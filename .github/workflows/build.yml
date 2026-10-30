@@ -162,7 +162,8 @@ jobs:
 
   publication:
     name: Publication GitHub
-    if: startsWith(github.ref, 'refs/tags/v')
+    # Publie ce qui a été compilé, même si une plateforme a échoué ; le paquet de contenu signé est obligatoire.
+    if: ${{ !cancelled() && startsWith(github.ref, 'refs/tags/v') && needs.contenu.result == 'success' }}
     needs: [bureau, contenu, android, ios]
     runs-on: ubuntu-latest
     steps:
