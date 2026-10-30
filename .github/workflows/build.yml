@@ -44,7 +44,12 @@ jobs:
       - run: npm ci
       - run: node build.mjs --prod
       - name: Construire les installeurs
-        run: npx electron-builder ${{ matrix.cible }} --publish never
+        shell: bash
+        # Une variable vide (secret absent) est prise pour un certificat sur macOS : on la retire.
+        run: |
+          [ -n "$CSC_LINK" ] || unset CSC_LINK CSC_KEY_PASSWORD
+          for v in APPLE_ID APPLE_APP_SPECIFIC_PASSWORD APPLE_TEAM_ID; do [ -n "${!v}" ] || unset "$v"; done
+          npx electron-builder ${{ matrix.cible }} --publish never
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: ${{ (matrix.os == 'macos-latest' && secrets.MAC_CSC_LINK != '') && 'true' || 'false' }}
           CSC_LINK: ${{ matrix.os == 'windows-latest' && secrets.WIN_CSC_LINK || secrets.MAC_CSC_LINK }}
