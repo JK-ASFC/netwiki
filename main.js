@@ -9,7 +9,9 @@ const fsp = fs.promises;
 const crypto = require('node:crypto');
 const { pathToFileURL } = require('node:url');
 const pack = require('./main/pack.js');
+const content = require('./main/content.js');
 const updates = require('./main/updates.js');
+const selfupdate = require('./main/selfupdate.js');
 
 protocol.registerSchemesAsPrivileged([
   { scheme: 'wikifile', privileges: { standard: true, secure: true, supportFetchAPI: true, stream: true } },
@@ -36,8 +38,16 @@ const APP_VERSION = (() => {
   }
 })();
 const SEED_DIR = app.isPackaged ? path.join(process.resourcesPath, 'content') : path.join(__dirname, 'content');
+// Version datée du contenu livré (écrite par build.mjs) ; en développement, le contenu du projet est toujours appliqué.
+const BUNDLED_CONTENT_VERSION = (() => {
+  if (!app.isPackaged) return process.env.NETWIKI_AUTOMATION === '1' ? String(process.env.NETWIKI_TEST_CONTENT_VERSION || '') : '';
+  try {
+    return String(require('./dist/content-version.json').version || '');
+  } catch {
+    return '';
+  }
+})();
 const SETTINGS_FILE = path.join(app.getPath('userData'), 'settings.json');
-const SEED_MANIFEST = '.netwiki-seed.json';
 const ASSETS_DIR = '_assets';
 
 const DEFAULT_SETTINGS = {
@@ -95,10 +105,6 @@ function resolveInside(rel = '') {
   return full;
 }
 
-function sha1(buf) {
-  return crypto.createHash('sha1').update(buf).digest('hex');
-}
-
 function slugify(text) {
   return (
     String(text)
@@ -131,60 +137,11 @@ function markOwnWrite() {
   suppressWatchUntil = Date.now() + 1500;
 }
 
-async function walkFiles(dir, rel = '') {
-  const out = [];
-  for (const e of await fsp.readdir(dir, { withFileTypes: true })) {
-    const r = rel ? `${rel}/${e.name}` : e.name;
-    if (e.isDirectory()) out.push(...(await walkFiles(path.join(dir, e.name), r)));
-    else out.push(r);
-  }
-  return out;
-}
-
 // ---------------------------------------------------------------- contenu d'origine
 
-/**
- * Importe le contenu livré avec l'application dans le dossier de données.
- * Un manifeste mémorise chaque fichier importé (et son empreinte) :
- *  - un fichier jamais importé est copié s'il n'existe pas ;
- *  - un fichier mis à jour dans une nouvelle version est remplacé seulement si l'utilisateur ne l'a pas modifié ;
- *  - un fichier supprimé ou déplacé par l'utilisateur n'est jamais recréé.
- */
-async function syncSeeds({ force = false } = {}) {
-  if (!(await exists(SEED_DIR))) return 0;
-  const root = dataDir();
-  await fsp.mkdir(root, { recursive: true });
-  const manifestPath = path.join(root, SEED_MANIFEST);
-  let manifest = {};
-  try {
-    manifest = JSON.parse(await fsp.readFile(manifestPath, 'utf8'));
-  } catch {}
-
-  let imported = 0;
-  for (const rel of await walkFiles(SEED_DIR)) {
-    const seed = await fsp.readFile(path.join(SEED_DIR, rel));
-    const seedHash = sha1(seed);
-    const target = path.join(root, rel);
-    const known = manifest[rel];
-    const targetExists = await exists(target);
-
-    if (!known || force) {
-      if (!targetExists) {
-        await fsp.mkdir(path.dirname(target), { recursive: true });
-        await fsp.writeFile(target, seed);
-        imported++;
-      }
-    } else if (known !== seedHash && targetExists) {
-      const current = sha1(await fsp.readFile(target));
-      if (current === known) {
-        await fsp.writeFile(target, seed);
-        imported++;
-      }
-    }
-    manifest[rel] = seedHash;
-  }
-  await fsp.writeFile(manifestPath, JSON.stringify(manifest, null, 2), 'utf8');
-  return imported;
+/** Importe le contenu livré avec l'application s'il est plus récent que le contenu installé (voir main/content.js). */
+function syncSeeds({ force = false } = {}) {
+  return content.syncSeeds({ seedDir: SEED_DIR, dataRoot: dataDir(), bundledVersion: BUNDLED_CONTENT_VERSION, force });
 }
 
 // ---------------------------------------------------------------- lecture de l'arborescence
@@ -418,22 +375,15 @@ handle('shell:open-external', async (url) => {
 // ---------------------------------------------------------------- paquets de contenu et mises à jour
 
 const pendingImports = new Map();
-
-async function readManifest() {
-  try {
-    return JSON.parse(await fsp.readFile(path.join(dataDir(), SEED_MANIFEST), 'utf8'));
-  } catch {
-    return {};
-  }
-}
+let lastCheck = null;
 
 /** Vérifie un paquet et prépare son import sans rien écrire ; le renderer confirme ensuite avec le jeton. */
-async function prepareImport(buf, { requireSignature }) {
+async function prepareImport(buf, { requireSignature, source }) {
   const p = pack.readPack(buf, { requireSignature });
-  const plan = await pack.planImport(p.files, dataDir(), await readManifest());
+  const plan = await pack.planImport(p.files, dataDir(), await content.readManifest(dataDir()));
   const token = crypto.randomUUID();
   pendingImports.clear();
-  pendingImports.set(token, { files: p.files, plan });
+  pendingImports.set(token, { files: p.files, plan, signed: p.signed, meta: p.meta, source });
   const counts = Object.fromEntries(Object.entries(plan).map(([k, v]) => [k, v.length]));
   return { token, signed: p.signed, meta: p.meta, counts, keepSample: plan.keep.slice(0, 8) };
 }
@@ -459,7 +409,7 @@ handle('pack:choose', async () => {
   if (res.canceled || !res.filePaths[0]) return null;
   const file = res.filePaths[0];
   if ((await fsp.stat(file)).size > 200 * 1024 * 1024) throw new Error('Paquet trop volumineux.');
-  return prepareImport(await fsp.readFile(file), { requireSignature: false });
+  return prepareImport(await fsp.readFile(file), { requireSignature: false, source: 'fichier' });
 });
 
 handle('pack:apply', async (token) => {
@@ -467,15 +417,54 @@ handle('pack:apply', async (token) => {
   if (!pending) throw new Error('Import expiré : recommencez.');
   pendingImports.delete(token);
   suppressWatchUntil = Date.now() + 15000;
-  const manifest = await readManifest();
-  const result = await pack.applyImport(pending.files, pending.plan, dataDir(), manifest);
-  await fsp.writeFile(path.join(dataDir(), SEED_MANIFEST), JSON.stringify(manifest, null, 2), 'utf8');
+  const root = dataDir();
+  const manifest = await content.readManifest(root);
+  const result = await pack.applyImport(pending.files, pending.plan, root, manifest);
+  await content.writeManifest(root, manifest);
+  // Seul un paquet officiel (signé) fait avancer la version du contenu installé.
+  if (pending.signed) await content.recordContentVersion(root, { version: pending.meta.contentVersion, source: pending.source, label: pending.meta.label });
   return result;
 });
 
-handle('updates:check', async () => updates.checkLatest(APP_VERSION));
+handle('content:info', async () => content.readContentState(dataDir()));
 
-handle('updates:download-pack', async (url) => prepareImport(await updates.downloadPack(url, APP_VERSION), { requireSignature: true }));
+/** Vérifie le logiciel (Release) et le contenu (branche « contenu ») ; mémorise le résultat pour les téléchargements. */
+handle('updates:check', async () => {
+  const installed = (await content.readContentState(dataDir())).version;
+  const [a, c] = await Promise.allSettled([updates.checkApp(APP_VERSION), updates.checkContent(installed, APP_VERSION)]);
+  if (a.status === 'rejected' && c.status === 'rejected') throw a.reason;
+  lastCheck = { app: a.status === 'fulfilled' ? a.value : null, content: c.status === 'fulfilled' ? c.value : null };
+  const appInfo = lastCheck.app && { ...lastCheck.app, assets: undefined, selfUpdate: selfupdate.mode() };
+  return {
+    app: appInfo,
+    appError: a.status === 'rejected' ? a.reason.message : null,
+    content: lastCheck.content && { ...lastCheck.content, url: undefined },
+    contentError: c.status === 'rejected' ? c.reason.message : null,
+  };
+});
+
+handle('updates:download-content', async () => {
+  if (!lastCheck?.content) throw new Error('Vérifiez d’abord les mises à jour.');
+  const buf = await updates.download(lastCheck.content.url, APP_VERSION, { maxBytes: updates.LIMITS.pack });
+  return prepareImport(buf, { requireSignature: true, source: 'hebdomadaire' });
+});
+
+handle('updates:install-app', async () => {
+  const rel = lastCheck?.app;
+  if (!rel?.newer) throw new Error('Aucune nouvelle version à installer.');
+  const progress = (received, total) => {
+    if (win && !win.isDestroyed()) win.webContents.send('updates:progress', { received, total });
+  };
+  const r = await selfupdate.install(rel, APP_VERSION, progress);
+  settings.cleanupFiles = [...(settings.cleanupFiles || []), r.cleanup].filter(Boolean);
+  saveSettings();
+  // Laisse au renderer le temps d'afficher « redémarrage », puis relance la nouvelle version (portable) ou laisse l'installeur faire.
+  setTimeout(() => {
+    if (r.relaunch) app.relaunch({ execPath: r.relaunch, args: [] });
+    app.quit();
+  }, 800);
+  return { mode: r.mode };
+});
 
 handle('updates:open-page', async (url) => {
   if (/^https:\/\/github\.com\//i.test(url)) await shell.openExternal(url);
@@ -639,6 +628,10 @@ app.whenReady().then(async () => {
     await syncSeeds();
   } catch (err) {
     console.error('Import du contenu initial impossible :', err);
+  }
+  if (settings.cleanupFiles?.length) {
+    settings.cleanupFiles = await selfupdate.cleanup(settings.cleanupFiles);
+    saveSettings();
   }
 
   buildMenu();

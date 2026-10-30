@@ -1,0 +1,70 @@
+# NetWiki — publication hebdomadaire du contenu (articles), indépendante des versions du logiciel.
+# Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
+#
+# Chaque lundi, le contenu de la branche main est empaqueté et signé (Ed25519, secret NETWIKI_SIGNING_KEY),
+# puis publié sur la branche « contenu » du dépôt : contenu.json (index) + netwiki-contenu.netwiki (paquet).
+# Ce n'est pas une Release : la branche ne contient qu'un seul commit, remplacé à chaque publication.
+# Rien n'est publié si aucun article n'a changé depuis la dernière fois (sauf lancement manuel avec « forcer »).
+# NetWiki (avec l'accord de l'utilisateur) vérifie cet index au démarrage et applique le paquet s'il est plus récent.
+
+name: Publication hebdomadaire du contenu
+
+on:
+  schedule:
+    - cron: '0 5 * * 1' # lundi 5 h UTC (6 h à Paris en hiver, 7 h en été)
+  workflow_dispatch:
+    inputs:
+      forcer:
+        description: Publier même si aucun article n'a changé
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contenu
+  cancel-in-progress: false
+
+jobs:
+  contenu:
+    name: Paquet de contenu hebdomadaire
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Construire et signer le paquet
+        run: node scripts/pack-content.js --canal canal
+        env:
+          NETWIKI_SIGNING_KEY: ${{ secrets.NETWIKI_SIGNING_KEY }}
+      - name: Comparer avec le contenu déjà publié
+        id: comparer
+        run: |
+          curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/contenu/contenu.json" -o publie.json || echo '{}' > publie.json
+          CHANGE=$(node -e "const a=require('./canal/contenu.json'),b=require('./publie.json');console.log(a.contentHash!==b.contentHash?'oui':'non')")
+          echo "Contenu modifié depuis la dernière publication : $CHANGE"
+          echo "change=$CHANGE" >> "$GITHUB_OUTPUT"
+      - name: Publier sur la branche « contenu »
+        if: steps.comparer.outputs.change == 'oui' || inputs.forcer
+        working-directory: canal
+        run: |
+          cat > README.md <<'FIN'
+          # Contenu NetWiki
+
+          Branche générée automatiquement chaque semaine par le workflow « Publication hebdomadaire du contenu ».
+          Elle ne contient que le dernier paquet d'articles signé par JK-ASFC (`netwiki-contenu.netwiki`) et son index (`contenu.json`).
+          Ne pas modifier à la main : les articles se modifient dans le dossier `content/` de la branche `main`.
+          FIN
+          git init -q -b contenu
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Contenu $(node -p "require('./contenu.json').version")"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" contenu
+          echo "Publié : $(node -p "require('./contenu.json').label")"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

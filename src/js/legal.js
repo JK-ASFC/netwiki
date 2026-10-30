@@ -58,7 +58,7 @@ const confidentialite = `
   <h4>Connexions réseau</h4>
   <ul>
     <li><b>Aucune par défaut.</b></li>
-    <li><b>Vérification des mises à jour</b>, uniquement si vous l'autorisez : une requête HTTPS anonyme vers l'API publique de GitHub (<code>api.github.com</code>), au plus une fois par jour, puis le téléchargement d'un paquet signé si vous le demandez. Comme pour toute connexion à un site web, GitHub reçoit votre adresse IP et l'identifiant du logiciel (« NetWiki/version ») ; aucun contenu de votre wiki n'est envoyé. Désactivable à tout moment dans les Paramètres.</li>
+    <li><b>Vérification des mises à jour</b>, uniquement si vous l'autorisez : des requêtes HTTPS anonymes vers GitHub, au plus une fois par jour (<code>api.github.com</code> pour le logiciel, <code>raw.githubusercontent.com</code> pour le contenu publié chaque semaine). Le paquet de contenu signé est alors appliqué (automatiquement ou après confirmation, selon votre réglage) ; une nouvelle version du logiciel n'est téléchargée que si vous cliquez sur « Mettre à jour maintenant », après vérification de son empreinte signée. Comme pour toute connexion à un site web, GitHub reçoit votre adresse IP et l'identifiant du logiciel (« NetWiki/version ») ; aucun contenu de votre wiki n'est envoyé. Désactivable à tout moment dans les Paramètres.</li>
     <li><b>Liens externes</b> : ils s'ouvrent dans votre navigateur, seulement quand vous cliquez dessus. C'est le cas du bouton « Soutenir » (page de dons Liberapay) : NetWiki n'envoie rien à Liberapay.</li>
     <li><b>Images distantes</b> : bloquées par la politique de sécurité de l'application (aucune image n'est chargée depuis Internet).</li>
     <li><b>Correcteur orthographique</b> : celui du système (Windows, macOS), local ; désactivé sous Linux pour éviter tout téléchargement de dictionnaire.</li>
@@ -80,6 +80,7 @@ const rgpd = `
   <h4>Vérification des mises à jour</h4>
   <ul>
     <li><b>Base légale</b> : votre <b>consentement</b> (article 6.1.a), demandé au premier lancement et retirable à tout moment dans les Paramètres, sans conséquence sur l'utilisation du wiki.</li>
+    <li><b>Finalité</b> : signaler une nouvelle version du logiciel et appliquer le contenu du wiki publié chaque semaine.</li>
     <li><b>Données concernées</b> : adresse IP et identifiant technique du logiciel, reçus par GitHub, Inc. lors de la requête, selon sa propre politique de confidentialité (GitHub est adhérent du Data Privacy Framework UE–États-Unis pour les transferts hors de l'Union).</li>
     <li><b>Conservation par l'éditeur</b> : aucune.</li>
   </ul>

@@ -20,7 +20,7 @@ Vous pouvez aussi mettre une ⭐ au dépôt, signaler une erreur ou proposer un 
 - **Licence MIT** — Copyright © 2026 **JK-ASFC** ([LICENSE](LICENSE)) : utilisation, modification et redistribution libres, à condition de conserver la mention de copyright et la licence. L'attribution est vérifiée au démarrage et affichée dans *Paramètres → À propos*.
 - **Confidentialité** : aucune donnée collectée, aucune télémétrie, aucune connexion sans accord ([PRIVACY.md](PRIVACY.md), [RGPD.md](RGPD.md)).
 - **Sécurité** : mesures et signalement des vulnérabilités dans [SECURITY.md](SECURITY.md).
-- **Mises à jour** : vérification facultative des [Releases GitHub](https://github.com/JK-ASFC/netwiki/releases) et paquets de contenu `.netwiki` signés (Ed25519) par JK-ASFC ; export/import de paquets pour les postes hors ligne.
+- **Mises à jour** (facultatives, avec votre accord) : le **contenu** est publié chaque semaine sous forme de paquet `.netwiki` signé (Ed25519) par JK-ASFC et appliqué automatiquement ; le **logiciel** se met à jour depuis les [Releases GitHub](https://github.com/JK-ASFC/netwiki/releases) — sous Windows, l'exécutable portable se remplace lui-même et l'installeur se lance tout seul, après vérification d'une empreinte signée. Export/import de paquets pour les postes hors ligne.
 
 ## Plateformes
 
@@ -202,7 +202,7 @@ Chaque système se construit sur son propre OS. Le workflow `.github/workflows/b
 
 *Paramètres → Dossier des données* permet d'ouvrir ce dossier ou d'en choisir un autre (partage réseau, dépôt Git d'équipe). Les préférences (thème, favoris, récents) sont dans `settings.json` à côté.
 
-Au premier lancement, le contenu livré est copié dans ce dossier. Lors des mises à jour de l'application, les nouveaux articles sont ajoutés et les articles d'origine **non modifiés** sont actualisés ; vos modifications et suppressions sont toujours respectées (manifeste `.netwiki-seed.json`). *Paramètres → Restaurer le contenu d'origine* recrée les articles livrés manquants.
+Au premier lancement, le contenu livré est copié dans ce dossier. Ensuite, chaque contenu officiel plus récent (nouvelle version de l'application ou paquet hebdomadaire) ajoute les nouveaux articles et actualise les articles d'origine **non modifiés** ; vos modifications et suppressions sont toujours respectées (manifeste `.netwiki-seed.json`). La version du contenu installé est notée dans `.netwiki-content.json` : un exécutable plus ancien ne remet jamais en place des articles plus anciens. *Paramètres → Restaurer le contenu d'origine* recrée les articles livrés manquants.
 
 ## Format d'un article
 
@@ -226,7 +226,7 @@ Texte, `code`, [[Autre article]], > [!TIP] encadrés, ```cisco blocs de code```,
 
 1. Créer `content/<catégorie>/<NN-service>/_folder.json` et les articles `NN-sujet.md`.
 2. `npm run validate` pour contrôler liens, blocs de code et diagrammes.
-3. Reconstruire l'application : les utilisateurs existants recevront les nouveaux articles à la prochaine mise à jour.
+3. Pousser sur `main` : le workflow **Publication hebdomadaire du contenu** publie chaque lundi le paquet signé sur la branche `contenu`, et les utilisateurs le reçoivent sans changer de version du logiciel (lancement manuel possible dans *Actions*).
 
 ## Raccourcis
 

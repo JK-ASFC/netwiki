@@ -16,7 +16,8 @@ Merci de **ne pas** ouvrir d'issue publique. Utilisez le signalement privé de G
 | Navigation | Navigation interne bloquée, liens externes ouverts dans le navigateur système, nouvelles fenêtres refusées |
 | Permissions | Toutes refusées sauf l'écriture dans le presse-papiers |
 | Réseau | Aucune requête sans accord ; mises à jour via HTTPS depuis GitHub uniquement (hôtes contrôlés, taille limitée) |
-| Mises à jour de contenu | Paquets signés Ed25519 par JK-ASFC, signature vérifiée avant import, chemins et types de fichiers filtrés, modifications locales jamais écrasées |
+| Mises à jour de contenu | Paquets signés Ed25519 par JK-ASFC (publication hebdomadaire sur la branche `contenu`), signature vérifiée avant import, chemins et types de fichiers filtrés, modifications locales jamais écrasées, aucun retour à un contenu plus ancien |
+| Mises à jour du logiciel | Fichier téléchargé (portable ou installeur Windows) accepté seulement si son empreinte SHA-256 figure dans `netwiki-update.json`, liste signée Ed25519 par JK-ASFC |
 | Exécutable | Fusibles Electron : pas de mode « run as node », pas de `NODE_OPTIONS`, pas d'options d'inspection, chargement depuis l'archive uniquement, intégrité de l'archive vérifiée |
 | Outils de développement | Désactivés dans les versions installées (activables volontairement via `"devTools": true` dans `settings.json`) |
 | Dépendances | `npm audit` : 0 vulnérabilité connue au 30/10/2026 |

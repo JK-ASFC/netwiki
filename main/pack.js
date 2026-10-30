@@ -3,7 +3,7 @@
 //
 // Format d'un paquet : JSON {
 //   format: "netwiki-pack", version: 1, signer: "JK-ASFC" | null,
-//   payload: base64(gzip(JSON { appVersion, contentVersion, created, label, files: { "chemin/relatif.md": base64 } })),
+//   payload: base64(gzip(JSON { appVersion, contentVersion, contentHash, created, label, files: { "chemin/relatif.md": base64 } })),
 //   signature: base64(Ed25519(payload décodé)) | null
 // }
 // Les paquets officiels (mises à jour en ligne) sont signés avec la clé privée de JK-ASFC ;
@@ -17,6 +17,7 @@ const crypto = require('node:crypto');
 
 const PACK_FORMAT = 'netwiki-pack';
 const PACK_VERSION = 1;
+const SIGNED_FORMAT = 'netwiki-signed';
 const SIGNER = 'JK-ASFC';
 
 // Clé publique Ed25519 de JK-ASFC (vérification des paquets officiels).
@@ -96,6 +97,7 @@ function readPack(buf, { requireSignature = false } = {}) {
     meta: {
       appVersion: String(inner.appVersion || ''),
       contentVersion: String(inner.contentVersion || inner.appVersion || ''),
+      contentHash: String(inner.contentHash || ''),
       created: String(inner.created || ''),
       label: String(inner.label || ''),
     },
@@ -103,8 +105,15 @@ function readPack(buf, { requireSignature = false } = {}) {
   };
 }
 
+/** Empreinte de l'ensemble du contenu (chemins et fichiers) : identique tant qu'aucun article ne change. */
+function contentHash(files) {
+  const h = crypto.createHash('sha256');
+  for (const rel of Object.keys(files).sort()) h.update(rel + '\0' + sha1(Buffer.from(files[rel], 'base64')) + '\n');
+  return h.digest('hex');
+}
+
 /** Construit un paquet à partir d'un dossier (contenu des données ou dossier « content » du projet). */
-async function buildPack(rootDir, { appVersion, label = '', privateKeyPem = null } = {}) {
+async function buildPack(rootDir, { appVersion, contentVersion = appVersion, label = '', privateKeyPem = null } = {}) {
   const files = {};
   const walk = async (dir, rel = '') => {
     for (const e of await fsp.readdir(dir, { withFileTypes: true })) {
@@ -117,11 +126,39 @@ async function buildPack(rootDir, { appVersion, label = '', privateKeyPem = null
     }
   };
   await walk(rootDir);
-  const inner = { appVersion, contentVersion: appVersion, created: new Date().toISOString(), label, files };
+  const hash = contentHash(files);
+  const inner = { appVersion, contentVersion, contentHash: hash, created: new Date().toISOString(), label, files };
   const payload = zlib.gzipSync(Buffer.from(JSON.stringify(inner), 'utf8'), { level: 9 });
   const signature = privateKeyPem ? crypto.sign(null, payload, crypto.createPrivateKey(privateKeyPem)).toString('base64') : null;
   const outer = { format: PACK_FORMAT, version: PACK_VERSION, signer: privateKeyPem ? SIGNER : null, payload: payload.toString('base64'), signature };
-  return { buffer: Buffer.from(JSON.stringify(outer), 'utf8'), count: Object.keys(files).length };
+  return { buffer: Buffer.from(JSON.stringify(outer), 'utf8'), count: Object.keys(files).length, contentHash: hash };
+}
+
+/** Signe un document JSON (liste des empreintes des installeurs d'une version, par exemple). */
+function signDocument(doc, privateKeyPem) {
+  const payload = Buffer.from(JSON.stringify(doc), 'utf8');
+  const signature = crypto.sign(null, payload, crypto.createPrivateKey(privateKeyPem)).toString('base64');
+  return Buffer.from(JSON.stringify({ format: SIGNED_FORMAT, version: 1, signer: SIGNER, payload: payload.toString('base64'), signature }, null, 2), 'utf8');
+}
+
+/** Lit un document signé par JK-ASFC ; lève une erreur s'il n'est pas signé ou s'il a été modifié. */
+function readSignedDocument(buf) {
+  let outer;
+  try {
+    outer = JSON.parse(buf.toString('utf8'));
+  } catch {
+    throw new Error('Document de mise à jour illisible.');
+  }
+  if (outer?.format !== SIGNED_FORMAT || outer.version !== 1 || typeof outer.payload !== 'string' || typeof outer.signature !== 'string') {
+    throw new Error('Document de mise à jour non signé ou de format inconnu.');
+  }
+  const key = publicKey();
+  if (!key) throw new Error('Aucune clé de vérification n’est intégrée à cette version de NetWiki.');
+  const payload = Buffer.from(outer.payload, 'base64');
+  if (!crypto.verify(null, payload, key, Buffer.from(outer.signature, 'base64'))) {
+    throw new Error('Signature invalide : la mise à jour a été modifiée ou ne provient pas de JK-ASFC.');
+  }
+  return JSON.parse(payload.toString('utf8'));
 }
 
 /**
@@ -159,4 +196,4 @@ async function applyImport(files, plan, dataRoot, manifest) {
   return { added: plan.add.length, updated: plan.update.length, kept: plan.keep.length };
 }
 
-module.exports = { buildPack, readPack, planImport, applyImport, isAllowedPath, SIGNER };
+module.exports = { buildPack, readPack, planImport, applyImport, isAllowedPath, signDocument, readSignedDocument, SIGNER };

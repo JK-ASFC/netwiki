@@ -1,7 +1,7 @@
 {
   "name": "netwiki",
   "productName": "NetWiki",
-  "version": "1.42.0",
+  "version": "1.43.0",
   "description": "Le wiki local de l'architecte rÃ©seau : prÃ©sentation, installation et configuration des services d'infrastructure.",
   "main": "main.js",
   "author": {
@@ -56,9 +56,13 @@
       "icon": "build/icon.png"
     },
     "nsis": {
+      "artifactName": "${productName}-Setup-${version}.${ext}",
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "perMachine": false
+    },
+    "portable": {
+      "artifactName": "${productName}-portable.${ext}"
     },
     "mac": {
       "target": [

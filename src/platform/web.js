@@ -224,6 +224,8 @@ window.netwiki = {
   exportPack: indisponible,
   choosePack: indisponible,
   applyPack: indisponible,
+  contentInfo: async () => ({ version: '', source: '', label: '', updated: '' }),
+  // Version web / mobile : le contenu est livré avec l'application (mises à jour par les magasins d'applications).
   checkUpdates: async () => {
     const res = await fetch('https://api.github.com/repos/JK-ASFC/netwiki/releases/latest', { headers: { Accept: 'application/vnd.github+json' } });
     if (res.status === 404) throw new Error('Aucune version publiée pour le moment.');
@@ -236,9 +238,11 @@ window.netwiki = {
       for (let i = 0; i < 3; i++) if ((pa[i] || 0) !== (pb[i] || 0)) return (pa[i] || 0) - (pb[i] || 0);
       return 0;
     };
-    return { current: VERSION, latest, newer: !!latest && cmp(latest, VERSION) > 0, notes: String(rel.body || '').slice(0, 4000), page: rel.html_url || 'https://github.com/JK-ASFC/netwiki/releases', pack: null };
+    const app = { current: VERSION, latest, newer: !!latest && cmp(latest, VERSION) > 0, notes: String(rel.body || '').slice(0, 4000), page: rel.html_url || 'https://github.com/JK-ASFC/netwiki/releases', selfUpdate: null };
+    return { app, appError: null, content: null, contentError: null };
   },
-  downloadPack: indisponible,
+  downloadContent: indisponible,
+  installAppUpdate: indisponible,
   openReleasePage: async (url) => {
     if (/^https:\/\/github\.com\//i.test(url)) openUrl(url);
   },

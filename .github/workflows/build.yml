@@ -172,10 +172,19 @@ jobs:
     needs: [bureau, contenu, android, ios]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - uses: actions/download-artifact@v4
         with:
           path: artefacts
           merge-multiple: true
+      # Liste signée des empreintes : NetWiki la vérifie avant de remplacer l'exécutable portable ou de lancer l'installeur.
+      - name: Signer la liste des fichiers (Ed25519, JK-ASFC)
+        run: node scripts/sign-release.js artefacts "${{ github.ref_name }}"
+        env:
+          NETWIKI_SIGNING_KEY: ${{ secrets.NETWIKI_SIGNING_KEY }}
       - uses: softprops/action-gh-release@v2
         with:
           name: NetWiki ${{ github.ref_name }}

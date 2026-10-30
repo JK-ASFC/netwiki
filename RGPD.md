@@ -13,7 +13,7 @@
 
 | Élément | Détail |
 | --- | --- |
-| Finalité | Informer de la disponibilité d'une nouvelle version et permettre la mise à jour du contenu |
+| Finalité | Informer de la disponibilité d'une nouvelle version du logiciel et appliquer le contenu du wiki publié chaque semaine |
 | Base légale | Consentement (article 6.1.a), demandé au premier lancement, retirable à tout moment dans les Paramètres sans conséquence sur l'usage du wiki |
 | Données | Adresse IP et identifiant technique du logiciel, reçus par GitHub, Inc. lors de la requête |
 | Destinataire | GitHub, Inc., selon sa propre politique de confidentialité ; transferts hors UE encadrés par le Data Privacy Framework UE–États-Unis |

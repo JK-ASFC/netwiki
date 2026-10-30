@@ -4,6 +4,7 @@ import { $, $$, confirmDialog, esc, modal, toast } from '../ui.js';
 import { COLORS } from '../dialogs.js';
 import { actions, api, state } from '../state.js';
 import { openAbout } from '../legal.js';
+import { contentDate } from '../updates.js';
 
 export function openSettings() {
   const s = state.settings;
@@ -35,8 +36,10 @@ export function openSettings() {
           <button class="btn sm" id="st-restore">${icon('archive-restore', 15)}Restaurer le contenu d'origine</button></div>
         <div class="hint">Les articles sont de simples fichiers Markdown : synchronisez ce dossier avec Git, un NAS ou un cloud pour le partager.</div></div>
       <div class="field"><label>Mises à jour</label>
-        <div class="row"><div class="grow"><div class="hint" style="margin:0">Vérifier au démarrage (une fois par jour au plus) les versions publiées sur github.com/JK-ASFC/netwiki. Requête anonyme, aucune donnée envoyée.</div></div>
+        <div class="row"><div class="grow"><div class="hint" style="margin:0">Vérifier au démarrage (une fois par jour au plus) les nouvelles versions du logiciel et du contenu publiées sur github.com/JK-ASFC/netwiki. Requêtes anonymes, aucune donnée envoyée.</div></div>
           <label class="toggle"><input type="checkbox" id="st-upd" ${s.updateConsent ? 'checked' : ''}><span></span></label></div>
+        <div class="row" style="margin-top:8px"><div class="grow"><div class="hint" style="margin:0">Appliquer automatiquement le contenu publié chaque semaine (sinon, demander avant). <span id="st-content-ver"></span></div></div>
+          <label class="toggle"><input type="checkbox" id="st-cauto" ${s.contentAuto !== false ? 'checked' : ''}><span></span></label></div>
         <div class="row" style="margin-top:8px"><button class="btn sm" id="st-check">${icon('refresh-cw', 15)}Vérifier maintenant</button><span class="grow"></span>
           <button class="btn sm" id="st-export">${icon('package', 15)}Exporter un paquet…</button>
           <button class="btn sm" id="st-import">${icon('package-open', 15)}Importer un paquet…</button></div>
@@ -94,6 +97,10 @@ export function openSettings() {
         if (e.target.checked) actions.checkUpdates({ manual: true });
       };
       $('#st-check', b).onclick = () => actions.checkUpdates({ manual: true });
+      $('#st-cauto', b).onchange = (e) => actions.saveSettings({ contentAuto: e.target.checked });
+      api.contentInfo?.().then((c) => {
+        if (c?.version) $('#st-content-ver', b).textContent = `Contenu installé : version du ${contentDate(c.version)}.`;
+      });
       $('#st-export', b).onclick = () => actions.exportPack();
       $('#st-import', b).onclick = () => actions.importPack();
       $('#st-open', b).onclick = () => api.openDataDir();

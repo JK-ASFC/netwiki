@@ -2208,3 +2208,18 @@ textarea.input {
     background: var(--surface);
   }
 }
+.dl-progress {
+  height: 8px;
+  margin: 12px 0 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--hover-2, rgba(127, 127, 127, 0.15));
+}
+.dl-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), #0ea5e9);
+  transition: width 0.25s;
+}

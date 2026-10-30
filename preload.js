@@ -31,9 +31,12 @@ contextBridge.exposeInMainWorld('netwiki', {
   exportPack: () => invoke('pack:export'),
   choosePack: () => invoke('pack:choose'),
   applyPack: (token) => invoke('pack:apply', token),
+  contentInfo: () => invoke('content:info'),
   checkUpdates: () => invoke('updates:check'),
-  downloadPack: (url) => invoke('updates:download-pack', url),
+  downloadContent: () => invoke('updates:download-content'),
+  installAppUpdate: () => invoke('updates:install-app'),
   openReleasePage: (url) => invoke('updates:open-page', url),
 
   onChanged: (cb) => ipcRenderer.on('wiki:changed', () => cb()),
+  onUpdateProgress: (cb) => ipcRenderer.on('updates:progress', (_e, p) => cb({ received: Number(p?.received) || 0, total: Number(p?.total) || 0 })),
 });

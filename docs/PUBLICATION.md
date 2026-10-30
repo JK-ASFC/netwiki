@@ -33,10 +33,22 @@ Le pipeline construit et joint à la *release* GitHub :
 
 | Plateforme | Fichiers |
 | --- | --- |
-| Windows | `NetWiki Setup x.y.z.exe` (installeur), `NetWiki x.y.z.exe` (portable) |
+| Windows | `NetWiki-Setup-x.y.z.exe` (installeur), `NetWiki-portable.exe` (portable, nom fixe : il se remplace lui-même lors des mises à jour) |
 | macOS | `.dmg`, `.zip` (Intel et Apple Silicon selon le runner) |
 | Linux | `.AppImage`, `.deb` |
-| Contenu | `netwiki-content-x.y.z.netwiki` signé — utilisé par la mise à jour en ligne et pour les postes hors ligne |
+| Contenu | `netwiki-content-x.y.z.netwiki` signé — pour les postes hors ligne |
+| Mises à jour | `netwiki-update.json` : empreintes SHA-256 de tous les fichiers, signées Ed25519 — vérifiées par NetWiki avant d'installer une nouvelle version |
+
+### Publication hebdomadaire du contenu
+
+Le workflow `.github/workflows/contenu.yml` s'exécute **chaque lundi à 5 h UTC** (et à la demande : *Actions → Publication hebdomadaire du contenu → Run workflow*, option « forcer »). Il empaquette et signe le dossier `content/` de `main`, puis publie sur la branche **`contenu`** (un seul commit, remplacé à chaque fois — ce n'est pas une Release) :
+
+| Fichier | Rôle |
+| --- | --- |
+| `contenu.json` | Index : version datée du contenu (`AAAA.MM.JJ.HHMM`), nombre d'articles, taille, empreintes |
+| `netwiki-contenu.netwiki` | Paquet signé de tous les articles |
+
+Rien n'est publié si aucun article n'a changé. NetWiki lit l'index au démarrage (au plus une fois par jour, avec l'accord de l'utilisateur) et applique le paquet s'il est plus récent que le contenu installé. GitHub suspend les tâches planifiées d'un dépôt public après 60 jours sans activité : un commit ou un lancement manuel les réactive.
 | Android | `app-debug.apk` (test), `app-release.aab` (Play Store, signé si la clé est configurée) |
 | iOS | `NetWiki-simulateur.zip` (test sur simulateur ; la version App Store nécessite la signature Apple) |
 
