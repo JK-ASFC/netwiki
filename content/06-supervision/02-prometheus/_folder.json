@@ -1,0 +1,1 @@
+{ "title": "Prometheus", "icon": "flame", "color": "#e6522c", "description": "Métriques par collecte (pull) : exporteurs, SNMP, PromQL, Alertmanager, stockage." }

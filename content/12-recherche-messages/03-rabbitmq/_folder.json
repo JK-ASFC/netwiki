@@ -1,0 +1,1 @@
+{ "title": "RabbitMQ", "icon": "rabbit", "color": "#f97316", "description": "Courtier de messages AMQP : vhosts, échanges, files quorum, cluster, fédération." }

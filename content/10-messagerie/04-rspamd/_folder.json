@@ -1,0 +1,1 @@
+{ "title": "Rspamd", "icon": "shield-alert", "color": "#ea580c", "description": "Filtrage anti-spam rapide : milter, scores, Bayes Redis, DKIM/ARC, listes, limitation de débit." }

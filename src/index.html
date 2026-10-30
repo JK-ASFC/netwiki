@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- NetWiki — Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE). -->
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: wikifile:; font-src 'self' data:; connect-src 'self' wikifile:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NetWiki</title>
+    <link rel="stylesheet" href="../dist/styles.css" />
+    <script defer src="../dist/app.js"></script>
+  </head>
+  <body>
+    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <header class="titlebar">
+      <div class="tb-left">
+        <button class="icon-btn" id="btn-sidebar" data-tip="Afficher / masquer le panneau (Ctrl+B)"></button>
+        <div class="brand" id="brand">
+          <span class="brand-logo"></span>
+          <span class="brand-name">Net<b>Wiki</b></span>
+        </div>
+        <div class="nav-btns">
+          <button class="icon-btn" id="btn-back" data-tip="Précédent (Alt+←)"></button>
+          <button class="icon-btn" id="btn-forward" data-tip="Suivant (Alt+→)"></button>
+        </div>
+      </div>
+      <button class="search-trigger" id="btn-search">
+        <span class="st-icon"></span>
+        <span class="st-label">Rechercher dans le wiki…</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <div class="tb-right">
+        <button class="icon-btn" id="btn-new" data-tip="Nouvel article (Ctrl+N)"></button>
+        <button class="icon-btn" id="btn-theme" data-tip="Changer de thème"></button>
+        <button class="icon-btn" id="btn-settings" data-tip="Paramètres"></button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar" id="sidebar"></aside>
+      <div class="resizer" id="resizer"></div>
+      <main class="main" id="main">
+        <div class="view" id="view"></div>
+      </main>
+    </div>
+
+    <div id="overlays"></div>
+    <div class="toasts" id="toasts"></div>
+  </body>
+</html>

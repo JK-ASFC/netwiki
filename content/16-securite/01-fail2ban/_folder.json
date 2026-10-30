@@ -1,0 +1,1 @@
+{ "title": "Fail2ban", "icon": "ban", "color": "#dc2626", "description": "Bannissement automatique des adresses à partir des journaux." }

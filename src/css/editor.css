@@ -1,0 +1,216 @@
+/* Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE). */
+/* ================================================================ éditeur */
+
+.editor {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ed-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+}
+.ed-bar .ed-title {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.ed-bar .ed-title span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ed-bar .dirty-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-amber);
+  box-shadow: 0 0 10px var(--c-amber);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.25s var(--spring);
+}
+.ed-bar .dirty-dot.on {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ed-meta {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr auto;
+  gap: 10px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  align-items: end;
+}
+.ed-meta .field {
+  margin: 0;
+}
+.ed-meta .field > label {
+  font-size: 11.5px;
+}
+.ed-meta .input {
+  height: 34px;
+  font-size: 13.5px;
+}
+.icon-pick {
+  height: 34px;
+  min-width: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px;
+  border-radius: 9px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-2);
+  color: var(--accent-hi);
+}
+
+.ed-tools {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.ed-tools .sep {
+  width: 1px;
+  height: 20px;
+  background: var(--border-strong);
+  margin: 0 6px;
+}
+.ed-tools .spacer {
+  flex: 1;
+}
+
+.ed-panes {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.ed-panes.mode-edit {
+  grid-template-columns: 1fr 0;
+}
+.ed-panes.mode-edit .ed-preview {
+  display: none;
+}
+.ed-panes.mode-preview {
+  grid-template-columns: 0 1fr;
+}
+.ed-panes.mode-preview .ed-source {
+  display: none;
+}
+
+.ed-source {
+  min-width: 0;
+  min-height: 0;
+  border-right: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  position: relative;
+}
+.ed-source .cm-editor {
+  height: 100%;
+}
+.ed-source.drop {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.ed-preview {
+  min-width: 0;
+  overflow: auto;
+  padding: 28px 36px 80px;
+}
+.ed-preview .md {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* CodeMirror */
+.cm-editor {
+  font-size: 14px;
+  background: transparent;
+}
+.cm-editor.cm-focused {
+  outline: none;
+}
+.cm-scroller {
+  font-family: var(--mono) !important;
+  line-height: 1.65 !important;
+}
+.cm-content {
+  padding: 18px 0 120px !important;
+  caret-color: var(--accent-hi);
+}
+.cm-line {
+  padding: 0 22px 0 10px !important;
+}
+.cm-gutters {
+  background: transparent !important;
+  border-right: 1px solid var(--border) !important;
+  color: var(--text-faint) !important;
+}
+.cm-activeLineGutter {
+  background: var(--accent-softer) !important;
+  color: var(--accent-hi) !important;
+}
+.cm-activeLine {
+  background: var(--accent-softer) !important;
+}
+.cm-selectionBackground,
+.cm-focused .cm-selectionBackground,
+.cm-content ::selection {
+  background: var(--accent-ring) !important;
+}
+.cm-cursor {
+  border-left: 2px solid var(--accent-hi) !important;
+}
+.cm-selectionMatch {
+  background: color-mix(in srgb, var(--c-amber) 20%, transparent) !important;
+}
+.cm-matchingBracket {
+  background: var(--accent-soft) !important;
+  outline: 1px solid var(--accent-ring);
+}
+.cm-panels {
+  background: var(--surface-2) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+.cm-panel.cm-search input,
+.cm-panel.cm-search button {
+  font: inherit;
+  font-size: 13px;
+}
+.cm-textfield {
+  border-radius: 6px;
+  border: 1px solid var(--border-strong) !important;
+  background: var(--surface) !important;
+}
+.cm-button {
+  background-image: none !important;
+  background: var(--surface-3) !important;
+  border: 1px solid var(--border-strong) !important;
+  border-radius: 6px !important;
+}
+.cm-searchMatch {
+  background: color-mix(in srgb, var(--c-amber) 28%, transparent) !important;
+}
+.cm-searchMatch-selected {
+  background: color-mix(in srgb, var(--c-amber) 55%, transparent) !important;
+}
+.cm-placeholder {
+  color: var(--text-faint) !important;
+}

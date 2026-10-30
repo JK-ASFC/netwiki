@@ -1,0 +1,1 @@
+{"title": "Python (Gunicorn / Uvicorn)", "icon": "code", "color": "#3776ab", "description": "Applications web Python en production : environnements virtuels, WSGI avec Gunicorn, ASGI avec Uvicorn, systemd, reverse proxy, sécurité."}

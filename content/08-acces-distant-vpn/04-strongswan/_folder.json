@@ -1,0 +1,1 @@
+{ "title": "strongSwan (IPsec)", "icon": "shield-check", "color": "#2563eb", "description": "IPsec IKEv2 : tunnels site à site interopérables (Cisco, Fortinet, clouds), accès distant avec clients natifs, PKI, RADIUS et dépannage." }

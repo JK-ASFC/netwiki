@@ -1,0 +1,1 @@
+{ "title": "BIND9", "icon": "globe", "color": "#22c55e", "description": "Serveur DNS de référence de l’ISC : cache, zones, primaire/secondaire, vues, DNSSEC, RPZ, DoT/DoH." }

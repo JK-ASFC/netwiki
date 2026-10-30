@@ -1,0 +1,1 @@
+{ "title": "Infrastructure & services système", "icon": "server-cog", "color": "#64748b", "description": "Services de socle : temps (NTP/NTS), impression, mises à jour, haute disponibilité et gestion des adresses." }

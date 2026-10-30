@@ -1,0 +1,1 @@
+{ "title": "OpenVPN", "icon": "lock", "color": "#ea580c", "description": "VPN TLS : PKI easy-rsa, serveur d’accès distant, authentification LDAP/RADIUS/MFA, site à site, clients Windows/macOS/Linux et dépannage." }

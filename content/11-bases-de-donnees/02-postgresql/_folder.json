@@ -1,0 +1,1 @@
+{ "title": "PostgreSQL", "icon": "database", "color": "#336791", "description": "SGBD relationnel avancé : pg_hba, rôles, PITR, réplication, Patroni, VACUUM, performances." }

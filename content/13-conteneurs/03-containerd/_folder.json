@@ -1,0 +1,1 @@
+{ "title": "containerd", "icon": "box", "color": "#575757", "description": "Environnement d’exécution de conteneurs (CRI) : configuration, ctr, nerdctl, crictl." }

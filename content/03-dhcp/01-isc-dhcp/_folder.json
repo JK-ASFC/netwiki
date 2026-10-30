@@ -1,0 +1,1 @@
+{ "title": "ISC DHCP (dhcpd)", "icon": "network", "color": "#06b6d4", "description": "Serveur dhcpd : sous-réseaux, réservations, classes, options PXE/VoIP, failover, DDNS, DHCPv6 et migration Kea." }

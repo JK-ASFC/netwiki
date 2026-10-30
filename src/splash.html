@@ -1,0 +1,82 @@
+<!doctype html>
+<!-- NetWiki — écran de démarrage. Copyright (c) 2026 JK-ASFC — licence MIT. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'" />
+    <title>NetWiki</title>
+    <style>
+      :root {
+        --fond: #04070d;
+        --vert: #34d399;
+        --cyan: #22d3ee;
+        --texte: #e6edf6;
+        --doux: #8b98ad;
+        --accent: #6366f1;
+        --mono: 'Cascadia Mono', Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', monospace;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      html, body { height: 100%; overflow: hidden; user-select: none; cursor: default; }
+      body {
+        background: radial-gradient(120% 90% at 50% 40%, #0d1630 0%, var(--fond) 62%);
+        color: var(--texte);
+        font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+        -webkit-app-region: drag;
+      }
+      /* Terminal animé en arrière-plan */
+      #terminal {
+        position: absolute; inset: 0; padding: 18px 22px;
+        font: 12.5px/1.55 var(--mono); color: var(--vert);
+        opacity: 0.22; white-space: pre; overflow: hidden;
+        mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 70%, transparent 100%);
+      }
+      #terminal .p { color: var(--cyan); }
+      /* Grille et halos */
+      .grille {
+        position: absolute; inset: 0;
+        background-image: linear-gradient(rgba(99, 102, 241, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.07) 1px, transparent 1px);
+        background-size: 32px 32px;
+        mask-image: radial-gradient(70% 70% at 50% 45%, #000, transparent);
+      }
+      .halo { position: absolute; width: 420px; height: 420px; border-radius: 50%; filter: blur(70px); opacity: 0.35; }
+      .halo.a { background: var(--accent); left: -120px; top: -160px; animation: flotte 7s ease-in-out infinite alternate; }
+      .halo.b { background: #0ea5e9; right: -140px; bottom: -200px; animation: flotte 8s ease-in-out infinite alternate-reverse; }
+      @keyframes flotte { to { transform: translate(40px, 30px) scale(1.1); } }
+      /* Centre */
+      .centre { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+      .logo { width: 86px; height: 86px; border-radius: 22px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 18px 50px rgba(99, 102, 241, 0.45); animation: apparait 0.7s cubic-bezier(.2,.8,.2,1) both; }
+      .nom { font: 700 54px/1 var(--mono); letter-spacing: 1px; min-height: 58px; }
+      .nom .net { color: var(--texte); }
+      .nom .wiki { color: var(--cyan); }
+      .curseur { display: inline-block; width: 0.55em; height: 0.95em; margin-left: 4px; background: var(--vert); vertical-align: -0.08em; animation: clignote 0.9s steps(1) infinite; }
+      @keyframes clignote { 50% { opacity: 0; } }
+      .slogan { color: var(--doux); font-size: 14px; letter-spacing: 0.3px; opacity: 0; transition: opacity 0.6s; }
+      .slogan.on { opacity: 1; }
+      @keyframes apparait { from { opacity: 0; transform: scale(0.85) translateY(8px); } }
+      /* Bas */
+      .bas { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 22px 16px; }
+      .statut { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--doux); margin-bottom: 8px; }
+      .barre { height: 3px; border-radius: 3px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
+      .barre span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--cyan), var(--vert)); transition: width 0.35s ease; }
+      .mentions { display: flex; justify-content: space-between; margin-top: 10px; font-size: 11px; color: #64748b; }
+      @media (prefers-reduced-motion: reduce) { .halo, .curseur, .logo { animation: none; } }
+    </style>
+  </head>
+  <body>
+    <div class="halo a"></div>
+    <div class="halo b"></div>
+    <div class="grille"></div>
+    <div id="terminal" aria-hidden="true"></div>
+    <div class="centre">
+      <img class="logo" src="../build/icon.png" alt="" />
+      <div class="nom" aria-label="NetWiki"><span class="net" id="net"></span><span class="wiki" id="wiki"></span><span class="curseur"></span></div>
+      <div class="slogan" id="slogan">Le wiki de l'architecte réseau</div>
+    </div>
+    <div class="bas">
+      <div class="statut"><span id="etape">Démarrage…</span><span id="version"></span></div>
+      <div class="barre"><span id="barre"></span></div>
+      <div class="mentions"><span>Linux · Windows · macOS · équipements réseau · ToIP</span><span>© 2026 JK-ASFC — Licence MIT</span></div>
+    </div>
+    <script src="splash.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+{ "title": "Nginx", "icon": "zap", "color": "#009639", "description": "Serveur web et reverse proxy haute performance : server blocks, locations, TLS, upstreams, cache, limitation de débit, proxy TCP/UDP (stream). Linux, Windows et macOS." }

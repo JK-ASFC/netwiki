@@ -1,0 +1,1 @@
+{ "title": "ProFTPD", "icon": "file-up", "color": "#7c3aed", "description": "Serveur FTP modulaire à configuration de type Apache : FTPS, SFTP (mod_sftp), SQL/LDAP, quotas." }

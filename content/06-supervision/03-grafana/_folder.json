@@ -1,0 +1,1 @@
+{ "title": "Grafana", "icon": "chart-area", "color": "#f46800", "description": "Tableaux de bord et alertes multi-sources : Prometheus, InfluxDB, Loki, bases SQL." }

@@ -1,0 +1,1 @@
+{ "title": "OpenSSH (+ SFTP)", "icon": "square-terminal", "color": "#0d9488", "description": "Serveur SSH sous Linux, Windows et macOS : durcissement, clés et certificats SSH, MFA, tunnels et bastions, SFTP chrooté, intégration Active Directory." }

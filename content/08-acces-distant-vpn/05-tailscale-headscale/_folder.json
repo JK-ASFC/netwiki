@@ -1,0 +1,1 @@
+{ "title": "Tailscale / Headscale", "icon": "waypoints", "color": "#475569", "description": "Réseau maillé WireGuard sans configuration : routeurs de sous-réseaux, nœuds de sortie, MagicDNS, ACL, et serveur de contrôle auto-hébergé Headscale." }

@@ -1,0 +1,1 @@
+{"title": "Nginx RTMP", "icon": "video", "color": "#009639", "description": "Diffusion vidéo en direct avec le module RTMP de nginx : ingestion, HLS, enregistrement et relais."}

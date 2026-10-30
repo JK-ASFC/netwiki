@@ -1,0 +1,1 @@
+{ "title": "Varnish Cache", "icon": "gauge", "color": "#7c3aed", "description": "Accélérateur HTTP : langage VCL, purge et ban, grâce, ESI, terminaison TLS (Hitch), outils varnishlog/varnishstat." }

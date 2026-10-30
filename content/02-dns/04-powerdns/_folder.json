@@ -1,0 +1,1 @@
+{ "title": "PowerDNS", "icon": "database", "color": "#0f766e", "description": "Suite DNS : serveur autoritaire à backends SQL et API REST, DNSSEC en ligne, Recursor, et le répartiteur dnsdist." }

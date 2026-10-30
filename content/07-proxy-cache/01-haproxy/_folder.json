@@ -1,0 +1,1 @@
+{ "title": "HAProxy", "icon": "split", "color": "#1e6fb8", "description": "Répartiteur de charge TCP/HTTP : frontends, backends, ACL, terminaison TLS, stick-tables, haute disponibilité avec keepalived, API runtime et statistiques." }

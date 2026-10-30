@@ -1,0 +1,115 @@
+{
+  "name": "netwiki",
+  "productName": "NetWiki",
+  "version": "1.41.0",
+  "description": "Le wiki local de l'architecte rÃ©seau : prÃ©sentation, installation et configuration des services d'infrastructure.",
+  "main": "main.js",
+  "author": {
+    "name": "JK-ASFC",
+    "url": "https://github.com/JK-ASFC"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "build:prod": "node build.mjs --prod",
+    "start": "node build.mjs && electron .",
+    "watch": "node build.mjs --watch",
+    "icon": "electron scripts/make-icon.js",
+    "shot": "electron scripts/shot.js",
+    "validate": "node build.mjs && electron scripts/validate.js",
+    "dist": "node build.mjs --prod && electron-builder",
+    "dist:win": "node build.mjs --prod && electron-builder --win",
+    "dist:mac": "node build.mjs --prod && electron-builder --mac",
+    "dist:linux": "node build.mjs --prod && electron-builder --linux"
+  },
+  "build": {
+    "appId": "io.netwiki.app",
+    "productName": "NetWiki",
+    "copyright": "Copyright © 2026 JK-ASFC",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "LICENSE",
+      "main.js",
+      "main/**/*",
+      "preload.js",
+      "src/index.html",
+      "src/splash.html",
+      "src/splash.js",
+      "dist/**/*",
+      "build/icon.png"
+    ],
+    "extraResources": [
+      {
+        "from": "content",
+        "to": "content"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.developer-tools",
+      "icon": "build/icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Development",
+      "icon": "build/icon.png",
+      "maintainer": "JK-ASFC"
+    },
+    "electronFuses": {
+      "runAsNode": false,
+      "enableCookieEncryption": true,
+      "enableNodeOptionsEnvironmentVariable": false,
+      "enableNodeCliInspectArguments": false,
+      "enableEmbeddedAsarIntegrityValidation": true,
+      "onlyLoadAppFromAsar": true
+    }
+  },
+  "devDependencies": {
+    "@codemirror/autocomplete": "^6.20.4",
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-markdown": "^6.5.2",
+    "@codemirror/language": "^6.13.1",
+    "@codemirror/search": "^6.7.2",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.15",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@lezer/highlight": "^1.2.5",
+    "dompurify": "^3.4.17",
+    "electron": "^45.1.0",
+    "electron-builder": "^26.18.0",
+    "esbuild": "^0.28.2",
+    "highlight.js": "^11.12.0",
+    "lucide": "^1.63.0",
+    "marked": "^18.1.2",
+    "mermaid": "^12.2.0",
+    "minisearch": "^7.2.0"
+  },
+  "homepage": "https://github.com/JK-ASFC/netwiki",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JK-ASFC/netwiki.git"
+  }
+}

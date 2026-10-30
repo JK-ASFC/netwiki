@@ -1,0 +1,1 @@
+{ "title": "Exim", "icon": "mail-check", "color": "#7c3aed", "description": "MTA par défaut de Debian : routeurs, transports, ACL, smarthost, DKIM." }

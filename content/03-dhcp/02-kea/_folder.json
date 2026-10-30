@@ -1,0 +1,1 @@
+{ "title": "Kea DHCP", "icon": "network", "color": "#0891b2", "description": "Serveur DHCPv4/DHCPv6 moderne d'ISC : configuration JSON, réservations, classes, haute disponibilité, API et Stork." }

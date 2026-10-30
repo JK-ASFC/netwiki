@@ -1,0 +1,1 @@
+{ "title": "FreeRADIUS", "icon": "key-round", "color": "#f97316", "description": "Serveur RADIUS : clients, unlang, SQL, LDAP/AD, EAP (PEAP, EAP-TLS), 802.1X, VLAN dynamique, MAB, proxy." }

@@ -1,0 +1,1 @@
+{ "title": "TFTP", "icon": "arrow-down-up", "color": "#64748b", "description": "Serveur TFTP (tftpd-hpa) pour le démarrage PXE et les équipements réseau (configurations, firmwares)." }

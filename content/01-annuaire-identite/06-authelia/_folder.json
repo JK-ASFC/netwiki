@@ -1,0 +1,1 @@
+{ "title": "Authelia", "icon": "door-closed-locked", "color": "#1e88e5", "description": "Portail d’authentification et MFA devant les reverse proxys, fournisseur OIDC." }

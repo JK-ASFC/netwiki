@@ -1,0 +1,1 @@
+{ "title": "Messagerie & collaboration", "icon": "mail", "color": "#e11d48", "description": "Serveurs de messagerie SMTP et IMAP, authentification des domaines (SPF, DKIM, DMARC), anti-spam, listes de diffusion et outils de test." }

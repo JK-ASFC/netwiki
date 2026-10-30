@@ -1,0 +1,1 @@
+{ "title": "SpamAssassin", "icon": "filter", "color": "#ca8a04", "description": "Filtre anti-spam à règles et Bayes : spamd, sa-update, intégration milter." }

@@ -1,0 +1,1 @@
+{ "title": "Serveur DNS Windows", "icon": "globe", "color": "#0078d4", "description": "Rôle DNS de Windows Server hors et avec Active Directory : zones, transferts, stratégies DNS, DNSSEC, journaux et dépannage." }

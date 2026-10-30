@@ -1,0 +1,1 @@
+{ "title": "Mosquitto (MQTT)", "icon": "radio", "color": "#6366f1", "description": "Broker MQTT léger : listeners, mots de passe, ACL, TLS, ponts." }

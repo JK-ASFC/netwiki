@@ -1,0 +1,1 @@
+{ "title": "Apache Kafka", "icon": "workflow", "color": "#94a3b8", "description": "Plate-forme de flux d’événements : KRaft, topics, réplication, sécurité SASL/TLS, ACL." }

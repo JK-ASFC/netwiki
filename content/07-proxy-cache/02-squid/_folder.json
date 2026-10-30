@@ -1,0 +1,1 @@
+{ "title": "Squid", "icon": "shield-half", "color": "#0ea5e9", "description": "Proxy web sortant et cache : ACL, authentification Kerberos/LDAP (Active Directory), filtrage, interception TLS (SSL Bump), mode transparent, WPAD." }

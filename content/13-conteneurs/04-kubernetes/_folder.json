@@ -1,0 +1,1 @@
+{ "title": "Kubernetes", "icon": "ship-wheel", "color": "#326ce5", "description": "Orchestration : kubeadm, charges de travail, réseau, stockage, RBAC, exploitation." }

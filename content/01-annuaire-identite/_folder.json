@@ -1,0 +1,1 @@
+{ "title": "Annuaire, identité & secrets", "icon": "users", "color": "#8b5cf6", "description": "Annuaires (Active Directory, OpenLDAP, FreeIPA), Kerberos, fédération et SSO, portails d’authentification, coffres de secrets et de mots de passe." }

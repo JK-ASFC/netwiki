@@ -1,0 +1,1 @@
+{ "title": "Telegraf", "icon": "satellite", "color": "#9394ff", "description": "Agent de collecte à greffons : système, SNMP, MQTT, Windows, sorties multiples." }

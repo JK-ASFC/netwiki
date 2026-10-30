@@ -1,0 +1,1 @@
+{ "title": "Zabbix", "icon": "monitor-check", "color": "#d40000", "description": "Supervision complète : agents, SNMP, découverte, modèles, proxys, haute disponibilité." }

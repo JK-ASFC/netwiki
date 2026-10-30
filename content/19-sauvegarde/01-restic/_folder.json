@@ -1,0 +1,1 @@
+{ "title": "Restic", "icon": "archive", "color": "#2f7bbf", "description": "Sauvegardes chiffrées et dédupliquées vers disque, SFTP, S3 ou serveur REST : dépôts, instantanés, rétention, vérification." }

@@ -1,0 +1,1 @@
+{ "title": "Keycloak", "icon": "lock-keyhole", "color": "#4d9de0", "description": "Fournisseur d’identité OIDC/SAML : royaumes, clients, fédération LDAP/AD, MFA." }

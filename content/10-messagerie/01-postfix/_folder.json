@@ -1,0 +1,1 @@
+{ "title": "Postfix", "icon": "send", "color": "#2563eb", "description": "MTA de référence : relais, domaines virtuels, TLS, SPF/DKIM/DMARC, anti-spam, files d’attente." }

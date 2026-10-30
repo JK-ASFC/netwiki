@@ -1,0 +1,1 @@
+{ "title": "Logstash", "icon": "funnel", "color": "#00bfb3", "description": "Pipelines de collecte et de transformation : entrées, filtres grok, sorties." }

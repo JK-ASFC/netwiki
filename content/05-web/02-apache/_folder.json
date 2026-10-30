@@ -1,0 +1,1 @@
+{ "title": "Apache HTTP Server", "icon": "feather", "color": "#d22128", "description": "Serveur web de référence : MPM, virtual hosts, TLS, PHP-FPM, reverse proxy et répartition de charge, sécurité (ModSecurity), performances. Linux, Windows (Apache Lounge) et macOS." }

@@ -1,0 +1,1 @@
+{ "title": "MinIO (stockage objet S3)", "icon": "database", "color": "#c72e49", "description": "Stockage objet compatible S3 : déploiement, effacement de code, IAM, versionnage, verrouillage d'objets, réplication." }

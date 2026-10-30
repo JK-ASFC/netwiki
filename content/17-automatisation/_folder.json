@@ -1,0 +1,1 @@
+{ "title": "Automatisation & configuration", "icon": "bot", "color": "#14b8a6", "description": "Gestion de configuration et infrastructure as code : Ansible, Puppet, Salt, Terraform, PowerShell DSC." }

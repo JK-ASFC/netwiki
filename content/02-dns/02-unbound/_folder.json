@@ -1,0 +1,1 @@
+{ "title": "Unbound", "icon": "shield-check", "color": "#16a34a", "description": "Résolveur DNS récursif validant (NLnet Labs) : cache, DNSSEC, zones locales, redirections, DNS over TLS/HTTPS, RPZ, unbound-control." }

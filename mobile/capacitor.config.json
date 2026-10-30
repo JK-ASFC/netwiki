@@ -1,0 +1,15 @@
+{
+  "appId": "io.netwiki.app",
+  "appName": "NetWiki",
+  "webDir": "www",
+  "backgroundColor": "#0b0d14",
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false
+  },
+  "ios": {
+    "contentInset": "always",
+    "limitsNavigationsToAppBoundDomains": true
+  }
+}

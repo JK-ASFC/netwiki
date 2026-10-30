@@ -1,0 +1,1 @@
+{ "title": "BorgBackup", "icon": "archive", "color": "#00dd00", "description": "Sauvegardes dédupliquées, compressées et chiffrées par SSH, automatisées avec borgmatic." }

@@ -1,0 +1,1 @@
+{ "title": "MariaDB / MySQL", "icon": "database-zap", "color": "#00758f", "description": "SGBD relationnels compatibles : configuration InnoDB, comptes, sauvegarde, réplication, Galera, InnoDB Cluster." }

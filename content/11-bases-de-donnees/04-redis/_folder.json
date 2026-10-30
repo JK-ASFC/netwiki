@@ -1,0 +1,1 @@
+{ "title": "Redis / Valkey", "icon": "zap", "color": "#dc2626", "description": "Stockage clé-valeur en mémoire : persistance, ACL, réplication, Sentinel, Cluster." }

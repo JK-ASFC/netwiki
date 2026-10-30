@@ -1,0 +1,177 @@
+# NetWiki — compilation multi-plateforme et publication des versions.
+# Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
+#
+# Déclenchement : poussée d'une étiquette « v1.40.0 » (publication) ou lancement manuel (artefacts seulement).
+# Secrets facultatifs (Settings → Secrets and variables → Actions) :
+#   NETWIKI_SIGNING_KEY          clé privée Ed25519 (PEM) qui signe le paquet de contenu (obligatoire pour les mises à jour en ligne)
+#   WIN_CSC_LINK / WIN_CSC_KEY_PASSWORD        certificat de signature de code Windows (.pfx en base64)
+#   MAC_CSC_LINK / MAC_CSC_KEY_PASSWORD, APPLE_ID, APPLE_APP_SPECIFIC_PASSWORD, APPLE_TEAM_ID   signature et notarisation macOS
+#   ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD  signature Android (Play Store)
+
+name: Compilation et publication
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  bureau:
+    name: Bureau (${{ matrix.nom }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            nom: Windows
+            cible: --win
+          - os: macos-latest
+            nom: macOS
+            cible: --mac
+          - os: ubuntu-latest
+            nom: Linux
+            cible: --linux
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node build.mjs --prod
+      - name: Construire les installeurs
+        run: npx electron-builder ${{ matrix.cible }} --publish never
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: ${{ (matrix.os == 'macos-latest' && secrets.MAC_CSC_LINK != '') && 'true' || 'false' }}
+          CSC_LINK: ${{ matrix.os == 'windows-latest' && secrets.WIN_CSC_LINK || secrets.MAC_CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ matrix.os == 'windows-latest' && secrets.WIN_CSC_KEY_PASSWORD || secrets.MAC_CSC_KEY_PASSWORD }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: netwiki-${{ matrix.nom }}
+          path: |
+            release/*.exe
+            release/*.dmg
+            release/*.zip
+            release/*.AppImage
+            release/*.deb
+          if-no-files-found: ignore
+
+  contenu:
+    name: Paquet de contenu signé
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Signer le contenu (Ed25519, JK-ASFC)
+        if: ${{ env.NETWIKI_SIGNING_KEY != '' }}
+        run: node scripts/pack-content.js
+        env:
+          NETWIKI_SIGNING_KEY: ${{ secrets.NETWIKI_SIGNING_KEY }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: netwiki-contenu
+          path: release/*.netwiki
+          if-no-files-found: warn
+    env:
+      NETWIKI_SIGNING_KEY: ${{ secrets.NETWIKI_SIGNING_KEY }}
+
+  android:
+    name: Android
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - run: npm ci
+      - run: node scripts/build-web.mjs --prod
+      - name: Projet Capacitor Android
+        working-directory: mobile
+        run: |
+          npm install
+          [ -d android ] || npx cap add android
+          npx cap sync android
+      - name: Compiler (APK de test + bundle AAB pour le Play Store)
+        working-directory: mobile/android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug bundleRelease
+      - name: Signer l'AAB (si une clé Android est configurée)
+        if: ${{ env.ANDROID_KEYSTORE_BASE64 != '' }}
+        working-directory: mobile/android
+        run: |
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > netwiki.keystore
+          jarsigner -keystore netwiki.keystore -storepass "$ANDROID_KEYSTORE_PASSWORD" -keypass "$ANDROID_KEY_PASSWORD" \
+            app/build/outputs/bundle/release/app-release.aab "$ANDROID_KEY_ALIAS"
+          rm netwiki.keystore
+        env:
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: netwiki-android
+          path: |
+            mobile/android/app/build/outputs/apk/debug/*.apk
+            mobile/android/app/build/outputs/bundle/release/*.aab
+    env:
+      ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+
+  ios:
+    name: iOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/build-web.mjs --prod
+      - name: Projet Capacitor iOS
+        working-directory: mobile
+        run: |
+          npm install
+          [ -d ios ] || npx cap add ios
+          npx cap sync ios
+      - name: Compiler pour le simulateur (sans signature)
+        working-directory: mobile/ios/App
+        run: |
+          if [ -d App.xcworkspace ]; then CIBLE="-workspace App.xcworkspace"; else CIBLE="-project App.xcodeproj"; fi
+          xcodebuild $CIBLE -scheme App -configuration Release -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+          cd build/Build/Products/Release-iphonesimulator && zip -qr ../../../../NetWiki-simulateur.zip App.app
+      - uses: actions/upload-artifact@v4
+        with:
+          name: netwiki-ios
+          path: mobile/ios/App/NetWiki-simulateur.zip
+
+  publication:
+    name: Publication GitHub
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [bureau, contenu, android, ios]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artefacts
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: NetWiki ${{ github.ref_name }}
+          generate_release_notes: true
+          files: artefacts/**
