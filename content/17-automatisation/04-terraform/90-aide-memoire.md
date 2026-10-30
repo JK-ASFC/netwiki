@@ -1,11 +1,11 @@
 ---
 title: Terraform / OpenTofu — aide-mémoire des commandes
-description: Commandes Terraform et OpenTofu avec exemples — cycle (init, fmt, validate, plan, apply, destroy), plans enregistrés, variables (-var, -var-file, TF_VAR_), état (state list, show, mv, rm, pull, import et blocs import), espaces de travail, sorties, ciblage et remplacement (-target, -replace), verrouillage des fournisseurs, console, graph, journalisation (TF_LOG), mise à niveau.
+description: Commandes Terraform et OpenTofu avec exemples — cycle (init, fmt, validate, plan, apply, destroy), plans enregistrés, variables (-var, -var-file, TF_VAR_), état (state list, show, mv, rm, pull, import et blocs import), espaces de travail, sorties, ciblage et remplacement (-target, -replace), verrouillage des fournisseurs, console, graph, journalisation (TF_LOG), mise à niveau, commandes propres à OpenTofu (-exclude, évaluation anticipée, chiffrement, miroirs).
 tags: [aide-mémoire, terraform, opentofu, iac, plan, état, import]
 icon: terminal
 ---
 
-Référence rapide ; les explications sont dans [[01-presentation-installation|Terraform]]. Avec **OpenTofu**, remplacez `terraform` par `tofu`.
+Référence rapide ; les explications sont dans [[01-presentation-installation|Terraform]]. Avec **OpenTofu**, remplacez `terraform` par `tofu` ; ses commandes propres sont regroupées en fin de page et expliquées dans [[04-opentofu|OpenTofu]].
 
 ## Cycle de travail
 
@@ -73,4 +73,19 @@ terraform console                                    # évaluer des expressions
 terraform graph | dot -Tsvg > graphe.svg
 TF_LOG=DEBUG TF_LOG_PATH=terraform.log terraform plan
 terraform version
+```
+
+## Propre à OpenTofu
+
+```bash
+tofu version
+tofu init -var="environnement=prod"                  # variables utilisées dans le backend / les sources de modules
+tofu plan -exclude=module.labo                       # tout sauf ce module
+tofu plan -target-file=cibles.txt -exclude-file=exclusions.txt
+tofu test                                            # *.tftest.hcl et *.tofutest.hcl
+tofu init -upgrade                                   # après migration depuis Terraform : nouveau .terraform.lock.hcl
+tofu providers mirror /opt/tofu/fournisseurs         # miroir local pour réseau isolé
+export TF_VAR_phrase_etat='...'                      # phrase de passe du chiffrement d'état (pbkdf2)
+export TF_ENCRYPTION="$(cat encryption.hcl)"         # configuration du chiffrement hors du dépôt
+docker run --rm -v "$PWD":/srv -w /srv ghcr.io/opentofu/opentofu:1.10 plan
 ```

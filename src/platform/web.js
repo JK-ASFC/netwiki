@@ -6,6 +6,8 @@
 // localement dans IndexedDB (aucune donnée ne quitte l'appareil).
 
 window.NETWIKI_ASSET_BASE = './dist/';
+// Images des articles (dossiers _assets) : copiées dans www/content/ lors de la construction mobile.
+window.NETWIKI_ASSET_URL = (rel) => './content/' + rel.split('/').map(encodeURIComponent).join('/');
 
 const VERSION = '__NETWIKI_VERSION__';
 const SETTINGS_KEY = 'netwiki.settings';

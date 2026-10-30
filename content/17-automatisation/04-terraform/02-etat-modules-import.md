@@ -45,7 +45,7 @@ terraform {
 #   -backend-config="username=ci" -backend-config="password=$GITLAB_TOKEN"
 ```
 
-**OpenTofu** chiffre l'état nativement (bloc `encryption` avec une clé dérivée d'une phrase de passe, de Vault ou d'un KMS). Avec Terraform, chiffrez au niveau du stockage (SSE, chiffrement du compartiment) et restreignez l'accès.
+**OpenTofu** chiffre l'état nativement (bloc `encryption` avec une clé dérivée d'une phrase de passe, d'OpenBao ou d'un KMS — exemple et migration dans [[04-opentofu|OpenTofu]]). Avec Terraform, chiffrez au niveau du stockage (SSE, chiffrement du compartiment) et restreignez l'accès.
 
 ## Modules
 

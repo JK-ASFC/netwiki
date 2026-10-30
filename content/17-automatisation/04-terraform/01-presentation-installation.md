@@ -8,7 +8,7 @@ icon: info
 **Terraform** (HashiCorp, désormais IBM) décrit l'infrastructure — machines virtuelles, réseaux, DNS, pare-feu, enregistrements IPAM, comptes cloud — dans des fichiers **HCL** déclaratifs. Il compare l'état voulu avec l'état réel, affiche un **plan** de changements, puis l'applique via les API des **fournisseurs** (*providers*).
 
 > [!NOTE]
-> **Licence.** Depuis la version 1.6 (août 2023), Terraform est sous **BSL 1.1** (source disponible, usage interne autorisé, interdit pour concurrencer HashiCorp). La Linux Foundation maintient **OpenTofu** (MPL 2.0), fork compatible : commande `tofu` au lieu de `terraform`, même langage, mêmes fournisseurs (registre OpenTofu), plus le **chiffrement natif de l'état**. Le contenu de ces pages s'applique aux deux.
+> **Licence.** Depuis la version 1.6 (août 2023), Terraform est sous **BSL 1.1** (source disponible, usage interne autorisé, interdit pour concurrencer HashiCorp). La Linux Foundation maintient **OpenTofu** (MPL 2.0), fork compatible : commande `tofu` au lieu de `terraform`, même langage, mêmes fournisseurs (registre OpenTofu), plus des fonctions propres (chiffrement natif de l'état, variables dans le backend, `for_each` sur les fournisseurs, `-exclude`, registres OCI). Le contenu de ces pages s'applique aux deux ; OpenTofu est présenté en détail dans [[04-opentofu|OpenTofu — présentation et migration]].
 
 ## Concepts
 
@@ -129,4 +129,4 @@ Valeurs des variables : fichiers `*.tfvars` (`-var-file=prod.tfvars`), variables
 > [!TIP]
 > Lisez **toujours** le plan : une ligne `-/+ … must be replaced` sur une VM ou un pare-feu signifie une destruction suivie d'une recréation (attribut immuable modifié).
 
-Suite : [[02-etat-modules-import|état distant, modules et import]].
+Suite : [[02-etat-modules-import|état distant, modules et import]] · [[04-opentofu|OpenTofu : fonctions propres et migration]].
