@@ -1,6 +1,19 @@
 # NetWiki — le wiki local de l'architecte réseau
 
+[![Dernière version](https://img.shields.io/github/v/release/JK-ASFC/netwiki?label=version)](https://github.com/JK-ASFC/netwiki/releases/latest)
+[![Licence MIT](https://img.shields.io/badge/licence-MIT-blue)](LICENSE)
+[![Liberapay](https://img.shields.io/liberapay/patrons/JK-ASFC.svg?logo=liberapay)](https://liberapay.com/JK-ASFC/donate)
+[![Liberapay](https://img.shields.io/liberapay/receives/JK-ASFC.svg?logo=liberapay)](https://liberapay.com/JK-ASFC/donate)
+
 Application de bureau **Windows / macOS / Linux** (Electron) pour documenter la présentation, l'installation et la configuration des services d'infrastructure. Les articles sont de simples fichiers **Markdown** stockés localement : ajout, modification, suppression, déplacement et recherche plein texte hors ligne.
+
+## Soutenir le projet
+
+NetWiki est gratuit, libre et sans publicité. Il est rédigé, vérifié et maintenu bénévolement par **JK-ASFC**. Si le wiki vous fait gagner du temps, un don, même modeste, aide à le faire vivre et à l'enrichir :
+
+<a href="https://liberapay.com/JK-ASFC/donate"><img alt="Faire un don avec Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+
+Vous pouvez aussi mettre une ⭐ au dépôt, signaler une erreur ou proposer un article dans les [Issues](https://github.com/JK-ASFC/netwiki/issues). Dans le logiciel, le bouton ♥ de la barre de titre (ou *Soutenir* en bas du panneau latéral) ouvre la même page, dans votre navigateur, uniquement quand vous cliquez.
 
 ## Licence, propriété et confidentialité
 

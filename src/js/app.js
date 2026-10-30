@@ -17,6 +17,7 @@ import { stringifyFrontmatter } from './frontmatter.js';
 import { renderMarkdown, renderMermaid } from './markdown.js';
 import hljs from './hl.js';
 import { initUpdates } from './updates.js';
+import { openAbout } from './legal.js';
 
 const view = $('#view');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -390,6 +391,7 @@ function initChrome() {
   $('#btn-forward').innerHTML = icon('arrow-right', 18);
   $('#btn-new').innerHTML = icon('square-pen', 18);
   $('#btn-settings').innerHTML = icon('settings', 18);
+  $('#btn-donate').innerHTML = icon('heart', 18);
   $('.brand-logo').innerHTML = icon('network', 15);
   $('.st-icon').innerHTML = icon('search', 16);
 
@@ -400,6 +402,7 @@ function initChrome() {
   $('#btn-new').onclick = () => actions.newPage();
   $('#btn-theme').onclick = actions.toggleTheme;
   $('#btn-settings').onclick = openSettings;
+  $('#btn-donate').onclick = () => openAbout('soutenir');
   $('#brand').onclick = () => actions.navigate({ type: 'home' });
 
   const resizer = $('#resizer');

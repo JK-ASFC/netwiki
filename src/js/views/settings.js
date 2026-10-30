@@ -42,6 +42,7 @@ export function openSettings() {
           <button class="btn sm" id="st-import">${icon('package-open', 15)}Importer un paquet…</button></div>
         <div class="hint">Un paquet <code>.netwiki</code> contient les articles : idéal pour mettre à jour un poste sans Internet. Les paquets officiels sont signés par JK-ASFC ; vos modifications locales ne sont jamais écrasées.</div></div>
       <div class="row" style="margin-top:18px"><p style="font-size:12px;color:var(--text-faint)" class="grow">NetWiki ${esc(state.info.version)} · © 2026 JK-ASFC · licence MIT · Electron ${esc(state.info.electron)} · ${esc(state.info.platform)}</p>
+        <button class="btn sm ghost" id="st-support">${icon('heart', 15)}Soutenir</button>
         <button class="btn sm ghost" id="st-about">${icon('info', 15)}À propos, confidentialité, RGPD</button></div>`,
     actions: [{ label: 'Fermer', kind: 'primary', value: true }],
     onMount: (b) => {
@@ -86,6 +87,7 @@ export function openSettings() {
         actions.applyAppearance();
       };
       $('#st-about', b).onclick = () => openAbout();
+      $('#st-support', b).onclick = () => openAbout('soutenir');
       $('#st-splash', b).onchange = (e) => actions.saveSettings({ showSplash: e.target.checked });
       $('#st-upd', b).onchange = (e) => {
         actions.saveSettings({ updateConsent: e.target.checked });

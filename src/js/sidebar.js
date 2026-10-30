@@ -4,6 +4,7 @@ import { icon } from './icons.js';
 import { $, $$, esc, normalize } from './ui.js';
 import { ancestors, crumbText, getNode, iconOf, pagesUnder, store, tintOf } from './store.js';
 import { actions, state } from './state.js';
+import { openAbout } from './legal.js';
 
 const collator = new Intl.Collator('fr', { sensitivity: 'base', numeric: true });
 
@@ -44,7 +45,10 @@ export function initSidebar() {
       </div>
     </div>
     <div class="sb-scroll" id="sb-scroll"></div>
-    <div class="sb-foot"><span class="dot"></span><span id="sb-count"></span></div>`;
+    <div class="sb-foot"><span class="dot"></span><span id="sb-count"></span>
+      <button class="sb-support" id="sb-support" data-tip="Soutenir NetWiki (faire un don)">${icon('heart', 13)}Soutenir</button></div>`;
+
+  $('#sb-support').onclick = () => openAbout('soutenir');
 
   const input = $('#sb-filter');
   input.addEventListener('input', () => {
@@ -99,7 +103,7 @@ function updateSegmented() {
 
 export function renderSidebar() {
   renderSidebarBody();
-  $('#sb-count').textContent = `${store.pages.size} articles · stockage local · © JK-ASFC`;
+  $('#sb-count').textContent = `${store.pages.size} articles · © JK-ASFC`;
 }
 
 function renderSidebarBody() {

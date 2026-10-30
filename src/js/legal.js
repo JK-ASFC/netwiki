@@ -7,7 +7,27 @@ import { api, state } from './state.js';
 export const OWNER = 'JK-ASFC';
 export const OWNER_URL = 'https://github.com/JK-ASFC';
 export const REPO_URL = 'https://github.com/JK-ASFC/netwiki';
+export const LIBERAPAY_URL = 'https://liberapay.com/JK-ASFC';
+export const DONATE_URL = 'https://liberapay.com/JK-ASFC/donate';
 const MAJ = '30 octobre 2026';
+
+const soutenir = `
+  <div class="about-head">
+    <div class="about-logo support-logo">${icon('heart', 28)}</div>
+    <div><h2>Soutenir NetWiki</h2><p>Gratuit, libre et sans publicité, grâce à ceux qui l'utilisent.</p></div>
+  </div>
+  <p>NetWiki est développé et maintenu bénévolement par ${OWNER} : rédaction et vérification des articles, nouvelles versions, sécurité. Si le wiki vous fait gagner du temps, un don, même modeste, aide à le faire vivre et à l'enrichir.</p>
+  <p class="support-actions">
+    <a class="donate-btn" href="${DONATE_URL}">${icon('heart', 16)}Faire un don avec Liberapay</a>
+    <a class="btn sm ghost" href="${LIBERAPAY_URL}">${icon('external-link', 14)}Page Liberapay de ${OWNER}</a>
+  </p>
+  <p class="hint">Liberapay est une plateforme de dons récurrents gérée par une association à but non lucratif : vous choisissez le montant et la fréquence, et pouvez arrêter à tout moment. Le lien s'ouvre dans votre navigateur et le paiement se fait sur le site de Liberapay ; NetWiki ne transmet aucune donnée.</p>
+  <h4>Autres façons d'aider</h4>
+  <ul>
+    <li>Mettre une étoile au projet sur <a href="${REPO_URL}">GitHub</a> et le faire connaître autour de vous.</li>
+    <li>Signaler une erreur ou proposer un sujet d'article : <a href="${REPO_URL}/issues">${REPO_URL}/issues</a>.</li>
+    <li>Proposer directement des corrections ou de nouveaux articles (« pull request » sur GitHub).</li>
+  </ul>`;
 
 const apropos = (info) => `
   <div class="about-head">
@@ -39,7 +59,7 @@ const confidentialite = `
   <ul>
     <li><b>Aucune par défaut.</b></li>
     <li><b>Vérification des mises à jour</b>, uniquement si vous l'autorisez : une requête HTTPS anonyme vers l'API publique de GitHub (<code>api.github.com</code>), au plus une fois par jour, puis le téléchargement d'un paquet signé si vous le demandez. Comme pour toute connexion à un site web, GitHub reçoit votre adresse IP et l'identifiant du logiciel (« NetWiki/version ») ; aucun contenu de votre wiki n'est envoyé. Désactivable à tout moment dans les Paramètres.</li>
-    <li><b>Liens externes</b> : ils s'ouvrent dans votre navigateur, seulement quand vous cliquez dessus.</li>
+    <li><b>Liens externes</b> : ils s'ouvrent dans votre navigateur, seulement quand vous cliquez dessus. C'est le cas du bouton « Soutenir » (page de dons Liberapay) : NetWiki n'envoie rien à Liberapay.</li>
     <li><b>Images distantes</b> : bloquées par la politique de sécurité de l'application (aucune image n'est chargée depuis Internet).</li>
     <li><b>Correcteur orthographique</b> : celui du système (Windows, macOS), local ; désactivé sous Linux pour éviter tout téléchargement de dictionnaire.</li>
   </ul>
@@ -92,15 +112,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</pre>
   <p class="hint">Traduction indicative : chacun peut utiliser, copier, modifier, distribuer et vendre le logiciel, à condition de conserver la mention « Copyright (c) 2026 JK-ASFC » et cette licence. Le logiciel est fourni sans garantie.</p>`;
 
-/** Fenêtre « À propos » avec onglets : à propos, confidentialité, RGPD, licence. */
+/** Fenêtre « À propos » avec onglets : à propos, soutien, confidentialité, RGPD, licence. */
 export function openAbout(tab = 'apropos') {
   const tabs = [
     ['apropos', 'À propos', 'info'],
+    ['soutenir', 'Soutenir', 'heart'],
     ['confidentialite', 'Confidentialité', 'shield-check'],
     ['rgpd', 'RGPD', 'scale'],
     ['licence', 'Licence', 'file-text'],
   ];
-  const content = { apropos: apropos(state.info), confidentialite, rgpd, licence };
+  const content = { apropos: apropos(state.info), soutenir, confidentialite, rgpd, licence };
   modal({
     title: 'NetWiki — à propos et mentions légales',
     width: 720,

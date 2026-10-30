@@ -179,5 +179,9 @@ jobs:
       - uses: softprops/action-gh-release@v2
         with:
           name: NetWiki ${{ github.ref_name }}
+          body: |
+            **Soutenir NetWiki** : le projet est gratuit, libre et maintenu bénévolement par JK-ASFC. Un don, même modeste, aide à le faire vivre → https://liberapay.com/JK-ASFC/donate
+
+            [![Faire un don avec Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/JK-ASFC/donate)
           generate_release_notes: true
           files: artefacts/**

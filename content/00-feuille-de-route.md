@@ -55,6 +55,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 39 | Aide-mémoires : automatisation, infrastructure système, sauvegarde, multimédia (26) | ✅ |
 | 40 | Logiciel 1.40 : recherche instantanée, retour en haut de page, mises à jour (paquets signés, GitHub avec accord), écran de démarrage, audit de sécurité, confidentialité/RGPD, licence MIT JK-ASFC, versions Linux/macOS/Android/iOS | ✅ |
 | 41 | Aide-mémoires : outils (5), téléphonie IP (14), constructeurs (26) | ✅ |
+| 42 | Logiciel 1.42 : soutien du projet (onglet « Soutenir », bouton ♥, lien de don Liberapay dans l'installateur, le README, les Releases et le bouton Sponsor de GitHub) | ✅ |
 
 ## Annuaire, identité & secrets
 

@@ -23,6 +23,7 @@ const COMMANDS = () => [
   { label: 'Importer un paquet de contenu', icon: 'package-open', run: () => actions.importPack() },
   { label: 'Exporter un paquet de contenu', icon: 'package', run: () => actions.exportPack() },
   { label: 'À propos, confidentialité, RGPD, licence', icon: 'info', run: () => openAbout() },
+  { label: 'Soutenir NetWiki (faire un don)', icon: 'heart', run: () => openAbout('soutenir') },
 ];
 
 export function closePalette() {

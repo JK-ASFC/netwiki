@@ -19,7 +19,7 @@ Ces données ne quittent jamais votre poste par l'action de NetWiki. Si vous syn
 
 - **Aucune par défaut.**
 - **Vérification des mises à jour**, uniquement si vous l'autorisez (question posée au premier lancement, réglable dans les Paramètres) : requête HTTPS anonyme vers l'API publique de GitHub (`api.github.com`), au plus une fois par jour ; téléchargement d'un paquet de contenu **signé** depuis `github.com` seulement si vous le demandez. GitHub reçoit, comme pour toute connexion, votre adresse IP et l'identifiant du logiciel (`NetWiki/<version>`). Aucun contenu de votre wiki n'est envoyé.
-- **Liens externes** : ouverts dans votre navigateur, uniquement quand vous cliquez dessus.
+- **Liens externes** : ouverts dans votre navigateur, uniquement quand vous cliquez dessus. C'est aussi le cas du bouton « Soutenir » (page de dons Liberapay) : NetWiki n'envoie rien à Liberapay, le don se fait entièrement sur son site.
 - **Images distantes** : bloquées par la politique de sécurité du contenu (aucune image chargée depuis Internet).
 - **Correcteur orthographique** : celui du système (Windows, macOS), local ; désactivé sous Linux pour éviter tout téléchargement de dictionnaire.
 
