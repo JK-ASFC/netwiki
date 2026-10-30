@@ -14,6 +14,13 @@ systemctl status apache2
 curl -I http://localhost
 ```
 
+Ouvrez ensuite `http://<adresse-du-serveur>/` dans un navigateur : la **page par défaut d'Apache2 sous Debian** (« It works! ») confirme que le service répond. Elle résume aussi l'organisation de la configuration Debian (`apache2.conf`, `ports.conf`, `mods-enabled/`, `conf-enabled/`, `sites-enabled/`) et la racine des documents `/var/www/html`.
+
+![Page par défaut d'Apache2 sous Debian](_assets/page-par-defaut-debian.png "Page de test d'Apache2 sous Debian : « It works! » — fichier /var/www/html/index.html")
+
+> [!TIP]
+> Remplacez ou supprimez `/var/www/html/index.html` avant la mise en production : cette page révèle le logiciel et la distribution utilisés. Si le navigateur n'affiche rien alors que `curl -I http://localhost` répond, vérifiez le pare-feu (`sudo ufw allow 'Apache'` ou `sudo nft list ruleset`).
+
 Outils propres à Debian :
 
 | Commande | Rôle |

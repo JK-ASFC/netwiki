@@ -160,6 +160,51 @@
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
 }
+.md img.zoomable {
+  cursor: zoom-in;
+}
+.md figure {
+  margin: 1.4em 0;
+  text-align: center;
+}
+.md figure img {
+  display: block;
+  margin: 0 auto;
+  max-height: 75vh;
+  width: auto;
+}
+.md figcaption {
+  margin-top: 0.6em;
+  font-size: 0.88em;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.img-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.82);
+  cursor: zoom-out;
+}
+.img-lightbox img {
+  max-width: 100%;
+  max-height: calc(100% - 48px);
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+.img-lightbox-cap {
+  color: #e5e7eb;
+  font-size: 14px;
+  text-align: center;
+}
 
 .md kbd {
   font-size: 0.8em;

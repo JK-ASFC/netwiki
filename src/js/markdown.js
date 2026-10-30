@@ -79,6 +79,8 @@ function isExternal(href) {
 
 export function assetUrl(page, src) {
   const { path } = resolveRelative(page, src);
+  // Version mobile : la couche plateforme sert les images livrées avec le contenu.
+  if (window.NETWIKI_ASSET_URL) return window.NETWIKI_ASSET_URL(path);
   return 'wikifile://local/' + path.split('/').map(encodeURIComponent).join('/');
 }
 
@@ -162,14 +164,23 @@ export function renderMarkdown(body, page) {
     if (isExternal(href)) a.dataset.href = href;
   });
 
-  // images relatives → protocole wikifile://
-  if (page) {
-    el.querySelectorAll('img').forEach((img) => {
-      const src = img.getAttribute('src') || '';
-      if (src && !/^(https?:|data:|blob:)/i.test(src)) img.src = assetUrl(page, src);
-      img.loading = 'lazy';
-    });
-  }
+  // images relatives → protocole wikifile:// ; ![texte](image.png "Légende") → figure légendée
+  el.querySelectorAll('img').forEach((img) => {
+    const src = img.getAttribute('src') || '';
+    if (page && src && !/^(https?:|data:|blob:)/i.test(src)) img.src = assetUrl(page, src);
+    img.loading = 'lazy';
+    img.classList.add('zoomable');
+    const caption = img.getAttribute('title');
+    const p = img.parentElement;
+    if (caption && p?.tagName === 'P' && p.childNodes.length === 1) {
+      const fig = document.createElement('figure');
+      const cap = document.createElement('figcaption');
+      cap.textContent = caption;
+      img.removeAttribute('title');
+      p.replaceWith(fig);
+      fig.append(img, cap);
+    }
+  });
 
   // tableaux défilants
   el.querySelectorAll('table').forEach((t) => {
@@ -186,6 +197,7 @@ export function renderMarkdown(body, page) {
 
 /** Comportements interactifs (copie de code) à brancher une fois le contenu inséré. */
 export function wireContent(root) {
+  root.querySelectorAll('img.zoomable').forEach((img) => (img.onclick = () => openImage(img)));
   root.querySelectorAll('.code-copy').forEach((btn) => {
     btn.onclick = async () => {
       const code = btn.closest('.code-block').querySelector('code').innerText;
@@ -199,6 +211,36 @@ export function wireContent(root) {
     };
   });
   renderMermaid(root);
+}
+
+/** Affiche une image en grand (clic ou Échap pour fermer). */
+function openImage(img) {
+  const box = document.createElement('div');
+  box.className = 'img-lightbox';
+  const big = document.createElement('img');
+  big.src = img.currentSrc || img.src;
+  big.alt = img.alt;
+  box.append(big);
+  const caption = img.closest('figure')?.querySelector('figcaption')?.textContent || img.alt;
+  if (caption) {
+    const cap = document.createElement('div');
+    cap.className = 'img-lightbox-cap';
+    cap.textContent = caption;
+    box.append(cap);
+  }
+  const close = () => {
+    box.remove();
+    document.removeEventListener('keydown', onKey, true);
+  };
+  const onKey = (e) => {
+    if (e.key === 'Escape') {
+      e.stopPropagation();
+      close();
+    }
+  };
+  box.onclick = close;
+  document.addEventListener('keydown', onKey, true);
+  document.body.append(box);
 }
 
 // ---------------------------------------------------------------- Mermaid (chargé à la demande)

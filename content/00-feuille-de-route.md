@@ -58,6 +58,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 42 | Logiciel 1.42 : soutien du projet (onglet « Soutenir », bouton ♥, lien de don Liberapay dans l'installateur, le README, les Releases et le bouton Sponsor de GitHub) | ✅ |
 | 43 | Logiciel 1.43 : contenu publié chaque semaine (paquet signé sur la branche « contenu », appliqué automatiquement), mise à jour automatique du portable et de l'installeur Windows (empreintes signées), correction du retour à l'ancien contenu au redémarrage | ✅ |
 | 44 | Mise à jour des articles : OpenTofu (présentation, fonctions propres, chiffrement de l’état, migration depuis Terraform) | ✅ |
+| 45 | Logiciel 1.44 : images dans les articles (bouton « Insérer une image », légendes, agrandissement au clic, images dans la version mobile, contrôle des images manquantes) ; première capture : page de test d’Apache2 sous Debian | ✅ |
 
 ## Annuaire, identité & secrets
 

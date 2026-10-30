@@ -1,6 +1,6 @@
 // Vérifie tout le contenu du wiki dans le vrai moteur de rendu :
 // Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
-// liens wiki / relatifs cassés, langages de code inconnus, diagrammes Mermaid invalides, icônes inconnues, titres manquants.
+// liens wiki / relatifs cassés, images introuvables, langages de code inconnus, diagrammes Mermaid invalides, icônes inconnues, titres manquants.
 //   npm run validate
 const { app } = require('electron');
 const path = require('node:path');
@@ -24,6 +24,7 @@ const CHECK = async () => {
   }
   let mermaidCount = 0;
   let codeCount = 0;
+  let imageCount = 0;
   for (const p of store.pages.values()) {
     if (!p.fm.title) issues.push({ page: p.path, type: 'titre manquant' });
     if (!p.fm.description) issues.push({ page: p.path, type: 'description manquante' });
@@ -46,6 +47,18 @@ const CHECK = async () => {
     el.querySelectorAll('a.broken').forEach((a) =>
       issues.push({ page: p.path, type: 'lien cassé', detail: a.dataset.wikilink || a.textContent })
     );
+    for (const img of el.querySelectorAll('img')) {
+      const src = img.getAttribute('src') || '';
+      if (/^(https?:|data:|blob:)/i.test(src)) continue;
+      imageCount++;
+      const ok = await new Promise((res) => {
+        const probe = new Image();
+        probe.onload = () => res(true);
+        probe.onerror = () => res(false);
+        probe.src = img.src;
+      });
+      if (!ok) issues.push({ page: p.path, type: 'image introuvable', detail: decodeURIComponent(src.replace(/^wikifile:\/\/local\//, '')) });
+    }
     el.querySelectorAll('.code-block .lang').forEach((l) => {
       codeCount++;
       const lang = l.textContent.trim();
@@ -60,7 +73,7 @@ const CHECK = async () => {
     }
   }
   sandbox.remove();
-  return { pages: store.pages.size, folders: store.folders.size - 1, codeBlocks: codeCount, diagrams: mermaidCount, issues };
+  return { pages: store.pages.size, folders: store.folders.size - 1, codeBlocks: codeCount, diagrams: mermaidCount, images: imageCount, issues };
 };
 
 app.on('browser-window-created', (_e, win) => {
@@ -70,7 +83,7 @@ app.on('browser-window-created', (_e, win) => {
     try {
       await new Promise((r) => setTimeout(r, 2500));
       const res = await win.webContents.executeJavaScript(`(${CHECK.toString()})()`);
-      console.log(`Pages : ${res.pages} · dossiers : ${res.folders} · blocs de code : ${res.codeBlocks} · diagrammes : ${res.diagrams}`);
+      console.log(`Pages : ${res.pages} · dossiers : ${res.folders} · blocs de code : ${res.codeBlocks} · diagrammes : ${res.diagrams} · images : ${res.images}`);
       if (res.issues.length) {
         code = 1;
         console.log(`\n${res.issues.length} problème(s) :`);

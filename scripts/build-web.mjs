@@ -40,17 +40,25 @@ html = html
   .replace('<script defer src="./dist/app.js"></script>', '<script defer src="./dist/platform.js"></script>\n    <script defer src="./dist/app.js"></script>');
 fs.writeFileSync(path.join(www, 'index.html'), html);
 
-// Contenu livré : articles Markdown et métadonnées de dossiers.
+// Contenu livré : articles Markdown et métadonnées de dossiers (content.json), images des articles (www/content/).
+const IMAGE_EXT = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.avif']);
 const files = {};
+let images = 0;
+fs.rmSync(path.join(www, 'content'), { recursive: true, force: true });
 const walk = (dir, rel = '') => {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const r = rel ? `${rel}/${e.name}` : e.name;
     if (e.isDirectory()) walk(path.join(dir, e.name), r);
     else if (e.name.endsWith('.md') || e.name === '_folder.json') files[r] = fs.readFileSync(path.join(dir, e.name), 'utf8');
+    else if (r.split('/').includes('_assets') && IMAGE_EXT.has(path.extname(e.name).toLowerCase())) {
+      fs.mkdirSync(path.join(www, 'content', path.dirname(r)), { recursive: true });
+      fs.copyFileSync(path.join(dir, e.name), path.join(www, 'content', r));
+      images++;
+    }
   }
 };
 walk(path.join(root, 'content'));
 fs.writeFileSync(path.join(www, 'content.json'), JSON.stringify({ version, built: Date.now(), files }));
 fs.copyFileSync(path.join(root, 'LICENSE'), path.join(www, 'LICENSE.txt'));
 fs.copyFileSync(path.join(root, 'build', 'icon.png'), path.join(www, 'icon.png'));
-console.log(`mobile/www prêt : ${Object.keys(files).length} fichiers de contenu, version ${version}.`);
+console.log(`mobile/www prêt : ${Object.keys(files).length} fichiers de contenu, ${images} image(s), version ${version}.`);

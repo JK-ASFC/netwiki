@@ -1,7 +1,7 @@
 {
   "name": "netwiki",
   "productName": "NetWiki",
-  "version": "1.43.0",
+  "version": "1.44.0",
   "description": "Le wiki local de l'architecte rÃ©seau : prÃ©sentation, installation et configuration des services d'infrastructure.",
   "main": "main.js",
   "author": {

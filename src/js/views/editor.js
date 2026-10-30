@@ -43,6 +43,7 @@ const TOOLS = [
   ['code', 'Code en ligne', (v) => wrap(v, '`', '`', 'code')],
   ['link', 'Lien (Ctrl+K)', (v) => wrap(v, '[', '](https://)', 'texte')],
   ['link-2', 'Lien wiki [[…]]', (v) => wrap(v, '[[', ']]', 'Titre de la page')],
+  ['image-plus', 'Insérer une image (capture d’écran, interface graphique)', () => state.editor?.pickImage?.()],
   '|',
   ['list', 'Liste à puces', (v) => linePrefix(v, '- ')],
   ['list-ordered', 'Liste numérotée', (v) => linePrefix(v, '1. ')],
@@ -210,7 +211,7 @@ export function renderEditor(view, page) {
   async function handleFiles(e, files) {
     const images = [...(files || [])].filter((f) => f.type.startsWith('image/'));
     if (!images.length) return false;
-    e.preventDefault();
+    e?.preventDefault();
     if (page.isNew) {
       toast("Enregistrez d'abord l'article pour y coller des images.", 'info', 4000);
       return true;
@@ -220,13 +221,24 @@ export function renderEditor(view, page) {
       const name = f.name && f.name !== 'image.png' ? f.name : `capture-${Date.now()}.png`;
       const rel = await api.saveAsset(page.path, name, bytes);
       const pos = cm.state.selection.main.head;
-      cm.dispatch({ changes: { from: pos, insert: `![${name.replace(/\.[^.]+$/, '')}](${rel})\n` } });
+      const alt = name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ');
+      cm.dispatch({ changes: { from: pos, insert: `![${alt}](${rel} "Légende de l'image")\n` } });
     }
     toast(images.length > 1 ? `${images.length} images ajoutées` : 'Image ajoutée');
     return true;
   }
 
-  state.editor = { dirty: false, save, cm };
+  // bouton « Image » : choix d'un ou plusieurs fichiers
+  function pickImage() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/png,image/jpeg,image/gif,image/webp,image/svg+xml,image/avif';
+    input.multiple = true;
+    input.onchange = () => handleFiles(null, input.files).catch((err) => toast(err.message || String(err), 'error', 5000));
+    input.click();
+  }
+
+  state.editor = { dirty: false, save, cm, pickImage };
 
   // barre d'outils
   const tools = $('#ed-tools', view);
@@ -245,7 +257,7 @@ export function renderEditor(view, page) {
   }
   tools.insertAdjacentHTML(
     'beforeend',
-    `<span class="spacer"></span><span style="font-size:12px;color:var(--text-faint)">Collez ou glissez une image pour l'insérer · Ctrl+F pour chercher</span>`
+    `<span class="spacer"></span><span style="font-size:12px;color:var(--text-faint)">Bouton image, collage ou glisser-déposer pour insérer une image · Ctrl+F pour chercher</span>`
   );
 
   // métadonnées → état modifié
