@@ -1,1 +1,1 @@
-{ "title": "Terraform / OpenTofu", "icon": "blocks", "color": "#7b42bc", "description": "Infrastructure as code déclarative : fournisseurs, état, modules, plan/apply." }
+{ "title": "Terraform / OpenTofu", "icon": "blocks", "color": "#7b42bc", "description": "Infrastructure as code déclarative : fournisseurs, état, modules, plan/apply ; OpenTofu (fork libre) : chiffrement de l’état, fonctions propres, migration." }
