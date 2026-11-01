@@ -62,6 +62,25 @@ Rien n'est publié si aucun article n'a changé. NetWiki lit l'index à chaque d
 
 Sans certificat, les versions bureau fonctionnent mais Windows SmartScreen et macOS Gatekeeper affichent un avertissement à la première ouverture.
 
+### Supprimer l'avertissement « Windows a protégé votre ordinateur » (SmartScreen)
+
+SmartScreen bloque les exécutables **non signés** (« Éditeur inconnu ») et ceux dont la signature n'a pas encore de **réputation**. L'empreinte SHA-256 et la signature Ed25519 de NetWiki protègent les mises à jour, mais Windows ne les connaît pas : seule une signature **Authenticode** compte. Solutions, de la moins chère à la plus complète :
+
+| Solution | Coût | Effet |
+| --- | --- | --- |
+| **SignPath Foundation** (programme de signature gratuit pour les projets open source, à demander sur signpath.org) | Gratuit, après acceptation du projet | Exécutables signés par la fondation depuis GitHub Actions ; l'avertissement disparaît une fois la réputation acquise |
+| **Azure Artifact Signing** (ex-Trusted Signing, Microsoft) | Abonnement mensuel ; vérification d'identité (conditions d'éligibilité selon le pays) | Certificat géré par Microsoft, réputation SmartScreen rapide, intégration GitHub Actions |
+| Certificat **OV / EV** d'une autorité (Sectigo, DigiCert, Certum…) | De ~60 €/an (Certum open source) à plusieurs centaines d'euros/an | Signature classique ; EV : réputation immédiate (clé sur jeton matériel ou HSM cloud) |
+| **Microsoft Store** (compte développeur individuel gratuit) | Gratuit | Application signée et distribuée par Microsoft : aucun avertissement pour les utilisateurs du Store |
+
+En attendant, l'utilisateur clique sur **Informations complémentaires → Exécuter quand même** ; il peut vérifier le fichier téléchargé avec `Get-FileHash .\NetWiki-Setup-x.y.z.exe` et comparer l'empreinte à celle de `netwiki-update.json` ou de la page de la Release.
+
+### Installateurs aux couleurs de NetWiki
+
+- **Windows** (`build/installer.nsh`) : thème sombre sur toutes les pages, pages « Sécurité et confidentialité » et « Soutenir NetWiki » (don Liberapay), installation pour l'utilisateur courant sans droits administrateur ; pages d'information sautées lors d'une mise à jour (`--updated`).
+- **macOS** (DMG) : fond personnalisé (glisser vers Applications, sécurité, premier lancement) et raccourci « Soutenir NetWiki ».
+- Visuels régénérés par `npm run installer-art` (`scripts/make-installer-art.js`) : `installerSidebar.bmp`, `uninstallerSidebar.bmp`, `installerHeader.bmp`, `background.png`, `background@2x.png`.
+
 ## 4. Google Play Store
 
 1. Créez un compte **Google Play Console** (frais uniques de 25 $) au nom de JK-ASFC.
