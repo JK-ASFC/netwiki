@@ -1,0 +1,58 @@
+# NetWiki — site de présentation publié sur GitHub Pages (https://jk-asfc.github.io/netwiki/).
+# Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
+#
+# Reconstruit à chaque modification du site ou des articles (chiffres et catégories calculés depuis content/).
+# Prérequis (une seule fois) : Settings → Pages → Build and deployment → Source : « GitHub Actions ».
+
+name: Site web
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'content/**'
+      - 'scripts/build-site.mjs'
+      - 'build/icon.png'
+      - 'package.json'
+      - '.github/workflows/site.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  construire:
+    name: Construire le site
+    runs-on: ubuntu-latest
+    env:
+      ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/build-site.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publier:
+    name: Publier sur GitHub Pages
+    needs: construire
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploiement.outputs.page_url }}
+    steps:
+      - id: deploiement
+        uses: actions/deploy-pages@v4

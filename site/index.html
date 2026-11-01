@@ -1,0 +1,422 @@
+<!doctype html>
+<!-- NetWiki — site de présentation. Copyright (c) 2026 JK-ASFC — licence MIT. -->
+<html lang="fr" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NetWiki — le wiki hors ligne de l'architecte réseau</title>
+    <meta name="description" content="NetWiki : {{articles}} articles en français et {{cheatsheets}} aide-mémoires de commandes pour administrateurs et architectes réseau — services, Windows Server, Cisco, Fortinet, Palo Alto, Juniper, téléphonie IP. Gratuit, open source, hors ligne." />
+    <meta name="theme-color" content="#0b0d14" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NetWiki — le wiki de l'architecte réseau" />
+    <meta property="og:description" content="{{articles}} articles, {{cheatsheets}} aide-mémoires de commandes, {{vendors}} constructeurs. Gratuit, open source, 100 % hors ligne." />
+    <meta property="og:image" content="https://jk-asfc.github.io/netwiki/img/og.jpg" />
+    <meta property="og:url" content="https://jk-asfc.github.io/netwiki/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/site.css" />
+    <script defer src="js/site.js"></script>
+  </head>
+  <body>
+    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="grid-bg" aria-hidden="true"></div>
+
+    <!-- ============================================================ navigation -->
+    <header class="nav" id="nav">
+      <div class="wrap nav-in">
+        <a class="brand" href="#top" aria-label="NetWiki, retour en haut">
+          <img src="img/icon.png" width="30" height="30" alt="" />
+          <span class="nom">Net<i>Wiki</i></span>
+        </a>
+        <nav class="nav-links" id="nav-links" aria-label="Sections">
+          <a href="#fonctionnalites">Fonctionnalités</a>
+          <a href="#exemples">Exemples</a>
+          <a href="#comment">Comment ça marche</a>
+          <a href="#telecharger">Télécharger</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-cta">
+          <a class="btn ghost sm hide-sm" href="https://github.com/JK-ASFC/netwiki" rel="noopener"><i data-icon="git-branch" data-size="16"></i>GitHub</a>
+          <a class="btn primary sm" href="#telecharger"><i data-icon="download" data-size="16"></i>Télécharger</a>
+          <button class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><i data-icon="menu"></i></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ============================================================ accueil -->
+      <section class="hero">
+        <pre class="term-bg" id="term-bg" aria-hidden="true"></pre>
+        <div class="wrap hero-in">
+          <div class="hero-txt">
+            <a class="badge reveal" href="#telecharger"><span class="dot"></span>Version <b data-version>{{version}}</b> · contenu du {{contentDate}}<i data-icon="arrow-right" data-size="14"></i></a>
+            <div class="hero-name reveal" aria-hidden="true"><span class="prompt">$</span> <span id="type-name" class="nom">Net<i>Wiki</i></span><span class="caret"></span></div>
+            <h1 class="reveal">Le wiki de <span class="grad">l'architecte réseau</span></h1>
+            <p class="lead reveal">
+              Services, Windows Server, Cisco, Fortinet, Palo Alto, Juniper, téléphonie IP… <b>{{articles}} articles</b> en français et
+              <b>{{cheatsheets}} aide-mémoires</b> de commandes, retrouvés en un éclair et consultables <b>sans Internet</b>.
+            </p>
+            <div class="hero-cta reveal">
+              <a class="btn primary lg" href="#telecharger" id="hero-dl"><i data-icon="download"></i><span>Télécharger gratuitement</span></a>
+              <a class="btn ghost lg" href="#exemples"><i data-icon="play"></i>Voir les exemples</a>
+            </div>
+            <ul class="hero-points reveal">
+              <li><i data-icon="badge-check" data-size="16"></i>Gratuit et open source</li>
+              <li><i data-icon="wifi-off" data-size="16"></i>100 % hors ligne</li>
+              <li><i data-icon="shield-check" data-size="16"></i>Aucune télémétrie</li>
+              <li><i data-icon="monitor-smartphone" data-size="16"></i>Windows · macOS · Linux · Android</li>
+            </ul>
+          </div>
+          <div class="hero-vis reveal">
+            <div class="window tilt" id="hero-window">
+              <img src="img/accueil.webp" width="1440" height="900" alt="Accueil de NetWiki : recherche, catégories et statistiques du wiki" fetchpriority="high" />
+            </div>
+            <div class="float f1"><kbd>Ctrl</kbd><kbd>K</kbd><span>vlan trunk</span></div>
+            <div class="float f2"><span class="p">sw-paris-01#</span> show vlan brief</div>
+            <div class="float f3"><i data-icon="badge-check" data-size="15"></i>Paquet signé par JK-ASFC</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ chiffres -->
+      <section class="stats wrap" aria-label="NetWiki en chiffres">
+        <div class="stat reveal"><b data-count="{{articles}}">{{articles}}</b><span>articles</span></div>
+        <div class="stat reveal"><b data-count="{{cheatsheets}}">{{cheatsheets}}</b><span>aide-mémoires</span></div>
+        <div class="stat reveal"><b data-count="{{services}}">{{services}}</b><span>services et logiciels</span></div>
+        <div class="stat reveal"><b data-count="{{vendors}}">{{vendors}}</b><span>constructeurs réseau</span></div>
+        <div class="stat reveal"><b data-count="{{words}}">{{words}}</b><span>mots de documentation</span></div>
+      </section>
+
+      <!-- ============================================================ fonctionnalités -->
+      <section class="section" id="fonctionnalites">
+        <div class="wrap">
+          <div class="head reveal">
+            <span class="eyebrow"><i data-icon="sparkles" data-size="14"></i>Fonctionnalités</span>
+            <h2>Toute la documentation réseau, au même endroit</h2>
+            <p>Né d'un constat simple : <em>« Marre de chercher dans tous les articles. »</em> NetWiki réunit procédures, commandes et bonnes pratiques dans une application rapide, belle et privée.</p>
+          </div>
+          <div class="bento">
+            <article class="card big reveal">
+              <div class="card-txt">
+                <span class="ic" style="--c:#6366f1"><i data-icon="search"></i></span>
+                <h3>Recherche instantanée</h3>
+                <p><kbd>Ctrl</kbd> <kbd>K</kbd>, quelques lettres, et les résultats s'affichent pendant la frappe, mots surlignés, dans tout le wiki.</p>
+              </div>
+              <img class="card-shot" src="img/recherche.webp" loading="lazy" width="1440" height="900" alt="Recherche instantanée de « vlan trunk » dans NetWiki" />
+            </article>
+            <article class="card reveal">
+              <span class="ic" style="--c:#22d3ee"><i data-icon="terminal"></i></span>
+              <h3>{{cheatsheets}} aide-mémoires</h3>
+              <p>Commandes par service et par constructeur, avec exemples prêts à copier en un clic.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic" style="--c:#f59e0b"><i data-icon="git-compare-arrows"></i></span>
+              <h3>Correspondance des CLI</h3>
+              <p>La même tâche chez Cisco, Aruba, HPE, Huawei, Juniper, Alcatel… <a href="#demo">Essayez la démo</a>.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic" style="--c:#34d399"><i data-icon="wifi-off"></i></span>
+              <h3>100 % hors ligne</h3>
+              <p>En salle serveur, en datacenter ou en déplacement : tout est sur votre poste.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic" style="--c:#ec4899"><i data-icon="file-pen-line"></i></span>
+              <h3>Vos propres procédures</h3>
+              <p>Articles en Markdown modifiables, captures d'écran, nouvelles pages, export PDF.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic" style="--c:#a855f7"><i data-icon="refresh-cw"></i></span>
+              <h3>Nouveautés chaque semaine</h3>
+              <p>Paquet signé publié tous les lundis, récapitulatif des ajouts avant installation.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic" style="--c:#60a5fa"><i data-icon="workflow"></i></span>
+              <h3>Schémas et code lisibles</h3>
+              <p>Diagrammes Mermaid, coloration syntaxique de dizaines de langages, encadrés et tableaux.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic" style="--c:#fbbf24"><i data-icon="monitor-smartphone"></i></span>
+              <h3>Sur tous vos appareils</h3>
+              <p>Windows, macOS, Linux et Android ; thème sombre ou clair, couleur d'accent au choix.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic" style="--c:#f87171"><i data-icon="shield-check"></i></span>
+              <h3>Privé par conception</h3>
+              <p>Aucune télémétrie, aucun compte, aucune publicité. Code ouvert sous licence MIT.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ catégories -->
+      <section class="section tight" id="contenu">
+        <div class="wrap">
+          <div class="head reveal">
+            <span class="eyebrow"><i data-icon="library" data-size="14"></i>Contenu</span>
+            <h2>{{categories}} catégories, de l'annuaire à la ToIP</h2>
+            <p>Chaque service a sa fiche : présentation, installation (Linux, Windows, macOS), configuration, sécurité, dépannage et aide-mémoire.</p>
+          </div>
+          <ul class="cats">
+{{categoriesHtml}}
+          </ul>
+          <div class="vendors reveal">
+            <span>Constructeurs couverts, en ligne de commande et en interface graphique :</span>
+            <ul>{{vendorsHtml}}</ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ exemples -->
+      <section class="section" id="exemples">
+        <div class="wrap">
+          <div class="head reveal">
+            <span class="eyebrow"><i data-icon="images" data-size="14"></i>Exemples</span>
+            <h2>À quoi ça ressemble</h2>
+            <p>Captures réelles de NetWiki {{version}}. Cliquez sur une image pour l'agrandir.</p>
+          </div>
+          <div class="tabs reveal" role="tablist" aria-label="Exemples" data-tabs="gallery">
+            <button role="tab" aria-selected="true" data-tab="g-accueil"><i data-icon="house" data-size="16"></i>Accueil</button>
+            <button role="tab" data-tab="g-recherche"><i data-icon="search" data-size="16"></i>Recherche</button>
+            <button role="tab" data-tab="g-aide"><i data-icon="terminal" data-size="16"></i>Aide-mémoire</button>
+            <button role="tab" data-tab="g-corr"><i data-icon="git-compare-arrows" data-size="16"></i>Correspondance</button>
+            <button role="tab" data-tab="g-diag"><i data-icon="workflow" data-size="16"></i>Schémas</button>
+            <button role="tab" data-tab="g-edit"><i data-icon="file-pen-line" data-size="16"></i>Éditeur</button>
+            <button role="tab" data-tab="g-clair"><i data-icon="sun" data-size="16"></i>Thème clair</button>
+            <button role="tab" data-tab="g-start"><i data-icon="clapperboard" data-size="16"></i>Démarrage</button>
+          </div>
+          <div class="gallery reveal" data-panels="gallery">
+            <figure role="tabpanel" id="g-accueil" class="on">
+              <div class="window"><img src="img/accueil.webp" loading="lazy" width="1440" height="900" alt="Accueil de NetWiki" /></div>
+              <figcaption><b>Accueil</b> — recherche, chiffres du wiki, catégories et accès direct aux aide-mémoires.</figcaption>
+            </figure>
+            <figure role="tabpanel" id="g-recherche">
+              <div class="window"><img src="img/recherche.webp" loading="lazy" width="1440" height="900" alt="Recherche instantanée dans NetWiki" /></div>
+              <figcaption><b>Recherche instantanée</b> — <kbd>Ctrl</kbd> <kbd>K</kbd> depuis n'importe où ; résultats pendant la frappe, termes surlignés.</figcaption>
+            </figure>
+            <figure role="tabpanel" id="g-aide">
+              <div class="window"><img src="img/aide-memoire.webp" loading="lazy" width="1440" height="900" alt="Aide-mémoire des commutateurs Cisco Catalyst" /></div>
+              <figcaption><b>Aide-mémoire Cisco Catalyst</b> — VLAN, trunk, STP, sécurité des ports : chaque bloc se copie en un clic.</figcaption>
+            </figure>
+            <figure role="tabpanel" id="g-corr">
+              <div class="window"><img src="img/correspondance.webp" loading="lazy" width="1440" height="900" alt="Tables de correspondance des commandes entre constructeurs" /></div>
+              <figcaption><b>Correspondance des commandes</b> — la même tâche chez chaque constructeur, côte à côte.</figcaption>
+            </figure>
+            <figure role="tabpanel" id="g-diag">
+              <div class="window"><img src="img/diagramme.webp" loading="lazy" width="1440" height="900" alt="Article Terraform avec diagramme et code" /></div>
+              <figcaption><b>Schémas et code</b> — diagrammes Mermaid, tableaux et blocs de code colorés (ici Terraform / OpenTofu).</figcaption>
+            </figure>
+            <figure role="tabpanel" id="g-edit">
+              <div class="window"><img src="img/editeur.webp" loading="lazy" width="1440" height="900" alt="Éditeur Markdown de NetWiki avec aperçu" /></div>
+              <figcaption><b>Éditeur Markdown</b> — modifiez un article avec aperçu en direct ; collez une capture d'écran pour l'insérer.</figcaption>
+            </figure>
+            <figure role="tabpanel" id="g-clair">
+              <div class="window"><img src="img/clair.webp" loading="lazy" width="1440" height="900" alt="NetWiki en thème clair" /></div>
+              <figcaption><b>Thème clair</b> — sombre, clair ou celui du système, couleur d'accent au choix.</figcaption>
+            </figure>
+            <figure role="tabpanel" id="g-start">
+              <div class="window"><video src="img/demarrage.mp4" poster="img/demarrage.webp" muted loop playsinline preload="none" width="1280" height="720" aria-label="Écran de démarrage animé de NetWiki"></video></div>
+              <figcaption><b>Démarrage</b> — le terminal tape « NetWiki » pendant le chargement des articles.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ démo -->
+      <section class="section tight" id="demo">
+        <div class="wrap">
+          <div class="head reveal">
+            <span class="eyebrow"><i data-icon="mouse-pointer-click" data-size="14"></i>Démo interactive</span>
+            <h2>Une commande, tous les constructeurs</h2>
+            <p>Extrait réel des tables de correspondance de NetWiki. Choisissez une tâche :</p>
+          </div>
+          <div class="demo reveal">
+            <div class="demo-tasks" id="demo-tasks" role="listbox" aria-label="Tâches"></div>
+            <div class="demo-out" id="demo-out" aria-live="polite"></div>
+          </div>
+          <noscript><p class="center dim">Activez JavaScript pour essayer la démo, ou ouvrez la page « Correspondance des commandes » dans NetWiki.</p></noscript>
+        </div>
+      </section>
+
+      <!-- ============================================================ comment ça marche -->
+      <section class="section" id="comment">
+        <div class="wrap">
+          <div class="head reveal">
+            <span class="eyebrow"><i data-icon="compass" data-size="14"></i>Comment ça marche</span>
+            <h2>De l'installation aux mises à jour</h2>
+          </div>
+          <div class="tabs reveal" role="tablist" aria-label="Comment ça marche" data-tabs="how">
+            <button role="tab" aria-selected="true" data-tab="h-install"><span class="n">1</span>Installer</button>
+            <button role="tab" data-tab="h-explore"><span class="n">2</span>Explorer</button>
+            <button role="tab" data-tab="h-enrich"><span class="n">3</span>Enrichir</button>
+            <button role="tab" data-tab="h-update"><span class="n">4</span>Mettre à jour</button>
+            <button role="tab" data-tab="h-secu"><span class="n">5</span>Sécurité</button>
+          </div>
+          <div class="how reveal" data-panels="how">
+            <div role="tabpanel" id="h-install" class="on">
+              <div class="steps">
+                <div class="step"><span class="ic" style="--c:#60a5fa"><i data-icon="monitor"></i></span><h3>Windows</h3>
+                  <p>Lancez <code>NetWiki-Setup.exe</code> : installation pour votre compte, sans droits administrateur. Ou utilisez <code>NetWiki-portable.exe</code>, sans installation.</p>
+                  <p class="note"><i data-icon="info" data-size="15"></i><span>Message « Windows a protégé votre ordinateur » : <b>Informations complémentaires → Exécuter quand même</b> (logiciel pas encore signé par un certificat Microsoft).</span></p></div>
+                <div class="step"><span class="ic" style="--c:#e7e9f0"><i data-icon="apple"></i></span><h3>macOS</h3>
+                  <p>Ouvrez le <code>.dmg</code> et glissez NetWiki dans <b>Applications</b>. Au premier lancement : <b>clic droit → Ouvrir</b>, puis confirmez.</p></div>
+                <div class="step"><span class="ic" style="--c:#fbbf24"><i data-icon="square-terminal"></i></span><h3>Linux</h3>
+                  <pre><code>chmod +x NetWiki-*.AppImage && ./NetWiki-*.AppImage
+# ou (Debian / Ubuntu)
+sudo apt install ./netwiki_*_amd64.deb</code></pre></div>
+                <div class="step"><span class="ic" style="--c:#4ade80"><i data-icon="smartphone"></i></span><h3>Android</h3>
+                  <p>Installez l'APK de test (autorisez les sources inconnues). Même interface et même contenu, hors ligne.</p></div>
+              </div>
+            </div>
+            <div role="tabpanel" id="h-explore">
+              <div class="split">
+                <ul class="checks">
+                  <li><b>Arborescence par fonction</b> : DNS, DHCP, VPN, pare-feu… les alternatives côte à côte (Apache, Nginx, IIS…).</li>
+                  <li><b><kbd>Ctrl</kbd> <kbd>K</kbd></b> : recherche plein texte instantanée, même hors ligne.</li>
+                  <li><b>Sommaire</b> « Sur cette page », favoris, historique et liens entre articles.</li>
+                  <li><b>Bouton Copier</b> sur chaque bloc de commandes, prêt à coller en CLI.</li>
+                  <li><b>Aide-mémoires</b> regroupés sur une page, par service et par constructeur.</li>
+                </ul>
+                <div class="window small"><img src="img/aide-memoire.webp" loading="lazy" width="1440" height="900" alt="Aide-mémoire dans NetWiki" /></div>
+              </div>
+            </div>
+            <div role="tabpanel" id="h-enrich">
+              <div class="split">
+                <ul class="checks">
+                  <li><b>Modifier</b> un article (<kbd>Ctrl</kbd> <kbd>E</kbd>) ou en créer un (<kbd>Ctrl</kbd> <kbd>N</kbd>) : Markdown avec aperçu en direct.</li>
+                  <li><b>Images</b> : bouton « Insérer une image », collage ou glisser-déposer ; légende et agrandissement au clic.</li>
+                  <li><b>Vos fichiers</b> : simples <code>.md</code> dans un dossier à synchroniser avec Git, un NAS ou un cloud.</li>
+                  <li><b>Export</b> d'un article en PDF, d'un wiki entier en paquet <code>.netwiki</code> pour un poste hors ligne.</li>
+                  <li><b>Vos modifications sont conservées</b> lors des mises à jour officielles.</li>
+                </ul>
+                <div class="window small"><img src="img/editeur.webp" loading="lazy" width="1440" height="900" alt="Éditeur Markdown de NetWiki" /></div>
+              </div>
+            </div>
+            <div role="tabpanel" id="h-update">
+              <div class="flow">
+                <div class="flow-step"><span class="ic" style="--c:#a855f7"><i data-icon="git-branch"></i></span><b>Chaque lundi</b><small>Nouveaux articles publiés sur GitHub</small></div>
+                <i class="flow-arrow" data-icon="chevron-right"></i>
+                <div class="flow-step"><span class="ic" style="--c:#34d399"><i data-icon="file-badge"></i></span><b>Paquet signé</b><small>.netwiki signé Ed25519 par JK-ASFC</small></div>
+                <i class="flow-arrow" data-icon="chevron-right"></i>
+                <div class="flow-step"><span class="ic" style="--c:#22d3ee"><i data-icon="list-checks"></i></span><b>Récapitulatif</b><small>Liste des ajouts, installation après accord</small></div>
+                <i class="flow-arrow" data-icon="chevron-right"></i>
+                <div class="flow-step"><span class="ic" style="--c:#6366f1"><i data-icon="rotate-ccw"></i></span><b>Redémarrage</b><small>Contrôle que tout est en place</small></div>
+              </div>
+              <ul class="checks cols">
+                <li><b>Wiki</b> : recherché automatiquement au démarrage si vous l'acceptez, ou à la demande.</li>
+                <li><b>Logiciel</b> : vérifié uniquement quand vous le demandez, fichier contrôlé par empreinte signée.</li>
+                <li><b>Hors ligne</b> : importez le même paquet <code>.netwiki</code> à la main.</li>
+                <li><b>Vos articles modifiés</b> ne sont jamais écrasés.</li>
+              </ul>
+            </div>
+            <div role="tabpanel" id="h-secu">
+              <div class="steps">
+                <div class="step"><span class="ic" style="--c:#34d399"><i data-icon="hard-drive"></i></span><h3>Vos données chez vous</h3><p>Articles et réglages restent sur votre poste. Aucun compte, aucune télémétrie, aucune publicité.</p></div>
+                <div class="step"><span class="ic" style="--c:#22d3ee"><i data-icon="file-badge"></i></span><h3>Mises à jour signées</h3><p>Contenu et logiciel installés seulement s'ils sont signés par JK-ASFC (Ed25519) ; sinon refusés.</p></div>
+                <div class="step"><span class="ic" style="--c:#6366f1"><i data-icon="box"></i></span><h3>Application cloisonnée</h3><p>Electron durci : bac à sable, isolation du contexte, ni caméra ni micro, outils de développement désactivés.</p></div>
+                <div class="step"><span class="ic" style="--c:#f59e0b"><i data-icon="scale"></i></span><h3>Transparent</h3><p>Code source ouvert sous licence MIT, <a href="https://github.com/JK-ASFC/netwiki/blob/main/PRIVACY.md" rel="noopener">politique de confidentialité</a> et <a href="https://github.com/JK-ASFC/netwiki/blob/main/RGPD.md" rel="noopener">RGPD</a> publiées.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ téléchargement -->
+      <section class="section" id="telecharger">
+        <div class="wrap">
+          <div class="head reveal">
+            <span class="eyebrow"><i data-icon="download" data-size="14"></i>Télécharger</span>
+            <h2>NetWiki <span data-version>{{version}}</span></h2>
+            <p id="dl-meta">Gratuit, sans inscription. Fichiers publiés sur GitHub par la compilation automatique.</p>
+          </div>
+          <div class="dl-grid">
+            <article class="dl reveal" data-os="windows">
+              <span class="ic" style="--c:#60a5fa"><i data-icon="monitor"></i></span>
+              <h3>Windows</h3><p class="dim">Windows 10 et 11 (64 bits)</p>
+              <a class="btn primary" data-asset="setup" href="https://github.com/JK-ASFC/netwiki/releases/latest"><i data-icon="download" data-size="16"></i>Installateur <small data-size-of="setup"></small></a>
+              <a class="btn ghost" data-asset="portable" href="https://github.com/JK-ASFC/netwiki/releases/latest/download/NetWiki-portable.exe"><i data-icon="usb" data-size="16"></i>Version portable <small data-size-of="portable"></small></a>
+            </article>
+            <article class="dl reveal" data-os="mac">
+              <span class="ic" style="--c:#e7e9f0"><i data-icon="apple"></i></span>
+              <h3>macOS</h3><p class="dim">Apple Silicon (M1 et suivants)</p>
+              <a class="btn primary" data-asset="dmg" href="https://github.com/JK-ASFC/netwiki/releases/latest"><i data-icon="download" data-size="16"></i>Fichier .dmg <small data-size-of="dmg"></small></a>
+              <a class="btn ghost" data-asset="maczip" href="https://github.com/JK-ASFC/netwiki/releases/latest"><i data-icon="file-archive" data-size="16"></i>Archive .zip <small data-size-of="maczip"></small></a>
+            </article>
+            <article class="dl reveal" data-os="linux">
+              <span class="ic" style="--c:#fbbf24"><i data-icon="square-terminal"></i></span>
+              <h3>Linux</h3><p class="dim">x64 — toutes distributions</p>
+              <a class="btn primary" data-asset="appimage" href="https://github.com/JK-ASFC/netwiki/releases/latest"><i data-icon="download" data-size="16"></i>AppImage <small data-size-of="appimage"></small></a>
+              <a class="btn ghost" data-asset="deb" href="https://github.com/JK-ASFC/netwiki/releases/latest"><i data-icon="package" data-size="16"></i>Paquet .deb <small data-size-of="deb"></small></a>
+            </article>
+            <article class="dl reveal" data-os="android">
+              <span class="ic" style="--c:#4ade80"><i data-icon="smartphone"></i></span>
+              <h3>Android</h3><p class="dim">APK de test (avant le Play Store)</p>
+              <a class="btn primary" data-asset="apk" href="https://github.com/JK-ASFC/netwiki/releases/latest"><i data-icon="download" data-size="16"></i>APK <small data-size-of="apk"></small></a>
+              <a class="btn ghost" data-asset="netwiki" href="https://github.com/JK-ASFC/netwiki/releases/latest"><i data-icon="package-open" data-size="16"></i>Contenu .netwiki <small data-size-of="netwiki"></small></a>
+            </article>
+          </div>
+          <p class="dl-foot reveal">
+            <i data-icon="shield-check" data-size="16"></i>
+            <span>Empreintes SHA-256 de chaque fichier sur la <a id="dl-page" href="https://github.com/JK-ASFC/netwiki/releases/latest" rel="noopener">page de la version</a> ; vérification sous Windows : <code>Get-FileHash .\NetWiki-Setup-*.exe</code>. iOS : bientôt sur l'App Store.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================================ soutien -->
+      <section class="section tight" id="soutenir">
+        <div class="wrap">
+          <div class="support reveal">
+            <div>
+              <span class="eyebrow pink"><i data-icon="heart" data-size="14"></i>Soutenir</span>
+              <h2>Gratuit, libre et sans publicité</h2>
+              <p>NetWiki est rédigé, vérifié et maintenu bénévolement par <b>JK-ASFC</b>, avec de nouveaux articles chaque semaine. Si le wiki vous fait gagner du temps, un don, même modeste, aide à le faire vivre.</p>
+            </div>
+            <div class="support-cta">
+              <a class="btn pink lg" href="https://liberapay.com/JK-ASFC/donate" rel="noopener"><i data-icon="heart"></i>Faire un don sur Liberapay</a>
+              <a class="btn ghost" href="https://github.com/JK-ASFC/netwiki" rel="noopener"><i data-icon="star" data-size="16"></i>Une étoile sur GitHub</a>
+              <a class="btn ghost" href="https://github.com/JK-ASFC/netwiki/issues" rel="noopener"><i data-icon="message-square-plus" data-size="16"></i>Proposer un article</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ FAQ -->
+      <section class="section" id="faq">
+        <div class="wrap narrow">
+          <div class="head reveal">
+            <span class="eyebrow"><i data-icon="circle-help" data-size="14"></i>FAQ</span>
+            <h2>Questions fréquentes</h2>
+          </div>
+          <div class="faq">
+            <details class="reveal"><summary>NetWiki est-il vraiment gratuit ?</summary><p>Oui, entièrement : pas d'abonnement, pas de version premium, pas de publicité. Le code est open source sous licence MIT. Les dons sont facultatifs.</p></details>
+            <details class="reveal"><summary>Faut-il une connexion Internet ?</summary><p>Non. Tout le wiki est installé sur votre poste et fonctionne hors ligne. Internet ne sert qu'aux mises à jour, et seulement si vous l'acceptez ; un poste isolé peut importer un paquet <code>.netwiki</code>.</p></details>
+            <details class="reveal"><summary>Que deviennent mes données ?</summary><p>Elles restent sur votre ordinateur : NetWiki n'envoie rien, ne collecte rien et ne crée aucun compte. Vos articles sont de simples fichiers Markdown que vous pouvez sauvegarder ou synchroniser comme vous le souhaitez.</p></details>
+            <details class="reveal"><summary>Pourquoi Windows affiche « Windows a protégé votre ordinateur » ?</summary><p>L'installateur n'est pas encore signé par un certificat de signature de code reconnu par Microsoft (une démarche est en cours). Cliquez sur <b>Informations complémentaires</b> puis <b>Exécuter quand même</b>. Vous pouvez vérifier le fichier en comparant son empreinte SHA-256 avec celle publiée sur la page de la version.</p></details>
+            <details class="reveal"><summary>Comment le contenu est-il rédigé ?</summary><p>NetWiki est un projet personnel conçu à 50 / 50 avec l'IA : JK-ASFC définit, oriente, relit et teste ; l'IA (Claude) rédige une grande partie des articles et du code. Chaque lot est validé automatiquement (liens, tableaux, code, diagrammes). Une erreur ? Signalez-la sur GitHub, elle sera corrigée dans la mise à jour suivante.</p></details>
+            <details class="reveal"><summary>Puis-je proposer un article ou un constructeur ?</summary><p>Avec plaisir : ouvrez une <a href="https://github.com/JK-ASFC/netwiki/issues" rel="noopener">Issue sur GitHub</a>. Les demandes alimentent les publications hebdomadaires.</p></details>
+            <details class="reveal"><summary>Mes modifications sont-elles écrasées par les mises à jour ?</summary><p>Non. Un article que vous avez modifié ou supprimé est conservé tel quel ; seuls les articles officiels inchangés sont mis à jour.</p></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================ pied de page -->
+    <footer class="foot">
+      <div class="wrap foot-in">
+        <div class="foot-brand">
+          <a class="brand" href="#top"><img src="img/icon.png" width="28" height="28" alt="" /><span class="nom">Net<i>Wiki</i></span></a>
+          <p class="dim">Le wiki de l'architecte réseau.<br />© 2026 JK-ASFC — licence MIT.</p>
+        </div>
+        <nav class="foot-links" aria-label="Liens">
+          <div><b>Projet</b><a href="https://github.com/JK-ASFC/netwiki" rel="noopener">GitHub</a><a href="https://github.com/JK-ASFC/netwiki/releases" rel="noopener">Versions</a><a href="https://github.com/JK-ASFC/netwiki/issues" rel="noopener">Signaler une erreur</a></div>
+          <div><b>Légal</b><a href="https://github.com/JK-ASFC/netwiki/blob/main/PRIVACY.md" rel="noopener">Confidentialité</a><a href="https://github.com/JK-ASFC/netwiki/blob/main/RGPD.md" rel="noopener">RGPD</a><a href="https://github.com/JK-ASFC/netwiki/blob/main/SECURITY.md" rel="noopener">Sécurité</a><a href="https://github.com/JK-ASFC/netwiki/blob/main/LICENSE" rel="noopener">Licence MIT</a></div>
+          <div><b>Soutenir</b><a href="https://liberapay.com/JK-ASFC/donate" rel="noopener">Liberapay</a><a href="#telecharger">Télécharger</a><a href="#faq">FAQ</a></div>
+        </nav>
+      </div>
+      <p class="wrap foot-note">Ce site n'utilise aucun cookie ni traceur. La section Télécharger interroge l'API publique de GitHub pour afficher la dernière version.</p>
+    </footer>
+
+    <div class="lightbox" id="lightbox" hidden><img alt="" /><button class="icon-btn" aria-label="Fermer"><i data-icon="x"></i></button></div>
+  </body>
+</html>
