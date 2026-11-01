@@ -36,14 +36,14 @@ export function openSettings() {
           <button class="btn sm" id="st-restore">${icon('archive-restore', 15)}Restaurer le contenu d'origine</button></div>
         <div class="hint">Les articles sont de simples fichiers Markdown : synchronisez ce dossier avec Git, un NAS ou un cloud pour le partager.</div></div>
       <div class="field"><label>Mises à jour</label>
-        <div class="row"><div class="grow"><div class="hint" style="margin:0">Vérifier au démarrage (une fois par jour au plus) les nouvelles versions du logiciel et du contenu publiées sur github.com/JK-ASFC/netwiki. Requêtes anonymes, aucune donnée envoyée.</div></div>
-          <label class="toggle"><input type="checkbox" id="st-upd" ${s.updateConsent ? 'checked' : ''}><span></span></label></div>
-        <div class="row" style="margin-top:8px"><div class="grow"><div class="hint" style="margin:0">Appliquer automatiquement le contenu publié chaque semaine (sinon, demander avant). <span id="st-content-ver"></span></div></div>
-          <label class="toggle"><input type="checkbox" id="st-cauto" ${s.contentAuto !== false ? 'checked' : ''}><span></span></label></div>
-        <div class="row" style="margin-top:8px"><button class="btn sm" id="st-check">${icon('refresh-cw', 15)}Vérifier maintenant</button><span class="grow"></span>
-          <button class="btn sm" id="st-export">${icon('package', 15)}Exporter un paquet…</button>
+        <div class="row"><div class="grow"><b style="font-size:13px">Logiciel</b><div class="hint" style="margin:0">Version installée : ${esc(state.info.version)}. Vérifiée uniquement quand vous le demandez.</div></div>
+          <button class="btn sm" id="st-check-app">${icon('app-window', 15)}Rechercher une mise à jour du logiciel</button></div>
+        <div class="row" style="margin-top:10px"><div class="grow"><b style="font-size:13px">Wiki (.netwiki)</b><div class="hint" style="margin:0">Rechercher automatiquement une mise à jour du wiki à chaque démarrage (contenu publié chaque semaine). La liste des ajouts est affichée avant l'installation. <span id="st-content-ver"></span></div></div>
+          <label class="toggle"><input type="checkbox" id="st-ccheck" ${s.contentCheck ? 'checked' : ''}><span></span></label></div>
+        <div class="row" style="margin-top:8px"><button class="btn sm" id="st-check-content">${icon('refresh-cw', 15)}Rechercher une mise à jour du wiki</button></div>
+        <div class="row" style="margin-top:8px"><button class="btn sm" id="st-export">${icon('package', 15)}Exporter un paquet…</button>
           <button class="btn sm" id="st-import">${icon('package-open', 15)}Importer un paquet…</button></div>
-        <div class="hint">Un paquet <code>.netwiki</code> contient les articles : idéal pour mettre à jour un poste sans Internet. Les paquets officiels sont signés par JK-ASFC ; vos modifications locales ne sont jamais écrasées.</div></div>
+        <div class="hint">Requêtes anonymes vers github.com/JK-ASFC/netwiki, aucune donnée envoyée. Un paquet <code>.netwiki</code> contient les articles : idéal pour mettre à jour un poste sans Internet. Les paquets officiels sont signés par JK-ASFC ; vos modifications locales ne sont jamais écrasées. Après chaque mise à jour, NetWiki redémarre.</div></div>
       <div class="row" style="margin-top:18px"><p style="font-size:12px;color:var(--text-faint)" class="grow">NetWiki ${esc(state.info.version)} · © 2026 JK-ASFC · licence MIT · Electron ${esc(state.info.electron)} · ${esc(state.info.platform)}</p>
         <button class="btn sm ghost" id="st-support">${icon('heart', 15)}Soutenir</button>
         <button class="btn sm ghost" id="st-about">${icon('info', 15)}À propos, confidentialité, RGPD</button></div>`,
@@ -92,12 +92,12 @@ export function openSettings() {
       $('#st-about', b).onclick = () => openAbout();
       $('#st-support', b).onclick = () => openAbout('soutenir');
       $('#st-splash', b).onchange = (e) => actions.saveSettings({ showSplash: e.target.checked });
-      $('#st-upd', b).onchange = (e) => {
-        actions.saveSettings({ updateConsent: e.target.checked });
-        if (e.target.checked) actions.checkUpdates({ manual: true });
+      $('#st-check-app', b).onclick = () => actions.checkAppUpdate();
+      $('#st-check-content', b).onclick = () => actions.checkContentUpdate({ manual: true });
+      $('#st-ccheck', b).onchange = (e) => {
+        actions.saveSettings({ contentCheck: e.target.checked });
+        if (e.target.checked) actions.checkContentUpdate({ manual: true });
       };
-      $('#st-check', b).onclick = () => actions.checkUpdates({ manual: true });
-      $('#st-cauto', b).onchange = (e) => actions.saveSettings({ contentAuto: e.target.checked });
       api.contentInfo?.().then((c) => {
         if (c?.version) $('#st-content-ver', b).textContent = `Contenu installé : version du ${contentDate(c.version)}.`;
       });

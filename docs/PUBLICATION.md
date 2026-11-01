@@ -48,7 +48,7 @@ Le workflow `.github/workflows/contenu.yml` s'exécute **chaque lundi à 5 h UTC
 | `contenu.json` | Index : version datée du contenu (`AAAA.MM.JJ.HHMM`), nombre d'articles, taille, empreintes |
 | `netwiki-contenu.netwiki` | Paquet signé de tous les articles |
 
-Rien n'est publié si aucun article n'a changé. NetWiki lit l'index au démarrage (au plus une fois par jour, avec l'accord de l'utilisateur) et applique le paquet s'il est plus récent que le contenu installé. GitHub suspend les tâches planifiées d'un dépôt public après 60 jours sans activité : un commit ou un lancement manuel les réactive.
+Rien n'est publié si aucun article n'a changé. NetWiki lit l'index à chaque démarrage (si l'utilisateur l'a accepté) ou à la demande ; si le paquet est plus récent que le contenu installé, il affiche la liste des nouveautés, l'applique après accord puis redémarre. GitHub suspend les tâches planifiées d'un dépôt public après 60 jours sans activité : un commit ou un lancement manuel les réactive.
 | Android | `app-debug.apk` (test), `app-release.aab` (Play Store, signé si la clé est configurée) |
 | iOS | `NetWiki-simulateur.zip` (test sur simulateur ; la version App Store nécessite la signature Apple) |
 

@@ -228,7 +228,7 @@ window.netwiki = {
   applyPack: indisponible,
   contentInfo: async () => ({ version: '', source: '', label: '', updated: '' }),
   // Version web / mobile : le contenu est livré avec l'application (mises à jour par les magasins d'applications).
-  checkUpdates: async () => {
+  checkAppUpdate: async () => {
     const res = await fetch('https://api.github.com/repos/JK-ASFC/netwiki/releases/latest', { headers: { Accept: 'application/vnd.github+json' } });
     if (res.status === 404) throw new Error('Aucune version publiée pour le moment.');
     if (!res.ok) throw new Error(`GitHub a répondu ${res.status}.`);
@@ -240,9 +240,10 @@ window.netwiki = {
       for (let i = 0; i < 3; i++) if ((pa[i] || 0) !== (pb[i] || 0)) return (pa[i] || 0) - (pb[i] || 0);
       return 0;
     };
-    const app = { current: VERSION, latest, newer: !!latest && cmp(latest, VERSION) > 0, notes: String(rel.body || '').slice(0, 4000), page: rel.html_url || 'https://github.com/JK-ASFC/netwiki/releases', selfUpdate: null };
-    return { app, appError: null, content: null, contentError: null };
+    return { current: VERSION, latest, newer: !!latest && cmp(latest, VERSION) > 0, notes: String(rel.body || '').slice(0, 4000), page: rel.html_url || 'https://github.com/JK-ASFC/netwiki/releases', selfUpdate: null };
   },
+  checkContentUpdate: async () => null,
+  restartApp: async () => location.reload(),
   downloadContent: indisponible,
   installAppUpdate: indisponible,
   openReleasePage: async (url) => {

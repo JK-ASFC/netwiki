@@ -1,6 +1,6 @@
 // NetWiki — mise à jour du logiciel lui-même sous Windows.
 //  - version portable : le fichier .exe lancé est remplacé sur place par la nouvelle version, puis NetWiki redémarre ;
-//  - version installée : le nouvel installeur est téléchargé puis lancé (il ferme NetWiki et met à jour l'installation).
+//  - version installée : le nouvel installeur est téléchargé, vérifié, puis lancé au redémarrage (NetWiki fermé), et relance NetWiki.
 // Le fichier téléchargé doit figurer, avec son empreinte SHA-256, dans la liste « netwiki-update.json » signée par JK-ASFC.
 // Copyright (c) 2026 JK-ASFC — licence MIT.
 
@@ -70,17 +70,22 @@ async function replacePortable(buf) {
   return { relaunch: target, cleanup: old };
 }
 
-async function launchInstaller(buf, name) {
+/** Enregistre l'installeur vérifié ; il n'est lancé qu'au redémarrage (launchInstaller), NetWiki étant alors fermé. */
+async function saveInstaller(buf, name) {
   const file = path.join(os.tmpdir(), name);
   await fsp.writeFile(file, buf);
-  spawn(file, ['--updated'], { detached: true, stdio: 'ignore' }).unref();
-  return { relaunch: null, cleanup: file };
+  return { relaunch: null, installer: file, cleanup: file };
 }
 
-/** Télécharge, vérifie et installe la nouvelle version. Retourne { mode, relaunch, cleanup }. */
+/** Lance l'installeur en mode mise à jour : il remplace l'installation puis relance NetWiki. */
+function launchInstaller(file) {
+  spawn(file, ['--updated', '--force-run'], { detached: true, stdio: 'ignore' }).unref();
+}
+
+/** Télécharge, vérifie et prépare la nouvelle version. Retourne { mode, relaunch, installer, cleanup }. */
 async function install(release, currentVersion, onProgress) {
   const { mode: m, buf, name } = await fetchVerified(release, currentVersion, onProgress);
-  const r = m === 'portable' ? await replacePortable(buf) : await launchInstaller(buf, name);
+  const r = m === 'portable' ? await replacePortable(buf) : await saveInstaller(buf, name);
   return { mode: m, ...r };
 }
 
@@ -100,4 +105,4 @@ async function cleanup(files) {
   return keep;
 }
 
-module.exports = { mode, install, cleanup, MANIFEST_ASSET, PORTABLE_ASSET };
+module.exports = { mode, install, launchInstaller, cleanup, MANIFEST_ASSET, PORTABLE_ASSET };
