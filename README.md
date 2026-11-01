@@ -26,8 +26,8 @@ Vous pouvez aussi mettre une ⭐ au dépôt, signaler une erreur ou proposer un 
 
 | Plateforme | Format | Compilation |
 | --- | --- | --- |
-| Windows | Installeur NSIS et version portable | Locale (`npm run dist:win`) ou GitHub Actions |
-| macOS | DMG et ZIP | GitHub Actions (runner macOS) |
+| Windows | Installeur NSIS aux couleurs de NetWiki (sécurité, soutien) et version portable | Locale (`npm run dist:win`) ou GitHub Actions |
+| macOS | DMG personnalisé et ZIP | GitHub Actions (runner macOS) |
 | Linux | AppImage et .deb | GitHub Actions (runner Ubuntu) |
 | Android | APK de test, AAB pour le Play Store | GitHub Actions (Capacitor, dossier `mobile/`) |
 | iOS | Application pour simulateur ; App Store après signature Apple | GitHub Actions (Capacitor) |
@@ -190,7 +190,7 @@ npm run dist:linux   # Linux : AppImage + .deb (à lancer sous Linux)
 
 Chaque système se construit sur son propre OS. Le workflow `.github/workflows/build.yml` produit les trois automatiquement sur GitHub Actions (déclenché par un tag `v*` ou manuellement).
 
-> Les binaires ne sont pas signés : Windows SmartScreen et macOS Gatekeeper afficheront un avertissement. Pour une diffusion large, configurer un certificat de signature de code (variables `CSC_LINK` / `CSC_KEY_PASSWORD`, notarisation Apple).
+> Les binaires ne sont pas encore signés : Windows SmartScreen (« Windows a protégé votre ordinateur » → *Informations complémentaires* → *Exécuter quand même*) et macOS Gatekeeper (clic droit → *Ouvrir*) affichent un avertissement. Solutions (SignPath Foundation gratuit pour l'open source, Azure Artifact Signing, certificat OV/EV, Microsoft Store) : voir [docs/PUBLICATION.md](docs/PUBLICATION.md#3-signature-de-code-supprime-les-avertissements).
 
 ## Où sont les données ?
 
