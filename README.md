@@ -5,6 +5,8 @@
 [![Liberapay](https://img.shields.io/liberapay/patrons/JK-ASFC.svg?logo=liberapay)](https://liberapay.com/JK-ASFC/donate)
 [![Liberapay](https://img.shields.io/liberapay/receives/JK-ASFC.svg?logo=liberapay)](https://liberapay.com/JK-ASFC/donate)
 
+🌐 **Site officiel : [jk-asfc.github.io/netwiki](https://jk-asfc.github.io/netwiki/)** — présentation, exemples, démo et téléchargements.
+
 Application de bureau **Windows / macOS / Linux** (Electron) pour documenter la présentation, l'installation et la configuration des services d'infrastructure. Les articles sont de simples fichiers **Markdown** stockés localement : ajout, modification, suppression, déplacement et recherche plein texte hors ligne.
 
 ## Soutenir le projet

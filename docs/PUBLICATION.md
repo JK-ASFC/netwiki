@@ -105,3 +105,14 @@ node scripts/pack-content.js                # paquet de contenu signé dans rele
 ## Différences de la version mobile
 
 La version Android/iOS reprend la même interface et tout le contenu, sans accès au système de fichiers : les articles modifiés ou créés sont conservés dans le stockage interne de l'application (IndexedDB). L'export/import de paquets et les pièces jointes images sont réservés à la version de bureau ; les mises à jour passent par les magasins d'applications.
+
+## Site de présentation (GitHub Pages)
+
+Le site **https://jk-asfc.github.io/netwiki/** est généré à partir du dossier `site/` (HTML, CSS, JavaScript, captures) et du contenu du wiki : chiffres, catégories et démo des commandes sont recalculés à chaque publication (`scripts/build-site.mjs`).
+
+1. **Une seule fois** : *Settings → Pages → Build and deployment → Source* : choisissez **GitHub Actions**.
+2. Le workflow `.github/workflows/site.yml` publie le site à chaque modification de `site/` ou de `content/` sur `main` (ou à la demande : *Actions → Site web → Run workflow*).
+3. Aperçu local : `node scripts/build-site.mjs` puis `npx serve _site` (ou `python3 -m http.server -d _site`).
+
+La section Télécharger lit la dernière version via l'API publique de GitHub : les liens et la version se mettent à jour seuls après chaque Release. Le site ne dépose aucun cookie et n'utilise aucun traceur.
+
