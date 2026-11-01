@@ -2116,6 +2116,37 @@ textarea.input {
   padding-left: 18px;
   line-height: 1.7;
 }
+.update-recap {
+  max-height: 300px;
+  overflow: auto;
+  margin-top: 10px;
+  padding: 4px 12px 10px;
+  border-radius: 8px;
+  background: var(--surface-2, rgba(127, 127, 127, 0.08));
+  font-size: 13px;
+}
+.recap-h {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 6px;
+  font-size: 13.5px;
+}
+.recap-cat {
+  margin: 6px 0 0 4px;
+}
+.recap-cat ul {
+  margin: 2px 0 0;
+  padding-left: 18px;
+  line-height: 1.6;
+}
+.recap-cat li .i {
+  vertical-align: -2px;
+  margin-right: 4px;
+}
+.recap-svc {
+  color: var(--text-dim);
+}
 
 /* ---------------------------------------------------------------- petits écrans (version mobile Android / iOS, fenêtres étroites)
    Copyright (c) 2026 JK-ASFC — licence MIT */

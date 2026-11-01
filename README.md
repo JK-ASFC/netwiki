@@ -20,7 +20,7 @@ Vous pouvez aussi mettre une ⭐ au dépôt, signaler une erreur ou proposer un 
 - **Licence MIT** — Copyright © 2026 **JK-ASFC** ([LICENSE](LICENSE)) : utilisation, modification et redistribution libres, à condition de conserver la mention de copyright et la licence. L'attribution est vérifiée au démarrage et affichée dans *Paramètres → À propos*.
 - **Confidentialité** : aucune donnée collectée, aucune télémétrie, aucune connexion sans accord ([PRIVACY.md](PRIVACY.md), [RGPD.md](RGPD.md)).
 - **Sécurité** : mesures et signalement des vulnérabilités dans [SECURITY.md](SECURITY.md).
-- **Mises à jour** (facultatives, avec votre accord) : le **contenu** est publié chaque semaine sous forme de paquet `.netwiki` signé (Ed25519) par JK-ASFC et appliqué automatiquement ; le **logiciel** se met à jour depuis les [Releases GitHub](https://github.com/JK-ASFC/netwiki/releases) — sous Windows, l'exécutable portable se remplace lui-même et l'installeur se lance tout seul, après vérification d'une empreinte signée. Export/import de paquets pour les postes hors ligne.
+- **Mises à jour** (facultatives, avec votre accord) : le **wiki** est publié chaque semaine sous forme de paquet `.netwiki` signé (Ed25519) par JK-ASFC ; NetWiki le recherche à chaque démarrage si vous l'avez accepté (ou à la demande), affiche la liste des nouveautés, l'applique après votre accord puis redémarre. Le **logiciel** n'est vérifié qu'à votre demande (*Paramètres → Mises à jour*), depuis les [Releases GitHub](https://github.com/JK-ASFC/netwiki/releases) — sous Windows, l'exécutable portable est remplacé ou l'installeur est lancé au redémarrage, après vérification d'une empreinte signée. Export/import de paquets pour les postes hors ligne.
 
 ## Plateformes
 

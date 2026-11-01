@@ -375,7 +375,47 @@ handle('shell:open-external', async (url) => {
 // ---------------------------------------------------------------- paquets de contenu et mises à jour
 
 const pendingImports = new Map();
-let lastCheck = null;
+let lastApp = null; // dernière Release trouvée (logiciel)
+let lastContent = null; // dernier contenu hebdomadaire trouvé
+let pendingAppUpdate = null; // nouvelle version prête : { mode, relaunch, installer }
+
+/** Liste lisible des changements d'un paquet (catégorie, service, titre) pour le récapitulatif avant mise à jour. */
+function describeChanges(files, plan) {
+  const root = dataDir();
+  const titles = new Map();
+  const folderTitle = (dir) => {
+    if (titles.has(dir)) return titles.get(dir);
+    let raw = files.get(`${dir}/_folder.json`);
+    if (!raw) {
+      try {
+        raw = fs.readFileSync(path.join(root, ...dir.split('/'), '_folder.json'));
+      } catch {}
+    }
+    let t = dir.split('/').pop().replace(/^\d+-/, '');
+    try {
+      t = String(JSON.parse(raw.toString('utf8')).title || t);
+    } catch {}
+    titles.set(dir, t);
+    return t;
+  };
+  const describe = (rel) => {
+    const parts = rel.split('/');
+    let title = parts[parts.length - 1];
+    if (rel.endsWith('.md')) {
+      const m = /^title:\s*(.+)$/m.exec(files.get(rel).toString('utf8').slice(0, 3000));
+      if (m) title = m[1].trim().replace(/^["']|["']$/g, '');
+    }
+    return {
+      path: rel,
+      title: title.slice(0, 160),
+      category: parts.length > 1 ? folderTitle(parts[0]) : 'Accueil',
+      service: parts.length > 2 && parts[1] !== '_assets' ? folderTitle(parts.slice(0, 2).join('/')) : '',
+      kind: rel.endsWith('.md') ? 'article' : 'image',
+    };
+  };
+  const list = (rels) => rels.filter((r) => !r.endsWith('_folder.json')).slice(0, 500).map(describe);
+  return { add: list(plan.add), update: list(plan.update) };
+}
 
 /** Vérifie un paquet et prépare son import sans rien écrire ; le renderer confirme ensuite avec le jeton. */
 async function prepareImport(buf, { requireSignature, source }) {
@@ -385,7 +425,7 @@ async function prepareImport(buf, { requireSignature, source }) {
   pendingImports.clear();
   pendingImports.set(token, { files: p.files, plan, signed: p.signed, meta: p.meta, source });
   const counts = Object.fromEntries(Object.entries(plan).map(([k, v]) => [k, v.length]));
-  return { token, signed: p.signed, meta: p.meta, counts, keepSample: plan.keep.slice(0, 8) };
+  return { token, signed: p.signed, meta: p.meta, counts, keepSample: plan.keep.slice(0, 8), details: describeChanges(p.files, plan) };
 }
 
 handle('pack:export', async () => {
@@ -428,29 +468,28 @@ handle('pack:apply', async (token) => {
 
 handle('content:info', async () => content.readContentState(dataDir()));
 
-/** Vérifie le logiciel (Release) et le contenu (branche « contenu ») ; mémorise le résultat pour les téléchargements. */
-handle('updates:check', async () => {
+/** Logiciel seulement (à la demande de l'utilisateur) : dernière Release GitHub. */
+handle('updates:check-app', async () => {
+  lastApp = await updates.checkApp(APP_VERSION);
+  return { ...lastApp, assets: undefined, selfUpdate: selfupdate.mode() };
+});
+
+/** Contenu du wiki seulement : index de la branche « contenu » (null si rien n'est encore publié). */
+handle('updates:check-content', async () => {
   const installed = (await content.readContentState(dataDir())).version;
-  const [a, c] = await Promise.allSettled([updates.checkApp(APP_VERSION), updates.checkContent(installed, APP_VERSION)]);
-  if (a.status === 'rejected' && c.status === 'rejected') throw a.reason;
-  lastCheck = { app: a.status === 'fulfilled' ? a.value : null, content: c.status === 'fulfilled' ? c.value : null };
-  const appInfo = lastCheck.app && { ...lastCheck.app, assets: undefined, selfUpdate: selfupdate.mode() };
-  return {
-    app: appInfo,
-    appError: a.status === 'rejected' ? a.reason.message : null,
-    content: lastCheck.content && { ...lastCheck.content, url: undefined },
-    contentError: c.status === 'rejected' ? c.reason.message : null,
-  };
+  lastContent = await updates.checkContent(installed, APP_VERSION);
+  return lastContent && { ...lastContent, url: undefined };
 });
 
 handle('updates:download-content', async () => {
-  if (!lastCheck?.content) throw new Error('Vérifiez d’abord les mises à jour.');
-  const buf = await updates.download(lastCheck.content.url, APP_VERSION, { maxBytes: updates.LIMITS.pack });
+  if (!lastContent) throw new Error('Recherchez d’abord une mise à jour du wiki.');
+  const buf = await updates.download(lastContent.url, APP_VERSION, { maxBytes: updates.LIMITS.pack });
   return prepareImport(buf, { requireSignature: true, source: 'hebdomadaire' });
 });
 
+/** Télécharge et vérifie la nouvelle version ; elle est installée au redémarrage (app:restart). */
 handle('updates:install-app', async () => {
-  const rel = lastCheck?.app;
+  const rel = lastApp;
   if (!rel?.newer) throw new Error('Aucune nouvelle version à installer.');
   const progress = (received, total) => {
     if (win && !win.isDestroyed()) win.webContents.send('updates:progress', { received, total });
@@ -458,12 +497,27 @@ handle('updates:install-app', async () => {
   const r = await selfupdate.install(rel, APP_VERSION, progress);
   settings.cleanupFiles = [...(settings.cleanupFiles || []), r.cleanup].filter(Boolean);
   saveSettings();
-  // Laisse au renderer le temps d'afficher « redémarrage », puis relance la nouvelle version (portable) ou laisse l'installeur faire.
-  setTimeout(() => {
-    if (r.relaunch) app.relaunch({ execPath: r.relaunch, args: [] });
-    app.quit();
-  }, 800);
+  pendingAppUpdate = r;
   return { mode: r.mode };
+});
+
+/**
+ * Redémarre NetWiki pour charger la nouvelle version ou le nouveau contenu.
+ * Version portable : on relance le fichier .exe d'origine (process.execPath pointe vers un dossier temporaire
+ * supprimé à la fermeture). Version installée mise à jour : l'installeur prend le relais et relance NetWiki.
+ */
+handle('app:restart', async () => {
+  setTimeout(() => {
+    if (pendingAppUpdate?.mode === 'installer') {
+      selfupdate.launchInstaller(pendingAppUpdate.installer);
+      app.quit();
+      return;
+    }
+    const exe = pendingAppUpdate?.relaunch || process.env.PORTABLE_EXECUTABLE_FILE;
+    if (exe) app.relaunch({ execPath: exe, args: [] });
+    else app.relaunch();
+    app.quit();
+  }, 400);
 });
 
 handle('updates:open-page', async (url) => {
