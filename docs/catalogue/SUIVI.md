@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 179 (14 %) | 408 | 1 | 723 (55 %) |
+| 1311 | 179 (14 %) | 429 | 1 | 702 (54 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -563,7 +563,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OpenEDR | EDR open source | Windows, Linux | 🆕 fait (lot 61) | `16-securite/29-openedr` |
 | XCP-ng Xen Orchestra (community) | Gestion hyperviseur | Linux, Windows, macOS via navigateur | 🆕 fait (lot 48) | `13-conteneurs/15-xcp-ng-xen` |
 
-## 11. AUTOMATISATION, CONFIGURATION ET INFRASTRUCTURE AS CODE — 29/45
+## 11. AUTOMATISATION, CONFIGURATION ET INFRASTRUCTURE AS CODE — 45/45
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -595,33 +595,33 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | NAPALM | Automatisation réseau | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/16-automatisation-reseau-python` |
 | Nornir Salt | Automatisation réseau | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/16-automatisation-reseau-python` |
 | StackStorm | Automatisation événementielle | Linux | 🆕 fait (lot 62) | `17-automatisation/17-stackstorm` |
-| Huginn | Automatisation événementielle | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
+| Huginn | Automatisation événementielle | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/18-workflows-low-code` |
 | n8n (source available/community) | Automatisation workflows | Windows, Linux, macOS | ✅ existant | `21-outils/05-ia-productivite/06-n8n` |
-| Node-RED | Automatisation low-code | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Activepieces (community) | Automatisation workflows | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Windmill (community) | Automatisation scripts et workflows | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Kestra | Orchestration workflows | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Apache Airflow | Orchestration pipelines | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Prefect | Orchestration workflows | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Dagster | Orchestration data | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Temporal | Orchestration durable | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Netflix Conductor | Orchestration microservices | Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Apache DolphinScheduler | Orchestration tâches | Linux | ⏳ à faire | → `17-automatisation` |
-| Molecule | Tests rôles Ansible | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Testinfra | Tests infrastructure | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| InSpec (core open source) | Tests conformité | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Serverspec | Tests infrastructure | Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| KitchenCI | Tests infrastructure | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
+| Node-RED | Automatisation low-code | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/18-workflows-low-code` |
+| Activepieces (community) | Automatisation workflows | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/18-workflows-low-code` |
+| Windmill (community) | Automatisation scripts et workflows | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/18-workflows-low-code` |
+| Kestra | Orchestration workflows | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/19-orchestration-donnees` |
+| Apache Airflow | Orchestration pipelines | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/19-orchestration-donnees` |
+| Prefect | Orchestration workflows | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/19-orchestration-donnees` |
+| Dagster | Orchestration data | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/19-orchestration-donnees` |
+| Temporal | Orchestration durable | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/20-temporal-conductor` |
+| Netflix Conductor | Orchestration microservices | Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/20-temporal-conductor` |
+| Apache DolphinScheduler | Orchestration tâches | Linux | 🆕 fait (lot 63) | `17-automatisation/19-orchestration-donnees` |
+| Molecule | Tests rôles Ansible | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
+| Testinfra | Tests infrastructure | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
+| InSpec (core open source) | Tests conformité | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
+| Serverspec | Tests infrastructure | Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
+| KitchenCI | Tests infrastructure | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 
-## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 11/80
+## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 16/80
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| Matrix Synapse | Serveur messagerie Matrix | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Dendrite | Serveur Matrix | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Conduit | Serveur Matrix léger | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Continuwuity | Serveur Matrix | Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Element Server Suite (components) | Messagerie Matrix | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
+| Matrix Synapse | Serveur messagerie Matrix | Windows, Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
+| Dendrite | Serveur Matrix | Windows, Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
+| Conduit | Serveur Matrix léger | Windows, Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
+| Continuwuity | Serveur Matrix | Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
+| Element Server Suite (components) | Messagerie Matrix | Windows, Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
 | Mattermost Team Edition | Chat équipe | Linux, Windows via conteneur | ⏳ à faire | → `10-messagerie` |
 | Rocket.Chat Community | Chat équipe | Linux, Windows via conteneur | ⏳ à faire | → `10-messagerie` |
 | Zulip | Chat équipe | Linux | ⏳ à faire | → `10-messagerie` |

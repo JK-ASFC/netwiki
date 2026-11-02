@@ -1,0 +1,1 @@
+{ "title": "Temporal et Conductor", "icon": "timer", "color": "#141414", "description": "Orchestration durable de processus métier et de microservices : workflows reprenables après panne, temporisations longues, compensation." }

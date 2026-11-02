@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-338 capture(s) attendue(s) dans 92 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+351 capture(s) attendue(s) dans 96 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -300,6 +300,14 @@
 | `content/09-fichiers-partage/37-partage-collaboration/_assets/cozy-drive.png` | Cozy Drive — liste des fichiers | `04-interface-graphique.md` |
 | `content/09-fichiers-partage/37-partage-collaboration/_assets/projectsend-fichier.png` | ProjectSend — attribution d'un fichier à un client | `04-interface-graphique.md` |
 | `content/09-fichiers-partage/37-partage-collaboration/_assets/pingvin-share.png` | Pingvin Share — création d'un partage | `04-interface-graphique.md` |
+
+## 10-messagerie/11-matrix
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/11-matrix/_assets/element-salons.png` | Element — liste des salons et espaces | `03-interface-graphique.md` |
+| `content/10-messagerie/11-matrix/_assets/element-verification.png` | Element — vérification d'une nouvelle session | `03-interface-graphique.md` |
+| `content/10-messagerie/11-matrix/_assets/synapse-admin-utilisateurs.png` | synapse-admin — liste des utilisateurs | `03-interface-graphique.md` |
 
 ## 11-bases-de-donnees/11-duckdb
 
@@ -669,6 +677,31 @@
 | `content/17-automatisation/14-rudder/_assets/rudder-tableau.png` | Rudder — tableau de bord de conformité | `02-interface-graphique.md` |
 | `content/17-automatisation/14-rudder/_assets/rudder-regle.png` | Rudder — conformité d'une règle par nœud | `02-interface-graphique.md` |
 | `content/17-automatisation/14-rudder/_assets/rudder-editeur.png` | Rudder — éditeur de techniques | `02-interface-graphique.md` |
+
+## 17-automatisation/18-workflows-low-code
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/17-automatisation/18-workflows-low-code/_assets/node-red-editeur.png` | Node-RED — éditeur de flux | `01-node-red.md` |
+| `content/17-automatisation/18-workflows-low-code/_assets/activepieces-flux.png` | Activepieces — éditeur de flux | `02-huginn-activepieces-windmill.md` |
+| `content/17-automatisation/18-workflows-low-code/_assets/windmill-script.png` | Windmill — script avec formulaire généré | `02-huginn-activepieces-windmill.md` |
+
+## 17-automatisation/19-orchestration-donnees
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/17-automatisation/19-orchestration-donnees/_assets/airflow-grille.png` | Airflow — vue grille d'un DAG | `03-interface-graphique.md` |
+| `content/17-automatisation/19-orchestration-donnees/_assets/airflow-journal.png` | Airflow — journal d'une tâche | `03-interface-graphique.md` |
+| `content/17-automatisation/19-orchestration-donnees/_assets/kestra-editeur.png` | Kestra — éditeur de flux et topologie | `03-interface-graphique.md` |
+| `content/17-automatisation/19-orchestration-donnees/_assets/prefect-executions.png` | Prefect — exécutions d'un flux | `03-interface-graphique.md` |
+| `content/17-automatisation/19-orchestration-donnees/_assets/dagster-actifs.png` | Dagster — graphe des actifs | `03-interface-graphique.md` |
+| `content/17-automatisation/19-orchestration-donnees/_assets/dolphinscheduler-workflow.png` | DolphinScheduler — définition visuelle d'un workflow | `03-interface-graphique.md` |
+
+## 17-automatisation/20-temporal-conductor
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/17-automatisation/20-temporal-conductor/_assets/temporal-ui.png` | Temporal — interface web, historique d'un workflow | `01-presentation-installation.md` |
 
 ## 18-infrastructure-systeme/08-netbox-nautobot
 
