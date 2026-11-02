@@ -7,6 +7,8 @@
 
 🌐 **Site officiel : [jk-asfc.github.io/netwiki](https://jk-asfc.github.io/netwiki/)** — présentation, exemples, démo et téléchargements.
 
+🤖 **Veille et agent IA** : nouvelles versions des services surveillées chaque semaine, mises à jour proposées en demandes de fusion — voir [docs/AGENT-IA.md](docs/AGENT-IA.md). Catalogue des services à documenter : [docs/catalogue/SUIVI.md](docs/catalogue/SUIVI.md).
+
 Application de bureau **Windows / macOS / Linux** (Electron) pour documenter la présentation, l'installation et la configuration des services d'infrastructure. Les articles sont de simples fichiers **Markdown** stockés localement : ajout, modification, suppression, déplacement et recherche plein texte hors ligne.
 
 ## Soutenir le projet
