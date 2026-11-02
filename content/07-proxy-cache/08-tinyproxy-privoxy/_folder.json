@@ -1,0 +1,1 @@
+{ "title": "Tinyproxy et Privoxy", "icon": "filter", "color": "#64748b", "description": "Proxys HTTP sortants légers : Tinyproxy (proxy minimal avec filtrage et ACL) et Privoxy (proxy filtrant axé vie privée, chaînage vers Tor)." }

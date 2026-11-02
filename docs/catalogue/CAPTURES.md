@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-180 capture(s) attendue(s) dans 34 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+183 capture(s) attendue(s) dans 35 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -91,6 +91,14 @@
 | `content/04-aaa/03-packetfence-opennac/_assets/packetfence-switch-roles.png` | PacketFence — configuration d'un commutateur (rôles → VLAN) | `03-interface-graphique.md` |
 | `content/04-aaa/03-packetfence-opennac/_assets/packetfence-portail-captif.png` | PacketFence — portail captif d'enregistrement | `03-interface-graphique.md` |
 | `content/04-aaa/03-packetfence-opennac/_assets/opennac-politiques.png` | OpenNAC — console, liste des politiques | `03-interface-graphique.md` |
+
+## 07-proxy-cache/09-mitmproxy
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/07-proxy-cache/09-mitmproxy/_assets/mitmweb-flux.png` | mitmweb — liste des flux et détail d'une requête JSON | `01-presentation-utilisation.md` |
+| `content/07-proxy-cache/09-mitmproxy/_assets/mitmweb-interception.png` | mitmweb — interception et modification d'une requête | `01-presentation-utilisation.md` |
+| `content/07-proxy-cache/09-mitmproxy/_assets/mitmproxy-console.png` | mitmproxy — interface console | `01-presentation-utilisation.md` |
 
 ## 08-acces-distant-vpn/11-netbird-nebula
 

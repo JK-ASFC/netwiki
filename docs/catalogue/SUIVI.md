@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 101 | 0 | 1037 (79 %) |
+| 1311 | 173 (13 %) | 107 | 0 | 1031 (79 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -153,7 +153,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | IPsec-tools | VPN IPsec | BSD, Linux | ✅ existant | `08-acces-distant-vpn/04-strongswan` |
 | Mullvad VPN app | Client VPN (composants open source) | Windows, Linux, macOS | 🆕 fait (lot 51) | `08-acces-distant-vpn/13-softether-pritunl-mullvad` |
 
-## 4. PROXY, REVERSE PROXY, LOAD BALANCING ET PASSERELLES — 8/34
+## 4. PROXY, REVERSE PROXY, LOAD BALANCING ET PASSERELLES — 14/34
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -162,14 +162,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Apache HTTP Server | Serveur web | Windows, Linux, macOS | ✅ existant | `05-web/02-apache` |
 | Caddy | Serveur web et proxy TLS automatique | Windows, Linux, macOS | ✅ existant | `05-web/04-caddy` |
 | Traefik Proxy | Reverse proxy | Windows, Linux, macOS | ✅ existant | `07-proxy-cache/04-traefik` |
-| Envoy Proxy | Proxy L7 | Windows, Linux, macOS | ⏳ à faire | → `07-proxy-cache` |
+| Envoy Proxy | Proxy L7 | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/07-envoy` |
 | Varnish Cache | Cache HTTP | Linux, BSD | ✅ existant | `07-proxy-cache/03-varnish` |
 | Squid | Proxy cache | Windows, Linux, macOS | ✅ existant | `07-proxy-cache/02-squid` |
-| Tinyproxy | Proxy HTTP léger | Linux, BSD | ⏳ à faire | → `07-proxy-cache` |
-| Privoxy | Proxy filtrant | Windows, Linux, macOS | ⏳ à faire | → `07-proxy-cache` |
-| mitmproxy | Proxy d'inspection HTTP(S) | Windows, Linux, macOS | ⏳ à faire | → `07-proxy-cache` |
-| Apache Traffic Server | Proxy/cache | Linux, BSD | ⏳ à faire | → `07-proxy-cache` |
-| ATS | Proxy/cache | Linux, BSD | ⏳ à faire | → `07-proxy-cache` |
+| Tinyproxy | Proxy HTTP léger | Linux, BSD | 🆕 fait (lot 52) | `07-proxy-cache/08-tinyproxy-privoxy` |
+| Privoxy | Proxy filtrant | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/08-tinyproxy-privoxy` |
+| mitmproxy | Proxy d'inspection HTTP(S) | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/09-mitmproxy` |
+| Apache Traffic Server | Proxy/cache | Linux, BSD | 🆕 fait (lot 52) | `07-proxy-cache/10-apache-traffic-server` |
+| ATS | Proxy/cache | Linux, BSD | 🆕 fait (lot 52) | `07-proxy-cache/10-apache-traffic-server` |
 | OpenResty | Plateforme NGINX/Lua | Linux, Windows | ⏳ à faire | → `07-proxy-cache` |
 | H2O | Serveur web HTTP/2/3 | Linux, macOS | ⏳ à faire | → `07-proxy-cache` |
 | Lighttpd | Serveur web léger | Windows, Linux, macOS | ⏳ à faire | → `07-proxy-cache` |

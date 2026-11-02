@@ -1,0 +1,1 @@
+{ "title": "mitmproxy", "icon": "scan-search", "color": "#c2410c", "description": "Proxy d'interception HTTP(S) pour déboguer et tester : mitmproxy (console), mitmweb (interface web), mitmdump, modes de proxy, certificat d'interception, scripts Python." }
