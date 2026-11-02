@@ -1,0 +1,1 @@
+{ "title": "KVM, QEMU et libvirt", "icon": "cpu", "color": "#ff6600", "description": "Virtualisation native de Linux : hyperviseur KVM, émulateur QEMU (Linux, Windows, macOS), gestion par libvirt (virsh), virt-manager, GNOME Boxes et Cockpit." }

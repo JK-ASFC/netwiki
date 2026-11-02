@@ -240,9 +240,10 @@ const services = parseCatalogue().map((e) => {
   // Doublons du catalogue (même service listé dans deux sections) : même fiche, identifiant suffixé
   if (seen.has(id)) id = `${id}-${e.section}`;
   seen.set(id, true);
-  const prev = oldById.get(id) || {};
-  const wiki = prev.wiki || match(e.nom, idx);
-  const statut = prev.statut && prev.statut !== 'a-faire' ? prev.statut : wiki ? 'existant' : 'a-faire';
+  const prev = oldById.get(id);
+  // Une fois le service suivi, seul l'état enregistré fait foi (une nouvelle fiche ne doit pas devenir « existante »).
+  const wiki = prev ? prev.wiki : match(e.nom, idx);
+  const statut = prev ? prev.statut : wiki ? 'existant' : 'a-faire';
   return {
     id,
     nom: e.nom,
@@ -251,10 +252,10 @@ const services = parseCatalogue().map((e) => {
     section: e.section,
     statut,
     wiki: wiki || null,
-    cible: prev.cible || (wiki ? wiki.split('/')[0] : cible(e)),
-    lot: prev.lot ?? null,
-    depot: prev.depot ?? null,
-    eol: prev.eol ?? null,
+    cible: prev?.cible || (wiki ? wiki.split('/')[0] : cible(e)),
+    lot: prev?.lot ?? null,
+    depot: prev?.depot ?? null,
+    eol: prev?.eol ?? null,
     _sectionTitre: e.sectionTitre,
   };
 });
@@ -266,6 +267,28 @@ for (const s of services) {
 }
 
 const args = process.argv.slice(2);
+const opt = (k) => {
+  const i = args.indexOf(k);
+  return i >= 0 ? args[i + 1] : undefined;
+};
+// node scripts/catalogue.mjs --marquer id1,id2 --wiki 13-conteneurs/14-kvm --lot 48 [--statut ameliore] [--depot o/r] [--eol produit]
+if (args[0] === '--marquer') {
+  const ids = String(args[1] || '').split(',').filter(Boolean);
+  for (const id of ids) {
+    const s = services.find((x) => x.id === id);
+    if (!s) {
+      console.error(`Service inconnu : ${id}`);
+      process.exitCode = 1;
+      continue;
+    }
+    s.statut = opt('--statut') || (s.statut === 'existant' ? 'ameliore' : 'fait');
+    if (opt('--wiki')) s.wiki = opt('--wiki');
+    if (opt('--wiki')) s.cible = opt('--wiki').split('/')[0];
+    if (opt('--lot')) s.lot = /^\d+$/.test(opt('--lot')) ? Number(opt('--lot')) : opt('--lot');
+    if (opt('--depot')) s.depot = opt('--depot');
+    if (opt('--eol')) s.eol = opt('--eol');
+  }
+}
 if (args[0] === '--suivant') {
   const n = Number(args[1]) || 10;
   const next = services.filter((s) => s.statut === 'a-faire').slice(0, n);

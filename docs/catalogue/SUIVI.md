@@ -4,22 +4,22 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 172 (13 %) | 0 | 0 | 1139 (87 %) |
+| 1311 | 172 (13 %) | 8 | 0 | 1131 (86 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
-## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 5/51
+## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 12/51
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Proxmox VE | Virtualisation bare-metal | Debian/Linux | ✅ existant | `13-conteneurs/11-proxmox-ve` |
-| XCP-ng | Hyperviseur | Linux | ⏳ à faire | → `13-conteneurs` |
-| KVM | Hyperviseur | Linux | ⏳ à faire | → `13-conteneurs` |
-| QEMU | Emulation et virtualisation | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
+| XCP-ng | Hyperviseur | Linux | 🆕 fait (lot 48) | `13-conteneurs/15-xcp-ng-xen` |
+| KVM | Hyperviseur | Linux | 🆕 fait (lot 48) | `13-conteneurs/14-kvm-qemu-libvirt` |
+| QEMU | Emulation et virtualisation | Windows, Linux, macOS | 🆕 fait (lot 48) | `13-conteneurs/14-kvm-qemu-libvirt` |
 | VirtualBox | Virtualisation poste de travail | Windows, Linux, macOS | ✅ existant | `13-conteneurs/12-virtualbox` |
-| UTM | Virtualisation poste de travail | macOS | ⏳ à faire | → `13-conteneurs` |
-| GNOME Boxes | Virtualisation poste de travail | Linux | ⏳ à faire | → `13-conteneurs` |
-| libvirt | Gestion des hyperviseurs | Linux | ⏳ à faire | → `13-conteneurs` |
+| UTM | Virtualisation poste de travail | macOS | 🆕 fait (lot 48) | `13-conteneurs/16-utm` |
+| GNOME Boxes | Virtualisation poste de travail | Linux | 🆕 fait (lot 48) | `13-conteneurs/14-kvm-qemu-libvirt` |
+| libvirt | Gestion des hyperviseurs | Linux | 🆕 fait (lot 48) | `13-conteneurs/14-kvm-qemu-libvirt` |
 | oVirt | Gestion de virtualisation | Linux | ⏳ à faire | → `13-conteneurs` |
 | OpenStack | Cloud privé IaaS | Linux | ⏳ à faire | → `13-conteneurs` |
 | OpenNebula | Cloud et virtualisation | Linux | ⏳ à faire | → `13-conteneurs` |
@@ -34,7 +34,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Kata Containers | Conteneurs isolés | Linux | ⏳ à faire | → `13-conteneurs` |
 | Firecracker | MicroVM | Linux | ⏳ à faire | → `13-conteneurs` |
 | bhyve | Hyperviseur | FreeBSD | ⏳ à faire | → `13-conteneurs` |
-| Xen | Hyperviseur | Linux, BSD | ⏳ à faire | → `13-conteneurs` |
+| Xen | Hyperviseur | Linux, BSD | 🆕 fait (lot 48) | `13-conteneurs/15-xcp-ng-xen` |
 | Bareos | Sauvegarde serveur | Windows, Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
 | FreeBSD | Système d'exploitation serveur | x86, ARM | ⏳ à faire | → `24-systemes-exploitation` |
 | OpenBSD | Système d'exploitation | x86, ARM | ⏳ à faire | → `24-systemes-exploitation` |
@@ -494,7 +494,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Masscan | Scan réseau | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
 | Netdata Cloud Agent (agent) | Métriques hôte | Windows, Linux, macOS | ✅ existant | `06-supervision/07-netdata` |
 
-## 10. SECURITE, PARE-FEU, SIEM, SCAN ET PKI — 16/64
+## 10. SECURITE, PARE-FEU, SIEM, SCAN ET PKI — 17/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -561,7 +561,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | AIDE | Contrôle intégrité fichiers | Linux, Unix | ✅ existant | `16-securite/03-aide` |
 | Lynis Enterprise alternatives | Audit système (catégorie) | Linux | ✅ existant | `16-securite/08-lynis` |
 | OpenEDR | EDR open source | Windows, Linux | ⏳ à faire | → `16-securite` |
-| XCP-ng Xen Orchestra (community) | Gestion hyperviseur | Linux, Windows, macOS via navigateur | ⏳ à faire | → `16-securite` |
+| XCP-ng Xen Orchestra (community) | Gestion hyperviseur | Linux, Windows, macOS via navigateur | 🆕 fait (lot 48) | `13-conteneurs/15-xcp-ng-xen` |
 
 ## 11. AUTOMATISATION, CONFIGURATION ET INFRASTRUCTURE AS CODE — 6/45
 

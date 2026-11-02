@@ -1,0 +1,1 @@
+{ "title": "XCP-ng et Xen", "icon": "server-cog", "color": "#00b4d8", "description": "Hyperviseur Xen et sa distribution XCP-ng : installation, pools, stockage, réseau, Xen Orchestra (interface web, sauvegardes), outil xe et Xen sur Debian." }
