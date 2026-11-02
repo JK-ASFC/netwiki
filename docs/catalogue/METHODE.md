@@ -80,7 +80,7 @@ Ne jamais insérer une image qui n'existe pas. Placer un **emplacement de captur
 - Exemples **copiables tels quels** en CLI : aucune variable non expliquée, pas de `…` dans une commande.
 - Versions : citer la version majeure documentée (« Grafana 12 ») et éviter les dates relatives.
 - Encadrés : `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]`.
-- Liens internes : `[[NN-service/01-presentation-installation|Nom]]` ; tables : jamais de `|` non échappé dans une cellule.
+- Liens internes : `[[NN-service/01-presentation-installation|Nom]]` ; dans un tableau, échapper la barre : `[[NN-service/01-presentation-installation\|Nom]]` (jamais de `|` non échappé dans une cellule, y compris dans du code : `\|`).
 
 ## 6. Valider et enregistrer
 

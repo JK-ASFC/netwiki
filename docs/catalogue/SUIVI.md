@@ -4,11 +4,11 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 172 (13 %) | 8 | 0 | 1131 (86 %) |
+| 1311 | 172 (13 %) | 13 | 0 | 1126 (86 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
-## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 12/51
+## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 17/51
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -20,13 +20,13 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | UTM | Virtualisation poste de travail | macOS | 🆕 fait (lot 48) | `13-conteneurs/16-utm` |
 | GNOME Boxes | Virtualisation poste de travail | Linux | 🆕 fait (lot 48) | `13-conteneurs/14-kvm-qemu-libvirt` |
 | libvirt | Gestion des hyperviseurs | Linux | 🆕 fait (lot 48) | `13-conteneurs/14-kvm-qemu-libvirt` |
-| oVirt | Gestion de virtualisation | Linux | ⏳ à faire | → `13-conteneurs` |
-| OpenStack | Cloud privé IaaS | Linux | ⏳ à faire | → `13-conteneurs` |
+| oVirt | Gestion de virtualisation | Linux | 🆕 fait (lot 48) | `13-conteneurs/18-ovirt` |
+| OpenStack | Cloud privé IaaS | Linux | 🆕 fait (lot 48) | `13-conteneurs/19-openstack` |
 | OpenNebula | Cloud et virtualisation | Linux | ⏳ à faire | → `13-conteneurs` |
 | Apache CloudStack | Cloud IaaS | Linux | ⏳ à faire | → `13-conteneurs` |
-| Incus | Conteneurs système et machines virtuelles | Linux | ⏳ à faire | → `13-conteneurs` |
-| LXD | Conteneurs système et machines virtuelles | Linux | ⏳ à faire | → `13-conteneurs` |
-| LXC | Conteneurs système | Linux | ⏳ à faire | → `13-conteneurs` |
+| Incus | Conteneurs système et machines virtuelles | Linux | 🆕 fait (lot 48) | `13-conteneurs/17-incus-lxd-lxc` |
+| LXD | Conteneurs système et machines virtuelles | Linux | 🆕 fait (lot 48) | `13-conteneurs/17-incus-lxd-lxc` |
+| LXC | Conteneurs système | Linux | 🆕 fait (lot 48) | `13-conteneurs/17-incus-lxd-lxc` |
 | Docker Engine | Conteneurs | Windows, Linux, macOS (via Desktop/VM) | ✅ existant | `13-conteneurs/01-docker` |
 | Podman | Conteneurs | Windows, Linux, macOS | ✅ existant | `13-conteneurs/02-podman` |
 | containerd | Runtime de conteneurs | Linux, Windows | ✅ existant | `13-conteneurs/03-containerd` |
