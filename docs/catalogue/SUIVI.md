@@ -4,11 +4,11 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 172 (13 %) | 19 | 0 | 1120 (85 %) |
+| 1311 | 172 (13 %) | 21 | 0 | 1118 (85 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
-## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 23/51
+## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 25/51
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -39,8 +39,8 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | FreeBSD | Système d'exploitation serveur | x86, ARM | ⏳ à faire | → `24-systemes-exploitation` |
 | OpenBSD | Système d'exploitation | x86, ARM | ⏳ à faire | → `24-systemes-exploitation` |
 | NetBSD | Système d'exploitation | x86, ARM | ⏳ à faire | → `24-systemes-exploitation` |
-| Debian | Distribution Linux | PC, serveur, ARM | ⏳ à faire | → `24-systemes-exploitation` |
-| Ubuntu Server | Distribution Linux serveur | PC, serveur, ARM | ⏳ à faire | → `24-systemes-exploitation` |
+| Debian | Distribution Linux | PC, serveur, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/01-debian-ubuntu` |
+| Ubuntu Server | Distribution Linux serveur | PC, serveur, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/01-debian-ubuntu` |
 | Rocky Linux | Distribution Linux serveur | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
 | AlmaLinux | Distribution Linux serveur | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
 | Fedora Server | Distribution Linux serveur | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |

@@ -436,12 +436,12 @@
    "role": "Distribution Linux",
    "plateformes": "PC, serveur, ARM",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/01-debian-ubuntu",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
-   "eol": null
+   "eol": "debian"
   },
   {
    "id": "ubuntu-server",
@@ -449,12 +449,12 @@
    "role": "Distribution Linux serveur",
    "plateformes": "PC, serveur, ARM",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/01-debian-ubuntu",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
-   "eol": null
+   "eol": "ubuntu"
   },
   {
    "id": "rocky-linux",
