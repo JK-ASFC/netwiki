@@ -1,0 +1,1 @@
+{ "title": "NetBird et Nebula", "icon": "waypoints", "color": "#f68330", "description": "Réseaux maillés WireGuard et overlay : NetBird (plateforme ZTNA auto-hébergeable, SSO, politiques) et Nebula (overlay de Slack, autorité de certification, lighthouses)." }

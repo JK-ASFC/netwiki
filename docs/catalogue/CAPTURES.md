@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-167 capture(s) attendue(s) dans 31 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+180 capture(s) attendue(s) dans 34 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -91,6 +91,34 @@
 | `content/04-aaa/03-packetfence-opennac/_assets/packetfence-switch-roles.png` | PacketFence — configuration d'un commutateur (rôles → VLAN) | `03-interface-graphique.md` |
 | `content/04-aaa/03-packetfence-opennac/_assets/packetfence-portail-captif.png` | PacketFence — portail captif d'enregistrement | `03-interface-graphique.md` |
 | `content/04-aaa/03-packetfence-opennac/_assets/opennac-politiques.png` | OpenNAC — console, liste des politiques | `03-interface-graphique.md` |
+
+## 08-acces-distant-vpn/11-netbird-nebula
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/08-acces-distant-vpn/11-netbird-nebula/_assets/netbird-pairs.png` | NetBird — liste des pairs | `03-interface-graphique.md` |
+| `content/08-acces-distant-vpn/11-netbird-nebula/_assets/netbird-politique.png` | NetBird — création d'une politique d'accès | `03-interface-graphique.md` |
+| `content/08-acces-distant-vpn/11-netbird-nebula/_assets/netbird-reseau.png` | NetBird — réseau routé via un pair routeur | `03-interface-graphique.md` |
+| `content/08-acces-distant-vpn/11-netbird-nebula/_assets/netbird-client.png` | NetBird — application de bureau dans la barre des tâches | `03-interface-graphique.md` |
+| `content/08-acces-distant-vpn/11-netbird-nebula/_assets/mobile-nebula.png` | Mobile Nebula — configuration d'un site | `03-interface-graphique.md` |
+
+## 08-acces-distant-vpn/12-openconnect-ocserv
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/08-acces-distant-vpn/12-openconnect-ocserv/_assets/openconnect-networkmanager.png` | NetworkManager — configuration d'un VPN OpenConnect (GNOME) | `01-presentation-installation.md` |
+| `content/08-acces-distant-vpn/12-openconnect-ocserv/_assets/openconnect-gui.png` | OpenConnect GUI sous Windows | `01-presentation-installation.md` |
+
+## 08-acces-distant-vpn/13-softether-pritunl-mullvad
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/softether-manager.png` | SoftEther VPN Server Manager — fenêtre principale | `04-interface-graphique.md` |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/softether-l2tp.png` | SoftEther — paramètres IPsec / L2TP | `04-interface-graphique.md` |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/pritunl-serveurs.png` | Pritunl — onglet Servers avec routes et organisation rattachée | `04-interface-graphique.md` |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/pritunl-client.png` | Pritunl Client — profil importé et connexion | `04-interface-graphique.md` |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/mullvad-principal.png` | Mullvad VPN — écran principal connecté | `04-interface-graphique.md` |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/mullvad-parametres.png` | Mullvad VPN — paramètres VPN (lockdown, DNS) | `04-interface-graphique.md` |
 
 ## 09-fichiers-partage/21-truenas-scale
 

@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 94 | 0 | 1044 (80 %) |
+| 1311 | 173 (13 %) | 101 | 0 | 1037 (79 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -99,7 +99,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Samba AD DC | Contrôleur de domaine | Linux | ✅ existant | `09-fichiers-partage/01-samba` |
 | gopass | Gestionnaire de secrets CLI | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/21-gopass` |
 
-## 3. DNS, DHCP, IPAM ET SERVICES RESEAU — 42/49
+## 3. DNS, DHCP, IPAM ET SERVICES RESEAU — 49/49
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -143,15 +143,15 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | strongSwan | VPN IPsec | Linux, Windows | ✅ existant | `08-acces-distant-vpn/04-strongswan` |
 | Tailscale (client open source) | VPN mesh | Windows, Linux, macOS | ✅ existant | `08-acces-distant-vpn/05-tailscale-headscale` |
 | Headscale | Contrôle VPN mesh auto-hébergé | Linux, Windows, macOS | ✅ existant | `08-acces-distant-vpn/05-tailscale-headscale` |
-| NetBird | VPN mesh | Windows, Linux, macOS | ⏳ à faire | → `18-infrastructure-systeme` |
+| NetBird | VPN mesh | Windows, Linux, macOS | 🆕 fait (lot 51) | `08-acces-distant-vpn/11-netbird-nebula` |
 | ZeroTier (client open source) | Réseau overlay | Windows, Linux, macOS | ✅ existant | `08-acces-distant-vpn/06-zerotier` |
-| Nebula | Réseau overlay | Windows, Linux, macOS | ⏳ à faire | → `18-infrastructure-systeme` |
-| SoftEther VPN | VPN multi-protocoles | Windows, Linux, macOS | ⏳ à faire | → `18-infrastructure-systeme` |
-| OpenConnect | Client VPN | Windows, Linux, macOS | ⏳ à faire | → `18-infrastructure-systeme` |
-| ocserv | Serveur VPN | Linux | ⏳ à faire | → `18-infrastructure-systeme` |
-| Pritunl (community) | Serveur VPN | Linux | ⏳ à faire | → `18-infrastructure-systeme` |
+| Nebula | Réseau overlay | Windows, Linux, macOS | 🆕 fait (lot 51) | `08-acces-distant-vpn/11-netbird-nebula` |
+| SoftEther VPN | VPN multi-protocoles | Windows, Linux, macOS | 🆕 fait (lot 51) | `08-acces-distant-vpn/13-softether-pritunl-mullvad` |
+| OpenConnect | Client VPN | Windows, Linux, macOS | 🆕 fait (lot 51) | `08-acces-distant-vpn/12-openconnect-ocserv` |
+| ocserv | Serveur VPN | Linux | 🆕 fait (lot 51) | `08-acces-distant-vpn/12-openconnect-ocserv` |
+| Pritunl (community) | Serveur VPN | Linux | 🆕 fait (lot 51) | `08-acces-distant-vpn/13-softether-pritunl-mullvad` |
 | IPsec-tools | VPN IPsec | BSD, Linux | ✅ existant | `08-acces-distant-vpn/04-strongswan` |
-| Mullvad VPN app | Client VPN (composants open source) | Windows, Linux, macOS | ⏳ à faire | → `18-infrastructure-systeme` |
+| Mullvad VPN app | Client VPN (composants open source) | Windows, Linux, macOS | 🆕 fait (lot 51) | `08-acces-distant-vpn/13-softether-pritunl-mullvad` |
 
 ## 4. PROXY, REVERSE PROXY, LOAD BALANCING ET PASSERELLES — 8/34
 
