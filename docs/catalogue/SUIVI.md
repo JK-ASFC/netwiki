@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 142 | 1 | 995 (76 %) |
+| 1311 | 173 (13 %) | 158 | 1 | 979 (75 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -192,7 +192,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | MaxScale (édition communautaire) | Proxy MariaDB | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
 | Odyssey | Pooler PostgreSQL | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
 
-## 5. SERVEURS WEB, LANGAGES ET RUNTIMES — 23/41
+## 5. SERVEURS WEB, LANGAGES ET RUNTIMES — 39/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -214,11 +214,11 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Lua | Langage embarqué | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/20-perl-lua` |
 | Erlang/OTP | Runtime Erlang | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/21-erlang-elixir` |
 | Elixir | Langage BEAM | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/21-erlang-elixir` |
-| GCC | Compilateur | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Clang/LLVM | Compilateur | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| CMake | Build system | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Ninja | Build system | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Meson | Build system | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| GCC | Compilateur | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/01-gcc-clang` |
+| Clang/LLVM | Compilateur | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/01-gcc-clang` |
+| CMake | Build system | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/02-cmake-ninja-meson` |
+| Ninja | Build system | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/02-cmake-ninja-meson` |
+| Meson | Build system | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/02-cmake-ninja-meson` |
 | Apache Tomcat | Serveur Java | Windows, Linux, macOS | ✅ existant | `05-web/10-tomcat` |
 | Eclipse Jetty | Serveur Java | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/22-serveurs-jakarta-ee` |
 | WildFly | Serveur d'applications Java | Windows, Linux, macOS | ✅ existant | `05-web/11-wildfly` |
@@ -226,17 +226,17 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Open Liberty | Serveur Java | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/22-serveurs-jakarta-ee` |
 | GlassFish | Serveur Jakarta EE | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/22-serveurs-jakarta-ee` |
 | Jenkins | Automatisation CI/CD | Windows, Linux, macOS | ✅ existant | `14-devops/05-jenkins` |
-| Buildbot | Automatisation build | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Concourse CI | CI/CD | Linux, Windows via workers | ⏳ à faire | → `05-web` |
-| GoCD | CI/CD | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Woodpecker CI | CI/CD | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Drone CI (community) | CI/CD | Linux | ⏳ à faire | → `05-web` |
-| Tekton | Pipelines Kubernetes | Linux | ⏳ à faire | → `05-web` |
-| Argo Workflows | Workflows Kubernetes | Linux | ⏳ à faire | → `05-web` |
-| Dagger | Pipelines programmables | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Earthly | Build reproductibles | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Task | Task runner | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Just | Task runner | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Buildbot | Automatisation build | Windows, Linux, macOS | 🆕 fait (lot 53) | `14-devops/08-buildbot-gocd` |
+| Concourse CI | CI/CD | Linux, Windows via workers | 🆕 fait (lot 53) | `14-devops/10-concourse` |
+| GoCD | CI/CD | Windows, Linux, macOS | 🆕 fait (lot 53) | `14-devops/08-buildbot-gocd` |
+| Woodpecker CI | CI/CD | Windows, Linux, macOS | 🆕 fait (lot 53) | `14-devops/09-woodpecker-drone` |
+| Drone CI (community) | CI/CD | Linux | 🆕 fait (lot 53) | `14-devops/09-woodpecker-drone` |
+| Tekton | Pipelines Kubernetes | Linux | 🆕 fait (lot 53) | `14-devops/11-tekton-argo-workflows` |
+| Argo Workflows | Workflows Kubernetes | Linux | 🆕 fait (lot 53) | `14-devops/11-tekton-argo-workflows` |
+| Dagger | Pipelines programmables | Windows, Linux, macOS | 🆕 fait (lot 53) | `14-devops/12-dagger-earthly` |
+| Earthly | Build reproductibles | Windows, Linux, macOS | 🆕 fait (lot 53) | `14-devops/12-dagger-earthly` |
+| Task | Task runner | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/03-task-just` |
+| Just | Task runner | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/03-task-just` |
 
 ## 6. BASES DE DONNEES SQL ET NOSQL — 11/64
 

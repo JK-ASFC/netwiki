@@ -1,0 +1,1 @@
+{ "title": "CMake, Ninja et Meson", "icon": "hammer", "color": "#064f8c", "description": "Systèmes de construction pour C, C++ et projets mixtes : génération (CMake, Meson), exécution rapide (Ninja), tests, installation et paquets." }

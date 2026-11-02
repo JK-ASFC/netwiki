@@ -1,0 +1,1 @@
+{ "title": "Tekton et Argo Workflows", "icon": "ship", "color": "#fd495c", "description": "Pipelines et workflows natifs Kubernetes : Tekton (Task, Pipeline, Triggers, tkn) et Argo Workflows (DAG, étapes, artefacts, interface web)." }

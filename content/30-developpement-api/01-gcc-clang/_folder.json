@@ -1,0 +1,1 @@
+{ "title": "GCC et Clang/LLVM", "icon": "cpu", "color": "#64748b", "description": "Compilateurs C et C++ : installation par système, options courantes, sanitizers, compilation croisée, outils binaires, débogueurs et analyse statique." }

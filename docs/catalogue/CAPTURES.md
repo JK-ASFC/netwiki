@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-195 capture(s) attendue(s) dans 40 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+206 capture(s) attendue(s) dans 44 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -282,6 +282,37 @@
 | `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-assistant-zone.png` | CloudStack — assistant d'ajout de zone, étape réseau physique | `03-interface-graphique.md` |
 | `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-hotes.png` | CloudStack — liste des hôtes KVM et leur état | `03-interface-graphique.md` |
 | `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-deployer-instance.png` | CloudStack — assistant de déploiement d'instance | `03-interface-graphique.md` |
+
+## 14-devops/08-buildbot-gocd
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/14-devops/08-buildbot-gocd/_assets/buildbot-waterfall.png` | Buildbot — vue Waterfall | `03-interface-graphique.md` |
+| `content/14-devops/08-buildbot-gocd/_assets/buildbot-construction.png` | Buildbot — détail d'une construction et de ses étapes | `03-interface-graphique.md` |
+| `content/14-devops/08-buildbot-gocd/_assets/gocd-dashboard.png` | GoCD — tableau de bord des pipelines | `03-interface-graphique.md` |
+| `content/14-devops/08-buildbot-gocd/_assets/gocd-vsm.png` | GoCD — carte de flux de valeur | `03-interface-graphique.md` |
+
+## 14-devops/09-woodpecker-drone
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/14-devops/09-woodpecker-drone/_assets/woodpecker-pipelines.png` | Woodpecker — liste des pipelines d'un dépôt | `03-interface-graphique.md` |
+| `content/14-devops/09-woodpecker-drone/_assets/woodpecker-journaux.png` | Woodpecker — journaux d'une étape | `03-interface-graphique.md` |
+| `content/14-devops/09-woodpecker-drone/_assets/woodpecker-secrets.png` | Woodpecker — réglages du dépôt et secrets | `03-interface-graphique.md` |
+
+## 14-devops/10-concourse
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/14-devops/10-concourse/_assets/concourse-pipeline.png` | Concourse — vue graphique d'un pipeline | `01-presentation-installation.md` |
+
+## 14-devops/11-tekton-argo-workflows
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/14-devops/11-tekton-argo-workflows/_assets/tekton-dashboard.png` | Tekton Dashboard — PipelineRun et journaux des étapes | `03-interface-graphique.md` |
+| `content/14-devops/11-tekton-argo-workflows/_assets/argo-workflows-dag.png` | Argo Workflows — graphe DAG d'un workflow | `03-interface-graphique.md` |
+| `content/14-devops/11-tekton-argo-workflows/_assets/argo-workflows-cron.png` | Argo Workflows — liste des Cron Workflows | `03-interface-graphique.md` |
 
 ## 18-infrastructure-systeme/08-netbox-nautobot
 
