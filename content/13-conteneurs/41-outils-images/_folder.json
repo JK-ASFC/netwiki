@@ -1,0 +1,1 @@
+{ "title": "Buildah, Skopeo, Dive, Hadolint, Dockle et Kompose", "icon": "layers", "color": "#892ca0", "description": "Outils d'images conteneurs : construction sans démon (Buildah), copie et inspection entre registres (Skopeo), analyse (Dive, Hadolint, Dockle), conversion Compose vers Kubernetes (Kompose)." }

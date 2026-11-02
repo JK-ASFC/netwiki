@@ -1,0 +1,1 @@
+{ "title": "Jetty, Payara, GlassFish et Open Liberty", "icon": "coffee", "color": "#f89820", "description": "Serveurs d'applications Java : Eclipse Jetty (conteneur de servlets léger), Payara et GlassFish (Jakarta EE complet, asadmin), Open Liberty (modulaire, server.xml)." }

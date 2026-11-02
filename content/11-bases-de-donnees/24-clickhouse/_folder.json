@@ -1,0 +1,1 @@
+{ "title": "ClickHouse", "icon": "bar-chart-3", "color": "#faff69", "description": "Base analytique en colonnes très rapide : installation, moteurs MergeTree, requêtes, réplication, journaux et observabilité, sauvegarde." }

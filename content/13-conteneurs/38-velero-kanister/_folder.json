@@ -1,0 +1,1 @@
+{ "title": "Velero et Kanister", "icon": "archive-restore", "color": "#2d7ff9", "description": "Sauvegarde et restauration de Kubernetes : ressources et volumes (Velero) et protection cohérente des données applicatives (Kanister)." }

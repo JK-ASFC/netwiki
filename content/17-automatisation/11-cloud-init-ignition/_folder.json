@@ -1,0 +1,1 @@
+{ "title": "cloud-init et Ignition", "icon": "rocket", "color": "#e95420", "description": "Initialisation des machines au premier démarrage : cloud-init (user-data, modules, NoCloud, Proxmox, VMware) et Ignition (Fedora CoreOS, Flatcar, Butane)." }

@@ -1,0 +1,1 @@
+{ "title": "Woodpecker CI et Drone", "icon": "container", "color": "#4caf50", "description": "CI légère pilotée par conteneurs et intégrée aux forges (Gitea, Forgejo, GitLab, GitHub) : serveur, agents, fichiers de pipeline YAML, secrets." }

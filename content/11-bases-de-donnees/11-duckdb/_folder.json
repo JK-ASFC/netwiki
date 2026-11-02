@@ -1,0 +1,1 @@
+{ "title": "DuckDB", "icon": "feather", "color": "#fff000", "description": "Base analytique embarquée en colonnes : requêtes SQL directes sur CSV, Parquet et JSON, extensions (httpfs, postgres, spatial), interface web locale." }

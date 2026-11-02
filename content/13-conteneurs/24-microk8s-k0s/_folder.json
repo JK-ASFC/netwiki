@@ -1,0 +1,1 @@
+{ "title": "MicroK8s et k0s", "icon": "box", "color": "#e95420", "description": "Distributions Kubernetes légères et complètes : MicroK8s (Canonical, snap, modules) et k0s (Mirantis, binaire unique, k0sctl)." }

@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 127 | 0 | 1011 (77 %) |
+| 1311 | 179 (14 %) | 429 | 1 | 702 (54 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -192,53 +192,53 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | MaxScale (édition communautaire) | Proxy MariaDB | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
 | Odyssey | Pooler PostgreSQL | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
 
-## 5. SERVEURS WEB, LANGAGES ET RUNTIMES — 7/41
+## 5. SERVEURS WEB, LANGAGES ET RUNTIMES — 39/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | PHP | Runtime PHP | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
 | Node.js | Runtime JavaScript | Windows, Linux, macOS | ✅ existant | `05-web/06-nodejs` |
 | Deno | Runtime JavaScript/TypeScript | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Bun | Runtime JavaScript | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Bun | Runtime JavaScript | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/15-bun` |
 | Python | Langage et runtime | Windows, Linux, macOS | ✅ existant | `05-web/07-python` |
 | Ruby | Langage et runtime | Windows, Linux, macOS | ✅ existant | `05-web/08-ruby` |
-| Go | Langage et runtime | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Rust | Langage et toolchain | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Go | Langage et runtime | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/16-go` |
+| Rust | Langage et toolchain | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/17-rust` |
 | OpenJDK | Runtime Java | Windows, Linux, macOS | ✅ existant | `05-web/09-openjdk` |
-| Eclipse Temurin | Distribution OpenJDK | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| GraalVM Community Edition | Runtime polyglotte | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| .NET SDK | Runtime et SDK .NET | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Mono | Runtime .NET historique | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| PowerShell | Shell et automatisation | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Perl | Langage et runtime | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Lua | Langage embarqué | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Erlang/OTP | Runtime Erlang | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Elixir | Langage BEAM | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| GCC | Compilateur | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Clang/LLVM | Compilateur | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| CMake | Build system | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Ninja | Build system | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Meson | Build system | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Eclipse Temurin | Distribution OpenJDK | Windows, Linux, macOS | ✨ amélioré (lot 53) | `05-web/09-openjdk` |
+| GraalVM Community Edition | Runtime polyglotte | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/09-openjdk` |
+| .NET SDK | Runtime et SDK .NET | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/18-dotnet-mono` |
+| Mono | Runtime .NET historique | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/18-dotnet-mono` |
+| PowerShell | Shell et automatisation | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/19-powershell` |
+| Perl | Langage et runtime | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/20-perl-lua` |
+| Lua | Langage embarqué | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/20-perl-lua` |
+| Erlang/OTP | Runtime Erlang | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/21-erlang-elixir` |
+| Elixir | Langage BEAM | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/21-erlang-elixir` |
+| GCC | Compilateur | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/01-gcc-clang` |
+| Clang/LLVM | Compilateur | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/01-gcc-clang` |
+| CMake | Build system | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/02-cmake-ninja-meson` |
+| Ninja | Build system | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/02-cmake-ninja-meson` |
+| Meson | Build system | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/02-cmake-ninja-meson` |
 | Apache Tomcat | Serveur Java | Windows, Linux, macOS | ✅ existant | `05-web/10-tomcat` |
-| Eclipse Jetty | Serveur Java | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Eclipse Jetty | Serveur Java | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/22-serveurs-jakarta-ee` |
 | WildFly | Serveur d'applications Java | Windows, Linux, macOS | ✅ existant | `05-web/11-wildfly` |
-| Payara Community | Serveur Jakarta EE | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Open Liberty | Serveur Java | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| GlassFish | Serveur Jakarta EE | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Payara Community | Serveur Jakarta EE | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/22-serveurs-jakarta-ee` |
+| Open Liberty | Serveur Java | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/22-serveurs-jakarta-ee` |
+| GlassFish | Serveur Jakarta EE | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/22-serveurs-jakarta-ee` |
 | Jenkins | Automatisation CI/CD | Windows, Linux, macOS | ✅ existant | `14-devops/05-jenkins` |
-| Buildbot | Automatisation build | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Concourse CI | CI/CD | Linux, Windows via workers | ⏳ à faire | → `05-web` |
-| GoCD | CI/CD | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Woodpecker CI | CI/CD | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Drone CI (community) | CI/CD | Linux | ⏳ à faire | → `05-web` |
-| Tekton | Pipelines Kubernetes | Linux | ⏳ à faire | → `05-web` |
-| Argo Workflows | Workflows Kubernetes | Linux | ⏳ à faire | → `05-web` |
-| Dagger | Pipelines programmables | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Earthly | Build reproductibles | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Task | Task runner | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Just | Task runner | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Buildbot | Automatisation build | Windows, Linux, macOS | 🆕 fait (lot 53) | `14-devops/08-buildbot-gocd` |
+| Concourse CI | CI/CD | Linux, Windows via workers | 🆕 fait (lot 53) | `14-devops/10-concourse` |
+| GoCD | CI/CD | Windows, Linux, macOS | 🆕 fait (lot 53) | `14-devops/08-buildbot-gocd` |
+| Woodpecker CI | CI/CD | Windows, Linux, macOS | 🆕 fait (lot 53) | `14-devops/09-woodpecker-drone` |
+| Drone CI (community) | CI/CD | Linux | 🆕 fait (lot 53) | `14-devops/09-woodpecker-drone` |
+| Tekton | Pipelines Kubernetes | Linux | 🆕 fait (lot 53) | `14-devops/11-tekton-argo-workflows` |
+| Argo Workflows | Workflows Kubernetes | Linux | 🆕 fait (lot 53) | `14-devops/11-tekton-argo-workflows` |
+| Dagger | Pipelines programmables | Windows, Linux, macOS | 🆕 fait (lot 53) | `14-devops/12-dagger-earthly` |
+| Earthly | Build reproductibles | Windows, Linux, macOS | 🆕 fait (lot 53) | `14-devops/12-dagger-earthly` |
+| Task | Task runner | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/03-task-just` |
+| Just | Task runner | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/03-task-just` |
 
-## 6. BASES DE DONNEES SQL ET NOSQL — 11/64
+## 6. BASES DE DONNEES SQL ET NOSQL — 64/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -246,382 +246,382 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | MariaDB Server | Base SQL | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/01-mariadb-mysql` |
 | MySQL Community Server | Base SQL | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/01-mariadb-mysql` |
 | SQLite | Base SQL embarquée | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/06-sqlite` |
-| Firebird | Base SQL | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| DuckDB | Base analytique embarquée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| CockroachDB | Base SQL distribuée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| YugabyteDB | Base SQL distribuée | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| TiDB | Base SQL distribuée | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Citus | Extension PostgreSQL distribuée | Linux, Windows via PostgreSQL | ⏳ à faire | → `11-bases-de-donnees` |
-| TimescaleDB | Base time-series PostgreSQL | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| QuestDB | Base time-series | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
+| Firebird | Base SQL | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/10-firebird` |
+| DuckDB | Base analytique embarquée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/11-duckdb` |
+| CockroachDB | Base SQL distribuée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/12-sql-distribue` |
+| YugabyteDB | Base SQL distribuée | Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/12-sql-distribue` |
+| TiDB | Base SQL distribuée | Linux | 🆕 fait (lot 54) | `11-bases-de-donnees/12-sql-distribue` |
+| Citus | Extension PostgreSQL distribuée | Linux, Windows via PostgreSQL | 🆕 fait (lot 54) | `11-bases-de-donnees/13-extensions-postgresql` |
+| TimescaleDB | Base time-series PostgreSQL | Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/13-extensions-postgresql` |
+| QuestDB | Base time-series | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/14-questdb` |
 | InfluxDB OSS | Base time-series | Windows, Linux, macOS | ✅ existant | `06-supervision/10-influxdb` |
-| Apache Cassandra | Base NoSQL wide-column | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| ScyllaDB | Base NoSQL wide-column | Linux | ⏳ à faire | → `11-bases-de-donnees` |
+| Apache Cassandra | Base NoSQL wide-column | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/15-cassandra-scylladb` |
+| ScyllaDB | Base NoSQL wide-column | Linux | 🆕 fait (lot 54) | `11-bases-de-donnees/15-cassandra-scylladb` |
 | MongoDB Community Server | Base documentaire | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/03-mongodb` |
-| FerretDB | Compatibilité MongoDB | Linux, Windows, macOS | ⏳ à faire | → `11-bases-de-donnees` |
+| FerretDB | Compatibilité MongoDB | Linux, Windows, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/16-bases-documentaires` |
 | CouchDB | Base documentaire | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/07-couchdb` |
-| Couchbase Community | Base NoSQL | Linux, Windows | ⏳ à faire | → `11-bases-de-donnees` |
-| RavenDB Community | Base documentaire | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| RethinkDB | Base documentaire temps réel | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
+| Couchbase Community | Base NoSQL | Linux, Windows | 🆕 fait (lot 54) | `11-bases-de-donnees/16-bases-documentaires` |
+| RavenDB Community | Base documentaire | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/16-bases-documentaires` |
+| RethinkDB | Base documentaire temps réel | Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/16-bases-documentaires` |
 | Redis | Base clé-valeur | Windows via WSL/containers, Linux, macOS | ✅ existant | `11-bases-de-donnees/04-redis` |
 | Valkey | Base clé-valeur | Windows via WSL/containers, Linux, macOS | ✅ existant | `11-bases-de-donnees/04-redis` |
-| KeyDB | Base clé-valeur | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Dragonfly | Base clé-valeur | Linux | ⏳ à faire | → `11-bases-de-donnees` |
+| KeyDB | Base clé-valeur | Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/17-keydb-dragonfly` |
+| Dragonfly | Base clé-valeur | Linux | 🆕 fait (lot 54) | `11-bases-de-donnees/17-keydb-dragonfly` |
 | Memcached | Cache clé-valeur | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/05-memcached` |
-| etcd | Base clé-valeur distribuée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Consul | Store clé-valeur et découverte | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| FoundationDB | Base clé-valeur distribuée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| BadgerDB | Base clé-valeur embarquée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| RocksDB | Moteur clé-valeur embarqué | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| LevelDB | Moteur clé-valeur embarqué | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| LMDB | Base clé-valeur embarquée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| SurrealDB | Base multi-modèle | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| ArangoDB Community | Base multi-modèle | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| OrientDB | Base graphe/document | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
+| etcd | Base clé-valeur distribuée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/18-etcd-consul` |
+| Consul | Store clé-valeur et découverte | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/18-etcd-consul` |
+| FoundationDB | Base clé-valeur distribuée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/19-foundationdb` |
+| BadgerDB | Base clé-valeur embarquée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/20-moteurs-embarques` |
+| RocksDB | Moteur clé-valeur embarqué | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/20-moteurs-embarques` |
+| LevelDB | Moteur clé-valeur embarqué | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/20-moteurs-embarques` |
+| LMDB | Base clé-valeur embarquée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/20-moteurs-embarques` |
+| SurrealDB | Base multi-modèle | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/21-multi-modeles` |
+| ArangoDB Community | Base multi-modèle | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/21-multi-modeles` |
+| OrientDB | Base graphe/document | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/21-multi-modeles` |
 | Neo4j Community | Base graphe | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/09-neo4j` |
-| Memgraph | Base graphe | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| JanusGraph | Base graphe | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache AGE | Extension graphe PostgreSQL | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Dgraph | Base graphe | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| TerminusDB | Base graphe/document | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| XTDB | Base bitemporelle | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Doris | Entrepôt analytique | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| ClickHouse | Base analytique colonne | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Pinot | Base analytique temps réel | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Druid | Base analytique temps réel | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Trino | Moteur SQL distribué | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Presto | Moteur SQL distribué | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Hive | Entrepôt SQL Hadoop | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache HBase | Base NoSQL Hadoop | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Kudu | Stockage analytique | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Greenplum Database | Base analytique MPP | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| MonetDB | Base analytique colonne | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| DuckDB extensions | Extensions analytiques | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Drill | Moteur SQL | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Ignite | Base distribuée en mémoire | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Hazelcast | In-memory data grid | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Geode | Base distribuée en mémoire | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| VoltDB Community | Base SQL en mémoire | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| H2 Database | Base SQL Java | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| HSQLDB | Base SQL Java | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Derby | Base SQL Java | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Realm (community components) | Base embarquée mobile | Windows, macOS, Linux | ⏳ à faire | → `11-bases-de-donnees` |
+| Memgraph | Base graphe | Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/22-bases-graphes` |
+| JanusGraph | Base graphe | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/22-bases-graphes` |
+| Apache AGE | Extension graphe PostgreSQL | Linux | 🆕 fait (lot 54) | `11-bases-de-donnees/13-extensions-postgresql` |
+| Dgraph | Base graphe | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/22-bases-graphes` |
+| TerminusDB | Base graphe/document | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/23-terminusdb-xtdb` |
+| XTDB | Base bitemporelle | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/23-terminusdb-xtdb` |
+| Apache Doris | Entrepôt analytique | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/25-olap-temps-reel` |
+| ClickHouse | Base analytique colonne | Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/24-clickhouse` |
+| Apache Pinot | Base analytique temps réel | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/25-olap-temps-reel` |
+| Apache Druid | Base analytique temps réel | Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/25-olap-temps-reel` |
+| Trino | Moteur SQL distribué | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/26-moteurs-sql-federes` |
+| Presto | Moteur SQL distribué | Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/26-moteurs-sql-federes` |
+| Apache Hive | Entrepôt SQL Hadoop | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/27-ecosysteme-hadoop` |
+| Apache HBase | Base NoSQL Hadoop | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/27-ecosysteme-hadoop` |
+| Apache Kudu | Stockage analytique | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/27-ecosysteme-hadoop` |
+| Greenplum Database | Base analytique MPP | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/28-greenplum-monetdb` |
+| MonetDB | Base analytique colonne | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/28-greenplum-monetdb` |
+| DuckDB extensions | Extensions analytiques | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/11-duckdb` |
+| Apache Drill | Moteur SQL | Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/26-moteurs-sql-federes` |
+| Apache Ignite | Base distribuée en mémoire | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/29-grilles-memoire` |
+| Hazelcast | In-memory data grid | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/29-grilles-memoire` |
+| Apache Geode | Base distribuée en mémoire | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/29-grilles-memoire` |
+| VoltDB Community | Base SQL en mémoire | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/29-grilles-memoire` |
+| H2 Database | Base SQL Java | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/30-bases-java-embarquees` |
+| HSQLDB | Base SQL Java | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/30-bases-java-embarquees` |
+| Derby | Base SQL Java | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/30-bases-java-embarquees` |
+| Realm (community components) | Base embarquée mobile | Windows, macOS, Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/30-bases-java-embarquees` |
 
-## 7. STOCKAGE, NAS, OBJET, FICHIERS ET SAUVEGARDE — 12/47
+## 7. STOCKAGE, NAS, OBJET, FICHIERS ET SAUVEGARDE — 47/47
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | MinIO (community source) | Stockage objet S3 | Linux, Windows via conteneur | ✅ existant | `09-fichiers-partage/07-minio` |
-| Ceph | Stockage distribué | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| GlusterFS | Système de fichiers distribué | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| Lustre | Système de fichiers parallèle | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| BeeGFS | Système de fichiers parallèle | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| OpenZFS | Système de fichiers et volumes | Linux, FreeBSD, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| Btrfs | Système de fichiers | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| XFS | Système de fichiers | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| LVM2 | Gestion volumes logiques | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| mdadm | RAID logiciel | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| mergerfs | Fusion de systèmes de fichiers | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| SnapRAID | Protection de données | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
+| Ceph | Stockage distribué | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/24-ceph` |
+| GlusterFS | Système de fichiers distribué | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/25-glusterfs` |
+| Lustre | Système de fichiers parallèle | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/26-lustre-beegfs` |
+| BeeGFS | Système de fichiers parallèle | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/26-lustre-beegfs` |
+| OpenZFS | Système de fichiers et volumes | Linux, FreeBSD, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/27-openzfs` |
+| Btrfs | Système de fichiers | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/28-btrfs-xfs` |
+| XFS | Système de fichiers | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/28-btrfs-xfs` |
+| LVM2 | Gestion volumes logiques | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/29-lvm-mdadm` |
+| mdadm | RAID logiciel | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/29-lvm-mdadm` |
+| mergerfs | Fusion de systèmes de fichiers | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/30-mergerfs-snapraid` |
+| SnapRAID | Protection de données | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/30-mergerfs-snapraid` |
 | NFS-Ganesha | Serveur NFS | Linux | ✅ existant | `09-fichiers-partage/02-nfs` |
-| OpenAFS | Système de fichiers distribué | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| SeaweedFS | Stockage distribué | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| Garage | Stockage objet S3 | Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| OpenIO | Stockage objet | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| OpenStack Swift | Stockage objet | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| Rook | Orchestration stockage Kubernetes | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| Longhorn | Stockage persistant Kubernetes | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| OpenEBS | Stockage Kubernetes | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| LINSTOR | Stockage bloc distribué | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| DRBD | Réplication bloc | Linux | ⏳ à faire | → `19-sauvegarde` |
+| OpenAFS | Système de fichiers distribué | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/31-openafs` |
+| SeaweedFS | Stockage distribué | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/32-stockage-objet` |
+| Garage | Stockage objet S3 | Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/32-stockage-objet` |
+| OpenIO | Stockage objet | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/32-stockage-objet` |
+| OpenStack Swift | Stockage objet | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/32-stockage-objet` |
+| Rook | Orchestration stockage Kubernetes | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/33-stockage-kubernetes` |
+| Longhorn | Stockage persistant Kubernetes | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/33-stockage-kubernetes` |
+| OpenEBS | Stockage Kubernetes | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/33-stockage-kubernetes` |
+| LINSTOR | Stockage bloc distribué | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/34-drbd-linstor` |
+| DRBD | Réplication bloc | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/34-drbd-linstor` |
 | Restic | Sauvegarde | Windows, Linux, macOS | ✅ existant | `19-sauvegarde/01-restic` |
 | BorgBackup | Sauvegarde dédupliquée | Linux, macOS | ✅ existant | `19-sauvegarde/02-borgbackup` |
-| Kopia | Sauvegarde | Windows, Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
-| Duplicati | Sauvegarde | Windows, Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
+| Kopia | Sauvegarde | Windows, Linux, macOS | 🆕 fait (lot 56) | `19-sauvegarde/09-kopia` |
+| Duplicati | Sauvegarde | Windows, Linux, macOS | 🆕 fait (lot 56) | `19-sauvegarde/10-duplicati` |
 | UrBackup | Sauvegarde client/serveur | Windows, Linux | ✅ existant | `19-sauvegarde/04-urbackup` |
 | Bacula Community | Sauvegarde réseau | Windows, Linux, macOS | ✅ existant | `19-sauvegarde/03-bacula` |
-| Amanda | Sauvegarde réseau | Linux, Unix | ⏳ à faire | → `19-sauvegarde` |
-| rdiff-backup | Sauvegarde incrémentale | Windows, Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
-| rsnapshot | Sauvegarde snapshots | Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
-| Rsync | Synchronisation fichiers | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| Rclone | Synchronisation stockage cloud | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
+| Amanda | Sauvegarde réseau | Linux, Unix | 🆕 fait (lot 56) | `19-sauvegarde/11-amanda` |
+| rdiff-backup | Sauvegarde incrémentale | Windows, Linux, macOS | 🆕 fait (lot 56) | `19-sauvegarde/12-rdiff-backup-rsnapshot` |
+| rsnapshot | Sauvegarde snapshots | Linux, macOS | 🆕 fait (lot 56) | `19-sauvegarde/12-rdiff-backup-rsnapshot` |
+| Rsync | Synchronisation fichiers | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/35-rsync-rclone` |
+| Rclone | Synchronisation stockage cloud | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/35-rsync-rclone` |
 | Syncthing | Synchronisation P2P | Windows, Linux, macOS | ✅ existant | `09-fichiers-partage/11-syncthing` |
 | Seafile Community | Synchronisation fichiers | Windows, Linux, macOS | ✅ existant | `09-fichiers-partage/10-seafile` |
 | Nextcloud | Cloud de fichiers | Windows, Linux, macOS (serveur Linux recommandé) | ✅ existant | `09-fichiers-partage/08-nextcloud` |
 | ownCloud Infinite Scale | Cloud de fichiers | Windows, Linux, macOS | ✅ existant | `09-fichiers-partage/09-owncloud` |
-| File Browser | Interface web fichiers | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| SFTPGo | Serveur SFTP/FTP/WebDAV | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
+| File Browser | Interface web fichiers | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/36-interfaces-web-fichiers` |
+| SFTPGo | Serveur SFTP/FTP/WebDAV | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/36-interfaces-web-fichiers` |
 | OpenSSH SFTP | Transfert sécurisé | Windows, Linux, macOS | ✅ existant | `08-acces-distant-vpn/01-openssh` |
 | WebDAV (Apache mod_dav) | Partage WebDAV | Windows, Linux, macOS | ✅ existant | `09-fichiers-partage/12-webdav` |
-| Pydio Cells | Partage et collaboration fichiers | Linux, Windows via conteneur | ⏳ à faire | → `09-fichiers-partage` |
-| Cozy Cloud | Cloud personnel | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| Filestash | Interface multi-stockage | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| ProjectSend | Partage de fichiers | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| Pingvin Share | Partage temporaire | Linux, Windows via conteneur | ⏳ à faire | → `09-fichiers-partage` |
+| Pydio Cells | Partage et collaboration fichiers | Linux, Windows via conteneur | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
+| Cozy Cloud | Cloud personnel | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
+| Filestash | Interface multi-stockage | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/36-interfaces-web-fichiers` |
+| ProjectSend | Partage de fichiers | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
+| Pingvin Share | Partage temporaire | Linux, Windows via conteneur | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
 
-## 8. CONTENEURS, ORCHESTRATION ET PLATEFORMES CLOUD-NATIVE — 8/61
+## 8. CONTENEURS, ORCHESTRATION ET PLATEFORMES CLOUD-NATIVE — 61/61
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Kubernetes | Orchestration conteneurs | Linux, Windows nodes | ✅ existant | `13-conteneurs/04-kubernetes` |
 | K3s | Kubernetes léger | Linux, Windows via WSL/VM | ✅ existant | `13-conteneurs/05-k3s` |
-| MicroK8s | Kubernetes léger | Linux, Windows via WSL, macOS | ⏳ à faire | → `13-conteneurs` |
+| MicroK8s | Kubernetes léger | Linux, Windows via WSL, macOS | 🆕 fait (lot 57) | `13-conteneurs/24-microk8s-k0s` |
 | Minikube | Kubernetes local | Windows, Linux, macOS | ✅ existant | `13-conteneurs/06-minikube` |
 | kind | Kubernetes en Docker | Windows, Linux, macOS | ✅ existant | `13-conteneurs/07-kind` |
-| k0s | Kubernetes léger | Linux | ⏳ à faire | → `13-conteneurs` |
-| Talos Linux | OS Kubernetes | x86, ARM | ⏳ à faire | → `13-conteneurs` |
-| RKE2 | Kubernetes durci | Linux | ⏳ à faire | → `13-conteneurs` |
-| OpenShift OKD | Plateforme Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| KubeVirt | VM sur Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Helm | Gestionnaire de packages Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Kustomize | Configuration Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Argo CD | GitOps Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Flux CD | GitOps Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Rancher | Gestion Kubernetes | Linux, Windows via conteneur | ⏳ à faire | → `13-conteneurs` |
+| k0s | Kubernetes léger | Linux | 🆕 fait (lot 57) | `13-conteneurs/24-microk8s-k0s` |
+| Talos Linux | OS Kubernetes | x86, ARM | 🆕 fait (lot 57) | `13-conteneurs/25-talos-linux` |
+| RKE2 | Kubernetes durci | Linux | 🆕 fait (lot 57) | `13-conteneurs/26-rke2-rancher` |
+| OpenShift OKD | Plateforme Kubernetes | Linux | 🆕 fait (lot 57) | `13-conteneurs/27-openshift-okd` |
+| KubeVirt | VM sur Kubernetes | Linux | 🆕 fait (lot 57) | `13-conteneurs/28-kubevirt` |
+| Helm | Gestionnaire de packages Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/29-helm-kustomize` |
+| Kustomize | Configuration Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/29-helm-kustomize` |
+| Argo CD | GitOps Kubernetes | Linux | 🆕 fait (lot 57) | `13-conteneurs/30-gitops-argocd-flux` |
+| Flux CD | GitOps Kubernetes | Linux | 🆕 fait (lot 57) | `13-conteneurs/30-gitops-argocd-flux` |
+| Rancher | Gestion Kubernetes | Linux, Windows via conteneur | 🆕 fait (lot 57) | `13-conteneurs/26-rke2-rancher` |
 | Portainer CE | Gestion conteneurs | Windows, Linux, macOS | ✅ existant | `13-conteneurs/08-portainer` |
-| Lens Open Source | IDE Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Headlamp | Dashboard Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| K9s | Terminal Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Skaffold | Développement Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Tilt | Développement Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Garden | Développement Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Telepresence | Développement Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Dapr | Runtime applicatif distribué | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Knative | Serverless Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| OpenFaaS | Serverless | Linux, Windows via conteneur | ⏳ à faire | → `13-conteneurs` |
-| Fission | Serverless Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| KEDA | Autoscaling événementiel | Linux | ⏳ à faire | → `13-conteneurs` |
-| Crossplane | Control plane cloud | Linux | ⏳ à faire | → `13-conteneurs` |
-| Cluster API | Gestion cycle de vie clusters | Linux | ⏳ à faire | → `13-conteneurs` |
-| MetalLB | Load balancer Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Cilium | Réseau et sécurité Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Calico | Réseau Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Flannel | Réseau Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Weave Net | Réseau Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Multus | Réseaux multiples Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Gateway API | API réseau Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Contour | Ingress Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| NGINX Ingress Controller | Ingress Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
+| Lens Open Source | IDE Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/31-lens-headlamp-k9s` |
+| Headlamp | Dashboard Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/31-lens-headlamp-k9s` |
+| K9s | Terminal Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/31-lens-headlamp-k9s` |
+| Skaffold | Développement Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/32-developpement-kubernetes` |
+| Tilt | Développement Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/32-developpement-kubernetes` |
+| Garden | Développement Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/32-developpement-kubernetes` |
+| Telepresence | Développement Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/32-developpement-kubernetes` |
+| Dapr | Runtime applicatif distribué | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/33-dapr` |
+| Knative | Serverless Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/34-serverless-keda` |
+| OpenFaaS | Serverless | Linux, Windows via conteneur | 🆕 fait (lot 58) | `13-conteneurs/34-serverless-keda` |
+| Fission | Serverless Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/34-serverless-keda` |
+| KEDA | Autoscaling événementiel | Linux | 🆕 fait (lot 58) | `13-conteneurs/34-serverless-keda` |
+| Crossplane | Control plane cloud | Linux | 🆕 fait (lot 58) | `13-conteneurs/35-crossplane-cluster-api` |
+| Cluster API | Gestion cycle de vie clusters | Linux | 🆕 fait (lot 58) | `13-conteneurs/35-crossplane-cluster-api` |
+| MetalLB | Load balancer Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
+| Cilium | Réseau et sécurité Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/36-reseau-cni` |
+| Calico | Réseau Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/36-reseau-cni` |
+| Flannel | Réseau Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/36-reseau-cni` |
+| Weave Net | Réseau Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/36-reseau-cni` |
+| Multus | Réseaux multiples Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/36-reseau-cni` |
+| Gateway API | API réseau Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
+| Contour | Ingress Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
+| NGINX Ingress Controller | Ingress Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
 | Traefik | Ingress Kubernetes | Windows, Linux, macOS | ✅ existant | `07-proxy-cache/04-traefik` |
-| cert-manager | Certificats Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| ExternalDNS | DNS Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Velero | Sauvegarde Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Kanister | Protection données Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Kube-bench | Audit CIS Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Kubescape | Sécurité Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Trivy | Scanner vulnérabilités | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Falco | Détection runtime | Linux | ⏳ à faire | → `13-conteneurs` |
-| Kyverno | Politiques Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| OPA Gatekeeper | Politiques Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Open Policy Agent | Moteur de politiques | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Buildah | Construction images | Linux, Windows via WSL | ⏳ à faire | → `13-conteneurs` |
-| Skopeo | Gestion images conteneurs | Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Dive | Analyse images Docker | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Hadolint | Lint Dockerfile | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Dockle | Audit images conteneurs | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
+| cert-manager | Certificats Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
+| ExternalDNS | DNS Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
+| Velero | Sauvegarde Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/38-velero-kanister` |
+| Kanister | Protection données Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/38-velero-kanister` |
+| Kube-bench | Audit CIS Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/39-securite-kubernetes` |
+| Kubescape | Sécurité Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/39-securite-kubernetes` |
+| Trivy | Scanner vulnérabilités | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/39-securite-kubernetes` |
+| Falco | Détection runtime | Linux | 🆕 fait (lot 58) | `13-conteneurs/39-securite-kubernetes` |
+| Kyverno | Politiques Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/40-politiques-opa-kyverno` |
+| OPA Gatekeeper | Politiques Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/40-politiques-opa-kyverno` |
+| Open Policy Agent | Moteur de politiques | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/40-politiques-opa-kyverno` |
+| Buildah | Construction images | Linux, Windows via WSL | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
+| Skopeo | Gestion images conteneurs | Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
+| Dive | Analyse images Docker | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
+| Hadolint | Lint Dockerfile | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
+| Dockle | Audit images conteneurs | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
 | Docker Compose | Orchestration locale | Windows, Linux, macOS | ✅ existant | `13-conteneurs/01-docker` |
 | Podman Compose | Orchestration locale | Windows, Linux, macOS | ✅ existant | `13-conteneurs/02-podman` |
-| Kompose | Conversion Compose/Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Packer | Création images machines | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Vagrant | Environnements reproductibles | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
+| Kompose | Conversion Compose/Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
+| Packer | Création images machines | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/42-packer-vagrant` |
+| Vagrant | Environnements reproductibles | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/42-packer-vagrant` |
 
-## 9. SUPERVISION, METRIQUES, LOGS ET OBSERVABILITE — 19/64
+## 9. SUPERVISION, METRIQUES, LOGS ET OBSERVABILITE — 64/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Prometheus | Métriques et alertes | Windows, Linux, macOS | ✅ existant | `06-supervision/02-prometheus` |
 | Grafana OSS | Dashboards | Windows, Linux, macOS | ✅ existant | `06-supervision/03-grafana` |
-| VictoriaMetrics | Base métriques | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Thanos | Stockage long terme Prometheus | Linux | ⏳ à faire | → `06-supervision` |
-| Mimir | Stockage métriques | Linux | ⏳ à faire | → `06-supervision` |
-| Cortex | Stockage métriques | Linux | ⏳ à faire | → `06-supervision` |
-| Alertmanager | Gestion alertes | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
+| VictoriaMetrics | Base métriques | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/13-stockage-metriques-long-terme` |
+| Thanos | Stockage long terme Prometheus | Linux | 🆕 fait (lot 59) | `06-supervision/13-stockage-metriques-long-terme` |
+| Mimir | Stockage métriques | Linux | 🆕 fait (lot 59) | `06-supervision/13-stockage-metriques-long-terme` |
+| Cortex | Stockage métriques | Linux | 🆕 fait (lot 59) | `06-supervision/13-stockage-metriques-long-terme` |
+| Alertmanager | Gestion alertes | Windows, Linux, macOS | ✅ existant (lot 59) | `06-supervision/02-prometheus` |
 | Zabbix | Supervision infrastructure | Windows, Linux, macOS | ✅ existant | `06-supervision/04-zabbix` |
 | Icinga 2 | Supervision | Windows, Linux, macOS | ✅ existant | `06-supervision/06-icinga` |
 | Nagios Core | Supervision | Linux | ✅ existant | `06-supervision/05-nagios` |
 | Checkmk Raw | Supervision | Linux | ✅ existant | `06-supervision/08-checkmk` |
-| LibreNMS | Supervision réseau | Linux | ⏳ à faire | → `06-supervision` |
-| Observium Community | Supervision réseau | Linux | ⏳ à faire | → `06-supervision` |
-| OpenNMS Horizon | Supervision réseau | Linux | ⏳ à faire | → `06-supervision` |
+| LibreNMS | Supervision réseau | Linux | 🆕 fait (lot 59) | `06-supervision/14-supervision-reseau-snmp` |
+| Observium Community | Supervision réseau | Linux | 🆕 fait (lot 59) | `06-supervision/14-supervision-reseau-snmp` |
+| OpenNMS Horizon | Supervision réseau | Linux | 🆕 fait (lot 59) | `06-supervision/14-supervision-reseau-snmp` |
 | Netdata | Supervision temps réel | Windows, Linux, macOS | ✅ existant | `06-supervision/07-netdata` |
-| Glances | Supervision système | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Cockpit | Administration serveur | Linux | ⏳ à faire | → `06-supervision` |
-| NetXMS | Supervision réseau | Windows, Linux | ⏳ à faire | → `06-supervision` |
+| Glances | Supervision système | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/15-glances-cockpit` |
+| Cockpit | Administration serveur | Linux | 🆕 fait (lot 59) | `06-supervision/15-glances-cockpit` |
+| NetXMS | Supervision réseau | Windows, Linux | 🆕 fait (lot 59) | `06-supervision/14-supervision-reseau-snmp` |
 | Centreon Open Source | Supervision | Linux | ✅ existant | `06-supervision/01-centreon` |
 | Prometheus Node Exporter | Export métriques système | Windows, Linux, macOS | ✅ existant | `06-supervision/02-prometheus` |
-| windows_exporter | Export métriques Windows | Windows | ⏳ à faire | → `06-supervision` |
+| windows_exporter | Export métriques Windows | Windows | ✅ existant (lot 59) | `06-supervision/02-prometheus` |
 | Telegraf | Collecteur métriques | Windows, Linux, macOS | ✅ existant | `06-supervision/09-telegraf` |
-| Collectd | Collecteur métriques | Linux, BSD | ⏳ à faire | → `06-supervision` |
-| StatsD | Collecteur métriques | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| OpenTelemetry Collector | Collecteur télémétrie | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Jaeger | Traçage distribué | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Zipkin | Traçage distribué | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Tempo | Backend traces | Linux | ⏳ à faire | → `06-supervision` |
-| Loki | Agrégation logs | Windows, Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| Promtail (déprécié) | Agent logs historique | Windows, Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| Grafana Alloy | Agent observabilité | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
+| Collectd | Collecteur métriques | Linux, BSD | 🆕 fait (lot 59) | `06-supervision/16-collectd-statsd` |
+| StatsD | Collecteur métriques | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/16-collectd-statsd` |
+| OpenTelemetry Collector | Collecteur télémétrie | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/17-opentelemetry-alloy` |
+| Jaeger | Traçage distribué | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/18-tracage-distribue` |
+| Zipkin | Traçage distribué | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/18-tracage-distribue` |
+| Tempo | Backend traces | Linux | 🆕 fait (lot 59) | `06-supervision/18-tracage-distribue` |
+| Loki | Agrégation logs | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/09-loki-promtail` |
+| Promtail (déprécié) | Agent logs historique | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/09-loki-promtail` |
+| Grafana Alloy | Agent observabilité | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/17-opentelemetry-alloy` |
 | Fluent Bit | Collecteur logs | Windows, Linux, macOS | ✅ existant | `15-journalisation/03-fluent-bit` |
-| Fluentd | Collecteur logs | Windows, Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| Vector | Pipeline observabilité | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
+| Fluentd | Collecteur logs | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/10-fluentd-vector` |
+| Vector | Pipeline observabilité | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/10-fluentd-vector` |
 | Logstash | Pipeline logs | Windows, Linux, macOS | ✅ existant | `15-journalisation/02-logstash` |
 | OpenSearch | Recherche et analytics logs | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/02-opensearch` |
 | OpenSearch Dashboards | Visualisation logs | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/02-opensearch` |
 | Graylog Open | Gestion logs | Linux | ✅ existant | `15-journalisation/04-graylog` |
 | Wazuh | SIEM et XDR | Windows, Linux, macOS | ✅ existant | `15-journalisation/05-wazuh` |
-| ELK Stack (Elasticsearch OSS alternatives) | Recherche et logs | Windows, Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| Quickwit | Recherche logs | Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| VictoriaLogs | Gestion logs | Windows, Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| SigNoz | Observabilité full-stack | Linux, Windows via conteneur | ⏳ à faire | → `06-supervision` |
-| HyperDX | Observabilité | Linux, Windows via conteneur | ⏳ à faire | → `06-supervision` |
-| Uptrace | APM et traces | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| GlitchTip | Suivi erreurs | Linux, Windows via conteneur | ⏳ à faire | → `06-supervision` |
-| Sentry self-hosted | Suivi erreurs | Linux | ⏳ à faire | → `06-supervision` |
-| Errbit | Suivi erreurs | Linux | ⏳ à faire | → `06-supervision` |
-| Uptime Kuma | Surveillance disponibilité | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Gatus | Surveillance disponibilité | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Cachet | Page statut | Linux | ⏳ à faire | → `06-supervision` |
-| Statping-ng | Page statut | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Cabot | Supervision et alertes | Linux | ⏳ à faire | → `06-supervision` |
-| Healthchecks | Surveillance tâches planifiées | Linux | ⏳ à faire | → `06-supervision` |
-| ntopng | Analyse trafic réseau | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| iftop | Analyse bande passante | Linux, BSD | ⏳ à faire | → `06-supervision` |
-| vnStat | Statistiques trafic | Linux, BSD | ⏳ à faire | → `06-supervision` |
+| ELK Stack (Elasticsearch OSS alternatives) | Recherche et logs | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/11-recherche-journaux` |
+| Quickwit | Recherche logs | Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/11-recherche-journaux` |
+| VictoriaLogs | Gestion logs | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/11-recherche-journaux` |
+| SigNoz | Observabilité full-stack | Linux, Windows via conteneur | 🆕 fait (lot 59) | `06-supervision/19-observabilite-unifiee` |
+| HyperDX | Observabilité | Linux, Windows via conteneur | 🆕 fait (lot 59) | `06-supervision/19-observabilite-unifiee` |
+| Uptrace | APM et traces | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/19-observabilite-unifiee` |
+| GlitchTip | Suivi erreurs | Linux, Windows via conteneur | 🆕 fait (lot 59) | `06-supervision/20-suivi-erreurs` |
+| Sentry self-hosted | Suivi erreurs | Linux | 🆕 fait (lot 59) | `06-supervision/20-suivi-erreurs` |
+| Errbit | Suivi erreurs | Linux | 🆕 fait (lot 59) | `06-supervision/20-suivi-erreurs` |
+| Uptime Kuma | Surveillance disponibilité | Windows, Linux, macOS | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| Gatus | Surveillance disponibilité | Windows, Linux, macOS | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| Cachet | Page statut | Linux | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| Statping-ng | Page statut | Windows, Linux, macOS | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| Cabot | Supervision et alertes | Linux | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| Healthchecks | Surveillance tâches planifiées | Linux | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| ntopng | Analyse trafic réseau | Windows, Linux, macOS | 🆕 fait (lot 60) | `06-supervision/22-analyse-trafic` |
+| iftop | Analyse bande passante | Linux, BSD | 🆕 fait (lot 60) | `06-supervision/22-analyse-trafic` |
+| vnStat | Statistiques trafic | Linux, BSD | 🆕 fait (lot 60) | `06-supervision/22-analyse-trafic` |
 | Wireshark | Analyse protocoles réseau | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/01-wireshark-capture` |
-| tshark | Analyse réseau CLI | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| tcpdump | Capture réseau | Linux, macOS, BSD | ⏳ à faire | → `06-supervision` |
+| tshark | Analyse réseau CLI | Windows, Linux, macOS | ✅ existant (lot 60) | `21-outils/02-reseau-diagnostic` |
+| tcpdump | Capture réseau | Linux, macOS, BSD | 🆕 fait (lot 60) | `06-supervision/22-analyse-trafic` |
 | Nmap | Découverte et audit réseau | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/03-nmap` |
-| ZMap | Scan réseau Internet | Linux | ⏳ à faire | → `06-supervision` |
-| Masscan | Scan réseau | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
+| ZMap | Scan réseau Internet | Linux | 🆕 fait (lot 60) | `06-supervision/23-scan-internet` |
+| Masscan | Scan réseau | Windows, Linux, macOS | 🆕 fait (lot 60) | `06-supervision/23-scan-internet` |
 | Netdata Cloud Agent (agent) | Métriques hôte | Windows, Linux, macOS | ✅ existant | `06-supervision/07-netdata` |
 
-## 10. SECURITE, PARE-FEU, SIEM, SCAN ET PKI — 17/64
+## 10. SECURITE, PARE-FEU, SIEM, SCAN ET PKI — 64/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| OSSEC | HIDS | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| OSSEC | HIDS | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/12-ossec` |
 | Suricata | IDS/IPS réseau | Windows, Linux, macOS | ✅ existant | `16-securite/05-suricata` |
 | Zeek | Analyse sécurité réseau | Linux, macOS | ✅ existant | `16-securite/07-zeek` |
 | Snort | IDS/IPS | Windows, Linux, macOS | ✅ existant | `16-securite/06-snort` |
-| Security Onion | Distribution SOC | Linux | ⏳ à faire | → `16-securite` |
-| TheHive | Gestion incidents SOC | Linux | ⏳ à faire | → `16-securite` |
-| MISP | Partage renseignements menaces | Linux | ⏳ à faire | → `16-securite` |
-| OpenCTI | Renseignement cyber | Linux | ⏳ à faire | → `16-securite` |
-| Yeti | Threat intelligence | Linux | ⏳ à faire | → `16-securite` |
-| IntelOwl | Analyse fichiers et observables | Linux | ⏳ à faire | → `16-securite` |
-| Velociraptor | DFIR et réponse incident | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| GRR Rapid Response | Forensic à distance | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| osquery | Instrumentation endpoint | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| FleetDM | Gestion osquery | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Kolide Launcher | Sécurité endpoint | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| Security Onion | Distribution SOC | Linux | 🆕 fait (lot 60) | `16-securite/13-security-onion` |
+| TheHive | Gestion incidents SOC | Linux | 🆕 fait (lot 60) | `16-securite/14-reponse-incident-cti` |
+| MISP | Partage renseignements menaces | Linux | 🆕 fait (lot 60) | `16-securite/14-reponse-incident-cti` |
+| OpenCTI | Renseignement cyber | Linux | 🆕 fait (lot 60) | `16-securite/14-reponse-incident-cti` |
+| Yeti | Threat intelligence | Linux | 🆕 fait (lot 60) | `16-securite/14-reponse-incident-cti` |
+| IntelOwl | Analyse fichiers et observables | Linux | 🆕 fait (lot 60) | `16-securite/14-reponse-incident-cti` |
+| Velociraptor | DFIR et réponse incident | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/15-velociraptor-grr` |
+| GRR Rapid Response | Forensic à distance | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/15-velociraptor-grr` |
+| osquery | Instrumentation endpoint | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/16-osquery-fleet` |
+| FleetDM | Gestion osquery | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/16-osquery-fleet` |
+| Kolide Launcher | Sécurité endpoint | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/16-osquery-fleet` |
 | Lynis | Audit sécurité système | Linux, macOS, BSD | ✅ existant | `16-securite/08-lynis` |
-| OpenSCAP | Conformité et audit | Linux | ⏳ à faire | → `16-securite` |
+| OpenSCAP | Conformité et audit | Linux | 🆕 fait (lot 60) | `16-securite/17-openscap` |
 | Greenbone Community Edition | Scanner vulnérabilités | Linux | ✅ existant | `21-outils/02-reseau-diagnostic/08-greenbone-openvas` |
 | OpenVAS | Scanner vulnérabilités | Linux | ✅ existant | `21-outils/02-reseau-diagnostic/08-greenbone-openvas` |
-| Nuclei | Scanner templates vulnérabilités | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| Nuclei | Scanner templates vulnérabilités | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/18-scanners-web` |
 | OWASP ZAP | Test sécurité web | Windows, Linux, macOS | ✅ existant | `21-outils/03-cybersecurite/02-owasp-zap` |
-| Nikto | Scanner serveur web | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Wapiti | Scanner web | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Arachni | Scanner web | Linux | ⏳ à faire | → `16-securite` |
-| sqlmap | Audit injection SQL | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| Nikto | Scanner serveur web | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/18-scanners-web` |
+| Wapiti | Scanner web | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/18-scanners-web` |
+| Arachni | Scanner web | Linux | 🆕 fait (lot 61) | `16-securite/18-scanners-web` |
+| sqlmap | Audit injection SQL | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/18-scanners-web` |
 | Nmap NSE | Scripts audit réseau | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/03-nmap` |
-| testssl.sh | Audit TLS | Linux, macOS | ⏳ à faire | → `16-securite` |
-| SSLyze | Audit TLS | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Certbot | Gestion certificats ACME | Windows via WSL, Linux, macOS | ⏳ à faire | → `16-securite` |
-| acme.sh | Client ACME | Windows via shell, Linux, macOS | ⏳ à faire | → `16-securite` |
-| step-ca | Autorité de certification | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Smallstep CLI | PKI et certificats | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| EJBCA Community | Autorité de certification | Linux | ⏳ à faire | → `16-securite` |
-| OpenSSL | Cryptographie et PKI | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| LibreSSL | Cryptographie | OpenBSD, Linux, macOS | ⏳ à faire | → `16-securite` |
-| GnuPG | Chiffrement et signature | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| age | Chiffrement fichiers | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| SOPS | Chiffrement secrets config | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Vault (open source core) | Gestion secrets | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| OpenBao | Gestion secrets | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Infisical (open source core) | Gestion secrets | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Mozilla SOPS | Gestion secrets | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| testssl.sh | Audit TLS | Linux, macOS | 🆕 fait (lot 61) | `16-securite/19-audit-tls` |
+| SSLyze | Audit TLS | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/19-audit-tls` |
+| Certbot | Gestion certificats ACME | Windows via WSL, Linux, macOS | 🆕 fait (lot 61) | `16-securite/20-acme-certbot` |
+| acme.sh | Client ACME | Windows via shell, Linux, macOS | 🆕 fait (lot 61) | `16-securite/20-acme-certbot` |
+| step-ca | Autorité de certification | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/21-pki-step-ca-ejbca` |
+| Smallstep CLI | PKI et certificats | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/21-pki-step-ca-ejbca` |
+| EJBCA Community | Autorité de certification | Linux | 🆕 fait (lot 61) | `16-securite/21-pki-step-ca-ejbca` |
+| OpenSSL | Cryptographie et PKI | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/22-openssl-libressl` |
+| LibreSSL | Cryptographie | OpenBSD, Linux, macOS | 🆕 fait (lot 61) | `16-securite/22-openssl-libressl` |
+| GnuPG | Chiffrement et signature | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/23-gnupg-age` |
+| age | Chiffrement fichiers | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/23-gnupg-age` |
+| SOPS | Chiffrement secrets config | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/24-sops` |
+| Vault (open source core) | Gestion secrets | Windows, Linux, macOS | ✅ existant (lot 61) | `01-annuaire-identite/07-vault` |
+| OpenBao | Gestion secrets | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/25-openbao-infisical` |
+| Infisical (open source core) | Gestion secrets | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/25-openbao-infisical` |
+| Mozilla SOPS | Gestion secrets | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/24-sops` |
 | KeePassXC | Gestionnaire mots de passe | Windows, Linux, macOS | ✅ existant | `21-outils/03-cybersecurite/06-keepassxc-bitwarden` |
-| KeePass | Gestionnaire mots de passe | Windows | ⏳ à faire | → `16-securite` |
+| KeePass | Gestionnaire mots de passe | Windows | ✅ existant (lot 61) | `21-outils/03-cybersecurite` |
 | Bitwarden self-hosted (clients open source) | Gestion mots de passe | Windows, Linux, macOS | ✅ existant | `21-outils/03-cybersecurite/06-keepassxc-bitwarden` |
 | Vaultwarden | Serveur compatible Bitwarden | Windows, Linux, macOS | ✅ existant | `01-annuaire-identite/08-vaultwarden` |
-| Passbolt Community | Gestion mots de passe équipe | Linux | ⏳ à faire | → `16-securite` |
-| Psono Community | Gestion mots de passe équipe | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| Passbolt Community | Gestion mots de passe équipe | Linux | 🆕 fait (lot 61) | `16-securite/26-passbolt-psono` |
+| Psono Community | Gestion mots de passe équipe | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/26-passbolt-psono` |
 | Fail2ban | Blocage brute force | Linux, BSD | ✅ existant | `16-securite/01-fail2ban` |
 | CrowdSec | Détection et blocage comportemental | Windows, Linux, macOS | ✅ existant | `16-securite/02-crowdsec` |
-| sshguard | Protection SSH | Linux, BSD | ⏳ à faire | → `16-securite` |
-| Firewalld | Pare-feu dynamique | Linux | ⏳ à faire | → `16-securite` |
-| nftables | Pare-feu Linux | Linux | ⏳ à faire | → `16-securite` |
-| iptables | Pare-feu Linux historique | Linux | ⏳ à faire | → `16-securite` |
-| UFW | Pare-feu simplifié | Linux | ⏳ à faire | → `16-securite` |
-| Windows Defender Firewall Tools | Administration pare-feu natif | Windows | ⏳ à faire | → `16-securite` |
+| sshguard | Protection SSH | Linux, BSD | 🆕 fait (lot 61) | `16-securite/27-pare-feu-linux` |
+| Firewalld | Pare-feu dynamique | Linux | 🆕 fait (lot 61) | `16-securite/27-pare-feu-linux` |
+| nftables | Pare-feu Linux | Linux | 🆕 fait (lot 61) | `16-securite/27-pare-feu-linux` |
+| iptables | Pare-feu Linux historique | Linux | 🆕 fait (lot 61) | `16-securite/27-pare-feu-linux` |
+| UFW | Pare-feu simplifié | Linux | 🆕 fait (lot 61) | `16-securite/27-pare-feu-linux` |
+| Windows Defender Firewall Tools | Administration pare-feu natif | Windows | ✅ existant (lot 61) | `16-securite/10-pare-feu-windows` |
 | ClamAV | Antivirus open source | Windows, Linux, macOS | ✅ existant | `16-securite/04-clamav` |
-| YARA | Règles de détection | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Chkrootkit | Détection rootkits | Linux | ⏳ à faire | → `16-securite` |
-| rkhunter | Détection rootkits | Linux | ⏳ à faire | → `16-securite` |
+| YARA | Règles de détection | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/28-yara-rootkits` |
+| Chkrootkit | Détection rootkits | Linux | 🆕 fait (lot 61) | `16-securite/28-yara-rootkits` |
+| rkhunter | Détection rootkits | Linux | 🆕 fait (lot 61) | `16-securite/28-yara-rootkits` |
 | AIDE | Contrôle intégrité fichiers | Linux, Unix | ✅ existant | `16-securite/03-aide` |
 | Lynis Enterprise alternatives | Audit système (catégorie) | Linux | ✅ existant | `16-securite/08-lynis` |
-| OpenEDR | EDR open source | Windows, Linux | ⏳ à faire | → `16-securite` |
+| OpenEDR | EDR open source | Windows, Linux | 🆕 fait (lot 61) | `16-securite/29-openedr` |
 | XCP-ng Xen Orchestra (community) | Gestion hyperviseur | Linux, Windows, macOS via navigateur | 🆕 fait (lot 48) | `13-conteneurs/15-xcp-ng-xen` |
 
-## 11. AUTOMATISATION, CONFIGURATION ET INFRASTRUCTURE AS CODE — 6/45
+## 11. AUTOMATISATION, CONFIGURATION ET INFRASTRUCTURE AS CODE — 45/45
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Ansible | Automatisation configuration | Windows, Linux, macOS (contrôle Linux/macOS) | ✅ existant | `17-automatisation/01-ansible` |
-| AWX | Interface Ansible | Linux, Windows via conteneur | ⏳ à faire | → `17-automatisation` |
-| Semaphore UI | Interface Ansible | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Rundeck Community | Automatisation opérations | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Rundeck | Orchestration tâches | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
+| AWX | Interface Ansible | Linux, Windows via conteneur | 🆕 fait (lot 62) | `17-automatisation/06-awx-semaphore` |
+| Semaphore UI | Interface Ansible | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/06-awx-semaphore` |
+| Rundeck Community | Automatisation opérations | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/07-rundeck` |
+| Rundeck | Orchestration tâches | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/07-rundeck` |
 | Salt Project | Automatisation infrastructure | Windows, Linux, macOS | ✅ existant | `17-automatisation/03-salt` |
 | Puppet Open Source | Gestion configuration | Windows, Linux, macOS | ✅ existant | `17-automatisation/02-puppet` |
-| Chef Infra (community) | Gestion configuration | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| CFEngine | Gestion configuration | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
+| Chef Infra (community) | Gestion configuration | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/08-chef-cfengine` |
+| CFEngine | Gestion configuration | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/08-chef-cfengine` |
 | Terraform | Infrastructure as Code | Windows, Linux, macOS | ✅ existant | `17-automatisation/04-terraform` |
 | OpenTofu | Infrastructure as Code | Windows, Linux, macOS | ✅ existant | `17-automatisation/04-terraform` |
-| Pulumi | Infrastructure as Code | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Terragrunt | Orchestration Terraform | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Terramate | Orchestration IaC | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Cloud-init | Initialisation VM | Linux, BSD | ⏳ à faire | → `17-automatisation` |
-| Ignition | Provisioning OS | Linux | ⏳ à faire | → `17-automatisation` |
-| Foreman | Provisioning et gestion serveurs | Linux | ⏳ à faire | → `17-automatisation` |
-| Katello | Gestion contenu et patchs | Linux | ⏳ à faire | → `17-automatisation` |
-| Uyuni | Gestion parc et patchs | Linux | ⏳ à faire | → `17-automatisation` |
-| Rudder | Configuration et conformité | Windows, Linux | ⏳ à faire | → `17-automatisation` |
-| Rex (R)? | Automatisation distante | Linux, Unix | ⏳ à faire | → `17-automatisation` |
-| Fabric | Automatisation SSH Python | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Invoke | Task execution Python | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Nornir | Automatisation réseau Python | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Netmiko | Automatisation équipements réseau | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| NAPALM | Automatisation réseau | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Nornir Salt | Automatisation réseau | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| StackStorm | Automatisation événementielle | Linux | ⏳ à faire | → `17-automatisation` |
-| Huginn | Automatisation événementielle | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
+| Pulumi | Infrastructure as Code | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/09-pulumi` |
+| Terragrunt | Orchestration Terraform | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/10-terragrunt-terramate` |
+| Terramate | Orchestration IaC | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/10-terragrunt-terramate` |
+| Cloud-init | Initialisation VM | Linux, BSD | 🆕 fait (lot 62) | `17-automatisation/11-cloud-init-ignition` |
+| Ignition | Provisioning OS | Linux | 🆕 fait (lot 62) | `17-automatisation/11-cloud-init-ignition` |
+| Foreman | Provisioning et gestion serveurs | Linux | 🆕 fait (lot 62) | `17-automatisation/12-foreman-katello` |
+| Katello | Gestion contenu et patchs | Linux | 🆕 fait (lot 62) | `17-automatisation/12-foreman-katello` |
+| Uyuni | Gestion parc et patchs | Linux | 🆕 fait (lot 62) | `17-automatisation/13-uyuni` |
+| Rudder | Configuration et conformité | Windows, Linux | 🆕 fait (lot 62) | `17-automatisation/14-rudder` |
+| Rex (R)? | Automatisation distante | Linux, Unix | 🆕 fait (lot 62) | `17-automatisation/15-rex-fabric-invoke` |
+| Fabric | Automatisation SSH Python | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/15-rex-fabric-invoke` |
+| Invoke | Task execution Python | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/15-rex-fabric-invoke` |
+| Nornir | Automatisation réseau Python | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/16-automatisation-reseau-python` |
+| Netmiko | Automatisation équipements réseau | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/16-automatisation-reseau-python` |
+| NAPALM | Automatisation réseau | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/16-automatisation-reseau-python` |
+| Nornir Salt | Automatisation réseau | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/16-automatisation-reseau-python` |
+| StackStorm | Automatisation événementielle | Linux | 🆕 fait (lot 62) | `17-automatisation/17-stackstorm` |
+| Huginn | Automatisation événementielle | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/18-workflows-low-code` |
 | n8n (source available/community) | Automatisation workflows | Windows, Linux, macOS | ✅ existant | `21-outils/05-ia-productivite/06-n8n` |
-| Node-RED | Automatisation low-code | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Activepieces (community) | Automatisation workflows | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Windmill (community) | Automatisation scripts et workflows | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Kestra | Orchestration workflows | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Apache Airflow | Orchestration pipelines | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Prefect | Orchestration workflows | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Dagster | Orchestration data | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Temporal | Orchestration durable | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Netflix Conductor | Orchestration microservices | Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Apache DolphinScheduler | Orchestration tâches | Linux | ⏳ à faire | → `17-automatisation` |
-| Molecule | Tests rôles Ansible | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Testinfra | Tests infrastructure | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| InSpec (core open source) | Tests conformité | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Serverspec | Tests infrastructure | Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| KitchenCI | Tests infrastructure | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
+| Node-RED | Automatisation low-code | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/18-workflows-low-code` |
+| Activepieces (community) | Automatisation workflows | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/18-workflows-low-code` |
+| Windmill (community) | Automatisation scripts et workflows | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/18-workflows-low-code` |
+| Kestra | Orchestration workflows | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/19-orchestration-donnees` |
+| Apache Airflow | Orchestration pipelines | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/19-orchestration-donnees` |
+| Prefect | Orchestration workflows | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/19-orchestration-donnees` |
+| Dagster | Orchestration data | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/19-orchestration-donnees` |
+| Temporal | Orchestration durable | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/20-temporal-conductor` |
+| Netflix Conductor | Orchestration microservices | Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/20-temporal-conductor` |
+| Apache DolphinScheduler | Orchestration tâches | Linux | 🆕 fait (lot 63) | `17-automatisation/19-orchestration-donnees` |
+| Molecule | Tests rôles Ansible | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
+| Testinfra | Tests infrastructure | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
+| InSpec (core open source) | Tests conformité | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
+| Serverspec | Tests infrastructure | Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
+| KitchenCI | Tests infrastructure | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 
-## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 11/80
+## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 16/80
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| Matrix Synapse | Serveur messagerie Matrix | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Dendrite | Serveur Matrix | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Conduit | Serveur Matrix léger | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Continuwuity | Serveur Matrix | Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Element Server Suite (components) | Messagerie Matrix | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
+| Matrix Synapse | Serveur messagerie Matrix | Windows, Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
+| Dendrite | Serveur Matrix | Windows, Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
+| Conduit | Serveur Matrix léger | Windows, Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
+| Continuwuity | Serveur Matrix | Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
+| Element Server Suite (components) | Messagerie Matrix | Windows, Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
 | Mattermost Team Edition | Chat équipe | Linux, Windows via conteneur | ⏳ à faire | → `10-messagerie` |
 | Rocket.Chat Community | Chat équipe | Linux, Windows via conteneur | ⏳ à faire | → `10-messagerie` |
 | Zulip | Chat équipe | Linux | ⏳ à faire | → `10-messagerie` |

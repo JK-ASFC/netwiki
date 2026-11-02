@@ -1,0 +1,1 @@
+{ "title": "Buildbot et GoCD", "icon": "workflow", "color": "#2f9e44", "description": "Serveurs d'intégration continue auto-hébergés : Buildbot (configuration en Python, maîtres et workers) et GoCD (pipelines, chaînes de valeur, agents)." }

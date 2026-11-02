@@ -1,0 +1,1 @@
+{ "title": "etcd et Consul", "icon": "share-2", "color": "#419eda", "description": "Magasins clé-valeur distribués et découverte de services : etcd (Raft, Kubernetes) et Consul (catalogue, DNS, contrôles de santé, KV, ACL)." }

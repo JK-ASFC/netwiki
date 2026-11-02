@@ -1,0 +1,1 @@
+{ "title": "Erlang/OTP et Elixir", "icon": "atom", "color": "#a90533", "description": "Machine virtuelle BEAM pour systèmes concurrents et tolérants aux pannes : installation, rebar3, mix, releases, distribution et cookies (RabbitMQ, ejabberd, Phoenix)." }

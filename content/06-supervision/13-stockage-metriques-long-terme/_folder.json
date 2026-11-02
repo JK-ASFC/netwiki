@@ -1,0 +1,1 @@
+{ "title": "VictoriaMetrics, Thanos, Mimir et Cortex", "icon": "database", "color": "#621773", "description": "Stockage long terme et haute disponibilité des métriques Prometheus : VictoriaMetrics, Thanos, Grafana Mimir et Cortex." }

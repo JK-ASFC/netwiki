@@ -1,0 +1,1 @@
+{ "title": "GlusterFS", "icon": "folder-tree", "color": "#3c5a99", "description": "Système de fichiers distribué en espace utilisateur : briques, volumes répliqués et dispersés, clients FUSE et NFS, géo-réplication." }

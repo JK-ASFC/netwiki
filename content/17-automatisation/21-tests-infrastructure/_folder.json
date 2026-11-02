@@ -1,0 +1,1 @@
+{ "title": "Molecule, Testinfra, InSpec, Serverspec et Kitchen", "icon": "flask-conical", "color": "#0f766e", "description": "Tester l'infrastructure comme du code : rôles Ansible (Molecule), état des serveurs (Testinfra, Serverspec), conformité (InSpec) et cycles de test (Test Kitchen)." }

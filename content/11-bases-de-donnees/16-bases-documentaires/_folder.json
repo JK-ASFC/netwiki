@@ -1,0 +1,1 @@
+{ "title": "FerretDB, Couchbase, RavenDB et RethinkDB", "icon": "file-json", "color": "#ea2328", "description": "Bases documentaires alternatives à MongoDB : FerretDB (protocole MongoDB sur PostgreSQL), Couchbase, RavenDB et RethinkDB." }

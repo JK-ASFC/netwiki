@@ -1,0 +1,1 @@
+{ "title": "Packer et Vagrant", "icon": "box", "color": "#02a8ef", "description": "Outils HashiCorp : modèles d'images de machines reproductibles (Packer) et environnements de développement et de test virtualisés (Vagrant)." }

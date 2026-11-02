@@ -1,0 +1,1 @@
+{ "title": "testssl.sh et SSLyze", "icon": "lock-keyhole", "color": "#0d9488", "description": "Audit de la configuration TLS des serveurs : protocoles, suites, certificats, vulnérabilités connues et conformité aux recommandations." }

@@ -1,0 +1,1 @@
+{ "title": "Dagger et Earthly", "icon": "boxes", "color": "#131126", "description": "Pipelines portables exécutés dans des conteneurs, identiques en local et en CI : Dagger (pipelines en code) et Earthly (Earthfile)." }

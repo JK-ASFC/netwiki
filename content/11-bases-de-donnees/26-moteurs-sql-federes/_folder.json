@@ -1,0 +1,1 @@
+{ "title": "Trino, Presto et Apache Drill", "icon": "git-fork", "color": "#dd00a1", "description": "Moteurs SQL distribués qui interrogent des sources multiples (lac de données, bases, S3) sans les copier." }

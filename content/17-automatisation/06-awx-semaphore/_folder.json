@@ -1,0 +1,1 @@
+{ "title": "AWX et Semaphore UI", "icon": "play", "color": "#ee0000", "description": "Interfaces web pour exécuter Ansible en équipe : inventaires, identifiants, modèles de tâches, planifications, droits et journaux (AWX, Semaphore UI)." }

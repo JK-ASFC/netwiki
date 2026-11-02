@@ -81,3 +81,11 @@ jdeps --print-module-deps app.jar
 jlink --add-modules java.base,java.logging,java.net.http --strip-debug --no-header-files --no-man-pages --output /opt/runtime-app
 jpackage --name MonOutil --input target --main-jar app.jar --type deb       # msi (Windows), dmg (macOS)
 ```
+
+## GraalVM
+
+```bash
+sdk install java 21-graalce ; sdk use java 21-graalce
+native-image --version ; native-image -jar app.jar app ; native-image --help
+java -agentlib:native-image-agent=config-output-dir=config -jar app.jar
+```

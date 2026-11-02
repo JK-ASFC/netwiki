@@ -1,0 +1,1 @@
+{ "title": "rsync et Rclone", "icon": "refresh-cw", "color": "#16a34a", "description": "Synchronisation de fichiers : rsync (local et SSH, incrémental, démon) et Rclone (plus de 70 stockages cloud, chiffrement, montage, copie serveur à serveur)." }

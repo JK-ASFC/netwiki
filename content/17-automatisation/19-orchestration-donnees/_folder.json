@@ -1,0 +1,1 @@
+{ "title": "Airflow, Kestra, Prefect, Dagster et DolphinScheduler", "icon": "git-fork", "color": "#017cee", "description": "Orchestration de pipelines de données et de tâches planifiées : DAG, dépendances, reprises, planification, supervision." }

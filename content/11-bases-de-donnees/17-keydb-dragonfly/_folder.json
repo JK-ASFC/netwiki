@@ -1,0 +1,1 @@
+{ "title": "KeyDB et Dragonfly", "icon": "key-round", "color": "#dc382d", "description": "Alternatives compatibles Redis : KeyDB (multithread, réplication active et multi-maître) et Dragonfly (architecture moderne multicœur, forte densité mémoire)." }

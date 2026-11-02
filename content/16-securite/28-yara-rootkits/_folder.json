@@ -1,0 +1,1 @@
+{ "title": "YARA, chkrootkit et rkhunter", "icon": "scan-search", "color": "#4b5563", "description": "Détection de logiciels malveillants : règles YARA pour identifier des fichiers et de la mémoire, chkrootkit et rkhunter pour rechercher des rootkits sous Linux." }

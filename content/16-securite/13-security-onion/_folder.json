@@ -1,0 +1,1 @@
+{ "title": "Security Onion", "icon": "shield", "color": "#1f2937", "description": "Distribution Linux de supervision de la sécurité (SOC) : détection réseau (Suricata, Zeek), capture de paquets, journaux, chasse aux menaces et gestion des alertes." }

@@ -1,0 +1,1 @@
+{ "title": "osquery, FleetDM et Kolide", "icon": "database-zap", "color": "#a596ff", "description": "Interroger les postes et serveurs en SQL (osquery) et piloter un parc d'agents osquery (FleetDM, Kolide Launcher)." }

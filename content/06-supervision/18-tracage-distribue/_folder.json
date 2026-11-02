@@ -1,0 +1,1 @@
+{ "title": "Jaeger, Zipkin et Tempo", "icon": "git-commit-horizontal", "color": "#60d0e4", "description": "Traçage distribué des requêtes entre services : Jaeger, Zipkin et Grafana Tempo, alimentés par OpenTelemetry." }

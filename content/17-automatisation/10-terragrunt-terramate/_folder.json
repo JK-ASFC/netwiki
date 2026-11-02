@@ -1,0 +1,1 @@
+{ "title": "Terragrunt et Terramate", "icon": "layers-3", "color": "#5c4ee5", "description": "Orchestration de projets Terraform et OpenTofu à grande échelle : configuration DRY, dépendances entre modules, piles, exécution ciblée et CI." }

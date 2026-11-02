@@ -1,0 +1,1 @@
+{ "title": "Certbot et acme.sh", "icon": "badge-check", "color": "#003a70", "description": "Clients ACME pour obtenir et renouveler automatiquement des certificats (Let's Encrypt, AC internes ACME) : défis HTTP-01 et DNS-01, déploiement et hooks." }

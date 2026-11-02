@@ -1,0 +1,1 @@
+{ "title": "Alternatives à ELK, Quickwit et VictoriaLogs", "icon": "search", "color": "#00bfb3", "description": "Rechercher dans de gros volumes de journaux : piles ELK libres (OpenSearch, Graylog), Quickwit (index sur stockage objet) et VictoriaLogs." }
