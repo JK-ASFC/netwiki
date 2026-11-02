@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-129 capture(s) attendue(s) dans 23 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+139 capture(s) attendue(s) dans 25 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -52,6 +52,26 @@
 | `content/01-annuaire-identite/19-plateformes-iam/_assets/logto-organisations.png` | Logto — organisations et rôles | `04-logto.md` |
 | `content/01-annuaire-identite/19-plateformes-iam/_assets/janssen-tui-clients.png` | Janssen — interface TUI d'administration (clients OpenID) | `06-gluu-flex-openam.md` |
 | `content/01-annuaire-identite/19-plateformes-iam/_assets/openam-console-royaume.png` | OpenAM — console, royaume et chaînes d'authentification | `06-gluu-flex-openam.md` |
+
+## 02-dns/08-technitium
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/02-dns/08-technitium/_assets/technitium-tableau-de-bord.png` | Technitium — tableau de bord | `03-interface-graphique.md` |
+| `content/02-dns/08-technitium/_assets/technitium-zone.png` | Technitium — édition d'une zone et de ses enregistrements | `03-interface-graphique.md` |
+| `content/02-dns/08-technitium/_assets/technitium-blocage.png` | Technitium — paramètres de blocage avec listes | `03-interface-graphique.md` |
+| `content/02-dns/08-technitium/_assets/technitium-dns-client.png` | Technitium — DNS Client (outil de résolution) | `03-interface-graphique.md` |
+
+## 02-dns/09-dns-filtrants
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/02-dns/09-dns-filtrants/_assets/adguard-home-tableau-de-bord.png` | AdGuard Home — tableau de bord | `04-interface-graphique.md` |
+| `content/02-dns/09-dns-filtrants/_assets/adguard-home-journal.png` | AdGuard Home — journal des requêtes avec la règle appliquée | `04-interface-graphique.md` |
+| `content/02-dns/09-dns-filtrants/_assets/adguard-home-parametres-dns.png` | AdGuard Home — paramètres DNS (amonts et transfert conditionnel) | `04-interface-graphique.md` |
+| `content/02-dns/09-dns-filtrants/_assets/pihole-tableau-de-bord.png` | Pi-hole — tableau de bord | `04-interface-graphique.md` |
+| `content/02-dns/09-dns-filtrants/_assets/pihole-query-log.png` | Pi-hole — Query Log | `04-interface-graphique.md` |
+| `content/02-dns/09-dns-filtrants/_assets/blocky-grafana.png` | Grafana — tableau de bord Blocky | `04-interface-graphique.md` |
 
 ## 04-aaa/03-packetfence-opennac
 

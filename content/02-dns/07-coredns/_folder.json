@@ -1,0 +1,1 @@
+{ "title": "CoreDNS", "icon": "globe", "color": "#2f9e44", "description": "Serveur DNS extensible par greffons (Corefile) : DNS de Kubernetes, transfert conditionnel, zones, cache, métriques Prometheus." }

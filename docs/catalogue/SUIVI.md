@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 68 | 0 | 1070 (82 %) |
+| 1311 | 173 (13 %) | 76 | 0 | 1062 (81 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -99,23 +99,23 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Samba AD DC | Contrôleur de domaine | Linux | ✅ existant | `09-fichiers-partage/01-samba` |
 | gopass | Gestionnaire de secrets CLI | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/21-gopass` |
 
-## 3. DNS, DHCP, IPAM ET SERVICES RESEAU — 17/49
+## 3. DNS, DHCP, IPAM ET SERVICES RESEAU — 25/49
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | BIND 9 | Serveur DNS | Windows, Linux, macOS | ✅ existant | `02-dns/01-bind9` |
-| Knot DNS | Serveur DNS autoritatif | Linux, BSD | ⏳ à faire | → `02-dns` |
+| Knot DNS | Serveur DNS autoritatif | Linux, BSD | 🆕 fait (lot 51) | `02-dns/06-knot-nsd-maradns` |
 | PowerDNS Authoritative | Serveur DNS autoritatif | Windows, Linux, macOS | ✅ existant | `02-dns/04-powerdns` |
 | PowerDNS Recursor | Résolveur DNS | Windows, Linux, macOS | ✅ existant | `02-dns/04-powerdns` |
 | Unbound | Résolveur DNS récursif | Windows, Linux, macOS | ✅ existant | `02-dns/02-unbound` |
-| CoreDNS | DNS extensible | Windows, Linux, macOS | ⏳ à faire | → `02-dns` |
-| Technitium DNS Server | DNS récursif et autoritatif | Windows, Linux, macOS | ⏳ à faire | → `02-dns` |
+| CoreDNS | DNS extensible | Windows, Linux, macOS | 🆕 fait (lot 51) | `02-dns/07-coredns` |
+| Technitium DNS Server | DNS récursif et autoritatif | Windows, Linux, macOS | 🆕 fait (lot 51) | `02-dns/08-technitium` |
 | dnsmasq | DNS/DHCP léger | Linux, macOS, BSD | ✅ existant | `02-dns/03-dnsmasq` |
-| AdGuard Home | DNS filtrant | Windows, Linux, macOS | ⏳ à faire | → `02-dns` |
-| Pi-hole | DNS filtrant | Linux | ⏳ à faire | → `02-dns` |
-| Blocky | DNS filtrant | Windows, Linux, macOS | ⏳ à faire | → `02-dns` |
-| MaraDNS | Serveur DNS | Windows, Linux | ⏳ à faire | → `02-dns` |
-| NSD | Serveur DNS autoritatif | Linux, BSD | ⏳ à faire | → `02-dns` |
+| AdGuard Home | DNS filtrant | Windows, Linux, macOS | 🆕 fait (lot 51) | `02-dns/09-dns-filtrants` |
+| Pi-hole | DNS filtrant | Linux | 🆕 fait (lot 51) | `02-dns/09-dns-filtrants` |
+| Blocky | DNS filtrant | Windows, Linux, macOS | 🆕 fait (lot 51) | `02-dns/09-dns-filtrants` |
+| MaraDNS | Serveur DNS | Windows, Linux | 🆕 fait (lot 51) | `02-dns/06-knot-nsd-maradns` |
+| NSD | Serveur DNS autoritatif | Linux, BSD | 🆕 fait (lot 51) | `02-dns/06-knot-nsd-maradns` |
 | Kea DHCP | Serveur DHCP | Linux, BSD | ✅ existant | `03-dhcp/02-kea` |
 | ISC DHCP (fin de vie) | Serveur DHCP historique | Linux, BSD | ✅ existant | `03-dhcp/01-isc-dhcp` |
 | Open DHCP Server | Serveur DHCP | Windows | ⏳ à faire | → `03-dhcp` |
