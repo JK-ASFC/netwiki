@@ -1,0 +1,1 @@
+{ "title": "Dapr", "icon": "blocks", "color": "#0d2192", "description": "Runtime d'applications distribuées : blocs (état, publication/abonnement, appels de services, secrets, liaisons) exposés par un sidecar, sur Kubernetes ou en local." }

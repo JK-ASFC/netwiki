@@ -1,0 +1,1 @@
+{ "title": "Crossplane et Cluster API", "icon": "network", "color": "#f7d046", "description": "Gérer l'infrastructure et les clusters par l'API Kubernetes : Crossplane (ressources cloud et compositions) et Cluster API (cycle de vie déclaratif des clusters)." }

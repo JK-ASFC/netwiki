@@ -1,0 +1,1 @@
+{ "title": "Knative, OpenFaaS, Fission et KEDA", "icon": "zap", "color": "#0865ad", "description": "Serverless et mise à l'échelle événementielle sur Kubernetes : services à l'échelle zéro (Knative), fonctions (OpenFaaS, Fission) et autoscaling sur files et métriques (KEDA)." }

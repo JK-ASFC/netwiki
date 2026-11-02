@@ -1,0 +1,1 @@
+{ "title": "kube-bench, Kubescape, Trivy et Falco", "icon": "shield-alert", "color": "#1904da", "description": "Sécurité des clusters et des images : audit CIS (kube-bench), posture (Kubescape), vulnérabilités et mauvaises configurations (Trivy), détection à l'exécution (Falco)." }

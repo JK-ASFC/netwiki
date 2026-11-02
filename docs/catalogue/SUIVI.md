@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 264 | 1 | 873 (67 %) |
+| 1311 | 173 (13 %) | 299 | 1 | 838 (64 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -359,7 +359,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | ProjectSend | Partage de fichiers | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
 | Pingvin Share | Partage temporaire | Linux, Windows via conteneur | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
 
-## 8. CONTENEURS, ORCHESTRATION ET PLATEFORMES CLOUD-NATIVE — 26/61
+## 8. CONTENEURS, ORCHESTRATION ET PLATEFORMES CLOUD-NATIVE — 61/61
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -386,44 +386,44 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Tilt | Développement Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/32-developpement-kubernetes` |
 | Garden | Développement Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/32-developpement-kubernetes` |
 | Telepresence | Développement Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/32-developpement-kubernetes` |
-| Dapr | Runtime applicatif distribué | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Knative | Serverless Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| OpenFaaS | Serverless | Linux, Windows via conteneur | ⏳ à faire | → `13-conteneurs` |
-| Fission | Serverless Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| KEDA | Autoscaling événementiel | Linux | ⏳ à faire | → `13-conteneurs` |
-| Crossplane | Control plane cloud | Linux | ⏳ à faire | → `13-conteneurs` |
-| Cluster API | Gestion cycle de vie clusters | Linux | ⏳ à faire | → `13-conteneurs` |
-| MetalLB | Load balancer Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Cilium | Réseau et sécurité Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Calico | Réseau Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Flannel | Réseau Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Weave Net | Réseau Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Multus | Réseaux multiples Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Gateway API | API réseau Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Contour | Ingress Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| NGINX Ingress Controller | Ingress Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
+| Dapr | Runtime applicatif distribué | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/33-dapr` |
+| Knative | Serverless Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/34-serverless-keda` |
+| OpenFaaS | Serverless | Linux, Windows via conteneur | 🆕 fait (lot 58) | `13-conteneurs/34-serverless-keda` |
+| Fission | Serverless Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/34-serverless-keda` |
+| KEDA | Autoscaling événementiel | Linux | 🆕 fait (lot 58) | `13-conteneurs/34-serverless-keda` |
+| Crossplane | Control plane cloud | Linux | 🆕 fait (lot 58) | `13-conteneurs/35-crossplane-cluster-api` |
+| Cluster API | Gestion cycle de vie clusters | Linux | 🆕 fait (lot 58) | `13-conteneurs/35-crossplane-cluster-api` |
+| MetalLB | Load balancer Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
+| Cilium | Réseau et sécurité Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/36-reseau-cni` |
+| Calico | Réseau Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/36-reseau-cni` |
+| Flannel | Réseau Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/36-reseau-cni` |
+| Weave Net | Réseau Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/36-reseau-cni` |
+| Multus | Réseaux multiples Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/36-reseau-cni` |
+| Gateway API | API réseau Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
+| Contour | Ingress Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
+| NGINX Ingress Controller | Ingress Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
 | Traefik | Ingress Kubernetes | Windows, Linux, macOS | ✅ existant | `07-proxy-cache/04-traefik` |
-| cert-manager | Certificats Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| ExternalDNS | DNS Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Velero | Sauvegarde Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Kanister | Protection données Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Kube-bench | Audit CIS Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Kubescape | Sécurité Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Trivy | Scanner vulnérabilités | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Falco | Détection runtime | Linux | ⏳ à faire | → `13-conteneurs` |
-| Kyverno | Politiques Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| OPA Gatekeeper | Politiques Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Open Policy Agent | Moteur de politiques | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Buildah | Construction images | Linux, Windows via WSL | ⏳ à faire | → `13-conteneurs` |
-| Skopeo | Gestion images conteneurs | Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Dive | Analyse images Docker | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Hadolint | Lint Dockerfile | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Dockle | Audit images conteneurs | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
+| cert-manager | Certificats Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
+| ExternalDNS | DNS Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/37-ingress-certificats-dns` |
+| Velero | Sauvegarde Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/38-velero-kanister` |
+| Kanister | Protection données Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/38-velero-kanister` |
+| Kube-bench | Audit CIS Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/39-securite-kubernetes` |
+| Kubescape | Sécurité Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/39-securite-kubernetes` |
+| Trivy | Scanner vulnérabilités | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/39-securite-kubernetes` |
+| Falco | Détection runtime | Linux | 🆕 fait (lot 58) | `13-conteneurs/39-securite-kubernetes` |
+| Kyverno | Politiques Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/40-politiques-opa-kyverno` |
+| OPA Gatekeeper | Politiques Kubernetes | Linux | 🆕 fait (lot 58) | `13-conteneurs/40-politiques-opa-kyverno` |
+| Open Policy Agent | Moteur de politiques | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/40-politiques-opa-kyverno` |
+| Buildah | Construction images | Linux, Windows via WSL | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
+| Skopeo | Gestion images conteneurs | Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
+| Dive | Analyse images Docker | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
+| Hadolint | Lint Dockerfile | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
+| Dockle | Audit images conteneurs | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
 | Docker Compose | Orchestration locale | Windows, Linux, macOS | ✅ existant | `13-conteneurs/01-docker` |
 | Podman Compose | Orchestration locale | Windows, Linux, macOS | ✅ existant | `13-conteneurs/02-podman` |
-| Kompose | Conversion Compose/Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Packer | Création images machines | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Vagrant | Environnements reproductibles | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
+| Kompose | Conversion Compose/Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/41-outils-images` |
+| Packer | Création images machines | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/42-packer-vagrant` |
+| Vagrant | Environnements reproductibles | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/42-packer-vagrant` |
 
 ## 9. SUPERVISION, METRIQUES, LOGS ET OBSERVABILITE — 19/64
 

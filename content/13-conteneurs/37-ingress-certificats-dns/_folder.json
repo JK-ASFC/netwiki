@@ -1,0 +1,1 @@
+{ "title": "Ingress, Gateway API, cert-manager, MetalLB et ExternalDNS", "icon": "door-open", "color": "#326ce5", "description": "Exposer les services Kubernetes : contrôleurs Ingress (NGINX, Contour), Gateway API, adresses LoadBalancer sur site (MetalLB), certificats automatiques (cert-manager) et DNS (ExternalDNS)." }

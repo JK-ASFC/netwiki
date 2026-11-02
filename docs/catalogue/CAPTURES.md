@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-269 capture(s) attendue(s) dans 68 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+271 capture(s) attendue(s) dans 70 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -449,6 +449,18 @@
 | Image à créer | Écran | Article |
 | --- | --- | --- |
 | `content/13-conteneurs/32-developpement-kubernetes/_assets/tilt-ui.png` | Tilt — interface web, état des ressources et journaux | `01-presentation-utilisation.md` |
+
+## 13-conteneurs/36-reseau-cni
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/13-conteneurs/36-reseau-cni/_assets/hubble-ui.png` | Hubble UI — carte des flux d'un namespace | `02-cilium.md` |
+
+## 13-conteneurs/39-securite-kubernetes
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/13-conteneurs/39-securite-kubernetes/_assets/falcosidekick-ui.png` | Falcosidekick UI — tableau des alertes | `02-falco.md` |
 
 ## 14-devops/08-buildbot-gocd
 
