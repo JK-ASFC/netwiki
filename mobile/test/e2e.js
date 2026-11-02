@@ -28,11 +28,29 @@ const log = (ok, step, detail = '') => {
     await device.screenshot({ path: file });
     report.push(`\n![${name}](${path.basename(file)})\n`);
   };
+  let page = null;
+  const connect = async () => {
+    const webview = await device.webView({ pkg: PKG }, { timeout: 60000 });
+    page = await webview.page();
+    page.on('console', (m) => console.log('[webview]', m.type(), m.text()));
+    page.on('crash', () => console.log('[webview] PLANTAGE du moteur de rendu'));
+    page.on('close', () => console.log('[webview] page fermée'));
+  };
   const step = async (name, fn) => {
     try {
+      if (!page || page.isClosed()) {
+        console.log('Reconnexion à la vue web…');
+        await sh(`monkey -p ${PKG} -c android.intent.category.LAUNCHER 1`).catch(() => {});
+        await sleep(2000);
+        await connect();
+        await page.waitForFunction(() => window.__netwiki?.state?.info, null, { timeout: 30000 });
+      }
       log(true, name, (await fn()) ?? '');
     } catch (err) {
       log(false, name, err.message || err);
+      const alive = await sh(`pidof ${PKG}`).catch(() => '');
+      console.log('  processus de l’application :', alive.trim() || 'arrêté');
+      await shot('echec').catch(() => {});
     }
   };
 
@@ -42,8 +60,7 @@ const log = (ok, step, detail = '') => {
   await sleep(700);
   await shot('demarrage');
 
-  const webview = await device.webView({ pkg: PKG }, { timeout: 60000 });
-  const page = await webview.page();
+  await connect();
   const ev = (fn, arg) => page.evaluate(fn, arg);
   await page.waitForFunction(() => window.__netwiki?.state?.info, null, { timeout: 60000 });
   await sleep(2500);

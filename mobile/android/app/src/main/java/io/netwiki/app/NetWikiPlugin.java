@@ -38,6 +38,7 @@ import com.getcapacitor.PermissionState;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
+import com.getcapacitor.WebViewListener;
 import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import com.getcapacitor.annotation.Permission;
@@ -68,6 +69,16 @@ public class NetWikiPlugin extends Plugin {
     @Override
     public void load() {
         UpdateCheck.createChannel(getContext());
+        // Si le moteur de rendu de la vue web s'arrête (mémoire insuffisante…), NetWiki se relance au lieu de se fermer.
+        getBridge().addWebViewListener(new WebViewListener() {
+            @Override
+            @android.annotation.TargetApi(26)
+            public boolean onRenderProcessGone(WebView view, android.webkit.RenderProcessGoneDetail detail) {
+                android.util.Log.e("NetWiki", "Moteur de rendu arrêté (plantage : " + detail.didCrash() + ")");
+                getActivity().runOnUiThread(() -> getActivity().recreate());
+                return true;
+            }
+        });
     }
 
     // ------------------------------------------------------------------ informations
@@ -377,6 +388,7 @@ public class NetWikiPlugin extends Plugin {
     public void savePdf(PluginCall call) {
         String name = pdfName(call.getString("name"));
         String action = call.getString("action", "save");
+        android.util.Log.i("NetWiki", "PDF : " + action + " « " + name + " »");
         getActivity().runOnUiThread(() -> {
             WebView wv = getBridge().getWebView();
             File dir = new File(getContext().getCacheDir(), "pdf");
@@ -394,6 +406,7 @@ public class NetWikiPlugin extends Plugin {
 
                     @Override
                     public void onError(String m) {
+                        android.util.Log.e("NetWiki", "PDF : " + m);
                         call.reject(m);
                     }
                 });

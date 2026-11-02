@@ -60,9 +60,12 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           script: |
             adb install -r "$RUNNER_TEMP/netwiki-test.apk"
-            node mobile/test/e2e.js resultats || echo "ECHEC_TEST=1" >> "$GITHUB_ENV"
+            mkdir -p resultats
+            node mobile/test/e2e.js resultats > resultats/console.txt 2>&1 || echo "ECHEC_TEST=1" >> "$GITHUB_ENV"
+            tail -120 resultats/console.txt
             adb pull /sdcard/Download/NetWiki resultats/pdf || true
             adb logcat -d -s Capacitor:* Capacitor/Console:* NetWiki:* AndroidRuntime:E chromium:E > resultats/logcat.txt || true
+            adb logcat -d -t 6000 > resultats/logcat-complet.txt || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
