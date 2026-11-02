@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-183 capture(s) attendue(s) dans 35 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+184 capture(s) attendue(s) dans 36 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -91,6 +91,12 @@
 | `content/04-aaa/03-packetfence-opennac/_assets/packetfence-switch-roles.png` | PacketFence — configuration d'un commutateur (rôles → VLAN) | `03-interface-graphique.md` |
 | `content/04-aaa/03-packetfence-opennac/_assets/packetfence-portail-captif.png` | PacketFence — portail captif d'enregistrement | `03-interface-graphique.md` |
 | `content/04-aaa/03-packetfence-opennac/_assets/opennac-politiques.png` | OpenNAC — console, liste des politiques | `03-interface-graphique.md` |
+
+## 05-web/13-lighttpd-h2o-cherokee
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/05-web/13-lighttpd-h2o-cherokee/_assets/cherokee-admin.png` | cherokee-admin — liste des vServers et règles | `03-cherokee.md` |
 
 ## 07-proxy-cache/09-mitmproxy
 
