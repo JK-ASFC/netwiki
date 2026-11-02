@@ -1,6 +1,7 @@
 # NetWiki — test de l'application Android sur émulateur (Android 14, Pixel 6).
 # Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
 #
+# Image AOSP sans services Google : évite les redémarrages des services Google pendant le test.
 # Compile une version de test (numérotée 1.0.0 pour simuler une mise à jour disponible), l'installe sur un émulateur
 # et la pilote (mobile/test/e2e.js) : mises à jour, notifications, PDF, partage, bouton Retour, thème, icône.
 # Les captures et le rapport sont publiés comme artefact et sur la branche « tests-android » (dossier du commit testé).
@@ -53,7 +54,7 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 34
-          target: google_apis
+          target: default
           arch: x86_64
           profile: pixel_6
           disable-animations: true
