@@ -648,7 +648,7 @@
    "wiki": "09-fichiers-partage/22-openmediavault",
    "cible": "09-fichiers-partage",
    "lot": 49,
-   "depot": "openmediavault/openmediavault",
+   "depot": null,
    "eol": null
   },
   {
@@ -1507,7 +1507,7 @@
    "cible": "22-constructeurs",
    "lot": null,
    "depot": null,
-   "eol": "pfsense"
+   "eol": null
   },
   {
    "id": "vyos",
