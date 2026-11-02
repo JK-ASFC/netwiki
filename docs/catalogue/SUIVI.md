@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 172 (13 %) | 47 | 0 | 1092 (83 %) |
+| 1311 | 172 (13 %) | 49 | 0 | 1090 (83 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -64,16 +64,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | DietPi | Distribution légère | Linux, SBC | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
 | Raspberry Pi OS | Distribution Linux | Raspberry Pi | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
 
-## 2. ANNUAIRE, IDENTITE, AUTHENTIFICATION ET SSO — 8/30
+## 2. ANNUAIRE, IDENTITE, AUTHENTIFICATION ET SSO — 10/30
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | OpenLDAP | Annuaire LDAP | Windows, Linux, macOS | ✅ existant | `01-annuaire-identite/02-openldap` |
-| 389 Directory Server | Annuaire LDAP | Linux | ⏳ à faire | → `01-annuaire-identite` |
+| 389 Directory Server | Annuaire LDAP | Linux | 🆕 fait (lot 50) | `01-annuaire-identite/12-389-directory-server` |
 | FreeIPA | Identité et gestion de domaines Linux | Linux | ✅ existant | `01-annuaire-identite/03-freeipa` |
 | Samba | Partage SMB et contrôleur de domaine AD compatible | Windows, Linux, macOS | ✅ existant | `09-fichiers-partage/01-samba` |
 | Keycloak | IAM, SSO et fédération | Windows, Linux, macOS | ✅ existant | `01-annuaire-identite/05-keycloak` |
-| Authentik | IAM et SSO | Windows, Linux, macOS | ⏳ à faire | → `01-annuaire-identite` |
+| Authentik | IAM et SSO | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/13-authentik` |
 | Authelia | Portail d'authentification | Windows, Linux, macOS | ✅ existant | `01-annuaire-identite/06-authelia` |
 | Kanidm | Annuaire et identité | Linux, macOS | ⏳ à faire | → `01-annuaire-identite` |
 | Gluu Flex | IAM et SSO | Linux | ⏳ à faire | → `01-annuaire-identite` |

@@ -761,11 +761,11 @@
    "role": "Annuaire LDAP",
    "plateformes": "Linux",
    "section": 2,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "01-annuaire-identite/12-389-directory-server",
    "cible": "01-annuaire-identite",
-   "lot": null,
-   "depot": null,
+   "lot": 50,
+   "depot": "389ds/389-ds-base",
    "eol": null
   },
   {
@@ -813,11 +813,11 @@
    "role": "IAM et SSO",
    "plateformes": "Windows, Linux, macOS",
    "section": 2,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "01-annuaire-identite/13-authentik",
    "cible": "01-annuaire-identite",
-   "lot": null,
-   "depot": null,
+   "lot": 50,
+   "depot": "goauthentik/authentik",
    "eol": null
   },
   {

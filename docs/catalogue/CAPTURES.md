@@ -1,6 +1,25 @@
 # Captures d'écran à ajouter
 
-97 capture(s) attendue(s) dans 17 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+106 capture(s) attendue(s) dans 19 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+
+## 01-annuaire-identite/12-389-directory-server
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/01-annuaire-identite/12-389-directory-server/_assets/389ds-cockpit-instance.png` | Cockpit 389 — sélection de l'instance et onglets principaux | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/12-389-directory-server/_assets/389ds-cockpit-replication.png` | Cockpit 389 — onglet Replication, accords et état | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/12-389-directory-server/_assets/389ds-cockpit-ldap-browser.png` | Cockpit 389 — LDAP Browser, édition d'un utilisateur | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/12-389-directory-server/_assets/389ds-cockpit-pwpolicy.png` | Cockpit 389 — politique de mots de passe | `03-interface-graphique.md` |
+
+## 01-annuaire-identite/13-authentik
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/01-annuaire-identite/13-authentik/_assets/authentik-bibliotheque.png` | Authentik — bibliothèque d'applications de l'utilisateur | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/13-authentik/_assets/authentik-admin-tableau-de-bord.png` | Authentik — tableau de bord d'administration | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/13-authentik/_assets/authentik-assistant-application.png` | Authentik — assistant « Create with Provider » (OIDC) | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/13-authentik/_assets/authentik-flux-etapes.png` | Authentik — flux d'authentification et ses étapes (MFA) | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/13-authentik/_assets/authentik-source-ldap.png` | Authentik — source LDAP Active Directory | `03-interface-graphique.md` |
 
 ## 09-fichiers-partage/21-truenas-scale
 
