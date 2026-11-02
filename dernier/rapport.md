@@ -1,6 +1,6 @@
 # Test Android de NetWiki
 
-Appareil : sdk_gphone64_x86_64 — versionCode=10000 minSdk=23 targetSdk=35 versionName=1.0.0 Failed to write while dumping service package: Broken pipe
+Appareil : Android SDK built for x86_64 — versionCode=10000 minSdk=23 targetSdk=35 versionName=1.0.0 Failed to write while dumping service package: Broken pipe
 
 | | Étape | Détail |
 | --- | --- | --- |
@@ -28,22 +28,22 @@ Appareil : sdk_gphone64_x86_64 — versionCode=10000 minSdk=23 targetSdk=35 vers
 ![partager](06-partager.png)
 
 | ✅ | Fenêtre Partager / exporter |  |
-| ❌ | Enregistrer en PDF (Téléchargements) | page.waitForFunction: Target page, context or browser has been closed |
 
-![echec](07-echec.png)
+![pdf-enregistre](07-pdf-enregistre.png)
 
-| ❌ | Partager le PDF (sélecteur d’Android) | page.click: Timeout 30000ms exceeded. Call log: - waiting for locator('[data-act="share"]')  |
+| ✅ | Enregistrer en PDF (Téléchargements) | -rwxrwx--- 1 u0_a140 media_rw 501267 2026-11-02 17:13 Présentation\ et\ installation.pdf |
 
-![echec](08-echec.png)
+![partage-pdf](08-partage-pdf.png)
 
-| ❌ | Imprimer (boîte d’impression d’Android) | page.click: Timeout 30000ms exceeded. Call log: - waiting for locator('[data-act="share"]')  |
+| ✅ | Partager le PDF (sélecteur d’Android) |  |
 
-![echec](09-echec.png)
+![impression](09-impression.png)
 
-| ❌ | Partager le texte (Markdown) | page.click: Timeout 30000ms exceeded. Call log: - waiting for locator('[data-act="share"]')  |
+| ✅ | Imprimer (boîte d’impression d’Android) |  |
 
-![echec](10-echec.png)
+![partage-texte](10-partage-texte.png)
 
+| ✅ | Partager le texte (Markdown) |  |
 
 ![theme-clair](11-theme-clair.png)
 
