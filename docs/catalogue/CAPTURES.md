@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-434 capture(s) attendue(s) dans 117 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+437 capture(s) attendue(s) dans 118 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -1005,6 +1005,14 @@
 | Image à créer | Écran | Article |
 | --- | --- | --- |
 | `content/25-web-cms-portails/10-ecommerce/_assets/prestashop-commandes.png` | Back-office PrestaShop, liste des commandes | `01-prestashop-woocommerce-opencart-magento.md` |
+
+## 25-web-cms-portails/11-caisse-inventaire
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/11-caisse-inventaire/_assets/ospos-vente.png` | Écran de vente OSPOS | `01-caisses-pos.md` |
+| `content/25-web-cms-portails/11-caisse-inventaire/_assets/inventree-piece.png` | Fiche d'une pièce InvenTree avec stocks par emplacement | `02-inventaire-actifs.md` |
+| `content/25-web-cms-portails/11-caisse-inventaire/_assets/snipeit-actifs.png` | Liste des actifs Snipe-IT | `02-inventaire-actifs.md` |
 
 ## 31-auto-hebergement/01-plateformes-auto-hebergement
 

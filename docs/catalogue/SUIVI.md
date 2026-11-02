@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 545 | 2 | 581 (44 %) |
+| 1311 | 183 (14 %) | 553 | 2 | 573 (44 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -698,7 +698,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | SquirrelMail | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 | RainLoop (abandonné) | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 
-## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 56/64
+## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 64/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -757,15 +757,15 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Reaction Commerce (archivé) | E-commerce | Linux | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
 | Vendure | E-commerce headless | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
 | Solidus | E-commerce Ruby | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
-| Open Source POS (OSPOS) | Caisse POS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| uniCenta oPOS | Caisse POS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Floreant POS | Caisse POS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| ERPNext POS | Caisse POS | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| OpenBoxes | Gestion stocks | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Inventree | Gestion inventaire | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Snipe-IT | Gestion actifs | Linux | ⏳ à faire | → `25-web-cms-portails` |
+| Open Source POS (OSPOS) | Caisse POS | Windows, Linux, macOS | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| uniCenta oPOS | Caisse POS | Windows, Linux, macOS | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| Floreant POS | Caisse POS | Windows, Linux, macOS | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| ERPNext POS | Caisse POS | Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| OpenBoxes | Gestion stocks | Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| Inventree | Gestion inventaire | Windows, Linux, macOS | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| Snipe-IT | Gestion actifs | Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
 | OCS Inventory NG | Inventaire IT | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/07-ocs-inventory` |
-| FusionInventory | Inventaire IT (ancien) | Windows, Linux | ⏳ à faire | → `25-web-cms-portails` |
+| FusionInventory | Inventaire IT (ancien) | Windows, Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
 
 ## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 5/56
 

@@ -89,6 +89,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 73 | Catalogue — ERP : Odoo, Frappe et ERPNext, Dolibarr, Tryton, iDempiere, metasfresh, Apache OFBiz, ERP5, FrontAccounting | ✅ |
 | 74 | Catalogue — facturation, temps et e-commerce PHP : Invoice Ninja, Akaunting, Kimai, Crater, PrestaShop, WooCommerce, OpenCart, Magento Open Source | ✅ |
 | 75 | Catalogue — commerce headless et frameworks : Saleor, Medusa, Vendure, Sylius, Shopware, Bagisto, Spree, Solidus, Reaction Commerce | ✅ |
+| 76 | Catalogue — caisses et inventaire : OSPOS, uniCenta oPOS, Floreant POS, ERPNext POS, InvenTree, Snipe-IT, OpenBoxes, FusionInventory | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -421,3 +422,4 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[09-facturation-temps/01-invoice-ninja-akaunting-kimai-crater\|Invoice Ninja, Akaunting, Kimai]] | Docker, PHP | Docker, PHP (Kimai) | Docker, PHP (Kimai) | ✅ |
 | [[10-ecommerce/01-prestashop-woocommerce-opencart-magento\|PrestaShop, WooCommerce, OpenCart, Magento]] | PHP, Composer, Docker | WAMP/IIS + PHP, Docker | PHP, Docker | ✅ |
 | [[10-ecommerce/02-headless-frameworks\|Saleor, Medusa, Vendure, Sylius, Shopware, Bagisto, Spree, Solidus]] | Docker, Node.js, PHP, Ruby | Docker, Node.js, PHP | Docker, Node.js, PHP | ✅ |
+| [[11-caisse-inventaire/01-caisses-pos\|OSPOS, uniCenta, Floreant, ERPNext POS]], [[11-caisse-inventaire/02-inventaire-actifs\|InvenTree, Snipe-IT, OpenBoxes]] | Docker, PHP, Java | Java (uniCenta, Floreant), Docker | Java, Docker | ✅ |
