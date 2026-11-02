@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-253 capture(s) attendue(s) dans 63 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+269 capture(s) attendue(s) dans 68 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -408,6 +408,47 @@
 | `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-assistant-zone.png` | CloudStack — assistant d'ajout de zone, étape réseau physique | `03-interface-graphique.md` |
 | `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-hotes.png` | CloudStack — liste des hôtes KVM et leur état | `03-interface-graphique.md` |
 | `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-deployer-instance.png` | CloudStack — assistant de déploiement d'instance | `03-interface-graphique.md` |
+
+## 13-conteneurs/26-rke2-rancher
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/13-conteneurs/26-rke2-rancher/_assets/rancher-accueil.png` | Rancher — accueil, liste des clusters | `03-interface-graphique.md` |
+| `content/13-conteneurs/26-rke2-rancher/_assets/rancher-explorateur.png` | Rancher — explorateur de cluster, liste des déploiements | `03-interface-graphique.md` |
+| `content/13-conteneurs/26-rke2-rancher/_assets/rancher-auth-ad.png` | Rancher — configuration de l'authentification Active Directory | `03-interface-graphique.md` |
+
+## 13-conteneurs/27-openshift-okd
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/13-conteneurs/27-openshift-okd/_assets/okd-overview.png` | OKD — vue d'ensemble du cluster (perspective Administrateur) | `02-interface-graphique.md` |
+| `content/13-conteneurs/27-openshift-okd/_assets/okd-topology.png` | OKD — vue Topology (perspective Développeur) | `02-interface-graphique.md` |
+| `content/13-conteneurs/27-openshift-okd/_assets/okd-mise-a-jour.png` | OKD — Cluster Settings, mise à jour | `02-interface-graphique.md` |
+
+## 13-conteneurs/30-gitops-argocd-flux
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/13-conteneurs/30-gitops-argocd-flux/_assets/argocd-applications.png` | Argo CD — liste des applications | `03-interface-graphique.md` |
+| `content/13-conteneurs/30-gitops-argocd-flux/_assets/argocd-arbre.png` | Argo CD — arbre des ressources d'une application | `03-interface-graphique.md` |
+| `content/13-conteneurs/30-gitops-argocd-flux/_assets/argocd-diff.png` | Argo CD — différences avant synchronisation | `03-interface-graphique.md` |
+| `content/13-conteneurs/30-gitops-argocd-flux/_assets/flux-capacitor.png` | Capacitor — état des Kustomizations Flux | `03-interface-graphique.md` |
+
+## 13-conteneurs/31-lens-headlamp-k9s
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/13-conteneurs/31-lens-headlamp-k9s/_assets/lens-cluster.png` | Lens — vue d'ensemble d'un cluster | `02-interface-graphique.md` |
+| `content/13-conteneurs/31-lens-headlamp-k9s/_assets/headlamp-pods.png` | Headlamp — liste des pods et détail | `02-interface-graphique.md` |
+| `content/13-conteneurs/31-lens-headlamp-k9s/_assets/headlamp-map.png` | Headlamp — vue Map | `02-interface-graphique.md` |
+| `content/13-conteneurs/31-lens-headlamp-k9s/_assets/k9s-pods.png` | K9s — vue des pods avec filtre | `02-interface-graphique.md` |
+| `content/13-conteneurs/31-lens-headlamp-k9s/_assets/k9s-pulses.png` | K9s — tableau de bord Pulses | `02-interface-graphique.md` |
+
+## 13-conteneurs/32-developpement-kubernetes
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/13-conteneurs/32-developpement-kubernetes/_assets/tilt-ui.png` | Tilt — interface web, état des ressources et journaux | `01-presentation-utilisation.md` |
 
 ## 14-devops/08-buildbot-gocd
 

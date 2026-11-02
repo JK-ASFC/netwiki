@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 246 | 1 | 891 (68 %) |
+| 1311 | 173 (13 %) | 264 | 1 | 873 (67 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -359,33 +359,33 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | ProjectSend | Partage de fichiers | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
 | Pingvin Share | Partage temporaire | Linux, Windows via conteneur | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
 
-## 8. CONTENEURS, ORCHESTRATION ET PLATEFORMES CLOUD-NATIVE — 8/61
+## 8. CONTENEURS, ORCHESTRATION ET PLATEFORMES CLOUD-NATIVE — 26/61
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Kubernetes | Orchestration conteneurs | Linux, Windows nodes | ✅ existant | `13-conteneurs/04-kubernetes` |
 | K3s | Kubernetes léger | Linux, Windows via WSL/VM | ✅ existant | `13-conteneurs/05-k3s` |
-| MicroK8s | Kubernetes léger | Linux, Windows via WSL, macOS | ⏳ à faire | → `13-conteneurs` |
+| MicroK8s | Kubernetes léger | Linux, Windows via WSL, macOS | 🆕 fait (lot 57) | `13-conteneurs/24-microk8s-k0s` |
 | Minikube | Kubernetes local | Windows, Linux, macOS | ✅ existant | `13-conteneurs/06-minikube` |
 | kind | Kubernetes en Docker | Windows, Linux, macOS | ✅ existant | `13-conteneurs/07-kind` |
-| k0s | Kubernetes léger | Linux | ⏳ à faire | → `13-conteneurs` |
-| Talos Linux | OS Kubernetes | x86, ARM | ⏳ à faire | → `13-conteneurs` |
-| RKE2 | Kubernetes durci | Linux | ⏳ à faire | → `13-conteneurs` |
-| OpenShift OKD | Plateforme Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| KubeVirt | VM sur Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Helm | Gestionnaire de packages Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Kustomize | Configuration Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Argo CD | GitOps Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Flux CD | GitOps Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Rancher | Gestion Kubernetes | Linux, Windows via conteneur | ⏳ à faire | → `13-conteneurs` |
+| k0s | Kubernetes léger | Linux | 🆕 fait (lot 57) | `13-conteneurs/24-microk8s-k0s` |
+| Talos Linux | OS Kubernetes | x86, ARM | 🆕 fait (lot 57) | `13-conteneurs/25-talos-linux` |
+| RKE2 | Kubernetes durci | Linux | 🆕 fait (lot 57) | `13-conteneurs/26-rke2-rancher` |
+| OpenShift OKD | Plateforme Kubernetes | Linux | 🆕 fait (lot 57) | `13-conteneurs/27-openshift-okd` |
+| KubeVirt | VM sur Kubernetes | Linux | 🆕 fait (lot 57) | `13-conteneurs/28-kubevirt` |
+| Helm | Gestionnaire de packages Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/29-helm-kustomize` |
+| Kustomize | Configuration Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/29-helm-kustomize` |
+| Argo CD | GitOps Kubernetes | Linux | 🆕 fait (lot 57) | `13-conteneurs/30-gitops-argocd-flux` |
+| Flux CD | GitOps Kubernetes | Linux | 🆕 fait (lot 57) | `13-conteneurs/30-gitops-argocd-flux` |
+| Rancher | Gestion Kubernetes | Linux, Windows via conteneur | 🆕 fait (lot 57) | `13-conteneurs/26-rke2-rancher` |
 | Portainer CE | Gestion conteneurs | Windows, Linux, macOS | ✅ existant | `13-conteneurs/08-portainer` |
-| Lens Open Source | IDE Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Headlamp | Dashboard Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| K9s | Terminal Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Skaffold | Développement Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Tilt | Développement Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Garden | Développement Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
-| Telepresence | Développement Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
+| Lens Open Source | IDE Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/31-lens-headlamp-k9s` |
+| Headlamp | Dashboard Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/31-lens-headlamp-k9s` |
+| K9s | Terminal Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/31-lens-headlamp-k9s` |
+| Skaffold | Développement Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/32-developpement-kubernetes` |
+| Tilt | Développement Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/32-developpement-kubernetes` |
+| Garden | Développement Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/32-developpement-kubernetes` |
+| Telepresence | Développement Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 57) | `13-conteneurs/32-developpement-kubernetes` |
 | Dapr | Runtime applicatif distribué | Windows, Linux, macOS | ⏳ à faire | → `13-conteneurs` |
 | Knative | Serverless Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
 | OpenFaaS | Serverless | Linux, Windows via conteneur | ⏳ à faire | → `13-conteneurs` |

@@ -1,0 +1,1 @@
+{ "title": "KubeVirt", "icon": "monitor-cog", "color": "#00797f", "description": "Machines virtuelles dans Kubernetes : VirtualMachine, CDI pour les disques, virtctl, migration à chaud." }

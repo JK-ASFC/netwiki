@@ -1,0 +1,1 @@
+{ "title": "Argo CD et Flux", "icon": "git-pull-request", "color": "#ef7b4d", "description": "Déploiement continu GitOps : Git comme source de vérité, réconciliation automatique, multi-clusters, secrets et notifications." }
