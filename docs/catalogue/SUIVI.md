@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 536 | 2 | 590 (45 %) |
+| 1311 | 183 (14 %) | 545 | 2 | 581 (44 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -698,7 +698,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | SquirrelMail | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 | RainLoop (abandonné) | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 
-## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 47/64
+## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 56/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -748,15 +748,15 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | PrestaShop | E-commerce | Windows, Linux, macOS | 🆕 fait (lot 74) | `25-web-cms-portails/10-ecommerce` |
 | Magento Open Source | E-commerce | Linux | 🆕 fait (lot 74) | `25-web-cms-portails/10-ecommerce` |
 | WooCommerce | E-commerce WordPress | Windows, Linux, macOS | 🆕 fait (lot 74) | `25-web-cms-portails/10-ecommerce` |
-| Saleor | E-commerce headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Medusa | E-commerce headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Sylius | E-commerce Symfony | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Shopware Community | E-commerce | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Bagisto | E-commerce Laravel | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Spree Commerce | E-commerce Ruby | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Reaction Commerce (archivé) | E-commerce | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Vendure | E-commerce headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Solidus | E-commerce Ruby | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
+| Saleor | E-commerce headless | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Medusa | E-commerce headless | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Sylius | E-commerce Symfony | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Shopware Community | E-commerce | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Bagisto | E-commerce Laravel | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Spree Commerce | E-commerce Ruby | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Reaction Commerce (archivé) | E-commerce | Linux | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Vendure | E-commerce headless | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Solidus | E-commerce Ruby | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
 | Open Source POS (OSPOS) | Caisse POS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
 | uniCenta oPOS | Caisse POS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
 | Floreant POS | Caisse POS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
