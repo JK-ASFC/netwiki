@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-153 capture(s) attendue(s) dans 29 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+167 capture(s) attendue(s) dans 31 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -244,6 +244,30 @@
 | `content/19-sauvegarde/08-bareos/_assets/bareos-webui-tableau-de-bord.png` | Bareos WebUI — tableau de bord des tâches | `03-interface-graphique.md` |
 | `content/19-sauvegarde/08-bareos/_assets/bareos-webui-restauration.png` | Bareos WebUI — assistant de restauration avec arborescence de fichiers | `03-interface-graphique.md` |
 | `content/19-sauvegarde/08-bareos/_assets/bareos-webui-volumes.png` | Bareos WebUI — liste des volumes d'un pool | `03-interface-graphique.md` |
+
+## 22-constructeurs/29-openwrt-openwisp
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/luci-overview.png` | LuCI — Status Overview | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/luci-vlan-dsa.png` | LuCI — Network → Interfaces, onglet Devices avec les VLAN du pont br-lan | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/luci-wifi.png` | LuCI — Network → Wireless, configuration d'un SSID WPA3 | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/luci-pare-feu.png` | LuCI — Network → Firewall, zones | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/openwisp-tableau-de-bord.png` | OpenWISP — tableau de bord avec carte des appareils | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/openwisp-appareil.png` | OpenWISP — fiche d'un appareil, onglet Configuration et modèles | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/openwisp-supervision.png` | OpenWISP — graphiques de supervision d'un point d'accès | `03-interface-graphique.md` |
+
+## 22-constructeurs/30-ipfire-endian
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/22-constructeurs/30-ipfire-endian/_assets/ipfire-accueil.png` | IPFire — page d'accueil avec état des zones | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/ipfire-regles.png` | IPFire — Firewall Rules, création d'une redirection de port vers la DMZ | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/ipfire-ips.png` | IPFire — Intrusion Prevention System, choix des jeux de règles | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/ipfire-pakfire.png` | IPFire — Pakfire | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/endian-tableau-de-bord.png` | Endian — tableau de bord | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/endian-pare-feu.png` | Endian — Firewall, règles inter-zones | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/endian-openvpn.png` | Endian — VPN, serveur OpenVPN | `03-interface-graphique.md` |
 
 ## 24-systemes-exploitation/01-debian-ubuntu
 

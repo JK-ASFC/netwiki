@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 85 | 0 | 1053 (80 %) |
+| 1311 | 173 (13 %) | 94 | 0 | 1044 (80 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -99,7 +99,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Samba AD DC | Contrôleur de domaine | Linux | ✅ existant | `09-fichiers-partage/01-samba` |
 | gopass | Gestionnaire de secrets CLI | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/21-gopass` |
 
-## 3. DNS, DHCP, IPAM ET SERVICES RESEAU — 34/49
+## 3. DNS, DHCP, IPAM ET SERVICES RESEAU — 42/49
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -128,16 +128,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | NIPAP | IPAM | Linux | 🆕 fait (lot 51) | `18-infrastructure-systeme/10-ipam-dcim-alternatives` |
 | Ralph | DCIM et gestion d'actifs | Linux | 🆕 fait (lot 51) | `18-infrastructure-systeme/10-ipam-dcim-alternatives` |
 | RackTables | Gestion datacenter et IP | Linux | 🆕 fait (lot 51) | `18-infrastructure-systeme/10-ipam-dcim-alternatives` |
-| OpenWISP | Gestion réseau | Linux | ⏳ à faire | → `18-infrastructure-systeme` |
-| OpenWrt | Firmware routeur | Routeurs, x86 | ⏳ à faire | → `18-infrastructure-systeme` |
+| OpenWISP | Gestion réseau | Linux | 🆕 fait (lot 51) | `22-constructeurs/29-openwrt-openwisp` |
+| OpenWrt | Firmware routeur | Routeurs, x86 | 🆕 fait (lot 51) | `22-constructeurs/29-openwrt-openwisp` |
 | OPNsense | Pare-feu/routeur | FreeBSD | ✅ existant | `22-constructeurs/19-pfsense-opnsense` |
 | pfSense CE | Pare-feu/routeur | FreeBSD | ✅ existant | `22-constructeurs/19-pfsense-opnsense` |
-| VyOS | Routeur logiciel | Linux | ⏳ à faire | → `18-infrastructure-systeme` |
-| IPFire | Pare-feu | Linux | ⏳ à faire | → `18-infrastructure-systeme` |
-| Endian Firewall Community | Pare-feu | Linux | ⏳ à faire | → `18-infrastructure-systeme` |
-| FRRouting | Routage BGP/OSPF | Linux, BSD | ⏳ à faire | → `18-infrastructure-systeme` |
-| BIRD | Routage BGP | Linux, BSD | ⏳ à faire | → `18-infrastructure-systeme` |
-| OpenBGPD | Routage BGP | OpenBSD, Linux | ⏳ à faire | → `18-infrastructure-systeme` |
+| VyOS | Routeur logiciel | Linux | 🆕 fait (lot 51) | `22-constructeurs/28-vyos` |
+| IPFire | Pare-feu | Linux | 🆕 fait (lot 51) | `22-constructeurs/30-ipfire-endian` |
+| Endian Firewall Community | Pare-feu | Linux | 🆕 fait (lot 51) | `22-constructeurs/30-ipfire-endian` |
+| FRRouting | Routage BGP/OSPF | Linux, BSD | 🆕 fait (lot 51) | `22-constructeurs/31-routage-logiciel` |
+| BIRD | Routage BGP | Linux, BSD | 🆕 fait (lot 51) | `22-constructeurs/31-routage-logiciel` |
+| OpenBGPD | Routage BGP | OpenBSD, Linux | 🆕 fait (lot 51) | `22-constructeurs/31-routage-logiciel` |
 | OpenVPN | VPN | Windows, Linux, macOS | ✅ existant | `08-acces-distant-vpn/02-openvpn` |
 | WireGuard | VPN | Windows, Linux, macOS | ✅ existant | `08-acces-distant-vpn/03-wireguard` |
 | strongSwan | VPN IPsec | Linux, Windows | ✅ existant | `08-acces-distant-vpn/04-strongswan` |
@@ -1211,7 +1211,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | 4get | Métamoteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
 | LibreX | Métamoteur recherche | Linux | ⏳ à faire | → `12-recherche-messages` |
 
-## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 3/50
+## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 4/50
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1244,7 +1244,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | systemd-networkd | Gestion réseau | Linux | ⏳ à faire | → `21-outils` |
 | ConnMan | Gestion réseau | Linux | ⏳ à faire | → `21-outils` |
 | Open vSwitch | Switch virtuel | Linux, Windows | ⏳ à faire | → `21-outils` |
-| FRR | Routage dynamique | Linux, BSD | ⏳ à faire | → `21-outils` |
+| FRR | Routage dynamique | Linux, BSD | 🆕 fait (lot 51) | `22-constructeurs/31-routage-logiciel` |
 | iperf2 | Mesure réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
 | OpenSpeedTest | Test débit web | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
 | LibreSpeed | Test débit web | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |

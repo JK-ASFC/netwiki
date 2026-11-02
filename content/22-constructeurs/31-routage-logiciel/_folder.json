@@ -1,0 +1,1 @@
+{ "title": "FRRouting, BIRD et OpenBGPD", "icon": "route", "color": "#2b8a3e", "description": "Routage dynamique logiciel : FRRouting (BGP, OSPF, IS-IS, BFD, EVPN, vtysh), BIRD (BGP de serveurs de route et IXP) et OpenBGPD (OpenBSD)." }
