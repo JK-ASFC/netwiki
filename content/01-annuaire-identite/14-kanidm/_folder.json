@@ -1,0 +1,1 @@
+{ "title": "Kanidm", "icon": "users", "color": "#3b5bdb", "description": "Gestion d'identité moderne en Rust : comptes, groupes, OAuth2/OIDC, RADIUS, LDAPS en lecture, clés de sécurité et intégration Linux (SSH, PAM)." }

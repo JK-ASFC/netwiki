@@ -1,0 +1,1 @@
+{ "title": "Technitium DNS Server", "icon": "globe", "color": "#1971c2", "description": "Serveur DNS récursif et faisant autorité avec interface web : zones, DNSSEC, blocage publicitaire, DoT/DoH/DoQ, DHCP intégré, Windows, Linux et macOS." }

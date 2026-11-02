@@ -1,0 +1,1 @@
+{ "title": "OpenConnect et ocserv", "icon": "plug", "color": "#0e7490", "description": "VPN SSL compatible AnyConnect : serveur ocserv (TLS/DTLS, authentification PAM, RADIUS, certificats) et client OpenConnect multi-protocole (AnyConnect, GlobalProtect, Pulse, Fortinet)." }

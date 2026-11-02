@@ -1,0 +1,1 @@
+{ "title": "Apache Traffic Server", "icon": "database-zap", "color": "#d22128", "description": "Proxy et cache HTTP haute performance (ATS) pour CDN et reverse proxy : remap, stockage du cache, hiérarchie de parents, TLS, plugins, traffic_ctl." }

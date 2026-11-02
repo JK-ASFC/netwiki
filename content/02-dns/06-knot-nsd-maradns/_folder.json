@@ -1,0 +1,1 @@
+{ "title": "Knot DNS, NSD et MaraDNS", "icon": "globe", "color": "#0b7285", "description": "Serveurs DNS faisant autorité : Knot DNS (CZ.NIC, DNSSEC automatique), NSD (NLnet Labs) et MaraDNS (léger, Windows) — zones, transferts, DNSSEC et exploitation." }

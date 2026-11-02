@@ -1,0 +1,89 @@
+# NetWiki — veille automatique des services documentés (étapes 1, 3 et 5 de la chaîne de veille).
+# Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
+#
+# Chaque dimanche (veille de la publication hebdomadaire du contenu) :
+#   1. Veille     : dernières versions sur GitHub (releases / étiquettes) et endoflife.date (scripts/veille.mjs) ;
+#   3. Contrôle   : comparaison avec les versions déjà vues (branche « veille »), sans doublon ;
+#   5. Rapport    : une Issue « Rapport de veille » (nouvelles versions, sécurité, changements, fins de support) ;
+#   2-4. Agent IA : s'il y a des nouveautés, l'agent prépare une demande de fusion (workflow agent.yml).
+# Rien n'est publié dans le wiki sans validation de JK-ASFC.
+
+name: Veille des services
+
+on:
+  schedule:
+    - cron: '17 4 * * 0' # dimanche 4 h 17 UTC
+  workflow_dispatch:
+    inputs:
+      agent:
+        description: Lancer l'agent IA s'il y a des nouveautés
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  id-token: write
+
+concurrency:
+  group: veille
+  cancel-in-progress: false
+
+jobs:
+  veille:
+    name: Veille des versions
+    runs-on: ubuntu-latest
+    outputs:
+      nouveautes: ${{ steps.veille.outputs.nouveautes }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: État précédent (branche « veille »)
+        run: |
+          mkdir -p .veille
+          curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/veille/etat.json" -o .veille/etat.json || echo '{}' > .veille/etat.json
+      - name: Vérifier les versions
+        id: veille
+        run: node scripts/veille.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Enregistrer l'état sur la branche « veille »
+        working-directory: .veille
+        run: |
+          cat > README.md <<'FIN'
+          # Veille NetWiki
+
+          Branche générée par le workflow « Veille des services » : dernière version vue de chaque service (`etat.json`),
+          dernier rapport (`rapport.md`) et nouveautés transmises à l'agent IA (`nouveautes.json`). Ne pas modifier à la main.
+          FIN
+          git init -q -b veille
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Veille du $(date -u +%F)"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" veille
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: veille
+          path: .veille/
+      - name: Rapport de veille (Issue)
+        if: steps.veille.outputs.nouveautes != '0' || steps.veille.outputs.premier == 'true'
+        run: |
+          gh label create veille --color 22d3ee --description "Rapport de veille automatique" 2>/dev/null || true
+          gh issue create --title "Rapport de veille du $(date -u +%d/%m/%Y)" --body-file .veille/rapport.md --label veille
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  agent:
+    name: Agent IA
+    needs: veille
+    if: needs.veille.outputs.nouveautes != '0' && (github.event_name == 'schedule' || inputs.agent)
+    uses: ./.github/workflows/agent.yml
+    with:
+      mode: veille
+    secrets: inherit

@@ -1,0 +1,1385 @@
+1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS
+----------------------------------------------------------
+- Proxmox VE | Virtualisation bare-metal | Debian/Linux
+- XCP-ng | Hyperviseur | Linux
+- KVM | Hyperviseur | Linux
+- QEMU | Emulation et virtualisation | Windows, Linux, macOS
+- VirtualBox | Virtualisation poste de travail | Windows, Linux, macOS
+- UTM | Virtualisation poste de travail | macOS
+- GNOME Boxes | Virtualisation poste de travail | Linux
+- libvirt | Gestion des hyperviseurs | Linux
+- oVirt | Gestion de virtualisation | Linux
+- OpenStack | Cloud privé IaaS | Linux
+- OpenNebula | Cloud et virtualisation | Linux
+- Apache CloudStack | Cloud IaaS | Linux
+- Incus | Conteneurs système et machines virtuelles | Linux
+- LXD | Conteneurs système et machines virtuelles | Linux
+- LXC | Conteneurs système | Linux
+- Docker Engine | Conteneurs | Windows, Linux, macOS (via Desktop/VM)
+- Podman | Conteneurs | Windows, Linux, macOS
+- containerd | Runtime de conteneurs | Linux, Windows
+- CRI-O | Runtime Kubernetes | Linux
+- Kata Containers | Conteneurs isolés | Linux
+- Firecracker | MicroVM | Linux
+- bhyve | Hyperviseur | FreeBSD
+- Xen | Hyperviseur | Linux, BSD
+- Bareos | Sauvegarde serveur | Windows, Linux, macOS
+- FreeBSD | Système d'exploitation serveur | x86, ARM
+- OpenBSD | Système d'exploitation | x86, ARM
+- NetBSD | Système d'exploitation | x86, ARM
+- Debian | Distribution Linux | PC, serveur, ARM
+- Ubuntu Server | Distribution Linux serveur | PC, serveur, ARM
+- Rocky Linux | Distribution Linux serveur | PC, serveur
+- AlmaLinux | Distribution Linux serveur | PC, serveur
+- Fedora Server | Distribution Linux serveur | PC, serveur
+- openSUSE Leap | Distribution Linux | PC, serveur
+- openSUSE Tumbleweed | Distribution Linux | PC, serveur
+- Arch Linux | Distribution Linux | PC, serveur
+- Gentoo | Distribution Linux | PC, serveur
+- Alpine Linux | Distribution Linux légère | PC, serveur, conteneurs
+- Oracle Linux | Distribution Linux serveur | PC, serveur
+- CentOS Stream | Distribution Linux serveur | PC, serveur
+- NixOS | Distribution Linux déclarative | PC, serveur
+- Kali Linux | Distribution sécurité | PC, serveur
+- Parrot OS | Distribution sécurité | PC
+- TrueNAS SCALE | NAS et stockage | Linux x86_64
+- OpenMediaVault | NAS | Linux/Debian
+- Rockstor | NAS | Linux
+- CasaOS | Plateforme serveur domestique | Linux
+- Umbrel | Plateforme serveur personnel | Linux
+- YunoHost | Plateforme d'auto-hébergement | Debian
+- Runtipi | Plateforme d'applications auto-hébergées | Linux
+- DietPi | Distribution légère | Linux, SBC
+- Raspberry Pi OS | Distribution Linux | Raspberry Pi
+
+2. ANNUAIRE, IDENTITE, AUTHENTIFICATION ET SSO
+----------------------------------------------
+- OpenLDAP | Annuaire LDAP | Windows, Linux, macOS
+- 389 Directory Server | Annuaire LDAP | Linux
+- FreeIPA | Identité et gestion de domaines Linux | Linux
+- Samba | Partage SMB et contrôleur de domaine AD compatible | Windows, Linux, macOS
+- Keycloak | IAM, SSO et fédération | Windows, Linux, macOS
+- Authentik | IAM et SSO | Windows, Linux, macOS
+- Authelia | Portail d'authentification | Windows, Linux, macOS
+- Kanidm | Annuaire et identité | Linux, macOS
+- Gluu Flex | IAM et SSO | Linux
+- LemonLDAP::NG | Portail SSO | Linux
+- Shibboleth | Fédération d'identité | Windows, Linux, macOS
+- privacyIDEA | Authentification multifacteur | Windows, Linux
+- LinOTP | Authentification OTP | Linux
+- Keycloak Gatekeeper (archivé) | Proxy d'authentification | Linux
+- OAuth2 Proxy | Proxy OAuth2/OIDC | Windows, Linux, macOS
+- Dex | Fournisseur OIDC | Windows, Linux, macOS
+- Zitadel | IAM (édition open source) | Windows, Linux, macOS
+- Casdoor | Plateforme IAM | Windows, Linux, macOS
+- Logto | Plateforme IAM | Windows, Linux, macOS
+- Ory Kratos | Gestion des identités | Windows, Linux, macOS
+- Ory Hydra | Serveur OAuth2/OIDC | Windows, Linux, macOS
+- OpenAM | IAM | Linux
+- FreeRADIUS | Serveur RADIUS | Windows, Linux, macOS
+- PacketFence | NAC et contrôle d'accès réseau | Linux
+- OpenNAC | Contrôle d'accès réseau | Linux
+- Authentification SSH OpenSSH | Accès distant sécurisé | Windows, Linux, macOS
+- SSSD | Intégration identité Linux | Linux
+-  realmd | Jointure de domaines | Linux
+- Samba AD DC | Contrôleur de domaine | Linux
+- gopass | Gestionnaire de secrets CLI | Windows, Linux, macOS
+
+3. DNS, DHCP, IPAM ET SERVICES RESEAU
+-------------------------------------
+- BIND 9 | Serveur DNS | Windows, Linux, macOS
+- Knot DNS | Serveur DNS autoritatif | Linux, BSD
+- PowerDNS Authoritative | Serveur DNS autoritatif | Windows, Linux, macOS
+- PowerDNS Recursor | Résolveur DNS | Windows, Linux, macOS
+- Unbound | Résolveur DNS récursif | Windows, Linux, macOS
+- CoreDNS | DNS extensible | Windows, Linux, macOS
+- Technitium DNS Server | DNS récursif et autoritatif | Windows, Linux, macOS
+- dnsmasq | DNS/DHCP léger | Linux, macOS, BSD
+- AdGuard Home | DNS filtrant | Windows, Linux, macOS
+- Pi-hole | DNS filtrant | Linux
+- Blocky | DNS filtrant | Windows, Linux, macOS
+- MaraDNS | Serveur DNS | Windows, Linux
+- NSD | Serveur DNS autoritatif | Linux, BSD
+- Kea DHCP | Serveur DHCP | Linux, BSD
+- ISC DHCP (fin de vie) | Serveur DHCP historique | Linux, BSD
+- Open DHCP Server | Serveur DHCP | Windows
+- dhcpd | Serveur DHCP | Linux, BSD
+- Kea Stork | Supervision DHCP/DNS | Linux
+- phpIPAM | IPAM | Linux, Windows via stack web
+- NetBox | IPAM et DCIM | Linux, Windows via conteneurs
+- Nautobot | IPAM et automatisation réseau | Linux, Windows via conteneurs
+- GestióIP | IPAM | Linux
+- NIPAP | IPAM | Linux
+- Ralph | DCIM et gestion d'actifs | Linux
+- RackTables | Gestion datacenter et IP | Linux
+- OpenWISP | Gestion réseau | Linux
+- OpenWrt | Firmware routeur | Routeurs, x86
+- OPNsense | Pare-feu/routeur | FreeBSD
+- pfSense CE | Pare-feu/routeur | FreeBSD
+- VyOS | Routeur logiciel | Linux
+- IPFire | Pare-feu | Linux
+- Endian Firewall Community | Pare-feu | Linux
+- FRRouting | Routage BGP/OSPF | Linux, BSD
+- BIRD | Routage BGP | Linux, BSD
+- OpenBGPD | Routage BGP | OpenBSD, Linux
+- OpenVPN | VPN | Windows, Linux, macOS
+- WireGuard | VPN | Windows, Linux, macOS
+- strongSwan | VPN IPsec | Linux, Windows
+- Tailscale (client open source) | VPN mesh | Windows, Linux, macOS
+- Headscale | Contrôle VPN mesh auto-hébergé | Linux, Windows, macOS
+- NetBird | VPN mesh | Windows, Linux, macOS
+- ZeroTier (client open source) | Réseau overlay | Windows, Linux, macOS
+- Nebula | Réseau overlay | Windows, Linux, macOS
+- SoftEther VPN | VPN multi-protocoles | Windows, Linux, macOS
+- OpenConnect | Client VPN | Windows, Linux, macOS
+- ocserv | Serveur VPN | Linux
+- Pritunl (community) | Serveur VPN | Linux
+- IPsec-tools | VPN IPsec | BSD, Linux
+- Mullvad VPN app | Client VPN (composants open source) | Windows, Linux, macOS
+
+4. PROXY, REVERSE PROXY, LOAD BALANCING ET PASSERELLES
+------------------------------------------------------
+- NGINX | Serveur web et reverse proxy | Windows, Linux, macOS
+- HAProxy | Load balancer et proxy | Linux, BSD
+- Apache HTTP Server | Serveur web | Windows, Linux, macOS
+- Caddy | Serveur web et proxy TLS automatique | Windows, Linux, macOS
+- Traefik Proxy | Reverse proxy | Windows, Linux, macOS
+- Envoy Proxy | Proxy L7 | Windows, Linux, macOS
+- Varnish Cache | Cache HTTP | Linux, BSD
+- Squid | Proxy cache | Windows, Linux, macOS
+- Tinyproxy | Proxy HTTP léger | Linux, BSD
+- Privoxy | Proxy filtrant | Windows, Linux, macOS
+-  mitmproxy | Proxy d'inspection HTTP(S) | Windows, Linux, macOS
+- Apache Traffic Server | Proxy/cache | Linux, BSD
+- ATS | Proxy/cache | Linux, BSD
+- OpenResty | Plateforme NGINX/Lua | Linux, Windows
+- H2O | Serveur web HTTP/2/3 | Linux, macOS
+- Lighttpd | Serveur web léger | Windows, Linux, macOS
+- Cherokee | Serveur web | Linux, BSD
+- Kong Gateway OSS | API gateway | Windows, Linux, macOS
+- Apache APISIX | API gateway | Windows, Linux, macOS
+- Tyk Gateway (community) | API gateway | Linux, Windows via conteneur
+- KrakenD Community | API gateway | Windows, Linux, macOS
+- Gravitee APIM Community | Gestion API | Linux, Windows via conteneur
+- Zuul | API gateway | Windows, Linux, macOS
+- Ocelot | API gateway .NET | Windows, Linux, macOS
+- YARP | Reverse proxy .NET | Windows, Linux, macOS
+- HAProxy Data Plane API | API de gestion HAProxy | Linux
+- Keepalived | Haute disponibilité IP | Linux
+- LVS | Load balancing L4 | Linux
+- Pen | Load balancer | Linux, BSD
+- Balance | Load balancer TCP | Linux, BSD
+- PgBouncer | Pooler PostgreSQL | Windows, Linux, macOS
+- ProxySQL | Proxy MySQL | Linux
+- MaxScale (édition communautaire) | Proxy MariaDB | Linux
+- Odyssey | Pooler PostgreSQL | Linux
+
+5. SERVEURS WEB, LANGAGES ET RUNTIMES
+-------------------------------------
+- PHP | Runtime PHP | Windows, Linux, macOS
+- Node.js | Runtime JavaScript | Windows, Linux, macOS
+- Deno | Runtime JavaScript/TypeScript | Windows, Linux, macOS
+- Bun | Runtime JavaScript | Windows, Linux, macOS
+- Python | Langage et runtime | Windows, Linux, macOS
+- Ruby | Langage et runtime | Windows, Linux, macOS
+- Go | Langage et runtime | Windows, Linux, macOS
+- Rust | Langage et toolchain | Windows, Linux, macOS
+- OpenJDK | Runtime Java | Windows, Linux, macOS
+- Eclipse Temurin | Distribution OpenJDK | Windows, Linux, macOS
+- GraalVM Community Edition | Runtime polyglotte | Windows, Linux, macOS
+- .NET SDK | Runtime et SDK .NET | Windows, Linux, macOS
+- Mono | Runtime .NET historique | Windows, Linux, macOS
+- PowerShell | Shell et automatisation | Windows, Linux, macOS
+- Perl | Langage et runtime | Windows, Linux, macOS
+- Lua | Langage embarqué | Windows, Linux, macOS
+- Erlang/OTP | Runtime Erlang | Windows, Linux, macOS
+- Elixir | Langage BEAM | Windows, Linux, macOS
+- GCC | Compilateur | Windows, Linux, macOS
+- Clang/LLVM | Compilateur | Windows, Linux, macOS
+- CMake | Build system | Windows, Linux, macOS
+- Ninja | Build system | Windows, Linux, macOS
+- Meson | Build system | Windows, Linux, macOS
+- Apache Tomcat | Serveur Java | Windows, Linux, macOS
+- Eclipse Jetty | Serveur Java | Windows, Linux, macOS
+- WildFly | Serveur d'applications Java | Windows, Linux, macOS
+- Payara Community | Serveur Jakarta EE | Windows, Linux, macOS
+- Open Liberty | Serveur Java | Windows, Linux, macOS
+- GlassFish | Serveur Jakarta EE | Windows, Linux, macOS
+- Jenkins | Automatisation CI/CD | Windows, Linux, macOS
+- Buildbot | Automatisation build | Windows, Linux, macOS
+- Concourse CI | CI/CD | Linux, Windows via workers
+- GoCD | CI/CD | Windows, Linux, macOS
+- Woodpecker CI | CI/CD | Windows, Linux, macOS
+- Drone CI (community) | CI/CD | Linux
+- Tekton | Pipelines Kubernetes | Linux
+- Argo Workflows | Workflows Kubernetes | Linux
+- Dagger | Pipelines programmables | Windows, Linux, macOS
+- Earthly | Build reproductibles | Windows, Linux, macOS
+- Task | Task runner | Windows, Linux, macOS
+- Just | Task runner | Windows, Linux, macOS
+
+6. BASES DE DONNEES SQL ET NOSQL
+--------------------------------
+- PostgreSQL | Base SQL | Windows, Linux, macOS
+- MariaDB Server | Base SQL | Windows, Linux, macOS
+- MySQL Community Server | Base SQL | Windows, Linux, macOS
+- SQLite | Base SQL embarquée | Windows, Linux, macOS
+- Firebird | Base SQL | Windows, Linux, macOS
+- DuckDB | Base analytique embarquée | Windows, Linux, macOS
+- CockroachDB | Base SQL distribuée | Windows, Linux, macOS
+- YugabyteDB | Base SQL distribuée | Linux, macOS
+- TiDB | Base SQL distribuée | Linux
+- Citus | Extension PostgreSQL distribuée | Linux, Windows via PostgreSQL
+- TimescaleDB | Base time-series PostgreSQL | Linux, macOS
+- QuestDB | Base time-series | Windows, Linux, macOS
+- InfluxDB OSS | Base time-series | Windows, Linux, macOS
+- Apache Cassandra | Base NoSQL wide-column | Windows, Linux, macOS
+- ScyllaDB | Base NoSQL wide-column | Linux
+- MongoDB Community Server | Base documentaire | Windows, Linux, macOS
+- FerretDB | Compatibilité MongoDB | Linux, Windows, macOS
+- CouchDB | Base documentaire | Windows, Linux, macOS
+- Couchbase Community | Base NoSQL | Linux, Windows
+- RavenDB Community | Base documentaire | Windows, Linux, macOS
+- RethinkDB | Base documentaire temps réel | Linux, macOS
+- Redis | Base clé-valeur | Windows via WSL/containers, Linux, macOS
+- Valkey | Base clé-valeur | Windows via WSL/containers, Linux, macOS
+- KeyDB | Base clé-valeur | Linux, macOS
+- Dragonfly | Base clé-valeur | Linux
+- Memcached | Cache clé-valeur | Windows, Linux, macOS
+- etcd | Base clé-valeur distribuée | Windows, Linux, macOS
+- Consul | Store clé-valeur et découverte | Windows, Linux, macOS
+- FoundationDB | Base clé-valeur distribuée | Windows, Linux, macOS
+- BadgerDB | Base clé-valeur embarquée | Windows, Linux, macOS
+- RocksDB | Moteur clé-valeur embarqué | Windows, Linux, macOS
+- LevelDB | Moteur clé-valeur embarqué | Windows, Linux, macOS
+- LMDB | Base clé-valeur embarquée | Windows, Linux, macOS
+- SurrealDB | Base multi-modèle | Windows, Linux, macOS
+- ArangoDB Community | Base multi-modèle | Windows, Linux, macOS
+- OrientDB | Base graphe/document | Windows, Linux, macOS
+- Neo4j Community | Base graphe | Windows, Linux, macOS
+- Memgraph | Base graphe | Linux, macOS
+- JanusGraph | Base graphe | Windows, Linux, macOS
+- Apache AGE | Extension graphe PostgreSQL | Linux
+- Dgraph | Base graphe | Windows, Linux, macOS
+- TerminusDB | Base graphe/document | Windows, Linux, macOS
+- XTDB | Base bitemporelle | Windows, Linux, macOS
+- Apache Doris | Entrepôt analytique | Linux
+- ClickHouse | Base analytique colonne | Linux, macOS
+- Apache Pinot | Base analytique temps réel | Linux
+- Apache Druid | Base analytique temps réel | Linux, macOS
+- Trino | Moteur SQL distribué | Windows, Linux, macOS
+- Presto | Moteur SQL distribué | Linux, macOS
+- Apache Hive | Entrepôt SQL Hadoop | Linux
+- Apache HBase | Base NoSQL Hadoop | Linux
+- Apache Kudu | Stockage analytique | Linux
+- Greenplum Database | Base analytique MPP | Linux
+- MonetDB | Base analytique colonne | Windows, Linux, macOS
+- DuckDB extensions | Extensions analytiques | Windows, Linux, macOS
+- Apache Drill | Moteur SQL | Linux, macOS
+- Apache Ignite | Base distribuée en mémoire | Windows, Linux, macOS
+- Hazelcast | In-memory data grid | Windows, Linux, macOS
+- Apache Geode | Base distribuée en mémoire | Windows, Linux, macOS
+- VoltDB Community | Base SQL en mémoire | Linux
+- H2 Database | Base SQL Java | Windows, Linux, macOS
+- HSQLDB | Base SQL Java | Windows, Linux, macOS
+- Derby | Base SQL Java | Windows, Linux, macOS
+- Realm (community components) | Base embarquée mobile | Windows, macOS, Linux
+
+7. STOCKAGE, NAS, OBJET, FICHIERS ET SAUVEGARDE
+-----------------------------------------------
+- MinIO (community source) | Stockage objet S3 | Linux, Windows via conteneur
+- Ceph | Stockage distribué | Linux
+- GlusterFS | Système de fichiers distribué | Linux
+- Lustre | Système de fichiers parallèle | Linux
+- BeeGFS | Système de fichiers parallèle | Linux
+- OpenZFS | Système de fichiers et volumes | Linux, FreeBSD, macOS
+- Btrfs | Système de fichiers | Linux
+- XFS | Système de fichiers | Linux
+- LVM2 | Gestion volumes logiques | Linux
+- mdadm | RAID logiciel | Linux
+-  mergerfs | Fusion de systèmes de fichiers | Linux
+- SnapRAID | Protection de données | Windows, Linux, macOS
+- NFS-Ganesha | Serveur NFS | Linux
+- OpenAFS | Système de fichiers distribué | Windows, Linux, macOS
+- SeaweedFS | Stockage distribué | Windows, Linux, macOS
+- Garage | Stockage objet S3 | Linux, macOS
+- OpenIO | Stockage objet | Linux
+- OpenStack Swift | Stockage objet | Linux
+- Rook | Orchestration stockage Kubernetes | Linux
+- Longhorn | Stockage persistant Kubernetes | Linux
+- OpenEBS | Stockage Kubernetes | Linux
+- LINSTOR | Stockage bloc distribué | Linux
+- DRBD | Réplication bloc | Linux
+- Restic | Sauvegarde | Windows, Linux, macOS
+- BorgBackup | Sauvegarde dédupliquée | Linux, macOS
+- Kopia | Sauvegarde | Windows, Linux, macOS
+- Duplicati | Sauvegarde | Windows, Linux, macOS
+- UrBackup | Sauvegarde client/serveur | Windows, Linux
+- Bacula Community | Sauvegarde réseau | Windows, Linux, macOS
+- Amanda | Sauvegarde réseau | Linux, Unix
+- rdiff-backup | Sauvegarde incrémentale | Windows, Linux, macOS
+- rsnapshot | Sauvegarde snapshots | Linux, macOS
+- Rsync | Synchronisation fichiers | Windows, Linux, macOS
+- Rclone | Synchronisation stockage cloud | Windows, Linux, macOS
+- Syncthing | Synchronisation P2P | Windows, Linux, macOS
+- Seafile Community | Synchronisation fichiers | Windows, Linux, macOS
+- Nextcloud | Cloud de fichiers | Windows, Linux, macOS (serveur Linux recommandé)
+- ownCloud Infinite Scale | Cloud de fichiers | Windows, Linux, macOS
+- File Browser | Interface web fichiers | Windows, Linux, macOS
+- SFTPGo | Serveur SFTP/FTP/WebDAV | Windows, Linux, macOS
+- OpenSSH SFTP | Transfert sécurisé | Windows, Linux, macOS
+- WebDAV (Apache mod_dav) | Partage WebDAV | Windows, Linux, macOS
+- Pydio Cells | Partage et collaboration fichiers | Linux, Windows via conteneur
+- Cozy Cloud | Cloud personnel | Linux
+- Filestash | Interface multi-stockage | Windows, Linux, macOS
+- ProjectSend | Partage de fichiers | Linux
+- Pingvin Share | Partage temporaire | Linux, Windows via conteneur
+
+8. CONTENEURS, ORCHESTRATION ET PLATEFORMES CLOUD-NATIVE
+--------------------------------------------------------
+- Kubernetes | Orchestration conteneurs | Linux, Windows nodes
+- K3s | Kubernetes léger | Linux, Windows via WSL/VM
+- MicroK8s | Kubernetes léger | Linux, Windows via WSL, macOS
+- Minikube | Kubernetes local | Windows, Linux, macOS
+- kind | Kubernetes en Docker | Windows, Linux, macOS
+- k0s | Kubernetes léger | Linux
+- Talos Linux | OS Kubernetes | x86, ARM
+- RKE2 | Kubernetes durci | Linux
+- OpenShift OKD | Plateforme Kubernetes | Linux
+- KubeVirt | VM sur Kubernetes | Linux
+- Helm | Gestionnaire de packages Kubernetes | Windows, Linux, macOS
+- Kustomize | Configuration Kubernetes | Windows, Linux, macOS
+- Argo CD | GitOps Kubernetes | Linux
+- Flux CD | GitOps Kubernetes | Linux
+- Rancher | Gestion Kubernetes | Linux, Windows via conteneur
+- Portainer CE | Gestion conteneurs | Windows, Linux, macOS
+- Lens Open Source | IDE Kubernetes | Windows, Linux, macOS
+- Headlamp | Dashboard Kubernetes | Windows, Linux, macOS
+- K9s | Terminal Kubernetes | Windows, Linux, macOS
+- Skaffold | Développement Kubernetes | Windows, Linux, macOS
+- Tilt | Développement Kubernetes | Windows, Linux, macOS
+- Garden | Développement Kubernetes | Windows, Linux, macOS
+- Telepresence | Développement Kubernetes | Windows, Linux, macOS
+- Dapr | Runtime applicatif distribué | Windows, Linux, macOS
+- Knative | Serverless Kubernetes | Linux
+- OpenFaaS | Serverless | Linux, Windows via conteneur
+- Fission | Serverless Kubernetes | Linux
+- KEDA | Autoscaling événementiel | Linux
+- Crossplane | Control plane cloud | Linux
+- Cluster API | Gestion cycle de vie clusters | Linux
+- MetalLB | Load balancer Kubernetes | Linux
+- Cilium | Réseau et sécurité Kubernetes | Linux
+- Calico | Réseau Kubernetes | Linux
+- Flannel | Réseau Kubernetes | Linux
+- Weave Net | Réseau Kubernetes | Linux
+- Multus | Réseaux multiples Kubernetes | Linux
+- Gateway API | API réseau Kubernetes | Linux
+- Contour | Ingress Kubernetes | Linux
+- NGINX Ingress Controller | Ingress Kubernetes | Linux
+- Traefik | Ingress Kubernetes | Windows, Linux, macOS
+- cert-manager | Certificats Kubernetes | Linux
+- ExternalDNS | DNS Kubernetes | Linux
+- Velero | Sauvegarde Kubernetes | Linux
+- Kanister | Protection données Kubernetes | Linux
+- Kube-bench | Audit CIS Kubernetes | Linux
+- Kubescape | Sécurité Kubernetes | Windows, Linux, macOS
+- Trivy | Scanner vulnérabilités | Windows, Linux, macOS
+- Falco | Détection runtime | Linux
+- Kyverno | Politiques Kubernetes | Linux
+- OPA Gatekeeper | Politiques Kubernetes | Linux
+- Open Policy Agent | Moteur de politiques | Windows, Linux, macOS
+- Buildah | Construction images | Linux, Windows via WSL
+- Skopeo | Gestion images conteneurs | Linux, macOS
+- Dive | Analyse images Docker | Windows, Linux, macOS
+- Hadolint | Lint Dockerfile | Windows, Linux, macOS
+- Dockle | Audit images conteneurs | Windows, Linux, macOS
+- Docker Compose | Orchestration locale | Windows, Linux, macOS
+- Podman Compose | Orchestration locale | Windows, Linux, macOS
+- Kompose | Conversion Compose/Kubernetes | Windows, Linux, macOS
+- Packer | Création images machines | Windows, Linux, macOS
+- Vagrant | Environnements reproductibles | Windows, Linux, macOS
+
+9. SUPERVISION, METRIQUES, LOGS ET OBSERVABILITE
+------------------------------------------------
+- Prometheus | Métriques et alertes | Windows, Linux, macOS
+- Grafana OSS | Dashboards | Windows, Linux, macOS
+- VictoriaMetrics | Base métriques | Windows, Linux, macOS
+- Thanos | Stockage long terme Prometheus | Linux
+- Mimir | Stockage métriques | Linux
+- Cortex | Stockage métriques | Linux
+- Alertmanager | Gestion alertes | Windows, Linux, macOS
+- Zabbix | Supervision infrastructure | Windows, Linux, macOS
+- Icinga 2 | Supervision | Windows, Linux, macOS
+- Nagios Core | Supervision | Linux
+- Checkmk Raw | Supervision | Linux
+- LibreNMS | Supervision réseau | Linux
+- Observium Community | Supervision réseau | Linux
+- OpenNMS Horizon | Supervision réseau | Linux
+- Netdata | Supervision temps réel | Windows, Linux, macOS
+- Glances | Supervision système | Windows, Linux, macOS
+- Cockpit | Administration serveur | Linux
+- NetXMS | Supervision réseau | Windows, Linux
+- Centreon Open Source | Supervision | Linux
+- Prometheus Node Exporter | Export métriques système | Windows, Linux, macOS
+- windows_exporter | Export métriques Windows | Windows
+- Telegraf | Collecteur métriques | Windows, Linux, macOS
+- Collectd | Collecteur métriques | Linux, BSD
+- StatsD | Collecteur métriques | Windows, Linux, macOS
+- OpenTelemetry Collector | Collecteur télémétrie | Windows, Linux, macOS
+- Jaeger | Traçage distribué | Windows, Linux, macOS
+- Zipkin | Traçage distribué | Windows, Linux, macOS
+- Tempo | Backend traces | Linux
+- Loki | Agrégation logs | Windows, Linux, macOS
+- Promtail (déprécié) | Agent logs historique | Windows, Linux, macOS
+- Grafana Alloy | Agent observabilité | Windows, Linux, macOS
+- Fluent Bit | Collecteur logs | Windows, Linux, macOS
+- Fluentd | Collecteur logs | Windows, Linux, macOS
+- Vector | Pipeline observabilité | Windows, Linux, macOS
+- Logstash | Pipeline logs | Windows, Linux, macOS
+- OpenSearch | Recherche et analytics logs | Windows, Linux, macOS
+- OpenSearch Dashboards | Visualisation logs | Windows, Linux, macOS
+- Graylog Open | Gestion logs | Linux
+- Wazuh | SIEM et XDR | Windows, Linux, macOS
+- ELK Stack (Elasticsearch OSS alternatives) | Recherche et logs | Windows, Linux, macOS
+- Quickwit | Recherche logs | Linux, macOS
+- VictoriaLogs | Gestion logs | Windows, Linux, macOS
+- SigNoz | Observabilité full-stack | Linux, Windows via conteneur
+- HyperDX | Observabilité | Linux, Windows via conteneur
+- Uptrace | APM et traces | Windows, Linux, macOS
+- GlitchTip | Suivi erreurs | Linux, Windows via conteneur
+- Sentry self-hosted | Suivi erreurs | Linux
+- Errbit | Suivi erreurs | Linux
+- Uptime Kuma | Surveillance disponibilité | Windows, Linux, macOS
+- Gatus | Surveillance disponibilité | Windows, Linux, macOS
+- Cachet | Page statut | Linux
+- Statping-ng | Page statut | Windows, Linux, macOS
+- Cabot | Supervision et alertes | Linux
+- Healthchecks | Surveillance tâches planifiées | Linux
+- ntopng | Analyse trafic réseau | Windows, Linux, macOS
+- iftop | Analyse bande passante | Linux, BSD
+- vnStat | Statistiques trafic | Linux, BSD
+- Wireshark | Analyse protocoles réseau | Windows, Linux, macOS
+- tshark | Analyse réseau CLI | Windows, Linux, macOS
+- tcpdump | Capture réseau | Linux, macOS, BSD
+- Nmap | Découverte et audit réseau | Windows, Linux, macOS
+- ZMap | Scan réseau Internet | Linux
+- Masscan | Scan réseau | Windows, Linux, macOS
+- Netdata Cloud Agent (agent) | Métriques hôte | Windows, Linux, macOS
+
+10. SECURITE, PARE-FEU, SIEM, SCAN ET PKI
+-----------------------------------------
+- OSSEC | HIDS | Windows, Linux, macOS
+- Suricata | IDS/IPS réseau | Windows, Linux, macOS
+- Zeek | Analyse sécurité réseau | Linux, macOS
+- Snort | IDS/IPS | Windows, Linux, macOS
+- Security Onion | Distribution SOC | Linux
+- TheHive | Gestion incidents SOC | Linux
+- MISP | Partage renseignements menaces | Linux
+- OpenCTI | Renseignement cyber | Linux
+- Yeti | Threat intelligence | Linux
+- IntelOwl | Analyse fichiers et observables | Linux
+- Velociraptor | DFIR et réponse incident | Windows, Linux, macOS
+- GRR Rapid Response | Forensic à distance | Windows, Linux, macOS
+- osquery | Instrumentation endpoint | Windows, Linux, macOS
+- FleetDM | Gestion osquery | Windows, Linux, macOS
+- Kolide Launcher | Sécurité endpoint | Windows, Linux, macOS
+- Lynis | Audit sécurité système | Linux, macOS, BSD
+- OpenSCAP | Conformité et audit | Linux
+- Greenbone Community Edition | Scanner vulnérabilités | Linux
+- OpenVAS | Scanner vulnérabilités | Linux
+- Nuclei | Scanner templates vulnérabilités | Windows, Linux, macOS
+- OWASP ZAP | Test sécurité web | Windows, Linux, macOS
+- Nikto | Scanner serveur web | Windows, Linux, macOS
+- Wapiti | Scanner web | Windows, Linux, macOS
+- Arachni | Scanner web | Linux
+- sqlmap | Audit injection SQL | Windows, Linux, macOS
+- Nmap NSE | Scripts audit réseau | Windows, Linux, macOS
+- testssl.sh | Audit TLS | Linux, macOS
+- SSLyze | Audit TLS | Windows, Linux, macOS
+- Certbot | Gestion certificats ACME | Windows via WSL, Linux, macOS
+- acme.sh | Client ACME | Windows via shell, Linux, macOS
+- step-ca | Autorité de certification | Windows, Linux, macOS
+- Smallstep CLI | PKI et certificats | Windows, Linux, macOS
+- EJBCA Community | Autorité de certification | Linux
+- OpenSSL | Cryptographie et PKI | Windows, Linux, macOS
+- LibreSSL | Cryptographie | OpenBSD, Linux, macOS
+- GnuPG | Chiffrement et signature | Windows, Linux, macOS
+-  age | Chiffrement fichiers | Windows, Linux, macOS
+- SOPS | Chiffrement secrets config | Windows, Linux, macOS
+- Vault (open source core) | Gestion secrets | Windows, Linux, macOS
+- OpenBao | Gestion secrets | Windows, Linux, macOS
+- Infisical (open source core) | Gestion secrets | Windows, Linux, macOS
+- Mozilla SOPS | Gestion secrets | Windows, Linux, macOS
+- KeePassXC | Gestionnaire mots de passe | Windows, Linux, macOS
+- KeePass | Gestionnaire mots de passe | Windows
+- Bitwarden self-hosted (clients open source) | Gestion mots de passe | Windows, Linux, macOS
+- Vaultwarden | Serveur compatible Bitwarden | Windows, Linux, macOS
+- Passbolt Community | Gestion mots de passe équipe | Linux
+- Psono Community | Gestion mots de passe équipe | Windows, Linux, macOS
+- Fail2ban | Blocage brute force | Linux, BSD
+- CrowdSec | Détection et blocage comportemental | Windows, Linux, macOS
+- sshguard | Protection SSH | Linux, BSD
+- Firewalld | Pare-feu dynamique | Linux
+- nftables | Pare-feu Linux | Linux
+- iptables | Pare-feu Linux historique | Linux
+- UFW | Pare-feu simplifié | Linux
+- Windows Defender Firewall Tools | Administration pare-feu natif | Windows
+- ClamAV | Antivirus open source | Windows, Linux, macOS
+- YARA | Règles de détection | Windows, Linux, macOS
+- Chkrootkit | Détection rootkits | Linux
+- rkhunter | Détection rootkits | Linux
+- AIDE | Contrôle intégrité fichiers | Linux, Unix
+- Lynis Enterprise alternatives | Audit système (catégorie) | Linux
+- OpenEDR | EDR open source | Windows, Linux
+- XCP-ng Xen Orchestra (community) | Gestion hyperviseur | Linux, Windows, macOS via navigateur
+
+11. AUTOMATISATION, CONFIGURATION ET INFRASTRUCTURE AS CODE
+-----------------------------------------------------------
+- Ansible | Automatisation configuration | Windows, Linux, macOS (contrôle Linux/macOS)
+- AWX | Interface Ansible | Linux, Windows via conteneur
+- Semaphore UI | Interface Ansible | Windows, Linux, macOS
+- Rundeck Community | Automatisation opérations | Windows, Linux, macOS
+- Rundeck | Orchestration tâches | Windows, Linux, macOS
+- Salt Project | Automatisation infrastructure | Windows, Linux, macOS
+- Puppet Open Source | Gestion configuration | Windows, Linux, macOS
+- Chef Infra (community) | Gestion configuration | Windows, Linux, macOS
+- CFEngine | Gestion configuration | Windows, Linux, macOS
+- Terraform | Infrastructure as Code | Windows, Linux, macOS
+- OpenTofu | Infrastructure as Code | Windows, Linux, macOS
+- Pulumi | Infrastructure as Code | Windows, Linux, macOS
+- Terragrunt | Orchestration Terraform | Windows, Linux, macOS
+- Terramate | Orchestration IaC | Windows, Linux, macOS
+- Cloud-init | Initialisation VM | Linux, BSD
+- Ignition | Provisioning OS | Linux
+- Foreman | Provisioning et gestion serveurs | Linux
+- Katello | Gestion contenu et patchs | Linux
+- Uyuni | Gestion parc et patchs | Linux
+- Rudder | Configuration et conformité | Windows, Linux
+- Rex (R)? | Automatisation distante | Linux, Unix
+- Fabric | Automatisation SSH Python | Windows, Linux, macOS
+- Invoke | Task execution Python | Windows, Linux, macOS
+- Nornir | Automatisation réseau Python | Windows, Linux, macOS
+- Netmiko | Automatisation équipements réseau | Windows, Linux, macOS
+- NAPALM | Automatisation réseau | Windows, Linux, macOS
+- Nornir Salt | Automatisation réseau | Windows, Linux, macOS
+- StackStorm | Automatisation événementielle | Linux
+- Huginn | Automatisation événementielle | Windows, Linux, macOS
+- n8n (source available/community) | Automatisation workflows | Windows, Linux, macOS
+- Node-RED | Automatisation low-code | Windows, Linux, macOS
+- Activepieces (community) | Automatisation workflows | Windows, Linux, macOS
+- Windmill (community) | Automatisation scripts et workflows | Windows, Linux, macOS
+- Kestra | Orchestration workflows | Windows, Linux, macOS
+- Apache Airflow | Orchestration pipelines | Windows, Linux, macOS
+- Prefect | Orchestration workflows | Windows, Linux, macOS
+- Dagster | Orchestration data | Windows, Linux, macOS
+- Temporal | Orchestration durable | Windows, Linux, macOS
+- Netflix Conductor | Orchestration microservices | Linux, macOS
+- Apache DolphinScheduler | Orchestration tâches | Linux
+- Molecule | Tests rôles Ansible | Windows, Linux, macOS
+- Testinfra | Tests infrastructure | Windows, Linux, macOS
+- InSpec (core open source) | Tests conformité | Windows, Linux, macOS
+- Serverspec | Tests infrastructure | Linux, macOS
+- KitchenCI | Tests infrastructure | Windows, Linux, macOS
+
+12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION
+---------------------------------------------------------
+- Matrix Synapse | Serveur messagerie Matrix | Windows, Linux, macOS
+- Dendrite | Serveur Matrix | Windows, Linux, macOS
+- Conduit | Serveur Matrix léger | Windows, Linux, macOS
+- Continuwuity | Serveur Matrix | Linux, macOS
+- Element Server Suite (components) | Messagerie Matrix | Windows, Linux, macOS
+- Mattermost Team Edition | Chat équipe | Linux, Windows via conteneur
+- Rocket.Chat Community | Chat équipe | Linux, Windows via conteneur
+- Zulip | Chat équipe | Linux
+- XMPP Prosody | Serveur XMPP | Windows, Linux, macOS
+- ejabberd | Serveur XMPP | Windows, Linux, macOS
+- Openfire | Serveur XMPP | Windows, Linux, macOS
+- Snikket | Messagerie XMPP | Linux
+- MongooseIM | Serveur XMPP | Linux
+- Jitsi Meet | Visioconférence | Linux
+- Jitsi Videobridge | Serveur média | Linux
+- BigBlueButton | Classe virtuelle | Linux
+- Galène | Visioconférence | Windows, Linux, macOS
+- Nextcloud Talk | Chat et visioconférence | Linux
+- Element | Client Matrix | Windows, Linux, macOS
+- Converse.js | Client XMPP web | Windows, Linux, macOS
+- Zammad | Helpdesk | Linux
+- Chatwoot | Support client omnicanal | Linux
+- FreeScout | Helpdesk email | Linux
+- osTicket | Ticketing support | Windows, Linux, macOS
+- GLPI | ITSM et parc informatique | Windows, Linux, macOS
+- iTop | ITSM et CMDB | Windows, Linux, macOS
+- OTOBO | ITSM | Linux
+- Znuny | ITSM | Linux
+- Request Tracker | Ticketing | Linux, Unix
+- UVdesk Community | Helpdesk | Linux
+- Faveo Helpdesk Community | Helpdesk | Linux
+- OpenProject | Gestion projet | Linux
+- Taiga | Gestion projet agile | Linux
+- Plane (community) | Gestion projet | Linux, Windows via conteneur
+- Leantime | Gestion projet | Linux
+- Redmine | Gestion projet | Windows, Linux, macOS
+- Trac | Gestion projet et wiki | Windows, Linux, macOS
+- Phabricator (archivé) | Collaboration développement | Linux
+- Tuleap Community | ALM et projet | Linux
+- Kanboard | Kanban | Linux
+- Wekan | Kanban | Windows, Linux, macOS
+- Focalboard (archivé) | Gestion projet | Windows, Linux, macOS
+- Vikunja | Tâches et projets | Windows, Linux, macOS
+- AppFlowy | Espace de travail | Windows, Linux, macOS
+- AFFiNE | Espace de travail | Windows, Linux, macOS
+- Outline | Wiki collaboratif | Linux
+- BookStack | Wiki documentaire | Linux
+- Wiki.js | Wiki | Windows, Linux, macOS
+- XWiki | Wiki | Windows, Linux, macOS
+- DokuWiki | Wiki | Windows, Linux, macOS
+- MediaWiki | Wiki | Windows, Linux, macOS
+- TWiki | Wiki | Windows, Linux, macOS
+- MoinMoin | Wiki | Windows, Linux, macOS
+- Gollum | Wiki Git | Windows, Linux, macOS
+- HedgeDoc | Édition Markdown collaborative | Linux
+- Etherpad | Édition collaborative | Windows, Linux, macOS
+- CryptPad | Suite collaborative chiffrée | Linux
+- ownCloud | Suite collaborative | Linux
+- SOGo | Groupware | Linux
+- Kopano Core Community | Groupware | Linux
+- Cal.com (core open source) | Planification rendez-vous | Linux, Windows via conteneur
+- Radicale | Serveur CalDAV/CardDAV | Windows, Linux, macOS
+- Baïkal | Serveur CalDAV/CardDAV | Linux
+- DAViCal | Serveur CalDAV | Linux
+- Mailu | Suite serveur mail | Linux
+- Mailcow | Suite serveur mail | Linux
+- docker-mailserver | Serveur mail | Linux
+- Modoboa | Suite serveur mail | Linux
+- iRedMail (open source edition) | Suite serveur mail | Linux, BSD
+- Postfix | MTA SMTP | Windows via ports, Linux, macOS
+- Exim | MTA SMTP | Linux, Unix
+- OpenSMTPD | MTA SMTP | OpenBSD, Linux
+- Dovecot | Serveur IMAP/POP3 | Linux, Unix
+- Rspamd | Filtrage spam | Linux
+- SpamAssassin | Filtrage spam | Windows, Linux, macOS
+- Amavis | Filtrage email | Linux
+- Roundcube | Webmail | Windows, Linux, macOS
+- SnappyMail | Webmail | Windows, Linux, macOS
+- SquirrelMail | Webmail historique | Linux
+- RainLoop (abandonné) | Webmail historique | Linux
+
+13. WEB, CMS, E-COMMERCE ET PORTAILS
+------------------------------------
+- WordPress | CMS | Windows, Linux, macOS
+- Drupal | CMS | Windows, Linux, macOS
+- Joomla | CMS | Windows, Linux, macOS
+- Ghost | CMS/blog | Windows, Linux, macOS
+- Grav | CMS flat-file | Windows, Linux, macOS
+- ClassicPress | CMS | Windows, Linux, macOS
+- TYPO3 | CMS entreprise | Windows, Linux, macOS
+- Contao | CMS | Windows, Linux, macOS
+- October CMS (community) | CMS Laravel | Windows, Linux, macOS
+- Strapi | CMS headless | Windows, Linux, macOS
+- Directus | CMS headless | Windows, Linux, macOS
+- Payload CMS | CMS headless | Windows, Linux, macOS
+- KeystoneJS | CMS headless | Windows, Linux, macOS
+- Sanity Studio (source available) | CMS headless | Windows, Linux, macOS
+- Wagtail | CMS Django | Windows, Linux, macOS
+- Mezzanine | CMS Django | Windows, Linux, macOS
+- Plone | CMS Python | Windows, Linux, macOS
+- Zope | Serveur applicatif | Windows, Linux, macOS
+- Liferay Community Edition | Portail | Windows, Linux, macOS
+- Jahia (community components) | CMS | Linux
+- eXo Platform (community) | Portail collaboratif | Linux
+- Alfresco Community | ECM | Linux, Windows
+- Nuxeo (community legacy) | ECM | Linux
+- Moodle | LMS | Windows, Linux, macOS
+- Canvas LMS (open source) | LMS | Linux
+- Chamilo | LMS | Windows, Linux, macOS
+- ILIAS | LMS | Windows, Linux, macOS
+- Open edX | LMS | Linux
+- Frappe Framework | Framework ERP | Windows, Linux, macOS
+- ERPNext | ERP | Linux
+- Odoo Community | ERP/CRM | Windows, Linux, macOS
+- Tryton | ERP | Windows, Linux, macOS
+- Dolibarr | ERP/CRM | Windows, Linux, macOS
+- iDempiere | ERP | Windows, Linux, macOS
+- metasfresh | ERP | Linux
+- Apache OFBiz | ERP | Windows, Linux, macOS
+- ERP5 | ERP | Linux
+- FrontAccounting | Comptabilité/ERP | Windows, Linux, macOS
+- Invoice Ninja (community) | Facturation | Linux
+- Akaunting (community) | Comptabilité | Linux
+- Kimai | Suivi temps et facturation | Windows, Linux, macOS
+- Crater (archivé) | Facturation | Linux
+- OpenCart | E-commerce | Windows, Linux, macOS
+- PrestaShop | E-commerce | Windows, Linux, macOS
+- Magento Open Source | E-commerce | Linux
+- WooCommerce | E-commerce WordPress | Windows, Linux, macOS
+- Saleor | E-commerce headless | Windows, Linux, macOS
+- Medusa | E-commerce headless | Windows, Linux, macOS
+- Sylius | E-commerce Symfony | Windows, Linux, macOS
+- Shopware Community | E-commerce | Windows, Linux, macOS
+- Bagisto | E-commerce Laravel | Windows, Linux, macOS
+- Spree Commerce | E-commerce Ruby | Windows, Linux, macOS
+- Reaction Commerce (archivé) | E-commerce | Linux
+- Vendure | E-commerce headless | Windows, Linux, macOS
+- Solidus | E-commerce Ruby | Windows, Linux, macOS
+- Open Source POS (OSPOS) | Caisse POS | Windows, Linux, macOS
+- uniCenta oPOS | Caisse POS | Windows, Linux, macOS
+- Floreant POS | Caisse POS | Windows, Linux, macOS
+- ERPNext POS | Caisse POS | Linux
+- OpenBoxes | Gestion stocks | Linux
+- Inventree | Gestion inventaire | Windows, Linux, macOS
+- Snipe-IT | Gestion actifs | Linux
+- OCS Inventory NG | Inventaire IT | Windows, Linux, macOS
+- FusionInventory | Inventaire IT (ancien) | Windows, Linux
+
+14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE
+-----------------------------------------------
+- Git | Gestion versions | Windows, Linux, macOS
+- Gitea | Forge Git | Windows, Linux, macOS
+- Forgejo | Forge Git | Windows, Linux, macOS
+- GitLab Community Edition | Forge DevOps | Linux
+- Gogs | Forge Git | Windows, Linux, macOS
+- OneDev | Forge DevOps | Windows, Linux, macOS
+- SourceHut | Forge de développement | Linux
+- Pagure | Forge Git | Linux
+- Phorge | Forge développement | Linux
+- Gerrit Code Review | Revue de code | Windows, Linux, macOS
+- Review Board | Revue de code | Windows, Linux, macOS
+- RhodeCode Community | Forge Git | Linux
+- Fossil SCM | Gestion versions | Windows, Linux, macOS
+- Mercurial | Gestion versions | Windows, Linux, macOS
+- Subversion Apache | Gestion versions | Windows, Linux, macOS
+- Harbor | Registry OCI | Linux
+- Distribution Registry | Registry Docker | Windows, Linux, macOS
+- Zot | Registry OCI | Windows, Linux, macOS
+- Nexus Repository OSS | Gestion dépôts artefacts | Windows, Linux, macOS
+- JFrog Artifactory OSS (legacy) | Gestion artefacts | Linux
+- Verdaccio | Registry npm | Windows, Linux, macOS
+- SonarQube Community Build | Qualité code | Windows, Linux, macOS
+- SonarLint | Analyse IDE | Windows, Linux, macOS
+- Semgrep CE | Analyse statique | Windows, Linux, macOS
+- CodeQL CLI (license restrictions) | Analyse code | Windows, Linux, macOS
+- PMD | Analyse statique | Windows, Linux, macOS
+- Checkstyle | Analyse Java | Windows, Linux, macOS
+- SpotBugs | Analyse Java | Windows, Linux, macOS
+- ESLint | Analyse JavaScript | Windows, Linux, macOS
+- Prettier | Formatage code | Windows, Linux, macOS
+- Ruff | Lint Python | Windows, Linux, macOS
+- Pylint | Lint Python | Windows, Linux, macOS
+- Mypy | Types Python | Windows, Linux, macOS
+- Bandit | Sécurité Python | Windows, Linux, macOS
+- Grype | Scan vulnérabilités | Windows, Linux, macOS
+- Syft | SBOM | Windows, Linux, macOS
+- Cosign | Signature artefacts | Windows, Linux, macOS
+- in-toto | Chaîne approvisionnement | Windows, Linux, macOS
+- Tekton Chains | Signature pipelines | Linux
+- Renovate | Mise à jour dépendances | Windows, Linux, macOS
+- Dependabot (service GitHub) | Mise à jour dépendances | Cloud
+- Mend Renovate CLI | Mise à jour dépendances | Windows, Linux, macOS
+- OpenRewrite | Modernisation code | Windows, Linux, macOS
+- Allure Report | Rapports tests | Windows, Linux, macOS
+- ReportPortal | Rapports tests | Linux
+- Sonobuoy | Tests Kubernetes | Windows, Linux, macOS
+- k6 | Tests de charge | Windows, Linux, macOS
+- Apache JMeter | Tests de charge | Windows, Linux, macOS
+- Locust | Tests de charge | Windows, Linux, macOS
+- Gatling (core) | Tests de charge | Windows, Linux, macOS
+- Vegeta | Tests HTTP | Windows, Linux, macOS
+- wrk | Tests HTTP | Linux, macOS
+- hey | Tests HTTP | Windows, Linux, macOS
+- Siege | Tests HTTP | Windows, Linux, macOS
+- OWASP Juice Shop | Application de test sécurité | Windows, Linux, macOS
+- WebGoat | Application de test sécurité | Windows, Linux, macOS
+
+15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION
+-------------------------------------------------------------
+- OpenSSH for Windows | Serveur/client SSH | Windows
+- PowerShell 7 | Shell et scripts | Windows, Linux, macOS
+- Windows Terminal | Terminal | Windows
+- WinGet CLI | Gestion paquets Windows | Windows
+- Chocolatey (community edition) | Gestion paquets Windows | Windows
+- Scoop | Gestion paquets Windows | Windows
+- NSSM | Gestion services Windows | Windows
+- WinSW | Wrapper services Windows | Windows
+- RDPY | Outils RDP Python | Windows, Linux, macOS
+- FreeRDP | Client/serveur RDP | Windows, Linux, macOS
+- Apache Guacamole | Passerelle RDP/VNC/SSH | Windows, Linux, macOS (serveur Linux)
+- MeshCentral | Gestion et téléassistance | Windows, Linux, macOS
+- RustDesk Server | Relais bureau distant | Windows, Linux, macOS
+- Remmina | Client bureau distant | Linux
+- TigerVNC | Serveur/client VNC | Windows, Linux, macOS
+- TightVNC | Serveur/client VNC | Windows, Linux
+- UltraVNC | Serveur/client VNC | Windows
+- xrdp | Serveur RDP Linux | Linux
+- X2Go | Bureau distant | Linux, Windows client
+- FreeIPA client | Intégration identité | Linux
+- Winbind | Intégration AD | Windows, Linux
+- WSL | Sous-système Linux | Windows
+- Cygwin | Environnement Unix | Windows
+- MSYS2 | Environnement Unix et outils | Windows
+- Git for Windows | Git et shell | Windows
+- Rufus (open source) | Création supports boot | Windows
+- Ventoy | Création supports multiboot | Windows, Linux
+- Clonezilla | Clonage système | Windows, Linux, macOS
+- FOG Project | Déploiement images | Linux, Windows clients
+-  opsi | Déploiement logiciel | Linux server, Windows clients
+- WAPT Community | Déploiement logiciel | Windows, Linux server
+- Open-AudIT | Inventaire réseau | Windows, Linux, macOS
+- GLPI Agent | Inventaire agent | Windows, Linux, macOS
+- Win32-OpenSSH | SSH Windows | Windows
+- RPort | Gestion distante | Windows, Linux, macOS
+- Tactical RMM | RMM et téléassistance | Windows, Linux, macOS
+- Remotely | Téléassistance | Windows, Linux, macOS
+- Actiona | Automatisation GUI | Windows, Linux
+- AutoHotkey | Automatisation Windows | Windows
+- AutoIt | Automatisation Windows | Windows
+- PowerToys | Utilitaires Windows | Windows
+
+16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES
+------------------------------------------------------------
+- Homebrew | Gestionnaire paquets | macOS, Linux
+- MacPorts | Gestionnaire paquets | macOS
+- Nix | Gestionnaire paquets reproductible | Windows, Linux, macOS
+- GNU Guix | Gestionnaire paquets | Linux
+- Flatpak | Applications sandbox | Linux
+- Snapd | Gestionnaire paquets | Linux
+- AppImage | Format applications portables | Linux
+- Apt | Gestionnaire paquets | Debian/Ubuntu
+- DNF | Gestionnaire paquets | Fedora/RHEL-like
+- YUM | Gestionnaire paquets historique | CentOS/RHEL
+- Zypper | Gestionnaire paquets | openSUSE/SLES
+- Pacman | Gestionnaire paquets | Arch Linux
+- APK | Gestionnaire paquets | Alpine Linux
+- Portage | Gestionnaire paquets | Gentoo
+- OpenRC | Init et services | Linux, BSD
+- systemd | Init et services | Linux
+- runit | Init et services | Linux, BSD
+- s6 | Suite supervision services | Linux, BSD
+- Supervisord | Gestion processus | Windows, Linux, macOS
+- Monit | Supervision processus | Linux, BSD
+- PM2 | Gestion processus Node.js | Windows, Linux, macOS
+- forever | Gestion processus Node.js | Windows, Linux, macOS
+- circus | Gestion processus | Windows, Linux, macOS
+- GNU Screen | Multiplexeur terminal | Linux, macOS
+- tmux | Multiplexeur terminal | Windows, Linux, macOS
+- Zellij | Multiplexeur terminal | Windows, Linux, macOS
+- Fish shell | Shell | Windows, Linux, macOS
+- Zsh | Shell | Windows, Linux, macOS
+- Bash | Shell | Windows, Linux, macOS
+- nushell | Shell | Windows, Linux, macOS
+- Starship | Invite shell | Windows, Linux, macOS
+- Oh My Zsh | Configuration Zsh | Linux, macOS
+- chezmoi | Gestion dotfiles | Windows, Linux, macOS
+- GNU Stow | Gestion dotfiles | Linux, macOS
+- Ansible Pull | Configuration poste | Windows, Linux, macOS
+- Timeshift | Snapshots système | Linux
+- Snapper | Snapshots système | Linux
+- Back In Time | Sauvegarde poste | Linux
+- Déjà Dup | Sauvegarde poste | Linux
+- KDE Connect | Intégration appareils | Windows, Linux, macOS
+- Barrier | Partage clavier/souris | Windows, Linux, macOS
+- Input Leap | Partage clavier/souris | Windows, Linux, macOS
+- Synergy Core (open source legacy) | Partage clavier/souris | Windows, Linux, macOS
+- LocalSend | Transfert fichiers local | Windows, Linux, macOS
+- KDE Plasma | Environnement bureau | Linux, BSD
+- GNOME | Environnement bureau | Linux, BSD
+- XFCE | Environnement bureau | Linux, BSD
+- MATE | Environnement bureau | Linux, BSD
+- Cinnamon | Environnement bureau | Linux
+- LXQt | Environnement bureau | Linux
+- COSMIC | Environnement bureau | Linux
+- Xfce Terminal | Terminal graphique | Linux
+- Alacritty | Terminal graphique | Windows, Linux, macOS
+- WezTerm | Terminal graphique | Windows, Linux, macOS
+- Kitty | Terminal graphique | Linux, macOS
+- Ghostty | Terminal graphique | Linux, macOS
+- Neovim | Éditeur terminal | Windows, Linux, macOS
+- Vim | Éditeur texte | Windows, Linux, macOS
+- Emacs | Éditeur texte | Windows, Linux, macOS
+- Geany | IDE léger | Windows, Linux, macOS
+- VSCodium | Éditeur code | Windows, Linux, macOS
+- Eclipse IDE | IDE | Windows, Linux, macOS
+- Apache NetBeans | IDE | Windows, Linux, macOS
+- Qt Creator | IDE | Windows, Linux, macOS
+- Code::Blocks | IDE | Windows, Linux, macOS
+- Kate | Éditeur texte | Linux, Windows
+- Notepad++ | Éditeur texte | Windows
+
+17. STREAMING, MEDIA, AUDIO, VIDEO ET TRANSCODAGE
+-------------------------------------------------
+- Jellyfin | Serveur média | Windows, Linux, macOS
+- Navidrome | Serveur musique | Windows, Linux, macOS
+- Ampache | Serveur musique | Windows, Linux, macOS
+- LMS (Lyrion Music Server) | Serveur musique | Windows, Linux, macOS
+- Mopidy | Serveur musique | Windows, Linux, macOS
+- Airsonic-Advanced | Serveur musique | Windows, Linux, macOS
+- Funkwhale | Plateforme audio | Linux
+- AzuraCast | Radio web | Linux
+- LibreTime | Radio web | Linux
+- Icecast | Streaming audio | Windows, Linux, macOS
+- Owncast | Streaming vidéo live | Windows, Linux, macOS
+- PeerTube | Plateforme vidéo | Linux
+- MediaCMS | Plateforme vidéo | Linux
+- Ant Media Community (license check) | Streaming vidéo | Linux
+- OvenMediaEngine | Streaming vidéo | Linux
+- SRS | Serveur streaming | Linux, Windows, macOS
+- Nginx RTMP Module | Streaming RTMP | Linux
+- Red5 Open Source | Serveur streaming | Windows, Linux, macOS
+- Janus WebRTC Server | Serveur WebRTC | Linux
+- mediasoup | SFU WebRTC | Windows, Linux, macOS
+- LiveKit | Serveur WebRTC | Windows, Linux, macOS
+- Pion WebRTC | Bibliothèque WebRTC | Windows, Linux, macOS
+- Kurento | Serveur média WebRTC | Linux
+- FFmpeg | Traitement audio/vidéo | Windows, Linux, macOS
+- HandBrake | Transcodage vidéo | Windows, Linux, macOS
+- GStreamer | Framework multimédia | Windows, Linux, macOS
+- OBS Studio | Capture et streaming | Windows, Linux, macOS
+- VLC | Lecteur média | Windows, Linux, macOS
+- MPV | Lecteur média | Windows, Linux, macOS
+- Kodi | Media center | Windows, Linux, macOS
+- Shaka Packager | Packaging vidéo | Windows, Linux, macOS
+- Bento4 | Packaging MP4 | Windows, Linux, macOS
+- MediaMTX | Serveur RTSP/RTMP/WebRTC | Windows, Linux, macOS
+- Restreamer | Streaming et retransmission | Windows, Linux, macOS
+- Tdarr (community) | Automatisation transcodage | Windows, Linux, macOS
+- Unmanic | Automatisation médias | Windows, Linux, macOS
+- FileFlows | Traitement médias | Windows, Linux, macOS
+- Bazarr | Sous-titres | Windows, Linux, macOS
+- Sonarr | Gestion séries | Windows, Linux, macOS
+- Radarr | Gestion films | Windows, Linux, macOS
+- Lidarr | Gestion musique | Windows, Linux, macOS
+- Readarr | Gestion livres | Windows, Linux, macOS
+- Prowlarr | Gestion indexeurs | Windows, Linux, macOS
+- Jackett | Proxy indexeurs | Windows, Linux, macOS
+- qBittorrent | Client BitTorrent | Windows, Linux, macOS
+- Transmission | Client BitTorrent | Windows, Linux, macOS
+- Deluge | Client BitTorrent | Windows, Linux, macOS
+- aria2 | Téléchargement multi-protocole | Windows, Linux, macOS
+- yt-dlp | Téléchargement médias | Windows, Linux, macOS
+
+18. DNS WEB, EMAIL, ANTI-SPAM ET OUTILS DE COMMUNICATION
+--------------------------------------------------------
+- PostfixAdmin | Administration Postfix | Linux
+- Mailpit | Test SMTP local | Windows, Linux, macOS
+- MailHog | Test SMTP local | Windows, Linux, macOS
+- smtp4dev | Test SMTP local | Windows, Linux, macOS
+- Haraka | Serveur SMTP Node.js | Windows, Linux, macOS
+- Postal | Plateforme envoi email | Linux
+- Listmonk | Newsletters | Windows, Linux, macOS
+- Mautic | Marketing automation | Windows, Linux, macOS
+- phpList | Newsletters | Windows, Linux, macOS
+- Sympa | Listes de diffusion | Linux
+- Mailman 3 | Listes de diffusion | Linux
+- Mailman 2 (legacy) | Listes de diffusion | Linux
+- OpenDKIM | Signature DKIM | Linux
+- OpenDMARC | Validation DMARC | Linux
+- Postgrey | Greylisting SMTP | Linux
+-  policyd-spf | Validation SPF | Linux
+- OpenARC | Validation ARC | Linux
+- SoGo Connector | Connecteur groupware | Windows, Linux, macOS
+- Nextcloud Calendar | Calendrier | Linux
+- Nextcloud Contacts | Contacts | Linux
+- DAVx5 (client open source) | Synchronisation CalDAV/CardDAV | Android
+- Evolution | Client mail/groupware | Linux
+- Thunderbird | Client mail | Windows, Linux, macOS
+- KMail | Client mail | Linux
+- Claws Mail | Client mail | Windows, Linux, macOS
+- Mutt | Client mail terminal | Linux, macOS
+- NeoMutt | Client mail terminal | Linux, macOS
+- aerc | Client mail terminal | Windows, Linux, macOS
+- getmail6 | Récupération mail | Linux, macOS
+- Fetchmail | Récupération mail | Windows, Linux, macOS
+- OfflineIMAP | Synchronisation mail | Linux, macOS
+
+19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING
+------------------------------------------------
+- Apache Kafka | Streaming événements | Windows, Linux, macOS
+- Redpanda (community source) | Streaming Kafka-compatible | Linux
+- Apache Pulsar | Messaging et streaming | Windows, Linux, macOS
+- RabbitMQ | Message broker | Windows, Linux, macOS
+- ActiveMQ Classic | Message broker | Windows, Linux, macOS
+- ActiveMQ Artemis | Message broker | Windows, Linux, macOS
+- Apache RocketMQ | Message broker | Windows, Linux, macOS
+- NATS | Message broker | Windows, Linux, macOS
+- Mosquitto | Broker MQTT | Windows, Linux, macOS
+- EMQX (community) | Broker MQTT | Windows, Linux, macOS
+- VerneMQ | Broker MQTT | Linux
+- NanoMQ | Broker MQTT | Windows, Linux, macOS
+- HiveMQ CE | Broker MQTT | Windows, Linux, macOS
+- ZeroMQ | Messaging bibliothèque | Windows, Linux, macOS
+- NSQ | Message broker | Windows, Linux, macOS
+- Beanstalkd | Queue de tâches | Linux, macOS
+- Gearman | Queue de tâches | Windows, Linux, macOS
+- Celery | Queue de tâches Python | Windows, Linux, macOS
+- Dramatiq | Queue de tâches Python | Windows, Linux, macOS
+- RQ | Queue de tâches Python | Windows, Linux, macOS
+- BullMQ | Queue de tâches Node.js | Windows, Linux, macOS
+- pg-boss | Queue PostgreSQL | Windows, Linux, macOS
+- Graphile Worker | Queue PostgreSQL | Windows, Linux, macOS
+- Apache Flink | Traitement streaming | Windows, Linux, macOS
+- Apache Spark | Traitement distribué | Windows, Linux, macOS
+- Apache Beam | Traitement data | Windows, Linux, macOS
+- Apache Samza | Traitement streaming | Linux
+- Apache Storm | Traitement streaming | Linux
+- Apache NiFi | Flux de données | Windows, Linux, macOS
+- Apache SeaTunnel | Intégration données | Windows, Linux, macOS
+- Airbyte (community) | ELT | Windows, Linux, macOS
+- Meltano | ELT | Windows, Linux, macOS
+- Singer taps | Connecteurs ELT | Windows, Linux, macOS
+- Debezium | CDC | Windows, Linux, macOS
+- Kafka Connect | Connecteurs streaming | Windows, Linux, macOS
+- Benthos / Redpanda Connect | Pipeline données | Windows, Linux, macOS
+- Flink CDC | CDC streaming | Linux
+- Apache Hudi | Lakehouse | Linux
+- Apache Iceberg | Format table lakehouse | Windows, Linux, macOS
+- Delta Lake | Lakehouse | Windows, Linux, macOS
+- Project Nessie | Catalogue lakehouse | Windows, Linux, macOS
+- Apache Atlas | Gouvernance données | Linux
+- OpenMetadata | Catalogue et gouvernance | Linux, Windows via conteneur
+- DataHub | Catalogue données | Linux
+- Amundsen | Catalogue données | Linux
+- dbt Core | Transformation SQL | Windows, Linux, macOS
+- SQLMesh | Transformation SQL | Windows, Linux, macOS
+- Polars | DataFrame | Windows, Linux, macOS
+- Apache Arrow | Format et moteur colonne | Windows, Linux, macOS
+- JupyterHub | Plateforme notebooks | Windows, Linux, macOS
+- JupyterLab | Notebooks | Windows, Linux, macOS
+- MLflow | Cycle de vie ML | Windows, Linux, macOS
+- DVC | Versionnement données | Windows, Linux, macOS
+- LakeFS | Versionnement data lake | Windows, Linux, macOS
+- Pachyderm | Pipelines données | Linux
+
+20. IA, MACHINE LEARNING ET INFERENCE AUTO-HEBERGEE
+---------------------------------------------------
+- Ollama | Exécution LLM locale | Windows, Linux, macOS
+- llama.cpp | Inference LLM | Windows, Linux, macOS
+- LocalAI | API IA locale | Windows, Linux, macOS
+- vLLM | Serveur inference LLM | Linux
+- Text Generation Inference | Serveur inference LLM | Linux
+- Hugging Face Transformers | Bibliothèque ML | Windows, Linux, macOS
+- Hugging Face TGI | Inference LLM | Linux
+- Open WebUI | Interface LLM auto-hébergée | Windows, Linux, macOS
+- LibreChat | Interface chat IA | Windows, Linux, macOS
+- AnythingLLM | Espace de travail LLM | Windows, Linux, macOS
+- Dify | Plateforme applications IA | Windows, Linux, macOS
+- Flowise | Constructeur flux LLM | Windows, Linux, macOS
+- Langflow | Constructeur flux IA | Windows, Linux, macOS
+- LangChain | Framework LLM | Windows, Linux, macOS
+- LlamaIndex | Framework RAG | Windows, Linux, macOS
+- Haystack | Framework recherche/RAG | Windows, Linux, macOS
+- RAGFlow | Moteur RAG | Linux
+- Quivr | Base de connaissance IA | Linux, Windows via conteneur
+- Khoj | Assistant personnel IA | Windows, Linux, macOS
+- PrivateGPT | RAG local | Windows, Linux, macOS
+- GPT4All | LLM local | Windows, Linux, macOS
+- Jan | LLM local | Windows, Linux, macOS
+- KoboldCpp | Inference LLM | Windows, Linux, macOS
+-  text-generation-webui | Interface inference LLM | Windows, Linux, macOS
+- SillyTavern | Interface chat LLM | Windows, Linux, macOS
+- ComfyUI | Génération image par nœuds | Windows, Linux, macOS
+- AUTOMATIC1111 Stable Diffusion WebUI | Génération image | Windows, Linux, macOS
+- InvokeAI | Génération image | Windows, Linux, macOS
+- Fooocus | Génération image | Windows, Linux, macOS
+- OpenCV | Vision par ordinateur | Windows, Linux, macOS
+- PyTorch | Framework ML | Windows, Linux, macOS
+- TensorFlow | Framework ML | Windows, Linux, macOS
+- JAX | Framework ML | Windows, Linux, macOS
+- scikit-learn | Machine learning | Windows, Linux, macOS
+- XGBoost | Machine learning | Windows, Linux, macOS
+- LightGBM | Machine learning | Windows, Linux, macOS
+- CatBoost | Machine learning | Windows, Linux, macOS
+- ONNX Runtime | Inference ML | Windows, Linux, macOS
+- OpenVINO | Inference accélérée | Windows, Linux, macOS
+- BentoML | Déploiement modèles | Windows, Linux, macOS
+- KServe | Serving modèles Kubernetes | Linux
+- Seldon Core | Serving modèles | Linux
+- Ray | Calcul distribué/IA | Windows, Linux, macOS
+- Kubeflow | Plateforme ML Kubernetes | Linux
+- ClearML | MLOps | Windows, Linux, macOS
+- Aim | Suivi expériences ML | Windows, Linux, macOS
+- Label Studio | Annotation données | Windows, Linux, macOS
+- CVAT | Annotation vision | Windows, Linux, macOS
+- FiftyOne | Gestion datasets vision | Windows, Linux, macOS
+- Whisper.cpp | Transcription locale | Windows, Linux, macOS
+-  faster-whisper | Transcription audio | Windows, Linux, macOS
+- Whisper | Reconnaissance vocale | Windows, Linux, macOS
+- Piper | Synthèse vocale | Windows, Linux, macOS
+- Coqui TTS | Synthèse vocale | Windows, Linux, macOS
+- Kokoro TTS (open weights) | Synthèse vocale (licence modèle à vérifier) | Windows, Linux, macOS
+- RVC Project | Conversion voix | Windows, Linux, macOS
+- Mimic 3 | Synthèse vocale | Linux
+
+21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE
+-------------------------------------------------
+- Paperless-ngx | GED et archivage | Windows, Linux, macOS
+- Mayan EDMS | GED | Linux
+- Teedy | GED | Windows, Linux, macOS
+- OpenKM Community | GED | Windows, Linux
+- LogicalDOC Community | GED | Windows, Linux
+- SeedDMS | GED | Windows, Linux, macOS
+- Docspell | GED | Windows, Linux, macOS
+- Documenso | Signature électronique | Windows, Linux, macOS
+- OpenSign | Signature électronique | Linux
+- LibreSign | Signature électronique Nextcloud | Linux
+- Stirling-PDF | Outils PDF web | Windows, Linux, macOS
+- Gotenberg | Conversion documents API | Windows, Linux, macOS
+- ONLYOFFICE Docs Community | Suite bureautique serveur | Windows, Linux
+- Collabora Online Development Edition | Suite bureautique web | Linux
+- LibreOffice | Suite bureautique | Windows, Linux, macOS
+- Apache OpenOffice | Suite bureautique | Windows, Linux, macOS
+- TriliumNext Notes | Base de connaissances | Windows, Linux, macOS
+- Joplin Server | Synchronisation notes | Windows, Linux, macOS
+- Memos | Notes auto-hébergées | Windows, Linux, macOS
+- SilverBullet | Base de connaissance Markdown | Windows, Linux, macOS
+- Logseq | Notes et graphe | Windows, Linux, macOS
+- SiYuan | Base de connaissances | Windows, Linux, macOS
+- Documize Community | Documentation | Linux
+- Read the Docs (community stack) | Documentation technique | Windows, Linux, macOS
+- MkDocs | Documentation statique | Windows, Linux, macOS
+- Material for MkDocs | Thème documentation | Windows, Linux, macOS
+- Docusaurus | Documentation statique | Windows, Linux, macOS
+- VitePress | Documentation statique | Windows, Linux, macOS
+- Sphinx | Documentation Python | Windows, Linux, macOS
+- Antora | Documentation technique | Windows, Linux, macOS
+- Bookdown | Publication docs | Windows, Linux, macOS
+- Hugo | Générateur site statique | Windows, Linux, macOS
+- Jekyll | Générateur site statique | Windows, Linux, macOS
+- Zola | Générateur site statique | Windows, Linux, macOS
+- Astro | Framework web statique | Windows, Linux, macOS
+- Quartz | Publication notes | Windows, Linux, macOS
+- Meilisearch | Moteur recherche | Windows, Linux, macOS
+- Typesense | Moteur recherche | Windows, Linux, macOS
+- Sonic | Moteur recherche | Linux
+- Apache Solr | Moteur recherche | Windows, Linux, macOS
+- Elasticsearch (license changed) | Moteur recherche (licence non OSI selon version) | Windows, Linux, macOS
+- Manticore Search | Moteur recherche | Windows, Linux, macOS
+- ZincSearch | Moteur recherche | Windows, Linux, macOS
+- Tantivy | Bibliothèque recherche | Windows, Linux, macOS
+- Whoogle | Métamoteur recherche privé | Windows, Linux, macOS
+- SearXNG | Métamoteur recherche | Windows, Linux, macOS
+- 4get | Métamoteur recherche | Windows, Linux, macOS
+- LibreX | Métamoteur recherche | Linux
+
+22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC
+---------------------------------------------------------
+- OpenSSH | SSH client/serveur | Windows, Linux, macOS
+- Dropbear SSH | Serveur SSH léger | Linux, embedded
+- TinySSH | Serveur SSH minimal | Linux
+- Mosh | Terminal distant | Windows, Linux, macOS
+- Eternal Terminal | Terminal distant | Linux, macOS
+- tmate | Partage terminal | Windows, Linux, macOS
+- GNU inetutils | Utilitaires réseau | Windows, Linux, macOS
+-  socat | Relais sockets | Windows, Linux, macOS
+- ncat | Outil réseau | Windows, Linux, macOS
+- netcat-openbsd | Outil réseau | Linux, BSD
+- iperf3 | Mesure débit réseau | Windows, Linux, macOS
+- mtr | Diagnostic réseau | Windows, Linux, macOS
+- traceroute | Diagnostic réseau | Windows, Linux, macOS
+- fping | Ping multi-hôtes | Linux, BSD
+- arp-scan | Découverte LAN | Linux
+- arping | Diagnostic ARP | Linux
+- Ettercap | Analyse réseau | Windows, Linux, macOS
+- Bettercap | Analyse réseau | Windows, Linux, macOS
+- MITMf (archivé) | Outils réseau anciens | Linux
+- Aircrack-ng | Audit Wi-Fi | Windows, Linux, macOS
+- Kismet | Détection réseau sans fil | Linux, macOS
+-  hostapd | Point d'accès Wi-Fi | Linux
+- wpa_supplicant | Client Wi-Fi | Linux, Windows
+- iw | Outils Wi-Fi | Linux
+- iwctl/iwd | Gestion Wi-Fi | Linux
+- NetworkManager | Gestion réseau | Linux
+- systemd-networkd | Gestion réseau | Linux
+- ConnMan | Gestion réseau | Linux
+- Open vSwitch | Switch virtuel | Linux, Windows
+- FRR | Routage dynamique | Linux, BSD
+- iperf2 | Mesure réseau | Windows, Linux, macOS
+- OpenSpeedTest | Test débit web | Windows, Linux, macOS
+- LibreSpeed | Test débit web | Windows, Linux, macOS
+- Speedtest Tracker | Historique tests débit | Linux
+- Smokeping | Latence réseau | Linux
+- Blackbox Exporter | Sondes réseau Prometheus | Windows, Linux, macOS
+- Fping exporter | Sonde ping | Linux
+- Netdisco | Découverte réseau | Linux
+- Oxidized | Sauvegarde configuration réseau | Linux
+- RANCID | Sauvegarde configuration réseau | Linux, Unix
+- Batfish | Validation configuration réseau | Windows, Linux, macOS
+- Containerlab | Laboratoire réseau | Linux
+- Kathara | Laboratoire réseau | Windows, Linux, macOS
+- GNS3 | Simulation réseau | Windows, Linux, macOS
+- CORE Network Emulator | Émulation réseau | Linux
+- ns-3 | Simulation réseau | Windows, Linux, macOS
+- Mininet | Émulation réseau SDN | Linux
+- OpenDaylight | Contrôleur SDN | Linux
+- ONOS | Contrôleur SDN | Linux
+- Ryu SDN Framework | Contrôleur SDN | Windows, Linux, macOS
+
+23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS
+---------------------------------------------------------------
+- FusionInventory Agent | Inventaire agent | Windows, Linux, macOS
+- i-doit Open | CMDB | Linux
+- CMDBuild | CMDB | Windows, Linux
+- PartKeepr (archivé) | Inventaire composants | Linux
+- Grocy | Gestion inventaire | Windows, Linux, macOS
+- Homebox | Inventaire domestique | Windows, Linux, macOS
+- ERPNext Stock | Gestion stocks | Linux
+- OpenWMS | Gestion entrepôt | Windows, Linux
+- OpenLMIS | Logistique | Linux
+- CUPS | Serveur impression | Linux, macOS
+- IPP Everywhere | Impression réseau | Linux, macOS
+- Samba print services | Partage imprimantes | Windows, Linux
+- OctoPrint | Serveur impression 3D | Windows, Linux, macOS
+- Klipper | Firmware impression 3D | Linux, SBC
+- Moonraker | API impression 3D | Linux
+- Mainsail | Interface impression 3D | Linux
+- Fluidd | Interface impression 3D | Linux
+- Home Assistant | Domotique | Windows, Linux, macOS
+- openHAB | Domotique | Windows, Linux, macOS
+- Domoticz | Domotique | Windows, Linux, macOS
+- ThingsBoard Community | Plateforme IoT | Windows, Linux, macOS
+- Mainflux | Plateforme IoT | Linux
+- Kaa IoT (community) | Plateforme IoT | Linux
+- Eclipse Mosquitto | Broker IoT MQTT | Windows, Linux, macOS
+- Eclipse Kura | Passerelle IoT | Linux
+- ChirpStack | Serveur LoRaWAN | Linux
+- The Things Network Stack | Serveur LoRaWAN | Linux
+- ThingsBoard Gateway | Passerelle IoT | Windows, Linux, macOS
+- Zigbee2MQTT | Passerelle Zigbee | Windows, Linux, macOS
+- Z-Wave JS UI | Passerelle Z-Wave | Windows, Linux, macOS
+- ESPHome | Firmware IoT | Windows, Linux, macOS
+- Tasmota | Firmware IoT | ESP
+- OpenMQTTGateway | Passerelle IoT | ESP
+- Frigate | NVR détection objets | Linux
+- ZoneMinder | Vidéosurveillance | Linux
+- Shinobi | NVR vidéosurveillance | Linux, Windows via conteneur
+- Motion | Détection mouvement | Linux
+- motionEye (legacy) | Interface vidéosurveillance | Linux
+- Kerberos.io | Vidéosurveillance | Linux
+- Scrypted | Passerelle caméra | Windows, Linux, macOS
+- go2rtc | Relais flux caméra | Windows, Linux, macOS
+
+24. OUTILS DE DEVELOPPEMENT, API ET TESTS
+-----------------------------------------
+- Insomnia (license check) | Client API | Windows, Linux, macOS
+- Bruno | Client API | Windows, Linux, macOS
+- Hoppscotch | Client API web | Windows, Linux, macOS
+- HTTPie | Client HTTP | Windows, Linux, macOS
+- curl | Client HTTP | Windows, Linux, macOS
+- wget | Téléchargement HTTP | Windows, Linux, macOS
+- xh | Client HTTP | Windows, Linux, macOS
+- Swagger UI | Documentation API | Windows, Linux, macOS
+- Swagger Editor | Édition OpenAPI | Windows, Linux, macOS
+- Redoc | Documentation API | Windows, Linux, macOS
+- Scalar | Documentation API | Windows, Linux, macOS
+- Stoplight Elements | Documentation API | Windows, Linux, macOS
+- Prism | Mock serveur API | Windows, Linux, macOS
+- WireMock | Mock HTTP | Windows, Linux, macOS
+- MockServer | Mock API | Windows, Linux, macOS
+- Hoverfly | Simulation API | Windows, Linux, macOS
+- Mountebank | Mock multi-protocoles | Windows, Linux, macOS
+- Pact | Tests contractuels | Windows, Linux, macOS
+- Schemathesis | Tests API | Windows, Linux, macOS
+- Dredd | Tests API | Windows, Linux, macOS
+- Hurl | Tests HTTP | Windows, Linux, macOS
+- Newman | Runner Postman collections | Windows, Linux, macOS
+- Apache Bench | Tests HTTP | Windows, Linux, macOS
+- wrk2 | Tests HTTP | Linux, macOS
+- Autocannon | Tests HTTP | Windows, Linux, macOS
+- oha | Tests HTTP | Windows, Linux, macOS
+- Playwright | Tests navigateur | Windows, Linux, macOS
+- Selenium | Automatisation navigateur | Windows, Linux, macOS
+- Cypress | Tests navigateur | Windows, Linux, macOS
+- WebdriverIO | Tests navigateur | Windows, Linux, macOS
+- Puppeteer | Automatisation navigateur | Windows, Linux, macOS
+- Robot Framework | Automatisation tests | Windows, Linux, macOS
+- pytest | Tests Python | Windows, Linux, macOS
+- JUnit | Tests Java | Windows, Linux, macOS
+- TestNG | Tests Java | Windows, Linux, macOS
+- NUnit | Tests .NET | Windows, Linux, macOS
+- xUnit.net | Tests .NET | Windows, Linux, macOS
+- MSTest | Tests .NET | Windows, Linux, macOS
+- Cucumber | Tests BDD | Windows, Linux, macOS
+- Behave | Tests BDD Python | Windows, Linux, macOS
+- Ginkgo | Tests Go | Windows, Linux, macOS
+- Go test | Tests Go | Windows, Linux, macOS
+- cargo test | Tests Rust | Windows, Linux, macOS
+- Vitest | Tests JavaScript | Windows, Linux, macOS
+- Jest | Tests JavaScript | Windows, Linux, macOS
+- Mocha | Tests JavaScript | Windows, Linux, macOS
+- AVA | Tests JavaScript | Windows, Linux, macOS
+- PHPUnit | Tests PHP | Windows, Linux, macOS
+- Pest PHP | Tests PHP | Windows, Linux, macOS
+- Rspec | Tests Ruby | Windows, Linux, macOS
+- Minitest | Tests Ruby | Windows, Linux, macOS
+- Gitleaks | Détection secrets Git | Windows, Linux, macOS
+- detect-secrets | Détection secrets | Windows, Linux, macOS
+- TruffleHog OSS | Détection secrets | Windows, Linux, macOS
+- Checkov | Analyse IaC | Windows, Linux, macOS
+- KICS | Analyse IaC | Windows, Linux, macOS
+- Terrascan | Analyse IaC | Windows, Linux, macOS
+- TFLint | Lint Terraform | Windows, Linux, macOS
+- Actionlint | Lint GitHub Actions | Windows, Linux, macOS
+- ShellCheck | Lint shell | Windows, Linux, macOS
+- shfmt | Formatage shell | Windows, Linux, macOS
+- EditorConfig | Conventions code | Windows, Linux, macOS
+
+25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES
+------------------------------------------------------------
+- Coolify | Plateforme déploiement PaaS | Linux
+- Dokku | PaaS léger | Linux
+- CapRover | PaaS | Linux
+- HomelabOS | Déploiement services homelab | Linux
+- Ansible-NAS | Déploiement NAS | Linux
+- Sandstorm | Plateforme applications | Linux
+- FreedomBox | Serveur personnel | Debian
+- HestiaCP | Panneau hébergement | Linux
+- CyberPanel (open source components) | Panneau hébergement | Linux
+- ISPConfig | Panneau hébergement | Linux
+- Virtualmin GPL | Panneau hébergement | Linux
+- Webmin | Administration serveur | Linux, Unix
+- Ajenti | Administration serveur | Linux
+- Froxlor | Panneau hébergement | Linux
+- Virtualmin | Panneau hébergement | Linux
+- Yacht | Gestion Docker | Linux
+- Dockge | Gestion Compose | Linux, Windows via conteneur
+- Komodo | Gestion déploiements conteneurs | Linux
+- Homepage | Dashboard serveur | Windows, Linux, macOS
+- Homarr | Dashboard serveur | Windows, Linux, macOS
+- Dashy | Dashboard serveur | Windows, Linux, macOS
+- Heimdall | Dashboard applications | Linux, Windows via conteneur
+- Flame | Dashboard applications | Windows, Linux, macOS
+- Organizr | Dashboard applications | Windows, Linux, macOS
+- Glance | Dashboard | Windows, Linux, macOS
+- Homer | Dashboard | Windows, Linux, macOS
+- Fenrus | Dashboard | Windows, Linux, macOS
+- DashMachine | Dashboard | Linux
+- SUI | Dashboard auto-hébergement | Windows, Linux, macOS
+- OliveTin | Exécution commandes contrôlée | Windows, Linux, macOS
+- Ansible Semaphore | Interface Ansible | Windows, Linux, macOS
+- NocoDB | Base no-code | Windows, Linux, macOS
+- Baserow | Base no-code | Windows, Linux, macOS
+- Grist | Tableur/base de données | Windows, Linux, macOS
+- Appsmith | Applications internes | Windows, Linux, macOS
+- Budibase | Applications internes | Windows, Linux, macOS
+- ToolJet | Applications internes | Windows, Linux, macOS
+- Supabase (self-hosted) | Backend-as-a-Service | Windows, Linux, macOS
+- Appwrite | Backend-as-a-Service | Windows, Linux, macOS
+- PocketBase | Backend léger | Windows, Linux, macOS
+- Parse Server | Backend-as-a-Service | Windows, Linux, macOS
+- Hasura GraphQL Engine | API GraphQL | Windows, Linux, macOS
+- PostgREST | API REST PostgreSQL | Windows, Linux, macOS
+- PostGraphile | API GraphQL PostgreSQL | Windows, Linux, macOS
+- Metabase | BI et dashboards | Windows, Linux, macOS
+- Apache Superset | BI | Windows, Linux, macOS
+- Redash | BI | Linux
+- Lightdash | BI dbt | Windows, Linux, macOS
+- Evidence | BI-as-code | Windows, Linux, macOS
+- Grafana | Dashboards | Windows, Linux, macOS
+- Kibana (license check) | Dashboards recherche | Windows, Linux, macOS
+- OpenObserve | Observabilité et analytics | Windows, Linux, macOS
+- Linkding | Gestion favoris | Windows, Linux, macOS
+- Shiori | Gestion favoris | Windows, Linux, macOS
+- Wallabag | Lecture différée | Windows, Linux, macOS
+- ArchiveBox | Archivage web | Windows, Linux, macOS
+- Readeck | Lecture différée | Windows, Linux, macOS
+- Changedetection.io | Surveillance pages web | Windows, Linux, macOS
+- Hoarder (Karakeep) | Signets et archivage | Windows, Linux, macOS
+- Linkwarden | Gestion liens | Windows, Linux, macOS

@@ -1,0 +1,1 @@
+{ "title": "Bareos", "icon": "archive", "color": "#1a4e8a", "description": "Sauvegarde réseau d'entreprise (fork de Bacula) : Director, Storage et File daemons, catalogue PostgreSQL, tâches, pools, restaurations, interface Bareos WebUI." }

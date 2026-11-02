@@ -9,3 +9,4 @@ mobile/www/
 .claude/
 *.pem
 _site/
+.veille/

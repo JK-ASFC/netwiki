@@ -1,0 +1,36 @@
+# NetWiki — vérification automatique des demandes de fusion touchant les articles.
+# Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
+# Liens, tableaux, blocs de code, diagrammes Mermaid, icônes et images de tous les articles (scripts/validate.js).
+
+name: Vérification du wiki
+
+on:
+  pull_request:
+    paths:
+      - 'content/**'
+      - 'docs/catalogue/**'
+      - 'src/**'
+      - 'scripts/validate.js'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  valider:
+    name: Valider les articles
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node build.mjs
+      - name: Validation (moteur de rendu de NetWiki)
+        run: xvfb-run -a npx electron --no-sandbox scripts/validate.js
+      - name: Suivi du catalogue et captures attendues
+        run: |
+          node scripts/catalogue.mjs
+          node scripts/captures.mjs

@@ -1,0 +1,1 @@
+{ "title": "OAuth2 Proxy et Dex", "icon": "key-round", "color": "#0c8599", "description": "Briques OIDC légères : OAuth2 Proxy protège une application web derrière un fournisseur OIDC ; Dex fédère LDAP, Active Directory, GitHub ou SAML en un fournisseur OIDC (Kubernetes)." }

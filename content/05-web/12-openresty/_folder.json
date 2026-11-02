@@ -1,0 +1,1 @@
+{ "title": "OpenResty", "icon": "code-xml", "color": "#2d9c66", "description": "Plate-forme web NGINX + LuaJIT : scripts Lua dans les phases de requête, bibliothèques lua-resty, cache partagé, passerelles et WAF programmables (base de Kong et APISIX)." }

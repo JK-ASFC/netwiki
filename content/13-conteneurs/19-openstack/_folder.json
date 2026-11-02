@@ -1,0 +1,1 @@
+{ "title": "OpenStack", "icon": "cloud", "color": "#ed1944", "description": "Cloud privé IaaS : composants (Nova, Neutron, Cinder, Glance, Keystone), déploiement avec Kolla-Ansible, exploitation en ligne de commande et tableau de bord Horizon." }

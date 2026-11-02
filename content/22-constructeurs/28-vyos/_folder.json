@@ -1,0 +1,1 @@
+{ "title": "VyOS", "icon": "router", "color": "#00a3e0", "description": "Routeur et pare-feu logiciel open source (Debian) : CLI à la Junos (set, commit, save), interfaces, VLAN, NAT, pare-feu par zones, BGP/OSPF (FRR), VPN IPsec et WireGuard, haute disponibilité VRRP." }

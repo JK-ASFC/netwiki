@@ -1,0 +1,1 @@
+{ "title": "Envoy Proxy", "icon": "waypoints", "color": "#ac6199", "description": "Proxy L4/L7 de la CNCF : écouteurs, filtres, clusters, équilibrage, TLS, observabilité, interface d'administration, configuration dynamique xDS (Istio, Envoy Gateway)." }

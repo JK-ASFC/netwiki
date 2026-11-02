@@ -1,0 +1,1 @@
+{ "title": "NetBox et Nautobot", "icon": "network", "color": "#1d4ed8", "description": "Source de vérité du réseau (IPAM et DCIM) : préfixes, adresses, VLAN, VRF, sites, baies, équipements, câblage, API REST/GraphQL et automatisation." }

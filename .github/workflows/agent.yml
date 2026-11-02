@@ -1,0 +1,178 @@
+# NetWiki — agent IA de rédaction (étapes 2 et 4 de la chaîne de veille).
+# Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
+#
+# Modes :
+#   veille    : met à jour les fiches des services dont la veille a détecté une nouvelle version (lancé par veille.yml) ;
+#   catalogue : rédige les N prochains services du catalogue (docs/catalogue/suivi.json) selon docs/catalogue/METHODE.md ;
+#   consigne  : exécute une consigne libre (ex. « Ajoute l'interface graphique de Zabbix »).
+# L'agent modifie les fichiers, le workflow valide le wiki puis ouvre une demande de fusion (PR) : JK-ASFC relit et fusionne.
+# Clé requise (Settings → Secrets and variables → Actions) : CLAUDE_CODE_OAUTH_TOKEN (abonnement Claude Pro/Max,
+# `claude setup-token`) ou ANTHROPIC_API_KEY (API Anthropic). Sans clé, le workflow s'arrête sans erreur.
+
+name: Agent IA
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Travail demandé
+        type: choice
+        options: [catalogue, veille, consigne]
+        default: catalogue
+      nombre:
+        description: "Mode catalogue : nombre de services à rédiger"
+        default: '5'
+      consigne:
+        description: "Mode consigne : instruction libre"
+        default: ''
+  workflow_call:
+    inputs:
+      mode:
+        type: string
+        default: veille
+      nombre:
+        type: string
+        default: '5'
+      consigne:
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  id-token: write
+
+concurrency:
+  group: agent-ia
+  cancel-in-progress: false
+
+jobs:
+  agent:
+    name: Rédaction (${{ inputs.mode }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Clé de l'agent
+        id: cle
+        run: |
+          if [ -n "$OAUTH" ]; then echo "type=oauth" >> "$GITHUB_OUTPUT"
+          elif [ -n "$API" ]; then echo "type=api" >> "$GITHUB_OUTPUT"
+          else
+            echo "type=aucune" >> "$GITHUB_OUTPUT"
+            echo "::warning::Agent IA non configuré : ajoutez le secret CLAUDE_CODE_OAUTH_TOKEN ou ANTHROPIC_API_KEY (voir docs/AGENT-IA.md)."
+          fi
+        env:
+          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          API: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - uses: actions/checkout@v4
+        if: steps.cle.outputs.type != 'aucune'
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        if: steps.cle.outputs.type != 'aucune'
+        with:
+          node-version: 22
+          cache: npm
+      - name: Dépendances
+        if: steps.cle.outputs.type != 'aucune'
+        run: npm ci
+      - name: Nouveautés de la veille
+        if: steps.cle.outputs.type != 'aucune' && inputs.mode == 'veille'
+        run: |
+          mkdir -p .veille
+          curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/veille/nouveautes.json" -o .veille/nouveautes.json || echo '[]' > .veille/nouveautes.json
+          echo "$(node -p "require('./.veille/nouveautes.json').length") nouveauté(s) à traiter"
+
+      - name: Consigne de l'agent
+        if: steps.cle.outputs.type != 'aucune'
+        id: consigne
+        run: |
+          {
+            echo 'texte<<FIN_CONSIGNE'
+            echo "Tu es l'agent de rédaction de NetWiki (wiki technique français pour administrateurs et architectes réseau, articles Markdown dans content/)."
+            echo "Lis d'abord docs/catalogue/METHODE.md et respecte-le strictement (structure, installation par OS, interface graphique avec emplacements <!-- CAPTURE: … -->, style, validation)."
+            case "$MODE" in
+              veille)
+                echo "Mission : le fichier .veille/nouveautes.json liste les services dont une nouvelle version vient de sortir (champ wiki = fiche à mettre à jour, url = notes de version)."
+                echo "Pour chaque entrée : lis la fiche, consulte les notes de version officielles et la documentation de l'éditeur, puis corrige uniquement ce qui est devenu faux ou incomplet : commandes, options, chemins, dépôts et procédures d'installation, versions citées, fonctionnalités supprimées."
+                echo "Ajoute une courte section « Nouveautés de la version X » seulement si elle sert en production (sécurité, changement incompatible, nouvelle commande utile). Signale les correctifs de sécurité."
+                echo "Ne change rien sans source officielle ; si une information est incertaine, ne l'écris pas et note-la dans le résumé." ;;
+              catalogue)
+                echo "Mission : rédige les $NOMBRE prochains services du catalogue, donnés par : node scripts/catalogue.mjs --suivant $NOMBRE"
+                echo "Pour chacun : fiche complète selon METHODE.md (nouvelle catégorie si la cible n'existe pas, avec _folder.json), puis mets à jour docs/catalogue/suivi.json (statut fait, lot \"agent-$(date -u +%F)\", wiki, depot, eol)."
+                echo "Vérifie chaque commande dans la documentation officielle (WebFetch / WebSearch). Lance ensuite node scripts/catalogue.mjs et node scripts/captures.mjs." ;;
+              consigne)
+                echo "Mission : $CONSIGNE" ;;
+            esac
+            echo "Valide le wiki avec : node build.mjs && xvfb-run -a npx electron --no-sandbox scripts/validate.js (doit afficher « Aucun problème détecté. ») et corrige les erreurs."
+            echo "Ne modifie que content/ et docs/catalogue/. N'exécute ni git commit ni git push : le workflow s'en charge."
+            echo "Termine en écrivant agent-resume.md : fiches créées ou modifiées, sources consultées, points que JK-ASFC doit vérifier, captures d'écran à fournir."
+            echo 'FIN_CONSIGNE'
+          } >> "$GITHUB_OUTPUT"
+        env:
+          MODE: ${{ inputs.mode }}
+          NOMBRE: ${{ inputs.nombre }}
+          CONSIGNE: ${{ inputs.consigne }}
+
+      - name: Agent (abonnement Claude)
+        if: steps.cle.outputs.type == 'oauth'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: ${{ steps.consigne.outputs.texte }}
+          claude_args: >-
+            --max-turns 250
+            --allowedTools "Read,Write,Edit,MultiEdit,Glob,Grep,LS,WebFetch,WebSearch,Bash(node:*),Bash(npx:*),Bash(xvfb-run:*),Bash(ls:*),Bash(cat:*),Bash(git diff:*),Bash(git status:*)"
+      - name: Agent (API Anthropic)
+        if: steps.cle.outputs.type == 'api'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: ${{ steps.consigne.outputs.texte }}
+          claude_args: >-
+            --max-turns 250
+            --allowedTools "Read,Write,Edit,MultiEdit,Glob,Grep,LS,WebFetch,WebSearch,Bash(node:*),Bash(npx:*),Bash(xvfb-run:*),Bash(ls:*),Bash(cat:*),Bash(git diff:*),Bash(git status:*)"
+
+      - name: Valider le wiki
+        if: steps.cle.outputs.type != 'aucune'
+        id: valider
+        run: |
+          node build.mjs
+          node scripts/catalogue.mjs
+          node scripts/captures.mjs
+          set +e
+          xvfb-run -a npx electron --no-sandbox scripts/validate.js > validation.txt 2>&1
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          grep -v "^\[" validation.txt | tail -40
+
+      - name: Proposer les modifications (demande de fusion)
+        if: steps.cle.outputs.type != 'aucune'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A content docs/catalogue
+          if git diff --cached --quiet; then echo "Aucune modification proposée par l'agent."; exit 0; fi
+          BRANCHE="agent/${{ inputs.mode }}-$(date -u +%Y%m%d-%H%M)"
+          git switch -c "$BRANCHE"
+          git commit -q -m "Agent IA (${{ inputs.mode }}) : mise à jour des articles"
+          git push -q origin "$BRANCHE"
+          {
+            echo "Demande de fusion préparée par l'agent IA (mode **${{ inputs.mode }}**). À relire avant fusion : rien n'est publié tant que JK-ASFC ne fusionne pas."
+            echo
+            if [ "${{ steps.valider.outputs.code }}" = "0" ]; then echo "✅ Validation du wiki : aucun problème détecté."; else echo "❌ Validation du wiki : problèmes à corriger (voir ci-dessous)."; fi
+            echo
+            [ -f agent-resume.md ] && cat agent-resume.md
+            echo
+            echo "<details><summary>Résultat de la validation</summary>"
+            echo
+            echo '```text'
+            grep -v "^\[" validation.txt | tail -60
+            echo '```'
+            echo "</details>"
+          } > corps-pr.md
+          gh label create agent-ia --color a855f7 --description "Proposé par l'agent IA" 2>/dev/null || true
+          gh pr create --base main --head "$BRANCHE" --title "Agent IA (${{ inputs.mode }}) — $(date -u +%d/%m/%Y)" --body-file corps-pr.md --label agent-ia
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

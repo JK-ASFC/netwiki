@@ -1,0 +1,1 @@
+{ "title": "OpenWrt et OpenWISP", "icon": "router", "color": "#00b5e2", "description": "Système libre pour routeurs et points d'accès (UCI, LuCI, paquets, VLAN, Wi-Fi, pare-feu) et OpenWISP pour gérer un parc OpenWrt (configuration centralisée, supervision)." }

@@ -1,0 +1,1 @@
+{ "title": "389 Directory Server", "icon": "users", "color": "#cc0000", "description": "Annuaire LDAP d'entreprise (Red Hat Directory Server, base de FreeIPA) : installation dscreate, suffixes, réplication multi-maîtres, TLS, politique de mots de passe et console web Cockpit." }

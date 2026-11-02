@@ -1,0 +1,1 @@
+{ "title": "Incus, LXD et LXC", "icon": "boxes", "color": "#e95420", "description": "Conteneurs système et machines virtuelles : LXC (bas niveau), LXD (Canonical) et Incus (fork communautaire) — installation, images, profils, réseau, stockage, cluster et interface web." }

@@ -1,0 +1,1 @@
+{ "title": "Proxys de bases de données", "icon": "database", "color": "#0891b2", "description": "Regroupement de connexions et routage SQL : PgBouncer et Odyssey (PostgreSQL), ProxySQL (MySQL/MariaDB, PostgreSQL) et MariaDB MaxScale (séparation lecture/écriture, bascule)." }
