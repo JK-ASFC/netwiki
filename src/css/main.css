@@ -2238,6 +2238,16 @@ textarea.input {
   .modal {
     background: var(--surface);
   }
+  .hero-search kbd {
+    display: none;
+  }
+  .st-foot,
+  .st-wrap {
+    flex-wrap: wrap;
+  }
+  .st-foot > p {
+    flex-basis: 100%;
+  }
 }
 .dl-progress {
   height: 8px;
@@ -2253,4 +2263,46 @@ textarea.input {
   border-radius: inherit;
   background: linear-gradient(90deg, var(--accent), #0ea5e9);
   transition: width 0.25s;
+}
+
+/* ---------------------------------------------------------------- partage / export (version mobile)
+   Copyright (c) 2026 JK-ASFC — licence MIT */
+.share-choices {
+  display: grid;
+  gap: 8px;
+}
+.share-choice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+.share-choice:hover,
+.share-choice:active {
+  background: var(--hover);
+  border-color: var(--accent);
+}
+.share-choice > .i {
+  flex: none;
+  color: var(--accent);
+}
+.share-choice span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.share-choice small {
+  color: var(--text-dim);
+  font-size: 12px;
 }

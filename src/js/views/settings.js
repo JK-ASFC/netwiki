@@ -4,7 +4,7 @@ import { $, $$, confirmDialog, esc, modal, toast } from '../ui.js';
 import { COLORS } from '../dialogs.js';
 import { actions, api, state } from '../state.js';
 import { openAbout } from '../legal.js';
-import { contentDate } from '../updates.js';
+import { contentDate, setUpdateNotifications } from '../updates.js';
 
 export function openSettings() {
   const s = state.settings;
@@ -28,7 +28,19 @@ export function openSettings() {
         <label class="toggle"><input type="checkbox" id="st-fx" ${s.effects !== false ? 'checked' : ''}><span></span></label></div></div>
       <div class="field"><div class="row"><div class="grow"><label>Écran de démarrage</label><div class="hint">Logo et terminal animé à l'ouverture de NetWiki.</div></div>
         <label class="toggle"><input type="checkbox" id="st-splash" ${s.showSplash !== false ? 'checked' : ''}><span></span></label></div></div>
-      <div class="field"><label>Dossier des données</label>
+      ${state.info.mobile ? `      <div class="field"><label>Mises à jour</label>
+        <div class="row"><div class="grow"><b style="font-size:13px">Application</b><div class="hint" style="margin:0">Version installée : ${esc(state.info.version)}.${state.info.selfUpdate ? ' Téléchargée et vérifiée (signature de JK-ASFC) avant installation.' : ''}</div></div>
+          <button class="btn sm" id="st-check-app">${icon('refresh-cw', 15)}Rechercher</button></div>
+        <div class="row" style="margin-top:10px"><div class="grow"><b style="font-size:13px">Recherche automatique</b><div class="hint" style="margin:0">À l'ouverture : nouvelle version de l'application et nouveaux articles du wiki. Rien n'est installé sans votre accord.</div></div>
+          <label class="toggle"><input type="checkbox" id="st-auto" ${s.appCheck ? 'checked' : ''}><span></span></label></div>
+        <div class="row" style="margin-top:10px"><div class="grow"><b style="font-size:13px">Notifications</b><div class="hint" style="margin:0" id="st-notify-hint">Être averti d'une nouvelle version ou de nouveaux articles, même quand NetWiki est fermé.</div></div>
+          <label class="toggle"><input type="checkbox" id="st-notify" ${s.updateNotify ? 'checked' : ''}><span></span></label></div>
+        <div class="row" style="margin-top:10px"><div class="grow"><b style="font-size:13px">Wiki</b><div class="hint" style="margin:0">Articles publiés chaque semaine (paquet .netwiki signé). <span id="st-content-ver"></span></div></div>
+          <button class="btn sm" id="st-check-content">${icon('refresh-cw', 15)}Rechercher</button></div>
+        <div class="row st-wrap" style="margin-top:8px"><button class="btn sm" id="st-import">${icon('package-open', 15)}Importer un paquet…</button>
+          <span class="grow"></span><button class="btn sm ghost" id="st-restore">${icon('archive-restore', 15)}Restaurer le contenu d'origine</button></div>
+        <div class="hint">Requêtes anonymes vers github.com/JK-ASFC/netwiki, aucune donnée envoyée. Vos articles modifiés ne sont jamais écrasés.</div></div>
+` : `      <div class="field"><label>Dossier des données</label>
         <div class="row"><input class="input grow" readonly value="${esc(state.info.dataDir)}" id="st-dir">
           <button class="btn sm" id="st-open">${icon('folder-open', 15)}Ouvrir</button></div>
         <div class="row" style="margin-top:8px"><button class="btn sm" id="st-change">${icon('folder-cog', 15)}Changer…</button>
@@ -44,7 +56,8 @@ export function openSettings() {
         <div class="row" style="margin-top:8px"><button class="btn sm" id="st-export">${icon('package', 15)}Exporter un paquet…</button>
           <button class="btn sm" id="st-import">${icon('package-open', 15)}Importer un paquet…</button></div>
         <div class="hint">Requêtes anonymes vers github.com/JK-ASFC/netwiki, aucune donnée envoyée. Un paquet <code>.netwiki</code> contient les articles : idéal pour mettre à jour un poste sans Internet. Les paquets officiels sont signés par JK-ASFC ; vos modifications locales ne sont jamais écrasées. Après chaque mise à jour, NetWiki redémarre.</div></div>
-      <div class="row" style="margin-top:18px"><p style="font-size:12px;color:var(--text-faint)" class="grow">NetWiki ${esc(state.info.version)} · © 2026 JK-ASFC · licence MIT · Electron ${esc(state.info.electron)} · ${esc(state.info.platform)}</p>
+`}
+      <div class="row st-foot" style="margin-top:18px"><p style="font-size:12px;color:var(--text-faint)" class="grow">NetWiki ${esc(state.info.version)} · © 2026 JK-ASFC · licence MIT · ${state.info.mobile ? esc(state.info.platformLabel || state.info.platform) : `Electron ${esc(state.info.electron)} · ${esc(state.info.platform)}`}</p>
         <button class="btn sm ghost" id="st-support">${icon('heart', 15)}Soutenir</button>
         <button class="btn sm ghost" id="st-about">${icon('info', 15)}À propos, confidentialité, RGPD</button></div>`,
     actions: [{ label: 'Fermer', kind: 'primary', value: true }],
@@ -94,15 +107,32 @@ export function openSettings() {
       $('#st-splash', b).onchange = (e) => actions.saveSettings({ showSplash: e.target.checked });
       $('#st-check-app', b).onclick = () => actions.checkAppUpdate();
       $('#st-check-content', b).onclick = () => actions.checkContentUpdate({ manual: true });
+      const on = (id, ev, fn) => {
+        const el = $(id, b);
+        if (el) el[ev] = fn;
+      };
+      on('#st-auto', 'onchange', (e) => {
+        actions.saveSettings({ appCheck: e.target.checked, contentCheck: e.target.checked });
+        if (e.target.checked) actions.checkAppUpdate();
+      });
+      on('#st-notify', 'onchange', async (e) => {
+        const r = await setUpdateNotifications(e.target.checked);
+        e.target.checked = !!r?.enabled;
+        if (r?.denied) {
+          $('#st-notify-hint', b).innerHTML = `Notifications refusées pour NetWiki. <a href="#" id="st-notify-open">Ouvrir les réglages d'Android</a>`;
+          $('#st-notify-open', b).onclick = (ev) => {
+            ev.preventDefault();
+            api.mobile?.openNotificationSettings();
+          };
+        } else if (r?.enabled) toast('Notifications de mise à jour activées', 'info');
+      });
+      if (!$('#st-ccheck', b)) return wireCommon(b);
       $('#st-ccheck', b).onchange = (e) => {
         actions.saveSettings({ contentCheck: e.target.checked });
         if (e.target.checked) actions.checkContentUpdate({ manual: true });
       };
-      api.contentInfo?.().then((c) => {
-        if (c?.version) $('#st-content-ver', b).textContent = `Contenu installé : version du ${contentDate(c.version)}.`;
-      });
       $('#st-export', b).onclick = () => actions.exportPack();
-      $('#st-import', b).onclick = () => actions.importPack();
+      wireCommon(b);
       $('#st-open', b).onclick = () => api.openDataDir();
       $('#st-change', b).onclick = async () => {
         const dir = await api.chooseDataDir();
@@ -118,16 +148,24 @@ export function openSettings() {
         $('#st-dir', b).value = dir;
         await actions.reload(true);
       };
-      $('#st-restore', b).onclick = async () => {
-        const ok = await confirmDialog(
-          "Restaurer le contenu d'origine",
-          "Les articles livrés avec NetWiki qui ont été supprimés ou déplacés seront recréés. Vos modifications existantes ne sont pas écrasées."
-        );
-        if (!ok) return;
-        const n = await api.restoreSeeds();
-        await actions.reload(true);
-        toast(n ? `${n} fichier(s) restauré(s)` : 'Rien à restaurer : tout est déjà présent', 'info');
-      };
     },
   });
+}
+
+/** Boutons présents sur toutes les plateformes : import de paquet, restauration, version du contenu. */
+function wireCommon(b) {
+  $('#st-import', b).onclick = () => actions.importPack();
+  api.contentInfo?.().then((c) => {
+    if (c?.version) $('#st-content-ver', b).textContent = `Contenu installé : version du ${contentDate(c.version)}.`;
+  });
+  $('#st-restore', b).onclick = async () => {
+    const ok = await confirmDialog(
+      "Restaurer le contenu d'origine",
+      "Les articles livrés avec NetWiki qui ont été supprimés ou déplacés seront recréés. Vos modifications existantes ne sont pas écrasées."
+    );
+    if (!ok) return;
+    const n = await api.restoreSeeds();
+    await actions.reload(true);
+    toast(n ? `${n} fichier(s) restauré(s)` : 'Rien à restaurer : tout est déjà présent', 'info');
+  };
 }

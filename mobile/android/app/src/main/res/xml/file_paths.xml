@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fichiers partagés avec d'autres applications : PDF générés et mises à jour téléchargées (cache uniquement). -->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <cache-path name="pdf" path="pdf/" />
+    <cache-path name="updates" path="updates/" />
+</paths>

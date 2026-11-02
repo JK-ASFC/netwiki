@@ -1,0 +1,95 @@
+# NetWiki — test de l'application Android sur émulateur (Android 14, Pixel 6).
+# Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
+#
+# Image AOSP sans services Google : évite les redémarrages des services Google pendant le test.
+# Compile une version de test (numérotée 1.0.0 pour simuler une mise à jour disponible), l'installe sur un émulateur
+# et la pilote (mobile/test/e2e.js) : mises à jour, notifications, PDF, partage, bouton Retour, thème, icône.
+# Les captures et le rapport sont publiés comme artefact et sur la branche « tests-android » (dossier du commit testé).
+
+name: Test Android
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main-y4i8tw]
+    paths: ['mobile/**', 'src/**', 'scripts/build-web.mjs', '.github/workflows/android-test.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: test-android-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  emulateur:
+    name: Émulateur Android
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Virtualisation (KVM)
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+      - run: npm ci
+      - run: node scripts/build-web.mjs --prod
+      - name: Compiler la version de test
+        run: |
+          cd mobile && npm install && npx cap sync android
+          cd android && chmod +x gradlew
+          ./gradlew --no-daemon assembleGithubDebug -PnetwikiVersion=1.0.0
+          cp app/build/outputs/apk/github/debug/app-github-debug.apk "$RUNNER_TEMP/netwiki-test.apk"
+      - name: Outils de test
+        run: npm install --no-save playwright-core@1.56.1
+      - name: Émulateur et scénario
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: default
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: |
+            adb install -r "$RUNNER_TEMP/netwiki-test.apk"
+            mkdir -p resultats
+            node mobile/test/e2e.js resultats > resultats/console.txt 2>&1 || echo "ECHEC_TEST=1" >> "$GITHUB_ENV"
+            tail -120 resultats/console.txt
+            adb pull /sdcard/Download/NetWiki resultats/pdf || true
+            adb logcat -d -s Capacitor:* Capacitor/Console:* NetWiki:* AndroidRuntime:E chromium:E > resultats/logcat.txt || true
+            adb logcat -d -t 6000 > resultats/logcat-complet.txt || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-android
+          path: resultats
+      - name: Publier les résultats (branche tests-android)
+        if: always()
+        run: |
+          [ -d resultats ] || exit 0
+          D="$RUNNER_TEMP/pub" && rm -rf "$D" && mkdir -p "$D"
+          cd "$D"
+          git init -q && git checkout -q -b tests-android
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch -q --depth 1 origin tests-android && git reset -q --soft FETCH_HEAD || true
+          rm -rf dernier && mkdir dernier && cp -r "$GITHUB_WORKSPACE/resultats/." dernier/
+          echo "Commit testé : ${GITHUB_SHA}" > dernier/commit.txt
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Test Android ${GITHUB_SHA::7}" || exit 0
+          git push -q origin tests-android
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Résultat
+        if: always()
+        run: |
+          [ -f resultats/rapport.md ] && cat resultats/rapport.md | grep -v '^!\[' >> "$GITHUB_STEP_SUMMARY" || true
+          [ -z "$ECHEC_TEST" ] || { echo "::error title=Test Android::au moins une étape a échoué (voir rapport.md)"; exit 1; }

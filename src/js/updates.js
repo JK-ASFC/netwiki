@@ -173,7 +173,7 @@ const mo = (n) => (n / 1048576).toFixed(1).replace('.', ',');
 async function installApp(body, a) {
   const buttons = [...body.closest('.modal').querySelectorAll('.modal-foot button')];
   buttons.forEach((b) => (b.disabled = true));
-  body.innerHTML = `<p>Téléchargement de NetWiki ${esc(a.latest)}…</p>
+  body.innerHTML = `<p>Téléchargement de NetWiki ${esc(a.latest)}${a.size ? ` (${mo(a.size)} Mo)` : ''}…</p>
     <div class="dl-progress"><span></span></div><p class="hint" data-p>Connexion à GitHub…</p>`;
   const bar = body.querySelector('.dl-progress span');
   const label = body.querySelector('[data-p]');
@@ -188,7 +188,13 @@ async function installApp(body, a) {
     return { mode: r.mode };
   } catch (err) {
     onProgress = null;
-    body.innerHTML = `<p class="warn">${esc(err.message || String(err))}</p><p class="hint">Vous pouvez télécharger la nouvelle version depuis la page officielle.</p>`;
+    const extra =
+      err.code === 'INSTALL_PERMISSION'
+        ? `<p class="hint">Android demande une autorisation unique : <b>Paramètres → Applications → NetWiki → Installer des applications inconnues</b>, puis relancez la mise à jour.</p>`
+        : err.code === 'SIGNATURE'
+          ? ''
+          : '<p class="hint">Vous pouvez télécharger la nouvelle version depuis la page officielle.</p>';
+    body.innerHTML = `<p class="warn">${esc(err.message || String(err))}</p>${extra}`;
     buttons.forEach((b) => (b.disabled = false));
     return false;
   }
@@ -198,20 +204,30 @@ async function offerApp(a) {
   const how = {
     portable: 'Le fichier portable que vous utilisez sera remplacé par la nouvelle version, puis NetWiki redémarrera.',
     installer: 'Le nouvel installeur sera téléchargé et vérifié ; au redémarrage, il mettra à jour votre installation puis relancera NetWiki.',
+    android: "La nouvelle version sera téléchargée et vérifiée, puis Android vous demandera de confirmer l'installation (« Mettre à jour »).",
   }[a.selfUpdate];
+  const mobileStore = state.info.mobile && !a.selfUpdate;
   const buttons = [{ label: 'Plus tard', kind: 'ghost', value: null }];
   buttons.push({ label: 'Page de téléchargement', kind: how ? '' : 'primary', value: 'page' });
-  if (how) buttons.push({ label: 'Mettre à jour et redémarrer', kind: 'primary', value: (body) => installApp(body, a) });
+  if (how) buttons.push({ label: a.selfUpdate === 'android' ? 'Télécharger et installer' : 'Mettre à jour et redémarrer', kind: 'primary', value: (body) => installApp(body, a) });
   const choice = await modal({
     title: `NetWiki ${a.latest} est disponible`,
     width: 560,
     body: `<p>Version installée : ${esc(a.current)}.</p>
       ${a.notes ? `<pre class="update-notes">${esc(a.notes)}</pre>` : ''}
-      <p class="hint">${how || 'Sur ce système, téléchargez la nouvelle version depuis la page officielle.'} Le fichier est vérifié (empreinte signée par JK-ASFC) avant d'être utilisé ; vos articles et vos réglages sont conservés.</p>`,
+      <p class="hint">${
+        mobileStore
+          ? 'Cette version de NetWiki est mise à jour par le magasin d’applications, ou depuis la page officielle.'
+          : `${how || 'Sur ce système, téléchargez la nouvelle version depuis la page officielle.'} Le fichier est vérifié (empreinte signée par JK-ASFC) avant d'être utilisé ; vos articles et vos réglages sont conservés.`
+      }</p>`,
     actions: buttons,
   });
+  if (choice === null && state.info.mobile) actions.saveSettings({ appSnooze: { version: a.latest, until: Date.now() + DAY } });
   if (choice === 'page') api.openReleasePage(a.page);
-  else if (choice?.mode) {
+  else if (choice?.mode === 'android') {
+    // L'installeur d'Android prend le relais ; NetWiki est relancé sur la nouvelle version après confirmation.
+    toast(`Confirmez l'installation de NetWiki ${a.latest} dans la fenêtre d'Android`, 'info', 6000);
+  } else if (choice?.mode) {
     await restartPopup(
       choice.mode === 'portable'
         ? `NetWiki ${esc(a.latest)} est prêt (empreinte vérifiée). NetWiki va redémarrer sur la nouvelle version.`
@@ -220,20 +236,26 @@ async function offerApp(a) {
   }
 }
 
-/** Logiciel seulement, uniquement à la demande de l'utilisateur. */
-actions.checkAppUpdate = async () => {
+/**
+ * Logiciel : à la demande de l'utilisateur ; sur mobile, aussi au démarrage si l'utilisateur l'a accepté
+ * (`auto` : silencieux si tout est à jour ou hors connexion, et pas plus d'une proposition par jour pour une même version).
+ */
+actions.checkAppUpdate = async ({ auto = false } = {}) => {
   let a;
   try {
-    toast('Recherche d’une mise à jour du logiciel…', 'info', 2000);
+    if (!auto) toast('Recherche d’une mise à jour du logiciel…', 'info', 2000);
     a = await api.checkAppUpdate();
+    actions.saveSettings({ lastAppCheck: Date.now() });
   } catch (err) {
-    toast(err.message || String(err), 'error', 5000);
+    if (!auto) toast(err.message || String(err), 'error', 5000);
     return;
   }
   if (!a.newer) {
-    toast(`NetWiki est à jour (version ${a.current})`, 'info');
+    if (!auto) toast(`NetWiki est à jour (version ${a.current})`, 'info');
     return;
   }
+  const snooze = state.settings.appSnooze;
+  if (auto && snooze?.version === a.latest && Date.now() < snooze.until) return;
   await offerApp(a);
 };
 
@@ -250,12 +272,21 @@ async function confirmPendingUpdate() {
       modal({
         title: 'Mise à jour du logiciel non appliquée',
         body: `<p>NetWiki ${esc(p.version)} devait être installé, mais la version ${esc(state.info.version)} est toujours utilisée.</p>
-          <p class="hint">Fermez NetWiki puis lancez le fichier téléchargé, ou téléchargez la nouvelle version depuis la page officielle.</p>`,
+          <p class="hint">${
+            state.info.mobile
+              ? "L'installation a été annulée ou n'a pas abouti. Relancez la mise à jour : la nouvelle version sera de nouveau vérifiée avant l'installation."
+              : 'Fermez NetWiki puis lancez le fichier téléchargé, ou téléchargez la nouvelle version depuis la page officielle.'
+          }</p>`,
         actions: [
           { label: 'Fermer', kind: 'ghost', value: null },
-          { label: 'Page de téléchargement', kind: 'primary', value: 'page' },
+          state.info.mobile && state.info.selfUpdate
+            ? { label: 'Relancer la mise à jour', kind: 'primary', value: 'retry' }
+            : { label: 'Page de téléchargement', kind: 'primary', value: 'page' },
         ],
-      }).then((v) => v === 'page' && api.openReleasePage('https://github.com/JK-ASFC/netwiki/releases/latest'));
+      }).then((v) => {
+        if (v === 'page') api.openReleasePage('https://github.com/JK-ASFC/netwiki/releases/latest');
+        if (v === 'retry') actions.checkAppUpdate();
+      });
     return;
   }
   const c = await api.contentInfo?.().catch(() => null);
@@ -272,6 +303,7 @@ async function confirmPendingUpdate() {
  */
 export async function initUpdates() {
   await confirmPendingUpdate();
+  if (state.info.mobile) return initMobileUpdates();
   const s = state.settings;
   if (s.contentCheck === undefined || s.contentCheck === null) {
     const ok = await confirmDialog(
@@ -284,5 +316,63 @@ export async function initUpdates() {
     actions.saveSettings({ contentCheck: !!ok });
     if (!ok) return;
   }
+  if (state.settings.contentCheck) await actions.checkContentUpdate();
+}
+
+// ================================================================ mobile (Android)
+
+/** Active ou coupe les notifications de nouvelle version (tâche de fond d'Android, deux fois par jour). */
+export async function setUpdateNotifications(on) {
+  const m = api.mobile;
+  if (!m) return false;
+  let granted = false;
+  if (on) granted = await m.requestNotifications().catch(() => false);
+  const enabled = on && granted;
+  actions.saveSettings({ updateNotify: enabled });
+  await m.configureUpdates({ notify: enabled, contentNotify: true }).catch(() => {});
+  return { enabled, denied: on && !granted };
+}
+
+/** Choix proposé une seule fois au premier lancement : recherche automatique et notifications. */
+async function askMobileUpdates() {
+  const r = await modal({
+    title: 'Mises à jour de NetWiki',
+    width: 520,
+    body: `<p>NetWiki peut se tenir à jour tout seul : nouvelle version de l'application et nouveaux articles du wiki (publiés chaque semaine par JK-ASFC).</p>
+      <div class="field"><div class="row"><div class="grow"><label>Rechercher automatiquement</label><div class="hint">À l'ouverture de NetWiki. Rien n'est installé sans votre accord.</div></div>
+        <label class="toggle"><input type="checkbox" data-auto checked><span></span></label></div></div>
+      <div class="field"><div class="row"><div class="grow"><label>M'avertir par une notification</label><div class="hint">Même quand NetWiki est fermé (vérification deux fois par jour).</div></div>
+        <label class="toggle"><input type="checkbox" data-notify checked><span></span></label></div></div>
+      <p class="hint">Requêtes anonymes vers github.com/JK-ASFC/netwiki, aucune donnée envoyée. Modifiable à tout moment dans Paramètres → Mises à jour.</p>`,
+    actions: [{ label: 'Enregistrer', kind: 'primary', value: (b) => ({ auto: b.querySelector('[data-auto]').checked, notify: b.querySelector('[data-notify]').checked }) }],
+  });
+  const auto = r ? r.auto : false;
+  actions.saveSettings({ appCheck: auto, contentCheck: auto });
+  await setUpdateNotifications(!!r?.notify);
+}
+
+let launchHandled = false;
+function handleLaunchAction(action) {
+  if (action === 'app-update') actions.checkAppUpdate();
+  else if (action === 'content-update') actions.checkContentUpdate({ manual: true });
+}
+
+async function initMobileUpdates() {
+  const m = api.mobile;
+  if (m && !launchHandled) {
+    launchHandled = true;
+    m.onLaunchAction(handleLaunchAction);
+    const pending = await m.consumeLaunchAction().catch(() => null);
+    if (pending) {
+      if (state.settings.appCheck === undefined) actions.saveSettings({ appCheck: true, contentCheck: true });
+      handleLaunchAction(pending);
+      return;
+    }
+  }
+  if (state.settings.appCheck === undefined || state.settings.appCheck === null) await askMobileUpdates();
+  // La tâche de fond compare les nouveaux articles à la version du contenu installé.
+  const c = await api.contentInfo().catch(() => null);
+  m?.configureUpdates({ notify: !!state.settings.updateNotify, contentVersion: c?.version || '' }).catch(() => {});
+  if (state.settings.appCheck && Date.now() - (state.settings.lastAppCheck || 0) > 6 * 3600 * 1000) await actions.checkAppUpdate({ auto: true });
   if (state.settings.contentCheck) await actions.checkContentUpdate();
 }

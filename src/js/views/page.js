@@ -27,6 +27,7 @@ export function renderPage(view, page, { anchor, terms } = {}) {
           <div class="page-title"><h1>${esc(page.title)}</h1>${page.description ? `<p class="desc">${esc(page.description)}</p>` : ''}</div>
           <div class="page-actions">
             <button class="icon-btn ${fav ? 'active' : ''}" data-act="fav" data-tip="${fav ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${icon('star', 18)}</button>
+            ${state.info?.mobile ? `<button class="icon-btn" data-act="share" data-tip="Partager ou exporter (PDF)">${icon('share-2', 18)}</button>` : ''}
             <button class="btn sm" data-act="edit">${icon('pencil', 15)}Modifier</button>
             <button class="icon-btn" data-act="more" data-tip="Plus d'actions">${icon('ellipsis', 18)}</button>
           </div>

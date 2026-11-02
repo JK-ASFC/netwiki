@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Thème de base de l'application. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/netwiki_background</item>
+    </style>
+
+    <!-- Thème appliqué par Capacitor après le démarrage : fond sombre de NetWiki derrière les barres système. -->
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@color/netwiki_background</item>
+        <item name="android:statusBarColor">@color/netwiki_background</item>
+        <item name="android:navigationBarColor">@color/netwiki_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Écran de démarrage : logo NetWiki sur le fond sombre (Android 12+ : API SplashScreen ; avant : image). -->
+    <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/netwiki_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_icon</item>
+        <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
+        <item name="android:background">@drawable/splash</item>
+    </style>
+</resources>
