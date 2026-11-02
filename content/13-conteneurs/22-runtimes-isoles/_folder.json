@@ -1,0 +1,1 @@
+{ "title": "CRI-O, Kata Containers et Firecracker", "icon": "shield-check", "color": "#6b7280", "description": "Runtimes de conteneurs pour Kubernetes et isolation renforcée : CRI-O, Kata Containers (micro-VM par pod) et microVM Firecracker." }

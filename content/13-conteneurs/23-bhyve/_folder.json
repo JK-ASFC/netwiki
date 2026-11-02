@@ -1,0 +1,1 @@
+{ "title": "bhyve (FreeBSD)", "icon": "server", "color": "#ab2b28", "description": "Hyperviseur natif de FreeBSD : installation, vm-bhyve, réseau par commutateurs virtuels, ZFS, invités Linux et Windows." }

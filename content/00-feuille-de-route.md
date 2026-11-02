@@ -61,6 +61,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 45 | Logiciel 1.44 : images dans les articles (bouton « Insérer une image », légendes, agrandissement au clic, images dans la version mobile, contrôle des images manquantes) ; première capture : page de test d’Apache2 sous Debian | ✅ |
 | 46 | Logiciel 1.45 : mises à jour séparées — logiciel vérifié uniquement à la demande ; wiki (.netwiki) recherché automatiquement au démarrage si l’utilisateur l’accepte, récapitulatif des nouveautés avant installation, redémarrage avec compte à rebours et contrôle au lancement suivant ; installateurs Windows et macOS aux couleurs de NetWiki (thème sombre, pages « Sécurité et confidentialité » et « Soutenir ») | ✅ |
 | 47 | Site de présentation sur GitHub Pages (jk-asfc.github.io/netwiki) : mêmes couleurs que le logiciel, exemples, démo interactive des commandes, « Comment ça marche », téléchargements de la dernière version, soutien et FAQ | ✅ |
+| 48 | Catalogue — virtualisation : KVM, QEMU et libvirt (virt-manager, GNOME Boxes, Cockpit), XCP-ng et Xen (Xen Orchestra), UTM, Incus, LXD et LXC, oVirt, OpenStack (Horizon), OpenNebula (Sunstone), Apache CloudStack, CRI-O, Kata Containers, Firecracker, bhyve | ✅ |
 
 ## Annuaire, identité & secrets
 

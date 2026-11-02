@@ -4,11 +4,11 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 172 (13 %) | 13 | 0 | 1126 (86 %) |
+| 1311 | 172 (13 %) | 19 | 0 | 1120 (85 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
-## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 17/51
+## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 23/51
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -22,18 +22,18 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | libvirt | Gestion des hyperviseurs | Linux | 🆕 fait (lot 48) | `13-conteneurs/14-kvm-qemu-libvirt` |
 | oVirt | Gestion de virtualisation | Linux | 🆕 fait (lot 48) | `13-conteneurs/18-ovirt` |
 | OpenStack | Cloud privé IaaS | Linux | 🆕 fait (lot 48) | `13-conteneurs/19-openstack` |
-| OpenNebula | Cloud et virtualisation | Linux | ⏳ à faire | → `13-conteneurs` |
-| Apache CloudStack | Cloud IaaS | Linux | ⏳ à faire | → `13-conteneurs` |
+| OpenNebula | Cloud et virtualisation | Linux | 🆕 fait (lot 48) | `13-conteneurs/20-opennebula` |
+| Apache CloudStack | Cloud IaaS | Linux | 🆕 fait (lot 48) | `13-conteneurs/21-apache-cloudstack` |
 | Incus | Conteneurs système et machines virtuelles | Linux | 🆕 fait (lot 48) | `13-conteneurs/17-incus-lxd-lxc` |
 | LXD | Conteneurs système et machines virtuelles | Linux | 🆕 fait (lot 48) | `13-conteneurs/17-incus-lxd-lxc` |
 | LXC | Conteneurs système | Linux | 🆕 fait (lot 48) | `13-conteneurs/17-incus-lxd-lxc` |
 | Docker Engine | Conteneurs | Windows, Linux, macOS (via Desktop/VM) | ✅ existant | `13-conteneurs/01-docker` |
 | Podman | Conteneurs | Windows, Linux, macOS | ✅ existant | `13-conteneurs/02-podman` |
 | containerd | Runtime de conteneurs | Linux, Windows | ✅ existant | `13-conteneurs/03-containerd` |
-| CRI-O | Runtime Kubernetes | Linux | ⏳ à faire | → `13-conteneurs` |
-| Kata Containers | Conteneurs isolés | Linux | ⏳ à faire | → `13-conteneurs` |
-| Firecracker | MicroVM | Linux | ⏳ à faire | → `13-conteneurs` |
-| bhyve | Hyperviseur | FreeBSD | ⏳ à faire | → `13-conteneurs` |
+| CRI-O | Runtime Kubernetes | Linux | 🆕 fait (lot 48) | `13-conteneurs/22-runtimes-isoles` |
+| Kata Containers | Conteneurs isolés | Linux | 🆕 fait (lot 48) | `13-conteneurs/22-runtimes-isoles` |
+| Firecracker | MicroVM | Linux | 🆕 fait (lot 48) | `13-conteneurs/22-runtimes-isoles` |
+| bhyve | Hyperviseur | FreeBSD | 🆕 fait (lot 48) | `13-conteneurs/23-bhyve` |
 | Xen | Hyperviseur | Linux, BSD | 🆕 fait (lot 48) | `13-conteneurs/15-xcp-ng-xen` |
 | Bareos | Sauvegarde serveur | Windows, Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
 | FreeBSD | Système d'exploitation serveur | x86, ARM | ⏳ à faire | → `24-systemes-exploitation` |
