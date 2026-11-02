@@ -462,12 +462,12 @@
    "role": "Distribution Linux serveur",
    "plateformes": "PC, serveur",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/02-famille-red-hat",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
-   "eol": null
+   "eol": "rocky-linux"
   },
   {
    "id": "almalinux",
@@ -475,12 +475,12 @@
    "role": "Distribution Linux serveur",
    "plateformes": "PC, serveur",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/02-famille-red-hat",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
-   "eol": null
+   "eol": "almalinux"
   },
   {
    "id": "fedora-server",
@@ -488,12 +488,12 @@
    "role": "Distribution Linux serveur",
    "plateformes": "PC, serveur",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/02-famille-red-hat",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
-   "eol": null
+   "eol": "fedora"
   },
   {
    "id": "opensuse-leap",
@@ -566,12 +566,12 @@
    "role": "Distribution Linux serveur",
    "plateformes": "PC, serveur",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/02-famille-red-hat",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
-   "eol": null
+   "eol": "oracle-linux"
   },
   {
    "id": "centos-stream",
@@ -579,12 +579,12 @@
    "role": "Distribution Linux serveur",
    "plateformes": "PC, serveur",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/02-famille-red-hat",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
-   "eol": null
+   "eol": "centos-stream"
   },
   {
    "id": "nixos",

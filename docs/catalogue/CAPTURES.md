@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-53 capture(s) attendue(s) dans 9 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+59 capture(s) attendue(s) dans 10 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 13-conteneurs/14-kvm-qemu-libvirt
 
@@ -99,4 +99,15 @@
 | `content/24-systemes-exploitation/01-debian-ubuntu/_assets/cockpit-stockage-lvm.png` | Cockpit — page Stockage avec un groupe de volumes LVM | `03-interface-graphique.md` |
 | `content/24-systemes-exploitation/01-debian-ubuntu/_assets/cockpit-services.png` | Cockpit — page Services, détail d'une unité systemd | `03-interface-graphique.md` |
 | `content/24-systemes-exploitation/01-debian-ubuntu/_assets/cockpit-mises-a-jour.png` | Cockpit — mises à jour logicielles disponibles | `03-interface-graphique.md` |
+
+## 24-systemes-exploitation/02-famille-red-hat
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/anaconda-resume.png` | Anaconda — résumé de l'installation (Rocky Linux 10) | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/anaconda-stockage.png` | Anaconda — Destination d'installation avec partitionnement LVM personnalisé | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/anaconda-reseau.png` | Anaconda — Réseau et nom d'hôte avec adresse IP fixe | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/cockpit-selinux.png` | Cockpit — page SELinux avec un refus et la solution proposée | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/cockpit-firewalld.png` | Cockpit — Réseau, zones du pare-feu firewalld | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/nmtui-connexion.png` | nmtui — modification d'une connexion avec adresse IP fixe | `03-interface-graphique.md` |
 

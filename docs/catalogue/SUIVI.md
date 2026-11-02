@@ -4,11 +4,11 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 172 (13 %) | 21 | 0 | 1118 (85 %) |
+| 1311 | 172 (13 %) | 26 | 0 | 1113 (85 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
-## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 25/51
+## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 30/51
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -41,16 +41,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | NetBSD | Système d'exploitation | x86, ARM | ⏳ à faire | → `24-systemes-exploitation` |
 | Debian | Distribution Linux | PC, serveur, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/01-debian-ubuntu` |
 | Ubuntu Server | Distribution Linux serveur | PC, serveur, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/01-debian-ubuntu` |
-| Rocky Linux | Distribution Linux serveur | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
-| AlmaLinux | Distribution Linux serveur | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
-| Fedora Server | Distribution Linux serveur | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
+| Rocky Linux | Distribution Linux serveur | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/02-famille-red-hat` |
+| AlmaLinux | Distribution Linux serveur | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/02-famille-red-hat` |
+| Fedora Server | Distribution Linux serveur | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/02-famille-red-hat` |
 | openSUSE Leap | Distribution Linux | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
 | openSUSE Tumbleweed | Distribution Linux | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
 | Arch Linux | Distribution Linux | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
 | Gentoo | Distribution Linux | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
 | Alpine Linux | Distribution Linux légère | PC, serveur, conteneurs | ⏳ à faire | → `24-systemes-exploitation` |
-| Oracle Linux | Distribution Linux serveur | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
-| CentOS Stream | Distribution Linux serveur | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
+| Oracle Linux | Distribution Linux serveur | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/02-famille-red-hat` |
+| CentOS Stream | Distribution Linux serveur | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/02-famille-red-hat` |
 | NixOS | Distribution Linux déclarative | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
 | Kali Linux | Distribution sécurité | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
 | Parrot OS | Distribution sécurité | PC | ⏳ à faire | → `24-systemes-exploitation` |
