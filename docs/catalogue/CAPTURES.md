@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-394 capture(s) attendue(s) dans 102 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+402 capture(s) attendue(s) dans 103 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -361,6 +361,19 @@
 | `content/10-messagerie/16-gestion-projet/_assets/kanboard-tableau.png` | Tableau kanban d'un projet Kanboard | `05-kanban-taches.md` |
 | `content/10-messagerie/16-gestion-projet/_assets/wekan-tableau.png` | Tableau Wekan avec listes et cartes | `05-kanban-taches.md` |
 | `content/10-messagerie/16-gestion-projet/_assets/vikunja-kanban.png` | Vue kanban d'un projet Vikunja | `05-kanban-taches.md` |
+
+## 10-messagerie/17-wikis
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/17-wikis/_assets/outline-document.png` | Document Outline en édition collaborative | `01-outline-wikijs.md` |
+| `content/10-messagerie/17-wikis/_assets/wikijs-stockage-git.png` | Administration Wiki.js, module de stockage Git | `01-outline-wikijs.md` |
+| `content/10-messagerie/17-wikis/_assets/xwiki-distribution.png` | Assistant de distribution XWiki (installation du flavor Standard) | `02-xwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/xwiki-droits.png` | Administration XWiki, droits d'un espace | `02-xwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/mediawiki-visualeditor.png` | Page MediaWiki en édition avec VisualEditor | `03-mediawiki-dokuwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/dokuwiki-acl.png` | Gestion des ACL DokuWiki | `03-mediawiki-dokuwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/appflowy-console.png` | Console d'administration AppFlowy Cloud | `05-appflowy-affine.md` |
+| `content/10-messagerie/17-wikis/_assets/affine-tableau-blanc.png` | Document AFFiNE en mode tableau blanc | `05-appflowy-affine.md` |
 
 ## 11-bases-de-donnees/11-duckdb
 

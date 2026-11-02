@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 461 | 2 | 665 (51 %) |
+| 1311 | 183 (14 %) | 471 | 2 | 655 (50 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -613,7 +613,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Serverspec | Tests infrastructure | Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 | KitchenCI | Tests infrastructure | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 
-## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 51/80
+## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 61/80
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -660,17 +660,17 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Wekan | Kanban | Windows, Linux, macOS | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
 | Focalboard (archivé) | Gestion projet | Windows, Linux, macOS | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
 | Vikunja | Tâches et projets | Windows, Linux, macOS | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
-| AppFlowy | Espace de travail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| AFFiNE | Espace de travail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Outline | Wiki collaboratif | Linux | ⏳ à faire | → `10-messagerie` |
+| AppFlowy | Espace de travail | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
+| AFFiNE | Espace de travail | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
+| Outline | Wiki collaboratif | Linux | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
 | BookStack | Wiki documentaire | Linux | ✅ existant | `21-outils/05-ia-productivite/09-bookstack` |
-| Wiki.js | Wiki | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| XWiki | Wiki | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| DokuWiki | Wiki | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| MediaWiki | Wiki | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| TWiki | Wiki | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| MoinMoin | Wiki | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Gollum | Wiki Git | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
+| Wiki.js | Wiki | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
+| XWiki | Wiki | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
+| DokuWiki | Wiki | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
+| MediaWiki | Wiki | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
+| TWiki | Wiki | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
+| MoinMoin | Wiki | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
+| Gollum | Wiki Git | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
 | HedgeDoc | Édition Markdown collaborative | Linux | ⏳ à faire | → `10-messagerie` |
 | Etherpad | Édition collaborative | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
 | CryptPad | Suite collaborative chiffrée | Linux | ⏳ à faire | → `10-messagerie` |
