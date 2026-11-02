@@ -514,8 +514,32 @@ public class NetWikiPlugin extends Plugin {
         getActivity().runOnUiThread(() -> {
             try {
                 PrintManager pm = (PrintManager) getActivity().getSystemService(Context.PRINT_SERVICE);
-                pm.print(name, getBridge().getWebView().createPrintDocumentAdapter(name), a4());
-                call.resolve();
+                final PrintDocumentAdapter inner = getBridge().getWebView().createPrintDocumentAdapter(name);
+                // La page est mise en forme pendant toute la durée de la boîte d'impression : l'appel ne se termine
+                // qu'à sa fermeture, pour que l'interface garde le thème clair jusque-là.
+                PrintDocumentAdapter adapter = new PrintDocumentAdapter() {
+                    @Override
+                    public void onStart() {
+                        inner.onStart();
+                    }
+
+                    @Override
+                    public void onLayout(PrintAttributes o, PrintAttributes n, android.os.CancellationSignal c, LayoutResultCallback cb, android.os.Bundle e) {
+                        inner.onLayout(o, n, c, cb, e);
+                    }
+
+                    @Override
+                    public void onWrite(android.print.PageRange[] p, android.os.ParcelFileDescriptor d, android.os.CancellationSignal c, WriteResultCallback cb) {
+                        inner.onWrite(p, d, c, cb);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        inner.onFinish();
+                        call.resolve();
+                    }
+                };
+                pm.print(name, adapter, a4());
             } catch (Exception e) {
                 call.reject(message(e, "Impression indisponible."));
             }
