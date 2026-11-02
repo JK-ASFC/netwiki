@@ -1,6 +1,36 @@
 # Captures d'écran à ajouter
 
-68 capture(s) attendue(s) dans 12 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+97 capture(s) attendue(s) dans 17 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+
+## 09-fichiers-partage/21-truenas-scale
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-tableau-de-bord.png` | TrueNAS — tableau de bord | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-creer-pool.png` | TrueNAS — assistant de création de pool (étape Data, RAIDZ2) | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-storage.png` | TrueNAS — page Storage, état d'un pool et de ses vdev | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-acl.png` | TrueNAS — éditeur d'ACL d'un jeu de données SMB | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-partage-smb.png` | TrueNAS — assistant d'ajout de partage SMB | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-data-protection.png` | TrueNAS — page Data Protection avec tâches d'instantanés et de réplication | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-active-directory.png` | TrueNAS — Directory Services, rejoindre Active Directory | `03-interface-graphique.md` |
+
+## 09-fichiers-partage/22-openmediavault
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/09-fichiers-partage/22-openmediavault/_assets/omv-tableau-de-bord.png` | OpenMediaVault — tableau de bord avec widgets (système, systèmes de fichiers, services) | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/22-openmediavault/_assets/omv-appliquer.png` | OpenMediaVault — bandeau « changements en attente » | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/22-openmediavault/_assets/omv-systemes-de-fichiers.png` | OpenMediaVault — Stockage, systèmes de fichiers montés | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/22-openmediavault/_assets/omv-dossier-partage.png` | OpenMediaVault — dossier partagé et ses permissions | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/22-openmediavault/_assets/omv-smb.png` | OpenMediaVault — Services, partage SMB | `03-interface-graphique.md` |
+
+## 09-fichiers-partage/23-rockstor
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/09-fichiers-partage/23-rockstor/_assets/rockstor-tableau-de-bord.png` | Rockstor — tableau de bord | `01-presentation-installation.md` |
+| `content/09-fichiers-partage/23-rockstor/_assets/rockstor-pool.png` | Rockstor — création d'un pool Btrfs en raid1 | `01-presentation-installation.md` |
+| `content/09-fichiers-partage/23-rockstor/_assets/rockstor-rock-ons.png` | Rockstor — Rock-ons disponibles | `01-presentation-installation.md` |
 
 ## 13-conteneurs/14-kvm-qemu-libvirt
 
@@ -90,6 +120,15 @@
 | `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-hotes.png` | CloudStack — liste des hôtes KVM et leur état | `03-interface-graphique.md` |
 | `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-deployer-instance.png` | CloudStack — assistant de déploiement d'instance | `03-interface-graphique.md` |
 
+## 19-sauvegarde/08-bareos
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/19-sauvegarde/08-bareos/_assets/bareos-webui-connexion.png` | Bareos WebUI — page de connexion | `03-interface-graphique.md` |
+| `content/19-sauvegarde/08-bareos/_assets/bareos-webui-tableau-de-bord.png` | Bareos WebUI — tableau de bord des tâches | `03-interface-graphique.md` |
+| `content/19-sauvegarde/08-bareos/_assets/bareos-webui-restauration.png` | Bareos WebUI — assistant de restauration avec arborescence de fichiers | `03-interface-graphique.md` |
+| `content/19-sauvegarde/08-bareos/_assets/bareos-webui-volumes.png` | Bareos WebUI — liste des volumes d'un pool | `03-interface-graphique.md` |
+
 ## 24-systemes-exploitation/01-debian-ubuntu
 
 | Image à créer | Écran | Article |
@@ -129,4 +168,19 @@
 | `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/rpi-imager-reglages.png` | Raspberry Pi Imager — réglages de personnalisation (nom d'hôte, SSH, utilisateur) | `01-presentation-installation.md` |
 | `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/raspi-config-menu.png` | raspi-config — menu principal | `01-presentation-installation.md` |
 | `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/dietpi-software.png` | DietPi — menu dietpi-software | `01-presentation-installation.md` |
+
+## 31-auto-hebergement/01-plateformes-auto-hebergement
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/yunohost-admin-accueil.png` | YunoHost — interface d'administration, accueil | `02-yunohost.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/yunohost-catalogue.png` | YunoHost — catalogue d'applications | `02-yunohost.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/yunohost-diagnostic.png` | YunoHost — diagnostic (DNS, ports, messagerie) | `02-yunohost.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/yunohost-portail.png` | YunoHost — portail utilisateur avec les tuiles d'applications | `02-yunohost.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/casaos-tableau-de-bord.png` | CasaOS — tableau de bord avec widgets et applications | `03-casaos-runtipi-umbrel.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/casaos-app-store.png` | CasaOS — App Store | `03-casaos-runtipi-umbrel.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/casaos-appli-personnalisee.png` | CasaOS — installation d'une application personnalisée (Compose) | `03-casaos-runtipi-umbrel.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/runtipi-app-store.png` | Runtipi — App Store | `03-casaos-runtipi-umbrel.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/runtipi-config-appli.png` | Runtipi — configuration d'une application avec domaine exposé | `03-casaos-runtipi-umbrel.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/umbrel-tableau-de-bord.png` | Umbrel — tableau de bord umbrelOS | `03-casaos-runtipi-umbrel.md` |
 

@@ -4,11 +4,11 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 172 (13 %) | 39 | 0 | 1100 (84 %) |
+| 1311 | 172 (13 %) | 47 | 0 | 1092 (83 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
-## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 43/51
+## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 51/51
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -35,7 +35,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Firecracker | MicroVM | Linux | 🆕 fait (lot 48) | `13-conteneurs/22-runtimes-isoles` |
 | bhyve | Hyperviseur | FreeBSD | 🆕 fait (lot 48) | `13-conteneurs/23-bhyve` |
 | Xen | Hyperviseur | Linux, BSD | 🆕 fait (lot 48) | `13-conteneurs/15-xcp-ng-xen` |
-| Bareos | Sauvegarde serveur | Windows, Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
+| Bareos | Sauvegarde serveur | Windows, Linux, macOS | 🆕 fait (lot 49) | `19-sauvegarde/08-bareos` |
 | FreeBSD | Système d'exploitation serveur | x86, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/09-bsd` |
 | OpenBSD | Système d'exploitation | x86, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/09-bsd` |
 | NetBSD | Système d'exploitation | x86, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/09-bsd` |
@@ -54,13 +54,13 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | NixOS | Distribution Linux déclarative | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/07-nixos` |
 | Kali Linux | Distribution sécurité | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/08-kali-parrot` |
 | Parrot OS | Distribution sécurité | PC | 🆕 fait (lot 49) | `24-systemes-exploitation/08-kali-parrot` |
-| TrueNAS SCALE | NAS et stockage | Linux x86_64 | ⏳ à faire | → `09-fichiers-partage` |
-| OpenMediaVault | NAS | Linux/Debian | ⏳ à faire | → `09-fichiers-partage` |
-| Rockstor | NAS | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| CasaOS | Plateforme serveur domestique | Linux | ⏳ à faire | → `24-systemes-exploitation` |
-| Umbrel | Plateforme serveur personnel | Linux | ⏳ à faire | → `24-systemes-exploitation` |
-| YunoHost | Plateforme d'auto-hébergement | Debian | ⏳ à faire | → `24-systemes-exploitation` |
-| Runtipi | Plateforme d'applications auto-hébergées | Linux | ⏳ à faire | → `24-systemes-exploitation` |
+| TrueNAS SCALE | NAS et stockage | Linux x86_64 | 🆕 fait (lot 49) | `09-fichiers-partage/21-truenas-scale` |
+| OpenMediaVault | NAS | Linux/Debian | 🆕 fait (lot 49) | `09-fichiers-partage/22-openmediavault` |
+| Rockstor | NAS | Linux | 🆕 fait (lot 49) | `09-fichiers-partage/23-rockstor` |
+| CasaOS | Plateforme serveur domestique | Linux | 🆕 fait (lot 49) | `31-auto-hebergement/01-plateformes-auto-hebergement` |
+| Umbrel | Plateforme serveur personnel | Linux | 🆕 fait (lot 49) | `31-auto-hebergement/01-plateformes-auto-hebergement` |
+| YunoHost | Plateforme d'auto-hébergement | Debian | 🆕 fait (lot 49) | `31-auto-hebergement/01-plateformes-auto-hebergement` |
+| Runtipi | Plateforme d'applications auto-hébergées | Linux | 🆕 fait (lot 49) | `31-auto-hebergement/01-plateformes-auto-hebergement` |
 | DietPi | Distribution légère | Linux, SBC | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
 | Raspberry Pi OS | Distribution Linux | Raspberry Pi | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
 
