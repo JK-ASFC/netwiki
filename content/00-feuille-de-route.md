@@ -85,6 +85,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 69 | Catalogue — suites de messagerie et webmails : Mailcow, Mailu, docker-mailserver, Modoboa, iRedMail, OpenSMTPD, Amavis, Roundcube, SnappyMail, SquirrelMail, RainLoop | ✅ |
 | 70 | Catalogue — CMS (nouvelle catégorie Web : CMS, e-commerce & portails) : WordPress, ClassicPress, Drupal, Joomla, TYPO3, Contao, Ghost, Grav, October CMS | ✅ |
 | 71 | Catalogue — CMS headless et Python : Strapi, Directus, Payload, KeystoneJS, Sanity Studio, Wagtail, Mezzanine, Plone, Zope | ✅ |
+| 72 | Catalogue — portails, GED et LMS : Liferay, Jahia, eXo Platform, Alfresco, Nuxeo, Moodle, Canvas, Chamilo, ILIAS, Open edX | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -411,3 +412,5 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[03-typo3-contao/01-typo3\|TYPO3]], [[03-typo3-contao/02-contao\|Contao]] | Composer, DDEV | PHP + Composer | PHP + Composer | ✅ |
 | [[04-ghost-grav-october/01-ghost\|Ghost]], [[04-ghost-grav-october/02-grav-october\|Grav, October CMS]] | Ghost-CLI, Composer, Docker | Docker, IIS (Grav) | Docker, PHP | ✅ |
 | [[05-cms-headless-python/01-strapi-directus-payload\|Strapi, Directus, Payload]], [[05-cms-headless-python/02-keystone-sanity\|KeystoneJS, Sanity]], [[05-cms-headless-python/03-wagtail-mezzanine\|Wagtail, Mezzanine]], [[05-cms-headless-python/04-plone-zope\|Plone, Zope]] | Node.js, pip, Docker | Node.js, Python, Docker | Node.js, Python, Docker | ✅ |
+| [[06-portails-ged/01-liferay-jahia-exo\|Liferay, Jahia, eXo]], [[06-portails-ged/02-alfresco-nuxeo\|Alfresco, Nuxeo]] | Docker, bundle Tomcat | Docker, bundle Tomcat | Docker | ✅ |
+| [[07-lms/01-moodle\|Moodle]], [[07-lms/02-canvas-chamilo-ilias-openedx\|Canvas, Chamilo, ILIAS, Open edX]] | PHP, Git, Tutor | IIS/WAMP + PHP | PHP (Homebrew) | ✅ |

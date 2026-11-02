@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-424 capture(s) attendue(s) dans 112 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+428 capture(s) attendue(s) dans 114 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -970,6 +970,20 @@
 | `content/25-web-cms-portails/05-cms-headless-python/_assets/directus-data-studio.png` | Data Studio Directus, collection et éditeur d'élément | `01-strapi-directus-payload.md` |
 | `content/25-web-cms-portails/05-cms-headless-python/_assets/wagtail-streamfield.png` | Éditeur de page Wagtail avec StreamField | `03-wagtail-mezzanine.md` |
 | `content/25-web-cms-portails/05-cms-headless-python/_assets/plone-volto.png` | Interface Volto de Plone 6, édition d'une page | `04-plone-zope.md` |
+
+## 25-web-cms-portails/06-portails-ged
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/06-portails-ged/_assets/liferay-control-panel.png` | Control Panel de Liferay | `01-liferay-jahia-exo.md` |
+| `content/25-web-cms-portails/06-portails-ged/_assets/alfresco-share-documents.png` | Bibliothèque de documents d'un site dans Alfresco Share | `02-alfresco-nuxeo.md` |
+
+## 25-web-cms-portails/07-lms
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/07-lms/_assets/moodle-cours.png` | Page d'un cours Moodle (format thématique) | `01-moodle.md` |
+| `content/25-web-cms-portails/07-lms/_assets/moodle-administration.png` | Administration du site Moodle | `01-moodle.md` |
 
 ## 31-auto-hebergement/01-plateformes-auto-hebergement
 

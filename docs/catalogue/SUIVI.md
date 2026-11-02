@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 508 | 2 | 618 (47 %) |
+| 1311 | 183 (14 %) | 518 | 2 | 608 (46 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -698,7 +698,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | SquirrelMail | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 | RainLoop (abandonné) | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 
-## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 19/64
+## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 29/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -720,16 +720,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Mezzanine | CMS Django | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
 | Plone | CMS Python | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
 | Zope | Serveur applicatif | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
-| Liferay Community Edition | Portail | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Jahia (community components) | CMS | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| eXo Platform (community) | Portail collaboratif | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Alfresco Community | ECM | Linux, Windows | ⏳ à faire | → `25-web-cms-portails` |
-| Nuxeo (community legacy) | ECM | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Moodle | LMS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Canvas LMS (open source) | LMS | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Chamilo | LMS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| ILIAS | LMS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Open edX | LMS | Linux | ⏳ à faire | → `25-web-cms-portails` |
+| Liferay Community Edition | Portail | Windows, Linux, macOS | 🆕 fait (lot 72) | `25-web-cms-portails/06-portails-ged` |
+| Jahia (community components) | CMS | Linux | 🆕 fait (lot 72) | `25-web-cms-portails/06-portails-ged` |
+| eXo Platform (community) | Portail collaboratif | Linux | 🆕 fait (lot 72) | `25-web-cms-portails/06-portails-ged` |
+| Alfresco Community | ECM | Linux, Windows | 🆕 fait (lot 72) | `25-web-cms-portails/06-portails-ged` |
+| Nuxeo (community legacy) | ECM | Linux | 🆕 fait (lot 72) | `25-web-cms-portails/06-portails-ged` |
+| Moodle | LMS | Windows, Linux, macOS | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
+| Canvas LMS (open source) | LMS | Linux | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
+| Chamilo | LMS | Windows, Linux, macOS | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
+| ILIAS | LMS | Windows, Linux, macOS | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
+| Open edX | LMS | Linux | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
 | Frappe Framework | Framework ERP | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
 | ERPNext | ERP | Linux | ⏳ à faire | → `25-web-cms-portails` |
 | Odoo Community | ERP/CRM | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
