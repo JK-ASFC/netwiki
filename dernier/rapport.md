@@ -29,18 +29,48 @@ Appareil : sdk_gphone64_x86_64 — versionCode=10000 minSdk=23 targetSdk=35 vers
 
 | ✅ | Fenêtre Partager / exporter |  |
 | ❌ | Enregistrer en PDF (Téléchargements) | page.waitForFunction: Target page, context or browser has been closed |
-| ❌ | Partager le PDF (sélecteur d’Android) | page.click: Target page, context or browser has been closed |
-| ❌ | Imprimer (boîte d’impression d’Android) | page.click: Target page, context or browser has been closed |
-| ❌ | Partager le texte (Markdown) | page.click: Target page, context or browser has been closed |
-| ❌ | Thème clair (barres système) | page.click: Target page, context or browser has been closed |
-| ❌ | Paramètres → Mises à jour | page.evaluate: Target page, context or browser has been closed |
-| ❌ | Notification de nouvelle version (tâche de fond) | page.evaluate: Target page, context or browser has been closed |
-| ❌ | Notification touchée → fenêtre de mise à jour | page.waitForSelector: Target page, context or browser has been closed |
-| ❌ | Téléchargement vérifié (refus d’un APK signé par une autre clé) | page.evaluate: Target page, context or browser has been closed |
-| ❌ | Empreinte incorrecte refusée | page.evaluate: Target page, context or browser has been closed |
-| ❌ | Autorisation « Installer des applications inconnues » | page.evaluate: Target page, context or browser has been closed |
-| ❌ | Bouton Retour : article → accueil → sortie | page.evaluate: Target page, context or browser has been closed |
 
-![tiroir-applications](07-tiroir-applications.png)
+![echec](07-echec.png)
+
+| ❌ | Partager le PDF (sélecteur d’Android) | page.click: Timeout 30000ms exceeded. Call log: - waiting for locator('[data-act="share"]')  |
+
+![echec](08-echec.png)
+
+| ❌ | Imprimer (boîte d’impression d’Android) | page.click: Timeout 30000ms exceeded. Call log: - waiting for locator('[data-act="share"]')  |
+
+![echec](09-echec.png)
+
+| ❌ | Partager le texte (Markdown) | page.click: Timeout 30000ms exceeded. Call log: - waiting for locator('[data-act="share"]')  |
+
+![echec](10-echec.png)
+
+
+![theme-clair](11-theme-clair.png)
+
+| ✅ | Thème clair (barres système) |  |
+
+![parametres](12-parametres.png)
+
+| ✅ | Paramètres → Mises à jour |  |
+
+![notification](13-notification.png)
+
+| ✅ | Notification de nouvelle version (tâche de fond) | notification affichée ; nouveaux articles : true |
+
+![depuis-notification](14-depuis-notification.png)
+
+| ✅ | Notification touchée → fenêtre de mise à jour | NetWiki 1.45.0 est disponible |
+| ✅ | Téléchargement vérifié (refus d’un APK signé par une autre clé) | SIGNATURE La nouvelle version est signée avec la clé officielle de JK-ASFC, différente de celle de l'application installée (ancienne version de test). Désinstallez NetWiki une seule fois puis installez la nouvelle version : les mises à jour suivantes seront automatiques. |
+| ✅ | Empreinte incorrecte refusée | Empreinte du fichier téléchargé incorrecte : mise à jour annulée. |
+
+![autorisation-installation](15-autorisation-installation.png)
+
+| ✅ | Autorisation « Installer des applications inconnues » |  |
+
+![apres-retour](16-apres-retour.png)
+
+| ✅ | Bouton Retour : article → accueil → sortie | accueil puis application en arrière-plan |
+
+![tiroir-applications](17-tiroir-applications.png)
 
 | ✅ | Icône dans le tiroir d’applications |  |
