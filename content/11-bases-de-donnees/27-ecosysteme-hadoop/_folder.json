@@ -1,0 +1,1 @@
+{ "title": "Apache Hive, HBase et Kudu", "icon": "warehouse", "color": "#66ccff", "description": "Composants de l'écosystème Hadoop : entrepôt SQL (Hive), base NoSQL sur HDFS (HBase) et stockage en colonnes modifiable (Kudu)." }

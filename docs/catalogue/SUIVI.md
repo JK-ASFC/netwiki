@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 189 | 1 | 948 (72 %) |
+| 1311 | 173 (13 %) | 211 | 1 | 926 (71 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -238,7 +238,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Task | Task runner | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/03-task-just` |
 | Just | Task runner | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/03-task-just` |
 
-## 6. BASES DE DONNEES SQL ET NOSQL — 42/64
+## 6. BASES DE DONNEES SQL ET NOSQL — 64/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -283,29 +283,29 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | JanusGraph | Base graphe | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/22-bases-graphes` |
 | Apache AGE | Extension graphe PostgreSQL | Linux | 🆕 fait (lot 54) | `11-bases-de-donnees/13-extensions-postgresql` |
 | Dgraph | Base graphe | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/22-bases-graphes` |
-| TerminusDB | Base graphe/document | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| XTDB | Base bitemporelle | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Doris | Entrepôt analytique | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| ClickHouse | Base analytique colonne | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Pinot | Base analytique temps réel | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Druid | Base analytique temps réel | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Trino | Moteur SQL distribué | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Presto | Moteur SQL distribué | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Hive | Entrepôt SQL Hadoop | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache HBase | Base NoSQL Hadoop | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Kudu | Stockage analytique | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Greenplum Database | Base analytique MPP | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| MonetDB | Base analytique colonne | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
+| TerminusDB | Base graphe/document | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/23-terminusdb-xtdb` |
+| XTDB | Base bitemporelle | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/23-terminusdb-xtdb` |
+| Apache Doris | Entrepôt analytique | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/25-olap-temps-reel` |
+| ClickHouse | Base analytique colonne | Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/24-clickhouse` |
+| Apache Pinot | Base analytique temps réel | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/25-olap-temps-reel` |
+| Apache Druid | Base analytique temps réel | Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/25-olap-temps-reel` |
+| Trino | Moteur SQL distribué | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/26-moteurs-sql-federes` |
+| Presto | Moteur SQL distribué | Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/26-moteurs-sql-federes` |
+| Apache Hive | Entrepôt SQL Hadoop | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/27-ecosysteme-hadoop` |
+| Apache HBase | Base NoSQL Hadoop | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/27-ecosysteme-hadoop` |
+| Apache Kudu | Stockage analytique | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/27-ecosysteme-hadoop` |
+| Greenplum Database | Base analytique MPP | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/28-greenplum-monetdb` |
+| MonetDB | Base analytique colonne | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/28-greenplum-monetdb` |
 | DuckDB extensions | Extensions analytiques | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/11-duckdb` |
-| Apache Drill | Moteur SQL | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Ignite | Base distribuée en mémoire | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Hazelcast | In-memory data grid | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache Geode | Base distribuée en mémoire | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| VoltDB Community | Base SQL en mémoire | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| H2 Database | Base SQL Java | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| HSQLDB | Base SQL Java | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Derby | Base SQL Java | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Realm (community components) | Base embarquée mobile | Windows, macOS, Linux | ⏳ à faire | → `11-bases-de-donnees` |
+| Apache Drill | Moteur SQL | Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/26-moteurs-sql-federes` |
+| Apache Ignite | Base distribuée en mémoire | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/29-grilles-memoire` |
+| Hazelcast | In-memory data grid | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/29-grilles-memoire` |
+| Apache Geode | Base distribuée en mémoire | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/29-grilles-memoire` |
+| VoltDB Community | Base SQL en mémoire | Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/29-grilles-memoire` |
+| H2 Database | Base SQL Java | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/30-bases-java-embarquees` |
+| HSQLDB | Base SQL Java | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/30-bases-java-embarquees` |
+| Derby | Base SQL Java | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/30-bases-java-embarquees` |
+| Realm (community components) | Base embarquée mobile | Windows, macOS, Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/30-bases-java-embarquees` |
 
 ## 7. STOCKAGE, NAS, OBJET, FICHIERS ET SAUVEGARDE — 12/47
 

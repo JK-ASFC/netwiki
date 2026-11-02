@@ -1,0 +1,1 @@
+{ "title": "TerminusDB et XTDB", "icon": "history", "color": "#7c3aed", "description": "Bases versionnées et temporelles : TerminusDB (graphe/documents versionnés comme Git) et XTDB (base SQL bitemporelle immuable)." }

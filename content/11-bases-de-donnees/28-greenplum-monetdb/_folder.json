@@ -1,0 +1,1 @@
+{ "title": "Greenplum et MonetDB", "icon": "server", "color": "#2a8c5c", "description": "Bases analytiques : Greenplum (MPP dérivée de PostgreSQL, désormais propriétaire, forks libres) et MonetDB (pionnière du stockage en colonnes)." }

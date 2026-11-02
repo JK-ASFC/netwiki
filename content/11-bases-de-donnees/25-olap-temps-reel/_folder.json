@@ -1,0 +1,1 @@
+{ "title": "Apache Doris, Pinot et Druid", "icon": "gauge", "color": "#1677ff", "description": "Bases OLAP temps réel pour tableaux de bord et analyses à faible latence : architecture, ingestion (Kafka, fichiers), requêtes et consoles." }

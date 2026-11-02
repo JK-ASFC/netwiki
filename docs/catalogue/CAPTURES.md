@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-222 capture(s) attendue(s) dans 51 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+232 capture(s) attendue(s) dans 56 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -245,6 +245,41 @@
 | --- | --- | --- |
 | `content/11-bases-de-donnees/22-bases-graphes/_assets/memgraph-lab.png` | Memgraph Lab — visualisation d'une topologie réseau | `04-interface-graphique.md` |
 | `content/11-bases-de-donnees/22-bases-graphes/_assets/dgraph-ratel.png` | Dgraph Ratel — requête DQL et vue graphe | `04-interface-graphique.md` |
+
+## 11-bases-de-donnees/24-clickhouse
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/24-clickhouse/_assets/clickhouse-play.png` | ClickHouse — interface Play (requête SQL dans le navigateur) | `01-presentation-installation.md` |
+| `content/11-bases-de-donnees/24-clickhouse/_assets/clickhouse-dashboard.png` | ClickHouse — tableau de bord intégré /dashboard | `01-presentation-installation.md` |
+
+## 11-bases-de-donnees/25-olap-temps-reel
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/25-olap-temps-reel/_assets/doris-backends.png` | Apache Doris — interface web, liste des Backends | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/25-olap-temps-reel/_assets/pinot-query.png` | Apache Pinot — Query Console | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/25-olap-temps-reel/_assets/druid-datasources.png` | Apache Druid — console, onglet Datasources | `04-interface-graphique.md` |
+
+## 11-bases-de-donnees/26-moteurs-sql-federes
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/26-moteurs-sql-federes/_assets/trino-ui.png` | Trino — interface web, liste des requêtes | `03-interface-graphique.md` |
+| `content/11-bases-de-donnees/26-moteurs-sql-federes/_assets/drill-storage.png` | Apache Drill — onglet Storage | `03-interface-graphique.md` |
+
+## 11-bases-de-donnees/29-grilles-memoire
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/29-grilles-memoire/_assets/hazelcast-mc.png` | Hazelcast Management Center — vue des membres du cluster | `03-interface-graphique.md` |
+| `content/11-bases-de-donnees/29-grilles-memoire/_assets/geode-pulse.png` | Geode Pulse — vue du cluster | `03-interface-graphique.md` |
+
+## 11-bases-de-donnees/30-bases-java-embarquees
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/30-bases-java-embarquees/_assets/realm-studio.png` | Realm Studio — ouverture d'un fichier .realm et vue des objets | `02-realm.md` |
 
 ## 13-conteneurs/14-kvm-qemu-libvirt
 
