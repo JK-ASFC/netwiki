@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-351 capture(s) attendue(s) dans 96 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+420 capture(s) attendue(s) dans 111 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -308,6 +308,103 @@
 | `content/10-messagerie/11-matrix/_assets/element-salons.png` | Element — liste des salons et espaces | `03-interface-graphique.md` |
 | `content/10-messagerie/11-matrix/_assets/element-verification.png` | Element — vérification d'une nouvelle session | `03-interface-graphique.md` |
 | `content/10-messagerie/11-matrix/_assets/synapse-admin-utilisateurs.png` | synapse-admin — liste des utilisateurs | `03-interface-graphique.md` |
+
+## 10-messagerie/12-mattermost
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-premier-demarrage.png` | Assistant de premier démarrage (création du compte administrateur et de l'équipe) | `01-presentation-installation.md` |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-espace-travail.png` | Espace de travail avec barre latérale, canal et fil de discussion ouvert | `03-interface-graphique.md` |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-system-console.png` | System Console, section Users | `03-interface-graphique.md` |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-webhook.png` | Création d'un webhook entrant | `03-interface-graphique.md` |
+
+## 10-messagerie/13-rocketchat
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-assistant.png` | Assistant de configuration (administrateur et organisation) | `01-presentation-installation.md` |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-espace-travail.png` | Espace de travail Rocket.Chat avec un canal et ses fils | `02-interface-graphique.md` |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-administration-users.png` | Administration, page Users | `02-interface-graphique.md` |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-omnichannel.png` | Configuration Omnichannel, départements et agents | `02-interface-graphique.md` |
+
+## 10-messagerie/14-zulip
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/14-zulip/_assets/zulip-creation-organisation.png` | Page de création de l'organisation Zulip | `01-presentation-installation.md` |
+| `content/10-messagerie/14-zulip/_assets/zulip-boite-reception.png` | Boîte de réception avec canaux et sujets non lus | `02-interface-graphique.md` |
+| `content/10-messagerie/14-zulip/_assets/zulip-parametres-utilisateurs.png` | Paramètres de l'organisation, section Utilisateurs | `02-interface-graphique.md` |
+
+## 10-messagerie/15-xmpp
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/15-xmpp/_assets/ejabberd-webadmin.png` | Interface web d'ejabberd, page des utilisateurs du domaine | `02-ejabberd.md` |
+| `content/10-messagerie/15-xmpp/_assets/openfire-assistant-ldap.png` | Assistant Openfire, étape Profils utilisateurs avec Active Directory | `03-openfire.md` |
+| `content/10-messagerie/15-xmpp/_assets/openfire-sessions.png` | Console Openfire, liste des sessions | `03-openfire.md` |
+| `content/10-messagerie/15-xmpp/_assets/snikket-portail.png` | Portail d'administration Snikket (utilisateurs et invitations) | `04-snikket-mongooseim.md` |
+| `content/10-messagerie/15-xmpp/_assets/conversejs-plein-ecran.png` | Converse.js en mode plein écran avec un salon ouvert | `05-clients-conversejs.md` |
+
+## 10-messagerie/16-gestion-projet
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/16-gestion-projet/_assets/openproject-gantt.png` | Vue Gantt d'un projet OpenProject | `01-openproject.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/openproject-tableau.png` | Tableau agile (kanban) des lots de travaux | `01-openproject.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/redmine-demandes.png` | Liste des demandes d'un projet Redmine avec filtres | `02-redmine.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/redmine-workflow.png` | Administration, écran Workflow | `02-redmine.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/taiga-backlog.png` | Backlog scrum d'un projet Taiga | `03-taiga-plane-leantime.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/plane-issues.png` | Liste des issues d'un projet Plane (vue tableau) | `03-taiga-plane-leantime.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/leantime-tableau-de-bord.png` | Tableau de bord d'un projet Leantime | `03-taiga-plane-leantime.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/tuleap-cardwall.png` | Tableau agile (cardwall) d'un projet Tuleap | `04-tuleap-trac-phorge.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/phorge-differential.png` | Revue de code Differential dans Phorge | `04-tuleap-trac-phorge.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/kanboard-tableau.png` | Tableau kanban d'un projet Kanboard | `05-kanban-taches.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/wekan-tableau.png` | Tableau Wekan avec listes et cartes | `05-kanban-taches.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/vikunja-kanban.png` | Vue kanban d'un projet Vikunja | `05-kanban-taches.md` |
+
+## 10-messagerie/17-wikis
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/17-wikis/_assets/outline-document.png` | Document Outline en édition collaborative | `01-outline-wikijs.md` |
+| `content/10-messagerie/17-wikis/_assets/wikijs-stockage-git.png` | Administration Wiki.js, module de stockage Git | `01-outline-wikijs.md` |
+| `content/10-messagerie/17-wikis/_assets/xwiki-distribution.png` | Assistant de distribution XWiki (installation du flavor Standard) | `02-xwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/xwiki-droits.png` | Administration XWiki, droits d'un espace | `02-xwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/mediawiki-visualeditor.png` | Page MediaWiki en édition avec VisualEditor | `03-mediawiki-dokuwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/dokuwiki-acl.png` | Gestion des ACL DokuWiki | `03-mediawiki-dokuwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/appflowy-console.png` | Console d'administration AppFlowy Cloud | `05-appflowy-affine.md` |
+| `content/10-messagerie/17-wikis/_assets/affine-tableau-blanc.png` | Document AFFiNE en mode tableau blanc | `05-appflowy-affine.md` |
+
+## 10-messagerie/18-edition-collaborative
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/18-edition-collaborative/_assets/hedgedoc-note.png` | Note HedgeDoc en mode édition et aperçu côte à côte | `01-hedgedoc-etherpad-cryptpad.md` |
+| `content/10-messagerie/18-edition-collaborative/_assets/etherpad-pad.png` | Pad Etherpad avec couleurs des auteurs | `01-hedgedoc-etherpad-cryptpad.md` |
+| `content/10-messagerie/18-edition-collaborative/_assets/cryptpad-lecteur.png` | Lecteur CryptPad avec documents et tableurs | `01-hedgedoc-etherpad-cryptpad.md` |
+
+## 10-messagerie/19-groupware-agendas
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/19-groupware-agendas/_assets/sogo-agenda.png` | Agenda partagé dans l'interface web de SOGo | `01-sogo-kopano.md` |
+| `content/10-messagerie/19-groupware-agendas/_assets/caldiy-reservation.png` | Page de réservation publique Cal.diy | `02-calcom-baikal-davical.md` |
+| `content/10-messagerie/19-groupware-agendas/_assets/baikal-utilisateurs.png` | Administration Baïkal, liste des utilisateurs | `02-calcom-baikal-davical.md` |
+
+## 10-messagerie/20-suites-messagerie
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/20-suites-messagerie/_assets/mailcow-administration.png` | Interface d'administration Mailcow (domaines et boîtes) | `01-mailcow-mailu-docker-mailserver.md` |
+| `content/10-messagerie/20-suites-messagerie/_assets/modoboa-domaines.png` | Interface d'administration Modoboa, liste des domaines | `02-modoboa-iredmail.md` |
+| `content/10-messagerie/20-suites-messagerie/_assets/iredadmin-utilisateur.png` | iRedAdmin, création d'un utilisateur | `02-modoboa-iredmail.md` |
+
+## 10-messagerie/21-webmail
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/21-webmail/_assets/roundcube-elastic.png` | Boîte de réception Roundcube (thème Elastic) | `01-roundcube.md` |
+| `content/10-messagerie/21-webmail/_assets/snappymail-domaine.png` | Administration SnappyMail, configuration d'un domaine IMAP et SMTP | `02-snappymail-anciens.md` |
 
 ## 11-bases-de-donnees/11-duckdb
 
@@ -754,6 +851,26 @@
 | `content/19-sauvegarde/10-duplicati/_assets/duplicati-destination.png` | Duplicati — assistant de création, étape Destination | `01-presentation-installation.md` |
 | `content/19-sauvegarde/10-duplicati/_assets/duplicati-restauration.png` | Duplicati — restauration de fichiers | `01-presentation-installation.md` |
 
+## 21-outils/06-support-parc
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/21-outils/06-support-parc/_assets/chatwoot-conversations.png` | Boîte de conversations Chatwoot avec une conversation ouverte | `12-chatwoot.md` |
+| `content/21-outils/06-support-parc/_assets/chatwoot-widget.png` | Ajout d'une boîte de réception Site web (widget) | `12-chatwoot.md` |
+| `content/21-outils/06-support-parc/_assets/freescout-conversations.png` | Boîte aux lettres FreeScout avec liste de conversations | `13-freescout.md` |
+| `content/21-outils/06-support-parc/_assets/freescout-imap.png` | Paramètres de connexion entrante IMAP d'une boîte aux lettres | `13-freescout.md` |
+| `content/21-outils/06-support-parc/_assets/osticket-file-tickets.png` | File de tickets osTicket (panneau agent) | `14-osticket.md` |
+| `content/21-outils/06-support-parc/_assets/osticket-rubriques.png` | Panneau d'administration, Rubriques d'aide | `14-osticket.md` |
+| `content/21-outils/06-support-parc/_assets/itop-setup-modules.png` | Assistant d'installation iTop, choix des modules ITIL | `15-itop.md` |
+| `content/21-outils/06-support-parc/_assets/itop-analyse-impact.png` | Fiche d'un serveur avec l'onglet Impacts (graphe) | `15-itop.md` |
+| `content/21-outils/06-support-parc/_assets/itop-incidents.png` | Liste des incidents ouverts avec SLA | `15-itop.md` |
+| `content/21-outils/06-support-parc/_assets/otobo-vue-files.png` | Vue des files de l'interface agent OTOBO | `16-otobo-znuny.md` |
+| `content/21-outils/06-support-parc/_assets/otobo-processus.png` | Éditeur graphique de processus | `16-otobo-znuny.md` |
+| `content/21-outils/06-support-parc/_assets/rt-accueil.png` | Page d'accueil RT avec tickets et files | `17-request-tracker.md` |
+| `content/21-outils/06-support-parc/_assets/rt-scrips.png` | Administration d'une file, liste des scrips | `17-request-tracker.md` |
+| `content/21-outils/06-support-parc/_assets/uvdesk-tickets.png` | Liste des tickets UVdesk (espace agent) | `18-uvdesk-faveo.md` |
+| `content/21-outils/06-support-parc/_assets/faveo-tableau-de-bord.png` | Tableau de bord agent de Faveo | `18-uvdesk-faveo.md` |
+
 ## 22-constructeurs/29-openwrt-openwisp
 
 | Image à créer | Écran | Article |
@@ -817,6 +934,33 @@
 | `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/rpi-imager-reglages.png` | Raspberry Pi Imager — réglages de personnalisation (nom d'hôte, SSH, utilisateur) | `01-presentation-installation.md` |
 | `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/raspi-config-menu.png` | raspi-config — menu principal | `01-presentation-installation.md` |
 | `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/dietpi-software.png` | DietPi — menu dietpi-software | `01-presentation-installation.md` |
+
+## 25-web-cms-portails/01-wordpress
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/01-wordpress/_assets/wordpress-tableau-de-bord.png` | Tableau de bord d'administration WordPress | `01-presentation-installation.md` |
+
+## 25-web-cms-portails/02-drupal-joomla
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/02-drupal-joomla/_assets/drupal-rapport-etat.png` | Rapport d'état Drupal | `01-drupal.md` |
+| `content/25-web-cms-portails/02-drupal-joomla/_assets/joomla-administration.png` | Panneau d'administration Joomla | `02-joomla.md` |
+
+## 25-web-cms-portails/03-typo3-contao
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/03-typo3-contao/_assets/typo3-module-page.png` | Back-office TYPO3, module Page | `01-typo3.md` |
+| `content/25-web-cms-portails/03-typo3-contao/_assets/contao-structure-site.png` | Back-office Contao, structure du site | `02-contao.md` |
+
+## 25-web-cms-portails/04-ghost-grav-october
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/04-ghost-grav-october/_assets/ghost-editeur.png` | Éditeur d'article Ghost | `01-ghost.md` |
+| `content/25-web-cms-portails/04-ghost-grav-october/_assets/grav-admin.png` | Interface d'administration Grav, édition d'une page | `02-grav-october.md` |
 
 ## 31-auto-hebergement/01-plateformes-auto-hebergement
 

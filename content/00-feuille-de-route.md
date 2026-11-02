@@ -77,6 +77,13 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 61 | Catalogue — sécurité : Nuclei, Nikto, Wapiti, Arachni, sqlmap, testssl.sh, SSLyze, Certbot, acme.sh, step-ca, EJBCA, OpenSSL, LibreSSL, GnuPG, age, SOPS, OpenBao, Infisical, Passbolt, Psono, nftables, iptables, firewalld, UFW, SSHGuard, YARA, chkrootkit, rkhunter, OpenEDR | ✅ |
 | 62 | Catalogue — automatisation (1) : AWX, Semaphore, Rundeck, Chef/Cinc, CFEngine, Pulumi, Terragrunt, Terramate, cloud-init, Ignition, Foreman, Katello, Uyuni, Rudder, Rex, Fabric, Invoke, Netmiko, NAPALM, Nornir, StackStorm | ✅ |
 | 63 | Catalogue — automatisation (2) et Matrix : Node-RED, Huginn, Activepieces, Windmill, Airflow, Kestra, Prefect, Dagster, DolphinScheduler, Temporal, Conductor, Molecule, Testinfra, InSpec, Serverspec, Test Kitchen, Synapse, Dendrite, Conduit, Continuwuity, Element Server Suite | ✅ |
+| 64 | Catalogue — messagerie d'équipe et XMPP : Mattermost, Rocket.Chat, Zulip, Prosody, ejabberd, Openfire, Snikket, MongooseIM, Converse.js, Galène (Jitsi, BigBlueButton et Element déjà présents) | ✅ |
+| 65 | Catalogue — support client, helpdesk et ITSM : Chatwoot, FreeScout, osTicket, iTop, OTOBO, Znuny, Request Tracker, UVdesk, Faveo | ✅ |
+| 66 | Catalogue — gestion de projet et kanban : OpenProject, Redmine, Taiga, Plane, Leantime, Tuleap, Trac, Phorge (Phabricator), Kanboard, Wekan, Focalboard, Vikunja | ✅ |
+| 67 | Catalogue — wikis et espaces de travail : Outline, Wiki.js, XWiki, MediaWiki, DokuWiki, Gollum, MoinMoin, TWiki, AppFlowy, AFFiNE | ✅ |
+| 68 | Catalogue — édition collaborative, groupware et agendas : HedgeDoc, Etherpad, CryptPad, SOGo, Kopano, Cal.com (Cal.diy), Baïkal, DAViCal | ✅ |
+| 69 | Catalogue — suites de messagerie et webmails : Mailcow, Mailu, docker-mailserver, Modoboa, iRedMail, OpenSMTPD, Amavis, Roundcube, SnappyMail, SquirrelMail, RainLoop | ✅ |
+| 70 | Catalogue — CMS (nouvelle catégorie Web : CMS, e-commerce & portails) : WordPress, ClassicPress, Drupal, Joomla, TYPO3, Contao, Ghost, Grav, October CMS | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -191,6 +198,16 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[07-mailpit/01-presentation-installation\|Mailpit (tests)]] | mailpit | mailpit | mailpit | ✅ |
 | [[10-smtp-windows/01-relais-smtp\|Serveur SMTP Windows (relais IIS 6)]] | ➖ | SMTP-Server | ➖ | ✅ |
 | [[08-radicale/01-installation-configuration\|Radicale (CalDAV / CardDAV)]], [[09-joplin-server/01-installation-exploitation\|Joplin Server]] | radicale | radicale (pip) | radicale, joplin-server | ✅ |
+| [[11-matrix/01-synapse-ess\|Matrix (Synapse, ESS, Element)]] | matrix-synapse-py3, Docker | ➖ (Docker), Element | ➖ (Docker), Element | ✅ |
+| [[12-mattermost/01-presentation-installation\|Mattermost]] | mattermost (deb), tar.gz, Docker | ➖ (Docker), client winget | ➖ (Docker), client brew | ✅ |
+| [[13-rocketchat/01-presentation-installation\|Rocket.Chat]] | Docker Compose | Docker Desktop, client winget | Docker Desktop, client brew | ✅ |
+| [[14-zulip/01-presentation-installation\|Zulip]] | installateur (Ubuntu, Debian), Docker | ➖ (Docker), client winget | ➖ (Docker), client brew | ✅ |
+| [[15-xmpp/01-prosody\|XMPP : Prosody]], [[15-xmpp/02-ejabberd\|ejabberd]], [[15-xmpp/03-openfire\|Openfire]], [[15-xmpp/04-snikket-mongooseim\|Snikket, MongooseIM]] | prosody, ejabberd, openfire, Docker | Openfire (exe), Docker | prosody, ejabberd (brew), Openfire (dmg) | ✅ |
+| [[16-gestion-projet/01-openproject\|OpenProject]], [[16-gestion-projet/02-redmine\|Redmine]], [[16-gestion-projet/03-taiga-plane-leantime\|Taiga, Plane, Leantime]], [[16-gestion-projet/04-tuleap-trac-phorge\|Tuleap, Trac, Phorge]], [[16-gestion-projet/05-kanban-taches\|Kanboard, Wekan, Vikunja]] | openproject, redmine, Docker | Docker, Redmine (Ruby) | Docker | ✅ |
+| [[17-wikis/01-outline-wikijs\|Outline, Wiki.js]], [[17-wikis/02-xwiki\|XWiki]], [[17-wikis/03-mediawiki-dokuwiki\|MediaWiki, DokuWiki]], [[17-wikis/04-gollum-moinmoin-twiki\|Gollum, MoinMoin, TWiki]], [[17-wikis/05-appflowy-affine\|AppFlowy, AFFiNE]] | Docker, PHP, gem, pip | Docker, PHP, clients AppFlowy | Docker, PHP, brew | ✅ |
+| [[18-edition-collaborative/01-hedgedoc-etherpad-cryptpad\|HedgeDoc, Etherpad, CryptPad]], [[19-groupware-agendas/01-sogo-kopano\|SOGo, Kopano]], [[19-groupware-agendas/02-calcom-baikal-davical\|Cal.diy, Baïkal, DAViCal]] | Docker, sogo, davical | Etherpad, Docker | Etherpad, Docker | ✅ |
+| [[20-suites-messagerie/01-mailcow-mailu-docker-mailserver\|Mailcow, Mailu, docker-mailserver]], [[20-suites-messagerie/02-modoboa-iredmail\|Modoboa, iRedMail]], [[22-opensmtpd/01-presentation-configuration\|OpenSMTPD]], [[05-spamassassin/03-amavis\|Amavis]] | Docker, installateurs, opensmtpd, amavisd-new | ➖ (VM Linux) | opensmtpd (brew) | ✅ |
+| [[21-webmail/01-roundcube\|Roundcube]], [[21-webmail/02-snappymail-anciens\|SnappyMail, SquirrelMail, RainLoop]] | roundcube, archive, Docker | IIS + PHP, Docker | PHP, Docker | ✅ |
 
 ## Bases de données
 
@@ -330,7 +347,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | Cybersécurité | [[09-defender/01-antivirus-configuration\|Microsoft Defender]], [[03-cybersecurite/01-nessus\|Nessus]], [[03-cybersecurite/02-owasp-zap\|OWASP ZAP]], [[03-cybersecurite/03-burp-suite\|Burp Suite]], [[03-cybersecurite/04-john-hashcat\|John the Ripper, Hashcat]], [[08-lynis/01-installation-audit\|Lynis]], [[03-cybersecurite/05-owasp-dependency-check\|OWASP Dependency-Check]], [[03-cybersecurite/06-keepassxc-bitwarden\|KeePassXC, Bitwarden]], [[03-cybersecurite/07-ghidra\|Ghidra]] | ✅ |
 | Développement | [[04-developpement/01-vscode\|VS Code]], [[04-developpement/02-jetbrains-intellij-pycharm\|IntelliJ IDEA, PyCharm]], [[04-developpement/03-visual-studio\|Visual Studio]], [[04-developpement/04-eclipse\|Eclipse]], [[04-developpement/05-notepad-plus-plus\|Notepad++]], [[01-git/01-presentation-installation\|Git]], [[04-developpement/06-github-github-desktop\|GitHub, GitHub Desktop]], [[04-developpement/07-dbeaver\|DBeaver]], [[04-developpement/08-pgadmin-mysql-workbench\|pgAdmin, MySQL Workbench]], [[04-developpement/09-playwright\|Playwright]], [[04-developpement/10-uv\|uv]], [[06-nodejs/01-presentation-installation\|Node.js]] | ✅ |
 | IA et productivité | [[05-ia-productivite/01-chatgpt\|ChatGPT]], [[05-ia-productivite/02-github-copilot\|GitHub Copilot]], [[05-ia-productivite/03-cursor\|Cursor]], [[05-ia-productivite/04-ollama-open-webui\|Ollama, Open WebUI]], [[05-ia-productivite/05-jupyterlab\|JupyterLab]], [[05-ia-productivite/06-n8n\|n8n]], [[05-ia-productivite/07-power-automate\|Power Automate]], [[05-ia-productivite/08-obsidian\|Obsidian]], [[05-ia-productivite/09-bookstack\|BookStack]] | ✅ |
-| Support et prise en main | [[06-support-parc/01-anydesk-teamviewer\|AnyDesk, TeamViewer]], [[06-support-parc/02-rustdesk\|RustDesk]], [[06-support-parc/03-meshcentral\|MeshCentral]], [[06-support-parc/04-glpi-installation\|GLPI]], [[06-support-parc/06-zammad\|Zammad]], [[06-support-parc/07-ocs-inventory\|OCS Inventory NG]], [[06-support-parc/08-lansweeper\|Lansweeper]], [[06-support-parc/09-pdq-deploy\|PDQ Deploy]], [[06-support-parc/10-intune-inscription\|Intune]] | ✅ |
+| Support et prise en main | [[06-support-parc/01-anydesk-teamviewer\|AnyDesk, TeamViewer]], [[06-support-parc/02-rustdesk\|RustDesk]], [[06-support-parc/03-meshcentral\|MeshCentral]], [[06-support-parc/04-glpi-installation\|GLPI]], [[06-support-parc/06-zammad\|Zammad]], [[06-support-parc/12-chatwoot\|Chatwoot]], [[06-support-parc/13-freescout\|FreeScout]], [[06-support-parc/14-osticket\|osTicket]], [[06-support-parc/15-itop\|iTop]], [[06-support-parc/16-otobo-znuny\|OTOBO et Znuny]], [[06-support-parc/17-request-tracker\|Request Tracker]], [[06-support-parc/18-uvdesk-faveo\|UVdesk et Faveo]], [[06-support-parc/07-ocs-inventory\|OCS Inventory NG]], [[06-support-parc/08-lansweeper\|Lansweeper]], [[06-support-parc/09-pdq-deploy\|PDQ Deploy]], [[06-support-parc/10-intune-inscription\|Intune]] | ✅ |
 | Disques et récupération | [[07-disques-recuperation/01-gparted\|GParted]], [[07-disques-recuperation/02-clonezilla\|Clonezilla]], [[07-disques-recuperation/03-testdisk-photorec\|TestDisk, PhotoRec]] | ✅ |
 
 ## Équipements réseau par constructeur
@@ -383,3 +400,12 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[14-softphones/01-softphones\|Softphones]] | Linphone, Baresip | MicroSIP, Linphone | Linphone, Telephone | ✅ |
 | [[15-diagnostic-voip/01-sngrep-wireshark-sipp\|sngrep, Wireshark, SIPp]], [[15-diagnostic-voip/02-homer-voipmonitor\|HOMER, VoIPmonitor]] | sngrep, sipp, sipsak | Wireshark, pktmon | Wireshark | ✅ |
 | [[16-visioconference/01-jitsi-bigbluebutton\|Jitsi Meet, BigBlueButton]] | jitsi-meet, bbb-install | navigateur | navigateur | ✅ |
+
+## Web : CMS, e-commerce & portails
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[01-wordpress/01-presentation-installation\|WordPress, ClassicPress]] | PHP-FPM, WP-CLI, Docker | IIS + PHP, Docker | Homebrew, Docker | ✅ |
+| [[02-drupal-joomla/01-drupal\|Drupal]], [[02-drupal-joomla/02-joomla\|Joomla]] | Composer, Drush, archive, Docker | IIS + PHP, Docker | Homebrew, DDEV | ✅ |
+| [[03-typo3-contao/01-typo3\|TYPO3]], [[03-typo3-contao/02-contao\|Contao]] | Composer, DDEV | PHP + Composer | PHP + Composer | ✅ |
+| [[04-ghost-grav-october/01-ghost\|Ghost]], [[04-ghost-grav-october/02-grav-october\|Grav, October CMS]] | Ghost-CLI, Composer, Docker | Docker, IIS (Grav) | Docker, PHP | ✅ |

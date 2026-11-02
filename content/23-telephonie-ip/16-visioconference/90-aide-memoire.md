@@ -36,3 +36,14 @@ sudo bbb-record --rebuild <id-enregistrement>
 docker exec -it greenlight-v3 bundle exec rake 'admin:create[Administrateur,admin@exemple.fr,MotDePasseLong2026]'
 sudo tail -f /var/log/bigbluebutton/bbb-web.log
 ```
+
+## Galène
+
+```bash
+sudo systemctl status galene ; sudo journalctl -u galene -f
+galenectl list-groups
+galenectl create-group -group reunion-hebdo
+galenectl create-user -group reunion-hebdo -user animateur -permissions op
+galenectl set-password -group reunion-hebdo -user animateur
+galenectl list-users -l -group reunion-hebdo
+```

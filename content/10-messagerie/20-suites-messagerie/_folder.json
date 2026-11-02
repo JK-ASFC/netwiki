@@ -1,0 +1,1 @@
+{ "title": "Suites de messagerie (Mailcow, Mailu, docker-mailserver, Modoboa, iRedMail)", "icon": "mails", "color": "#be123c", "description": "Serveurs de messagerie complets prêts à l'emploi : SMTP, IMAP, antispam, antivirus, webmail et administration web, en conteneurs ou par installateur." }

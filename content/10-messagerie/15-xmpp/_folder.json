@@ -1,0 +1,1 @@
+{ "title": "XMPP (Prosody, ejabberd, Openfire, Snikket, MongooseIM)", "icon": "message-square-text", "color": "#2c9ae0", "description": "Messagerie instantanée fédérée sur le protocole ouvert XMPP : serveurs Prosody, ejabberd, Openfire, Snikket et MongooseIM, client web Converse.js." }

@@ -1,6 +1,6 @@
 ---
-title: Visioconférence auto-hébergée — Jitsi Meet et BigBlueButton
-description: Héberger sa visioconférence — Jitsi Meet (architecture Prosody, Jicofo, Jitsi Videobridge ; installation par paquets Debian/Ubuntu ou Docker ; ports ; authentification par domaine sécurisé ou JWT ; passerelle téléphonique Jigasi ; dimensionnement), BigBlueButton (classe virtuelle, installation bbb-install sur Ubuntu, Greenlight, intégration LMS), clients Windows, macOS, Linux et mobiles, sécurité et dépannage.
+title: Visioconférence auto-hébergée — Jitsi Meet, BigBlueButton et Galène
+description: Héberger sa visioconférence — Jitsi Meet (architecture Prosody, Jicofo, Jitsi Videobridge ; installation par paquets Debian/Ubuntu ou Docker ; ports ; authentification par domaine sécurisé ou JWT ; passerelle téléphonique Jigasi ; dimensionnement), BigBlueButton (classe virtuelle, installation bbb-install sur Ubuntu, Greenlight, intégration LMS), Galène (serveur léger en Go, galenectl, TURN intégré), clients Windows, macOS, Linux et mobiles, sécurité et dépannage.
 tags: [visioconférence, jitsi, bigbluebutton, webrtc, prosody, jvb, greenlight]
 icon: video
 ---
@@ -72,6 +72,48 @@ wget -qO- https://raw.githubusercontent.com/bigbluebutton/bbb-install/v3.0.x-rel
 ```
 
 L'option `-g` installe **Greenlight** (interface d'accueil : comptes, salles permanentes, enregistrements). Vérifications : `sudo bbb-conf --check`, `sudo bbb-conf --status`, secret d'API : `sudo bbb-conf --secret`.
+
+## Galène
+
+**Galène** (MIT, écrit en Go par Juliusz Chroboczek) est un serveur de visioconférence **très léger** : un seul binaire, aucune base de données, des groupes décrits en JSON, un serveur TURN intégré. Il convient aux cours, réunions et séminaires sur une petite machine (quelques centaines de participants sur un serveur modeste) et fonctionne sous Linux, Windows et macOS.
+
+```bash
+git clone https://github.com/jech/galene && cd galene
+CGO_ENABLED=0 go build -ldflags='-s -w'
+(cd galenectl && go build -ldflags='-s -w' && sudo cp galenectl /usr/local/bin/)
+sudo useradd --system --create-home galene
+mkdir groups data && sudo rsync -a galene static data groups /home/galene/ && sudo chown -R galene:galene /home/galene
+sudo cp /etc/letsencrypt/live/visio.exemple.fr/fullchain.pem /home/galene/data/cert.pem
+sudo cp /etc/letsencrypt/live/visio.exemple.fr/privkey.pem /home/galene/data/key.pem && sudo chown galene:galene /home/galene/data/*.pem
+```
+
+Unité systemd `/etc/systemd/system/galene.service` :
+
+```ini
+[Unit]
+Description=Galene
+After=network.target
+[Service]
+Type=simple
+WorkingDirectory=/home/galene
+User=galene
+Group=galene
+ExecStart=/home/galene/galene
+LimitNOFILE=65536
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+sudo systemctl daemon-reload && sudo systemctl enable --now galene
+galenectl -admin-username admin initial-setup          # crée galenectl.json et config.json (à copier dans data/)
+galenectl create-group -group cours-reseau
+galenectl create-user -group cours-reseau -user jk -permissions op
+galenectl set-password -group cours-reseau -user jk
+galenectl list-groups ; galenectl list-users -l -group cours-reseau
+```
+
+Accès : `https://visio.exemple.fr:8443/group/cours-reseau/`. Ports : **8443/tcp** (web, modifiable par `-http`), **1194/tcp et udp** (TURN intégré, option `-turn`) et une plage UDP pour le média (`-udp-range 20000-40000` pour la restreindre). Sous Windows : `set CGO_ENABLED=0` puis `go build`, et lancer `galene.exe` dans le dossier contenant `static`, `data` et `groups`.
 
 ## Clients
 

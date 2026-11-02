@@ -1,11 +1,11 @@
 ---
-title: Support et parc — aide-mémoire (AnyDesk, TeamViewer, RustDesk, MeshCentral, GLPI, Zammad, OCS, Lansweeper, PDQ, Intune)
-description: Commandes des outils de support et de gestion de parc avec exemples — déploiement silencieux et options de ligne de commande d'AnyDesk et TeamViewer, RustDesk (client et serveur hbbs/hbbr), MeshCentral (installation, mise à jour, agent), GLPI (console bin/console, agent GLPI, API REST), Zammad (rails r, sauvegarde), OCS Inventory (agent), Lansweeper, PDQ Deploy/Inventory, Intune (synchronisation, journaux, Graph PowerShell).
+title: Support et parc — aide-mémoire (AnyDesk, TeamViewer, RustDesk, MeshCentral, GLPI, Zammad, helpdesks, OCS, Lansweeper, PDQ, Intune)
+description: Commandes des outils de support et de gestion de parc avec exemples — déploiement silencieux et options de ligne de commande d'AnyDesk et TeamViewer, RustDesk (client et serveur hbbs/hbbr), MeshCentral (installation, mise à jour, agent), GLPI (console bin/console, agent GLPI, API REST), Zammad (rails r, sauvegarde), helpdesks (Chatwoot cwctl, FreeScout artisan, osTicket et iTop cron, OTOBO et Znuny Console, Request Tracker rt et rt-mailgate, UVdesk), OCS Inventory (agent), Lansweeper, PDQ Deploy/Inventory, Intune (synchronisation, journaux, Graph PowerShell).
 tags: [aide-mémoire, glpi, intune, rustdesk, meshcentral, zammad, ocs, pdq, anydesk]
 icon: terminal
 ---
 
-Référence rapide ; les explications sont dans [[02-rustdesk|RustDesk]], [[03-meshcentral|MeshCentral]], [[04-glpi-installation|GLPI]], [[06-zammad|Zammad]] et [[10-intune-inscription|Intune]].
+Référence rapide ; les explications sont dans [[02-rustdesk|RustDesk]], [[03-meshcentral|MeshCentral]], [[04-glpi-installation|GLPI]], [[06-zammad|Zammad]], [[12-chatwoot|Chatwoot]], [[13-freescout|FreeScout]], [[14-osticket|osTicket]], [[15-itop|iTop]], [[16-otobo-znuny|OTOBO et Znuny]], [[17-request-tracker|Request Tracker]], [[18-uvdesk-faveo|UVdesk et Faveo]] et [[10-intune-inscription|Intune]].
 
 ## AnyDesk et TeamViewer (déploiement)
 
@@ -79,6 +79,24 @@ sudo zammad run rails r "User.find_by(email: 'admin@exemple.fr').update!(passwor
 sudo zammad run rake zammad:searchindex:rebuild
 sudo /opt/zammad/contrib/backup/zammad_backup.sh
 sudo systemctl status zammad zammad-web zammad-worker zammad-websocket
+```
+
+## Helpdesks et ITSM (Chatwoot, FreeScout, osTicket, iTop, OTOBO, Znuny, RT, UVdesk)
+
+```bash
+cwctl -r ; cwctl -l worker ; cwctl --upgrade                                        # Chatwoot (installation Linux)
+docker compose run --rm rails bundle exec rails db:chatwoot_prepare && docker compose up -d   # Chatwoot (Docker)
+sudo -u www-data php /var/www/freescout/artisan freescout:fetch-emails               # FreeScout
+sudo -u www-data php /var/www/freescout/artisan freescout:clear-cache
+sudo -u www-data /var/www/freescout/tools/update.sh
+sudo -u www-data php /var/www/osticket/api/cron.php                                  # osTicket (cron manuel)
+sudo -u www-data php /var/www/itop/webservices/cron.php --param_file=/etc/itop/cron.params --verbose=1   # iTop
+sudo -u otobo /opt/otobo/bin/otobo.Console.pl Maint::Cache::Delete                    # OTOBO
+sudo -u otobo /opt/otobo/scripts/backup.pl -d /srv/sauvegardes
+sudo -u otrs /opt/otrs/bin/otrs.Daemon.pl status ; sudo -u otrs /opt/otrs/bin/otrs.Console.pl Maint::Config::Rebuild   # Znuny
+rt ls -q Support "Status = 'new'" ; rt show ticket/1234 ; rt edit ticket/1234 set status=resolved      # Request Tracker
+echo "Test" | /usr/bin/rt-mailgate --queue Support --action correspond --url https://rt.corp.exemple.fr/
+sudo -u www-data php /var/www/helpdesk/bin/console uvdesk:refresh-mailbox support@corp.exemple.fr   # UVdesk
 ```
 
 ## OCS Inventory, Lansweeper, PDQ
