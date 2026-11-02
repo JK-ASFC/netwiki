@@ -1,0 +1,1 @@
+{ "title": "Perl et Lua", "icon": "scroll-text", "color": "#39457e", "description": "Perl (traitement de texte, scripts d'administration, CPAN) et Lua (langage léger embarqué dans NGINX/OpenResty, HAProxy, Redis, Nmap, Wireshark)." }

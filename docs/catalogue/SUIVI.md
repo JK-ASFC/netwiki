@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 127 | 0 | 1011 (77 %) |
+| 1311 | 173 (13 %) | 142 | 1 | 995 (76 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -192,39 +192,39 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | MaxScale (édition communautaire) | Proxy MariaDB | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
 | Odyssey | Pooler PostgreSQL | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
 
-## 5. SERVEURS WEB, LANGAGES ET RUNTIMES — 7/41
+## 5. SERVEURS WEB, LANGAGES ET RUNTIMES — 23/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | PHP | Runtime PHP | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
 | Node.js | Runtime JavaScript | Windows, Linux, macOS | ✅ existant | `05-web/06-nodejs` |
 | Deno | Runtime JavaScript/TypeScript | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Bun | Runtime JavaScript | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Bun | Runtime JavaScript | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/15-bun` |
 | Python | Langage et runtime | Windows, Linux, macOS | ✅ existant | `05-web/07-python` |
 | Ruby | Langage et runtime | Windows, Linux, macOS | ✅ existant | `05-web/08-ruby` |
-| Go | Langage et runtime | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Rust | Langage et toolchain | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Go | Langage et runtime | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/16-go` |
+| Rust | Langage et toolchain | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/17-rust` |
 | OpenJDK | Runtime Java | Windows, Linux, macOS | ✅ existant | `05-web/09-openjdk` |
-| Eclipse Temurin | Distribution OpenJDK | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| GraalVM Community Edition | Runtime polyglotte | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| .NET SDK | Runtime et SDK .NET | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Mono | Runtime .NET historique | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| PowerShell | Shell et automatisation | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Perl | Langage et runtime | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Lua | Langage embarqué | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Erlang/OTP | Runtime Erlang | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Elixir | Langage BEAM | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Eclipse Temurin | Distribution OpenJDK | Windows, Linux, macOS | ✨ amélioré (lot 53) | `05-web/09-openjdk` |
+| GraalVM Community Edition | Runtime polyglotte | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/09-openjdk` |
+| .NET SDK | Runtime et SDK .NET | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/18-dotnet-mono` |
+| Mono | Runtime .NET historique | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/18-dotnet-mono` |
+| PowerShell | Shell et automatisation | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/19-powershell` |
+| Perl | Langage et runtime | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/20-perl-lua` |
+| Lua | Langage embarqué | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/20-perl-lua` |
+| Erlang/OTP | Runtime Erlang | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/21-erlang-elixir` |
+| Elixir | Langage BEAM | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/21-erlang-elixir` |
 | GCC | Compilateur | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
 | Clang/LLVM | Compilateur | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
 | CMake | Build system | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
 | Ninja | Build system | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
 | Meson | Build system | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
 | Apache Tomcat | Serveur Java | Windows, Linux, macOS | ✅ existant | `05-web/10-tomcat` |
-| Eclipse Jetty | Serveur Java | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Eclipse Jetty | Serveur Java | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/22-serveurs-jakarta-ee` |
 | WildFly | Serveur d'applications Java | Windows, Linux, macOS | ✅ existant | `05-web/11-wildfly` |
-| Payara Community | Serveur Jakarta EE | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| Open Liberty | Serveur Java | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
-| GlassFish | Serveur Jakarta EE | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Payara Community | Serveur Jakarta EE | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/22-serveurs-jakarta-ee` |
+| Open Liberty | Serveur Java | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/22-serveurs-jakarta-ee` |
+| GlassFish | Serveur Jakarta EE | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/22-serveurs-jakarta-ee` |
 | Jenkins | Automatisation CI/CD | Windows, Linux, macOS | ✅ existant | `14-devops/05-jenkins` |
 | Buildbot | Automatisation build | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
 | Concourse CI | CI/CD | Linux, Windows via workers | ⏳ à faire | → `05-web` |

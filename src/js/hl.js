@@ -18,6 +18,12 @@ import lua from 'highlight.js/lib/languages/lua';
 import markdown from 'highlight.js/lib/languages/markdown';
 import nginx from 'highlight.js/lib/languages/nginx';
 import nix from 'highlight.js/lib/languages/nix';
+import go from 'highlight.js/lib/languages/go';
+import rust from 'highlight.js/lib/languages/rust';
+import elixir from 'highlight.js/lib/languages/elixir';
+import erlang from 'highlight.js/lib/languages/erlang';
+import cmake from 'highlight.js/lib/languages/cmake';
+import makefile from 'highlight.js/lib/languages/makefile';
 import perl from 'highlight.js/lib/languages/perl';
 import php from 'highlight.js/lib/languages/php';
 import plaintext from 'highlight.js/lib/languages/plaintext';
@@ -31,7 +37,7 @@ import sql from 'highlight.js/lib/languages/sql';
 import xml from 'highlight.js/lib/languages/xml';
 import yaml from 'highlight.js/lib/languages/yaml';
 
-const langs = { apache, bash, csharp, diff, dns, dockerfile, groovy, ini, java, javascript, json, kotlin, lua, markdown, nginx, nix, perl, php, plaintext, powershell, properties, python, ruby, shell, sql, typescript, xml, yaml };
+const langs = { apache, bash, cmake, csharp, diff, dns, dockerfile, elixir, erlang, go, makefile, rust, groovy, ini, java, javascript, json, kotlin, lua, markdown, nginx, nix, perl, php, plaintext, powershell, properties, python, ruby, shell, sql, typescript, xml, yaml };
 for (const [name, def] of Object.entries(langs)) hljs.registerLanguage(name, def);
 
 function confLanguage(name, keywords, extraContains = []) {

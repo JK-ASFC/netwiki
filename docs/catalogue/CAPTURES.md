@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-192 capture(s) attendue(s) dans 39 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+195 capture(s) attendue(s) dans 40 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -97,6 +97,14 @@
 | Image à créer | Écran | Article |
 | --- | --- | --- |
 | `content/05-web/13-lighttpd-h2o-cherokee/_assets/cherokee-admin.png` | cherokee-admin — liste des vServers et règles | `03-cherokee.md` |
+
+## 05-web/22-serveurs-jakarta-ee
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/05-web/22-serveurs-jakarta-ee/_assets/payara-applications.png` | Payara — console d'administration, liste des applications | `04-interface-graphique.md` |
+| `content/05-web/22-serveurs-jakarta-ee/_assets/payara-jdbc.png` | Payara — pool JDBC et test de connexion (Ping) | `04-interface-graphique.md` |
+| `content/05-web/22-serveurs-jakarta-ee/_assets/liberty-admin-center.png` | Open Liberty — Admin Center, outil Explore | `04-interface-graphique.md` |
 
 ## 07-proxy-cache/09-mitmproxy
 
