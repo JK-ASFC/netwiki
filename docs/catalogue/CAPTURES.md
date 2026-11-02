@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-106 capture(s) attendue(s) dans 19 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+110 capture(s) attendue(s) dans 20 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -20,6 +20,15 @@
 | `content/01-annuaire-identite/13-authentik/_assets/authentik-assistant-application.png` | Authentik — assistant « Create with Provider » (OIDC) | `03-interface-graphique.md` |
 | `content/01-annuaire-identite/13-authentik/_assets/authentik-flux-etapes.png` | Authentik — flux d'authentification et ses étapes (MFA) | `03-interface-graphique.md` |
 | `content/01-annuaire-identite/13-authentik/_assets/authentik-source-ldap.png` | Authentik — source LDAP Active Directory | `03-interface-graphique.md` |
+
+## 01-annuaire-identite/15-lemonldap-ng
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-portail-menu.png` | LemonLDAP::NG — portail, menu des applications | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-2fa.png` | LemonLDAP::NG — enregistrement d'un second facteur TOTP | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-manager-vhost.png` | LemonLDAP::NG — Manager, arbre de configuration et hôte virtuel | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-manager-sessions.png` | LemonLDAP::NG — Manager, explorateur de sessions | `03-interface-graphique.md` |
 
 ## 09-fichiers-partage/21-truenas-scale
 
