@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-184 capture(s) attendue(s) dans 36 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+191 capture(s) attendue(s) dans 38 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -105,6 +105,23 @@
 | `content/07-proxy-cache/09-mitmproxy/_assets/mitmweb-flux.png` | mitmweb — liste des flux et détail d'une requête JSON | `01-presentation-utilisation.md` |
 | `content/07-proxy-cache/09-mitmproxy/_assets/mitmweb-interception.png` | mitmweb — interception et modification d'une requête | `01-presentation-utilisation.md` |
 | `content/07-proxy-cache/09-mitmproxy/_assets/mitmproxy-console.png` | mitmproxy — interface console | `01-presentation-utilisation.md` |
+
+## 07-proxy-cache/11-kong-apisix
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/07-proxy-cache/11-kong-apisix/_assets/kong-manager-services.png` | Kong Manager — liste des Gateway Services | `03-interface-graphique.md` |
+| `content/07-proxy-cache/11-kong-apisix/_assets/kong-manager-greffon.png` | Kong Manager — ajout du greffon rate-limiting à une route | `03-interface-graphique.md` |
+| `content/07-proxy-cache/11-kong-apisix/_assets/apisix-routes.png` | APISIX — liste des routes | `03-interface-graphique.md` |
+| `content/07-proxy-cache/11-kong-apisix/_assets/apisix-greffons.png` | APISIX — configuration des greffons d'une route | `03-interface-graphique.md` |
+
+## 07-proxy-cache/12-passerelles-api-alternatives
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/07-proxy-cache/12-passerelles-api-alternatives/_assets/gravitee-console.png` | Gravitee — console, liste des API et plans | `01-tyk-krakend-gravitee.md` |
+| `content/07-proxy-cache/12-passerelles-api-alternatives/_assets/gravitee-portail.png` | Gravitee — portail développeur | `01-tyk-krakend-gravitee.md` |
+| `content/07-proxy-cache/12-passerelles-api-alternatives/_assets/krakend-designer.png` | KrakenD Designer — édition d'un endpoint agrégé | `01-tyk-krakend-gravitee.md` |
 
 ## 08-acces-distant-vpn/11-netbird-nebula
 

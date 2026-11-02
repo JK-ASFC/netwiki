@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 111 | 0 | 1027 (78 %) |
+| 1311 | 173 (13 %) | 119 | 0 | 1019 (78 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -153,7 +153,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | IPsec-tools | VPN IPsec | BSD, Linux | ✅ existant | `08-acces-distant-vpn/04-strongswan` |
 | Mullvad VPN app | Client VPN (composants open source) | Windows, Linux, macOS | 🆕 fait (lot 51) | `08-acces-distant-vpn/13-softether-pritunl-mullvad` |
 
-## 4. PROXY, REVERSE PROXY, LOAD BALANCING ET PASSERELLES — 18/34
+## 4. PROXY, REVERSE PROXY, LOAD BALANCING ET PASSERELLES — 26/34
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -174,14 +174,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | H2O | Serveur web HTTP/2/3 | Linux, macOS | 🆕 fait (lot 52) | `05-web/13-lighttpd-h2o-cherokee` |
 | Lighttpd | Serveur web léger | Windows, Linux, macOS | 🆕 fait (lot 52) | `05-web/13-lighttpd-h2o-cherokee` |
 | Cherokee | Serveur web | Linux, BSD | 🆕 fait (lot 52) | `05-web/13-lighttpd-h2o-cherokee` |
-| Kong Gateway OSS | API gateway | Windows, Linux, macOS | ⏳ à faire | → `07-proxy-cache` |
-| Apache APISIX | API gateway | Windows, Linux, macOS | ⏳ à faire | → `07-proxy-cache` |
-| Tyk Gateway (community) | API gateway | Linux, Windows via conteneur | ⏳ à faire | → `07-proxy-cache` |
-| KrakenD Community | API gateway | Windows, Linux, macOS | ⏳ à faire | → `07-proxy-cache` |
-| Gravitee APIM Community | Gestion API | Linux, Windows via conteneur | ⏳ à faire | → `07-proxy-cache` |
-| Zuul | API gateway | Windows, Linux, macOS | ⏳ à faire | → `07-proxy-cache` |
-| Ocelot | API gateway .NET | Windows, Linux, macOS | ⏳ à faire | → `07-proxy-cache` |
-| YARP | Reverse proxy .NET | Windows, Linux, macOS | ⏳ à faire | → `07-proxy-cache` |
+| Kong Gateway OSS | API gateway | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/11-kong-apisix` |
+| Apache APISIX | API gateway | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/11-kong-apisix` |
+| Tyk Gateway (community) | API gateway | Linux, Windows via conteneur | 🆕 fait (lot 52) | `07-proxy-cache/12-passerelles-api-alternatives` |
+| KrakenD Community | API gateway | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/12-passerelles-api-alternatives` |
+| Gravitee APIM Community | Gestion API | Linux, Windows via conteneur | 🆕 fait (lot 52) | `07-proxy-cache/12-passerelles-api-alternatives` |
+| Zuul | API gateway | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/12-passerelles-api-alternatives` |
+| Ocelot | API gateway .NET | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/12-passerelles-api-alternatives` |
+| YARP | Reverse proxy .NET | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/12-passerelles-api-alternatives` |
 | HAProxy Data Plane API | API de gestion HAProxy | Linux | ✅ existant | `07-proxy-cache/01-haproxy` |
 | Keepalived | Haute disponibilité IP | Linux | ⏳ à faire | → `07-proxy-cache` |
 | LVS | Load balancing L4 | Linux | ⏳ à faire | → `07-proxy-cache` |

@@ -1,0 +1,1 @@
+{ "title": "Kong et Apache APISIX", "icon": "door-open", "color": "#1155cb", "description": "Passerelles d'API basées sur OpenResty : services, routes, consommateurs, greffons (authentification, limitation, transformation), configuration déclarative, API d'administration et interfaces web." }
