@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-110 capture(s) attendue(s) dans 20 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+115 capture(s) attendue(s) dans 21 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -29,6 +29,16 @@
 | `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-2fa.png` | LemonLDAP::NG — enregistrement d'un second facteur TOTP | `03-interface-graphique.md` |
 | `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-manager-vhost.png` | LemonLDAP::NG — Manager, arbre de configuration et hôte virtuel | `03-interface-graphique.md` |
 | `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-manager-sessions.png` | LemonLDAP::NG — Manager, explorateur de sessions | `03-interface-graphique.md` |
+
+## 01-annuaire-identite/17-privacyidea-linotp
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/01-annuaire-identite/17-privacyidea-linotp/_assets/privacyidea-jetons.png` | privacyIDEA — liste des jetons | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/17-privacyidea-linotp/_assets/privacyidea-resolveur-ldap.png` | privacyIDEA — configuration d'un résolveur LDAP Active Directory | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/17-privacyidea-linotp/_assets/privacyidea-politique.png` | privacyIDEA — éditeur de politique (scope authentication) | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/17-privacyidea-linotp/_assets/privacyidea-inscription-totp.png` | privacyIDEA — inscription d'un jeton TOTP avec QR code | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/17-privacyidea-linotp/_assets/linotp-manage.png` | LinOTP — Manage UI, liste des jetons | `03-interface-graphique.md` |
 
 ## 09-fichiers-partage/21-truenas-scale
 

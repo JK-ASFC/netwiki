@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 172 (13 %) | 52 | 0 | 1087 (83 %) |
+| 1311 | 172 (13 %) | 54 | 0 | 1085 (83 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -64,7 +64,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | DietPi | Distribution légère | Linux, SBC | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
 | Raspberry Pi OS | Distribution Linux | Raspberry Pi | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
 
-## 2. ANNUAIRE, IDENTITE, AUTHENTIFICATION ET SSO — 13/30
+## 2. ANNUAIRE, IDENTITE, AUTHENTIFICATION ET SSO — 15/30
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -79,8 +79,8 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Gluu Flex | IAM et SSO | Linux | ⏳ à faire | → `01-annuaire-identite` |
 | LemonLDAP::NG | Portail SSO | Linux | 🆕 fait (lot 50) | `01-annuaire-identite/15-lemonldap-ng` |
 | Shibboleth | Fédération d'identité | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/16-shibboleth` |
-| privacyIDEA | Authentification multifacteur | Windows, Linux | ⏳ à faire | → `01-annuaire-identite` |
-| LinOTP | Authentification OTP | Linux | ⏳ à faire | → `04-aaa` |
+| privacyIDEA | Authentification multifacteur | Windows, Linux | 🆕 fait (lot 50) | `01-annuaire-identite/17-privacyidea-linotp` |
+| LinOTP | Authentification OTP | Linux | 🆕 fait (lot 50) | `01-annuaire-identite/17-privacyidea-linotp` |
 | Keycloak Gatekeeper (archivé) | Proxy d'authentification | Linux | ✅ existant | `01-annuaire-identite/05-keycloak` |
 | OAuth2 Proxy | Proxy OAuth2/OIDC | Windows, Linux, macOS | ⏳ à faire | → `01-annuaire-identite` |
 | Dex | Fournisseur OIDC | Windows, Linux, macOS | ⏳ à faire | → `01-annuaire-identite` |

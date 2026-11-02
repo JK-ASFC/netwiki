@@ -891,11 +891,11 @@
    "role": "Authentification multifacteur",
    "plateformes": "Windows, Linux",
    "section": 2,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "01-annuaire-identite/17-privacyidea-linotp",
    "cible": "01-annuaire-identite",
-   "lot": null,
-   "depot": null,
+   "lot": 50,
+   "depot": "privacyidea/privacyidea",
    "eol": null
   },
   {
@@ -904,11 +904,11 @@
    "role": "Authentification OTP",
    "plateformes": "Linux",
    "section": 2,
-   "statut": "a-faire",
-   "wiki": null,
-   "cible": "04-aaa",
-   "lot": null,
-   "depot": null,
+   "statut": "fait",
+   "wiki": "01-annuaire-identite/17-privacyidea-linotp",
+   "cible": "01-annuaire-identite",
+   "lot": 50,
+   "depot": "LinOTP/LinOTP",
    "eol": null
   },
   {

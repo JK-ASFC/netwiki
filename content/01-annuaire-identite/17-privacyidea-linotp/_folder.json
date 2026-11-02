@@ -1,0 +1,1 @@
+{ "title": "privacyIDEA et LinOTP", "icon": "shield-check", "color": "#2b8a3e", "description": "Serveurs d'authentification multifacteur (OTP, TOTP, WebAuthn, push, SMS) : jetons, annuaires, politiques, RADIUS pour VPN et équipements, ouverture de session Windows et Linux." }
