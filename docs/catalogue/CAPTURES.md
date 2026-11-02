@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-65 capture(s) attendue(s) dans 11 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+68 capture(s) attendue(s) dans 12 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 13-conteneurs/14-kvm-qemu-libvirt
 
@@ -121,4 +121,12 @@
 | `content/24-systemes-exploitation/03-opensuse/_assets/yast-texte-reseau.png` | YaST en mode texte (ncurses) — paramètres réseau | `03-interface-graphique.md` |
 | `content/24-systemes-exploitation/03-opensuse/_assets/yast-snapper.png` | YaST — module Snapper, comparaison de deux instantanés | `03-interface-graphique.md` |
 | `content/24-systemes-exploitation/03-opensuse/_assets/cockpit-opensuse-leap16.png` | Cockpit sur openSUSE Leap 16 — vue d'ensemble | `03-interface-graphique.md` |
+
+## 24-systemes-exploitation/10-raspberry-pi-os-dietpi
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/rpi-imager-reglages.png` | Raspberry Pi Imager — réglages de personnalisation (nom d'hôte, SSH, utilisateur) | `01-presentation-installation.md` |
+| `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/raspi-config-menu.png` | raspi-config — menu principal | `01-presentation-installation.md` |
+| `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/dietpi-software.png` | DietPi — menu dietpi-software | `01-presentation-installation.md` |
 

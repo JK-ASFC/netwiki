@@ -4,11 +4,11 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 172 (13 %) | 32 | 0 | 1107 (84 %) |
+| 1311 | 172 (13 %) | 39 | 0 | 1100 (84 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
-## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 36/51
+## 1. SYSTEMES D'EXPLOITATION, VIRTUALISATION ET HYPERVISEURS — 43/51
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -36,9 +36,9 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | bhyve | Hyperviseur | FreeBSD | 🆕 fait (lot 48) | `13-conteneurs/23-bhyve` |
 | Xen | Hyperviseur | Linux, BSD | 🆕 fait (lot 48) | `13-conteneurs/15-xcp-ng-xen` |
 | Bareos | Sauvegarde serveur | Windows, Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
-| FreeBSD | Système d'exploitation serveur | x86, ARM | ⏳ à faire | → `24-systemes-exploitation` |
-| OpenBSD | Système d'exploitation | x86, ARM | ⏳ à faire | → `24-systemes-exploitation` |
-| NetBSD | Système d'exploitation | x86, ARM | ⏳ à faire | → `24-systemes-exploitation` |
+| FreeBSD | Système d'exploitation serveur | x86, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/09-bsd` |
+| OpenBSD | Système d'exploitation | x86, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/09-bsd` |
+| NetBSD | Système d'exploitation | x86, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/09-bsd` |
 | Debian | Distribution Linux | PC, serveur, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/01-debian-ubuntu` |
 | Ubuntu Server | Distribution Linux serveur | PC, serveur, ARM | 🆕 fait (lot 49) | `24-systemes-exploitation/01-debian-ubuntu` |
 | Rocky Linux | Distribution Linux serveur | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/02-famille-red-hat` |
@@ -52,8 +52,8 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Oracle Linux | Distribution Linux serveur | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/02-famille-red-hat` |
 | CentOS Stream | Distribution Linux serveur | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/02-famille-red-hat` |
 | NixOS | Distribution Linux déclarative | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/07-nixos` |
-| Kali Linux | Distribution sécurité | PC, serveur | ⏳ à faire | → `24-systemes-exploitation` |
-| Parrot OS | Distribution sécurité | PC | ⏳ à faire | → `24-systemes-exploitation` |
+| Kali Linux | Distribution sécurité | PC, serveur | 🆕 fait (lot 49) | `24-systemes-exploitation/08-kali-parrot` |
+| Parrot OS | Distribution sécurité | PC | 🆕 fait (lot 49) | `24-systemes-exploitation/08-kali-parrot` |
 | TrueNAS SCALE | NAS et stockage | Linux x86_64 | ⏳ à faire | → `09-fichiers-partage` |
 | OpenMediaVault | NAS | Linux/Debian | ⏳ à faire | → `09-fichiers-partage` |
 | Rockstor | NAS | Linux | ⏳ à faire | → `09-fichiers-partage` |
@@ -61,8 +61,8 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Umbrel | Plateforme serveur personnel | Linux | ⏳ à faire | → `24-systemes-exploitation` |
 | YunoHost | Plateforme d'auto-hébergement | Debian | ⏳ à faire | → `24-systemes-exploitation` |
 | Runtipi | Plateforme d'applications auto-hébergées | Linux | ⏳ à faire | → `24-systemes-exploitation` |
-| DietPi | Distribution légère | Linux, SBC | ⏳ à faire | → `24-systemes-exploitation` |
-| Raspberry Pi OS | Distribution Linux | Raspberry Pi | ⏳ à faire | → `24-systemes-exploitation` |
+| DietPi | Distribution légère | Linux, SBC | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
+| Raspberry Pi OS | Distribution Linux | Raspberry Pi | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
 
 ## 2. ANNUAIRE, IDENTITE, AUTHENTIFICATION ET SSO — 8/30
 
