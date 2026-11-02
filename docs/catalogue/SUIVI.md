@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 490 | 2 | 636 (49 %) |
+| 1311 | 183 (14 %) | 499 | 2 | 627 (48 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -698,19 +698,19 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | SquirrelMail | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 | RainLoop (abandonné) | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 
-## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 1/64
+## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 10/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| WordPress | CMS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Drupal | CMS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Joomla | CMS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Ghost | CMS/blog | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Grav | CMS flat-file | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| ClassicPress | CMS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| TYPO3 | CMS entreprise | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Contao | CMS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| October CMS (community) | CMS Laravel | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
+| WordPress | CMS | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/01-wordpress` |
+| Drupal | CMS | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/02-drupal-joomla` |
+| Joomla | CMS | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/02-drupal-joomla` |
+| Ghost | CMS/blog | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/04-ghost-grav-october` |
+| Grav | CMS flat-file | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/04-ghost-grav-october` |
+| ClassicPress | CMS | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/01-wordpress` |
+| TYPO3 | CMS entreprise | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/03-typo3-contao` |
+| Contao | CMS | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/03-typo3-contao` |
+| October CMS (community) | CMS Laravel | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/04-ghost-grav-october` |
 | Strapi | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
 | Directus | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
 | Payload CMS | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |

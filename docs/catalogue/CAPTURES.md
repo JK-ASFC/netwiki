@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-413 capture(s) attendue(s) dans 107 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+420 capture(s) attendue(s) dans 111 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -934,6 +934,33 @@
 | `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/rpi-imager-reglages.png` | Raspberry Pi Imager — réglages de personnalisation (nom d'hôte, SSH, utilisateur) | `01-presentation-installation.md` |
 | `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/raspi-config-menu.png` | raspi-config — menu principal | `01-presentation-installation.md` |
 | `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/dietpi-software.png` | DietPi — menu dietpi-software | `01-presentation-installation.md` |
+
+## 25-web-cms-portails/01-wordpress
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/01-wordpress/_assets/wordpress-tableau-de-bord.png` | Tableau de bord d'administration WordPress | `01-presentation-installation.md` |
+
+## 25-web-cms-portails/02-drupal-joomla
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/02-drupal-joomla/_assets/drupal-rapport-etat.png` | Rapport d'état Drupal | `01-drupal.md` |
+| `content/25-web-cms-portails/02-drupal-joomla/_assets/joomla-administration.png` | Panneau d'administration Joomla | `02-joomla.md` |
+
+## 25-web-cms-portails/03-typo3-contao
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/03-typo3-contao/_assets/typo3-module-page.png` | Back-office TYPO3, module Page | `01-typo3.md` |
+| `content/25-web-cms-portails/03-typo3-contao/_assets/contao-structure-site.png` | Back-office Contao, structure du site | `02-contao.md` |
+
+## 25-web-cms-portails/04-ghost-grav-october
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/04-ghost-grav-october/_assets/ghost-editeur.png` | Éditeur d'article Ghost | `01-ghost.md` |
+| `content/25-web-cms-portails/04-ghost-grav-october/_assets/grav-admin.png` | Interface d'administration Grav, édition d'une page | `02-grav-october.md` |
 
 ## 31-auto-hebergement/01-plateformes-auto-hebergement
 

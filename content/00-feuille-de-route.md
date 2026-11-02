@@ -83,6 +83,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 67 | Catalogue — wikis et espaces de travail : Outline, Wiki.js, XWiki, MediaWiki, DokuWiki, Gollum, MoinMoin, TWiki, AppFlowy, AFFiNE | ✅ |
 | 68 | Catalogue — édition collaborative, groupware et agendas : HedgeDoc, Etherpad, CryptPad, SOGo, Kopano, Cal.com (Cal.diy), Baïkal, DAViCal | ✅ |
 | 69 | Catalogue — suites de messagerie et webmails : Mailcow, Mailu, docker-mailserver, Modoboa, iRedMail, OpenSMTPD, Amavis, Roundcube, SnappyMail, SquirrelMail, RainLoop | ✅ |
+| 70 | Catalogue — CMS (nouvelle catégorie Web : CMS, e-commerce & portails) : WordPress, ClassicPress, Drupal, Joomla, TYPO3, Contao, Ghost, Grav, October CMS | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -399,3 +400,12 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[14-softphones/01-softphones\|Softphones]] | Linphone, Baresip | MicroSIP, Linphone | Linphone, Telephone | ✅ |
 | [[15-diagnostic-voip/01-sngrep-wireshark-sipp\|sngrep, Wireshark, SIPp]], [[15-diagnostic-voip/02-homer-voipmonitor\|HOMER, VoIPmonitor]] | sngrep, sipp, sipsak | Wireshark, pktmon | Wireshark | ✅ |
 | [[16-visioconference/01-jitsi-bigbluebutton\|Jitsi Meet, BigBlueButton]] | jitsi-meet, bbb-install | navigateur | navigateur | ✅ |
+
+## Web : CMS, e-commerce & portails
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[01-wordpress/01-presentation-installation\|WordPress, ClassicPress]] | PHP-FPM, WP-CLI, Docker | IIS + PHP, Docker | Homebrew, Docker | ✅ |
+| [[02-drupal-joomla/01-drupal\|Drupal]], [[02-drupal-joomla/02-joomla\|Joomla]] | Composer, Drush, archive, Docker | IIS + PHP, Docker | Homebrew, DDEV | ✅ |
+| [[03-typo3-contao/01-typo3\|TYPO3]], [[03-typo3-contao/02-contao\|Contao]] | Composer, DDEV | PHP + Composer | PHP + Composer | ✅ |
+| [[04-ghost-grav-october/01-ghost\|Ghost]], [[04-ghost-grav-october/02-grav-october\|Grav, October CMS]] | Ghost-CLI, Composer, Docker | Docker, IIS (Grav) | Docker, PHP | ✅ |

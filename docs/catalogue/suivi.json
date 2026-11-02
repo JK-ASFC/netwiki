@@ -8275,12 +8275,12 @@
    "role": "CMS",
    "plateformes": "Windows, Linux, macOS",
    "section": 13,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "25-web-cms-portails/01-wordpress",
    "cible": "25-web-cms-portails",
-   "lot": null,
-   "depot": null,
-   "eol": null
+   "lot": 70,
+   "depot": "WordPress/WordPress",
+   "eol": "wordpress"
   },
   {
    "id": "drupal",
@@ -8288,12 +8288,12 @@
    "role": "CMS",
    "plateformes": "Windows, Linux, macOS",
    "section": 13,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "25-web-cms-portails/02-drupal-joomla",
    "cible": "25-web-cms-portails",
-   "lot": null,
-   "depot": null,
-   "eol": null
+   "lot": 70,
+   "depot": "drupal/drupal",
+   "eol": "drupal"
   },
   {
    "id": "joomla",
@@ -8301,12 +8301,12 @@
    "role": "CMS",
    "plateformes": "Windows, Linux, macOS",
    "section": 13,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "25-web-cms-portails/02-drupal-joomla",
    "cible": "25-web-cms-portails",
-   "lot": null,
-   "depot": null,
-   "eol": null
+   "lot": 70,
+   "depot": "joomla/joomla-cms",
+   "eol": "joomla"
   },
   {
    "id": "ghost",
@@ -8314,11 +8314,11 @@
    "role": "CMS/blog",
    "plateformes": "Windows, Linux, macOS",
    "section": 13,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "25-web-cms-portails/04-ghost-grav-october",
    "cible": "25-web-cms-portails",
-   "lot": null,
-   "depot": null,
+   "lot": 70,
+   "depot": "TryGhost/Ghost",
    "eol": null
   },
   {
@@ -8327,11 +8327,11 @@
    "role": "CMS flat-file",
    "plateformes": "Windows, Linux, macOS",
    "section": 13,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "25-web-cms-portails/04-ghost-grav-october",
    "cible": "25-web-cms-portails",
-   "lot": null,
-   "depot": null,
+   "lot": 70,
+   "depot": "getgrav/grav",
    "eol": null
   },
   {
@@ -8340,11 +8340,11 @@
    "role": "CMS",
    "plateformes": "Windows, Linux, macOS",
    "section": 13,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "25-web-cms-portails/01-wordpress",
    "cible": "25-web-cms-portails",
-   "lot": null,
-   "depot": null,
+   "lot": 70,
+   "depot": "ClassicPress/ClassicPress-release",
    "eol": null
   },
   {
@@ -8353,12 +8353,12 @@
    "role": "CMS entreprise",
    "plateformes": "Windows, Linux, macOS",
    "section": 13,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "25-web-cms-portails/03-typo3-contao",
    "cible": "25-web-cms-portails",
-   "lot": null,
-   "depot": null,
-   "eol": null
+   "lot": 70,
+   "depot": "TYPO3/typo3",
+   "eol": "typo3"
   },
   {
    "id": "contao",
@@ -8366,11 +8366,11 @@
    "role": "CMS",
    "plateformes": "Windows, Linux, macOS",
    "section": 13,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "25-web-cms-portails/03-typo3-contao",
    "cible": "25-web-cms-portails",
-   "lot": null,
-   "depot": null,
+   "lot": 70,
+   "depot": "contao/contao",
    "eol": null
   },
   {
@@ -8379,11 +8379,11 @@
    "role": "CMS Laravel",
    "plateformes": "Windows, Linux, macOS",
    "section": 13,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "25-web-cms-portails/04-ghost-grav-october",
    "cible": "25-web-cms-portails",
-   "lot": null,
-   "depot": null,
+   "lot": 70,
+   "depot": "octobercms/october",
    "eol": null
   },
   {
