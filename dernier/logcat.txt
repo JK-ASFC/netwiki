@@ -1,0 +1,36 @@
+--------- beginning of main
+11-02 16:52:57.492  2683  2683 D Capacitor: Starting BridgeActivity
+11-02 16:52:57.525  2683  2683 D Capacitor: Registering plugin instance: CapacitorCookies
+11-02 16:52:57.534  2683  2683 D Capacitor: Registering plugin instance: WebView
+11-02 16:52:57.540  2683  2683 D Capacitor: Registering plugin instance: CapacitorHttp
+11-02 16:52:57.542  2683  2683 D Capacitor: Registering plugin instance: NetWiki
+11-02 16:52:57.556  2683  2683 D Capacitor: Registering plugin instance: Browser
+11-02 16:52:57.605  2683  2683 W Capacitor: Unable to read file at path public/plugins
+11-02 16:52:57.612  2683  2683 D Capacitor: Loading app at https://localhost
+11-02 16:52:57.666  2683  2683 D Capacitor: App started
+11-02 16:52:58.063  2683  2683 D Capacitor: App resumed
+11-02 16:52:58.128  2683  3067 D Capacitor: Handling local request: https://localhost/
+11-02 16:53:00.614  2683  3060 D Capacitor: Handling local request: https://localhost/dist/styles.css
+11-02 16:53:00.641  2683  3067 D Capacitor: Handling local request: https://localhost/dist/platform.js
+11-02 16:53:00.648  2683  3069 D Capacitor: Handling local request: https://localhost/dist/app.js
+11-02 16:53:01.139  2683  3060 D Capacitor: Handling local request: https://localhost/dist/inter-latin-wght-normal-NRMW37G5.woff2
+11-02 16:53:06.195  2683  2683 V Capacitor: callback: 17584731, pluginId: NetWiki, methodName: addListener, methodData: {"eventName":"updateProgress"}
+11-02 16:53:06.204  2683  2683 V Capacitor: callback: 17584732, pluginId: NetWiki, methodName: getInfo, methodData: {}
+11-02 16:53:06.213  2683  3067 D Capacitor: Handling local request: https://localhost/favicon.ico
+11-02 16:53:07.077  2683  3060 D Capacitor: Handling local request: https://localhost/LICENSE.txt
+11-02 16:53:07.540  2683  2683 V Capacitor: callback: 17584733, pluginId: NetWiki, methodName: addListener, methodData: {"eventName":"backButton"}
+11-02 16:53:07.546  2683  2683 V Capacitor: callback: 17584734, pluginId: NetWiki, methodName: setBackHandler, methodData: {"enabled":true}
+11-02 16:53:07.550  2683  2683 V Capacitor: callback: 17584735, pluginId: NetWiki, methodName: setSystemBars, methodData: {"dark":true,"color":"#0b0d14"}
+11-02 16:53:07.554  2683  3060 D Capacitor: Handling local request: https://localhost/content.json
+11-02 16:53:07.905  2683  2683 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-02 16:53:10.278  2683  2683 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-02 16:54:06.869  2683  2683 V Capacitor: callback: 17584736, pluginId: NetWiki, methodName: addListener, methodData: {"eventName":"launchAction"}
+11-02 16:54:06.872  2683  2683 V Capacitor: callback: 17584737, pluginId: NetWiki, methodName: consumeLaunchAction, methodData: {}
+11-02 16:54:29.124  2683  2683 V Capacitor: callback: 17584738, pluginId: NetWiki, methodName: requestNotifications, methodData: {}
+11-02 16:54:30.456  2683  2683 V Capacitor: callback: 17584739, pluginId: NetWiki, methodName: configureUpdates, methodData: {"notify":true,"contentNotify":true}
+11-02 16:54:31.378  2683  2683 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-02 16:54:31.379  2683  2683 V Capacitor: callback: 17584740, pluginId: NetWiki, methodName: configureUpdates, methodData: {"notify":true,"contentVersion":"2026.11.02.1649"}
+11-02 16:54:31.674  2683  2683 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-02 16:54:33.297  2683  2683 V Capacitor: callback: 17584741, pluginId: NetWiki, methodName: getInfo, methodData: {}
+11-02 16:54:49.293  2683  3059 D Capacitor: Handling local request: https://localhost/dist/mermaid.min.js
+11-02 16:54:49.314  2683  3059 D Capacitor: Handling local request: https://localhost/dist/jetbrains-mono-latin-wght-normal-VBS632QH.woff2
