@@ -1,0 +1,1 @@
+{ "title": "Rook, Longhorn et OpenEBS", "icon": "container", "color": "#326ce5", "description": "Stockage persistant pour Kubernetes : Rook (Ceph), Longhorn (bloc répliqué avec interface) et OpenEBS (moteurs locaux et répliqués)." }

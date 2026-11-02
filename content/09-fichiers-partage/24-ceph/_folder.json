@@ -1,0 +1,1 @@
+{ "title": "Ceph", "icon": "database", "color": "#ef5c55", "description": "Stockage distribué unifié (bloc RBD, fichiers CephFS, objet S3 RGW) : cephadm, OSD, pools, CRUSH, tableau de bord, exploitation et dépannage." }

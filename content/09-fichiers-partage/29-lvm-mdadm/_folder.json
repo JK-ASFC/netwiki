@@ -1,0 +1,1 @@
+{ "title": "LVM2 et mdadm", "icon": "layers", "color": "#4f46e5", "description": "Gestion de volumes logiques (LVM2 : PV, VG, LV, extension, instantanés, thin provisioning, cache) et RAID logiciel Linux (mdadm)." }

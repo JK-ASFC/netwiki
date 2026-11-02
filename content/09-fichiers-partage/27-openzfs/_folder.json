@@ -1,0 +1,1 @@
+{ "title": "OpenZFS", "icon": "hard-drive", "color": "#2a6f97", "description": "Système de fichiers et gestionnaire de volumes : pools, vdevs, datasets, instantanés, réplication send/receive, compression, intégrité et entretien." }
