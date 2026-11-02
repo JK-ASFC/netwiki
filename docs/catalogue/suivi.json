@@ -2217,12 +2217,12 @@
    "role": "Runtime PHP",
    "plateformes": "Windows, Linux, macOS",
    "section": 5,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "ameliore",
+   "wiki": "05-web/05-php-fpm",
    "cible": "05-web",
-   "lot": null,
-   "depot": null,
-   "eol": null
+   "lot": "agent-2026-11-02",
+   "depot": "php/php-src",
+   "eol": "php"
   },
   {
    "id": "nodejs",
@@ -2243,11 +2243,11 @@
    "role": "Runtime JavaScript/TypeScript",
    "plateformes": "Windows, Linux, macOS",
    "section": 5,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "05-web/14-deno",
    "cible": "05-web",
-   "lot": null,
-   "depot": null,
+   "lot": "agent-2026-11-02",
+   "depot": "denoland/deno",
    "eol": null
   },
   {

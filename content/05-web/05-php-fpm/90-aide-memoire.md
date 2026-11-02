@@ -112,3 +112,17 @@ sudo update-alternatives --config php       # version de la CLI
 ls /run/php/                                 # un socket par version et par pool
 # Nginx : choisir la version par site via fastcgi_pass unix:/run/php/php8.2-fpm.sock;
 ```
+
+## Runtime PHP et Composer
+
+```bash
+php -d memory_limit=1G bin/console app:import        # surcharger un réglage pour un script
+php -S 127.0.0.1:8080 -t public                       # serveur de test local uniquement
+sudo update-alternatives --set php /usr/bin/php8.4    # version par défaut (Debian/Ubuntu)
+composer install --no-dev --optimize-autoloader       # déploiement depuis composer.lock
+composer audit                                        # vulnérabilités des dépendances
+composer self-update                                  # mise à jour de Composer
+docker run --rm -v "$PWD":/app -w /app php:8.4-cli php script.php
+```
+
+Installation sur Alpine, Arch, openSUSE, Windows, FreeBSD : [[03-runtime-php-systemes-composer|Runtime PHP]].

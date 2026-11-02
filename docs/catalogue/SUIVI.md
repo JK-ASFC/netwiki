@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 127 | 0 | 1011 (77 %) |
+| 1311 | 173 (13 %) | 128 | 1 | 1009 (77 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -192,13 +192,13 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | MaxScale (édition communautaire) | Proxy MariaDB | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
 | Odyssey | Pooler PostgreSQL | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
 
-## 5. SERVEURS WEB, LANGAGES ET RUNTIMES — 7/41
+## 5. SERVEURS WEB, LANGAGES ET RUNTIMES — 9/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| PHP | Runtime PHP | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| PHP | Runtime PHP | Windows, Linux, macOS | ✨ amélioré (lot agent-2026-11-02) | `05-web/05-php-fpm` |
 | Node.js | Runtime JavaScript | Windows, Linux, macOS | ✅ existant | `05-web/06-nodejs` |
-| Deno | Runtime JavaScript/TypeScript | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Deno | Runtime JavaScript/TypeScript | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-02) | `05-web/14-deno` |
 | Bun | Runtime JavaScript | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
 | Python | Langage et runtime | Windows, Linux, macOS | ✅ existant | `05-web/07-python` |
 | Ruby | Langage et runtime | Windows, Linux, macOS | ✅ existant | `05-web/08-ruby` |
