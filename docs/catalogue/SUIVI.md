@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 76 | 0 | 1062 (81 %) |
+| 1311 | 173 (13 %) | 85 | 0 | 1053 (80 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -99,7 +99,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Samba AD DC | Contrôleur de domaine | Linux | ✅ existant | `09-fichiers-partage/01-samba` |
 | gopass | Gestionnaire de secrets CLI | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/21-gopass` |
 
-## 3. DNS, DHCP, IPAM ET SERVICES RESEAU — 25/49
+## 3. DNS, DHCP, IPAM ET SERVICES RESEAU — 34/49
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -118,16 +118,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | NSD | Serveur DNS autoritatif | Linux, BSD | 🆕 fait (lot 51) | `02-dns/06-knot-nsd-maradns` |
 | Kea DHCP | Serveur DHCP | Linux, BSD | ✅ existant | `03-dhcp/02-kea` |
 | ISC DHCP (fin de vie) | Serveur DHCP historique | Linux, BSD | ✅ existant | `03-dhcp/01-isc-dhcp` |
-| Open DHCP Server | Serveur DHCP | Windows | ⏳ à faire | → `03-dhcp` |
+| Open DHCP Server | Serveur DHCP | Windows | 🆕 fait (lot 51) | `03-dhcp/05-open-dhcp-server` |
 | dhcpd | Serveur DHCP | Linux, BSD | ✅ existant | `03-dhcp/01-isc-dhcp` |
-| Kea Stork | Supervision DHCP/DNS | Linux | ⏳ à faire | → `03-dhcp` |
-| phpIPAM | IPAM | Linux, Windows via stack web | ⏳ à faire | → `18-infrastructure-systeme` |
-| NetBox | IPAM et DCIM | Linux, Windows via conteneurs | ⏳ à faire | → `18-infrastructure-systeme` |
-| Nautobot | IPAM et automatisation réseau | Linux, Windows via conteneurs | ⏳ à faire | → `18-infrastructure-systeme` |
-| GestióIP | IPAM | Linux | ⏳ à faire | → `18-infrastructure-systeme` |
-| NIPAP | IPAM | Linux | ⏳ à faire | → `18-infrastructure-systeme` |
-| Ralph | DCIM et gestion d'actifs | Linux | ⏳ à faire | → `18-infrastructure-systeme` |
-| RackTables | Gestion datacenter et IP | Linux | ⏳ à faire | → `18-infrastructure-systeme` |
+| Kea Stork | Supervision DHCP/DNS | Linux | 🆕 fait (lot 51) | `03-dhcp/02-kea` |
+| phpIPAM | IPAM | Linux, Windows via stack web | 🆕 fait (lot 51) | `18-infrastructure-systeme/09-phpipam` |
+| NetBox | IPAM et DCIM | Linux, Windows via conteneurs | 🆕 fait (lot 51) | `18-infrastructure-systeme/08-netbox-nautobot` |
+| Nautobot | IPAM et automatisation réseau | Linux, Windows via conteneurs | 🆕 fait (lot 51) | `18-infrastructure-systeme/08-netbox-nautobot` |
+| GestióIP | IPAM | Linux | 🆕 fait (lot 51) | `18-infrastructure-systeme/10-ipam-dcim-alternatives` |
+| NIPAP | IPAM | Linux | 🆕 fait (lot 51) | `18-infrastructure-systeme/10-ipam-dcim-alternatives` |
+| Ralph | DCIM et gestion d'actifs | Linux | 🆕 fait (lot 51) | `18-infrastructure-systeme/10-ipam-dcim-alternatives` |
+| RackTables | Gestion datacenter et IP | Linux | 🆕 fait (lot 51) | `18-infrastructure-systeme/10-ipam-dcim-alternatives` |
 | OpenWISP | Gestion réseau | Linux | ⏳ à faire | → `18-infrastructure-systeme` |
 | OpenWrt | Firmware routeur | Routeurs, x86 | ⏳ à faire | → `18-infrastructure-systeme` |
 | OPNsense | Pare-feu/routeur | FreeBSD | ✅ existant | `22-constructeurs/19-pfsense-opnsense` |

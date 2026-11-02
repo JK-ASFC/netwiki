@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-139 capture(s) attendue(s) dans 25 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+153 capture(s) attendue(s) dans 29 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -72,6 +72,14 @@
 | `content/02-dns/09-dns-filtrants/_assets/pihole-tableau-de-bord.png` | Pi-hole — tableau de bord | `04-interface-graphique.md` |
 | `content/02-dns/09-dns-filtrants/_assets/pihole-query-log.png` | Pi-hole — Query Log | `04-interface-graphique.md` |
 | `content/02-dns/09-dns-filtrants/_assets/blocky-grafana.png` | Grafana — tableau de bord Blocky | `04-interface-graphique.md` |
+
+## 03-dhcp/02-kea
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/03-dhcp/02-kea/_assets/stork-tableau-de-bord.png` | Stork — tableau de bord DHCP (occupation des sous-réseaux) | `04-interface-graphique-stork.md` |
+| `content/03-dhcp/02-kea/_assets/stork-recherche-baux.png` | Stork — recherche de baux | `04-interface-graphique-stork.md` |
+| `content/03-dhcp/02-kea/_assets/stork-reservations.png` | Stork — réservations d'hôtes | `04-interface-graphique-stork.md` |
 
 ## 04-aaa/03-packetfence-opennac
 
@@ -201,6 +209,32 @@
 | `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-assistant-zone.png` | CloudStack — assistant d'ajout de zone, étape réseau physique | `03-interface-graphique.md` |
 | `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-hotes.png` | CloudStack — liste des hôtes KVM et leur état | `03-interface-graphique.md` |
 | `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-deployer-instance.png` | CloudStack — assistant de déploiement d'instance | `03-interface-graphique.md` |
+
+## 18-infrastructure-systeme/08-netbox-nautobot
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/18-infrastructure-systeme/08-netbox-nautobot/_assets/netbox-prefixes.png` | NetBox — liste des préfixes avec leur utilisation | `03-interface-graphique.md` |
+| `content/18-infrastructure-systeme/08-netbox-nautobot/_assets/netbox-elevation-baie.png` | NetBox — élévation d'une baie | `03-interface-graphique.md` |
+| `content/18-infrastructure-systeme/08-netbox-nautobot/_assets/netbox-trace-cable.png` | NetBox — fiche d'équipement et traçage de câble | `03-interface-graphique.md` |
+| `content/18-infrastructure-systeme/08-netbox-nautobot/_assets/nautobot-job.png` | Nautobot — lancement d'un Job | `03-interface-graphique.md` |
+| `content/18-infrastructure-systeme/08-netbox-nautobot/_assets/nautobot-golden-config.png` | Nautobot — Golden Config, tableau de conformité | `03-interface-graphique.md` |
+
+## 18-infrastructure-systeme/09-phpipam
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/18-infrastructure-systeme/09-phpipam/_assets/phpipam-sous-reseau.png` | phpIPAM — vue d'un sous-réseau avec carte des adresses | `01-presentation-installation.md` |
+| `content/18-infrastructure-systeme/09-phpipam/_assets/phpipam-sections.png` | phpIPAM — arborescence des sections et sous-réseaux | `01-presentation-installation.md` |
+| `content/18-infrastructure-systeme/09-phpipam/_assets/phpipam-auth-ad.png` | phpIPAM — configuration de l'authentification Active Directory | `01-presentation-installation.md` |
+
+## 18-infrastructure-systeme/10-ipam-dcim-alternatives
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/18-infrastructure-systeme/10-ipam-dcim-alternatives/_assets/gestioip-reseaux.png` | GestióIP — liste des réseaux et occupation | `01-presentation-comparatif.md` |
+| `content/18-infrastructure-systeme/10-ipam-dcim-alternatives/_assets/ralph-dc-view.png` | Ralph — vue graphique d'une salle et de ses baies | `01-presentation-comparatif.md` |
+| `content/18-infrastructure-systeme/10-ipam-dcim-alternatives/_assets/racktables-baie.png` | RackTables — vue d'une baie | `01-presentation-comparatif.md` |
 
 ## 19-sauvegarde/08-bareos
 

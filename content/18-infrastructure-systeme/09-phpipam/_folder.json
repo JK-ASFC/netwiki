@@ -1,0 +1,1 @@
+{ "title": "phpIPAM", "icon": "network", "color": "#4263eb", "description": "Gestion des adresses IP en PHP : sections, sous-réseaux, adresses, VLAN, VRF, découverte et scan, authentification AD, API REST." }
