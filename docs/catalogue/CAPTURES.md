@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-59 capture(s) attendue(s) dans 10 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+65 capture(s) attendue(s) dans 11 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 13-conteneurs/14-kvm-qemu-libvirt
 
@@ -110,4 +110,15 @@
 | `content/24-systemes-exploitation/02-famille-red-hat/_assets/cockpit-selinux.png` | Cockpit — page SELinux avec un refus et la solution proposée | `03-interface-graphique.md` |
 | `content/24-systemes-exploitation/02-famille-red-hat/_assets/cockpit-firewalld.png` | Cockpit — Réseau, zones du pare-feu firewalld | `03-interface-graphique.md` |
 | `content/24-systemes-exploitation/02-famille-red-hat/_assets/nmtui-connexion.png` | nmtui — modification d'une connexion avec adresse IP fixe | `03-interface-graphique.md` |
+
+## 24-systemes-exploitation/03-opensuse
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/24-systemes-exploitation/03-opensuse/_assets/agama-vue-ensemble.png` | Agama — vue d'ensemble de l'installation openSUSE Leap 16 | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/03-opensuse/_assets/agama-stockage.png` | Agama — configuration du stockage Btrfs avec instantanés | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/03-opensuse/_assets/yast-centre-controle.png` | YaST — centre de contrôle graphique | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/03-opensuse/_assets/yast-texte-reseau.png` | YaST en mode texte (ncurses) — paramètres réseau | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/03-opensuse/_assets/yast-snapper.png` | YaST — module Snapper, comparaison de deux instantanés | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/03-opensuse/_assets/cockpit-opensuse-leap16.png` | Cockpit sur openSUSE Leap 16 — vue d'ensemble | `03-interface-graphique.md` |
 

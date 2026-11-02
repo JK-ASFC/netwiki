@@ -501,12 +501,12 @@
    "role": "Distribution Linux",
    "plateformes": "PC, serveur",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/03-opensuse",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
-   "eol": null
+   "eol": "opensuse"
   },
   {
    "id": "opensuse-tumbleweed",
@@ -514,10 +514,10 @@
    "role": "Distribution Linux",
    "plateformes": "PC, serveur",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/03-opensuse",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
    "eol": null
   },
@@ -527,10 +527,10 @@
    "role": "Distribution Linux",
    "plateformes": "PC, serveur",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/04-arch-linux",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
    "eol": null
   },
@@ -540,10 +540,10 @@
    "role": "Distribution Linux",
    "plateformes": "PC, serveur",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/05-gentoo",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
    "eol": null
   },
@@ -553,12 +553,12 @@
    "role": "Distribution Linux légère",
    "plateformes": "PC, serveur, conteneurs",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/06-alpine-linux",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
-   "eol": null
+   "eol": "alpine"
   },
   {
    "id": "oracle-linux",
@@ -592,12 +592,12 @@
    "role": "Distribution Linux déclarative",
    "plateformes": "PC, serveur",
    "section": 1,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "24-systemes-exploitation/07-nixos",
    "cible": "24-systemes-exploitation",
-   "lot": null,
+   "lot": 49,
    "depot": null,
-   "eol": null
+   "eol": "nixos"
   },
   {
    "id": "kali-linux",
