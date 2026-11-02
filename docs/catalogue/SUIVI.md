@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 440 | 2 | 686 (52 %) |
+| 1311 | 183 (14 %) | 449 | 2 | 677 (52 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -613,7 +613,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Serverspec | Tests infrastructure | Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 | KitchenCI | Tests infrastructure | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 
-## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 30/80
+## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 39/80
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -638,16 +638,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Element | Client Matrix | Windows, Linux, macOS | ✅ existant (lot 64) | `10-messagerie/11-matrix` |
 | Converse.js | Client XMPP web | Windows, Linux, macOS | 🆕 fait (lot 64) | `10-messagerie/15-xmpp` |
 | Zammad | Helpdesk | Linux | ✅ existant | `21-outils/06-support-parc/06-zammad` |
-| Chatwoot | Support client omnicanal | Linux | ⏳ à faire | → `10-messagerie` |
-| FreeScout | Helpdesk email | Linux | ⏳ à faire | → `10-messagerie` |
-| osTicket | Ticketing support | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
+| Chatwoot | Support client omnicanal | Linux | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
+| FreeScout | Helpdesk email | Linux | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
+| osTicket | Ticketing support | Windows, Linux, macOS | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
 | GLPI | ITSM et parc informatique | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/04-glpi-installation` |
-| iTop | ITSM et CMDB | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| OTOBO | ITSM | Linux | ⏳ à faire | → `10-messagerie` |
-| Znuny | ITSM | Linux | ⏳ à faire | → `10-messagerie` |
-| Request Tracker | Ticketing | Linux, Unix | ⏳ à faire | → `10-messagerie` |
-| UVdesk Community | Helpdesk | Linux | ⏳ à faire | → `10-messagerie` |
-| Faveo Helpdesk Community | Helpdesk | Linux | ⏳ à faire | → `10-messagerie` |
+| iTop | ITSM et CMDB | Windows, Linux, macOS | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
+| OTOBO | ITSM | Linux | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
+| Znuny | ITSM | Linux | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
+| Request Tracker | Ticketing | Linux, Unix | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
+| UVdesk Community | Helpdesk | Linux | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
+| Faveo Helpdesk Community | Helpdesk | Linux | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
 | OpenProject | Gestion projet | Linux | ⏳ à faire | → `10-messagerie` |
 | Taiga | Gestion projet agile | Linux | ⏳ à faire | → `10-messagerie` |
 | Plane (community) | Gestion projet | Linux, Windows via conteneur | ⏳ à faire | → `10-messagerie` |

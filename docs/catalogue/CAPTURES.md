@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-367 capture(s) attendue(s) dans 100 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+382 capture(s) attendue(s) dans 101 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -789,6 +789,26 @@
 | `content/19-sauvegarde/10-duplicati/_assets/duplicati-accueil.png` | Duplicati — tableau des sauvegardes (accueil de l'interface web) | `01-presentation-installation.md` |
 | `content/19-sauvegarde/10-duplicati/_assets/duplicati-destination.png` | Duplicati — assistant de création, étape Destination | `01-presentation-installation.md` |
 | `content/19-sauvegarde/10-duplicati/_assets/duplicati-restauration.png` | Duplicati — restauration de fichiers | `01-presentation-installation.md` |
+
+## 21-outils/06-support-parc
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/21-outils/06-support-parc/_assets/chatwoot-conversations.png` | Boîte de conversations Chatwoot avec une conversation ouverte | `12-chatwoot.md` |
+| `content/21-outils/06-support-parc/_assets/chatwoot-widget.png` | Ajout d'une boîte de réception Site web (widget) | `12-chatwoot.md` |
+| `content/21-outils/06-support-parc/_assets/freescout-conversations.png` | Boîte aux lettres FreeScout avec liste de conversations | `13-freescout.md` |
+| `content/21-outils/06-support-parc/_assets/freescout-imap.png` | Paramètres de connexion entrante IMAP d'une boîte aux lettres | `13-freescout.md` |
+| `content/21-outils/06-support-parc/_assets/osticket-file-tickets.png` | File de tickets osTicket (panneau agent) | `14-osticket.md` |
+| `content/21-outils/06-support-parc/_assets/osticket-rubriques.png` | Panneau d'administration, Rubriques d'aide | `14-osticket.md` |
+| `content/21-outils/06-support-parc/_assets/itop-setup-modules.png` | Assistant d'installation iTop, choix des modules ITIL | `15-itop.md` |
+| `content/21-outils/06-support-parc/_assets/itop-analyse-impact.png` | Fiche d'un serveur avec l'onglet Impacts (graphe) | `15-itop.md` |
+| `content/21-outils/06-support-parc/_assets/itop-incidents.png` | Liste des incidents ouverts avec SLA | `15-itop.md` |
+| `content/21-outils/06-support-parc/_assets/otobo-vue-files.png` | Vue des files de l'interface agent OTOBO | `16-otobo-znuny.md` |
+| `content/21-outils/06-support-parc/_assets/otobo-processus.png` | Éditeur graphique de processus | `16-otobo-znuny.md` |
+| `content/21-outils/06-support-parc/_assets/rt-accueil.png` | Page d'accueil RT avec tickets et files | `17-request-tracker.md` |
+| `content/21-outils/06-support-parc/_assets/rt-scrips.png` | Administration d'une file, liste des scrips | `17-request-tracker.md` |
+| `content/21-outils/06-support-parc/_assets/uvdesk-tickets.png` | Liste des tickets UVdesk (espace agent) | `18-uvdesk-faveo.md` |
+| `content/21-outils/06-support-parc/_assets/faveo-tableau-de-bord.png` | Tableau de bord agent de Faveo | `18-uvdesk-faveo.md` |
 
 ## 22-constructeurs/29-openwrt-openwisp
 
