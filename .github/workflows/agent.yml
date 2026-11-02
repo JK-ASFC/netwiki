@@ -135,6 +135,20 @@ jobs:
             --max-turns 250
             --allowedTools "Read,Write,Edit,MultiEdit,Glob,Grep,LS,WebFetch,WebSearch,Bash(node:*),Bash(npx:*),Bash(xvfb-run:*),Bash(ls:*),Bash(cat:*),Bash(git diff:*),Bash(git status:*)"
 
+      # La sortie de l'agent est masquée par l'action : en cas d'échec, n'afficher que le message final
+      # (ex. jeton invalide ou expiré, quota atteint), sans le reste de la conversation.
+      - name: Diagnostic de l'agent
+        if: failure() && steps.cle.outputs.type != 'aucune'
+        run: |
+          f="$RUNNER_TEMP/claude-execution-output.json"
+          [ -f "$f" ] || { echo "Pas de journal d'exécution de l'agent."; exit 0; }
+          node -e '
+            const msgs = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"));
+            const r = [].concat(msgs).reverse().find(m => m && m.type === "result") || {};
+            const texte = String(r.result || (r.errors || []).join(" ") || "aucun message").replace(/\s+/g, " ").slice(0, 500);
+            console.log("::error title=Agent IA::" + texte);
+          ' "$f"
+
       - name: Valider le wiki
         if: steps.cle.outputs.type != 'aucune'
         id: valider
