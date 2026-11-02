@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 518 | 2 | 608 (46 %) |
+| 1311 | 183 (14 %) | 528 | 2 | 598 (46 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -698,7 +698,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | SquirrelMail | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 | RainLoop (abandonné) | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 
-## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 29/64
+## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 39/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -730,16 +730,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Chamilo | LMS | Windows, Linux, macOS | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
 | ILIAS | LMS | Windows, Linux, macOS | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
 | Open edX | LMS | Linux | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
-| Frappe Framework | Framework ERP | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| ERPNext | ERP | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Odoo Community | ERP/CRM | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Tryton | ERP | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Dolibarr | ERP/CRM | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| iDempiere | ERP | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| metasfresh | ERP | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Apache OFBiz | ERP | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| ERP5 | ERP | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| FrontAccounting | Comptabilité/ERP | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
+| Frappe Framework | Framework ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| ERPNext | ERP | Linux | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| Odoo Community | ERP/CRM | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| Tryton | ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| Dolibarr | ERP/CRM | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| iDempiere | ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| metasfresh | ERP | Linux | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| Apache OFBiz | ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| ERP5 | ERP | Linux | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| FrontAccounting | Comptabilité/ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
 | Invoice Ninja (community) | Facturation | Linux | ⏳ à faire | → `25-web-cms-portails` |
 | Akaunting (community) | Comptabilité | Linux | ⏳ à faire | → `25-web-cms-portails` |
 | Kimai | Suivi temps et facturation | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |

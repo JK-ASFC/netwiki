@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-428 capture(s) attendue(s) dans 114 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+431 capture(s) attendue(s) dans 115 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -984,6 +984,14 @@
 | --- | --- | --- |
 | `content/25-web-cms-portails/07-lms/_assets/moodle-cours.png` | Page d'un cours Moodle (format thématique) | `01-moodle.md` |
 | `content/25-web-cms-portails/07-lms/_assets/moodle-administration.png` | Administration du site Moodle | `01-moodle.md` |
+
+## 25-web-cms-portails/08-erp
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/08-erp/_assets/odoo-applications.png` | Écran des applications Odoo | `01-odoo.md` |
+| `content/25-web-cms-portails/08-erp/_assets/erpnext-comptabilite.png` | Espace de travail Comptabilité d'ERPNext | `02-frappe-erpnext.md` |
+| `content/25-web-cms-portails/08-erp/_assets/dolibarr-tableau-de-bord.png` | Tableau de bord Dolibarr | `03-dolibarr-tryton.md` |
 
 ## 31-auto-hebergement/01-plateformes-auto-hebergement
 
