@@ -196,7 +196,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| PHP | Runtime PHP | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| PHP | Runtime PHP | Windows, Linux, macOS | ✨ amélioré (lot agent-2026-11-02) | `05-web/05-php-fpm` |
 | Node.js | Runtime JavaScript | Windows, Linux, macOS | ✅ existant | `05-web/06-nodejs` |
 | Deno | Runtime JavaScript/TypeScript | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
 | Bun | Runtime JavaScript | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/15-bun` |
