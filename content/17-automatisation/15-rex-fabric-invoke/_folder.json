@@ -1,0 +1,1 @@
+{ "title": "Rex, Fabric et Invoke", "icon": "terminal", "color": "#3776ab", "description": "Automatisation par SSH en code : Rex (Perl) et Fabric/Invoke (Python) pour lancer des tâches sur des serveurs sans agent." }

@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 179 (14 %) | 385 | 1 | 746 (57 %) |
+| 1311 | 179 (14 %) | 408 | 1 | 723 (55 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -563,38 +563,38 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OpenEDR | EDR open source | Windows, Linux | 🆕 fait (lot 61) | `16-securite/29-openedr` |
 | XCP-ng Xen Orchestra (community) | Gestion hyperviseur | Linux, Windows, macOS via navigateur | 🆕 fait (lot 48) | `13-conteneurs/15-xcp-ng-xen` |
 
-## 11. AUTOMATISATION, CONFIGURATION ET INFRASTRUCTURE AS CODE — 6/45
+## 11. AUTOMATISATION, CONFIGURATION ET INFRASTRUCTURE AS CODE — 29/45
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Ansible | Automatisation configuration | Windows, Linux, macOS (contrôle Linux/macOS) | ✅ existant | `17-automatisation/01-ansible` |
-| AWX | Interface Ansible | Linux, Windows via conteneur | ⏳ à faire | → `17-automatisation` |
-| Semaphore UI | Interface Ansible | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Rundeck Community | Automatisation opérations | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Rundeck | Orchestration tâches | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
+| AWX | Interface Ansible | Linux, Windows via conteneur | 🆕 fait (lot 62) | `17-automatisation/06-awx-semaphore` |
+| Semaphore UI | Interface Ansible | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/06-awx-semaphore` |
+| Rundeck Community | Automatisation opérations | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/07-rundeck` |
+| Rundeck | Orchestration tâches | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/07-rundeck` |
 | Salt Project | Automatisation infrastructure | Windows, Linux, macOS | ✅ existant | `17-automatisation/03-salt` |
 | Puppet Open Source | Gestion configuration | Windows, Linux, macOS | ✅ existant | `17-automatisation/02-puppet` |
-| Chef Infra (community) | Gestion configuration | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| CFEngine | Gestion configuration | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
+| Chef Infra (community) | Gestion configuration | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/08-chef-cfengine` |
+| CFEngine | Gestion configuration | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/08-chef-cfengine` |
 | Terraform | Infrastructure as Code | Windows, Linux, macOS | ✅ existant | `17-automatisation/04-terraform` |
 | OpenTofu | Infrastructure as Code | Windows, Linux, macOS | ✅ existant | `17-automatisation/04-terraform` |
-| Pulumi | Infrastructure as Code | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Terragrunt | Orchestration Terraform | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Terramate | Orchestration IaC | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Cloud-init | Initialisation VM | Linux, BSD | ⏳ à faire | → `17-automatisation` |
-| Ignition | Provisioning OS | Linux | ⏳ à faire | → `17-automatisation` |
-| Foreman | Provisioning et gestion serveurs | Linux | ⏳ à faire | → `17-automatisation` |
-| Katello | Gestion contenu et patchs | Linux | ⏳ à faire | → `17-automatisation` |
-| Uyuni | Gestion parc et patchs | Linux | ⏳ à faire | → `17-automatisation` |
-| Rudder | Configuration et conformité | Windows, Linux | ⏳ à faire | → `17-automatisation` |
-| Rex (R)? | Automatisation distante | Linux, Unix | ⏳ à faire | → `17-automatisation` |
-| Fabric | Automatisation SSH Python | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Invoke | Task execution Python | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Nornir | Automatisation réseau Python | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Netmiko | Automatisation équipements réseau | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| NAPALM | Automatisation réseau | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| Nornir Salt | Automatisation réseau | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
-| StackStorm | Automatisation événementielle | Linux | ⏳ à faire | → `17-automatisation` |
+| Pulumi | Infrastructure as Code | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/09-pulumi` |
+| Terragrunt | Orchestration Terraform | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/10-terragrunt-terramate` |
+| Terramate | Orchestration IaC | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/10-terragrunt-terramate` |
+| Cloud-init | Initialisation VM | Linux, BSD | 🆕 fait (lot 62) | `17-automatisation/11-cloud-init-ignition` |
+| Ignition | Provisioning OS | Linux | 🆕 fait (lot 62) | `17-automatisation/11-cloud-init-ignition` |
+| Foreman | Provisioning et gestion serveurs | Linux | 🆕 fait (lot 62) | `17-automatisation/12-foreman-katello` |
+| Katello | Gestion contenu et patchs | Linux | 🆕 fait (lot 62) | `17-automatisation/12-foreman-katello` |
+| Uyuni | Gestion parc et patchs | Linux | 🆕 fait (lot 62) | `17-automatisation/13-uyuni` |
+| Rudder | Configuration et conformité | Windows, Linux | 🆕 fait (lot 62) | `17-automatisation/14-rudder` |
+| Rex (R)? | Automatisation distante | Linux, Unix | 🆕 fait (lot 62) | `17-automatisation/15-rex-fabric-invoke` |
+| Fabric | Automatisation SSH Python | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/15-rex-fabric-invoke` |
+| Invoke | Task execution Python | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/15-rex-fabric-invoke` |
+| Nornir | Automatisation réseau Python | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/16-automatisation-reseau-python` |
+| Netmiko | Automatisation équipements réseau | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/16-automatisation-reseau-python` |
+| NAPALM | Automatisation réseau | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/16-automatisation-reseau-python` |
+| Nornir Salt | Automatisation réseau | Windows, Linux, macOS | 🆕 fait (lot 62) | `17-automatisation/16-automatisation-reseau-python` |
+| StackStorm | Automatisation événementielle | Linux | 🆕 fait (lot 62) | `17-automatisation/17-stackstorm` |
 | Huginn | Automatisation événementielle | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |
 | n8n (source available/community) | Automatisation workflows | Windows, Linux, macOS | ✅ existant | `21-outils/05-ia-productivite/06-n8n` |
 | Node-RED | Automatisation low-code | Windows, Linux, macOS | ⏳ à faire | → `17-automatisation` |

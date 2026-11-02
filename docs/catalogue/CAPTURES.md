@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-322 capture(s) attendue(s) dans 87 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+338 capture(s) attendue(s) dans 92 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -628,6 +628,47 @@
 | --- | --- | --- |
 | `content/16-securite/26-passbolt-psono/_assets/passbolt-liste.png` | Passbolt — liste des mots de passe et partage par groupe | `01-presentation-installation.md` |
 | `content/16-securite/26-passbolt-psono/_assets/psono-coffre.png` | Psono — coffre et dossiers partagés | `01-presentation-installation.md` |
+
+## 17-automatisation/06-awx-semaphore
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/17-automatisation/06-awx-semaphore/_assets/awx-modeles.png` | AWX — liste des modèles de tâches | `03-interface-graphique.md` |
+| `content/17-automatisation/06-awx-semaphore/_assets/awx-execution.png` | AWX — sortie d'une exécution | `03-interface-graphique.md` |
+| `content/17-automatisation/06-awx-semaphore/_assets/semaphore-modeles.png` | Semaphore UI — modèles de tâches d'un projet | `03-interface-graphique.md` |
+| `content/17-automatisation/06-awx-semaphore/_assets/semaphore-tache.png` | Semaphore UI — journal d'une tâche | `03-interface-graphique.md` |
+
+## 17-automatisation/07-rundeck
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/17-automatisation/07-rundeck/_assets/rundeck-taches.png` | Rundeck — liste des tâches d'un projet | `02-interface-graphique.md` |
+| `content/17-automatisation/07-rundeck/_assets/rundeck-lancement.png` | Rundeck — lancement d'une tâche avec options | `02-interface-graphique.md` |
+| `content/17-automatisation/07-rundeck/_assets/rundeck-journal.png` | Rundeck — journal d'exécution par nœud | `02-interface-graphique.md` |
+
+## 17-automatisation/12-foreman-katello
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/17-automatisation/12-foreman-katello/_assets/foreman-tableau.png` | Foreman — tableau de bord | `02-interface-graphique.md` |
+| `content/17-automatisation/12-foreman-katello/_assets/katello-vues.png` | Katello — vue de contenu et environnements de cycle de vie | `02-interface-graphique.md` |
+| `content/17-automatisation/12-foreman-katello/_assets/foreman-ansible.png` | Foreman — exécution d'un rôle Ansible sur un groupe d'hôtes | `02-interface-graphique.md` |
+
+## 17-automatisation/13-uyuni
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/17-automatisation/13-uyuni/_assets/uyuni-accueil.png` | Uyuni — vue d'ensemble des systèmes et correctifs | `02-interface-graphique.md` |
+| `content/17-automatisation/13-uyuni/_assets/uyuni-clm.png` | Uyuni — projet de cycle de vie des contenus | `02-interface-graphique.md` |
+| `content/17-automatisation/13-uyuni/_assets/uyuni-cve.png` | Uyuni — audit CVE | `02-interface-graphique.md` |
+
+## 17-automatisation/14-rudder
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/17-automatisation/14-rudder/_assets/rudder-tableau.png` | Rudder — tableau de bord de conformité | `02-interface-graphique.md` |
+| `content/17-automatisation/14-rudder/_assets/rudder-regle.png` | Rudder — conformité d'une règle par nœud | `02-interface-graphique.md` |
+| `content/17-automatisation/14-rudder/_assets/rudder-editeur.png` | Rudder — éditeur de techniques | `02-interface-graphique.md` |
 
 ## 18-infrastructure-systeme/08-netbox-nautobot
 
