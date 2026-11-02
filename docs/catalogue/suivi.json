@@ -930,11 +930,11 @@
    "role": "Proxy OAuth2/OIDC",
    "plateformes": "Windows, Linux, macOS",
    "section": 2,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "01-annuaire-identite/18-oauth2-proxy-dex",
    "cible": "01-annuaire-identite",
-   "lot": null,
-   "depot": null,
+   "lot": 50,
+   "depot": "oauth2-proxy/oauth2-proxy",
    "eol": null
   },
   {
@@ -943,11 +943,11 @@
    "role": "Fournisseur OIDC",
    "plateformes": "Windows, Linux, macOS",
    "section": 2,
-   "statut": "a-faire",
-   "wiki": null,
+   "statut": "fait",
+   "wiki": "01-annuaire-identite/18-oauth2-proxy-dex",
    "cible": "01-annuaire-identite",
-   "lot": null,
-   "depot": null,
+   "lot": 50,
+   "depot": "dexidp/dex",
    "eol": null
   },
   {
