@@ -1,0 +1,1 @@
+{ "title": "Sentry, GlitchTip et Errbit", "icon": "bug", "color": "#362d59", "description": "Suivi des erreurs et exceptions applicatives auto-hébergé : Sentry, GlitchTip (compatible Sentry, léger) et Errbit (compatible Airbrake)." }

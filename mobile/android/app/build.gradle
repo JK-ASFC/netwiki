@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+
+import groovy.json.JsonSlurper
+
+// Version de NetWiki lue dans package.json (racine du dépôt) : 1.46.0 → versionName « 1.46.0 », versionCode 14600.
+// Le versionCode croît à chaque version : Android accepte ainsi la mise à jour par-dessus l'installation existante.
+// (-PnetwikiVersion=1.0.0 : simule une ancienne version, pour les tests de mise à jour sur émulateur.)
+def netwikiVersion = project.findProperty('netwikiVersion') ?: new JsonSlurper().parse(rootProject.file('../../package.json')).version
+def netwikiCode = netwikiVersion.tokenize('.').collect { it.replaceAll('[^0-9].*', '') as int }.with { it[0] * 10000 + it[1] * 100 + it[2] }
+
+// Signature officielle (clé de JK-ASFC) : fournie par la CI via des variables d'environnement, jamais versionnée.
+// Une signature stable est indispensable pour que chaque nouvelle version s'installe par-dessus la précédente.
+def keystorePath = System.getenv('NETWIKI_KEYSTORE')
+def hasKeystore = keystorePath && file(keystorePath).exists()
+
+android {
+    namespace "io.netwiki.app"
+    compileSdk rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "io.netwiki.app"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode netwikiCode
+        versionName netwikiVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        aaptOptions {
+             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
+             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
+            ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+    buildFeatures {
+        buildConfig true
+    }
+    signingConfigs {
+        if (hasKeystore) {
+            release {
+                storeFile file(keystorePath)
+                storePassword System.getenv('NETWIKI_KEYSTORE_PASSWORD')
+                keyAlias System.getenv('NETWIKI_KEY_ALIAS')
+                keyPassword System.getenv('NETWIKI_KEY_PASSWORD') ?: System.getenv('NETWIKI_KEYSTORE_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (hasKeystore) signingConfig signingConfigs.release
+        }
+    }
+    // github : APK publié sur GitHub, se met à jour lui-même (liste signée par JK-ASFC) ;
+    // play   : paquet AAB pour Google Play, mis à jour par le magasin.
+    flavorDimensions = ['distribution']
+    productFlavors {
+        github {
+            dimension 'distribution'
+            buildConfigField 'boolean', 'SELF_UPDATE', 'true'
+        }
+        play {
+            dimension 'distribution'
+            buildConfigField 'boolean', 'SELF_UPDATE', 'false'
+        }
+    }
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+    implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+    implementation project(':capacitor-android')
+    implementation "androidx.work:work-runtime:$androidxWorkVersion"
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation project(':capacitor-cordova-android-plugins')
+}
+
+apply from: 'capacitor.build.gradle'
+
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}

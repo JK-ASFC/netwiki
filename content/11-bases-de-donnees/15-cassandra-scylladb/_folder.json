@@ -1,0 +1,1 @@
+{ "title": "Apache Cassandra et ScyllaDB", "icon": "columns-3", "color": "#1287b1", "description": "Bases NoSQL orientées colonnes larges, sans maître : CQL, réplication multi-datacenters, nodetool, réparations et exploitation." }

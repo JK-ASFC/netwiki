@@ -1,0 +1,1 @@
+{ "title": "Helm et Kustomize", "icon": "package", "color": "#0f1689", "description": "Paqueter et personnaliser les déploiements Kubernetes : charts Helm (création, dépôts OCI, valeurs) et Kustomize (bases, overlays, patches)." }

@@ -1,0 +1,1 @@
+{ "title": "OPA, Gatekeeper et Kyverno", "icon": "scale", "color": "#7d9199", "description": "Politiques en tant que code : Open Policy Agent et Rego, Gatekeeper et Kyverno comme contrôleurs d'admission Kubernetes." }

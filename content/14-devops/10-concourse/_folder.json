@@ -1,0 +1,1 @@
+{ "title": "Concourse CI", "icon": "git-merge", "color": "#3498db", "description": "CI/CD déclarative fondée sur ressources, jobs et tâches conteneurisées, pilotée par la CLI fly." }

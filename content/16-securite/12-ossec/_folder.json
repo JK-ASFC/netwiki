@@ -1,0 +1,1 @@
+{ "title": "OSSEC", "icon": "eye", "color": "#b91c1c", "description": "Détection d'intrusions sur les hôtes (HIDS) : analyse de journaux, intégrité des fichiers, détection de rootkits et réponse active, ancêtre de Wazuh." }

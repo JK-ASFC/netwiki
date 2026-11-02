@@ -1,0 +1,1 @@
+{ "title": "Foreman et Katello", "icon": "server-cog", "color": "#ff9900", "description": "Cycle de vie des serveurs : provisionnement PXE et modèles (Foreman), gestion des contenus, dépôts et correctifs (Katello), intégration Ansible et Puppet." }

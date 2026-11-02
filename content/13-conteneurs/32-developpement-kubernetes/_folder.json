@@ -1,0 +1,1 @@
+{ "title": "Skaffold, Tilt, Garden et Telepresence", "icon": "code", "color": "#2563eb", "description": "Boucle de développement sur Kubernetes : construction et déploiement automatiques, environnements de développement et accès au cluster depuis le poste." }

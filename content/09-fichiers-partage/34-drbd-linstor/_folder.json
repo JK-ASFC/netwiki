@@ -1,0 +1,1 @@
+{ "title": "DRBD et LINSTOR", "icon": "copy", "color": "#f97316", "description": "Réplication de disques bloc en temps réel (DRBD) et orchestration de volumes répliqués (LINSTOR) pour la haute disponibilité Linux." }

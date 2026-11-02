@@ -1,0 +1,1 @@
+{ "title": "Netmiko, NAPALM et Nornir", "icon": "network", "color": "#0ea5e9", "description": "Automatisation des équipements réseau en Python : connexions SSH multi-constructeurs (Netmiko), API unifiée (NAPALM), exécution parallèle sur un inventaire (Nornir, Nornir Salt)." }

@@ -1,7 +1,7 @@
 // NetWiki — point d'entrée du renderer : navigation, actions sur le contenu, raccourcis clavier.
 // Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
 import { hasIcon, icon } from './icons.js';
-import { $, confirmDialog, contextMenu, debounce, esc, promptDialog, toast } from './ui.js';
+import { $, closeContextMenu, confirmDialog, contextMenu, debounce, esc, modal, promptDialog, toast } from './ui.js';
 import { buildStore, getNode, store } from './store.js';
 import { buildIndex } from './search.js';
 import { actions, api, state } from './state.js';
@@ -283,19 +283,71 @@ actions.toggleFav = (path) => {
   if (state.view.type === 'page') actions.rerender();
 };
 
-actions.exportPdf = async (page) => {
+/**
+ * Export PDF de l'article affiché (thème clair le temps de la génération).
+ * Sur mobile, `action` : « save » (Téléchargements), « share » (applications d'Android) ou « print » ; sans action,
+ * une fenêtre propose le choix.
+ */
+actions.exportPdf = async (page, action) => {
+  if (state.info.mobile && !action) return actions.sharePage(page);
   const root = document.documentElement;
   const theme = root.dataset.theme;
   root.dataset.theme = 'light';
   actions.rerender();
   await sleep(700);
+  let r;
   try {
-    const file = await api.exportPdf(page.title);
-    if (file) toast('PDF exporté');
+    r = await api.exportPdf(page.title, { action });
+  } catch (err) {
+    toast(err.message || String(err), 'error', 6000);
+    return;
   } finally {
     root.dataset.theme = theme;
     actions.rerender();
   }
+  if (!state.info.mobile) {
+    if (r) toast('PDF exporté');
+  } else if (r?.location) {
+    const open = await modal({
+      title: 'PDF enregistré',
+      width: 460,
+      body: `<p>${icon('file-check', 16)} <b>${esc(r.location)}</b></p><p class="hint">Retrouvez-le dans l'application « Fichiers », dossier Téléchargements.</p>`,
+      actions: [
+        { label: 'Fermer', kind: 'ghost', value: null },
+        { label: 'Ouvrir', kind: 'primary', icon: 'external-link', value: true },
+      ],
+    });
+    if (open) api.openFile(r.uri).catch((err) => toast(err.message || String(err), 'error', 5000));
+  }
+};
+
+/** Mobile : partage ou export de l'article (PDF, texte Markdown, impression). */
+actions.sharePage = async (page) => {
+  const choice = await modal({
+    title: 'Partager ou exporter',
+    width: 480,
+    body: `<p class="hint" style="margin-top:0">${esc(page.title)}</p>
+      <div class="share-choices">
+        <button class="share-choice" data-v="save">${icon('file-down', 22)}<span><b>Enregistrer en PDF</b><small>Dans Téléchargements/NetWiki</small></span></button>
+        <button class="share-choice" data-v="share">${icon('share-2', 22)}<span><b>Partager le PDF</b><small>Messagerie, e-mail, Drive…</small></span></button>
+        <button class="share-choice" data-v="text">${icon('file-text', 22)}<span><b>Partager le texte</b><small>Article au format Markdown</small></span></button>
+        <button class="share-choice" data-v="print">${icon('printer', 22)}<span><b>Imprimer</b><small>Imprimante ou PDF via Android</small></span></button>
+      </div>`,
+    actions: [],
+    onMount: (b, finish) => b.querySelectorAll('[data-v]').forEach((el) => (el.onclick = () => finish(el.dataset.v))),
+  });
+  if (!choice) return;
+  if (choice === 'text') {
+    const node = getNode(page.path);
+    try {
+      const r = await api.share({ title: page.title, text: node?.raw || `${page.title}\n\n${page.body || ''}` });
+      if (r?.copied) toast('Article copié dans le presse-papiers', 'info');
+    } catch (err) {
+      if (err?.name !== 'AbortError') toast(err.message || String(err), 'error', 5000);
+    }
+    return;
+  }
+  await actions.exportPdf(page, choice);
 };
 
 actions.nodeMenu = (node, x, y) => {
@@ -309,8 +361,10 @@ actions.nodeMenu = (node, x, y) => {
       '-',
       { label: 'Dupliquer', icon: 'copy', action: () => actions.duplicate(node) },
       { label: 'Déplacer vers…', icon: 'folder-input', action: () => actions.moveNode(node) },
-      { label: 'Exporter en PDF', icon: 'file-down', action: () => actions.navigate({ type: 'page', path: node.path }).then(() => actions.exportPdf(node)) },
-      { label: 'Afficher dans le dossier', icon: 'folder-search', action: () => api.reveal(node.path) },
+      state.info.mobile
+        ? { label: 'Partager ou exporter (PDF)', icon: 'share-2', action: () => actions.navigate({ type: 'page', path: node.path }).then(() => actions.sharePage(node)) }
+        : { label: 'Exporter en PDF', icon: 'file-down', action: () => actions.navigate({ type: 'page', path: node.path }).then(() => actions.exportPdf(node)) },
+      ...(state.info.mobile ? [] : [{ label: 'Afficher dans le dossier', icon: 'folder-search', action: () => api.reveal(node.path) }]),
       '-',
       { label: 'Supprimer', icon: 'trash-2', danger: true, action: () => actions.deleteNode(node) },
     ]);
@@ -367,6 +421,8 @@ view.addEventListener('click', (e) => {
       return actions.navigate({ type: 'edit', path: state.view.path });
     case 'fav':
       return actions.toggleFav(state.view.path);
+    case 'share':
+      return node && actions.sharePage(node);
     case 'more': {
       const r = el.getBoundingClientRect();
       return node && actions.nodeMenu(node, r.left - 160, r.bottom + 6);
@@ -467,6 +523,22 @@ function initChrome() {
   });
 
   window.addEventListener('beforeunload', () => api.setSettings(state.settings));
+
+  // Bouton Retour d'Android : ferme d'abord ce qui est ouvert, puis revient en arrière, puis quitte.
+  api.mobile?.onBack(() => {
+    if (document.querySelector('#overlays > *, .ctxmenu, .img-lightbox') || isPaletteOpen()) {
+      (document.activeElement || document).dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+      closeContextMenu();
+      return;
+    }
+    if (matchMedia('(max-width: 760px)').matches && !document.body.classList.contains('sidebar-hidden')) {
+      document.body.classList.add('sidebar-hidden');
+      return;
+    }
+    if (state.hIndex > 0) go(-1);
+    else if (state.view.type !== 'home') actions.navigate({ type: 'home' });
+    else api.mobile.exitApp();
+  });
 }
 
 // ================================================================ démarrage

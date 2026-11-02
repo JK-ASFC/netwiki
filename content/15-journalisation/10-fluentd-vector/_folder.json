@@ -1,0 +1,1 @@
+{ "title": "Fluentd et Vector", "icon": "workflow", "color": "#0e83c8", "description": "Pipelines de journaux et de télémétrie : Fluentd (CNCF, greffons Ruby) et Vector (Rust, VRL, hautes performances)." }

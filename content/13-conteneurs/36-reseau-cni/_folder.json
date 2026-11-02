@@ -1,0 +1,1 @@
+{ "title": "Cilium, Calico, Flannel, Weave Net et Multus", "icon": "network", "color": "#f8c517", "description": "Réseau des pods Kubernetes (CNI) : routage, encapsulation, BGP, politiques réseau, eBPF, observabilité et interfaces multiples." }

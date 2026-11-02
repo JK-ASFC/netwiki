@@ -1,0 +1,1 @@
+{ "title": "Chef Infra et CFEngine", "icon": "chef-hat", "color": "#f09820", "description": "Gestion de configuration historique : Chef Infra (cookbooks, recettes en Ruby, Chef Server/Cinc) et CFEngine (promesses, agent léger, très grande échelle)." }

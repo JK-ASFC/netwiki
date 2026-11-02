@@ -2,8 +2,12 @@
 //   node scripts/build-web.mjs [--prod]
 // Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
 import * as esbuild from 'esbuild';
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createRequire } from 'node:module';
+
+const { contentVersion } = createRequire(import.meta.url)('./content-version.js');
 
 const prod = process.argv.includes('--prod');
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), '..');
@@ -34,7 +38,7 @@ fs.copyFileSync(path.join(root, 'node_modules/mermaid/dist/mermaid.min.js'), pat
 // Page d'entrée : mêmes éléments que la version de bureau, CSP adaptée (pas de wikifile:, API GitHub autorisée).
 let html = fs.readFileSync(path.join(root, 'src', 'index.html'), 'utf8');
 html = html
-  .replace(/content="default-src[^"]*"/, `content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'"`)
+  .replace(/content="default-src[^"]*"/, `content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'"`)
   .replace('width=device-width, initial-scale=1', 'width=device-width, initial-scale=1, viewport-fit=cover')
   .replaceAll('../dist/', './dist/')
   .replace('<script defer src="./dist/app.js"></script>', '<script defer src="./dist/platform.js"></script>\n    <script defer src="./dist/app.js"></script>');
@@ -43,6 +47,7 @@ fs.writeFileSync(path.join(www, 'index.html'), html);
 // Contenu livré : articles Markdown et métadonnées de dossiers (content.json), images des articles (www/content/).
 const IMAGE_EXT = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.avif']);
 const files = {};
+const imageSums = {};
 let images = 0;
 fs.rmSync(path.join(www, 'content'), { recursive: true, force: true });
 const walk = (dir, rel = '') => {
@@ -53,12 +58,16 @@ const walk = (dir, rel = '') => {
     else if (r.split('/').includes('_assets') && IMAGE_EXT.has(path.extname(e.name).toLowerCase())) {
       fs.mkdirSync(path.join(www, 'content', path.dirname(r)), { recursive: true });
       fs.copyFileSync(path.join(dir, e.name), path.join(www, 'content', r));
+      imageSums[r] = crypto.createHash('sha1').update(fs.readFileSync(path.join(dir, e.name))).digest('hex');
       images++;
     }
   }
 };
 walk(path.join(root, 'content'));
-fs.writeFileSync(path.join(www, 'content.json'), JSON.stringify({ version, built: Date.now(), files }));
+// contentVersion : même numérotation que les paquets hebdomadaires (date du dernier commit), pour ne jamais
+// appliquer sur l'appareil un contenu plus ancien que celui livré avec l'application.
+const cv = contentVersion(root);
+fs.writeFileSync(path.join(www, 'content.json'), JSON.stringify({ version, contentVersion: cv, built: Date.now(), files, images: imageSums }));
 fs.copyFileSync(path.join(root, 'LICENSE'), path.join(www, 'LICENSE.txt'));
 fs.copyFileSync(path.join(root, 'build', 'icon.png'), path.join(www, 'icon.png'));
-console.log(`mobile/www prêt : ${Object.keys(files).length} fichiers de contenu, ${images} image(s), version ${version}.`);
+console.log(`mobile/www prêt : ${Object.keys(files).length} fichiers de contenu, ${images} image(s), version ${version}, contenu ${cv}.`);

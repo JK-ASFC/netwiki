@@ -1,0 +1,1 @@
+{ "title": "Btrfs et XFS", "icon": "file-cog", "color": "#64748b", "description": "Systèmes de fichiers Linux : Btrfs (sous-volumes, instantanés, RAID, compression) et XFS (gros volumes, performances, quotas, réparation)." }

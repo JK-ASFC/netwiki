@@ -1,0 +1,1 @@
+{ "title": "Talos Linux", "icon": "shield-check", "color": "#ff7300", "description": "Système d'exploitation immuable et minimal dédié à Kubernetes, administré uniquement par API (talosctl)." }

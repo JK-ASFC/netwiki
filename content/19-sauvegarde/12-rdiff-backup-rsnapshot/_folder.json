@@ -1,0 +1,1 @@
+{ "title": "rdiff-backup et rsnapshot", "icon": "history", "color": "#059669", "description": "Sauvegardes incrémentales simples basées sur rsync : rdiff-backup (miroir + différences inversées) et rsnapshot (instantanés par liens durs)." }

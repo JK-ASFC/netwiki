@@ -1,0 +1,1 @@
+{ "title": "SOPS", "icon": "file-lock-2", "color": "#2563eb", "description": "Chiffrement des secrets dans les fichiers de configuration versionnés (YAML, JSON, ENV) avec age, PGP ou KMS, pour GitOps et Ansible." }
