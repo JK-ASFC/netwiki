@@ -6,7 +6,8 @@
 #   NETWIKI_SIGNING_KEY          clé privée Ed25519 (PEM) qui signe le paquet de contenu (obligatoire pour les mises à jour en ligne)
 #   WIN_CSC_LINK / WIN_CSC_KEY_PASSWORD        certificat de signature de code Windows (.pfx en base64)
 #   MAC_CSC_LINK / MAC_CSC_KEY_PASSWORD, APPLE_ID, APPLE_APP_SPECIFIC_PASSWORD, APPLE_TEAM_ID   signature et notarisation macOS
-#   ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD  signature Android (Play Store)
+#   ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD  signature Android
+#                                (obligatoire pour publier l'APK : mêmes valeurs à chaque version, voir docs/ANDROID.md)
 
 name: Compilation et publication
 
@@ -108,33 +109,49 @@ jobs:
         working-directory: mobile
         run: |
           npm install
-          [ -d android ] || npx cap add android
           npx cap sync android
-      - name: Compiler (APK de test + bundle AAB pour le Play Store)
-        working-directory: mobile/android
+      # Clé de signature officielle : la même à chaque version, sinon Android refuse la mise à jour par-dessus
+      # l'installation existante. Sans clé, une version publiée (étiquette v*) n'inclut pas d'application Android.
+      - name: Clé de signature Android
         run: |
-          chmod +x gradlew
-          ./gradlew assembleDebug bundleRelease
-      - name: Signer l'AAB (si une clé Android est configurée)
-        if: ${{ env.ANDROID_KEYSTORE_BASE64 != '' }}
-        working-directory: mobile/android
-        run: |
-          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > netwiki.keystore
-          jarsigner -keystore netwiki.keystore -storepass "$ANDROID_KEYSTORE_PASSWORD" -keypass "$ANDROID_KEY_PASSWORD" \
-            app/build/outputs/bundle/release/app-release.aab "$ANDROID_KEY_ALIAS"
-          rm netwiki.keystore
+          if [ -n "$ANDROID_KEYSTORE_BASE64" ]; then
+            printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/netwiki.jks"
+            { echo "NETWIKI_KEYSTORE=$RUNNER_TEMP/netwiki.jks"; echo "NETWIKI_KEY_ALIAS=$ANDROID_KEY_ALIAS"; } >> "$GITHUB_ENV"
+            echo "::add-mask::$ANDROID_KEYSTORE_PASSWORD"; echo "::add-mask::$ANDROID_KEY_PASSWORD"
+            { echo "NETWIKI_KEYSTORE_PASSWORD=$ANDROID_KEYSTORE_PASSWORD"; echo "NETWIKI_KEY_PASSWORD=$ANDROID_KEY_PASSWORD"; } >> "$GITHUB_ENV"
+          elif [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            echo "::error title=Android::Secret ANDROID_KEYSTORE_BASE64 absent : l'application Android n'est pas publiée (voir docs/ANDROID.md)."
+            exit 1
+          else
+            echo "::warning title=Android::Clé officielle absente : APK de test signé avec une clé temporaire (ne pas distribuer)."
+            P=$(openssl rand -hex 16)
+            keytool -genkeypair -keystore "$RUNNER_TEMP/netwiki.jks" -storepass "$P" -keypass "$P" -alias test \
+              -keyalg RSA -keysize 2048 -validity 30 -dname "CN=NetWiki test" >/dev/null
+            { echo "NETWIKI_KEYSTORE=$RUNNER_TEMP/netwiki.jks"; echo "NETWIKI_KEY_ALIAS=test"; echo "NETWIKI_KEYSTORE_PASSWORD=$P"; echo "NETWIKI_KEY_PASSWORD=$P"; } >> "$GITHUB_ENV"
+          fi
         env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+      - name: Compiler (APK GitHub à mise à jour intégrée + bundle AAB pour le Play Store)
+        working-directory: mobile/android
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon assembleGithubRelease bundlePlayRelease
+          V=$(node -p "require('../../package.json').version")
+          mkdir -p ../../release
+          cp app/build/outputs/apk/github/release/app-github-release.apk "../../release/NetWiki-$V.apk"
+          cp app/build/outputs/bundle/playRelease/app-play-release.aab "../../release/NetWiki-$V.aab"
+          rm -f "$RUNNER_TEMP/netwiki.jks"
+          BT=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
+          "$BT/apksigner" verify --print-certs "../../release/NetWiki-$V.apk" | sed -n '1,3p'
       - uses: actions/upload-artifact@v4
         with:
           name: netwiki-android
           path: |
-            mobile/android/app/build/outputs/apk/debug/*.apk
-            mobile/android/app/build/outputs/bundle/release/*.aab
-    env:
-      ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+            release/*.apk
+            release/*.aab
 
   ios:
     name: iOS
