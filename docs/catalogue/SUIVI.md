@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 175 (13 %) | 329 | 1 | 806 (61 %) |
+| 1311 | 176 (13 %) | 354 | 1 | 780 (59 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -425,7 +425,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Packer | Création images machines | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/42-packer-vagrant` |
 | Vagrant | Environnements reproductibles | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/42-packer-vagrant` |
 
-## 9. SUPERVISION, METRIQUES, LOGS ET OBSERVABILITE — 51/64
+## 9. SUPERVISION, METRIQUES, LOGS ET OBSERVABILITE — 64/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -477,44 +477,44 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | GlitchTip | Suivi erreurs | Linux, Windows via conteneur | 🆕 fait (lot 59) | `06-supervision/20-suivi-erreurs` |
 | Sentry self-hosted | Suivi erreurs | Linux | 🆕 fait (lot 59) | `06-supervision/20-suivi-erreurs` |
 | Errbit | Suivi erreurs | Linux | 🆕 fait (lot 59) | `06-supervision/20-suivi-erreurs` |
-| Uptime Kuma | Surveillance disponibilité | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Gatus | Surveillance disponibilité | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Cachet | Page statut | Linux | ⏳ à faire | → `06-supervision` |
-| Statping-ng | Page statut | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Cabot | Supervision et alertes | Linux | ⏳ à faire | → `06-supervision` |
-| Healthchecks | Surveillance tâches planifiées | Linux | ⏳ à faire | → `06-supervision` |
-| ntopng | Analyse trafic réseau | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| iftop | Analyse bande passante | Linux, BSD | ⏳ à faire | → `06-supervision` |
-| vnStat | Statistiques trafic | Linux, BSD | ⏳ à faire | → `06-supervision` |
+| Uptime Kuma | Surveillance disponibilité | Windows, Linux, macOS | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| Gatus | Surveillance disponibilité | Windows, Linux, macOS | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| Cachet | Page statut | Linux | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| Statping-ng | Page statut | Windows, Linux, macOS | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| Cabot | Supervision et alertes | Linux | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| Healthchecks | Surveillance tâches planifiées | Linux | 🆕 fait (lot 60) | `06-supervision/21-disponibilite-pages-statut` |
+| ntopng | Analyse trafic réseau | Windows, Linux, macOS | 🆕 fait (lot 60) | `06-supervision/22-analyse-trafic` |
+| iftop | Analyse bande passante | Linux, BSD | 🆕 fait (lot 60) | `06-supervision/22-analyse-trafic` |
+| vnStat | Statistiques trafic | Linux, BSD | 🆕 fait (lot 60) | `06-supervision/22-analyse-trafic` |
 | Wireshark | Analyse protocoles réseau | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/01-wireshark-capture` |
-| tshark | Analyse réseau CLI | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| tcpdump | Capture réseau | Linux, macOS, BSD | ⏳ à faire | → `06-supervision` |
+| tshark | Analyse réseau CLI | Windows, Linux, macOS | ✅ existant (lot 60) | `21-outils/02-reseau-diagnostic` |
+| tcpdump | Capture réseau | Linux, macOS, BSD | 🆕 fait (lot 60) | `06-supervision/22-analyse-trafic` |
 | Nmap | Découverte et audit réseau | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/03-nmap` |
-| ZMap | Scan réseau Internet | Linux | ⏳ à faire | → `06-supervision` |
-| Masscan | Scan réseau | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
+| ZMap | Scan réseau Internet | Linux | 🆕 fait (lot 60) | `06-supervision/23-scan-internet` |
+| Masscan | Scan réseau | Windows, Linux, macOS | 🆕 fait (lot 60) | `06-supervision/23-scan-internet` |
 | Netdata Cloud Agent (agent) | Métriques hôte | Windows, Linux, macOS | ✅ existant | `06-supervision/07-netdata` |
 
-## 10. SECURITE, PARE-FEU, SIEM, SCAN ET PKI — 17/64
+## 10. SECURITE, PARE-FEU, SIEM, SCAN ET PKI — 30/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| OSSEC | HIDS | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| OSSEC | HIDS | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/12-ossec` |
 | Suricata | IDS/IPS réseau | Windows, Linux, macOS | ✅ existant | `16-securite/05-suricata` |
 | Zeek | Analyse sécurité réseau | Linux, macOS | ✅ existant | `16-securite/07-zeek` |
 | Snort | IDS/IPS | Windows, Linux, macOS | ✅ existant | `16-securite/06-snort` |
-| Security Onion | Distribution SOC | Linux | ⏳ à faire | → `16-securite` |
-| TheHive | Gestion incidents SOC | Linux | ⏳ à faire | → `16-securite` |
-| MISP | Partage renseignements menaces | Linux | ⏳ à faire | → `16-securite` |
-| OpenCTI | Renseignement cyber | Linux | ⏳ à faire | → `16-securite` |
-| Yeti | Threat intelligence | Linux | ⏳ à faire | → `16-securite` |
-| IntelOwl | Analyse fichiers et observables | Linux | ⏳ à faire | → `16-securite` |
-| Velociraptor | DFIR et réponse incident | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| GRR Rapid Response | Forensic à distance | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| osquery | Instrumentation endpoint | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| FleetDM | Gestion osquery | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Kolide Launcher | Sécurité endpoint | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| Security Onion | Distribution SOC | Linux | 🆕 fait (lot 60) | `16-securite/13-security-onion` |
+| TheHive | Gestion incidents SOC | Linux | 🆕 fait (lot 60) | `16-securite/14-reponse-incident-cti` |
+| MISP | Partage renseignements menaces | Linux | 🆕 fait (lot 60) | `16-securite/14-reponse-incident-cti` |
+| OpenCTI | Renseignement cyber | Linux | 🆕 fait (lot 60) | `16-securite/14-reponse-incident-cti` |
+| Yeti | Threat intelligence | Linux | 🆕 fait (lot 60) | `16-securite/14-reponse-incident-cti` |
+| IntelOwl | Analyse fichiers et observables | Linux | 🆕 fait (lot 60) | `16-securite/14-reponse-incident-cti` |
+| Velociraptor | DFIR et réponse incident | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/15-velociraptor-grr` |
+| GRR Rapid Response | Forensic à distance | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/15-velociraptor-grr` |
+| osquery | Instrumentation endpoint | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/16-osquery-fleet` |
+| FleetDM | Gestion osquery | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/16-osquery-fleet` |
+| Kolide Launcher | Sécurité endpoint | Windows, Linux, macOS | 🆕 fait (lot 60) | `16-securite/16-osquery-fleet` |
 | Lynis | Audit sécurité système | Linux, macOS, BSD | ✅ existant | `16-securite/08-lynis` |
-| OpenSCAP | Conformité et audit | Linux | ⏳ à faire | → `16-securite` |
+| OpenSCAP | Conformité et audit | Linux | 🆕 fait (lot 60) | `16-securite/17-openscap` |
 | Greenbone Community Edition | Scanner vulnérabilités | Linux | ✅ existant | `21-outils/02-reseau-diagnostic/08-greenbone-openvas` |
 | OpenVAS | Scanner vulnérabilités | Linux | ✅ existant | `21-outils/02-reseau-diagnostic/08-greenbone-openvas` |
 | Nuclei | Scanner templates vulnérabilités | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |

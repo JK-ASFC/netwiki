@@ -1,0 +1,1 @@
+{ "title": "Uptime Kuma, Gatus, pages de statut et Healthchecks", "icon": "heart-pulse", "color": "#5cdd8b", "description": "Surveillance de disponibilité vue de l'extérieur (HTTP, TCP, DNS, ping, certificats), pages de statut publiques (Cachet, Statping-ng) et surveillance des tâches planifiées (Healthchecks, Cabot)." }

@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-293 capture(s) attendue(s) dans 77 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+314 capture(s) attendue(s) dans 84 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -155,6 +155,22 @@
 | --- | --- | --- |
 | `content/06-supervision/20-suivi-erreurs/_assets/glitchtip-problemes.png` | GlitchTip — liste des problèmes d'un projet | `01-presentation-installation.md` |
 | `content/06-supervision/20-suivi-erreurs/_assets/sentry-erreur.png` | Sentry — détail d'une erreur avec pile d'appels | `01-presentation-installation.md` |
+
+## 06-supervision/21-disponibilite-pages-statut
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/06-supervision/21-disponibilite-pages-statut/_assets/uptime-kuma-tableau.png` | Uptime Kuma — tableau de bord des sondes | `03-interface-graphique.md` |
+| `content/06-supervision/21-disponibilite-pages-statut/_assets/uptime-kuma-statut.png` | Uptime Kuma — page de statut publique | `03-interface-graphique.md` |
+| `content/06-supervision/21-disponibilite-pages-statut/_assets/gatus-tableau.png` | Gatus — tableau des points de terminaison | `03-interface-graphique.md` |
+| `content/06-supervision/21-disponibilite-pages-statut/_assets/healthchecks-liste.png` | Healthchecks — liste des contrôles | `03-interface-graphique.md` |
+
+## 06-supervision/22-analyse-trafic
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/06-supervision/22-analyse-trafic/_assets/ntopng-tableau.png` | ntopng — tableau de bord (top hôtes et applications) | `01-ntopng.md` |
+| `content/06-supervision/22-analyse-trafic/_assets/ntopng-hote.png` | ntopng — détail d'un hôte | `01-ntopng.md` |
 
 ## 07-proxy-cache/09-mitmproxy
 
@@ -549,6 +565,46 @@
 | --- | --- | --- |
 | `content/15-journalisation/11-recherche-journaux/_assets/victorialogs-vmui.png` | VictoriaLogs — interface vmui, requête LogsQL | `02-quickwit-victorialogs.md` |
 | `content/15-journalisation/11-recherche-journaux/_assets/quickwit-ui.png` | Quickwit — interface de recherche | `02-quickwit-victorialogs.md` |
+
+## 16-securite/13-security-onion
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/16-securite/13-security-onion/_assets/security-onion-alertes.png` | Security Onion — écran Alerts | `02-interface-graphique.md` |
+| `content/16-securite/13-security-onion/_assets/security-onion-hunt.png` | Security Onion — Hunt, pivot sur une adresse IP | `02-interface-graphique.md` |
+| `content/16-securite/13-security-onion/_assets/security-onion-cas.png` | Security Onion — gestion d'un cas | `02-interface-graphique.md` |
+
+## 16-securite/14-reponse-incident-cti
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/16-securite/14-reponse-incident-cti/_assets/thehive-cas.png` | TheHive — liste des cas | `04-interface-graphique.md` |
+| `content/16-securite/14-reponse-incident-cti/_assets/thehive-observables.png` | TheHive — observables enrichis par Cortex | `04-interface-graphique.md` |
+| `content/16-securite/14-reponse-incident-cti/_assets/misp-evenement.png` | MISP — événement et attributs | `04-interface-graphique.md` |
+| `content/16-securite/14-reponse-incident-cti/_assets/opencti-graphe.png` | OpenCTI — graphe de connaissance d'un rapport | `04-interface-graphique.md` |
+| `content/16-securite/14-reponse-incident-cti/_assets/intelowl-resultats.png` | IntelOwl — résultats d'analyse d'une adresse IP | `04-interface-graphique.md` |
+| `content/16-securite/14-reponse-incident-cti/_assets/yeti-observable.png` | Yeti — page d'un observable et ses liens | `04-interface-graphique.md` |
+
+## 16-securite/15-velociraptor-grr
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/16-securite/15-velociraptor-grr/_assets/velociraptor-chasse.png` | Velociraptor — résultats d'une chasse sur le parc | `01-presentation-installation.md` |
+| `content/16-securite/15-velociraptor-grr/_assets/velociraptor-client.png` | Velociraptor — vue d'un client et collecte d'artefacts | `01-presentation-installation.md` |
+
+## 16-securite/16-osquery-fleet
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/16-securite/16-osquery-fleet/_assets/fleet-hotes.png` | FleetDM — liste des hôtes et politiques | `01-presentation-installation.md` |
+| `content/16-securite/16-osquery-fleet/_assets/fleet-requete.png` | FleetDM — requête en direct sur plusieurs hôtes | `01-presentation-installation.md` |
+
+## 16-securite/17-openscap
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/16-securite/17-openscap/_assets/openscap-rapport.png` | OpenSCAP — rapport HTML (score et règles en échec) | `01-presentation-installation.md` |
+| `content/16-securite/17-openscap/_assets/scap-workbench.png` | SCAP Workbench — choix du profil et personnalisation | `01-presentation-installation.md` |
 
 ## 18-infrastructure-systeme/08-netbox-nautobot
 
