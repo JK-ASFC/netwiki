@@ -1,0 +1,1 @@
+{ "title": "Glances et Cockpit", "icon": "gauge", "color": "#2a9d8f", "description": "Supervision et administration d'un serveur : Glances (tableau de bord système en terminal et web) et Cockpit (console web d'administration Linux)." }

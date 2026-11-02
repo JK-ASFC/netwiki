@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-271 capture(s) attendue(s) dans 70 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+293 capture(s) attendue(s) dans 77 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -105,6 +105,56 @@
 | `content/05-web/22-serveurs-jakarta-ee/_assets/payara-applications.png` | Payara — console d'administration, liste des applications | `04-interface-graphique.md` |
 | `content/05-web/22-serveurs-jakarta-ee/_assets/payara-jdbc.png` | Payara — pool JDBC et test de connexion (Ping) | `04-interface-graphique.md` |
 | `content/05-web/22-serveurs-jakarta-ee/_assets/liberty-admin-center.png` | Open Liberty — Admin Center, outil Explore | `04-interface-graphique.md` |
+
+## 06-supervision/14-supervision-reseau-snmp
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/librenms-dashboard.png` | LibreNMS — tableau de bord | `03-interface-graphique.md` |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/librenms-ports.png` | LibreNMS — page d'un commutateur, onglet Ports | `03-interface-graphique.md` |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/librenms-carte.png` | LibreNMS — carte réseau des voisins LLDP | `03-interface-graphique.md` |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/observium-equipement.png` | Observium — vue d'un équipement | `03-interface-graphique.md` |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/opennms-alarmes.png` | OpenNMS Horizon — liste des alarmes | `03-interface-graphique.md` |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/netxms-carte.png` | NetXMS — console, carte réseau | `03-interface-graphique.md` |
+
+## 06-supervision/15-glances-cockpit
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/06-supervision/15-glances-cockpit/_assets/glances-web.png` | Glances — interface web | `01-glances.md` |
+| `content/06-supervision/15-glances-cockpit/_assets/cockpit-apercu.png` | Cockpit — vue d'ensemble d'un serveur | `02-cockpit.md` |
+| `content/06-supervision/15-glances-cockpit/_assets/cockpit-stockage.png` | Cockpit — stockage et LVM | `02-cockpit.md` |
+| `content/06-supervision/15-glances-cockpit/_assets/cockpit-podman.png` | Cockpit — conteneurs Podman | `02-cockpit.md` |
+
+## 06-supervision/17-opentelemetry-alloy
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/06-supervision/17-opentelemetry-alloy/_assets/alloy-ui.png` | Grafana Alloy — interface de débogage, graphe des composants | `01-presentation-installation.md` |
+
+## 06-supervision/18-tracage-distribue
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/06-supervision/18-tracage-distribue/_assets/jaeger-recherche.png` | Jaeger — recherche de traces d'un service | `03-interface-graphique.md` |
+| `content/06-supervision/18-tracage-distribue/_assets/jaeger-trace.png` | Jaeger — vue en cascade d'une trace | `03-interface-graphique.md` |
+| `content/06-supervision/18-tracage-distribue/_assets/grafana-tempo-trace.png` | Grafana — trace Tempo avec lien vers les journaux Loki | `03-interface-graphique.md` |
+| `content/06-supervision/18-tracage-distribue/_assets/grafana-tempo-graphe.png` | Grafana — graphe des services (Tempo) | `03-interface-graphique.md` |
+
+## 06-supervision/19-observabilite-unifiee
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/06-supervision/19-observabilite-unifiee/_assets/signoz-apm.png` | SigNoz — vue APM d'un service (latence, erreurs, débit) | `01-presentation-installation.md` |
+| `content/06-supervision/19-observabilite-unifiee/_assets/hyperdx-recherche.png` | HyperDX — recherche de journaux et trace associée | `01-presentation-installation.md` |
+| `content/06-supervision/19-observabilite-unifiee/_assets/uptrace-traces.png` | Uptrace — liste des traces | `01-presentation-installation.md` |
+
+## 06-supervision/20-suivi-erreurs
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/06-supervision/20-suivi-erreurs/_assets/glitchtip-problemes.png` | GlitchTip — liste des problèmes d'un projet | `01-presentation-installation.md` |
+| `content/06-supervision/20-suivi-erreurs/_assets/sentry-erreur.png` | Sentry — détail d'une erreur avec pile d'appels | `01-presentation-installation.md` |
 
 ## 07-proxy-cache/09-mitmproxy
 
@@ -492,6 +542,13 @@
 | `content/14-devops/11-tekton-argo-workflows/_assets/tekton-dashboard.png` | Tekton Dashboard — PipelineRun et journaux des étapes | `03-interface-graphique.md` |
 | `content/14-devops/11-tekton-argo-workflows/_assets/argo-workflows-dag.png` | Argo Workflows — graphe DAG d'un workflow | `03-interface-graphique.md` |
 | `content/14-devops/11-tekton-argo-workflows/_assets/argo-workflows-cron.png` | Argo Workflows — liste des Cron Workflows | `03-interface-graphique.md` |
+
+## 15-journalisation/11-recherche-journaux
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/15-journalisation/11-recherche-journaux/_assets/victorialogs-vmui.png` | VictoriaLogs — interface vmui, requête LogsQL | `02-quickwit-victorialogs.md` |
+| `content/15-journalisation/11-recherche-journaux/_assets/quickwit-ui.png` | Quickwit — interface de recherche | `02-quickwit-victorialogs.md` |
 
 ## 18-infrastructure-systeme/08-netbox-nautobot
 

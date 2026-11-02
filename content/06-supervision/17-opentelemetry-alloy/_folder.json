@@ -1,0 +1,1 @@
+{ "title": "OpenTelemetry Collector et Grafana Alloy", "icon": "radio-tower", "color": "#425cc7", "description": "Collecteurs de télémétrie unifiés (métriques, journaux, traces) : OpenTelemetry Collector et Grafana Alloy (successeur de l'agent Grafana et de Promtail)." }

@@ -1,0 +1,1 @@
+{ "title": "Loki et Promtail", "icon": "scroll-text", "color": "#f46800", "description": "Agrégation de journaux de Grafana Labs : indexation par étiquettes, LogQL, stockage objet, rétention, collecte (Promtail déprécié, Alloy)." }

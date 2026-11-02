@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 299 | 1 | 838 (64 %) |
+| 1311 | 175 (13 %) | 329 | 1 | 806 (61 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -425,58 +425,58 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Packer | Création images machines | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/42-packer-vagrant` |
 | Vagrant | Environnements reproductibles | Windows, Linux, macOS | 🆕 fait (lot 58) | `13-conteneurs/42-packer-vagrant` |
 
-## 9. SUPERVISION, METRIQUES, LOGS ET OBSERVABILITE — 19/64
+## 9. SUPERVISION, METRIQUES, LOGS ET OBSERVABILITE — 51/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Prometheus | Métriques et alertes | Windows, Linux, macOS | ✅ existant | `06-supervision/02-prometheus` |
 | Grafana OSS | Dashboards | Windows, Linux, macOS | ✅ existant | `06-supervision/03-grafana` |
-| VictoriaMetrics | Base métriques | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Thanos | Stockage long terme Prometheus | Linux | ⏳ à faire | → `06-supervision` |
-| Mimir | Stockage métriques | Linux | ⏳ à faire | → `06-supervision` |
-| Cortex | Stockage métriques | Linux | ⏳ à faire | → `06-supervision` |
-| Alertmanager | Gestion alertes | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
+| VictoriaMetrics | Base métriques | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/13-stockage-metriques-long-terme` |
+| Thanos | Stockage long terme Prometheus | Linux | 🆕 fait (lot 59) | `06-supervision/13-stockage-metriques-long-terme` |
+| Mimir | Stockage métriques | Linux | 🆕 fait (lot 59) | `06-supervision/13-stockage-metriques-long-terme` |
+| Cortex | Stockage métriques | Linux | 🆕 fait (lot 59) | `06-supervision/13-stockage-metriques-long-terme` |
+| Alertmanager | Gestion alertes | Windows, Linux, macOS | ✅ existant (lot 59) | `06-supervision/02-prometheus` |
 | Zabbix | Supervision infrastructure | Windows, Linux, macOS | ✅ existant | `06-supervision/04-zabbix` |
 | Icinga 2 | Supervision | Windows, Linux, macOS | ✅ existant | `06-supervision/06-icinga` |
 | Nagios Core | Supervision | Linux | ✅ existant | `06-supervision/05-nagios` |
 | Checkmk Raw | Supervision | Linux | ✅ existant | `06-supervision/08-checkmk` |
-| LibreNMS | Supervision réseau | Linux | ⏳ à faire | → `06-supervision` |
-| Observium Community | Supervision réseau | Linux | ⏳ à faire | → `06-supervision` |
-| OpenNMS Horizon | Supervision réseau | Linux | ⏳ à faire | → `06-supervision` |
+| LibreNMS | Supervision réseau | Linux | 🆕 fait (lot 59) | `06-supervision/14-supervision-reseau-snmp` |
+| Observium Community | Supervision réseau | Linux | 🆕 fait (lot 59) | `06-supervision/14-supervision-reseau-snmp` |
+| OpenNMS Horizon | Supervision réseau | Linux | 🆕 fait (lot 59) | `06-supervision/14-supervision-reseau-snmp` |
 | Netdata | Supervision temps réel | Windows, Linux, macOS | ✅ existant | `06-supervision/07-netdata` |
-| Glances | Supervision système | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Cockpit | Administration serveur | Linux | ⏳ à faire | → `06-supervision` |
-| NetXMS | Supervision réseau | Windows, Linux | ⏳ à faire | → `06-supervision` |
+| Glances | Supervision système | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/15-glances-cockpit` |
+| Cockpit | Administration serveur | Linux | 🆕 fait (lot 59) | `06-supervision/15-glances-cockpit` |
+| NetXMS | Supervision réseau | Windows, Linux | 🆕 fait (lot 59) | `06-supervision/14-supervision-reseau-snmp` |
 | Centreon Open Source | Supervision | Linux | ✅ existant | `06-supervision/01-centreon` |
 | Prometheus Node Exporter | Export métriques système | Windows, Linux, macOS | ✅ existant | `06-supervision/02-prometheus` |
-| windows_exporter | Export métriques Windows | Windows | ⏳ à faire | → `06-supervision` |
+| windows_exporter | Export métriques Windows | Windows | ✅ existant (lot 59) | `06-supervision/02-prometheus` |
 | Telegraf | Collecteur métriques | Windows, Linux, macOS | ✅ existant | `06-supervision/09-telegraf` |
-| Collectd | Collecteur métriques | Linux, BSD | ⏳ à faire | → `06-supervision` |
-| StatsD | Collecteur métriques | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| OpenTelemetry Collector | Collecteur télémétrie | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Jaeger | Traçage distribué | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Zipkin | Traçage distribué | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| Tempo | Backend traces | Linux | ⏳ à faire | → `06-supervision` |
-| Loki | Agrégation logs | Windows, Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| Promtail (déprécié) | Agent logs historique | Windows, Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| Grafana Alloy | Agent observabilité | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
+| Collectd | Collecteur métriques | Linux, BSD | 🆕 fait (lot 59) | `06-supervision/16-collectd-statsd` |
+| StatsD | Collecteur métriques | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/16-collectd-statsd` |
+| OpenTelemetry Collector | Collecteur télémétrie | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/17-opentelemetry-alloy` |
+| Jaeger | Traçage distribué | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/18-tracage-distribue` |
+| Zipkin | Traçage distribué | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/18-tracage-distribue` |
+| Tempo | Backend traces | Linux | 🆕 fait (lot 59) | `06-supervision/18-tracage-distribue` |
+| Loki | Agrégation logs | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/09-loki-promtail` |
+| Promtail (déprécié) | Agent logs historique | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/09-loki-promtail` |
+| Grafana Alloy | Agent observabilité | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/17-opentelemetry-alloy` |
 | Fluent Bit | Collecteur logs | Windows, Linux, macOS | ✅ existant | `15-journalisation/03-fluent-bit` |
-| Fluentd | Collecteur logs | Windows, Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| Vector | Pipeline observabilité | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
+| Fluentd | Collecteur logs | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/10-fluentd-vector` |
+| Vector | Pipeline observabilité | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/10-fluentd-vector` |
 | Logstash | Pipeline logs | Windows, Linux, macOS | ✅ existant | `15-journalisation/02-logstash` |
 | OpenSearch | Recherche et analytics logs | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/02-opensearch` |
 | OpenSearch Dashboards | Visualisation logs | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/02-opensearch` |
 | Graylog Open | Gestion logs | Linux | ✅ existant | `15-journalisation/04-graylog` |
 | Wazuh | SIEM et XDR | Windows, Linux, macOS | ✅ existant | `15-journalisation/05-wazuh` |
-| ELK Stack (Elasticsearch OSS alternatives) | Recherche et logs | Windows, Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| Quickwit | Recherche logs | Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| VictoriaLogs | Gestion logs | Windows, Linux, macOS | ⏳ à faire | → `15-journalisation` |
-| SigNoz | Observabilité full-stack | Linux, Windows via conteneur | ⏳ à faire | → `06-supervision` |
-| HyperDX | Observabilité | Linux, Windows via conteneur | ⏳ à faire | → `06-supervision` |
-| Uptrace | APM et traces | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
-| GlitchTip | Suivi erreurs | Linux, Windows via conteneur | ⏳ à faire | → `06-supervision` |
-| Sentry self-hosted | Suivi erreurs | Linux | ⏳ à faire | → `06-supervision` |
-| Errbit | Suivi erreurs | Linux | ⏳ à faire | → `06-supervision` |
+| ELK Stack (Elasticsearch OSS alternatives) | Recherche et logs | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/11-recherche-journaux` |
+| Quickwit | Recherche logs | Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/11-recherche-journaux` |
+| VictoriaLogs | Gestion logs | Windows, Linux, macOS | 🆕 fait (lot 59) | `15-journalisation/11-recherche-journaux` |
+| SigNoz | Observabilité full-stack | Linux, Windows via conteneur | 🆕 fait (lot 59) | `06-supervision/19-observabilite-unifiee` |
+| HyperDX | Observabilité | Linux, Windows via conteneur | 🆕 fait (lot 59) | `06-supervision/19-observabilite-unifiee` |
+| Uptrace | APM et traces | Windows, Linux, macOS | 🆕 fait (lot 59) | `06-supervision/19-observabilite-unifiee` |
+| GlitchTip | Suivi erreurs | Linux, Windows via conteneur | 🆕 fait (lot 59) | `06-supervision/20-suivi-erreurs` |
+| Sentry self-hosted | Suivi erreurs | Linux | 🆕 fait (lot 59) | `06-supervision/20-suivi-erreurs` |
+| Errbit | Suivi erreurs | Linux | 🆕 fait (lot 59) | `06-supervision/20-suivi-erreurs` |
 | Uptime Kuma | Surveillance disponibilité | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
 | Gatus | Surveillance disponibilité | Windows, Linux, macOS | ⏳ à faire | → `06-supervision` |
 | Cachet | Page statut | Linux | ⏳ à faire | → `06-supervision` |

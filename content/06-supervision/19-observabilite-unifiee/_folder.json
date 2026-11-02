@@ -1,0 +1,1 @@
+{ "title": "SigNoz, HyperDX et Uptrace", "icon": "layout-dashboard", "color": "#f43f5e", "description": "Plates-formes d'observabilité tout-en-un (APM, traces, journaux, métriques) fondées sur OpenTelemetry et ClickHouse." }

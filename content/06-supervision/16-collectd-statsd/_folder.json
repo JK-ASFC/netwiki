@@ -1,0 +1,1 @@
+{ "title": "collectd et StatsD", "icon": "activity", "color": "#64748b", "description": "Collecteurs de métriques historiques : collectd (démon système à greffons) et StatsD (agrégation de métriques applicatives UDP)." }
