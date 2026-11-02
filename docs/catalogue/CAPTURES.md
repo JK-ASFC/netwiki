@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-115 capture(s) attendue(s) dans 21 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+123 capture(s) attendue(s) dans 22 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -39,6 +39,19 @@
 | `content/01-annuaire-identite/17-privacyidea-linotp/_assets/privacyidea-politique.png` | privacyIDEA — éditeur de politique (scope authentication) | `03-interface-graphique.md` |
 | `content/01-annuaire-identite/17-privacyidea-linotp/_assets/privacyidea-inscription-totp.png` | privacyIDEA — inscription d'un jeton TOTP avec QR code | `03-interface-graphique.md` |
 | `content/01-annuaire-identite/17-privacyidea-linotp/_assets/linotp-manage.png` | LinOTP — Manage UI, liste des jetons | `03-interface-graphique.md` |
+
+## 01-annuaire-identite/19-plateformes-iam
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/zitadel-console-projets.png` | Zitadel — console, liste des projets et applications | `02-zitadel.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/zitadel-parametres-connexion.png` | Zitadel — paramètres de connexion (passkeys, MFA) | `02-zitadel.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/casdoor-applications.png` | Casdoor — liste des applications | `03-casdoor.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/casdoor-application-edition.png` | Casdoor — édition d'une application (redirections, fournisseurs) | `03-casdoor.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/logto-sign-in-experience.png` | Logto — console, expérience de connexion | `04-logto.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/logto-organisations.png` | Logto — organisations et rôles | `04-logto.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/janssen-tui-clients.png` | Janssen — interface TUI d'administration (clients OpenID) | `06-gluu-flex-openam.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/openam-console-royaume.png` | OpenAM — console, royaume et chaînes d'authentification | `06-gluu-flex-openam.md` |
 
 ## 09-fichiers-partage/21-truenas-scale
 

@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 172 (13 %) | 56 | 0 | 1083 (83 %) |
+| 1311 | 172 (13 %) | 63 | 0 | 1076 (82 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -64,7 +64,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | DietPi | Distribution légère | Linux, SBC | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
 | Raspberry Pi OS | Distribution Linux | Raspberry Pi | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
 
-## 2. ANNUAIRE, IDENTITE, AUTHENTIFICATION ET SSO — 17/30
+## 2. ANNUAIRE, IDENTITE, AUTHENTIFICATION ET SSO — 24/30
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -76,7 +76,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Authentik | IAM et SSO | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/13-authentik` |
 | Authelia | Portail d'authentification | Windows, Linux, macOS | ✅ existant | `01-annuaire-identite/06-authelia` |
 | Kanidm | Annuaire et identité | Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/14-kanidm` |
-| Gluu Flex | IAM et SSO | Linux | ⏳ à faire | → `01-annuaire-identite` |
+| Gluu Flex | IAM et SSO | Linux | 🆕 fait (lot 50) | `01-annuaire-identite/19-plateformes-iam` |
 | LemonLDAP::NG | Portail SSO | Linux | 🆕 fait (lot 50) | `01-annuaire-identite/15-lemonldap-ng` |
 | Shibboleth | Fédération d'identité | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/16-shibboleth` |
 | privacyIDEA | Authentification multifacteur | Windows, Linux | 🆕 fait (lot 50) | `01-annuaire-identite/17-privacyidea-linotp` |
@@ -84,12 +84,12 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Keycloak Gatekeeper (archivé) | Proxy d'authentification | Linux | ✅ existant | `01-annuaire-identite/05-keycloak` |
 | OAuth2 Proxy | Proxy OAuth2/OIDC | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/18-oauth2-proxy-dex` |
 | Dex | Fournisseur OIDC | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/18-oauth2-proxy-dex` |
-| Zitadel | IAM (édition open source) | Windows, Linux, macOS | ⏳ à faire | → `01-annuaire-identite` |
-| Casdoor | Plateforme IAM | Windows, Linux, macOS | ⏳ à faire | → `01-annuaire-identite` |
-| Logto | Plateforme IAM | Windows, Linux, macOS | ⏳ à faire | → `01-annuaire-identite` |
-| Ory Kratos | Gestion des identités | Windows, Linux, macOS | ⏳ à faire | → `01-annuaire-identite` |
-| Ory Hydra | Serveur OAuth2/OIDC | Windows, Linux, macOS | ⏳ à faire | → `01-annuaire-identite` |
-| OpenAM | IAM | Linux | ⏳ à faire | → `01-annuaire-identite` |
+| Zitadel | IAM (édition open source) | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/19-plateformes-iam` |
+| Casdoor | Plateforme IAM | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/19-plateformes-iam` |
+| Logto | Plateforme IAM | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/19-plateformes-iam` |
+| Ory Kratos | Gestion des identités | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/19-plateformes-iam` |
+| Ory Hydra | Serveur OAuth2/OIDC | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/19-plateformes-iam` |
+| OpenAM | IAM | Linux | 🆕 fait (lot 50) | `01-annuaire-identite/19-plateformes-iam` |
 | FreeRADIUS | Serveur RADIUS | Windows, Linux, macOS | ✅ existant | `04-aaa/01-freeradius` |
 | PacketFence | NAC et contrôle d'accès réseau | Linux | ⏳ à faire | → `01-annuaire-identite` |
 | OpenNAC | Contrôle d'accès réseau | Linux | ⏳ à faire | → `01-annuaire-identite` |
