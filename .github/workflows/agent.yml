@@ -190,6 +190,10 @@ jobs:
           if git diff --cached --quiet; then echo "Aucune modification proposée par l'agent."; exit 0; fi
           BRANCHE="agent/${{ inputs.mode }}-$(date -u +%Y%m%d-%H%M)"
           git switch -c "$BRANCHE"
+          # L'action de l'agent remplace l'URL du dépôt par son propre jeton, révoqué en fin d'étape :
+          # on repasse sur le jeton du workflow pour pousser la branche.
+          git config --unset-all http.https://github.com/.extraheader || true
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git commit -q -m "Agent IA (${{ inputs.mode }}) : mise à jour des articles"
           git push -q origin "$BRANCHE"
           {
