@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-431 capture(s) attendue(s) dans 115 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+434 capture(s) attendue(s) dans 117 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -992,6 +992,19 @@
 | `content/25-web-cms-portails/08-erp/_assets/odoo-applications.png` | Écran des applications Odoo | `01-odoo.md` |
 | `content/25-web-cms-portails/08-erp/_assets/erpnext-comptabilite.png` | Espace de travail Comptabilité d'ERPNext | `02-frappe-erpnext.md` |
 | `content/25-web-cms-portails/08-erp/_assets/dolibarr-tableau-de-bord.png` | Tableau de bord Dolibarr | `03-dolibarr-tryton.md` |
+
+## 25-web-cms-portails/09-facturation-temps
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/09-facturation-temps/_assets/invoiceninja-tableau-de-bord.png` | Tableau de bord Invoice Ninja | `01-invoice-ninja-akaunting-kimai-crater.md` |
+| `content/25-web-cms-portails/09-facturation-temps/_assets/kimai-feuille-temps.png` | Feuille de temps hebdomadaire Kimai | `01-invoice-ninja-akaunting-kimai-crater.md` |
+
+## 25-web-cms-portails/10-ecommerce
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/10-ecommerce/_assets/prestashop-commandes.png` | Back-office PrestaShop, liste des commandes | `01-prestashop-woocommerce-opencart-magento.md` |
 
 ## 31-auto-hebergement/01-plateformes-auto-hebergement
 

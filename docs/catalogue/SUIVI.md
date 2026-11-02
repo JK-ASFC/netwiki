@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 528 | 2 | 598 (46 %) |
+| 1311 | 183 (14 %) | 536 | 2 | 590 (45 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -698,7 +698,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | SquirrelMail | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 | RainLoop (abandonné) | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 
-## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 39/64
+## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 47/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -740,14 +740,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Apache OFBiz | ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
 | ERP5 | ERP | Linux | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
 | FrontAccounting | Comptabilité/ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
-| Invoice Ninja (community) | Facturation | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Akaunting (community) | Comptabilité | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Kimai | Suivi temps et facturation | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Crater (archivé) | Facturation | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| OpenCart | E-commerce | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| PrestaShop | E-commerce | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Magento Open Source | E-commerce | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| WooCommerce | E-commerce WordPress | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
+| Invoice Ninja (community) | Facturation | Linux | 🆕 fait (lot 74) | `25-web-cms-portails/09-facturation-temps` |
+| Akaunting (community) | Comptabilité | Linux | 🆕 fait (lot 74) | `25-web-cms-portails/09-facturation-temps` |
+| Kimai | Suivi temps et facturation | Windows, Linux, macOS | 🆕 fait (lot 74) | `25-web-cms-portails/09-facturation-temps` |
+| Crater (archivé) | Facturation | Linux | 🆕 fait (lot 74) | `25-web-cms-portails/09-facturation-temps` |
+| OpenCart | E-commerce | Windows, Linux, macOS | 🆕 fait (lot 74) | `25-web-cms-portails/10-ecommerce` |
+| PrestaShop | E-commerce | Windows, Linux, macOS | 🆕 fait (lot 74) | `25-web-cms-portails/10-ecommerce` |
+| Magento Open Source | E-commerce | Linux | 🆕 fait (lot 74) | `25-web-cms-portails/10-ecommerce` |
+| WooCommerce | E-commerce WordPress | Windows, Linux, macOS | 🆕 fait (lot 74) | `25-web-cms-portails/10-ecommerce` |
 | Saleor | E-commerce headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
 | Medusa | E-commerce headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
 | Sylius | E-commerce Symfony | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |

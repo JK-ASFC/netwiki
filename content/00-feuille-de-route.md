@@ -87,6 +87,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 71 | Catalogue — CMS headless et Python : Strapi, Directus, Payload, KeystoneJS, Sanity Studio, Wagtail, Mezzanine, Plone, Zope | ✅ |
 | 72 | Catalogue — portails, GED et LMS : Liferay, Jahia, eXo Platform, Alfresco, Nuxeo, Moodle, Canvas, Chamilo, ILIAS, Open edX | ✅ |
 | 73 | Catalogue — ERP : Odoo, Frappe et ERPNext, Dolibarr, Tryton, iDempiere, metasfresh, Apache OFBiz, ERP5, FrontAccounting | ✅ |
+| 74 | Catalogue — facturation, temps et e-commerce PHP : Invoice Ninja, Akaunting, Kimai, Crater, PrestaShop, WooCommerce, OpenCart, Magento Open Source | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -416,3 +417,5 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[06-portails-ged/01-liferay-jahia-exo\|Liferay, Jahia, eXo]], [[06-portails-ged/02-alfresco-nuxeo\|Alfresco, Nuxeo]] | Docker, bundle Tomcat | Docker, bundle Tomcat | Docker | ✅ |
 | [[07-lms/01-moodle\|Moodle]], [[07-lms/02-canvas-chamilo-ilias-openedx\|Canvas, Chamilo, ILIAS, Open edX]] | PHP, Git, Tutor | IIS/WAMP + PHP | PHP (Homebrew) | ✅ |
 | [[08-erp/01-odoo\|Odoo]], [[08-erp/02-frappe-erpnext\|ERPNext]], [[08-erp/03-dolibarr-tryton\|Dolibarr, Tryton]], [[08-erp/04-idempiere-metasfresh-ofbiz-erp5-frontaccounting\|iDempiere, metasfresh, OFBiz, ERP5, FrontAccounting]] | odoo (deb), bench, Docker | Odoo (exe), DoliWamp, Docker | Docker, sources | ✅ |
+| [[09-facturation-temps/01-invoice-ninja-akaunting-kimai-crater\|Invoice Ninja, Akaunting, Kimai]] | Docker, PHP | Docker, PHP (Kimai) | Docker, PHP (Kimai) | ✅ |
+| [[10-ecommerce/01-prestashop-woocommerce-opencart-magento\|PrestaShop, WooCommerce, OpenCart, Magento]] | PHP, Composer, Docker | WAMP/IIS + PHP, Docker | PHP, Docker | ✅ |
