@@ -1,0 +1,1 @@
+{ "title": "Kopia", "icon": "archive", "color": "#2c88d9", "description": "Sauvegarde dédupliquée et chiffrée (fichiers et dossiers) vers disque, SFTP, S3, B2, Azure, GCS ou WebDAV, avec interface graphique KopiaUI et serveur de dépôts." }

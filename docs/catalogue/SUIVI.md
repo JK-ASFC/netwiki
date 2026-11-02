@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 211 | 1 | 926 (71 %) |
+| 1311 | 173 (13 %) | 246 | 1 | 891 (68 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -307,57 +307,57 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Derby | Base SQL Java | Windows, Linux, macOS | 🆕 fait (lot 55) | `11-bases-de-donnees/30-bases-java-embarquees` |
 | Realm (community components) | Base embarquée mobile | Windows, macOS, Linux | 🆕 fait (lot 55) | `11-bases-de-donnees/30-bases-java-embarquees` |
 
-## 7. STOCKAGE, NAS, OBJET, FICHIERS ET SAUVEGARDE — 12/47
+## 7. STOCKAGE, NAS, OBJET, FICHIERS ET SAUVEGARDE — 47/47
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | MinIO (community source) | Stockage objet S3 | Linux, Windows via conteneur | ✅ existant | `09-fichiers-partage/07-minio` |
-| Ceph | Stockage distribué | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| GlusterFS | Système de fichiers distribué | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| Lustre | Système de fichiers parallèle | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| BeeGFS | Système de fichiers parallèle | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| OpenZFS | Système de fichiers et volumes | Linux, FreeBSD, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| Btrfs | Système de fichiers | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| XFS | Système de fichiers | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| LVM2 | Gestion volumes logiques | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| mdadm | RAID logiciel | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| mergerfs | Fusion de systèmes de fichiers | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| SnapRAID | Protection de données | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
+| Ceph | Stockage distribué | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/24-ceph` |
+| GlusterFS | Système de fichiers distribué | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/25-glusterfs` |
+| Lustre | Système de fichiers parallèle | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/26-lustre-beegfs` |
+| BeeGFS | Système de fichiers parallèle | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/26-lustre-beegfs` |
+| OpenZFS | Système de fichiers et volumes | Linux, FreeBSD, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/27-openzfs` |
+| Btrfs | Système de fichiers | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/28-btrfs-xfs` |
+| XFS | Système de fichiers | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/28-btrfs-xfs` |
+| LVM2 | Gestion volumes logiques | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/29-lvm-mdadm` |
+| mdadm | RAID logiciel | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/29-lvm-mdadm` |
+| mergerfs | Fusion de systèmes de fichiers | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/30-mergerfs-snapraid` |
+| SnapRAID | Protection de données | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/30-mergerfs-snapraid` |
 | NFS-Ganesha | Serveur NFS | Linux | ✅ existant | `09-fichiers-partage/02-nfs` |
-| OpenAFS | Système de fichiers distribué | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| SeaweedFS | Stockage distribué | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| Garage | Stockage objet S3 | Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| OpenIO | Stockage objet | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| OpenStack Swift | Stockage objet | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| Rook | Orchestration stockage Kubernetes | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| Longhorn | Stockage persistant Kubernetes | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| OpenEBS | Stockage Kubernetes | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| LINSTOR | Stockage bloc distribué | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| DRBD | Réplication bloc | Linux | ⏳ à faire | → `19-sauvegarde` |
+| OpenAFS | Système de fichiers distribué | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/31-openafs` |
+| SeaweedFS | Stockage distribué | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/32-stockage-objet` |
+| Garage | Stockage objet S3 | Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/32-stockage-objet` |
+| OpenIO | Stockage objet | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/32-stockage-objet` |
+| OpenStack Swift | Stockage objet | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/32-stockage-objet` |
+| Rook | Orchestration stockage Kubernetes | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/33-stockage-kubernetes` |
+| Longhorn | Stockage persistant Kubernetes | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/33-stockage-kubernetes` |
+| OpenEBS | Stockage Kubernetes | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/33-stockage-kubernetes` |
+| LINSTOR | Stockage bloc distribué | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/34-drbd-linstor` |
+| DRBD | Réplication bloc | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/34-drbd-linstor` |
 | Restic | Sauvegarde | Windows, Linux, macOS | ✅ existant | `19-sauvegarde/01-restic` |
 | BorgBackup | Sauvegarde dédupliquée | Linux, macOS | ✅ existant | `19-sauvegarde/02-borgbackup` |
-| Kopia | Sauvegarde | Windows, Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
-| Duplicati | Sauvegarde | Windows, Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
+| Kopia | Sauvegarde | Windows, Linux, macOS | 🆕 fait (lot 56) | `19-sauvegarde/09-kopia` |
+| Duplicati | Sauvegarde | Windows, Linux, macOS | 🆕 fait (lot 56) | `19-sauvegarde/10-duplicati` |
 | UrBackup | Sauvegarde client/serveur | Windows, Linux | ✅ existant | `19-sauvegarde/04-urbackup` |
 | Bacula Community | Sauvegarde réseau | Windows, Linux, macOS | ✅ existant | `19-sauvegarde/03-bacula` |
-| Amanda | Sauvegarde réseau | Linux, Unix | ⏳ à faire | → `19-sauvegarde` |
-| rdiff-backup | Sauvegarde incrémentale | Windows, Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
-| rsnapshot | Sauvegarde snapshots | Linux, macOS | ⏳ à faire | → `19-sauvegarde` |
-| Rsync | Synchronisation fichiers | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| Rclone | Synchronisation stockage cloud | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
+| Amanda | Sauvegarde réseau | Linux, Unix | 🆕 fait (lot 56) | `19-sauvegarde/11-amanda` |
+| rdiff-backup | Sauvegarde incrémentale | Windows, Linux, macOS | 🆕 fait (lot 56) | `19-sauvegarde/12-rdiff-backup-rsnapshot` |
+| rsnapshot | Sauvegarde snapshots | Linux, macOS | 🆕 fait (lot 56) | `19-sauvegarde/12-rdiff-backup-rsnapshot` |
+| Rsync | Synchronisation fichiers | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/35-rsync-rclone` |
+| Rclone | Synchronisation stockage cloud | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/35-rsync-rclone` |
 | Syncthing | Synchronisation P2P | Windows, Linux, macOS | ✅ existant | `09-fichiers-partage/11-syncthing` |
 | Seafile Community | Synchronisation fichiers | Windows, Linux, macOS | ✅ existant | `09-fichiers-partage/10-seafile` |
 | Nextcloud | Cloud de fichiers | Windows, Linux, macOS (serveur Linux recommandé) | ✅ existant | `09-fichiers-partage/08-nextcloud` |
 | ownCloud Infinite Scale | Cloud de fichiers | Windows, Linux, macOS | ✅ existant | `09-fichiers-partage/09-owncloud` |
-| File Browser | Interface web fichiers | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| SFTPGo | Serveur SFTP/FTP/WebDAV | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
+| File Browser | Interface web fichiers | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/36-interfaces-web-fichiers` |
+| SFTPGo | Serveur SFTP/FTP/WebDAV | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/36-interfaces-web-fichiers` |
 | OpenSSH SFTP | Transfert sécurisé | Windows, Linux, macOS | ✅ existant | `08-acces-distant-vpn/01-openssh` |
 | WebDAV (Apache mod_dav) | Partage WebDAV | Windows, Linux, macOS | ✅ existant | `09-fichiers-partage/12-webdav` |
-| Pydio Cells | Partage et collaboration fichiers | Linux, Windows via conteneur | ⏳ à faire | → `09-fichiers-partage` |
-| Cozy Cloud | Cloud personnel | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| Filestash | Interface multi-stockage | Windows, Linux, macOS | ⏳ à faire | → `09-fichiers-partage` |
-| ProjectSend | Partage de fichiers | Linux | ⏳ à faire | → `09-fichiers-partage` |
-| Pingvin Share | Partage temporaire | Linux, Windows via conteneur | ⏳ à faire | → `09-fichiers-partage` |
+| Pydio Cells | Partage et collaboration fichiers | Linux, Windows via conteneur | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
+| Cozy Cloud | Cloud personnel | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
+| Filestash | Interface multi-stockage | Windows, Linux, macOS | 🆕 fait (lot 56) | `09-fichiers-partage/36-interfaces-web-fichiers` |
+| ProjectSend | Partage de fichiers | Linux | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
+| Pingvin Share | Partage temporaire | Linux, Windows via conteneur | 🆕 fait (lot 56) | `09-fichiers-partage/37-partage-collaboration` |
 
 ## 8. CONTENEURS, ORCHESTRATION ET PLATEFORMES CLOUD-NATIVE — 8/61
 

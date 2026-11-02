@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-232 capture(s) attendue(s) dans 56 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+253 capture(s) attendue(s) dans 63 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -194,6 +194,46 @@
 | `content/09-fichiers-partage/23-rockstor/_assets/rockstor-tableau-de-bord.png` | Rockstor — tableau de bord | `01-presentation-installation.md` |
 | `content/09-fichiers-partage/23-rockstor/_assets/rockstor-pool.png` | Rockstor — création d'un pool Btrfs en raid1 | `01-presentation-installation.md` |
 | `content/09-fichiers-partage/23-rockstor/_assets/rockstor-rock-ons.png` | Rockstor — Rock-ons disponibles | `01-presentation-installation.md` |
+
+## 09-fichiers-partage/24-ceph
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/09-fichiers-partage/24-ceph/_assets/ceph-dashboard.png` | Ceph Dashboard — page d'accueil (santé et capacité) | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/24-ceph/_assets/ceph-osd.png` | Ceph Dashboard — liste des OSD | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/24-ceph/_assets/proxmox-ceph.png` | Proxmox VE — Datacenter → Ceph | `03-interface-graphique.md` |
+
+## 09-fichiers-partage/33-stockage-kubernetes
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/09-fichiers-partage/33-stockage-kubernetes/_assets/longhorn-dashboard.png` | Longhorn — tableau de bord | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/33-stockage-kubernetes/_assets/longhorn-volume.png` | Longhorn — détail d'un volume et de ses répliques | `03-interface-graphique.md` |
+
+## 09-fichiers-partage/35-rsync-rclone
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/09-fichiers-partage/35-rsync-rclone/_assets/rclone-webgui.png` | Rclone Web GUI — explorateur de remotes | `02-rclone.md` |
+
+## 09-fichiers-partage/36-interfaces-web-fichiers
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/09-fichiers-partage/36-interfaces-web-fichiers/_assets/filebrowser-liste.png` | File Browser — liste des fichiers | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/36-interfaces-web-fichiers/_assets/filestash-connexion.png` | Filestash — écran de connexion multi-protocoles | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/36-interfaces-web-fichiers/_assets/sftpgo-utilisateurs.png` | SFTPGo — liste des utilisateurs | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/36-interfaces-web-fichiers/_assets/sftpgo-client.png` | SFTPGo — client web utilisateur | `03-interface-graphique.md` |
+
+## 09-fichiers-partage/37-partage-collaboration
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/09-fichiers-partage/37-partage-collaboration/_assets/pydio-cells-workspace.png` | Pydio Cells — espace de travail et partage | `04-interface-graphique.md` |
+| `content/09-fichiers-partage/37-partage-collaboration/_assets/pydio-cells-console.png` | Pydio Cells — console d'administration, datasources | `04-interface-graphique.md` |
+| `content/09-fichiers-partage/37-partage-collaboration/_assets/cozy-drive.png` | Cozy Drive — liste des fichiers | `04-interface-graphique.md` |
+| `content/09-fichiers-partage/37-partage-collaboration/_assets/projectsend-fichier.png` | ProjectSend — attribution d'un fichier à un client | `04-interface-graphique.md` |
+| `content/09-fichiers-partage/37-partage-collaboration/_assets/pingvin-share.png` | Pingvin Share — création d'un partage | `04-interface-graphique.md` |
 
 ## 11-bases-de-donnees/11-duckdb
 
@@ -434,6 +474,22 @@
 | `content/19-sauvegarde/08-bareos/_assets/bareos-webui-tableau-de-bord.png` | Bareos WebUI — tableau de bord des tâches | `03-interface-graphique.md` |
 | `content/19-sauvegarde/08-bareos/_assets/bareos-webui-restauration.png` | Bareos WebUI — assistant de restauration avec arborescence de fichiers | `03-interface-graphique.md` |
 | `content/19-sauvegarde/08-bareos/_assets/bareos-webui-volumes.png` | Bareos WebUI — liste des volumes d'un pool | `03-interface-graphique.md` |
+
+## 19-sauvegarde/09-kopia
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/19-sauvegarde/09-kopia/_assets/kopiaui-snapshots.png` | KopiaUI — liste des instantanés | `02-interface-graphique.md` |
+| `content/19-sauvegarde/09-kopia/_assets/kopiaui-policy.png` | KopiaUI — politique de planification et de rétention | `02-interface-graphique.md` |
+| `content/19-sauvegarde/09-kopia/_assets/kopiaui-restauration.png` | KopiaUI — restauration d'un dossier | `02-interface-graphique.md` |
+
+## 19-sauvegarde/10-duplicati
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/19-sauvegarde/10-duplicati/_assets/duplicati-accueil.png` | Duplicati — tableau des sauvegardes (accueil de l'interface web) | `01-presentation-installation.md` |
+| `content/19-sauvegarde/10-duplicati/_assets/duplicati-destination.png` | Duplicati — assistant de création, étape Destination | `01-presentation-installation.md` |
+| `content/19-sauvegarde/10-duplicati/_assets/duplicati-restauration.png` | Duplicati — restauration de fichiers | `01-presentation-installation.md` |
 
 ## 22-constructeurs/29-openwrt-openwisp
 
