@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-123 capture(s) attendue(s) dans 22 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+129 capture(s) attendue(s) dans 23 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -52,6 +52,17 @@
 | `content/01-annuaire-identite/19-plateformes-iam/_assets/logto-organisations.png` | Logto — organisations et rôles | `04-logto.md` |
 | `content/01-annuaire-identite/19-plateformes-iam/_assets/janssen-tui-clients.png` | Janssen — interface TUI d'administration (clients OpenID) | `06-gluu-flex-openam.md` |
 | `content/01-annuaire-identite/19-plateformes-iam/_assets/openam-console-royaume.png` | OpenAM — console, royaume et chaînes d'authentification | `06-gluu-flex-openam.md` |
+
+## 04-aaa/03-packetfence-opennac
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/04-aaa/03-packetfence-opennac/_assets/packetfence-status.png` | PacketFence — tableau de bord Status | `03-interface-graphique.md` |
+| `content/04-aaa/03-packetfence-opennac/_assets/packetfence-audit-radius.png` | PacketFence — Auditing, détail d'une authentification RADIUS | `03-interface-graphique.md` |
+| `content/04-aaa/03-packetfence-opennac/_assets/packetfence-node.png` | PacketFence — Nodes, fiche d'un terminal et changement de rôle | `03-interface-graphique.md` |
+| `content/04-aaa/03-packetfence-opennac/_assets/packetfence-switch-roles.png` | PacketFence — configuration d'un commutateur (rôles → VLAN) | `03-interface-graphique.md` |
+| `content/04-aaa/03-packetfence-opennac/_assets/packetfence-portail-captif.png` | PacketFence — portail captif d'enregistrement | `03-interface-graphique.md` |
+| `content/04-aaa/03-packetfence-opennac/_assets/opennac-politiques.png` | OpenNAC — console, liste des politiques | `03-interface-graphique.md` |
 
 ## 09-fichiers-partage/21-truenas-scale
 

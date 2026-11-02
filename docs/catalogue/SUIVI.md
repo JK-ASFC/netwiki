@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 172 (13 %) | 63 | 0 | 1076 (82 %) |
+| 1311 | 173 (13 %) | 68 | 0 | 1070 (82 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -64,7 +64,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | DietPi | Distribution légère | Linux, SBC | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
 | Raspberry Pi OS | Distribution Linux | Raspberry Pi | 🆕 fait (lot 49) | `24-systemes-exploitation/10-raspberry-pi-os-dietpi` |
 
-## 2. ANNUAIRE, IDENTITE, AUTHENTIFICATION ET SSO — 24/30
+## 2. ANNUAIRE, IDENTITE, AUTHENTIFICATION ET SSO — 30/30
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -91,13 +91,13 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Ory Hydra | Serveur OAuth2/OIDC | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/19-plateformes-iam` |
 | OpenAM | IAM | Linux | 🆕 fait (lot 50) | `01-annuaire-identite/19-plateformes-iam` |
 | FreeRADIUS | Serveur RADIUS | Windows, Linux, macOS | ✅ existant | `04-aaa/01-freeradius` |
-| PacketFence | NAC et contrôle d'accès réseau | Linux | ⏳ à faire | → `01-annuaire-identite` |
-| OpenNAC | Contrôle d'accès réseau | Linux | ⏳ à faire | → `01-annuaire-identite` |
-| Authentification SSH OpenSSH | Accès distant sécurisé | Windows, Linux, macOS | ⏳ à faire | → `01-annuaire-identite` |
-| SSSD | Intégration identité Linux | Linux | ⏳ à faire | → `01-annuaire-identite` |
-| realmd | Jointure de domaines | Linux | ⏳ à faire | → `01-annuaire-identite` |
+| PacketFence | NAC et contrôle d'accès réseau | Linux | 🆕 fait (lot 50) | `04-aaa/03-packetfence-opennac` |
+| OpenNAC | Contrôle d'accès réseau | Linux | 🆕 fait (lot 50) | `04-aaa/03-packetfence-opennac` |
+| Authentification SSH OpenSSH | Accès distant sécurisé | Windows, Linux, macOS | ✅ existant | `08-acces-distant-vpn/01-openssh` |
+| SSSD | Intégration identité Linux | Linux | 🆕 fait (lot 50) | `01-annuaire-identite/20-sssd-realmd` |
+| realmd | Jointure de domaines | Linux | 🆕 fait (lot 50) | `01-annuaire-identite/20-sssd-realmd` |
 | Samba AD DC | Contrôleur de domaine | Linux | ✅ existant | `09-fichiers-partage/01-samba` |
-| gopass | Gestionnaire de secrets CLI | Windows, Linux, macOS | ⏳ à faire | → `01-annuaire-identite` |
+| gopass | Gestionnaire de secrets CLI | Windows, Linux, macOS | 🆕 fait (lot 50) | `01-annuaire-identite/21-gopass` |
 
 ## 3. DNS, DHCP, IPAM ET SERVICES RESEAU — 17/49
 

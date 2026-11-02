@@ -1,0 +1,1 @@
+{ "title": "PacketFence et OpenNAC (NAC)", "icon": "shield-check", "color": "#e8590c", "description": "Contrôle d'accès au réseau : 802.1X et MAB, portail captif, attribution dynamique de VLAN, enregistrement des terminaux, isolation et conformité, interface d'administration." }

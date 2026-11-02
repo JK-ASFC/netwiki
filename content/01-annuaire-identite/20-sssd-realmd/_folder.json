@@ -1,0 +1,1 @@
+{ "title": "SSSD et realmd", "icon": "users", "color": "#1c7ed6", "description": "Intégration des serveurs Linux à Active Directory, FreeIPA ou LDAP : jointure de domaine (realm join), SSSD, connexion des comptes du domaine, sudo, accès SSH par groupes, cache hors ligne." }

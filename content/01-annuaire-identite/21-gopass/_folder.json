@@ -1,0 +1,1 @@
+{ "title": "gopass", "icon": "key-round", "color": "#868e96", "description": "Gestionnaire de secrets en ligne de commande pour les équipes : chiffrement GPG ou age, dépôts Git, plusieurs magasins, intégrations (navigateur, Ansible, scripts)." }

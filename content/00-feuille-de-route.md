@@ -63,6 +63,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 47 | Site de présentation sur GitHub Pages (jk-asfc.github.io/netwiki) : mêmes couleurs que le logiciel, exemples, démo interactive des commandes, « Comment ça marche », téléchargements de la dernière version, soutien et FAQ | ✅ |
 | 48 | Catalogue — virtualisation : KVM, QEMU et libvirt (virt-manager, GNOME Boxes, Cockpit), XCP-ng et Xen (Xen Orchestra), UTM, Incus, LXD et LXC, oVirt, OpenStack (Horizon), OpenNebula (Sunstone), Apache CloudStack, CRI-O, Kata Containers, Firecracker, bhyve | ✅ |
 | 49 | Catalogue — systèmes et stockage : catégorie « Systèmes d'exploitation » (Debian et Ubuntu Server, famille Red Hat, openSUSE, Arch, Gentoo, Alpine, NixOS, Kali et Parrot, FreeBSD, OpenBSD, NetBSD, Raspberry Pi OS et DietPi), NAS (TrueNAS, OpenMediaVault, Rockstor), Bareos, catégorie « Services auto-hébergés » (YunoHost, CasaOS, Runtipi, Umbrel) | ✅ |
+| 50 | Catalogue — identité et SSO : 389 Directory Server, Authentik, Kanidm, LemonLDAP::NG, Shibboleth, privacyIDEA et LinOTP, OAuth2 Proxy et Dex, plateformes IAM (Zitadel, Casdoor, Logto, Ory, Gluu Flex, OpenAM), PacketFence et OpenNAC, SSSD et realmd, gopass | ✅ |
 
 ## Annuaire, identité & secrets
 
