@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-351 capture(s) attendue(s) dans 96 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+367 capture(s) attendue(s) dans 100 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -308,6 +308,42 @@
 | `content/10-messagerie/11-matrix/_assets/element-salons.png` | Element — liste des salons et espaces | `03-interface-graphique.md` |
 | `content/10-messagerie/11-matrix/_assets/element-verification.png` | Element — vérification d'une nouvelle session | `03-interface-graphique.md` |
 | `content/10-messagerie/11-matrix/_assets/synapse-admin-utilisateurs.png` | synapse-admin — liste des utilisateurs | `03-interface-graphique.md` |
+
+## 10-messagerie/12-mattermost
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-premier-demarrage.png` | Assistant de premier démarrage (création du compte administrateur et de l'équipe) | `01-presentation-installation.md` |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-espace-travail.png` | Espace de travail avec barre latérale, canal et fil de discussion ouvert | `03-interface-graphique.md` |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-system-console.png` | System Console, section Users | `03-interface-graphique.md` |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-webhook.png` | Création d'un webhook entrant | `03-interface-graphique.md` |
+
+## 10-messagerie/13-rocketchat
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-assistant.png` | Assistant de configuration (administrateur et organisation) | `01-presentation-installation.md` |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-espace-travail.png` | Espace de travail Rocket.Chat avec un canal et ses fils | `02-interface-graphique.md` |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-administration-users.png` | Administration, page Users | `02-interface-graphique.md` |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-omnichannel.png` | Configuration Omnichannel, départements et agents | `02-interface-graphique.md` |
+
+## 10-messagerie/14-zulip
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/14-zulip/_assets/zulip-creation-organisation.png` | Page de création de l'organisation Zulip | `01-presentation-installation.md` |
+| `content/10-messagerie/14-zulip/_assets/zulip-boite-reception.png` | Boîte de réception avec canaux et sujets non lus | `02-interface-graphique.md` |
+| `content/10-messagerie/14-zulip/_assets/zulip-parametres-utilisateurs.png` | Paramètres de l'organisation, section Utilisateurs | `02-interface-graphique.md` |
+
+## 10-messagerie/15-xmpp
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/15-xmpp/_assets/ejabberd-webadmin.png` | Interface web d'ejabberd, page des utilisateurs du domaine | `02-ejabberd.md` |
+| `content/10-messagerie/15-xmpp/_assets/openfire-assistant-ldap.png` | Assistant Openfire, étape Profils utilisateurs avec Active Directory | `03-openfire.md` |
+| `content/10-messagerie/15-xmpp/_assets/openfire-sessions.png` | Console Openfire, liste des sessions | `03-openfire.md` |
+| `content/10-messagerie/15-xmpp/_assets/snikket-portail.png` | Portail d'administration Snikket (utilisateurs et invitations) | `04-snikket-mongooseim.md` |
+| `content/10-messagerie/15-xmpp/_assets/conversejs-plein-ecran.png` | Converse.js en mode plein écran avec un salon ouvert | `05-clients-conversejs.md` |
 
 ## 11-bases-de-donnees/11-duckdb
 

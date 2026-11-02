@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 179 (14 %) | 429 | 1 | 702 (54 %) |
+| 1311 | 183 (14 %) | 440 | 2 | 686 (52 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -192,13 +192,13 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | MaxScale (édition communautaire) | Proxy MariaDB | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
 | Odyssey | Pooler PostgreSQL | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
 
-## 5. SERVEURS WEB, LANGAGES ET RUNTIMES — 39/41
+## 5. SERVEURS WEB, LANGAGES ET RUNTIMES — 41/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | PHP | Runtime PHP | Windows, Linux, macOS | ✨ amélioré (lot agent-2026-11-02) | `05-web/05-php-fpm` |
 | Node.js | Runtime JavaScript | Windows, Linux, macOS | ✅ existant | `05-web/06-nodejs` |
-| Deno | Runtime JavaScript/TypeScript | Windows, Linux, macOS | ⏳ à faire | → `05-web` |
+| Deno | Runtime JavaScript/TypeScript | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-02) | `05-web/14-deno` |
 | Bun | Runtime JavaScript | Windows, Linux, macOS | 🆕 fait (lot 53) | `05-web/15-bun` |
 | Python | Langage et runtime | Windows, Linux, macOS | ✅ existant | `05-web/07-python` |
 | Ruby | Langage et runtime | Windows, Linux, macOS | ✅ existant | `05-web/08-ruby` |
@@ -613,7 +613,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Serverspec | Tests infrastructure | Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 | KitchenCI | Tests infrastructure | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 
-## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 16/80
+## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 30/80
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -622,21 +622,21 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Conduit | Serveur Matrix léger | Windows, Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
 | Continuwuity | Serveur Matrix | Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
 | Element Server Suite (components) | Messagerie Matrix | Windows, Linux, macOS | 🆕 fait (lot 63) | `10-messagerie/11-matrix` |
-| Mattermost Team Edition | Chat équipe | Linux, Windows via conteneur | ⏳ à faire | → `10-messagerie` |
-| Rocket.Chat Community | Chat équipe | Linux, Windows via conteneur | ⏳ à faire | → `10-messagerie` |
-| Zulip | Chat équipe | Linux | ⏳ à faire | → `10-messagerie` |
-| XMPP Prosody | Serveur XMPP | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| ejabberd | Serveur XMPP | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Openfire | Serveur XMPP | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Snikket | Messagerie XMPP | Linux | ⏳ à faire | → `10-messagerie` |
-| MongooseIM | Serveur XMPP | Linux | ⏳ à faire | → `10-messagerie` |
-| Jitsi Meet | Visioconférence | Linux | ⏳ à faire | → `10-messagerie` |
-| Jitsi Videobridge | Serveur média | Linux | ⏳ à faire | → `10-messagerie` |
-| BigBlueButton | Classe virtuelle | Linux | ⏳ à faire | → `10-messagerie` |
-| Galène | Visioconférence | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
+| Mattermost Team Edition | Chat équipe | Linux, Windows via conteneur | 🆕 fait (lot 64) | `10-messagerie/12-mattermost` |
+| Rocket.Chat Community | Chat équipe | Linux, Windows via conteneur | 🆕 fait (lot 64) | `10-messagerie/13-rocketchat` |
+| Zulip | Chat équipe | Linux | 🆕 fait (lot 64) | `10-messagerie/14-zulip` |
+| XMPP Prosody | Serveur XMPP | Windows, Linux, macOS | 🆕 fait (lot 64) | `10-messagerie/15-xmpp` |
+| ejabberd | Serveur XMPP | Windows, Linux, macOS | 🆕 fait (lot 64) | `10-messagerie/15-xmpp` |
+| Openfire | Serveur XMPP | Windows, Linux, macOS | 🆕 fait (lot 64) | `10-messagerie/15-xmpp` |
+| Snikket | Messagerie XMPP | Linux | 🆕 fait (lot 64) | `10-messagerie/15-xmpp` |
+| MongooseIM | Serveur XMPP | Linux | 🆕 fait (lot 64) | `10-messagerie/15-xmpp` |
+| Jitsi Meet | Visioconférence | Linux | ✅ existant (lot 64) | `23-telephonie-ip/16-visioconference` |
+| Jitsi Videobridge | Serveur média | Linux | ✅ existant (lot 64) | `23-telephonie-ip/16-visioconference` |
+| BigBlueButton | Classe virtuelle | Linux | ✅ existant (lot 64) | `23-telephonie-ip/16-visioconference` |
+| Galène | Visioconférence | Windows, Linux, macOS | 🆕 fait (lot 64) | `23-telephonie-ip/16-visioconference` |
 | Nextcloud Talk | Chat et visioconférence | Linux | ✅ existant | `09-fichiers-partage/08-nextcloud` |
-| Element | Client Matrix | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Converse.js | Client XMPP web | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
+| Element | Client Matrix | Windows, Linux, macOS | ✅ existant (lot 64) | `10-messagerie/11-matrix` |
+| Converse.js | Client XMPP web | Windows, Linux, macOS | 🆕 fait (lot 64) | `10-messagerie/15-xmpp` |
 | Zammad | Helpdesk | Linux | ✅ existant | `21-outils/06-support-parc/06-zammad` |
 | Chatwoot | Support client omnicanal | Linux | ⏳ à faire | → `10-messagerie` |
 | FreeScout | Helpdesk email | Linux | ⏳ à faire | → `10-messagerie` |

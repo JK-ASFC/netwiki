@@ -77,6 +77,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 61 | Catalogue — sécurité : Nuclei, Nikto, Wapiti, Arachni, sqlmap, testssl.sh, SSLyze, Certbot, acme.sh, step-ca, EJBCA, OpenSSL, LibreSSL, GnuPG, age, SOPS, OpenBao, Infisical, Passbolt, Psono, nftables, iptables, firewalld, UFW, SSHGuard, YARA, chkrootkit, rkhunter, OpenEDR | ✅ |
 | 62 | Catalogue — automatisation (1) : AWX, Semaphore, Rundeck, Chef/Cinc, CFEngine, Pulumi, Terragrunt, Terramate, cloud-init, Ignition, Foreman, Katello, Uyuni, Rudder, Rex, Fabric, Invoke, Netmiko, NAPALM, Nornir, StackStorm | ✅ |
 | 63 | Catalogue — automatisation (2) et Matrix : Node-RED, Huginn, Activepieces, Windmill, Airflow, Kestra, Prefect, Dagster, DolphinScheduler, Temporal, Conductor, Molecule, Testinfra, InSpec, Serverspec, Test Kitchen, Synapse, Dendrite, Conduit, Continuwuity, Element Server Suite | ✅ |
+| 64 | Catalogue — messagerie d'équipe et XMPP : Mattermost, Rocket.Chat, Zulip, Prosody, ejabberd, Openfire, Snikket, MongooseIM, Converse.js, Galène (Jitsi, BigBlueButton et Element déjà présents) | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -191,6 +192,11 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[07-mailpit/01-presentation-installation\|Mailpit (tests)]] | mailpit | mailpit | mailpit | ✅ |
 | [[10-smtp-windows/01-relais-smtp\|Serveur SMTP Windows (relais IIS 6)]] | ➖ | SMTP-Server | ➖ | ✅ |
 | [[08-radicale/01-installation-configuration\|Radicale (CalDAV / CardDAV)]], [[09-joplin-server/01-installation-exploitation\|Joplin Server]] | radicale | radicale (pip) | radicale, joplin-server | ✅ |
+| [[11-matrix/01-synapse-ess\|Matrix (Synapse, ESS, Element)]] | matrix-synapse-py3, Docker | ➖ (Docker), Element | ➖ (Docker), Element | ✅ |
+| [[12-mattermost/01-presentation-installation\|Mattermost]] | mattermost (deb), tar.gz, Docker | ➖ (Docker), client winget | ➖ (Docker), client brew | ✅ |
+| [[13-rocketchat/01-presentation-installation\|Rocket.Chat]] | Docker Compose | Docker Desktop, client winget | Docker Desktop, client brew | ✅ |
+| [[14-zulip/01-presentation-installation\|Zulip]] | installateur (Ubuntu, Debian), Docker | ➖ (Docker), client winget | ➖ (Docker), client brew | ✅ |
+| [[15-xmpp/01-prosody\|XMPP : Prosody]], [[15-xmpp/02-ejabberd\|ejabberd]], [[15-xmpp/03-openfire\|Openfire]], [[15-xmpp/04-snikket-mongooseim\|Snikket, MongooseIM]] | prosody, ejabberd, openfire, Docker | Openfire (exe), Docker | prosody, ejabberd (brew), Openfire (dmg) | ✅ |
 
 ## Bases de données
 
