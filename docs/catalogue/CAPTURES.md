@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-382 capture(s) attendue(s) dans 101 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+394 capture(s) attendue(s) dans 102 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -344,6 +344,23 @@
 | `content/10-messagerie/15-xmpp/_assets/openfire-sessions.png` | Console Openfire, liste des sessions | `03-openfire.md` |
 | `content/10-messagerie/15-xmpp/_assets/snikket-portail.png` | Portail d'administration Snikket (utilisateurs et invitations) | `04-snikket-mongooseim.md` |
 | `content/10-messagerie/15-xmpp/_assets/conversejs-plein-ecran.png` | Converse.js en mode plein écran avec un salon ouvert | `05-clients-conversejs.md` |
+
+## 10-messagerie/16-gestion-projet
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/16-gestion-projet/_assets/openproject-gantt.png` | Vue Gantt d'un projet OpenProject | `01-openproject.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/openproject-tableau.png` | Tableau agile (kanban) des lots de travaux | `01-openproject.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/redmine-demandes.png` | Liste des demandes d'un projet Redmine avec filtres | `02-redmine.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/redmine-workflow.png` | Administration, écran Workflow | `02-redmine.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/taiga-backlog.png` | Backlog scrum d'un projet Taiga | `03-taiga-plane-leantime.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/plane-issues.png` | Liste des issues d'un projet Plane (vue tableau) | `03-taiga-plane-leantime.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/leantime-tableau-de-bord.png` | Tableau de bord d'un projet Leantime | `03-taiga-plane-leantime.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/tuleap-cardwall.png` | Tableau agile (cardwall) d'un projet Tuleap | `04-tuleap-trac-phorge.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/phorge-differential.png` | Revue de code Differential dans Phorge | `04-tuleap-trac-phorge.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/kanboard-tableau.png` | Tableau kanban d'un projet Kanboard | `05-kanban-taches.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/wekan-tableau.png` | Tableau Wekan avec listes et cartes | `05-kanban-taches.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/vikunja-kanban.png` | Vue kanban d'un projet Vikunja | `05-kanban-taches.md` |
 
 ## 11-bases-de-donnees/11-duckdb
 

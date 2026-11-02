@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 449 | 2 | 677 (52 %) |
+| 1311 | 183 (14 %) | 461 | 2 | 665 (51 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -613,7 +613,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Serverspec | Tests infrastructure | Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 | KitchenCI | Tests infrastructure | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 
-## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 39/80
+## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 51/80
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -648,18 +648,18 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Request Tracker | Ticketing | Linux, Unix | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
 | UVdesk Community | Helpdesk | Linux | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
 | Faveo Helpdesk Community | Helpdesk | Linux | 🆕 fait (lot 65) | `21-outils/06-support-parc` |
-| OpenProject | Gestion projet | Linux | ⏳ à faire | → `10-messagerie` |
-| Taiga | Gestion projet agile | Linux | ⏳ à faire | → `10-messagerie` |
-| Plane (community) | Gestion projet | Linux, Windows via conteneur | ⏳ à faire | → `10-messagerie` |
-| Leantime | Gestion projet | Linux | ⏳ à faire | → `10-messagerie` |
-| Redmine | Gestion projet | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Trac | Gestion projet et wiki | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Phabricator (archivé) | Collaboration développement | Linux | ⏳ à faire | → `10-messagerie` |
-| Tuleap Community | ALM et projet | Linux | ⏳ à faire | → `10-messagerie` |
-| Kanboard | Kanban | Linux | ⏳ à faire | → `10-messagerie` |
-| Wekan | Kanban | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Focalboard (archivé) | Gestion projet | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Vikunja | Tâches et projets | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
+| OpenProject | Gestion projet | Linux | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
+| Taiga | Gestion projet agile | Linux | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
+| Plane (community) | Gestion projet | Linux, Windows via conteneur | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
+| Leantime | Gestion projet | Linux | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
+| Redmine | Gestion projet | Windows, Linux, macOS | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
+| Trac | Gestion projet et wiki | Windows, Linux, macOS | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
+| Phabricator (archivé) | Collaboration développement | Linux | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
+| Tuleap Community | ALM et projet | Linux | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
+| Kanboard | Kanban | Linux | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
+| Wekan | Kanban | Windows, Linux, macOS | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
+| Focalboard (archivé) | Gestion projet | Windows, Linux, macOS | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
+| Vikunja | Tâches et projets | Windows, Linux, macOS | 🆕 fait (lot 66) | `10-messagerie/16-gestion-projet` |
 | AppFlowy | Espace de travail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
 | AFFiNE | Espace de travail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
 | Outline | Wiki collaboratif | Linux | ⏳ à faire | → `10-messagerie` |
