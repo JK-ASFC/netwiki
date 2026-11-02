@@ -68,3 +68,15 @@ sudo systemctl restart spamass-milter postfix
 sudo journalctl -u spamd -f
 grep spamd /var/log/mail.log | grep -E "result: Y" | tail
 ```
+
+## Amavis
+
+Explications : [[03-amavis|Amavis]].
+
+```bash
+sudo systemctl status amavis ; sudo journalctl -u amavis -f
+sudo amavisd-new showkeys ; sudo amavisd-new testkeys
+sudo amavisd-release spam-AbCdEf123456.gz
+nc -zv 127.0.0.1 10024 ; nc -zv 127.0.0.1 10025
+sudo grep -E 'amavis\[' /var/log/mail.log | tail -20
+```

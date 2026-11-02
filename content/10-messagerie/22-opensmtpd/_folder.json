@@ -1,0 +1,1 @@
+{ "title": "OpenSMTPD", "icon": "send", "color": "#facc15", "description": "Serveur SMTP du projet OpenBSD, simple et sûr : réception, relais, soumission authentifiée et livraison locale." }

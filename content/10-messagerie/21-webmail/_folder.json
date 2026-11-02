@@ -1,0 +1,1 @@
+{ "title": "Webmails (Roundcube, SnappyMail, SquirrelMail, RainLoop)", "icon": "mail-open", "color": "#0891b2", "description": "Clients de messagerie dans le navigateur, à brancher sur un serveur IMAP/SMTP existant." }

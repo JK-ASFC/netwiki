@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-408 capture(s) attendue(s) dans 105 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+413 capture(s) attendue(s) dans 107 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -390,6 +390,21 @@
 | `content/10-messagerie/19-groupware-agendas/_assets/sogo-agenda.png` | Agenda partagé dans l'interface web de SOGo | `01-sogo-kopano.md` |
 | `content/10-messagerie/19-groupware-agendas/_assets/caldiy-reservation.png` | Page de réservation publique Cal.diy | `02-calcom-baikal-davical.md` |
 | `content/10-messagerie/19-groupware-agendas/_assets/baikal-utilisateurs.png` | Administration Baïkal, liste des utilisateurs | `02-calcom-baikal-davical.md` |
+
+## 10-messagerie/20-suites-messagerie
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/20-suites-messagerie/_assets/mailcow-administration.png` | Interface d'administration Mailcow (domaines et boîtes) | `01-mailcow-mailu-docker-mailserver.md` |
+| `content/10-messagerie/20-suites-messagerie/_assets/modoboa-domaines.png` | Interface d'administration Modoboa, liste des domaines | `02-modoboa-iredmail.md` |
+| `content/10-messagerie/20-suites-messagerie/_assets/iredadmin-utilisateur.png` | iRedAdmin, création d'un utilisateur | `02-modoboa-iredmail.md` |
+
+## 10-messagerie/21-webmail
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/21-webmail/_assets/roundcube-elastic.png` | Boîte de réception Roundcube (thème Elastic) | `01-roundcube.md` |
+| `content/10-messagerie/21-webmail/_assets/snappymail-domaine.png` | Administration SnappyMail, configuration d'un domaine IMAP et SMTP | `02-snappymail-anciens.md` |
 
 ## 11-bases-de-donnees/11-duckdb
 

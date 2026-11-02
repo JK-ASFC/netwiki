@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 479 | 2 | 647 (49 %) |
+| 1311 | 183 (14 %) | 490 | 2 | 636 (49 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -613,7 +613,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Serverspec | Tests infrastructure | Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 | KitchenCI | Tests infrastructure | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 
-## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 69/80
+## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 80/80
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -681,22 +681,22 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Radicale | Serveur CalDAV/CardDAV | Windows, Linux, macOS | ✅ existant | `10-messagerie/08-radicale` |
 | Baïkal | Serveur CalDAV/CardDAV | Linux | 🆕 fait (lot 68) | `10-messagerie/19-groupware-agendas` |
 | DAViCal | Serveur CalDAV | Linux | 🆕 fait (lot 68) | `10-messagerie/19-groupware-agendas` |
-| Mailu | Suite serveur mail | Linux | ⏳ à faire | → `10-messagerie` |
-| Mailcow | Suite serveur mail | Linux | ⏳ à faire | → `10-messagerie` |
-| docker-mailserver | Serveur mail | Linux | ⏳ à faire | → `10-messagerie` |
-| Modoboa | Suite serveur mail | Linux | ⏳ à faire | → `10-messagerie` |
-| iRedMail (open source edition) | Suite serveur mail | Linux, BSD | ⏳ à faire | → `10-messagerie` |
+| Mailu | Suite serveur mail | Linux | 🆕 fait (lot 69) | `10-messagerie/20-suites-messagerie` |
+| Mailcow | Suite serveur mail | Linux | 🆕 fait (lot 69) | `10-messagerie/20-suites-messagerie` |
+| docker-mailserver | Serveur mail | Linux | 🆕 fait (lot 69) | `10-messagerie/20-suites-messagerie` |
+| Modoboa | Suite serveur mail | Linux | 🆕 fait (lot 69) | `10-messagerie/20-suites-messagerie` |
+| iRedMail (open source edition) | Suite serveur mail | Linux, BSD | 🆕 fait (lot 69) | `10-messagerie/20-suites-messagerie` |
 | Postfix | MTA SMTP | Windows via ports, Linux, macOS | ✅ existant | `10-messagerie/01-postfix` |
 | Exim | MTA SMTP | Linux, Unix | ✅ existant | `10-messagerie/03-exim` |
-| OpenSMTPD | MTA SMTP | OpenBSD, Linux | ⏳ à faire | → `10-messagerie` |
+| OpenSMTPD | MTA SMTP | OpenBSD, Linux | 🆕 fait (lot 69) | `10-messagerie/22-opensmtpd` |
 | Dovecot | Serveur IMAP/POP3 | Linux, Unix | ✅ existant | `10-messagerie/02-dovecot` |
 | Rspamd | Filtrage spam | Linux | ✅ existant | `10-messagerie/04-rspamd` |
 | SpamAssassin | Filtrage spam | Windows, Linux, macOS | ✅ existant | `10-messagerie/05-spamassassin` |
-| Amavis | Filtrage email | Linux | ⏳ à faire | → `10-messagerie` |
-| Roundcube | Webmail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| SnappyMail | Webmail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| SquirrelMail | Webmail historique | Linux | ⏳ à faire | → `10-messagerie` |
-| RainLoop (abandonné) | Webmail historique | Linux | ⏳ à faire | → `10-messagerie` |
+| Amavis | Filtrage email | Linux | 🆕 fait (lot 69) | `10-messagerie/05-spamassassin` |
+| Roundcube | Webmail | Windows, Linux, macOS | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
+| SnappyMail | Webmail | Windows, Linux, macOS | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
+| SquirrelMail | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
+| RainLoop (abandonné) | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 
 ## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 1/64
 
