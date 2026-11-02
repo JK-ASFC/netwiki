@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-420 capture(s) attendue(s) dans 111 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+424 capture(s) attendue(s) dans 112 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -961,6 +961,15 @@
 | --- | --- | --- |
 | `content/25-web-cms-portails/04-ghost-grav-october/_assets/ghost-editeur.png` | Éditeur d'article Ghost | `01-ghost.md` |
 | `content/25-web-cms-portails/04-ghost-grav-october/_assets/grav-admin.png` | Interface d'administration Grav, édition d'une page | `02-grav-october.md` |
+
+## 25-web-cms-portails/05-cms-headless-python
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/strapi-content-type-builder.png` | Constructeur de types de contenu Strapi | `01-strapi-directus-payload.md` |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/directus-data-studio.png` | Data Studio Directus, collection et éditeur d'élément | `01-strapi-directus-payload.md` |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/wagtail-streamfield.png` | Éditeur de page Wagtail avec StreamField | `03-wagtail-mezzanine.md` |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/plone-volto.png` | Interface Volto de Plone 6, édition d'une page | `04-plone-zope.md` |
 
 ## 31-auto-hebergement/01-plateformes-auto-hebergement
 

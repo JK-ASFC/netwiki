@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 499 | 2 | 627 (48 %) |
+| 1311 | 183 (14 %) | 508 | 2 | 618 (47 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -698,7 +698,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | SquirrelMail | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 | RainLoop (abandonné) | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 
-## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 10/64
+## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 19/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -711,15 +711,15 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | TYPO3 | CMS entreprise | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/03-typo3-contao` |
 | Contao | CMS | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/03-typo3-contao` |
 | October CMS (community) | CMS Laravel | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/04-ghost-grav-october` |
-| Strapi | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Directus | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Payload CMS | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| KeystoneJS | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Sanity Studio (source available) | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Wagtail | CMS Django | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Mezzanine | CMS Django | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Plone | CMS Python | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Zope | Serveur applicatif | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
+| Strapi | CMS headless | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Directus | CMS headless | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Payload CMS | CMS headless | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| KeystoneJS | CMS headless | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Sanity Studio (source available) | CMS headless | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Wagtail | CMS Django | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Mezzanine | CMS Django | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Plone | CMS Python | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Zope | Serveur applicatif | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
 | Liferay Community Edition | Portail | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
 | Jahia (community components) | CMS | Linux | ⏳ à faire | → `25-web-cms-portails` |
 | eXo Platform (community) | Portail collaboratif | Linux | ⏳ à faire | → `25-web-cms-portails` |
