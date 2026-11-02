@@ -1,0 +1,1 @@
+{ "title": "CockroachDB, YugabyteDB et TiDB", "icon": "network", "color": "#6933ff", "description": "Bases SQL distribuées (NewSQL) compatibles PostgreSQL ou MySQL : architecture, déploiement en cluster, sécurité, consoles d'administration." }

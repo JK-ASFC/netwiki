@@ -1,0 +1,1 @@
+{ "title": "FoundationDB", "icon": "layers", "color": "#5d6d7e", "description": "Base clé-valeur distribuée transactionnelle (ACID) d'Apple : cluster, fdbcli, réplication, sauvegarde et couches." }

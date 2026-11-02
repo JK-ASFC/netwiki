@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-206 capture(s) attendue(s) dans 44 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+222 capture(s) attendue(s) dans 51 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -194,6 +194,57 @@
 | `content/09-fichiers-partage/23-rockstor/_assets/rockstor-tableau-de-bord.png` | Rockstor — tableau de bord | `01-presentation-installation.md` |
 | `content/09-fichiers-partage/23-rockstor/_assets/rockstor-pool.png` | Rockstor — création d'un pool Btrfs en raid1 | `01-presentation-installation.md` |
 | `content/09-fichiers-partage/23-rockstor/_assets/rockstor-rock-ons.png` | Rockstor — Rock-ons disponibles | `01-presentation-installation.md` |
+
+## 11-bases-de-donnees/11-duckdb
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/11-duckdb/_assets/duckdb-ui.png` | DuckDB UI — carnet SQL et résultat d'une requête sur un fichier Parquet | `01-presentation-utilisation.md` |
+
+## 11-bases-de-donnees/12-sql-distribue
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/12-sql-distribue/_assets/cockroachdb-console.png` | CockroachDB — DB Console, vue d'ensemble du cluster | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/12-sql-distribue/_assets/yugabytedb-ui.png` | YugabyteDB — interface yugabyted | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/12-sql-distribue/_assets/tidb-dashboard.png` | TiDB Dashboard — requêtes lentes | `04-interface-graphique.md` |
+
+## 11-bases-de-donnees/14-questdb
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/14-questdb/_assets/questdb-console.png` | QuestDB — console web, éditeur SQL et graphique de résultat | `01-presentation-installation.md` |
+
+## 11-bases-de-donnees/16-bases-documentaires
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/16-bases-documentaires/_assets/couchbase-query.png` | Couchbase — Query Workbench | `05-interface-graphique.md` |
+| `content/11-bases-de-donnees/16-bases-documentaires/_assets/ravendb-studio.png` | RavenDB — Studio, liste des documents d'une collection | `05-interface-graphique.md` |
+| `content/11-bases-de-donnees/16-bases-documentaires/_assets/rethinkdb-explorer.png` | RethinkDB — Data Explorer | `05-interface-graphique.md` |
+
+## 11-bases-de-donnees/18-etcd-consul
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/18-etcd-consul/_assets/consul-services.png` | Consul — liste des services et état de santé | `03-interface-graphique.md` |
+| `content/11-bases-de-donnees/18-etcd-consul/_assets/consul-kv.png` | Consul — magasin clé-valeur | `03-interface-graphique.md` |
+
+## 11-bases-de-donnees/21-multi-modeles
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/21-multi-modeles/_assets/surrealist.png` | Surrealist — éditeur de requêtes SurrealQL | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/21-multi-modeles/_assets/arangodb-aql.png` | ArangoDB — éditeur AQL et résultat | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/21-multi-modeles/_assets/arangodb-graphe.png` | ArangoDB — visualisation d'un graphe | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/21-multi-modeles/_assets/orientdb-studio.png` | OrientDB Studio — éditeur de graphe | `04-interface-graphique.md` |
+
+## 11-bases-de-donnees/22-bases-graphes
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/11-bases-de-donnees/22-bases-graphes/_assets/memgraph-lab.png` | Memgraph Lab — visualisation d'une topologie réseau | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/22-bases-graphes/_assets/dgraph-ratel.png` | Dgraph Ratel — requête DQL et vue graphe | `04-interface-graphique.md` |
 
 ## 13-conteneurs/14-kvm-qemu-libvirt
 

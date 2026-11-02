@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 158 | 1 | 979 (75 %) |
+| 1311 | 173 (13 %) | 189 | 1 | 948 (72 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -238,7 +238,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Task | Task runner | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/03-task-just` |
 | Just | Task runner | Windows, Linux, macOS | 🆕 fait (lot 53) | `30-developpement-api/03-task-just` |
 
-## 6. BASES DE DONNEES SQL ET NOSQL — 11/64
+## 6. BASES DE DONNEES SQL ET NOSQL — 42/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -246,43 +246,43 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | MariaDB Server | Base SQL | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/01-mariadb-mysql` |
 | MySQL Community Server | Base SQL | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/01-mariadb-mysql` |
 | SQLite | Base SQL embarquée | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/06-sqlite` |
-| Firebird | Base SQL | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| DuckDB | Base analytique embarquée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| CockroachDB | Base SQL distribuée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| YugabyteDB | Base SQL distribuée | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| TiDB | Base SQL distribuée | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Citus | Extension PostgreSQL distribuée | Linux, Windows via PostgreSQL | ⏳ à faire | → `11-bases-de-donnees` |
-| TimescaleDB | Base time-series PostgreSQL | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| QuestDB | Base time-series | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
+| Firebird | Base SQL | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/10-firebird` |
+| DuckDB | Base analytique embarquée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/11-duckdb` |
+| CockroachDB | Base SQL distribuée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/12-sql-distribue` |
+| YugabyteDB | Base SQL distribuée | Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/12-sql-distribue` |
+| TiDB | Base SQL distribuée | Linux | 🆕 fait (lot 54) | `11-bases-de-donnees/12-sql-distribue` |
+| Citus | Extension PostgreSQL distribuée | Linux, Windows via PostgreSQL | 🆕 fait (lot 54) | `11-bases-de-donnees/13-extensions-postgresql` |
+| TimescaleDB | Base time-series PostgreSQL | Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/13-extensions-postgresql` |
+| QuestDB | Base time-series | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/14-questdb` |
 | InfluxDB OSS | Base time-series | Windows, Linux, macOS | ✅ existant | `06-supervision/10-influxdb` |
-| Apache Cassandra | Base NoSQL wide-column | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| ScyllaDB | Base NoSQL wide-column | Linux | ⏳ à faire | → `11-bases-de-donnees` |
+| Apache Cassandra | Base NoSQL wide-column | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/15-cassandra-scylladb` |
+| ScyllaDB | Base NoSQL wide-column | Linux | 🆕 fait (lot 54) | `11-bases-de-donnees/15-cassandra-scylladb` |
 | MongoDB Community Server | Base documentaire | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/03-mongodb` |
-| FerretDB | Compatibilité MongoDB | Linux, Windows, macOS | ⏳ à faire | → `11-bases-de-donnees` |
+| FerretDB | Compatibilité MongoDB | Linux, Windows, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/16-bases-documentaires` |
 | CouchDB | Base documentaire | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/07-couchdb` |
-| Couchbase Community | Base NoSQL | Linux, Windows | ⏳ à faire | → `11-bases-de-donnees` |
-| RavenDB Community | Base documentaire | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| RethinkDB | Base documentaire temps réel | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
+| Couchbase Community | Base NoSQL | Linux, Windows | 🆕 fait (lot 54) | `11-bases-de-donnees/16-bases-documentaires` |
+| RavenDB Community | Base documentaire | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/16-bases-documentaires` |
+| RethinkDB | Base documentaire temps réel | Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/16-bases-documentaires` |
 | Redis | Base clé-valeur | Windows via WSL/containers, Linux, macOS | ✅ existant | `11-bases-de-donnees/04-redis` |
 | Valkey | Base clé-valeur | Windows via WSL/containers, Linux, macOS | ✅ existant | `11-bases-de-donnees/04-redis` |
-| KeyDB | Base clé-valeur | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Dragonfly | Base clé-valeur | Linux | ⏳ à faire | → `11-bases-de-donnees` |
+| KeyDB | Base clé-valeur | Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/17-keydb-dragonfly` |
+| Dragonfly | Base clé-valeur | Linux | 🆕 fait (lot 54) | `11-bases-de-donnees/17-keydb-dragonfly` |
 | Memcached | Cache clé-valeur | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/05-memcached` |
-| etcd | Base clé-valeur distribuée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Consul | Store clé-valeur et découverte | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| FoundationDB | Base clé-valeur distribuée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| BadgerDB | Base clé-valeur embarquée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| RocksDB | Moteur clé-valeur embarqué | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| LevelDB | Moteur clé-valeur embarqué | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| LMDB | Base clé-valeur embarquée | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| SurrealDB | Base multi-modèle | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| ArangoDB Community | Base multi-modèle | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| OrientDB | Base graphe/document | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
+| etcd | Base clé-valeur distribuée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/18-etcd-consul` |
+| Consul | Store clé-valeur et découverte | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/18-etcd-consul` |
+| FoundationDB | Base clé-valeur distribuée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/19-foundationdb` |
+| BadgerDB | Base clé-valeur embarquée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/20-moteurs-embarques` |
+| RocksDB | Moteur clé-valeur embarqué | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/20-moteurs-embarques` |
+| LevelDB | Moteur clé-valeur embarqué | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/20-moteurs-embarques` |
+| LMDB | Base clé-valeur embarquée | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/20-moteurs-embarques` |
+| SurrealDB | Base multi-modèle | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/21-multi-modeles` |
+| ArangoDB Community | Base multi-modèle | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/21-multi-modeles` |
+| OrientDB | Base graphe/document | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/21-multi-modeles` |
 | Neo4j Community | Base graphe | Windows, Linux, macOS | ✅ existant | `11-bases-de-donnees/09-neo4j` |
-| Memgraph | Base graphe | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| JanusGraph | Base graphe | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| Apache AGE | Extension graphe PostgreSQL | Linux | ⏳ à faire | → `11-bases-de-donnees` |
-| Dgraph | Base graphe | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
+| Memgraph | Base graphe | Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/22-bases-graphes` |
+| JanusGraph | Base graphe | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/22-bases-graphes` |
+| Apache AGE | Extension graphe PostgreSQL | Linux | 🆕 fait (lot 54) | `11-bases-de-donnees/13-extensions-postgresql` |
+| Dgraph | Base graphe | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/22-bases-graphes` |
 | TerminusDB | Base graphe/document | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
 | XTDB | Base bitemporelle | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
 | Apache Doris | Entrepôt analytique | Linux | ⏳ à faire | → `11-bases-de-donnees` |
@@ -296,7 +296,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Apache Kudu | Stockage analytique | Linux | ⏳ à faire | → `11-bases-de-donnees` |
 | Greenplum Database | Base analytique MPP | Linux | ⏳ à faire | → `11-bases-de-donnees` |
 | MonetDB | Base analytique colonne | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
-| DuckDB extensions | Extensions analytiques | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
+| DuckDB extensions | Extensions analytiques | Windows, Linux, macOS | 🆕 fait (lot 54) | `11-bases-de-donnees/11-duckdb` |
 | Apache Drill | Moteur SQL | Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
 | Apache Ignite | Base distribuée en mémoire | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |
 | Hazelcast | In-memory data grid | Windows, Linux, macOS | ⏳ à faire | → `11-bases-de-donnees` |

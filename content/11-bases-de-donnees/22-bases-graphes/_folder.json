@@ -1,0 +1,1 @@
+{ "title": "Memgraph, JanusGraph et Dgraph", "icon": "waypoints", "color": "#fb6e00", "description": "Bases orientées graphes : Memgraph (Cypher en mémoire), JanusGraph (Gremlin, stockages Cassandra/HBase) et Dgraph (GraphQL natif)." }

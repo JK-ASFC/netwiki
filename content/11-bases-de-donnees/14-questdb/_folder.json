@@ -1,0 +1,1 @@
+{ "title": "QuestDB", "icon": "activity", "color": "#d14671", "description": "Base de séries temporelles haute performance : ingestion InfluxDB Line Protocol, SQL étendu (SAMPLE BY, LATEST ON), protocole PostgreSQL, console web." }
