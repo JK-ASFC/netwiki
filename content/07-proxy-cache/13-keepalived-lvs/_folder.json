@@ -1,0 +1,1 @@
+{ "title": "Keepalived, LVS, Pen et Balance", "icon": "scale", "color": "#9333ea", "description": "Haute disponibilité IP et répartition L4 sous Linux : Keepalived (VRRP, IP virtuelles, contrôles), LVS/IPVS (ipvsadm, NAT, DR, tunnel) et petits répartiteurs TCP Pen et Balance." }

@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 173 (13 %) | 119 | 0 | 1019 (78 %) |
+| 1311 | 173 (13 %) | 127 | 0 | 1011 (77 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -153,7 +153,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | IPsec-tools | VPN IPsec | BSD, Linux | ✅ existant | `08-acces-distant-vpn/04-strongswan` |
 | Mullvad VPN app | Client VPN (composants open source) | Windows, Linux, macOS | 🆕 fait (lot 51) | `08-acces-distant-vpn/13-softether-pritunl-mullvad` |
 
-## 4. PROXY, REVERSE PROXY, LOAD BALANCING ET PASSERELLES — 26/34
+## 4. PROXY, REVERSE PROXY, LOAD BALANCING ET PASSERELLES — 34/34
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -183,14 +183,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Ocelot | API gateway .NET | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/12-passerelles-api-alternatives` |
 | YARP | Reverse proxy .NET | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/12-passerelles-api-alternatives` |
 | HAProxy Data Plane API | API de gestion HAProxy | Linux | ✅ existant | `07-proxy-cache/01-haproxy` |
-| Keepalived | Haute disponibilité IP | Linux | ⏳ à faire | → `07-proxy-cache` |
-| LVS | Load balancing L4 | Linux | ⏳ à faire | → `07-proxy-cache` |
-| Pen | Load balancer | Linux, BSD | ⏳ à faire | → `07-proxy-cache` |
-| Balance | Load balancer TCP | Linux, BSD | ⏳ à faire | → `07-proxy-cache` |
-| PgBouncer | Pooler PostgreSQL | Windows, Linux, macOS | ⏳ à faire | → `07-proxy-cache` |
-| ProxySQL | Proxy MySQL | Linux | ⏳ à faire | → `07-proxy-cache` |
-| MaxScale (édition communautaire) | Proxy MariaDB | Linux | ⏳ à faire | → `07-proxy-cache` |
-| Odyssey | Pooler PostgreSQL | Linux | ⏳ à faire | → `07-proxy-cache` |
+| Keepalived | Haute disponibilité IP | Linux | 🆕 fait (lot 52) | `07-proxy-cache/13-keepalived-lvs` |
+| LVS | Load balancing L4 | Linux | 🆕 fait (lot 52) | `07-proxy-cache/13-keepalived-lvs` |
+| Pen | Load balancer | Linux, BSD | 🆕 fait (lot 52) | `07-proxy-cache/13-keepalived-lvs` |
+| Balance | Load balancer TCP | Linux, BSD | 🆕 fait (lot 52) | `07-proxy-cache/13-keepalived-lvs` |
+| PgBouncer | Pooler PostgreSQL | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
+| ProxySQL | Proxy MySQL | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
+| MaxScale (édition communautaire) | Proxy MariaDB | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
+| Odyssey | Pooler PostgreSQL | Linux | 🆕 fait (lot 52) | `07-proxy-cache/14-proxys-bases-de-donnees` |
 
 ## 5. SERVEURS WEB, LANGAGES ET RUNTIMES — 7/41
 

@@ -65,6 +65,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 49 | Catalogue — systèmes et stockage : catégorie « Systèmes d'exploitation » (Debian et Ubuntu Server, famille Red Hat, openSUSE, Arch, Gentoo, Alpine, NixOS, Kali et Parrot, FreeBSD, OpenBSD, NetBSD, Raspberry Pi OS et DietPi), NAS (TrueNAS, OpenMediaVault, Rockstor), Bareos, catégorie « Services auto-hébergés » (YunoHost, CasaOS, Runtipi, Umbrel) | ✅ |
 | 50 | Catalogue — identité et SSO : 389 Directory Server, Authentik, Kanidm, LemonLDAP::NG, Shibboleth, privacyIDEA et LinOTP, OAuth2 Proxy et Dex, plateformes IAM (Zitadel, Casdoor, Logto, Ory, Gluu Flex, OpenAM), PacketFence et OpenNAC, SSSD et realmd, gopass | ✅ |
 | 51 | Catalogue — réseau : Knot DNS, NSD et MaraDNS, CoreDNS, Technitium, DNS filtrants (AdGuard Home, Pi-hole, Blocky), Open DHCP Server, Kea Stork, NetBox et Nautobot, phpIPAM, GestióIP, NIPAP, Ralph, RackTables, VyOS, OpenWrt et OpenWISP, IPFire, Endian, FRRouting, BIRD, OpenBGPD, NetBird, Nebula, OpenConnect et ocserv, SoftEther, Pritunl, Mullvad | ✅ |
+| 52 | Catalogue — proxys et passerelles : Envoy, Tinyproxy, Privoxy, mitmproxy, Apache Traffic Server, OpenResty, Lighttpd, H2O, Cherokee, Kong, Apache APISIX, Tyk, KrakenD, Gravitee, Zuul, Ocelot, YARP, Keepalived, LVS, Pen, Balance, PgBouncer, Odyssey, ProxySQL, MaxScale | ✅ |
 
 ## Annuaire, identité & secrets
 

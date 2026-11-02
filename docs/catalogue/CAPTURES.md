@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-191 capture(s) attendue(s) dans 38 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+192 capture(s) attendue(s) dans 39 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -122,6 +122,12 @@
 | `content/07-proxy-cache/12-passerelles-api-alternatives/_assets/gravitee-console.png` | Gravitee — console, liste des API et plans | `01-tyk-krakend-gravitee.md` |
 | `content/07-proxy-cache/12-passerelles-api-alternatives/_assets/gravitee-portail.png` | Gravitee — portail développeur | `01-tyk-krakend-gravitee.md` |
 | `content/07-proxy-cache/12-passerelles-api-alternatives/_assets/krakend-designer.png` | KrakenD Designer — édition d'un endpoint agrégé | `01-tyk-krakend-gravitee.md` |
+
+## 07-proxy-cache/14-proxys-bases-de-donnees
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/07-proxy-cache/14-proxys-bases-de-donnees/_assets/maxscale-gui.png` | MaxScale GUI — tableau de bord et topologie de réplication | `02-proxysql-maxscale.md` |
 
 ## 08-acces-distant-vpn/11-netbird-nebula
 
