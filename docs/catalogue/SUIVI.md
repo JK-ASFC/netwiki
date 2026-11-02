@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 176 (13 %) | 354 | 1 | 780 (59 %) |
+| 1311 | 179 (14 %) | 385 | 1 | 746 (57 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -494,7 +494,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Masscan | Scan réseau | Windows, Linux, macOS | 🆕 fait (lot 60) | `06-supervision/23-scan-internet` |
 | Netdata Cloud Agent (agent) | Métriques hôte | Windows, Linux, macOS | ✅ existant | `06-supervision/07-netdata` |
 
-## 10. SECURITE, PARE-FEU, SIEM, SCAN ET PKI — 30/64
+## 10. SECURITE, PARE-FEU, SIEM, SCAN ET PKI — 64/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -517,50 +517,50 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OpenSCAP | Conformité et audit | Linux | 🆕 fait (lot 60) | `16-securite/17-openscap` |
 | Greenbone Community Edition | Scanner vulnérabilités | Linux | ✅ existant | `21-outils/02-reseau-diagnostic/08-greenbone-openvas` |
 | OpenVAS | Scanner vulnérabilités | Linux | ✅ existant | `21-outils/02-reseau-diagnostic/08-greenbone-openvas` |
-| Nuclei | Scanner templates vulnérabilités | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| Nuclei | Scanner templates vulnérabilités | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/18-scanners-web` |
 | OWASP ZAP | Test sécurité web | Windows, Linux, macOS | ✅ existant | `21-outils/03-cybersecurite/02-owasp-zap` |
-| Nikto | Scanner serveur web | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Wapiti | Scanner web | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Arachni | Scanner web | Linux | ⏳ à faire | → `16-securite` |
-| sqlmap | Audit injection SQL | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| Nikto | Scanner serveur web | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/18-scanners-web` |
+| Wapiti | Scanner web | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/18-scanners-web` |
+| Arachni | Scanner web | Linux | 🆕 fait (lot 61) | `16-securite/18-scanners-web` |
+| sqlmap | Audit injection SQL | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/18-scanners-web` |
 | Nmap NSE | Scripts audit réseau | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/03-nmap` |
-| testssl.sh | Audit TLS | Linux, macOS | ⏳ à faire | → `16-securite` |
-| SSLyze | Audit TLS | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Certbot | Gestion certificats ACME | Windows via WSL, Linux, macOS | ⏳ à faire | → `16-securite` |
-| acme.sh | Client ACME | Windows via shell, Linux, macOS | ⏳ à faire | → `16-securite` |
-| step-ca | Autorité de certification | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Smallstep CLI | PKI et certificats | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| EJBCA Community | Autorité de certification | Linux | ⏳ à faire | → `16-securite` |
-| OpenSSL | Cryptographie et PKI | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| LibreSSL | Cryptographie | OpenBSD, Linux, macOS | ⏳ à faire | → `16-securite` |
-| GnuPG | Chiffrement et signature | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| age | Chiffrement fichiers | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| SOPS | Chiffrement secrets config | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Vault (open source core) | Gestion secrets | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| OpenBao | Gestion secrets | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Infisical (open source core) | Gestion secrets | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Mozilla SOPS | Gestion secrets | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| testssl.sh | Audit TLS | Linux, macOS | 🆕 fait (lot 61) | `16-securite/19-audit-tls` |
+| SSLyze | Audit TLS | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/19-audit-tls` |
+| Certbot | Gestion certificats ACME | Windows via WSL, Linux, macOS | 🆕 fait (lot 61) | `16-securite/20-acme-certbot` |
+| acme.sh | Client ACME | Windows via shell, Linux, macOS | 🆕 fait (lot 61) | `16-securite/20-acme-certbot` |
+| step-ca | Autorité de certification | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/21-pki-step-ca-ejbca` |
+| Smallstep CLI | PKI et certificats | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/21-pki-step-ca-ejbca` |
+| EJBCA Community | Autorité de certification | Linux | 🆕 fait (lot 61) | `16-securite/21-pki-step-ca-ejbca` |
+| OpenSSL | Cryptographie et PKI | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/22-openssl-libressl` |
+| LibreSSL | Cryptographie | OpenBSD, Linux, macOS | 🆕 fait (lot 61) | `16-securite/22-openssl-libressl` |
+| GnuPG | Chiffrement et signature | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/23-gnupg-age` |
+| age | Chiffrement fichiers | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/23-gnupg-age` |
+| SOPS | Chiffrement secrets config | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/24-sops` |
+| Vault (open source core) | Gestion secrets | Windows, Linux, macOS | ✅ existant (lot 61) | `01-annuaire-identite/07-vault` |
+| OpenBao | Gestion secrets | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/25-openbao-infisical` |
+| Infisical (open source core) | Gestion secrets | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/25-openbao-infisical` |
+| Mozilla SOPS | Gestion secrets | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/24-sops` |
 | KeePassXC | Gestionnaire mots de passe | Windows, Linux, macOS | ✅ existant | `21-outils/03-cybersecurite/06-keepassxc-bitwarden` |
-| KeePass | Gestionnaire mots de passe | Windows | ⏳ à faire | → `16-securite` |
+| KeePass | Gestionnaire mots de passe | Windows | ✅ existant (lot 61) | `21-outils/03-cybersecurite` |
 | Bitwarden self-hosted (clients open source) | Gestion mots de passe | Windows, Linux, macOS | ✅ existant | `21-outils/03-cybersecurite/06-keepassxc-bitwarden` |
 | Vaultwarden | Serveur compatible Bitwarden | Windows, Linux, macOS | ✅ existant | `01-annuaire-identite/08-vaultwarden` |
-| Passbolt Community | Gestion mots de passe équipe | Linux | ⏳ à faire | → `16-securite` |
-| Psono Community | Gestion mots de passe équipe | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
+| Passbolt Community | Gestion mots de passe équipe | Linux | 🆕 fait (lot 61) | `16-securite/26-passbolt-psono` |
+| Psono Community | Gestion mots de passe équipe | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/26-passbolt-psono` |
 | Fail2ban | Blocage brute force | Linux, BSD | ✅ existant | `16-securite/01-fail2ban` |
 | CrowdSec | Détection et blocage comportemental | Windows, Linux, macOS | ✅ existant | `16-securite/02-crowdsec` |
-| sshguard | Protection SSH | Linux, BSD | ⏳ à faire | → `16-securite` |
-| Firewalld | Pare-feu dynamique | Linux | ⏳ à faire | → `16-securite` |
-| nftables | Pare-feu Linux | Linux | ⏳ à faire | → `16-securite` |
-| iptables | Pare-feu Linux historique | Linux | ⏳ à faire | → `16-securite` |
-| UFW | Pare-feu simplifié | Linux | ⏳ à faire | → `16-securite` |
-| Windows Defender Firewall Tools | Administration pare-feu natif | Windows | ⏳ à faire | → `16-securite` |
+| sshguard | Protection SSH | Linux, BSD | 🆕 fait (lot 61) | `16-securite/27-pare-feu-linux` |
+| Firewalld | Pare-feu dynamique | Linux | 🆕 fait (lot 61) | `16-securite/27-pare-feu-linux` |
+| nftables | Pare-feu Linux | Linux | 🆕 fait (lot 61) | `16-securite/27-pare-feu-linux` |
+| iptables | Pare-feu Linux historique | Linux | 🆕 fait (lot 61) | `16-securite/27-pare-feu-linux` |
+| UFW | Pare-feu simplifié | Linux | 🆕 fait (lot 61) | `16-securite/27-pare-feu-linux` |
+| Windows Defender Firewall Tools | Administration pare-feu natif | Windows | ✅ existant (lot 61) | `16-securite/10-pare-feu-windows` |
 | ClamAV | Antivirus open source | Windows, Linux, macOS | ✅ existant | `16-securite/04-clamav` |
-| YARA | Règles de détection | Windows, Linux, macOS | ⏳ à faire | → `16-securite` |
-| Chkrootkit | Détection rootkits | Linux | ⏳ à faire | → `16-securite` |
-| rkhunter | Détection rootkits | Linux | ⏳ à faire | → `16-securite` |
+| YARA | Règles de détection | Windows, Linux, macOS | 🆕 fait (lot 61) | `16-securite/28-yara-rootkits` |
+| Chkrootkit | Détection rootkits | Linux | 🆕 fait (lot 61) | `16-securite/28-yara-rootkits` |
+| rkhunter | Détection rootkits | Linux | 🆕 fait (lot 61) | `16-securite/28-yara-rootkits` |
 | AIDE | Contrôle intégrité fichiers | Linux, Unix | ✅ existant | `16-securite/03-aide` |
 | Lynis Enterprise alternatives | Audit système (catégorie) | Linux | ✅ existant | `16-securite/08-lynis` |
-| OpenEDR | EDR open source | Windows, Linux | ⏳ à faire | → `16-securite` |
+| OpenEDR | EDR open source | Windows, Linux | 🆕 fait (lot 61) | `16-securite/29-openedr` |
 | XCP-ng Xen Orchestra (community) | Gestion hyperviseur | Linux, Windows, macOS via navigateur | 🆕 fait (lot 48) | `13-conteneurs/15-xcp-ng-xen` |
 
 ## 11. AUTOMATISATION, CONFIGURATION ET INFRASTRUCTURE AS CODE — 6/45

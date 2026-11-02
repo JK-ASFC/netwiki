@@ -1,0 +1,1 @@
+{ "title": "step-ca, step CLI et EJBCA", "icon": "key-square", "color": "#3f51b5", "description": "Autorités de certification auto-hébergées : step-ca et step CLI (Smallstep, ACME, certificats courts, SSH) et EJBCA Community (PKI d'entreprise complète)." }

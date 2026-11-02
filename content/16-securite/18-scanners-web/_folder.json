@@ -1,0 +1,1 @@
+{ "title": "Nuclei, Nikto, Wapiti, Arachni et sqlmap", "icon": "bug", "color": "#e11d48", "description": "Scanners de vulnérabilités web et d'applications : modèles Nuclei, serveurs web (Nikto), applications (Wapiti, Arachni) et injections SQL (sqlmap), à utiliser avec autorisation." }

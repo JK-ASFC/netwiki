@@ -1,0 +1,1 @@
+{ "title": "nftables, iptables, firewalld, UFW et SSHGuard", "icon": "brick-wall", "color": "#b91c1c", "description": "Pare-feu Linux : nftables et iptables (filtrage noyau), firewalld et UFW (gestion simplifiée), SSHGuard (blocage des attaques par force brute)." }

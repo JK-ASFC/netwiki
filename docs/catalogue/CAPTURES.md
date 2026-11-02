@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-314 capture(s) attendue(s) dans 84 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+322 capture(s) attendue(s) dans 87 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -605,6 +605,29 @@
 | --- | --- | --- |
 | `content/16-securite/17-openscap/_assets/openscap-rapport.png` | OpenSCAP — rapport HTML (score et règles en échec) | `01-presentation-installation.md` |
 | `content/16-securite/17-openscap/_assets/scap-workbench.png` | SCAP Workbench — choix du profil et personnalisation | `01-presentation-installation.md` |
+
+## 16-securite/21-pki-step-ca-ejbca
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/16-securite/21-pki-step-ca-ejbca/_assets/ejbca-ac.png` | EJBCA — Admin Web, liste des autorités de certification | `03-interface-graphique.md` |
+| `content/16-securite/21-pki-step-ca-ejbca/_assets/ejbca-profil.png` | EJBCA — profil de certificat serveur TLS | `03-interface-graphique.md` |
+| `content/16-securite/21-pki-step-ca-ejbca/_assets/ejbca-ra.png` | EJBCA — RA Web, demande de certificat | `03-interface-graphique.md` |
+
+## 16-securite/25-openbao-infisical
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/16-securite/25-openbao-infisical/_assets/openbao-kv.png` | OpenBao — navigation dans un moteur KV | `03-interface-graphique.md` |
+| `content/16-securite/25-openbao-infisical/_assets/openbao-politiques.png` | OpenBao — politiques ACL | `03-interface-graphique.md` |
+| `content/16-securite/25-openbao-infisical/_assets/infisical-secrets.png` | Infisical — tableau des secrets par environnement | `03-interface-graphique.md` |
+
+## 16-securite/26-passbolt-psono
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/16-securite/26-passbolt-psono/_assets/passbolt-liste.png` | Passbolt — liste des mots de passe et partage par groupe | `01-presentation-installation.md` |
+| `content/16-securite/26-passbolt-psono/_assets/psono-coffre.png` | Psono — coffre et dossiers partagés | `01-presentation-installation.md` |
 
 ## 18-infrastructure-systeme/08-netbox-nautobot
 

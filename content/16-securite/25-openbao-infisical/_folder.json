@@ -1,0 +1,1 @@
+{ "title": "OpenBao et Infisical", "icon": "vault", "color": "#0e7490", "description": "Gestion des secrets : OpenBao (fork communautaire libre de HashiCorp Vault) et Infisical (plate-forme de secrets pour les équipes et la CI)." }
