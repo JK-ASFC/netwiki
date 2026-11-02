@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-402 capture(s) attendue(s) dans 103 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+408 capture(s) attendue(s) dans 105 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -374,6 +374,22 @@
 | `content/10-messagerie/17-wikis/_assets/dokuwiki-acl.png` | Gestion des ACL DokuWiki | `03-mediawiki-dokuwiki.md` |
 | `content/10-messagerie/17-wikis/_assets/appflowy-console.png` | Console d'administration AppFlowy Cloud | `05-appflowy-affine.md` |
 | `content/10-messagerie/17-wikis/_assets/affine-tableau-blanc.png` | Document AFFiNE en mode tableau blanc | `05-appflowy-affine.md` |
+
+## 10-messagerie/18-edition-collaborative
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/18-edition-collaborative/_assets/hedgedoc-note.png` | Note HedgeDoc en mode édition et aperçu côte à côte | `01-hedgedoc-etherpad-cryptpad.md` |
+| `content/10-messagerie/18-edition-collaborative/_assets/etherpad-pad.png` | Pad Etherpad avec couleurs des auteurs | `01-hedgedoc-etherpad-cryptpad.md` |
+| `content/10-messagerie/18-edition-collaborative/_assets/cryptpad-lecteur.png` | Lecteur CryptPad avec documents et tableurs | `01-hedgedoc-etherpad-cryptpad.md` |
+
+## 10-messagerie/19-groupware-agendas
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/10-messagerie/19-groupware-agendas/_assets/sogo-agenda.png` | Agenda partagé dans l'interface web de SOGo | `01-sogo-kopano.md` |
+| `content/10-messagerie/19-groupware-agendas/_assets/caldiy-reservation.png` | Page de réservation publique Cal.diy | `02-calcom-baikal-davical.md` |
+| `content/10-messagerie/19-groupware-agendas/_assets/baikal-utilisateurs.png` | Administration Baïkal, liste des utilisateurs | `02-calcom-baikal-davical.md` |
 
 ## 11-bases-de-donnees/11-duckdb
 

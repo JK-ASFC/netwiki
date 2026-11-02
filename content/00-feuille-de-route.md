@@ -81,6 +81,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 65 | Catalogue — support client, helpdesk et ITSM : Chatwoot, FreeScout, osTicket, iTop, OTOBO, Znuny, Request Tracker, UVdesk, Faveo | ✅ |
 | 66 | Catalogue — gestion de projet et kanban : OpenProject, Redmine, Taiga, Plane, Leantime, Tuleap, Trac, Phorge (Phabricator), Kanboard, Wekan, Focalboard, Vikunja | ✅ |
 | 67 | Catalogue — wikis et espaces de travail : Outline, Wiki.js, XWiki, MediaWiki, DokuWiki, Gollum, MoinMoin, TWiki, AppFlowy, AFFiNE | ✅ |
+| 68 | Catalogue — édition collaborative, groupware et agendas : HedgeDoc, Etherpad, CryptPad, SOGo, Kopano, Cal.com (Cal.diy), Baïkal, DAViCal | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -202,6 +203,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[15-xmpp/01-prosody\|XMPP : Prosody]], [[15-xmpp/02-ejabberd\|ejabberd]], [[15-xmpp/03-openfire\|Openfire]], [[15-xmpp/04-snikket-mongooseim\|Snikket, MongooseIM]] | prosody, ejabberd, openfire, Docker | Openfire (exe), Docker | prosody, ejabberd (brew), Openfire (dmg) | ✅ |
 | [[16-gestion-projet/01-openproject\|OpenProject]], [[16-gestion-projet/02-redmine\|Redmine]], [[16-gestion-projet/03-taiga-plane-leantime\|Taiga, Plane, Leantime]], [[16-gestion-projet/04-tuleap-trac-phorge\|Tuleap, Trac, Phorge]], [[16-gestion-projet/05-kanban-taches\|Kanboard, Wekan, Vikunja]] | openproject, redmine, Docker | Docker, Redmine (Ruby) | Docker | ✅ |
 | [[17-wikis/01-outline-wikijs\|Outline, Wiki.js]], [[17-wikis/02-xwiki\|XWiki]], [[17-wikis/03-mediawiki-dokuwiki\|MediaWiki, DokuWiki]], [[17-wikis/04-gollum-moinmoin-twiki\|Gollum, MoinMoin, TWiki]], [[17-wikis/05-appflowy-affine\|AppFlowy, AFFiNE]] | Docker, PHP, gem, pip | Docker, PHP, clients AppFlowy | Docker, PHP, brew | ✅ |
+| [[18-edition-collaborative/01-hedgedoc-etherpad-cryptpad\|HedgeDoc, Etherpad, CryptPad]], [[19-groupware-agendas/01-sogo-kopano\|SOGo, Kopano]], [[19-groupware-agendas/02-calcom-baikal-davical\|Cal.diy, Baïkal, DAViCal]] | Docker, sogo, davical | Etherpad, Docker | Etherpad, Docker | ✅ |
 
 ## Bases de données
 

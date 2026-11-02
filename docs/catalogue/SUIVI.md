@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 471 | 2 | 655 (50 %) |
+| 1311 | 183 (14 %) | 479 | 2 | 647 (49 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -613,7 +613,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Serverspec | Tests infrastructure | Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 | KitchenCI | Tests infrastructure | Windows, Linux, macOS | 🆕 fait (lot 63) | `17-automatisation/21-tests-infrastructure` |
 
-## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 61/80
+## 12. MESSAGERIE, COLLABORATION, GROUPWARE ET COMMUNICATION — 69/80
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -671,16 +671,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | TWiki | Wiki | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
 | MoinMoin | Wiki | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
 | Gollum | Wiki Git | Windows, Linux, macOS | 🆕 fait (lot 67) | `10-messagerie/17-wikis` |
-| HedgeDoc | Édition Markdown collaborative | Linux | ⏳ à faire | → `10-messagerie` |
-| Etherpad | Édition collaborative | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| CryptPad | Suite collaborative chiffrée | Linux | ⏳ à faire | → `10-messagerie` |
+| HedgeDoc | Édition Markdown collaborative | Linux | 🆕 fait (lot 68) | `10-messagerie/18-edition-collaborative` |
+| Etherpad | Édition collaborative | Windows, Linux, macOS | 🆕 fait (lot 68) | `10-messagerie/18-edition-collaborative` |
+| CryptPad | Suite collaborative chiffrée | Linux | 🆕 fait (lot 68) | `10-messagerie/18-edition-collaborative` |
 | ownCloud | Suite collaborative | Linux | ✅ existant | `09-fichiers-partage/09-owncloud` |
-| SOGo | Groupware | Linux | ⏳ à faire | → `10-messagerie` |
-| Kopano Core Community | Groupware | Linux | ⏳ à faire | → `10-messagerie` |
-| Cal.com (core open source) | Planification rendez-vous | Linux, Windows via conteneur | ⏳ à faire | → `10-messagerie` |
+| SOGo | Groupware | Linux | 🆕 fait (lot 68) | `10-messagerie/19-groupware-agendas` |
+| Kopano Core Community | Groupware | Linux | 🆕 fait (lot 68) | `10-messagerie/19-groupware-agendas` |
+| Cal.com (core open source) | Planification rendez-vous | Linux, Windows via conteneur | 🆕 fait (lot 68) | `10-messagerie/19-groupware-agendas` |
 | Radicale | Serveur CalDAV/CardDAV | Windows, Linux, macOS | ✅ existant | `10-messagerie/08-radicale` |
-| Baïkal | Serveur CalDAV/CardDAV | Linux | ⏳ à faire | → `10-messagerie` |
-| DAViCal | Serveur CalDAV | Linux | ⏳ à faire | → `10-messagerie` |
+| Baïkal | Serveur CalDAV/CardDAV | Linux | 🆕 fait (lot 68) | `10-messagerie/19-groupware-agendas` |
+| DAViCal | Serveur CalDAV | Linux | 🆕 fait (lot 68) | `10-messagerie/19-groupware-agendas` |
 | Mailu | Suite serveur mail | Linux | ⏳ à faire | → `10-messagerie` |
 | Mailcow | Suite serveur mail | Linux | ⏳ à faire | → `10-messagerie` |
 | docker-mailserver | Serveur mail | Linux | ⏳ à faire | → `10-messagerie` |
