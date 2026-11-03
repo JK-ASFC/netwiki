@@ -97,6 +97,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 81 | Catalogue — tests de charge : k6, Apache JMeter, Locust, Gatling, Vegeta, wrk, hey, Siege | ✅ |
 | 82 | Catalogue — outils Windows (nouvelle catégorie Gestion de parc) : Windows Terminal, WinGet, Chocolatey, Scoop, NSSM, WinSW, WSL, Cygwin, MSYS2, Git for Windows, OpenSSH pour Windows, PowerToys (PowerShell 7 déjà présent) | ✅ |
 | 83 | Catalogue — bureau distant : Apache Guacamole, FreeRDP, xrdp, Remmina, RDPY, TigerVNC, TightVNC, UltraVNC, X2Go | ✅ |
+| 84 | Catalogue — supports, déploiement, RMM et automatisation : Rufus, Ventoy, FOG, opsi, WAPT, Open-AudIT, Tactical RMM, RPort, Remotely, AutoHotkey, AutoIt, Actiona (Winbind déjà présent) | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -450,3 +451,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[02-bureau-distant/01-apache-guacamole\|Apache Guacamole]] | Docker, guacd + Tomcat | navigateur | navigateur | ✅ |
 | [[02-bureau-distant/02-rdp-freerdp-xrdp-remmina\|FreeRDP, xrdp, Remmina, RDPY]] | apt, dnf, Flatpak | FreeRDP | brew (FreeRDP) | ✅ |
 | [[02-bureau-distant/03-vnc-x2go\|TigerVNC, TightVNC, UltraVNC, X2Go]] | tigervnc, x2goserver | MSI, x2goclient | vncviewer, x2goclient | ✅ |
+| [[03-supports-deploiement/01-rufus-ventoy\|Rufus, Ventoy]] | Ventoy2Disk.sh | winget, portable | ➖ | ✅ |
+| [[03-supports-deploiement/02-fog-opsi-wapt\|FOG, opsi, WAPT]] | installfog.sh, Docker, paquets | agents | agents (opsi, WAPT) | ✅ |
+| [[04-inventaire-rmm/01-open-audit-tactical-rport-remotely\|Open-AudIT, Tactical RMM, RPort, Remotely]] | installateurs, script, Docker | agents, Open-AudIT | agents | ✅ |
+| [[05-automatisation-poste/01-autohotkey-autoit-actiona\|AutoHotkey, AutoIt, Actiona]] | apt (Actiona) | winget, installateurs | ➖ | ✅ |

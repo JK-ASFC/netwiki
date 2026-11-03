@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 185 (14 %) | 624 | 2 | 500 (38 %) |
+| 1311 | 186 (14 %) | 636 | 2 | 487 (37 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -828,7 +828,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OWASP Juice Shop | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 | WebGoat | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 
-## 15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION — 28/41
+## 15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION — 41/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -852,26 +852,26 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | xrdp | Serveur RDP Linux | Linux | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
 | X2Go | Bureau distant | Linux, Windows client | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
 | FreeIPA client | Intégration identité | Linux | ✅ existant | `01-annuaire-identite/03-freeipa` |
-| Winbind | Intégration AD | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
+| Winbind | Intégration AD | Windows, Linux | ✅ existant (lot 84) | `09-fichiers-partage/01-samba` |
 | WSL | Sous-système Linux | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | Cygwin | Environnement Unix | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | MSYS2 | Environnement Unix et outils | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | Git for Windows | Git et shell | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
-| Rufus (open source) | Création supports boot | Windows | ⏳ à faire | → `26-gestion-parc` |
-| Ventoy | Création supports multiboot | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
+| Rufus (open source) | Création supports boot | Windows | 🆕 fait (lot 84) | `26-gestion-parc/03-supports-deploiement` |
+| Ventoy | Création supports multiboot | Windows, Linux | 🆕 fait (lot 84) | `26-gestion-parc/03-supports-deploiement` |
 | Clonezilla | Clonage système | Windows, Linux, macOS | ✅ existant | `21-outils/07-disques-recuperation/02-clonezilla` |
-| FOG Project | Déploiement images | Linux, Windows clients | ⏳ à faire | → `26-gestion-parc` |
-| opsi | Déploiement logiciel | Linux server, Windows clients | ⏳ à faire | → `26-gestion-parc` |
-| WAPT Community | Déploiement logiciel | Windows, Linux server | ⏳ à faire | → `26-gestion-parc` |
-| Open-AudIT | Inventaire réseau | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
+| FOG Project | Déploiement images | Linux, Windows clients | 🆕 fait (lot 84) | `26-gestion-parc/03-supports-deploiement` |
+| opsi | Déploiement logiciel | Linux server, Windows clients | 🆕 fait (lot 84) | `26-gestion-parc/03-supports-deploiement` |
+| WAPT Community | Déploiement logiciel | Windows, Linux server | 🆕 fait (lot 84) | `26-gestion-parc/03-supports-deploiement` |
+| Open-AudIT | Inventaire réseau | Windows, Linux, macOS | 🆕 fait (lot 84) | `26-gestion-parc/04-inventaire-rmm` |
 | GLPI Agent | Inventaire agent | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/04-glpi-installation` |
 | Win32-OpenSSH | SSH Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
-| RPort | Gestion distante | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Tactical RMM | RMM et téléassistance | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Remotely | Téléassistance | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Actiona | Automatisation GUI | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
-| AutoHotkey | Automatisation Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| AutoIt | Automatisation Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
+| RPort | Gestion distante | Windows, Linux, macOS | 🆕 fait (lot 84) | `26-gestion-parc/04-inventaire-rmm` |
+| Tactical RMM | RMM et téléassistance | Windows, Linux, macOS | 🆕 fait (lot 84) | `26-gestion-parc/04-inventaire-rmm` |
+| Remotely | Téléassistance | Windows, Linux, macOS | 🆕 fait (lot 84) | `26-gestion-parc/04-inventaire-rmm` |
+| Actiona | Automatisation GUI | Windows, Linux | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
+| AutoHotkey | Automatisation Windows | Windows | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
+| AutoIt | Automatisation Windows | Windows | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
 | PowerToys | Utilitaires Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 
 ## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 3/67
