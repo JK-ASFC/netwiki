@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 193 (15 %) | 643 | 2 | 473 (36 %) |
+| 1311 | 193 (15 %) | 652 | 2 | 464 (35 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -874,7 +874,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | AutoIt | Automatisation Windows | Windows | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
 | PowerToys | Utilitaires Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 
-## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 17/67
+## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 26/67
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -892,15 +892,15 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Pacman | Gestionnaire paquets | Arch Linux | ✅ existant (lot 85) | `24-systemes-exploitation/04-arch-linux` |
 | APK | Gestionnaire paquets | Alpine Linux | ✅ existant (lot 85) | `24-systemes-exploitation/06-alpine-linux` |
 | Portage | Gestionnaire paquets | Gentoo | ✅ existant (lot 85) | `24-systemes-exploitation/05-gentoo` |
-| OpenRC | Init et services | Linux, BSD | ⏳ à faire | → `21-outils` |
-| systemd | Init et services | Linux | ⏳ à faire | → `21-outils` |
-| runit | Init et services | Linux, BSD | ⏳ à faire | → `21-outils` |
-| s6 | Suite supervision services | Linux, BSD | ⏳ à faire | → `21-outils` |
-| Supervisord | Gestion processus | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Monit | Supervision processus | Linux, BSD | ⏳ à faire | → `21-outils` |
-| PM2 | Gestion processus Node.js | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| forever | Gestion processus Node.js | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| circus | Gestion processus | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
+| OpenRC | Init et services | Linux, BSD | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| systemd | Init et services | Linux | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| runit | Init et services | Linux, BSD | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| s6 | Suite supervision services | Linux, BSD | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| Supervisord | Gestion processus | Windows, Linux, macOS | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| Monit | Supervision processus | Linux, BSD | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| PM2 | Gestion processus Node.js | Windows, Linux, macOS | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| forever | Gestion processus Node.js | Windows, Linux, macOS | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| circus | Gestion processus | Windows, Linux, macOS | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
 | GNU Screen | Multiplexeur terminal | Linux, macOS | ⏳ à faire | → `21-outils` |
 | tmux | Multiplexeur terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
 | Zellij | Multiplexeur terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
