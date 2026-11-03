@@ -1,0 +1,1 @@
+{ "title": "Analyse statique et qualité du code", "icon": "scan-search", "color": "#126ed3", "description": "Linters, formateurs et analyseurs de sécurité : SonarQube for IDE (SonarLint), Semgrep, CodeQL, PMD, Checkstyle, SpotBugs, ESLint et Prettier." }

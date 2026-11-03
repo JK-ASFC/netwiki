@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 184 (14 %) | 563 | 2 | 562 (43 %) |
+| 1311 | 184 (14 %) | 577 | 2 | 548 (42 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -767,7 +767,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OCS Inventory NG | Inventaire IT | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/07-ocs-inventory` |
 | FusionInventory | Inventaire IT (ancien) | Windows, Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
 
-## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 16/56
+## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 30/56
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -786,21 +786,21 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Fossil SCM | Gestion versions | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
 | Mercurial | Gestion versions | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
 | Subversion Apache | Gestion versions | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
-| Harbor | Registry OCI | Linux | ⏳ à faire | → `14-devops` |
-| Distribution Registry | Registry Docker | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Zot | Registry OCI | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Nexus Repository OSS | Gestion dépôts artefacts | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| JFrog Artifactory OSS (legacy) | Gestion artefacts | Linux | ⏳ à faire | → `14-devops` |
-| Verdaccio | Registry npm | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
+| Harbor | Registry OCI | Linux | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
+| Distribution Registry | Registry Docker | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
+| Zot | Registry OCI | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
+| Nexus Repository OSS | Gestion dépôts artefacts | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
+| JFrog Artifactory OSS (legacy) | Gestion artefacts | Linux | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
+| Verdaccio | Registry npm | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
 | SonarQube Community Build | Qualité code | Windows, Linux, macOS | ✅ existant | `14-devops/07-sonarqube` |
-| SonarLint | Analyse IDE | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Semgrep CE | Analyse statique | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| CodeQL CLI (license restrictions) | Analyse code | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| PMD | Analyse statique | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Checkstyle | Analyse Java | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| SpotBugs | Analyse Java | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| ESLint | Analyse JavaScript | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Prettier | Formatage code | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
+| SonarLint | Analyse IDE | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| Semgrep CE | Analyse statique | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| CodeQL CLI (license restrictions) | Analyse code | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| PMD | Analyse statique | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| Checkstyle | Analyse Java | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| SpotBugs | Analyse Java | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| ESLint | Analyse JavaScript | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| Prettier | Formatage code | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
 | Ruff | Lint Python | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
 | Pylint | Lint Python | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
 | Mypy | Types Python | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |

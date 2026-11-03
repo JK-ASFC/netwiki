@@ -91,6 +91,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 75 | Catalogue — commerce headless et frameworks : Saleor, Medusa, Vendure, Sylius, Shopware, Bagisto, Spree, Solidus, Reaction Commerce | ✅ |
 | 76 | Catalogue — caisses et inventaire : OSPOS, uniCenta oPOS, Floreant POS, ERPNext POS, InvenTree, Snipe-IT, OpenBoxes, FusionInventory | ✅ |
 | 77 | Catalogue — forges, revue de code et gestion de versions : Gogs, OneDev, SourceHut, Pagure, RhodeCode, Gerrit, Review Board, Subversion, Mercurial, Fossil (Phorge déjà présent) | ✅ |
+| 78 | Catalogue — registres, artefacts et analyse de code : Harbor, Distribution, Zot, Nexus, Artifactory, Verdaccio, SonarQube for IDE, Semgrep, CodeQL, PMD, Checkstyle, SpotBugs, ESLint, Prettier | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -268,6 +269,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[06-teamcity/01-presentation-installation\|TeamCity]] | TeamCity (archive, Docker) | TeamCity | ➖ | ✅ |
 | [[07-sonarqube/01-presentation-installation\|SonarQube]] | sonarqube | SonarQube | sonarqube (Docker) | ✅ |
 | [[13-forges-revue-vcs/01-forges\|Gogs, OneDev, SourceHut, Pagure, RhodeCode]], [[13-forges-revue-vcs/02-gerrit-reviewboard\|Gerrit, Review Board]], [[13-forges-revue-vcs/03-subversion-mercurial-fossil\|Subversion, Mercurial, Fossil]] | Docker, binaires, paquets | TortoiseSVN, TortoiseHg, Fossil (winget) | Homebrew | ✅ |
+| [[14-registres-artefacts/01-harbor-distribution-zot\|Harbor, Distribution, Zot]], [[14-registres-artefacts/02-nexus-artifactory-verdaccio\|Nexus, Artifactory, Verdaccio]] | Docker, installateurs | Docker, archives Java | Docker, Node.js | ✅ |
+| [[15-analyse-code/01-outils-analyse\|Semgrep, CodeQL, PMD, Checkstyle, SpotBugs, ESLint, Prettier]] | pip, npm, Java | pip, npm, Java | brew, npm | ✅ |
 
 ## Supervision & métriques
 

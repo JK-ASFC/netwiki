@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-439 capture(s) attendue(s) dans 119 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+441 capture(s) attendue(s) dans 120 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -670,6 +670,13 @@
 | --- | --- | --- |
 | `content/14-devops/13-forges-revue-vcs/_assets/onedev-projet.png` | Projet OneDev avec pipeline CI et tickets | `01-forges.md` |
 | `content/14-devops/13-forges-revue-vcs/_assets/gerrit-changement.png` | Changement Gerrit avec votes et commentaires | `02-gerrit-reviewboard.md` |
+
+## 14-devops/14-registres-artefacts
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/14-devops/14-registres-artefacts/_assets/harbor-projet.png` | Projet Harbor avec résultats d'analyse Trivy | `01-harbor-distribution-zot.md` |
+| `content/14-devops/14-registres-artefacts/_assets/nexus-depots.png` | Liste des dépôts Nexus (proxy, hébergés, groupes) | `02-nexus-artifactory-verdaccio.md` |
 
 ## 15-journalisation/11-recherche-journaux
 
