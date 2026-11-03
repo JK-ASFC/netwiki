@@ -1,0 +1,1 @@
+{ "title": "Tests : rapports, charge et sécurité", "icon": "flask-conical", "color": "#16a34a", "description": "Rapports de tests (Allure, ReportPortal), conformité Kubernetes (Sonobuoy), tests de charge et applications volontairement vulnérables pour la formation." }

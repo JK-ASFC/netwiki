@@ -84,6 +84,19 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 68 | Catalogue — édition collaborative, groupware et agendas : HedgeDoc, Etherpad, CryptPad, SOGo, Kopano, Cal.com (Cal.diy), Baïkal, DAViCal | ✅ |
 | 69 | Catalogue — suites de messagerie et webmails : Mailcow, Mailu, docker-mailserver, Modoboa, iRedMail, OpenSMTPD, Amavis, Roundcube, SnappyMail, SquirrelMail, RainLoop | ✅ |
 | 70 | Catalogue — CMS (nouvelle catégorie Web : CMS, e-commerce & portails) : WordPress, ClassicPress, Drupal, Joomla, TYPO3, Contao, Ghost, Grav, October CMS | ✅ |
+| 71 | Catalogue — CMS headless et Python : Strapi, Directus, Payload, KeystoneJS, Sanity Studio, Wagtail, Mezzanine, Plone, Zope | ✅ |
+| 72 | Catalogue — portails, GED et LMS : Liferay, Jahia, eXo Platform, Alfresco, Nuxeo, Moodle, Canvas, Chamilo, ILIAS, Open edX | ✅ |
+| 73 | Catalogue — ERP : Odoo, Frappe et ERPNext, Dolibarr, Tryton, iDempiere, metasfresh, Apache OFBiz, ERP5, FrontAccounting | ✅ |
+| 74 | Catalogue — facturation, temps et e-commerce PHP : Invoice Ninja, Akaunting, Kimai, Crater, PrestaShop, WooCommerce, OpenCart, Magento Open Source | ✅ |
+| 75 | Catalogue — commerce headless et frameworks : Saleor, Medusa, Vendure, Sylius, Shopware, Bagisto, Spree, Solidus, Reaction Commerce | ✅ |
+| 76 | Catalogue — caisses et inventaire : OSPOS, uniCenta oPOS, Floreant POS, ERPNext POS, InvenTree, Snipe-IT, OpenBoxes, FusionInventory | ✅ |
+| 77 | Catalogue — forges, revue de code et gestion de versions : Gogs, OneDev, SourceHut, Pagure, RhodeCode, Gerrit, Review Board, Subversion, Mercurial, Fossil (Phorge déjà présent) | ✅ |
+| 78 | Catalogue — registres, artefacts et analyse de code : Harbor, Distribution, Zot, Nexus, Artifactory, Verdaccio, SonarQube for IDE, Semgrep, CodeQL, PMD, Checkstyle, SpotBugs, ESLint, Prettier | ✅ |
+| 79 | Catalogue — analyse Python et chaîne d'approvisionnement : Ruff, Pylint, mypy, Bandit, Syft, Grype, Cosign, in-toto, Tekton Chains | ✅ |
+| 80 | Catalogue — dépendances, modernisation et tests : Renovate, Dependabot, Mend Renovate, OpenRewrite, Allure Report, ReportPortal, Sonobuoy, OWASP Juice Shop, WebGoat | ✅ |
+| 81 | Catalogue — tests de charge : k6, Apache JMeter, Locust, Gatling, Vegeta, wrk, hey, Siege | ✅ |
+| 82 | Catalogue — outils Windows (nouvelle catégorie Gestion de parc) : Windows Terminal, WinGet, Chocolatey, Scoop, NSSM, WinSW, WSL, Cygwin, MSYS2, Git for Windows, OpenSSH pour Windows, PowerToys (PowerShell 7 déjà présent) | ✅ |
+| 83 | Catalogue — bureau distant : Apache Guacamole, FreeRDP, xrdp, Remmina, RDPY, TigerVNC, TightVNC, UltraVNC, X2Go | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -260,6 +273,14 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[05-jenkins/01-presentation-installation\|Jenkins]] | jenkins | Jenkins | jenkins-lts | ✅ |
 | [[06-teamcity/01-presentation-installation\|TeamCity]] | TeamCity (archive, Docker) | TeamCity | ➖ | ✅ |
 | [[07-sonarqube/01-presentation-installation\|SonarQube]] | sonarqube | SonarQube | sonarqube (Docker) | ✅ |
+| [[13-forges-revue-vcs/01-forges\|Gogs, OneDev, SourceHut, Pagure, RhodeCode]], [[13-forges-revue-vcs/02-gerrit-reviewboard\|Gerrit, Review Board]], [[13-forges-revue-vcs/03-subversion-mercurial-fossil\|Subversion, Mercurial, Fossil]] | Docker, binaires, paquets | TortoiseSVN, TortoiseHg, Fossil (winget) | Homebrew | ✅ |
+| [[14-registres-artefacts/01-harbor-distribution-zot\|Harbor, Distribution, Zot]], [[14-registres-artefacts/02-nexus-artifactory-verdaccio\|Nexus, Artifactory, Verdaccio]] | Docker, installateurs | Docker, archives Java | Docker, Node.js | ✅ |
+| [[15-analyse-code/01-outils-analyse\|Semgrep, CodeQL, PMD, Checkstyle, SpotBugs, ESLint, Prettier]] | pip, npm, Java | pip, npm, Java | brew, npm | ✅ |
+| [[15-analyse-code/02-python\|Ruff, Pylint, mypy, Bandit]] | pip, uv | pip, uv | pip, brew | ✅ |
+| [[16-chaine-approvisionnement/01-sbom-signature-attestations\|Syft, Grype, Cosign, in-toto, Tekton Chains]] | binaires, pip, Kubernetes | binaires, pip | brew | ✅ |
+| [[17-dependances-modernisation/01-renovate-dependabot\|Renovate, Dependabot, Mend Renovate]], [[17-dependances-modernisation/02-openrewrite\|OpenRewrite]] | Docker, npm, Maven, Gradle | npm, Maven, Gradle | npm, brew | ✅ |
+| [[18-tests/01-rapports-tests-sonobuoy\|Allure, ReportPortal, Sonobuoy]], [[18-tests/03-applications-vulnerables\|Juice Shop, WebGoat]] | npm, Docker, binaire | npm, Docker | npm, brew, Docker | ✅ |
+| [[18-tests/02-tests-charge\|k6, JMeter, Locust, Gatling, Vegeta, wrk, hey, Siege]] | apt, dnf, pip, Docker | winget, pip, archives | brew | ✅ |
 
 ## Supervision & métriques
 
@@ -409,3 +430,23 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[02-drupal-joomla/01-drupal\|Drupal]], [[02-drupal-joomla/02-joomla\|Joomla]] | Composer, Drush, archive, Docker | IIS + PHP, Docker | Homebrew, DDEV | ✅ |
 | [[03-typo3-contao/01-typo3\|TYPO3]], [[03-typo3-contao/02-contao\|Contao]] | Composer, DDEV | PHP + Composer | PHP + Composer | ✅ |
 | [[04-ghost-grav-october/01-ghost\|Ghost]], [[04-ghost-grav-october/02-grav-october\|Grav, October CMS]] | Ghost-CLI, Composer, Docker | Docker, IIS (Grav) | Docker, PHP | ✅ |
+| [[05-cms-headless-python/01-strapi-directus-payload\|Strapi, Directus, Payload]], [[05-cms-headless-python/02-keystone-sanity\|KeystoneJS, Sanity]], [[05-cms-headless-python/03-wagtail-mezzanine\|Wagtail, Mezzanine]], [[05-cms-headless-python/04-plone-zope\|Plone, Zope]] | Node.js, pip, Docker | Node.js, Python, Docker | Node.js, Python, Docker | ✅ |
+| [[06-portails-ged/01-liferay-jahia-exo\|Liferay, Jahia, eXo]], [[06-portails-ged/02-alfresco-nuxeo\|Alfresco, Nuxeo]] | Docker, bundle Tomcat | Docker, bundle Tomcat | Docker | ✅ |
+| [[07-lms/01-moodle\|Moodle]], [[07-lms/02-canvas-chamilo-ilias-openedx\|Canvas, Chamilo, ILIAS, Open edX]] | PHP, Git, Tutor | IIS/WAMP + PHP | PHP (Homebrew) | ✅ |
+| [[08-erp/01-odoo\|Odoo]], [[08-erp/02-frappe-erpnext\|ERPNext]], [[08-erp/03-dolibarr-tryton\|Dolibarr, Tryton]], [[08-erp/04-idempiere-metasfresh-ofbiz-erp5-frontaccounting\|iDempiere, metasfresh, OFBiz, ERP5, FrontAccounting]] | odoo (deb), bench, Docker | Odoo (exe), DoliWamp, Docker | Docker, sources | ✅ |
+| [[09-facturation-temps/01-invoice-ninja-akaunting-kimai-crater\|Invoice Ninja, Akaunting, Kimai]] | Docker, PHP | Docker, PHP (Kimai) | Docker, PHP (Kimai) | ✅ |
+| [[10-ecommerce/01-prestashop-woocommerce-opencart-magento\|PrestaShop, WooCommerce, OpenCart, Magento]] | PHP, Composer, Docker | WAMP/IIS + PHP, Docker | PHP, Docker | ✅ |
+| [[10-ecommerce/02-headless-frameworks\|Saleor, Medusa, Vendure, Sylius, Shopware, Bagisto, Spree, Solidus]] | Docker, Node.js, PHP, Ruby | Docker, Node.js, PHP | Docker, Node.js, PHP | ✅ |
+| [[11-caisse-inventaire/01-caisses-pos\|OSPOS, uniCenta, Floreant, ERPNext POS]], [[11-caisse-inventaire/02-inventaire-actifs\|InvenTree, Snipe-IT, OpenBoxes]] | Docker, PHP, Java | Java (uniCenta, Floreant), Docker | Java, Docker | ✅ |
+
+## Gestion de parc & services Windows
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[01-outils-windows/01-terminal-gestionnaires-paquets\|Windows Terminal, WinGet, Chocolatey, Scoop]] | ➖ | winget, script PowerShell | ➖ | ✅ |
+| [[01-outils-windows/02-services-nssm-winsw\|NSSM, WinSW]] | ➖ | archive, choco | ➖ | ✅ |
+| [[01-outils-windows/03-wsl-cygwin-msys2-git\|WSL, Cygwin, MSYS2, Git for Windows]] | ➖ | wsl --install, setup, winget | ➖ | ✅ |
+| [[01-outils-windows/04-openssh-powertoys\|OpenSSH pour Windows, PowerToys]] | ➖ | Add-WindowsCapability, winget | ➖ | ✅ |
+| [[02-bureau-distant/01-apache-guacamole\|Apache Guacamole]] | Docker, guacd + Tomcat | navigateur | navigateur | ✅ |
+| [[02-bureau-distant/02-rdp-freerdp-xrdp-remmina\|FreeRDP, xrdp, Remmina, RDPY]] | apt, dnf, Flatpak | FreeRDP | brew (FreeRDP) | ✅ |
+| [[02-bureau-distant/03-vnc-x2go\|TigerVNC, TightVNC, UltraVNC, X2Go]] | tigervnc, x2goserver | MSI, x2goclient | vncviewer, x2goclient | ✅ |

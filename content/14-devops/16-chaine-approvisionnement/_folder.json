@@ -1,0 +1,1 @@
+{ "title": "Sécurité de la chaîne d'approvisionnement", "icon": "shield-check", "color": "#7c3aed", "description": "SBOM, analyse de vulnérabilités, signature et attestations des artefacts : Syft, Grype, Cosign, in-toto et Tekton Chains." }

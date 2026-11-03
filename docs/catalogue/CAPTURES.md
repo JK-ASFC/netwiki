@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-420 capture(s) attendue(s) dans 111 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+441 capture(s) attendue(s) dans 120 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -664,6 +664,20 @@
 | `content/14-devops/11-tekton-argo-workflows/_assets/argo-workflows-dag.png` | Argo Workflows — graphe DAG d'un workflow | `03-interface-graphique.md` |
 | `content/14-devops/11-tekton-argo-workflows/_assets/argo-workflows-cron.png` | Argo Workflows — liste des Cron Workflows | `03-interface-graphique.md` |
 
+## 14-devops/13-forges-revue-vcs
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/14-devops/13-forges-revue-vcs/_assets/onedev-projet.png` | Projet OneDev avec pipeline CI et tickets | `01-forges.md` |
+| `content/14-devops/13-forges-revue-vcs/_assets/gerrit-changement.png` | Changement Gerrit avec votes et commentaires | `02-gerrit-reviewboard.md` |
+
+## 14-devops/14-registres-artefacts
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/14-devops/14-registres-artefacts/_assets/harbor-projet.png` | Projet Harbor avec résultats d'analyse Trivy | `01-harbor-distribution-zot.md` |
+| `content/14-devops/14-registres-artefacts/_assets/nexus-depots.png` | Liste des dépôts Nexus (proxy, hébergés, groupes) | `02-nexus-artifactory-verdaccio.md` |
+
 ## 15-journalisation/11-recherche-journaux
 
 | Image à créer | Écran | Article |
@@ -961,6 +975,58 @@
 | --- | --- | --- |
 | `content/25-web-cms-portails/04-ghost-grav-october/_assets/ghost-editeur.png` | Éditeur d'article Ghost | `01-ghost.md` |
 | `content/25-web-cms-portails/04-ghost-grav-october/_assets/grav-admin.png` | Interface d'administration Grav, édition d'une page | `02-grav-october.md` |
+
+## 25-web-cms-portails/05-cms-headless-python
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/strapi-content-type-builder.png` | Constructeur de types de contenu Strapi | `01-strapi-directus-payload.md` |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/directus-data-studio.png` | Data Studio Directus, collection et éditeur d'élément | `01-strapi-directus-payload.md` |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/wagtail-streamfield.png` | Éditeur de page Wagtail avec StreamField | `03-wagtail-mezzanine.md` |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/plone-volto.png` | Interface Volto de Plone 6, édition d'une page | `04-plone-zope.md` |
+
+## 25-web-cms-portails/06-portails-ged
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/06-portails-ged/_assets/liferay-control-panel.png` | Control Panel de Liferay | `01-liferay-jahia-exo.md` |
+| `content/25-web-cms-portails/06-portails-ged/_assets/alfresco-share-documents.png` | Bibliothèque de documents d'un site dans Alfresco Share | `02-alfresco-nuxeo.md` |
+
+## 25-web-cms-portails/07-lms
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/07-lms/_assets/moodle-cours.png` | Page d'un cours Moodle (format thématique) | `01-moodle.md` |
+| `content/25-web-cms-portails/07-lms/_assets/moodle-administration.png` | Administration du site Moodle | `01-moodle.md` |
+
+## 25-web-cms-portails/08-erp
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/08-erp/_assets/odoo-applications.png` | Écran des applications Odoo | `01-odoo.md` |
+| `content/25-web-cms-portails/08-erp/_assets/erpnext-comptabilite.png` | Espace de travail Comptabilité d'ERPNext | `02-frappe-erpnext.md` |
+| `content/25-web-cms-portails/08-erp/_assets/dolibarr-tableau-de-bord.png` | Tableau de bord Dolibarr | `03-dolibarr-tryton.md` |
+
+## 25-web-cms-portails/09-facturation-temps
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/09-facturation-temps/_assets/invoiceninja-tableau-de-bord.png` | Tableau de bord Invoice Ninja | `01-invoice-ninja-akaunting-kimai-crater.md` |
+| `content/25-web-cms-portails/09-facturation-temps/_assets/kimai-feuille-temps.png` | Feuille de temps hebdomadaire Kimai | `01-invoice-ninja-akaunting-kimai-crater.md` |
+
+## 25-web-cms-portails/10-ecommerce
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/10-ecommerce/_assets/prestashop-commandes.png` | Back-office PrestaShop, liste des commandes | `01-prestashop-woocommerce-opencart-magento.md` |
+
+## 25-web-cms-portails/11-caisse-inventaire
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/25-web-cms-portails/11-caisse-inventaire/_assets/ospos-vente.png` | Écran de vente OSPOS | `01-caisses-pos.md` |
+| `content/25-web-cms-portails/11-caisse-inventaire/_assets/inventree-piece.png` | Fiche d'une pièce InvenTree avec stocks par emplacement | `02-inventaire-actifs.md` |
+| `content/25-web-cms-portails/11-caisse-inventaire/_assets/snipeit-actifs.png` | Liste des actifs Snipe-IT | `02-inventaire-actifs.md` |
 
 ## 31-auto-hebergement/01-plateformes-auto-hebergement
 

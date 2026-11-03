@@ -1,0 +1,1 @@
+{ "title": "Registres et dépôts d'artefacts", "icon": "package", "color": "#60b932", "description": "Registres d'images OCI (Harbor, Distribution, Zot) et dépôts d'artefacts (Nexus Repository, Artifactory, Verdaccio)." }

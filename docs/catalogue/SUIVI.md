@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 499 | 2 | 627 (48 %) |
+| 1311 | 185 (14 %) | 624 | 2 | 500 (38 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -698,7 +698,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | SquirrelMail | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 | RainLoop (abandonné) | Webmail historique | Linux | 🆕 fait (lot 69) | `10-messagerie/21-webmail` |
 
-## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 10/64
+## 13. WEB, CMS, E-COMMERCE ET PORTAILS — 64/64
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -711,63 +711,63 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | TYPO3 | CMS entreprise | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/03-typo3-contao` |
 | Contao | CMS | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/03-typo3-contao` |
 | October CMS (community) | CMS Laravel | Windows, Linux, macOS | 🆕 fait (lot 70) | `25-web-cms-portails/04-ghost-grav-october` |
-| Strapi | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Directus | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Payload CMS | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| KeystoneJS | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Sanity Studio (source available) | CMS headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Wagtail | CMS Django | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Mezzanine | CMS Django | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Plone | CMS Python | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Zope | Serveur applicatif | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Liferay Community Edition | Portail | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Jahia (community components) | CMS | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| eXo Platform (community) | Portail collaboratif | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Alfresco Community | ECM | Linux, Windows | ⏳ à faire | → `25-web-cms-portails` |
-| Nuxeo (community legacy) | ECM | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Moodle | LMS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Canvas LMS (open source) | LMS | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Chamilo | LMS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| ILIAS | LMS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Open edX | LMS | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Frappe Framework | Framework ERP | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| ERPNext | ERP | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Odoo Community | ERP/CRM | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Tryton | ERP | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Dolibarr | ERP/CRM | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| iDempiere | ERP | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| metasfresh | ERP | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Apache OFBiz | ERP | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| ERP5 | ERP | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| FrontAccounting | Comptabilité/ERP | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Invoice Ninja (community) | Facturation | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Akaunting (community) | Comptabilité | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Kimai | Suivi temps et facturation | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Crater (archivé) | Facturation | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| OpenCart | E-commerce | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| PrestaShop | E-commerce | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Magento Open Source | E-commerce | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| WooCommerce | E-commerce WordPress | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Saleor | E-commerce headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Medusa | E-commerce headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Sylius | E-commerce Symfony | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Shopware Community | E-commerce | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Bagisto | E-commerce Laravel | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Spree Commerce | E-commerce Ruby | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Reaction Commerce (archivé) | E-commerce | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Vendure | E-commerce headless | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Solidus | E-commerce Ruby | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Open Source POS (OSPOS) | Caisse POS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| uniCenta oPOS | Caisse POS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Floreant POS | Caisse POS | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| ERPNext POS | Caisse POS | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| OpenBoxes | Gestion stocks | Linux | ⏳ à faire | → `25-web-cms-portails` |
-| Inventree | Gestion inventaire | Windows, Linux, macOS | ⏳ à faire | → `25-web-cms-portails` |
-| Snipe-IT | Gestion actifs | Linux | ⏳ à faire | → `25-web-cms-portails` |
+| Strapi | CMS headless | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Directus | CMS headless | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Payload CMS | CMS headless | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| KeystoneJS | CMS headless | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Sanity Studio (source available) | CMS headless | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Wagtail | CMS Django | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Mezzanine | CMS Django | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Plone | CMS Python | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Zope | Serveur applicatif | Windows, Linux, macOS | 🆕 fait (lot 71) | `25-web-cms-portails/05-cms-headless-python` |
+| Liferay Community Edition | Portail | Windows, Linux, macOS | 🆕 fait (lot 72) | `25-web-cms-portails/06-portails-ged` |
+| Jahia (community components) | CMS | Linux | 🆕 fait (lot 72) | `25-web-cms-portails/06-portails-ged` |
+| eXo Platform (community) | Portail collaboratif | Linux | 🆕 fait (lot 72) | `25-web-cms-portails/06-portails-ged` |
+| Alfresco Community | ECM | Linux, Windows | 🆕 fait (lot 72) | `25-web-cms-portails/06-portails-ged` |
+| Nuxeo (community legacy) | ECM | Linux | 🆕 fait (lot 72) | `25-web-cms-portails/06-portails-ged` |
+| Moodle | LMS | Windows, Linux, macOS | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
+| Canvas LMS (open source) | LMS | Linux | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
+| Chamilo | LMS | Windows, Linux, macOS | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
+| ILIAS | LMS | Windows, Linux, macOS | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
+| Open edX | LMS | Linux | 🆕 fait (lot 72) | `25-web-cms-portails/07-lms` |
+| Frappe Framework | Framework ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| ERPNext | ERP | Linux | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| Odoo Community | ERP/CRM | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| Tryton | ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| Dolibarr | ERP/CRM | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| iDempiere | ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| metasfresh | ERP | Linux | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| Apache OFBiz | ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| ERP5 | ERP | Linux | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| FrontAccounting | Comptabilité/ERP | Windows, Linux, macOS | 🆕 fait (lot 73) | `25-web-cms-portails/08-erp` |
+| Invoice Ninja (community) | Facturation | Linux | 🆕 fait (lot 74) | `25-web-cms-portails/09-facturation-temps` |
+| Akaunting (community) | Comptabilité | Linux | 🆕 fait (lot 74) | `25-web-cms-portails/09-facturation-temps` |
+| Kimai | Suivi temps et facturation | Windows, Linux, macOS | 🆕 fait (lot 74) | `25-web-cms-portails/09-facturation-temps` |
+| Crater (archivé) | Facturation | Linux | 🆕 fait (lot 74) | `25-web-cms-portails/09-facturation-temps` |
+| OpenCart | E-commerce | Windows, Linux, macOS | 🆕 fait (lot 74) | `25-web-cms-portails/10-ecommerce` |
+| PrestaShop | E-commerce | Windows, Linux, macOS | 🆕 fait (lot 74) | `25-web-cms-portails/10-ecommerce` |
+| Magento Open Source | E-commerce | Linux | 🆕 fait (lot 74) | `25-web-cms-portails/10-ecommerce` |
+| WooCommerce | E-commerce WordPress | Windows, Linux, macOS | 🆕 fait (lot 74) | `25-web-cms-portails/10-ecommerce` |
+| Saleor | E-commerce headless | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Medusa | E-commerce headless | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Sylius | E-commerce Symfony | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Shopware Community | E-commerce | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Bagisto | E-commerce Laravel | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Spree Commerce | E-commerce Ruby | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Reaction Commerce (archivé) | E-commerce | Linux | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Vendure | E-commerce headless | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Solidus | E-commerce Ruby | Windows, Linux, macOS | 🆕 fait (lot 75) | `25-web-cms-portails/10-ecommerce` |
+| Open Source POS (OSPOS) | Caisse POS | Windows, Linux, macOS | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| uniCenta oPOS | Caisse POS | Windows, Linux, macOS | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| Floreant POS | Caisse POS | Windows, Linux, macOS | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| ERPNext POS | Caisse POS | Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| OpenBoxes | Gestion stocks | Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| Inventree | Gestion inventaire | Windows, Linux, macOS | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
+| Snipe-IT | Gestion actifs | Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
 | OCS Inventory NG | Inventaire IT | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/07-ocs-inventory` |
-| FusionInventory | Inventaire IT (ancien) | Windows, Linux | ⏳ à faire | → `25-web-cms-portails` |
+| FusionInventory | Inventaire IT (ancien) | Windows, Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
 
-## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 5/56
+## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 56/56
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -775,88 +775,88 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Gitea | Forge Git | Windows, Linux, macOS | ✅ existant | `14-devops/03-gitea` |
 | Forgejo | Forge Git | Windows, Linux, macOS | ✅ existant | `14-devops/04-forgejo` |
 | GitLab Community Edition | Forge DevOps | Linux | ✅ existant | `14-devops/02-gitlab` |
-| Gogs | Forge Git | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| OneDev | Forge DevOps | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| SourceHut | Forge de développement | Linux | ⏳ à faire | → `14-devops` |
-| Pagure | Forge Git | Linux | ⏳ à faire | → `14-devops` |
-| Phorge | Forge développement | Linux | ⏳ à faire | → `14-devops` |
-| Gerrit Code Review | Revue de code | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Review Board | Revue de code | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| RhodeCode Community | Forge Git | Linux | ⏳ à faire | → `14-devops` |
-| Fossil SCM | Gestion versions | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Mercurial | Gestion versions | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Subversion Apache | Gestion versions | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Harbor | Registry OCI | Linux | ⏳ à faire | → `14-devops` |
-| Distribution Registry | Registry Docker | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Zot | Registry OCI | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Nexus Repository OSS | Gestion dépôts artefacts | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| JFrog Artifactory OSS (legacy) | Gestion artefacts | Linux | ⏳ à faire | → `14-devops` |
-| Verdaccio | Registry npm | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
+| Gogs | Forge Git | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| OneDev | Forge DevOps | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| SourceHut | Forge de développement | Linux | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Pagure | Forge Git | Linux | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Phorge | Forge développement | Linux | ✅ existant (lot 77) | `10-messagerie/16-gestion-projet` |
+| Gerrit Code Review | Revue de code | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Review Board | Revue de code | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| RhodeCode Community | Forge Git | Linux | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Fossil SCM | Gestion versions | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Mercurial | Gestion versions | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Subversion Apache | Gestion versions | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Harbor | Registry OCI | Linux | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
+| Distribution Registry | Registry Docker | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
+| Zot | Registry OCI | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
+| Nexus Repository OSS | Gestion dépôts artefacts | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
+| JFrog Artifactory OSS (legacy) | Gestion artefacts | Linux | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
+| Verdaccio | Registry npm | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/14-registres-artefacts` |
 | SonarQube Community Build | Qualité code | Windows, Linux, macOS | ✅ existant | `14-devops/07-sonarqube` |
-| SonarLint | Analyse IDE | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Semgrep CE | Analyse statique | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| CodeQL CLI (license restrictions) | Analyse code | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| PMD | Analyse statique | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Checkstyle | Analyse Java | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| SpotBugs | Analyse Java | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| ESLint | Analyse JavaScript | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Prettier | Formatage code | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Ruff | Lint Python | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Pylint | Lint Python | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Mypy | Types Python | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Bandit | Sécurité Python | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Grype | Scan vulnérabilités | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Syft | SBOM | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Cosign | Signature artefacts | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| in-toto | Chaîne approvisionnement | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Tekton Chains | Signature pipelines | Linux | ⏳ à faire | → `14-devops` |
-| Renovate | Mise à jour dépendances | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Dependabot (service GitHub) | Mise à jour dépendances | Cloud | ⏳ à faire | → `14-devops` |
-| Mend Renovate CLI | Mise à jour dépendances | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| OpenRewrite | Modernisation code | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Allure Report | Rapports tests | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| ReportPortal | Rapports tests | Linux | ⏳ à faire | → `14-devops` |
-| Sonobuoy | Tests Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| k6 | Tests de charge | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Apache JMeter | Tests de charge | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Locust | Tests de charge | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Gatling (core) | Tests de charge | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Vegeta | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| wrk | Tests HTTP | Linux, macOS | ⏳ à faire | → `14-devops` |
-| hey | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Siege | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| OWASP Juice Shop | Application de test sécurité | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| WebGoat | Application de test sécurité | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
+| SonarLint | Analyse IDE | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| Semgrep CE | Analyse statique | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| CodeQL CLI (license restrictions) | Analyse code | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| PMD | Analyse statique | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| Checkstyle | Analyse Java | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| SpotBugs | Analyse Java | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| ESLint | Analyse JavaScript | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| Prettier | Formatage code | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
+| Ruff | Lint Python | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/15-analyse-code` |
+| Pylint | Lint Python | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/15-analyse-code` |
+| Mypy | Types Python | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/15-analyse-code` |
+| Bandit | Sécurité Python | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/15-analyse-code` |
+| Grype | Scan vulnérabilités | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
+| Syft | SBOM | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
+| Cosign | Signature artefacts | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
+| in-toto | Chaîne approvisionnement | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
+| Tekton Chains | Signature pipelines | Linux | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
+| Renovate | Mise à jour dépendances | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/17-dependances-modernisation` |
+| Dependabot (service GitHub) | Mise à jour dépendances | Cloud | 🆕 fait (lot 80) | `14-devops/17-dependances-modernisation` |
+| Mend Renovate CLI | Mise à jour dépendances | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/17-dependances-modernisation` |
+| OpenRewrite | Modernisation code | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/17-dependances-modernisation` |
+| Allure Report | Rapports tests | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
+| ReportPortal | Rapports tests | Linux | 🆕 fait (lot 80) | `14-devops/18-tests` |
+| Sonobuoy | Tests Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
+| k6 | Tests de charge | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| Apache JMeter | Tests de charge | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| Locust | Tests de charge | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| Gatling (core) | Tests de charge | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| Vegeta | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| wrk | Tests HTTP | Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| hey | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| Siege | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| OWASP Juice Shop | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
+| WebGoat | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 
-## 15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION — 6/41
+## 15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION — 28/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | OpenSSH for Windows | Serveur/client SSH | Windows | ✅ existant | `08-acces-distant-vpn/01-openssh` |
-| PowerShell 7 | Shell et scripts | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Windows Terminal | Terminal | Windows | ⏳ à faire | → `26-gestion-parc` |
-| WinGet CLI | Gestion paquets Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| Chocolatey (community edition) | Gestion paquets Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| Scoop | Gestion paquets Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| NSSM | Gestion services Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| WinSW | Wrapper services Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| RDPY | Outils RDP Python | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| FreeRDP | Client/serveur RDP | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Apache Guacamole | Passerelle RDP/VNC/SSH | Windows, Linux, macOS (serveur Linux) | ⏳ à faire | → `26-gestion-parc` |
+| PowerShell 7 | Shell et scripts | Windows, Linux, macOS | ✅ existant (lot 82) | `05-web/19-powershell` |
+| Windows Terminal | Terminal | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| WinGet CLI | Gestion paquets Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| Chocolatey (community edition) | Gestion paquets Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| Scoop | Gestion paquets Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| NSSM | Gestion services Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| WinSW | Wrapper services Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| RDPY | Outils RDP Python | Windows, Linux, macOS | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| FreeRDP | Client/serveur RDP | Windows, Linux, macOS | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| Apache Guacamole | Passerelle RDP/VNC/SSH | Windows, Linux, macOS (serveur Linux) | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
 | MeshCentral | Gestion et téléassistance | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/03-meshcentral` |
 | RustDesk Server | Relais bureau distant | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/02-rustdesk` |
-| Remmina | Client bureau distant | Linux | ⏳ à faire | → `26-gestion-parc` |
-| TigerVNC | Serveur/client VNC | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| TightVNC | Serveur/client VNC | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
-| UltraVNC | Serveur/client VNC | Windows | ⏳ à faire | → `26-gestion-parc` |
-| xrdp | Serveur RDP Linux | Linux | ⏳ à faire | → `26-gestion-parc` |
-| X2Go | Bureau distant | Linux, Windows client | ⏳ à faire | → `26-gestion-parc` |
+| Remmina | Client bureau distant | Linux | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| TigerVNC | Serveur/client VNC | Windows, Linux, macOS | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| TightVNC | Serveur/client VNC | Windows, Linux | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| UltraVNC | Serveur/client VNC | Windows | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| xrdp | Serveur RDP Linux | Linux | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| X2Go | Bureau distant | Linux, Windows client | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
 | FreeIPA client | Intégration identité | Linux | ✅ existant | `01-annuaire-identite/03-freeipa` |
 | Winbind | Intégration AD | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
-| WSL | Sous-système Linux | Windows | ⏳ à faire | → `26-gestion-parc` |
-| Cygwin | Environnement Unix | Windows | ⏳ à faire | → `26-gestion-parc` |
-| MSYS2 | Environnement Unix et outils | Windows | ⏳ à faire | → `26-gestion-parc` |
-| Git for Windows | Git et shell | Windows | ⏳ à faire | → `26-gestion-parc` |
+| WSL | Sous-système Linux | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| Cygwin | Environnement Unix | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| MSYS2 | Environnement Unix et outils | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| Git for Windows | Git et shell | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | Rufus (open source) | Création supports boot | Windows | ⏳ à faire | → `26-gestion-parc` |
 | Ventoy | Création supports multiboot | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
 | Clonezilla | Clonage système | Windows, Linux, macOS | ✅ existant | `21-outils/07-disques-recuperation/02-clonezilla` |
@@ -865,14 +865,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | WAPT Community | Déploiement logiciel | Windows, Linux server | ⏳ à faire | → `26-gestion-parc` |
 | Open-AudIT | Inventaire réseau | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | GLPI Agent | Inventaire agent | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/04-glpi-installation` |
-| Win32-OpenSSH | SSH Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
+| Win32-OpenSSH | SSH Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | RPort | Gestion distante | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | Tactical RMM | RMM et téléassistance | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | Remotely | Téléassistance | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | Actiona | Automatisation GUI | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
 | AutoHotkey | Automatisation Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
 | AutoIt | Automatisation Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| PowerToys | Utilitaires Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
+| PowerToys | Utilitaires Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 
 ## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 3/67
 
