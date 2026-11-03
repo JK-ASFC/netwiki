@@ -1,0 +1,1 @@
+{ "title": "Bureau distant (RDP, VNC, passerelles)", "icon": "monitor-smartphone", "color": "#0d9488", "description": "Passerelle web Apache Guacamole, RDP (FreeRDP, xrdp, Remmina), VNC (TigerVNC, TightVNC, UltraVNC) et X2Go." }

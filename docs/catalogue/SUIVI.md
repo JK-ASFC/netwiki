@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 185 (14 %) | 615 | 2 | 509 (39 %) |
+| 1311 | 185 (14 %) | 624 | 2 | 500 (38 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -828,7 +828,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OWASP Juice Shop | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 | WebGoat | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 
-## 15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION — 19/41
+## 15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION — 28/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -840,17 +840,17 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Scoop | Gestion paquets Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | NSSM | Gestion services Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | WinSW | Wrapper services Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
-| RDPY | Outils RDP Python | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| FreeRDP | Client/serveur RDP | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Apache Guacamole | Passerelle RDP/VNC/SSH | Windows, Linux, macOS (serveur Linux) | ⏳ à faire | → `26-gestion-parc` |
+| RDPY | Outils RDP Python | Windows, Linux, macOS | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| FreeRDP | Client/serveur RDP | Windows, Linux, macOS | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| Apache Guacamole | Passerelle RDP/VNC/SSH | Windows, Linux, macOS (serveur Linux) | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
 | MeshCentral | Gestion et téléassistance | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/03-meshcentral` |
 | RustDesk Server | Relais bureau distant | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/02-rustdesk` |
-| Remmina | Client bureau distant | Linux | ⏳ à faire | → `26-gestion-parc` |
-| TigerVNC | Serveur/client VNC | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| TightVNC | Serveur/client VNC | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
-| UltraVNC | Serveur/client VNC | Windows | ⏳ à faire | → `26-gestion-parc` |
-| xrdp | Serveur RDP Linux | Linux | ⏳ à faire | → `26-gestion-parc` |
-| X2Go | Bureau distant | Linux, Windows client | ⏳ à faire | → `26-gestion-parc` |
+| Remmina | Client bureau distant | Linux | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| TigerVNC | Serveur/client VNC | Windows, Linux, macOS | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| TightVNC | Serveur/client VNC | Windows, Linux | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| UltraVNC | Serveur/client VNC | Windows | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| xrdp | Serveur RDP Linux | Linux | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
+| X2Go | Bureau distant | Linux, Windows client | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
 | FreeIPA client | Intégration identité | Linux | ✅ existant | `01-annuaire-identite/03-freeipa` |
 | Winbind | Intégration AD | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
 | WSL | Sous-système Linux | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |

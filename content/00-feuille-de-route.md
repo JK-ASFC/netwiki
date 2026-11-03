@@ -96,6 +96,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 80 | Catalogue — dépendances, modernisation et tests : Renovate, Dependabot, Mend Renovate, OpenRewrite, Allure Report, ReportPortal, Sonobuoy, OWASP Juice Shop, WebGoat | ✅ |
 | 81 | Catalogue — tests de charge : k6, Apache JMeter, Locust, Gatling, Vegeta, wrk, hey, Siege | ✅ |
 | 82 | Catalogue — outils Windows (nouvelle catégorie Gestion de parc) : Windows Terminal, WinGet, Chocolatey, Scoop, NSSM, WinSW, WSL, Cygwin, MSYS2, Git for Windows, OpenSSH pour Windows, PowerToys (PowerShell 7 déjà présent) | ✅ |
+| 83 | Catalogue — bureau distant : Apache Guacamole, FreeRDP, xrdp, Remmina, RDPY, TigerVNC, TightVNC, UltraVNC, X2Go | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -446,3 +447,6 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[01-outils-windows/02-services-nssm-winsw\|NSSM, WinSW]] | ➖ | archive, choco | ➖ | ✅ |
 | [[01-outils-windows/03-wsl-cygwin-msys2-git\|WSL, Cygwin, MSYS2, Git for Windows]] | ➖ | wsl --install, setup, winget | ➖ | ✅ |
 | [[01-outils-windows/04-openssh-powertoys\|OpenSSH pour Windows, PowerToys]] | ➖ | Add-WindowsCapability, winget | ➖ | ✅ |
+| [[02-bureau-distant/01-apache-guacamole\|Apache Guacamole]] | Docker, guacd + Tomcat | navigateur | navigateur | ✅ |
+| [[02-bureau-distant/02-rdp-freerdp-xrdp-remmina\|FreeRDP, xrdp, Remmina, RDPY]] | apt, dnf, Flatpak | FreeRDP | brew (FreeRDP) | ✅ |
+| [[02-bureau-distant/03-vnc-x2go\|TigerVNC, TightVNC, UltraVNC, X2Go]] | tigervnc, x2goserver | MSI, x2goclient | vncviewer, x2goclient | ✅ |
