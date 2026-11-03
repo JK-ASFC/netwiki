@@ -86,7 +86,7 @@ no ip http server
 ip http secure-server
 ```
 
-L'authentification centralisée (**AAA** avec RADIUS ou TACACS+) est détaillée dans [[01-freeradius/09-administration-equipements|FreeRADIUS — administration des équipements]] et [[02-nps/02-8021x-vpn-equipements-depannage|NPS]] : `aaa new-model`, groupe de serveurs, et toujours un compte local de secours.
+L'authentification centralisée (**AAA** avec RADIUS ou TACACS+) est détaillée dans [[01-freeradius/09-administration-equipements|FreeRADIUS — administration des équipements]] et [[02-nps/02-8021x-vpn-equipements-depannage|NPS]] pour RADIUS, et dans [[04-tacacs/08-equipements-cisco|TACACS+ sur Cisco]] pour l'autorisation commande par commande : `aaa new-model`, groupe de serveurs, et toujours un compte local de secours.
 
 ## Configuration en cours et sauvegardée
 

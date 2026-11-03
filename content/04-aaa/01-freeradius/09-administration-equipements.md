@@ -10,7 +10,7 @@ icon: user-cog
 Les administrateurs se connectent aux commutateurs, routeurs et pare-feu avec **leur compte AD** ; le niveau de droits dépend de leur **groupe** ; chaque connexion est journalisée. Un compte local de secours reste utilisable si RADIUS est injoignable.
 
 > [!NOTE]
-> **TACACS+** reste préférable quand on veut autoriser ou journaliser **commande par commande** (Cisco ISE, tac_plus-ng). RADIUS suffit pour l'authentification et l'attribution d'un niveau de privilège ou d'un profil.
+> **TACACS+** reste préférable quand on veut autoriser ou journaliser **commande par commande** (Cisco ISE, tac_plus-ng) : voir la section [[04-tacacs/01-presentation-historique|TACACS et TACACS+]]. RADIUS suffit pour l'authentification et l'attribution d'un niveau de privilège ou d'un profil.
 
 ## Serveur virtuel dédié
 

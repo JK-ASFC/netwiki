@@ -146,6 +146,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | --- | --- | --- | --- | --- |
 | [[01-freeradius/01-presentation\|FreeRADIUS]] | freeradius | ➖ | freeradius-server | ✅ |
 | [[02-nps/01-presentation-installation\|Network Policy Server]] | ➖ | NPAS | ➖ | ✅ |
+| [[04-tacacs/01-presentation-historique\|TACACS, XTACACS et TACACS+]] (RFC 1492, 8907, 9887 ; tac_plus-ng, tac_plus, équipements) | tac_plus-ng, tac_plus, libpam-tacplus | TACACS.net | ➖ | ✅ |
 
 ## Serveurs web & applications
 
