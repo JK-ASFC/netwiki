@@ -1,20 +1,17 @@
 ---
 title: "Référence"
-description: "Nginx — Référence. njs provides objects, methods and properties for extending nginx functionality."
+description: "Nginx — Référence. njs fournit des objets, méthodes et propriétés pour étendre les fonctions de nginx."
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+[[10-guides/04-njs/00-index|njs]] fournit des objets, méthodes et propriétés pour étendre les fonctions de nginx.
 
-[[10-guides/04-njs/00-index|njs]] provides objects, methods and properties for extending nginx functionality.
+Cette référence ne contient que les propriétés, méthodes et modules propres à njs, non conformes à ECMAScript. Les définitions des propriétés et méthodes de njs conformes à ECMAScript se trouvent dans la [spécification ECMAScript](http://www.ecma-international.org/ecma-262/). La liste de toutes les propriétés et méthodes de njs figure dans [[10-guides/04-njs/compatibility|Compatibilité]].
 
-This reference contains only njs specific properties, methods and modules not compliant with ECMAScript. Definitions of njs properties and methods compliant with ECMAScript can be found in [ECMAScript specification](http://www.ecma-international.org/ecma-262/). List of all njs properties and methods can be found in [[10-guides/04-njs/compatibility|Compatibility]].
+## Objets nginx
 
-## nginx objects
-
-### HTTP Request
+### Requête HTTP
 
 |   |
 | --- |
@@ -57,27 +54,27 @@ This reference contains only njs specific properties, methods and modules not co
 | `r.variables{}` |
 | `r.warn()` |
 
-The HTTP request object is available only in the [[11-modules/02-http/ngx_http_js_module|ngx_http_js_module]] module. Before 0.8.5, all string properties of the object were byte strings.
+L'objet requête HTTP n'est disponible que dans le module [[11-modules/02-http/ngx_http_js_module|ngx_http_js_module]]. Avant la version 0.8.5, toutes les propriétés chaîne de l'objet étaient des chaînes d'octets.
 
 - **`r.args{}`**
 
-  request arguments object, read-only.
+  objet des arguments de la requête, en lecture seule.
 
-  The query string is returned as an object. Since 0.7.6, duplicate keys are returned as an array, keys are case-sensitive, both keys and values are percent-decoded.
+  La chaîne de requête est renvoyée sous forme d'objet. Depuis la version 0.7.6, les clés en double sont renvoyées sous forme de tableau, les clés sont sensibles à la casse, et clés comme valeurs sont décodées (percent-decoding).
 
-  For example, the query string
+  Par exemple, la chaîne de requête
 
   ```nginx
   'a=1&b=%32&A=3&b=4&B=two%20words'
   ```
 
-  is converted to `r.args` as:
+  est convertie en `r.args` ainsi :
 
   ```nginx
   {a: "1", b: ["2", "4"], A: "3", B: "two words"}
   ```
 
-  More advanced parsing scenarios can be achieved with the Query String module and with the [[13-variables/args|$args]] variable, for example:
+  Des analyses plus élaborées sont possibles avec le module Query String et la variable [[13-variables/args|$args]], par exemple :
 
   ```nginx
   import qs from 'querystring';
@@ -87,179 +84,179 @@ The HTTP request object is available only in the [[11-modules/02-http/ngx_http_j
   }
   ```
 
-  The argument object is evaluated at the first access to `r.args`. If only a single argument is needed, for example `foo`, nginx variables can be used:
+  L'objet des arguments est évalué au premier accès à `r.args`. Si un seul argument est nécessaire, par exemple `foo`, on peut utiliser les variables nginx :
 
   ```nginx
   r.variables.arg_foo
   ```
 
-  Here, nginx variables object returns the first value for a given key, case-insensitive, without percent-decoding.
+  Ici, l'objet des variables nginx renvoie la première valeur pour une clé donnée, sans tenir compte de la casse et sans décodage.
 
-  To convert `r.args` back to a string, the Query String `stringify` method can be used.
+  Pour reconvertir `r.args` en chaîne, on peut utiliser la méthode `stringify` de Query String.
 
 - **`r.decline()`**
 
-  makes the [[12-directives/js-access-http-js|js_access]] handler express no opinion about access, deferring the decision to other access checkers under [[12-directives/satisfy|satisfy any]] (0.9.9). A handler that returns without calling `r.decline()` or `r.return()` implicitly grants access. May be called only from the [[12-directives/js-access-http-js|js_access]] function.
+  fait que le gestionnaire [[12-directives/js-access-http-js|js_access]] ne se prononce pas sur l'accès et laisse la décision aux autres vérificateurs sous [[12-directives/satisfy|satisfy any]] (0.9.9). Un gestionnaire qui rend la main sans appeler `r.decline()` ni `r.return()` accorde implicitement l'accès. Ne peut être appelée que depuis la fonction [[12-directives/js-access-http-js|js_access]].
 
 - **`r.done()`**
 
-  after calling this function, next data chunks will be passed to client without calling [[12-directives/js-body-filter|js_body_filter]] (0.5.2). May be called only from the [[12-directives/js-body-filter|js_body_filter]] function
+  après l'appel de cette fonction, les blocs de données suivants sont transmis au client sans appeler [[12-directives/js-body-filter|js_body_filter]] (0.5.2). Ne peut être appelée que depuis la fonction [[12-directives/js-body-filter|js_body_filter]]
 
 - **`r.error(string)`**
 
-  writes a `string` to the error log on the `error` level of logging
+  écrit une `string` dans le journal d'erreurs au niveau `error`
 
   > [!NOTE]
-  > As nginx has a [[10-guides/06-developpement/development-guide|hardcoded]] maximum line length limit, only first 2048 bytes of the string can be logged.
+  > Comme nginx a une longueur de ligne maximale [[10-guides/06-developpement/development-guide|codée en dur]], seuls les 2048 premiers octets de la chaîne peuvent être journalisés.
 
 - **`r.finish()`**
 
-  finishes sending a response to the client
+  termine l'envoi de la réponse au client
 
 - **`r.headersIn{}`**
 
-  incoming headers object, read-only.
+  objet des en-têtes entrants, en lecture seule.
 
-  The `Foo` request header can be accessed with the syntax: `headersIn.foo` or `headersIn['Foo']`.
+  L'en-tête de requête `Foo` est accessible avec la syntaxe : `headersIn.foo` ou `headersIn['Foo']`.
 
-  The `Authorization`, `Content-Length`, `Content-Range`, `Content-Type`, `ETag`, `Expect`, `From`, `Host`, `If-Match`, `If-Modified-Since`, `If-None-Match`, `If-Range`, `If-Unmodified-Since`, `Max-Forwards`, `Proxy-Authorization`, `Referer`, `Transfer-Encoding`, and `User-Agent` request headers can have only one field value (0.4.1). Duplicate field values in `Cookie` headers are separated by semicolon (`;`). Duplicate field values in all other request headers are separated by commas.
+  Les en-têtes de requête `Authorization`, `Content-Length`, `Content-Range`, `Content-Type`, `ETag`, `Expect`, `From`, `Host`, `If-Match`, `If-Modified-Since`, `If-None-Match`, `If-Range`, `If-Unmodified-Since`, `Max-Forwards`, `Proxy-Authorization`, `Referer`, `Transfer-Encoding` et `User-Agent` ne peuvent avoir qu'une valeur (0.4.1). Les valeurs en double des en-têtes `Cookie` sont séparées par un point-virgule (`;`). Celles de tous les autres en-têtes de requête sont séparées par des virgules.
 
 - **`r.headersOut{}`**
 
-  outgoing headers object for the main request, writable.
+  objet des en-têtes sortants de la requête principale, modifiable.
 
-  If `r.headersOut{}` is the response object of a subrequest, it represents response headers. In this case, field values in `Accept-Ranges`, `Connection`, `Content-Disposition`, `Content-Encoding`, `Content-Length`, `Content-Range`, `Date`, `Keep-Alive`, `Server`, `Transfer-Encoding`, `X-Accel-*` response headers may be omitted.
+  Si `r.headersOut{}` est l'objet réponse d'une sous-requête, il représente les en-têtes de réponse. Dans ce cas, les valeurs des en-têtes de réponse `Accept-Ranges`, `Connection`, `Content-Disposition`, `Content-Encoding`, `Content-Length`, `Content-Range`, `Date`, `Keep-Alive`, `Server`, `Transfer-Encoding`, `X-Accel-*` peuvent être omises.
 
-  The `Foo` response header can be accessed with the syntax: `headersOut.foo` or `headersOut['Foo']`.
+  L'en-tête de réponse `Foo` est accessible avec la syntaxe : `headersOut.foo` ou `headersOut['Foo']`.
 
-  Outgoing headers should be set before a response header is sent to a client, otherwise header update will be ignored. This means that `r.headersOut{}` is effectively writable in:
+  Les en-têtes sortants doivent être définis avant l'envoi de l'en-tête de réponse au client, sinon la modification est ignorée. `r.headersOut{}` n'est donc réellement modifiable que dans :
 
-  - the [[12-directives/js-content|js_content]] handler before `r.sendHeader()` or `r.return()` are called
-  - the [[12-directives/js-header-filter|js_header_filter]] handler
+  - le gestionnaire [[12-directives/js-content|js_content]], avant l'appel de `r.sendHeader()` ou `r.return()`
+  - le gestionnaire [[12-directives/js-header-filter|js_header_filter]]
 
-  Field values of multi-value response headers (0.4.0) can be set with the syntax:
+  Les valeurs des en-têtes de réponse multivaleurs (0.4.0) se définissent avec la syntaxe :
 
   ```nginx
   r.headersOut['Foo'] = ['a', 'b']
   ```
 
-  where the output will be:
+  ce qui donne en sortie :
 
   ```nginx
   Foo: a
   Foo: b
   ```
 
-  All previous field values of the `Foo` response header will be deleted.
+  Toutes les valeurs précédentes de l'en-tête de réponse `Foo` sont supprimées.
 
-  For standard response headers that accept only a single field value such as `Content-Type`, only the last element of the array will take effect. Field values of the `Set-Cookie` response header are always returned as an array. Duplicate field values in `Age`, `Content-Encoding`, `Content-Length`, `Content-Type`, `ETag`, `Expires`, `Last-Modified`, `Location`, `Retry-After` response headers are ignored. Duplicate field values in all other response headers are separated by commas.
+  Pour les en-têtes de réponse standard qui n'acceptent qu'une valeur, comme `Content-Type`, seul le dernier élément du tableau est pris en compte. Les valeurs de l'en-tête de réponse `Set-Cookie` sont toujours renvoyées sous forme de tableau. Les valeurs en double des en-têtes de réponse `Age`, `Content-Encoding`, `Content-Length`, `Content-Type`, `ETag`, `Expires`, `Last-Modified`, `Location`, `Retry-After` sont ignorées. Celles de tous les autres en-têtes de réponse sont séparées par des virgules.
 
 - **`r.httpVersion`**
 
-  HTTP version, read-only
+  version HTTP, en lecture seule
 
 - **`r.internal`**
 
-  boolean value, true for [[12-directives/internal|internal]] locations
+  booléen, vrai pour les locations [[12-directives/internal|internal]]
 
 - **`r.internalRedirect(uri)`**
 
-  performs an [[10-guides/06-developpement/development-guide|internal redirect]] to the specified `uri`. If the uri starts with the “`@`” prefix, it is considered a named location. In a new location, all request processing is repeated starting from [[10-guides/06-developpement/development-guide|NGX_HTTP_SERVER_REWRITE_PHASE]] for ordinary locations and from [[10-guides/06-developpement/development-guide|NGX_HTTP_REWRITE_PHASE]] for named locations. As a result, a redirect to a named location does not check [[12-directives/client-max-body-size|client_max_body_size]] limit. See [[10-guides/06-developpement/development-guide|dev guide]] for more details. Redirected requests become internal and can access the [[12-directives/internal|internal]] locations. The actual redirect happens after the handler execution is completed.
+  effectue une [[10-guides/06-developpement/development-guide|redirection interne]] vers l'`uri` indiquée. Si l'URI commence par le préfixe « `@` », elle est considérée comme une location nommée. Dans la nouvelle location, tout le traitement de la requête est repris à partir de [[10-guides/06-developpement/development-guide|NGX_HTTP_SERVER_REWRITE_PHASE]] pour les locations ordinaires et de [[10-guides/06-developpement/development-guide|NGX_HTTP_REWRITE_PHASE]] pour les locations nommées. En conséquence, une redirection vers une location nommée ne vérifie pas la limite [[12-directives/client-max-body-size|client_max_body_size]]. Voir le [[10-guides/06-developpement/development-guide|guide du développeur]] pour plus de détails. Les requêtes redirigées deviennent internes et peuvent accéder aux locations [[12-directives/internal|internal]]. La redirection effective a lieu après la fin de l'exécution du gestionnaire.
 
   > [!NOTE]
-  > After redirect, a new njs VM is started in the target location, the VM in the original location is stopped. Values of nginx variables are kept and can be used to pass information to the target location. Since 0.5.3, the variable declared with the `js_var` directive for [[12-directives/js-var-http-js|http]] or [[12-directives/js-var-stream-js|stream]] can be used.
+  > Après la redirection, une nouvelle machine virtuelle njs démarre dans la location cible et celle de la location d'origine est arrêtée. Les valeurs des variables nginx sont conservées et peuvent servir à transmettre des informations à la location cible. Depuis la version 0.5.3, la variable déclarée avec la directive `js_var` pour [[12-directives/js-var-http-js|http]] ou [[12-directives/js-var-stream-js|stream]] peut être utilisée.
 
   > [!NOTE]
-  > Since 0.7.4, the method accepts escaped URIs.
+  > Depuis la version 0.7.4, la méthode accepte les URI échappées.
 
 - **`r.log(string)`**
 
-  writes a `string` to the error log on the `info` level of logging
+  écrit une `string` dans le journal d'erreurs au niveau `info`
 
   > [!NOTE]
-  > As nginx has a [[10-guides/06-developpement/development-guide|hardcoded]] maximum line length limit, only first 2048 bytes of the string can be logged.
+  > Comme nginx a une longueur de ligne maximale [[10-guides/06-developpement/development-guide|codée en dur]], seuls les 2048 premiers octets de la chaîne peuvent être journalisés.
 
 - **`r.method`**
 
-  HTTP method, read-only
+  méthode HTTP, en lecture seule
 
 - **`r.parent`**
 
-  references the parent request object for a subrequest response object received through a completion callback or the `Promise` returned by `r.subrequest()`. For a request object passed to a JavaScript handler, including a subrequest handler, `undefined` is returned.
+  référence l'objet requête parent pour un objet réponse de sous-requête reçu via une fonction de rappel de fin ou la `Promise` renvoyée par `r.subrequest()`. Pour un objet requête passé à un gestionnaire JavaScript, y compris un gestionnaire de sous-requête, renvoie `undefined`.
 
 - **`r.remoteAddress`**
 
-  client address, read-only
+  adresse du client, en lecture seule
 
 - **`r.readRequestArrayBuffer()`**
 
-  returns a `Promise` that resolves with the client request body as an `ArrayBuffer` (0.9.9). See `r.readRequestText()` for availability, body caching, and concurrency semantics.
+  renvoie une `Promise` résolue avec le corps de la requête client sous forme d'`ArrayBuffer` (0.9.9). Voir `r.readRequestText()` pour la disponibilité, la mise en cache du corps et la concurrence.
 
 - **`r.readRequestForm([options])`**
 
-  reads the client request body and parses it as an HTML form, returning a `Promise` that resolves with a form object (0.9.9). Supported content types are `application/x-www-form-urlencoded` and `multipart/form-data`.
+  lit le corps de la requête client et l'analyse comme un formulaire HTML ; renvoie une `Promise` résolue avec un objet formulaire (0.9.9). Types de contenu pris en charge : `application/x-www-form-urlencoded` et `multipart/form-data`.
 
-  The form object provides the following methods:
+  L'objet formulaire fournit les méthodes suivantes :
 
   - **`get(name)`**
 
-    returns the first value for *name*, or `null` if absent.
+    renvoie la première valeur de *name*, ou `null` si elle est absente.
 
   - **`getAll(name)`**
 
-    returns an array with all values for *name*.
+    renvoie un tableau de toutes les valeurs de *name*.
 
   - **`has(name)`**
 
-    returns `true` if at least one entry exists for *name*.
+    renvoie `true` s'il existe au moins une entrée pour *name*.
 
   - **`forEach(callback[, thisArg])`**
 
-    invokes *callback* for each entry with arguments `(value, key, form)`.
+    appelle *callback* pour chaque entrée avec les arguments `(value, key, form)`.
 
   - **`hasFiles()`**
 
-    returns `true` if the form contains any file parts.
+    renvoie `true` si le formulaire contient des parties fichier.
 
-  For text fields, values are decoded strings. For file parts, the value is an object with the client-supplied filename available as the `name` property; file contents are not exposed. The filename is client-supplied and is not sanitized.
+  Pour les champs texte, les valeurs sont des chaînes décodées. Pour les parties fichier, la valeur est un objet dont la propriété `name` contient le nom de fichier fourni par le client ; le contenu du fichier n'est pas exposé. Ce nom de fichier, fourni par le client, n'est pas assaini.
 
-  The optional *options* object accepts the following properties:
+  L'objet facultatif *options* accepte les propriétés suivantes :
 
   - **`maxKeys` *number***
 
-    the maximum number of fields to parse, by default is `128`. Exceeding the limit rejects the returned promise.
+    nombre maximal de champs à analyser, `128` par défaut. Dépasser la limite rejette la promesse renvoyée.
 
-  See `r.readRequestText()` for availability, body caching, and concurrency semantics. The parsed form is itself cached on the request: a subsequent call returns the same form object and ignores any new *options* argument.
+  Voir `r.readRequestText()` pour la disponibilité, la mise en cache du corps et la concurrence. Le formulaire analysé est lui-même mis en cache dans la requête : un appel ultérieur renvoie le même objet formulaire et ignore tout nouvel argument *options*.
 
 - **`r.readRequestJSON()`**
 
-  returns a `Promise` that resolves with the client request body parsed as JSON (0.9.9). See `r.readRequestText()` for availability, body caching, and concurrency semantics.
+  renvoie une `Promise` résolue avec le corps de la requête client analysé en JSON (0.9.9). Voir `r.readRequestText()` pour la disponibilité, la mise en cache du corps et la concurrence.
 
 - **`r.readRequestText()`**
 
-  returns a `Promise` that resolves with the client request body as a string (0.9.9). The size of the request body is limited by [[12-directives/client-max-body-size|client_max_body_size]]. The method is available in the [[12-directives/js-access-http-js|js_access]] and [[12-directives/js-content|js_content]] directives.
+  renvoie une `Promise` résolue avec le corps de la requête client sous forme de chaîne (0.9.9). La taille du corps est limitée par [[12-directives/client-max-body-size|client_max_body_size]]. La méthode est disponible dans les directives [[12-directives/js-access-http-js|js_access]] et [[12-directives/js-content|js_content]].
 
-  The body is read once and cached on the request: subsequent calls to `r.readRequestText()`, `r.readRequestArrayBuffer()`, `r.readRequestJSON()`, or `r.readRequestForm()` resolve from the cached body without re-reading the wire. A second call issued while a previous read is still pending throws `"request body is already being read"`.
+  Le corps est lu une fois et mis en cache dans la requête : les appels suivants à `r.readRequestText()`, `r.readRequestArrayBuffer()`, `r.readRequestJSON()` ou `r.readRequestForm()` sont résolus à partir du corps en cache, sans relecture réseau. Un second appel lancé alors qu'une lecture précédente est en cours lève `"request body is already being read"`.
 
-  Note that it may convert bytes invalid in UTF-8 encoding into the replacement character.
+  Notez que les octets invalides en UTF-8 peuvent être convertis en caractère de remplacement.
 
 - **`r.requestBody`**
 
-  the property was made obsolete in 0.5.0 and was removed in 0.8.0. The `r.requestBuffer` or `r.requestText` property should be used instead.
+  la propriété est devenue obsolète en 0.5.0 et a été supprimée en 0.8.0. Utilisez plutôt la propriété `r.requestBuffer` ou `r.requestText`.
 
 - **`r.requestBuffer`**
 
-  client request body if it has not been written to a temporary file (since 0.5.0). To ensure that the client request body is in memory, its size should be limited by [[12-directives/client-max-body-size|client_max_body_size]], and a sufficient buffer size should be set using [[12-directives/client-body-buffer-size|client_body_buffer_size]]. The property is available only in the [[12-directives/js-content|js_content]] directive. For asynchronous access, or for use in [[12-directives/js-access-http-js|js_access]], see `r.readRequestText()` and other “`r.readRequest*()`” methods.
+  corps de la requête client s'il n'a pas été écrit dans un fichier temporaire (depuis 0.5.0). Pour garantir que le corps est en mémoire, limitez sa taille avec [[12-directives/client-max-body-size|client_max_body_size]] et fixez une taille de tampon suffisante avec [[12-directives/client-body-buffer-size|client_body_buffer_size]]. La propriété n'est disponible que dans la directive [[12-directives/js-content|js_content]]. Pour un accès asynchrone, ou dans [[12-directives/js-access-http-js|js_access]], voir `r.readRequestText()` et les autres méthodes « `r.readRequest*()` ».
 
 - **`r.requestText`**
 
-  the same as `r.requestBuffer`, but returns a `string`. Note that it may convert bytes invalid in UTF-8 encoding into the replacement character. For asynchronous access, or for use in [[12-directives/js-access-http-js|js_access]], see `r.readRequestText()`.
+  comme `r.requestBuffer`, mais renvoie une `string`. Notez que les octets invalides en UTF-8 peuvent être convertis en caractère de remplacement. Pour un accès asynchrone, ou dans [[12-directives/js-access-http-js|js_access]], voir `r.readRequestText()`.
 
 - **`r.rawHeadersIn[]`**
 
-  returns an array of key-value pairs exactly as they were received from the client (0.4.1).
+  renvoie un tableau de paires clé-valeur exactement telles que reçues du client (0.4.1).
 
-  For example, with the following request headers:
+  Par exemple, avec les en-têtes de requête suivants :
 
   ```nginx
   Host: localhost
@@ -267,7 +264,7 @@ The HTTP request object is available only in the [[11-modules/02-http/ngx_http_j
   foo:  bar2
   ```
 
-  the output of `r.rawHeadersIn` will be:
+  la sortie de `r.rawHeadersIn` sera :
 
   ```nginx
   [
@@ -277,73 +274,73 @@ The HTTP request object is available only in the [[11-modules/02-http/ngx_http_j
   ]
   ```
 
-  All `foo` headers can be collected with the syntax:
+  Tous les en-têtes `foo` peuvent être collectés avec la syntaxe :
 
   ```nginx
   r.rawHeadersIn.filter(v=>v[0].toLowerCase() == 'foo').map(v=>v[1])
   ```
 
-  the output will be:
+  la sortie sera :
 
   ```nginx
   ['bar', 'bar2']
   ```
 
-  Header field names are not converted to lower case, duplicate field values are not merged.
+  Les noms des champs d'en-tête ne sont pas convertis en minuscules et les valeurs en double ne sont pas fusionnées.
 
 - **`r.rawHeadersOut[]`**
 
-  returns an array of key-value pairs of response headers (0.4.1). Header field names are not converted to lower case, duplicate field values are not merged.
+  renvoie un tableau de paires clé-valeur des en-têtes de réponse (0.4.1). Les noms des champs ne sont pas convertis en minuscules et les valeurs en double ne sont pas fusionnées.
 
 - **`r.responseBody`**
 
-  the property was made obsolete in 0.5.0 and was removed in 0.8.0. The `r.responseBuffer` or the `r.responseText` property should be used instead.
+  la propriété est devenue obsolète en 0.5.0 et a été supprimée en 0.8.0. Utilisez plutôt la propriété `r.responseBuffer` ou `r.responseText`.
 
 - **`r.responseBuffer`**
 
-  holds the subrequest response body, read-only (since 0.5.0). The size of `r.responseBuffer` is limited by the [[12-directives/subrequest-output-buffer-size|subrequest_output_buffer_size]] directive.
+  contient le corps de la réponse de la sous-requête, en lecture seule (depuis 0.5.0). La taille de `r.responseBuffer` est limitée par la directive [[12-directives/subrequest-output-buffer-size|subrequest_output_buffer_size]].
 
 - **`r.responseText`**
 
-  the same as `r.responseBuffer` but returns a string (since 0.5.0). Note that it may convert bytes invalid in UTF-8 encoding into the replacement character.
+  comme `r.responseBuffer`, mais renvoie une chaîne (depuis 0.5.0). Notez que les octets invalides en UTF-8 peuvent être convertis en caractère de remplacement.
 
 - **`r.return(status[, string | Buffer])`**
 
-  sends the entire response with the specified `status` to the client. The response can be a string or Buffer (0.5.0).
+  envoie au client la réponse complète avec le `status` indiqué. La réponse peut être une chaîne ou un Buffer (0.5.0).
 
-  May be called from the [[12-directives/js-content|js_content]] or, since 0.9.9, [[12-directives/js-access-http-js|js_access]] handler.
+  Peut être appelée depuis le gestionnaire [[12-directives/js-content|js_content]] ou, depuis la version 0.9.9, [[12-directives/js-access-http-js|js_access]].
 
-  It is possible to specify either a redirect URL (for codes 301, 302, 303, 307, and 308) or the response body text (for other codes) as the second argument
+  On peut indiquer en second argument soit une URL de redirection (pour les codes 301, 302, 303, 307 et 308), soit le texte du corps de réponse (pour les autres codes)
 
 - **`r.send(string | Buffer)`**
 
-  sends a part of the response body to the client. The data sent can be a string or Buffer (0.5.0)
+  envoie une partie du corps de la réponse au client. Les données envoyées peuvent être une chaîne ou un Buffer (0.5.0)
 
 - **`r.sendBuffer(data[, options])`**
 
-  adds data to the chain of data chunks to be forwarded to the next body filter (0.5.2). The actual forwarding happens later, when the all the data chunks of the current chain are processed.
+  ajoute des données à la chaîne des blocs de données à transmettre au filtre de corps suivant (0.5.2). La transmission effective a lieu plus tard, quand tous les blocs de la chaîne courante ont été traités.
 
-  The data can be a string or Buffer. The `options` is an object used to override nginx buffer flags derived from an incoming data chunk buffer. The flags can be overridden with the following flags:
+  Les données peuvent être une chaîne ou un Buffer. `options` est un objet qui permet de remplacer les indicateurs de tampon nginx issus du tampon de données entrant. Les indicateurs suivants peuvent être remplacés :
 
   - **`last`**
 
-    boolean, true if the buffer is the last buffer
+    booléen, vrai si le tampon est le dernier
 
   - **`flush`**
 
-    boolean, true if the buffer should have the `flush` flag
+    booléen, vrai si le tampon doit porter l'indicateur `flush`
 
-  The method may be called only from the [[12-directives/js-body-filter|js_body_filter]] function.
+  La méthode ne peut être appelée que depuis la fonction [[12-directives/js-body-filter|js_body_filter]].
 
 - **`r.sendHeader()`**
 
-  sends the HTTP headers to the client
+  envoie les en-têtes HTTP au client
 
 - **`r.setReturnValue(value)`**
 
-  sets the return value of the [[12-directives/js-set-http-js|js_set]] handler (0.7.0).
+  définit la valeur de retour du gestionnaire [[12-directives/js-set-http-js|js_set]] (0.7.0).
 
-  The method was made obsolete in 0.9.5. Since this version, an `async` handler can return its value with an ordinary return statement:
+  La méthode est devenue obsolète en 0.9.5. Depuis cette version, un gestionnaire `async` peut renvoyer sa valeur avec une instruction return ordinaire :
 
   ```nginx
   async function js_set(r) {
@@ -354,37 +351,37 @@ The HTTP request object is available only in the [[11-modules/02-http/ngx_http_j
 
 - **`r.status`**
 
-  status, writable
+  état, modifiable
 
 - **`r.subrequest(uri[, options[, callback]])`**
 
-  creates a subrequest with the given `uri` and `options`, and installs an optional completion `callback`.
+  crée une sous-requête avec l'`uri` et les `options` données, et installe une fonction de rappel de fin `callback` facultative.
 
-  A subrequest shares its input headers with the client request. To send headers different from original headers to a proxied server, the [[12-directives/proxy-set-header|proxy_set_header]] directive can be used. To send a completely new set of headers to a proxied server, the [[12-directives/proxy-pass-request-headers|proxy_pass_request_headers]] directive can be used.
+  Une sous-requête partage ses en-têtes d'entrée avec la requête client. Pour envoyer à un serveur mandaté des en-têtes différents des originaux, utilisez la directive [[12-directives/proxy-set-header|proxy_set_header]]. Pour lui envoyer un tout nouvel ensemble d'en-têtes, utilisez la directive [[12-directives/proxy-pass-request-headers|proxy_pass_request_headers]].
 
-  If `options` is a string, then it holds the subrequest arguments string. Otherwise, `options` is expected to be an object with the following keys:
+  Si `options` est une chaîne, elle contient la chaîne des arguments de la sous-requête. Sinon, `options` doit être un objet avec les clés suivantes :
 
   - **`args`**
 
-    arguments string, by default an empty string is used
+    chaîne des arguments, chaîne vide par défaut
 
   - **`body`**
 
-    request body, by default the request body of the parent request object is used
+    corps de la requête, par défaut celui de l'objet requête parent
 
   - **`method`**
 
-    HTTP method, by default the `GET` method is used
+    méthode HTTP, `GET` par défaut
 
   - **`detached`**
 
-    boolean flag (0.3.9), if `true`, the created subrequest is a detached subrequest. Responses to detached subrequests are ignored. Unlike ordinary subrequests, a detached subrequest can be created inside a variable handler. The `detached` flag and callback argument are mutually exclusive.
+    booléen (0.3.9) ; si `true`, la sous-requête créée est détachée. Les réponses aux sous-requêtes détachées sont ignorées. Contrairement aux sous-requêtes ordinaires, une sous-requête détachée peut être créée dans un gestionnaire de variable. L'indicateur `detached` et l'argument callback sont mutuellement exclusifs.
 
-  The completion `callback` receives a subrequest response object with methods and properties identical to the parent request object.
+  La fonction de rappel de fin `callback` reçoit un objet réponse de sous-requête dont les méthodes et propriétés sont identiques à celles de l'objet requête parent.
 
-  Since 0.3.8, if a `callback` is not provided, the `Promise` object that resolves to the subrequest response object is returned.
+  Depuis la version 0.3.8, si aucun `callback` n'est fourni, un objet `Promise` résolu avec l'objet réponse de la sous-requête est renvoyé.
 
-  For example, to view all response headers in the subrequest:
+  Par exemple, pour afficher tous les en-têtes de réponse de la sous-requête :
 
   ```nginx
   async function handler(r) {
@@ -400,57 +397,57 @@ The HTTP request object is available only in the [[11-modules/02-http/ngx_http_j
 
 - **`r.uri`**
 
-  current [[13-variables/uri|URI]] in request, [[12-directives/location|normalized]], read-only
+  [[13-variables/uri|URI]] courante de la requête, [[12-directives/location|normalisée]], en lecture seule
 
 - **`r.rawVariables{}`**
 
-  nginx variables as Buffers, writable (since 0.5.0)
+  variables nginx sous forme de Buffers, modifiables (depuis 0.5.0)
 
 - **`r.jsVarNames([prefix])`**
 
-  returns a new array of names of nginx variables declared with the [[12-directives/js-var-http-js|js_var]] directive (since 0.9.9). The optional *prefix* argument must be a string. If it is specified, only names that start with the prefix are returned.
+  renvoie un nouveau tableau des noms des variables nginx déclarées avec la directive [[12-directives/js-var-http-js|js_var]] (depuis 0.9.9). L'argument facultatif *prefix* doit être une chaîne ; s'il est indiqué, seuls les noms commençant par ce préfixe sont renvoyés.
 
 - **`r.variables{}`**
 
-  nginx variables object, writable (since 0.2.8).
+  objet des variables nginx, modifiable (depuis 0.2.8).
 
-  For example, to get the `$foo` variable, one of the following syntax can be used:
+  Par exemple, pour obtenir la variable `$foo`, l'une des syntaxes suivantes peut être utilisée :
 
   ```nginx
   r.variables['foo']
   r.variables.foo
   ```
 
-  Since 0.8.6, regular expression captures can be accessed using the following syntax:
+  Depuis la version 0.8.6, les captures d'expressions régulières sont accessibles avec la syntaxe suivante :
 
   ```nginx
   r.variables['1']
   r.variables[1]
   ```
 
-  nginx treats variables referenced in `nginx.conf` and unreferenced variables differently. When a variable is referenced, it may be cacheable, but when it is unreferenced it is always uncacheable. For example, when the [[13-variables/request-id|$request_id]] variable is only accessed from njs, it has a new value every time it is evaluated. But, when the [[13-variables/request-id|$request_id]] is referenced, for example:
+  nginx traite différemment les variables référencées dans `nginx.conf` et les autres. Une variable référencée peut être mise en cache, une variable non référencée ne l'est jamais. Par exemple, quand la variable [[13-variables/request-id|$request_id]] n'est lue que depuis njs, elle a une nouvelle valeur à chaque évaluation. Mais quand [[13-variables/request-id|$request_id]] est référencée, par exemple :
 
   ```nginx
   proxy_set_header X-Request-Id $request_id;
   ```
 
-  the `r.variables.request_id` returns the same value every time.
+  `r.variables.request_id` renvoie la même valeur à chaque fois.
 
-  A variable is writable if:
+  Une variable est modifiable si :
 
-  - it was created using the `js_var` directive for [[12-directives/js-var-http-js|http]] or [[12-directives/js-var-stream-js|stream]] (since 0.5.3)
-  - it is referenced in nginx configuration file
+  - elle a été créée avec la directive `js_var` pour [[12-directives/js-var-http-js|http]] ou [[12-directives/js-var-stream-js|stream]] (depuis 0.5.3)
+  - elle est référencée dans le fichier de configuration de nginx
 
-  Even so, some embedded variables still cannot be assigned a value (for example, [[11-modules/02-http/ngx_http_core_module|$http_]]).
+  Même ainsi, certaines variables intégrées ne peuvent toujours pas recevoir de valeur (par exemple [[11-modules/02-http/ngx_http_core_module|$http_]]).
 
 - **`r.warn(string)`**
 
-  writes a `string` to the error log on the `warning` level of logging
+  écrit une `string` dans le journal d'erreurs au niveau `warning`
 
   > [!NOTE]
-  > As nginx has a [[10-guides/06-developpement/development-guide|hardcoded]] maximum line length limit, only first 2048 bytes of the string can be logged.
+  > Comme nginx a une longueur de ligne maximale [[10-guides/06-developpement/development-guide|codée en dur]], seuls les 2048 premiers octets de la chaîne peuvent être journalisés.
 
-### Stream Session
+### Session stream
 
 |   |
 | --- |
@@ -473,73 +470,73 @@ The HTTP request object is available only in the [[11-modules/02-http/ngx_http_j
 | `s.variables{}` |
 | `s.warn()` |
 
-The stream session object is available only in the [[11-modules/03-stream/ngx_stream_js_module|ngx_stream_js_module]] module. Before 0.8.5, all string properties of the object were byte strings.
+L'objet session stream n'est disponible que dans le module [[11-modules/03-stream/ngx_stream_js_module|ngx_stream_js_module]]. Avant la version 0.8.5, toutes les propriétés chaîne de l'objet étaient des chaînes d'octets.
 
 - **`s.allow()`**
 
-  an alias to `s.done(0)` (0.2.4)
+  alias de `s.done(0)` (0.2.4)
 
 - **`s.decline()`**
 
-  an alias to `s.done(-5)` (0.2.4)
+  alias de `s.done(-5)` (0.2.4)
 
 - **`s.deny()`**
 
-  an alias to `s.done(403)` (0.2.4)
+  alias de `s.done(403)` (0.2.4)
 
 - **`s.done([code]`)**
 
-  sets an exit `code` for the current [[10-guides/03-stream/stream-processing|phase]] handler to a code value, by default `0`. The actual finalization happens when the js handler is completed and all pending events, for example, from `ngx.fetch()` or `setTimeout()`, are processed (0.2.4).
+  fixe le `code` de sortie du gestionnaire de la [[10-guides/03-stream/stream-processing|phase]] courante, `0` par défaut. La finalisation effective a lieu quand le gestionnaire js est terminé et que tous les événements en attente, par exemple de `ngx.fetch()` ou `setTimeout()`, sont traités (0.2.4).
 
-  Possible code values:
+  Valeurs possibles du code :
 
-  - `0` — successful finalization, passing control to the next phase
-  - `-5` — undecided, passing control to the next handler of the current phase (if any)
-  - `403` — access is forbidden
+  - `0` — finalisation réussie, passage à la phase suivante
+  - `-5` — indécis, passage au gestionnaire suivant de la phase courante (s'il existe)
+  - `403` — accès interdit
 
-  May be called only from a phase handler function: [[12-directives/js-access-stream-js|js_access]] or [[12-directives/js-preread|js_preread]].
+  Ne peut être appelée que depuis une fonction de gestionnaire de phase : [[12-directives/js-access-stream-js|js_access]] ou [[12-directives/js-preread|js_preread]].
 
 - **`s.error(string)`**
 
-  writes a sent `string` to the error log on the `error` level of logging
+  écrit la `string` envoyée dans le journal d'erreurs au niveau `error`
 
   > [!NOTE]
-  > As nginx has a [[10-guides/06-developpement/development-guide|hardcoded]] maximum line length limit, only first 2048 bytes of the string can be logged.
+  > Comme nginx a une longueur de ligne maximale [[10-guides/06-developpement/development-guide|codée en dur]], seuls les 2048 premiers octets de la chaîne peuvent être journalisés.
 
 - **`s.log(string)`**
 
-  writes a sent *string* to the error log on the `info` level of logging
+  écrit la *string* envoyée dans le journal d'erreurs au niveau `info`
 
   > [!NOTE]
-  > As nginx has a [[10-guides/06-developpement/development-guide|hardcoded]] maximum line length limit, only first 2048 bytes of the string can be logged.
+  > Comme nginx a une longueur de ligne maximale [[10-guides/06-developpement/development-guide|codée en dur]], seuls les 2048 premiers octets de la chaîne peuvent être journalisés.
 
 - **`s.off(eventName)`**
 
-  unregisters the callback set by the s.on() method (0.2.4)
+  désenregistre la fonction de rappel définie par la méthode s.on() (0.2.4)
 
 - **`s.on(event, callback)`**
 
-  registers a `callback` for the specified `event` (0.2.4).
+  enregistre une fonction de rappel `callback` pour l'`event` indiqué (0.2.4).
 
-  An `event` may be one of the following strings:
+  Un `event` peut être l'une des chaînes suivantes :
 
   - **`upload`**
 
-    new data (string) from a client
+    nouvelles données (chaîne) venant d'un client
 
   - **`download`**
 
-    new data (string) to a client
+    nouvelles données (chaîne) destinées à un client
 
   - **`upstream`**
 
-    new data (Buffer) from a client (since 0.5.0)
+    nouvelles données (Buffer) venant d'un client (depuis 0.5.0)
 
   - **`downstream`**
 
-    new data (Buffer) to a client (since 0.5.0)
+    nouvelles données (Buffer) destinées à un client (depuis 0.5.0)
 
-  The completion callback has the following prototype: `callback(data, flags)`, where `data` is string or Buffer (depending on the event type) `flags` is an object with the following properties:
+  La fonction de rappel a le prototype suivant : `callback(data, flags)`, où `data` est une chaîne ou un Buffer (selon le type d'événement) et `flags` un objet avec les propriétés suivantes :
 
   - **`last`**
 
@@ -547,49 +544,49 @@ The stream session object is available only in the [[11-modules/03-stream/ngx_st
 
 - **`s.remoteAddress`**
 
-  client address, read-only
+  adresse du client, en lecture seule
 
 - **`s.rawVariables`**
 
-  nginx variables as Buffers, writable (since 0.5.0)
+  variables nginx sous forme de Buffers, modifiables (depuis 0.5.0)
 
 - **`s.jsVarNames([prefix])`**
 
-  returns a new array of names of nginx variables declared with the [[12-directives/js-var-stream-js|js_var]] directive (since 0.9.9). The optional *prefix* argument must be a string. If it is specified, only names that start with the prefix are returned.
+  renvoie un nouveau tableau des noms des variables nginx déclarées avec la directive [[12-directives/js-var-stream-js|js_var]] (depuis 0.9.9). L'argument facultatif *prefix* doit être une chaîne ; s'il est indiqué, seuls les noms commençant par ce préfixe sont renvoyés.
 
 - **`s.send(data[, options])`**
 
-  adds data to the chain of data chunks that will be forwarded in the forward direction: in download callback to a client; in upload to an upstream server (0.2.4). The actual forwarding happens later, when the all the data chunks of the current chain are processed.
+  ajoute des données à la chaîne des blocs de données à transmettre dans le sens courant : vers le client dans un rappel de téléchargement, vers un serveur amont dans un envoi (0.2.4). La transmission effective a lieu plus tard, quand tous les blocs de la chaîne courante ont été traités.
 
-  The data can be a string or Buffer (0.5.0). The `options` is an object used to override nginx buffer flags derived from an incoming data chunk buffer. The flags can be overridden with the following flags:
+  Les données peuvent être une chaîne ou un Buffer (0.5.0). `options` est un objet qui permet de remplacer les indicateurs de tampon nginx issus du tampon de données entrant. Les indicateurs suivants peuvent être remplacés :
 
   - **`last`**
 
-    boolean, true if the buffer is the last buffer
+    booléen, vrai si le tampon est le dernier
 
   - **`flush`**
 
-    boolean, true if the buffer should have the `flush` flag
+    booléen, vrai si le tampon doit porter l'indicateur `flush`
 
-  The method can be called multiple times per callback invocation.
+  La méthode peut être appelée plusieurs fois par invocation de la fonction de rappel.
 
 - **`s.sendDownstream()`**
 
-  is identical to s.send(), except for it always sends data to a client (since 0.7.8).
+  identique à s.send(), sauf qu'elle envoie toujours les données vers le client (depuis 0.7.8).
 
 - **`s.sendUpstream()`**
 
-  is identical to s.send(), except for it always sends data from a client (since 0.7.8).
+  identique à s.send(), sauf qu'elle envoie toujours les données depuis le client (depuis 0.7.8).
 
 - **`s.status`**
 
-  session status code, an alias to the [[13-variables/status-stream-core|$status]] variable, read only (since 0.5.2)
+  code d'état de la session, alias de la variable [[13-variables/status-stream-core|$status]], en lecture seule (depuis 0.5.2)
 
 - **`s.setReturnValue(value)`**
 
-  sets the return value of the [[12-directives/js-set-stream-js|js_set]] handler (0.7.0).
+  définit la valeur de retour du gestionnaire [[12-directives/js-set-stream-js|js_set]] (0.7.0).
 
-  The method was made obsolete in 0.9.5. Since this version, an `async` handler can return its value with an ordinary return statement:
+  La méthode est devenue obsolète en 0.9.5. Depuis cette version, un gestionnaire `async` peut renvoyer sa valeur avec une instruction return ordinaire :
 
   ```nginx
   async function js_set(s) {
@@ -600,33 +597,33 @@ The stream session object is available only in the [[11-modules/03-stream/ngx_st
 
 - **`s.variables{}`**
 
-  nginx variables object, writable (since 0.2.8). A variable can be writable only if it is referenced in nginx configuration file. Even so, some embedded variables still cannot be assigned a value.
+  objet des variables nginx, modifiable (depuis 0.2.8). Une variable n'est modifiable que si elle est référencée dans le fichier de configuration de nginx. Même ainsi, certaines variables intégrées ne peuvent toujours pas recevoir de valeur.
 
 - **`s.warn(string)`**
 
-  writes a sent `string` to the error log on the `warning` level of logging
+  écrit la `string` envoyée dans le journal d'erreurs au niveau `warning`
 
   > [!NOTE]
-  > As nginx has a [[10-guides/06-developpement/development-guide|hardcoded]] maximum line length limit, only first 2048 bytes of the string can be logged.
+  > Comme nginx a une longueur de ligne maximale [[10-guides/06-developpement/development-guide|codée en dur]], seuls les 2048 premiers octets de la chaîne peuvent être journalisés.
 
-### Periodic Session
+### Session périodique
 
 |   |
 | --- |
 | `PeriodicSession.rawVariables{}` |
 | `PeriodicSession.variables{}` |
 
-The `Periodic Session` object is provided as the first argument for the `js_periodic` handler for [[12-directives/js-periodic-http-js|http]] and [[12-directives/js-periodic-stream-js|stream]] (since 0.8.1).
+L'objet `Periodic Session` est fourni en premier argument au gestionnaire `js_periodic` pour [[12-directives/js-periodic-http-js|http]] et [[12-directives/js-periodic-stream-js|stream]] (depuis 0.8.1).
 
 - **`PeriodicSession.rawVariables{}`**
 
-  nginx variables as Buffers, writable.
+  variables nginx sous forme de Buffers, modifiables.
 
 - **`PeriodicSession.variables{}`**
 
-  nginx variables object, writable.
+  objet des variables nginx, modifiable.
 
-### Headers
+### En-têtes
 
 |   |
 | --- |
@@ -639,45 +636,45 @@ The `Periodic Session` object is provided as the first argument for the `js_peri
 | `Headers.has()` |
 | `Headers.set()` |
 
-The `Headers` interface of the `Fetch API` is available since 0.5.1.
+L'interface `Headers` de l'`API Fetch` est disponible depuis la version 0.5.1.
 
-A new `Headers` object can be created using the `Headers()` constructor: (since 0.7.10):
+Un nouvel objet `Headers` peut être créé avec le constructeur `Headers()` (depuis 0.7.10) :
 
 - **`Headers([init])`**
 
   - **`init`**
 
-    An object containing HTTP headers for prepopulating the `Headers` object, can be a `string`, an `array` of name-value pairs, or an existing `Headers` object.
+    Objet contenant des en-têtes HTTP pour préremplir l'objet `Headers` : une `string`, un `array` de paires nom-valeur ou un objet `Headers` existant.
 
-A new `Headers` object can be created with the following properties and methods:
+Un nouvel objet `Headers` peut être créé avec les propriétés et méthodes suivantes :
 
 - **`append()`**
 
-  Appends a new value into an existing header in the `Headers` object, or adds the header if it does not already exist (since 0.7.10).
+  Ajoute une nouvelle valeur à un en-tête existant de l'objet `Headers`, ou ajoute l'en-tête s'il n'existe pas (depuis 0.7.10).
 
 - **`delete()`**
 
-  Deletes a header from the `Headers` object (since 0.7.10).
+  Supprime un en-tête de l'objet `Headers` (depuis 0.7.10).
 
 - **`get()`**
 
-  Returns a string containing the values of all headers with the specified name separated by a comma and a space.
+  Renvoie une chaîne contenant les valeurs de tous les en-têtes du nom indiqué, séparées par une virgule et un espace.
 
 - **`getAll(name)`**
 
-  Returns an array containing the values of all headers with the specified name.
+  Renvoie un tableau des valeurs de tous les en-têtes du nom indiqué.
 
 - **`forEach()`**
 
-  Executes a provided function once for each key/value pair in the `Headers` object (since 0.7.10).
+  Exécute une fonction donnée une fois pour chaque paire clé/valeur de l'objet `Headers` (depuis 0.7.10).
 
 - **`has()`**
 
-  Returns a boolean value indicating whether a header with the specified name exists.
+  Renvoie un booléen indiquant si un en-tête du nom indiqué existe.
 
 - **`set()`**
 
-  Sets a new value for an existing header inside the `Headers` object, or adds the header if it does not already exist (since 0.7.10).
+  Définit une nouvelle valeur pour un en-tête existant de l'objet `Headers`, ou ajoute l'en-tête s'il n'existe pas (depuis 0.7.10).
 
 ### Requête
 
@@ -695,67 +692,67 @@ A new `Headers` object can be created with the following properties and methods:
 | `Request.text()` |
 | `Request.url` |
 
-The `Request` interface of the `Fetch API` is available since 0.7.10.
+L'interface `Request` de l'`API Fetch` est disponible depuis la version 0.7.10.
 
-A new `Request` object can be created using the `Request()` constructor:
+Un nouvel objet `Request` peut être créé avec le constructeur `Request()` :
 
 - **`Request[resource[, options]])`**
 
-  Creates a `Request` object to fetch that can be passed later to `ngx.fetch()`. The `resource` can be a URL or an existing `Request` object. The `options` is an optional argument that is expected to be an object with the following keys:
+  Crée un objet `Request` qui pourra ensuite être passé à `ngx.fetch()`. `resource` peut être une URL ou un objet `Request` existant. `options` est un argument facultatif, un objet avec les clés suivantes :
 
   - **`body`**
 
-    The request body, by default is empty.
+    Corps de la requête, vide par défaut.
 
   - **`headers`**
 
-    The response headers object — the object containing HTTP headers for prepopulating the `Headers` object, can be a `string`, an `array` of name-value pairs, or an existing `Headers` object.
+    Objet des en-têtes de réponse — objet contenant des en-têtes HTTP pour préremplir l'objet `Headers` : une `string`, un `array` de paires nom-valeur ou un objet `Headers` existant.
 
   - **`method`**
 
-    The HTTP method, by default the GET method is used.
+    Méthode HTTP, GET par défaut.
 
-A new `Request` object can be created with the following properties and methods:
+Un nouvel objet `Request` peut être créé avec les propriétés et méthodes suivantes :
 
 - **`arrayBuffer()`**
 
-  Returns a `Promise` that resolves with an `ArrayBuffer`.
+  Renvoie une `Promise` résolue avec un `ArrayBuffer`.
 
 - **`bodyUsed`**
 
-  A boolean value, `true` if the body was used in the request.
+  Booléen, `true` si le corps a été utilisé dans la requête.
 
 - **`cache`**
 
-  Contains the cache mode of the request.
+  Contient le mode de cache de la requête.
 
 - **`credentials`**
 
-  Contains the credentials of the request, by default is `same-origin`.
+  Contient les identifiants (credentials) de la requête, `same-origin` par défaut.
 
 - **`headers`**
 
-  The `Headers` read-only object associated with the `Request`.
+  Objet `Headers` en lecture seule associé à la `Request`.
 
 - **`json()`**
 
-  Returns a `Promise` that resolves with the result of parsing the request body as JSON.
+  Renvoie une `Promise` résolue avec le résultat de l'analyse JSON du corps de la requête.
 
 - **`method`**
 
-  Contains the request method.
+  Contient la méthode de la requête.
 
 - **`mode`**
 
-  Contains the mode of the request.
+  Contient le mode de la requête.
 
 - **`text()`**
 
-  Returns a `Promise` that resolves with a string representation of the request body.
+  Renvoie une `Promise` résolue avec une représentation textuelle du corps de la requête.
 
 - **`url`**
 
-  Contains the URL of the request.
+  Contient l'URL de la requête.
 
 ### Réponse
 
@@ -774,71 +771,71 @@ A new `Request` object can be created with the following properties and methods:
 | `Response.type` |
 | `Response.url` |
 
-The `Response` interface is available since 0.5.1.
+L'interface `Response` est disponible depuis la version 0.5.1.
 
-A new `Response` object can be created using the `Response()` constructor (since 0.7.10):
+Un nouvel objet `Response` peut être créé avec le constructeur `Response()` (depuis 0.7.10) :
 
 - **`Response[body[, options]])`**
 
-  Creates a `Response` object. The `body` is an optional argument, can be a `string` or a `buffer`, by default is `null`. The `options` is an optional argument that is expected to be an object with the following keys:
+  Crée un objet `Response`. `body` est un argument facultatif, `string` ou `buffer`, `null` par défaut. `options` est un argument facultatif, un objet avec les clés suivantes :
 
   - **`headers`**
 
-    The response headers object — the object containing HTTP headers for prepopulating the `Headers` object, can be a `string`, an `array` of name-value pairs, or an existing `Headers` object.
+    Objet des en-têtes de réponse — objet contenant des en-têtes HTTP pour préremplir l'objet `Headers` : une `string`, un `array` de paires nom-valeur ou un objet `Headers` existant.
 
   - **`status`**
 
-    The status code of the response.
+    Code d'état de la réponse.
 
   - **`statusText`**
 
-    The status message corresponding to the status code.
+    Message d'état correspondant au code d'état.
 
-A new `Response()` object can be created with the following properties and methods:
+Un nouvel objet `Response()` peut être créé avec les propriétés et méthodes suivantes :
 
 - **`arrayBuffer()`**
 
-  Takes a `Response` stream and reads it to completion. Returns a `Promise` that resolves with an `ArrayBuffer`.
+  Lit un flux `Response` jusqu'au bout. Renvoie une `Promise` résolue avec un `ArrayBuffer`.
 
 - **`bodyUsed`**
 
-  A boolean value, `true` if the body was read.
+  Booléen, `true` si le corps a été lu.
 
 - **`headers`**
 
-  The `Headers` read-only object associated with the `Response`.
+  Objet `Headers` en lecture seule associé à la `Response`.
 
 - **`json()`**
 
-  Takes a `Response` stream and reads it to completion. Returns a `Promise` that resolves with the result of parsing the body text as JSON.
+  Lit un flux `Response` jusqu'au bout. Renvoie une `Promise` résolue avec le résultat de l'analyse JSON du texte du corps.
 
 - **`ok`**
 
-  A boolean value, `true` if the response was successful (status codes between 200–299).
+  Booléen, `true` si la réponse a réussi (codes d'état de 200 à 299).
 
 - **`redirected`**
 
-  A boolean value, `true` if the response is the result of a redirect.
+  Booléen, `true` si la réponse résulte d'une redirection.
 
 - **`status`**
 
-  The status code of the response.
+  Code d'état de la réponse.
 
 - **`statusText`**
 
-  The status message corresponding to the status code.
+  Message d'état correspondant au code d'état.
 
 - **`text()`**
 
-  Takes a `Response` stream and reads it to completion. Returns a `Promise` that resolves with a string.
+  Lit un flux `Response` jusqu'au bout. Renvoie une `Promise` résolue avec une chaîne.
 
 - **`type`**
 
-  The type of the response.
+  Type de la réponse.
 
 - **`url`**
 
-  The URL of the response.
+  URL de la réponse.
 
 ### ngx
 
@@ -855,55 +852,55 @@ A new `Response()` object can be created with the following properties and metho
 | `ngx.version_number` |
 | `ngx.worker_id` |
 
-The `ngx` global object is available since 0.5.0.
+L'objet global `ngx` est disponible depuis la version 0.5.0.
 
 - **`ngx.build`**
 
-  a string containing an optional nginx build name, corresponds to the [[10-guides/01-introduction/configure|--build=name]] argument of the [[10-guides/01-introduction/configure|configure]] script, by default is `""` (0.8.0)
+  chaîne contenant le nom de build facultatif de nginx, correspondant à l'argument [[10-guides/01-introduction/configure|--build=name]] du script [[10-guides/01-introduction/configure|configure]], `""` par défaut (0.8.0)
 
 - **`ngx.conf_file_path`**
 
-  a string containing the file path to current nginx configuration file (0.8.0)
+  chaîne contenant le chemin du fichier de configuration courant de nginx (0.8.0)
 
 - **`ngx.conf_prefix`**
 
-  a string containing the file path to [[10-guides/01-introduction/configure|nginx configuration prefix]] — the directory where nginx is currently looking for configuration (0.7.8)
+  chaîne contenant le chemin du [[10-guides/01-introduction/configure|préfixe de configuration de nginx]] — le répertoire où nginx cherche actuellement sa configuration (0.7.8)
 
 - **`ngx.error_log_path`**
 
-  a string containing the file path to the current [[12-directives/error-log|error log]] file (0.8.0)
+  chaîne contenant le chemin du fichier [[12-directives/error-log|journal d'erreurs]] courant (0.8.0)
 
 - **`ngx.fetch(resource, [options])`**
 
-  Makes a request to fetch a *resource* (0.5.1), which can be an URL or the `Request` object (0.7.10). Returns a `Promise` that resolves with the `Response` object. Since 0.7.0, the `https://` scheme is supported, redirects are not handled.
+  Effectue une requête pour récupérer une *resource* (0.5.1), qui peut être une URL ou un objet `Request` (0.7.10). Renvoie une `Promise` résolue avec l'objet `Response`. Depuis la version 0.7.0, le schéma `https://` est pris en charge ; les redirections ne sont pas suivies.
 
-  If the URL in the *resource* is specified as a domain name, it is determined using a [[12-directives/resolver-http-core|resolver]]. If the `https://` scheme is specified, the [[12-directives/js-fetch-trusted-certificate-http-js|js_fetch_trusted_certificate]] directive should be configured for the authentication of the *resource*'s HTTPS server.
+  Si l'URL de la *resource* est un nom de domaine, elle est résolue à l'aide d'un [[12-directives/resolver-http-core|résolveur]]. Avec le schéma `https://`, la directive [[12-directives/js-fetch-trusted-certificate-http-js|js_fetch_trusted_certificate]] doit être configurée pour authentifier le serveur HTTPS de la *resource*.
 
-  The `options` parameter is expected to be an object with the following keys:
+  Le paramètre `options` doit être un objet avec les clés suivantes :
 
   - **`body`**
 
-    request body, by default is empty
+    corps de la requête, vide par défaut
 
   - **`buffer_size`**
 
-    the buffer size for reading the response, by default is `4096`
+    taille du tampon de lecture de la réponse, `4096` par défaut
 
   - **`headers`**
 
-    request headers object
+    objet des en-têtes de la requête
 
   - **`max_response_body_size`**
 
-    the maximum size of the response body in bytes, by default is `32768`
+    taille maximale du corps de la réponse en octets, `32768` par défaut
 
   - **`method`**
 
-    HTTP method, by default the `GET` method is used
+    méthode HTTP, `GET` par défaut
 
   - **`verify`**
 
-    enables or disables verification of the HTTPS server certificate, by default is `true` (0.7.0)
+    active ou désactive la vérification du certificat du serveur HTTPS, `true` par défaut (0.7.0)
 
   Exemple :
 
@@ -916,30 +913,30 @@ The `ngx` global object is available since 0.5.0.
 
 - **`ngx.log`(*level*, *message*)**
 
-  writes a message to the error log with the specified level of logging. The *level* parameter specifies one of the log levels, the *message* parameter can be a string or Buffer. The following log levels can be specified: `ngx.INFO`, `ngx.WARN`, and `ngx.ERR`.
+  écrit un message dans le journal d'erreurs au niveau indiqué. Le paramètre *level* précise l'un des niveaux, le paramètre *message* peut être une chaîne ou un Buffer. Niveaux possibles : `ngx.INFO`, `ngx.WARN` et `ngx.ERR`.
 
   > [!NOTE]
-  > As nginx has a [[10-guides/06-developpement/development-guide|hardcoded]] maximum line length limit, only first 2048 bytes of the string can be logged.
+  > Comme nginx a une longueur de ligne maximale [[10-guides/06-developpement/development-guide|codée en dur]], seuls les 2048 premiers octets de la chaîne peuvent être journalisés.
 
 - **`ngx.prefix`**
 
-  a string containing the file path to [[10-guides/01-introduction/configure|nginx prefix]] — a directory that keeps server files (0.8.0)
+  chaîne contenant le chemin du [[10-guides/01-introduction/configure|préfixe de nginx]] — un répertoire qui contient les fichiers du serveur (0.8.0)
 
 - **`ngx.version`**
 
-  a string containing nginx version, for example: `1.25.0` (0.8.0)
+  chaîne contenant la version de nginx, par exemple : `1.25.0` (0.8.0)
 
 - **`ngx.version_number`**
 
-  a number containing nginx version, for example: `1025000` (0.8.0)
+  nombre contenant la version de nginx, par exemple : `1025000` (0.8.0)
 
 - **`ngx.worker_id`**
 
-  a number that corresponds to nginx internal worker id, the value is between `0` and the value specified in the [[12-directives/worker-processes|worker_processes]] directive (0.8.0)
+  nombre correspondant à l'identifiant interne du processus de travail nginx, compris entre `0` et la valeur de la directive [[12-directives/worker-processes|worker_processes]] (0.8.0)
 
 ### ngx.shared
 
-The `ngx.shared` global object is available since 0.8.0.
+L'objet global `ngx.shared` est disponible depuis la version 0.8.0.
 
 #### SharedDict
 
@@ -963,94 +960,94 @@ The `ngx.shared` global object is available since 0.8.0.
 | `ngx.shared.SharedDict.ttl()` |
 | `ngx.shared.SharedDict.type` |
 
-The shared dictionary object is available since 0.8.0. The shared dictionary name, type, and size are set with the `js_shared_dict_zone` directive in [[12-directives/js-shared-dict-zone-http-js|http]] or [[12-directives/js-shared-dict-zone-stream-js|stream]].
+L'objet dictionnaire partagé est disponible depuis la version 0.8.0. Le nom, le type et la taille du dictionnaire partagé se définissent avec la directive `js_shared_dict_zone` dans [[12-directives/js-shared-dict-zone-http-js|http]] ou [[12-directives/js-shared-dict-zone-stream-js|stream]].
 
-A `SharedDict()` object has the following properties and methods:
+Un objet `SharedDict()` a les propriétés et méthodes suivantes :
 
 - **`ngx.shared.SharedDict.add(key, value [,timeout])`**
 
-  Sets the `value` for the specified `key` in the dictionary only if the key does not exist yet. The `key` is a string representing the key of the item to add, the `value` is the value of the item to add.
+  Définit la `value` de la `key` indiquée dans le dictionnaire, seulement si la clé n'existe pas encore. `key` est une chaîne représentant la clé de l'élément à ajouter, `value` la valeur de l'élément.
 
-  The optional `timeout` argument is specified in milliseconds and overrides the `timeout` parameter of the `js_shared_dict_zone` directive in [[12-directives/js-shared-dict-zone-http-js|http]] or [[12-directives/js-shared-dict-zone-stream-js|stream]] (since 0.8.5). It can be useful when some keys are expected to have unique timeouts.
+  L'argument facultatif `timeout`, en millisecondes, remplace le paramètre `timeout` de la directive `js_shared_dict_zone` dans [[12-directives/js-shared-dict-zone-http-js|http]] ou [[12-directives/js-shared-dict-zone-stream-js|stream]] (depuis 0.8.5). Utile quand certaines clés doivent avoir leur propre délai.
 
-  Returns `true` if the value has been successfully added to the `SharedDict` dictionary, `false` if the key already exists in the dictionary. Throws `SharedMemoryError` if there is not enough free space in the `SharedDict` dictionary. Throws `TypeError` if the `value` is of a different type than expected by this dictionary.
+  Renvoie `true` si la valeur a été ajoutée au dictionnaire `SharedDict`, `false` si la clé existe déjà. Lève `SharedMemoryError` s'il n'y a pas assez d'espace libre dans le dictionnaire `SharedDict`. Lève `TypeError` si `value` n'est pas du type attendu par ce dictionnaire.
 
 - **`ngx.shared.SharedDict.capacity`**
 
-  Returns the capacity of the `SharedDict` dictionary, corresponds to the `size` parameter of `js_shared_dict_zone` directive in [[12-directives/js-shared-dict-zone-http-js|http]] or [[12-directives/js-shared-dict-zone-stream-js|stream]].
+  Renvoie la capacité du dictionnaire `SharedDict`, correspondant au paramètre `size` de la directive `js_shared_dict_zone` dans [[12-directives/js-shared-dict-zone-http-js|http]] ou [[12-directives/js-shared-dict-zone-stream-js|stream]].
 
 - **`ngx.shared.SharedDict.clear()`**
 
-  Removes all items from the `SharedDict` dictionary.
+  Supprime tous les éléments du dictionnaire `SharedDict`.
 
 - **`ngx.shared.SharedDict.delete(key)`**
 
-  Removes the item associated with the specified key from the `SharedDict` dictionary, `true` if the item in the dictionary existed and was removed, `false` otherwise.
+  Supprime du dictionnaire `SharedDict` l'élément associé à la clé indiquée ; renvoie `true` si l'élément existait et a été supprimé, `false` sinon.
 
 - **`ngx.shared.SharedDict.freeSpace()`**
 
-  Returns the free page size in bytes. If the size is zero, the `SharedDict` dictionary will still accept new values if there is space in the occupied pages.
+  Renvoie la taille des pages libres en octets. Si elle est nulle, le dictionnaire `SharedDict` accepte encore de nouvelles valeurs s'il reste de la place dans les pages occupées.
 
 - **`ngx.shared.SharedDict.get(key)`**
 
-  Retrieves the item by its `key`, returns the value associated with the `key` or `undefined` if there is none.
+  Récupère l'élément par sa `key` ; renvoie la valeur associée à la `key`, ou `undefined` s'il n'y en a pas.
 
 - **`ngx.shared.SharedDict.has(key)`**
 
-  Searches for an item by its `key`, returns `true` if such item exists or `false` otherwise.
+  Cherche un élément par sa `key` ; renvoie `true` s'il existe, `false` sinon.
 
 - **`ngx.shared.SharedDict.incr(key,delta[[,init], timeout]))`**
 
-  Increments the integer value associated with the `key` by `delta`. The `key` is a string, the `delta` is the number to increment or decrement the value by. If the key does not exist, the item will be initialized to an optional `init` argument, by default is `0`.
+  Incrémente de `delta` la valeur entière associée à la `key`. `key` est une chaîne, `delta` le nombre à ajouter ou retrancher. Si la clé n'existe pas, l'élément est initialisé avec l'argument facultatif `init`, `0` par défaut.
 
-  The optional `timeout` argument is specified in milliseconds and overrides the `timeout` parameter of the `js_shared_dict_zone` directive in [[12-directives/js-shared-dict-zone-http-js|http]] or [[12-directives/js-shared-dict-zone-stream-js|stream]] (since 0.8.5). If the `timeout` argument is not specified, the existing per-entry TTL is preserved (since 0.9.7). Before version 0.9.7, omitting `timeout` would reset the entry expiry to the directive default.
+  L'argument facultatif `timeout`, en millisecondes, remplace le paramètre `timeout` de la directive `js_shared_dict_zone` dans [[12-directives/js-shared-dict-zone-http-js|http]] ou [[12-directives/js-shared-dict-zone-stream-js|stream]] (depuis 0.8.5). Sans argument `timeout`, la durée de vie existante de l'entrée est conservée (depuis 0.9.7). Avant la version 0.9.7, omettre `timeout` remettait l'expiration de l'entrée à la valeur par défaut de la directive.
 
-  Returns the new value. Throws `SharedMemoryError` if there is not enough free space in the `SharedDict` dictionary. Throws `TypeError` if this dictionary does not expect numbers.
+  Renvoie la nouvelle valeur. Lève `SharedMemoryError` s'il n'y a pas assez d'espace libre dans le dictionnaire `SharedDict`. Lève `TypeError` si ce dictionnaire n'attend pas de nombres.
 
   > [!NOTE]
-  > This method can be used only if the dictionary type was declared with `type=number` parameter of the `js_shared_dict_zone` directive in [[12-directives/js-shared-dict-zone-http-js|http]] or [[12-directives/js-shared-dict-zone-stream-js|stream]].
+  > Cette méthode n'est utilisable que si le type du dictionnaire a été déclaré avec le paramètre `type=number` de la directive `js_shared_dict_zone` dans [[12-directives/js-shared-dict-zone-http-js|http]] ou [[12-directives/js-shared-dict-zone-stream-js|stream]].
 
 - **`ngx.shared.SharedDict.items([maxCount])`**
 
-  Returns an array of the `SharedDict` dictionary key-value items (since 0.8.1). The `maxCount` parameter sets maximum number of items to retrieve, by default is `1024`.
+  Renvoie un tableau des éléments clé-valeur du dictionnaire `SharedDict` (depuis 0.8.1). Le paramètre `maxCount` fixe le nombre maximal d'éléments à récupérer, `1024` par défaut.
 
 - **`ngx.shared.SharedDict.keys([maxCount])`**
 
-  Returns an array of the `SharedDict` dictionary keys. The `maxCount` parameter sets maximum number of keys to retrieve, by default is `1024`.
+  Renvoie un tableau des clés du dictionnaire `SharedDict`. Le paramètre `maxCount` fixe le nombre maximal de clés à récupérer, `1024` par défaut.
 
 - **`ngx.shared.SharedDict.name`**
 
-  Returns the name of the `SharedDict` dictionary, corresponds to the `zone=` parameter of `js_shared_dict_zone` directive in [[12-directives/js-shared-dict-zone-http-js|http]] or [[12-directives/js-shared-dict-zone-stream-js|stream]].
+  Renvoie le nom du dictionnaire `SharedDict`, correspondant au paramètre `zone=` de la directive `js_shared_dict_zone` dans [[12-directives/js-shared-dict-zone-http-js|http]] ou [[12-directives/js-shared-dict-zone-stream-js|stream]].
 
 - **`ngx.shared.SharedDict.pop(key)`**
 
-  Removes the item associated with the specified `key` from the `SharedDict` dictionary, returns the value associated with the `key` or `undefined` if there is none.
+  Supprime du dictionnaire `SharedDict` l'élément associé à la `key` indiquée ; renvoie la valeur associée à la `key`, ou `undefined` s'il n'y en a pas.
 
 - **`ngx.shared.SharedDict.replace(key, value)`**
 
-  Replaces the `value` for the specified `key` only if the key already exists, returns `true` if the value was successfully replaced, `false` if the key does not exist in the `SharedDict` dictionary. Throws `SharedMemoryError` if there is not enough free space in the `SharedDict` dictionary. Throws `TypeError` if the `value` is of a different type than expected by this dictionary.
+  Remplace la `value` de la `key` indiquée seulement si la clé existe déjà ; renvoie `true` si la valeur a été remplacée, `false` si la clé n'existe pas dans le dictionnaire `SharedDict`. Lève `SharedMemoryError` s'il n'y a pas assez d'espace libre dans le dictionnaire `SharedDict`. Lève `TypeError` si `value` n'est pas du type attendu par ce dictionnaire.
 
 - **`ngx.shared.SharedDict.set(key, value [,timeout])`**
 
-  Sets the `value` for the specified `key`, returns this `SharedDict` dictionary (for method chaining).
+  Définit la `value` de la `key` indiquée ; renvoie ce dictionnaire `SharedDict` (pour le chaînage des méthodes).
 
-  The optional `timeout` argument is specified in milliseconds and overrides the `timeout` parameter of the `js_shared_dict_zone` directive in [[12-directives/js-shared-dict-zone-http-js|http]] or [[12-directives/js-shared-dict-zone-stream-js|stream]] (since 0.8.5). It can be useful when some keys are expected to have unique timeouts.
+  L'argument facultatif `timeout`, en millisecondes, remplace le paramètre `timeout` de la directive `js_shared_dict_zone` dans [[12-directives/js-shared-dict-zone-http-js|http]] ou [[12-directives/js-shared-dict-zone-stream-js|stream]] (depuis 0.8.5). Utile quand certaines clés doivent avoir leur propre délai.
 
 - **`ngx.shared.SharedDict.size()`**
 
-  Returns the number of items for the `SharedDict` dictionary.
+  Renvoie le nombre d'éléments du dictionnaire `SharedDict`.
 
 - **`ngx.shared.SharedDict.ttl(key)`**
 
-  Returns the remaining time-to-live in milliseconds for the specified `key`, or `undefined` if the key does not exist or has expired (since 0.9.7).
+  Renvoie la durée de vie restante en millisecondes de la `key` indiquée, ou `undefined` si la clé n'existe pas ou a expiré (depuis 0.9.7).
 
-  Throws `TypeError` if the dictionary was declared without the `timeout` parameter of the `js_shared_dict_zone` directive in [[12-directives/js-shared-dict-zone-http-js|http]] or [[12-directives/js-shared-dict-zone-stream-js|stream]].
+  Lève `TypeError` si le dictionnaire a été déclaré sans le paramètre `timeout` de la directive `js_shared_dict_zone` dans [[12-directives/js-shared-dict-zone-http-js|http]] ou [[12-directives/js-shared-dict-zone-stream-js|stream]].
 
 - **`ngx.shared.SharedDict.type`**
 
-  Returns `string` or `number` that corresponds to the `SharedDict` dictionary type set by the `type=` parameter of `js_shared_dict_zone` directive in [[12-directives/js-shared-dict-zone-http-js|http]] or [[12-directives/js-shared-dict-zone-stream-js|stream]].
+  Renvoie `string` ou `number`, selon le type du dictionnaire `SharedDict` défini par le paramètre `type=` de la directive `js_shared_dict_zone` dans [[12-directives/js-shared-dict-zone-http-js|http]] ou [[12-directives/js-shared-dict-zone-stream-js|stream]].
 
-## built-in objects
+## objets intégrés
 
 ### console
 
@@ -1063,31 +1060,31 @@ A `SharedDict()` object has the following properties and methods:
 | `console.timeEnd()` |
 | `console.warn()` |
 
-The `console` object is available in nginx since 0.8.2, in CLI since 0.2.6.
+L'objet `console` est disponible dans nginx depuis la version 0.8.2, et dans la CLI depuis la version 0.2.6.
 
 - **`console.error(msg[, msg2 ...])`**
 
-  Outputs one or more error messages. The message may be a string or an object.
+  Affiche un ou plusieurs messages d'erreur. Le message peut être une chaîne ou un objet.
 
 - **`console.info(msg[, msg2 ...])`**
 
-  Outputs one or more info messages. The message may be a string or an object.
+  Affiche un ou plusieurs messages d'information. Le message peut être une chaîne ou un objet.
 
 - **`console.log(msg[, msg2 ...])`**
 
-  Outputs one or more log messages. The message may be a string or an object.
+  Affiche un ou plusieurs messages de journal. Le message peut être une chaîne ou un objet.
 
 - **`console.time(label)`**
 
-  Starts a timer that can track how long an operation takes. The `label` parameter allows naming different timers. If `console.timeEnd()` with the same name is called, the time that elapsed since the timer was started will be output, in milliseconds.
+  Démarre un chronomètre qui mesure la durée d'une opération. Le paramètre `label` permet de nommer différents chronomètres. Si `console.timeEnd()` est appelée avec le même nom, le temps écoulé depuis le démarrage est affiché, en millisecondes.
 
 - **`console.timeEnd(label)`**
 
-  Stops a timer previously started by `console.time()` The `label` parameter allows naming different timers.
+  Arrête un chronomètre démarré par `console.time()`. Le paramètre `label` permet de nommer différents chronomètres.
 
 - **`console.warn(msg[, msg2 ...])`**
 
-  Outputs one or more warning messages. The message may be a string or an object.
+  Affiche un ou plusieurs messages d'avertissement. Le message peut être une chaîne ou un objet.
 
 ### crypto
 
@@ -1108,609 +1105,609 @@ The `console` object is available in nginx since 0.8.2, in CLI since 0.2.6.
 | `сrypto.subtle.wrapKey()` |
 | `сrypto.subtle.unwrapKey()` |
 
-The `crypto` object is a global object that allows using cryptographic functionality (since 0.7.0). Since 0.9.7, the full [Web Crypto API](https://www.w3.org/TR/webcrypto-2/) specification is supported.
+L'objet `crypto` est un objet global qui donne accès aux fonctions cryptographiques (depuis 0.7.0). Depuis la version 0.9.7, toute la spécification [Web Crypto API](https://www.w3.org/TR/webcrypto-2/) est prise en charge.
 
 - **`сrypto.getRandomValues`(`typedArray`)**
 
-  Gets cryptographically strong random values. Returns the same array passed as `typedArray` but with its contents replaced with the newly generated random numbers. Possible values:
+  Obtient des valeurs aléatoires cryptographiquement fortes. Renvoie le tableau passé en `typedArray`, avec son contenu remplacé par les nombres aléatoires générés. Valeurs possibles :
 
   - **`typedArray`**
 
-    can be `Int8Array`, `Int16Array`, `Uint16Array`, `Int32Array`, or `Uint32Array`
+    peut être `Int8Array`, `Int16Array`, `Uint16Array`, `Int32Array` ou `Uint32Array`
 
 - **`сrypto.randomUUID`()**
 
-  Returns a randomly generated, 36 character long v4 UUID string, for example `"36b8f84d-df4e-4d49-b662-bcde71a8764f"` (since 0.9.7).
+  Renvoie une chaîne UUID v4 aléatoire de 36 caractères, par exemple `"36b8f84d-df4e-4d49-b662-bcde71a8764f"` (depuis 0.9.7).
 
 - **`сrypto.subtle.encrypt`(`algorithm`, `key`, `data`)**
 
-  Encrypts `data` using the provided `algorithm` and `key`. Returns a `Promise` that fulfills with an `ArrayBuffer` containing the ciphertext. Possible values:
+  Chiffre `data` avec l'`algorithm` et la `key` fournis. Renvoie une `Promise` résolue avec un `ArrayBuffer` contenant le texte chiffré. Valeurs possibles :
 
   - **`algorithm`**
 
-    an object that specifies the algorithm to be used and any extra parameters if required:
+    objet indiquant l'algorithme à utiliser et les éventuels paramètres supplémentaires :
 
-    - for `RSA-OAEP`, pass the object with the following keys:
+    - pour `RSA-OAEP`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `RSA-OAEP`:
+      - `name` est une chaîne, à fixer à `RSA-OAEP` :
 
         ```nginx
         crypto.subtle.encrypt({name: "RSA-OAEP"}, key, data)
         ```
-    - for `AES-CTR`, pass the object with the following keys:
+    - pour `AES-CTR`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `AES-CTR`
-      - `counter` is an `ArrayBuffer`, `TypedArray`, or `DataView` — the initial value of the counter block, must be 16 bytes long (the AES block size). The rightmost length bits of this block are used for the counter, and the rest is used for the nonce. For example, if length is set to 64, then the first half of counter is the nonce and the second half is used for the counter
-      - `length` is the number of bits in the counter block that are used for the actual counter. The counter must be big enough that it doesn't wrap.
-    - for `AES-CBC`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `AES-CTR`
+      - `counter` est un `ArrayBuffer`, `TypedArray` ou `DataView` — valeur initiale du bloc compteur, de 16 octets (taille d'un bloc AES). Les length bits de droite servent de compteur, le reste de nonce. Par exemple, si length vaut 64, la première moitié du compteur est le nonce et la seconde sert de compteur
+      - `length` est le nombre de bits du bloc compteur utilisés pour le compteur proprement dit. Le compteur doit être assez grand pour ne pas reboucler.
+    - pour `AES-CBC`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `AES-CBC`
-      - `iv` or the initialization vector, is an `ArrayBuffer`, `TypedArray`, or `DataView`, must be 16 bytes, unpredictable, and preferably cryptographically random. However, it need not be secret, for example, it may be transmitted unencrypted along with the ciphertext.
-    - for `AES-GCM`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `AES-CBC`
+      - `iv`, le vecteur d'initialisation, est un `ArrayBuffer`, `TypedArray` ou `DataView` de 16 octets, imprévisible et de préférence aléatoire au sens cryptographique. Il n'a pas besoin d'être secret : il peut par exemple être transmis en clair avec le texte chiffré.
+    - pour `AES-GCM`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `AES-GCM`
-      - `iv` or the initialization vector, is an `ArrayBuffer`, `TypedArray`, or `DataView`, must be 16 bytes, and must be unique for every encryption operation carried out with a given key
-      - `additionalData` (optional) is an `ArrayBuffer`, `TypedArray`, or `DataView` that contains additional data that will not be encrypted but will be authenticated along with the encrypted data. If `additionalData` is specified, then the same data must be specified in the corresponding call to `decrypt()`: if the data given to the `decrypt()` call does not match the original data, the decryption will throw an exception. The bit length of `additionalData` must be smaller than `2^64 - 1`.
-      - `tagLength` (optional, default is `128`) - a `number` that determines the size in bits of the authentication tag generated in the encryption operation and used for authentication in the corresponding decryption Possible values: `32`, `64`, `96`, `104`, `112`, `120`, or `128`. The AES-GCM specification recommends that it should be `96`, `104`, `112`, `120`, or `128`, although `32` or `64` bits may be acceptable in some applications.
+      - `name` est une chaîne, à fixer à `AES-GCM`
+      - `iv`, le vecteur d'initialisation, est un `ArrayBuffer`, `TypedArray` ou `DataView` de 16 octets, unique pour chaque opération de chiffrement avec une clé donnée
+      - `additionalData` (facultatif) est un `ArrayBuffer`, `TypedArray` ou `DataView` contenant des données supplémentaires non chiffrées mais authentifiées avec les données chiffrées. Si `additionalData` est indiqué, les mêmes données doivent être passées à l'appel `decrypt()` correspondant : si elles ne correspondent pas, le déchiffrement lève une exception. La longueur en bits de `additionalData` doit être inférieure à `2^64 - 1`.
+      - `tagLength` (facultatif, `128` par défaut) - `number` qui fixe la taille en bits de l'étiquette d'authentification générée lors du chiffrement et utilisée lors du déchiffrement correspondant. Valeurs possibles : `32`, `64`, `96`, `104`, `112`, `120` ou `128`. La spécification AES-GCM recommande `96`, `104`, `112`, `120` ou `128`, bien que `32` ou `64` bits puissent convenir à certaines applications.
 
   - **`key`**
 
-    a `CryptoKey` that contains the key to be used for encryption
+    `CryptoKey` contenant la clé de chiffrement
 
   - **`data`**
 
-    an `ArrayBuffer`, `TypedArray`, or `DataView` that contains the data to be encrypted (also known as the plaintext)
+    `ArrayBuffer`, `TypedArray` ou `DataView` contenant les données à chiffrer (le texte en clair)
 
 - **`сrypto.subtle.decrypt`(`algorithm`, `key`, `data`)**
 
-  Decrypts encrypted data. Returns a `Promise` with the decrypted data. Possible values:
+  Déchiffre des données chiffrées. Renvoie une `Promise` avec les données déchiffrées. Valeurs possibles :
 
   - **`algorithm`**
 
-    an object that specifies the algorithm to be used, and any extra parameters as required. The values given for the extra parameters must match those passed into the corresponding `encrypt()` call.
+    objet indiquant l'algorithme à utiliser et les éventuels paramètres supplémentaires. Ces paramètres doivent correspondre à ceux passés à l'appel `encrypt()` correspondant.
 
-    - for `RSA-OAEP`, pass the object with the following keys:
+    - pour `RSA-OAEP`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `RSA-OAEP`:
+      - `name` est une chaîne, à fixer à `RSA-OAEP` :
 
         ```nginx
         crypto.subtle.encrypt({name: "RSA-OAEP"}, key, data)
         ```
-    - for `AES-CTR`, pass the object with the following keys:
+    - pour `AES-CTR`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `AES-CTR`
-      - `counter` is an `ArrayBuffer`, `TypedArray`, or `DataView` — the initial value of the counter block, must be 16 bytes long (the AES block size). The rightmost length bits of this block are used for the counter, and the rest is used for the nonce. For example, if length is set to 64, then the first half of counter is the nonce and the second half is used for the counter.
-      - `length` is the number of bits in the counter block that are used for the actual counter. The counter must be big enough that it doesn't wrap.
-    - for `AES-CBC`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `AES-CTR`
+      - `counter` est un `ArrayBuffer`, `TypedArray` ou `DataView` — valeur initiale du bloc compteur, de 16 octets (taille d'un bloc AES). Les length bits de droite servent de compteur, le reste de nonce. Par exemple, si length vaut 64, la première moitié du compteur est le nonce et la seconde sert de compteur.
+      - `length` est le nombre de bits du bloc compteur utilisés pour le compteur proprement dit. Le compteur doit être assez grand pour ne pas reboucler.
+    - pour `AES-CBC`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `AES-CBC`
-      - `iv` or the initialization vector, is an `ArrayBuffer`, `TypedArray`, or `DataView`, must be 16 bytes, unpredictable, and preferably cryptographically random. However, it need not be secret (for example, it may be transmitted unencrypted along with the ciphertext).
-    - for `AES-GCM`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `AES-CBC`
+      - `iv`, le vecteur d'initialisation, est un `ArrayBuffer`, `TypedArray` ou `DataView` de 16 octets, imprévisible et de préférence aléatoire au sens cryptographique. Il n'a pas besoin d'être secret (il peut par exemple être transmis en clair avec le texte chiffré).
+    - pour `AES-GCM`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `AES-GCM`
-      - `iv` or the initialization vector, is an `ArrayBuffer`, `TypedArray`, or `DataView`, must be 16 bytes, and must be unique for every encryption operation carried out with a given key
-      - `additionalData` (optional) is an `ArrayBuffer`, `TypedArray`, or `DataView` that contains additional data that will not be encrypted but will be authenticated along with the encrypted data. If `additionalData` is specified, then the same data must be specified in the corresponding call to `decrypt()`: if the data given to the `decrypt()` call does not match the original data, the decryption will throw an exception. The bit length of `additionalData` must be smaller than `2^64 - 1`.
-      - `tagLength` (optional, default is `128`) - a `number` that determines the size in bits of the authentication tag generated in the encryption operation and used for authentication in the corresponding decryption. Possible values: `32`, `64`, `96`, `104`, `112`, `120`, or `128`. The AES-GCM specification recommends that it should be `96`, `104`, `112`, `120`, or `128`, although `32` or `64` bits may be acceptable in some applications.
+      - `name` est une chaîne, à fixer à `AES-GCM`
+      - `iv`, le vecteur d'initialisation, est un `ArrayBuffer`, `TypedArray` ou `DataView` de 16 octets, unique pour chaque opération de chiffrement avec une clé donnée
+      - `additionalData` (facultatif) est un `ArrayBuffer`, `TypedArray` ou `DataView` contenant des données supplémentaires non chiffrées mais authentifiées avec les données chiffrées. Si `additionalData` est indiqué, les mêmes données doivent être passées à l'appel `decrypt()` correspondant : si elles ne correspondent pas, le déchiffrement lève une exception. La longueur en bits de `additionalData` doit être inférieure à `2^64 - 1`.
+      - `tagLength` (facultatif, `128` par défaut) - `number` qui fixe la taille en bits de l'étiquette d'authentification générée lors du chiffrement et utilisée lors du déchiffrement correspondant. Valeurs possibles : `32`, `64`, `96`, `104`, `112`, `120` ou `128`. La spécification AES-GCM recommande `96`, `104`, `112`, `120` ou `128`, bien que `32` ou `64` bits puissent convenir à certaines applications.
 
   - **`key`**
 
-    a `CryptoKey` that contains the key to be used for decryption. If `RSA-OAEP` is used, this is the `privateKey` property of the `CryptoKeyPair` object.
+    `CryptoKey` contenant la clé de déchiffrement. Avec `RSA-OAEP`, c'est la propriété `privateKey` de l'objet `CryptoKeyPair`.
 
   - **`data`**
 
-    an `ArrayBuffer`, `TypedArray`, or `DataView` that contains the data to be decrypted (also known as ciphertext)
+    `ArrayBuffer`, `TypedArray` ou `DataView` contenant les données à déchiffrer (le texte chiffré)
 
 - **`сrypto.subtle.deriveBits`(`algorithm`, `baseKey`, `length`)**
 
-  Derives an array of bits from a base key. Returns a `Promise` which will be fulfilled with an `ArrayBuffer` that contains the derived bits. Possible values:
+  Dérive un tableau de bits à partir d'une clé de base. Renvoie une `Promise` résolue avec un `ArrayBuffer` contenant les bits dérivés. Valeurs possibles :
 
   - **`algorithm`**
 
-    is an object that defines the derivation algorithm to use:
+    objet qui définit l'algorithme de dérivation :
 
-    - for `HKDF`, pass the object with the following keys:
+    - pour `HKDF`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `HKDF`
-      - `hash` is a string with the digest algorithm to use: `SHA-1`, `SHA-256`, `SHA-384`, or `SHA-512`
-      - `salt` is an `ArrayBuffer`, `TypedArray`, or `DataView` that represents random or pseudo-random value with the same length as the output of the `digest` function. Unlike the input key material passed into `deriveKey()`, salt does not need to be kept secret.
-      - `info` is an `ArrayBuffer`, `TypedArray`, or `DataView` that represents application-specific contextual information used to bind the derived key to an application or context, and enables deriving different keys for different contexts while using the same input key material. This property is required but may be an empty buffer.
-    - for `PBKDF2`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `HKDF`
+      - `hash` est une chaîne indiquant l'algorithme de condensat : `SHA-1`, `SHA-256`, `SHA-384` ou `SHA-512`
+      - `salt` est un `ArrayBuffer`, `TypedArray` ou `DataView` représentant une valeur aléatoire ou pseudo-aléatoire de même longueur que la sortie de la fonction `digest`. Contrairement au matériau de clé passé à `deriveKey()`, le sel n'a pas besoin d'être secret.
+      - `info` est un `ArrayBuffer`, `TypedArray` ou `DataView` représentant des informations de contexte propres à l'application, qui lient la clé dérivée à une application ou un contexte et permettent de dériver des clés différentes pour des contextes différents à partir du même matériau de clé. Cette propriété est obligatoire mais peut être un tampon vide.
+    - pour `PBKDF2`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `PBKDF2`
-      - `hash` is a string with the digest algorithm to use: `SHA-1`, `SHA-256`, `SHA-384`, or `SHA-512`
-      - `salt` is an `ArrayBuffer`, `TypedArray`, or `DataView` that represents random or pseudo-random value of at least `16` bytes. Unlike the input key material passed into `deriveKey()`, salt does not need to be kept secret.
-      - `iterations` is a `number` that represents the number of times the hash function will be executed in `deriveKey()`
-    - for `ECDH`, pass the object with the following keys (since 0.9.1):
+      - `name` est une chaîne, à fixer à `PBKDF2`
+      - `hash` est une chaîne indiquant l'algorithme de condensat : `SHA-1`, `SHA-256`, `SHA-384` ou `SHA-512`
+      - `salt` est un `ArrayBuffer`, `TypedArray` ou `DataView` représentant une valeur aléatoire ou pseudo-aléatoire d'au moins `16` octets. Contrairement au matériau de clé passé à `deriveKey()`, le sel n'a pas besoin d'être secret.
+      - `iterations` est un `number` représentant le nombre d'exécutions de la fonction de hachage dans `deriveKey()`
+    - pour `ECDH`, passez l'objet avec les clés suivantes (depuis 0.9.1) :
 
-      - `name` is a string, should be set to `ECDH`
-      - `public` is a `CryptoKey` that represents the public key of the other party. The key must be generated using the same curve as the base key.
-    - for `X25519`, pass the object with the following keys (since 0.9.7):
+      - `name` est une chaîne, à fixer à `ECDH`
+      - `public` est une `CryptoKey` représentant la clé publique de l'autre partie. Elle doit être générée avec la même courbe que la clé de base.
+    - pour `X25519`, passez l'objet avec les clés suivantes (depuis 0.9.7) :
 
-      - `name` is a string, should be set to `X25519`
-      - `public` is a `CryptoKey` that represents the public key of the other party
+      - `name` est une chaîne, à fixer à `X25519`
+      - `public` est une `CryptoKey` représentant la clé publique de l'autre partie
 
   - **`baseKey`**
 
-    is a `CryptoKey` that represents the input to the derivation algorithm - the initial key material for the derivation function: for example, for `PBKDF2` it might be a password, imported as a `CryptoKey` using `сrypto.subtle.importKey()`
+    `CryptoKey` représentant l'entrée de l'algorithme de dérivation — le matériau de clé initial de la fonction de dérivation : par exemple, pour `PBKDF2`, un mot de passe importé en `CryptoKey` avec `сrypto.subtle.importKey()`
 
   - **`length`**
 
-    is a number representing the number of bits to derive. For browsers compatibility, the number should be a multiple of `8`
+    nombre de bits à dériver. Pour la compatibilité avec les navigateurs, il doit être un multiple de `8`
 
 - **`сrypto.subtle.deriveKey`(`algorithm`, `baseKey`, `derivedKeyAlgorithm`, `extractable`, `keyUsages`)**
 
-  Derives a secret key from a master key. Possible values:
+  Dérive une clé secrète à partir d'une clé maîtresse. Valeurs possibles :
 
   - **`algorithm`**
 
-    is an object that defines the derivation algorithm to use:
+    objet qui définit l'algorithme de dérivation :
 
-    - for `HKDF`, pass the object with the following keys:
+    - pour `HKDF`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `HKDF`
-      - `hash` is a string with the digest algorithm to use: `SHA-1`, `SHA-256`, `SHA-384`, or `SHA-512`
-      - `salt` is an `ArrayBuffer`, `TypedArray`, or `DataView` that represents random or pseudo-random value with the same length as the output of the `digest` function. Unlike the input key material passed into `deriveKey()`, salt does not need to be kept secret.
-      - `info` is an `ArrayBuffer`, `TypedArray`, or `DataView` that represents application-specific contextual information used to bind the derived key to an application or context, and enables deriving different keys for different contexts while using the same input key material. This property is required but may be an empty buffer.
-    - for `PBKDF2`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `HKDF`
+      - `hash` est une chaîne indiquant l'algorithme de condensat : `SHA-1`, `SHA-256`, `SHA-384` ou `SHA-512`
+      - `salt` est un `ArrayBuffer`, `TypedArray` ou `DataView` représentant une valeur aléatoire ou pseudo-aléatoire de même longueur que la sortie de la fonction `digest`. Contrairement au matériau de clé passé à `deriveKey()`, le sel n'a pas besoin d'être secret.
+      - `info` est un `ArrayBuffer`, `TypedArray` ou `DataView` représentant des informations de contexte propres à l'application, qui lient la clé dérivée à une application ou un contexte et permettent de dériver des clés différentes pour des contextes différents à partir du même matériau de clé. Cette propriété est obligatoire mais peut être un tampon vide.
+    - pour `PBKDF2`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `PBKDF2`
-      - `hash` is a string with the digest algorithm to use: `SHA-1`, `SHA-256`, `SHA-384`, or `SHA-512`
-      - `salt` is an `ArrayBuffer`, `TypedArray`, or `DataView` that represents random or pseudo-random value of at least `16` bytes. Unlike the input key material passed into `deriveKey()`, salt does not need to be kept secret.
-      - `iterations` is a `number` that represents the number of times the hash function will be executed in `deriveKey()`
-    - for `ECDH`, pass the object with the following keys (since 0.9.1):
+      - `name` est une chaîne, à fixer à `PBKDF2`
+      - `hash` est une chaîne indiquant l'algorithme de condensat : `SHA-1`, `SHA-256`, `SHA-384` ou `SHA-512`
+      - `salt` est un `ArrayBuffer`, `TypedArray` ou `DataView` représentant une valeur aléatoire ou pseudo-aléatoire d'au moins `16` octets. Contrairement au matériau de clé passé à `deriveKey()`, le sel n'a pas besoin d'être secret.
+      - `iterations` est un `number` représentant le nombre d'exécutions de la fonction de hachage dans `deriveKey()`
+    - pour `ECDH`, passez l'objet avec les clés suivantes (depuis 0.9.1) :
 
-      - `name` is a string, should be set to `ECDH`
-      - `public` is a `CryptoKey` that represents the public key of the other party. The key must be generated using the same curve as the base key.
-    - for `X25519`, pass the object with the following keys (since 0.9.7):
+      - `name` est une chaîne, à fixer à `ECDH`
+      - `public` est une `CryptoKey` représentant la clé publique de l'autre partie. Elle doit être générée avec la même courbe que la clé de base.
+    - pour `X25519`, passez l'objet avec les clés suivantes (depuis 0.9.7) :
 
-      - `name` is a string, should be set to `X25519`
-      - `public` is a `CryptoKey` that represents the public key of the other party
+      - `name` est une chaîne, à fixer à `X25519`
+      - `public` est une `CryptoKey` représentant la clé publique de l'autre partie
 
   - **`baseKey`**
 
-    is a `CryptoKey` that represents the input to the derivation algorithm - the initial key material for the derivation function: for example, for `PBKDF2` it might be a password, imported as a `CryptoKey` using `сrypto.subtle.importKey()`.
+    `CryptoKey` représentant l'entrée de l'algorithme de dérivation — le matériau de clé initial de la fonction de dérivation : par exemple, pour `PBKDF2`, un mot de passe importé en `CryptoKey` avec `сrypto.subtle.importKey()`.
 
   - **`derivedKeyAlgorithm`**
 
-    is an object that defines the algorithm the derived key will be used for:
+    objet qui définit l'algorithme auquel servira la clé dérivée :
 
-    - for `HMAC`, pass the object with the following keys:
+    - pour `HMAC`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `HMAC`
-      - `hash` is a string with the name of the digest function to use: `SHA-1`, `SHA-256`, `SHA-384`, or `SHA-512`
-      - `length` (optional) is a `number` that represents the length in bits of the key. If not specified, the length of the key is equal to the block size of the chozen hash function
-    - for `AES-CTR`, `AES-CBC`, `AES-GCM`, or `AES-KW` (since 0.9.7), pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `HMAC`
+      - `hash` est une chaîne indiquant le nom de la fonction de condensat : `SHA-1`, `SHA-256`, `SHA-384` ou `SHA-512`
+      - `length` (facultatif) est un `number` représentant la longueur de la clé en bits. Sans lui, la longueur de la clé est égale à la taille de bloc de la fonction de hachage choisie
+    - pour `AES-CTR`, `AES-CBC`, `AES-GCM` ou `AES-KW` (depuis 0.9.7), passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `AES-CTR`, `AES-CBC`, `AES-GCM`, or `AES-KW`, depending on the algorithm used
-      - `length` is a `number` that represents the length in bits of the key to generate: `128`, `192`, or `256`
+      - `name` est une chaîne, à fixer à `AES-CTR`, `AES-CBC`, `AES-GCM` ou `AES-KW` selon l'algorithme utilisé
+      - `length` est un `number` représentant la longueur en bits de la clé à générer : `128`, `192` ou `256`
 
   - **`extractable`**
 
-    is a boolean value that indicates whether it will be possible to export the key
+    booléen indiquant s'il sera possible d'exporter la clé
 
   - **`keyUsages`**
 
-    is an `Array` that indicates what can be done with the derived key. The key usages must be allowed by the algorithm set in `derivedKeyAlgorithm`. Possible values:
+    `Array` indiquant ce que l'on peut faire avec la clé dérivée. Les usages doivent être autorisés par l'algorithme fixé dans `derivedKeyAlgorithm`. Valeurs possibles :
 
     - **`encrypt`**
 
-      key for encrypting messages
+      clé de chiffrement de messages
 
     - **`decrypt`**
 
-      key for decrypting messages
+      clé de déchiffrement de messages
 
     - **`sign`**
 
-      key for signing messages
+      clé de signature de messages
 
     - **`verify`**
 
-      key for verifying signatures
+      clé de vérification de signatures
 
     - **`deriveKey`**
 
-      key for deriving a new key
+      clé de dérivation d'une nouvelle clé
 
     - **`deriveBits`**
 
-      key for deriving bits
+      clé de dérivation de bits
 
     - **`wrapKey`**
 
-      key for wrapping a key
+      clé d'enveloppement d'une clé
 
     - **`unwrapKey`**
 
-      key for unwrapping a key
+      clé de désenveloppement d'une clé
 
 - **`сrypto.subtle.digest`(`algorithm`, `data`)**
 
-  Generates a digest of the given data. Takes as its arguments an identifier for the digest algorithm to use and the data to digest. Returns a `Promise` which will be fulfilled with the digest. Possible values:
+  Calcule le condensat des données fournies. Prend en arguments l'identifiant de l'algorithme de condensat et les données. Renvoie une `Promise` résolue avec le condensat. Valeurs possibles :
 
   - **`algorithm`**
 
-    is a string that defines the hash function to use: `SHA-1` (not for cryptographic applications), `SHA-256`, `SHA-384`, or `SHA-512`
+    chaîne définissant la fonction de hachage : `SHA-1` (pas pour des usages cryptographiques), `SHA-256`, `SHA-384` ou `SHA-512`
 
   - **`data`**
 
-    is an `ArrayBuffer`, `TypedArray`, or `DataView` that contains the data to be digested
+    `ArrayBuffer`, `TypedArray` ou `DataView` contenant les données à condenser
 
 - **`сrypto.subtle.exportKey`(`format`, `key`)**
 
-  Exports a key: takes a key as a `CryptoKey` object and returns the key in an external, portable format (since 0.7.10). If the `format` was `jwk`, then the `Promise` fulfills with a JSON object containing the key. Otherwise, the promise fulfills with an `ArrayBuffer` containing the key. Possible values:
+  Exporte une clé : prend une clé sous forme d'objet `CryptoKey` et la renvoie dans un format externe portable (depuis 0.7.10). Si `format` vaut `jwk`, la `Promise` est résolue avec un objet JSON contenant la clé ; sinon avec un `ArrayBuffer` contenant la clé. Valeurs possibles :
 
   - **`format`**
 
-    a string that describes the data format in which the key should be exported, can be the following:
+    chaîne décrivant le format de données dans lequel exporter la clé, parmi :
 
     - **`raw`**
 
-      the raw data format
+      le format de données brut
 
     - **`pkcs8`**
 
-      the [PKCS #8](https://datatracker.ietf.org/doc/html/rfc5208) format
+      le format [PKCS #8](https://datatracker.ietf.org/doc/html/rfc5208)
 
     - **`spki`**
 
-      the [SubjectPublicKeyInfo](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1) format
+      le format [SubjectPublicKeyInfo](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1)
 
     - **`jwk`**
 
-      the [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) (JWK) format (since 0.7.10)
+      le format [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) (JWK) (depuis 0.7.10)
 
   - **`key`**
 
-    the `CryptoKey` that contains the key to be exported
+    la `CryptoKey` contenant la clé à exporter
 
 - **`сrypto.subtle.generateKey`(`algorithm`, `extractable`, `usage`)**
 
-  Generates a new key for symmetric algorithms or key pair for public-key algorithms (since 0.7.10). Returns a `Promise` that fulfills with the generated key as a `CryptoKey` or `CryptoKeyPair` object. Possible values:
+  Génère une nouvelle clé pour les algorithmes symétriques ou une paire de clés pour les algorithmes à clé publique (depuis 0.7.10). Renvoie une `Promise` résolue avec la clé générée sous forme d'objet `CryptoKey` ou `CryptoKeyPair`. Valeurs possibles :
 
   - **`algorithm`**
 
-    a dictionary object that defines the type of key to generate and provides extra algorithm-specific parameters:
+    objet dictionnaire qui définit le type de clé à générer et fournit les paramètres propres à l'algorithme :
 
-    - for `RSASSA-PKCS1-v1_5`, `RSA-PSS`, or `RSA-OAEP`, pass the object with the following keys:
+    - pour `RSASSA-PKCS1-v1_5`, `RSA-PSS` ou `RSA-OAEP`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `RSASSA-PKCS1-v1_5`, `RSA-PSS`, or `RSA-OAEP`, depending on the used algorithm
-      - `hash` is a string that represents the name of the `digest` function to use, can be `SHA-256`, `SHA-384`, or `SHA-512`
-    - for `ECDSA`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `RSASSA-PKCS1-v1_5`, `RSA-PSS` ou `RSA-OAEP` selon l'algorithme utilisé
+      - `hash` est une chaîne représentant le nom de la fonction `digest` : `SHA-256`, `SHA-384` ou `SHA-512`
+    - pour `ECDSA`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `ECDSA`
-      - `namedCurve` is a string that represents the name of the elliptic curve to use, may be `P-256`, `P-384`, or `P-521`
-    - for `HMAC`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `ECDSA`
+      - `namedCurve` est une chaîne représentant le nom de la courbe elliptique : `P-256`, `P-384` ou `P-521`
+    - pour `HMAC`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `HMAC`
-      - `hash` is a string that represents the name of the `digest` function to use, can be `SHA-256`, `SHA-384`, or `SHA-512`
-      - `length` (optional) is a number that represents the length in bits of the key. If omitted, the length of the key is equal to the length of the digest generated by the chosen digest function.
-    - for `AES-CTR`, `AES-CBC`, `AES-GCM`, or `AES-KW` (since 0.9.7), pass the string identifying the algorithm or an object of the form `{ "name": "ALGORITHM" }`, where `ALGORITHM` is the name of the algorithm
-    - for `ECDH`, pass the object with the following keys (since 0.9.1):
+      - `name` est une chaîne, à fixer à `HMAC`
+      - `hash` est une chaîne représentant le nom de la fonction `digest` : `SHA-256`, `SHA-384` ou `SHA-512`
+      - `length` (facultatif) est un nombre représentant la longueur de la clé en bits. Sans lui, la longueur de la clé est égale à celle du condensat produit par la fonction choisie.
+    - pour `AES-CTR`, `AES-CBC`, `AES-GCM` ou `AES-KW` (depuis 0.9.7), passez la chaîne identifiant l'algorithme ou un objet de la forme `{ "name": "ALGORITHM" }`, où `ALGORITHM` est le nom de l'algorithme
+    - pour `ECDH`, passez l'objet avec les clés suivantes (depuis 0.9.1) :
 
-      - `name` is a string, should be set to `ECDH`
-      - `namedCurve` is a string that represents the name of the elliptic curve to use, may be `P-256`, `P-384`, or `P-521`
-    - for `Ed25519`, pass the `Ed25519` string or an object of the form `{ "name": "Ed25519" }` (since 0.9.7)
-    - for `X25519`, pass the `X25519` string or an object of the form `{ "name": "X25519" }` (since 0.9.7)
+      - `name` est une chaîne, à fixer à `ECDH`
+      - `namedCurve` est une chaîne représentant le nom de la courbe elliptique : `P-256`, `P-384` ou `P-521`
+    - pour `Ed25519`, passez la chaîne `Ed25519` ou un objet de la forme `{ "name": "Ed25519" }` (depuis 0.9.7)
+    - pour `X25519`, passez la chaîne `X25519` ou un objet de la forme `{ "name": "X25519" }` (depuis 0.9.7)
 
   - **`extractable`**
 
-    boolean value that indicates if it is possible to export the key
+    booléen indiquant s'il est possible d'exporter la clé
 
   - **`usage`**
 
-    an `array` that indicates possible actions with the key:
+    `array` indiquant les actions possibles avec la clé :
 
     - **`encrypt`**
 
-      key for encrypting messages
+      clé de chiffrement de messages
 
     - **`decrypt`**
 
-      key for decrypting messages
+      clé de déchiffrement de messages
 
     - **`sign`**
 
-      key for signing messages
+      clé de signature de messages
 
     - **`verify`**
 
-      key for verifying signatures
+      clé de vérification de signatures
 
     - **`deriveKey`**
 
-      key for deriving a new key
+      clé de dérivation d'une nouvelle clé
 
     - **`deriveBits`**
 
-      key for deriving bits
+      clé de dérivation de bits
 
     - **`wrapKey`**
 
-      key for wrapping a key
+      clé d'enveloppement d'une clé
 
     - **`unwrapKey`**
 
-      key for unwrapping a key
+      clé de désenveloppement d'une clé
 
 - **`сrypto.subtle.importKey`(`format`, `keyData`, `algorithm`, `extractable`, `keyUsages`)**
 
-  Imports a key: takes as input a key in an external, portable format and gives a `CryptoKey` object. Returns a `Promise` that fulfills with the imported key as a `CryptoKey` object. Possible values:
+  Importe une clé : prend une clé dans un format externe portable et produit un objet `CryptoKey`. Renvoie une `Promise` résolue avec la clé importée sous forme d'objet `CryptoKey`. Valeurs possibles :
 
   - **`format`**
 
-    a string that describes the data format of the key to import, can be the following:
+    chaîne décrivant le format de données de la clé à importer, parmi :
 
     - **`raw`**
 
-      the raw data format
+      le format de données brut
 
     - **`pkcs8`**
 
-      the [PKCS #8](https://datatracker.ietf.org/doc/html/rfc5208) format
+      le format [PKCS #8](https://datatracker.ietf.org/doc/html/rfc5208)
 
     - **`spki`**
 
-      the [SubjectPublicKeyInfo](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1) format
+      le format [SubjectPublicKeyInfo](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1)
 
     - **`jwk`**
 
-      the [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) (JWK) format (since 0.7.10)
+      le format [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) (JWK) (depuis 0.7.10)
 
   - **`keyData`**
 
-    the `ArrayBuffer`, `TypedArray`, or `DataView` object that contains the key in the given format
+    objet `ArrayBuffer`, `TypedArray` ou `DataView` contenant la clé dans le format indiqué
 
   - **`algorithm`**
 
-    a dictionary object that defines the type of key to import and provides extra algorithm-specific parameters:
+    objet dictionnaire qui définit le type de clé à importer et fournit les paramètres propres à l'algorithme :
 
-    - for `RSASSA-PKCS1-v1_5`, `RSA-PSS`, or `RSA-OAEP`, pass the object with the following keys:
+    - pour `RSASSA-PKCS1-v1_5`, `RSA-PSS` ou `RSA-OAEP`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `RSASSA-PKCS1-v1_5`, `RSA-PSS`, or `RSA-OAEP`, depending on the used algorithm
-      - `hash` is a string that represents the name of the `digest` function to use, can be `SHA-1`, `SHA-256`, `SHA-384`, or `SHA-512`
-    - for `ECDSA`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `RSASSA-PKCS1-v1_5`, `RSA-PSS` ou `RSA-OAEP` selon l'algorithme utilisé
+      - `hash` est une chaîne représentant le nom de la fonction `digest` : `SHA-1`, `SHA-256`, `SHA-384` ou `SHA-512`
+    - pour `ECDSA`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `ECDSA`
-      - `namedCurve` is a string that represents the name of the elliptic curve to use, may be `P-256`, `P-384`, or `P-521`
-    - for `HMAC`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `ECDSA`
+      - `namedCurve` est une chaîne représentant le nom de la courbe elliptique : `P-256`, `P-384` ou `P-521`
+    - pour `HMAC`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `HMAC`
-      - `hash` is a string that represents the name of the `digest` function to use, can be `SHA-256`, `SHA-384`, or `SHA-512`
-      - `length` (optional) is a number that represents the length in bits of the key. If omitted, the length of the key is equal to the length of the digest generated by the chosen digest function.
-    - for `AES-CTR`, `AES-CBC`, `AES-GCM`, or `AES-KW` (since 0.9.7), pass the string identifying the algorithm or an object of the form `{ "name": "ALGORITHM" }`, where `ALGORITHM` is the name of the algorithm
-    - for `PBKDF2`, pass the `PBKDF2` string
-    - for `HKDF`, pass the `HKDF` string
-    - for `ECDH`, pass the object with the following keys (since 0.9.1):
+      - `name` est une chaîne, à fixer à `HMAC`
+      - `hash` est une chaîne représentant le nom de la fonction `digest` : `SHA-256`, `SHA-384` ou `SHA-512`
+      - `length` (facultatif) est un nombre représentant la longueur de la clé en bits. Sans lui, la longueur de la clé est égale à celle du condensat produit par la fonction choisie.
+    - pour `AES-CTR`, `AES-CBC`, `AES-GCM` ou `AES-KW` (depuis 0.9.7), passez la chaîne identifiant l'algorithme ou un objet de la forme `{ "name": "ALGORITHM" }`, où `ALGORITHM` est le nom de l'algorithme
+    - pour `PBKDF2`, passez la chaîne `PBKDF2`
+    - pour `HKDF`, passez la chaîne `HKDF`
+    - pour `ECDH`, passez l'objet avec les clés suivantes (depuis 0.9.1) :
 
-      - `name` is a string, should be set to `ECDH`
-      - `namedCurve` is a string that represents the name of the elliptic curve to use, may be `P-256`, `P-384`, or `P-521`
-    - for `Ed25519`, pass the `Ed25519` string or an object of the form `{ "name": "Ed25519" }` (since 0.9.7)
-    - for `X25519`, pass the `X25519` string or an object of the form `{ "name": "X25519" }` (since 0.9.7)
+      - `name` est une chaîne, à fixer à `ECDH`
+      - `namedCurve` est une chaîne représentant le nom de la courbe elliptique : `P-256`, `P-384` ou `P-521`
+    - pour `Ed25519`, passez la chaîne `Ed25519` ou un objet de la forme `{ "name": "Ed25519" }` (depuis 0.9.7)
+    - pour `X25519`, passez la chaîne `X25519` ou un objet de la forme `{ "name": "X25519" }` (depuis 0.9.7)
 
   - **`extractable`**
 
-    boolean value that indicates if it is possible to export the key
+    booléen indiquant s'il est possible d'exporter la clé
 
   - **`keyUsages`**
 
-    an `array` that indicates possible actions with the key:
+    `array` indiquant les actions possibles avec la clé :
 
     - **`encrypt`**
 
-      key for encrypting messages
+      clé de chiffrement de messages
 
     - **`decrypt`**
 
-      key for decrypting messages
+      clé de déchiffrement de messages
 
     - **`sign`**
 
-      key for signing messages
+      clé de signature de messages
 
     - **`verify`**
 
-      key for verifying signatures
+      clé de vérification de signatures
 
     - **`deriveKey`**
 
-      key for deriving a new key
+      clé de dérivation d'une nouvelle clé
 
     - **`deriveBits`**
 
-      key for deriving bits
+      clé de dérivation de bits
 
     - **`wrapKey`**
 
-      key for wrapping a key
+      clé d'enveloppement d'une clé
 
     - **`unwrapKey`**
 
-      key for unwrapping a key
+      clé de désenveloppement d'une clé
 
 - **`сrypto.subtle.sign`(`algorithm`, `key`, `data`)**
 
-  Returns `signature` as a `Promise` that fulfills with an `ArrayBuffer` containing the signature. Possible values:
+  Renvoie `signature` sous forme de `Promise` résolue avec un `ArrayBuffer` contenant la signature. Valeurs possibles :
 
   - **`algorithm`**
 
-    is a string or object that specifies the signature algorithm to use and its parameters:
+    chaîne ou objet indiquant l'algorithme de signature et ses paramètres :
 
-    - for `RSASSA-PKCS1-v1_5`, pass the string identifying the algorithm or an object of the form `{ "name": "ALGORITHM" }`
-    - for `RSA-PSS`, pass the object with the following keys:
+    - pour `RSASSA-PKCS1-v1_5`, passez la chaîne identifiant l'algorithme ou un objet de la forme `{ "name": "ALGORITHM" }`
+    - pour `RSA-PSS`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `RSA-PSS`
-      - `saltLength` is a long `integer` that represents the length of the random salt to use, in bytes
-    - for `ECDSA`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `RSA-PSS`
+      - `saltLength` est un `integer` long représentant la longueur du sel aléatoire, en octets
+    - pour `ECDSA`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `ECDSA`
-      - `hash` is an identifier for the digest algorithm to use, can be `SHA-256`, `SHA-384`, or `SHA-512`
-    - for `HMAC`, pass the string identifying the algorithm or an object of the form `{ "name": "ALGORITHM" }`
-    - for `Ed25519`, pass the `Ed25519` string or an object of the form `{ "name": "Ed25519" }` (since 0.9.7)
+      - `name` est une chaîne, à fixer à `ECDSA`
+      - `hash` est l'identifiant de l'algorithme de condensat : `SHA-256`, `SHA-384` ou `SHA-512`
+    - pour `HMAC`, passez la chaîne identifiant l'algorithme ou un objet de la forme `{ "name": "ALGORITHM" }`
+    - pour `Ed25519`, passez la chaîne `Ed25519` ou un objet de la forme `{ "name": "Ed25519" }` (depuis 0.9.7)
 
   - **`key`**
 
-    is a `CryptoKey` object that the key to be used for signing. If algorithm identifies a public-key cryptosystem, this is the private key.
+    objet `CryptoKey` contenant la clé de signature. Si l'algorithme est un cryptosystème à clé publique, c'est la clé privée.
 
   - **`data`**
 
-    is an `ArrayBuffer`, `TypedArray`, or `DataView` object that contains the data to be signed
+    objet `ArrayBuffer`, `TypedArray` ou `DataView` contenant les données à signer
 
 - **`сrypto.subtle.verify`(`algorithm`, `key`, `signature`, `data`)**
 
-  Verifies a digital signature, returns a `Promise` that fulfills with a boolean value: `true` if the signature is valid, otherwise `false`. Possible values:
+  Vérifie une signature numérique ; renvoie une `Promise` résolue avec un booléen : `true` si la signature est valide, `false` sinon. Valeurs possibles :
 
   - **`algorithm`**
 
-    is a string or object that specifies the algorithm to use and its parameters:
+    chaîne ou objet indiquant l'algorithme et ses paramètres :
 
-    - for `RSASSA-PKCS1-v1_5`, pass the string identifying the algorithm or an object of the form `{ "name": "ALGORITHM" }`
-    - for `RSA-PSS`, pass the object with the following keys:
+    - pour `RSASSA-PKCS1-v1_5`, passez la chaîne identifiant l'algorithme ou un objet de la forme `{ "name": "ALGORITHM" }`
+    - pour `RSA-PSS`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `RSA-PSS`
-      - `saltLength` is a long `integer` that represents the length of the random salt to use, in bytes
-    - for `ECDSA`, pass the object with the following keys:
+      - `name` est une chaîne, à fixer à `RSA-PSS`
+      - `saltLength` est un `integer` long représentant la longueur du sel aléatoire, en octets
+    - pour `ECDSA`, passez l'objet avec les clés suivantes :
 
-      - `name` is a string, should be set to `ECDSA`
-      - `hash` is an identifier for the digest algorithm to use, can be `SHA-256`, `SHA-384`, or `SHA-512`
-    - for `HMAC`, pass the string identifying the algorithm or an object of the form `{ "name": "ALGORITHM" }`
-    - for `Ed25519`, pass the `Ed25519` string or an object of the form `{ "name": "Ed25519" }` (since 0.9.7)
+      - `name` est une chaîne, à fixer à `ECDSA`
+      - `hash` est l'identifiant de l'algorithme de condensat : `SHA-256`, `SHA-384` ou `SHA-512`
+    - pour `HMAC`, passez la chaîne identifiant l'algorithme ou un objet de la forme `{ "name": "ALGORITHM" }`
+    - pour `Ed25519`, passez la chaîne `Ed25519` ou un objet de la forme `{ "name": "Ed25519" }` (depuis 0.9.7)
 
   - **`key`**
 
-    is a `CryptoKey` object that the key to be used for verifying. It is the secret key for a symmetric algorithm and the public key for a public-key system.
+    objet `CryptoKey` contenant la clé de vérification : la clé secrète pour un algorithme symétrique, la clé publique pour un système à clé publique.
 
   - **`signature`**
 
-    is an `ArrayBuffer`, `TypedArray`, or `DataView` that contains the signature to verify
+    `ArrayBuffer`, `TypedArray` ou `DataView` contenant la signature à vérifier
 
   - **`data`**
 
-    is an `ArrayBuffer`, `TypedArray`, or `DataView` object that contains the data whose signature is to be verified
+    objet `ArrayBuffer`, `TypedArray` ou `DataView` contenant les données dont la signature est à vérifier
 
 - **`сrypto.subtle.wrapKey`(`format`, `key`, `wrappingKey`, `wrapAlgorithm`)**
 
-  Wraps a key: exports a key in an external, portable format, then encrypts the exported key (since 0.9.7). Returns a `Promise` that fulfills with an `ArrayBuffer` containing the encrypted exported key. Possible values:
+  Enveloppe une clé : l'exporte dans un format externe portable, puis chiffre la clé exportée (depuis 0.9.7). Renvoie une `Promise` résolue avec un `ArrayBuffer` contenant la clé exportée chiffrée. Valeurs possibles :
 
   - **`format`**
 
-    a string that describes the data format of the key to export before it is encrypted, can be the following:
+    chaîne décrivant le format de données de la clé à exporter avant chiffrement, parmi :
 
     - **`raw`**
 
-      the raw data format
+      le format de données brut
 
     - **`pkcs8`**
 
-      the [PKCS #8](https://datatracker.ietf.org/doc/html/rfc5208) format
+      le format [PKCS #8](https://datatracker.ietf.org/doc/html/rfc5208)
 
     - **`spki`**
 
-      the [SubjectPublicKeyInfo](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1) format
+      le format [SubjectPublicKeyInfo](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1)
 
     - **`jwk`**
 
-      the [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) (JWK) format
+      le format [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) (JWK)
 
   - **`key`**
 
-    a `CryptoKey` that contains the key to be wrapped. The key must have `CryptoKey.extractable` set to `true`.
+    `CryptoKey` contenant la clé à envelopper. Elle doit avoir `CryptoKey.extractable` à `true`.
 
   - **`wrappingKey`**
 
-    a `CryptoKey` that contains the key used to encrypt the exported key. The key must have the `wrapKey` usage set.
+    `CryptoKey` contenant la clé servant à chiffrer la clé exportée. Elle doit avoir l'usage `wrapKey`.
 
   - **`wrapAlgorithm`**
 
-    an object that specifies the algorithm to be used to encrypt the exported key, and any extra parameters as required:
+    objet indiquant l'algorithme de chiffrement de la clé exportée et les éventuels paramètres supplémentaires :
 
-    - for `AES-CBC`, `AES-CTR`, or `AES-GCM`, pass the corresponding algorithm parameters as described in `сrypto.subtle.encrypt()`
-    - for `AES-KW`, pass the `AES-KW` string or an object of the form `{ "name": "AES-KW" }`
-    - for `RSA-OAEP`, pass the corresponding algorithm parameters as described in `сrypto.subtle.encrypt()`
+    - pour `AES-CBC`, `AES-CTR` ou `AES-GCM`, passez les paramètres d'algorithme correspondants décrits dans `сrypto.subtle.encrypt()`
+    - pour `AES-KW`, passez la chaîne `AES-KW` ou un objet de la forme `{ "name": "AES-KW" }`
+    - pour `RSA-OAEP`, passez les paramètres d'algorithme correspondants décrits dans `сrypto.subtle.encrypt()`
 
 - **`сrypto.subtle.unwrapKey`(`format`, `wrappedKey`, `unwrappingKey`, `unwrapAlgorithm`, `unwrappedKeyAlgorithm`, `extractable`, `keyUsages`)**
 
-  Unwraps a key: decrypts a wrapped key and creates a `CryptoKey` object from the result (since 0.9.7). Returns a `Promise` that fulfills with the unwrapped key as a `CryptoKey`. Possible values:
+  Désenveloppe une clé : déchiffre une clé enveloppée et crée un objet `CryptoKey` à partir du résultat (depuis 0.9.7). Renvoie une `Promise` résolue avec la clé désenveloppée sous forme de `CryptoKey`. Valeurs possibles :
 
   - **`format`**
 
-    a string that describes the data format of the key that was wrapped, can be the following:
+    chaîne décrivant le format de données de la clé enveloppée, parmi :
 
     - **`raw`**
 
-      the raw data format
+      le format de données brut
 
     - **`pkcs8`**
 
-      the [PKCS #8](https://datatracker.ietf.org/doc/html/rfc5208) format
+      le format [PKCS #8](https://datatracker.ietf.org/doc/html/rfc5208)
 
     - **`spki`**
 
-      the [SubjectPublicKeyInfo](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1) format
+      le format [SubjectPublicKeyInfo](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1)
 
     - **`jwk`**
 
-      the [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) (JWK) format
+      le format [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) (JWK)
 
   - **`wrappedKey`**
 
-    an `ArrayBuffer`, `TypedArray`, or `DataView` that contains the wrapped key in the given format
+    `ArrayBuffer`, `TypedArray` ou `DataView` contenant la clé enveloppée dans le format indiqué
 
   - **`unwrappingKey`**
 
-    a `CryptoKey` that contains the key used to decrypt the wrapped key. The key must have the `unwrapKey` usage set.
+    `CryptoKey` contenant la clé servant à déchiffrer la clé enveloppée. Elle doit avoir l'usage `unwrapKey`.
 
   - **`unwrapAlgorithm`**
 
-    an object that specifies the algorithm to be used to decrypt the wrapped key, and any extra parameters as required:
+    objet indiquant l'algorithme de déchiffrement de la clé enveloppée et les éventuels paramètres supplémentaires :
 
-    - for `AES-CBC`, `AES-CTR`, or `AES-GCM`, pass the corresponding algorithm parameters as described in `сrypto.subtle.encrypt()`
-    - for `AES-KW`, pass the `AES-KW` string or an object of the form `{ "name": "AES-KW" }`
-    - for `RSA-OAEP`, pass the corresponding algorithm parameters as described in `сrypto.subtle.encrypt()`
+    - pour `AES-CBC`, `AES-CTR` ou `AES-GCM`, passez les paramètres d'algorithme correspondants décrits dans `сrypto.subtle.encrypt()`
+    - pour `AES-KW`, passez la chaîne `AES-KW` ou un objet de la forme `{ "name": "AES-KW" }`
+    - pour `RSA-OAEP`, passez les paramètres d'algorithme correspondants décrits dans `сrypto.subtle.encrypt()`
 
   - **`unwrappedKeyAlgorithm`**
 
-    a dictionary object that defines the type of key to unwrap and provides extra algorithm-specific parameters. The same algorithm descriptions as in `сrypto.subtle.importKey()` apply.
+    objet dictionnaire qui définit le type de clé à désenvelopper et fournit les paramètres propres à l'algorithme. Les mêmes descriptions d'algorithmes que pour `сrypto.subtle.importKey()` s'appliquent.
 
   - **`extractable`**
 
-    boolean value that indicates if it is possible to export the key
+    booléen indiquant s'il est possible d'exporter la clé
 
   - **`keyUsages`**
 
-    an `array` that indicates possible actions with the key:
+    `array` indiquant les actions possibles avec la clé :
 
     - **`encrypt`**
 
-      key for encrypting messages
+      clé de chiffrement de messages
 
     - **`decrypt`**
 
-      key for decrypting messages
+      clé de déchiffrement de messages
 
     - **`sign`**
 
-      key for signing messages
+      clé de signature de messages
 
     - **`verify`**
 
-      key for verifying signatures
+      clé de vérification de signatures
 
     - **`deriveKey`**
 
-      key for deriving a new key
+      clé de dérivation d'une nouvelle clé
 
     - **`deriveBits`**
 
-      key for deriving bits
+      clé de dérivation de bits
 
     - **`wrapKey`**
 
-      key for wrapping a key
+      clé d'enveloppement d'une clé
 
     - **`unwrapKey`**
 
-      key for unwrapping a key
+      clé de désenveloppement d'une clé
 
 ### CryptoKey
 
@@ -1721,59 +1718,59 @@ The `crypto` object is a global object that allows using cryptographic functiona
 | `CryptoKey.type` |
 | `CryptoKey.usages` |
 
-The `CryptoKey` object represents a cryptographic `key` obtained from one of the `SubtleCrypto` methods: `сrypto.subtle.generateKey()`, `сrypto.subtle.deriveKey()`, `сrypto.subtle.importKey()`.
+L'objet `CryptoKey` représente une `key` cryptographique obtenue par l'une des méthodes de `SubtleCrypto` : `сrypto.subtle.generateKey()`, `сrypto.subtle.deriveKey()`, `сrypto.subtle.importKey()`.
 
 - **`CryptoKey.algorithm`**
 
-  returns an object describing the algorithm for which this key can be used and any associated extra parameters (since 0.8.0), read-only
+  renvoie un objet décrivant l'algorithme pour lequel la clé peut être utilisée et les éventuels paramètres associés (depuis 0.8.0), en lecture seule
 
 - **`CryptoKey.extractable`**
 
-  a boolean value, `true` if the key can be exported (since 0.8.0), read-only
+  booléen, `true` si la clé peut être exportée (depuis 0.8.0), en lecture seule
 
 - **`CryptoKey.type`**
 
-  a string value that indicates which kind of key is represented by the object, read-only. Possible values:
+  chaîne indiquant le type de clé représenté par l'objet, en lecture seule. Valeurs possibles :
 
   - **`secret`**
 
-    This key is a secret key for use with a symmetric algorithm.
+    Clé secrète destinée à un algorithme symétrique.
 
   - **`private`**
 
-    This key is the private half of an asymmetric algorithm's `CryptoKeyPair`
+    Moitié privée de la `CryptoKeyPair` d'un algorithme asymétrique
 
   - **`public`**
 
-    This key is the public half of an asymmetric algorithm's `CryptoKeyPair`.
+    Moitié publique de la `CryptoKeyPair` d'un algorithme asymétrique.
 
 - **`CryptoKey.usages`**
 
-  An array of strings indicating what this key can be used for (since 0.8.0), read-only. Possible array values:
+  Tableau de chaînes indiquant les usages possibles de la clé (depuis 0.8.0), en lecture seule. Valeurs possibles du tableau :
 
   - **`encrypt`**
 
-    key for encrypting messages
+    clé de chiffrement de messages
 
   - **`decrypt`**
 
-    key for decrypting messages
+    clé de déchiffrement de messages
 
   - **`sign`**
 
-    key for signing messages
+    clé de signature de messages
 
   - **`verify`**
 
-    key for verifying signatures
+    clé de vérification de signatures
 
   - **`deriveKey`**
 
-    key for deriving a new key
+    clé de dérivation d'une nouvelle clé
 
   - **`deriveBits`**
 
-    key for deriving bits
+    clé de dérivation de bits
 
 ### CryptoKeyPair
 
@@ -1782,15 +1779,15 @@ The `CryptoKey` object represents a cryptographic `key` obtained from one of the
 | `CryptoKeyPair.privateKey` |
 | `CryptoKeyPair.publicKey` |
 
-The `CryptoKeyPair` is a dictionary object of the WebCrypto API that represents an asymmetric key pair.
+`CryptoKeyPair` est un objet dictionnaire de l'API WebCrypto qui représente une paire de clés asymétriques.
 
 - **`CryptoKeyPair.privateKey`**
 
-  A `CryptoKey` object representing the private key.
+  Objet `CryptoKey` représentant la clé privée.
 
 - **`CryptoKeyPair.publicKey`**
 
-  A `CryptoKey` object representing the public key.
+  Objet `CryptoKey` représentant la clé publique.
 
 ### njs
 
@@ -1802,35 +1799,35 @@ The `CryptoKeyPair` is a dictionary object of the WebCrypto API that represents 
 | `njs.memoryStats` |
 | `njs.on()` |
 
-The `njs` object is a global object that represents the current VM instance (since 0.2.0).
+L'objet `njs` est un objet global qui représente l'instance courante de la machine virtuelle (depuis 0.2.0).
 
 - **`njs.version`**
 
-  Returns a string with the current version of njs (for example, “0.7.4”).
+  Renvoie une chaîne contenant la version courante de njs (par exemple « 0.7.4 »).
 
 - **`njs.version_number`**
 
-  Returns a number with the current version of njs. For example, “0.7.4” is returned as `0x000704` (since 0.7.4).
+  Renvoie un nombre contenant la version courante de njs. Par exemple, « 0.7.4 » est renvoyé sous la forme `0x000704` (depuis 0.7.4).
 
 - **`njs.dump(value)`**
 
-  Returns the pretty-print string representation for a value.
+  Renvoie une représentation textuelle mise en forme d'une valeur.
 
 - **`njs.memoryStats`**
 
-  Object containing memory statistics for current VM instance (since 0.7.8).
+  Objet contenant les statistiques mémoire de l'instance courante de la machine virtuelle (depuis 0.7.8).
 
   - **`size`**
 
-    amount of memory in bytes njs memory pool claimed from the operating system.
+    quantité de mémoire en octets réclamée au système d'exploitation par le pool mémoire de njs.
 
 - **`njs.on(event, callback)`**
 
-  Registers a callback for the specified VM event (since 0.5.2). An event may be one of the following strings:
+  Enregistre une fonction de rappel pour l'événement de machine virtuelle indiqué (depuis 0.5.2). Un événement peut être l'une des chaînes suivantes :
 
   - **`exit`**
 
-    is called before the VM is destroyed. The callback is called without arguments.
+    appelée avant la destruction de la machine virtuelle, sans argument.
 
 ### process
 
@@ -1842,48 +1839,48 @@ The `njs` object is a global object that represents the current VM instance (sin
 | `process.pid` |
 | `process.ppid` |
 
-The `process` object is a global object that provides information about the current process (0.3.3).
+L'objet `process` est un objet global qui fournit des informations sur le processus courant (0.3.3).
 
 - **`process.argv`**
 
-  Returns an array that contains the command line arguments passed when the current process was launched.
+  Renvoie un tableau contenant les arguments de ligne de commande passés au lancement du processus courant.
 
 - **`process.env`**
 
-  Returns an object containing the user environment.
+  Renvoie un objet contenant l'environnement utilisateur.
 
   > [!NOTE]
-  > By default, nginx removes all environment variables inherited from its parent process except the TZ variable. Use the [[12-directives/env|env]] directive to preserve some of the inherited variables.
+  > Par défaut, nginx supprime toutes les variables d'environnement héritées de son processus parent, sauf TZ. Utilisez la directive [[12-directives/env|env]] pour conserver certaines variables héritées.
 
 - **`process.kill(pid, number | string)`**
 
-  Sends the signal to the process identified by `pid`. Signal names are numbers or strings such as 'SIGINT' or 'SIGHUP'. See [kill(2)](https://man7.org/linux/man-pages/man2/kill.2.html) for more information.
+  Envoie le signal au processus identifié par `pid`. Les noms de signaux sont des nombres ou des chaînes comme 'SIGINT' ou 'SIGHUP'. Voir [kill(2)](https://man7.org/linux/man-pages/man2/kill.2.html) pour plus d'informations.
 
 - **`process.pid`**
 
-  Returns the PID of the current process.
+  Renvoie le PID du processus courant.
 
 - **`process.ppid`**
 
-  Returns the PID of the current parent process.
+  Renvoie le PID du processus parent courant.
 
-### String
+### Chaînes
 
-By default all strings in njs are Unicode strings. They correspond to ECMAScript strings that contain Unicode characters. Before 0.8.0, byte strings were also supported.
+Par défaut, toutes les chaînes de njs sont des chaînes Unicode. Elles correspondent aux chaînes ECMAScript contenant des caractères Unicode. Avant la version 0.8.0, les chaînes d'octets étaient aussi prises en charge.
 
-#### Byte strings
+#### Chaînes d'octets
 
 > [!NOTE]
-> Since 0.8.0, the support for byte strings and byte string methods were removed. When working with byte sequence, the Buffer object and `Buffer` properties, such as `r.requestBuffer`, `r.rawVariables`, should be used.
+> Depuis la version 0.8.0, la prise en charge des chaînes d'octets et de leurs méthodes a été supprimée. Pour manipuler des suites d'octets, utilisez l'objet Buffer et les propriétés `Buffer`, comme `r.requestBuffer`, `r.rawVariables`.
 
-Byte strings contain a sequence of bytes and are used to serialize Unicode strings to external data and deserialize from external sources. For example, the toUTF8() method serializes a Unicode string to a byte string using UTF-8 encoding:
+Les chaînes d'octets contiennent une suite d'octets et servent à sérialiser des chaînes Unicode vers des données externes ou à les désérialiser depuis des sources externes. Par exemple, la méthode toUTF8() sérialise une chaîne Unicode en chaîne d'octets encodée en UTF-8 :
 
 ```nginx
 >> '£'.toUTF8().toString('hex')
 'c2a3'  /* C2 A3 is the UTF-8 representation of 00A3 ('£') code point */
 ```
 
-The toBytes() method serializes a Unicode string with code points up to 255 into a byte string, otherwise, `null` is returned:
+La méthode toBytes() sérialise une chaîne Unicode dont les points de code ne dépassent pas 255 en chaîne d'octets ; sinon, `null` est renvoyé :
 
 ```nginx
 >> '£'.toBytes().toString('hex')
@@ -1892,7 +1889,7 @@ The toBytes() method serializes a Unicode string with code points up to 255 into
 
 - **`String.bytesFrom(array | string, encoding)`**
 
-  The method was made obsolete in 0.4.4 and was removed in 0.8.0. The `Buffer.from` method should be used instead:
+  La méthode est devenue obsolète en 0.4.4 et a été supprimée en 0.8.0. Utilisez plutôt la méthode `Buffer.from` :
 
   ```nginx
   >> Buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]).toString()
@@ -1902,30 +1899,30 @@ The toBytes() method serializes a Unicode string with code points up to 255 into
   'buffer'
   ```
 
-  Before 0.4.4, created a byte string either from an array that contained octets, or from an encoded string (0.2.3), the encoding could be `hex`, `base64`, and `base64url`.
+  Avant la version 0.4.4, créait une chaîne d'octets soit à partir d'un tableau d'octets, soit à partir d'une chaîne encodée (0.2.3), l'encodage pouvant être `hex`, `base64` ou `base64url`.
 
 - **`String.prototype.fromBytes(start[, end])`**
 
-  the property was made obsolete in 0.7.7 and was removed in 0.8.0. Before 0.7.7, returned a new Unicode string from a byte string where each byte was replaced with a corresponding Unicode code point.
+  la propriété est devenue obsolète en 0.7.7 et a été supprimée en 0.8.0. Avant la version 0.7.7, renvoyait une nouvelle chaîne Unicode à partir d'une chaîne d'octets, chaque octet étant remplacé par le point de code Unicode correspondant.
 
 - **`String.prototype.fromUTF8(start[, end])`**
 
-  the property was made obsolete in 0.7.7 and was removed in 0.8.0. The `TextDecoder` method should be used instead. Before 0.7.7, converted a byte string containing a valid UTF-8 string into a Unicode string, otherwise `null` was returned.
+  la propriété est devenue obsolète en 0.7.7 et a été supprimée en 0.8.0. Utilisez plutôt la méthode `TextDecoder`. Avant la version 0.7.7, convertissait une chaîne d'octets contenant une chaîne UTF-8 valide en chaîne Unicode, sinon renvoyait `null`.
 
 - **`String.prototype.toBytes(start[, end])`**
 
-  the property was made obsolete in 0.7.7 and was removed in 0.8.0. Before 0.7.7, serialized a Unicode string to a byte string, returned `null` if a character larger than 255 was found in the string.
+  la propriété est devenue obsolète en 0.7.7 et a été supprimée en 0.8.0. Avant la version 0.7.7, sérialisait une chaîne Unicode en chaîne d'octets, et renvoyait `null` si un caractère supérieur à 255 était trouvé.
 
 - **`String.prototype.toString(encoding)`**
 
-  the property was made obsolete in 0.7.7 and was removed in 0.8.0. Before 0.7.7, encoded a string to `hex`, `base64`, or `base64url`:
+  la propriété est devenue obsolète en 0.7.7 et a été supprimée en 0.8.0. Avant la version 0.7.7, encodait une chaîne en `hex`, `base64` ou `base64url` :
 
   ```nginx
   >>  'αβγδ'.toString('base64url')
   'zrHOss6zzrQ'
   ```
 
-  Before version 0.4.3, only a byte string could be encoded:
+  Avant la version 0.4.3, seule une chaîne d'octets pouvait être encodée :
 
   ```nginx
   >>  'αβγδ'.toUTF8().toString('base64url')
@@ -1934,7 +1931,7 @@ The toBytes() method serializes a Unicode string with code points up to 255 into
 
 - **`String.prototype.toUTF8(start[, end])`**
 
-  the property was made obsolete in 0.7.7 and was removed in 0.8.0. The `TextEncoder` method should be used instead. Before 0.7.7, serialized a Unicode string to a byte string using UTF-8 encoding:
+  la propriété est devenue obsolète en 0.7.7 et a été supprimée en 0.8.0. Utilisez plutôt la méthode `TextEncoder`. Avant la version 0.7.7, sérialisait une chaîne Unicode en chaîne d'octets encodée en UTF-8 :
 
   ```nginx
   >> 'αβγδ'.toUTF8().length
@@ -1943,7 +1940,7 @@ The toBytes() method serializes a Unicode string with code points up to 255 into
   4
   ```
 
-## web API
+## API web
 
 ### Text Decoder
 
@@ -1955,35 +1952,35 @@ The toBytes() method serializes a Unicode string with code points up to 255 into
 | `TextDecoder.prototype.ignoreBOM` |
 | `TextDecoder.prototype.decode()` |
 
-The `TextDecoder` produces a stream of code points from a stream of bytes (0.4.3).
+`TextDecoder` produit un flux de points de code à partir d'un flux d'octets (0.4.3).
 
 - **`TextDecoder([[encoding], options])`**
 
-  Creates a new `TextDecoder` object for specified `encoding`, currently, only UTF-8 is supported. The `options` is `TextDecoderOptions` dictionary with the property:
+  Crée un nouvel objet `TextDecoder` pour l'`encoding` indiqué ; seul UTF-8 est actuellement pris en charge. `options` est un dictionnaire `TextDecoderOptions` avec la propriété :
 
   - **`fatal`**
 
-    boolean flag indicating if `TextDecoder.decode()` must throw the *TypeError* exception when a coding error is found, by default is `false`.
+    booléen indiquant si `TextDecoder.decode()` doit lever l'exception *TypeError* en cas d'erreur d'encodage, `false` par défaut.
 
 - **`TextDecoder.prototype.encoding`**
 
-  Returns a string with the name of the encoding used by `TextDecoder()`, read-only.
+  Renvoie une chaîne contenant le nom de l'encodage utilisé par `TextDecoder()`, en lecture seule.
 
 - **`TextDecoder.prototype.fatal`**
 
-  boolean flag, `true` if the error mode is fatal, read-only.
+  booléen, `true` si le mode d'erreur est fatal, en lecture seule.
 
 - **`TextDecoder.prototype.ignoreBOM`**
 
-  boolean flag, `true` if the byte order marker is ignored, read-only.
+  booléen, `true` si l'indicateur d'ordre des octets (BOM) est ignoré, en lecture seule.
 
 - **`TextDecoder.prototype.decode(buffer, [options])`**
 
-  Returns a string with the text decoded from the `buffer` by `TextDecoder()`. The buffer can be `ArrayBuffer`. The `options` is `TextDecodeOptions` dictionary with the property:
+  Renvoie une chaîne contenant le texte décodé du `buffer` par `TextDecoder()`. Le tampon peut être un `ArrayBuffer`. `options` est un dictionnaire `TextDecodeOptions` avec la propriété :
 
   - **`stream`**
 
-    boolean flag indicating if additional data will follow in subsequent calls to `decode()`: `true` if processing the data in chunks, and `false` for the final chunk or if the data is not chunked. By default is `false`.
+    booléen indiquant si d'autres données suivront dans des appels ultérieurs à `decode()` : `true` lors d'un traitement par blocs, `false` pour le dernier bloc ou des données non découpées. `false` par défaut.
 
   ```nginx
   >> (new TextDecoder()).decode(new Uint8Array([206,177,206,178]))
@@ -1998,29 +1995,29 @@ The `TextDecoder` produces a stream of code points from a stream of bytes (0.4.3
 | `TextEncoder.prototype.encode()` |
 | `TextEncoder.prototype.encodeInto()` |
 
-The `TextEncoder` object produces a byte stream with UTF-8 encoding from a stream of code points (0.4.3).
+L'objet `TextEncoder` produit un flux d'octets encodé en UTF-8 à partir d'un flux de points de code (0.4.3).
 
 - **`TextEncoder()`**
 
-  Returns a newly constructed `TextEncoder` that will generate a byte stream with UTF-8 encoding.
+  Renvoie un nouvel objet `TextEncoder` qui générera un flux d'octets encodé en UTF-8.
 
 - **`TextEncoder.prototype.encode(string)`**
 
-  Encodes `string` into a `Uint8Array` with UTF-8 encoded text.
+  Encode `string` dans un `Uint8Array` contenant le texte encodé en UTF-8.
 
 - **`TextEncoder.prototype.encodeInto(string, uint8Array)`**
 
-  Encodes a `string` to UTF-8, puts the result into destination `Uint8Array`, and returns a dictionary object that shows the progress of the encoding. The dictionary object contains two members:
+  Encode une `string` en UTF-8, place le résultat dans le `Uint8Array` de destination et renvoie un objet dictionnaire montrant la progression de l'encodage. Cet objet contient deux membres :
 
   - **`read`**
 
-    the number of UTF-16 units of code from the source `string` converted to UTF-8
+    nombre d'unités de code UTF-16 de la `string` source converties en UTF-8
 
   - **`written`**
 
-    the number of bytes modified in the destination `Uint8Array`
+    nombre d'octets modifiés dans le `Uint8Array` de destination
 
-## timers
+## minuteurs
 
 |   |
 | --- |
@@ -2029,11 +2026,11 @@ The `TextEncoder` object produces a byte stream with UTF-8 encoding from a strea
 
 - **`clearTimeout(timeout)`**
 
-  Cancels a `timeout` object created by `setTimeout()`.
+  Annule un objet `timeout` créé par `setTimeout()`.
 
 - **`setTimeout(function, milliseconds[, argument1, argumentN])`**
 
-  Calls a `function` after a specified number of `milliseconds`. One or more optional `arguments` can be passed to the specified function. Returns a `timeout` object.
+  Appelle une `function` après le nombre de `milliseconds` indiqué. Un ou plusieurs `arguments` facultatifs peuvent être passés à la fonction. Renvoie un objet `timeout`.
 
   ```nginx
   function handler(v)
@@ -2048,7 +2045,7 @@ The `TextEncoder` object produces a byte stream with UTF-8 encoding from a strea
   clearTimeout(t);
   ```
 
-### Global functions
+### Fonctions globales
 
 |   |
 | --- |
@@ -2057,9 +2054,9 @@ The `TextEncoder` object produces a byte stream with UTF-8 encoding from a strea
 
 - **`atob(encodedData)`**
 
-  Decodes a string of data which has been encoded using `Base64` encoding. The `encodedData` parameter is a binary string that contains Base64-encoded data. Returns a string that contains decoded data from `encodedData`.
+  Décode une chaîne de données encodée en `Base64`. Le paramètre `encodedData` est une chaîne binaire contenant les données encodées en Base64. Renvoie une chaîne contenant les données décodées de `encodedData`.
 
-  The similar `btoa()` method can be used to encode and transmit data which may otherwise cause communication problems, then transmit it and use the `atob()` method to decode the data again. For example, you can encode, transmit, and decode control characters such as ASCII values `0` through `31`.
+  La méthode similaire `btoa()` permet d'encoder et de transmettre des données qui poseraient sinon des problèmes de communication, puis d'utiliser `atob()` pour les décoder. On peut par exemple encoder, transmettre et décoder des caractères de contrôle comme les valeurs ASCII `0` à `31`.
 
   ```nginx
   const encodedData = btoa("text to encode"); // encode a string
@@ -2068,16 +2065,16 @@ The `TextEncoder` object produces a byte stream with UTF-8 encoding from a strea
 
 - **`btoa(stringToEncode)`**
 
-  Creates a Base64-encoded ASCII string from a binary string. The `stringToEncode` parameter is a binary string to encode. Returns an ASCII string containing the Base64 representation of `stringToEncode`.
+  Crée une chaîne ASCII encodée en Base64 à partir d'une chaîne binaire. Le paramètre `stringToEncode` est la chaîne binaire à encoder. Renvoie une chaîne ASCII contenant la représentation Base64 de `stringToEncode`.
 
-  The method can be used to encode data which may otherwise cause communication problems, transmit it, then use the `atob()` method to decode the data again. For example, you can encode control characters such as ASCII values `0` through `31`.
+  La méthode permet d'encoder des données qui poseraient sinon des problèmes de communication, de les transmettre, puis d'utiliser `atob()` pour les décoder. On peut par exemple encoder des caractères de contrôle comme les valeurs ASCII `0` à `31`.
 
   ```nginx
   const encodedData = btoa("text to encode"); // encode a string
   const decodedData = atob(encodedData); // decode the string
   ```
 
-## built-in modules
+## modules intégrés
 
 ### Tampon
 
@@ -2133,211 +2130,211 @@ The `TextEncoder` object produces a byte stream with UTF-8 encoding from a strea
 
 - **`Buffer.alloc(size[, fill[, encoding]]))`**
 
-  Allocates a new Buffer of a specified *size*. If *fill* is not specified, the Buffer will be zero-filled. If *fill* is specified, the allocated Buffer will be initialized by calling `buf.fill(fill)`. If *fill* and *encoding* are specified, the allocated Buffer will be initialized by calling `buf.fill(fill, encoding)`.
+  Alloue un nouveau Buffer de la *size* indiquée. Sans *fill*, le Buffer est rempli de zéros. Avec *fill*, il est initialisé par `buf.fill(fill)`. Avec *fill* et *encoding*, il est initialisé par `buf.fill(fill, encoding)`.
 
-  The *fill* parameter may be a *string*, *Buffer*, *Uint8Array*, or *integer*.
+  Le paramètre *fill* peut être une *string*, un *Buffer*, un *Uint8Array* ou un *integer*.
 
 - **`Buffer.allocUnsafe(size)`**
 
-  The same as `Buffer.alloc()`, with the difference that the memory allocated for the buffer is not initialized, the contents of the new buffer is unknown and may contain sensitive data.
+  Comme `Buffer.alloc()`, sauf que la mémoire allouée n'est pas initialisée : le contenu du nouveau tampon est inconnu et peut contenir des données sensibles.
 
 - **`Buffer.byteLength(value[, encoding])`**
 
-  Returns the byte length of a specified value, when encoded using *encoding*. The value can be a `string`, `Buffer`, `TypedArray`, `DataView`, or `ArrayBuffer`. If the value is a *string*, the `encoding` parameter is its encoding, can be *utf8*, *hex*, *base64*, *base64url*; by default is *utf8*.
+  Renvoie la longueur en octets d'une valeur encodée avec *encoding*. La valeur peut être une `string`, un `Buffer`, un `TypedArray`, un `DataView` ou un `ArrayBuffer`. Si c'est une *string*, le paramètre `encoding` est son encodage : *utf8*, *hex*, *base64*, *base64url* ; *utf8* par défaut.
 
 - **`Buffer.compare(buffer1, buffer2)`**
 
-  Compares *buffer1* with *buffer2* when sorting arrays of Buffer instances. Returns `0` if *buffer1* is the same as *buffer2*, `1` if *buffer2* should come before *buffer1* when sorted, or `-1` if *buffer2* should come after *buffer1* when sorted.
+  Compare *buffer1* et *buffer2* lors du tri de tableaux d'instances Buffer. Renvoie `0` si *buffer1* est identique à *buffer2*, `1` si *buffer2* doit précéder *buffer1* dans le tri, ou `-1` si *buffer2* doit suivre *buffer1*.
 
 - **`Buffer.concat(list[, totalLength])`**
 
-  Returns a new Buffer which is the result of concatenating all the Buffer instances in the list. If there are no items in the list or the total length is 0, a new zero-length Buffer is returned. If *totalLength* is not specified, it is calculated from the Buffer instances in list by adding their lengths. If *totalLength* is specified, it is coerced to an unsigned integer. If the combined length of the Buffers in list exceeds *totalLength*, the result is truncated to *totalLength*.
+  Renvoie un nouveau Buffer résultant de la concaténation de toutes les instances Buffer de la liste. Si la liste est vide ou que la longueur totale vaut 0, un Buffer de longueur nulle est renvoyé. Sans *totalLength*, la longueur est calculée en additionnant celles des Buffers de la liste. Si *totalLength* est indiqué, il est converti en entier non signé. Si la longueur cumulée des Buffers dépasse *totalLength*, le résultat est tronqué à *totalLength*.
 
 - **`Buffer.from(array)`**
 
-  Allocates a new Buffer using an array of bytes in the range `0` – `255`. Array entries outside that range will be truncated.
+  Alloue un nouveau Buffer à partir d'un tableau d'octets compris entre `0` et `255`. Les entrées hors de cette plage sont tronquées.
 
 - **`Buffer.from(arrayBuffer, byteOffset[, length]])`**
 
-  Creates a view of the *ArrayBuffer* without copying the underlying memory. The optional *byteOffset* and *length* arguments specify a memory range within the *arrayBuffer* that will be shared by the Buffer.
+  Crée une vue sur l'*ArrayBuffer* sans copier la mémoire sous-jacente. Les arguments facultatifs *byteOffset* et *length* indiquent la plage mémoire de l'*arrayBuffer* partagée par le Buffer.
 
 - **`Buffer.from(buffer)`**
 
-  Copies the passed buffer data onto a new Buffer instance.
+  Copie les données du tampon passé dans une nouvelle instance Buffer.
 
 - **`Buffer.from(object[, offsetOrEncoding[, length]])`**
 
-  For objects whose `valueOf()` function returns a value not strictly equal to object, returns `Buffer.from(object.valueOf()`, `offsetOrEncoding`, `length`).
+  Pour les objets dont la fonction `valueOf()` renvoie une valeur non strictement égale à l'objet, renvoie `Buffer.from(object.valueOf()`, `offsetOrEncoding`, `length`).
 
 - **`Buffer.from(string[, encoding])`**
 
-  Creates a new Buffer with a *string*. The *encoding* parameter identifies the character encoding to be used when converting a string into bytes. The encoding can be `utf8`, `hex`, `base64`, `base64url`; by default is `utf8`.
+  Crée un nouveau Buffer à partir d'une *string*. Le paramètre *encoding* indique l'encodage des caractères à utiliser pour convertir la chaîne en octets : `utf8`, `hex`, `base64`, `base64url` ; `utf8` par défaut.
 
 - **`Buffer.isBuffer(object)`**
 
-  A boolean value, returns `true` if *object* is a Buffer.
+  Booléen, renvoie `true` si *object* est un Buffer.
 
 - **`Buffer.isEncoding(encoding)`**
 
-  A boolean value, returns `true` if encoding is the name of a supported character encoding.
+  Booléen, renvoie `true` si encoding est le nom d'un encodage de caractères pris en charge.
 
 - **`buffer[index]`**
 
-  The index operator that can be used to get and set the octet at position `index` in `buffer`. The values refer to individual bytes, so the legal value range is between 0 and 255 (decimal).
+  Opérateur d'indice permettant de lire et définir l'octet à la position `index` dans `buffer`. Les valeurs désignent des octets individuels ; la plage autorisée va donc de 0 à 255 (en décimal).
 
 - **`buf.buffer`**
 
-  The underlying `ArrayBuffer` object based on which this Buffer object is created.
+  Objet `ArrayBuffer` sous-jacent à partir duquel ce Buffer est créé.
 
 - **`buf.byteOffset`**
 
-  An integer, specifying the `byteOffset` of the Buffers underlying `ArrayBuffer` object.
+  Entier indiquant le `byteOffset` de l'objet `ArrayBuffer` sous-jacent du Buffer.
 
 - **`buf.compare(target[, targetStart[, targetEnd[, sourceStart[, sourceEnd]]]])`**
 
-  Compares buffer with *target* and returns a number indicating whether buffer comes before, after, or is the same as *target* in sort order. Comparison is based on the actual sequence of bytes in each Buffer. The `targetStart` is an integer specifying the offset within *target* at which to begin comparison, by default is 0. The `targetEnd` is an integer specifying the offset within *target* at which to end comparison, by default is `target.length`. The `sourceStart` is an integer specifying the offset within buffer at which to begin comparison, by default is 0. The `sourceEnd` is an integer specifying the offset within buffer at which to end comparison (not inclusive), by default is `buf.length`.
+  Compare le tampon à *target* et renvoie un nombre indiquant s'il vient avant, après, ou au même rang que *target* dans l'ordre de tri. La comparaison repose sur la suite réelle des octets de chaque Buffer. `targetStart` est l'entier donnant le décalage dans *target* où commencer la comparaison, 0 par défaut. `targetEnd` est le décalage dans *target* où l'arrêter, `target.length` par défaut. `sourceStart` est le décalage dans le tampon où commencer la comparaison, 0 par défaut. `sourceEnd` est le décalage dans le tampon où l'arrêter (non inclus), `buf.length` par défaut.
 
 - **`buf.copy(target[, targetStart[, sourceStart[, sourceEnd]]])`**
 
-  Copies data from a region of buffer to a region in *target*, even if the target memory region overlaps with buffer. The `target` parameter is a *Buffer* or *Uint8Array* to copy into.
+  Copie les données d'une zone du tampon vers une zone de *target*, même si les zones mémoire se chevauchent. Le paramètre `target` est le *Buffer* ou *Uint8Array* de destination.
 
-  The `targetStart` is an integer specifying the offset within target at which to begin writing, by default is 0. The `sourceStart` is an integer specifying the offset within buffer from which to begin copying, by default is 0. The `sourceEnd` is an integer specifying the offset within buffer at which to stop copying (not inclusive) by default is *buf.length*.
+  `targetStart` est l'entier donnant le décalage dans la cible où commencer l'écriture, 0 par défaut. `sourceStart` est le décalage dans le tampon où commencer la copie, 0 par défaut. `sourceEnd` est le décalage dans le tampon où arrêter la copie (non inclus), *buf.length* par défaut.
 
 - **`buf.equals(otherBuffer)`**
 
-  A boolean value, returns `true` if both Buffer and *otherBuffer* have exactly the same bytes.
+  Booléen, renvoie `true` si le Buffer et *otherBuffer* contiennent exactement les mêmes octets.
 
 - **`buf.fill(value[, offset[, end]][, encoding])`**
 
-  Fills the Buffer with the specified *value*. If the *offset* and *end* are not specified, the entire Buffer will be filled. The *value* is coerced to *uint32* if it is not a `string`, `Buffer`, or `integer`. If the resulting integer is greater than 255, the Buffer will be filled with *value* and 255.
+  Remplit le Buffer avec la *value* indiquée. Sans *offset* ni *end*, tout le Buffer est rempli. La *value* est convertie en *uint32* si ce n'est ni une `string`, ni un `Buffer`, ni un `integer`. Si l'entier obtenu dépasse 255, le Buffer est rempli avec *value* et 255.
 
 - **`buf.includes(value[, byteOffset][, encoding])`**
 
-  Equivalent to `buf.indexOf()` `!== -1`, returns `true` if the *value* was found in Buffer.
+  Équivalent à `buf.indexOf()` `!== -1` ; renvoie `true` si la *value* a été trouvée dans le Buffer.
 
 - **`buf.indexOf(value[, byteOffset][, encoding])`**
 
-  Returns an integer which is the index of the first occurrence of *value* in Buffer, or *-1* if Buffer does not contain value. The *value* can be a `string` with specified *encoding* (by default *utf8*), `Buffer`, `Unit8Array`, or a number between 0 and 255.
+  Renvoie l'indice de la première occurrence de *value* dans le Buffer, ou *-1* si elle est absente. La *value* peut être une `string` avec l'*encoding* indiqué (*utf8* par défaut), un `Buffer`, un `Unit8Array` ou un nombre entre 0 et 255.
 
 - **`buf.lastIndexOf(value[, byteOffset][, encoding])`**
 
-  The same as `buf.indexOf()`, except the last occurrence of the *value* is found instead of the first occurrence. The *value* can be a string, Buffer, or integer between 1 and 255. If the *value* is an empty string or empty Buffer, `byteOffset` will be returned.
+  Comme `buf.indexOf()`, mais cherche la dernière occurrence de *value* au lieu de la première. La *value* peut être une chaîne, un Buffer ou un entier entre 1 et 255. Si *value* est une chaîne ou un Buffer vide, `byteOffset` est renvoyé.
 
 - **`buf.length`**
 
-  Returns the number of bytes in Buffer.
+  Renvoie le nombre d'octets du Buffer.
 
 - **`buf.readIntBE(offset, byteLength)`**
 
-  Reads the *byteLength* from `buf` at the specified *offset* and interprets the result as a big-endian, two's complement signed value supporting up to 48 bits of accuracy. The *byteLength* parameter is an integer between 1 and 6 specifying the number of bytes to read.
+  Lit *byteLength* octets de `buf` à l'*offset* indiqué et interprète le résultat comme une valeur signée en complément à deux, gros-boutiste, avec une précision allant jusqu'à 48 bits. Le paramètre *byteLength* est un entier entre 1 et 6 indiquant le nombre d'octets à lire.
 
-  The similar methods are also supported: `buf.readInt8([offset])`, `buf.readInt16BE([offset])`, `buf.readInt32BE([offset])`.
+  Les méthodes similaires suivantes sont aussi prises en charge : `buf.readInt8([offset])`, `buf.readInt16BE([offset])`, `buf.readInt32BE([offset])`.
 
 - **`buf.readIntLE(offset, byteLength)`**
 
-  Reads the *byteLength* from `buf` at the specified *offset* and interprets the result as a little-endian, two's complement signed value supporting up to 48 bits of accuracy. The *byteLength* parameter is an integer between 1 and 6 specifying the number of bytes to read.
+  Lit *byteLength* octets de `buf` à l'*offset* indiqué et interprète le résultat comme une valeur signée en complément à deux, petit-boutiste, avec une précision allant jusqu'à 48 bits. Le paramètre *byteLength* est un entier entre 1 et 6 indiquant le nombre d'octets à lire.
 
-  The similar methods are also supported: `buf.readInt8([offset])`, `buf.readInt16LE([offset])`, `buf.readInt32LE([offset])`.
+  Les méthodes similaires suivantes sont aussi prises en charge : `buf.readInt8([offset])`, `buf.readInt16LE([offset])`, `buf.readInt32LE([offset])`.
 
 - **`buf.readUIntBE(offset, byteLength)`**
 
-  Reads the *byteLength* from `buf` at the specified *offset* and interprets the result as a big-endian integer supporting up to 48 bits of accuracy. The *byteLength* parameter is an integer between 1 and 6 specifying the number of bytes to read.
+  Lit *byteLength* octets de `buf` à l'*offset* indiqué et interprète le résultat comme un entier gros-boutiste avec une précision allant jusqu'à 48 bits. Le paramètre *byteLength* est un entier entre 1 et 6 indiquant le nombre d'octets à lire.
 
-  The similar methods are also supported: `buf.readUInt8([offset])`, `buf.readUInt16BE([offset])`, `buf.readUInt32BE([offset])`.
+  Les méthodes similaires suivantes sont aussi prises en charge : `buf.readUInt8([offset])`, `buf.readUInt16BE([offset])`, `buf.readUInt32BE([offset])`.
 
 - **`buf.readUIntLE(offset, byteLength)`**
 
-  Reads the *byteLength* from `buf` at the specified *offset* and interprets the result as a little-endian integer supporting up to 48 bits of accuracy. The *byteLength* parameter is an integer between 1 and 6 specifying the number of bytes to read.
+  Lit *byteLength* octets de `buf` à l'*offset* indiqué et interprète le résultat comme un entier petit-boutiste avec une précision allant jusqu'à 48 bits. Le paramètre *byteLength* est un entier entre 1 et 6 indiquant le nombre d'octets à lire.
 
-  The similar methods are also supported: `buf.readUInt8([offset])`, `buf.readUInt16LE([offset])`, `buf.readUInt32LE([offset])`.
+  Les méthodes similaires suivantes sont aussi prises en charge : `buf.readUInt8([offset])`, `buf.readUInt16LE([offset])`, `buf.readUInt32LE([offset])`.
 
 - **`buf.readDoubleBE`(\[*offset*\])**
 
-  Reads a 64-bit, big-endian double from `buf` at the specified *offset*.
+  Lit un double 64 bits gros-boutiste de `buf` à l'*offset* indiqué.
 
 - **`buf.readDoubleLE`(\[*offset*\])**
 
-  Reads a 64-bit, little-endian double from `buf` at the specified *offset*.
+  Lit un double 64 bits petit-boutiste de `buf` à l'*offset* indiqué.
 
 - **`buf.readFloatBE`(\[*offset*\])**
 
-  Reads a 32-bit, big-endian float from `buf` at the specified *offset*.
+  Lit un flottant 32 bits gros-boutiste de `buf` à l'*offset* indiqué.
 
 - **`buf.readFloatLE`(\[*offset*\])**
 
-  Reads a 32-bit, little-endian float from `buf` at the specified *offset*.
+  Lit un flottant 32 bits petit-boutiste de `buf` à l'*offset* indiqué.
 
 - **`buf.subarray([start[, end]])`**
 
-  Returns a new `buf` that references the same memory as the original, but offset and cropped by *start* and *end*. If *end* is greater than `buf.length`, the same result as that of end equal to `buf.length` is returned.
+  Renvoie un nouveau `buf` qui référence la même mémoire que l'original, mais décalé et rogné par *start* et *end*. Si *end* dépasse `buf.length`, le résultat est le même qu'avec end égal à `buf.length`.
 
 - **`buf.slice([start[, end]])`**
 
-  Returns a new `buf` that references the same memory as the original, but offset and cropped by the *start* and *end* values. The method is not compatible with the `Uint8Array.prototype.slice()`, which is a superclass of Buffer. To copy the slice, use `Uint8Array.prototype.slice()`.
+  Renvoie un nouveau `buf` qui référence la même mémoire que l'original, mais décalé et rogné par les valeurs *start* et *end*. La méthode n'est pas compatible avec `Uint8Array.prototype.slice()`, superclasse de Buffer. Pour copier la tranche, utilisez `Uint8Array.prototype.slice()`.
 
 - **`buf.swap16`()**
 
-  Interprets `buf` as an array of unsigned 16-bit numbers and swaps the byte order in-place. Throws an error if `buf.length` is not a multiple of 2.
+  Interprète `buf` comme un tableau de nombres non signés de 16 bits et inverse l'ordre des octets sur place. Lève une erreur si `buf.length` n'est pas un multiple de 2.
 
 - **`buf.swap32`()**
 
-  Interprets `buf` as an array of unsigned 32-bit numbers and swaps the byte order in-place. Throws an error if `buf.length` is not a multiple of 4.
+  Interprète `buf` comme un tableau de nombres non signés de 32 bits et inverse l'ordre des octets sur place. Lève une erreur si `buf.length` n'est pas un multiple de 4.
 
 - **`buf.swap64`()**
 
-  Interprets `buf` as an array of 64-bit numbers and swaps byte order in-place. Throws an error if `buf.length` is not a multiple of 8.
+  Interprète `buf` comme un tableau de nombres de 64 bits et inverse l'ordre des octets sur place. Lève une erreur si `buf.length` n'est pas un multiple de 8.
 
 - **`buf.toJSON`()**
 
-  Returns a JSON representation of `buf.` `JSON.stringify()` implicitly calls this function when stringifying a Buffer instance.
+  Renvoie une représentation JSON de `buf.` `JSON.stringify()` appelle implicitement cette fonction lors de la sérialisation d'une instance Buffer.
 
 - **`buf.toString([encoding[, start[, end]]])`**
 
-  Decodes `buf` to a string according to the specified character *encoding* which can be *utf8*, *hex*, *base64*, *base64url*. The *start* and *end* parameters may be passed to decode only a subset of Buffer.
+  Décode `buf` en chaîne selon l'*encoding* de caractères indiqué : *utf8*, *hex*, *base64*, *base64url*. Les paramètres *start* et *end* permettent de ne décoder qu'une partie du Buffer.
 
 - **`buf.write(string[, offset[, length]][, encoding])`**
 
-  Writes a *string* to `buf` at *offset* according to the character *encoding*. The *length* parameter is the number of bytes to write. If Buffer did not contain enough space to fit the entire string, only part of string will be written, however, partially encoded characters will not be written. The *encoding* can be *utf8*, *hex*, *base64*, *base64url*.
+  Écrit une *string* dans `buf` à l'*offset* indiqué selon l'*encoding* de caractères. Le paramètre *length* est le nombre d'octets à écrire. Si le Buffer n'a pas assez de place pour toute la chaîne, seule une partie est écrite, mais les caractères partiellement encodés ne le sont pas. L'*encoding* peut être *utf8*, *hex*, *base64*, *base64url*.
 
 - **`buf.writeIntBE(value, offset, byteLength)`**
 
-  Writes *byteLength* bytes of *value* to `buf` at the specified *offset* as big-endian. Supports up to 48 bits of accuracy. The *byteLength* parameter is an integer between 1 and 6 specifying the number of bytes to read.
+  Écrit *byteLength* octets de *value* dans `buf` à l'*offset* indiqué, en gros-boutiste. Précision jusqu'à 48 bits. Le paramètre *byteLength* est un entier entre 1 et 6 indiquant le nombre d'octets.
 
-  The following similar methods are also supported: `buf.writeInt8`, `buf.writeInt16BE`, `buf.writeInt32BE`.
+  Les méthodes similaires suivantes sont aussi prises en charge : `buf.writeInt8`, `buf.writeInt16BE`, `buf.writeInt32BE`.
 
 - **`buf.writeIntLE(value, offset, byteLength)`**
 
-  Writes *byteLength* bytes of *value* to `buf` at the specified *offset* as little-endian. Supports up to 48 bits of accuracy. The *byteLength* parameter is an integer between 1 and 6 specifying the number of bytes to read.
+  Écrit *byteLength* octets de *value* dans `buf` à l'*offset* indiqué, en petit-boutiste. Précision jusqu'à 48 bits. Le paramètre *byteLength* est un entier entre 1 et 6 indiquant le nombre d'octets.
 
-  The following similar methods are also supported: `buf.writeInt8`, `buf.writeInt16LE`, `buf.writeInt32LE`.
+  Les méthodes similaires suivantes sont aussi prises en charge : `buf.writeInt8`, `buf.writeInt16LE`, `buf.writeInt32LE`.
 
 - **`buf.writeUIntBE(value, offset, byteLength)`**
 
-  Writes *byteLength* bytes of *value* to `buf` at the specified *offset* as big-endian. Supports up to 48 bits of accuracy. The *byteLength* parameter is an integer between 1 and 6 specifying the number of bytes to read.
+  Écrit *byteLength* octets de *value* dans `buf` à l'*offset* indiqué, en gros-boutiste. Précision jusqu'à 48 bits. Le paramètre *byteLength* est un entier entre 1 et 6 indiquant le nombre d'octets.
 
-  The following similar methods are also supported: `buf.writeUInt8`, `buf.writeUInt16BE`, `buf.writeUInt32BE`.
+  Les méthodes similaires suivantes sont aussi prises en charge : `buf.writeUInt8`, `buf.writeUInt16BE`, `buf.writeUInt32BE`.
 
 - **`buf.writeUIntLE(value, offset, byteLength)`**
 
-  Writes *byteLength* bytes of *value* to `buf` at the specified *offset* as little-endian. Supports up to 48 bits of accuracy. The *byteLength* parameter is an integer between 1 and 6 specifying the number of bytes to read.
+  Écrit *byteLength* octets de *value* dans `buf` à l'*offset* indiqué, en petit-boutiste. Précision jusqu'à 48 bits. Le paramètre *byteLength* est un entier entre 1 et 6 indiquant le nombre d'octets.
 
-  The following similar methods are also supported: `buf.writeUInt8`, `buf.writeUInt16LE`, `buf.writeUInt32LE`.
+  Les méthodes similaires suivantes sont aussi prises en charge : `buf.writeUInt8`, `buf.writeUInt16LE`, `buf.writeUInt32LE`.
 
 - **`buf.writeDoubleBE(value, [offset])`**
 
-  Writes the *value* to `buf` at the specified *offset* as big-endian.
+  Écrit la *value* dans `buf` à l'*offset* indiqué, en gros-boutiste.
 
 - **`buf.writeDoubleLE(value, [offset])`**
 
-  Writes the *value* to `buf` at the specified *offset* as little-endian.
+  Écrit la *value* dans `buf` à l'*offset* indiqué, en petit-boutiste.
 
 - **`buf.writeFloatBE(value, [offset])`**
 
-  Writes the *value* to `buf` at the specified *offset* as big-endian.
+  Écrit la *value* dans `buf` à l'*offset* indiqué, en gros-boutiste.
 
 - **`buf.writeFloatLE(value, [offset])`**
 
-  Writes the *value* to `buf` at the specified *offset* as little-endian.
+  Écrit la *value* dans `buf` à l'*offset* indiqué, en petit-boutiste.
 
 ### Crypto
 
@@ -2347,20 +2344,20 @@ The `TextEncoder` object produces a byte stream with UTF-8 encoding from a strea
 | `crypto.createHmac()` |
 
 > [!NOTE]
-> Since 0.7.0, extended crypto API is available as a global crypto object.
+> Depuis la version 0.7.0, une API crypto étendue est disponible sous forme d'objet global crypto.
 
-The Crypto module provides cryptographic functionality support. The Crypto module object is imported using `import crypto from 'crypto'`.
+Le module Crypto fournit des fonctions cryptographiques. L'objet module s'importe avec `import crypto from 'crypto'`.
 
 > [!NOTE]
-> Since 0.9.7, the Crypto module requires OpenSSL and uses OpenSSL EVP for hashing, making any digest algorithm supported by the linked OpenSSL library available to JavaScript code.
+> Depuis la version 0.9.7, le module Crypto nécessite OpenSSL et utilise OpenSSL EVP pour le hachage, ce qui rend disponible au code JavaScript tout algorithme de condensat pris en charge par la bibliothèque OpenSSL liée.
 
 - **`crypto.createHash(algorithm)`**
 
-  Creates and returns a Hash object that can be used to generate hash digests using the given *algorithm*. The algorithm can be `md5`, `sha1`, `sha256`, `sha384`, `sha512`, and any other digest supported by the linked OpenSSL library (since 0.9.7). Before version 0.9.7, only `md5`, `sha1`, and `sha256` were supported.
+  Crée et renvoie un objet Hash permettant de produire des condensats avec l'*algorithm* indiqué : `md5`, `sha1`, `sha256`, `sha384`, `sha512` ou tout autre condensat pris en charge par la bibliothèque OpenSSL liée (depuis 0.9.7). Avant la version 0.9.7, seuls `md5`, `sha1` et `sha256` étaient pris en charge.
 
 - **`crypto.createHmac(algorithm, secret key)`**
 
-  Creates and returns an HMAC object that uses the given *algorithm* and *secret key*. The algorithm can be `md5`, `sha1`, `sha256`, `sha384`, `sha512`, and any other digest supported by the linked OpenSSL library (since 0.9.7). Before version 0.9.7, only `md5`, `sha1`, and `sha256` were supported.
+  Crée et renvoie un objet HMAC utilisant l'*algorithm* et la *secret key* indiqués. L'algorithme peut être `md5`, `sha1`, `sha256`, `sha384`, `sha512` ou tout autre condensat pris en charge par la bibliothèque OpenSSL liée (depuis 0.9.7). Avant la version 0.9.7, seuls `md5`, `sha1` et `sha256` étaient pris en charge.
 
 #### Table de hachage
 
@@ -2371,18 +2368,18 @@ The Crypto module provides cryptographic functionality support. The Crypto modul
 
 - **`hash.update(data)`**
 
-  Updates the hash content with the given *data*.
+  Met à jour le contenu du hachage avec les *data* fournies.
 
 - **`hash.digest([encoding])`**
 
-  Calculates the digest of all of the data passed using `hash.update()`. The encoding can be `hex`, `base64`, and `base64url`. If encoding is not provided, a Buffer object (0.4.4) is returned.
+  Calcule le condensat de toutes les données passées avec `hash.update()`. L'encodage peut être `hex`, `base64` ou `base64url`. Sans encodage, un objet Buffer (0.4.4) est renvoyé.
 
   > [!NOTE]
-  > Before version (0.4.4), a byte string was returned instead of a Buffer object.
+  > Avant la version (0.4.4), une chaîne d'octets était renvoyée au lieu d'un objet Buffer.
 
 - **`hash.copy()`**
 
-  Makes a copy of the current state of the hash (since 0.7.12).
+  Fait une copie de l'état courant du hachage (depuis 0.7.12).
 
 ```nginx
 import crypto from 'crypto';
@@ -2400,14 +2397,14 @@ crypto.createHash('sha1').update('A').update('B').digest('base64url');
 
 - **`hmac.update(data)`**
 
-  Updates the HMAC content with the given *data*.
+  Met à jour le contenu HMAC avec les *data* fournies.
 
 - **`hmac.digest([encoding])`**
 
-  Calculates the HMAC digest of all of the data passed using `hmac.update()`. The encoding can be `hex`, `base64`, and `base64url`. If encoding is not provided, a Buffer object (0.4.4) is returned.
+  Calcule le condensat HMAC de toutes les données passées avec `hmac.update()`. L'encodage peut être `hex`, `base64` ou `base64url`. Sans encodage, un objet Buffer (0.4.4) est renvoyé.
 
   > [!NOTE]
-  > Before version 0.4.4, a byte string was returned instead of a Buffer object.
+  > Avant la version 0.4.4, une chaîne d'octets était renvoyée au lieu d'un objet Buffer.
 
 ```nginx
 import crypto from 'crypto';
@@ -2416,7 +2413,7 @@ crypto.createHmac('sha1', 'secret.key').update('AB').digest('base64url');
 /* Oglm93xn23_MkiaEq_e9u8zk374 */
 ```
 
-### File System
+### Système de fichiers
 
 |   |
 | --- |
@@ -2451,9 +2448,9 @@ crypto.createHmac('sha1', 'secret.key').update('AB').digest('base64url');
 | `File Access Constants` |
 | `File System Flags` |
 
-The File System module provides operations with files.
+Le module File System fournit des opérations sur les fichiers.
 
-The module object is imported using `import fs from 'fs'`. Since 0.3.9, promissified versions of file system methods are available through `fs.promises` object after importing with `import fs from 'fs'`:
+L'objet module s'importe avec `import fs from 'fs'`. Depuis la version 0.3.9, des versions à base de promesses des méthodes sont disponibles via l'objet `fs.promises` après import avec `import fs from 'fs'` :
 
 ```nginx
 import fs from 'fs';
@@ -2465,11 +2462,11 @@ fs.promises.readFile("/file/path").then((data) => {
 
 - **`accessSync(path[, mode])`**
 
-  Synchronously tests permissions for a file or directory specified in the `path` (0.3.9). If the check fails, an error will be returned, otherwise, the method will return undefined.
+  Teste de façon synchrone les permissions d'un fichier ou répertoire indiqué par `path` (0.3.9). Si la vérification échoue, une erreur est renvoyée ; sinon, la méthode renvoie undefined.
 
   - **`mode`**
 
-    an optional integer that specifies the accessibility checks to be performed, by default is `fs.constants.F_OK`
+    entier facultatif indiquant les vérifications d'accessibilité à effectuer, `fs.constants.F_OK` par défaut
 
     ```nginx
     try {
@@ -2482,96 +2479,96 @@ fs.promises.readFile("/file/path").then((data) => {
 
 - **`appendFileSync(filename, data[, options])`**
 
-  Synchronously appends specified `data` to a file with provided `filename`. The `data` is expected to be a string or a Buffer object (0.4.4). If the file does not exist, it will be created. The `options` parameter is expected to be an object with the following keys:
+  Ajoute de façon synchrone les `data` indiquées au fichier `filename`. `data` doit être une chaîne ou un objet Buffer (0.4.4). Si le fichier n'existe pas, il est créé. Le paramètre `options` doit être un objet avec les clés suivantes :
 
   - **`mode`**
 
-    mode option, by default is `0o666`
+    option mode, `0o666` par défaut
 
   - **`flag`**
 
-    file system flag, by default is `a`
+    indicateur de système de fichiers, `a` par défaut
 
 - **`closeSync(fd)`**
 
-  Closes the `fd` file descriptor represented by an integer used by the method. Returns `undefined`.
+  Ferme le descripteur de fichier `fd`, entier utilisé par la méthode. Renvoie `undefined`.
 
 - **`existsSync(path)`**
 
-  Boolean value, returns `true` if the specified *path* exists. (0.8.2)
+  Booléen, renvoie `true` si le *path* indiqué existe. (0.8.2)
 
 - **`fstatSync(fd)`**
 
-  Retrieves the `fs.Stats` object for the file descriptor (0.7.7). The `fd` parameter is an integer representing the file descriptor used by the method.
+  Récupère l'objet `fs.Stats` du descripteur de fichier (0.7.7). Le paramètre `fd` est un entier représentant le descripteur utilisé par la méthode.
 
 - **`lstatSync(path[, options])`**
 
-  Synchronously retrieves the `fs.Stats` object for the symbolic link referred to by `path` (0.7.1). The `options` parameter is expected to be an object with the following keys:
+  Récupère de façon synchrone l'objet `fs.Stats` du lien symbolique désigné par `path` (0.7.1). Le paramètre `options` doit être un objet avec les clés suivantes :
 
   - **`throwIfNoEntry`**
 
-    a boolean value which indicates whether an exception is thrown if no file system entry exists, rather than returning `undefined`, by default is `false`.
+    booléen indiquant si une exception est levée quand aucune entrée n'existe, au lieu de renvoyer `undefined`, `false` par défaut.
 
 - **`mkdirSync(path[, options])`**
 
-  Synchronously creates a directory at the specified `path` (0.4.2). The `options` parameter is expected to be an `integer` that specifies the mode, or an object with the following keys:
+  Crée de façon synchrone un répertoire au `path` indiqué (0.4.2). Le paramètre `options` doit être un `integer` indiquant le mode, ou un objet avec les clés suivantes :
 
   - **`mode`**
 
-    mode option, by default is `0o777`.
+    option mode, `0o777` par défaut.
 
 - **`openSync(path[, flags[, mode]])`**
 
-  Returns an integer representing the file descriptor for the opened file `path` (0.7.7).
+  Renvoie un entier représentant le descripteur du fichier ouvert `path` (0.7.7).
 
   - **`flags`**
 
-    file system flag, by default is `r`
+    indicateur de système de fichiers, `r` par défaut
 
   - **`mode`**
 
-    mode option, by default is `0o666`
+    option mode, `0o666` par défaut
 
 - **`promises.open(path[, flags[, mode]])`**
 
-  Returns a `FileHandle` object representing the opened file `path` (0.7.7).
+  Renvoie un objet `FileHandle` représentant le fichier ouvert `path` (0.7.7).
 
   - **`flags`**
 
-    file system flag, by default is `r`
+    indicateur de système de fichiers, `r` par défaut
 
   - **`mode`**
 
-    mode option, by default is `0o666`
+    option mode, `0o666` par défaut
 
 - **`readdirSync(path[, options])`**
 
-  Synchronously reads the contents of a directory at the specified `path` (0.4.2). The `options` parameter is expected to be a string that specifies encoding or an object with the following keys:
+  Lit de façon synchrone le contenu du répertoire au `path` indiqué (0.4.2). Le paramètre `options` doit être une chaîne indiquant l'encodage ou un objet avec les clés suivantes :
 
   - **`encoding`**
 
-    encoding, by default is `utf8`. The encoding can be `utf8` and `buffer` (0.4.4).
+    encodage, `utf8` par défaut. L'encodage peut être `utf8` ou `buffer` (0.4.4).
 
   - **`withFileTypes`**
 
-    if set to `true`, the files array will contain `fs.Dirent` objects, by default is `false`.
+    si `true`, le tableau de fichiers contient des objets `fs.Dirent`, `false` par défaut.
 
 - **`readFileSync(filename[, options])`**
 
-  Synchronously returns the contents of the file with provided `filename`. The `options` parameter holds `string` that specifies encoding. If an encoding is specified, a string is returned, otherwise, a Buffer object (0.4.4) is returned.
+  Renvoie de façon synchrone le contenu du fichier `filename`. Le paramètre `options` contient une `string` indiquant l'encodage. Avec un encodage, une chaîne est renvoyée ; sinon, un objet Buffer (0.4.4).
 
   > [!NOTE]
-  > Before version 0.4.4, a byte string was returned if encoding was not specified.
+  > Avant la version 0.4.4, une chaîne d'octets était renvoyée sans encodage indiqué.
 
-  Otherwise, `options` is expected to be an object with the following keys:
+  Sinon, `options` doit être un objet avec les clés suivantes :
 
   - **`encoding`**
 
-    encoding, by default is not specified. The encoding can be `utf8`, `hex` (0.4.4), `base64` (0.4.4), `base64url` (0.4.4).
+    encodage, non défini par défaut. L'encodage peut être `utf8`, `hex` (0.4.4), `base64` (0.4.4), `base64url` (0.4.4).
 
   - **`flag`**
 
-    file system flag, by default is `r`
+    indicateur de système de fichiers, `r` par défaut
 
   ```nginx
   import fs from 'fs';
@@ -2582,35 +2579,35 @@ fs.promises.readFile("/file/path").then((data) => {
 
 - **`readlinkSync(path[, options])`**
 
-  Synchronously gets the contents of the symbolic link `path` using [readlink(2)](https://man7.org/linux/man-pages/man2/readlink.2.html) (0.8.7). The `options` argument can be a string specifying an encoding, or an object with `encoding` property specifying the character encoding to use. If the `encoding` is *buffer*, the result is returned as a `Buffer` object, otherwise as a string.
+  Obtient de façon synchrone le contenu du lien symbolique `path` avec [readlink(2)](https://man7.org/linux/man-pages/man2/readlink.2.html) (0.8.7). L'argument `options` peut être une chaîne indiquant un encodage, ou un objet dont la propriété `encoding` indique l'encodage des caractères. Si `encoding` vaut *buffer*, le résultat est renvoyé sous forme d'objet `Buffer`, sinon sous forme de chaîne.
 
 - **`readSync(fd, buffer, offset[, length[, position]])`**
 
-  Reads the content of a file path using file descriptor `fd`, returns the number of bytes read (0.7.7).
+  Lit le contenu d'un fichier via le descripteur `fd` ; renvoie le nombre d'octets lus (0.7.7).
 
   - **`buffer`**
 
-    the `buffer` value can be a `Buffer`, `TypedArray`, or `DataView`
+    la valeur `buffer` peut être un `Buffer`, un `TypedArray` ou un `DataView`
 
   - **`offset`**
 
-    is an `integer` representing the position in buffer to write the data to
+    `integer` représentant la position dans le tampon où écrire les données
 
   - **`length`**
 
-    is an `integer` representing the number of bytes to read
+    `integer` représentant le nombre d'octets à lire
 
   - **`position`**
 
-    specifies where to begin reading from in the file, the value can be `integer` or `null`, by default is `null`. If `position` is `null`, data will be read from the current file position, and the file position will be updated. If position is an `integer`, the file position will be unchanged
+    indique où commencer la lecture dans le fichier ; `integer` ou `null`, `null` par défaut. Si `position` vaut `null`, les données sont lues à la position courante et celle-ci est mise à jour. Si c'est un `integer`, la position courante reste inchangée
 
 - **`realpathSync(path[, options])`**
 
-  Synchronously computes the canonical pathname by resolving `.`, `..` and symbolic links using [realpath(3)](http://man7.org/linux/man-pages/man3/realpath.3.html). The `options` argument can be a string specifying an encoding, or an object with an encoding property specifying the character encoding to use for the path passed to the callback (0.3.9).
+  Calcule de façon synchrone le chemin canonique en résolvant `.`, `..` et les liens symboliques avec [realpath(3)](http://man7.org/linux/man-pages/man3/realpath.3.html). L'argument `options` peut être une chaîne indiquant un encodage, ou un objet dont la propriété encoding indique l'encodage du chemin passé à la fonction de rappel (0.3.9).
 
 - **`renameSync(oldPath, newPath)`**
 
-  Synchronously changes the name or location of a file from `oldPath` to `newPath` (0.3.4).
+  Change de façon synchrone le nom ou l'emplacement d'un fichier de `oldPath` à `newPath` (0.3.4).
 
   ```nginx
   import fs from 'fs';
@@ -2620,35 +2617,35 @@ fs.promises.readFile("/file/path").then((data) => {
 
 - **`rmdirSync(path)`**
 
-  Synchronously removes a directory at the specified `path` (0.4.2).
+  Supprime de façon synchrone le répertoire au `path` indiqué (0.4.2).
 
 - **`statSync(path,[ options])`**
 
-  Synchronously retrieves the `fs.Stats` object for the specified `path` (0.7.1). The `path` can be a `string` or `buffer`. The `options` parameter is expected to be an object with the following keys:
+  Récupère de façon synchrone l'objet `fs.Stats` du `path` indiqué (0.7.1). `path` peut être une `string` ou un `buffer`. Le paramètre `options` doit être un objet avec les clés suivantes :
 
   - **`throwIfNoEntry`**
 
-    a boolean value which indicates whether an exception is thrown if no file system entry exists rather than returning `undefined`, by default is `true`.
+    booléen indiquant si une exception est levée quand aucune entrée n'existe, au lieu de renvoyer `undefined`, `true` par défaut.
 
 - **`symlinkSync(target, path)`**
 
-  Synchronously creates the link called `path` pointing to `target` using [symlink(2)](http://man7.org/linux/man-pages/man2/symlink.2.html) (0.3.9). Relative targets are relative to the link’s parent directory.
+  Crée de façon synchrone le lien `path` pointant vers `target` avec [symlink(2)](http://man7.org/linux/man-pages/man2/symlink.2.html) (0.3.9). Les cibles relatives le sont par rapport au répertoire parent du lien.
 
 - **`unlinkSync(path)`**
 
-  Synchronously unlinks a file by `path` (0.3.9).
+  Supprime de façon synchrone le fichier `path` (0.3.9).
 
 - **`writeFileSync(filename, data[, options])`**
 
-  Synchronously writes `data` to a file with provided `filename`. The `data` is expected to be a string or a Buffer object (0.4.4). If the file does not exist, it will be created, if the file exists, it will be replaced. The `options` parameter is expected to be an object with the following keys:
+  Écrit de façon synchrone `data` dans le fichier `filename`. `data` doit être une chaîne ou un objet Buffer (0.4.4). Si le fichier n'existe pas, il est créé ; s'il existe, il est remplacé. Le paramètre `options` doit être un objet avec les clés suivantes :
 
   - **`mode`**
 
-    mode option, by default is `0o666`
+    option mode, `0o666` par défaut
 
   - **`flag`**
 
-    file system flag, by default is `w`
+    indicateur de système de fichiers, `w` par défaut
 
   ```nginx
   import fs from 'fs';
@@ -2658,63 +2655,63 @@ fs.promises.readFile("/file/path").then((data) => {
 
 - **`writeSync(fd, buffer, offset[, length[, position]])`**
 
-  Writes a buffer to a file using file descriptor, returns the `number` of bytes written (0.7.7).
+  Écrit un tampon dans un fichier via un descripteur ; renvoie le `number` d'octets écrits (0.7.7).
 
   - **`fd`**
 
-    an `integer` representing the file descriptor
+    `integer` représentant le descripteur de fichier
 
   - **`buffer`**
 
-    the `buffer` value can be a `Buffer`, `TypedArray`, or `DataView`
+    la valeur `buffer` peut être un `Buffer`, un `TypedArray` ou un `DataView`
 
   - **`offset`**
 
-    is an `integer` that determines the part of the buffer to be written, by default `0`
+    `integer` déterminant la partie du tampon à écrire, `0` par défaut
 
   - **`length`**
 
-    is an `integer` specifying the number of bytes to write, by default is an offset of Buffer.byteLength
+    `integer` indiquant le nombre d'octets à écrire, par défaut un décalage de Buffer.byteLength
 
   - **`position`**
 
-    refers to the offset from the beginning of the file where this data should be written, can be an `integer` or `null`, by default is `null`. See also [pwrite(2)](https://man7.org/linux/man-pages/man2/write.2.html).
+    décalage depuis le début du fichier où écrire les données ; `integer` ou `null`, `null` par défaut. Voir aussi [pwrite(2)](https://man7.org/linux/man-pages/man2/write.2.html).
 
 - **`writeSync(fd, string[, position[, encoding]])`**
 
-  Writes a `string` to a file using file descriptor `fd`, returns the `number` of bytes written (0.7.7).
+  Écrit une `string` dans un fichier via le descripteur `fd` ; renvoie le `number` d'octets écrits (0.7.7).
 
   - **`fd`**
 
-    is an `integer` representing a file descriptor
+    `integer` représentant un descripteur de fichier
 
   - **`position`**
 
-    refers to the offset from the beginning of the file where this data should be written, can be an `integer` or `null`, by default is `null`. See also [pwrite(2)](https://man7.org/linux/man-pages/man2/write.2.html)
+    décalage depuis le début du fichier où écrire les données ; `integer` ou `null`, `null` par défaut. Voir aussi [pwrite(2)](https://man7.org/linux/man-pages/man2/write.2.html)
 
   - **`encoding`**
 
-    is a `string`, by default is `utf8`
+    `string`, `utf8` par défaut
 
 #### fs.Dirent
 
-`fs.Dirent` is a representation of a directory entry — a file or a subdirectory. When `readdirSync()` is called with the `withFileTypes` option, the resulting array contains `fs.Dirent` objects.
+`fs.Dirent` représente une entrée de répertoire — un fichier ou un sous-répertoire. Quand `readdirSync()` est appelée avec l'option `withFileTypes`, le tableau obtenu contient des objets `fs.Dirent`.
 
-- `dirent.isBlockDevice()` — returns `true` if the `fs.Dirent` object describes a block device.
+- `dirent.isBlockDevice()` — renvoie `true` si l'objet `fs.Dirent` décrit un périphérique en mode bloc.
 
-- `dirent.isCharacterDevice()` — returns `true` if the `fs.Dirent` object describes a character device.
+- `dirent.isCharacterDevice()` — renvoie `true` si l'objet `fs.Dirent` décrit un périphérique en mode caractère.
 
-- `dirent.isDirectory()` — returns `true` if the `fs.Dirent` object describes a file system directory.
+- `dirent.isDirectory()` — renvoie `true` si l'objet `fs.Dirent` décrit un répertoire.
 
-- `dirent.isFIFO()` — returns `true` if the `fs.Dirent` object describes a first-in-first-out (FIFO) pipe.
+- `dirent.isFIFO()` — renvoie `true` si l'objet `fs.Dirent` décrit un tube FIFO (premier entré, premier sorti).
 
-- `dirent.isFile()` — returns `true` if the `fs.Dirent` object describes a regular file.
+- `dirent.isFile()` — renvoie `true` si l'objet `fs.Dirent` décrit un fichier ordinaire.
 
-- `dirent.isSocket()` — returns `true` if the `fs.Dirent` object describes a socket.
+- `dirent.isSocket()` — renvoie `true` si l'objet `fs.Dirent` décrit une socket.
 
-- `dirent.isSymbolicLink()` — returns `true` if the `fs.Dirent` object describes a symbolic link.
+- `dirent.isSymbolicLink()` — renvoie `true` si l'objet `fs.Dirent` décrit un lien symbolique.
 
-- `dirent.name` — the name of the file `fs.Dirent` object refers to.
+- `dirent.name` — nom du fichier auquel l'objet `fs.Dirent` fait référence.
 
 #### fs.FileHandle
 
@@ -2727,201 +2724,201 @@ fs.promises.readFile("/file/path").then((data) => {
 | `filehandle.write(buf)` |
 | `filehandle.write(str)` |
 
-The `FileHandle` object is an object wrapper for a numeric file descriptor (0.7.7). Instances of the `FileHandle` object are created by the `fs.promises.open()` method. If a `FileHandle` is not closed using the `filehandle.close()` method, it will try to automatically close the file descriptor, helping to prevent memory leaks. Please do not rely on this behavior because it can be unreliable. Instead, always explicitly close a `FileHandle`.
+L'objet `FileHandle` enrobe un descripteur de fichier numérique (0.7.7). Ses instances sont créées par la méthode `fs.promises.open()`. Si un `FileHandle` n'est pas fermé avec la méthode `filehandle.close()`, il tente de fermer automatiquement le descripteur pour éviter les fuites de mémoire. Ne comptez pas sur ce comportement, peu fiable : fermez toujours explicitement un `FileHandle`.
 
 - **`filehandle.close()`**
 
-  Closes the file handle after waiting for any pending operation on the handle to complete. Returns a `promise`, fulfills with undefined upon success.
+  Ferme le descripteur après avoir attendu la fin des opérations en attente. Renvoie une `promise`, résolue avec undefined en cas de succès.
 
 - **`filehandle.fd`**
 
-  The numeric file descriptor managed by the `FileHandle` object.
+  Descripteur de fichier numérique géré par l'objet `FileHandle`.
 
 - **`filehandle.read(buffer, offset[, length[, position]])`**
 
-  Reads data from the file and stores that in the given buffer.
+  Lit des données du fichier et les stocke dans le tampon fourni.
 
   - **`buffer`**
 
-    a buffer that will be filled with the file data read, the value can be a `Buffer`, `TypedArray`, or `DataView`
+    tampon qui sera rempli avec les données lues ; `Buffer`, `TypedArray` ou `DataView`
 
   - **`offset`**
 
-    is an `integer` representing the location in the buffer at which to start filling
+    `integer` représentant la position dans le tampon où commencer le remplissage
 
   - **`length`**
 
-    is an `integer` representing the number of bytes to read
+    `integer` représentant le nombre d'octets à lire
 
   - **`position`**
 
-    the location where to begin reading data from the file, the value can be `integer`, `null`. If `null`, data will be read from the current file position and the position will be updated. If position is an `integer`, the current file position will remain unchanged.
+    position où commencer la lecture dans le fichier ; `integer` ou `null`. Avec `null`, les données sont lues à la position courante et celle-ci est mise à jour. Avec un `integer`, la position courante reste inchangée.
 
-  Returns a `Promise` which fulfills upon success with an object with two properties:
+  Renvoie une `Promise` résolue en cas de succès avec un objet à deux propriétés :
 
   - **`bytesRead`**
 
-    is an `integer` representing the number of bytes read
+    `integer` représentant le nombre d'octets lus
 
   - **`buffer`**
 
-    is a reference to the passed argument in buffer, can be `Buffer`, `TypedArray`, or `DataView`
+    référence à l'argument buffer passé ; `Buffer`, `TypedArray` ou `DataView`
 
 - **`filehandle.stat()`**
 
-  Fulfills with an fs.Stats for the file, returns a `promise`.
+  Résolue avec un fs.Stats du fichier ; renvoie une `promise`.
 
 - **`filehandle.write(buffer, offset[, length[, position]])`**
 
-  Writes a buffer to the file.
+  Écrit un tampon dans le fichier.
 
   - **`buffer`**
 
-    the `buffer` value can be a `Buffer`, `TypedArray`, or `DataView`
+    la valeur `buffer` peut être un `Buffer`, un `TypedArray` ou un `DataView`
 
   - **`offset`**
 
-    is an `integer` representing the start position from within buffer where the data to write begins
+    `integer` représentant la position de départ, dans le tampon, des données à écrire
 
   - **`length`**
 
-    is an `integer` representing the number of bytes from buffer to write, by default is an offset of Buffer.byteLength
+    `integer` représentant le nombre d'octets du tampon à écrire, par défaut un décalage de Buffer.byteLength
 
   - **`position`**
 
-    the offset from the beginning of the file where the data from buffer should be written, can be an `integer` or `null`, by default is `null`. If `position` is not a `number`, the data will be written at the current position. See the POSIX [pwrite(2)](https://man7.org/linux/man-pages/man2/write.2.html) documentation for details.
+    décalage depuis le début du fichier où écrire les données du tampon ; `integer` ou `null`, `null` par défaut. Si `position` n'est pas un `number`, les données sont écrites à la position courante. Voir la documentation POSIX de [pwrite(2)](https://man7.org/linux/man-pages/man2/write.2.html) pour les détails.
 
-  Returns a `Promise` which is resolved with an object containing two properties:
+  Renvoie une `Promise` résolue avec un objet à deux propriétés :
 
   - **`bytesWritten`**
 
-    is an `integer` representing the number of bytes written
+    `integer` représentant le nombre d'octets écrits
 
   - **`buffer`**
 
-    a reference to the buffer written, can be a `Buffer`, `TypedArray`, or `DataView`
+    référence au tampon écrit ; `Buffer`, `TypedArray` ou `DataView`
 
   > [!NOTE]
-  > It is unsafe to use `filehandle.write()` multiple times on the same file without waiting for the promise to be resolved or rejected.
+  > Il est dangereux d'appeler plusieurs fois `filehandle.write()` sur le même fichier sans attendre la résolution ou le rejet de la promesse.
 
 - **`filehandle.write(string[, position[, encoding]])`**
 
-  Writes a `string` to the file.
+  Écrit une `string` dans le fichier.
 
   - **`position`**
 
-    the offset from the beginning of the file where the data from buffer should be written, can be an `integer` or `null`, by default is `null`. If `position` is not a `number`, the data will be written at the current position. See the POSIX [pwrite(2)](https://man7.org/linux/man-pages/man2/write.2.html) documentation for details.
+    décalage depuis le début du fichier où écrire les données du tampon ; `integer` ou `null`, `null` par défaut. Si `position` n'est pas un `number`, les données sont écrites à la position courante. Voir la documentation POSIX de [pwrite(2)](https://man7.org/linux/man-pages/man2/write.2.html) pour les détails.
 
   - **`encoding`**
 
-    the expected encoding of the string, by default `utf8`
+    encodage attendu de la chaîne, `utf8` par défaut
 
-  Returns a `Promise` which is resolved with an object containing two properties:
+  Renvoie une `Promise` résolue avec un objet à deux propriétés :
 
   - **`bytesWritten`**
 
-    is an `integer` representing the number of bytes written
+    `integer` représentant le nombre d'octets écrits
 
   - **`buffer`**
 
-    a reference to the buffer written, can be a `Buffer`, `TypedArray`, or `DataView`
+    référence au tampon écrit ; `Buffer`, `TypedArray` ou `DataView`
 
   > [!NOTE]
-  > It is unsafe to use `filehandle.write()` multiple times on the same file without waiting for the promise to be resolved or rejected.
+  > Il est dangereux d'appeler plusieurs fois `filehandle.write()` sur le même fichier sans attendre la résolution ou le rejet de la promesse.
 
 #### fs.Stats
 
-The `fs.Stats` object provides information about a file. The object is returned from fs.statSync() and fs.lstatSync().
+L'objet `fs.Stats` fournit des informations sur un fichier. Il est renvoyé par fs.statSync() et fs.lstatSync().
 
-- `stats.isBlockDevice()` — returns `true` if the `fs.Stats` object describes a block device.
+- `stats.isBlockDevice()` — renvoie `true` si l'objet `fs.Stats` décrit un périphérique en mode bloc.
 
-- `stats.isDirectory()` — returns `true` if the `fs.Stats` object describes a file system directory.
+- `stats.isDirectory()` — renvoie `true` si l'objet `fs.Stats` décrit un répertoire.
 
-- `stats.isFIFO()` — returns `true` if the `fs.Stats` object describes a first-in-first-out (FIFO) pipe.
+- `stats.isFIFO()` — renvoie `true` si l'objet `fs.Stats` décrit un tube FIFO (premier entré, premier sorti).
 
-- `stats.isFile()` — returns `true` if the `fs.Stats` object describes a regular file.
+- `stats.isFile()` — renvoie `true` si l'objet `fs.Stats` décrit un fichier ordinaire.
 
-- `stats.isSocket()` — returns `true` if the `fs.Stats` object describes a socket.
+- `stats.isSocket()` — renvoie `true` si l'objet `fs.Stats` décrit une socket.
 
-- `stats.isSymbolicLink()` — returns `true` if the `fs.Stats` object describes a symbolic link.
+- `stats.isSymbolicLink()` — renvoie `true` si l'objet `fs.Stats` décrit un lien symbolique.
 
-- `stats.dev` — the numeric identifier of the device containing the file.
+- `stats.dev` — identifiant numérique du périphérique contenant le fichier.
 
-- `stats.ino` — the file system specific `Inode` number for the file.
+- `stats.ino` — numéro d'`Inode` du fichier, propre au système de fichiers.
 
-- `stats.mode` — a bit-field describing the file type and mode.
+- `stats.mode` — champ de bits décrivant le type et le mode du fichier.
 
-- `stats.nlink` — the number of hard-links that exist for the file.
+- `stats.nlink` — nombre de liens physiques du fichier.
 
-- `stats.uid` — the numeric user identifier of the user that owns the file (POSIX).
+- `stats.uid` — identifiant numérique de l'utilisateur propriétaire du fichier (POSIX).
 
-- `stats.gid` — the numeric group identifier of the group that owns the file (POSIX).
+- `stats.gid` — identifiant numérique du groupe propriétaire du fichier (POSIX).
 
-- `stats.rdev` — the numeric device identifier if the file represents a device.
+- `stats.rdev` — identifiant numérique du périphérique si le fichier en représente un.
 
-- `stats.size` — the size of the file in bytes.
+- `stats.size` — taille du fichier en octets.
 
-- `stats.blksize` — the file system block size for i/o operations.
+- `stats.blksize` — taille de bloc du système de fichiers pour les E/S.
 
-- `stats.blocks` — the number of blocks allocated for this file.
+- `stats.blocks` — nombre de blocs alloués au fichier.
 
-- `stats.atimeMs` — the timestamp indicating the last time this file was accessed expressed in milliseconds since the POSIX Epoch.
+- `stats.atimeMs` — horodatage du dernier accès au fichier, en millisecondes depuis l'Epoch POSIX.
 
-- `stats.mtimeMs` — the timestamp indicating the last time this file was modified expressed in milliseconds since the POSIX Epoch.
+- `stats.mtimeMs` — horodatage de la dernière modification du contenu, en millisecondes depuis l'Epoch POSIX.
 
-- `stats.ctimeMs` — the timestamp indicating the last time this file was changed expressed in milliseconds since the POSIX Epoch.
+- `stats.ctimeMs` — horodatage du dernier changement du fichier, en millisecondes depuis l'Epoch POSIX.
 
-- `stats.birthtimeMs` — the timestamp indicating the creation time of this file expressed in milliseconds since the POSIX Epoch.
+- `stats.birthtimeMs` — horodatage de création du fichier, en millisecondes depuis l'Epoch POSIX.
 
-- `stats.atime` — the timestamp indicating the last time this file was accessed.
+- `stats.atime` — horodatage du dernier accès au fichier.
 
-- `stats.mtime` — the timestamp indicating the last time this file was modified.
+- `stats.mtime` — horodatage de la dernière modification du contenu.
 
-- `stats.ctime` — the timestamp indicating the last time this file was changed.
+- `stats.ctime` — horodatage du dernier changement du fichier.
 
-- `stats.birthtime` — the timestamp indicating the creation time of this file.
+- `stats.birthtime` — horodatage de création du fichier.
 
-#### File Access Constants
+#### Constantes d'accès aux fichiers
 
-The `access()` method can accept the following flags. These flags are exported by `fs.constants`:
+La méthode `access()` accepte les indicateurs suivants, exportés par `fs.constants` :
 
-- `F_OK` — indicates that the file is visible to the calling process, used by default if no mode is specified
+- `F_OK` — le fichier est visible par le processus appelant ; utilisé par défaut si aucun mode n'est indiqué
 
-- `R_OK` — indicates that the file can be read by the calling process
+- `R_OK` — le fichier peut être lu par le processus appelant
 
-- `W_OK` — indicates that the file can be written by the calling process
+- `W_OK` — le fichier peut être écrit par le processus appelant
 
-- `X_OK` — indicates that the file can be executed by the calling process
+- `X_OK` — le fichier peut être exécuté par le processus appelant
 
-#### File System Flags
+#### Indicateurs de système de fichiers
 
-The `flag` option can accept the following values:
+L'option `flag` accepte les valeurs suivantes :
 
-- `a` — open a file for appending. The file is created if it does not exist
+- `a` — ouvre un fichier en ajout. Le fichier est créé s'il n'existe pas
 
-- `ax` — the same as `a` but fails if the file already exists
+- `ax` — comme `a`, mais échoue si le fichier existe déjà
 
-- `a+` — open a file for reading and appending. If the file does not exist, it will be created
+- `a+` — ouvre un fichier en lecture et ajout. Le fichier est créé s'il n'existe pas
 
-- `ax+` — the same as `a+` but fails if the file already exists
+- `ax+` — comme `a+`, mais échoue si le fichier existe déjà
 
-- `as` — open a file for appending in synchronous mode. If the file does not exist, it will be created
+- `as` — ouvre un fichier en ajout en mode synchrone. Le fichier est créé s'il n'existe pas
 
-- `as+` — open a file for reading and appending in synchronous mode. If the file does not exist, it will be created
+- `as+` — ouvre un fichier en lecture et ajout en mode synchrone. Le fichier est créé s'il n'existe pas
 
-- `r` — open a file for reading. An exception occurs if the file does not exist
+- `r` — ouvre un fichier en lecture. Une exception est levée si le fichier n'existe pas
 
-- `r+` — open a file for reading and writing. An exception occurs if the file does not exist
+- `r+` — ouvre un fichier en lecture et écriture. Une exception est levée si le fichier n'existe pas
 
-- `rs+` — open a file for reading and writing in synchronous mode. Instructs the operating system to bypass the local file system cache
+- `rs+` — ouvre un fichier en lecture et écriture en mode synchrone. Demande au système d'exploitation de contourner le cache local du système de fichiers
 
-- `w` — open a file for writing. If the file does not exist, it will be created. If the file exists, it will be replaced
+- `w` — ouvre un fichier en écriture. Le fichier est créé s'il n'existe pas, remplacé s'il existe
 
-- `wx` — the same as `w` but fails if the file already exists
+- `wx` — comme `w`, mais échoue si le fichier existe déjà
 
-- `w+` — open a file for reading and writing. If the file does not exist, it will be created. If the file exists, it will be replaced
+- `w+` — ouvre un fichier en lecture et écriture. Le fichier est créé s'il n'existe pas, remplacé s'il existe
 
-- `wx+` — the same as `w+` but fails if the file already exists
+- `wx+` — comme `w+`, mais échoue si le fichier existe déjà
 
 ### Query String
 
@@ -2934,47 +2931,47 @@ The `flag` option can accept the following values:
 | `querystring.stringify()` |
 | `querystring.unescape()` |
 
-The Query String module provides support for parsing and formatting URL query strings (0.4.3). The Query String module object is imported using `import qs from 'querystring'`.
+Le module Query String permet d'analyser et de formater les chaînes de requête d'URL (0.4.3). L'objet module s'importe avec `import qs from 'querystring'`.
 
 - **`querystring.decode()`**
 
-  is an alias for `querystring.parse()`.
+  alias de `querystring.parse()`.
 
 - **`querystring.encode()`**
 
-  is an alias for `querystring.stringify()`.
+  alias de `querystring.stringify()`.
 
 - **`querystring.escape(string)`**
 
-  Performs URL encoding of the given `string`, returns an escaped query string. The method is used by `querystring.stringify()` and should not be used directly.
+  Encode pour URL la `string` fournie ; renvoie une chaîne de requête échappée. Utilisée par `querystring.stringify()`, elle ne doit pas être appelée directement.
 
 - **`querystring.parse(string[, separator[, equal[, options]]])`**
 
-  Parses the query string URL and returns an object.
+  Analyse la chaîne de requête d'URL et renvoie un objet.
 
-  The `separator` parameter is a substring for delimiting key and value pairs in the query string, by default is “`&`”.
+  Le paramètre `separator` est la sous-chaîne qui sépare les paires clé-valeur dans la chaîne de requête, « `&` » par défaut.
 
-  The `equal` parameter is a substring for delimiting keys and values in the query string, by default is “`=`”.
+  Le paramètre `equal` est la sous-chaîne qui sépare clés et valeurs dans la chaîne de requête, « `=` » par défaut.
 
-  The `options` parameter is expected to be an object with the following keys:
+  Le paramètre `options` doit être un objet avec les clés suivantes :
 
   - **`decodeURIComponent` *function***
 
-    Function used to decode percent-encoded characters in the query string, by default is `querystring.unescape()`
+    Fonction de décodage des caractères encodés en pourcentage dans la chaîne de requête, `querystring.unescape()` par défaut
 
   - **`maxKeys` *number***
 
-    the maximum number of keys to parse, by default is `1000`. The `0` value removes limitations for counting keys.
+    nombre maximal de clés à analyser, `1000` par défaut. La valeur `0` supprime la limite.
 
-  By default, percent-encoded characters within the query string are assumed to use the UTF-8 encoding, invalid UTF-8 sequences will be replaced with the `U+FFFD` replacement character.
+  Par défaut, les caractères encodés en pourcentage dans la chaîne de requête sont supposés être en UTF-8 ; les séquences UTF-8 invalides sont remplacées par le caractère de remplacement `U+FFFD`.
 
-  For example, for the following query string
+  Par exemple, pour la chaîne de requête suivante
 
   ```nginx
   'foo=bar&abc=xyz&abc=123'
   ```
 
-  the output will be:
+  la sortie sera :
 
   ```nginx
   {
@@ -2985,27 +2982,27 @@ The Query String module provides support for parsing and formatting URL query st
 
 - **`querystring.stringify(object[, separator[, equal[, options]]])`**
 
-  Serializes an object and returns a URL query string.
+  Sérialise un objet et renvoie une chaîne de requête d'URL.
 
-  The `separator` parameter is a substring for delimiting key and value pairs in the query string, by default is “`&`”.
+  Le paramètre `separator` est la sous-chaîne qui sépare les paires clé-valeur dans la chaîne de requête, « `&` » par défaut.
 
-  The `equal` parameter is a substring for delimiting keys and values in the query string, by default is “`=`”.
+  Le paramètre `equal` est la sous-chaîne qui sépare clés et valeurs dans la chaîne de requête, « `=` » par défaut.
 
-  The `options` parameter is expected to be an object with the following keys:
+  Le paramètre `options` doit être un objet avec les clés suivantes :
 
   - **`encodeURIComponent` *function***
 
-    The function to use when converting URL-unsafe characters to percent-encoding in the query string, by default is `querystring.escape()`.
+    Fonction utilisée pour encoder en pourcentage les caractères non sûrs pour une URL dans la chaîne de requête, `querystring.escape()` par défaut.
 
-  By default, characters that require percent-encoding within the query string are encoded as UTF-8. If other encoding is required, then `encodeURIComponent` option should be specified.
+  Par défaut, les caractères à encoder en pourcentage dans la chaîne de requête sont encodés en UTF-8. Pour un autre encodage, indiquez l'option `encodeURIComponent`.
 
-  For example, for the following command
+  Par exemple, pour la commande suivante
 
   ```nginx
   querystring.stringify({ foo: 'bar', baz: ['qux', 'quux'], 123: '' });
   ```
 
-  the query string will be:
+  la chaîne de requête sera :
 
   ```nginx
   'foo=bar&baz=qux&baz=quux&123='
@@ -3013,7 +3010,7 @@ The Query String module provides support for parsing and formatting URL query st
 
 - **`querystring.unescape(string)`**
 
-  Performs decoding of URL percent-encoded characters of the `string`, returns an unescaped query string. The method is used by `querystring.parse()` and should not be used directly.
+  Décode les caractères encodés en pourcentage de la `string` ; renvoie une chaîne de requête non échappée. Utilisée par `querystring.parse()`, elle ne doit pas être appelée directement.
 
 ### XML
 
@@ -3028,7 +3025,7 @@ The Query String module provides support for parsing and formatting URL query st
 | `XMLNode` |
 | `XMLAttr` |
 
-The XML module allows working with XML documents (since 0.7.10). The XML module object is imported using `import xml from 'xml'`.
+Le module XML permet de manipuler des documents XML (depuis 0.7.10). L'objet module s'importe avec `import xml from 'xml'`.
 
 Exemple :
 
@@ -3055,155 +3052,155 @@ console.log(c14n) /* '<note><from>Jani</from></note>' */
 
 - **`parse(string | Buffer)`**
 
-  Parses a string or Buffer for an XML document, returns an `XMLDoc` wrapper object representing the parsed XML document.
+  Analyse une chaîne ou un Buffer contenant un document XML ; renvoie un objet enveloppe `XMLDoc` représentant le document analysé.
 
 - **`c14n(root_node[, excluding_node])`**
 
-  Canonicalizes `root_node` and its children according to [Canonical XML Version 1.1](https://www.w3.org/TR/xml-c14n). The `root_node` can be `XMLNode` or `XMLDoc` wrapper object around XML structure. Returns Buffer object that contains canonicalized output.
+  Canonicalise `root_node` et ses enfants selon [Canonical XML Version 1.1](https://www.w3.org/TR/xml-c14n). `root_node` peut être un objet enveloppe `XMLNode` ou `XMLDoc` autour de la structure XML. Renvoie un objet Buffer contenant la sortie canonicalisée.
 
   - **`excluding_node`**
 
-    allows omitting from the output a part of the document
+    permet d'omettre une partie du document dans la sortie
 
 - **`exclusiveC14n(root_node[, excluding_node[, withComments [,prefix_list]]])`**
 
-  Canonicalizes `root_node` and its children according to [Exclusive XML Canonicalization Version 1.0](https://www.w3.org/TR/xml-exc-c14n/).
+  Canonicalise `root_node` et ses enfants selon [Exclusive XML Canonicalization Version 1.0](https://www.w3.org/TR/xml-exc-c14n/).
 
   - **`root_node`**
 
-    is `XMLNode` or `XMLDoc` wrapper object around XML structure
+    objet enveloppe `XMLNode` ou `XMLDoc` autour de la structure XML
 
   - **`excluding_node`**
 
-    allows omitting from the output a part of the document corresponding to the node and its children
+    permet d'omettre de la sortie la partie du document correspondant au nœud et à ses enfants
 
   - **`withComments`**
 
-    a boolean value, `false` by default. If `true`, canonicalization corresponds to [Exclusive XML Canonicalization Version 1.0](http://www.w3.org/2001/10/xml-exc-c14n#WithComments). Returns Buffer object that contains canonicalized output.
+    booléen, `false` par défaut. Avec `true`, la canonicalisation correspond à [Exclusive XML Canonicalization Version 1.0](http://www.w3.org/2001/10/xml-exc-c14n#WithComments). Renvoie un objet Buffer contenant la sortie canonicalisée.
 
   - **`prefix_list`**
 
-    an optional string with a space separated namespace prefixes for namespaces that should also be included into the output
+    chaîne facultative de préfixes d'espaces de noms, séparés par des espaces, à inclure aussi dans la sortie
 
 - **`serialize()`**
 
-  The same as `xml.c14n()` (since 0.7.11).
+  Comme `xml.c14n()` (depuis 0.7.11).
 
 - **`serializeToString()`**
 
-  The same as `xml.c14n()` except it returns the result as a `string` (since 0.7.11).
+  Comme `xml.c14n()`, mais renvoie le résultat sous forme de `string` (depuis 0.7.11).
 
 - **`XMLDoc`**
 
-  An XMLDoc wrapper object around XML structure, the root node of the document.
+  Objet enveloppe XMLDoc autour de la structure XML, nœud racine du document.
 
   - **`doc.$root`**
 
-    the document's root by its name or undefined
+    la racine du document par son nom, ou undefined
 
   - **`doc.abc`**
 
-    the first root tag named *abc* as `XMLNode` wrapper object
+    la première balise racine nommée *abc*, sous forme d'objet enveloppe `XMLNode`
 
 - **`XMLNode`**
 
-  An XMLNode wrapper object around XML tag node. Since 1.0.2, existing wrappers for a node continue to refer to it after mutation. Removed nodes remain readable, but cannot be mutated.
+  Objet enveloppe XMLNode autour d'un nœud de balise XML. Depuis la version 1.0.2, les enveloppes existantes d'un nœud continuent à y faire référence après modification. Les nœuds retirés restent lisibles mais ne peuvent plus être modifiés.
 
   - **`node.abc`**
 
-    the same as `node.$tag$abc`, unless *abc* is the name of an XMLNode method
+    comme `node.$tag$abc`, sauf si *abc* est le nom d'une méthode de XMLNode
 
   - **`node.$attr$abc`**
 
-    the node's attribute value of *abc*, writable since 0.7.11
+    valeur de l'attribut *abc* du nœud, modifiable depuis 0.7.11
 
   - **`node.$attr$abc`=*xyz***
 
-    the same as `node.setAttribute('abc', xyz)` (since 0.7.11)
+    comme `node.setAttribute('abc', xyz)` (depuis 0.7.11)
 
   - **`node.$attrs`**
 
-    an `XMLAttr` wrapper object for all attributes of the node
+    objet enveloppe `XMLAttr` pour tous les attributs du nœud
 
   - **`node.$name`**
 
-    the name of the node
+    nom du nœud
 
   - **`node.$ns`**
 
-    the namespace of the node
+    espace de noms du nœud
 
   - **`node.$parent`**
 
-    the parent node of the current node, or `undefined` for a document root. Since 1.0.2, the value is also `undefined` for a removed node
+    nœud parent du nœud courant, ou `undefined` pour la racine d'un document. Depuis la version 1.0.2, la valeur est aussi `undefined` pour un nœud retiré
 
   - **`node.$tag$abc`**
 
-    the first child tag of the node named *abc*. This form is required if *abc* is also the name of an XMLNode method. Assignment is not supported. Deleting the property removes matching child tags
+    première balise enfant du nœud nommée *abc*. Cette forme est obligatoire si *abc* est aussi le nom d'une méthode de XMLNode. L'affectation n'est pas prise en charge. Supprimer la propriété retire les balises enfants correspondantes
 
   - **`node.$tags`**
 
-    an array of all children tags
+    tableau de toutes les balises enfants
 
   - **`node.$tags = [node1, node2, ...]`**
 
-    the same as `node.removeChildren`(); `node.addChild(node1)`; `node.addChild(node2)` (since 0.7.11). Since 1.0.2, XMLDoc sources are supported and source nodes must not have namespaces
+    comme `node.removeChildren`(); `node.addChild(node1)`; `node.addChild(node2)` (depuis 0.7.11). Depuis la version 1.0.2, les sources XMLDoc sont prises en charge et les nœuds source ne doivent pas avoir d'espace de noms
 
   - **`node.$tags$abc`**
 
-    all children tags named *abc* of the node. Assignment and deletion are not supported
+    toutes les balises enfants du nœud nommées *abc*. Affectation et suppression non prises en charge
 
   - **`node.$text`**
 
-    the content of the node, writable since 0.7.11 Since 1.0.2, assigning a string replaces all child nodes, while assigning `null` or `undefined` removes them
+    contenu du nœud, modifiable depuis 0.7.11. Depuis la version 1.0.2, affecter une chaîne remplace tous les nœuds enfants, tandis qu'affecter `null` ou `undefined` les retire
 
   - **`node.$text = 'abc'`**
 
-    the same as `node.setText('abc')` (since 0.7.11)
+    comme `node.setText('abc')` (depuis 0.7.11)
 
   - **`node.addChild(nd)`**
 
-    adds XMLNode as a child to node (since 0.7.11). `nd` is recursively copied before adding to the node. Since 1.0.2, XMLDoc sources are supported and source nodes must not have namespaces
+    ajoute un XMLNode comme enfant du nœud (depuis 0.7.11). `nd` est copié récursivement avant l'ajout. Depuis la version 1.0.2, les sources XMLDoc sont prises en charge et les nœuds source ne doivent pas avoir d'espace de noms
 
   - **`node.getAttributeNS(namespaceURI, localName)`**
 
-    returns the value of the first attribute matching `namespaceURI` and `localName`, or `undefined` if there is no matching attribute. The `namespaceURI` is a string or `null`; an empty string and `null` match attributes without a namespace. An unprefixed attribute has no namespace, even if a default namespace is declared. Since 1.0.2
+    renvoie la valeur du premier attribut correspondant à `namespaceURI` et `localName`, ou `undefined` s'il n'y en a pas. `namespaceURI` est une chaîne ou `null` ; une chaîne vide et `null` correspondent aux attributs sans espace de noms. Un attribut sans préfixe n'a pas d'espace de noms, même si un espace de noms par défaut est déclaré. Depuis 1.0.2
 
   - **`node.getChildNS(namespaceURI, localName)`**
 
-    returns the first child tag matching `namespaceURI` and `localName`, or `undefined` if there is no matching child tag. The `namespaceURI` is a string or `null`; an empty string and `null` match tags without a namespace. Since 1.0.2
+    renvoie la première balise enfant correspondant à `namespaceURI` et `localName`, ou `undefined` s'il n'y en a pas. `namespaceURI` est une chaîne ou `null` ; une chaîne vide et `null` correspondent aux balises sans espace de noms. Depuis 1.0.2
 
   - **`node.removeAllAttributes()`**
 
-    removes all attributes of the node (since 0.7.11)
+    supprime tous les attributs du nœud (depuis 0.7.11)
 
   - **`node.removeAttribute(attr_name)`**
 
-    removes the attribute named `attr_name` (since 0.7.11)
+    supprime l'attribut nommé `attr_name` (depuis 0.7.11)
 
   - **`node.removeChildren(tag_name)`**
 
-    removes all the children tags named `tag_name` (since 0.7.11). If `tag_name` is absent, all child nodes are removed
+    supprime toutes les balises enfants nommées `tag_name` (depuis 0.7.11). Sans `tag_name`, tous les nœuds enfants sont supprimés
 
   - **`node.removeText()`**
 
-    removes all child nodes (0.7.11)
+    supprime tous les nœuds enfants (0.7.11)
 
   - **`node.setAttribute(attr_name, value)`**
 
-    sets a value for an `attr_name` (since 0.7.11). Since 1.0.2, a string value is assigned to the attribute, while `null` or `undefined` deletes it
+    définit la valeur de `attr_name` (depuis 0.7.11). Depuis la version 1.0.2, une chaîne est affectée à l'attribut, tandis que `null` ou `undefined` le supprime
 
   - **`node.setText(value)`**
 
-    sets a text value for the node (since 0.7.11). Since 1.0.2, a string value replaces all child nodes, while `null` or `undefined` deletes all child nodes
+    définit le texte du nœud (depuis 0.7.11). Depuis la version 1.0.2, une chaîne remplace tous les nœuds enfants, tandis que `null` ou `undefined` les supprime tous
 
 - **`XMLAttr`**
 
-  An XMLAttrs wrapper object around XML node attributes.
+  Objet enveloppe XMLAttrs autour des attributs d'un nœud XML.
 
   - **`attr.abc`**
 
-    the attribute value of *abc*
+    valeur de l'attribut *abc*
 
 ### zlib
 
@@ -3214,58 +3211,58 @@ console.log(c14n) /* '<note><from>Jani</from></note>' */
 | `zlib.inflateRawSync()` |
 | `zlib.inflateSync()` |
 
-The zlib module provides compression functionality using the “deflate” and “inflate” algorithms (since 0.7.12). The zlib module object is imported using `import zlib from 'zlib'`.
+Le module zlib fournit des fonctions de compression avec les algorithmes « deflate » et « inflate » (depuis 0.7.12). L'objet module s'importe avec `import zlib from 'zlib'`.
 
 - **`deflateRawSync(string | Buffer[, options])`**
 
-  Compresses data using the “deflate” algorithm provided as a string or Buffer and does not append a zlib header. The buffer value can be a `Buffer`, `TypedArray`, or `DataView`. `Options` is an optional object that contains `zlib_options`. Returns Buffer instance that contains the compressed data.
+  Compresse avec l'algorithme « deflate » des données fournies sous forme de chaîne ou de Buffer, sans ajouter d'en-tête zlib. La valeur peut être un `Buffer`, un `TypedArray` ou un `DataView`. `Options` est un objet facultatif contenant des `zlib_options`. Renvoie une instance Buffer contenant les données compressées.
 
 - **`deflateSync(string | Buffer[, options])`**
 
-  Compresses data using the “deflate” algorithm provided as a string or Buffer. The Buffer value can be a `Buffer`, `TypedArray`, or `DataView`. `Options` is an optional object that contains `zlib_options`. Returns Buffer instance that contains the compressed data.
+  Compresse avec l'algorithme « deflate » des données fournies sous forme de chaîne ou de Buffer. La valeur peut être un `Buffer`, un `TypedArray` ou un `DataView`. `Options` est un objet facultatif contenant des `zlib_options`. Renvoie une instance Buffer contenant les données compressées.
 
 - **`inflateRawSync(string | Buffer)`**
 
-  Decompresses a raw stream by using the “deflate” algorithm. Returns Buffer instance that contains the decompressed data.
+  Décompresse un flux brut avec l'algorithme « deflate ». Renvoie une instance Buffer contenant les données décompressées.
 
 - **`inflateSync(string | Buffer)`**
 
-  Decompresses a stream by using the “deflate” algorithm. Returns Buffer instance that contains the decompressed data.
+  Décompresse un flux avec l'algorithme « deflate ». Renvoie une instance Buffer contenant les données décompressées.
 
-#### zlib options
+#### Options zlib
 
-- `chunkSize` — is an integer, by default is `1024`
+- `chunkSize` — entier, `1024` par défaut
 
-- `dictionary` — is a `Buffer`, `TypedArray`, or `DataView`. by default is empty
+- `dictionary` — `Buffer`, `TypedArray` ou `DataView`, vide par défaut
 
-- `level` — is an integer, compression only, see `zlib_compression_levels`
+- `level` — entier, compression uniquement ; voir `zlib_compression_levels`
 
-- `memLevel` — is an integer from `1` to `9`, compression only
+- `memLevel` — entier de `1` à `9`, compression uniquement
 
-- `strategy` — is an integer, compression only, see `zlib_compression_strategy`
+- `strategy` — entier, compression uniquement ; voir `zlib_compression_strategy`
 
-- `windowBits` — is an integer from `-15` to `-9` for raw data, from `9` to `15` for an ordinary stream
+- `windowBits` — entier de `-15` à `-9` pour des données brutes, de `9` à `15` pour un flux ordinaire
 
-#### zlib compression levels
-
-|   |   |
-| --- | --- |
-| Name | Description |
-| `zlib.constants.Z_NO_COMPRESSION` | no compression |
-| `zlib.constants.Z_BEST_SPEED` | fastest, produces the least compression |
-| `zlib.constants.Z_DEFAULT_COMPRESSION` | trade-off between speed and compression |
-| `zlib.constants.Z_BEST_COMPRESSION` | slowest, produces the most compression |
-
-#### zlib compression strategy
+#### Niveaux de compression zlib
 
 |   |   |
 | --- | --- |
-| Name | Description |
-| `zlib.constants.Z_FILTERED` | Filtered strategy: for the data produced by a filter or predictor |
-| `zlib.constants.Z_HUFFMAN_ONLY` | Huffman-only strategy: only Huffman encoding, no string matching |
-| `zlib.constants.Z_RLE` | Run Length Encoding strategy: limit match distances to one, better compression of PNG image data |
-| `zlib.constants.Z_FIXED` | Fixed table strategy: prevents the use of dynamic Huffman codes, a simpler decoder for special applications |
-| `zlib.constants.Z_DEFAULT_STRATEGY` | Default strategy, suitable for general purpose compression |
+| Nom | Description |
+| `zlib.constants.Z_NO_COMPRESSION` | pas de compression |
+| `zlib.constants.Z_BEST_SPEED` | le plus rapide, compression la plus faible |
+| `zlib.constants.Z_DEFAULT_COMPRESSION` | compromis entre vitesse et compression |
+| `zlib.constants.Z_BEST_COMPRESSION` | le plus lent, compression la plus forte |
+
+#### Stratégie de compression zlib
+
+|   |   |
+| --- | --- |
+| Nom | Description |
+| `zlib.constants.Z_FILTERED` | Stratégie filtrée : pour les données produites par un filtre ou un prédicteur |
+| `zlib.constants.Z_HUFFMAN_ONLY` | Stratégie Huffman seul : codage de Huffman uniquement, sans recherche de chaînes |
+| `zlib.constants.Z_RLE` | Stratégie RLE (Run Length Encoding) : limite les distances de correspondance à un, meilleure compression des images PNG |
+| `zlib.constants.Z_FIXED` | Stratégie à table fixe : empêche l'utilisation de codes de Huffman dynamiques, décodeur plus simple pour des applications particulières |
+| `zlib.constants.Z_DEFAULT_STRATEGY` | Stratégie par défaut, adaptée à la compression générale |
 
 ---
 
