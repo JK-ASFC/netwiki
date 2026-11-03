@@ -1,0 +1,32 @@
+---
+title: "uwsgi_bind"
+description: "Directive nginx uwsgi_bind (ngx_http_uwsgi_module) — Makes outgoing connections to a uwsgi server originate from the specified local IP address with an optional port (1.11.2). Parameter value can contain variables (1.3.12). The special value off…"
+tags: [nginx, directive, ngx_http_uwsgi_module]
+icon: settings-2
+---
+
+> [!NOTE]
+> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+
+| Propriété | Valeur |
+| --- | --- |
+| **Syntaxe** | `uwsgi_bind address [transparent] \| off;` |
+| **Valeur par défaut** | — |
+| **Contexte** | `http`, `server`, `location` |
+| **Module** | [[11-modules/02-http/ngx_http_uwsgi_module\|ngx_http_uwsgi_module]] |
+
+## Utilisation
+
+Makes outgoing connections to a uwsgi server originate from the specified local IP address with an optional port (1.11.2). Parameter value can contain variables (1.3.12). The special value `off` (1.3.12) cancels the effect of the `uwsgi_bind` directive inherited from the previous configuration level, which allows the system to auto-assign the local IP address and port.
+
+The `transparent` parameter (1.11.0) allows outgoing connections to a uwsgi server originate from a non-local IP address, for example, from a real IP address of a client:
+
+```nginx
+uwsgi_bind $remote_addr transparent;
+```
+
+In order for this parameter to work, it is usually necessary to run nginx worker processes with the [[12-directives/user|superuser]] privileges. On Linux it is not required (1.13.8) as if the `transparent` parameter is specified, worker processes inherit the `CAP_NET_RAW` capability from the master process. It is also necessary to configure kernel routing table to intercept network traffic from the uwsgi server.
+
+---
+
+*Source : documentation officielle de nginx (nginx.org), © Igor Sysoev, © Nginx, Inc., licence BSD à 2 clauses ; traduction française NetWiki.*

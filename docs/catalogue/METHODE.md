@@ -88,7 +88,7 @@ Pour les services majeurs, la fiche peut être complétée par la **documentatio
 
 - Partir des **sources** de la documentation officielle (dépôt Git, XML, Markdown), jamais d'une copie de site.
 - Vérifier la **licence** (Apache 2.0, CC BY…) et citer la source en pied de chaque page.
-- Prendre la **traduction française officielle** quand elle existe ; sinon reproduire le texte original et le signaler par un encadré.
+- Prendre la **traduction française officielle** quand elle existe. Sinon, traduire : le script calcule l'empreinte de chaque paragraphe anglais et lit sa traduction dans `docs/traductions/<service>/*.json` (`--manquants <fichier>` liste les paragraphes à traduire, `--stats` donne l'avancement). Un paragraphe modifié dans la source redevient anglais jusqu'à sa nouvelle traduction et la page affiche « Traduction en cours ». Exemple : Nginx (`scripts/import-nginx-docs.py`).
 - Générer les pages avec un script versionné (`scripts/import-<service>-docs.py`) pour pouvoir les régénérer à chaque nouvelle version ; ne pas les modifier à la main.
 - Une page par élément (commande, module, directive), un sous-dossier par thème pour les guides, liens wiki entre les éléments (directive → module, module → directives, guide → directives).
 - Ajouter un renvoi vers ces sections dans la page de présentation du service et passer le statut du catalogue à `ameliore`.

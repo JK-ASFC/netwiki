@@ -1,0 +1,51 @@
+---
+title: "Command-line interface"
+description: "Nginx — Command-line interface. njs scripts development and debugging can be performed from the command-line. The command-line utility is available after the installation of the Linux package or after building from the sources. Compared to njs running…"
+tags: [nginx, guide]
+icon: book-open
+---
+
+> [!NOTE]
+> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+
+njs scripts development and debugging can be performed from the command-line. The command-line utility is available after the installation of the Linux [[10-guides/04-njs/install|package]] or after building from the [[10-guides/04-njs/install|sources]]. Compared to njs running inside nginx, nginx objects ([[10-guides/04-njs/reference|HTTP]] and [[10-guides/04-njs/reference|Stream]]) are not available in the utility.
+
+```nginx
+$ echo "2**3" | njs -q
+8
+
+$ njs
+>> globalThis
+global {
+ njs: njs {
+  version: '0.3.9'
+ },
+ global: [Circular],
+ process: process {
+  argv: [
+   '/usr/bin/njs'
+  ],
+  env: {
+   PATH: '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+   HOSTNAME: 'f777c149d4f8',
+   TERM: 'xterm',
+   NGINX_VERSION: '1.17.9',
+   NJS_VERSION: '0.3.9',
+   PKG_RELEASE: '1~buster',
+   HOME: '/root'
+  }
+ },
+ console: {
+  log: [Function: native],
+  dump: [Function: native],
+  time: [Function: native],
+  timeEnd: [Function: native]
+ },
+ print: [Function: native]
+}
+>>
+```
+
+---
+
+*Source : documentation officielle de nginx (nginx.org), © Igor Sysoev, © Nginx, Inc., licence BSD à 2 clauses ; traduction française NetWiki.*

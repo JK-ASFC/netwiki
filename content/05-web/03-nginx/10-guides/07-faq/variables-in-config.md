@@ -1,0 +1,17 @@
+---
+title: "Is there a proper way to use nginx variables to                make sections of the configuration shorter,                using them as macros for making                parts of configuration work as templates?"
+description: "Nginx — Is there a proper way to use nginx variables to make sections of the configuration shorter, using them as macros for making parts of configuration work as templates?. Q: Is there a proper way to use nginx variables to make sections of the configuration shorter, using them as macros for making parts of configuration work as templates?"
+tags: [nginx, guide]
+icon: book-open
+---
+
+> [!NOTE]
+> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+
+Q: Is there a proper way to use nginx variables to make sections of the configuration shorter, using them as macros for making parts of configuration work as templates?
+
+A: Variables should not be used as template macros. Variables are evaluated in the run-time during the processing of each request, so they are rather costly compared to plain static configuration. Using variables to store static strings is also a bad idea. Instead, a macro expansion and "include" directives should be used to generate configs more easily and it can be done with the external tools, e.g. sed + make or any other common template mechanism.
+
+---
+
+*Source : documentation officielle de nginx (nginx.org), © Igor Sysoev, © Nginx, Inc., licence BSD à 2 clauses ; traduction française NetWiki.*

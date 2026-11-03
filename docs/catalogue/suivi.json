@@ -1775,7 +1775,7 @@
    "role": "Serveur web et reverse proxy",
    "plateformes": "Windows, Linux, macOS",
    "section": 4,
-   "statut": "existant",
+   "statut": "ameliore",
    "wiki": "05-web/03-nginx",
    "cible": "05-web",
    "lot": null,

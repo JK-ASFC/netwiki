@@ -153,7 +153,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | --- | --- | --- | --- | --- |
 | [[01-iis/01-presentation\|IIS]] (+ FTP, outils de gestion, WAS) | ➖ | Web-Server, Web-Ftp-Server, Web-Mgmt-Tools, WAS | ➖ | ✅ |
 | [[02-apache/01-presentation\|Apache HTTP Server]] (+ documentation de référence : 17 commandes, 85 guides, 132 modules, 730 directives) | apache2 | Apache Lounge | httpd | ✅ |
-| [[03-nginx/01-presentation\|Nginx]] | nginx | nginx | nginx | ✅ |
+| [[03-nginx/01-presentation\|Nginx]] (+ documentation de référence traduite : 44 guides, 103 modules, 1 009 directives, 210 variables) | nginx | nginx | nginx | ✅ |
 | [[04-caddy/01-presentation-installation\|Caddy]] | caddy | caddy | caddy | ✅ |
 | [[05-php-fpm/01-presentation-installation-pools\|PHP (PHP-FPM)]] | php-fpm | PHP NTS (FastCGI IIS) | php | ✅ |
 | [[06-nodejs/01-presentation-installation\|Node.js]] | nodejs | Node.js LTS | node | ✅ |
