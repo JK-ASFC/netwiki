@@ -95,6 +95,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 79 | Catalogue — analyse Python et chaîne d'approvisionnement : Ruff, Pylint, mypy, Bandit, Syft, Grype, Cosign, in-toto, Tekton Chains | ✅ |
 | 80 | Catalogue — dépendances, modernisation et tests : Renovate, Dependabot, Mend Renovate, OpenRewrite, Allure Report, ReportPortal, Sonobuoy, OWASP Juice Shop, WebGoat | ✅ |
 | 81 | Catalogue — tests de charge : k6, Apache JMeter, Locust, Gatling, Vegeta, wrk, hey, Siege | ✅ |
+| 82 | Catalogue — outils Windows (nouvelle catégorie Gestion de parc) : Windows Terminal, WinGet, Chocolatey, Scoop, NSSM, WinSW, WSL, Cygwin, MSYS2, Git for Windows, OpenSSH pour Windows, PowerToys (PowerShell 7 déjà présent) | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -436,3 +437,12 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[10-ecommerce/01-prestashop-woocommerce-opencart-magento\|PrestaShop, WooCommerce, OpenCart, Magento]] | PHP, Composer, Docker | WAMP/IIS + PHP, Docker | PHP, Docker | ✅ |
 | [[10-ecommerce/02-headless-frameworks\|Saleor, Medusa, Vendure, Sylius, Shopware, Bagisto, Spree, Solidus]] | Docker, Node.js, PHP, Ruby | Docker, Node.js, PHP | Docker, Node.js, PHP | ✅ |
 | [[11-caisse-inventaire/01-caisses-pos\|OSPOS, uniCenta, Floreant, ERPNext POS]], [[11-caisse-inventaire/02-inventaire-actifs\|InvenTree, Snipe-IT, OpenBoxes]] | Docker, PHP, Java | Java (uniCenta, Floreant), Docker | Java, Docker | ✅ |
+
+## Gestion de parc & services Windows
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[01-outils-windows/01-terminal-gestionnaires-paquets\|Windows Terminal, WinGet, Chocolatey, Scoop]] | ➖ | winget, script PowerShell | ➖ | ✅ |
+| [[01-outils-windows/02-services-nssm-winsw\|NSSM, WinSW]] | ➖ | archive, choco | ➖ | ✅ |
+| [[01-outils-windows/03-wsl-cygwin-msys2-git\|WSL, Cygwin, MSYS2, Git for Windows]] | ➖ | wsl --install, setup, winget | ➖ | ✅ |
+| [[01-outils-windows/04-openssh-powertoys\|OpenSSH pour Windows, PowerToys]] | ➖ | Add-WindowsCapability, winget | ➖ | ✅ |

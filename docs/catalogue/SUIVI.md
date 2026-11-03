@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 184 (14 %) | 603 | 2 | 522 (40 %) |
+| 1311 | 185 (14 %) | 615 | 2 | 509 (39 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -828,18 +828,18 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OWASP Juice Shop | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 | WebGoat | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 
-## 15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION — 6/41
+## 15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION — 19/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | OpenSSH for Windows | Serveur/client SSH | Windows | ✅ existant | `08-acces-distant-vpn/01-openssh` |
-| PowerShell 7 | Shell et scripts | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Windows Terminal | Terminal | Windows | ⏳ à faire | → `26-gestion-parc` |
-| WinGet CLI | Gestion paquets Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| Chocolatey (community edition) | Gestion paquets Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| Scoop | Gestion paquets Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| NSSM | Gestion services Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| WinSW | Wrapper services Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
+| PowerShell 7 | Shell et scripts | Windows, Linux, macOS | ✅ existant (lot 82) | `05-web/19-powershell` |
+| Windows Terminal | Terminal | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| WinGet CLI | Gestion paquets Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| Chocolatey (community edition) | Gestion paquets Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| Scoop | Gestion paquets Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| NSSM | Gestion services Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| WinSW | Wrapper services Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | RDPY | Outils RDP Python | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | FreeRDP | Client/serveur RDP | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | Apache Guacamole | Passerelle RDP/VNC/SSH | Windows, Linux, macOS (serveur Linux) | ⏳ à faire | → `26-gestion-parc` |
@@ -853,10 +853,10 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | X2Go | Bureau distant | Linux, Windows client | ⏳ à faire | → `26-gestion-parc` |
 | FreeIPA client | Intégration identité | Linux | ✅ existant | `01-annuaire-identite/03-freeipa` |
 | Winbind | Intégration AD | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
-| WSL | Sous-système Linux | Windows | ⏳ à faire | → `26-gestion-parc` |
-| Cygwin | Environnement Unix | Windows | ⏳ à faire | → `26-gestion-parc` |
-| MSYS2 | Environnement Unix et outils | Windows | ⏳ à faire | → `26-gestion-parc` |
-| Git for Windows | Git et shell | Windows | ⏳ à faire | → `26-gestion-parc` |
+| WSL | Sous-système Linux | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| Cygwin | Environnement Unix | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| MSYS2 | Environnement Unix et outils | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
+| Git for Windows | Git et shell | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | Rufus (open source) | Création supports boot | Windows | ⏳ à faire | → `26-gestion-parc` |
 | Ventoy | Création supports multiboot | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
 | Clonezilla | Clonage système | Windows, Linux, macOS | ✅ existant | `21-outils/07-disques-recuperation/02-clonezilla` |
@@ -865,14 +865,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | WAPT Community | Déploiement logiciel | Windows, Linux server | ⏳ à faire | → `26-gestion-parc` |
 | Open-AudIT | Inventaire réseau | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | GLPI Agent | Inventaire agent | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/04-glpi-installation` |
-| Win32-OpenSSH | SSH Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
+| Win32-OpenSSH | SSH Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | RPort | Gestion distante | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | Tactical RMM | RMM et téléassistance | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | Remotely | Téléassistance | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | Actiona | Automatisation GUI | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
 | AutoHotkey | Automatisation Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
 | AutoIt | Automatisation Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| PowerToys | Utilitaires Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
+| PowerToys | Utilitaires Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 
 ## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 3/67
 
