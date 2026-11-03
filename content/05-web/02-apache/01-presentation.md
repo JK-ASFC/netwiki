@@ -116,3 +116,16 @@ Ordre de fusion : `<Directory>` (du moins au plus spécifique) puis `.htaccess`,
 5. [[06-reverse-proxy-repartition|Reverse proxy et répartition de charge]]
 6. [[07-securite-authentification|Sécurité et authentification]]
 7. [[08-performances-logs-depannage|Performances, journaux et dépannage]]
+
+## Documentation de référence
+
+La documentation officielle d'Apache HTTP Server 2.4 est intégrée au wiki, en français (traduction de la Fondation Apache) :
+
+| Section | Contenu |
+| --- | --- |
+| [[10-commandes/httpd\|Commandes]] | Les 17 programmes : `httpd`, `apachectl`, `ab`, `htpasswd`, `htdigest`, `rotatelogs`, `apxs`, `suexec`… |
+| [[11-guides/02-guides-pratiques/00-how-to-tutoriels\|Guides]] | 85 guides classés par thème : généralités, guides pratiques, serveurs virtuels, SSL/TLS, mod_rewrite, performances et sécurité, plates-formes, développement |
+| [[12-modules/core\|Modules]] | Les 132 modules (`core`, MPM, `mod_*`) avec leur rôle et leurs directives |
+| [[13-directives/allowoverride\|Directives]] | Les 730 directives : syntaxe, valeur par défaut, contexte, AllowOverride, statut, module et exemples |
+
+Utiliser la recherche (`Ctrl+K`) avec le nom d'une directive (`ProxyPass`, `RewriteRule`, `Require`) pour ouvrir directement sa fiche.

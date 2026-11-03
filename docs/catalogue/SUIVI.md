@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 185 (14 %) | 624 | 2 | 500 (38 %) |
+| 1311 | 191 (15 %) | 663 | 4 | 453 (35 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -157,9 +157,9 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| NGINX | Serveur web et reverse proxy | Windows, Linux, macOS | ✅ existant | `05-web/03-nginx` |
+| NGINX | Serveur web et reverse proxy | Windows, Linux, macOS | ✨ amélioré | `05-web/03-nginx` |
 | HAProxy | Load balancer et proxy | Linux, BSD | ✅ existant | `07-proxy-cache/01-haproxy` |
-| Apache HTTP Server | Serveur web | Windows, Linux, macOS | ✅ existant | `05-web/02-apache` |
+| Apache HTTP Server | Serveur web | Windows, Linux, macOS | ✨ amélioré | `05-web/02-apache` |
 | Caddy | Serveur web et proxy TLS automatique | Windows, Linux, macOS | ✅ existant | `05-web/04-caddy` |
 | Traefik Proxy | Reverse proxy | Windows, Linux, macOS | ✅ existant | `07-proxy-cache/04-traefik` |
 | Envoy Proxy | Proxy L7 | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/07-envoy` |
@@ -828,7 +828,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OWASP Juice Shop | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 | WebGoat | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 
-## 15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION — 28/41
+## 15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION — 41/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -852,66 +852,66 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | xrdp | Serveur RDP Linux | Linux | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
 | X2Go | Bureau distant | Linux, Windows client | 🆕 fait (lot 83) | `26-gestion-parc/02-bureau-distant` |
 | FreeIPA client | Intégration identité | Linux | ✅ existant | `01-annuaire-identite/03-freeipa` |
-| Winbind | Intégration AD | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
+| Winbind | Intégration AD | Windows, Linux | ✅ existant (lot 84) | `09-fichiers-partage/01-samba` |
 | WSL | Sous-système Linux | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | Cygwin | Environnement Unix | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | MSYS2 | Environnement Unix et outils | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 | Git for Windows | Git et shell | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
-| Rufus (open source) | Création supports boot | Windows | ⏳ à faire | → `26-gestion-parc` |
-| Ventoy | Création supports multiboot | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
+| Rufus (open source) | Création supports boot | Windows | 🆕 fait (lot 84) | `26-gestion-parc/03-supports-deploiement` |
+| Ventoy | Création supports multiboot | Windows, Linux | 🆕 fait (lot 84) | `26-gestion-parc/03-supports-deploiement` |
 | Clonezilla | Clonage système | Windows, Linux, macOS | ✅ existant | `21-outils/07-disques-recuperation/02-clonezilla` |
-| FOG Project | Déploiement images | Linux, Windows clients | ⏳ à faire | → `26-gestion-parc` |
-| opsi | Déploiement logiciel | Linux server, Windows clients | ⏳ à faire | → `26-gestion-parc` |
-| WAPT Community | Déploiement logiciel | Windows, Linux server | ⏳ à faire | → `26-gestion-parc` |
-| Open-AudIT | Inventaire réseau | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
+| FOG Project | Déploiement images | Linux, Windows clients | 🆕 fait (lot 84) | `26-gestion-parc/03-supports-deploiement` |
+| opsi | Déploiement logiciel | Linux server, Windows clients | 🆕 fait (lot 84) | `26-gestion-parc/03-supports-deploiement` |
+| WAPT Community | Déploiement logiciel | Windows, Linux server | 🆕 fait (lot 84) | `26-gestion-parc/03-supports-deploiement` |
+| Open-AudIT | Inventaire réseau | Windows, Linux, macOS | 🆕 fait (lot 84) | `26-gestion-parc/04-inventaire-rmm` |
 | GLPI Agent | Inventaire agent | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/04-glpi-installation` |
 | Win32-OpenSSH | SSH Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
-| RPort | Gestion distante | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Tactical RMM | RMM et téléassistance | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Remotely | Téléassistance | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Actiona | Automatisation GUI | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
-| AutoHotkey | Automatisation Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
-| AutoIt | Automatisation Windows | Windows | ⏳ à faire | → `26-gestion-parc` |
+| RPort | Gestion distante | Windows, Linux, macOS | 🆕 fait (lot 84) | `26-gestion-parc/04-inventaire-rmm` |
+| Tactical RMM | RMM et téléassistance | Windows, Linux, macOS | 🆕 fait (lot 84) | `26-gestion-parc/04-inventaire-rmm` |
+| Remotely | Téléassistance | Windows, Linux, macOS | 🆕 fait (lot 84) | `26-gestion-parc/04-inventaire-rmm` |
+| Actiona | Automatisation GUI | Windows, Linux | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
+| AutoHotkey | Automatisation Windows | Windows | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
+| AutoIt | Automatisation Windows | Windows | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
 | PowerToys | Utilitaires Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 
-## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 3/67
+## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 37/67
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| Homebrew | Gestionnaire paquets | macOS, Linux | ⏳ à faire | → `21-outils` |
-| MacPorts | Gestionnaire paquets | macOS | ⏳ à faire | → `21-outils` |
-| Nix | Gestionnaire paquets reproductible | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| GNU Guix | Gestionnaire paquets | Linux | ⏳ à faire | → `21-outils` |
-| Flatpak | Applications sandbox | Linux | ⏳ à faire | → `21-outils` |
-| Snapd | Gestionnaire paquets | Linux | ⏳ à faire | → `21-outils` |
-| AppImage | Format applications portables | Linux | ⏳ à faire | → `21-outils` |
-| Apt | Gestionnaire paquets | Debian/Ubuntu | ⏳ à faire | → `21-outils` |
-| DNF | Gestionnaire paquets | Fedora/RHEL-like | ⏳ à faire | → `21-outils` |
-| YUM | Gestionnaire paquets historique | CentOS/RHEL | ⏳ à faire | → `21-outils` |
-| Zypper | Gestionnaire paquets | openSUSE/SLES | ⏳ à faire | → `21-outils` |
-| Pacman | Gestionnaire paquets | Arch Linux | ⏳ à faire | → `21-outils` |
-| APK | Gestionnaire paquets | Alpine Linux | ⏳ à faire | → `21-outils` |
-| Portage | Gestionnaire paquets | Gentoo | ⏳ à faire | → `21-outils` |
-| OpenRC | Init et services | Linux, BSD | ⏳ à faire | → `21-outils` |
-| systemd | Init et services | Linux | ⏳ à faire | → `21-outils` |
-| runit | Init et services | Linux, BSD | ⏳ à faire | → `21-outils` |
-| s6 | Suite supervision services | Linux, BSD | ⏳ à faire | → `21-outils` |
-| Supervisord | Gestion processus | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Monit | Supervision processus | Linux, BSD | ⏳ à faire | → `21-outils` |
-| PM2 | Gestion processus Node.js | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| forever | Gestion processus Node.js | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| circus | Gestion processus | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| GNU Screen | Multiplexeur terminal | Linux, macOS | ⏳ à faire | → `21-outils` |
-| tmux | Multiplexeur terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Zellij | Multiplexeur terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Fish shell | Shell | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Zsh | Shell | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Bash | Shell | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| nushell | Shell | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Starship | Invite shell | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Oh My Zsh | Configuration Zsh | Linux, macOS | ⏳ à faire | → `21-outils` |
-| chezmoi | Gestion dotfiles | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| GNU Stow | Gestion dotfiles | Linux, macOS | ⏳ à faire | → `21-outils` |
+| Homebrew | Gestionnaire paquets | macOS, Linux | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| MacPorts | Gestionnaire paquets | macOS | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| Nix | Gestionnaire paquets reproductible | Windows, Linux, macOS | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| GNU Guix | Gestionnaire paquets | Linux | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| Flatpak | Applications sandbox | Linux | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| Snapd | Gestionnaire paquets | Linux | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| AppImage | Format applications portables | Linux | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| Apt | Gestionnaire paquets | Debian/Ubuntu | ✅ existant (lot 85) | `24-systemes-exploitation/01-debian-ubuntu` |
+| DNF | Gestionnaire paquets | Fedora/RHEL-like | ✅ existant (lot 85) | `24-systemes-exploitation/02-famille-red-hat` |
+| YUM | Gestionnaire paquets historique | CentOS/RHEL | ✅ existant (lot 85) | `24-systemes-exploitation/02-famille-red-hat` |
+| Zypper | Gestionnaire paquets | openSUSE/SLES | ✅ existant (lot 85) | `24-systemes-exploitation/03-opensuse` |
+| Pacman | Gestionnaire paquets | Arch Linux | ✅ existant (lot 85) | `24-systemes-exploitation/04-arch-linux` |
+| APK | Gestionnaire paquets | Alpine Linux | ✅ existant (lot 85) | `24-systemes-exploitation/06-alpine-linux` |
+| Portage | Gestionnaire paquets | Gentoo | ✅ existant (lot 85) | `24-systemes-exploitation/05-gentoo` |
+| OpenRC | Init et services | Linux, BSD | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| systemd | Init et services | Linux | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| runit | Init et services | Linux, BSD | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| s6 | Suite supervision services | Linux, BSD | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| Supervisord | Gestion processus | Windows, Linux, macOS | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| Monit | Supervision processus | Linux, BSD | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| PM2 | Gestion processus Node.js | Windows, Linux, macOS | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| forever | Gestion processus Node.js | Windows, Linux, macOS | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| circus | Gestion processus | Windows, Linux, macOS | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
+| GNU Screen | Multiplexeur terminal | Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| tmux | Multiplexeur terminal | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Zellij | Multiplexeur terminal | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Fish shell | Shell | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Zsh | Shell | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Bash | Shell | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| nushell | Shell | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Starship | Invite shell | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Oh My Zsh | Configuration Zsh | Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| chezmoi | Gestion dotfiles | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| GNU Stow | Gestion dotfiles | Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
 | Ansible Pull | Configuration poste | Windows, Linux, macOS | ✅ existant | `17-automatisation/01-ansible` |
 | Timeshift | Snapshots système | Linux | ⏳ à faire | → `21-outils` |
 | Snapper | Snapshots système | Linux | ⏳ à faire | → `21-outils` |

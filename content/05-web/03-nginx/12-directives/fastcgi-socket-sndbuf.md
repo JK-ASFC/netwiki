@@ -1,0 +1,22 @@
+---
+title: "fastcgi_socket_sndbuf"
+description: "Directive nginx fastcgi_socket_sndbuf (ngx_http_fastcgi_module) — Définit la taille du tampon d'envoi (option SO_SNDBUF) des connexions sortantes vers un serveur FastCGI. La valeur spéciale 0 annule l'effet de la directive fastcgi_socket_sndbuf héritée du niveau de…"
+tags: [nginx, directive, ngx_http_fastcgi_module]
+icon: settings-2
+---
+
+| Propriété | Valeur |
+| --- | --- |
+| **Syntaxe** | `fastcgi_socket_sndbuf size;` |
+| **Valeur par défaut** | — |
+| **Contexte** | `http`, `server`, `location` |
+| **Apparue dans la version** | 1.31.3 |
+| **Module** | [[11-modules/02-http/ngx_http_fastcgi_module\|ngx_http_fastcgi_module]] |
+
+## Utilisation
+
+Définit la taille du tampon d'envoi (option `SO_SNDBUF`) des connexions sortantes vers un serveur FastCGI. La valeur spéciale `0` annule l'effet de la directive `fastcgi_socket_sndbuf` héritée du niveau de configuration précédent, ce qui laisse s'appliquer les réglages du système d'exploitation.
+
+---
+
+*Source : documentation officielle de nginx (nginx.org), © Igor Sysoev, © Nginx, Inc., licence BSD à 2 clauses ; traduction française NetWiki.*

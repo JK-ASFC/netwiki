@@ -1,0 +1,1 @@
+{"title": "Variables", "icon": "dollar-sign", "color": "#009639", "description": "Les variables intégrées de nginx ($remote_addr, $request_uri, $upstream_status…) et leur module."}

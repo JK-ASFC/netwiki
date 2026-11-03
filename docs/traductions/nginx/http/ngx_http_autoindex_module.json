@@ -1,0 +1,9 @@
+{
+ "041ff7627896": "Le module `ngx_http_autoindex_module` traite les requêtes se terminant par une barre oblique (‘`/`’) et produit la liste du contenu du répertoire. Une requête est généralement transmise à ce module lorsque le module [[11-modules/02-http/ngx_http_index_module|ngx_http_index_module]] ne trouve pas de fichier d'index.",
+ "4730a5e31025": "Définit le format de la liste du répertoire.",
+ "5e5b39abaa70": "Pour le [[12-directives/autoindex-format|format]] HTML, indique si les heures de la liste sont affichées dans le fuseau horaire local ou en UTC.",
+ "7261e702f72d": "Active ou désactive l'affichage de la liste du répertoire.",
+ "95fe490e4d49": "Pour le [[12-directives/autoindex-format|format]] HTML, indique si la liste affiche la taille exacte des fichiers ou une taille arrondie en kilooctets, mégaoctets et gigaoctets.",
+ "9d65c28ca996": "Avec le format JSONP, le nom de la fonction de rappel est défini par l'argument de requête `callback`. Si l'argument est absent ou vide, le format JSON est utilisé.",
+ "e9bc0a701504": "La sortie XML peut être transformée avec le module [[11-modules/02-http/ngx_http_xslt_module|ngx_http_xslt_module]]."
+}

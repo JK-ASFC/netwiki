@@ -1,0 +1,13 @@
+{
+ "104d00a47462": "Règles Mongrel typiques :",
+ "394cf936acb9": "Convertir des règles de réécriture",
+ "53d11a61e43d": "Dans les versions antérieures à 0.9.1, les redirections peuvent se faire avec :",
+ "8fd74afa40bf": "C'est une méthode incorrecte, lourde et inefficace. La bonne méthode consiste à définir un serveur distinct pour `example.org` :",
+ "9ab8bf5ffc5f": "il suffit de définir `example.com`, `www.example.com` et « tout le reste » :",
+ "a0fa7ddb0237": "Ceux qui, du temps de l'hébergement mutualisé, configuraient *tout* *uniquement* avec les fichiers .htaccess d'Apache traduisent généralement les règles suivantes :",
+ "a21c74a9f336": "Convertir des règles Mongrel",
+ "ba30b2d34ba3": "en quelque chose comme ceci :",
+ "bd5844d7c43e": "à convertir en",
+ "efbca56d1f76": "Redirection vers un site principal",
+ "fd18b2b4bbf1": "Autre exemple. Au lieu de la logique « à l'envers » « tout ce qui n'est ni `example.com` ni `www.example.com` » :"
+}

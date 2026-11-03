@@ -1,0 +1,7 @@
+{
+ "0b27efa792e4": "Définit la taille (*size*) du tampon utilisé pour lire le fichier d'index `.f4x`.",
+ "87394d2d1b1b": "Ce module traite les requêtes HTTP Dynamic Streaming de la forme « `/videoSeg1-Frag1` » en extrayant le fragment nécessaire du fichier `videoSeg1.f4f` à l'aide du fichier d'index `videoSeg1.f4x`. Il remplace le module f4f d'Adobe (HTTP Origin Module) pour Apache.",
+ "8d362eb84a77": "Le prétraitement habituel avec f4fpackager d'Adobe est nécessaire ; voir sa documentation pour les détails.",
+ "967f782fc2e9": "Active le traitement par le module dans le bloc location englobant.",
+ "b17674520617": "Le module `ngx_http_f4f_module` fournit côté serveur la prise en charge d'Adobe HTTP Dynamic Streaming (HDS)."
+}

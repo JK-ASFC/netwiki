@@ -123,3 +123,16 @@ flowchart TD
 5. [[06-cache-performances|Cache et performances]]
 6. [[07-securite|Sécurité, limitation de débit et authentification]]
 7. [[08-stream-logs-depannage|Proxy TCP/UDP, journaux et dépannage]]
+
+## Documentation de référence
+
+La documentation officielle de nginx est intégrée au wiki et traduite en français :
+
+| Section | Contenu |
+| --- | --- |
+| [[10-guides/01-introduction/beginners-guide\|Guides]] | 44 guides : premiers pas, compilation, contrôle du processus, traitement des requêtes, noms de serveurs, répartition de charge, HTTPS, njs, développement, FAQ |
+| [[11-modules/02-http/ngx_http_core_module\|Modules]] | 103 modules (cœur, HTTP, stream, mail) avec exemple de configuration, directives et variables |
+| [[12-directives/proxy-pass-http-proxy\|Directives]] | Les 1 009 directives : syntaxe, valeur par défaut, contexte, version d'apparition, module et explications |
+| [[13-variables/remote-addr-http-core\|Variables]] | Les 210 variables intégrées (`$remote_addr`, `$request_uri`, `$upstream_status`…) |
+
+Utiliser la recherche (`Ctrl+K`) avec le nom d'une directive ou d'une variable pour ouvrir directement sa fiche.

@@ -97,6 +97,10 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 81 | Catalogue — tests de charge : k6, Apache JMeter, Locust, Gatling, Vegeta, wrk, hey, Siege | ✅ |
 | 82 | Catalogue — outils Windows (nouvelle catégorie Gestion de parc) : Windows Terminal, WinGet, Chocolatey, Scoop, NSSM, WinSW, WSL, Cygwin, MSYS2, Git for Windows, OpenSSH pour Windows, PowerToys (PowerShell 7 déjà présent) | ✅ |
 | 83 | Catalogue — bureau distant : Apache Guacamole, FreeRDP, xrdp, Remmina, RDPY, TigerVNC, TightVNC, UltraVNC, X2Go | ✅ |
+| 84 | Catalogue — supports, déploiement, RMM et automatisation : Rufus, Ventoy, FOG, opsi, WAPT, Open-AudIT, Tactical RMM, RPort, Remotely, AutoHotkey, AutoIt, Actiona (Winbind déjà présent) | ✅ |
+| 85 | Catalogue — gestionnaires de paquets : Homebrew, MacPorts, Nix, GNU Guix, Flatpak, Snap, AppImage, équivalences apt/dnf/yum/zypper/pacman/apk/Portage (déjà traités par distribution) | ✅ |
+| 86 | Catalogue — init et supervision de processus : systemd, OpenRC, runit, s6, Supervisor, Monit, Circus, PM2, forever | ✅ |
+| 87 | Catalogue — shells, multiplexeurs et dotfiles : tmux, GNU Screen, Zellij, Bash, Zsh, Oh My Zsh, fish, Nushell, Starship, chezmoi, GNU Stow | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -148,8 +152,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | Service | Linux | Windows | macOS | État |
 | --- | --- | --- | --- | --- |
 | [[01-iis/01-presentation\|IIS]] (+ FTP, outils de gestion, WAS) | ➖ | Web-Server, Web-Ftp-Server, Web-Mgmt-Tools, WAS | ➖ | ✅ |
-| [[02-apache/01-presentation\|Apache HTTP Server]] | apache2 | Apache Lounge | httpd | ✅ |
-| [[03-nginx/01-presentation\|Nginx]] | nginx | nginx | nginx | ✅ |
+| [[02-apache/01-presentation\|Apache HTTP Server]] (+ documentation de référence : 17 commandes, 85 guides, 132 modules, 730 directives) | apache2 | Apache Lounge | httpd | ✅ |
+| [[03-nginx/01-presentation\|Nginx]] (+ documentation de référence traduite : 44 guides, 103 modules, 1 009 directives, 210 variables) | nginx | nginx | nginx | ✅ |
 | [[04-caddy/01-presentation-installation\|Caddy]] | caddy | caddy | caddy | ✅ |
 | [[05-php-fpm/01-presentation-installation-pools\|PHP (PHP-FPM)]] | php-fpm | PHP NTS (FastCGI IIS) | php | ✅ |
 | [[06-nodejs/01-presentation-installation\|Node.js]] | nodejs | Node.js LTS | node | ✅ |
@@ -370,6 +374,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | IA et productivité | [[05-ia-productivite/01-chatgpt\|ChatGPT]], [[05-ia-productivite/02-github-copilot\|GitHub Copilot]], [[05-ia-productivite/03-cursor\|Cursor]], [[05-ia-productivite/04-ollama-open-webui\|Ollama, Open WebUI]], [[05-ia-productivite/05-jupyterlab\|JupyterLab]], [[05-ia-productivite/06-n8n\|n8n]], [[05-ia-productivite/07-power-automate\|Power Automate]], [[05-ia-productivite/08-obsidian\|Obsidian]], [[05-ia-productivite/09-bookstack\|BookStack]] | ✅ |
 | Support et prise en main | [[06-support-parc/01-anydesk-teamviewer\|AnyDesk, TeamViewer]], [[06-support-parc/02-rustdesk\|RustDesk]], [[06-support-parc/03-meshcentral\|MeshCentral]], [[06-support-parc/04-glpi-installation\|GLPI]], [[06-support-parc/06-zammad\|Zammad]], [[06-support-parc/12-chatwoot\|Chatwoot]], [[06-support-parc/13-freescout\|FreeScout]], [[06-support-parc/14-osticket\|osTicket]], [[06-support-parc/15-itop\|iTop]], [[06-support-parc/16-otobo-znuny\|OTOBO et Znuny]], [[06-support-parc/17-request-tracker\|Request Tracker]], [[06-support-parc/18-uvdesk-faveo\|UVdesk et Faveo]], [[06-support-parc/07-ocs-inventory\|OCS Inventory NG]], [[06-support-parc/08-lansweeper\|Lansweeper]], [[06-support-parc/09-pdq-deploy\|PDQ Deploy]], [[06-support-parc/10-intune-inscription\|Intune]] | ✅ |
 | Disques et récupération | [[07-disques-recuperation/01-gparted\|GParted]], [[07-disques-recuperation/02-clonezilla\|Clonezilla]], [[07-disques-recuperation/03-testdisk-photorec\|TestDisk, PhotoRec]] | ✅ |
+| Gestionnaires de paquets | [[08-gestionnaires-paquets/01-homebrew-macports\|Homebrew, MacPorts]], [[08-gestionnaires-paquets/02-nix-guix\|Nix, Guix]], [[08-gestionnaires-paquets/03-flatpak-snap-appimage\|Flatpak, Snap, AppImage]], [[08-gestionnaires-paquets/04-equivalences-distributions\|équivalences apt, dnf, zypper, pacman, apk, Portage]] | ✅ |
+| Init et processus | [[09-init-processus/01-systemd\|systemd]], [[09-init-processus/02-openrc-runit-s6\|OpenRC, runit, s6]], [[09-init-processus/03-supervisor-monit-circus\|Supervisor, Monit, Circus]], [[09-init-processus/04-pm2-forever\|PM2, forever]] | ✅ |
+| Shells et terminal | [[10-shells-terminal/01-tmux-screen-zellij\|tmux, Screen, Zellij]], [[10-shells-terminal/02-shells-bash-zsh-fish-nushell\|Bash, Zsh, fish, Nushell, Starship, Oh My Zsh]], [[10-shells-terminal/03-dotfiles-chezmoi-stow\|chezmoi, GNU Stow]] | ✅ |
 
 ## Équipements réseau par constructeur
 
@@ -450,3 +457,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[02-bureau-distant/01-apache-guacamole\|Apache Guacamole]] | Docker, guacd + Tomcat | navigateur | navigateur | ✅ |
 | [[02-bureau-distant/02-rdp-freerdp-xrdp-remmina\|FreeRDP, xrdp, Remmina, RDPY]] | apt, dnf, Flatpak | FreeRDP | brew (FreeRDP) | ✅ |
 | [[02-bureau-distant/03-vnc-x2go\|TigerVNC, TightVNC, UltraVNC, X2Go]] | tigervnc, x2goserver | MSI, x2goclient | vncviewer, x2goclient | ✅ |
+| [[03-supports-deploiement/01-rufus-ventoy\|Rufus, Ventoy]] | Ventoy2Disk.sh | winget, portable | ➖ | ✅ |
+| [[03-supports-deploiement/02-fog-opsi-wapt\|FOG, opsi, WAPT]] | installfog.sh, Docker, paquets | agents | agents (opsi, WAPT) | ✅ |
+| [[04-inventaire-rmm/01-open-audit-tactical-rport-remotely\|Open-AudIT, Tactical RMM, RPort, Remotely]] | installateurs, script, Docker | agents, Open-AudIT | agents | ✅ |
+| [[05-automatisation-poste/01-autohotkey-autoit-actiona\|AutoHotkey, AutoIt, Actiona]] | apt (Actiona) | winget, installateurs | ➖ | ✅ |

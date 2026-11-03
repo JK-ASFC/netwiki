@@ -1,0 +1,19 @@
+{
+ "3266b86b461f": "Les adresses IPv6 de confiance sont prises en charge à partir des versions 1.3.0 et 1.2.1.",
+ "34c019abc20e": "Le fichier `conf/geo.conf` peut contenir les lignes suivantes :",
+ "35cc022664ed": "valeur affectée à la variable si l'adresse du client ne correspond à aucune des adresses indiquées. En notation CIDR, on peut utiliser « `0.0.0.0/0` » et « `::/0` » au lieu de `default`. Sans `default`, la valeur par défaut est une chaîne vide.",
+ "4353cfb07659": "inclut un fichier d'adresses et de valeurs. Il peut y avoir plusieurs inclusions.",
+ "53781bd17044": "indique que la variable ne peut pas être mise en cache (1.29.3).",
+ "5f316fa0a775": "définit les adresses de confiance (0.8.7, 0.7.63). Lorsqu'une requête provient d'une adresse de confiance, c'est l'adresse du champ d'en-tête de requête `X-Forwarded-For` qui est utilisée. Contrairement aux adresses ordinaires, les adresses de confiance sont vérifiées dans l'ordre.",
+ "60f680b3a039": "Décrit la dépendance entre les valeurs de la variable indiquée et l'adresse IP du client. Par défaut, l'adresse est prise dans la variable `$remote_addr`, mais elle peut aussi l'être dans une autre variable (0.7.27), par exemple :",
+ "6d7cb6d1e9b4": "active la recherche récursive d'adresse (1.3.0, 1.2.1). Si elle est désactivée, l'adresse d'origine du client qui correspond à une adresse de confiance est remplacée par la dernière adresse transmise dans `X-Forwarded-For`. Si elle est activée, elle est remplacée par la dernière adresse non fiable transmise dans `X-Forwarded-For`.",
+ "788ae36c2b98": "Exemple avec des plages :",
+ "89507baa151e": "indique que les adresses sont des plages (0.7.23). Ce paramètre doit figurer en premier. Pour accélérer le chargement d'une base geo, les adresses doivent être classées par ordre croissant.",
+ "8a93ed24f953": "Les adresses s'indiquent soit sous forme de préfixes en notation CIDR (adresses individuelles comprises), soit sous forme de plages (0.7.23).",
+ "b280dc2d4b8d": "Si la valeur d'une variable n'est pas une adresse IP valide, l'adresse « `255.255.255.255` » est utilisée.",
+ "bb0f97fe80dd": "Comme les variables ne sont évaluées que lorsqu'elles sont utilisées, la simple existence d'un grand nombre de variables « `geo` » déclarées n'ajoute aucun coût au traitement des requêtes.",
+ "c37e9ceaef53": "Les préfixes IPv6 sont pris en charge à partir des versions 1.3.10 et 1.2.7.",
+ "e300744005b0": "Le module `ngx_http_geo_module` crée des variables dont la valeur dépend de l'adresse IP du client.",
+ "e6367ed414d0": "La valeur de la correspondance la plus précise est utilisée. Par exemple, pour l'adresse 127.0.0.1, c'est la valeur « `RU` » qui est choisie, et non « `US` ».",
+ "eb6065da8e29": "supprime le réseau indiqué (0.7.23)."
+}

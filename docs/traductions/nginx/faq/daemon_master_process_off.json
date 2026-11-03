@@ -1,0 +1,7 @@
+{
+ "0beb31d080bd": "Puis-je utiliser nginx avec « daemon off » ou « master\\_process off » en production ?",
+ "2ceee997898e": "R : Les directives « daemon on|off » et « master\\_process on|off » ont avant tout été conçues pour le développement du code de nginx.",
+ "3c80339ba85e": "Q : Puis-je utiliser nginx avec « daemon off » ou « master\\_process off » en production ?",
+ "a1b16b84cbef": "En environnement de développement, avec « master\\_process off », nginx peut tourner au premier plan sans processus maître et s'arrêter simplement avec ^C (SIGINT). C'est un peu comme lancer Apache avec l'option de ligne de commande « X ». En revanche, il ne faut JAMAIS utiliser nginx en production avec « master\\_process off ».",
+ "a7851c79d157": "Beaucoup utilisent « daemon off » en production, alors que ce n'était pas vraiment prévu pour cela. Depuis la version 1.0.9, on peut toutefois utiliser nginx en production avec « daemon off » sans risque. Attention : la mise à jour sans interruption n'est pas possible avec « daemon off »."
+}

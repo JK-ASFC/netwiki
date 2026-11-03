@@ -1,0 +1,21 @@
+{
+ "2273b9c9bc4d": "Contribuer des modifications",
+ "2e8a57cc5c47": "Site web",
+ "3229609e1543": "Licence",
+ "361fa51a0371": "Passer vos modifications dans la suite de tests est un bon moyen de vérifier qu'elles ne provoquent pas de régression. Le [dépôt](https://github.com/nginx/nginx-tests) des tests peut être cloné avec la commande suivante :",
+ "3c17304aee45": "Avant de soumettre",
+ "46b71aebf37a": "Les modifications proposées doivent fonctionner correctement sur un large éventail de plates-formes prises en charge.",
+ "4b2054f1aa8d": "Le code source est hébergé sur [GitHub](https://github.com). Le [dépôt](https://github.com/nginx/nginx) peut être cloné avec la commande suivante :",
+ "516cb17f29f4": "Les modifications proposées doivent être soumises depuis votre fork vers le [dépôt nginx](https://github.com/nginx/nginx) sous forme de [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).",
+ "65830bd62b17": "Quelques points méritent attention avant de soumettre des modifications :",
+ "689e94a1e314": "Les modifications doivent respecter le style de code de nginx. Lorsqu'il n'existe pas de règle claire, observez la mise en forme des sources existantes de nginx et imitez-la. Une modification a plus de chances d'être acceptée si son style correspond au code environnant.",
+ "69c7d2904e32": "Mise en forme des modifications",
+ "70d46c4ef2cf": "Le message de commit doit comporter un résumé d'une ligne, suivi d'une description détaillée après une ligne vide. Limitez les lignes du sujet et du corps du message à 72 caractères. Le commit obtenu s'affiche avec la commande `git show` :",
+ "72b1f69c658f": "Soumettre des modifications implique d'autoriser le projet à les utiliser sous une [licence](https://nginx.org/LICENSE) appropriée.",
+ "7dfdc52f8220": "Soumettre les modifications",
+ "9aec4d770af6": "[Commitez](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/about-commits) les modifications dans votre fork GitHub de nginx. Vérifiez que l'adresse [e-mail](https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git) et le vrai nom de l'auteur sont corrects.",
+ "c8270422378e": "Les sources de ce site web sont hébergées sur GitHub. Le [dépôt](https://www.github.com/nginx/nginx.org) peut être cloné avec la commande suivante :",
+ "e505d24ed33e": "Expliquez clairement pourquoi la modification est nécessaire et, si possible, donnez un cas d'usage.",
+ "e9d8e678e653": "Obtenir les sources",
+ "ed3ec49c8604": "Les modifications de la documentation doivent être soumises depuis votre fork sous forme de pull request."
+}

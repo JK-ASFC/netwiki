@@ -1,0 +1,6 @@
+{
+ "52e1c4ab91b4": "Si cette option est activée, l'opération [[12-directives/proxy-bind-stream-proxy|bind]] est effectuée à chaque tentative de connexion.",
+ "8a81453715fa": "Indique un fichier (*file*) de phrases de passe pour les [[12-directives/proxy-ssl-certificate-key-stream-proxy|clés secrètes]], une phrase par ligne. Les phrases sont essayées tour à tour au chargement de la clé.",
+ "b240da5dc322": "Définit un cache qui conserve les [[12-directives/proxy-ssl-certificate-stream-proxy|certificats SSL]] et les [[12-directives/proxy-ssl-certificate-key-stream-proxy|clés secrètes]] indiqués par des variables.",
+ "d34e3586d8b3": "Si un nom de domaine se résout en plusieurs adresses, elles sont toutes utilisées à tour de rôle. Une adresse peut aussi désigner un [[11-modules/03-stream/ngx_stream_upstream_module|groupe de serveurs]]."
+}

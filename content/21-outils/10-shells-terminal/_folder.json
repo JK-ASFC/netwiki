@@ -1,0 +1,1 @@
+{ "title": "Shells, multiplexeurs et dotfiles", "icon": "square-terminal", "color": "#475569", "description": "Multiplexeurs de terminal (tmux, GNU Screen, Zellij), shells (Bash, Zsh, fish, Nushell), invites et frameworks (Starship, Oh My Zsh) et gestion des fichiers de configuration (chezmoi, GNU Stow)." }

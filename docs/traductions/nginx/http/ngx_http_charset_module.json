@@ -1,0 +1,19 @@
+{
+ "0aaed9570d90": "Si la réponse est reçue dans une sous-requête, la conversion du jeu de caractères de la réponse vers celui de la requête principale est toujours effectuée, quelle que soit la valeur de la directive `override_charset`.",
+ "0ccaa0809e39": "ou les jeux de caractères à un octet vers ou depuis UTF-8.",
+ "2087d3044240": "seuls les jeux de caractères à un octet peuvent être convertis",
+ "2b60ffdc8abe": "Les tables de conversion complètes de `koi8-r` vers `windows-1251`, et de `koi8-r` et `windows-1251` vers `utf-8`, sont fournies dans les fichiers de la distribution `conf/koi-win`, `conf/koi-utf` et `conf/win-utf`.",
+ "4aa9382d3d4c": "Active le traitement par le module des réponses des types MIME indiqués, en plus de « `text/html` ». La valeur spéciale « `*` » correspond à tous les types MIME (0.8.29).",
+ "56fbfedbfbe1": "Le jeu de caractères peut être défini par une variable :",
+ "6f800eb4638c": "Jusqu'à la version 1.5.4, « `application/x-javascript` » était le type MIME par défaut au lieu de « `application/javascript` ».",
+ "8dab4f2f9287": "la conversion ne se fait que dans un sens, du serveur vers le client ;",
+ "9f3f931badd2": "Dans ce cas, toutes les valeurs possibles de la variable doivent apparaître au moins une fois dans la configuration, sous forme de directives [[12-directives/charset-map|charset_map]], [[12-directives/charset|charset]] ou [[12-directives/source-charset|source_charset]]. Pour les jeux `utf-8`, `windows-1251` et `koi8-r`, il suffit d'inclure les fichiers `conf/koi-win`, `conf/koi-utf` et `conf/win-utf` dans la configuration. Pour les autres, une table de conversion fictive suffit, par exemple :",
+ "aa5df4112e13": "Le jeu de caractères peut aussi être défini dans le champ d'en-tête de réponse `X-Accel-Charset`. Cette possibilité peut être désactivée avec les directives [[12-directives/proxy-ignore-headers|proxy_ignore_headers]], [[12-directives/fastcgi-ignore-headers|fastcgi_ignore_headers]], [[12-directives/uwsgi-ignore-headers|uwsgi_ignore_headers]], [[12-directives/scgi-ignore-headers|scgi_ignore_headers]] et [[12-directives/grpc-ignore-headers|grpc_ignore_headers]].",
+ "b0f549a3079e": "Pour décrire une table de conversion vers UTF-8, les codes UTF-8 se placent dans la seconde colonne, par exemple :",
+ "bc1e1c34e2c2": "Le module `ngx_http_charset_module` ajoute le jeu de caractères indiqué au champ d'en-tête de réponse `Content-Type`. Il peut aussi convertir les données d'un jeu de caractères à un autre, avec certaines limites :",
+ "bc9140603340": "Indique si une conversion doit être effectuée pour les réponses reçues d'un serveur mandaté ou d'un serveur FastCGI/uwsgi/SCGI/gRPC qui portent déjà un jeu de caractères dans le champ d'en-tête `Content-Type`. Si la conversion est activée, le jeu de caractères de la réponse reçue sert de jeu source.",
+ "c39d889b64c4": "Ajoute le jeu de caractères indiqué au champ d'en-tête de réponse `Content-Type`. S'il diffère de celui indiqué dans la directive [[12-directives/source-charset|source_charset]], une conversion est effectuée.",
+ "e01091228b77": "Le paramètre `off` annule l'ajout du jeu de caractères au champ d'en-tête de réponse `Content-Type`.",
+ "e3d95992357e": "Décrit la table de conversion d'un jeu de caractères à un autre. La table inverse est construite à partir des mêmes données. Les codes des caractères sont en hexadécimal. Les caractères manquants dans la plage 80-FF sont remplacés par « `?` ». Lors d'une conversion depuis UTF-8, les caractères absents du jeu à un octet sont remplacés par « `&#XXXX;` ».",
+ "f2aad0aade8e": "Définit le jeu de caractères source d'une réponse. S'il diffère de celui indiqué dans la directive [[12-directives/charset|charset]], une conversion est effectuée."
+}

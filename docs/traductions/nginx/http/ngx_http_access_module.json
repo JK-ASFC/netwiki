@@ -1,0 +1,9 @@
+{
+ "57b8b2148b7b": "Le module `ngx_http_access_module` permet de limiter l'accès à certaines adresses de clients.",
+ "75342f2b0914": "Refuse l'accès pour le réseau ou l'adresse indiqués. Avec la valeur spéciale `unix:` (1.5.1), refuse l'accès pour tous les sockets de domaine UNIX.",
+ "960c033d0f80": "Plusieurs directives `deny` peuvent être indiquées au même niveau. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `allow` ni `deny` n'est définie au niveau courant.",
+ "a61e47653974": "L'accès peut aussi être limité par [[11-modules/02-http/ngx_http_auth_basic_module|mot de passe]], par le [[11-modules/02-http/ngx_http_auth_request_module|résultat d'une sous-requête]] ou par [[11-modules/02-http/ngx_http_auth_jwt_module|JWT]]. La limitation simultanée par adresse et par mot de passe est contrôlée par la directive [[12-directives/satisfy|satisfy]].",
+ "ddf850131f74": "Plusieurs directives `allow` peuvent être indiquées au même niveau. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `allow` ni `deny` n'est définie au niveau courant.",
+ "e1a3b40813e9": "Les règles sont vérifiées dans l'ordre jusqu'à la première correspondance. Dans cet exemple, l'accès est autorisé uniquement pour les réseaux IPv4 `10.1.1.0/16` et `192.168.1.0/24`, sauf l'adresse `192.168.1.1`, et pour le réseau IPv6 `2001:0db8::/32`. Lorsque les règles sont nombreuses, il est préférable d'utiliser les variables du module [[11-modules/02-http/ngx_http_geo_module|ngx_http_geo_module]].",
+ "fe264febc445": "Autorise l'accès pour le réseau ou l'adresse indiqués. Avec la valeur spéciale `unix:` (1.5.1), autorise l'accès pour tous les sockets de domaine UNIX."
+}

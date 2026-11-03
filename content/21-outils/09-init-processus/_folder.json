@@ -1,0 +1,1 @@
+{ "title": "Init et supervision de processus", "icon": "activity", "color": "#059669", "description": "Systèmes d'init (systemd, OpenRC, runit, s6) et superviseurs de processus (Supervisor, Monit, Circus, PM2, forever)." }

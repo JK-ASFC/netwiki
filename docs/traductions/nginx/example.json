@@ -1,0 +1,4 @@
+{
+ "1d8379054a62": "Exemple de configuration de nginx",
+ "bb49c9126394": "Exemple de configuration de site qui transmet toutes les requêtes au serveur d'arrière-plan, sauf les images et les requêtes commençant par « /download/ »."
+}

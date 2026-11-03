@@ -1,0 +1,14 @@
+{
+ "0f1b13f0972b": "Les versions peuvent s'écrire sous les formes X, X.X, X.X.X ou X.X.X.X. Les valeurs maximales sont respectivement 4000, 4000.99, 4000.99.99 et 4000.99.99.99.",
+ "1fcefd8141a2": "vaut la valeur définie par la directive [[12-directives/modern-browser-value|modern_browser_value]] si le navigateur est identifié comme moderne ;",
+ "41bb340ba6f8": "vaut « 1 » si le navigateur est identifié comme MSIE, quelle que soit sa version.",
+ "5c77eeaee9fc": "vaut la valeur définie par la directive [[12-directives/ancient-browser-value|ancient_browser_value]] si le navigateur est identifié comme ancien ;",
+ "6e6dc72d195a": "Définit la valeur des variables `$ancient_browser`.",
+ "8de2a96729ab": "La valeur spéciale `unlisted` considère comme moderne un navigateur qui ne figure ni dans les directives `modern_browser` ni dans [[12-directives/ancient-browser|ancient_browser]] ; sinon, un tel navigateur est considéré comme ancien. Si la requête ne contient pas de champ `User-Agent`, le navigateur est traité comme non listé.",
+ "ac05abd55025": "Le module `ngx_http_browser_module` crée des variables dont la valeur dépend du champ d'en-tête de requête `User-Agent` :",
+ "d3f12fbda1ab": "Choix d'un fichier d'index :",
+ "e0adb2b4fd39": "Redirection des anciens navigateurs :",
+ "e74c612d7bc7": "Si l'une des sous-chaînes indiquées figure dans le champ d'en-tête de requête `User-Agent`, le navigateur est considéré comme ancien. La chaîne spéciale « `netscape4` » correspond à l'expression régulière « `^Mozilla/[1-4]` ».",
+ "eea7c81e66dc": "Indique la version à partir de laquelle un navigateur est considéré comme moderne. Le navigateur peut être : `msie`, `gecko` (navigateurs fondés sur Mozilla), `opera`, `safari` ou `konqueror`.",
+ "fc4cb9a16c07": "Définit la valeur des variables `$modern_browser`."
+}

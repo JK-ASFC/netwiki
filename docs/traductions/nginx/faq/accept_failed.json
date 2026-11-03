@@ -1,0 +1,5 @@
+{
+ "0ef9f5b93859": "R : Ces erreurs proviennent de connexions que les clients ont fermées avant que nginx ait pu les traiter. Cela arrive par exemple quand l'utilisateur n'attend pas le chargement complet d'une page riche en images et clique sur un autre lien : son navigateur ferme alors toutes les connexions précédentes devenues inutiles. Cette erreur n'est pas critique.",
+ "2631f2ae421f": "Que signifie l'erreur suivante dans le journal : « accept() failed (53: Software caused connection abort) while accepting new connection on 0.0.0.0:80 » ?",
+ "2b67fb2f370e": "Q : Que signifie l'erreur suivante dans le journal : « accept() failed (53: Software caused connection abort) while accepting new connection on 0.0.0.0:80 » ?"
+}
