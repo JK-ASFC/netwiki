@@ -57,4 +57,4 @@ sonobuoy delete --wait
 
 Utile après une installation ou une mise à niveau du cluster (kubeadm, RKE2, k3s) et avant de déclarer un cluster prêt pour la production.
 
-Voir aussi : [[03-applications-vulnerables|applications vulnérables]]. Commandes : [[90-aide-memoire|aide-mémoire]].
+Voir aussi : [[02-tests-charge|tests de charge]] · [[03-applications-vulnerables|applications vulnérables]]. Commandes : [[90-aide-memoire|aide-mémoire]].

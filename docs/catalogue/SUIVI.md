@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 184 (14 %) | 595 | 2 | 530 (40 %) |
+| 1311 | 184 (14 %) | 603 | 2 | 522 (40 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -767,7 +767,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OCS Inventory NG | Inventaire IT | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/07-ocs-inventory` |
 | FusionInventory | Inventaire IT (ancien) | Windows, Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
 
-## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 48/56
+## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 56/56
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -817,14 +817,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Allure Report | Rapports tests | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 | ReportPortal | Rapports tests | Linux | 🆕 fait (lot 80) | `14-devops/18-tests` |
 | Sonobuoy | Tests Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
-| k6 | Tests de charge | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Apache JMeter | Tests de charge | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Locust | Tests de charge | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Gatling (core) | Tests de charge | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Vegeta | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| wrk | Tests HTTP | Linux, macOS | ⏳ à faire | → `14-devops` |
-| hey | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Siege | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
+| k6 | Tests de charge | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| Apache JMeter | Tests de charge | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| Locust | Tests de charge | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| Gatling (core) | Tests de charge | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| Vegeta | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| wrk | Tests HTTP | Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| hey | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
+| Siege | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 81) | `14-devops/18-tests` |
 | OWASP Juice Shop | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 | WebGoat | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 
