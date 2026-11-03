@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 193 (15 %) | 652 | 2 | 464 (35 %) |
+| 1311 | 193 (15 %) | 663 | 2 | 453 (35 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -874,7 +874,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | AutoIt | Automatisation Windows | Windows | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
 | PowerToys | Utilitaires Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 
-## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 26/67
+## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 37/67
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -901,17 +901,17 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | PM2 | Gestion processus Node.js | Windows, Linux, macOS | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
 | forever | Gestion processus Node.js | Windows, Linux, macOS | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
 | circus | Gestion processus | Windows, Linux, macOS | 🆕 fait (lot 86) | `21-outils/09-init-processus` |
-| GNU Screen | Multiplexeur terminal | Linux, macOS | ⏳ à faire | → `21-outils` |
-| tmux | Multiplexeur terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Zellij | Multiplexeur terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Fish shell | Shell | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Zsh | Shell | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Bash | Shell | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| nushell | Shell | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Starship | Invite shell | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Oh My Zsh | Configuration Zsh | Linux, macOS | ⏳ à faire | → `21-outils` |
-| chezmoi | Gestion dotfiles | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| GNU Stow | Gestion dotfiles | Linux, macOS | ⏳ à faire | → `21-outils` |
+| GNU Screen | Multiplexeur terminal | Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| tmux | Multiplexeur terminal | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Zellij | Multiplexeur terminal | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Fish shell | Shell | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Zsh | Shell | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Bash | Shell | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| nushell | Shell | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Starship | Invite shell | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| Oh My Zsh | Configuration Zsh | Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| chezmoi | Gestion dotfiles | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
+| GNU Stow | Gestion dotfiles | Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
 | Ansible Pull | Configuration poste | Windows, Linux, macOS | ✅ existant | `17-automatisation/01-ansible` |
 | Timeshift | Snapshots système | Linux | ⏳ à faire | → `21-outils` |
 | Snapper | Snapshots système | Linux | ⏳ à faire | → `21-outils` |
