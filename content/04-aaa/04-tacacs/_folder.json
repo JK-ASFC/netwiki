@@ -1,0 +1,1 @@
+{ "title": "TACACS & TACACS+", "icon": "square-terminal", "color": "#f97316", "description": "TACACS (RFC 1492), XTACACS et TACACS+ (RFC 8907, TLS RFC 9887) : protocoles, serveurs tac_plus-ng et tac_plus, configuration des équipements, autorisation commande par commande, journalisation et dépannage." }

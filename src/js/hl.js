@@ -154,6 +154,21 @@ hljs.registerLanguage('cisco', (hl) => ({
   ],
 }));
 
+hljs.registerLanguage(
+  'tacplus',
+  confLanguage(
+    'TACACS+ (tac_plus-ng, tac_plus)',
+    'id spawnd listen spawn instances min max background port address tls tls-cert-file tls-key-file tls-ca-file ' +
+      'device host realm key group user profile ruleset rule script if else permit deny return set member password login pap ' +
+      'chap ms-chap clear crypt mavis pam des enable service cmd cmd-arg priv-lvl shell exec junos-exec context message ' +
+      'log destination access authorization accounting acctlog accesslog authorlog syslog file include default prohibit ' +
+      'enabled backend module setenv exec timeout idletime acl autocmd single-connection after authorization before ' +
+      'accounting key-file expires valid until from nac client server-name nas-name user-backend login-backend pap-backend',
+    [{ className: 'operator', begin: /==|!=|=~|!~|=/ }],
+  ),
+);
+
+hljs.registerAliases(['tac_plus', 'tac_plus-ng', 'tacacs'], { languageName: 'tacplus' });
 hljs.registerAliases(['sh', 'zsh', 'console', 'linux'], { languageName: 'bash' });
 hljs.registerAliases(['ps', 'ps1', 'pwsh', 'cmd', 'bat', 'batch'], { languageName: 'powershell' });
 hljs.registerAliases(['zone'], { languageName: 'dns' });
