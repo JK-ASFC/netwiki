@@ -1,12 +1,9 @@
 ---
 title: "limit_conn (ngx_stream_limit_conn_module)"
-description: "Directive nginx limit_conn (ngx_stream_limit_conn_module) — Sets the shared memory zone and the maximum allowed number of connections for a given key value. When this limit is exceeded, the server will close the connection. For example, the directives nginx…"
+description: "Directive nginx limit_conn (ngx_stream_limit_conn_module) — Définit la zone de mémoire partagée et le nombre maximal de connexions autorisées pour une valeur de clé donnée. Au-delà de cette limite, le serveur ferme la connexion. Par exemple, les directives…"
 tags: [nginx, directive, ngx_stream_limit_conn_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the shared memory zone and the maximum allowed number of connections for a given key value. When this limit is exceeded, the server will close the connection. For example, the directives
+Définit la zone de mémoire partagée et le nombre maximal de connexions autorisées pour une valeur de clé donnée. Au-delà de cette limite, le serveur ferme la connexion. Par exemple, les directives
 
 ```nginx
 limit_conn_zone $binary_remote_addr zone=addr:10m;
@@ -30,7 +27,7 @@ server {
 
 n'autorisent qu'une seule connexion à la fois par adresse IP.
 
-When several `limit_conn` directives are specified, any configured limit will apply.
+Quand plusieurs directives `limit_conn` sont indiquées, chaque limite configurée s'applique.
 
 Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `limit_conn` n'est définie au niveau courant.
 

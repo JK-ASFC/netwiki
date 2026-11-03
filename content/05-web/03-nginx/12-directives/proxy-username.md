@@ -1,12 +1,9 @@
 ---
 title: "proxy_username"
-description: "Directive nginx proxy_username (ngx_mgmt_module) — Sets the user name used for authentication on the proxy."
+description: "Directive nginx proxy_username (ngx_mgmt_module) — Définit le nom d'utilisateur pour l'authentification auprès du mandataire."
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the user name used for authentication on the [[12-directives/proxy|proxy]].
+Définit le nom d'utilisateur pour l'authentification auprès du [[12-directives/proxy|mandataire]].
 
 ---
 

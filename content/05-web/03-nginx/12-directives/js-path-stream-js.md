@@ -1,12 +1,9 @@
 ---
 title: "js_path (ngx_stream_js_module)"
-description: "Directive nginx js_path (ngx_stream_js_module) — Définit un chemin supplémentaire pour les modules njs. NOTE The directive can be specified on the server level since 0.7.7."
+description: "Directive nginx js_path (ngx_stream_js_module) — Définit un chemin supplémentaire pour les modules njs. NOTE La directive peut être indiquée au niveau server depuis la version 0.7.7."
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -21,7 +18,7 @@ icon: settings-2
 Définit un chemin supplémentaire pour les modules njs.
 
 > [!NOTE]
-> The directive can be specified on the `server` level since 0.7.7.
+> La directive peut être indiquée au niveau `server` depuis la version 0.7.7.
 
 ---
 

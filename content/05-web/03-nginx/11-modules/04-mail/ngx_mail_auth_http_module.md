@@ -5,16 +5,13 @@ tags: [nginx, module, ngx_mail_auth_http_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 ## Protocole
 
 Le protocole HTTP sert à communiquer avec le serveur d'authentification. Les données du corps de la réponse sont ignorées ; les informations ne sont transmises que dans les en-têtes.
 
-Examples of requests and responses:
+Exemples de requêtes et de réponses :
 
-Request:
+Requête :
 
 ```nginx
 GET /auth HTTP/1.0
@@ -28,7 +25,7 @@ Client-IP: 192.0.2.42
 Client-Host: client.example.org
 ```
 
-Good response:
+Réponse positive :
 
 ```nginx
 HTTP/1.0 200 OK
@@ -37,7 +34,7 @@ Auth-Server: 198.51.100.1
 Auth-Port: 143
 ```
 
-Bad response:
+Réponse négative :
 
 ```nginx
 HTTP/1.0 200 OK
@@ -45,9 +42,9 @@ Auth-Status: Invalid login or password
 Auth-Wait: 3
 ```
 
-If there is no `Auth-Wait` header, an error will be returned and the connection will be closed. The current implementation allocates memory for each authentication attempt. The memory is freed only at the end of a session. Therefore, the number of invalid authentication attempts in a single session must be limited — the server must respond without the `Auth-Wait` header after 10-20 attempts (the attempt number is passed in the `Auth-Login-Attempt` header).
+S'il n'y a pas d'en-tête `Auth-Wait`, une erreur est renvoyée et la connexion fermée. La mise en œuvre actuelle alloue de la mémoire à chaque tentative d'authentification, libérée seulement à la fin de la session. Le nombre de tentatives d'authentification non valides dans une même session doit donc être limité : le serveur doit répondre sans l'en-tête `Auth-Wait` après 10 à 20 tentatives (le numéro de tentative est transmis dans l'en-tête `Auth-Login-Attempt`).
 
-When the APOP or CRAM-MD5 are used, request-response will look as follows:
+Avec APOP ou CRAM-MD5, la requête et la réponse ressemblent à ceci :
 
 ```nginx
 GET /auth HTTP/1.0
@@ -62,7 +59,7 @@ Client-IP: 192.0.2.42
 Client-Host: client.example.org
 ```
 
-Good response:
+Réponse positive :
 
 ```nginx
 HTTP/1.0 200 OK
@@ -72,11 +69,11 @@ Auth-Port: 143
 Auth-Pass: plain-text-pass
 ```
 
-If the `Auth-User` header exists in the response, it overrides the username used to authenticate with the backend.
+Si l'en-tête `Auth-User` est présent dans la réponse, il remplace le nom d'utilisateur utilisé pour s'authentifier auprès du serveur d'arrière-plan.
 
-For the SMTP, the response additionally takes into account the `Auth-Error-Code` header — if exists, it is used as a response code in case of an error. Otherwise, the 535 5.7.0 code will be added to the `Auth-Status` header.
+Pour SMTP, la réponse tient aussi compte de l'en-tête `Auth-Error-Code` : s'il est présent, il sert de code de réponse en cas d'erreur ; sinon, le code 535 5.7.0 est ajouté à l'en-tête `Auth-Status`.
 
-For example, if the following response is received from the authentication server:
+Par exemple, si le serveur d'authentification renvoie la réponse suivante :
 
 ```nginx
 HTTP/1.0 200 OK
@@ -85,13 +82,13 @@ Auth-Error-Code: 451 4.3.0
 Auth-Wait: 3
 ```
 
-then the SMTP client will receive an error
+le client SMTP reçoit l'erreur
 
 ```nginx
 451 4.3.0 Temporary server problem, try again later
 ```
 
-If proxying SMTP does not require authentication, the request will look as follows:
+Si le relais SMTP ne nécessite pas d'authentification, la requête ressemble à ceci :
 
 ```nginx
 GET /auth HTTP/1.0
@@ -108,12 +105,12 @@ Auth-SMTP-From: MAIL FROM: <>
 Auth-SMTP-To: RCPT TO: <postmaster@mail.example.com>
 ```
 
-For the SSL/TLS client connection (1.7.11), the `Auth-SSL` header is added, and `Auth-SSL-Verify` will contain the result of client certificate verification, if [[12-directives/ssl-verify-client-mail-ssl|enabled]]: “`SUCCESS`”, “`FAILED:`*reason*”, and “`NONE`” if a certificate was not present.
+Pour une connexion cliente SSL/TLS (1.7.11), l'en-tête `Auth-SSL` est ajouté, et `Auth-SSL-Verify` contient le résultat de la vérification du certificat du client si elle est [[12-directives/ssl-verify-client-mail-ssl|activée]] : « `SUCCESS` », « `FAILED:`*reason* », ou « `NONE` » si aucun certificat n'a été présenté.
 
 > [!NOTE]
 > Avant la version 1.11.7, le résultat « `FAILED` » ne contenait pas la chaîne *reason*.
 
-When the client certificate was present, its details are passed in the following request headers: `Auth-SSL-Subject`, `Auth-SSL-Issuer`, `Auth-SSL-Serial`, and `Auth-SSL-Fingerprint`. If [[12-directives/auth-http-pass-client-cert|auth_http_pass_client_cert]] is enabled, the certificate itself is passed in the `Auth-SSL-Cert` header. The protocol and cipher of the established connection are passed in the `Auth-SSL-Protocol` and `Auth-SSL-Cipher` headers (1.21.2). The request will look as follows:
+Si le client a présenté un certificat, ses détails sont transmis dans les en-têtes de requête `Auth-SSL-Subject`, `Auth-SSL-Issuer`, `Auth-SSL-Serial` et `Auth-SSL-Fingerprint`. Si [[12-directives/auth-http-pass-client-cert|auth_http_pass_client_cert]] est activé, le certificat lui-même est transmis dans l'en-tête `Auth-SSL-Cert`. Le protocole et la suite de chiffrement de la connexion sont transmis dans les en-têtes `Auth-SSL-Protocol` et `Auth-SSL-Cipher` (1.21.2). La requête ressemble à ceci :
 
 ```nginx
 GET /auth HTTP/1.0
@@ -134,7 +131,7 @@ Auth-SSL-Serial: C07AD56B846B5BFF
 Auth-SSL-Fingerprint: 29d6a80a123d13355ed16b4b04605e29cb55a5ad
 ```
 
-When the [[11-modules/04-mail/ngx_mail_core_module|PROXY protocol]] is used, its details are passed in the following request headers: `Proxy-Protocol-Addr`, `Proxy-Protocol-Port`, `Proxy-Protocol-Server-Addr`, and `Proxy-Protocol-Server-Port` (1.19.8).
+Avec le [[11-modules/04-mail/ngx_mail_core_module|protocole PROXY]], ses détails sont transmis dans les en-têtes de requête `Proxy-Protocol-Addr`, `Proxy-Protocol-Port`, `Proxy-Protocol-Server-Addr` et `Proxy-Protocol-Server-Port` (1.19.8).
 
 ## Directives
 

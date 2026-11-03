@@ -24,7 +24,7 @@ state /var/lib/nginx/state/servers.conf; # path for Linux
 state /var/db/nginx/state/servers.conf;  # path for FreeBSD
 ```
 
-L'état se limite actuellement à la liste des serveurs et de leurs paramètres. Le fichier est lu lors de l'analyse de la configuration et mis à jour à chaque [[11-modules/03-stream/ngx_stream_api_module|modification]] de la configuration du groupe amont. Il faut éviter de modifier directement son contenu. La directive ne peut pas être utilisée avec la directive [[12-directives/server-stream-upstream|server]].
+L'état se limite actuellement à la liste des serveurs et de leurs paramètres. Le fichier est lu lors de l'analyse de la configuration et mis à jour à chaque [[11-modules/02-http/ngx_http_api_module|modification]] de la configuration du groupe amont. Il faut éviter de modifier directement son contenu. La directive ne peut pas être utilisée avec la directive [[12-directives/server-stream-upstream|server]].
 
 > [!NOTE]
 > Les modifications faites pendant un [[10-guides/01-introduction/control|rechargement de la configuration]] ou une [[10-guides/01-introduction/control|mise à jour de l'exécutable]] peuvent être perdues.

@@ -1,12 +1,9 @@
 ---
 title: "health_check (ngx_stream_upstream_hc_module)"
-description: "Directive nginx health_check (ngx_stream_upstream_hc_module) — Enables periodic health checks of the servers in a group. Les paramètres facultatifs suivants sont pris en charge : - interval=time définit l'intervalle entre deux vérifications consécutives ; 5…"
+description: "Directive nginx health_check (ngx_stream_upstream_hc_module) — Active les vérifications de santé périodiques des serveurs d'un groupe. Les paramètres facultatifs suivants sont pris en charge : - interval=time définit l'intervalle entre deux vérifications…"
 tags: [nginx, directive, ngx_stream_upstream_hc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables periodic health checks of the servers in a [[12-directives/upstream-stream-upstream|group]].
+Active les vérifications de santé périodiques des serveurs d'un [[12-directives/upstream-stream-upstream|groupe]].
 
 Les paramètres facultatifs suivants sont pris en charge :
 
@@ -39,16 +36,16 @@ Les paramètres facultatifs suivants sont pris en charge :
 
 - **`mandatory` \[`persistent`\]**
 
-  sets the initial “checking” state for a server until the first health check is completed (1.11.7). Client connections are not passed to servers in the “checking” state. If the parameter is not specified, the server will be initially considered healthy.
+  place initialement le serveur à l'état « checking » jusqu'à la fin de la première vérification (1.11.7). Les connexions client ne sont pas passées aux serveurs à l'état « checking ». Sans ce paramètre, le serveur est initialement considéré comme sain.
 
-  The `persistent` parameter (1.21.1) sets the initial “up” state for a server after reload if the server was considered healthy before reload.
+  Le paramètre `persistent` (1.21.1) place le serveur à l'état initial « up » après un rechargement s'il était considéré comme sain avant celui-ci.
 
 - **`match`=*name***
 
-  specifies the `match` block configuring the tests that a successful connection should pass in order for a health check to pass. By default, for TCP, only the ability to establish a TCP connection with the server is checked. For UDP, the absence of ICMP “`Destination Unreachable`” message is expected in reply to the sent string “`nginx health check`”.
+  indique le bloc `match` qui configure les tests qu'une connexion réussie doit passer pour que la vérification réussisse. Par défaut, en TCP, seule la possibilité d'établir une connexion TCP avec le serveur est vérifiée. En UDP, on attend l'absence de message ICMP « `Destination Unreachable` » en réponse à la chaîne envoyée « `nginx health check` ».
 
   > [!NOTE]
-  > Prior to version 1.11.7, by default, UDP health check required a match block with the send and expect parameters.
+  > Avant la version 1.11.7, la vérification UDP exigeait par défaut un bloc match avec les paramètres send et expect.
 
 - **`port`=*number***
 
@@ -56,7 +53,7 @@ Les paramètres facultatifs suivants sont pris en charge :
 
 - **`udp`**
 
-  specifies that the `UDP` protocol should be used for health checks instead of the default `TCP` protocol (1.9.13).
+  indique que le protocole `UDP` doit être utilisé pour les vérifications au lieu du protocole `TCP` par défaut (1.9.13).
 
 ---
 

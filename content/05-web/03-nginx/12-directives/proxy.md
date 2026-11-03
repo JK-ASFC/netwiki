@@ -1,12 +1,9 @@
 ---
 title: "proxy"
-description: "Directive nginx proxy (ngx_mgmt_module) — Sets the HTTP CONNECT proxy used for sending the usage report."
+description: "Directive nginx proxy (ngx_mgmt_module) — Définit le mandataire HTTP CONNECT utilisé pour envoyer le rapport d'utilisation."
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the HTTP CONNECT proxy used for sending the usage report.
+Définit le mandataire HTTP CONNECT utilisé pour envoyer le rapport d'utilisation.
 
 ---
 

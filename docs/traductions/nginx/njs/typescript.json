@@ -1,0 +1,15 @@
+{
+ "241f2d61c9a8": "Écrire du code njs sûr du point de vue des types",
+ "4cb098539a80": "Installation de TypeScript :",
+ "65a0e9791658": "Le fichier `test.js` obtenu peut être utilisé directement avec njs.",
+ "8b9f0e9c4a3f": "Placez les fichiers `*.d.ts` à un endroit où votre éditeur peut les trouver.",
+ "975cd20c7b62": "Écrire du code njs sûr du point de vue des types",
+ "a73b1d62aa2a": "Écrire du code njs avec les fichiers de définitions TypeScript",
+ "cf64c7b73987": "Vérifications de l'API et autocomplétion",
+ "d411d56f794f": "[TypeScript](https://www.typescriptlang.org) est un sur-ensemble typé de JavaScript qui se compile en JavaScript ordinaire.",
+ "d640bc15b1b2": "njs fournit des fichiers de définitions TypeScript pour son [[10-guides/04-njs/reference|API]], qui permettent de :",
+ "dc7fb51424ac": "TypeScript prend en charge des fichiers de définitions contenant les informations de type de bibliothèques JavaScript existantes. D'autres programmes peuvent ainsi utiliser les valeurs qui y sont définies comme des entités TypeScript typées statiquement.",
+ "ebf55494a160": "Compiler les fichiers de définitions TypeScript",
+ "f06244589ec9": "Bénéficier de l'autocomplétion et de la vérification de l'API dans un éditeur",
+ "f7ee8896b15e": "Compilation TypeScript :"
+}

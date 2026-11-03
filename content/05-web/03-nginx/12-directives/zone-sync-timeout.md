@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_timeout"
-description: "Directive nginx zone_sync_timeout (ngx_stream_zone_sync_module) — Sets the timeout between two successive read or write operations on connection to another cluster node. If no data is transmitted within this time, the connection is closed."
+description: "Directive nginx zone_sync_timeout (ngx_stream_zone_sync_module) — Définit le délai entre deux opérations successives de lecture ou d'écriture sur la connexion vers un autre nœud du cluster. Si aucune donnée n'est transmise dans ce délai, la connexion est fermée."
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *timeout* between two successive read or write operations on connection to another cluster node. If no data is transmitted within this time, the connection is closed.
+Définit le *délai* entre deux opérations successives de lecture ou d'écriture sur la connexion vers un autre nœud du cluster. Si aucune donnée n'est transmise dans ce délai, la connexion est fermée.
 
 ---
 

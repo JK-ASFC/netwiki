@@ -1,12 +1,9 @@
 ---
 title: "proxy_password"
-description: "Directive nginx proxy_password (ngx_mgmt_module) — Sets the password used for authentication on the proxy. The password is sent unencrypted by default. If the proxy supports TLS, the connection to the proxy can be protected with the stream module:…"
+description: "Directive nginx proxy_password (ngx_mgmt_module) — Définit le mot de passe pour l'authentification auprès du mandataire. Par défaut, le mot de passe est envoyé en clair. Si le mandataire prend en charge TLS, la connexion vers lui peut être protégée…"
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the password used for authentication on the [[12-directives/proxy|proxy]].
+Définit le mot de passe pour l'authentification auprès du [[12-directives/proxy|mandataire]].
 
-The password is sent unencrypted by default. If the proxy supports TLS, the connection to the proxy can be protected with the [[11-modules/03-stream/ngx_stream_proxy_module|stream]] module:
+Par défaut, le mot de passe est envoyé en clair. Si le mandataire prend en charge TLS, la connexion vers lui peut être protégée avec le module [[11-modules/03-stream/ngx_stream_proxy_module|stream]] :
 
 ```nginx
 mgmt {

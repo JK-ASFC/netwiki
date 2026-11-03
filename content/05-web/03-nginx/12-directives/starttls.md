@@ -1,12 +1,9 @@
 ---
 title: "starttls"
-description: "Directive nginx starttls (ngx_mail_ssl_module) — - on allow usage of the STLS command for the POP3 and the STARTTLS command for the IMAP and SMTP; - off deny usage of the STLS and STARTTLS commands; - only require preliminary TLS transition."
+description: "Directive nginx starttls (ngx_mail_ssl_module) — - on autorise la commande STLS pour POP3 et la commande STARTTLS pour IMAP et SMTP ; - off interdit les commandes STLS et STARTTLS ; - only exige le passage préalable à TLS."
 tags: [nginx, directive, ngx_mail_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -19,15 +16,15 @@ icon: settings-2
 
 - **`on`**
 
-  allow usage of the `STLS` command for the POP3 and the `STARTTLS` command for the IMAP and SMTP;
+  autorise la commande `STLS` pour POP3 et la commande `STARTTLS` pour IMAP et SMTP ;
 
 - **`off`**
 
-  deny usage of the `STLS` and `STARTTLS` commands;
+  interdit les commandes `STLS` et `STARTTLS` ;
 
 - **`only`**
 
-  require preliminary TLS transition.
+  exige le passage préalable à TLS.
 
 ---
 

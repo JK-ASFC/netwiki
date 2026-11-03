@@ -1,12 +1,9 @@
 ---
 title: "geo (ngx_stream_geo_module)"
-description: "Directive nginx geo (ngx_stream_geo_module) — Describes the dependency of values of the specified variable on the client IP address. By default, the address is taken from the $remote_addr variable, but it can also be taken from another variable,…"
+description: "Directive nginx geo (ngx_stream_geo_module) — Décrit la dépendance des valeurs de la variable indiquée vis-à-vis de l'adresse IP du client. Par défaut, l'adresse est prise dans la variable $remote_addr, mais elle peut aussi venir d'une autre…"
 tags: [nginx, directive, ngx_stream_geo_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Describes the dependency of values of the specified variable on the client IP address. By default, the address is taken from the `$remote_addr` variable, but it can also be taken from another variable, for example:
+Décrit la dépendance des valeurs de la variable indiquée vis-à-vis de l'adresse IP du client. Par défaut, l'adresse est prise dans la variable `$remote_addr`, mais elle peut aussi venir d'une autre variable, par exemple :
 
 ```nginx
 geo $arg_remote_addr $geo {
@@ -26,17 +23,17 @@ geo $arg_remote_addr $geo {
 ```
 
 > [!NOTE]
-> Since variables are evaluated only when used, the mere existence of even a large number of declared “`geo`” variables does not cause any extra costs for connection processing.
+> Comme les variables ne sont évaluées qu'à leur utilisation, la simple existence d'un grand nombre de variables « `geo` » déclarées n'entraîne aucun coût supplémentaire pour le traitement des connexions.
 
 Si la valeur d'une variable n'est pas une adresse IP valide, l'adresse « `255.255.255.255` » est utilisée.
 
-Addresses are specified either as prefixes in CIDR notation (including individual addresses) or as ranges.
+Les adresses s'indiquent soit sous forme de préfixes en notation CIDR (y compris des adresses individuelles), soit sous forme de plages.
 
 Les paramètres spéciaux suivants sont aussi pris en charge :
 
 - **`delete`**
 
-  deletes the specified network.
+  supprime le réseau indiqué.
 
 - **`default`**
 
@@ -48,7 +45,7 @@ Les paramètres spéciaux suivants sont aussi pris en charge :
 
 - **`ranges`**
 
-  indicates that addresses are specified as ranges. This parameter should be the first. To speed up loading of a geo base, addresses should be put in ascending order.
+  indique que les adresses sont données sous forme de plages. Ce paramètre doit être le premier. Pour accélérer le chargement d'une base geo, placez les adresses dans l'ordre croissant.
 
 - **`volatile`**
 

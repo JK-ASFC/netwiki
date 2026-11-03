@@ -1,12 +1,9 @@
 ---
 title: "max_errors"
-description: "Directive nginx max_errors (ngx_mail_core_module) — Sets the number of protocol errors after which the connection is closed."
+description: "Directive nginx max_errors (ngx_mail_core_module) — Définit le nombre d'erreurs de protocole au-delà duquel la connexion est fermée."
 tags: [nginx, directive, ngx_mail_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the number of protocol errors after which the connection is closed.
+Définit le nombre d'erreurs de protocole au-delà duquel la connexion est fermée.
 
 ---
 

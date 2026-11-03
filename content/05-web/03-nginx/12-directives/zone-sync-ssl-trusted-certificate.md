@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_ssl_trusted_certificate"
-description: "Directive nginx zone_sync_ssl_trusted_certificate (ngx_stream_zone_sync_module) — Specifies a file with trusted CA certificates in the PEM format used to verify the certificate of another cluster server."
+description: "Directive nginx zone_sync_ssl_trusted_certificate (ngx_stream_zone_sync_module) — Indique un fichier de certificats d'AC de confiance au format PEM utilisé pour vérifier le certificat d'un autre serveur du cluster."
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with trusted CA certificates in the PEM format used to [[12-directives/zone-sync-ssl-verify|verify]] the certificate of another cluster server.
+Indique un *fichier* de certificats d'AC de confiance au format PEM utilisé pour [[12-directives/zone-sync-ssl-verify|vérifier]] le certificat d'un autre serveur du cluster.
 
 ---
 

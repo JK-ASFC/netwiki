@@ -1,12 +1,9 @@
 ---
 title: "return (ngx_stream_return_module)"
-description: "Directive nginx return (ngx_stream_return_module) — Specifies a value to send to the client. The value can contain text, variables, and their combination."
+description: "Directive nginx return (ngx_stream_return_module) — Indique la valeur à envoyer au client. Elle peut contenir du texte, des variables et leur combinaison."
 tags: [nginx, directive, ngx_stream_return_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *value* to send to the client. The value can contain text, variables, and their combination.
+Indique la *valeur* à envoyer au client. Elle peut contenir du texte, des variables et leur combinaison.
 
 ---
 

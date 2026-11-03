@@ -1,0 +1,12 @@
+{
+ "01bd8dfa9d68": "Il est utile d'indiquer les extensions prises en charge par les serveurs IMAP d'arrière-plan vers lesquels les clients sont relayés (si elles concernent des commandes utilisées après l'authentification, lorsque nginx relaie de façon transparente la connexion du client).",
+ "06037fb69178": "Définit la liste des extensions du [protocole IMAP](https://datatracker.ietf.org/doc/html/rfc3501) transmise au client en réponse à la commande `CAPABILITY`. Les méthodes d'authentification indiquées dans la directive [[12-directives/imap-auth|imap_auth]] et [STARTTLS](https://datatracker.ietf.org/doc/html/rfc2595) sont ajoutées automatiquement à cette liste selon la valeur de la directive [[12-directives/starttls|starttls]].",
+ "0a8d21fa686f": "[LOGIN](https://datatracker.ietf.org/doc/html/rfc3501), [AUTH=PLAIN](https://datatracker.ietf.org/doc/html/rfc4616)",
+ "0bc9fb77f46a": "Les méthodes d'authentification en texte clair (commande `LOGIN`, `AUTH=PLAIN` et `AUTH=LOGIN`) sont toujours activées, mais si les méthodes `plain` et `login` ne sont pas indiquées, `AUTH=PLAIN` et `AUTH=LOGIN` ne sont pas ajoutées automatiquement à [[12-directives/imap-capabilities|imap_capabilities]].",
+ "4acd58b6903e": "[AUTH=CRAM-MD5](https://datatracker.ietf.org/doc/html/rfc2195). Pour que cette méthode fonctionne, le mot de passe doit être stocké en clair.",
+ "57d0966753f9": "[AUTH=EXTERNAL](https://datatracker.ietf.org/doc/html/rfc4422) (1.11.6).",
+ "608f966d535d": "[AUTH=LOGIN](https://datatracker.ietf.org/doc/html/draft-murchison-sasl-login-00)",
+ "81c318e64018": "Définit les méthodes d'authentification autorisées pour les clients IMAP. Les méthodes prises en charge sont :",
+ "d2dcf9d97dbf": "Définit la taille (*size*) du tampon utilisé pour lire les commandes IMAP. Par défaut, le tampon fait une page mémoire, soit 4K ou 8K selon la plate-forme.",
+ "e69f9e78d352": "La liste actuelle des extensions normalisées est publiée sur [www.iana.org](http://www.iana.org/assignments/imap4-capabilities)."
+}

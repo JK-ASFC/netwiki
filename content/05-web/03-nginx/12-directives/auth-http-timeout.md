@@ -1,12 +1,9 @@
 ---
 title: "auth_http_timeout"
-description: "Directive nginx auth_http_timeout (ngx_mail_auth_http_module) — Sets the timeout for communication with the authentication server."
+description: "Directive nginx auth_http_timeout (ngx_mail_auth_http_module) — Définit le délai de communication avec le serveur d'authentification."
 tags: [nginx, directive, ngx_mail_auth_http_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the timeout for communication with the authentication server.
+Définit le délai de communication avec le serveur d'authentification.
 
 ---
 

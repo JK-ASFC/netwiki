@@ -1,12 +1,9 @@
 ---
 title: "least_time (ngx_stream_upstream_module)"
-description: "Directive nginx least_time (ngx_stream_upstream_module) — Specifies that a group should use a load balancing method where a connection is passed to the server with the least average time and least number of active connections, taking into account weights of…"
+description: "Directive nginx least_time (ngx_stream_upstream_module) — Indique qu'un groupe doit utiliser une méthode de répartition où la connexion est passée au serveur ayant le plus faible temps moyen et le moins de connexions actives, en tenant compte des poids des…"
 tags: [nginx, directive, ngx_stream_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,12 +15,12 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies that a group should use a load balancing method where a connection is passed to the server with the least average time and least number of active connections, taking into account weights of servers. If there are several such servers, they are tried in turn using a weighted round-robin balancing method.
+Indique qu'un groupe doit utiliser une méthode de répartition où la connexion est passée au serveur ayant le plus faible temps moyen et le moins de connexions actives, en tenant compte des poids des serveurs. S'il y en a plusieurs, ils sont essayés à tour de rôle selon une méthode round-robin pondérée.
 
-If the `connect` parameter is specified, time to [[13-variables/upstream-connect-time-stream-upstream|connect]] to the upstream server is used. If the `first_byte` parameter is specified, time to receive the [[13-variables/upstream-first-byte-time|first byte]] of data is used. If the `last_byte` is specified, time to receive the [[13-variables/upstream-session-time|last byte]] of data is used. If the `inflight` parameter is specified (1.11.6), incomplete connections are also taken into account.
+Avec le paramètre `connect`, c'est le temps de [[13-variables/upstream-connect-time-stream-upstream|connexion]] au serveur amont qui est utilisé. Avec `first_byte`, le temps de réception du [[13-variables/upstream-first-byte-time|premier octet]] de données. Avec `last_byte`, le temps de réception du [[13-variables/upstream-session-time|dernier octet]]. Avec le paramètre `inflight` (1.11.6), les connexions incomplètes sont aussi prises en compte.
 
 > [!NOTE]
-> Prior to version 1.11.6, incomplete connections were taken into account by default.
+> Avant la version 1.11.6, les connexions incomplètes étaient prises en compte par défaut.
 
 > [!NOTE]
 > Avant la version 1.31.0, cette directive n'était disponible que dans le cadre de notre [abonnement commercial](https://nginx.com/products/).

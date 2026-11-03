@@ -1,19 +1,16 @@
 ---
 title: "$ssl_client_verify (ngx_stream_ssl_module)"
-description: "Variable nginx $ssl_client_verify (ngx_stream_ssl_module) — returns the result of client certificate verification (1.11.8): “SUCCESS”, “FAILED:reason”, and “NONE” if a certificate was not present;"
+description: "Variable nginx $ssl_client_verify (ngx_stream_ssl_module) — renvoie le résultat de la vérification du certificat client (1.11.8) : « SUCCESS », « FAILED:raison », ou « NONE » si aucun certificat n'a été présenté ;"
 tags: [nginx, variable, ngx_stream_ssl_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$ssl_client_verify` |
 | **Module** | [[11-modules/03-stream/ngx_stream_ssl_module\|ngx_stream_ssl_module]] |
 
-returns the result of client certificate verification (1.11.8): “`SUCCESS`”, “`FAILED:`*reason*”, and “`NONE`” if a certificate was not present;
+renvoie le résultat de la vérification du certificat client (1.11.8) : « `SUCCESS` », « `FAILED:`*raison* », ou « `NONE` » si aucun certificat n'a été présenté ;
 
 ---
 

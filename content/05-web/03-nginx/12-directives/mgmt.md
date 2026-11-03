@@ -1,12 +1,9 @@
 ---
 title: "mgmt"
-description: "Directive nginx mgmt (ngx_mgmt_module) — Provides the configuration file context in which usage reporting and license management directives are specified."
+description: "Directive nginx mgmt (ngx_mgmt_module) — Fournit le contexte du fichier de configuration dans lequel sont indiquées les directives de rapport d'utilisation et de gestion de licence."
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Provides the configuration file context in which usage reporting and license management directives are specified.
+Fournit le contexte du fichier de configuration dans lequel sont indiquées les directives de rapport d'utilisation et de gestion de licence.
 
 ---
 

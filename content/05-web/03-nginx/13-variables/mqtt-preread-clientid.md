@@ -1,19 +1,16 @@
 ---
 title: "$mqtt_preread_clientid"
-description: "Variable nginx $mqtt_preread_clientid (ngx_stream_mqtt_preread_module) — the clientid value from the CONNECT message"
+description: "Variable nginx $mqtt_preread_clientid (ngx_stream_mqtt_preread_module) — la valeur clientid du message CONNECT"
 tags: [nginx, variable, ngx_stream_mqtt_preread_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$mqtt_preread_clientid` |
 | **Module** | [[11-modules/03-stream/ngx_stream_mqtt_preread_module\|ngx_stream_mqtt_preread_module]] |
 
-the `clientid` value from the CONNECT message
+la valeur `clientid` du message CONNECT
 
 ---
 

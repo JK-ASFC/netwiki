@@ -1,0 +1,12 @@
+{
+ "1e4a108e4975": "Définit la liste des extensions du protocole SMTP transmise au client en réponse à la commande `EHLO`. Les méthodes d'authentification indiquées dans la directive [[12-directives/smtp-auth|smtp_auth]] et [STARTTLS](https://datatracker.ietf.org/doc/html/rfc3207) sont ajoutées automatiquement à cette liste selon la valeur de la directive [[12-directives/starttls|starttls]].",
+ "2a6ddb910974": "Définit les méthodes d'[authentification SASL](https://datatracker.ietf.org/doc/html/rfc2554) autorisées pour les clients SMTP. Les méthodes prises en charge sont :",
+ "2f4bc6b80eef": "Permet d'attendre un délai avant d'envoyer le message d'accueil SMTP, afin de rejeter les clients qui envoient des commandes SMTP sans attendre ce message.",
+ "5d67803c4b08": "Les méthodes d'authentification en texte clair (`AUTH PLAIN` et `AUTH LOGIN`) sont toujours activées, mais si les méthodes `plain` et `login` ne sont pas indiquées, `AUTH PLAIN` et `AUTH LOGIN` ne sont pas ajoutées automatiquement à [[12-directives/smtp-capabilities|smtp_capabilities]].",
+ "5ef19d49bb4b": "La liste actuelle des extensions normalisées est publiée sur [www.iana.org](http://www.iana.org/assignments/mail-parameters).",
+ "70efaf8bf028": "L'authentification n'est pas exigée.",
+ "8c316d9cf28a": "[AUTH PLAIN](https://datatracker.ietf.org/doc/html/rfc4616)",
+ "a11b50233b07": "[AUTH LOGIN](https://datatracker.ietf.org/doc/html/draft-murchison-sasl-login-00)",
+ "b3102688be1e": "Il est utile d'indiquer les extensions prises en charge par le MTA vers lequel les clients sont relayés (si elles concernent des commandes utilisées après l'authentification, lorsque nginx relaie de façon transparente la connexion du client).",
+ "b91130fac0b2": "Définit la taille (*size*) du tampon utilisé pour lire les commandes SMTP. Par défaut, le tampon fait une page mémoire, soit 4K ou 8K selon la plate-forme."
+}

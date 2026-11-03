@@ -1,12 +1,9 @@
 ---
 title: "mqtt_rewrite_buffer_size"
-description: "Directive nginx mqtt_rewrite_buffer_size (ngx_stream_mqtt_filter_module) — NOTE This directive is obsolete since version 1.25.1. The mqtt_buffers directive should be used instead. Sets the size of the buffer used for writing a modified message. By default, the buffer size…"
+description: "Directive nginx mqtt_rewrite_buffer_size (ngx_stream_mqtt_filter_module) — NOTE Cette directive est obsolète depuis la version 1.25.1. Utilisez plutôt la directive mqtt_buffers. Définit la taille du tampon utilisé pour écrire un message modifié. Par défaut, elle vaut une…"
 tags: [nginx, directive, ngx_stream_mqtt_filter_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 ## Utilisation
 
 > [!NOTE]
-> This directive is obsolete since version 1.25.1. The [[12-directives/mqtt-buffers|mqtt_buffers]] directive should be used instead.
+> Cette directive est obsolète depuis la version 1.25.1. Utilisez plutôt la directive [[12-directives/mqtt-buffers|mqtt_buffers]].
 
-Sets the *size* of the buffer used for writing a modified message. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform. It can be made smaller, however.
+Définit la *taille* du tampon utilisé pour écrire un message modifié. Par défaut, elle vaut une page mémoire, soit 4K ou 8K selon la plate-forme. Elle peut toutefois être réduite.
 
 ---
 

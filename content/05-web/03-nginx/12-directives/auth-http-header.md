@@ -1,12 +1,9 @@
 ---
 title: "auth_http_header"
-description: "Directive nginx auth_http_header (ngx_mail_auth_http_module) — Appends the specified header to requests sent to the authentication server. This header can be used as the shared secret to verify that the request comes from nginx. For example: nginx…"
+description: "Directive nginx auth_http_header (ngx_mail_auth_http_module) — Ajoute l'en-tête indiqué aux requêtes envoyées au serveur d'authentification. Cet en-tête peut servir de secret partagé pour vérifier que la requête provient de nginx. Par exemple : nginx…"
 tags: [nginx, directive, ngx_mail_auth_http_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Appends the specified header to requests sent to the authentication server. This header can be used as the shared secret to verify that the request comes from nginx. For example:
+Ajoute l'en-tête indiqué aux requêtes envoyées au serveur d'authentification. Cet en-tête peut servir de secret partagé pour vérifier que la requête provient de nginx. Par exemple :
 
 ```nginx
 auth_http_header X-Auth-Key "secret_string";

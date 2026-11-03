@@ -1,12 +1,9 @@
 ---
 title: "google_perftools_profiles"
-description: "Directive nginx google_perftools_profiles (ngx_google_perftools_module) — Sets a file name that keeps profiling information of nginx worker process. The ID of the worker process is always a part of the file name and is appended to the end of the file name, after a dot."
+description: "Directive nginx google_perftools_profiles (ngx_google_perftools_module) — Définit le nom du fichier qui contient les informations de profilage d'un processus de travail de nginx. L'identifiant du processus de travail fait toujours partie du nom de fichier et est ajouté à…"
 tags: [nginx, directive, ngx_google_perftools_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a file name that keeps profiling information of nginx worker process. The ID of the worker process is always a part of the file name and is appended to the end of the file name, after a dot.
+Définit le nom du fichier qui contient les informations de profilage d'un processus de travail de nginx. L'identifiant du processus de travail fait toujours partie du nom de fichier et est ajouté à la fin, après un point.
 
 ---
 

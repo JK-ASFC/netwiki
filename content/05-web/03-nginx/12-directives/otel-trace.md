@@ -1,12 +1,9 @@
 ---
 title: "otel_trace"
-description: "Directive nginx otel_trace (ngx_otel_module) — Enables or disables OpenTelemetry tracing. The directive can also be enabled by specifying a variable: nginx split_clients \"$otel_trace_id\" $ratio_sampler { 10% on; off; } server { location / {…"
+description: "Directive nginx otel_trace (ngx_otel_module) — Active ou désactive le traçage OpenTelemetry. La directive peut aussi être activée par une variable : nginx split_clients \"$otel_trace_id\" $ratio_sampler { 10% on; off; } server { location / {…"
 tags: [nginx, directive, ngx_otel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables OpenTelemetry tracing. The directive can also be enabled by specifying a variable:
+Active ou désactive le traçage OpenTelemetry. La directive peut aussi être activée par une variable :
 
 ```nginx
 split_clients "$otel_trace_id" $ratio_sampler {

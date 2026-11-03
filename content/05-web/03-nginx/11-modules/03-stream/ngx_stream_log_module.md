@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_log_module"
-description: "Module nginx ngx_stream_log_module — The ngx_stream_log_module module (1.11.4) writes session logs in the specified format."
+description: "Module nginx ngx_stream_log_module — Le module ngx_stream_log_module (1.11.4) écrit les journaux de session au format indiqué."
 tags: [nginx, module, ngx_stream_log_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_log_module` module (1.11.4) writes session logs in the specified format.
+Le module `ngx_stream_log_module` (1.11.4) écrit les journaux de session au format indiqué.
 
 ## Exemple de configuration
 

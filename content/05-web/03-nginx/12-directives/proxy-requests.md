@@ -1,12 +1,9 @@
 ---
 title: "proxy_requests"
-description: "Directive nginx proxy_requests (ngx_stream_proxy_module) — Sets the number of client datagrams at which binding between a client and existing UDP stream session is dropped. After receiving the specified number of datagrams, next datagram from the same client…"
+description: "Directive nginx proxy_requests (ngx_stream_proxy_module) — Définit le nombre de datagrammes client au-delà duquel le lien entre un client et une session stream UDP existante est rompu. Après réception de ce nombre de datagrammes, le datagramme suivant du…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the number of client datagrams at which binding between a client and existing UDP stream session is dropped. After receiving the specified number of datagrams, next datagram from the same client starts a new session. The session terminates when all client datagrams are transmitted to a proxied server and the expected number of [[12-directives/proxy-responses|responses]] is received, or when it reaches a [[12-directives/proxy-timeout-stream-proxy|timeout]].
+Définit le nombre de datagrammes client au-delà duquel le lien entre un client et une session stream UDP existante est rompu. Après réception de ce nombre de datagrammes, le datagramme suivant du même client ouvre une nouvelle session. La session se termine quand tous les datagrammes du client ont été transmis au serveur mandaté et que le nombre attendu de [[12-directives/proxy-responses|réponses]] a été reçu, ou quand un [[12-directives/proxy-timeout-stream-proxy|délai]] expire.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "resolver_timeout (ngx_stream_core_module)"
-description: "Directive nginx resolver_timeout (ngx_stream_core_module) — Définit le délai de résolution des noms, par exemple : nginx resolver_timeout 5s; NOTE Before version 1.11.3, this directive was available as part of our abonnement commercial."
+description: "Directive nginx resolver_timeout (ngx_stream_core_module) — Définit le délai de résolution des noms, par exemple : nginx resolver_timeout 5s; NOTE Avant la version 1.11.3, cette directive faisait partie de notre abonnement commercial."
 tags: [nginx, directive, ngx_stream_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -25,7 +22,7 @@ resolver_timeout 5s;
 ```
 
 > [!NOTE]
-> Before version 1.11.3, this directive was available as part of our [abonnement commercial](https://nginx.com/products/).
+> Avant la version 1.11.3, cette directive faisait partie de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

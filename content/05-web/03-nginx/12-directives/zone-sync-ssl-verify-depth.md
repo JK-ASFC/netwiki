@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_ssl_verify_depth"
-description: "Directive nginx zone_sync_ssl_verify_depth (ngx_stream_zone_sync_module) — Sets the verification depth in another cluster server certificates chain."
+description: "Directive nginx zone_sync_ssl_verify_depth (ngx_stream_zone_sync_module) — Définit la profondeur de vérification dans la chaîne de certificats d'un autre serveur du cluster."
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the verification depth in another cluster server certificates chain.
+Définit la profondeur de vérification dans la chaîne de certificats d'un autre serveur du cluster.
 
 ---
 

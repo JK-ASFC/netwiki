@@ -1,21 +1,18 @@
 ---
 title: "ngx_stream_zone_sync_module"
-description: "Module nginx ngx_stream_zone_sync_module — The ngx_stream_zone_sync_module module (1.13.8) provides the necessary support for synchronizing contents of shared memory zones between nodes of a cluster. To enable synchronization for a particular zone, a…"
+description: "Module nginx ngx_stream_zone_sync_module — Le module ngx_stream_zone_sync_module (1.13.8) fournit le nécessaire pour synchroniser le contenu de zones de mémoire partagée entre les nœuds d'un cluster. Pour qu'une zone soit synchronisée, le module correspondant…"
 tags: [nginx, module, ngx_stream_zone_sync_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_zone_sync_module` module (1.13.8) provides the necessary support for synchronizing contents of [[12-directives/zone-stream-upstream|shared memory zones]] between nodes of a cluster. To enable synchronization for a particular zone, a corresponding module must support this feature. Currently, it is possible to synchronize HTTP [[12-directives/sticky|sticky]] sessions, information about [[11-modules/02-http/ngx_http_limit_req_module|excessive HTTP requests]], and key-value pairs both in [[11-modules/02-http/ngx_http_keyval_module|http]] and [[11-modules/03-stream/ngx_stream_keyval_module|stream]].
+Le module `ngx_stream_zone_sync_module` (1.13.8) fournit le nécessaire pour synchroniser le contenu de [[12-directives/zone-stream-upstream|zones de mémoire partagée]] entre les nœuds d'un cluster. Pour qu'une zone soit synchronisée, le module correspondant doit le prendre en charge. On peut actuellement synchroniser les sessions HTTP [[12-directives/sticky|sticky]], les informations sur les [[11-modules/02-http/ngx_http_limit_req_module|requêtes HTTP excessives]] et les paires clé-valeur en [[11-modules/02-http/ngx_http_keyval_module|http]] comme en [[11-modules/03-stream/ngx_stream_keyval_module|stream]].
 
 > [!NOTE]
 > Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 
-Minimal configuration:
+Configuration minimale :
 
 ```nginx
 http {
@@ -50,7 +47,7 @@ stream {
     }
 ```
 
-A more complex configuration with SSL enabled and with cluster members defined by DNS:
+Une configuration plus complète, avec SSL activé et des membres du cluster définis par DNS :
 
 ```nginx
 ...
@@ -79,17 +76,17 @@ stream {
 }
 ```
 
-## API endpoints
+## Points d'accès de l'API
 
-The synchronization status of a node is available via the [[11-modules/02-http/ngx_http_api_module|/stream/zone_sync/]] endpoint of the API which returns the [[11-modules/02-http/ngx_http_api_module|following]] metrics.
+L'état de synchronisation d'un nœud est disponible via le point d'accès [[11-modules/02-http/ngx_http_api_module|/stream/zone_sync/]] de l'API, qui renvoie les métriques [[11-modules/02-http/ngx_http_api_module|suivantes]].
 
-## Starting, stopping, removing a cluster node
+## Démarrer, arrêter, retirer un nœud du cluster
 
-To start a new node, update a DNS record of a cluster hostname with the IP address of the new node and start an instance. The new node will discover other nodes from DNS or static configuration and will start sending updates to them. Other nodes will eventually discover the new node using DNS and start pushing updates to it. In case of static configuration, other nodes need to be reloaded in order to send updates to the new node.
+Pour démarrer un nouveau nœud, mettez à jour l'enregistrement DNS du nom d'hôte du cluster avec l'adresse IP du nouveau nœud et démarrez une instance. Le nouveau nœud découvre les autres via le DNS ou la configuration statique et commence à leur envoyer des mises à jour. Les autres nœuds finissent par découvrir le nouveau via le DNS et commencent à lui pousser des mises à jour. Avec une configuration statique, les autres nœuds doivent être rechargés pour envoyer des mises à jour au nouveau nœud.
 
-To stop a node, send the `QUIT` signal to the instance. The node will finish zone synchronization and gracefully close open connections.
+Pour arrêter un nœud, envoyez le signal `QUIT` à l'instance. Le nœud termine la synchronisation des zones et ferme proprement les connexions ouvertes.
 
-To remove a node, update a DNS record of a cluster hostname and remove the IP address of the node. All other nodes will eventually discover that the node is removed, close connections to the node, and will no longer try to connect to it. After the node is removed, it can be stopped as described above. In case of static configuration, other nodes need to be reloaded in order to stop sending updates to the removed node.
+Pour retirer un nœud, mettez à jour l'enregistrement DNS du nom d'hôte du cluster en supprimant l'adresse IP du nœud. Tous les autres nœuds finissent par découvrir son retrait, ferment leurs connexions vers lui et cessent d'essayer de s'y connecter. Une fois retiré, le nœud peut être arrêté comme décrit plus haut. Avec une configuration statique, les autres nœuds doivent être rechargés pour cesser d'envoyer des mises à jour au nœud retiré.
 
 ## Directives
 

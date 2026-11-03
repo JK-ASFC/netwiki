@@ -1,12 +1,9 @@
 ---
 title: "proxy_protocol_timeout"
-description: "Directive nginx proxy_protocol_timeout (ngx_stream_core_module) — Specifies a timeout for reading the PROXY protocol header to complete. If no entire header is transmitted within this time, the connection is closed."
+description: "Directive nginx proxy_protocol_timeout (ngx_stream_core_module) — Définit le délai de lecture complète de l'en-tête du protocole PROXY. Si l'en-tête entier n'est pas transmis dans ce délai, la connexion est fermée."
 tags: [nginx, directive, ngx_stream_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *timeout* for reading the PROXY protocol header to complete. If no entire header is transmitted within this time, the connection is closed.
+Définit le *délai* de lecture complète de l'en-tête du protocole PROXY. Si l'en-tête entier n'est pas transmis dans ce délai, la connexion est fermée.
 
 ---
 

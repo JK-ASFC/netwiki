@@ -1,0 +1,12 @@
+{
+ "23fae1bd0300": "La gravité des messages d'erreur est déterminée par nginx ; le paramètre est donc ignoré dans la directive `error_log`.",
+ "4984766c4c0e": "Les directives [[12-directives/error-log|error_log]] et [[12-directives/access-log-http-log|access_log]] prennent en charge la journalisation vers syslog. Les paramètres suivants la configurent :",
+ "4aea4e7af339": "Définit la gravité des messages syslog pour [[12-directives/access-log-http-log|access_log]], telle que définie dans la [RFC 3164](https://datatracker.ietf.org/doc/html/rfc3164#section-4.1.1). Les valeurs possibles sont celles du deuxième paramètre (niveau) de la directive [[12-directives/error-log|error_log]]. Par défaut : « `info` ».",
+ "55945b2aa6d0": "Définit l'adresse d'un serveur syslog. L'adresse peut être un nom de domaine ou une adresse IP, avec un port facultatif, ou un chemin de socket de domaine UNIX précédé du préfixe « `unix:` ». Sans port, le port UDP 514 est utilisé. Si un nom de domaine se résout en plusieurs adresses IP, la première est utilisée.",
+ "634c51d6c6f8": "Exemple de configuration syslog :",
+ "851ef223c144": "Désactive l'ajout du champ « hostname » dans l'en-tête du message syslog (1.9.7).",
+ "b8e5a9366322": "La journalisation vers syslog est disponible depuis la version 1.7.1. Dans notre [abonnement commercial](https://nginx.com/products/), elle est disponible depuis la version 1.5.3.",
+ "d5cf813fd48b": "Définit l'étiquette des messages syslog. Par défaut : « `nginx` ».",
+ "dc480807f599": "Définit la catégorie (facility) des messages syslog, telle que définie dans la [RFC 3164](https://datatracker.ietf.org/doc/html/rfc3164#section-4.1.1). Valeurs possibles : « `kern` », « `user` », « `mail` », « `daemon` », « `auth` », « `intern` », « `lpr` », « `news` », « `uucp` », « `clock` », « `authpriv` », « `ftp` », « `ntp` », « `audit` », « `alert` », « `cron` », « `local0` »..« `local7` ». Par défaut : « `local7` ».",
+ "fdac771f1ba5": "Journalisation vers syslog"
+}

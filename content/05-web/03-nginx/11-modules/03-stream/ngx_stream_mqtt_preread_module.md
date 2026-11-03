@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_mqtt_preread_module"
-description: "Module nginx ngx_stream_mqtt_preread_module — The ngx_stream_mqtt_preread_module module (1.23.4) allows extracting information from the CONNECT message of the Message Queuing Telemetry Transport protocol (MQTT) versions 3.1.1 and 5.0, for example, a username or a…"
+description: "Module nginx ngx_stream_mqtt_preread_module — Le module ngx_stream_mqtt_preread_module (1.23.4) permet d'extraire des informations du message CONNECT du protocole Message Queuing Telemetry Transport (MQTT) versions 3.1.1 et 5.0, par exemple un nom d'utilisateur ou…"
 tags: [nginx, module, ngx_stream_mqtt_preread_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_mqtt_preread_module` module (1.23.4) allows extracting information from the CONNECT message of the Message Queuing Telemetry Transport protocol (MQTT) versions [3.1.1](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html) and [5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html), for example, a username or a client ID.
+Le module `ngx_stream_mqtt_preread_module` (1.23.4) permet d'extraire des informations du message CONNECT du protocole Message Queuing Telemetry Transport (MQTT) versions [3.1.1](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html) et [5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html), par exemple un nom d'utilisateur ou un identifiant client.
 
 > [!NOTE]
 > Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).

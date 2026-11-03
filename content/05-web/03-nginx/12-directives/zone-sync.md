@@ -1,12 +1,9 @@
 ---
 title: "zone_sync"
-description: "Directive nginx zone_sync (ngx_stream_zone_sync_module) — Enables the synchronization of shared memory zones between cluster nodes. Cluster nodes are defined using zone_sync_server directives."
+description: "Directive nginx zone_sync (ngx_stream_zone_sync_module) — Active la synchronisation des zones de mémoire partagée entre les nœuds du cluster. Les nœuds sont définis avec les directives zone_sync_server."
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the synchronization of shared memory zones between cluster nodes. Cluster nodes are defined using [[12-directives/zone-sync-server|zone_sync_server]] directives.
+Active la synchronisation des zones de mémoire partagée entre les nœuds du cluster. Les nœuds sont définis avec les directives [[12-directives/zone-sync-server|zone_sync_server]].
 
 ---
 

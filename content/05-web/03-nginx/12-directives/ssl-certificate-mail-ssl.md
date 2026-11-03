@@ -1,12 +1,9 @@
 ---
 title: "ssl_certificate (ngx_mail_ssl_module)"
-description: "Directive nginx ssl_certificate (ngx_mail_ssl_module) — Specifies a file with the certificate in the PEM format for the given server. If intermediate certificates should be specified in addition to a primary certificate, they should be specified in the…"
+description: "Directive nginx ssl_certificate (ngx_mail_ssl_module) — Indique le fichier (file) contenant le certificat au format PEM pour le serveur. Si des certificats intermédiaires doivent accompagner le certificat principal, ils se placent dans le même fichier,…"
 tags: [nginx, directive, ngx_mail_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with the certificate in the PEM format for the given server. If intermediate certificates should be specified in addition to a primary certificate, they should be specified in the same file in the following order: the primary certificate comes first, then the intermediate certificates. A secret key in the PEM format may be placed in the same file.
+Indique le fichier (*file*) contenant le certificat au format PEM pour le serveur. Si des certificats intermédiaires doivent accompagner le certificat principal, ils se placent dans le même fichier, dans cet ordre : d'abord le certificat principal, puis les certificats intermédiaires. Une clé secrète au format PEM peut figurer dans le même fichier.
 
 Depuis la version 1.11.0, cette directive peut être indiquée plusieurs fois pour charger des certificats de types différents, par exemple RSA et ECDSA :
 
@@ -38,7 +35,7 @@ server {
 > [!NOTE]
 > Seul OpenSSL 1.0.2 ou plus récent prend en charge des [[10-guides/02-http/configuring-https-servers|chaînes de certificats]] distinctes pour différents certificats. Avec les versions plus anciennes, une seule chaîne peut être utilisée.
 
-The value `data`:*certificate* can be specified instead of the *file* (1.15.10), which loads a certificate without using intermediate files. Note that inappropriate use of this syntax may have its security implications, such as writing secret key data to [[12-directives/error-log|error log]].
+On peut indiquer `data`:*certificate* à la place de *file* (1.15.10) pour charger le certificat sans fichier intermédiaire. Une mauvaise utilisation de cette syntaxe peut avoir des conséquences sur la sécurité, comme l'écriture de données de clé secrète dans le [[12-directives/error-log|journal d'erreurs]].
 
 ---
 

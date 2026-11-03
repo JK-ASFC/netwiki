@@ -1,23 +1,20 @@
 ---
-title: "Writing njs code using TypeScript definition files"
-description: "Nginx — Writing njs code using TypeScript definition files. TypeScript is a typed superset of JavaScript that compiles to plain JavaScript."
+title: "Écrire du code njs avec les fichiers de définitions TypeScript"
+description: "Nginx — Écrire du code njs avec les fichiers de définitions TypeScript. TypeScript est un sur-ensemble typé de JavaScript qui se compile en JavaScript ordinaire."
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+[TypeScript](https://www.typescriptlang.org) est un sur-ensemble typé de JavaScript qui se compile en JavaScript ordinaire.
 
-[TypeScript](https://www.typescriptlang.org) is a typed superset of JavaScript that compiles to plain JavaScript.
+TypeScript prend en charge des fichiers de définitions contenant les informations de type de bibliothèques JavaScript existantes. D'autres programmes peuvent ainsi utiliser les valeurs qui y sont définies comme des entités TypeScript typées statiquement.
 
-TypeScript supports definition files that contain type information of existing JavaScript libraries. This enables other programs to use the values defined in the files as if they were statically typed TypeScript entities.
+njs fournit des fichiers de définitions TypeScript pour son [[10-guides/04-njs/reference|API]], qui permettent de :
 
-njs provides TypeScript definition files for its [[10-guides/04-njs/reference|API]] which can be used to:
+- Bénéficier de l'autocomplétion et de la vérification de l'API dans un éditeur
+- Écrire du code njs sûr du point de vue des types
 
-- Get autocompletion and API check in an editor
-- Write njs type-safe code
-
-## Compiling TypeScript definition files
+## Compiler les fichiers de définitions TypeScript
 
 ```nginx
 $ git clone https://github.com/nginx/njs
@@ -29,9 +26,9 @@ ngx_http_js_module.d.ts
 ngx_stream_js_module.d.ts
 ```
 
-## API checks and autocompletions
+## Vérifications de l'API et autocomplétion
 
-Put `*.d.ts` files to a place where you editor can find it.
+Placez les fichiers `*.d.ts` à un endroit où votre éditeur peut les trouver.
 
 `test.js`:
 
@@ -46,7 +43,7 @@ function content_handler(r) {
 }
 ```
 
-## Writing njs type-safe code
+## Écrire du code njs sûr du point de vue des types
 
 `test.ts`:
 
@@ -58,20 +55,20 @@ function content_handler(r: NginxHTTPRequest) {
 }
 ```
 
-TypeScript installation:
+Installation de TypeScript :
 
 ```nginx
 # npm install -g typescript
 ```
 
-TypeScript compilation:
+Compilation TypeScript :
 
 ```nginx
 $ tsc test.ts
 $ cat test.js
 ```
 
-The resulting `test.js` file can be used directly with njs.
+Le fichier `test.js` obtenu peut être utilisé directement avec njs.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_trusted_certificate (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_ssl_trusted_certificate (ngx_stream_proxy_module) — Specifies a file with trusted CA certificates in the PEM format used to verify the certificate of the proxied server."
+description: "Directive nginx proxy_ssl_trusted_certificate (ngx_stream_proxy_module) — Indique un fichier de certificats d'AC de confiance au format PEM utilisé pour vérifier le certificat du serveur mandaté."
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with trusted CA certificates in the PEM format used to [[12-directives/proxy-ssl-verify-stream-proxy|verify]] the certificate of the proxied server.
+Indique un *fichier* de certificats d'AC de confiance au format PEM utilisé pour [[12-directives/proxy-ssl-verify-stream-proxy|vérifier]] le certificat du serveur mandaté.
 
 ---
 

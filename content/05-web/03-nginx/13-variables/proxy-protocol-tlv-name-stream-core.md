@@ -5,9 +5,6 @@ tags: [nginx, variable, ngx_stream_core_module]
 icon: dollar-sign
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$proxy_protocol_tlv_name` |
@@ -45,7 +42,7 @@ Les noms de types de TLV SSL suivants sont pris en charge :
 
 Le nom de type de TLV SSL spécial suivant est aussi pris en charge :
 
-- `ssl_verify` — client SSL certificate verification result, zero if the client presented a certificate and it was successfully verified, and non-zero otherwise
+- `ssl_verify` — résultat de la vérification du certificat SSL client : zéro si le client a présenté un certificat vérifié avec succès, non nul sinon
 
 Le protocole PROXY doit au préalable être activé avec le paramètre `proxy_protocol` de la directive [[12-directives/listen-stream-core|listen]].
 

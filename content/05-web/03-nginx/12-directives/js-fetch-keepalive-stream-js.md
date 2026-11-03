@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `js_fetch_keepalive connections;` |
@@ -22,7 +19,7 @@ Active le cache des connexions vers les serveurs de destination. Une valeur sup�
 
 Le paramètre *connections* définit le nombre maximal de connexions persistantes inactives vers les serveurs de destination conservées dans le cache de chaque processus de travail. Au-delà, les connexions les moins récemment utilisées sont fermées.
 
-In Stream, the cache is maintained separately for each server configuration. A value set at the `stream` level is inherited by servers, but each server uses its own cache. Cached connections are reused for requests with the same protocol, host, and port.
+En Stream, le cache est tenu séparément pour chaque configuration de serveur. Une valeur définie au niveau `stream` est héritée par les serveurs, mais chaque serveur utilise son propre cache. Les connexions en cache sont réutilisées pour les requêtes ayant le même protocole, le même hôte et le même port.
 
 Lorsqu'il est activé, le mode persistant suppose que les serveurs de destination envoient des réponses HTTP valides.
 

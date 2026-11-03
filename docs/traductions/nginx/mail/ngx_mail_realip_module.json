@@ -1,1 +1,4 @@
-{}
+{
+ "15f29a9fc703": "Définit les adresses de confiance, connues pour transmettre des adresses de remplacement correctes. Avec la valeur spéciale `unix:`, tous les sockets de domaine UNIX sont considérés comme de confiance.",
+ "c5c4814fe90e": "Le module `ngx_mail_realip_module` sert à remplacer l'adresse et le port du client par ceux transmis dans l'en-tête du protocole PROXY (1.19.8). Le protocole PROXY doit au préalable être activé avec le paramètre [[11-modules/04-mail/ngx_mail_core_module|proxy_protocol]] de la directive `listen`."
+}

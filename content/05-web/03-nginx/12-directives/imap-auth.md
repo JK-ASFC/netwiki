@@ -1,12 +1,9 @@
 ---
 title: "imap_auth"
-description: "Directive nginx imap_auth (ngx_mail_imap_module) — Sets permitted methods of authentication for IMAP clients. Supported methods are: - plain LOGIN, AUTH=PLAIN - login AUTH=LOGIN - cram-md5 AUTH=CRAM-MD5. In order for this method to work, the password…"
+description: "Directive nginx imap_auth (ngx_mail_imap_module) — Définit les méthodes d'authentification autorisées pour les clients IMAP. Les méthodes prises en charge sont : - plain LOGIN, AUTH=PLAIN - login AUTH=LOGIN - cram-md5 AUTH=CRAM-MD5. Pour que cette…"
 tags: [nginx, directive, ngx_mail_imap_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets permitted methods of authentication for IMAP clients. Supported methods are:
+Définit les méthodes d'authentification autorisées pour les clients IMAP. Les méthodes prises en charge sont :
 
 - **`plain`**
 
@@ -29,13 +26,13 @@ Sets permitted methods of authentication for IMAP clients. Supported methods are
 
 - **`cram-md5`**
 
-  [AUTH=CRAM-MD5](https://datatracker.ietf.org/doc/html/rfc2195). In order for this method to work, the password must be stored unencrypted.
+  [AUTH=CRAM-MD5](https://datatracker.ietf.org/doc/html/rfc2195). Pour que cette méthode fonctionne, le mot de passe doit être stocké en clair.
 
 - **`external`**
 
   [AUTH=EXTERNAL](https://datatracker.ietf.org/doc/html/rfc4422) (1.11.6).
 
-Plain text authentication methods (the `LOGIN` command, `AUTH=PLAIN`, and `AUTH=LOGIN`) are always enabled, though if the `plain` and `login` methods are not specified, `AUTH=PLAIN` and `AUTH=LOGIN` will not be automatically included in [[12-directives/imap-capabilities|imap_capabilities]].
+Les méthodes d'authentification en texte clair (commande `LOGIN`, `AUTH=PLAIN` et `AUTH=LOGIN`) sont toujours activées, mais si les méthodes `plain` et `login` ne sont pas indiquées, `AUTH=PLAIN` et `AUTH=LOGIN` ne sont pas ajoutées automatiquement à [[12-directives/imap-capabilities|imap_capabilities]].
 
 ---
 

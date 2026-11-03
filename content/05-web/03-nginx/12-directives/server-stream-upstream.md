@@ -1,12 +1,9 @@
 ---
 title: "server (ngx_stream_upstream_module)"
-description: "Directive nginx server (ngx_stream_upstream_module) — Defines the address and other parameters of a server. The address can be specified as a domain name or IP address with an obligatory port, or as a UNIX-domain socket path specified after the “unix:”…"
+description: "Directive nginx server (ngx_stream_upstream_module) — Définit l'adresse et d'autres paramètres d'un serveur. L'adresse peut être un nom de domaine ou une adresse IP avec un port obligatoire, ou un chemin de socket de domaine UNIX précédé du préfixe «…"
 tags: [nginx, directive, ngx_stream_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the *address* and other *parameters* of a server. The address can be specified as a domain name or IP address with an obligatory port, or as a UNIX-domain socket path specified after the “`unix:`” prefix. A domain name that resolves to several IP addresses defines multiple servers at once.
+Définit l'*adresse* et d'autres *paramètres* d'un serveur. L'adresse peut être un nom de domaine ou une adresse IP avec un port obligatoire, ou un chemin de socket de domaine UNIX précédé du préfixe « `unix:` ». Un nom de domaine qui se résout en plusieurs adresses IP définit plusieurs serveurs à la fois.
 
 Les paramètres suivants peuvent être définis :
 
@@ -27,14 +24,14 @@ Les paramètres suivants peuvent être définis :
 
 - **`max_conns`=*number***
 
-  limits the maximum *number* of simultaneous connections to the proxied server (1.11.5). Default value is zero, meaning there is no limit. If the server group does not reside in the [[12-directives/zone-stream-upstream|shared memory]], the limitation works per each worker process.
+  limite le *nombre* maximal de connexions simultanées vers le serveur mandaté (1.11.5). La valeur par défaut est zéro, c'est-à-dire sans limite. Si le groupe ne réside pas en [[12-directives/zone-stream-upstream|mémoire partagée]], la limite s'applique par processus de travail.
 
   > [!NOTE]
-  > Prior to version 1.11.5, this parameter was available as part of our [abonnement commercial](https://nginx.com/products/).
+  > Avant la version 1.11.5, ce paramètre faisait partie de notre [abonnement commercial](https://nginx.com/products/).
 
 - **`max_fails`=*number***
 
-  sets the number of unsuccessful attempts to communicate with the server that should happen in the duration set by the `fail_timeout` parameter to consider the server unavailable for a duration also set by the `fail_timeout` parameter. By default, the number of unsuccessful attempts is set to 1. The zero value disables the accounting of attempts. Here, an unsuccessful attempt is an error or timeout while establishing a connection with the server.
+  définit le nombre de tentatives de communication infructueuses avec le serveur, survenant pendant la durée fixée par le paramètre `fail_timeout`, au-delà duquel le serveur est considéré comme indisponible pendant une durée également fixée par `fail_timeout`. Par défaut, ce nombre vaut 1. La valeur zéro désactive le décompte. Une tentative infructueuse est ici une erreur ou un dépassement de délai lors de l'établissement de la connexion avec le serveur.
 
 - **`fail_timeout`=*time***
 
@@ -47,10 +44,10 @@ Les paramètres suivants peuvent être définis :
 
 - **`backup`**
 
-  marks the server as a backup server. Connections to the backup server will be passed when the primary servers are unavailable.
+  marque le serveur comme serveur de secours. Les connexions lui sont passées quand les serveurs principaux sont indisponibles.
 
   > [!NOTE]
-  > The parameter cannot be used along with the [[12-directives/hash-stream-upstream|hash]] and [[12-directives/random-stream-upstream|random]] load balancing methods.
+  > Ce paramètre ne peut pas être utilisé avec les méthodes de répartition [[12-directives/hash-stream-upstream|hash]] et [[12-directives/random-stream-upstream|random]].
 
 - **`down`**
 
@@ -58,9 +55,9 @@ Les paramètres suivants peuvent être définis :
 
 - **`resolve`**
 
-  monitors changes of the IP addresses that correspond to a domain name of the server, and automatically modifies the upstream configuration without the need of restarting nginx. The server group must reside in the [[12-directives/zone-stream-upstream|shared memory]].
+  surveille les changements des adresses IP correspondant au nom de domaine du serveur et modifie automatiquement la configuration amont sans redémarrer nginx. Le groupe de serveurs doit résider en [[12-directives/zone-stream-upstream|mémoire partagée]].
 
-  In order for this parameter to work, the `resolver` directive must be specified in the [[12-directives/resolver-stream-core|stream]] block or in the corresponding [[12-directives/resolver-stream-upstream|upstream]] block.
+  Pour que ce paramètre fonctionne, la directive `resolver` doit être indiquée dans le bloc [[12-directives/resolver-stream-core|stream]] ou dans le bloc [[12-directives/resolver-stream-upstream|upstream]] correspondant.
 
   > [!NOTE]
   > Avant la version 1.27.3, ce paramètre n'était disponible que dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
@@ -94,7 +91,7 @@ En outre, les paramètres suivants sont disponibles dans le cadre de notre [abon
   définit la durée (*time*) pendant laquelle le serveur fait remonter son poids de zéro à sa valeur nominale, lorsqu'un serveur défaillant redevient [[12-directives/health-check-stream-upstream-hc|sain]] ou lorsqu'il redevient disponible après avoir été considéré comme indisponible. La valeur par défaut, zéro, désactive ce démarrage progressif.
 
   > [!NOTE]
-  > The parameter cannot be used along with the [[12-directives/hash-stream-upstream|hash]] and [[12-directives/random-stream-upstream|random]] load balancing methods.
+  > Ce paramètre ne peut pas être utilisé avec les méthodes de répartition [[12-directives/hash-stream-upstream|hash]] et [[12-directives/random-stream-upstream|random]].
 
 > [!NOTE]
 > S'il n'y a qu'un seul serveur dans un groupe, les paramètres `max_fails`, `fail_timeout` et `slow_start` sont ignorés et ce serveur n'est jamais considéré comme indisponible.

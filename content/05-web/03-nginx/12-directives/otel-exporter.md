@@ -1,12 +1,9 @@
 ---
 title: "otel_exporter"
-description: "Directive nginx otel_exporter (ngx_otel_module) — Specifies OTel data export parameters: - endpoint (http|https)://host:port; OTLP/gRPC endpoint that will accept telemetry data. TLS is supported since 0.1.2. - trusted_certificate path; the CA…"
+description: "Directive nginx otel_exporter (ngx_otel_module) — Définit les paramètres d'export des données OTel : - endpoint (http|https)://host:port; point de terminaison OTLP/gRPC qui reçoit les données de télémétrie. TLS est pris en charge depuis la version…"
 tags: [nginx, directive, ngx_otel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,31 +14,31 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies OTel data export parameters:
+Définit les paramètres d'export des données OTel :
 
 - **`endpoint [(http|https)://]host:port;`**
 
-  OTLP/gRPC endpoint that will accept telemetry data. TLS is supported since 0.1.2.
+  point de terminaison OTLP/gRPC qui reçoit les données de télémétrie. TLS est pris en charge depuis la version 0.1.2.
 
 - **`trusted_certificate path;`**
 
-  the CA certificates file in PEM format used to verify TLS endpoint (since 0.1.2). Defaults to OS provided CA bundle.
+  fichier des certificats d'autorités au format PEM utilisé pour vérifier le point de terminaison TLS (depuis 0.1.2). Par défaut, l'ensemble de certificats du système d'exploitation.
 
 - **`header name value;`**
 
-  a custom HTTP header to add to telemetry export request (since 0.1.2).
+  en-tête HTTP personnalisé à ajouter aux requêtes d'export de télémétrie (depuis 0.1.2).
 
 - **`interval time;`**
 
-  the maximum interval between two exports, by default is `5` seconds.
+  intervalle maximal entre deux exports ; `5` secondes par défaut.
 
 - **`batch_size number;`**
 
-  the maximum number of spans to be sent in one batch per worker, by default is `512`.
+  nombre maximal de spans envoyés dans un lot par processus de travail ; `512` par défaut.
 
 - **`batch_count number;`**
 
-  the number of pending batches per worker, spans exceeding the limit are dropped, by default is `4`.
+  nombre de lots en attente par processus de travail ; les spans au-delà de la limite sont abandonnés ; `4` par défaut.
 
 Exemple :
 

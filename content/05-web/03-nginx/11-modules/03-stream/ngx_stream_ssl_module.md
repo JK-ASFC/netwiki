@@ -1,16 +1,13 @@
 ---
 title: "ngx_stream_ssl_module"
-description: "Module nginx ngx_stream_ssl_module — The ngx_stream_ssl_module module (1.9.0) provides the necessary support for a stream proxy server to work with the SSL/TLS protocol."
+description: "Module nginx ngx_stream_ssl_module — Le module ngx_stream_ssl_module (1.9.0) fournit le nécessaire pour qu'un serveur mandataire stream fonctionne avec le protocole SSL/TLS."
 tags: [nginx, module, ngx_stream_ssl_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_stream_ssl_module` (1.9.0) fournit le nécessaire pour qu'un serveur mandataire stream fonctionne avec le protocole SSL/TLS.
 
-The `ngx_stream_ssl_module` module (1.9.0) provides the necessary support for a stream proxy server to work with the SSL/TLS protocol.
-
-This module is not built by default, it should be enabled with the `--with-stream_ssl_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; activez-le avec le paramètre de configuration `--with-stream_ssl_module`.
 
 > [!NOTE]
 > Ce module nécessite la bibliothèque [OpenSSL](http://www.openssl.org).

@@ -1,12 +1,9 @@
 ---
 title: "hash (ngx_stream_upstream_module)"
-description: "Directive nginx hash (ngx_stream_upstream_module) — Specifies a load balancing method for a server group where the client-server mapping is based on the hashed key value. The key can contain text, variables, and their combinations (1.11.2). Usage…"
+description: "Directive nginx hash (ngx_stream_upstream_module) — Indique une méthode de répartition de charge pour un groupe de serveurs dans laquelle l'association client-serveur repose sur la valeur hachée de la clé. La clé peut contenir du texte, des variables…"
 tags: [nginx, directive, ngx_stream_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a load balancing method for a server group where the client-server mapping is based on the hashed *key* value. The *key* can contain text, variables, and their combinations (1.11.2). Usage example:
+Indique une méthode de répartition de charge pour un groupe de serveurs dans laquelle l'association client-serveur repose sur la valeur hachée de la *clé*. La *clé* peut contenir du texte, des variables et leurs combinaisons (1.11.2). Exemple :
 
 ```nginx
 hash $remote_addr;
 ```
 
-Note that adding or removing a server from the group may result in remapping most of the keys to different servers. The method is compatible with the [Cache::Memcached](https://metacpan.org/pod/Cache::Memcached) Perl library.
+Notez qu'ajouter ou retirer un serveur du groupe peut réaffecter la plupart des clés à d'autres serveurs. La méthode est compatible avec la bibliothèque Perl [Cache::Memcached](https://metacpan.org/pod/Cache::Memcached).
 
 Avec le paramètre `consistent`, la méthode de hachage cohérent [ketama](https://www.metabrew.com/article/libketama-consistent-hashing-algo-memcached-clients) est utilisée à la place. Elle garantit que seules quelques clés sont réaffectées lorsqu'un serveur est ajouté au groupe ou en est retiré, ce qui améliore le taux de réussite des serveurs de cache. Cette méthode est compatible avec la bibliothèque Perl [Cache::Memcached::Fast](https://metacpan.org/pod/Cache::Memcached::Fast) avec le paramètre *ketama\_points* fixé à 160.
 

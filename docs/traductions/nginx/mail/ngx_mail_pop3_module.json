@@ -1,0 +1,11 @@
+{
+ "17f6ba76ac25": "Définit la liste des extensions du [protocole POP3](https://datatracker.ietf.org/doc/html/rfc2449) transmise au client en réponse à la commande `CAPA`. Les méthodes d'authentification indiquées dans la directive [[12-directives/pop3-auth|pop3_auth]] (extension [SASL](https://datatracker.ietf.org/doc/html/rfc2449)) et [STLS](https://datatracker.ietf.org/doc/html/rfc2595) sont ajoutées automatiquement à cette liste selon la valeur de la directive [[12-directives/starttls|starttls]].",
+ "391ed9265819": "Les méthodes d'authentification en texte clair (`USER/PASS`, `AUTH PLAIN` et `AUTH LOGIN`) sont toujours activées, mais si la méthode `plain` n'est pas indiquée, `AUTH PLAIN` et `AUTH LOGIN` ne sont pas ajoutées automatiquement à [[12-directives/pop3-capabilities|pop3_capabilities]].",
+ "4db090cc56e4": "[USER/PASS](https://datatracker.ietf.org/doc/html/rfc1939), [AUTH PLAIN](https://datatracker.ietf.org/doc/html/rfc4616), [AUTH LOGIN](https://datatracker.ietf.org/doc/html/draft-murchison-sasl-login-00)",
+ "5448a2042ad9": "[APOP](https://datatracker.ietf.org/doc/html/rfc1939). Pour que cette méthode fonctionne, le mot de passe doit être stocké en clair.",
+ "91656948f26f": "Définit les méthodes d'authentification autorisées pour les clients POP3. Les méthodes prises en charge sont :",
+ "93c66b7295bd": "[AUTH CRAM-MD5](https://datatracker.ietf.org/doc/html/rfc2195). Pour que cette méthode fonctionne, le mot de passe doit être stocké en clair.",
+ "cb912421577e": "Il est utile d'indiquer les extensions prises en charge par les serveurs POP3 d'arrière-plan vers lesquels les clients sont relayés (si elles concernent des commandes utilisées après l'authentification, lorsque nginx relaie de façon transparente la connexion du client).",
+ "ee488ec3c78f": "La liste actuelle des extensions normalisées est publiée sur [www.iana.org](http://www.iana.org/assignments/pop3-extension-mechanism).",
+ "f385fe435091": "[AUTH EXTERNAL](https://datatracker.ietf.org/doc/html/rfc4422) (1.11.6)."
+}

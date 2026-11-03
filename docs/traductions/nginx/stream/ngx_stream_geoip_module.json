@@ -1,1 +1,5 @@
-{}
+{
+ "51ea0ba94d75": "Avec des bases DAT prenant en charge IPv6, les adresses IPv4 sont recherchées comme adresses IPv6 mappées IPv4. Avec des bases MMDB, les adresses IPv6 mappées IPv4 sont recherchées comme adresses IPv4.",
+ "7304701ce294": "Le module `ngx_stream_geoip_module` (1.11.3) crée des variables dont les valeurs dépendent de l'adresse IP du client, à l'aide des bases [MaxMind](https://www.maxmind.com) précompilées. Depuis la version 1.31.7, le module prend en charge les bases au format MaxMind DB (MMDB).",
+ "8328d191a1fb": "Ce module n'est pas compilé par défaut ; activez-le avec le paramètre de configuration [[10-guides/01-introduction/configure|--with-stream_geoip_module]]."
+}

@@ -1,19 +1,16 @@
 ---
 title: "$protocol"
-description: "Variable nginx $protocol (ngx_stream_core_module) — protocol used to communicate with the client: TCP or UDP (1.11.4)"
+description: "Variable nginx $protocol (ngx_stream_core_module) — protocole utilisé pour communiquer avec le client : TCP ou UDP (1.11.4)"
 tags: [nginx, variable, ngx_stream_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$protocol` |
 | **Module** | [[11-modules/03-stream/ngx_stream_core_module\|ngx_stream_core_module]] |
 
-protocol used to communicate with the client: `TCP` or `UDP` (1.11.4)
+protocole utilisé pour communiquer avec le client : `TCP` ou `UDP` (1.11.4)
 
 ---
 

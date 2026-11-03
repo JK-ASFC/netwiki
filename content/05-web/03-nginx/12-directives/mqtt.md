@@ -1,12 +1,9 @@
 ---
 title: "mqtt"
-description: "Directive nginx mqtt (ngx_stream_mqtt_filter_module) — Enables the MQTT protocol for the given virtual server."
+description: "Directive nginx mqtt (ngx_stream_mqtt_filter_module) — Active le protocole MQTT pour le serveur virtuel donné."
 tags: [nginx, directive, ngx_stream_mqtt_filter_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the MQTT protocol for the given virtual server.
+Active le protocole MQTT pour le serveur virtuel donné.
 
 ---
 

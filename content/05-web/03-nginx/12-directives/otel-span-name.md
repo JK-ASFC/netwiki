@@ -1,12 +1,9 @@
 ---
 title: "otel_span_name"
-description: "Directive nginx otel_span_name (ngx_otel_module) — Defines the name of the OTel span. By default, it is a name of the location for a request. The name can contain variables."
+description: "Directive nginx otel_span_name (ngx_otel_module) — Définit le nom du span OTel. Par défaut, c'est le nom du bloc location de la requête. Le nom peut contenir des variables."
 tags: [nginx, directive, ngx_otel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the name of the OTel [span](https://opentelemetry.io/docs/concepts/observability-primer/#spans). By default, it is a name of the location for a request. The name can contain variables.
+Définit le nom du [span](https://opentelemetry.io/docs/concepts/observability-primer/#spans) OTel. Par défaut, c'est le nom du bloc location de la requête. Le nom peut contenir des variables.
 
 ---
 

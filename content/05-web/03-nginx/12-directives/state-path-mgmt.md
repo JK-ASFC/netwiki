@@ -1,12 +1,9 @@
 ---
 title: "state_path (ngx_mgmt_module)"
-description: "Directive nginx state_path (ngx_mgmt_module) — Defines a directory for storing state files (nginx-mgmt-) created by the ngx_mgmt_module module. The default directory for Linux is /var/lib/nginx/state, for FreeBSD is /var/db/nginx/state."
+description: "Directive nginx state_path (ngx_mgmt_module) — Définit le répertoire des fichiers d'état (nginx-mgmt-) créés par le module ngx_mgmt_module. Le répertoire par défaut est /var/lib/nginx/state sous Linux et /var/db/nginx/state sous FreeBSD."
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a directory for storing state files (`nginx-mgmt-*`) created by the `ngx_mgmt_module` module. The default directory for Linux is `/var/lib/nginx/state`, for FreeBSD is `/var/db/nginx/state`.
+Définit le répertoire des fichiers d'état (`nginx-mgmt-*`) créés par le module `ngx_mgmt_module`. Le répertoire par défaut est `/var/lib/nginx/state` sous Linux et `/var/db/nginx/state` sous FreeBSD.
 
 ---
 

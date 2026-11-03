@@ -1,12 +1,9 @@
 ---
 title: "mqtt_buffers"
-description: "Directive nginx mqtt_buffers (ngx_stream_mqtt_filter_module) — Sets the number and size of the buffers used for handling MQTT messages, for a single connection."
+description: "Directive nginx mqtt_buffers (ngx_stream_mqtt_filter_module) — Définit le nombre et la taille des tampons utilisés pour traiter les messages MQTT, pour une seule connexion."
 tags: [nginx, directive, ngx_stream_mqtt_filter_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *number* and *size* of the buffers used for handling MQTT messages, for a single connection.
+Définit le *nombre* et la *taille* des tampons utilisés pour traiter les messages MQTT, pour une seule connexion.
 
 ---
 

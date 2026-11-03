@@ -1,12 +1,9 @@
 ---
 title: "js_fetch_protocols (ngx_stream_js_module)"
-description: "Directive nginx js_fetch_protocols (ngx_stream_js_module) — Enables the specified protocols for HTTPS connections with Fetch API."
+description: "Directive nginx js_fetch_protocols (ngx_stream_js_module) — Active les protocoles indiqués pour les connexions HTTPS de l'API Fetch."
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the specified protocols for HTTPS connections with [[10-guides/04-njs/reference|Fetch API]].
+Active les protocoles indiqués pour les connexions HTTPS de l'[[10-guides/04-njs/reference|API Fetch]].
 
 ---
 

@@ -1,0 +1,16 @@
+{
+ "18264042e6f7": "Avec `XCLIENT`, le MTA peut journaliser les informations du client et appliquer diverses restrictions à partir de ces données.",
+ "2058bc887bd9": "Si [[12-directives/xclient|XCLIENT]] est aussi activé, la commande `XCLIENT` n'envoie pas le paramètre `LOGIN`.",
+ "2460ab082e12": "Définit le délai (*timeout*) entre deux opérations de lecture ou d'écriture successives sur les connexions du client ou du serveur mandaté. Si aucune donnée n'est transmise pendant ce délai, la connexion est fermée.",
+ "29cd6b01b7ab": "`EHLO` avec le [[12-directives/server-name-mail-core|nom du serveur]]",
+ "2d15bdc72152": "Active ou désactive la transmission de la commande [XCLIENT](http://www.postfix.org/XCLIENT_README.html) avec les paramètres du client lors de la connexion au serveur SMTP d'arrière-plan.",
+ "30d02eabb321": "Active le [protocole PROXY](http://www.haproxy.org/download/1.8/doc/proxy-protocol.txt) pour les connexions au serveur d'arrière-plan. Le paramètre `on` active la version 1 (format texte) et le paramètre `v2` (1.31.4) la version 2 (format binaire).",
+ "42c6f402da24": "Si `XCLIENT` est désactivé, nginx transmet lors de la connexion au serveur d'arrière-plan la commande `EHLO` avec le [[12-directives/server-name-mail-core|nom du serveur]] si le client a transmis `EHLO`, sinon `HELO` avec le nom du serveur.",
+ "68e4f142f083": "En général, si l'authentification réussit dans nginx, le serveur d'arrière-plan ne peut pas renvoyer d'erreur. S'il en renvoie une, c'est qu'une erreur interne s'est produite, et son message peut contenir des informations à ne pas montrer au client. Toutefois, répondre par une erreur malgré un mot de passe correct est un comportement normal pour certains serveurs POP3 : par exemple, CommuniGatePro informe l'utilisateur d'un [dépassement de boîte aux lettres](http://www.stalker.com/CommuniGatePro/Alerts.html#Quota) ou d'autres événements en renvoyant périodiquement une [erreur d'authentification](http://www.stalker.com/CommuniGatePro/POP.html#Alerts). Il faut alors activer cette directive.",
+ "6c939f7619b8": "Active ou désactive l'authentification des utilisateurs auprès du serveur SMTP d'arrière-plan avec la commande `AUTH`.",
+ "7c985b68ac87": "Si le nom [[12-directives/resolver-mail-core|trouvé]] à partir de l'adresse IP du client pointe vers la même adresse, il est transmis dans le paramètre `NAME` de la commande `XCLIENT`. Si le nom est introuvable, pointe vers une autre adresse ou si aucun [[12-directives/resolver-mail-core|résolveur]] n'est indiqué, `[UNAVAILABLE]` est transmis dans `NAME`. En cas d'erreur de résolution, la valeur `[TEMPUNAVAIL]` est utilisée.",
+ "9e6d00a27a89": "Si `XCLIENT` est activé, nginx transmet les commandes suivantes lors de la connexion au serveur d'arrière-plan :",
+ "a64292826ef2": "Indique s'il faut transmettre au client le message d'erreur obtenu lors de l'authentification auprès du serveur d'arrière-plan.",
+ "e0dc1dc89111": "`EHLO` ou `HELO`, tel que transmis par le client",
+ "e3c575ef96dd": "Définit la taille du tampon utilisé pour le relais. Par défaut, le tampon fait une page mémoire, soit 4K ou 8K selon la plate-forme."
+}

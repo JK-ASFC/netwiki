@@ -1,12 +1,9 @@
 ---
 title: "proxy_buffer_size (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_buffer_size (ngx_stream_proxy_module) — Sets the size of the buffer used for reading data from the proxied server. Also sets the size of the buffer used for reading data from the client."
+description: "Directive nginx proxy_buffer_size (ngx_stream_proxy_module) — Définit la taille du tampon de lecture des données du serveur mandaté. Définit aussi la taille du tampon de lecture des données du client."
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *size* of the buffer used for reading data from the proxied server. Also sets the *size* of the buffer used for reading data from the client.
+Définit la *taille* du tampon de lecture des données du serveur mandaté. Définit aussi la *taille* du tampon de lecture des données du client.
 
 ---
 

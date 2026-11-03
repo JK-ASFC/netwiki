@@ -1,18 +1,15 @@
 ---
 title: "ngx_stream_ssl_preread_module"
-description: "Module nginx ngx_stream_ssl_preread_module — The ngx_stream_ssl_preread_module module (1.11.5) allows extracting information from the ClientHello message without terminating SSL/TLS, for example, the server name requested through SNI or protocols advertised in…"
+description: "Module nginx ngx_stream_ssl_preread_module — Le module ngx_stream_ssl_preread_module (1.11.5) permet d'extraire des informations du message ClientHello sans terminer SSL/TLS, par exemple le nom de serveur demandé via SNI ou les protocoles annoncés dans ALPN. Ce…"
 tags: [nginx, module, ngx_stream_ssl_preread_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_ssl_preread_module` module (1.11.5) allows extracting information from the [ClientHello](https://datatracker.ietf.org/doc/html/rfc5246#section-7.4.1.2) message without terminating SSL/TLS, for example, the server name requested through [SNI](https://datatracker.ietf.org/doc/html/rfc6066#section-3) or protocols advertised in [ALPN](https://datatracker.ietf.org/doc/html/rfc7301). This module is not built by default, it should be enabled with the `--with-stream_ssl_preread_module` configuration parameter.
+Le module `ngx_stream_ssl_preread_module` (1.11.5) permet d'extraire des informations du message [ClientHello](https://datatracker.ietf.org/doc/html/rfc5246#section-7.4.1.2) sans terminer SSL/TLS, par exemple le nom de serveur demandé via [SNI](https://datatracker.ietf.org/doc/html/rfc6066#section-3) ou les protocoles annoncés dans [ALPN](https://datatracker.ietf.org/doc/html/rfc7301). Ce module n'est pas compilé par défaut ; activez-le avec le paramètre de configuration `--with-stream_ssl_preread_module`.
 
 ## Exemple de configuration
 
-Selecting an upstream based on server name:
+Choisir un groupe amont selon le nom de serveur :
 
 ```nginx
 map $ssl_preread_server_name $name {
@@ -37,7 +34,7 @@ server {
 }
 ```
 
-Selecting an upstream based on protocol:
+Choisir un groupe amont selon le protocole :
 
 ```nginx
 map $ssl_preread_alpn_protocols $proxy {
@@ -53,7 +50,7 @@ server {
 }
 ```
 
-Selecting an upstream based on SSL protocol version:
+Choisir un groupe amont selon la version du protocole SSL :
 
 ```nginx
 map $ssl_preread_protocol $upstream {

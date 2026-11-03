@@ -1,59 +1,56 @@
 ---
-title: "nginx JavaScript module"
-description: "Nginx — nginx JavaScript module. njs is an nginx module that extends the server's functionality through JavaScript scripting, enabling the creation of custom server-side logic and more."
+title: "Module JavaScript de nginx"
+description: "Nginx — Module JavaScript de nginx. njs est un module nginx qui étend les fonctions du serveur par des scripts JavaScript, pour créer une logique côté serveur personnalisée, entre autres."
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+njs est un module nginx qui étend les fonctions du serveur par des scripts JavaScript, pour créer une logique côté serveur personnalisée, entre autres.
 
-njs is an nginx module that extends the server's functionality through JavaScript scripting, enabling the creation of custom server-side logic and more.
-
-nginx calls JavaScript handlers at a fixed set of [[10-guides/04-njs/integration|integration points]]: HTTP request and response processing phases, stream session phases, variable evaluation, and periodic timers. njs is not a standalone application runtime: it has no start-up script and no event loop of its own, JavaScript code runs only when nginx invokes a configured handler, and control returns to nginx once the handler completes.
+nginx appelle les gestionnaires JavaScript à un ensemble fixe de [[10-guides/04-njs/integration|points d'intégration]] : phases de traitement des requêtes et réponses HTTP, phases des sessions stream, évaluation des variables et minuteurs périodiques. njs n'est pas un environnement d'exécution autonome : il n'a ni script de démarrage ni boucle d'événements propre ; le code JavaScript ne s'exécute que lorsque nginx appelle un gestionnaire configuré, et la main revient à nginx à la fin du gestionnaire.
 
 > [!NOTE]
-> The built-in [[10-guides/04-njs/engine|njs]] JavaScript engine is deprecated since 1.0.0; new configurations should use the [[10-guides/04-njs/engine|QuickJS]] engine.
+> Le moteur JavaScript intégré [[10-guides/04-njs/engine|njs]] est obsolète depuis la version 1.0.0 ; les nouvelles configurations doivent utiliser le moteur [[10-guides/04-njs/engine|QuickJS]].
 
-## Getting started
+## Premiers pas
 
-- [[10-guides/04-njs/install|Download and install]]
-- [[10-guides/04-njs/integration|Execution model and integration points]]
-- [Examples](https://github.com/nginx/njs-examples/)
-- [[10-guides/04-njs/cli|Command-line interface]]
+- [[10-guides/04-njs/install|Téléchargement et installation]]
+- [[10-guides/04-njs/integration|Modèle d'exécution et points d'intégration]]
+- [Exemples](https://github.com/nginx/njs-examples/)
+- [[10-guides/04-njs/cli|Interface en ligne de commande]]
 
-## Reference
+## Référence
 
-- [[10-guides/04-njs/reference|Reference]]
+- [[10-guides/04-njs/reference|Référence]]
 - [[11-modules/02-http/ngx_http_js_module|ngx_http_js_module]]
 - [[11-modules/03-stream/ngx_stream_js_module|ngx_stream_js_module]]
-- [[10-guides/04-njs/engine|JavaScript Engine]]
-- [[10-guides/04-njs/compatibility|Compatibility]]
-- [[10-guides/04-njs/native-modules|Native modules]]
-- [[10-guides/04-njs/node-modules|Using node modules with njs]]
-- [[10-guides/04-njs/typescript|Writing njs code using TypeScript definition files]]
-- [[10-guides/04-njs/preload-objects|Understanding preloaded objects]]
+- [[10-guides/04-njs/engine|Moteur JavaScript]]
+- [[10-guides/04-njs/compatibility|Compatibilité]]
+- [[10-guides/04-njs/native-modules|Modules natifs]]
+- [[10-guides/04-njs/node-modules|Utiliser des modules Node avec njs]]
+- [[10-guides/04-njs/typescript|Écrire du code njs avec les fichiers de définitions TypeScript]]
+- [[10-guides/04-njs/preload-objects|Comprendre les objets préchargés]]
 
-## Project
+## Projet
 
 - 
-- [[10-guides/04-njs/security|Security]]
-- Tested OS and platforms
+- [[10-guides/04-njs/security|Sécurité]]
+- Systèmes et plates-formes testés
 
-## Use cases
+## Cas d'usage
 
-- Complex access control and security checks in njs before a request reaches an upstream server
-- Manipulating response headers
-- Writing flexible asynchronous content handlers and filters
+- Contrôle d'accès complexe et vérifications de sécurité en njs avant qu'une requête n'atteigne un serveur amont
+- Manipulation des en-têtes de réponse
+- Écriture de gestionnaires de contenu et de filtres asynchrones souples
 
-See [examples](https://github.com/nginx/njs-examples/) for more njs use cases.
+Voir les [exemples](https://github.com/nginx/njs-examples/) pour d'autres cas d'usage de njs.
 
-## Basic HTTP Example
+## Exemple HTTP de base
 
-To use njs in nginx:
+Pour utiliser njs dans nginx :
 
-- [[10-guides/04-njs/install|install]] njs
-- create an njs script file, for example, `http.js`. See [[10-guides/04-njs/reference|Reference]] for the list of njs properties and methods.
+- [[10-guides/04-njs/install|installez]] njs
+- créez un fichier de script njs, par exemple `http.js`. Voir la [[10-guides/04-njs/reference|Référence]] pour la liste des propriétés et méthodes njs.
 
   ```nginx
   function hello(r) {
@@ -62,7 +59,7 @@ To use njs in nginx:
 
   export default {hello};
   ```
-- in the `nginx.conf` file, enable [[11-modules/02-http/ngx_http_js_module|ngx_http_js_module]] module and specify the [[12-directives/js-import-http-js|js_import]] directive with the `http.js` script file:
+- dans le fichier `nginx.conf`, activez le module [[11-modules/02-http/ngx_http_js_module|ngx_http_js_module]] et indiquez la directive [[12-directives/js-import-http-js|js_import]] avec le fichier de script `http.js` :
 
   ```nginx
   load_module modules/ngx_http_js_module.so;
@@ -85,16 +82,16 @@ To use njs in nginx:
   }
   ```
 
-There is also a standalone [[10-guides/04-njs/cli|command line]] utility that can be used independently of nginx for njs development and debugging.
+Il existe aussi un utilitaire autonome en [[10-guides/04-njs/cli|ligne de commande]], utilisable indépendamment de nginx pour développer et déboguer njs.
 
-## Tested OS and platforms
+## Systèmes et plates-formes testés
 
-- FreeBSD / amd64;
-- Linux / x86, amd64, arm64, ppc64el;
-- Solaris 11 / amd64;
-- macOS / x86\_64;
+- FreeBSD / amd64 ;
+- Linux / x86, amd64, arm64, ppc64el ;
+- Solaris 11 / amd64 ;
+- macOS / x86\_64 ;
 
-## Presentation at nginx.conf 2018
+## Présentation à nginx.conf 2018
 
 ---
 

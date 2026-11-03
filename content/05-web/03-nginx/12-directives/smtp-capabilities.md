@@ -1,12 +1,9 @@
 ---
 title: "smtp_capabilities"
-description: "Directive nginx smtp_capabilities (ngx_mail_smtp_module) — Sets the SMTP protocol extensions list that is passed to the client in response to the EHLO command. The authentication methods specified in the smtp_auth directive and STARTTLS are automatically…"
+description: "Directive nginx smtp_capabilities (ngx_mail_smtp_module) — Définit la liste des extensions du protocole SMTP transmise au client en réponse à la commande EHLO. Les méthodes d'authentification indiquées dans la directive smtp_auth et STARTTLS sont ajoutées…"
 tags: [nginx, directive, ngx_mail_smtp_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the SMTP protocol extensions list that is passed to the client in response to the `EHLO` command. The authentication methods specified in the [[12-directives/smtp-auth|smtp_auth]] directive and [STARTTLS](https://datatracker.ietf.org/doc/html/rfc3207) are automatically added to this list depending on the [[12-directives/starttls|starttls]] directive value.
+Définit la liste des extensions du protocole SMTP transmise au client en réponse à la commande `EHLO`. Les méthodes d'authentification indiquées dans la directive [[12-directives/smtp-auth|smtp_auth]] et [STARTTLS](https://datatracker.ietf.org/doc/html/rfc3207) sont ajoutées automatiquement à cette liste selon la valeur de la directive [[12-directives/starttls|starttls]].
 
-It makes sense to specify the extensions supported by the MTA to which the clients are proxied (if these extensions are related to commands used after the authentication, when nginx transparently proxies the client connection to the backend).
+Il est utile d'indiquer les extensions prises en charge par le MTA vers lequel les clients sont relayés (si elles concernent des commandes utilisées après l'authentification, lorsque nginx relaie de façon transparente la connexion du client).
 
-The current list of standardized extensions is published at [www.iana.org](http://www.iana.org/assignments/mail-parameters).
+La liste actuelle des extensions normalisées est publiée sur [www.iana.org](http://www.iana.org/assignments/mail-parameters).
 
 ---
 

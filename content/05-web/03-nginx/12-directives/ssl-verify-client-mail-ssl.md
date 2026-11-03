@@ -1,12 +1,9 @@
 ---
 title: "ssl_verify_client (ngx_mail_ssl_module)"
-description: "Directive nginx ssl_verify_client (ngx_mail_ssl_module) — Enables verification of client certificates. The verification result is passed in the Auth-SSL-Verify header of the authentication request. The optional parameter requests the client certificate and…"
+description: "Directive nginx ssl_verify_client (ngx_mail_ssl_module) — Active la vérification des certificats des clients. Le résultat est transmis dans l'en-tête Auth-SSL-Verify de la requête d'authentification. Le paramètre optional demande le certificat du client et…"
 tags: [nginx, directive, ngx_mail_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,11 +15,11 @@ icon: settings-2
 
 ## Utilisation
 
-Enables verification of client certificates. The verification result is passed in the `Auth-SSL-Verify` header of the [[12-directives/auth-http|authentication]] request.
+Active la vérification des certificats des clients. Le résultat est transmis dans l'en-tête `Auth-SSL-Verify` de la requête d'[[12-directives/auth-http|authentification]].
 
-The `optional` parameter requests the client certificate and verifies it if the certificate is present.
+Le paramètre `optional` demande le certificat du client et le vérifie s'il est présent.
 
-The `optional_no_ca` parameter requests the client certificate but does not require it to be signed by a trusted CA certificate. This is intended for the use in cases when a service that is external to nginx performs the actual certificate verification. The contents of the certificate is accessible through requests [[12-directives/auth-http-pass-client-cert|sent]] to the authentication server.
+Le paramètre `optional_no_ca` demande le certificat du client sans exiger qu'il soit signé par une autorité de confiance. Il est destiné aux cas où un service extérieur à nginx effectue la vérification réelle du certificat. Le contenu du certificat est accessible par les requêtes [[12-directives/auth-http-pass-client-cert|envoyées]] au serveur d'authentification.
 
 ---
 

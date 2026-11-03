@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_conf_command (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_ssl_conf_command (ngx_stream_proxy_module) — Sets arbitrary OpenSSL configuration commands when establishing a connection with the proxied server. NOTE Cette directive est prise en charge avec OpenSSL 1.0.2 ou plus récent. Plusieurs directives…"
+description: "Directive nginx proxy_ssl_conf_command (ngx_stream_proxy_module) — Définit des commandes de configuration OpenSSL arbitraires lors de l'établissement d'une connexion avec le serveur mandaté. NOTE Cette directive est prise en charge avec OpenSSL 1.0.2 ou plus récent.…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets arbitrary OpenSSL configuration [commands](https://www.openssl.org/docs/man1.1.1/man3/SSL_CONF_cmd.html) when establishing a connection with the proxied server.
+Définit des [commandes](https://www.openssl.org/docs/man1.1.1/man3/SSL_CONF_cmd.html) de configuration OpenSSL arbitraires lors de l'établissement d'une connexion avec le serveur mandaté.
 
 > [!NOTE]
 > Cette directive est prise en charge avec OpenSSL 1.0.2 ou plus récent.

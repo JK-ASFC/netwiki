@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_ssl_verify"
-description: "Directive nginx zone_sync_ssl_verify (ngx_stream_zone_sync_module) — Enables or disables verification of another cluster server certificate."
+description: "Directive nginx zone_sync_ssl_verify (ngx_stream_zone_sync_module) — Active ou désactive la vérification du certificat d'un autre serveur du cluster."
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables verification of another cluster server certificate.
+Active ou désactive la vérification du certificat d'un autre serveur du cluster.
 
 ---
 

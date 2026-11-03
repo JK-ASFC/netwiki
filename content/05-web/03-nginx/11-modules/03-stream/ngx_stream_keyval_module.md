@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_keyval_module"
-description: "Module nginx ngx_stream_keyval_module — The ngx_stream_keyval_module module (1.13.7) creates variables with values taken from key-value pairs managed by the API or a variable that can also be set with njs."
+description: "Module nginx ngx_stream_keyval_module — Le module ngx_stream_keyval_module (1.13.7) crée des variables dont les valeurs proviennent de paires clé-valeur gérées par l'API ou d'une variable qui peut aussi être définie avec njs."
 tags: [nginx, module, ngx_stream_keyval_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_keyval_module` module (1.13.7) creates variables with values taken from key-value pairs managed by the [[11-modules/02-http/ngx_http_api_module|API]] or a variable that can also be set with [njs](https://github.com/nginx/njs-examples/).
+Le module `ngx_stream_keyval_module` (1.13.7) crée des variables dont les valeurs proviennent de paires clé-valeur gérées par l'[[11-modules/02-http/ngx_http_api_module|API]] ou d'une variable qui peut aussi être définie avec [njs](https://github.com/nginx/njs-examples/).
 
 > [!NOTE]
 > Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).

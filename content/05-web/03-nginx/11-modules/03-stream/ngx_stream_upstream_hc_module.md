@@ -1,16 +1,13 @@
 ---
 title: "ngx_stream_upstream_hc_module"
-description: "Module nginx ngx_stream_upstream_hc_module — The ngx_stream_upstream_hc_module module (1.9.0) allows enabling periodic health checks of the servers in a group. The server group must reside in the shared memory."
+description: "Module nginx ngx_stream_upstream_hc_module — Le module ngx_stream_upstream_hc_module (1.9.0) permet d'activer des vérifications de santé périodiques des serveurs d'un groupe. Le groupe de serveurs doit résider en mémoire partagée."
 tags: [nginx, module, ngx_stream_upstream_hc_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_stream_upstream_hc_module` (1.9.0) permet d'activer des vérifications de santé périodiques des serveurs d'un [[12-directives/upstream-stream-upstream|groupe]]. Le groupe de serveurs doit résider en [[12-directives/zone-stream-upstream|mémoire partagée]].
 
-The `ngx_stream_upstream_hc_module` module (1.9.0) allows enabling periodic health checks of the servers in a [[12-directives/upstream-stream-upstream|group]]. The server group must reside in the [[12-directives/zone-stream-upstream|shared memory]].
-
-If a health check fails, the server will be considered unhealthy. If several health checks are defined for the same group of servers, a single failure of any check will make the corresponding server be considered unhealthy. Client connections are not passed to unhealthy servers and servers in the “checking” state.
+Si une vérification de santé échoue, le serveur est considéré comme défaillant. Si plusieurs vérifications sont définies pour le même groupe, un seul échec de l'une d'elles suffit à rendre le serveur défaillant. Les connexions client ne sont passées ni aux serveurs défaillants ni aux serveurs à l'état « checking ».
 
 > [!NOTE]
 > Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
@@ -36,9 +33,9 @@ server {
 }
 ```
 
-With this configuration, nginx will check the ability to establish a TCP connection to each server in the `tcp` group every five seconds. When a connection to the server cannot be established, the health check will fail, and the server will be considered unhealthy.
+Avec cette configuration, nginx vérifie toutes les cinq secondes qu'une connexion TCP peut être établie avec chaque serveur du groupe `tcp`. Si la connexion échoue, la vérification échoue et le serveur est considéré comme défaillant.
 
-Health checks can be configured for the UDP protocol:
+Les vérifications de santé peuvent être configurées pour le protocole UDP :
 
 ```nginx
 upstream dns_upstream {
@@ -57,9 +54,9 @@ server {
 }
 ```
 
-In this case, the absence of ICMP “`Destination Unreachable`” message is expected in reply to the sent string “`nginx health check`”.
+Dans ce cas, on attend l'absence de message ICMP « `Destination Unreachable` » en réponse à la chaîne envoyée « `nginx health check` ».
 
-Health checks can also be configured to test data obtained from the server. Tests are configured separately using the [[12-directives/match-stream-upstream-hc|match]] directive and referenced in the `match` parameter of the [[12-directives/health-check-stream-upstream-hc|health_check]] directive.
+Les vérifications peuvent aussi tester les données obtenues du serveur. Les tests se configurent séparément avec la directive [[12-directives/match-stream-upstream-hc|match]] et sont référencés dans le paramètre `match` de la directive [[12-directives/health-check-stream-upstream-hc|health_check]].
 
 ## Directives
 

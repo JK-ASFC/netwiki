@@ -1,12 +1,9 @@
 ---
 title: "license_pending_token"
-description: "Directive nginx license_pending_token (ngx_mgmt_module) — Controls how a renewed JWT license token is handled after it is received from the F5 licensing endpoint. By default, the renewed token is saved and applied immediately. When set to a file path, the…"
+description: "Directive nginx license_pending_token (ngx_mgmt_module) — Contrôle le traitement d'un jeton de licence JWT renouvelé reçu du point de terminaison de licences de F5. Par défaut, il est enregistré et appliqué immédiatement. Avec un chemin de fichier (file),…"
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,11 +15,11 @@ icon: settings-2
 
 ## Utilisation
 
-Controls how a renewed JWT license token is handled after it is received from the F5 licensing endpoint. By default, the renewed token is saved and applied immediately.
+Contrôle le traitement d'un jeton de licence JWT renouvelé reçu du point de terminaison de licences de F5. Par défaut, il est enregistré et appliqué immédiatement.
 
-When set to a *file* path, the renewed token is saved to the specified file but not applied. The path is relative to [[12-directives/state-path-mgmt|state_path]]. The token can be copied to the active license token file or applied using the `PUT` method of the `/api/10/license` API endpoint.
+Avec un chemin de fichier (*file*), le jeton renouvelé est enregistré dans ce fichier sans être appliqué. Le chemin est relatif à [[12-directives/state-path-mgmt|state_path]]. Le jeton peut ensuite être copié dans le fichier de licence actif ou appliqué avec la méthode `PUT` du point de terminaison d'API `/api/10/license`.
 
-When set to `off`, the renewal event is logged but the token is discarded. In this case, JWT license renewal is managed entirely through the `PUT` method of the `/api/10/license` API endpoint.
+Avec `off`, l'événement de renouvellement est journalisé mais le jeton est abandonné. Le renouvellement de la licence JWT se gère alors entièrement avec la méthode `PUT` du point de terminaison d'API `/api/10/license`.
 
 ---
 

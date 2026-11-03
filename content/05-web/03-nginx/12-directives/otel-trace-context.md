@@ -1,12 +1,9 @@
 ---
 title: "otel_trace_context"
-description: "Directive nginx otel_trace_context (ngx_otel_module) — Specifies how to propagate traceparent/tracestate headers: - extract uses an existing trace context from the request, so that the identifiers of a trace and the parent span are inherited from the…"
+description: "Directive nginx otel_trace_context (ngx_otel_module) — Indique comment propager les en-têtes traceparent/tracestate : - extract utilise le contexte de trace existant de la requête : les identifiants de la trace et du span parent sont hérités de la…"
 tags: [nginx, directive, ngx_otel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,23 +14,23 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies how to propagate [traceparent/tracestate](https://www.w3.org/TR/trace-context/#design-overview) headers:
+Indique comment propager les en-têtes [traceparent/tracestate](https://www.w3.org/TR/trace-context/#design-overview) :
 
 - **`extract`**
 
-  uses an existing trace context from the request, so that the identifiers of a [[13-variables/otel-trace-id|trace]] and the [[13-variables/otel-parent-id|parent span]] are inherited from the incoming request.
+  utilise le contexte de trace existant de la requête : les identifiants de la [[13-variables/otel-trace-id|trace]] et du [[13-variables/otel-parent-id|span parent]] sont hérités de la requête entrante.
 
 - **`inject`**
 
-  adds a new context to the request, overwriting existing headers, if any.
+  ajoute un nouveau contexte à la requête, en écrasant les en-têtes existants le cas échéant.
 
 - **`propagate`**
 
-  updates the existing context (combines `extract` and `inject`).
+  met à jour le contexte existant (combine `extract` et `inject`).
 
 - **`ignore`**
 
-  skips context headers processing.
+  ignore le traitement des en-têtes de contexte.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "ssl_handshake_timeout"
-description: "Directive nginx ssl_handshake_timeout (ngx_stream_ssl_module) — Specifies a timeout for the SSL handshake to complete."
+description: "Directive nginx ssl_handshake_timeout (ngx_stream_ssl_module) — Définit le délai d'achèvement de la poignée de main SSL."
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a timeout for the SSL handshake to complete.
+Définit le délai d'achèvement de la poignée de main SSL.
 
 ---
 

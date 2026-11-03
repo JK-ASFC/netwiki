@@ -1,1 +1,9 @@
-{}
+{
+ "17acdf8d9413": "Cette directive est obsolète depuis la version 1.25.1. Utilisez plutôt la directive [[12-directives/mqtt-buffers|mqtt_buffers]].",
+ "29d948ba3acb": "Active le protocole MQTT pour le serveur virtuel donné.",
+ "3e4060741166": "Plusieurs directives `mqtt_set_connect` peuvent être indiquées au même niveau :",
+ "7452892994e5": "Le module `ngx_stream_mqtt_filter_module` (1.23.4) prend en charge le protocole Message Queuing Telemetry Transport (MQTT) versions [3.1.1](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html) et [5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html).",
+ "76d76cdb3ef7": "Fixe le champ `field` du message CONNECT à la valeur `value`. Champs pris en charge : `clientid`, `username` et `password`. La valeur peut contenir du texte, des variables et leur combinaison.",
+ "c01382af5687": "Définit la *taille* du tampon utilisé pour écrire un message modifié. Par défaut, elle vaut une page mémoire, soit 4K ou 8K selon la plate-forme. Elle peut toutefois être réduite.",
+ "e4630333ea27": "Définit le *nombre* et la *taille* des tampons utilisés pour traiter les messages MQTT, pour une seule connexion."
+}

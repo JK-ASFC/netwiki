@@ -1,0 +1,21 @@
+{
+ "0e6b868dcb24": "`reopen` — rouvre les fichiers journaux",
+ "27ef57c678c6": "`-V` — affiche la version de nginx, celle du compilateur et les paramètres de configure.",
+ "3400d7ca7015": "`-e file` — utilise un autre *fichier* de journal d'erreurs que celui par défaut (1.19.5). La valeur spéciale `stderr` sélectionne la sortie d'erreur standard.",
+ "3a62cd1d8660": "`-T` — comme `-t`, mais affiche en plus les fichiers de configuration sur la sortie standard (1.9.2).",
+ "3b7a79981625": "`-v` — affiche la version de nginx.",
+ "3c2016b09864": "De la version 1.29.8 à la version 1.31.5, ce paramètre faisait partie de notre [abonnement commercial](https://nginx.com/products/).",
+ "4e1a044cd298": "`-l unix:socket | port` — active l'[API REST de contrôle de nginx](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control#control-api) sur la socket de domaine UNIX ou le port indiqués (1.31.5).",
+ "569fb1057718": "`reload` — recharge la configuration, démarre de nouveaux processus de travail avec la nouvelle configuration et arrête proprement les anciens.",
+ "5c3f79c7f2bd": "`quit` — arrêt propre",
+ "64da44880470": "`-p prefix` — définit le préfixe de chemin de nginx, c'est-à-dire le répertoire qui contiendra les fichiers du serveur (valeur par défaut : */usr/local/nginx*).",
+ "6aaa556f0c49": "`-t` — teste le fichier de configuration : nginx vérifie la syntaxe de la configuration, puis tente d'ouvrir les fichiers qu'elle référence.",
+ "6d4e38546618": "`-?` | `-h` — affiche l'aide des paramètres de ligne de commande.",
+ "763c819ba038": "`-q` — supprime les messages autres que les erreurs pendant le test de la configuration.",
+ "7d4bd17a6239": "nginx prend en charge les paramètres de ligne de commande suivants :",
+ "a655a6f4baa6": "`-c file` — utilise un autre *fichier* de configuration que celui par défaut.",
+ "b9a6b083401b": "`stop` — arrêt rapide",
+ "cd941d901cf2": "`-g directives` — définit des [[11-modules/01-coeur/ngx_core_module|directives de configuration globales]], par exemple",
+ "d86929e16c20": "Paramètres de la ligne de commande",
+ "daadedba1283": "`-s signal` — envoie un *signal* au processus maître. L'argument *signal* peut valoir :"
+}

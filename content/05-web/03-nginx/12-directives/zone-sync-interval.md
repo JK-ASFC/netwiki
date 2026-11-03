@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_interval"
-description: "Directive nginx zone_sync_interval (ngx_stream_zone_sync_module) — Defines an interval for polling updates in a shared memory zone."
+description: "Directive nginx zone_sync_interval (ngx_stream_zone_sync_module) — Définit l'intervalle d'interrogation des mises à jour dans une zone de mémoire partagée."
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines an interval for polling updates in a shared memory zone.
+Définit l'intervalle d'interrogation des mises à jour dans une zone de mémoire partagée.
 
 ---
 

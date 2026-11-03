@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_split_clients_module"
-description: "Module nginx ngx_stream_split_clients_module — The ngx_stream_split_clients_module module (1.11.3) creates variables suitable for A/B testing, also known as split testing."
+description: "Module nginx ngx_stream_split_clients_module — Le module ngx_stream_split_clients_module (1.11.3) crée des variables adaptées aux tests A/B, aussi appelés tests fractionnés."
 tags: [nginx, module, ngx_stream_split_clients_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_split_clients_module` module (1.11.3) creates variables suitable for A/B testing, also known as split testing.
+Le module `ngx_stream_split_clients_module` (1.11.3) crée des variables adaptées aux tests A/B, aussi appelés tests fractionnés.
 
 ## Exemple de configuration
 

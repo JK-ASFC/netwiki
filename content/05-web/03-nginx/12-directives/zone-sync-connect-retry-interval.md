@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_connect_retry_interval"
-description: "Directive nginx zone_sync_connect_retry_interval (ngx_stream_zone_sync_module) — Defines an interval between connection attempts to another cluster node."
+description: "Directive nginx zone_sync_connect_retry_interval (ngx_stream_zone_sync_module) — Définit l'intervalle entre deux tentatives de connexion à un autre nœud du cluster."
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines an interval between connection attempts to another cluster node.
+Définit l'intervalle entre deux tentatives de connexion à un autre nœud du cluster.
 
 ---
 

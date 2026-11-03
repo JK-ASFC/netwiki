@@ -1,4 +1,5 @@
 {
+ "152bf1be2f30": "Le module `ngx_stream_keyval_module` (1.13.7) crée des variables dont les valeurs proviennent de paires clé-valeur gérées par l'[[11-modules/02-http/ngx_http_api_module|API]] ou d'une variable qui peut aussi être définie avec [njs](https://github.com/nginx/njs-examples/).",
  "6ed3697f39a3": "Crée une nouvelle variable *$variable* dont la valeur est recherchée par la clé (*key*) dans la base clé-valeur. Les règles de correspondance sont définies par le paramètre `type` de la directive [[12-directives/keyval-zone-stream-keyval|keyval_zone]]. La base est stockée dans la zone de mémoire partagée indiquée par le paramètre `zone`.",
  "9dd1c28b23d9": "Le paramètre facultatif `type` (1.17.1) active un index supplémentaire optimisé pour un certain type de clé et définit les règles de correspondance lors de l'évaluation d'une variable [[12-directives/keyval-stream-keyval|keyval]] `$variable`."
 }

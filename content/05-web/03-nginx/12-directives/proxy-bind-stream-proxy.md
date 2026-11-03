@@ -1,12 +1,9 @@
 ---
 title: "proxy_bind (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_bind (ngx_stream_proxy_module) — Makes outgoing connections to a proxied server originate from the specified local IP address. Parameter value can contain variables (1.11.2). The special value off cancels the effect of the…"
+description: "Directive nginx proxy_bind (ngx_stream_proxy_module) — Fait partir les connexions sortantes vers un serveur mandaté de l'adresse IP locale indiquée. La valeur peut contenir des variables (1.11.2). La valeur spéciale off annule l'effet de la directive…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Makes outgoing connections to a proxied server originate from the specified local IP *address*. Parameter value can contain variables (1.11.2). The special value `off` cancels the effect of the `proxy_bind` directive inherited from the previous configuration level, which allows the system to auto-assign the local IP address.
+Fait partir les connexions sortantes vers un serveur mandaté de l'*adresse* IP locale indiquée. La valeur peut contenir des variables (1.11.2). La valeur spéciale `off` annule l'effet de la directive `proxy_bind` héritée du niveau de configuration précédent, ce qui laisse le système attribuer automatiquement l'adresse IP locale.
 
 Le paramètre `transparent` (1.11.0) permet aux connexions sortantes vers un serveur mandaté de partir d'une adresse IP non locale, par exemple de l'adresse IP réelle du client :
 

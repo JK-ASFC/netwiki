@@ -1,12 +1,9 @@
 ---
 title: "proxy_responses"
-description: "Directive nginx proxy_responses (ngx_stream_proxy_module) — Sets the number of datagrams expected from the proxied server in response to a client datagram if the UDP protocol is used. The number serves as a hint for session termination. By default, the number…"
+description: "Directive nginx proxy_responses (ngx_stream_proxy_module) — Définit le nombre de datagrammes attendus du serveur mandaté en réponse à un datagramme client quand le protocole UDP est utilisé. Ce nombre sert d'indication pour terminer la session. Par défaut, il…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the number of datagrams expected from the proxied server in response to a client datagram if the [[11-modules/03-stream/ngx_stream_core_module|UDP]] protocol is used. The number serves as a hint for session termination. By default, the number of datagrams is not limited.
+Définit le nombre de datagrammes attendus du serveur mandaté en réponse à un datagramme client quand le protocole [[11-modules/03-stream/ngx_stream_core_module|UDP]] est utilisé. Ce nombre sert d'indication pour terminer la session. Par défaut, il n'est pas limité.
 
-If zero value is specified, no response is expected. However, if a response is received and the session is still not finished, the response will be handled.
+Avec la valeur zéro, aucune réponse n'est attendue. Toutefois, si une réponse est reçue alors que la session n'est pas terminée, elle sera traitée.
 
 ---
 

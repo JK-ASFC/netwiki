@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_stream_upstream_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `upstream name { ... }` |
@@ -32,7 +29,7 @@ upstream backend {
 }
 ```
 
-By default, connections are distributed between the servers using a weighted round-robin balancing method. In the above example, each 7 connections will be distributed as follows: 5 connections go to `backend1.example.com:12345` and one connection to each of the second and third servers. If an error occurs during communication with a server, the connection will be passed to the next server, and so on until all of the functioning servers will be tried. If communication with all servers fails, the connection will be closed.
+Par défaut, les connexions sont réparties entre les serveurs selon une méthode round-robin pondérée. Dans l'exemple ci-dessus, chaque groupe de 7 connexions est réparti ainsi : 5 connexions vers `backend1.example.com:12345` et une vers chacun des deuxième et troisième serveurs. En cas d'erreur de communication avec un serveur, la connexion est passée au serveur suivant, et ainsi de suite jusqu'à avoir essayé tous les serveurs en fonctionnement. Si la communication échoue avec tous, la connexion est fermée.
 
 ---
 

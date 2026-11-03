@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_map_module"
-description: "Module nginx ngx_stream_map_module — The ngx_stream_map_module module (1.11.2) creates variables whose values depend on values of other variables."
+description: "Module nginx ngx_stream_map_module — Le module ngx_stream_map_module (1.11.2) crée des variables dont les valeurs dépendent des valeurs d'autres variables."
 tags: [nginx, module, ngx_stream_map_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_map_module` module (1.11.2) creates variables whose values depend on values of other variables.
+Le module `ngx_stream_map_module` (1.11.2) crée des variables dont les valeurs dépendent des valeurs d'autres variables.
 
 ## Exemple de configuration
 

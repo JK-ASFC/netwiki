@@ -1,12 +1,9 @@
 ---
 title: "js_load_stream_native_module"
-description: "Directive nginx js_load_stream_native_module (ngx_stream_js_module) — Loads a native module (shared library) for use in Stream JavaScript code. The directive is QuickJS-only and is not available when using the njs built-in JavaScript engine. Le paramètre path indique…"
+description: "Directive nginx js_load_stream_native_module (ngx_stream_js_module) — Charge un module natif (bibliothèque partagée) utilisable dans le code JavaScript Stream. La directive est propre à QuickJS et n'est pas disponible avec le moteur JavaScript intégré de njs. Le…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Loads a [[10-guides/04-njs/native-modules|native module]] (shared library) for use in Stream JavaScript code. The directive is [[10-guides/04-njs/engine|QuickJS]]-only and is not available when using the njs built-in JavaScript engine.
+Charge un [[10-guides/04-njs/native-modules|module natif]] (bibliothèque partagée) utilisable dans le code JavaScript Stream. La directive est propre à [[10-guides/04-njs/engine|QuickJS]] et n'est pas disponible avec le moteur JavaScript intégré de njs.
 
 Le paramètre *path* indique le chemin absolu du fichier de bibliothèque partagée. Le paramètre facultatif `as` *name* donne un alias pour importer le module dans le code JavaScript ; sinon, le module s'importe par son nom de fichier.
 

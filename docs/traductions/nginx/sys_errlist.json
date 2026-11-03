@@ -1,0 +1,5 @@
+{
+ "346adea886c1": "Q : Lors de la compilation de nginx 0.7.66, 0.8.35 ou supérieur sous Linux, les avertissements suivants apparaissent :",
+ "842614f25b7b": "R : C'est normal : nginx doit utiliser les obsolètes sys\\_errlist\\[\\] et sys\\_nerr dans les gestionnaires de signaux, car les fonctions strerror() et strerror\\_r() ne sont pas sûres vis-à-vis des signaux asynchrones (Async-Signal-Safe).",
+ "eaab894c042c": "Un message « ‘sys\\_errlist’ is deprecated; use ‘strerror’ or ‘strerror\\_r’ instead »"
+}

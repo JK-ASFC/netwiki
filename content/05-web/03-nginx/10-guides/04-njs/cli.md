@@ -1,14 +1,11 @@
 ---
-title: "Command-line interface"
-description: "Nginx — Command-line interface. njs scripts development and debugging can be performed from the command-line. The command-line utility is available after the installation of the Linux package or after building from the sources. Compared to njs running…"
+title: "Interface en ligne de commande"
+description: "Nginx — Interface en ligne de commande. Les scripts njs peuvent être développés et débogués en ligne de commande. L'utilitaire est disponible après l'installation du paquet Linux ou la compilation à partir des sources. Contrairement à njs exécuté dans nginx,…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-njs scripts development and debugging can be performed from the command-line. The command-line utility is available after the installation of the Linux [[10-guides/04-njs/install|package]] or after building from the [[10-guides/04-njs/install|sources]]. Compared to njs running inside nginx, nginx objects ([[10-guides/04-njs/reference|HTTP]] and [[10-guides/04-njs/reference|Stream]]) are not available in the utility.
+Les scripts njs peuvent être développés et débogués en ligne de commande. L'utilitaire est disponible après l'installation du [[10-guides/04-njs/install|paquet]] Linux ou la compilation à partir des [[10-guides/04-njs/install|sources]]. Contrairement à njs exécuté dans nginx, les objets nginx ([[10-guides/04-njs/reference|HTTP]] et [[10-guides/04-njs/reference|Stream]]) ne sont pas disponibles dans l'utilitaire.
 
 ```nginx
 $ echo "2**3" | njs -q

@@ -1,12 +1,9 @@
 ---
 title: "usage_report"
-description: "Directive nginx usage_report (ngx_mgmt_module) — Sets the address and port of the usage reporting endpoint. The interval parameter sets an interval between two consecutive reports. NOTE Before 1.27.2, the default values were nginx-mgmt.local and…"
+description: "Directive nginx usage_report (ngx_mgmt_module) — Définit l'adresse (address) et le port (port) du point de terminaison du rapport d'utilisation. Le paramètre interval définit l'intervalle entre deux rapports consécutifs. NOTE Avant la version…"
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *address* and *port* of the usage reporting endpoint. The `interval` parameter sets an interval between two consecutive reports.
+Définit l'adresse (*address*) et le port (*port*) du point de terminaison du rapport d'utilisation. Le paramètre `interval` définit l'intervalle entre deux rapports consécutifs.
 
 > [!NOTE]
-> Before 1.27.2, the default values were `nginx-mgmt.local` and `30m`.
+> Avant la version 1.27.2, les valeurs par défaut étaient `nginx-mgmt.local` et `30m`.
 
 ---
 

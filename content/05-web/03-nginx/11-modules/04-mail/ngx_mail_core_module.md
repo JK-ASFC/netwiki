@@ -1,14 +1,11 @@
 ---
 title: "ngx_mail_core_module"
-description: "Module nginx ngx_mail_core_module — This module is not built by default, it should be enabled with the --with-mail configuration parameter."
+description: "Module nginx ngx_mail_core_module — Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration --with-mail."
 tags: [nginx, module, ngx_mail_core_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-This module is not built by default, it should be enabled with the `--with-mail` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-mail`.
 
 ## Exemple de configuration
 

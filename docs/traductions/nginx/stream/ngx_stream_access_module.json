@@ -1,1 +1,6 @@
-{}
+{
+ "59d3d9cd21a8": "Refuse l'accès pour le réseau ou l'adresse indiqués. Avec la valeur spéciale `unix:`, refuse l'accès pour toutes les sockets de domaine UNIX.",
+ "a5d5b5f5123b": "Les règles sont vérifiées dans l'ordre jusqu'à la première correspondance. Dans cet exemple, l'accès n'est autorisé que pour les réseaux IPv4 `10.1.1.0/16` et `192.168.1.0/24`, à l'exception de l'adresse `192.168.1.1`, et pour le réseau IPv6 `2001:0db8::/32`.",
+ "c7ed019ae2a3": "Le module `ngx_stream_access_module` (1.9.2) permet de restreindre l'accès à certaines adresses client.",
+ "caf12340cada": "Autorise l'accès pour le réseau ou l'adresse indiqués. Avec la valeur spéciale `unix:`, autorise l'accès pour toutes les sockets de domaine UNIX."
+}

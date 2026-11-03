@@ -1,16 +1,13 @@
 ---
-title: "Debugging nginx with DTrace pid provider"
-description: "Nginx — Debugging nginx with DTrace pid provider. This article assumes the reader has a general knowledge of nginx internals and DTrace."
+title: "Déboguer nginx avec le fournisseur pid de DTrace"
+description: "Nginx — Déboguer nginx avec le fournisseur pid de DTrace. Cet article suppose une connaissance générale du fonctionnement interne de nginx et de DTrace."
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Cet article suppose une connaissance générale du fonctionnement interne de nginx et de DTrace.
 
-This article assumes the reader has a general knowledge of nginx internals and DTrace.
-
-Although nginx built with the [[10-guides/01-introduction/debugging-log|--with-debug]] option already provides a lot of information about request processing, it is sometimes desirable to trace particular parts of code path more thoroughly and at the same time omit the rest of debugging output. DTrace pid provider (available on Solaris, macOS) is a useful tool to explore userland program’s internals, since it doesn’t require any code changes and it can help with the task. A simple DTrace script to trace and print nginx function calls may look like this:
+Même si nginx compilé avec l'option [[10-guides/01-introduction/debugging-log|--with-debug]] fournit déjà beaucoup d'informations sur le traitement des requêtes, il est parfois souhaitable de tracer plus finement certaines parties du code tout en omettant le reste de la sortie de débogage. Le fournisseur pid de DTrace (disponible sous Solaris et macOS) est un outil utile pour explorer le fonctionnement interne des programmes utilisateur, car il ne nécessite aucune modification du code. Un script DTrace simple qui trace et affiche les appels de fonctions de nginx peut ressembler à ceci :
 
 ```c
 #pragma D option flowindent
@@ -22,9 +19,9 @@ pid$target:nginx::return {
 }
 ```
 
-DTrace capabilities for function calls tracing provide only a limited amount of useful information, though. Real-time inspection of function arguments is typically more interesting, but also a bit more complicated. Examples below are intended to help the reader become more familiar with DTrace and the process of analyzing nginx behavior using DTrace.
+Le traçage des appels de fonctions de DTrace ne fournit toutefois qu'une quantité limitée d'informations utiles. L'inspection en temps réel des arguments des fonctions est généralement plus intéressante, mais un peu plus complexe. Les exemples ci-dessous visent à familiariser le lecteur avec DTrace et l'analyse du comportement de nginx avec cet outil.
 
-One of the common scenarios for using DTrace with nginx is the following: attach to the nginx worker process to log request lines and request start times. The corresponding function to attach is `ngx_http_process_request`, and the argument in question is a pointer to the `ngx_http_request_t` structure. DTrace script for such request logging can be as simple as:
+Un scénario courant consiste à se rattacher au processus de travail de nginx pour journaliser les lignes de requête et leur heure de début. La fonction à instrumenter est `ngx_http_process_request`, et l'argument concerné est un pointeur vers la structure `ngx_http_request_t`. Le script DTrace de journalisation des requêtes peut être aussi simple que :
 
 ```c
 pid$target::*ngx_http_process_request:entry
@@ -37,26 +34,26 @@ pid$target::*ngx_http_process_request:entry
 }
 ```
 
-It should be noted that in the example above DTrace requires some knowledge about the `ngx_http_request_t` structure. Unfortunately while it is possible to use a specific `#include` directive in the DTrace script and then pass it to a C preprocessor (with the `-C` flag), that doesn’t really work. Due to a lot of cross dependencies, almost all nginx header files have to be included. In turn, based on `configure` script settings, nginx headers will include PCRE, OpenSSL and a variety of system header files. While in theory all those header files related to a specific nginx build might be included in DTrace script preprocessing and compilation, in reality DTrace script most probably will fail to compile because of unknown syntax in some header files.
+Dans l'exemple ci-dessus, DTrace doit connaître la structure `ngx_http_request_t`. On pourrait utiliser une directive `#include` dans le script DTrace et le passer au préprocesseur C (option `-C`), mais cela ne fonctionne pas vraiment : en raison des nombreuses dépendances croisées, il faudrait inclure presque tous les fichiers d'en-tête de nginx, qui incluent à leur tour, selon les réglages de `configure`, PCRE, OpenSSL et divers en-têtes système. En théorie, tous ces fichiers liés à une compilation donnée de nginx pourraient être inclus dans le prétraitement et la compilation du script DTrace ; en pratique, le script ne compilera très probablement pas à cause d'une syntaxe inconnue dans certains en-têtes.
 
-The problem above can be solved by including only the relevant and necessary structure and type definitions in the DTrace script. DTrace has to know sizes of structures, types, and fields offsets. Thus dependencies can be further reduced by manually optimizing structure definitions for use with DTrace.
+On résout ce problème en n'incluant dans le script DTrace que les définitions de structures et de types pertinentes et nécessaires. DTrace doit connaître la taille des structures et des types ainsi que les décalages des champs. On peut donc réduire encore les dépendances en optimisant manuellement les définitions de structures pour DTrace.
 
-Let’s use DTrace script example above and see what structure definitions it needs to work properly.
+Reprenons l'exemple de script DTrace ci-dessus et voyons de quelles définitions de structures il a besoin.
 
-First of all `objs/ngx_auto_config.h` file generated by configure should be included, because it defines a number of constants affecting various `#ifdef`’s. After that, some basic types and definitions like `ngx_str_t`, `ngx_table_elt_t`, `ngx_uint_t` etc. should be put at the beginning of the DTrace script. These definitions are compact, commonly used and unlikely to be frequently changed.
+Il faut d'abord inclure le fichier `objs/ngx_auto_config.h` généré par configure, car il définit plusieurs constantes qui influencent divers `#ifdef`. Ensuite, quelques types et définitions de base comme `ngx_str_t`, `ngx_table_elt_t`, `ngx_uint_t`, etc. doivent être placés au début du script DTrace. Ces définitions sont compactes, très utilisées et peu susceptibles de changer souvent.
 
-Then there’s the `ngx_http_request_t` structure that contains a lot of pointers to other structures. Because these pointers are really irrelevant to this script, and because they have the same size, it is possible to just replace them with void pointers. Instead of changing definitions, it is better to add appropriate typedefs, though:
+Vient ensuite la structure `ngx_http_request_t`, qui contient de nombreux pointeurs vers d'autres structures. Comme ces pointeurs sont sans intérêt pour ce script et ont tous la même taille, on peut les remplacer par des pointeurs void. Plutôt que de modifier les définitions, il vaut mieux ajouter des typedef appropriés :
 
 ```c
 typedef ngx_http_upstream_t     void;
 typedef ngx_http_request_body_t void;
 ```
 
-Last but not least it is necessary to add definitions of two member structures (`ngx_http_headers_in_t`, `ngx_http_headers_out_t`), declarations of callback functions and definitions of constants.
+Enfin, il faut ajouter les définitions de deux structures membres (`ngx_http_headers_in_t`, `ngx_http_headers_out_t`), les déclarations des fonctions de rappel et les définitions des constantes.
 
-The final DTrace script can be downloaded from [here](http://nginx.org/download/trace_process_request.d).
+Le script DTrace final peut être téléchargé [ici](http://nginx.org/download/trace_process_request.d).
 
-The following example shows the output of running this script:
+L'exemple suivant montre la sortie de l'exécution de ce script :
 
 ```c
 # dtrace -C -I ./objs -s trace_process_request.d -p 4848
@@ -69,12 +66,12 @@ request start sec = 1349162898
 request start sec = 1349162899
 ```
 
-Using similar techniques the reader should be able to trace other nginx function calls.
+Avec des techniques similaires, le lecteur devrait pouvoir tracer d'autres appels de fonctions de nginx.
 
 ## Voir aussi
 
 - [Solaris Dynamic Tracing Guide](http://docs.oracle.com/cd/E19253-01/817-6223/index.html)
-- [Introduction article on DTrace pid provider](http://dtrace.org/blogs/brendan/2011/02/09/dtrace-pid-provider/)
+- [Article d'introduction au fournisseur pid de DTrace](http://dtrace.org/blogs/brendan/2011/02/09/dtrace-pid-provider/)
 
 ---
 

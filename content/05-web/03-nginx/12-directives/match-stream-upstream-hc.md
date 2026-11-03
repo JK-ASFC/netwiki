@@ -1,12 +1,9 @@
 ---
 title: "match (ngx_stream_upstream_hc_module)"
-description: "Directive nginx match (ngx_stream_upstream_hc_module) — Defines the named test set used to verify server responses to health checks. The following parameters can be configured: - send string; sends a string to the server; - expect string | ~ regex; a…"
+description: "Directive nginx match (ngx_stream_upstream_hc_module) — Définit l'ensemble de tests nommé utilisé pour vérifier les réponses des serveurs aux vérifications de santé. Les paramètres suivants peuvent être configurés : - send string; envoie une chaîne au…"
 tags: [nginx, directive, ngx_stream_upstream_hc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,26 +14,26 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the named test set used to verify server responses to health checks.
+Définit l'ensemble de tests nommé utilisé pour vérifier les réponses des serveurs aux vérifications de santé.
 
-The following parameters can be configured:
+Les paramètres suivants peuvent être configurés :
 
 - **`send` *string*;**
 
-  sends a *string* to the server;
+  envoie une *chaîne* au serveur ;
 
 - **`expect` *string* | `~` *regex*;**
 
-  a literal string (1.9.12) or a regular expression that the data obtained from the server should match. The regular expression is specified with the preceding “`~*`” modifier (for case-insensitive matching), or the “`~`” modifier (for case-sensitive matching).
+  une chaîne littérale (1.9.12) ou une expression régulière à laquelle les données obtenues du serveur doivent correspondre. L'expression régulière est précédée du modificateur « `~*` » (correspondance insensible à la casse) ou « `~` » (sensible à la casse).
 
-Both `send` and `expect` parameters can contain hexadecimal literals with the prefix “`\x`” followed by two hex digits, for example, “`\x80`” (1.9.12).
+Les paramètres `send` et `expect` peuvent contenir des littéraux hexadécimaux avec le préfixe « `\x` » suivi de deux chiffres hexadécimaux, par exemple « `\x80` » (1.9.12).
 
-Health check is passed if:
+La vérification de santé réussit si :
 
-- the TCP connection was successfully established;
-- the *string* from the `send` parameter, if specified, was sent;
-- the data obtained from the server matched the string or regular expression from the `expect` parameter, if specified;
-- the time elapsed does not exceed the value specified in the [[12-directives/health-check-timeout|health_check_timeout]] directive.
+- la connexion TCP a été établie ;
+- la *chaîne* du paramètre `send`, si elle est indiquée, a été envoyée ;
+- les données obtenues du serveur correspondent à la chaîne ou à l'expression régulière du paramètre `expect`, s'il est indiqué ;
+- le temps écoulé ne dépasse pas la valeur de la directive [[12-directives/health-check-timeout|health_check_timeout]].
 
 Exemple :
 
@@ -59,7 +56,7 @@ server {
 ```
 
 > [!NOTE]
-> Only the first [[12-directives/proxy-buffer-size-stream-proxy|proxy_buffer_size]] bytes of data obtained from the server are examined.
+> Seuls les [[12-directives/proxy-buffer-size-stream-proxy|proxy_buffer_size]] premiers octets des données obtenues du serveur sont examinés.
 
 ---
 

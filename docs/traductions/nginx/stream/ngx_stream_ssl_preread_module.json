@@ -1,1 +1,10 @@
-{}
+{
+ "046aaceaaffe": "Active l'extraction d'informations du message ClientHello à la phase de [[10-guides/03-stream/stream-processing|prélecture]].",
+ "25332fb68be8": "Choisir un groupe amont selon le nom de serveur :",
+ "7db66cf2bf62": "Choisir un groupe amont selon la version du protocole SSL :",
+ "7f561706179b": "nom de serveur demandé via SNI",
+ "9b234838496a": "Le module `ngx_stream_ssl_preread_module` (1.11.5) permet d'extraire des informations du message [ClientHello](https://datatracker.ietf.org/doc/html/rfc5246#section-7.4.1.2) sans terminer SSL/TLS, par exemple le nom de serveur demandé via [SNI](https://datatracker.ietf.org/doc/html/rfc6066#section-3) ou les protocoles annoncés dans [ALPN](https://datatracker.ietf.org/doc/html/rfc7301). Ce module n'est pas compilé par défaut ; activez-le avec le paramètre de configuration `--with-stream_ssl_preread_module`.",
+ "a090378469df": "la version la plus élevée du protocole SSL prise en charge par le client (1.15.2)",
+ "abe5837789cf": "Choisir un groupe amont selon le protocole :",
+ "e1fb8e613186": "liste des protocoles annoncés par le client via ALPN (1.13.10). Les valeurs sont séparées par des virgules."
+}

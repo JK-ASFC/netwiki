@@ -1,12 +1,9 @@
 ---
 title: "enforce_initial_report"
-description: "Directive nginx enforce_initial_report (ngx_mgmt_module) — Enables or disables the 180-day grace period for sending the initial usage report. The initial usage report is sent immediately upon nginx first start after installation. By default, if the initial…"
+description: "Directive nginx enforce_initial_report (ngx_mgmt_module) — Active ou désactive le délai de grâce de 180 jours pour l'envoi du rapport d'utilisation initial. Le rapport d'utilisation initial est envoyé dès le premier démarrage de nginx après l'installation.…"
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables the 180-day grace period for sending the initial usage report.
+Active ou désactive le délai de grâce de 180 jours pour l'envoi du rapport d'utilisation initial.
 
-The initial usage report is sent immediately upon nginx first start after installation. By default, if the initial report is not received by F5 licensing endpoint, nginx stops processing traffic until the report is successfully delivered. Setting the directive value to `off` enables the 180-day grace period during which the initial usage report must be received by F5 licensing endpoint.
+Le rapport d'utilisation initial est envoyé dès le premier démarrage de nginx après l'installation. Par défaut, s'il n'est pas reçu par le point de terminaison de licences de F5, nginx cesse de traiter le trafic jusqu'à ce que le rapport soit livré. La valeur `off` active un délai de grâce de 180 jours pendant lequel le rapport initial doit être reçu.
 
 ---
 

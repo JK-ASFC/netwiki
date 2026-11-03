@@ -1,0 +1,11 @@
+{
+ "1cf3cbfd8762": "Pour pallier cette limite, des objets partagés préchargés ont été introduits. Ils sont créés immuables et n'ont pas de chaîne de prototypes : leurs valeurs ne peuvent pas être modifiées, et on ne peut ni ajouter ni supprimer de propriétés.",
+ "216019a20d5b": "Pour chaque requête entrante, njs crée une machine virtuelle distincte, ce qui présente de nombreux avantages, comme une consommation de mémoire prévisible ou l'isolement des requêtes. Mais comme toutes les requêtes sont isolées, un gestionnaire qui a besoin de certaines données doit les lire lui-même, ce qui est inefficace, surtout pour de gros volumes de données.",
+ "25879edaa616": "Les objets préchargés ne sont pris en charge qu'avec le moteur JavaScript [[10-guides/04-njs/engine|njs]] ; ils ne sont pas disponibles avec le moteur [[10-guides/04-njs/engine|QuickJS]].",
+ "373ef0a1723c": "énumérer les propriétés :",
+ "53dd5e18c7af": "appliquer des méthodes intégrées non modifiantes avec `call()` :",
+ "585ab97b5b83": "Travailler avec les objets préchargés",
+ "8a6232c1c4b4": "accéder aux propriétés par leur nom :",
+ "d76b1993ae47": "Voici quelques exemples d'utilisation d'un objet préchargé dans njs :",
+ "e38d767d0003": "Comprendre les objets préchargés"
+}

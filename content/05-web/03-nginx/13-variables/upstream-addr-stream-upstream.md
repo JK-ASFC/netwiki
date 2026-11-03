@@ -1,19 +1,16 @@
 ---
 title: "$upstream_addr (ngx_stream_upstream_module)"
-description: "Variable nginx $upstream_addr (ngx_stream_upstream_module) — keeps the IP address and port, or the path to the UNIX-domain socket of the upstream server (1.11.4). If several servers were contacted during proxying, their addresses are separated by commas, e.g.…"
+description: "Variable nginx $upstream_addr (ngx_stream_upstream_module) — contient l'adresse IP et le port, ou le chemin de la socket de domaine UNIX, du serveur amont (1.11.4). Si plusieurs serveurs ont été contactés pendant le relais, leurs adresses sont séparées par des…"
 tags: [nginx, variable, ngx_stream_upstream_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$upstream_addr` |
 | **Module** | [[11-modules/03-stream/ngx_stream_upstream_module\|ngx_stream_upstream_module]] |
 
-keeps the IP address and port, or the path to the UNIX-domain socket of the upstream server (1.11.4). If several servers were contacted during proxying, their addresses are separated by commas, e.g. “`192.168.1.1:12345, 192.168.1.2:12345, unix:/tmp/sock`”. If a server cannot be selected, the variable keeps the name of the server group.
+contient l'adresse IP et le port, ou le chemin de la socket de domaine UNIX, du serveur amont (1.11.4). Si plusieurs serveurs ont été contactés pendant le relais, leurs adresses sont séparées par des virgules, par exemple « `192.168.1.1:12345, 192.168.1.2:12345, unix:/tmp/sock` ». Si aucun serveur n'a pu être choisi, la variable contient le nom du groupe de serveurs.
 
 ---
 

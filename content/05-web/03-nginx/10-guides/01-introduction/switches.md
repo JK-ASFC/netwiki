@@ -1,39 +1,36 @@
 ---
-title: "Command-line parameters"
-description: "Nginx — Command-line parameters. nginx supports the following command-line parameters:"
+title: "Paramètres de la ligne de commande"
+description: "Nginx — Paramètres de la ligne de commande. nginx prend en charge les paramètres de ligne de commande suivants :"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+nginx prend en charge les paramètres de ligne de commande suivants :
 
-nginx supports the following command-line parameters:
-
-- `-?` | `-h` — print help for command-line parameters.
-- `-c file` — use an alternative configuration *file* instead of a default file.
-- `-e file` — use an alternative error log *file* to store the log instead of a default file (1.19.5). The special value `stderr` selects the standard error file.
-- `-g directives` — set [[11-modules/01-coeur/ngx_core_module|global configuration directives]], for example,
+- `-?` | `-h` — affiche l'aide des paramètres de ligne de commande.
+- `-c file` — utilise un autre *fichier* de configuration que celui par défaut.
+- `-e file` — utilise un autre *fichier* de journal d'erreurs que celui par défaut (1.19.5). La valeur spéciale `stderr` sélectionne la sortie d'erreur standard.
+- `-g directives` — définit des [[11-modules/01-coeur/ngx_core_module|directives de configuration globales]], par exemple
 
   ```
   nginx -g "pid /var/run/nginx.pid; worker_processes `sysctl -n hw.ncpu`;"
   ```
-- `-l unix:socket | port` — enable [nginx control REST API](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control#control-api) on a specified UNIX-domain socket or port (1.31.5).
+- `-l unix:socket | port` — active l'[API REST de contrôle de nginx](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control#control-api) sur la socket de domaine UNIX ou le port indiqués (1.31.5).
 
   > [!NOTE]
-  > Since version 1.29.8 and prior to version 1.31.5, this parameter was available as part of our [abonnement commercial](https://nginx.com/products/).
-- `-p prefix` — set nginx path prefix, i.e. a directory that will keep server files (default value is */usr/local/nginx*).
-- `-q` — suppress non-error messages during configuration testing.
-- `-s signal` — send a *signal* to the master process. The argument *signal* can be one of:
+  > De la version 1.29.8 à la version 1.31.5, ce paramètre faisait partie de notre [abonnement commercial](https://nginx.com/products/).
+- `-p prefix` — définit le préfixe de chemin de nginx, c'est-à-dire le répertoire qui contiendra les fichiers du serveur (valeur par défaut : */usr/local/nginx*).
+- `-q` — supprime les messages autres que les erreurs pendant le test de la configuration.
+- `-s signal` — envoie un *signal* au processus maître. L'argument *signal* peut valoir :
 
-  - `stop` — shut down quickly
-  - `quit` — shut down gracefully
-  - `reload` — reload configuration, start the new worker process with a new configuration, gracefully shut down old worker processes.
-  - `reopen` — reopen log files
-- `-t` — test the configuration file: nginx checks the configuration for correct syntax, and then tries to open files referred in the configuration.
-- `-T` — same as `-t`, but additionally dump configuration files to standard output (1.9.2).
-- `-v` — print nginx version.
-- `-V` — print nginx version, compiler version, and configure parameters.
+  - `stop` — arrêt rapide
+  - `quit` — arrêt propre
+  - `reload` — recharge la configuration, démarre de nouveaux processus de travail avec la nouvelle configuration et arrête proprement les anciens.
+  - `reopen` — rouvre les fichiers journaux
+- `-t` — teste le fichier de configuration : nginx vérifie la syntaxe de la configuration, puis tente d'ouvrir les fichiers qu'elle référence.
+- `-T` — comme `-t`, mais affiche en plus les fichiers de configuration sur la sortie standard (1.9.2).
+- `-v` — affiche la version de nginx.
+- `-V` — affiche la version de nginx, celle du compilateur et les paramètres de configure.
 
 ---
 

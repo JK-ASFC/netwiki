@@ -1,1 +1,6 @@
-{}
+{
+ "0e14ef7b3dce": "Le module `ngx_stream_realip_module` sert à remplacer l'adresse et le port du client par ceux envoyés dans l'en-tête du protocole PROXY (1.11.4). Le protocole PROXY doit d'abord être activé avec le paramètre [[11-modules/03-stream/ngx_stream_core_module|proxy_protocol]] de la directive `listen`.",
+ "55399af308d5": "contient l'adresse d'origine du client",
+ "b1f3887cb2db": "Ce module n'est pas compilé par défaut ; activez-le avec le paramètre de configuration `--with-stream_realip_module`.",
+ "c49bbf6e5803": "contient le port d'origine du client"
+}

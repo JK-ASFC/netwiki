@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_limit_conn_module"
-description: "Module nginx ngx_stream_limit_conn_module — The ngx_stream_limit_conn_module module (1.9.3) is used to limit the number of connections per the defined key, in particular, the number of connections from a single IP address."
+description: "Module nginx ngx_stream_limit_conn_module — Le module ngx_stream_limit_conn_module (1.9.3) sert à limiter le nombre de connexions par clé définie, en particulier le nombre de connexions depuis une même adresse IP."
 tags: [nginx, module, ngx_stream_limit_conn_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_limit_conn_module` module (1.9.3) is used to limit the number of connections per the defined key, in particular, the number of connections from a single IP address.
+Le module `ngx_stream_limit_conn_module` (1.9.3) sert à limiter le nombre de connexions par clé définie, en particulier le nombre de connexions depuis une même adresse IP.
 
 ## Exemple de configuration
 

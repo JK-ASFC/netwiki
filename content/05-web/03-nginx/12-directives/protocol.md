@@ -1,12 +1,9 @@
 ---
 title: "protocol"
-description: "Directive nginx protocol (ngx_mail_core_module) — Sets the protocol for a proxied server. Supported protocols are IMAP, POP3, and SMTP. If the directive is not set, the protocol can be detected automatically based on the well-known port specified in…"
+description: "Directive nginx protocol (ngx_mail_core_module) — Définit le protocole du serveur mandaté. Les protocoles pris en charge sont IMAP, POP3 et SMTP. Si la directive n'est pas définie, le protocole peut être détecté automatiquement d'après le port…"
 tags: [nginx, directive, ngx_mail_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,15 +14,15 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the protocol for a proxied server. Supported protocols are [[11-modules/04-mail/ngx_mail_imap_module|IMAP]], [[11-modules/04-mail/ngx_mail_pop3_module|POP3]], and [[11-modules/04-mail/ngx_mail_smtp_module|SMTP]].
+Définit le protocole du serveur mandaté. Les protocoles pris en charge sont [[11-modules/04-mail/ngx_mail_imap_module|IMAP]], [[11-modules/04-mail/ngx_mail_pop3_module|POP3]] et [[11-modules/04-mail/ngx_mail_smtp_module|SMTP]].
 
-If the directive is not set, the protocol can be detected automatically based on the well-known port specified in the [[12-directives/listen-mail-core|listen]] directive:
+Si la directive n'est pas définie, le protocole peut être détecté automatiquement d'après le port standard indiqué dans la directive [[12-directives/listen-mail-core|listen]] :
 
 - `imap`: 143, 993
 - `pop3`: 110, 995
 - `smtp`: 25, 587, 465
 
-Unnecessary protocols can be disabled using the [[10-guides/01-introduction/configure|configuration]] parameters `--without-mail_imap_module`, `--without-mail_pop3_module`, and `--without-mail_smtp_module`.
+Les protocoles inutiles peuvent être désactivés avec les paramètres de [[10-guides/01-introduction/configure|configuration]] `--without-mail_imap_module`, `--without-mail_pop3_module` et `--without-mail_smtp_module`.
 
 ---
 

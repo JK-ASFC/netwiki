@@ -1,4 +1,9 @@
 {
+ "08a2a919f4a1": "Une expression régulière doit commencer par le symbole « `~` » pour une correspondance sensible à la casse, ou par « `~*` » pour une correspondance insensible à la casse. Elle peut contenir des captures nommées et positionnelles réutilisables ensuite dans d'autres directives avec la variable résultante. Les expressions régulières sont évaluées lors de l'évaluation de la variable résultante, et une correspondance réussie remplace les captures positionnelles « `$1` »...« `$9` » définies par les expressions précédentes ; voir [[10-guides/01-introduction/regex-captures|Captures des expressions régulières]].",
+ "2e66ce69c4bb": "La valeur résultante peut contenir du texte, une variable et leur combinaison.",
+ "3321ad99543b": "Le module `ngx_stream_map_module` (1.11.2) crée des variables dont les valeurs dépendent des valeurs d'autres variables.",
  "824363d3aa18": "Définit la taille des compartiments des tables de hachage des variables [[12-directives/map-stream-map|map]]. La valeur par défaut dépend de la taille de ligne de cache du processeur. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]].",
+ "84bcf1923bdf": "Comme les variables ne sont évaluées qu'à leur utilisation, la simple déclaration d'un grand nombre de variables « `map` » n'ajoute aucun coût au traitement des connexions.",
+ "c22a22af3e99": "Les valeurs sources sont des chaînes ou des expressions régulières.",
  "da542049ad14": "Définit la taille (*size*) maximale des tables de hachage des variables [[12-directives/map-stream-map|map]]. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]]."
 }

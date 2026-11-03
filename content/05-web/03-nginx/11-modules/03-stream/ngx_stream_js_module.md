@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_js_module"
-description: "Module nginx ngx_stream_js_module — The ngx_stream_js_module module is used to implement session and variable handlers in JavaScript with njs."
+description: "Module nginx ngx_stream_js_module — Le module ngx_stream_js_module sert à mettre en œuvre des gestionnaires de session et de variables en JavaScript avec njs."
 tags: [nginx, module, ngx_stream_js_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_js_module` module is used to implement session and variable handlers in JavaScript with [[10-guides/04-njs/00-index|njs]].
+Le module `ngx_stream_js_module` sert à mettre en œuvre des gestionnaires de session et de variables en JavaScript avec [[10-guides/04-njs/00-index|njs]].
 
 Les instructions de téléchargement et d'installation sont disponibles [[10-guides/04-njs/install|ici]].
 
@@ -52,7 +49,7 @@ http {
 }
 ```
 
-The `stream.js` file:
+Le fichier `stream.js` :
 
 ```nginx
 var line = '';
@@ -109,9 +106,9 @@ function access(s) {
 export default {bar, preread, req_line, header_inject, access};
 ```
 
-## Session Object Properties
+## Propriétés de l'objet session
 
-Each stream njs handler receives one argument, a stream session [[10-guides/04-njs/reference|object]].
+Chaque gestionnaire njs stream reçoit un argument, un [[10-guides/04-njs/reference|objet]] session stream.
 
 ## Directives
 

@@ -1,3 +1,12 @@
 {
- "af41e4151e03": "le fichier est ouvert et fermé à chaque écriture. Toutefois, comme les descripteurs des fichiers fréquemment utilisés peuvent être conservés dans un [[12-directives/open-log-file-cache-stream-log|cache]], l'écriture dans l'ancien fichier peut se poursuivre pendant la durée indiquée par le paramètre `valid` de la directive [[12-directives/open-log-file-cache-stream-log|open_log_file_cache]]"
+ "032c83000ba7": "Le chemin du fichier peut contenir des variables, mais ces journaux ont certaines contraintes :",
+ "2436405dab6f": "Le module `ngx_stream_log_module` (1.11.4) écrit les journaux de session au format indiqué.",
+ "4c2d996ee6da": "si les données en tampon sont plus anciennes que la valeur du paramètre `flush` ;",
+ "5b069636ea55": "Avec l'échappement `default`, les caractères « `\"` », « `\\` » et les autres caractères de valeur inférieure à 32 ou supérieure à 126 sont échappés sous la forme « `\\xXX` ». Si la valeur de la variable est introuvable, un tiret (« `-` ») est journalisé.",
+ "77ad5dc3e5cf": "Le paramètre `escape` (1.11.8) permet de choisir l'échappement des caractères dans les variables, `json` ou `default` ; par défaut, `default` est utilisé. Le paramètre `none` (1.13.10) désactive l'échappement.",
+ "86b196918aa0": "Définit le format du journal, par exemple :",
+ "8f233165e225": "Si le paramètre `buffer` ou `gzip` est utilisé, les écritures dans le journal sont mises en tampon.",
+ "af41e4151e03": "le fichier est ouvert et fermé à chaque écriture. Toutefois, comme les descripteurs des fichiers fréquemment utilisés peuvent être conservés dans un [[12-directives/open-log-file-cache-stream-log|cache]], l'écriture dans l'ancien fichier peut se poursuivre pendant la durée indiquée par le paramètre `valid` de la directive [[12-directives/open-log-file-cache-stream-log|open_log_file_cache]]",
+ "b292ff89d257": "Le paramètre `if` active la journalisation conditionnelle. Une session n'est pas journalisée si la *condition* vaut « 0 » ou une chaîne vide.",
+ "e4a5cccf5aad": "Définit le chemin, le [[12-directives/log-format-stream-log|format]] et la configuration d'une écriture de journal en mémoire tampon. Plusieurs journaux peuvent être indiqués au même niveau de configuration. La journalisation vers [[10-guides/01-introduction/syslog|syslog]] se configure avec le préfixe « `syslog:` » dans le premier paramètre. La valeur spéciale `off` annule toutes les directives `access_log` du niveau courant."
 }

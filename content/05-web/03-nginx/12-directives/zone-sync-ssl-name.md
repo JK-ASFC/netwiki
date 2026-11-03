@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_ssl_name"
-description: "Directive nginx zone_sync_ssl_name (ngx_stream_zone_sync_module) — Allows overriding the server name used to verify the certificate of a cluster server and to be passed through SNI when establishing a connection with the cluster server. By default, the host part of…"
+description: "Directive nginx zone_sync_ssl_name (ngx_stream_zone_sync_module) — Permet de remplacer le nom de serveur utilisé pour vérifier le certificat d'un serveur du cluster et transmis via SNI lors de l'établissement de la connexion avec lui. Par défaut, la partie hôte de…"
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Allows overriding the server name used to [[12-directives/zone-sync-ssl-verify|verify]] the certificate of a cluster server and to be [[12-directives/zone-sync-ssl-server-name|passed through SNI]] when establishing a connection with the cluster server.
+Permet de remplacer le nom de serveur utilisé pour [[12-directives/zone-sync-ssl-verify|vérifier]] le certificat d'un serveur du cluster et [[12-directives/zone-sync-ssl-server-name|transmis via SNI]] lors de l'établissement de la connexion avec lui.
 
-By default, the host part of the [[12-directives/zone-sync-server|zone_sync_server]] address is used, or resolved IP address if the `resolve` parameter is specified.
+Par défaut, la partie hôte de l'adresse de [[12-directives/zone-sync-server|zone_sync_server]] est utilisée, ou l'adresse IP résolue si le paramètre `resolve` est indiqué.
 
 ---
 

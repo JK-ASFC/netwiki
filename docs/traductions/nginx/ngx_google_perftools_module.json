@@ -1,0 +1,7 @@
+{
+ "235631b12167": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-google_perftools_module`.",
+ "31e1e4a12836": "Le module `ngx_google_perftools_module` (0.6.29) permet de profiler les processus de travail de nginx avec [Google Performance Tools](https://github.com/gperftools/gperftools). Il est destiné aux développeurs de nginx.",
+ "a0cd6c054fa0": "Définit le nom du fichier qui contient les informations de profilage d'un processus de travail de nginx. L'identifiant du processus de travail fait toujours partie du nom de fichier et est ajouté à la fin, après un point.",
+ "c3a1bef04c29": "Ce module nécessite la bibliothèque [gperftools](https://github.com/gperftools/gperftools).",
+ "dbf5afac16f4": "Les profils sont enregistrés sous `/path/to/profile.<worker_pid>`."
+}

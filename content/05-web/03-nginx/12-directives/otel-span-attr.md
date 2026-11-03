@@ -1,12 +1,9 @@
 ---
 title: "otel_span_attr"
-description: "Directive nginx otel_span_attr (ngx_otel_module) — Adds a custom OTel span attribute. The value can contain variables."
+description: "Directive nginx otel_span_attr (ngx_otel_module) — Ajoute un attribut de span OTel personnalisé. La valeur peut contenir des variables."
 tags: [nginx, directive, ngx_otel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Adds a custom OTel span attribute. The value can contain variables.
+Ajoute un attribut de span OTel personnalisé. La valeur peut contenir des variables.
 
 ---
 

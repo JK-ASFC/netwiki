@@ -1,6 +1,6 @@
 ---
-title: "Reference"
-description: "Nginx — Reference. njs provides objects, methods and properties for extending nginx functionality."
+title: "Référence"
+description: "Nginx — Référence. njs provides objects, methods and properties for extending nginx functionality."
 tags: [nginx, guide]
 icon: book-open
 ---
@@ -2362,7 +2362,7 @@ The Crypto module provides cryptographic functionality support. The Crypto modul
 
   Creates and returns an HMAC object that uses the given *algorithm* and *secret key*. The algorithm can be `md5`, `sha1`, `sha256`, `sha384`, `sha512`, and any other digest supported by the linked OpenSSL library (since 0.9.7). Before version 0.9.7, only `md5`, `sha1`, and `sha256` were supported.
 
-#### Hash
+#### Table de hachage
 
 |   |
 | --- |

@@ -1,12 +1,9 @@
 ---
 title: "limit_conn_zone (ngx_stream_limit_conn_module)"
-description: "Directive nginx limit_conn_zone (ngx_stream_limit_conn_module) — Sets parameters for a shared memory zone that will keep states for various keys. In particular, the state includes the current number of connections. The key can contain text, variables, and their…"
+description: "Directive nginx limit_conn_zone (ngx_stream_limit_conn_module) — Définit les paramètres d'une zone de mémoire partagée qui conserve l'état des différentes clés. L'état comprend notamment le nombre courant de connexions. La clé peut contenir du texte, des variables…"
 tags: [nginx, directive, ngx_stream_limit_conn_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Sets parameters for a shared memory zone that will keep states for various keys. In particular, the state includes the current number of connections. The *key* can contain text, variables, and their combinations (1.11.2). Connections with an empty key value are not accounted. Usage example:
+Définit les paramètres d'une zone de mémoire partagée qui conserve l'état des différentes clés. L'état comprend notamment le nombre courant de connexions. La *clé* peut contenir du texte, des variables et leurs combinaisons (1.11.2). Les connexions dont la clé est vide ne sont pas comptées. Exemple :
 
 ```nginx
 limit_conn_zone $binary_remote_addr zone=addr:10m;
 ```
 
-Here, the key is a client IP address set by the `$binary_remote_addr` variable. The size of `$binary_remote_addr` is 4 bytes for IPv4 addresses or 16 bytes for IPv6 addresses. The stored state always occupies 32 or 64 bytes on 32-bit platforms and 64 bytes on 64-bit platforms. One megabyte zone can keep about 32 thousand 32-byte states or about 16 thousand 64-byte states. If the zone storage is exhausted, the server will close the connection.
+Ici, la clé est l'adresse IP du client, fournie par la variable `$binary_remote_addr`. Sa taille est de 4 octets pour les adresses IPv4 ou 16 octets pour les adresses IPv6. Un état stocké occupe toujours 32 ou 64 octets sur les plates-formes 32 bits et 64 octets sur les plates-formes 64 bits. Une zone d'un mégaoctet peut contenir environ 32 000 états de 32 octets ou environ 16 000 états de 64 octets. Si la zone est pleine, le serveur ferme la connexion.
 
 > [!NOTE]
 > En outre, dans le cadre de notre [abonnement commercial](https://nginx.com/products/), les [[11-modules/02-http/ngx_http_api_module|informations d'état]] de chaque zone de mémoire partagée de ce type peuvent être [[11-modules/02-http/ngx_http_api_module|consultées]] ou [[11-modules/02-http/ngx_http_api_module|remises à zéro]] avec l'[[11-modules/02-http/ngx_http_api_module|API]] depuis la version 1.17.7.

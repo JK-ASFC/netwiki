@@ -1,12 +1,9 @@
 ---
 title: "xclient"
-description: "Directive nginx xclient (ngx_mail_proxy_module) — Enables or disables the passing of the XCLIENT command with client parameters when connecting to the SMTP backend. With XCLIENT, the MTA is able to write client information to the log and apply…"
+description: "Directive nginx xclient (ngx_mail_proxy_module) — Active ou désactive la transmission de la commande XCLIENT avec les paramètres du client lors de la connexion au serveur SMTP d'arrière-plan. Avec XCLIENT, le MTA peut journaliser les informations du…"
 tags: [nginx, directive, ngx_mail_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,19 +14,19 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables the passing of the [XCLIENT](http://www.postfix.org/XCLIENT_README.html) command with client parameters when connecting to the SMTP backend.
+Active ou désactive la transmission de la commande [XCLIENT](http://www.postfix.org/XCLIENT_README.html) avec les paramètres du client lors de la connexion au serveur SMTP d'arrière-plan.
 
-With `XCLIENT`, the MTA is able to write client information to the log and apply various limitations based on this data.
+Avec `XCLIENT`, le MTA peut journaliser les informations du client et appliquer diverses restrictions à partir de ces données.
 
-If `XCLIENT` is enabled then nginx passes the following commands when connecting to the backend:
+Si `XCLIENT` est activé, nginx transmet les commandes suivantes lors de la connexion au serveur d'arrière-plan :
 
-- `EHLO` with the [[12-directives/server-name-mail-core|server name]]
+- `EHLO` avec le [[12-directives/server-name-mail-core|nom du serveur]]
 - `XCLIENT`
-- `EHLO` or `HELO`, as passed by the client
+- `EHLO` ou `HELO`, tel que transmis par le client
 
-If the name [[12-directives/resolver-mail-core|found]] by the client IP address points to the same address, it is passed in the `NAME` parameter of the `XCLIENT` command. If the name could not be found, points to a different address, or [[12-directives/resolver-mail-core|resolver]] is not specified, the `[UNAVAILABLE]` is passed in the `NAME` parameter. If an error has occurred in the process of resolving, the `[TEMPUNAVAIL]` value is used.
+Si le nom [[12-directives/resolver-mail-core|trouvé]] à partir de l'adresse IP du client pointe vers la même adresse, il est transmis dans le paramètre `NAME` de la commande `XCLIENT`. Si le nom est introuvable, pointe vers une autre adresse ou si aucun [[12-directives/resolver-mail-core|résolveur]] n'est indiqué, `[UNAVAILABLE]` est transmis dans `NAME`. En cas d'erreur de résolution, la valeur `[TEMPUNAVAIL]` est utilisée.
 
-If `XCLIENT` is disabled then nginx passes the `EHLO` command with the [[12-directives/server-name-mail-core|server name]] when connecting to the backend if the client has passed `EHLO`, or `HELO` with the server name, otherwise.
+Si `XCLIENT` est désactivé, nginx transmet lors de la connexion au serveur d'arrière-plan la commande `EHLO` avec le [[12-directives/server-name-mail-core|nom du serveur]] si le client a transmis `EHLO`, sinon `HELO` avec le nom du serveur.
 
 ---
 

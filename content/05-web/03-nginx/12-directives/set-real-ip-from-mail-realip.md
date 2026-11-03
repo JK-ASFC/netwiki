@@ -1,12 +1,9 @@
 ---
 title: "set_real_ip_from (ngx_mail_realip_module)"
-description: "Directive nginx set_real_ip_from (ngx_mail_realip_module) — Defines trusted addresses that are known to send correct replacement addresses. If the special value unix: is specified, all UNIX-domain sockets will be trusted."
+description: "Directive nginx set_real_ip_from (ngx_mail_realip_module) — Définit les adresses de confiance, connues pour transmettre des adresses de remplacement correctes. Avec la valeur spéciale unix:, tous les sockets de domaine UNIX sont considérés comme de confiance."
 tags: [nginx, directive, ngx_mail_realip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines trusted addresses that are known to send correct replacement addresses. If the special value `unix:` is specified, all UNIX-domain sockets will be trusted.
+Définit les adresses de confiance, connues pour transmettre des adresses de remplacement correctes. Avec la valeur spéciale `unix:`, tous les sockets de domaine UNIX sont considérés comme de confiance.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "js_filter"
-description: "Directive nginx js_filter (ngx_stream_js_module) — Sets a data filter. Since 0.4.0, a module function can be referenced. The filter function is called once at the moment when the stream session reaches the content phase. The filter function is called…"
+description: "Directive nginx js_filter (ngx_stream_js_module) — Définit un filtre de données. Depuis la version 0.4.0, une fonction de module peut être référencée. La fonction de filtre est appelée une fois, au moment où la session stream atteint la phase de…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,18 +14,18 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a data filter. Since 0.4.0, a module function can be referenced. The filter function is called once at the moment when the stream session reaches the [[10-guides/03-stream/stream-processing|content]] phase.
+Définit un filtre de données. Depuis la version 0.4.0, une fonction de module peut être référencée. La fonction de filtre est appelée une fois, au moment où la session stream atteint la phase de [[10-guides/03-stream/stream-processing|contenu]].
 
-The filter function is called with the following arguments:
+La fonction de filtre reçoit les arguments suivants :
 
 - **`s`**
 
-  the [[10-guides/04-njs/reference|Stream Session]] object
+  l'objet [[10-guides/04-njs/reference|Stream Session]]
 
-At this phase, it is possible to perform initialization or register a callback with the [[10-guides/04-njs/reference|s.on()]] method for each incoming data chunk. The [[10-guides/04-njs/reference|s.off()]] method may be used to unregister a callback and stop filtering.
+À cette phase, on peut effectuer une initialisation ou enregistrer, avec la méthode [[10-guides/04-njs/reference|s.on()]], une fonction de rappel pour chaque bloc de données entrant. La méthode [[10-guides/04-njs/reference|s.off()]] permet de désenregistrer une fonction de rappel et d'arrêter le filtrage.
 
 > [!NOTE]
-> As the `js_filter` handler returns its result immediately, it supports only synchronous operations. Thus, asynchronous operations such as [[10-guides/04-njs/reference|ngx.fetch()]] or [[10-guides/04-njs/reference|setTimeout()]] are not supported.
+> Comme le gestionnaire `js_filter` renvoie son résultat immédiatement, il ne prend en charge que les opérations synchrones. Les opérations asynchrones comme [[10-guides/04-njs/reference|ngx.fetch()]] ou [[10-guides/04-njs/reference|setTimeout()]] ne sont donc pas prises en charge.
 
 ---
 

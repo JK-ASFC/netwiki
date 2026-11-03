@@ -1,12 +1,9 @@
 ---
 title: "pop3_auth"
-description: "Directive nginx pop3_auth (ngx_mail_pop3_module) — Sets permitted methods of authentication for POP3 clients. Supported methods are: - plain USER/PASS, AUTH PLAIN, AUTH LOGIN - apop APOP. In order for this method to work, the password must be stored…"
+description: "Directive nginx pop3_auth (ngx_mail_pop3_module) — Définit les méthodes d'authentification autorisées pour les clients POP3. Les méthodes prises en charge sont : - plain USER/PASS, AUTH PLAIN, AUTH LOGIN - apop APOP. Pour que cette méthode…"
 tags: [nginx, directive, ngx_mail_pop3_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets permitted methods of authentication for POP3 clients. Supported methods are:
+Définit les méthodes d'authentification autorisées pour les clients POP3. Les méthodes prises en charge sont :
 
 - **`plain`**
 
@@ -25,17 +22,17 @@ Sets permitted methods of authentication for POP3 clients. Supported methods are
 
 - **`apop`**
 
-  [APOP](https://datatracker.ietf.org/doc/html/rfc1939). In order for this method to work, the password must be stored unencrypted.
+  [APOP](https://datatracker.ietf.org/doc/html/rfc1939). Pour que cette méthode fonctionne, le mot de passe doit être stocké en clair.
 
 - **`cram-md5`**
 
-  [AUTH CRAM-MD5](https://datatracker.ietf.org/doc/html/rfc2195). In order for this method to work, the password must be stored unencrypted.
+  [AUTH CRAM-MD5](https://datatracker.ietf.org/doc/html/rfc2195). Pour que cette méthode fonctionne, le mot de passe doit être stocké en clair.
 
 - **`external`**
 
   [AUTH EXTERNAL](https://datatracker.ietf.org/doc/html/rfc4422) (1.11.6).
 
-Plain text authentication methods (`USER/PASS`, `AUTH PLAIN`, and `AUTH LOGIN`) are always enabled, though if the `plain` method is not specified, `AUTH PLAIN` and `AUTH LOGIN` will not be automatically included in [[12-directives/pop3-capabilities|pop3_capabilities]].
+Les méthodes d'authentification en texte clair (`USER/PASS`, `AUTH PLAIN` et `AUTH LOGIN`) sont toujours activées, mais si la méthode `plain` n'est pas indiquée, `AUTH PLAIN` et `AUTH LOGIN` ne sont pas ajoutées automatiquement à [[12-directives/pop3-capabilities|pop3_capabilities]].
 
 ---
 

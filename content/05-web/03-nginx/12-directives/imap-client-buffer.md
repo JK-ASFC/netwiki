@@ -1,12 +1,9 @@
 ---
 title: "imap_client_buffer"
-description: "Directive nginx imap_client_buffer (ngx_mail_imap_module) — Sets the size of the buffer used for reading IMAP commands. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform."
+description: "Directive nginx imap_client_buffer (ngx_mail_imap_module) — Définit la taille (size) du tampon utilisé pour lire les commandes IMAP. Par défaut, le tampon fait une page mémoire, soit 4K ou 8K selon la plate-forme."
 tags: [nginx, directive, ngx_mail_imap_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *size* of the buffer used for reading IMAP commands. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform.
+Définit la taille (*size*) du tampon utilisé pour lire les commandes IMAP. Par défaut, le tampon fait une page mémoire, soit 4K ou 8K selon la plate-forme.
 
 ---
 

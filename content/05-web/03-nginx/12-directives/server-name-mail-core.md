@@ -1,12 +1,9 @@
 ---
 title: "server_name (ngx_mail_core_module)"
-description: "Directive nginx server_name (ngx_mail_core_module) — Sets the server name that is used: - in the initial POP3/SMTP server greeting; - in the salt during the SASL CRAM-MD5 authentication; - in the EHLO command when connecting to the SMTP backend, if the…"
+description: "Directive nginx server_name (ngx_mail_core_module) — Définit le nom de serveur utilisé : - dans le message d'accueil initial du serveur POP3/SMTP ; - dans le sel de l'authentification SASL CRAM-MD5 ; - dans la commande EHLO lors de la connexion au…"
 tags: [nginx, directive, ngx_mail_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the server name that is used:
+Définit le nom de serveur utilisé :
 
-- in the initial POP3/SMTP server greeting;
-- in the salt during the SASL CRAM-MD5 authentication;
-- in the `EHLO` command when connecting to the SMTP backend, if the passing of the [[12-directives/xclient|XCLIENT]] command is enabled.
+- dans le message d'accueil initial du serveur POP3/SMTP ;
+- dans le sel de l'authentification SASL CRAM-MD5 ;
+- dans la commande `EHLO` lors de la connexion au serveur SMTP d'arrière-plan, si la transmission de la commande [[12-directives/xclient|XCLIENT]] est activée.
 
-If the directive is not specified, the machine’s hostname is used.
+Si la directive n'est pas indiquée, le nom d'hôte de la machine est utilisé.
 
 ---
 

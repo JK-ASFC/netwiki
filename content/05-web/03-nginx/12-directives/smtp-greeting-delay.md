@@ -1,12 +1,9 @@
 ---
 title: "smtp_greeting_delay"
-description: "Directive nginx smtp_greeting_delay (ngx_mail_smtp_module) — Allows setting a delay before sending an SMTP greeting in order to reject clients who fail to wait for the greeting before sending SMTP commands."
+description: "Directive nginx smtp_greeting_delay (ngx_mail_smtp_module) — Permet d'attendre un délai avant d'envoyer le message d'accueil SMTP, afin de rejeter les clients qui envoient des commandes SMTP sans attendre ce message."
 tags: [nginx, directive, ngx_mail_smtp_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Allows setting a delay before sending an SMTP greeting in order to reject clients who fail to wait for the greeting before sending SMTP commands.
+Permet d'attendre un délai avant d'envoyer le message d'accueil SMTP, afin de rejeter les clients qui envoient des commandes SMTP sans attendre ce message.
 
 ---
 

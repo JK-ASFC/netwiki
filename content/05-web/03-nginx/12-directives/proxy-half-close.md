@@ -1,12 +1,9 @@
 ---
 title: "proxy_half_close"
-description: "Directive nginx proxy_half_close (ngx_stream_proxy_module) — Enables or disables closing each direction of a TCP connection independently (“TCP half-close”). If enabled, proxying over TCP will be kept until both sides close the connection."
+description: "Directive nginx proxy_half_close (ngx_stream_proxy_module) — Active ou désactive la fermeture indépendante de chaque sens d'une connexion TCP (« semi-fermeture TCP »). Si elle est activée, le relais TCP est maintenu jusqu'à ce que les deux côtés ferment la…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables closing each direction of a TCP connection independently (“TCP half-close”). If enabled, proxying over TCP will be kept until both sides close the connection.
+Active ou désactive la fermeture indépendante de chaque sens d'une connexion TCP (« semi-fermeture TCP »). Si elle est activée, le relais TCP est maintenu jusqu'à ce que les deux côtés ferment la connexion.
 
 ---
 

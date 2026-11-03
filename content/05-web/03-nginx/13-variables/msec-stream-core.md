@@ -1,19 +1,16 @@
 ---
 title: "$msec (ngx_stream_core_module)"
-description: "Variable nginx $msec (ngx_stream_core_module) — current time in seconds with the milliseconds resolution"
+description: "Variable nginx $msec (ngx_stream_core_module) — heure courante en secondes, à la milliseconde près"
 tags: [nginx, variable, ngx_stream_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$msec` |
 | **Module** | [[11-modules/03-stream/ngx_stream_core_module\|ngx_stream_core_module]] |
 
-current time in seconds with the milliseconds resolution
+heure courante en secondes, à la milliseconde près
 
 ---
 

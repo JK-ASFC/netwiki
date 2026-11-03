@@ -1,12 +1,9 @@
 ---
 title: "random (ngx_stream_upstream_module)"
-description: "Directive nginx random (ngx_stream_upstream_module) — Specifies that a group should use a load balancing method where a connection is passed to a randomly selected server, taking into account weights of servers. The optional two parameter instructs…"
+description: "Directive nginx random (ngx_stream_upstream_module) — Indique qu'un groupe doit utiliser une méthode de répartition où la connexion est passée à un serveur choisi au hasard, en tenant compte des poids des serveurs. Le paramètre facultatif two demande à…"
 tags: [nginx, directive, ngx_stream_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,11 +15,11 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies that a group should use a load balancing method where a connection is passed to a randomly selected server, taking into account weights of servers.
+Indique qu'un groupe doit utiliser une méthode de répartition où la connexion est passée à un serveur choisi au hasard, en tenant compte des poids des serveurs.
 
-The optional `two` parameter instructs nginx to randomly select [two](https://homes.cs.washington.edu/~karlin/papers/balls.pdf) servers and then choose a server using the specified `method`. The default method is `least_conn` which passes a connection to a server with the least number of active connections.
+Le paramètre facultatif `two` demande à nginx de choisir au hasard [deux](https://homes.cs.washington.edu/~karlin/papers/balls.pdf) serveurs, puis d'en choisir un avec la `méthode` indiquée. La méthode par défaut est `least_conn`, qui passe la connexion au serveur ayant le moins de connexions actives.
 
-The `least_time` method passes a connection to a server with the least average time and least number of active connections. If `least_time=connect` parameter is specified, time to [[13-variables/upstream-connect-time-stream-upstream|connect]] to the upstream server is used. If `least_time=first_byte` parameter is specified, time to receive the [[13-variables/upstream-first-byte-time|first byte]] of data is used. If `least_time=last_byte` is specified, time to receive the [[13-variables/upstream-session-time|last byte]] of data is used.
+La méthode `least_time` passe la connexion au serveur ayant le plus faible temps moyen et le moins de connexions actives. Avec `least_time=connect`, c'est le temps de [[13-variables/upstream-connect-time-stream-upstream|connexion]] au serveur amont qui est utilisé. Avec `least_time=first_byte`, le temps de réception du [[13-variables/upstream-first-byte-time|premier octet]]. Avec `least_time=last_byte`, le temps de réception du [[13-variables/upstream-session-time|dernier octet]].
 
 > [!NOTE]
 > La méthode `least_time` est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).

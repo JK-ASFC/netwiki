@@ -1,19 +1,16 @@
 ---
 title: "$server_port (ngx_stream_core_module)"
-description: "Variable nginx $server_port (ngx_stream_core_module) — port of the server which accepted a connection"
+description: "Variable nginx $server_port (ngx_stream_core_module) — port du serveur qui a accepté la connexion"
 tags: [nginx, variable, ngx_stream_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$server_port` |
 | **Module** | [[11-modules/03-stream/ngx_stream_core_module\|ngx_stream_core_module]] |
 
-port of the server which accepted a connection
+port du serveur qui a accepté la connexion
 
 ---
 

@@ -1,1 +1,8 @@
-{}
+{
+ "02a9962edcb7": "Le module `ngx_stream_geo_module` (1.11.3) crée des variables dont les valeurs dépendent de l'adresse IP du client.",
+ "02dc36161dce": "Comme les variables ne sont évaluées qu'à leur utilisation, la simple existence d'un grand nombre de variables « `geo` » déclarées n'entraîne aucun coût supplémentaire pour le traitement des connexions.",
+ "0dcc6672bb18": "Les adresses s'indiquent soit sous forme de préfixes en notation CIDR (y compris des adresses individuelles), soit sous forme de plages.",
+ "28e1d3beba96": "indique que les adresses sont données sous forme de plages. Ce paramètre doit être le premier. Pour accélérer le chargement d'une base geo, placez les adresses dans l'ordre croissant.",
+ "748c2cf21160": "Décrit la dépendance des valeurs de la variable indiquée vis-à-vis de l'adresse IP du client. Par défaut, l'adresse est prise dans la variable `$remote_addr`, mais elle peut aussi venir d'une autre variable, par exemple :",
+ "788cc1abbd44": "supprime le réseau indiqué."
+}

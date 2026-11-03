@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_return_module"
-description: "Module nginx ngx_stream_return_module — The ngx_stream_return_module module (1.11.2) allows sending a specified value to the client and then closing the connection."
+description: "Module nginx ngx_stream_return_module — Le module ngx_stream_return_module (1.11.2) permet d'envoyer une valeur donnée au client, puis de fermer la connexion."
 tags: [nginx, module, ngx_stream_return_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_return_module` module (1.11.2) allows sending a specified value to the client and then closing the connection.
+Le module `ngx_stream_return_module` (1.11.2) permet d'envoyer une valeur donnée au client, puis de fermer la connexion.
 
 ## Exemple de configuration
 

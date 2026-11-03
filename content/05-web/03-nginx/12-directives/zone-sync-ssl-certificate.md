@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_ssl_certificate"
-description: "Directive nginx zone_sync_ssl_certificate (ngx_stream_zone_sync_module) — Specifies a file with the certificate in the PEM format used for authentication to another cluster server."
+description: "Directive nginx zone_sync_ssl_certificate (ngx_stream_zone_sync_module) — Indique un fichier contenant le certificat au format PEM utilisé pour s'authentifier auprès d'un autre serveur du cluster."
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with the certificate in the PEM format used for authentication to another cluster server.
+Indique un *fichier* contenant le certificat au format PEM utilisé pour s'authentifier auprès d'un autre serveur du cluster.
 
 ---
 

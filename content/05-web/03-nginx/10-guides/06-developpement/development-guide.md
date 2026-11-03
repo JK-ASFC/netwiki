@@ -1,6 +1,6 @@
 ---
-title: "Development guide"
-description: "Nginx — Development guide. nginx does not formally separate its programming interface into public and private parts. All header files in the nginx source tree can be included by both standard and third-party modules. The data structure…"
+title: "Guide du développeur"
+description: "Nginx — Guide du développeur. nginx ne sépare pas formellement son interface de programmation en parties publique et privée. Tous les fichiers d'en-tête de l'arborescence des sources peuvent être inclus par les modules standard comme par les modules…"
 tags: [nginx, guide]
 icon: book-open
 ---
@@ -10,82 +10,82 @@ icon: book-open
 
 ## Introduction
 
-### Public and private API
+### API publique et privée
 
-nginx does not formally separate its programming interface into public and private parts. All header files in the nginx source tree can be included by both standard and third-party modules. The data structure definitions, external data references, macros, and functions they declare are available for public use. Some of these, however, exist for nginx's own internal convenience, and module authors should avoid depending on them. The best way to stay within the public part of the API is to follow this guide.
+nginx ne sépare pas formellement son interface de programmation en parties publique et privée. Tous les fichiers d'en-tête de l'arborescence des sources peuvent être inclus par les modules standard comme par les modules tiers. Les définitions de structures, références de données externes, macros et fonctions qu'ils déclarent sont disponibles pour un usage public. Certaines existent toutefois pour la commodité interne de nginx, et les auteurs de modules devraient éviter d'en dépendre. Le meilleur moyen de rester dans la partie publique de l'API est de suivre ce guide.
 
-Accessing nginx private data defined in C source files and not exported through header files is strongly discouraged, as is copying standard nginx functions in order to alter their behavior. Such code is fragile: it may become binary incompatible with a later nginx version, and security fixes applied to the original functions will not reach the copies.
+Il est fortement déconseillé d'accéder aux données privées de nginx définies dans les fichiers source C et non exportées par les fichiers d'en-tête, tout comme de copier des fonctions standard de nginx pour en modifier le comportement. Un tel code est fragile : il peut devenir binairement incompatible avec une version ultérieure, et les correctifs de sécurité appliqués aux fonctions d'origine n'atteindront pas les copies.
 
-### Code layout
+### Organisation du code
 
-- `auto` — Build scripts
+- `auto` — Scripts de compilation
 - `src`
 
-  - `core` — Basic types and functions — string, array, log, pool, etc.
-  - `event` — Event core
+  - `core` — Types et fonctions de base : chaînes, tableaux, journal, pool, etc.
+  - `event` — Cœur des événements
 
-    - `modules` — Event notification modules: `epoll`, `kqueue`, `select` etc.
-  - `http` — Core HTTP module and common code
+    - `modules` — Modules de notification d'événements : `epoll`, `kqueue`, `select`, etc.
+  - `http` — Module HTTP principal et code commun
 
-    - `modules` — Other HTTP modules
+    - `modules` — Autres modules HTTP
     - `v2` — HTTP/2
-  - `mail` — Mail modules
-  - `os` — Platform-specific code
+  - `mail` — Modules mail
+  - `os` — Code propre à chaque plate-forme
 
     - `unix`
     - `win32`
-  - `stream` — Stream modules
+  - `stream` — Modules stream
 
-### Include files
+### Fichiers d'inclusion
 
-The following two `#include` statements must appear at the beginning of every nginx file:
+Les deux instructions `#include` suivantes doivent figurer au début de chaque fichier nginx :
 
 ```c
 #include <ngx_config.h>
 #include <ngx_core.h>
 ```
 
-In addition to that, HTTP code should include
+En outre, le code HTTP doit inclure
 
 ```c
 #include <ngx_http.h>
 ```
 
-Mail code should include
+Le code mail doit inclure
 
 ```c
 #include <ngx_mail.h>
 ```
 
-Stream code should include
+Le code stream doit inclure
 
 ```c
 #include <ngx_stream.h>
 ```
 
-### Integers
+### Entiers
 
-For general purposes, nginx code uses two integer types, `ngx_int_t` and `ngx_uint_t`, which are typedefs for `intptr_t` and `uintptr_t` respectively.
+Pour un usage général, le code de nginx utilise deux types entiers, `ngx_int_t` et `ngx_uint_t`, qui sont des typedefs de `intptr_t` et `uintptr_t` respectivement.
 
-### Common return codes
+### Codes de retour courants
 
-Most functions in nginx return the following codes:
+La plupart des fonctions de nginx renvoient les codes suivants :
 
-- `NGX_OK` — Operation succeeded.
-- `NGX_ERROR` — Operation failed.
-- `NGX_AGAIN` — Operation incomplete; call the function again.
-- `NGX_DECLINED` — Operation rejected, for example, because it is disabled in the configuration. This is never an error.
-- `NGX_BUSY` — Resource is not available.
-- `NGX_DONE` — Operation complete or continued elsewhere. Also used as an alternative success code.
-- `NGX_ABORT` — Function was aborted. Also used as an alternative error code.
+- `NGX_OK` — L'opération a réussi.
+- `NGX_ERROR` — L'opération a échoué.
+- `NGX_AGAIN` — L'opération est incomplète ; rappelez la fonction.
+- `NGX_DECLINED` — L'opération est refusée, par exemple parce qu'elle est désactivée dans la configuration. Ce n'est jamais une erreur.
+- `NGX_BUSY` — La ressource n'est pas disponible.
+- `NGX_DONE` — L'opération est terminée ou se poursuit ailleurs. Sert aussi de code de succès alternatif.
+- `NGX_ABORT` — La fonction a été interrompue. Sert aussi de code d'erreur alternatif.
 
-### Error handling
+### Gestion des erreurs
 
-The `ngx_errno` macro returns the last system error code. It's mapped to `errno` on POSIX platforms and to `GetLastError()` call in Windows. The `ngx_socket_errno` macro returns the last socket error number. Like the `ngx_errno` macro, it's mapped to `errno` on POSIX platforms. It's mapped to the `WSAGetLastError()` call on Windows. Accessing the values of `ngx_errno` or `ngx_socket_errno` more than once in a row can cause performance issues. If the error value might be used multiple times, store it in a local variable of type `ngx_err_t`. To set errors, use the `ngx_set_errno(errno)` and `ngx_set_socket_errno(errno)` macros.
+La macro `ngx_errno` renvoie le dernier code d'erreur système. Elle correspond à `errno` sur les plates-formes POSIX et à l'appel `GetLastError()` sous Windows. La macro `ngx_socket_errno` renvoie le dernier numéro d'erreur de socket. Comme `ngx_errno`, elle correspond à `errno` sur les plates-formes POSIX, et à l'appel `WSAGetLastError()` sous Windows. Lire `ngx_errno` ou `ngx_socket_errno` plusieurs fois de suite peut nuire aux performances. Si la valeur d'erreur doit servir plusieurs fois, stockez-la dans une variable locale de type `ngx_err_t`. Pour définir des erreurs, utilisez les macros `ngx_set_errno(errno)` et `ngx_set_socket_errno(errno)`.
 
-The values of `ngx_errno` and `ngx_socket_errno` can be passed to the logging functions `ngx_log_error()` and `ngx_log_debugX()`, in which case system error text is added to the log message.
+Les valeurs de `ngx_errno` et `ngx_socket_errno` peuvent être passées aux fonctions de journalisation `ngx_log_error()` et `ngx_log_debugX()`, auquel cas le texte de l'erreur système est ajouté au message.
 
-Example using `ngx_errno`:
+Exemple d'utilisation de `ngx_errno` :
 
 ```c
 ngx_int_t
@@ -109,13 +109,13 @@ ngx_my_kill(ngx_pid_t pid, ngx_log_t *log, int signo)
 }
 ```
 
-## Strings
+## Chaînes
 
-### Overview
+### Présentation
 
-For C strings, nginx uses the unsigned character type pointer `u_char *`.
+Pour les chaînes C, nginx utilise le pointeur de type caractère non signé `u_char *`.
 
-The nginx string type `ngx_str_t` is defined as follows:
+Le type de chaîne de nginx, `ngx_str_t`, est défini ainsi :
 
 ```c
 typedef struct {
@@ -124,9 +124,9 @@ typedef struct {
 } ngx_str_t;
 ```
 
-The `len` field holds the string length and `data` holds the string data. The string, held in `ngx_str_t`, may or may not be null-terminated after the `len` bytes. In most cases it’s not. However, in certain parts of the code (for example, when parsing configuration), `ngx_str_t` objects are known to be null-terminated, which simplifies string comparison and makes it easier to pass the strings to syscalls.
+Le champ `len` contient la longueur de la chaîne et `data` ses données. La chaîne contenue dans `ngx_str_t` peut être ou non terminée par un octet nul après les `len` octets ; le plus souvent, elle ne l'est pas. Dans certaines parties du code (par exemple l'analyse de la configuration), les objets `ngx_str_t` sont toutefois connus pour être terminés par un octet nul, ce qui simplifie la comparaison des chaînes et leur passage aux appels système.
 
-The string operations in nginx are declared in `src/core/ngx_string.h` Some of them are wrappers around standard C functions:
+Les opérations sur les chaînes sont déclarées dans `src/core/ngx_string.h`. Certaines enrobent des fonctions C standard :
 
 - `ngx_strcmp()`
 - `ngx_strncmp()`
@@ -138,15 +138,15 @@ The string operations in nginx are declared in `src/core/ngx_string.h` Some of t
 - `ngx_memcpy()`
 - `ngx_memmove()`
 
-Other string functions are nginx-specific
+D'autres fonctions de chaînes sont propres à nginx
 
-- `ngx_memzero()` — Fills memory with zeroes.
-- `ngx_explicit_memzero()` — Does the same as `ngx_memzero()`, but this call is never removed by the compiler's dead store elimination optimization. This function can be used to clear sensitive data such as passwords and keys.
-- `ngx_cpymem()` — Does the same as `ngx_memcpy()`, but returns the final destination address This one is handy for appending multiple strings in a row.
-- `ngx_movemem()` — Does the same as `ngx_memmove()`, but returns the final destination address.
-- `ngx_strlchr()` — Searches for a character in a string, delimited by two pointers.
+- `ngx_memzero()` — Remplit la mémoire de zéros.
+- `ngx_explicit_memzero()` — Fait la même chose que `ngx_memzero()`, mais cet appel n'est jamais supprimé par l'optimisation d'élimination des écritures mortes du compilateur. Utile pour effacer des données sensibles comme des mots de passe et des clés.
+- `ngx_cpymem()` — Fait la même chose que `ngx_memcpy()`, mais renvoie l'adresse de destination finale. Pratique pour concaténer plusieurs chaînes à la suite.
+- `ngx_movemem()` — Fait la même chose que `ngx_memmove()`, mais renvoie l'adresse de destination finale.
+- `ngx_strlchr()` — Recherche un caractère dans une chaîne délimitée par deux pointeurs.
 
-The following functions perform case conversion and comparison:
+Les fonctions suivantes effectuent la conversion de casse et la comparaison :
 
 - `ngx_tolower()`
 - `ngx_toupper()`
@@ -154,16 +154,16 @@ The following functions perform case conversion and comparison:
 - `ngx_strcasecmp()`
 - `ngx_strncasecmp()`
 
-The following macros simplify string initialization:
+Les macros suivantes simplifient l'initialisation des chaînes :
 
-- `ngx_string(text)` — static initializer for the `ngx_str_t` type from the C string literal `text`
-- `ngx_null_string` — static empty string initializer for the `ngx_str_t` type
-- `ngx_str_set(str, text)` — initializes string `str` of `ngx_str_t *` type with the C string literal `text`
-- `ngx_str_null(str)` — initializes string `str` of `ngx_str_t *` type with the empty string
+- `ngx_string(text)` — initialiseur statique du type `ngx_str_t` à partir du littéral de chaîne C `text`
+- `ngx_null_string` — initialiseur statique de chaîne vide pour le type `ngx_str_t`
+- `ngx_str_set(str, text)` — initialise la chaîne `str` de type `ngx_str_t *` avec le littéral de chaîne C `text`
+- `ngx_str_null(str)` — initialise la chaîne `str` de type `ngx_str_t *` avec la chaîne vide
 
-### Formatting
+### Formatage
 
-The following formatting functions support nginx-specific types:
+Les fonctions de formatage suivantes prennent en charge les types propres à nginx :
 
 - `ngx_sprintf(buf, fmt, ...)`
 - `ngx_snprintf(buf, max, fmt, ...)`
@@ -171,7 +171,7 @@ The following formatting functions support nginx-specific types:
 - `ngx_vslprintf(buf, last, fmt, args)`
 - `ngx_vsnprintf(buf, max, fmt, args)`
 
-The full list of formatting options, supported by these functions is in `src/core/ngx_string.c`. Some of them are:
+La liste complète des options de formatage prises en charge figure dans `src/core/ngx_string.c`. En voici quelques-unes :
 
 - `%O` — `off_t`
 - `%T` — `time_t`
@@ -179,10 +179,10 @@ The full list of formatting options, supported by these functions is in `src/cor
 - `%i` — `ngx_int_t`
 - `%p` — `void *`
 - `%V` — `ngx_str_t *`
-- `%s` — `u_char *` (null-terminated)
+- `%s` — `u_char *` (terminée par un octet nul)
 - `%*s` — `size_t + u_char *`
 
-You can prepend `u` on most types to make them unsigned. To convert output to hex, use `X` or `x`.
+On peut préfixer la plupart des types par `u` pour les rendre non signés. Pour une sortie en hexadécimal, utilisez `X` ou `x`.
 
 Par exemple :
 
@@ -196,25 +196,25 @@ ngx_uint_t  n;
 len = ngx_sprintf(buf, "%ui", n) — buf;
 ```
 
-### Numeric conversion
+### Conversion numérique
 
-Several functions for numeric conversion are implemented in nginx. The first four each convert a string of given length to a positive integer of the indicated type. They return `NGX_ERROR` on error.
+nginx met en œuvre plusieurs fonctions de conversion numérique. Les quatre premières convertissent chacune une chaîne de longueur donnée en entier positif du type indiqué. Elles renvoient `NGX_ERROR` en cas d'erreur.
 
 - `ngx_atoi(line, n)` — `ngx_int_t`
 - `ngx_atosz(line, n)` — `ssize_t`
 - `ngx_atoof(line, n)` — `off_t`
 - `ngx_atotm(line, n)` — `time_t`
 
-There are two additional numeric conversion functions. Like the first four, they return `NGX_ERROR` on error.
+Il existe deux autres fonctions de conversion numérique. Comme les quatre premières, elles renvoient `NGX_ERROR` en cas d'erreur.
 
-- `ngx_atofp(line, n, point)` — Converts a fixed point floating number of given length to a positive integer of type `ngx_int_t`. The result is shifted left by `point` decimal positions. The string representation of the number is expected to have no more than `points` fractional digits. For example, `ngx_atofp("10.5", 4, 2)` returns `1050`.
-- `ngx_hextoi(line, n)` — Converts a hexadecimal representation of a positive integer to `ngx_int_t`.
+- `ngx_atofp(line, n, point)` — Convertit un nombre à virgule fixe de longueur donnée en entier positif de type `ngx_int_t`. Le résultat est décalé de `point` positions décimales vers la gauche. La représentation textuelle du nombre ne doit pas avoir plus de `points` chiffres après la virgule. Par exemple, `ngx_atofp("10.5", 4, 2)` renvoie `1050`.
+- `ngx_hextoi(line, n)` — Convertit la représentation hexadécimale d'un entier positif en `ngx_int_t`.
 
-### Regular expressions
+### Expressions régulières
 
-The regular expressions interface in nginx is a wrapper around the [PCRE](http://www.pcre.org) library. The corresponding header file is `src/core/ngx_regex.h`.
+L'interface des expressions régulières de nginx enrobe la bibliothèque [PCRE](http://www.pcre.org). Le fichier d'en-tête correspondant est `src/core/ngx_regex.h`.
 
-To use a regular expression for string matching, it first needs to be compiled, which is usually done at the configuration phase. Note that since PCRE support is optional, all code using the interface must be protected by the surrounding `NGX_PCRE` macro:
+Pour comparer une chaîne à une expression régulière, il faut d'abord compiler celle-ci, généralement pendant la phase de configuration. La prise en charge de PCRE étant facultative, tout code utilisant l'interface doit être protégé par la macro `NGX_PCRE` :
 
 ```c
 #if (NGX_PCRE)
@@ -242,9 +242,9 @@ re = rc.regex;
 #endif
 ```
 
-After successful compilation, the `captures` and `named_captures` fields in the `ngx_regex_compile_t` structure contain the count of all captures and named captures, respectively, found in the regular expression.
+Après une compilation réussie, les champs `captures` et `named_captures` de la structure `ngx_regex_compile_t` contiennent respectivement le nombre de captures et de captures nommées trouvées dans l'expression.
 
-The compiled regular expression can then be used for matching against strings:
+L'expression compilée peut ensuite servir à tester des chaînes :
 
 ```c
 ngx_int_t  n;
@@ -265,9 +265,9 @@ if (n >= 0) {
 }
 ```
 
-The arguments to `ngx_regex_exec()` are the compiled regular expression `re`, the string to match `input`, an optional array of integers to hold any `captures` that are found, and the array's `size`. The size of the `captures` array must be a multiple of three, as required by the [PCRE API](http://www.pcre.org/original/doc/html/pcreapi.html). In the example, the size is calculated from the total number of captures plus one for the matched string itself.
+Les arguments de `ngx_regex_exec()` sont l'expression compilée `re`, la chaîne à tester `input`, un tableau facultatif d'entiers pour recevoir les `captures` trouvées et la `size` du tableau. La taille du tableau `captures` doit être un multiple de trois, comme l'exige l'[API PCRE](http://www.pcre.org/original/doc/html/pcreapi.html). Dans l'exemple, elle est calculée à partir du nombre total de captures, plus un pour la chaîne correspondante elle-même.
 
-If there are matches, captures can be accessed as follows:
+En cas de correspondance, les captures sont accessibles ainsi :
 
 ```c
 u_char     *p;
@@ -299,11 +299,11 @@ for (i = 0; i < rc.named_captures; i++, p += size) {
 }
 ```
 
-The `ngx_regex_exec_array()` function accepts the array of `ngx_regex_elt_t` elements (which are just compiled regular expressions with associated names), a string to match, and a log. The function applies expressions from the array to the string until either a match is found or no more expressions are left. The return value is `NGX_OK` when there is a match and `NGX_DECLINED` otherwise, or `NGX_ERROR` in case of error.
+La fonction `ngx_regex_exec_array()` accepte le tableau d'éléments `ngx_regex_elt_t` (des expressions compilées associées à des noms), une chaîne à tester et un journal. Elle applique les expressions du tableau à la chaîne jusqu'à trouver une correspondance ou épuiser les expressions. Elle renvoie `NGX_OK` en cas de correspondance, `NGX_DECLINED` sinon, ou `NGX_ERROR` en cas d'erreur.
 
-## Time
+## Temps
 
-The `ngx_time_t` structure represents time with three separate types for seconds, milliseconds, and the GMT offset:
+La structure `ngx_time_t` représente le temps avec trois types distincts pour les secondes, les millisecondes et le décalage GMT :
 
 ```c
 typedef struct {
@@ -313,34 +313,34 @@ typedef struct {
 } ngx_time_t;
 ```
 
-The `ngx_tm_t` structure is an alias for `struct tm` on UNIX platforms and `SYSTEMTIME` on Windows.
+La structure `ngx_tm_t` est un alias de `struct tm` sur les plates-formes UNIX et de `SYSTEMTIME` sous Windows.
 
-To obtain the current time, it is usually sufficient to access one of the available global variables, representing the cached time value in the desired format.
+Pour obtenir l'heure courante, il suffit généralement de lire l'une des variables globales disponibles, qui contiennent la valeur du temps mise en cache dans le format voulu.
 
-The available string representations are:
+Représentations textuelles disponibles :
 
-- `ngx_cached_err_log_time` — Used in error log entries: `"1970/09/28 12:00:00"`
-- `ngx_cached_http_log_time` — Used in HTTP access log entries: `"28/Sep/1970:12:00:00 +0600"`
-- `ngx_cached_syslog_time` — Used in syslog entries: `"Sep 28 12:00:00"`
-- `ngx_cached_http_time` — Used in HTTP headers: `"Mon, 28 Sep 1970 06:00:00 GMT"`
-- `ngx_cached_http_log_iso8601` — The ISO 8601 standard format: `"1970-09-28T12:00:00+06:00"`
+- `ngx_cached_err_log_time` — Utilisée dans les entrées du journal d'erreurs : `"1970/09/28 12:00:00"`
+- `ngx_cached_http_log_time` — Utilisée dans les entrées du journal d'accès HTTP : `"28/Sep/1970:12:00:00 +0600"`
+- `ngx_cached_syslog_time` — Utilisée dans les entrées syslog : `"Sep 28 12:00:00"`
+- `ngx_cached_http_time` — Utilisée dans les en-têtes HTTP : `"Mon, 28 Sep 1970 06:00:00 GMT"`
+- `ngx_cached_http_log_iso8601` — Format standard ISO 8601 : `"1970-09-28T12:00:00+06:00"`
 
-The `ngx_time()` and `ngx_timeofday()` macros return the current time value in seconds and are the preferred way to access the cached time value.
+Les macros `ngx_time()` et `ngx_timeofday()` renvoient l'heure courante en secondes et sont le moyen privilégié d'accéder à la valeur mise en cache.
 
-To obtain the time explicitly, use `ngx_gettimeofday()`, which updates its argument (pointer to `struct timeval`). The time is always updated when nginx returns to the event loop from system calls. To update the time immediately, call `ngx_time_update()`, or `ngx_time_sigsafe_update()` if updating the time in the signal handler context.
+Pour obtenir l'heure explicitement, utilisez `ngx_gettimeofday()`, qui met à jour son argument (pointeur vers `struct timeval`). L'heure est toujours mise à jour quand nginx revient à la boucle d'événements après des appels système. Pour la mettre à jour immédiatement, appelez `ngx_time_update()`, ou `ngx_time_sigsafe_update()` dans le contexte d'un gestionnaire de signal.
 
-The following functions convert `time_t` into the indicated broken-down time representation. The first function in each pair converts `time_t` to `ngx_tm_t` and the second (with the `_libc_` infix) to `struct tm`:
+Les fonctions suivantes convertissent `time_t` dans la représentation décomposée indiquée. La première de chaque paire convertit `time_t` en `ngx_tm_t`, la seconde (avec l'infixe `_libc_`) en `struct tm` :
 
-- `ngx_gmtime(), ngx_libc_gmtime()` — Time expressed as UTC
-- `ngx_localtime(), ngx_libc_localtime()` — Time expressed relative to the local time zone
+- `ngx_gmtime(), ngx_libc_gmtime()` — Heure exprimée en UTC
+- `ngx_localtime(), ngx_libc_localtime()` — Heure exprimée selon le fuseau horaire local
 
-The `ngx_http_time(buf, time)` function returns a string representation suitable for use in HTTP headers (for example, `"Mon, 28 Sep 1970 06:00:00 GMT"`). The `ngx_http_cookie_time(buf, time)` returns a string representation function returns a string representation suitable for HTTP cookies (`"Thu, 31-Dec-37 23:55:55 GMT"`).
+La fonction `ngx_http_time(buf, time)` renvoie une représentation textuelle adaptée aux en-têtes HTTP (par exemple `"Mon, 28 Sep 1970 06:00:00 GMT"`). La fonction `ngx_http_cookie_time(buf, time)` renvoie une représentation adaptée aux cookies HTTP (`"Thu, 31-Dec-37 23:55:55 GMT"`).
 
-## Containers
+## Conteneurs
 
-### Array
+### Tableau
 
-The nginx array type `ngx_array_t` is defined as follows
+Le type tableau de nginx, `ngx_array_t`, est défini ainsi
 
 ```c
 typedef struct {
@@ -352,9 +352,9 @@ typedef struct {
 } ngx_array_t;
 ```
 
-The elements of the array are available in the `elts` field. The `nelts` field holds the number of elements. The `size` field holds the size of a single element and is set when the array is initialized.
+Les éléments du tableau sont disponibles dans le champ `elts`. Le champ `nelts` contient le nombre d'éléments. Le champ `size` contient la taille d'un élément ; il est fixé à l'initialisation du tableau.
 
-Use the `ngx_array_create(pool, n, size)` call to create an array in a pool, and the `ngx_array_init(array, pool, n, size)` call to initialize an array object that has already been allocated.
+Utilisez l'appel `ngx_array_create(pool, n, size)` pour créer un tableau dans un pool, et `ngx_array_init(array, pool, n, size)` pour initialiser un objet tableau déjà alloué.
 
 ```c
 ngx_array_t  *a, b;
@@ -366,21 +366,21 @@ a = ngx_array_create(pool, 10, sizeof(ngx_str_t));
 ngx_array_init(&b, pool, 10, sizeof(ngx_str_t));
 ```
 
-Use the following functions to add elements to an array:
+Utilisez les fonctions suivantes pour ajouter des éléments à un tableau :
 
-- `ngx_array_push(a)` adds one tail element and returns pointer to it
-- `ngx_array_push_n(a, n)` adds `n` tail elements and returns pointer to the first one
+- `ngx_array_push(a)` ajoute un élément en fin de tableau et renvoie un pointeur vers lui
+- `ngx_array_push_n(a, n)` ajoute `n` éléments en fin de tableau et renvoie un pointeur vers le premier
 
-If the currently allocated amount of memory is not large enough to accommodate the new elements, a new block of memory is allocated and the existing elements are copied to it. The new memory block is normally twice as large as the existing one.
+Si la mémoire allouée ne suffit pas pour les nouveaux éléments, un nouveau bloc est alloué et les éléments existants y sont copiés. Le nouveau bloc est normalement deux fois plus grand que l'ancien.
 
 ```c
 s = ngx_array_push(a);
 ss = ngx_array_push_n(&b, 3);
 ```
 
-### List
+### Liste
 
-In nginx a list is a sequence of arrays, optimized for inserting a potentially large number of items. The `ngx_list_t` list type is defined as follows:
+Dans nginx, une liste est une suite de tableaux, optimisée pour insérer un nombre potentiellement élevé d'éléments. Le type liste `ngx_list_t` est défini ainsi :
 
 ```c
 typedef struct {
@@ -392,7 +392,7 @@ typedef struct {
 } ngx_list_t;
 ```
 
-The actual items are stored in list parts, which are defined as follows:
+Les éléments sont stockés dans des parties de liste, définies ainsi :
 
 ```c
 typedef struct ngx_list_part_s  ngx_list_part_t;
@@ -404,7 +404,7 @@ struct ngx_list_part_s {
 };
 ```
 
-Before use, a list must be initialized by calling `ngx_list_init(list, pool, n, size)` or created by calling `ngx_list_create(pool, n, size)`. Both functions take as arguments the size of a single item and a number of items per list part. To add an item to a list, use the `ngx_list_push(list)` function. To iterate over the items, directly access the list fields as shown in the example:
+Avant utilisation, une liste doit être initialisée par `ngx_list_init(list, pool, n, size)` ou créée par `ngx_list_create(pool, n, size)`. Les deux fonctions prennent en argument la taille d'un élément et le nombre d'éléments par partie de liste. Pour ajouter un élément, utilisez la fonction `ngx_list_push(list)`. Pour parcourir les éléments, accédez directement aux champs de la liste comme dans l'exemple :
 
 ```c
 ngx_str_t        *v;
@@ -446,13 +446,13 @@ for (i = 0; /* void */; i++) {
 }
 ```
 
-Lists are primarily used for HTTP input and output headers.
+Les listes servent surtout aux en-têtes HTTP d'entrée et de sortie.
 
-Lists do not support item removal. However, when needed, items can internally be marked as missing without actually being removed from the list. For example, to mark HTTP output headers (which are stored as `ngx_table_elt_t` objects) as missing, set the `hash` field in `ngx_table_elt_t` to zero. Items marked in this way are explicitly skipped when the headers are iterated over.
+Les listes ne permettent pas de supprimer des éléments. Au besoin, on peut toutefois marquer des éléments comme absents sans les retirer réellement. Par exemple, pour marquer comme absents des en-têtes HTTP de sortie (stockés sous forme d'objets `ngx_table_elt_t`), mettez à zéro le champ `hash` de `ngx_table_elt_t`. Les éléments ainsi marqués sont explicitement ignorés lors du parcours des en-têtes.
 
-### Queue
+### File
 
-In nginx a queue is an intrusive doubly linked list, with each node defined as follows:
+Dans nginx, une file est une liste doublement chaînée intrusive, dont chaque nœud est défini ainsi :
 
 ```c
 typedef struct ngx_queue_s  ngx_queue_t;
@@ -463,17 +463,17 @@ struct ngx_queue_s {
 };
 ```
 
-The head queue node is not linked with any data. Use the `ngx_queue_init(q)` call to initialize the list head before use. Queues support the following operations:
+Le nœud de tête n'est lié à aucune donnée. Initialisez la tête avec l'appel `ngx_queue_init(q)` avant utilisation. Les files prennent en charge les opérations suivantes :
 
-- `ngx_queue_insert_head(h, x)`, `ngx_queue_insert_tail(h, x)` — Insert a new node
-- `ngx_queue_remove(x)` — Remove a queue node
-- `ngx_queue_split(h, q, n)` — Split a queue at a node, returning the queue tail in a separate queue
-- `ngx_queue_add(h, n)` — Add a second queue to the first queue
-- `ngx_queue_head(h)`, `ngx_queue_last(h)` — Get first or last queue node
-- `ngx_queue_sentinel(h)` - Get a queue sentinel object to end iteration at
-- `ngx_queue_data(q, type, link)` — Get a reference to the beginning of a queue node data structure, considering the queue field offset in it
+- `ngx_queue_insert_head(h, x)`, `ngx_queue_insert_tail(h, x)` — Insère un nouveau nœud
+- `ngx_queue_remove(x)` — Retire un nœud de la file
+- `ngx_queue_split(h, q, n)` — Coupe une file à un nœud et renvoie la fin dans une file distincte
+- `ngx_queue_add(h, n)` — Ajoute une seconde file à la première
+- `ngx_queue_head(h)`, `ngx_queue_last(h)` — Renvoie le premier ou le dernier nœud
+- `ngx_queue_sentinel(h)` - Renvoie l'objet sentinelle de la file, où arrêter le parcours
+- `ngx_queue_data(q, type, link)` — Renvoie une référence au début de la structure de données d'un nœud, compte tenu du décalage du champ de file dans celle-ci
 
-An example:
+Exemple :
 
 ```c
 typedef struct {
@@ -504,9 +504,9 @@ for (q = ngx_queue_head(&values);
 }
 ```
 
-### Red-Black tree
+### Arbre rouge-noir
 
-The `src/core/ngx_rbtree.h` header file provides access to the effective implementation of red-black trees.
+Le fichier d'en-tête `src/core/ngx_rbtree.h` donne accès à une implémentation efficace des arbres rouge-noir.
 
 ```c
 typedef struct {
@@ -524,9 +524,9 @@ typedef struct {
 } my_node_t;
 ```
 
-To deal with a tree as a whole, you need two nodes: root and sentinel. Typically, they are added to a custom structure, allowing you to organize your data into a tree in which the leaves contain a link to or embed your data.
+Pour manipuler un arbre dans son ensemble, il faut deux nœuds : la racine et la sentinelle. On les ajoute généralement à une structure personnalisée, ce qui permet d'organiser les données en arbre dont les feuilles contiennent un lien vers les données ou les intègrent.
 
-To initialize a tree:
+Pour initialiser un arbre :
 
 ```c
 my_tree_t  root;
@@ -534,7 +534,7 @@ my_tree_t  root;
 ngx_rbtree_init(&root.rbtree, &root.sentinel, insert_value_function);
 ```
 
-To traverse a tree and insert new values, use the "`insert_value`" functions. For example, the `ngx_str_rbtree_insert_value` function deals with the `ngx_str_t` type. Its arguments are pointers to a root node of an insertion, the newly created node to be added, and a tree sentinel.
+Pour parcourir un arbre et insérer de nouvelles valeurs, utilisez les fonctions « `insert_value` ». Par exemple, la fonction `ngx_str_rbtree_insert_value` traite le type `ngx_str_t`. Ses arguments sont des pointeurs vers le nœud racine de l'insertion, le nouveau nœud à ajouter et la sentinelle de l'arbre.
 
 ```c
 void ngx_str_rbtree_insert_value(ngx_rbtree_node_t *temp,
@@ -542,7 +542,7 @@ void ngx_str_rbtree_insert_value(ngx_rbtree_node_t *temp,
                                  ngx_rbtree_node_t *sentinel)
 ```
 
-The traversal is pretty straightforward and can be demonstrated with the following lookup function pattern:
+Le parcours est assez simple et peut être illustré par le modèle de fonction de recherche suivant :
 
 ```c
 my_node_t *
@@ -583,9 +583,9 @@ my_rbtree_lookup(ngx_rbtree_t *rbtree, foo_t *val, uint32_t hash)
 }
 ```
 
-The `compare()` function is a classic comparator function that returns a value less than, equal to, or greater than zero. To speed up lookups and avoid comparing user objects that can be big, an integer hash field is used.
+La fonction `compare()` est un comparateur classique qui renvoie une valeur négative, nulle ou positive. Pour accélérer les recherches et éviter de comparer des objets utilisateur potentiellement volumineux, un champ de hachage entier est utilisé.
 
-To add a node to a tree, allocate a new node, initialize it and call `ngx_rbtree_insert()`:
+Pour ajouter un nœud à un arbre, allouez un nouveau nœud, initialisez-le et appelez `ngx_rbtree_insert()` :
 
 ```c
 my_node_t          *my_node;
@@ -600,17 +600,17 @@ node->key = create_key(my_node->val);
 ngx_rbtree_insert(&root->rbtree, node);
 ```
 
-To remove a node, call the `ngx_rbtree_delete()` function:
+Pour retirer un nœud, appelez la fonction `ngx_rbtree_delete()` :
 
 ```c
 ngx_rbtree_delete(&root->rbtree, node);
 ```
 
-### Hash
+### Table de hachage
 
-Hash table functions are declared in `src/core/ngx_hash.h`. Both exact and wildcard matching are supported. The latter requires extra setup and is described in a separate section below.
+Les fonctions de table de hachage sont déclarées dans `src/core/ngx_hash.h`. Les correspondances exactes et avec jokers sont prises en charge. Ces dernières nécessitent une configuration supplémentaire, décrite dans une section séparée ci-dessous.
 
-Before initializing a hash, you need to know the number of elements it will hold so that nginx can build it optimally. Two parameters that need to be configured are `max_size` and `bucket_size`, as detailed in a separate [[10-guides/01-introduction/hash|document]]. They are usually configurable by the user. Hash initialization settings are stored with the `ngx_hash_init_t` type, and the hash itself is `ngx_hash_t`:
+Avant d'initialiser une table de hachage, il faut connaître le nombre d'éléments qu'elle contiendra pour que nginx puisse la construire de façon optimale. Deux paramètres doivent être configurés, `max_size` et `bucket_size`, comme détaillé dans un [[10-guides/01-introduction/hash|document]] séparé. Ils sont généralement configurables par l'utilisateur. Les paramètres d'initialisation sont stockés dans le type `ngx_hash_init_t`, et la table elle-même dans `ngx_hash_t` :
 
 ```c
 ngx_hash_t       foo_hash;
@@ -625,9 +625,9 @@ hash.pool = cf->pool;
 hash.temp_pool = cf->temp_pool;
 ```
 
-The `key` is a pointer to a function that creates the hash integer key from a string. There are two generic key-creation functions: `ngx_hash_key(data, len)` and `ngx_hash_key_lc(data, len)`. The latter converts a string to all lowercase characters, so the passed string must be writable. If that is not true, pass the `NGX_HASH_READONLY_KEY` flag to the function, initializing the key array (see below).
+`key` est un pointeur vers une fonction qui crée la clé de hachage entière à partir d'une chaîne. Il existe deux fonctions génériques de création de clé : `ngx_hash_key(data, len)` et `ngx_hash_key_lc(data, len)`. La seconde convertit la chaîne en minuscules ; celle-ci doit donc être modifiable. Sinon, passez l'indicateur `NGX_HASH_READONLY_KEY` à la fonction en initialisant le tableau de clés (voir ci-dessous).
 
-The hash keys are stored in `ngx_hash_keys_arrays_t` and are initialized with `ngx_hash_keys_array_init(arr, type)`: The second parameter (`type`) controls the amount of resources preallocated for the hash and can be either `NGX_HASH_SMALL` or `NGX_HASH_LARGE`. The latter is appropriate if you expect the hash to contain thousands of elements.
+Les clés de hachage sont stockées dans `ngx_hash_keys_arrays_t` et initialisées avec `ngx_hash_keys_array_init(arr, type)`. Le second paramètre (`type`) contrôle la quantité de ressources préallouées pour la table et vaut `NGX_HASH_SMALL` ou `NGX_HASH_LARGE`. Le second convient si la table doit contenir des milliers d'éléments.
 
 ```c
 ngx_hash_keys_arrays_t  foo_keys;
@@ -638,7 +638,7 @@ foo_keys.temp_pool = cf->temp_pool;
 ngx_hash_keys_array_init(&foo_keys, NGX_HASH_SMALL);
 ```
 
-To insert keys into a hash keys array, use the `ngx_hash_add_key(keys_array, key, value, flags)` function:
+Pour insérer des clés dans un tableau de clés de hachage, utilisez la fonction `ngx_hash_add_key(keys_array, key, value, flags)` :
 
 ```c
 ngx_str_t k1 = ngx_string("key1");
@@ -648,15 +648,15 @@ ngx_hash_add_key(&foo_keys, &k1, &my_data_ptr_1, NGX_HASH_READONLY_KEY);
 ngx_hash_add_key(&foo_keys, &k2, &my_data_ptr_2, NGX_HASH_READONLY_KEY);
 ```
 
-To build the hash table, call the `ngx_hash_init(hinit, key_names, nelts)` function:
+Pour construire la table de hachage, appelez la fonction `ngx_hash_init(hinit, key_names, nelts)` :
 
 ```c
 ngx_hash_init(&hash, foo_keys.keys.elts, foo_keys.keys.nelts);
 ```
 
-The function fails if `max_size` or `bucket_size` parameters are not big enough.
+La fonction échoue si les paramètres `max_size` ou `bucket_size` sont trop petits.
 
-When the hash is built, use the `ngx_hash_find(hash, key, name, len)` function to look up elements:
+Une fois la table construite, utilisez la fonction `ngx_hash_find(hash, key, name, len)` pour rechercher des éléments :
 
 ```c
 my_data_t   *data;
@@ -670,9 +670,9 @@ if (data == NULL) {
 }
 ```
 
-#### Wildcard matching
+#### Correspondance avec jokers
 
-To create a hash that works with wildcards, use the `ngx_hash_combined_t` type. It includes the hash type described above and has two additional keys arrays: `dns_wc_head` and `dns_wc_tail`. The initialization of basic properties is similar to a regular hash:
+Pour créer une table de hachage qui gère les jokers, utilisez le type `ngx_hash_combined_t`. Il comprend le type de table décrit ci-dessus et deux tableaux de clés supplémentaires : `dns_wc_head` et `dns_wc_tail`. L'initialisation des propriétés de base est semblable à celle d'une table ordinaire :
 
 ```c
 ngx_hash_init_t      hash
@@ -682,7 +682,7 @@ hash.hash = &foo_hash.hash;
 hash.key = ...;
 ```
 
-It is possible to add wildcard keys using the `NGX_HASH_WILDCARD_KEY` flag:
+On peut ajouter des clés avec jokers grâce à l'indicateur `NGX_HASH_WILDCARD_KEY` :
 
 ```c
 /* k1 = ".example.org"; */
@@ -691,9 +691,9 @@ ngx_hash_add_key(&foo_keys, &k1, &data1, NGX_HASH_WILDCARD_KEY);
 ngx_hash_add_key(&foo_keys, &k2, &data2, NGX_HASH_WILDCARD_KEY);
 ```
 
-The function recognizes wildcards and adds keys into the corresponding arrays. Please refer to the [[12-directives/map-http-map|map]] module documentation for the description of the wildcard syntax and the matching algorithm.
+La fonction reconnaît les jokers et ajoute les clés dans les tableaux correspondants. Voir la documentation du module [[12-directives/map-http-map|map]] pour la syntaxe des jokers et l'algorithme de correspondance.
 
-Depending on the contents of added keys, you may need to initialize up to three key arrays: one for exact matching (described above), and two more to enable matching starting from the head or tail of a string:
+Selon le contenu des clés ajoutées, il peut falloir initialiser jusqu'à trois tableaux de clés : un pour la correspondance exacte (décrit plus haut) et deux autres pour la correspondance à partir du début ou de la fin d'une chaîne :
 
 ```c
 if (foo_keys.dns_wc_head.nelts) {
@@ -717,9 +717,9 @@ if (foo_keys.dns_wc_head.nelts) {
 }
 ```
 
-The keys array needs to be sorted, and initialization results must be added to the combined hash. The initialization of `dns_wc_tail` array is done similarly.
+Le tableau de clés doit être trié, et les résultats de l'initialisation ajoutés à la table combinée. Le tableau `dns_wc_tail` s'initialise de la même façon.
 
-The lookup in a combined hash is handled by the `ngx_hash_find_combined(chash, key, name, len)`:
+La recherche dans une table combinée se fait avec `ngx_hash_find_combined(chash, key, name, len)` :
 
 ```c
 /* key = "bar.example.org"; — will match ".example.org" */
@@ -729,31 +729,31 @@ hkey = ngx_hash_key(key.data, key.len);
 res = ngx_hash_find_combined(&foo_hash, hkey, key.data, key.len);
 ```
 
-## Memory management
+## Gestion de la mémoire
 
-### Heap
+### Tas
 
-To allocate memory from system heap, use the following functions:
+Pour allouer de la mémoire sur le tas système, utilisez les fonctions suivantes :
 
-- `ngx_alloc(size, log)` — Allocate memory from system heap. This is a wrapper around `malloc()` with logging support. Allocation error and debugging information is logged to `log`.
-- `ngx_calloc(size, log)` — Allocate memory from system heap like `ngx_alloc()`, but fill memory with zeros after allocation.
-- `ngx_memalign(alignment, size, log)` — Allocate aligned memory from system heap. This is a wrapper around `posix_memalign()` on those platforms that provide that function. Otherwise implementation falls back to `ngx_alloc()` which provides maximum alignment.
-- `ngx_free(p)` — Free allocated memory. This is a wrapper around `free()`
+- `ngx_alloc(size, log)` — Alloue de la mémoire sur le tas système. Enrobe `malloc()` avec prise en charge de la journalisation. Les erreurs d'allocation et les informations de débogage sont écrites dans `log`.
+- `ngx_calloc(size, log)` — Alloue de la mémoire sur le tas système comme `ngx_alloc()`, puis la remplit de zéros.
+- `ngx_memalign(alignment, size, log)` — Alloue de la mémoire alignée sur le tas système. Enrobe `posix_memalign()` sur les plates-formes qui la fournissent ; sinon, se rabat sur `ngx_alloc()`, qui fournit l'alignement maximal.
+- `ngx_free(p)` — Libère la mémoire allouée. Enrobe `free()`
 
 ### Pool
 
-Most nginx allocations are done in pools. Memory allocated in an nginx pool is freed automatically when the pool is destroyed. This provides good allocation performance and makes memory control easy.
+La plupart des allocations de nginx se font dans des pools. La mémoire allouée dans un pool est libérée automatiquement à la destruction de celui-ci. Cela offre de bonnes performances d'allocation et facilite le contrôle de la mémoire.
 
-A pool internally allocates objects in continuous blocks of memory. Once a block is full, a new one is allocated and added to the pool memory block list. When the requested allocation is too large to fit into a block, the request is forwarded to the system allocator and the returned pointer is stored in the pool for further deallocation.
+Un pool alloue en interne les objets dans des blocs de mémoire contigus. Quand un bloc est plein, un nouveau est alloué et ajouté à la liste des blocs du pool. Si l'allocation demandée est trop grande pour tenir dans un bloc, la demande est transmise à l'allocateur système et le pointeur renvoyé est conservé dans le pool pour être libéré plus tard.
 
-The type for nginx pools is `ngx_pool_t`. The following operations are supported:
+Le type des pools nginx est `ngx_pool_t`. Opérations prises en charge :
 
-- `ngx_create_pool(size, log)` — Create a pool with specified block size. The pool object returned is allocated in the pool as well. The `size` should be at least `NGX_MIN_POOL_SIZE` and a multiple of `NGX_POOL_ALIGNMENT`.
-- `ngx_destroy_pool(pool)` — Free all pool memory, including the pool object itself.
-- `ngx_palloc(pool, size)` — Allocate aligned memory from the specified pool.
-- `ngx_pcalloc(pool, size)` — Allocate aligned memory from the specified pool and fill it with zeroes.
-- `ngx_pnalloc(pool, size)` — Allocate unaligned memory from the specified pool. Mostly used for allocating strings.
-- `ngx_pfree(pool, p)` — Free memory that was previously allocated in the specified pool. Only allocations that result from requests forwarded to the system allocator can be freed.
+- `ngx_create_pool(size, log)` — Crée un pool avec la taille de bloc indiquée. L'objet pool renvoyé est lui aussi alloué dans le pool. `size` doit valoir au moins `NGX_MIN_POOL_SIZE` et être un multiple de `NGX_POOL_ALIGNMENT`.
+- `ngx_destroy_pool(pool)` — Libère toute la mémoire du pool, y compris l'objet pool lui-même.
+- `ngx_palloc(pool, size)` — Alloue de la mémoire alignée dans le pool indiqué.
+- `ngx_pcalloc(pool, size)` — Alloue de la mémoire alignée dans le pool indiqué et la remplit de zéros.
+- `ngx_pnalloc(pool, size)` — Alloue de la mémoire non alignée dans le pool indiqué. Sert surtout à allouer des chaînes.
+- `ngx_pfree(pool, p)` — Libère de la mémoire allouée auparavant dans le pool indiqué. Seules les allocations transmises à l'allocateur système peuvent être libérées.
 
 ```c
 u_char      *p;
@@ -772,11 +772,11 @@ if (p == NULL) { /* error */ }
 ngx_memcpy(p, "foo", 3);
 ```
 
-Chain links (`ngx_chain_t`) are actively used in nginx, so the nginx pool implementation provides a way to reuse them. The `chain` field of `ngx_pool_t` keeps a list of previously allocated links ready for reuse. For efficient allocation of a chain link in a pool, use the `ngx_alloc_chain_link(pool)` function. This function looks up a free chain link in the pool list and allocates a new chain link if the pool list is empty. To free a link, call the `ngx_free_chain(pool, cl)` function.
+Les maillons de chaîne (`ngx_chain_t`) sont très utilisés dans nginx ; l'implémentation des pools permet donc de les réutiliser. Le champ `chain` de `ngx_pool_t` conserve une liste de maillons déjà alloués prêts à être réutilisés. Pour allouer efficacement un maillon dans un pool, utilisez la fonction `ngx_alloc_chain_link(pool)`. Elle cherche un maillon libre dans la liste du pool et en alloue un nouveau si la liste est vide. Pour libérer un maillon, appelez `ngx_free_chain(pool, cl)`.
 
-Cleanup handlers can be registered in a pool. A cleanup handler is a callback with an argument which is called when pool is destroyed. A pool is usually tied to a specific nginx object (like an HTTP request) and is destroyed when the object reaches the end of its lifetime. Registering a pool cleanup is a convenient way to release resources, close file descriptors or make final adjustments to the shared data associated with the main object.
+Des gestionnaires de nettoyage peuvent être enregistrés dans un pool. Un gestionnaire de nettoyage est une fonction de rappel avec un argument, appelée à la destruction du pool. Un pool est généralement lié à un objet nginx précis (comme une requête HTTP) et détruit quand l'objet arrive en fin de vie. Enregistrer un nettoyage de pool est un moyen pratique de libérer des ressources, fermer des descripteurs de fichiers ou apporter des ajustements finaux aux données partagées associées à l'objet principal.
 
-To register a pool cleanup, call `ngx_pool_cleanup_add(pool, size)`, which returns a `ngx_pool_cleanup_t` pointer to be filled in by the caller. Use the `size` argument to allocate context for the cleanup handler.
+Pour enregistrer un nettoyage de pool, appelez `ngx_pool_cleanup_add(pool, size)`, qui renvoie un pointeur `ngx_pool_cleanup_t` que l'appelant doit remplir. L'argument `size` permet d'allouer un contexte pour le gestionnaire de nettoyage.
 
 ```c
 ngx_pool_cleanup_t  *cln;
@@ -798,15 +798,15 @@ ngx_my_cleanup(void *data)
 }
 ```
 
-### Shared memory
+### Mémoire partagée
 
-Shared memory is used by nginx to share common data between processes. The `ngx_shared_memory_add(cf, name, size, tag)` function adds a new shared memory entry `ngx_shm_zone_t` to a cycle. The function receives the `name` and `size` of the zone. Each shared zone must have a unique name. If a shared zone entry with the provided `name` and `tag` already exists, the existing zone entry is reused. The function fails with an error if an existing entry with the same name has a different tag. Usually, the address of the module structure is passed as `tag`, making it possible to reuse shared zones by name within one nginx module.
+nginx utilise la mémoire partagée pour partager des données communes entre processus. La fonction `ngx_shared_memory_add(cf, name, size, tag)` ajoute une nouvelle entrée de mémoire partagée `ngx_shm_zone_t` à un cycle. Elle reçoit le `name` et la `size` de la zone. Chaque zone partagée doit avoir un nom unique. Si une entrée avec les mêmes `name` et `tag` existe déjà, elle est réutilisée. La fonction échoue si une entrée existante de même nom a un tag différent. On passe généralement l'adresse de la structure du module comme `tag`, ce qui permet de réutiliser les zones partagées par nom au sein d'un même module nginx.
 
-The shared memory entry structure `ngx_shm_zone_t` has the following fields:
+La structure d'entrée de mémoire partagée `ngx_shm_zone_t` a les champs suivants :
 
-- `init` — Initialization callback, called after the shared zone is mapped to actual memory
-- `data` — Data context, used to pass arbitrary data to the `init` callback
-- `noreuse` — Flag that disables reuse of a shared zone from the old cycle
+- `init` — Fonction de rappel d'initialisation, appelée une fois la zone partagée projetée en mémoire réelle
+- `data` — Contexte de données, utilisé pour passer des données arbitraires à la fonction de rappel `init`
+- `noreuse` — Indicateur qui désactive la réutilisation d'une zone partagée de l'ancien cycle
 - `tag` — Shared zone tag
 - `shm` — Platform-specific object of type `ngx_shm_t`, having at least the following fields:
 
@@ -1116,7 +1116,7 @@ The function `ngx_add_timer(ev, timer)` sets a timeout for an event, `ngx_del_ti
 
 An event can be posted which means that its handler will be called at some point later within the current event loop iteration. Posting events is a good practice for simplifying code and escaping stack overflows. Posted events are held in a post queue. The `ngx_post_event(ev, q)` macro posts the event `ev` to the post queue `q`. The `ngx_delete_posted_event(ev)` macro deletes the event `ev` from the queue it's currently posted in. Normally, events are posted to the `ngx_posted_events` queue, which is processed late in the event loop — after all I/O and timer events are already handled. The function `ngx_event_process_posted()` is called to process an event queue. It calls event handlers until the queue is empty. This means that a posted event handler can post more events to be processed within the current event loop iteration.
 
-An example:
+Exemple :
 
 ```c
 void
