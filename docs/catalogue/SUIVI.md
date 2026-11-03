@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 193 (15 %) | 663 | 2 | 453 (35 %) |
+| 1311 | 192 (15 %) | 663 | 3 | 453 (35 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -159,7 +159,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | --- | --- | --- | --- | --- |
 | NGINX | Serveur web et reverse proxy | Windows, Linux, macOS | ✅ existant | `05-web/03-nginx` |
 | HAProxy | Load balancer et proxy | Linux, BSD | ✅ existant | `07-proxy-cache/01-haproxy` |
-| Apache HTTP Server | Serveur web | Windows, Linux, macOS | ✅ existant | `05-web/02-apache` |
+| Apache HTTP Server | Serveur web | Windows, Linux, macOS | ✨ amélioré | `05-web/02-apache` |
 | Caddy | Serveur web et proxy TLS automatique | Windows, Linux, macOS | ✅ existant | `05-web/04-caddy` |
 | Traefik Proxy | Reverse proxy | Windows, Linux, macOS | ✅ existant | `07-proxy-cache/04-traefik` |
 | Envoy Proxy | Proxy L7 | Windows, Linux, macOS | 🆕 fait (lot 52) | `07-proxy-cache/07-envoy` |

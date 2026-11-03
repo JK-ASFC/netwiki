@@ -1801,11 +1801,11 @@
    "role": "Serveur web",
    "plateformes": "Windows, Linux, macOS",
    "section": 4,
-   "statut": "existant",
+   "statut": "ameliore",
    "wiki": "05-web/02-apache",
    "cible": "05-web",
    "lot": null,
-   "depot": null,
+   "depot": "apache/httpd",
    "eol": "apache-http-server"
   },
   {

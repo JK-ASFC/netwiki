@@ -82,6 +82,17 @@ Ne jamais insérer une image qui n'existe pas. Placer un **emplacement de captur
 - Encadrés : `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]`.
 - Liens internes : `[[NN-service/01-presentation-installation|Nom]]` ; dans un tableau, échapper la barre : `[[NN-service/01-presentation-installation\|Nom]]` (jamais de `|` non échappé dans une cellule, y compris dans du code : `\|`).
 
+## 5 bis. Documentation de référence complète d'un service
+
+Pour les services majeurs, la fiche peut être complétée par la **documentation officielle complète**, organisée en arborescence comme un navigateur de documentation : `Commandes`, `Guides`, `Modules`, `Directives` (ou l'équivalent du service). Exemple : Apache HTTP Server (`05-web/02-apache/10-commandes` … `13-directives`).
+
+- Partir des **sources** de la documentation officielle (dépôt Git, XML, Markdown), jamais d'une copie de site.
+- Vérifier la **licence** (Apache 2.0, CC BY…) et citer la source en pied de chaque page.
+- Prendre la **traduction française officielle** quand elle existe ; sinon reproduire le texte original et le signaler par un encadré.
+- Générer les pages avec un script versionné (`scripts/import-<service>-docs.py`) pour pouvoir les régénérer à chaque nouvelle version ; ne pas les modifier à la main.
+- Une page par élément (commande, module, directive), un sous-dossier par thème pour les guides, liens wiki entre les éléments (directive → module, module → directives, guide → directives).
+- Ajouter un renvoi vers ces sections dans la page de présentation du service et passer le statut du catalogue à `ameliore`.
+
 ## 6. Valider et enregistrer
 
 ```bash

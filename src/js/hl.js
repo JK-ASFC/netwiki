@@ -4,6 +4,7 @@
 import hljs from 'highlight.js/lib/core';
 import apache from 'highlight.js/lib/languages/apache';
 import bash from 'highlight.js/lib/languages/bash';
+import c from 'highlight.js/lib/languages/c';
 import csharp from 'highlight.js/lib/languages/csharp';
 import diff from 'highlight.js/lib/languages/diff';
 import groovy from 'highlight.js/lib/languages/groovy';
@@ -37,7 +38,7 @@ import sql from 'highlight.js/lib/languages/sql';
 import xml from 'highlight.js/lib/languages/xml';
 import yaml from 'highlight.js/lib/languages/yaml';
 
-const langs = { apache, bash, cmake, csharp, diff, dns, dockerfile, elixir, erlang, go, makefile, rust, groovy, ini, java, javascript, json, kotlin, lua, markdown, nginx, nix, perl, php, plaintext, powershell, properties, python, ruby, shell, sql, typescript, xml, yaml };
+const langs = { apache, bash, c, cmake, csharp, diff, dns, dockerfile, elixir, erlang, go, makefile, rust, groovy, ini, java, javascript, json, kotlin, lua, markdown, nginx, nix, perl, php, plaintext, powershell, properties, python, ruby, shell, sql, typescript, xml, yaml };
 for (const [name, def] of Object.entries(langs)) hljs.registerLanguage(name, def);
 
 function confLanguage(name, keywords, extraContains = []) {
