@@ -679,7 +679,7 @@ A new `Headers` object can be created with the following properties and methods:
 
   Sets a new value for an existing header inside the `Headers` object, or adds the header if it does not already exist (since 0.7.10).
 
-### Request
+### Requête
 
 |   |
 | --- |
@@ -757,7 +757,7 @@ A new `Request` object can be created with the following properties and methods:
 
   Contains the URL of the request.
 
-### Response
+### Réponse
 
 |   |
 | --- |
@@ -2079,7 +2079,7 @@ The `TextEncoder` object produces a byte stream with UTF-8 encoding from a strea
 
 ## built-in modules
 
-### Buffer
+### Tampon
 
 |   |
 | --- |

@@ -5,9 +5,6 @@ tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 ## Introduction
 
 ### API publique et privée
@@ -807,22 +804,22 @@ La structure d'entrée de mémoire partagée `ngx_shm_zone_t` a les champs suiva
 - `init` — Fonction de rappel d'initialisation, appelée une fois la zone partagée projetée en mémoire réelle
 - `data` — Contexte de données, utilisé pour passer des données arbitraires à la fonction de rappel `init`
 - `noreuse` — Indicateur qui désactive la réutilisation d'une zone partagée de l'ancien cycle
-- `tag` — Shared zone tag
-- `shm` — Platform-specific object of type `ngx_shm_t`, having at least the following fields:
+- `tag` — Tag de la zone partagée
+- `shm` — Objet propre à la plate-forme, de type `ngx_shm_t`, ayant au moins les champs suivants :
 
-  - `addr` — Mapped shared memory address, initially NULL
-  - `size` — Shared memory size
-  - `name` — Shared memory name
-  - `log` — Shared memory log
-  - `exists` — Flag that indicates shared memory was inherited from the master process (Windows-specific)
+  - `addr` — Adresse de la mémoire partagée projetée, NULL au départ
+  - `size` — Taille de la mémoire partagée
+  - `name` — Nom de la mémoire partagée
+  - `log` — Journal de la mémoire partagée
+  - `exists` — Indicateur signalant que la mémoire partagée a été héritée du processus maître (propre à Windows)
 
-Shared zone entries are mapped to actual memory in `ngx_init_cycle()` after the configuration is parsed. On POSIX systems, the `mmap()` syscall is used to create the shared anonymous mapping. On Windows, the `CreateFileMapping()`/ `MapViewOfFileEx()` pair is used.
+Les entrées de zones partagées sont projetées en mémoire réelle dans `ngx_init_cycle()`, après l'analyse de la configuration. Sur les systèmes POSIX, l'appel système `mmap()` crée la projection anonyme partagée. Sous Windows, c'est la paire `CreateFileMapping()`/ `MapViewOfFileEx()` qui est utilisée.
 
-For allocating in shared memory, nginx provides the slab pool `ngx_slab_pool_t` type. A slab pool for allocating memory is automatically created in each nginx shared zone. The pool is located in the beginning of the shared zone and can be accessed by the expression `(ngx_slab_pool_t *) shm_zone->shm.addr`. To allocate memory in a shared zone, call either `ngx_slab_alloc(pool, size)` or `ngx_slab_calloc(pool, size)`. To free memory, call `ngx_slab_free(pool, p)`.
+Pour allouer en mémoire partagée, nginx fournit le type de pool slab `ngx_slab_pool_t`. Un pool slab est créé automatiquement dans chaque zone partagée de nginx. Il se trouve au début de la zone et est accessible par l'expression `(ngx_slab_pool_t *) shm_zone->shm.addr`. Pour allouer de la mémoire dans une zone partagée, appelez `ngx_slab_alloc(pool, size)` ou `ngx_slab_calloc(pool, size)`. Pour la libérer, appelez `ngx_slab_free(pool, p)`.
 
-Slab pool divides all shared zone into pages. Each page is used for allocating objects of the same size. The specified size must be a power of 2, and greater than the minimum size of 8 bytes. Nonconforming values are rounded up. A bitmask for each page tracks which blocks are in use and which are free for allocation. For sizes greater than a half page (which is usually 2048 bytes), allocation is done an entire page at a time
+Le pool slab divise toute la zone partagée en pages. Chaque page sert à allouer des objets de même taille. La taille indiquée doit être une puissance de 2 supérieure à la taille minimale de 8 octets ; les valeurs non conformes sont arrondies au-dessus. Un masque de bits par page indique quels blocs sont utilisés et lesquels sont libres. Pour les tailles supérieures à une demi-page (généralement 2048 octets), l'allocation se fait page entière par page entière
 
-To protect data in shared memory from concurrent access, use the mutex available in the `mutex` field of `ngx_slab_pool_t`. A mutex is most commonly used by the slab pool while allocating and freeing memory, but it can be used to protect any other user data structures allocated in the shared zone. To lock or unlock a mutex, call `ngx_shmtx_lock(&shpool->mutex)` or `ngx_shmtx_unlock(&shpool->mutex)` respectively.
+Pour protéger les données en mémoire partagée contre les accès concurrents, utilisez le mutex disponible dans le champ `mutex` de `ngx_slab_pool_t`. Le mutex est surtout utilisé par le pool slab lors de l'allocation et de la libération, mais il peut protéger n'importe quelle autre structure de données utilisateur allouée dans la zone partagée. Pour verrouiller ou déverrouiller un mutex, appelez `ngx_shmtx_lock(&shpool->mutex)` ou `ngx_shmtx_unlock(&shpool->mutex)`.
 
 ```c
 ngx_str_t        name;
@@ -889,18 +886,18 @@ ngx_foo_init_zone(ngx_shm_zone_t *shm_zone, void *data)
 }
 ```
 
-## Logging
+## Journalisation
 
-For logging nginx uses `ngx_log_t` objects. The nginx logger supports several types of output:
+Pour journaliser, nginx utilise des objets `ngx_log_t`. Le journaliseur de nginx prend en charge plusieurs types de sortie :
 
-- stderr — Logging to standard error (stderr)
-- file — Logging to a file
-- syslog — Logging to syslog
-- memory — Logging to internal memory storage for development purposes; the memory can be accessed later with a debugger
+- stderr — Journalisation vers la sortie d'erreur standard (stderr)
+- file — Journalisation vers un fichier
+- syslog — Journalisation vers syslog
+- memory — Journalisation dans une zone mémoire interne, à des fins de développement ; la mémoire peut être consultée ensuite avec un débogueur
 
-A logger instance can be a chain of loggers, linked to each other with the `next` field. In this case, each message is written to all loggers in the chain.
+Une instance de journaliseur peut être une chaîne de journaliseurs reliés par le champ `next`. Chaque message est alors écrit dans tous les journaliseurs de la chaîne.
 
-For each logger, a severity level controls which messages are written to the log (only events assigned that level or higher are logged). The following severity levels are supported:
+Pour chaque journaliseur, un niveau de gravité détermine les messages écrits dans le journal (seuls les événements de ce niveau ou d'un niveau supérieur sont journalisés). Niveaux de gravité pris en charge :
 
 - `NGX_LOG_EMERG`
 - `NGX_LOG_ALERT`
@@ -911,7 +908,7 @@ For each logger, a severity level controls which messages are written to the log
 - `NGX_LOG_INFO`
 - `NGX_LOG_DEBUG`
 
-For debug logging, the debug mask is checked as well. The debug masks are:
+Pour la journalisation de débogage, le masque de débogage est aussi vérifié. Masques de débogage :
 
 - `NGX_LOG_DEBUG_CORE`
 - `NGX_LOG_DEBUG_ALLOC`
@@ -921,14 +918,14 @@ For debug logging, the debug mask is checked as well. The debug masks are:
 - `NGX_LOG_DEBUG_MAIL`
 - `NGX_LOG_DEBUG_STREAM`
 
-Normally, loggers are created by existing nginx code from `error_log` directives and are available at nearly every stage of processing in cycle, configuration, client connection and other objects.
+Normalement, les journaliseurs sont créés par le code existant de nginx à partir des directives `error_log` et sont disponibles à presque toutes les étapes du traitement, dans le cycle, la configuration, la connexion client et d'autres objets.
 
-Nginx provides the following logging macros:
+nginx fournit les macros de journalisation suivantes :
 
-- `ngx_log_error(level, log, err, fmt, ...)` — Error logging
-- `ngx_log_debug0(level, log, err, fmt)`, `ngx_log_debug1(level, log, err, fmt, arg1)` etc — Debug logging with up to eight supported formatting arguments
+- `ngx_log_error(level, log, err, fmt, ...)` — Journalisation des erreurs
+- `ngx_log_debug0(level, log, err, fmt)`, `ngx_log_debug1(level, log, err, fmt, arg1)`, etc. — Journalisation de débogage avec jusqu'à huit arguments de formatage
 
-A log message is formatted in a buffer of size `NGX_MAX_ERROR_STR` (currently, 2048 bytes) on stack. The message is prepended with the severity level, process ID (PID), connection ID (stored in `log->connection`), and the system error text. For non-debug messages `log->handler` is called as well to prepend more specific information to the log message. HTTP module sets `ngx_http_log_error()` function as log handler to log client and server addresses, current action (stored in `log->action`), client request line, server name etc.
+Un message de journal est formaté dans un tampon de taille `NGX_MAX_ERROR_STR` (actuellement 2048 octets) sur la pile. Il est précédé du niveau de gravité, de l'identifiant de processus (PID), de l'identifiant de connexion (stocké dans `log->connection`) et du texte de l'erreur système. Pour les messages hors débogage, `log->handler` est aussi appelé pour ajouter en tête des informations plus spécifiques. Le module HTTP définit la fonction `ngx_http_log_error()` comme gestionnaire de journal, pour consigner les adresses du client et du serveur, l'action en cours (stockée dans `log->action`), la ligne de requête du client, le nom du serveur, etc.
 
 ```c
 /* specify what is currently done */
@@ -942,7 +939,7 @@ ngx_log_debug2(NGX_LOG_DEBUG_HTTP, mp4->file.log, 0,
                "mp4 start:%ui, length:%ui", mp4->start, mp4->length);
 ```
 
-The example above results in log entries like these:
+L'exemple ci-dessus produit des entrées de journal comme celles-ci :
 
 ```
 2016/09/16 22:08:52 [info] 17445#0: *1 client prematurely closed connection while
@@ -952,52 +949,52 @@ sending mp4 to client, client: 127.0.0.1, server: , request: "GET /file.mp4 HTTP
 
 ## Cycle
 
-A cycle object stores the nginx runtime context created from a specific configuration. Its type is `ngx_cycle_t`. The current cycle is referenced by the `ngx_cycle` global variable and inherited by nginx workers as they start. Each time the nginx configuration is reloaded, a new cycle is created from the new nginx configuration; the old cycle is usually deleted after the new one is successfully created.
+Un objet cycle stocke le contexte d'exécution de nginx créé à partir d'une configuration donnée. Son type est `ngx_cycle_t`. Le cycle courant est référencé par la variable globale `ngx_cycle` et hérité par les processus de travail à leur démarrage. À chaque rechargement de la configuration, un nouveau cycle est créé à partir de la nouvelle configuration ; l'ancien est généralement supprimé une fois le nouveau créé avec succès.
 
-A cycle is created by the `ngx_init_cycle()` function, which takes the previous cycle as its argument. The function locates the previous cycle's configuration file and inherits as many resources as possible from the previous cycle. A placeholder cycle called "init cycle" is created as nginx start, then is replaced by an actual cycle built from configuration.
+Un cycle est créé par la fonction `ngx_init_cycle()`, qui prend le cycle précédent en argument. Elle localise le fichier de configuration du cycle précédent et hérite d'autant de ressources que possible de celui-ci. Un cycle provisoire appelé « init cycle » est créé au démarrage de nginx, puis remplacé par un vrai cycle construit à partir de la configuration.
 
-Members of the cycle include:
+Membres du cycle :
 
-- `pool` — Cycle pool. Created for each new cycle.
-- `log` — Cycle log. Initially inherited from the old cycle, it is set to point to `new_log` after the configuration is read.
-- `new_log` — Cycle log, created by the configuration. It's affected by the root-scope `error_log` directive.
-- `connections`, `connection_n` — Array of connections of type `ngx_connection_t`, created by the event module while initializing each nginx worker. The `worker_connections` directive in the nginx configuration sets the number of connections `connection_n`.
-- `free_connections`, `free_connection_n` — List and number of currently available connections. If no connections are available, an nginx worker refuses to accept new clients or connect to upstream servers.
-- `files`, `files_n` — Array for mapping file descriptors to nginx connections. This mapping is used by the event modules, having the `NGX_USE_FD_EVENT` flag (currently, it's `poll` and `devpoll`).
-- `conf_ctx` — Array of core module configurations. The configurations are created and filled during reading of nginx configuration files.
-- `modules`, `modules_n` — Array of modules of type `ngx_module_t`, both static and dynamic, loaded by the current configuration.
-- `listening` — Array of listening objects of type `ngx_listening_t`. Listening objects are normally added by the `listen` directive of different modules which call the `ngx_create_listening()` function. Listen sockets are created based on the listening objects.
-- `paths` — Array of paths of type `ngx_path_t`. Paths are added by calling the function `ngx_add_path()` from modules which are going to operate on certain directories. These directories are created by nginx after reading configuration, if missing. Moreover, two handlers can be added for each path:
+- `pool` — Pool du cycle. Créé pour chaque nouveau cycle.
+- `log` — Journal du cycle. Hérité au départ de l'ancien cycle, il pointe vers `new_log` après la lecture de la configuration.
+- `new_log` — Journal du cycle, créé par la configuration. Il dépend de la directive `error_log` de portée racine.
+- `connections`, `connection_n` — Tableau de connexions de type `ngx_connection_t`, créé par le module d'événements à l'initialisation de chaque processus de travail. La directive `worker_connections` de la configuration fixe le nombre de connexions `connection_n`.
+- `free_connections`, `free_connection_n` — Liste et nombre de connexions actuellement disponibles. S'il n'y en a plus, le processus de travail refuse d'accepter de nouveaux clients ou de se connecter aux serveurs amont.
+- `files`, `files_n` — Tableau associant les descripteurs de fichiers aux connexions nginx. Cette association est utilisée par les modules d'événements ayant l'indicateur `NGX_USE_FD_EVENT` (actuellement `poll` et `devpoll`).
+- `conf_ctx` — Tableau des configurations des modules du cœur. Les configurations sont créées et remplies pendant la lecture des fichiers de configuration.
+- `modules`, `modules_n` — Tableau des modules de type `ngx_module_t`, statiques comme dynamiques, chargés par la configuration courante.
+- `listening` — Tableau d'objets d'écoute de type `ngx_listening_t`. Ces objets sont normalement ajoutés par la directive `listen` de différents modules, qui appellent la fonction `ngx_create_listening()`. Les sockets d'écoute sont créées à partir de ces objets.
+- `paths` — Tableau de chemins de type `ngx_path_t`. Les chemins sont ajoutés en appelant la fonction `ngx_add_path()` depuis les modules qui vont travailler sur certains répertoires. nginx crée ces répertoires après la lecture de la configuration s'ils n'existent pas. Deux gestionnaires peuvent en outre être ajoutés pour chaque chemin :
 
-  - path loader — Executes only once in 60 seconds after starting or reloading nginx. Normally, the loader reads the directory and stores data in nginx shared memory. The handler is called from the dedicated nginx process “nginx cache loader”.
-  - path manager — Executes periodically. Normally, the manager removes old files from the directory and updates nginx memory to reflect the changes. The handler is called from the dedicated “nginx cache manager” process.
-- `open_files` — List of open file objects of type `ngx_open_file_t`, which are created by calling the function `ngx_conf_open_file()`. Currently, nginx uses this kind of open files for logging. After reading the configuration, nginx opens all files in the `open_files` list and stores each file descriptor in the object's `fd` field. The files are opened in append mode and are created if missing. The files in the list are reopened by nginx workers upon receiving the reopen signal (most often `USR1`). In this case the descriptor in the `fd` field is changed to a new value.
-- `shared_memory` — List of shared memory zones, each added by calling the `ngx_shared_memory_add()` function. Shared zones are mapped to the same address range in all nginx processes and are used to share common data, for example the HTTP cache in-memory tree.
+  - chargeur de chemin — S'exécute une seule fois, 60 secondes après le démarrage ou le rechargement de nginx. Normalement, il lit le répertoire et stocke des données en mémoire partagée. Il est appelé depuis le processus dédié « nginx cache loader ».
+  - gestionnaire de chemin — S'exécute périodiquement. Normalement, il supprime les anciens fichiers du répertoire et met à jour la mémoire de nginx en conséquence. Il est appelé depuis le processus dédié « nginx cache manager ».
+- `open_files` — Liste d'objets fichier ouvert de type `ngx_open_file_t`, créés en appelant la fonction `ngx_conf_open_file()`. nginx utilise actuellement ce type de fichiers ouverts pour la journalisation. Après la lecture de la configuration, nginx ouvre tous les fichiers de la liste `open_files` et stocke chaque descripteur dans le champ `fd` de l'objet. Les fichiers sont ouverts en mode ajout et créés s'ils n'existent pas. Ils sont rouverts par les processus de travail à la réception du signal de réouverture (le plus souvent `USR1`) ; le descripteur du champ `fd` prend alors une nouvelle valeur.
+- `shared_memory` — Liste des zones de mémoire partagée, chacune ajoutée en appelant la fonction `ngx_shared_memory_add()`. Les zones partagées sont projetées sur la même plage d'adresses dans tous les processus nginx et servent à partager des données communes, par exemple l'arbre en mémoire du cache HTTP.
 
-## Buffer
+## Tampon
 
-For input/output operations, nginx provides the buffer type `ngx_buf_t`. Normally, it's used to hold data to be written to a destination or read from a source. A buffer can reference data in memory or in a file and it's technically possible for a buffer to reference both at the same time. Memory for the buffer is allocated separately and is not related to the buffer structure `ngx_buf_t`.
+Pour les opérations d'entrée/sortie, nginx fournit le type tampon `ngx_buf_t`. Il contient normalement des données à écrire vers une destination ou lues depuis une source. Un tampon peut référencer des données en mémoire ou dans un fichier, et techniquement les deux à la fois. La mémoire du tampon est allouée séparément et n'est pas liée à la structure `ngx_buf_t`.
 
-The `ngx_buf_t` structure has the following fields:
+La structure `ngx_buf_t` a les champs suivants :
 
-- `start`, `end` — The boundaries of the memory block allocated for the buffer.
-- `pos`, `last` — The boundaries of the memory buffer; normally a subrange of `start` .. `end`.
-- `file_pos`, `file_last` — The boundaries of a file buffer, expressed as offsets from the beginning of the file.
-- `tag` — Unique value used to distinguish buffers; created by different nginx modules, usually for the purpose of buffer reuse.
-- `file` — File object.
-- `temporary` — Flag indicating that the buffer references writable memory.
-- `memory` — Flag indicating that the buffer references read-only memory.
-- `in_file` — Flag indicating that the buffer references data in a file.
-- `flush` — Flag indicating that all data prior to the buffer need to be flushed.
-- `recycled` — Flag indicating that the buffer can be reused and needs to be consumed as soon as possible.
-- `sync` — Flag indicating that the buffer carries no data or special signal like `flush` or `last_buf`. By default nginx considers such buffers an error condition, but this flag tells nginx to skip the error check.
-- `last_buf` — Flag indicating that the buffer is the last in output.
-- `last_in_chain` — Flag indicating that there are no more data buffers in a request or subrequest.
-- `shadow` — Reference to another ("shadow") buffer related to the current buffer, usually in the sense that the buffer uses data from the shadow. When the buffer is consumed, the shadow buffer is normally also marked as consumed.
-- `last_shadow` — Flag indicating that the buffer is the last one that references a particular shadow buffer.
-- `temp_file` — Flag indicating that the buffer is in a temporary file.
+- `start`, `end` — Limites du bloc mémoire alloué au tampon.
+- `pos`, `last` — Limites du tampon mémoire ; normalement une sous-plage de `start` .. `end`.
+- `file_pos`, `file_last` — Limites d'un tampon fichier, exprimées en décalages depuis le début du fichier.
+- `tag` — Valeur unique servant à distinguer les tampons ; créée par différents modules nginx, généralement pour réutiliser les tampons.
+- `file` — Objet fichier.
+- `temporary` — Indique que le tampon référence de la mémoire modifiable.
+- `memory` — Indique que le tampon référence de la mémoire en lecture seule.
+- `in_file` — Indique que le tampon référence des données dans un fichier.
+- `flush` — Indique que toutes les données précédant le tampon doivent être vidées.
+- `recycled` — Indique que le tampon peut être réutilisé et doit être consommé au plus vite.
+- `sync` — Indique que le tampon ne porte pas de données ni de signal spécial comme `flush` ou `last_buf`. Par défaut, nginx considère de tels tampons comme une erreur, mais cet indicateur lui demande de sauter la vérification.
+- `last_buf` — Indique que le tampon est le dernier de la sortie.
+- `last_in_chain` — Indique qu'il n'y a plus de tampons de données dans une requête ou une sous-requête.
+- `shadow` — Référence vers un autre tampon (« ombre ») lié au tampon courant, généralement au sens où celui-ci utilise les données de l'ombre. Quand le tampon est consommé, l'ombre est normalement marquée comme consommée elle aussi.
+- `last_shadow` — Indique que le tampon est le dernier à référencer un tampon ombre donné.
+- `temp_file` — Indique que le tampon se trouve dans un fichier temporaire.
 
-For input and output operations buffers are linked in chains. A chain is a sequence of chain links of type `ngx_chain_t`, defined as follows:
+Pour les opérations d'entrée et de sortie, les tampons sont reliés en chaînes. Une chaîne est une suite de maillons de type `ngx_chain_t`, défini ainsi :
 
 ```c
 typedef struct ngx_chain_s  ngx_chain_t;
@@ -1008,9 +1005,9 @@ struct ngx_chain_s {
 };
 ```
 
-Each chain link keeps a reference to its buffer and a reference to the next chain link.
+Chaque maillon conserve une référence vers son tampon et une référence vers le maillon suivant.
 
-An example of using buffers and chains:
+Exemple d'utilisation des tampons et des chaînes :
 
 ```c
 ngx_chain_t *
@@ -1053,68 +1050,68 @@ ngx_get_my_chain(ngx_pool_t *pool)
 }
 ```
 
-## Networking
+## Réseau
 
-### Connection
+### Connexion
 
-The connection type `ngx_connection_t` is a wrapper around a socket descriptor. It includes the following fields:
+Le type connexion `ngx_connection_t` enrobe un descripteur de socket. Il comprend les champs suivants :
 
-- `fd` — Socket descriptor
-- `data` — Arbitrary connection context. Normally, it is a pointer to a higher-level object built on top of the connection, such as an HTTP request or a Stream session.
-- `read`, `write` — Read and write events for the connection.
-- `recv`, `send`, `recv_chain`, `send_chain` — I/O operations for the connection.
-- `pool` — Connection pool.
-- `log` — Connection log.
-- `sockaddr`, `socklen`, `addr_text` — Remote socket address in binary and text forms.
-- `local_sockaddr`, `local_socklen` — Local socket address in binary form. Initially, these fields are empty. Use the `ngx_connection_local_sockaddr()` function to get the local socket address.
-- `proxy_protocol_addr`, `proxy_protocol_port` - PROXY protocol client address and port, if the PROXY protocol is enabled for the connection.
-- `ssl` — SSL context for the connection.
-- `reusable` — Flag indicating the connection is in a state that makes it eligible for reuse.
-- `close` — Flag indicating that the connection is being reused and needs to be closed.
+- `fd` — Descripteur de socket
+- `data` — Contexte arbitraire de la connexion. Normalement, un pointeur vers un objet de plus haut niveau construit sur la connexion, comme une requête HTTP ou une session Stream.
+- `read`, `write` — Événements de lecture et d'écriture de la connexion.
+- `recv`, `send`, `recv_chain`, `send_chain` — Opérations d'E/S de la connexion.
+- `pool` — Pool de la connexion.
+- `log` — Journal de la connexion.
+- `sockaddr`, `socklen`, `addr_text` — Adresse de la socket distante, sous forme binaire et textuelle.
+- `local_sockaddr`, `local_socklen` — Adresse de la socket locale sous forme binaire. Ces champs sont vides au départ. Utilisez la fonction `ngx_connection_local_sockaddr()` pour obtenir l'adresse locale.
+- `proxy_protocol_addr`, `proxy_protocol_port` - Adresse et port du client fournis par le protocole PROXY, s'il est activé pour la connexion.
+- `ssl` — Contexte SSL de la connexion.
+- `reusable` — Indique que la connexion est dans un état qui la rend réutilisable.
+- `close` — Indique que la connexion est en cours de réutilisation et doit être fermée.
 
-An nginx connection can transparently encapsulate the SSL layer. In this case the connection's `ssl` field holds a pointer to an `ngx_ssl_connection_t` structure, keeping all SSL-related data for the connection, including `SSL_CTX` and `SSL`. The `recv`, `send`, `recv_chain`, and `send_chain` handlers are set to SSL-enabled functions as well.
+Une connexion nginx peut encapsuler la couche SSL de façon transparente. Le champ `ssl` contient alors un pointeur vers une structure `ngx_ssl_connection_t` qui conserve toutes les données SSL de la connexion, dont `SSL_CTX` et `SSL`. Les gestionnaires `recv`, `send`, `recv_chain` et `send_chain` pointent alors aussi vers des fonctions compatibles SSL.
 
-The `worker_connections` directive in the nginx configuration limits the number of connections per nginx worker. All connection structures are precreated when a worker starts and stored in the `connections` field of the cycle object. To retrieve a connection structure, use the `ngx_get_connection(s, log)` function. It takes as its `s` argument a socket descriptor, which needs to be wrapped in a connection structure.
+La directive `worker_connections` limite le nombre de connexions par processus de travail. Toutes les structures de connexion sont créées à l'avance au démarrage du processus et stockées dans le champ `connections` de l'objet cycle. Pour obtenir une structure de connexion, utilisez la fonction `ngx_get_connection(s, log)`. Elle prend en argument `s` un descripteur de socket, qui doit être enrobé dans une structure de connexion.
 
-Because the number of connections per worker is limited, nginx provides a way to grab connections that are currently in use. To enable or disable reuse of a connection, call the `ngx_reusable_connection(c, reusable)` function. Calling `ngx_reusable_connection(c, 1)` sets the `reuse` flag in the connection structure and inserts the connection into the `reusable_connections_queue` of the cycle. Whenever `ngx_get_connection()` finds out there are no available connections in the cycle's `free_connections` list, it calls `ngx_drain_connections()` to release a specific number of reusable connections. For each such connection, the `close` flag is set and its read handler is called which is supposed to free the connection by calling `ngx_close_connection(c)` and make it available for reuse. To exit the state when a connection can be reused `ngx_reusable_connection(c, 0)` is called. HTTP client connections are an example of reusable connections in nginx; they are marked as reusable until the first request byte is received from the client.
+Comme le nombre de connexions par processus est limité, nginx permet de récupérer des connexions en cours d'utilisation. Pour activer ou désactiver la réutilisation d'une connexion, appelez la fonction `ngx_reusable_connection(c, reusable)`. L'appel `ngx_reusable_connection(c, 1)` positionne l'indicateur `reuse` dans la structure de connexion et insère la connexion dans la file `reusable_connections_queue` du cycle. Quand `ngx_get_connection()` constate qu'il n'y a plus de connexion disponible dans la liste `free_connections` du cycle, elle appelle `ngx_drain_connections()` pour libérer un certain nombre de connexions réutilisables. Pour chacune, l'indicateur `close` est positionné et son gestionnaire de lecture est appelé ; celui-ci doit libérer la connexion en appelant `ngx_close_connection(c)` et la rendre disponible. Pour sortir de l'état réutilisable, on appelle `ngx_reusable_connection(c, 0)`. Les connexions client HTTP sont un exemple de connexions réutilisables : elles sont marquées comme telles jusqu'à la réception du premier octet de requête.
 
-## Events
+## Événements
 
-### Event
+### Événement
 
-Event object `ngx_event_t` in nginx provides a mechanism for notification that a specific event has occurred.
+L'objet événement `ngx_event_t` fournit un mécanisme de notification de la survenue d'un événement précis.
 
-Fields in `ngx_event_t` include:
+Champs de `ngx_event_t` :
 
-- `data` — Arbitrary event context used in event handlers, usually as pointer to a connection related to the event.
-- `handler` — Callback function to be invoked when the event happens.
-- `write` — Flag indicating a write event. Absence of the flag indicates a read event.
-- `active` — Flag indicating that the event is registered for receiving I/O notifications, normally from notification mechanisms like `epoll`, `kqueue`, `poll`.
-- `ready` — Flag indicating that the event has received an I/O notification.
-- `delayed` — Flag indicating that I/O is delayed due to rate limiting.
-- `timer` — Red-black tree node for inserting the event into the timer tree.
-- `timer_set` — Flag indicating that the event timer is set and not yet expired.
-- `timedout` — Flag indicating that the event timer has expired.
-- `eof` — Flag indicating that EOF occurred while reading data.
-- `pending_eof` — Flag indicating that EOF is pending on the socket, even though there may be some data available before it. The flag is delivered via the `EPOLLRDHUP` `epoll` event or `EV_EOF` `kqueue` flag.
-- `error` — Flag indicating that an error occurred during reading (for a read event) or writing (for a write event).
-- `cancelable` — Timer event flag indicating that the event should be ignored while shutting down the worker. Graceful worker shutdown is delayed until there are no non-cancelable timer events scheduled.
-- `posted` — Flag indicating that the event is posted to a queue.
-- `queue` — Queue node for posting the event to a queue.
+- `data` — Contexte arbitraire de l'événement, utilisé dans les gestionnaires, généralement un pointeur vers la connexion concernée.
+- `handler` — Fonction de rappel appelée quand l'événement se produit.
+- `write` — Indique un événement d'écriture. Son absence indique un événement de lecture.
+- `active` — Indique que l'événement est enregistré pour recevoir des notifications d'E/S, normalement de mécanismes comme `epoll`, `kqueue`, `poll`.
+- `ready` — Indique que l'événement a reçu une notification d'E/S.
+- `delayed` — Indique que l'E/S est retardée à cause d'une limitation de débit.
+- `timer` — Nœud d'arbre rouge-noir pour insérer l'événement dans l'arbre des minuteurs.
+- `timer_set` — Indique que le minuteur de l'événement est armé et n'a pas encore expiré.
+- `timedout` — Indique que le minuteur de l'événement a expiré.
+- `eof` — Indique qu'une fin de fichier (EOF) a été rencontrée lors de la lecture.
+- `pending_eof` — Indique qu'une fin de fichier est en attente sur la socket, même si des données peuvent encore la précéder. L'indicateur est fourni par l'événement `epoll` `EPOLLRDHUP` ou l'indicateur `kqueue` `EV_EOF`.
+- `error` — Indique qu'une erreur s'est produite pendant la lecture (événement de lecture) ou l'écriture (événement d'écriture).
+- `cancelable` — Indicateur d'événement minuteur signalant que l'événement doit être ignoré pendant l'arrêt du processus de travail. L'arrêt propre est retardé tant que des événements minuteurs non annulables sont programmés.
+- `posted` — Indique que l'événement est posté dans une file.
+- `queue` — Nœud de file pour poster l'événement dans une file.
 
-### I/O events
+### Événements d'E/S
 
-Each connection obtained by calling the `ngx_get_connection()` function has two attached events, `c->read` and `c->write`, which are used for receiving notification that the socket is ready for reading or writing. All such events operate in Edge-Triggered mode, meaning that they only trigger notifications when the state of the socket changes. For example, doing a partial read on a socket does not make nginx deliver a repeated read notification until more data arrives on the socket. Even when the underlying I/O notification mechanism is essentially Level-Triggered (`poll`, `select` etc), nginx converts the notifications to Edge-Triggered. To make nginx event notifications consistent across all notifications systems on different platforms, the functions `ngx_handle_read_event(rev, flags)` and `ngx_handle_write_event(wev, lowat)` must be called after handling an I/O socket notification or calling any I/O functions on that socket. Normally, the functions are called once at the end of each read or write event handler.
+Chaque connexion obtenue par `ngx_get_connection()` a deux événements associés, `c->read` et `c->write`, qui servent à être notifié que la socket est prête en lecture ou en écriture. Tous ces événements fonctionnent en mode déclenché sur front (Edge-Triggered) : ils ne notifient que lors d'un changement d'état de la socket. Par exemple, une lecture partielle ne provoque pas de nouvelle notification de lecture tant que d'autres données n'arrivent pas. Même quand le mécanisme sous-jacent est déclenché sur niveau (`poll`, `select`, etc.), nginx convertit les notifications en mode sur front. Pour que les notifications soient cohérentes entre tous les systèmes de notification des différentes plates-formes, les fonctions `ngx_handle_read_event(rev, flags)` et `ngx_handle_write_event(wev, lowat)` doivent être appelées après le traitement d'une notification d'E/S ou l'appel de toute fonction d'E/S sur la socket. Normalement, elles sont appelées une fois à la fin de chaque gestionnaire d'événement de lecture ou d'écriture.
 
-### Timer events
+### Événements minuteurs
 
-An event can be set to send a notification when a timeout expires. The timer used by events counts milliseconds since some unspecified point in the past truncated to `ngx_msec_t` type. Its current value can be obtained from the `ngx_current_msec` variable.
+Un événement peut être configuré pour notifier l'expiration d'un délai. Le minuteur des événements compte les millisecondes depuis un instant passé non spécifié, tronqué au type `ngx_msec_t`. Sa valeur courante est disponible dans la variable `ngx_current_msec`.
 
-The function `ngx_add_timer(ev, timer)` sets a timeout for an event, `ngx_del_timer(ev)` deletes a previously set timeout. The global timeout red-black tree `ngx_event_timer_rbtree` stores all timeouts currently set. The key in the tree is of type `ngx_msec_t` and is the time when the event occurs. The tree structure enables fast insertion and deletion operations, as well as access to the nearest timeouts, which nginx uses to find out how long to wait for I/O events and for expiring timeout events.
+La fonction `ngx_add_timer(ev, timer)` arme un délai pour un événement, `ngx_del_timer(ev)` supprime un délai armé auparavant. L'arbre rouge-noir global `ngx_event_timer_rbtree` stocke tous les délais armés. La clé de l'arbre est de type `ngx_msec_t` et correspond à l'instant de survenue de l'événement. Cette structure permet des insertions et suppressions rapides, ainsi qu'un accès aux délais les plus proches, que nginx utilise pour savoir combien de temps attendre les événements d'E/S et faire expirer les événements minuteurs.
 
-### Posted events
+### Événements postés
 
-An event can be posted which means that its handler will be called at some point later within the current event loop iteration. Posting events is a good practice for simplifying code and escaping stack overflows. Posted events are held in a post queue. The `ngx_post_event(ev, q)` macro posts the event `ev` to the post queue `q`. The `ngx_delete_posted_event(ev)` macro deletes the event `ev` from the queue it's currently posted in. Normally, events are posted to the `ngx_posted_events` queue, which is processed late in the event loop — after all I/O and timer events are already handled. The function `ngx_event_process_posted()` is called to process an event queue. It calls event handlers until the queue is empty. This means that a posted event handler can post more events to be processed within the current event loop iteration.
+Un événement peut être posté, c'est-à-dire que son gestionnaire sera appelé plus tard dans l'itération courante de la boucle d'événements. Poster des événements est une bonne pratique pour simplifier le code et éviter les débordements de pile. Les événements postés sont conservés dans une file. La macro `ngx_post_event(ev, q)` poste l'événement `ev` dans la file `q`. La macro `ngx_delete_posted_event(ev)` retire l'événement `ev` de la file où il est posté. Normalement, les événements sont postés dans la file `ngx_posted_events`, traitée tard dans la boucle — après tous les événements d'E/S et de minuteurs. La fonction `ngx_event_process_posted()` traite une file d'événements : elle appelle les gestionnaires jusqu'à ce que la file soit vide. Un gestionnaire d'événement posté peut donc poster d'autres événements à traiter dans l'itération courante.
 
 Exemple :
 
@@ -1161,44 +1158,44 @@ ngx_my_read_handler(ngx_event_t *rev)
 }
 ```
 
-### Event loop
+### Boucle d'événements
 
-Except for the nginx master process, all nginx processes do I/O and so have an event loop. (The nginx master process instead spends most of its time in the `sigsuspend()` call waiting for signals to arrive.) The nginx event loop is implemented in the `ngx_process_events_and_timers()` function, which is called repeatedly until the process exits.
+À part le processus maître, tous les processus nginx font des E/S et ont donc une boucle d'événements. (Le processus maître passe l'essentiel de son temps dans l'appel `sigsuspend()` à attendre des signaux.) La boucle d'événements est mise en œuvre dans la fonction `ngx_process_events_and_timers()`, appelée en boucle jusqu'à la fin du processus.
 
-The event loop has the following stages:
+La boucle d'événements comporte les étapes suivantes :
 
-- Find the timeout that is closest to expiring, by calling `ngx_event_find_timer()`. This function finds the leftmost node in the timer tree and returns the number of milliseconds until the node expires.
-- Process I/O events by calling a handler, specific to the event notification mechanism, chosen by nginx configuration. This handler waits for at least one I/O event to happen, but only until the next timeout expires. When a read or write event occurs, the `ready` flag is set and the event's handler is called. For Linux, the `ngx_epoll_process_events()` handler is normally used, which calls `epoll_wait()` to wait for I/O events.
-- Expire timers by calling `ngx_event_expire_timers()`. The timer tree is iterated from the leftmost element to the right until an unexpired timeout is found. For each expired node the `timedout` event flag is set, the `timer_set` flag is reset, and the event handler is called
-- Process posted events by calling `ngx_event_process_posted()`. The function repeatedly removes the first element from the posted events queue and calls the element's handler, until the queue is empty.
+- Trouver le délai le plus proche de l'expiration en appelant `ngx_event_find_timer()`. Cette fonction trouve le nœud le plus à gauche de l'arbre des minuteurs et renvoie le nombre de millisecondes avant son expiration.
+- Traiter les événements d'E/S en appelant un gestionnaire propre au mécanisme de notification choisi par la configuration. Ce gestionnaire attend au moins un événement d'E/S, mais seulement jusqu'à l'expiration du prochain délai. Quand un événement de lecture ou d'écriture survient, l'indicateur `ready` est positionné et le gestionnaire de l'événement est appelé. Sous Linux, c'est normalement le gestionnaire `ngx_epoll_process_events()` qui est utilisé ; il appelle `epoll_wait()` pour attendre les événements d'E/S.
+- Faire expirer les minuteurs en appelant `ngx_event_expire_timers()`. L'arbre des minuteurs est parcouru de l'élément le plus à gauche vers la droite jusqu'à trouver un délai non expiré. Pour chaque nœud expiré, l'indicateur `timedout` est positionné, l'indicateur `timer_set` est remis à zéro et le gestionnaire de l'événement est appelé
+- Traiter les événements postés en appelant `ngx_event_process_posted()`. La fonction retire successivement le premier élément de la file des événements postés et appelle son gestionnaire, jusqu'à ce que la file soit vide.
 
-All nginx processes handle signals as well. Signal handlers only set global variables which are checked after the `ngx_process_events_and_timers()` call.
+Tous les processus nginx gèrent aussi les signaux. Les gestionnaires de signaux ne font que positionner des variables globales, vérifiées après l'appel à `ngx_process_events_and_timers()`.
 
-## Processes
+## Processus
 
-There are several types of processes in nginx. The type of a process is kept in the `ngx_process` global variable, and is one of the following:
+nginx comporte plusieurs types de processus. Le type d'un processus est conservé dans la variable globale `ngx_process` et vaut l'une des valeurs suivantes :
 
-- `NGX_PROCESS_MASTER` — The master process, which reads the NGINX configuration, creates cycles, and starts and controls child processes. It does not perform any I/O and responds only to signals. Its cycle function is `ngx_master_process_cycle()`.
-- `NGX_PROCESS_WORKER` — The worker process, which handles client connections. It is started by the master process and responds to its signals and channel commands as well. Its cycle function is `ngx_worker_process_cycle()`. There can be multiple worker processes, as configured by the `worker_processes` directive.
-- `NGX_PROCESS_SINGLE` — The single process, which exists only in `master_process off` mode, and is the only process running in that mode. It creates cycles (like the master process does) and handles client connections (like the worker process does). Its cycle function is `ngx_single_process_cycle()`.
-- `NGX_PROCESS_HELPER` — The helper process, of which currently there are two types: cache manager and cache loader. The cycle function for both is `ngx_cache_manager_process_cycle()`.
+- `NGX_PROCESS_MASTER` — Le processus maître, qui lit la configuration de NGINX, crée les cycles, démarre et contrôle les processus fils. Il ne fait aucune E/S et ne répond qu'aux signaux. Sa fonction de cycle est `ngx_master_process_cycle()`.
+- `NGX_PROCESS_WORKER` — Le processus de travail, qui traite les connexions client. Il est démarré par le processus maître et répond à ses signaux et à ses commandes de canal. Sa fonction de cycle est `ngx_worker_process_cycle()`. Il peut y avoir plusieurs processus de travail, selon la directive `worker_processes`.
+- `NGX_PROCESS_SINGLE` — Le processus unique, qui n'existe qu'en mode `master_process off` et y est le seul processus. Il crée les cycles (comme le maître) et traite les connexions client (comme un processus de travail). Sa fonction de cycle est `ngx_single_process_cycle()`.
+- `NGX_PROCESS_HELPER` — Le processus auxiliaire, dont il existe actuellement deux types : gestionnaire de cache et chargeur de cache. Leur fonction de cycle commune est `ngx_cache_manager_process_cycle()`.
 
-The nginx processes handle the following signals:
+Les processus nginx gèrent les signaux suivants :
 
-- `NGX_SHUTDOWN_SIGNAL` (`SIGQUIT` on most systems) — Gracefully shutdown. Upon receiving this signal, the master process sends a shutdown signal to all child processes. When no child processes are left, the master destroys the cycle pool and exits. When a worker process receives this signal, it closes all listening sockets and waits until there are no non-cancelable events scheduled, then destroys the cycle pool and exits. When the cache manager or the cache loader process receives this signal, it exits immediately. The `ngx_quit` variable is set to `1` when a process receives this signal, and is immediately reset after being processed. The `ngx_exiting` variable is set to `1` while a worker process is in the shutdown state.
-- `NGX_TERMINATE_SIGNAL` (`SIGTERM` on most systems) — Terminate. Upon receiving this signal, the master process sends a terminate signal to all child processes. If a child process does not exit within 1 second, the master process sends the `SIGKILL` signal to kill it. When no child processes are left, the master process destroys the cycle pool and exits. When a worker process, the cache manager process or the cache loader process receives this signal, it destroys the cycle pool and exits. The variable `ngx_terminate` is set to `1` when this signal is received.
-- `NGX_NOACCEPT_SIGNAL` (`SIGWINCH` on most systems) - Shut down all worker and helper processes. Upon receiving this signal, the master process shuts down its child processes. If a previously started new nginx binary exits, the child processes of the old master are started again. When a worker process receives this signal, it shuts down in debug mode set by the `debug_points` directive.
-- `NGX_RECONFIGURE_SIGNAL` (`SIGHUP` on most systems) - Reconfigure. Upon receiving this signal, the master process re-reads the configuration and creates a new cycle based on it. If the new cycle is created successfully, the old cycle is deleted and new child processes are started. Meanwhile, the old child processes receive the `NGX_SHUTDOWN_SIGNAL` signal. In single-process mode, nginx creates a new cycle, but keeps the old one until there are no longer clients with active connections tied to it. The worker and helper processes ignore this signal.
-- `NGX_REOPEN_SIGNAL` (`SIGUSR1` on most systems) — Reopen files. The master process sends this signal to workers, which reopen all `open_files` related to the cycle.
-- `NGX_CHANGEBIN_SIGNAL` (`SIGUSR2` on most systems) — Change the nginx binary. The master process starts a new nginx binary and passes in a list of all listen sockets. The text-format list, passed in the `“NGINX”` environment variable, consists of descriptor numbers separated with semicolons. The new nginx binary reads the `“NGINX”` variable and adds the sockets to its init cycle. Other processes ignore this signal.
+- `NGX_SHUTDOWN_SIGNAL` (`SIGQUIT` sur la plupart des systèmes) — Arrêt propre. À la réception de ce signal, le processus maître envoie un signal d'arrêt à tous ses fils. Quand il n'en reste plus, il détruit le pool du cycle et se termine. Un processus de travail qui reçoit ce signal ferme toutes ses sockets d'écoute, attend qu'il n'y ait plus d'événements non annulables programmés, puis détruit le pool du cycle et se termine. Le gestionnaire ou le chargeur de cache se termine immédiatement. La variable `ngx_quit` passe à `1` à la réception du signal et est remise à zéro aussitôt après traitement. La variable `ngx_exiting` vaut `1` tant qu'un processus de travail est en cours d'arrêt.
+- `NGX_TERMINATE_SIGNAL` (`SIGTERM` sur la plupart des systèmes) — Terminaison. À la réception de ce signal, le processus maître envoie un signal de terminaison à tous ses fils. Si un fils ne se termine pas dans la seconde, le maître lui envoie `SIGKILL`. Quand il n'y a plus de fils, le maître détruit le pool du cycle et se termine. Un processus de travail, le gestionnaire ou le chargeur de cache qui reçoit ce signal détruit le pool du cycle et se termine. La variable `ngx_terminate` passe à `1` à la réception de ce signal.
+- `NGX_NOACCEPT_SIGNAL` (`SIGWINCH` sur la plupart des systèmes) - Arrête tous les processus de travail et auxiliaires. À la réception de ce signal, le processus maître arrête ses fils. Si un nouveau binaire nginx démarré auparavant se termine, les fils de l'ancien maître sont redémarrés. Un processus de travail qui reçoit ce signal s'arrête dans le mode de débogage fixé par la directive `debug_points`.
+- `NGX_RECONFIGURE_SIGNAL` (`SIGHUP` sur la plupart des systèmes) - Reconfiguration. À la réception de ce signal, le processus maître relit la configuration et crée un nouveau cycle à partir d'elle. Si la création réussit, l'ancien cycle est supprimé et de nouveaux fils sont démarrés, tandis que les anciens reçoivent le signal `NGX_SHUTDOWN_SIGNAL`. En mode processus unique, nginx crée un nouveau cycle mais conserve l'ancien tant que des clients ont des connexions actives qui y sont liées. Les processus de travail et auxiliaires ignorent ce signal.
+- `NGX_REOPEN_SIGNAL` (`SIGUSR1` sur la plupart des systèmes) — Réouverture des fichiers. Le processus maître envoie ce signal aux processus de travail, qui rouvrent tous les `open_files` liés au cycle.
+- `NGX_CHANGEBIN_SIGNAL` (`SIGUSR2` sur la plupart des systèmes) — Changement du binaire nginx. Le processus maître démarre un nouveau binaire nginx et lui transmet la liste de toutes les sockets d'écoute. Cette liste textuelle, passée dans la variable d'environnement `“NGINX”`, est formée de numéros de descripteurs séparés par des points-virgules. Le nouveau binaire lit la variable `“NGINX”` et ajoute les sockets à son cycle initial. Les autres processus ignorent ce signal.
 
-While all nginx worker processes are able to receive and properly handle POSIX signals, the master process does not use the standard `kill()` syscall to pass signals to workers and helpers. Instead, nginx uses inter-process socket pairs which allow sending messages between all nginx processes. Currently, however, messages are only sent from the master to its children. The messages carry the standard signals.
+Bien que tous les processus de travail puissent recevoir et traiter correctement les signaux POSIX, le processus maître n'utilise pas l'appel système standard `kill()` pour transmettre des signaux aux processus de travail et auxiliaires. nginx utilise plutôt des paires de sockets interprocessus qui permettent d'échanger des messages entre tous ses processus. Actuellement, les messages ne vont toutefois que du maître vers ses fils. Ils transportent les signaux standard.
 
 ## Threads
 
-It is possible to offload into a separate thread tasks that would otherwise block the nginx worker process. For example, nginx can be configured to use threads to perform [[12-directives/aio|file I/O]]. Another use case is a library that doesn't have asynchronous interface and thus cannot be normally used with nginx. Keep in mind that the threads interface is a helper for the existing asynchronous approach to processing client connections, and by no means intended as a replacement.
+On peut déporter dans un thread séparé des tâches qui bloqueraient sinon le processus de travail. Par exemple, nginx peut être configuré pour utiliser des threads pour les [[12-directives/aio|E/S fichier]]. Autre cas d'usage : une bibliothèque sans interface asynchrone, donc normalement inutilisable avec nginx. Gardez à l'esprit que l'interface des threads complète l'approche asynchrone existante du traitement des connexions client et n'est en aucun cas destinée à la remplacer.
 
-To deal with synchronization, the following wrappers over `pthreads` primitives are available:
+Pour la synchronisation, les enrobages suivants des primitives `pthreads` sont disponibles :
 
 - `typedef pthread_mutex_t ngx_thread_mutex_t;`
 
@@ -1213,9 +1210,9 @@ To deal with synchronization, the following wrappers over `pthreads` primitives 
   - `ngx_int_t ngx_thread_cond_signal(ngx_thread_cond_t *cond, ngx_log_t *log);`
   - `ngx_int_t ngx_thread_cond_wait(ngx_thread_cond_t *cond, ngx_thread_mutex_t *mtx, ngx_log_t *log);`
 
-Instead of creating a new thread for each task, nginx implements a [[12-directives/thread-pool|thread_pool]] strategy. Multiple thread pools may be configured for different purposes (for example, performing I/O on different sets of disks). Each thread pool is created at startup and contains a limited number of threads that process a queue of tasks. When a task is completed, a predefined completion handler is called.
+Au lieu de créer un thread par tâche, nginx met en œuvre une stratégie de [[12-directives/thread-pool|thread_pool]]. Plusieurs pools de threads peuvent être configurés pour des usages différents (par exemple des E/S sur différents ensembles de disques). Chaque pool est créé au démarrage et contient un nombre limité de threads qui traitent une file de tâches. Quand une tâche est terminée, un gestionnaire de fin prédéfini est appelé.
 
-The `src/core/ngx_thread_pool.h` header file contains relevant definitions:
+Le fichier d'en-tête `src/core/ngx_thread_pool.h` contient les définitions utiles :
 
 ```c
 struct ngx_thread_task_s {
@@ -1235,9 +1232,9 @@ ngx_thread_task_t *ngx_thread_task_alloc(ngx_pool_t *pool, size_t size);
 ngx_int_t ngx_thread_task_post(ngx_thread_pool_t *tp, ngx_thread_task_t *task);
 ```
 
-At configuration time, a module willing to use threads has to obtain a reference to a thread pool by calling `ngx_thread_pool_add(cf, name)`, which either creates a new thread pool with the given `name` or returns a reference to the pool with that name if it already exists.
+Lors de la configuration, un module qui veut utiliser des threads doit obtenir une référence à un pool de threads en appelant `ngx_thread_pool_add(cf, name)`, qui crée un nouveau pool avec le `name` donné ou renvoie une référence au pool de ce nom s'il existe déjà.
 
-To add a `task` into a queue of a specified thread pool `tp` at runtime, use the `ngx_thread_task_post(tp, task)` function. To execute a function in a thread, pass parameters and setup a completion handler using the `ngx_thread_task_t` structure:
+Pour ajouter une tâche `task` dans la file d'un pool `tp` à l'exécution, utilisez la fonction `ngx_thread_task_post(tp, task)`. Pour exécuter une fonction dans un thread, passez les paramètres et définissez un gestionnaire de fin via la structure `ngx_thread_task_t` :
 
 ```c
 typedef struct {
@@ -1292,9 +1289,9 @@ my_task_offload(my_conf_t *conf)
 
 ## Modules
 
-### Adding new modules
+### Ajouter de nouveaux modules
 
-Each standalone nginx module resides in a separate directory that contains at least two files: `config` and a file with the module source code. The `config` file contains all information needed for nginx to integrate the module, for example:
+Chaque module nginx autonome se trouve dans un répertoire distinct contenant au moins deux fichiers : `config` et un fichier contenant le code source du module. Le fichier `config` contient toutes les informations dont nginx a besoin pour intégrer le module, par exemple :
 
 ```c
 ngx_module_type=CORE
@@ -1306,27 +1303,27 @@ ngx_module_srcs="$ngx_addon_dir/ngx_foo_module.c"
 ngx_addon_name=$ngx_module_name
 ```
 
-The `config` file is a POSIX shell script that can set and access the following variables:
+Le fichier `config` est un script shell POSIX qui peut définir et lire les variables suivantes :
 
-- `ngx_module_type` — Type of module to build. Possible values are `CORE`, `HTTP`, `HTTP_FILTER`, `HTTP_INIT_FILTER`, `HTTP_AUX_FILTER`, `MAIL`, `STREAM`, or `MISC`.
-- `ngx_module_name` — Module names. To build multiple modules from a set of source files, specify a whitespace-separated list of names. The first name indicates the name of the output binary for the dynamic module. The names in the list must match the names used in the source code.
-- `ngx_addon_name` — Name of the module as it appears in output on the console from the configure script.
-- `ngx_module_srcs` — Whitespace-separated list of source files used to compile the module. The `$ngx_addon_dir` variable can be used to represent the path to the module directory.
-- `ngx_module_incs` — Include paths required to build the module
-- `ngx_module_deps` — Whitespace-separated list of the module's dependencies. Usually, it is the list of header files.
-- `ngx_module_libs` — Whitespace-separated list of libraries to link with the module. For example, use `ngx_module_libs=-lpthread` to link `libpthread` library. The following macros can be used to link against the same libraries as nginx: `LIBXSLT`, `LIBGD`, `GEOIP`, `PCRE`, `OPENSSL`, `MD5`, `SHA1`, `ZLIB`, and `PERL`.
-- `ngx_module_link` — Variable set by the build system to `DYNAMIC` for a dynamic module or `ADDON` for a static module and used to determine different actions to perform depending on linking type.
-- `ngx_module_order` — Load order for the module; useful for the `HTTP_FILTER` and `HTTP_AUX_FILTER` module types. The format for this option is a whitespace-separated list of modules. All modules in the list following the current module's name end up after it in the global list of modules, which sets up the order for modules initialization. For filter modules later initialization means earlier execution.
+- `ngx_module_type` — Type de module à compiler. Valeurs possibles : `CORE`, `HTTP`, `HTTP_FILTER`, `HTTP_INIT_FILTER`, `HTTP_AUX_FILTER`, `MAIL`, `STREAM` ou `MISC`.
+- `ngx_module_name` — Noms des modules. Pour compiler plusieurs modules à partir d'un ensemble de fichiers source, indiquez une liste de noms séparés par des espaces. Le premier nom donne le nom du binaire produit pour le module dynamique. Les noms de la liste doivent correspondre à ceux utilisés dans le code source.
+- `ngx_addon_name` — Nom du module tel qu'il apparaît dans la sortie console du script configure.
+- `ngx_module_srcs` — Liste, séparée par des espaces, des fichiers source compilés pour le module. La variable `$ngx_addon_dir` peut représenter le chemin du répertoire du module.
+- `ngx_module_incs` — Chemins d'inclusion nécessaires à la compilation du module
+- `ngx_module_deps` — Liste, séparée par des espaces, des dépendances du module. Généralement la liste des fichiers d'en-tête.
+- `ngx_module_libs` — Liste, séparée par des espaces, des bibliothèques à lier avec le module. Par exemple, `ngx_module_libs=-lpthread` lie la bibliothèque `libpthread`. Les macros suivantes permettent de lier les mêmes bibliothèques que nginx : `LIBXSLT`, `LIBGD`, `GEOIP`, `PCRE`, `OPENSSL`, `MD5`, `SHA1`, `ZLIB` et `PERL`.
+- `ngx_module_link` — Variable fixée par le système de compilation à `DYNAMIC` pour un module dynamique ou `ADDON` pour un module statique, et utilisée pour choisir les actions selon le type de liaison.
+- `ngx_module_order` — Ordre de chargement du module ; utile pour les types `HTTP_FILTER` et `HTTP_AUX_FILTER`. Le format est une liste de modules séparés par des espaces. Tous les modules qui suivent le nom du module courant dans la liste se retrouvent après lui dans la liste globale des modules, qui fixe l'ordre d'initialisation. Pour les modules de filtre, une initialisation plus tardive signifie une exécution plus précoce.
 
-  The following modules are typically used as references. The `ngx_http_copy_filter_module` reads the data for other filter modules and is placed near the bottom of the list so that it is one of the first to be executed. The `ngx_http_write_filter_module` writes the data to the client socket and is placed near the top of the list, and is the last to be executed.
+  Les modules suivants servent généralement de repères. `ngx_http_copy_filter_module` lit les données pour les autres modules de filtre et se place vers le bas de la liste, pour être parmi les premiers exécutés. `ngx_http_write_filter_module` écrit les données sur la socket client, se place vers le haut de la liste et s'exécute en dernier.
 
-  By default, filter modules are placed before the `ngx_http_copy_filter` in the module list so that the filter handler is executed after the copy filter handler. For other module types the default is the empty string.
+  Par défaut, les modules de filtre sont placés avant `ngx_http_copy_filter` dans la liste, de sorte que leur gestionnaire s'exécute après celui du filtre de copie. Pour les autres types de modules, la valeur par défaut est la chaîne vide.
 
-To compile a module into nginx statically, use the `--add-module=/path/to/module` argument to the configure script. To compile a module for later dynamic loading into nginx, use the `--add-dynamic-module=/path/to/module` argument.
+Pour compiler un module statiquement dans nginx, passez l'argument `--add-module=/path/to/module` au script configure. Pour le compiler en vue d'un chargement dynamique ultérieur, utilisez `--add-dynamic-module=/path/to/module`.
 
-### Core Modules
+### Modules du cœur
 
-Modules are the building blocks of nginx, and most of its functionality is implemented as modules. The module source file must contain a global variable of type `ngx_module_t`, which is defined as follows:
+Les modules sont les briques de base de nginx, et la plupart de ses fonctions sont mises en œuvre sous forme de modules. Le fichier source d'un module doit contenir une variable globale de type `ngx_module_t`, définie ainsi :
 
 ```c
 struct ngx_module_s {
@@ -1352,19 +1349,19 @@ struct ngx_module_s {
 };
 ```
 
-The omitted private part includes the module version and a signature and is filled using the predefined macro `NGX_MODULE_V1`.
+La partie privée omise contient la version du module et une signature ; elle est remplie avec la macro prédéfinie `NGX_MODULE_V1`.
 
-Each module keeps its private data in the `ctx` field, recognizes the configuration directives, specified in the `commands` array, and can be invoked at certain stages of nginx lifecycle. The module lifecycle consists of the following events:
+Chaque module conserve ses données privées dans le champ `ctx`, reconnaît les directives de configuration indiquées dans le tableau `commands` et peut être appelé à certaines étapes du cycle de vie de nginx. Le cycle de vie d'un module comprend les événements suivants :
 
-- Configuration directive handlers are called as they appear in configuration files in the context of the master process.
-- After the configuration is parsed successfully, `init_module` handler is called in the context of the master process. The `init_module` handler is called in the master process each time a configuration is loaded.
-- The master process creates one or more worker processes and the `init_process` handler is called in each of them.
-- When a worker process receives the shutdown or terminate command from the master, it invokes the `exit_process` handler.
-- The master process calls the `exit_master` handler before exiting.
+- Les gestionnaires de directives de configuration sont appelés au fil de leur apparition dans les fichiers de configuration, dans le contexte du processus maître.
+- Après l'analyse réussie de la configuration, le gestionnaire `init_module` est appelé dans le contexte du processus maître, à chaque chargement d'une configuration.
+- Le processus maître crée un ou plusieurs processus de travail, et le gestionnaire `init_process` est appelé dans chacun d'eux.
+- Quand un processus de travail reçoit du maître la commande d'arrêt ou de terminaison, il appelle le gestionnaire `exit_process`.
+- Le processus maître appelle le gestionnaire `exit_master` avant de se terminer.
 
-Because threads are used in nginx only as a supplementary I/O facility with its own API, `init_thread` and `exit_thread` handlers are not currently called. There is also no `init_master` handler, because it would be unnecessary overhead.
+Comme nginx n'utilise les threads que comme moyen d'E/S complémentaire doté de sa propre API, les gestionnaires `init_thread` et `exit_thread` ne sont actuellement pas appelés. Il n'y a pas non plus de gestionnaire `init_master`, qui serait un surcoût inutile.
 
-The module `type` defines exactly what is stored in the `ctx` field. Its value is one of the following types:
+Le `type` du module définit exactement ce qui est stocké dans le champ `ctx`. Sa valeur est l'un des types suivants :
 
 - `NGX_CORE_MODULE`
 - `NGX_EVENT_MODULE`
@@ -1372,9 +1369,9 @@ The module `type` defines exactly what is stored in the `ctx` field. Its value i
 - `NGX_MAIL_MODULE`
 - `NGX_STREAM_MODULE`
 
-The `NGX_CORE_MODULE` is the most basic and thus the most generic and most low-level type of module. The other module types are implemented on top of it and provide a more convenient way to deal with corresponding domains, like handling events or HTTP requests.
+`NGX_CORE_MODULE` est le type de module le plus élémentaire, donc le plus générique et le plus bas niveau. Les autres types sont construits dessus et offrent un moyen plus pratique de traiter leurs domaines, comme les événements ou les requêtes HTTP.
 
-The set of core modules includes `ngx_core_module`, `ngx_errlog_module`, `ngx_regex_module`, `ngx_thread_pool_module` and `ngx_openssl_module` modules. The HTTP module, the stream module, the mail module and event modules are core modules too. The context of a core module is defined as:
+Les modules du cœur comprennent `ngx_core_module`, `ngx_errlog_module`, `ngx_regex_module`, `ngx_thread_pool_module` et `ngx_openssl_module`. Les modules HTTP, stream, mail et d'événements sont aussi des modules du cœur. Le contexte d'un module du cœur est défini ainsi :
 
 ```c
 typedef struct {
@@ -1384,9 +1381,9 @@ typedef struct {
 } ngx_core_module_t;
 ```
 
-where the `name` is a module name string, `create_conf` and `init_conf` are pointers to functions that create and initialize module configuration respectively. For core modules, nginx calls `create_conf` before parsing a new configuration and `init_conf` after all configuration is parsed successfully. The typical `create_conf` function allocates memory for the configuration and sets default values.
+où `name` est le nom du module, `create_conf` et `init_conf` des pointeurs vers des fonctions qui créent et initialisent respectivement la configuration du module. Pour les modules du cœur, nginx appelle `create_conf` avant d'analyser une nouvelle configuration et `init_conf` une fois toute la configuration analysée avec succès. La fonction `create_conf` type alloue la mémoire de la configuration et fixe les valeurs par défaut.
 
-For example, a simplistic module called `ngx_foo_module` might look like this:
+Par exemple, un module simpliste appelé `ngx_foo_module` pourrait ressembler à ceci :
 
 ```c
 /*
@@ -1488,9 +1485,9 @@ ngx_foo_enable(ngx_conf_t *cf, void *post, void *data)
 }
 ```
 
-### Configuration Directives
+### Directives de configuration
 
-The `ngx_command_t` type defines a single configuration directive. Each module that supports configuration provides an array of such structures that describe how to process arguments and what handlers to call:
+Le type `ngx_command_t` définit une directive de configuration. Chaque module qui prend en charge une configuration fournit un tableau de ces structures, qui décrivent comment traiter les arguments et quels gestionnaires appeler :
 
 ```c
 typedef struct ngx_command_s  ngx_command_t;
@@ -1505,151 +1502,151 @@ struct ngx_command_s {
 };
 ```
 
-Terminate the array with the special value `ngx_null_command`. The `name` is the name of a directive as it appears in the configuration file, for example "worker\_processes" or "listen". The `type` is a bit-field of flags that specify the number of arguments the directive takes, its type, and the context in which it appears. The flags are:
+Terminez le tableau par la valeur spéciale `ngx_null_command`. `name` est le nom de la directive tel qu'il apparaît dans le fichier de configuration, par exemple « worker\_processes » ou « listen ». `type` est un champ de bits d'indicateurs qui précisent le nombre d'arguments de la directive, son type et le contexte où elle apparaît. Indicateurs :
 
-- `NGX_CONF_NOARGS` — Directive takes no arguments.
-- `NGX_CONF_1MORE` — Directive takes one or more arguments.
-- `NGX_CONF_2MORE` — Directive takes two or more arguments.
-- `NGX_CONF_TAKE1`..`NGX_CONF_TAKE7` — Directive takes exactly the indicated number of arguments.
-- `NGX_CONF_TAKE12`, `NGX_CONF_TAKE13`, `NGX_CONF_TAKE23`, `NGX_CONF_TAKE123`, `NGX_CONF_TAKE1234` — Directive may take different number of arguments. Options are limited to the given numbers. For example, `NGX_CONF_TAKE12` means it takes one or two arguments.
+- `NGX_CONF_NOARGS` — La directive ne prend pas d'argument.
+- `NGX_CONF_1MORE` — La directive prend un ou plusieurs arguments.
+- `NGX_CONF_2MORE` — La directive prend deux arguments ou plus.
+- `NGX_CONF_TAKE1`..`NGX_CONF_TAKE7` — La directive prend exactement le nombre d'arguments indiqué.
+- `NGX_CONF_TAKE12`, `NGX_CONF_TAKE13`, `NGX_CONF_TAKE23`, `NGX_CONF_TAKE123`, `NGX_CONF_TAKE1234` — La directive peut prendre un nombre variable d'arguments, limité aux nombres indiqués. Par exemple, `NGX_CONF_TAKE12` signifie un ou deux arguments.
 
-The flags for directive types are:
+Indicateurs de type de directive :
 
-- `NGX_CONF_BLOCK` — Directive is a block, that is, it can contain other directives within its opening and closing braces, or even implement its own parser to handle contents inside.
-- `NGX_CONF_FLAG` — Directive takes a boolean value, either `on` or `off`.
+- `NGX_CONF_BLOCK` — La directive est un bloc : elle peut contenir d'autres directives entre ses accolades, voire mettre en œuvre son propre analyseur pour leur contenu.
+- `NGX_CONF_FLAG` — La directive prend une valeur booléenne, `on` ou `off`.
 
-A directive's context defines where it may appear in the configuration:
+Le contexte d'une directive définit où elle peut apparaître dans la configuration :
 
-- `NGX_MAIN_CONF` — In the top level context.
-- `NGX_HTTP_MAIN_CONF` — In the `http` block.
-- `NGX_HTTP_SRV_CONF` — In a `server` block within the `http` block.
-- `NGX_HTTP_LOC_CONF` — In a `location` block within the `http` block.
-- `NGX_HTTP_UPS_CONF` — In an `upstream` block within the `http` block.
-- `NGX_HTTP_SIF_CONF` — In an `if` block within a `server` block in the `http` block.
-- `NGX_HTTP_LIF_CONF` — In an `if` block within a `location` block in the `http` block.
-- `NGX_HTTP_LMT_CONF` — In a `limit_except` block within the `http` block.
-- `NGX_STREAM_MAIN_CONF` — In the `stream` block.
-- `NGX_STREAM_SRV_CONF` — In a `server` block within the `stream` block.
-- `NGX_STREAM_UPS_CONF` — In an `upstream` block within the `stream` block.
-- `NGX_MAIL_MAIN_CONF` — In the `mail` block.
-- `NGX_MAIL_SRV_CONF` — In a `server` block within the `mail` block.
-- `NGX_EVENT_CONF` — In the `event` block.
-- `NGX_DIRECT_CONF` — Used by modules that don't create a hierarchy of contexts and only have one global configuration. This configuration is passed to the handler as the `conf` argument.
+- `NGX_MAIN_CONF` — Dans le contexte de premier niveau.
+- `NGX_HTTP_MAIN_CONF` — Dans le bloc `http`.
+- `NGX_HTTP_SRV_CONF` — Dans un bloc `server` du bloc `http`.
+- `NGX_HTTP_LOC_CONF` — Dans un bloc `location` du bloc `http`.
+- `NGX_HTTP_UPS_CONF` — Dans un bloc `upstream` du bloc `http`.
+- `NGX_HTTP_SIF_CONF` — Dans un bloc `if` d'un bloc `server` du bloc `http`.
+- `NGX_HTTP_LIF_CONF` — Dans un bloc `if` d'un bloc `location` du bloc `http`.
+- `NGX_HTTP_LMT_CONF` — Dans un bloc `limit_except` du bloc `http`.
+- `NGX_STREAM_MAIN_CONF` — Dans le bloc `stream`.
+- `NGX_STREAM_SRV_CONF` — Dans un bloc `server` du bloc `stream`.
+- `NGX_STREAM_UPS_CONF` — Dans un bloc `upstream` du bloc `stream`.
+- `NGX_MAIL_MAIN_CONF` — Dans le bloc `mail`.
+- `NGX_MAIL_SRV_CONF` — Dans un bloc `server` du bloc `mail`.
+- `NGX_EVENT_CONF` — Dans le bloc `event`.
+- `NGX_DIRECT_CONF` — Utilisé par les modules qui ne créent pas de hiérarchie de contextes et n'ont qu'une configuration globale. Celle-ci est passée au gestionnaire dans l'argument `conf`.
 
-The configuration parser uses these flags to throw an error in case of a misplaced directive and calls directive handlers supplied with a proper configuration pointer, so that the same directives in different locations can store their values in distinct places.
+L'analyseur de configuration utilise ces indicateurs pour signaler une erreur en cas de directive mal placée et appelle les gestionnaires de directives avec le bon pointeur de configuration, afin que les mêmes directives à des emplacements différents stockent leurs valeurs à des endroits distincts.
 
-The `set` field defines a handler that processes a directive and stores parsed values into the corresponding configuration. There's a number of functions that perform common conversions:
+Le champ `set` définit un gestionnaire qui traite la directive et stocke les valeurs analysées dans la configuration correspondante. Plusieurs fonctions effectuent les conversions courantes :
 
-- `ngx_conf_set_flag_slot` — Converts the literal strings `on` and `off` into an `ngx_flag_t` value with values 1 or 0, respectively.
-- `ngx_conf_set_str_slot` — Stores a string as a value of the `ngx_str_t` type.
-- `ngx_conf_set_str_array_slot` — Appends a value to an array `ngx_array_t` of strings `ngx_str_t`. The array is created if does not already exist.
-- `ngx_conf_set_keyval_slot` — Appends a key-value pair to an array `ngx_array_t` of key-value pairs `ngx_keyval_t`. The first string becomes the key and the second the value. The array is created if it does not already exist.
-- `ngx_conf_set_num_slot` — Converts a directive's argument to an `ngx_int_t` value.
-- `ngx_conf_set_size_slot` — Converts a [[10-guides/01-introduction/syntax|size]] to a `size_t` value expressed in bytes.
-- `ngx_conf_set_off_slot` — Converts an [[10-guides/01-introduction/syntax|offset]] to an `off_t` value expressed in bytes.
-- `ngx_conf_set_msec_slot` — Converts a [[10-guides/01-introduction/syntax|time]] to an `ngx_msec_t` value expressed in milliseconds.
-- `ngx_conf_set_sec_slot` — Converts a [[10-guides/01-introduction/syntax|time]] to a `time_t` value expressed in in seconds.
-- `ngx_conf_set_bufs_slot` — Converts the two supplied arguments into an `ngx_bufs_t` object that holds the number and [[10-guides/01-introduction/syntax|size]] of buffers.
-- `ngx_conf_set_enum_slot` — Converts the supplied argument into an `ngx_uint_t` value. The null-terminated array of `ngx_conf_enum_t` passed in the `post` field defines the acceptable strings and corresponding integer values.
-- `ngx_conf_set_bitmask_slot` — Converts the supplied arguments into an `ngx_uint_t` value. The mask values for each argument are ORed producing the result. The null-terminated array of `ngx_conf_bitmask_t` passed in the `post` field defines the acceptable strings and corresponding mask values.
-- `set_path_slot` — Converts the supplied arguments to an `ngx_path_t` value and performs all required initializations. For details, see the documentation for the [[12-directives/proxy-temp-path|proxy_temp_path]] directive.
-- `set_access_slot` — Converts the supplied arguments to a file permissions mask. For details, see the documentation for the [[12-directives/proxy-store-access|proxy_store_access]] directive.
+- `ngx_conf_set_flag_slot` — Convertit les chaînes littérales `on` et `off` en valeur `ngx_flag_t` valant respectivement 1 ou 0.
+- `ngx_conf_set_str_slot` — Stocke une chaîne comme valeur de type `ngx_str_t`.
+- `ngx_conf_set_str_array_slot` — Ajoute une valeur à un tableau `ngx_array_t` de chaînes `ngx_str_t`. Le tableau est créé s'il n'existe pas.
+- `ngx_conf_set_keyval_slot` — Ajoute une paire clé-valeur à un tableau `ngx_array_t` de paires `ngx_keyval_t`. La première chaîne devient la clé, la seconde la valeur. Le tableau est créé s'il n'existe pas.
+- `ngx_conf_set_num_slot` — Convertit l'argument d'une directive en valeur `ngx_int_t`.
+- `ngx_conf_set_size_slot` — Convertit une [[10-guides/01-introduction/syntax|taille]] en valeur `size_t` exprimée en octets.
+- `ngx_conf_set_off_slot` — Convertit un [[10-guides/01-introduction/syntax|décalage]] en valeur `off_t` exprimée en octets.
+- `ngx_conf_set_msec_slot` — Convertit une [[10-guides/01-introduction/syntax|durée]] en valeur `ngx_msec_t` exprimée en millisecondes.
+- `ngx_conf_set_sec_slot` — Convertit une [[10-guides/01-introduction/syntax|durée]] en valeur `time_t` exprimée en secondes.
+- `ngx_conf_set_bufs_slot` — Convertit les deux arguments fournis en objet `ngx_bufs_t` contenant le nombre et la [[10-guides/01-introduction/syntax|taille]] des tampons.
+- `ngx_conf_set_enum_slot` — Convertit l'argument fourni en valeur `ngx_uint_t`. Le tableau terminé par un élément nul de `ngx_conf_enum_t` passé dans le champ `post` définit les chaînes acceptées et les valeurs entières correspondantes.
+- `ngx_conf_set_bitmask_slot` — Convertit les arguments fournis en valeur `ngx_uint_t`. Les masques de chaque argument sont combinés par OU pour former le résultat. Le tableau terminé par un élément nul de `ngx_conf_bitmask_t` passé dans le champ `post` définit les chaînes acceptées et les masques correspondants.
+- `set_path_slot` — Convertit les arguments fournis en valeur `ngx_path_t` et effectue toutes les initialisations nécessaires. Pour plus de détails, voir la documentation de la directive [[12-directives/proxy-temp-path|proxy_temp_path]].
+- `set_access_slot` — Convertit les arguments fournis en masque de permissions de fichier. Pour plus de détails, voir la documentation de la directive [[12-directives/proxy-store-access|proxy_store_access]].
 
-The `conf` field defines which configuration structure is passed to the directory handler. Core modules only have the global configuration and set `NGX_DIRECT_CONF` flag to access it. Modules like HTTP, Stream or Mail create hierarchies of configurations. For example, a module's configuration is created for `server`, `location` and `if` scopes.
+Le champ `conf` définit quelle structure de configuration est passée au gestionnaire de la directive. Les modules du cœur n'ont que la configuration globale et positionnent l'indicateur `NGX_DIRECT_CONF` pour y accéder. Les modules comme HTTP, Stream ou Mail créent des hiérarchies de configurations. Par exemple, une configuration de module est créée pour les portées `server`, `location` et `if`.
 
-- `NGX_HTTP_MAIN_CONF_OFFSET` — Configuration for the `http` block.
-- `NGX_HTTP_SRV_CONF_OFFSET` — Configuration for a `server` block within the `http` block.
-- `NGX_HTTP_LOC_CONF_OFFSET` — Configuration for a `location` block within the `http`.
-- `NGX_STREAM_MAIN_CONF_OFFSET` — Configuration for the `stream` block.
-- `NGX_STREAM_SRV_CONF_OFFSET` — Configuration for a `server` block within the `stream` block.
-- `NGX_MAIL_MAIN_CONF_OFFSET` — Configuration for the `mail` block.
-- `NGX_MAIL_SRV_CONF_OFFSET` — Configuration for a `server` block within the `mail` block.
+- `NGX_HTTP_MAIN_CONF_OFFSET` — Configuration du bloc `http`.
+- `NGX_HTTP_SRV_CONF_OFFSET` — Configuration d'un bloc `server` du bloc `http`.
+- `NGX_HTTP_LOC_CONF_OFFSET` — Configuration d'un bloc `location` du bloc `http`.
+- `NGX_STREAM_MAIN_CONF_OFFSET` — Configuration du bloc `stream`.
+- `NGX_STREAM_SRV_CONF_OFFSET` — Configuration d'un bloc `server` du bloc `stream`.
+- `NGX_MAIL_MAIN_CONF_OFFSET` — Configuration du bloc `mail`.
+- `NGX_MAIL_SRV_CONF_OFFSET` — Configuration d'un bloc `server` du bloc `mail`.
 
-The `offset` defines the offset of a field in a module configuration structure that holds values for this particular directive. The typical use is to employ the `offsetof()` macro.
+`offset` définit le décalage, dans la structure de configuration du module, du champ qui contient les valeurs de cette directive. On utilise généralement la macro `offsetof()`.
 
-The `post` field has two purposes: it may be used to define a handler to be called after the main handler has completed, or to pass additional data to the main handler. In the first case, the `ngx_conf_post_t` structure needs to be initialized with a pointer to the handler, for example:
+Le champ `post` a deux usages : définir un gestionnaire appelé après le gestionnaire principal, ou transmettre des données supplémentaires au gestionnaire principal. Dans le premier cas, la structure `ngx_conf_post_t` doit être initialisée avec un pointeur vers le gestionnaire, par exemple :
 
 ```c
 static char *ngx_do_foo(ngx_conf_t *cf, void *post, void *data);
 static ngx_conf_post_t  ngx_foo_post = { ngx_do_foo };
 ```
 
-The `post` argument is the `ngx_conf_post_t` object itself, and the `data` is a pointer to the value, converted from arguments by the main handler with the appropriate type.
+L'argument `post` est l'objet `ngx_conf_post_t` lui-même, et `data` un pointeur vers la valeur convertie à partir des arguments par le gestionnaire principal, avec le type approprié.
 
 ## HTTP
 
-### Connection
+### Connexion
 
-Each HTTP client connection runs through the following stages:
+Chaque connexion client HTTP passe par les étapes suivantes :
 
-- `ngx_event_accept()` accepts a client TCP connection. This handler is called in response to a read notification on a listen socket. A new `ngx_connection_t` object is created at this stage to wrap the newly accepted client socket. Each nginx listener provides a handler to pass the new connection object to. For HTTP connections it's `ngx_http_init_connection(c)`.
-- `ngx_http_init_connection()` performs early initialization of the HTTP connection. At this stage an `ngx_http_connection_t` object is created for the connection and its reference is stored in the connection's `data` field. Later it will be replaced by an HTTP request object. A PROXY protocol parser and the SSL handshake are started at this stage as well.
-- `ngx_http_wait_request_handler()` read event handler is called when data is available on the client socket. At this stage an HTTP request object `ngx_http_request_t` is created and set to the connection's `data` field.
-- `ngx_http_process_request_line()` read event handler reads client request line. The handler is set by `ngx_http_wait_request_handler()`. The data is read into connection's `buffer`. The size of the buffer is initially set by the directive [[12-directives/client-header-buffer-size|client_header_buffer_size]]. The entire client header is supposed to fit in the buffer. If the initial size is not sufficient, a bigger buffer is allocated, with the capacity set by the `large_client_header_buffers` directive.
-- `ngx_http_process_request_headers()` read event handler, is set after `ngx_http_process_request_line()` to read the client request header.
-- `ngx_http_core_run_phases()` is called when the request header is completely read and parsed. This function runs request phases from `NGX_HTTP_POST_READ_PHASE` to `NGX_HTTP_CONTENT_PHASE`. The last phase is intended to generate a response and pass it along the filter chain. The response is not necessarily sent to the client at this phase. It might remain buffered and be sent at the finalization stage.
-- `ngx_http_finalize_request()` is usually called when the request has generated all the output or produced an error. In the latter case an appropriate error page is looked up and used as the response. If the response is not completely sent to the client by this point, an HTTP writer `ngx_http_writer()` is activated to finish sending outstanding data.
-- `ngx_http_finalize_connection()` is called when the complete response has been sent to the client and the request can be destroyed. If the client connection keepalive feature is enabled, `ngx_http_set_keepalive()` is called, which destroys the current request and waits for the next request on the connection. Otherwise, `ngx_http_close_request()` destroys both the request and the connection.
+- `ngx_event_accept()` accepte une connexion TCP client. Ce gestionnaire est appelé en réponse à une notification de lecture sur une socket d'écoute. Un nouvel objet `ngx_connection_t` est créé à cette étape pour enrober la socket client nouvellement acceptée. Chaque écouteur nginx fournit un gestionnaire auquel transmettre le nouvel objet connexion. Pour les connexions HTTP, c'est `ngx_http_init_connection(c)`.
+- `ngx_http_init_connection()` effectue l'initialisation précoce de la connexion HTTP. Un objet `ngx_http_connection_t` est créé pour la connexion et sa référence est stockée dans le champ `data` de celle-ci ; il sera remplacé plus tard par un objet requête HTTP. L'analyseur du protocole PROXY et la poignée de main SSL sont aussi lancés à cette étape.
+- Le gestionnaire d'événement de lecture `ngx_http_wait_request_handler()` est appelé quand des données sont disponibles sur la socket client. Un objet requête HTTP `ngx_http_request_t` est alors créé et placé dans le champ `data` de la connexion.
+- Le gestionnaire d'événement de lecture `ngx_http_process_request_line()` lit la ligne de requête du client. Il est installé par `ngx_http_wait_request_handler()`. Les données sont lues dans le `buffer` de la connexion, dont la taille initiale est fixée par la directive [[12-directives/client-header-buffer-size|client_header_buffer_size]]. L'en-tête client complet est censé tenir dans ce tampon. Si la taille initiale ne suffit pas, un tampon plus grand est alloué, de capacité fixée par la directive `large_client_header_buffers`.
+- Le gestionnaire d'événement de lecture `ngx_http_process_request_headers()` est installé après `ngx_http_process_request_line()` pour lire l'en-tête de la requête client.
+- `ngx_http_core_run_phases()` est appelée quand l'en-tête de la requête a été entièrement lu et analysé. Elle exécute les phases de la requête de `NGX_HTTP_POST_READ_PHASE` à `NGX_HTTP_CONTENT_PHASE`. La dernière phase doit générer une réponse et la transmettre le long de la chaîne de filtres. La réponse n'est pas forcément envoyée au client à cette phase : elle peut rester en tampon et être envoyée lors de la finalisation.
+- `ngx_http_finalize_request()` est généralement appelée quand la requête a produit toute sa sortie ou une erreur. Dans ce dernier cas, une page d'erreur adaptée est recherchée et utilisée comme réponse. Si la réponse n'est pas encore entièrement envoyée au client, un écrivain HTTP `ngx_http_writer()` est activé pour finir d'envoyer les données en attente.
+- `ngx_http_finalize_connection()` est appelée quand la réponse complète a été envoyée au client et que la requête peut être détruite. Si le maintien de connexion (keepalive) est activé, `ngx_http_set_keepalive()` est appelée : elle détruit la requête courante et attend la requête suivante sur la connexion. Sinon, `ngx_http_close_request()` détruit la requête et la connexion.
 
-### Request
+### Requête
 
-For each client HTTP request the `ngx_http_request_t` object is created. Some of the fields of this object are:
+Pour chaque requête HTTP client, un objet `ngx_http_request_t` est créé. Quelques-uns de ses champs :
 
-- `connection` — Pointer to a `ngx_connection_t` client connection object. Several requests can reference the same connection object at the same time - one main request and its subrequests. After a request is deleted, a new request can be created on the same connection.
+- `connection` — Pointeur vers l'objet connexion client `ngx_connection_t`. Plusieurs requêtes peuvent référencer le même objet connexion en même temps : une requête principale et ses sous-requêtes. Après la suppression d'une requête, une nouvelle peut être créée sur la même connexion.
 
-  Note that for HTTP connections `ngx_connection_t`'s `data` field points back to the request. Such requests are called active, as opposed to the other requests tied to the connection. An active request is used to handle client connection events and is allowed to output its response to the client. Normally, each request becomes active at some point so that it can send its output.
-- `ctx` — Array of HTTP module contexts. Each module of type `NGX_HTTP_MODULE` can store any value (normally, a pointer to a structure) in the request. The value is stored in the `ctx` array at the module's `ctx_index` position. The following macros provide a convenient way to get and set request contexts:
+  Notez que pour les connexions HTTP, le champ `data` de `ngx_connection_t` pointe vers la requête. Une telle requête est dite active, par opposition aux autres requêtes liées à la connexion. La requête active traite les événements de la connexion client et a le droit d'envoyer sa réponse au client. Normalement, chaque requête devient active à un moment donné pour pouvoir envoyer sa sortie.
+- `ctx` — Tableau des contextes des modules HTTP. Chaque module de type `NGX_HTTP_MODULE` peut stocker n'importe quelle valeur (normalement un pointeur vers une structure) dans la requête. La valeur est stockée dans le tableau `ctx` à la position `ctx_index` du module. Les macros suivantes permettent de lire et définir facilement les contextes de requête :
 
-  - `ngx_http_get_module_ctx(r, module)` — Returns the `module`'s context
-  - `ngx_http_set_ctx(r, c, module)` — Sets `c` as the `module`'s context
-- `main_conf`, `srv_conf`, `loc_conf` — Arrays of current request configurations. Configurations are stored at the module's `ctx_index` positions.
-- `read_event_handler`, `write_event_handler` - Read and write event handlers for the request. Normally, both the read and write event handlers for an HTTP connection are set to `ngx_http_request_handler()`. This function calls the `read_event_handler` and `write_event_handler` handlers for the currently active request.
-- `cache` — Request cache object for caching the upstream response.
-- `upstream` — Request upstream object for proxying.
-- `pool` — Request pool. The request object itself is allocated in this pool, which is destroyed when the request is deleted. For allocations that need to be available throughout the client connection's lifetime, use `ngx_connection_t`'s pool instead.
-- `header_in` — Buffer into which the client HTTP request header is read.
-- `headers_in`, `headers_out` — Input and output HTTP headers objects. Both objects contain the `headers` field of type `ngx_list_t` for keeping the raw list of headers. In addition to that, specific headers are available for getting and setting as separate fields, for example `content_length_n`, `status` etc.
-- `request_body` — Client request body object.
-- `start_sec`, `start_msec` — Time point when the request was created, used for tracking request duration.
-- `method`, `method_name` — Numeric and text representation of the client HTTP request method. Numeric values for methods are defined in `src/http/ngx_http_request.h` with the macros `NGX_HTTP_GET`, `NGX_HTTP_HEAD`, `NGX_HTTP_POST`, etc.
-- `http_protocol` — Client HTTP protocol version in its original text form (“HTTP/1.0”, “HTTP/1.1” etc).
-- `http_version` — Client HTTP protocol version in numeric form (`NGX_HTTP_VERSION_10`, `NGX_HTTP_VERSION_11`, etc.).
-- `http_major`, `http_minor` — Client HTTP protocol version in numeric form split into major and minor parts.
-- `request_line`, `unparsed_uri` — Request line and URI in the original client request.
-- `uri`, `args`, `exten` — URI, arguments and file extension for the current request. The URI value here might differ from the original URI sent by the client due to normalization. Throughout request processing, these values can change as internal redirects are performed.
-- `main` — Pointer to a main request object. This object is created to process a client HTTP request, as opposed to subrequests, which are created to perform a specific subtask within the main request.
-- `parent` — Pointer to the parent request of a subrequest.
-- `postponed` — List of output buffers and subrequests, in the order in which they are sent and created. The list is used by the postpone filter to provide consistent request output when parts of it are created by subrequests.
-- `post_subrequest` — Pointer to a handler with the context to be called when a subrequest gets finalized. Unused for main requests.
-- `posted_requests` — List of requests to be started or resumed, which is done by calling the request's `write_event_handler`. Normally, this handler holds the request main function, which at first runs request phases and then produces the output.
+  - `ngx_http_get_module_ctx(r, module)` — Renvoie le contexte de `module`
+  - `ngx_http_set_ctx(r, c, module)` — Définit `c` comme contexte de `module`
+- `main_conf`, `srv_conf`, `loc_conf` — Tableaux des configurations de la requête courante. Les configurations sont stockées aux positions `ctx_index` des modules.
+- `read_event_handler`, `write_event_handler` - Gestionnaires d'événements de lecture et d'écriture de la requête. Normalement, les deux gestionnaires d'une connexion HTTP pointent vers `ngx_http_request_handler()`, qui appelle les gestionnaires `read_event_handler` et `write_event_handler` de la requête actuellement active.
+- `cache` — Objet cache de la requête, pour mettre en cache la réponse amont.
+- `upstream` — Objet amont de la requête, pour le relais.
+- `pool` — Pool de la requête. L'objet requête lui-même est alloué dans ce pool, détruit à la suppression de la requête. Pour les allocations qui doivent rester disponibles pendant toute la durée de vie de la connexion client, utilisez plutôt le pool de `ngx_connection_t`.
+- `header_in` — Tampon dans lequel l'en-tête de la requête HTTP client est lu.
+- `headers_in`, `headers_out` — Objets en-têtes HTTP d'entrée et de sortie. Tous deux contiennent le champ `headers` de type `ngx_list_t`, qui conserve la liste brute des en-têtes. Certains en-têtes sont en outre disponibles en lecture et écriture sous forme de champs distincts, par exemple `content_length_n`, `status`, etc.
+- `request_body` — Objet corps de la requête client.
+- `start_sec`, `start_msec` — Instant de création de la requête, utilisé pour suivre sa durée.
+- `method`, `method_name` — Représentations numérique et textuelle de la méthode de la requête HTTP client. Les valeurs numériques sont définies dans `src/http/ngx_http_request.h` par les macros `NGX_HTTP_GET`, `NGX_HTTP_HEAD`, `NGX_HTTP_POST`, etc.
+- `http_protocol` — Version du protocole HTTP du client sous sa forme textuelle d'origine (« HTTP/1.0 », « HTTP/1.1 », etc.).
+- `http_version` — Version du protocole HTTP du client sous forme numérique (`NGX_HTTP_VERSION_10`, `NGX_HTTP_VERSION_11`, etc.).
+- `http_major`, `http_minor` — Version du protocole HTTP du client sous forme numérique, séparée en parties majeure et mineure.
+- `request_line`, `unparsed_uri` — Ligne de requête et URI de la requête client d'origine.
+- `uri`, `args`, `exten` — URI, arguments et extension de fichier de la requête courante. L'URI peut différer de l'URI d'origine envoyée par le client à cause de la normalisation. Ces valeurs peuvent changer au cours du traitement, au gré des redirections internes.
+- `main` — Pointeur vers l'objet requête principale. Cet objet est créé pour traiter une requête HTTP client, par opposition aux sous-requêtes, créées pour effectuer une sous-tâche précise au sein de la requête principale.
+- `parent` — Pointeur vers la requête parente d'une sous-requête.
+- `postponed` — Liste des tampons de sortie et des sous-requêtes, dans l'ordre de leur envoi et de leur création. Le filtre postpone l'utilise pour produire une sortie cohérente quand certaines parties sont créées par des sous-requêtes.
+- `post_subrequest` — Pointeur vers un gestionnaire, avec son contexte, appelé à la finalisation d'une sous-requête. Inutilisé pour les requêtes principales.
+- `posted_requests` — Liste des requêtes à démarrer ou reprendre, ce qui se fait en appelant le `write_event_handler` de la requête. Normalement, ce gestionnaire contient la fonction principale de la requête, qui exécute d'abord les phases puis produit la sortie.
 
-  A request is usually posted by the `ngx_http_post_request(r, NULL)` call. It is always posted to the main request `posted_requests` list. The function `ngx_http_run_posted_requests(c)` runs all requests that are posted in the main request of the passed connection's active request. All event handlers call `ngx_http_run_posted_requests`, which can lead to new posted requests. Normally, it is called after invoking a request's read or write handler.
-- `phase_handler` — Index of current request phase.
-- `ncaptures`, `captures`, `captures_data` — Regex captures produced by the last regex match of the request. A regex match can occur at a number of places during request processing: map lookup, server lookup by SNI or HTTP Host, rewrite, proxy\_redirect, etc. Captures produced by a lookup are stored in the above mentioned fields. The field `ncaptures` holds the number of captures, `captures` holds captures boundaries and `captures_data` holds the string against which the regex was matched and which is used to extract captures. After each new regex match, request captures are reset to hold new values.
-- `count` — Request reference counter. The field only makes sense for the main request. Increasing the counter is done by simple `r->main->count++`. To decrease the counter, call `ngx_http_finalize_request(r, rc)`. Creating of a subrequest and running the request body read process both increment the counter.
-- `subrequests` — Current subrequest nesting level. Each subrequest inherits its parent's nesting level, decreased by one. An error is generated if the value reaches zero. The value for the main request is defined by the `NGX_HTTP_MAX_SUBREQUESTS` constant.
-- `uri_changes` — Number of URI changes remaining for the request. The total number of times a request can change its URI is limited by the `NGX_HTTP_MAX_URI_CHANGES` constant. With each change the value is decremented until it reaches zero, at which time an error is generated. Rewrites and internal redirects to normal or named locations are considered URI changes.
-- `blocked` — Counter of blocks held on the request. While this value is non-zero, the request cannot be terminated. Currently, this value is increased by pending AIO operations (POSIX AIO and thread operations) and active cache lock.
-- `buffered` — Bitmask showing which modules have buffered the output produced by the request. A number of filters can buffer output; for example, sub\_filter can buffer data because of a partial string match, copy filter can buffer data because of the lack of free output buffers etc. As long as this value is non-zero, the request is not finalized pending the flush.
-- `header_only` — Flag indicating that the output does not require a body. For example, this flag is used by HTTP HEAD requests.
-- `keepalive` — Flag indicating whether client connection keepalive is supported. The value is inferred from the HTTP version and the value of the `Connection` header.
-- `header_sent` — Flag indicating that the output header has already been sent by the request.
-- `internal` — Flag indicating that the current request is internal. To enter the internal state, a request must pass through an internal redirect or be a subrequest. Internal requests are allowed to enter internal locations.
-- `allow_ranges` — Flag indicating that a partial response can be sent to the client, as requested by the HTTP Range header.
-- `subrequest_ranges` — Flag indicating that a partial response can be sent while a subrequest is being processed.
-- `single_range` — Flag indicating that only a single continuous range of output data can be sent to the client. This flag is usually set when sending a stream of data, for example from a proxied server, and the entire response is not available in one buffer.
-- `main_filter_need_in_memory`, `filter_need_in_memory` — Flags requesting that the output produced in memory buffers rather than files. This is a signal to the copy filter to read data from file buffers even if sendfile is enabled. The difference between the two flags is the location of the filter modules that set them. Filters called before the postpone filter in the filter chain set `filter_need_in_memory`, requesting that only the current request output come in memory buffers. Filters called later in the filter chain set `main_filter_need_in_memory`, requesting that both the main request and all subrequests read files in memory while sending output.
-- `filter_need_temporary` — Flag requesting that the request output be produced in temporary buffers, but not in readonly memory buffers or file buffers. This is used by filters which may change output directly in the buffers where it's sent.
+  Une requête est généralement postée par l'appel `ngx_http_post_request(r, NULL)`. Elle est toujours postée dans la liste `posted_requests` de la requête principale. La fonction `ngx_http_run_posted_requests(c)` exécute toutes les requêtes postées dans la requête principale de la requête active de la connexion passée. Tous les gestionnaires d'événements appellent `ngx_http_run_posted_requests`, ce qui peut entraîner de nouvelles requêtes postées. Normalement, elle est appelée après le gestionnaire de lecture ou d'écriture d'une requête.
+- `phase_handler` — Indice de la phase courante de la requête.
+- `ncaptures`, `captures`, `captures_data` — Captures produites par la dernière correspondance d'expression régulière de la requête. Une correspondance peut avoir lieu à plusieurs endroits du traitement : recherche map, recherche de serveur par SNI ou par Host HTTP, rewrite, proxy\_redirect, etc. Les captures produites sont stockées dans ces champs. `ncaptures` contient le nombre de captures, `captures` leurs limites et `captures_data` la chaîne testée, d'où les captures sont extraites. Après chaque nouvelle correspondance, les captures de la requête sont réinitialisées avec les nouvelles valeurs.
+- `count` — Compteur de références de la requête. Le champ n'a de sens que pour la requête principale. On l'incrémente simplement par `r->main->count++`. Pour le décrémenter, appelez `ngx_http_finalize_request(r, rc)`. La création d'une sous-requête et le lancement de la lecture du corps de la requête incrémentent tous deux le compteur.
+- `subrequests` — Niveau d'imbrication courant des sous-requêtes. Chaque sous-requête hérite du niveau de son parent, diminué de un. Une erreur est générée si la valeur atteint zéro. La valeur de la requête principale est définie par la constante `NGX_HTTP_MAX_SUBREQUESTS`.
+- `uri_changes` — Nombre de changements d'URI restants pour la requête. Le nombre total de changements d'URI est limité par la constante `NGX_HTTP_MAX_URI_CHANGES`. À chaque changement, la valeur est décrémentée ; une erreur est générée quand elle atteint zéro. Les réécritures et les redirections internes vers des locations normales ou nommées comptent comme des changements d'URI.
+- `blocked` — Compteur des blocages détenus sur la requête. Tant qu'il est non nul, la requête ne peut pas être terminée. Il est actuellement incrémenté par les opérations AIO en attente (AIO POSIX et opérations de threads) et par un verrou de cache actif.
+- `buffered` — Masque de bits indiquant quels modules ont mis en tampon la sortie produite par la requête. Plusieurs filtres peuvent mettre la sortie en tampon ; par exemple, sub\_filter peut le faire à cause d'une correspondance partielle de chaîne, le filtre de copie par manque de tampons de sortie libres, etc. Tant que cette valeur est non nulle, la requête n'est pas finalisée, dans l'attente du vidage.
+- `header_only` — Indique que la sortie ne nécessite pas de corps. Utilisé par exemple pour les requêtes HTTP HEAD.
+- `keepalive` — Indique si le maintien de la connexion client est pris en charge. La valeur est déduite de la version HTTP et de l'en-tête `Connection`.
+- `header_sent` — Indique que l'en-tête de sortie a déjà été envoyé par la requête.
+- `internal` — Indique que la requête courante est interne. Pour devenir interne, une requête doit passer par une redirection interne ou être une sous-requête. Les requêtes internes ont accès aux locations internes.
+- `allow_ranges` — Indique qu'une réponse partielle peut être envoyée au client, selon l'en-tête HTTP Range.
+- `subrequest_ranges` — Indique qu'une réponse partielle peut être envoyée pendant le traitement d'une sous-requête.
+- `single_range` — Indique qu'une seule plage continue de données peut être envoyée au client. Généralement positionné lors de l'envoi d'un flux de données, par exemple depuis un serveur mandaté, quand la réponse complète n'est pas disponible dans un seul tampon.
+- `main_filter_need_in_memory`, `filter_need_in_memory` — Demandent que la sortie soit produite dans des tampons mémoire plutôt que dans des fichiers. C'est un signal pour que le filtre de copie lise les données des tampons fichier même si sendfile est activé. La différence entre les deux tient à la position des modules de filtre qui les positionnent. Les filtres appelés avant le filtre postpone positionnent `filter_need_in_memory`, pour que seule la sortie de la requête courante arrive en mémoire. Les filtres appelés plus tard positionnent `main_filter_need_in_memory`, pour que la requête principale et toutes les sous-requêtes lisent les fichiers en mémoire lors de l'envoi.
+- `filter_need_temporary` — Demande que la sortie de la requête soit produite dans des tampons temporaires, et non dans des tampons mémoire en lecture seule ou des tampons fichier. Utilisé par les filtres qui peuvent modifier la sortie directement dans les tampons où elle est envoyée.
 
 ### Configuration
 
-Each HTTP module can have three types of configuration:
+Chaque module HTTP peut avoir trois types de configuration :
 
-- Main configuration — Applies to the entire `http` block. Functions as global settings for a module.
-- Server configuration — Applies to a single `server` block. Functions as server-specific settings for a module.
-- Location configuration — Applies to a single `location`, `if` or `limit_except` block. Functions as location-specific settings for a module.
+- Configuration principale — S'applique à tout le bloc `http`. Sert de paramètres globaux du module.
+- Configuration de serveur — S'applique à un bloc `server`. Sert de paramètres du module propres au serveur.
+- Configuration de location — S'applique à un bloc `location`, `if` ou `limit_except`. Sert de paramètres du module propres à la location.
 
-Configuration structures are created at the nginx configuration stage by calling functions, which allocate the structures, initialize them and merge them. The following example shows how to create a simple location configuration for a module. The configuration has one setting, `foo`, of type unsigned integer.
+Les structures de configuration sont créées pendant la phase de configuration de nginx par des fonctions qui les allouent, les initialisent et les fusionnent. L'exemple suivant montre comment créer une configuration de location simple pour un module, avec un seul paramètre, `foo`, de type entier non signé.
 
 ```c
 typedef struct {
@@ -1698,15 +1695,15 @@ ngx_http_foo_merge_loc_conf(ngx_conf_t *cf, void *parent, void *child)
 }
 ```
 
-As seen in the example, the `ngx_http_foo_create_loc_conf()` function creates a new configuration structure, and `ngx_http_foo_merge_loc_conf()` merges a configuration with configuration from a higher level. In fact, server and location configuration do not exist only at the server and location levels, but are also created for all levels above them. Specifically, a server configuration is also created at the main level and location configurations are created at the main, server, and location levels. These configurations make it possible to specify server- and location-specific settings at any level of an nginx configuration file. Eventually configurations are merged down. A number of macros like `NGX_CONF_UNSET` and `NGX_CONF_UNSET_UINT` are provided for indicating a missing setting and ignoring it while merging. Standard nginx merge macros like `ngx_conf_merge_value()` and `ngx_conf_merge_uint_value()` provide a convenient way to merge a setting and set the default value if none of the configurations provided an explicit value. For complete list of macros for different types, see `src/core/ngx_conf_file.h`.
+Comme on le voit, la fonction `ngx_http_foo_create_loc_conf()` crée une nouvelle structure de configuration, et `ngx_http_foo_merge_loc_conf()` fusionne une configuration avec celle d'un niveau supérieur. En fait, les configurations de serveur et de location n'existent pas qu'à leur niveau : elles sont aussi créées pour tous les niveaux supérieurs. Une configuration de serveur est ainsi créée aussi au niveau principal, et des configurations de location aux niveaux principal, serveur et location. Cela permet d'indiquer des paramètres propres au serveur et à la location à n'importe quel niveau du fichier de configuration. Les configurations sont finalement fusionnées vers le bas. Plusieurs macros comme `NGX_CONF_UNSET` et `NGX_CONF_UNSET_UINT` permettent d'indiquer un paramètre absent, ignoré lors de la fusion. Les macros de fusion standard comme `ngx_conf_merge_value()` et `ngx_conf_merge_uint_value()` permettent de fusionner un paramètre et de fixer sa valeur par défaut si aucune configuration n'en fournit explicitement. Pour la liste complète des macros par type, voir `src/core/ngx_conf_file.h`.
 
-The following macros are available. for accessing configuration for HTTP modules at configuration time. They all take `ngx_conf_t` reference as the first argument.
+Les macros suivantes permettent d'accéder à la configuration des modules HTTP pendant la configuration. Elles prennent toutes une référence `ngx_conf_t` en premier argument.
 
 - `ngx_http_conf_get_module_main_conf(cf, module)`
 - `ngx_http_conf_get_module_srv_conf(cf, module)`
 - `ngx_http_conf_get_module_loc_conf(cf, module)`
 
-The following example gets a pointer to a location configuration of standard nginx core module [[11-modules/02-http/ngx_http_core_module|ngx_http_core_module]] and replaces the location content handler kept in the `handler` field of the structure.
+L'exemple suivant récupère un pointeur vers la configuration de location du module standard [[11-modules/02-http/ngx_http_core_module|ngx_http_core_module]] et remplace le gestionnaire de contenu de la location, conservé dans le champ `handler` de la structure.
 
 ```c
 static ngx_int_t ngx_http_foo_handler(ngx_http_request_t *r);
@@ -1737,13 +1734,13 @@ ngx_http_foo(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 }
 ```
 
-The following macros are available for accessing configuration for HTTP modules at runtime.
+Les macros suivantes permettent d'accéder à la configuration des modules HTTP à l'exécution.
 
 - `ngx_http_get_module_main_conf(r, module)`
 - `ngx_http_get_module_srv_conf(r, module)`
 - `ngx_http_get_module_loc_conf(r, module)`
 
-These macros receive a reference to an HTTP request `ngx_http_request_t`. The main configuration of a request never changes. Server configuration can change from the default after the virtual server for the request is chosen. Location configuration selected for processing a request can change multiple times as a result of a rewrite operation or internal redirect. The following example shows how to access a module's HTTP configuration at runtime.
+Ces macros reçoivent une référence à une requête HTTP `ngx_http_request_t`. La configuration principale d'une requête ne change jamais. La configuration de serveur peut changer par rapport à celle par défaut une fois le serveur virtuel de la requête choisi. La configuration de location retenue peut changer plusieurs fois suite à une réécriture ou une redirection interne. L'exemple suivant montre comment accéder à la configuration HTTP d'un module à l'exécution.
 
 ```c
 static ngx_int_t
@@ -1759,21 +1756,21 @@ ngx_http_foo_handler(ngx_http_request_t *r)
 
 ### Phases
 
-Each HTTP request passes through a sequence of phases. In each phase a distinct type of processing is performed on the request. Module-specific handlers can be registered in most phases, and many standard nginx modules register their phase handlers as a way to get called at a specific stage of request processing. Phases are processed successively and the phase handlers are called once the request reaches the phase. Following is the list of nginx HTTP phases.
+Chaque requête HTTP passe par une suite de phases, chacune effectuant un type de traitement distinct. Des gestionnaires propres aux modules peuvent être enregistrés dans la plupart des phases, et de nombreux modules standard le font pour être appelés à une étape précise du traitement. Les phases sont traitées successivement et leurs gestionnaires appelés quand la requête atteint la phase. Voici la liste des phases HTTP de nginx.
 
-- `NGX_HTTP_POST_READ_PHASE` — First phase. The [[11-modules/02-http/ngx_http_realip_module|ngx_http_realip_module]] registers its handler at this phase to enable substitution of client addresses before any other module is invoked.
-- `NGX_HTTP_SERVER_REWRITE_PHASE` — Phase where rewrite directives defined in a `server` block (but outside a `location` block) are processed. The [[11-modules/02-http/ngx_http_rewrite_module|ngx_http_rewrite_module]] installs its handler at this phase.
-- `NGX_HTTP_FIND_CONFIG_PHASE` — Special phase where a location is chosen based on the request URI. Before this phase, the default location for the relevant virtual server is assigned to the request, and any module requesting a location configuration receives the configuration for the default server location. This phase assigns a new location to the request. No additional handlers can be registered at this phase.
-- `NGX_HTTP_REWRITE_PHASE` — Same as `NGX_HTTP_SERVER_REWRITE_PHASE`, but for rewrite rules defined in the location, chosen in the previous phase.
-- `NGX_HTTP_POST_REWRITE_PHASE` — Special phase where the request is redirected to a new location if its URI changed during a rewrite. This is implemented by the request going through the `NGX_HTTP_FIND_CONFIG_PHASE` again. No additional handlers can be registered at this phase.
-- `NGX_HTTP_PREACCESS_PHASE` — A common phase for different types of handlers, not associated with access control. The standard nginx modules [[11-modules/02-http/ngx_http_limit_conn_module|ngx_http_limit_conn_module]] and [[11-modules/02-http/ngx_http_limit_req_module|ngx_http_limit_req_module]] register their handlers at this phase.
-- `NGX_HTTP_ACCESS_PHASE` — Phase where it is verified that the client is authorized to make the request. Standard nginx modules such as [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]] and [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]] register their handlers at this phase. By default the client must pass the authorization check of all handlers registered at this phase for the request to continue to the next phase. The [[12-directives/satisfy|satisfy]] directive, can be used to permit processing to continue if any of the phase handlers authorizes the client.
-- `NGX_HTTP_POST_ACCESS_PHASE` — Special phase where the [[12-directives/satisfy|satisfy any]] directive is processed. If some access phase handlers denied access and none explicitly allowed it, the request is finalized. No additional handlers can be registered at this phase.
-- `NGX_HTTP_PRECONTENT_PHASE` — Phase for handlers to be called prior to generating content. Standard modules such as [[12-directives/try-files|ngx_http_try_files_module]] and [[11-modules/02-http/ngx_http_mirror_module|ngx_http_mirror_module]] register their handlers at this phase.
-- `NGX_HTTP_CONTENT_PHASE` — Phase where the response is normally generated. Multiple nginx standard modules register their handlers at this phase, including [[11-modules/02-http/ngx_http_index_module|ngx_http_index_module]] or `ngx_http_static_module`. They are called sequentially until one of them produces the output. It's also possible to set content handlers on a per-location basis. If the [[11-modules/02-http/ngx_http_core_module|ngx_http_core_module]]'s location configuration has `handler` set, it is called as the content handler and the handlers installed at this phase are ignored.
-- `NGX_HTTP_LOG_PHASE` — Phase where request logging is performed. Currently, only the [[11-modules/02-http/ngx_http_log_module|ngx_http_log_module]] registers its handler at this stage for access logging. Log phase handlers are called at the very end of request processing, right before freeing the request.
+- `NGX_HTTP_POST_READ_PHASE` — Première phase. Le module [[11-modules/02-http/ngx_http_realip_module|ngx_http_realip_module]] y enregistre son gestionnaire pour pouvoir substituer les adresses client avant l'appel de tout autre module.
+- `NGX_HTTP_SERVER_REWRITE_PHASE` — Phase où sont traitées les directives de réécriture définies dans un bloc `server` (hors d'un bloc `location`). Le module [[11-modules/02-http/ngx_http_rewrite_module|ngx_http_rewrite_module]] y installe son gestionnaire.
+- `NGX_HTTP_FIND_CONFIG_PHASE` — Phase spéciale où une location est choisie selon l'URI de la requête. Avant cette phase, la location par défaut du serveur virtuel concerné est affectée à la requête, et tout module demandant une configuration de location reçoit celle de la location par défaut. Cette phase affecte une nouvelle location à la requête. Aucun gestionnaire supplémentaire ne peut y être enregistré.
+- `NGX_HTTP_REWRITE_PHASE` — Comme `NGX_HTTP_SERVER_REWRITE_PHASE`, mais pour les règles de réécriture de la location choisie à la phase précédente.
+- `NGX_HTTP_POST_REWRITE_PHASE` — Phase spéciale où la requête est redirigée vers une nouvelle location si son URI a changé lors d'une réécriture, en repassant par `NGX_HTTP_FIND_CONFIG_PHASE`. Aucun gestionnaire supplémentaire ne peut y être enregistré.
+- `NGX_HTTP_PREACCESS_PHASE` — Phase commune à différents types de gestionnaires, sans lien avec le contrôle d'accès. Les modules standard [[11-modules/02-http/ngx_http_limit_conn_module|ngx_http_limit_conn_module]] et [[11-modules/02-http/ngx_http_limit_req_module|ngx_http_limit_req_module]] y enregistrent leurs gestionnaires.
+- `NGX_HTTP_ACCESS_PHASE` — Phase où l'on vérifie que le client est autorisé à faire la requête. Des modules standard comme [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]] et [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]] y enregistrent leurs gestionnaires. Par défaut, le client doit passer la vérification de tous les gestionnaires de cette phase pour que la requête continue. La directive [[12-directives/satisfy|satisfy]] permet de continuer si l'un quelconque des gestionnaires autorise le client.
+- `NGX_HTTP_POST_ACCESS_PHASE` — Phase spéciale où la directive [[12-directives/satisfy|satisfy any]] est traitée. Si certains gestionnaires de la phase d'accès ont refusé l'accès et qu'aucun ne l'a explicitement autorisé, la requête est finalisée. Aucun gestionnaire supplémentaire ne peut y être enregistré.
+- `NGX_HTTP_PRECONTENT_PHASE` — Phase des gestionnaires à appeler avant la génération du contenu. Des modules standard comme [[12-directives/try-files|ngx_http_try_files_module]] et [[11-modules/02-http/ngx_http_mirror_module|ngx_http_mirror_module]] y enregistrent leurs gestionnaires.
+- `NGX_HTTP_CONTENT_PHASE` — Phase où la réponse est normalement générée. Plusieurs modules standard y enregistrent leurs gestionnaires, dont [[11-modules/02-http/ngx_http_index_module|ngx_http_index_module]] ou `ngx_http_static_module`. Ils sont appelés successivement jusqu'à ce que l'un d'eux produise la sortie. On peut aussi définir des gestionnaires de contenu par location : si la configuration de location de [[11-modules/02-http/ngx_http_core_module|ngx_http_core_module]] a un `handler` défini, il est appelé comme gestionnaire de contenu et ceux de cette phase sont ignorés.
+- `NGX_HTTP_LOG_PHASE` — Phase de journalisation de la requête. Actuellement, seul [[11-modules/02-http/ngx_http_log_module|ngx_http_log_module]] y enregistre son gestionnaire, pour le journal d'accès. Les gestionnaires de cette phase sont appelés tout à la fin du traitement, juste avant la libération de la requête.
 
-Following is the example of a preaccess phase handler.
+Voici un exemple de gestionnaire de la phase de pré-accès.
 
 ```c
 static ngx_http_module_t  ngx_http_foo_module_ctx = {
@@ -1830,20 +1827,20 @@ ngx_http_foo_init(ngx_conf_t *cf)
 }
 ```
 
-Phase handlers are expected to return specific codes:
+Les gestionnaires de phase doivent renvoyer des codes précis :
 
-- `NGX_OK` — Proceed to the next phase.
-- `NGX_DECLINED` — Proceed to the next handler of the current phase. If the current handler is the last in the current phase, move to the next phase.
-- `NGX_AGAIN`, `NGX_DONE` — Suspend phase handling until some future event which can be an asynchronous I/O operation or just a delay, for example. It is assumed, that phase handling will be resumed later by calling `ngx_http_core_run_phases()`.
-- Any other value returned by the phase handler is treated as a request finalization code, in particular, an HTTP response code. The request is finalized with the code provided.
+- `NGX_OK` — Passer à la phase suivante.
+- `NGX_DECLINED` — Passer au gestionnaire suivant de la phase courante. Si c'est le dernier de la phase, passer à la phase suivante.
+- `NGX_AGAIN`, `NGX_DONE` — Suspendre le traitement des phases jusqu'à un événement futur, par exemple une opération d'E/S asynchrone ou un simple délai. On suppose que le traitement reprendra plus tard par un appel à `ngx_http_core_run_phases()`.
+- Toute autre valeur renvoyée est traitée comme un code de finalisation de la requête, en particulier un code de réponse HTTP. La requête est finalisée avec ce code.
 
-For some phases, return codes are treated in a slightly different way. At the content phase, any return code other that `NGX_DECLINED` is considered a finalization code. Any return code from the location content handlers is considered a finalization code. At the access phase, in [[12-directives/satisfy|satisfy any]] mode, any return code other than `NGX_OK`, `NGX_DECLINED`, `NGX_AGAIN`, `NGX_DONE` is considered a denial. If no subsequent access handlers allow or deny access with a different code, the denial code will become the finalization code.
+Pour certaines phases, les codes de retour sont traités un peu différemment. À la phase de contenu, tout code autre que `NGX_DECLINED` est considéré comme un code de finalisation, de même que tout code renvoyé par les gestionnaires de contenu de location. À la phase d'accès, en mode [[12-directives/satisfy|satisfy any]], tout code autre que `NGX_OK`, `NGX_DECLINED`, `NGX_AGAIN`, `NGX_DONE` est considéré comme un refus. Si aucun gestionnaire d'accès suivant n'autorise ou ne refuse l'accès avec un autre code, le code de refus devient le code de finalisation.
 
 ### Variables
 
-#### Accessing existing variables
+#### Accéder aux variables existantes
 
-Variables can be referenced by index (this is the most common method) or name (see below). The index is created at configuration stage, when a variable is added to the configuration. To obtain the variable index, use `ngx_http_get_variable_index()`:
+Les variables peuvent être référencées par indice (méthode la plus courante) ou par nom (voir plus bas). L'indice est créé à l'étape de configuration, quand une variable est ajoutée à la configuration. Pour obtenir l'indice d'une variable, utilisez `ngx_http_get_variable_index()` :
 
 ```c
 ngx_str_t  name;  /* ngx_string("foo") */
@@ -1852,9 +1849,9 @@ ngx_int_t  index;
 index = ngx_http_get_variable_index(cf, &name);
 ```
 
-Here, `cf` is a pointer to nginx configuration and `name` points to a string containing the variable name. The function returns `NGX_ERROR` on error or a valid index otherwise, which is typically stored somewhere in the module's configuration for future use.
+Ici, `cf` est un pointeur vers la configuration de nginx et `name` pointe vers une chaîne contenant le nom de la variable. La fonction renvoie `NGX_ERROR` en cas d'erreur, sinon un indice valide, généralement stocké dans la configuration du module pour un usage ultérieur.
 
-All HTTP variables are evaluated in the context of a given HTTP request, and results are specific to and cached in that HTTP request. All functions that evaluate variables return the `ngx_http_variable_value_t` type, representing the variable value:
+Toutes les variables HTTP sont évaluées dans le contexte d'une requête HTTP donnée ; les résultats lui sont propres et y sont mis en cache. Toutes les fonctions qui évaluent des variables renvoient le type `ngx_http_variable_value_t`, qui représente la valeur de la variable :
 
 ```c
 typedef ngx_variable_value_t  ngx_http_variable_value_t;
@@ -1871,16 +1868,16 @@ typedef struct {
 } ngx_variable_value_t;
 ```
 
-where:
+où :
 
-- `len` — The length of the value
-- `data` — The value itself
-- `valid` — The value is valid
-- `not_found` — The variable was not found and thus the `data` and `len` fields are irrelevant; this can happen, for example, with variables like `$arg_foo` when a corresponding argument was not passed in a request
-- `no_cacheable` — Do not cache result
-- `escape` — Used internally by the logging module to mark values that require escaping on output.
+- `len` — Longueur de la valeur
+- `data` — La valeur elle-même
+- `valid` — La valeur est valide
+- `not_found` — La variable est introuvable, les champs `data` et `len` sont donc sans objet ; cela arrive par exemple avec des variables comme `$arg_foo` quand l'argument correspondant n'est pas passé dans la requête
+- `no_cacheable` — Ne pas mettre le résultat en cache
+- `escape` — Utilisé en interne par le module de journalisation pour marquer les valeurs à échapper en sortie.
 
-The `ngx_http_get_flushed_variable()` and `ngx_http_get_indexed_variable()` functions are used to obtain the value of a variable. They have the same interface - accepting an HTTP request `r` as a context for evaluating the variable and an `index` that identifies it. An example of typical usage:
+Les fonctions `ngx_http_get_flushed_variable()` et `ngx_http_get_indexed_variable()` servent à obtenir la valeur d'une variable. Elles ont la même interface : une requête HTTP `r` comme contexte d'évaluation et un `index` qui identifie la variable. Exemple d'usage typique :
 
 ```c
 ngx_http_variable_value_t  *v;
@@ -1895,20 +1892,20 @@ if (v == NULL || v->not_found) {
 /* some meaningful value is found */
 ```
 
-The difference between functions is that the `ngx_http_get_indexed_variable()` returns a cached value and `ngx_http_get_flushed_variable()` flushes the cache for non-cacheable variables.
+La différence est que `ngx_http_get_indexed_variable()` renvoie une valeur en cache, tandis que `ngx_http_get_flushed_variable()` vide le cache des variables non mises en cache.
 
-Some modules, such as SSI and Perl, need to deal with variables for which the name is not known at configuration time. An index therefore cannot be used to access them, but the `ngx_http_get_variable(r, name, key)` function is available. It searches for a variable with a given `name` and its hash `key` derived from the name.
+Certains modules, comme SSI et Perl, doivent traiter des variables dont le nom n'est pas connu à la configuration. On ne peut donc pas y accéder par indice, mais la fonction `ngx_http_get_variable(r, name, key)` est disponible. Elle cherche une variable de nom `name` avec sa clé de hachage `key` dérivée du nom.
 
-#### Creating variables
+#### Créer des variables
 
-To create a variable, use the `ngx_http_add_variable()` function. It takes as arguments a configuration (where the variable is registered), the variable name and flags that control the function's behaviour:
+Pour créer une variable, utilisez la fonction `ngx_http_add_variable()`. Elle prend en arguments une configuration (où la variable est enregistrée), le nom de la variable et des indicateurs qui contrôlent son comportement :
 
-- `NGX_HTTP_VAR_CHANGEABLE` — Enables redefinition of the variable: there is no conflict if another module defines a variable with the same name. This allows the [[12-directives/set-http-rewrite|set]] directive to override variables.
-- `NGX_HTTP_VAR_NOCACHEABLE` — Disables caching, which is useful for variables such as `$time_local`.
-- `NGX_HTTP_VAR_NOHASH` — Indicates that this variable is only accessible by index, not by name. This is a small optimization for use when it is known that the variable is not needed in modules like SSI or Perl.
-- `NGX_HTTP_VAR_PREFIX` — The name of the variable is a prefix. In this case, a handler must implement additional logic to obtain the value of a specific variable. For example, all “`arg_`” variables are processed by the same handler, which performs lookup in request arguments and returns the value of a specific argument.
+- `NGX_HTTP_VAR_CHANGEABLE` — Permet de redéfinir la variable : pas de conflit si un autre module définit une variable de même nom. Cela permet à la directive [[12-directives/set-http-rewrite|set]] de remplacer des variables.
+- `NGX_HTTP_VAR_NOCACHEABLE` — Désactive la mise en cache, utile pour des variables comme `$time_local`.
+- `NGX_HTTP_VAR_NOHASH` — Indique que la variable n'est accessible que par indice, pas par nom. Petite optimisation, à utiliser quand on sait que la variable n'est pas nécessaire dans des modules comme SSI ou Perl.
+- `NGX_HTTP_VAR_PREFIX` — Le nom de la variable est un préfixe. Le gestionnaire doit alors mettre en œuvre une logique supplémentaire pour obtenir la valeur d'une variable précise. Par exemple, toutes les variables « `arg_` » sont traitées par le même gestionnaire, qui cherche dans les arguments de la requête et renvoie la valeur de l'argument voulu.
 
-The function returns NULL in case of error or a pointer to `ngx_http_variable_t` otherwise:
+La fonction renvoie NULL en cas d'erreur, sinon un pointeur vers `ngx_http_variable_t` :
 
 ```c
 struct ngx_http_variable_s {
@@ -1921,9 +1918,9 @@ struct ngx_http_variable_s {
 };
 ```
 
-The `get` and `set` handlers are called to obtain or set the variable value, `data` is passed to variable handlers, and `index` holds assigned variable index used to reference the variable.
+Les gestionnaires `get` et `set` sont appelés pour obtenir ou définir la valeur de la variable, `data` est passé aux gestionnaires, et `index` contient l'indice attribué, qui sert à référencer la variable.
 
-Usually, a null-terminated static array of `ngx_http_variable_t` structures is created by a module and processed at the preconfiguration stage to add variables into the configuration, for example:
+Généralement, un module crée un tableau statique terminé par un élément nul de structures `ngx_http_variable_t`, traité à l'étape de préconfiguration pour ajouter les variables à la configuration, par exemple :
 
 ```c
 static ngx_http_variable_t  ngx_http_foo_vars[] = {
@@ -1952,9 +1949,9 @@ ngx_http_foo_add_variables(ngx_conf_t *cf)
 }
 ```
 
-This function in the example is used to initialize the `preconfiguration` field of the HTTP module context and is called before the parsing of HTTP configuration, so that the parser can refer to these variables.
+Dans l'exemple, cette fonction initialise le champ `preconfiguration` du contexte du module HTTP et est appelée avant l'analyse de la configuration HTTP, pour que l'analyseur puisse faire référence à ces variables.
 
-The `get` handler is responsible for evaluating a variable in the context of a specific request, for example:
+Le gestionnaire `get` évalue une variable dans le contexte d'une requête précise, par exemple :
 
 ```c
 static ngx_int_t
@@ -1978,9 +1975,9 @@ ngx_http_variable_connection(ngx_http_request_t *r,
 }
 ```
 
-It returns `NGX_ERROR` in case of internal error (for example, failed memory allocation) or `NGX_OK` otherwise. To learn the status of variable evaluation, inspect the flags in `ngx_http_variable_value_t` (see the description above).
+Il renvoie `NGX_ERROR` en cas d'erreur interne (par exemple un échec d'allocation mémoire), sinon `NGX_OK`. Pour connaître l'état de l'évaluation, examinez les indicateurs de `ngx_http_variable_value_t` (voir la description plus haut).
 
-The `set` handler allows setting the property referenced by the variable. For example, the set handler of the `$limit_rate` variable modifies the request's `limit_rate` field:
+Le gestionnaire `set` permet de définir la propriété référencée par la variable. Par exemple, le gestionnaire set de la variable `$limit_rate` modifie le champ `limit_rate` de la requête :
 
 ```c
 ...
@@ -2016,11 +2013,11 @@ ngx_http_variable_request_set_size(ngx_http_request_t *r,
 }
 ```
 
-### Complex values
+### Valeurs complexes
 
-A complex value, despite its name, provides an easy way to evaluate expressions which can contain text, variables, and their combination.
+Une valeur complexe, malgré son nom, offre un moyen simple d'évaluer des expressions pouvant contenir du texte, des variables et leur combinaison.
 
-The complex value description in `ngx_http_compile_complex_value` is compiled at the configuration stage into `ngx_http_complex_value_t` which is used at runtime to obtain results of expression evaluation.
+La description de la valeur complexe dans `ngx_http_compile_complex_value` est compilée à l'étape de configuration en `ngx_http_complex_value_t`, utilisé à l'exécution pour obtenir le résultat de l'évaluation de l'expression.
 
 ```c
 ngx_str_t                         *value;
@@ -2042,22 +2039,22 @@ if (ngx_http_compile_complex_value(&ccv) != NGX_OK) {
 }
 ```
 
-Here, `ccv` holds all parameters that are required to initialize the complex value `cv`:
+Ici, `ccv` contient tous les paramètres nécessaires pour initialiser la valeur complexe `cv` :
 
-- `cf` — Configuration pointer
-- `value` — String to be parsed (input)
-- `complex_value` — Compiled value (output)
-- `zero` — Flag that enables zero-terminating value
-- `conf_prefix` — Prefixes the result with the configuration prefix (the directory where nginx is currently looking for configuration)
-- `root_prefix` — Prefixes the result with the root prefix (the normal nginx installation prefix)
+- `cf` — Pointeur de configuration
+- `value` — Chaîne à analyser (entrée)
+- `complex_value` — Valeur compilée (sortie)
+- `zero` — Indicateur qui active la terminaison par un octet nul
+- `conf_prefix` — Préfixe le résultat par le préfixe de configuration (le répertoire où nginx cherche actuellement sa configuration)
+- `root_prefix` — Préfixe le résultat par le préfixe racine (le préfixe d'installation normal de nginx)
 
-The `zero` flag is useful when results are to be passed to libraries that require zero-terminated strings, and prefixes are handy when dealing with filenames.
+L'indicateur `zero` est utile quand les résultats sont passés à des bibliothèques qui exigent des chaînes terminées par un octet nul, et les préfixes sont pratiques pour les noms de fichiers.
 
-Upon successful compilation, `cv.lengths` contains information about the presence of variables in the expression. The NULL value means that the expression contained static text only, and so can be stored in a simple string rather than as a complex value.
+Après une compilation réussie, `cv.lengths` indique si l'expression contient des variables. La valeur NULL signifie qu'elle ne contient que du texte statique, qui peut donc être stocké dans une simple chaîne plutôt que sous forme de valeur complexe.
 
-The `ngx_http_set_complex_value_slot()` is a convenient function used to initialize a complex value completely in the directive declaration itself.
+`ngx_http_set_complex_value_slot()` est une fonction pratique qui initialise entièrement une valeur complexe dans la déclaration de la directive elle-même.
 
-At runtime, a complex value can be calculated using the `ngx_http_complex_value()` function:
+À l'exécution, une valeur complexe peut être calculée avec la fonction `ngx_http_complex_value()` :
 
 ```c
 ngx_str_t  res;
@@ -2067,17 +2064,17 @@ if (ngx_http_complex_value(r, &cv, &res) != NGX_OK) {
 }
 ```
 
-Given the request `r` and previously compiled value `cv`, the function evaluates the expression and writes the result to `res`.
+À partir de la requête `r` et de la valeur compilée `cv`, la fonction évalue l'expression et écrit le résultat dans `res`.
 
-### Request redirection
+### Redirection des requêtes
 
-An HTTP request is always connected to a location via the `loc_conf` field of the `ngx_http_request_t` structure. This means that at any point the location configuration of any module can be retrieved from the request by calling `ngx_http_get_module_loc_conf(r, module)`. Request location can change several times during the request's lifetime. Initially, a default server location of the default server is assigned to a request. If the request switches to a different server (chosen by the HTTP `Host` header or SSL SNI extension), the request switches to the default location of that server as well. The next change of the location takes place at the `NGX_HTTP_FIND_CONFIG_PHASE` request phase. At this phase a location is chosen by request URI among all non-named locations configured for the server. The [[11-modules/02-http/ngx_http_rewrite_module|ngx_http_rewrite_module]] can change the request URI at the `NGX_HTTP_REWRITE_PHASE` request phase as a result of the [[12-directives/rewrite|rewrite]] directive and send the request back to the `NGX_HTTP_FIND_CONFIG_PHASE` phase for selection of a new location based on the new URI.
+Une requête HTTP est toujours liée à une location via le champ `loc_conf` de la structure `ngx_http_request_t`. On peut donc à tout moment obtenir la configuration de location de n'importe quel module à partir de la requête en appelant `ngx_http_get_module_loc_conf(r, module)`. La location peut changer plusieurs fois pendant la vie de la requête. Au départ, la location par défaut du serveur par défaut lui est affectée. Si la requête bascule vers un autre serveur (choisi par l'en-tête HTTP `Host` ou l'extension SSL SNI), elle bascule aussi vers la location par défaut de ce serveur. Le changement suivant a lieu à la phase `NGX_HTTP_FIND_CONFIG_PHASE`, où une location est choisie selon l'URI parmi toutes les locations non nommées du serveur. Le module [[11-modules/02-http/ngx_http_rewrite_module|ngx_http_rewrite_module]] peut modifier l'URI à la phase `NGX_HTTP_REWRITE_PHASE` suite à la directive [[12-directives/rewrite|rewrite]] et renvoyer la requête à la phase `NGX_HTTP_FIND_CONFIG_PHASE` pour choisir une nouvelle location selon la nouvelle URI.
 
-It is also possible to redirect a request to a new location at any point by calling one of `ngx_http_internal_redirect(r, uri, args)` or `ngx_http_named_location(r, name)`.
+On peut aussi rediriger une requête vers une nouvelle location à tout moment en appelant `ngx_http_internal_redirect(r, uri, args)` ou `ngx_http_named_location(r, name)`.
 
-The `ngx_http_internal_redirect(r, uri, args)` function changes the request URI and returns the request to the `NGX_HTTP_SERVER_REWRITE_PHASE` phase. The request proceeds with a server default location. Later at `NGX_HTTP_FIND_CONFIG_PHASE` a new location is chosen based on the new request URI.
+La fonction `ngx_http_internal_redirect(r, uri, args)` modifie l'URI de la requête et la renvoie à la phase `NGX_HTTP_SERVER_REWRITE_PHASE`. La requête continue avec la location par défaut du serveur ; plus tard, à `NGX_HTTP_FIND_CONFIG_PHASE`, une nouvelle location est choisie selon la nouvelle URI.
 
-The following example performs an internal redirect with the new request arguments.
+L'exemple suivant effectue une redirection interne avec de nouveaux arguments de requête.
 
 ```c
 ngx_int_t
@@ -2092,9 +2089,9 @@ ngx_http_foo_redirect(ngx_http_request_t *r)
 }
 ```
 
-The function `ngx_http_named_location(r, name)` redirects a request to a named location. The name of the location is passed as the argument. The location is looked up among all named locations of the current server, after which the requests switches to the `NGX_HTTP_REWRITE_PHASE` phase.
+La fonction `ngx_http_named_location(r, name)` redirige une requête vers une location nommée, dont le nom est passé en argument. La location est recherchée parmi toutes les locations nommées du serveur courant, puis la requête passe à la phase `NGX_HTTP_REWRITE_PHASE`.
 
-The following example performs a redirect to a named location @foo.
+L'exemple suivant redirige vers une location nommée @foo.
 
 ```c
 ngx_int_t
@@ -2108,34 +2105,34 @@ ngx_http_foo_named_redirect(ngx_http_request_t *r)
 }
 ```
 
-Both functions - `ngx_http_internal_redirect(r, uri, args)` and `ngx_http_named_location(r, name)` can be called when nginx modules have already stored some contexts in a request's `ctx` field. It's possible for these contexts to become inconsistent with the new location configuration. To prevent inconsistency, all request contexts are erased by both redirect functions.
+Les deux fonctions `ngx_http_internal_redirect(r, uri, args)` et `ngx_http_named_location(r, name)` peuvent être appelées alors que des modules ont déjà stocké des contextes dans le champ `ctx` de la requête. Ces contextes risquent de devenir incohérents avec la nouvelle configuration de location. Pour l'éviter, les deux fonctions de redirection effacent tous les contextes de la requête.
 
-Calling `ngx_http_internal_redirect(r, uri, args)` or `ngx_http_named_location(r, name)` increases the request `count`. For consistent request reference counting, call `ngx_http_finalize_request(r, NGX_DONE)` after redirecting the request. This will finalize current request code path and decrease the counter.
+Appeler `ngx_http_internal_redirect(r, uri, args)` ou `ngx_http_named_location(r, name)` incrémente le `count` de la requête. Pour un décompte de références cohérent, appelez `ngx_http_finalize_request(r, NGX_DONE)` après la redirection : cela termine le chemin de code courant et décrémente le compteur.
 
-Redirected and rewritten requests become internal and can access the [[12-directives/internal|internal]] locations. Internal requests have the `internal` flag set.
+Les requêtes redirigées et réécrites deviennent internes et peuvent accéder aux locations [[12-directives/internal|internal]]. Les requêtes internes ont l'indicateur `internal` positionné.
 
-### Subrequests
+### Sous-requêtes
 
-Subrequests are primarily used to insert output of one request into another, possibly mixed with other data. A subrequest looks like a normal request, but shares some data with its parent. In particular, all fields related to client input are shared because a subrequest does not receive any other input from the client. The request field `parent` for a subrequest contains a link to its parent request and is NULL for the main request. The field `main` contains a link to the main request in a group of requests.
+Les sous-requêtes servent surtout à insérer la sortie d'une requête dans une autre, éventuellement mêlée à d'autres données. Une sous-requête ressemble à une requête normale mais partage certaines données avec son parent, en particulier tous les champs liés aux entrées du client, puisqu'une sous-requête ne reçoit aucune autre entrée de celui-ci. Le champ `parent` d'une sous-requête contient un lien vers sa requête parente ; il vaut NULL pour la requête principale. Le champ `main` contient un lien vers la requête principale d'un groupe de requêtes.
 
-A subrequest starts in the `NGX_HTTP_SERVER_REWRITE_PHASE` phase. It passes through the same subsequent phases as a normal request and is assigned a location based on its own URI.
+Une sous-requête démarre à la phase `NGX_HTTP_SERVER_REWRITE_PHASE`. Elle traverse les mêmes phases suivantes qu'une requête normale et reçoit une location selon sa propre URI.
 
-The output header in a subrequest is always ignored. The `ngx_http_postpone_filter` places the subrequest's output body in the right position relative to other data produced by the parent request.
+L'en-tête de sortie d'une sous-requête est toujours ignoré. Le filtre `ngx_http_postpone_filter` place le corps de sortie de la sous-requête au bon endroit par rapport aux autres données produites par la requête parente.
 
-Subrequests are related to the concept of active requests. A request `r` is considered active if `c->data == r`, where `c` is the client connection object. At any given point, only the active request in a request group is allowed to output its buffers to the client. An inactive request can still send its output to the filter chain, but it does not pass beyond the `ngx_http_postpone_filter` and remains buffered by that filter until the request becomes active. Here are some rules of request activation:
+Les sous-requêtes sont liées à la notion de requête active. Une requête `r` est active si `c->data == r`, où `c` est l'objet connexion client. À tout instant, seule la requête active d'un groupe peut envoyer ses tampons au client. Une requête inactive peut toujours envoyer sa sortie dans la chaîne de filtres, mais celle-ci ne dépasse pas `ngx_http_postpone_filter` et y reste en tampon jusqu'à ce que la requête devienne active. Quelques règles d'activation :
 
-- Initially, the main request is active.
-- The first subrequest of an active request becomes active right after creation.
-- The `ngx_http_postpone_filter` activates the next request in the active request's subrequest list, once all data prior to that request are sent.
-- When a request is finalized, its parent is activated.
+- Au départ, la requête principale est active.
+- La première sous-requête d'une requête active devient active dès sa création.
+- `ngx_http_postpone_filter` active la requête suivante de la liste des sous-requêtes de la requête active, une fois envoyées toutes les données qui la précèdent.
+- Quand une requête est finalisée, son parent est activé.
 
-Create a subrequest by calling the function `ngx_http_subrequest(r, uri, args, psr, ps, flags)`, where `r` is the parent request, `uri` and `args` are the URI and arguments of the subrequest, `psr` is the output parameter, which receives the newly created subrequest reference, `ps` is a callback object for notifying the parent request that the subrequest is being finalized, and `flags` is bitmask of flags. The following flags are available:
+Créez une sous-requête en appelant la fonction `ngx_http_subrequest(r, uri, args, psr, ps, flags)`, où `r` est la requête parente, `uri` et `args` l'URI et les arguments de la sous-requête, `psr` le paramètre de sortie qui reçoit la référence de la nouvelle sous-requête, `ps` un objet de rappel pour notifier la requête parente de la finalisation de la sous-requête, et `flags` un masque d'indicateurs. Indicateurs disponibles :
 
-- `NGX_HTTP_SUBREQUEST_IN_MEMORY` - Output is not sent to the client, but rather stored in memory. The flag only affects subrequests which are processed by one of the proxying modules. After a subrequest is finalized its output is available in `r->out` of type `ngx_buf_t`.
-- `NGX_HTTP_SUBREQUEST_WAITED` - The subrequest's `done` flag is set even if the subrequest is not active when it is finalized. This subrequest flag is used by the SSI filter.
-- `NGX_HTTP_SUBREQUEST_CLONE` - The subrequest is created as a clone of its parent. It is started at the same location and proceeds from the same phase as the parent request.
+- `NGX_HTTP_SUBREQUEST_IN_MEMORY` - La sortie n'est pas envoyée au client mais stockée en mémoire. N'affecte que les sous-requêtes traitées par l'un des modules de relais. Après finalisation, la sortie est disponible dans `r->out`, de type `ngx_buf_t`.
+- `NGX_HTTP_SUBREQUEST_WAITED` - L'indicateur `done` de la sous-requête est positionné même si elle n'est pas active lors de sa finalisation. Utilisé par le filtre SSI.
+- `NGX_HTTP_SUBREQUEST_CLONE` - La sous-requête est créée comme un clone de son parent. Elle démarre dans la même location et reprend à la même phase que la requête parente.
 
-The following example creates a subrequest with the URI of `/foo`.
+L'exemple suivant crée une sous-requête avec l'URI `/foo`.
 
 ```c
 ngx_int_t            rc;
@@ -2152,7 +2149,7 @@ if (rc == NGX_ERROR) {
 }
 ```
 
-This example clones the current request and sets a finalization callback for the subrequest.
+Cet exemple clone la requête courante et définit une fonction de rappel de finalisation pour la sous-requête.
 
 ```c
 ngx_int_t
@@ -2186,7 +2183,7 @@ ngx_http_foo_subrequest_done(ngx_http_request_t *r, void *data, ngx_int_t rc)
 }
 ```
 
-Subrequests are normally created in a body filter, in which case their output can be treated like the output from any explicit request. This means that eventually the output of a subrequest is sent to the client, after all explicit buffers that are passed before subrequest creation and before any buffers that are passed after creation. This ordering is preserved even for large hierarchies of subrequests. The following example inserts output from a subrequest after all request data buffers, but before the final buffer with the `last_buf` flag.
+Les sous-requêtes sont normalement créées dans un filtre de corps ; leur sortie est alors traitée comme celle de n'importe quelle requête explicite. La sortie d'une sous-requête est donc envoyée au client après tous les tampons explicites passés avant sa création et avant tous ceux passés après. Cet ordre est préservé même pour de grandes hiérarchies de sous-requêtes. L'exemple suivant insère la sortie d'une sous-requête après tous les tampons de données de la requête, mais avant le tampon final portant l'indicateur `last_buf`.
 
 ```c
 ngx_int_t
@@ -2251,28 +2248,28 @@ ngx_http_foo_body_filter(ngx_http_request_t *r, ngx_chain_t *in)
 }
 ```
 
-A subrequest can also be created for other purposes than data output. For example, the [[11-modules/02-http/ngx_http_auth_request_module|ngx_http_auth_request_module]] module creates a subrequest at the `NGX_HTTP_ACCESS_PHASE` phase. To disable output at this point, the `header_only` flag is set on the subrequest. This prevents the subrequest body from being sent to the client. Note that the subrequest's header is never sent to the client. The result of the subrequest can be analyzed in the callback handler.
+Une sous-requête peut aussi être créée à d'autres fins que la production de données. Par exemple, le module [[11-modules/02-http/ngx_http_auth_request_module|ngx_http_auth_request_module]] crée une sous-requête à la phase `NGX_HTTP_ACCESS_PHASE`. Pour désactiver la sortie à ce stade, l'indicateur `header_only` est positionné sur la sous-requête, ce qui empêche l'envoi de son corps au client. Notez que l'en-tête d'une sous-requête n'est jamais envoyé au client. Le résultat de la sous-requête peut être analysé dans le gestionnaire de rappel.
 
-### Request finalization
+### Finalisation des requêtes
 
-An HTTP request is finalized by calling the function `ngx_http_finalize_request(r, rc)`. It is usually finalized by the content handler after all output buffers are sent to the filter chain. At this point all of the output might not be sent to the client, with some of it remaining buffered somewhere along the filter chain. If it is, the `ngx_http_finalize_request(r, rc)` function automatically installs a special handler `ngx_http_writer(r)` to finish sending the output. A request is also finalized in case of an error or if a standard HTTP response code needs to be returned to the client.
+Une requête HTTP est finalisée en appelant la fonction `ngx_http_finalize_request(r, rc)`. Elle l'est généralement par le gestionnaire de contenu, une fois tous les tampons de sortie envoyés dans la chaîne de filtres. À ce stade, toute la sortie n'a pas forcément été envoyée au client : une partie peut rester en tampon quelque part dans la chaîne. Dans ce cas, `ngx_http_finalize_request(r, rc)` installe automatiquement un gestionnaire spécial `ngx_http_writer(r)` pour finir l'envoi. Une requête est aussi finalisée en cas d'erreur ou s'il faut renvoyer au client un code de réponse HTTP standard.
 
-The function `ngx_http_finalize_request(r, rc)` expects the following `rc` values:
+La fonction `ngx_http_finalize_request(r, rc)` attend les valeurs `rc` suivantes :
 
-- `NGX_DONE` - Fast finalization. Decrement the request `count` and destroy the request if it reaches zero. The client connection can be used for more requests after the current request is destroyed.
-- `NGX_ERROR`, `NGX_HTTP_REQUEST_TIME_OUT` (`408`), `NGX_HTTP_CLIENT_CLOSED_REQUEST` (`499`) - Error finalization. Terminate the request as soon as possible and close the client connection.
-- `NGX_HTTP_CREATED` (`201`), `NGX_HTTP_NO_CONTENT` (`204`), codes greater than or equal to `NGX_HTTP_SPECIAL_RESPONSE` (`300`) - Special response finalization. For these values nginx either sends to the client a default response page for the code or performs the internal redirect to an [[12-directives/error-page|error_page]] location if that is configured for the code.
-- Other codes are considered successful finalization codes and might activate the request writer to finish sending the response body. Once the body is completely sent, the request `count` is decremented. If it reaches zero, the request is destroyed, but the client connection can still be used for other requests. If `count` is positive, there are unfinished activities within the request, which will be finalized at a later point.
+- `NGX_DONE` - Finalisation rapide. Décrémente le `count` de la requête et la détruit s'il atteint zéro. La connexion client peut servir à d'autres requêtes après la destruction de la requête courante.
+- `NGX_ERROR`, `NGX_HTTP_REQUEST_TIME_OUT` (`408`), `NGX_HTTP_CLIENT_CLOSED_REQUEST` (`499`) - Finalisation sur erreur. Termine la requête au plus vite et ferme la connexion client.
+- `NGX_HTTP_CREATED` (`201`), `NGX_HTTP_NO_CONTENT` (`204`), codes supérieurs ou égaux à `NGX_HTTP_SPECIAL_RESPONSE` (`300`) - Finalisation avec réponse spéciale. nginx envoie alors au client une page de réponse par défaut pour le code, ou effectue une redirection interne vers une location [[12-directives/error-page|error_page]] si elle est configurée pour ce code.
+- Les autres codes sont considérés comme des codes de finalisation réussie et peuvent activer l'écrivain de la requête pour finir d'envoyer le corps de la réponse. Une fois le corps entièrement envoyé, le `count` de la requête est décrémenté. S'il atteint zéro, la requête est détruite, mais la connexion client peut encore servir à d'autres requêtes. Si `count` est positif, des activités inachevées subsistent dans la requête et seront finalisées plus tard.
 
-### Request body
+### Corps de la requête
 
-For dealing with the body of a client request, nginx provides the `ngx_http_read_client_request_body(r, post_handler)` and `ngx_http_discard_request_body(r)` functions. The first function reads the request body and makes it available via the `request_body` request field. The second function instructs nginx to discard (read and ignore) the request body. One of these functions must be called for every request. Normally, the content handler makes the call.
+Pour traiter le corps d'une requête client, nginx fournit les fonctions `ngx_http_read_client_request_body(r, post_handler)` et `ngx_http_discard_request_body(r)`. La première lit le corps et le rend disponible via le champ `request_body` de la requête. La seconde demande à nginx de rejeter (lire et ignorer) le corps. L'une de ces fonctions doit être appelée pour chaque requête, normalement par le gestionnaire de contenu.
 
-Reading or discarding the client request body from a subrequest is not allowed. It must always be done in the main request. When a subrequest is created, it inherits the parent's `request_body` object which can be used by the subrequest if the main request has previously read the request body.
+Il est interdit de lire ou de rejeter le corps de la requête client depuis une sous-requête : cela doit toujours se faire dans la requête principale. Une sous-requête hérite de l'objet `request_body` de son parent, qu'elle peut utiliser si la requête principale a déjà lu le corps.
 
-The function `ngx_http_read_client_request_body(r, post_handler)` starts the process of reading the request body. When the body is completely read, the `post_handler` callback is called to continue processing the request. If the request body is missing or has already been read, the callback is called immediately. In unbuffered mode, the callback can be called before the whole body is read. The function `ngx_http_read_client_request_body(r, post_handler)` allocates the `request_body` request field of type `ngx_http_request_body_t`. The field `bufs` of this object keeps the result as a buffer chain. The body can be saved in memory buffers or file buffers, if the capacity specified by the [[12-directives/client-body-buffer-size|client_body_buffer_size]] directive is not enough to fit the entire body in memory.
+La fonction `ngx_http_read_client_request_body(r, post_handler)` lance la lecture du corps de la requête. Quand le corps est entièrement lu, la fonction de rappel `post_handler` est appelée pour poursuivre le traitement. Si le corps est absent ou déjà lu, elle est appelée immédiatement. En mode sans tampon, elle peut être appelée avant la lecture complète du corps. La fonction alloue le champ `request_body` de type `ngx_http_request_body_t`, dont le champ `bufs` conserve le résultat sous forme de chaîne de tampons. Le corps peut être stocké dans des tampons mémoire ou fichier, si la capacité fixée par la directive [[12-directives/client-body-buffer-size|client_body_buffer_size]] ne suffit pas pour le garder entièrement en mémoire.
 
-The following example reads a client request body and returns its size.
+L'exemple suivant lit le corps d'une requête client et renvoie sa taille.
 
 ```c
 ngx_int_t
@@ -2339,25 +2336,25 @@ ngx_http_foo_init(ngx_http_request_t *r)
 }
 ```
 
-The following fields of the request determine how the request body is read:
+Les champs suivants de la requête déterminent comment le corps est lu :
 
-- `request_body_in_single_buf` - Read the body to a single memory buffer.
-- `request_body_in_file_only` - Always read the body to a file, even if fits in the memory buffer.
-- `request_body_in_persistent_file` - Do not unlink the file immediately after creation. A file with this flag can be moved to another directory.
-- `request_body_in_clean_file` - Unlink the file when the request is finalized. This can be useful when a file was supposed to be moved to another directory but was not moved for some reason.
-- `request_body_file_group_access` - Enable group access to the file by replacing the default 0600 access mask with 0660.
-- `request_body_file_log_level` - Severity level at which to log file errors.
-- `request_body_no_buffering` - Read the request body without buffering.
+- `request_body_in_single_buf` - Lire le corps dans un seul tampon mémoire.
+- `request_body_in_file_only` - Toujours lire le corps dans un fichier, même s'il tient dans le tampon mémoire.
+- `request_body_in_persistent_file` - Ne pas supprimer le fichier juste après sa création. Un fichier avec cet indicateur peut être déplacé dans un autre répertoire.
+- `request_body_in_clean_file` - Supprimer le fichier à la finalisation de la requête. Utile quand un fichier devait être déplacé dans un autre répertoire mais ne l'a pas été pour une raison quelconque.
+- `request_body_file_group_access` - Autoriser l'accès au fichier pour le groupe en remplaçant le masque d'accès par défaut 0600 par 0660.
+- `request_body_file_log_level` - Niveau de gravité auquel journaliser les erreurs de fichier.
+- `request_body_no_buffering` - Lire le corps de la requête sans mise en tampon.
 
-The `request_body_no_buffering` flag enables the unbuffered mode of reading a request body. In this mode, after calling `ngx_http_read_client_request_body()`, the `bufs` chain might keep only a part of the body. The request flag `reading_body` indicates that the request body reading is still in progress. To read the next part, call the `ngx_http_read_unbuffered_request_body(r)` function. The return value `NGX_AGAIN` indicates that more body data or buffer space is needed. If `bufs` is NULL after calling this function, no body data is available at the moment. The request callback `read_event_handler` will be called when more client body data is available.
+L'indicateur `request_body_no_buffering` active le mode de lecture sans tampon. Dans ce mode, après l'appel à `ngx_http_read_client_request_body()`, la chaîne `bufs` peut ne contenir qu'une partie du corps. L'indicateur `reading_body` signale que la lecture est encore en cours. Pour lire la partie suivante, appelez la fonction `ngx_http_read_unbuffered_request_body(r)`. La valeur de retour `NGX_AGAIN` indique qu'il faut plus de données ou d'espace tampon. Si `bufs` vaut NULL après cet appel, aucune donnée de corps n'est disponible pour l'instant. La fonction de rappel `read_event_handler` de la requête sera appelée quand d'autres données arriveront.
 
-### Request body filters
+### Filtres du corps de la requête
 
-After a request body part is read, it's passed to the request body filter chain by calling the first body filter handler stored in the `ngx_http_top_request_body_filter` variable. It's assumed that every body handler calls the next handler in the chain until the final handler `ngx_http_request_body_save_filter(r, cl)` is called. This handler collects the buffers in `r->request_body->bufs` and writes them to a file if necessary. The last request body buffer has nonzero `last_buf` flag.
+Une fois une partie du corps lue, elle est passée à la chaîne des filtres du corps de la requête en appelant le premier gestionnaire, stocké dans la variable `ngx_http_top_request_body_filter`. Chaque gestionnaire est censé appeler le suivant jusqu'au gestionnaire final `ngx_http_request_body_save_filter(r, cl)`, qui collecte les tampons dans `r->request_body->bufs` et les écrit dans un fichier si nécessaire. Le dernier tampon du corps a l'indicateur `last_buf` non nul.
 
-If a filter is planning to delay data buffers, it should set the flag `r->request_body->filter_need_buffering` to `1` when called for the first time.
+Si un filtre prévoit de retarder des tampons de données, il doit positionner l'indicateur `r->request_body->filter_need_buffering` à `1` lors de son premier appel.
 
-Following is an example of a simple request body filter that delays request body by one second.
+Voici un exemple de filtre simple qui retarde le corps de la requête d'une seconde.
 
 ```c
 #include <ngx_config.h>
@@ -2519,13 +2516,13 @@ ngx_http_delay_body_init(ngx_conf_t *cf)
 }
 ```
 
-### Response
+### Réponse
 
-In nginx an HTTP response is produced by sending the response header followed by the optional response body. Both header and body are passed through a chain of filters and eventually get written to the client socket. An nginx module can install its handler into the header or body filter chain and process the output coming from the previous handler.
+Dans nginx, une réponse HTTP est produite en envoyant l'en-tête de réponse suivi d'un éventuel corps. L'en-tête et le corps passent par une chaîne de filtres avant d'être écrits sur la socket client. Un module peut installer son gestionnaire dans la chaîne des filtres d'en-tête ou de corps et traiter la sortie du gestionnaire précédent.
 
-#### Response header
+#### En-tête de réponse
 
-The `ngx_http_send_header(r)` function sends the output header. Do not call this function until `r->headers_out` contains all of the data required to produce the HTTP response header. The `status` field in `r->headers_out` must always be set. If the response status indicates that a response body follows the header, `content_length_n` can be set as well. The default value for this field is `-1`, which means that the body size is unknown. In this case, chunked transfer encoding is used. To output an arbitrary header, append the `headers` list.
+La fonction `ngx_http_send_header(r)` envoie l'en-tête de sortie. Ne l'appelez pas avant que `r->headers_out` contienne toutes les données nécessaires à l'en-tête de réponse HTTP. Le champ `status` de `r->headers_out` doit toujours être défini. Si l'état de la réponse indique qu'un corps suit l'en-tête, `content_length_n` peut aussi être défini. Sa valeur par défaut est `-1`, ce qui signifie que la taille du corps est inconnue ; l'encodage de transfert par blocs (chunked) est alors utilisé. Pour envoyer un en-tête arbitraire, ajoutez-le à la liste `headers`.
 
 ```c
 static ngx_int_t
@@ -2562,13 +2559,13 @@ ngx_http_foo_content_handler(ngx_http_request_t *r)
 }
 ```
 
-#### Header filters
+#### Filtres d'en-tête
 
-The `ngx_http_send_header(r)` function invokes the header filter chain by calling the first header filter handler stored in the `ngx_http_top_header_filter` variable. It's assumed that every header handler calls the next handler in the chain until the final handler `ngx_http_header_filter(r)` is called. The final header handler constructs the HTTP response based on `r->headers_out` and passes it to the `ngx_http_writer_filter` for output.
+La fonction `ngx_http_send_header(r)` déclenche la chaîne des filtres d'en-tête en appelant le premier gestionnaire, stocké dans la variable `ngx_http_top_header_filter`. Chaque gestionnaire est censé appeler le suivant jusqu'au gestionnaire final `ngx_http_header_filter(r)`, qui construit la réponse HTTP à partir de `r->headers_out` et la passe à `ngx_http_writer_filter` pour l'envoi.
 
-To add a handler to the header filter chain, store its address in the global variable `ngx_http_top_header_filter` at configuration time. The previous handler address is normally stored in a static variable in a module and is called by the newly added handler before exiting.
+Pour ajouter un gestionnaire à la chaîne des filtres d'en-tête, stockez son adresse dans la variable globale `ngx_http_top_header_filter` pendant la configuration. L'adresse du gestionnaire précédent est normalement conservée dans une variable statique du module et appelée par le nouveau gestionnaire avant de rendre la main.
 
-The following example of a header filter module adds the HTTP header "`X-Foo: foo`" to every response with status `200`.
+L'exemple de module de filtre d'en-tête suivant ajoute l'en-tête HTTP « `X-Foo: foo` » à chaque réponse d'état `200`.
 
 ```c
 #include <ngx_config.h>
@@ -2651,11 +2648,11 @@ ngx_http_foo_header_filter_init(ngx_conf_t *cf)
 }
 ```
 
-### Response body
+### Corps de la réponse
 
-To send the response body, call the `ngx_http_output_filter(r, cl)` function. The function can be called multiple times. Each time, it sends a part of the response body in the form of a buffer chain. Set the `last_buf` flag in the last body buffer.
+Pour envoyer le corps de la réponse, appelez la fonction `ngx_http_output_filter(r, cl)`. Elle peut être appelée plusieurs fois ; chaque appel envoie une partie du corps sous forme de chaîne de tampons. Positionnez l'indicateur `last_buf` sur le dernier tampon du corps.
 
-The following example produces a complete HTTP response with "foo" as its body. For the example to work as subrequest as well as a main request, the `last_in_chain` flag is set in the last buffer of the output. The `last_buf` flag is set only for the main request because the last buffer for a subrequest does not end the entire output.
+L'exemple suivant produit une réponse HTTP complète avec « foo » comme corps. Pour que l'exemple fonctionne aussi bien en sous-requête qu'en requête principale, l'indicateur `last_in_chain` est positionné sur le dernier tampon de la sortie. L'indicateur `last_buf` n'est positionné que pour la requête principale, car le dernier tampon d'une sous-requête ne termine pas toute la sortie.
 
 ```c
 static ngx_int_t
@@ -2698,13 +2695,13 @@ ngx_http_bar_content_handler(ngx_http_request_t *r)
 }
 ```
 
-### Response body filters
+### Filtres du corps de la réponse
 
-The function `ngx_http_output_filter(r, cl)` invokes the body filter chain by calling the first body filter handler stored in the `ngx_http_top_body_filter` variable. It's assumed that every body handler calls the next handler in the chain until the final handler `ngx_http_write_filter(r, cl)` is called.
+La fonction `ngx_http_output_filter(r, cl)` déclenche la chaîne des filtres de corps en appelant le premier gestionnaire, stocké dans la variable `ngx_http_top_body_filter`. Chaque gestionnaire est censé appeler le suivant jusqu'au gestionnaire final `ngx_http_write_filter(r, cl)`.
 
-A body filter handler receives a chain of buffers. The handler is supposed to process the buffers and pass a possibly new chain to the next handler. It's worth noting that the chain links `ngx_chain_t` of the incoming chain belong to the caller, and must not be reused or changed. Right after the handler completes, the caller can use its output chain links to keep track of the buffers it has sent. To save the buffer chain or to substitute some buffers before passing to the next filter, a handler needs to allocate its own chain links.
+Un gestionnaire de filtre de corps reçoit une chaîne de tampons. Il doit les traiter et passer au gestionnaire suivant une chaîne, éventuellement nouvelle. Notez que les maillons `ngx_chain_t` de la chaîne entrante appartiennent à l'appelant et ne doivent être ni réutilisés ni modifiés. Juste après le retour du gestionnaire, l'appelant peut utiliser ses maillons de sortie pour suivre les tampons envoyés. Pour conserver la chaîne de tampons ou substituer certains tampons avant de passer au filtre suivant, un gestionnaire doit allouer ses propres maillons.
 
-Following is an example of a simple body filter that counts the number of bytes in the body. The result is available as the `$counter` variable which can be used in the access log.
+Voici un exemple de filtre de corps simple qui compte le nombre d'octets du corps. Le résultat est disponible dans la variable `$counter`, utilisable dans le journal d'accès.
 
 ```c
 #include <ngx_config.h>
@@ -2839,13 +2836,13 @@ ngx_http_counter_filter_init(ngx_conf_t *cf)
 }
 ```
 
-### Building filter modules
+### Écrire des modules de filtre
 
-When writing a body or header filter, pay special attention to the filter's position in the filter order. There's a number of header and body filters registered by nginx standard modules. The nginx standard modules register a number of head and body filters and it's important to register a new filter module in the right place with respect to them. Normally, modules register filters in their postconfiguration handlers. The order in which filters are called during processing is obviously the reverse of the order in which they are registered.
+Quand vous écrivez un filtre de corps ou d'en-tête, faites particulièrement attention à sa position dans l'ordre des filtres. Les modules standard de nginx enregistrent plusieurs filtres d'en-tête et de corps, et il est important d'enregistrer un nouveau module de filtre au bon endroit par rapport à eux. Normalement, les modules enregistrent leurs filtres dans leurs gestionnaires de postconfiguration. L'ordre d'appel des filtres pendant le traitement est évidemment l'inverse de leur ordre d'enregistrement.
 
-For third-party filter modules nginx provides a special slot `HTTP_AUX_FILTER_MODULES`. To register a filter module in this slot, set the `ngx_module_type` variable to `HTTP_AUX_FILTER` in the module's configuration.
+Pour les modules de filtre tiers, nginx fournit un emplacement spécial `HTTP_AUX_FILTER_MODULES`. Pour y enregistrer un module de filtre, fixez la variable `ngx_module_type` à `HTTP_AUX_FILTER` dans la configuration du module.
 
-The following example shows a filter module config file assuming for a module with just one source file, `ngx_http_foo_filter_module.c`.
+L'exemple suivant montre le fichier config d'un module de filtre composé d'un seul fichier source, `ngx_http_foo_filter_module.c`.
 
 ```c
 ngx_module_type=HTTP_AUX_FILTER
@@ -2855,11 +2852,11 @@ ngx_module_srcs="$ngx_addon_dir/ngx_http_foo_filter_module.c"
 . auto/module
 ```
 
-### Buffer reuse
+### Réutilisation des tampons
 
-When issuing or altering a stream of buffers, it's often desirable to reuse the allocated buffers. A standard and widely adopted approach in nginx code is to keep two buffer chains for this purpose: `free` and `busy`. The `free` chain keeps all free buffers, which can be reused. The `busy` chain keeps all buffers sent by the current module that are still in use by some other filter handler. A buffer is considered in use if its size is greater than zero. Normally, when a buffer is consumed by a filter, its `pos` (or `file_pos` for a file buffer) is moved towards `last` (`file_last` for a file buffer). Once a buffer is completely consumed, it's ready to be reused. To add newly freed buffers to the `free` chain it's enough to iterate over the `busy` chain and move the zero size buffers at the head of it to `free`. This operation is so common that there is a special function for it, `ngx_chain_update_chains(free, busy, out, tag)`. The function appends the output chain `out` to `busy` and moves free buffers from the top of `busy` to `free`. Only the buffers with the specified `tag` are reused. This lets a module reuse only the buffers that it allocated itself.
+Quand on émet ou modifie un flux de tampons, il est souvent souhaitable de réutiliser les tampons alloués. Une approche standard et largement adoptée dans le code de nginx consiste à garder deux chaînes de tampons : `free` et `busy`. La chaîne `free` contient tous les tampons libres réutilisables. La chaîne `busy` contient tous les tampons envoyés par le module courant qui sont encore utilisés par un autre gestionnaire de filtre. Un tampon est utilisé si sa taille est supérieure à zéro. Normalement, quand un filtre consomme un tampon, son `pos` (ou `file_pos` pour un tampon fichier) avance vers `last` (`file_last` pour un tampon fichier). Une fois entièrement consommé, le tampon peut être réutilisé. Pour ajouter les tampons nouvellement libérés à la chaîne `free`, il suffit de parcourir la chaîne `busy` et de déplacer vers `free` les tampons de taille nulle en tête. Cette opération est si courante qu'il existe une fonction dédiée, `ngx_chain_update_chains(free, busy, out, tag)`. Elle ajoute la chaîne de sortie `out` à `busy` et déplace les tampons libres du début de `busy` vers `free`. Seuls les tampons portant le `tag` indiqué sont réutilisés, ce qui permet à un module de ne réutiliser que les tampons qu'il a lui-même alloués.
 
-The following example is a body filter that inserts the string “foo” before each incoming buffer. The new buffers allocated by the module are reused if possible. Note that for this example to work properly, setting up a header filter and resetting `content_length_n` to `-1` is also required, but the relevant code is not provided here.
+L'exemple suivant est un filtre de corps qui insère la chaîne « foo » avant chaque tampon entrant. Les nouveaux tampons alloués par le module sont réutilisés si possible. Notez que pour que l'exemple fonctionne correctement, il faut aussi installer un filtre d'en-tête et remettre `content_length_n` à `-1`, mais ce code n'est pas fourni ici.
 
 ```c
 typedef struct {
@@ -2935,13 +2932,13 @@ ngx_http_foo_body_filter(ngx_http_request_t *r, ngx_chain_t *in)
 }
 ```
 
-### Load balancing
+### Répartition de charge
 
-The [[11-modules/02-http/ngx_http_upstream_module|ngx_http_upstream_module]] provides the basic functionality needed to pass requests to remote servers. Modules that implement specific protocols, such as HTTP or FastCGI, use this functionality. The module also provides an interface for creating custom load-balancing modules and implements a default round-robin method.
+Le module [[11-modules/02-http/ngx_http_upstream_module|ngx_http_upstream_module]] fournit les fonctions de base nécessaires pour transmettre des requêtes à des serveurs distants. Les modules qui mettent en œuvre des protocoles précis, comme HTTP ou FastCGI, les utilisent. Le module fournit aussi une interface pour créer des modules de répartition de charge personnalisés et met en œuvre une méthode round-robin par défaut.
 
-The [[12-directives/least-conn-http-upstream|least_conn]] and [[12-directives/hash-http-upstream|hash]] modules implement alternative load-balancing methods, but are actually implemented as extensions of the upstream round-robin module and share a lot of code with it, such as the representation of a server group. The [[12-directives/keepalive|keepalive]] module is an independent module that extends upstream functionality.
+Les modules [[12-directives/least-conn-http-upstream|least_conn]] et [[12-directives/hash-http-upstream|hash]] mettent en œuvre d'autres méthodes de répartition, mais sont en fait des extensions du module round-robin amont et partagent beaucoup de code avec lui, comme la représentation d'un groupe de serveurs. Le module [[12-directives/keepalive|keepalive]] est un module indépendant qui étend les fonctions amont.
 
-The [[11-modules/02-http/ngx_http_upstream_module|ngx_http_upstream_module]] can be configured explicitly by placing the corresponding [[12-directives/upstream-http-upstream|upstream]] block into the configuration file, or implicitly by using directives such as [[12-directives/proxy-pass-http-proxy|proxy_pass]] that accept a URL that gets evaluated at some point into a list of servers. The alternative load-balancing methods are available only with an explicit upstream configuration. The upstream module configuration has its own directive context `NGX_HTTP_UPS_CONF`. The structure is defined as follows:
+Le module [[11-modules/02-http/ngx_http_upstream_module|ngx_http_upstream_module]] peut être configuré explicitement en plaçant le bloc [[12-directives/upstream-http-upstream|upstream]] correspondant dans le fichier de configuration, ou implicitement avec des directives comme [[12-directives/proxy-pass-http-proxy|proxy_pass]] qui acceptent une URL évaluée à un moment donné en une liste de serveurs. Les autres méthodes de répartition ne sont disponibles qu'avec une configuration amont explicite. La configuration du module amont a son propre contexte de directives, `NGX_HTTP_UPS_CONF`. La structure est définie ainsi :
 
 ```c
 struct ngx_http_upstream_srv_conf_s {
@@ -2963,22 +2960,22 @@ struct ngx_http_upstream_srv_conf_s {
 };
 ```
 
-- `srv_conf` — Configuration context of upstream modules.
-- `servers` — Array of `ngx_http_upstream_server_t`, the result of parsing a set of [[12-directives/server-http-upstream|server]] directives in the `upstream` block.
-- `flags` — Flags that mostly mark which features are supported by the load-balancing method. The features are configured as parameters of the [[12-directives/server-http-upstream|server]] directive:
+- `srv_conf` — Contexte de configuration des modules amont.
+- `servers` — Tableau de `ngx_http_upstream_server_t`, résultat de l'analyse d'un ensemble de directives [[12-directives/server-http-upstream|server]] du bloc `upstream`.
+- `flags` — Indicateurs qui marquent surtout les fonctions prises en charge par la méthode de répartition. Ces fonctions se configurent comme paramètres de la directive [[12-directives/server-http-upstream|server]] :
 
-  - `NGX_HTTP_UPSTREAM_CREATE` — Distinguishes explicitly defined upstreams from those that are automatically created by the [[12-directives/proxy-pass-http-proxy|proxy_pass]] directive and “friends” (FastCGI, SCGI, etc.)
-  - `NGX_HTTP_UPSTREAM_WEIGHT` — The “`weight`” parameter is supported
-  - `NGX_HTTP_UPSTREAM_MAX_FAILS` — The “`max_fails`” parameter is supported
-  - `NGX_HTTP_UPSTREAM_FAIL_TIMEOUT` — The “`fail_timeout`” parameter is supported
-  - `NGX_HTTP_UPSTREAM_DOWN` — The “`down`” parameter is supported
-  - `NGX_HTTP_UPSTREAM_BACKUP` — The “`backup`” parameter is supported
-  - `NGX_HTTP_UPSTREAM_MAX_CONNS` — The “`max_conns`” parameter is supported
-- `host` — Name of the upstream.
-- `file_name, line` — Name of the configuration file and the line where the `upstream` block is located.
-- `port` and `no_port` — Not used for explicitly defined upstream groups.
-- `shm_zone` — Shared memory zone used by this upstream group, if any.
-- `peer` — object that holds generic methods for initializing upstream configuration:
+  - `NGX_HTTP_UPSTREAM_CREATE` — Distingue les groupes amont définis explicitement de ceux créés automatiquement par la directive [[12-directives/proxy-pass-http-proxy|proxy_pass]] et ses « semblables » (FastCGI, SCGI, etc.)
+  - `NGX_HTTP_UPSTREAM_WEIGHT` — Le paramètre « `weight` » est pris en charge
+  - `NGX_HTTP_UPSTREAM_MAX_FAILS` — Le paramètre « `max_fails` » est pris en charge
+  - `NGX_HTTP_UPSTREAM_FAIL_TIMEOUT` — Le paramètre « `fail_timeout` » est pris en charge
+  - `NGX_HTTP_UPSTREAM_DOWN` — Le paramètre « `down` » est pris en charge
+  - `NGX_HTTP_UPSTREAM_BACKUP` — Le paramètre « `backup` » est pris en charge
+  - `NGX_HTTP_UPSTREAM_MAX_CONNS` — Le paramètre « `max_conns` » est pris en charge
+- `host` — Nom du groupe amont.
+- `file_name, line` — Nom du fichier de configuration et ligne où se trouve le bloc `upstream`.
+- `port` et `no_port` — Inutilisés pour les groupes amont définis explicitement.
+- `shm_zone` — Zone de mémoire partagée utilisée par ce groupe amont, le cas échéant.
+- `peer` — Objet contenant les méthodes génériques d'initialisation de la configuration amont :
 
   ```c
   typedef struct {
@@ -2988,12 +2985,12 @@ struct ngx_http_upstream_srv_conf_s {
   } ngx_http_upstream_peer_t;
   ```
 
-  A module that implements a load-balancing algorithm must set these methods and initialize private `data`. If `init_upstream` was not initialized during configuration parsing, `ngx_http_upstream_module` sets it to the default `ngx_http_upstream_init_round_robin` algorithm.
+  Un module qui met en œuvre un algorithme de répartition de charge doit définir ces méthodes et initialiser les `data` privées. Si `init_upstream` n'a pas été initialisée lors de l'analyse de la configuration, `ngx_http_upstream_module` la fixe à l'algorithme par défaut `ngx_http_upstream_init_round_robin`.
 
-  - `init_upstream(cf, us)` — Configuration-time method responsible for initializing a group of servers and initializing the `init()` method in case of success. A typical load-balancing module uses a list of servers in the `upstream` block to create an efficient data structure that it uses and saves its own configuration to the `data` field.
-  - `init(r, us)` — Initializes a per-request `ngx_http_upstream_peer_t.peer` structure that is used for load balancing (not to be confused with the `ngx_http_upstream_srv_conf_t.peer` described above which is per-upstream). It is passed as the `data` argument to all callbacks that deal with server selection.
+  - `init_upstream(cf, us)` — Méthode appelée pendant la configuration, chargée d'initialiser un groupe de serveurs et, en cas de succès, la méthode `init()`. Un module de répartition typique utilise la liste des serveurs du bloc `upstream` pour créer une structure de données efficace qu'il utilise, et enregistre sa propre configuration dans le champ `data`.
+  - `init(r, us)` — Initialise une structure `ngx_http_upstream_peer_t.peer` par requête, utilisée pour la répartition de charge (à ne pas confondre avec `ngx_http_upstream_srv_conf_t.peer` décrite plus haut, qui est par groupe amont). Elle est passée comme argument `data` à toutes les fonctions de rappel qui gèrent le choix du serveur.
 
-When nginx has to pass a request to another host for processing, it uses the configured load-balancing method to obtain an address to connect to. The method is obtained from the `ngx_http_upstream_t.peer` object of type `ngx_peer_connection_t`:
+Quand nginx doit transmettre une requête à un autre hôte, il utilise la méthode de répartition configurée pour obtenir l'adresse à laquelle se connecter. La méthode est obtenue depuis l'objet `ngx_http_upstream_t.peer` de type `ngx_peer_connection_t` :
 
 ```c
 struct ngx_peer_connection_s {
@@ -3019,45 +3016,45 @@ struct ngx_peer_connection_s {
 };
 ```
 
-The structure has the following fields:
+La structure a les champs suivants :
 
-- `sockaddr`, `socklen`, `name` — Address of the upstream server to connect to; this is the output parameter of a load-balancing method.
-- `data` — The per-request data of a load-balancing method; keeps the state of the selection algorithm and usually includes the link to the upstream configuration. It is passed as an argument to all methods that deal with server selection (see below).
-- `tries` — Allowed [[12-directives/proxy-next-upstream-tries-http-proxy|number]] of attempts to connect to an upstream server.
-- `get`, `free`, `notify`, `set_session`, and `save_session` - Methods of the load-balancing module, described below.
+- `sockaddr`, `socklen`, `name` — Adresse du serveur amont auquel se connecter ; c'est le paramètre de sortie d'une méthode de répartition.
+- `data` — Données par requête d'une méthode de répartition ; conserve l'état de l'algorithme de sélection et comprend généralement le lien vers la configuration amont. Passé en argument à toutes les méthodes qui gèrent le choix du serveur (voir ci-dessous).
+- `tries` — [[12-directives/proxy-next-upstream-tries-http-proxy|Nombre]] autorisé de tentatives de connexion à un serveur amont.
+- `get`, `free`, `notify`, `set_session` et `save_session` - Méthodes du module de répartition, décrites ci-dessous.
 
-All methods accept at least two arguments: a peer connection object `pc` and the `data` created by `ngx_http_upstream_srv_conf_t.peer.init()`. Note that it might differ from `pc.data` due to “chaining” of load-balancing modules.
+Toutes les méthodes acceptent au moins deux arguments : un objet connexion pair `pc` et les `data` créées par `ngx_http_upstream_srv_conf_t.peer.init()`. Notez qu'elles peuvent différer de `pc.data` en raison du « chaînage » des modules de répartition.
 
-- `get(pc, data)` — The method called when the upstream module is ready to pass a request to an upstream server and needs to know its address. The method has to fill the `sockaddr`, `socklen`, and `name` fields of `ngx_peer_connection_t` structure. The return is one of:
+- `get(pc, data)` — Méthode appelée quand le module amont est prêt à transmettre une requête à un serveur amont et a besoin de son adresse. Elle doit remplir les champs `sockaddr`, `socklen` et `name` de la structure `ngx_peer_connection_t`. Elle renvoie l'une des valeurs suivantes :
 
-  - `NGX_OK` — Server was selected.
-  - `NGX_ERROR` — Internal error occurred.
-  - `NGX_BUSY` — no servers are currently available. This can happen due to many reasons, including: the dynamic server group is empty, all servers in the group are in the failed state, or all servers in the group are already handling the maximum number of connections.
-  - `NGX_DONE` — the underlying connection was reused and there is no need to create a new connection to the upstream server. This value is set by the `keepalive` module.
-- `free(pc, data, state)` — The method called when an upstream module has finished work with a particular server. The `state` argument is the completion status of the upstream connection, a bitmask with the following possible values:
+  - `NGX_OK` — Un serveur a été choisi.
+  - `NGX_ERROR` — Une erreur interne s'est produite.
+  - `NGX_BUSY` — Aucun serveur n'est disponible pour l'instant. Cela peut avoir de nombreuses causes : groupe de serveurs dynamique vide, tous les serveurs du groupe en échec, ou tous déjà au nombre maximal de connexions.
+  - `NGX_DONE` — La connexion sous-jacente a été réutilisée, il n'est pas nécessaire d'en créer une nouvelle vers le serveur amont. Cette valeur est fixée par le module `keepalive`.
+- `free(pc, data, state)` — Méthode appelée quand un module amont a fini de travailler avec un serveur donné. L'argument `state` est l'état d'achèvement de la connexion amont, un masque de bits pouvant valoir :
 
-  - `NGX_PEER_FAILED` — Attempt was [[11-modules/02-http/ngx_http_upstream_module|unsuccessful]]
-  - `NGX_PEER_NEXT` — A special case when upstream server returns codes `403` or `404`, which are not considered a [[11-modules/02-http/ngx_http_upstream_module|failure]].
-  - `NGX_PEER_KEEPALIVE` — Currently unused
+  - `NGX_PEER_FAILED` — La tentative a [[11-modules/02-http/ngx_http_upstream_module|échoué]]
+  - `NGX_PEER_NEXT` — Cas particulier où le serveur amont renvoie les codes `403` ou `404`, qui ne sont pas considérés comme un [[11-modules/02-http/ngx_http_upstream_module|échec]].
+  - `NGX_PEER_KEEPALIVE` — Actuellement inutilisé
 
-  This method also decrements the `tries` counter.
-- `notify(pc, data, type)` — Currently unused in the OSS version.
-- `set_session(pc, data)` and `save_session(pc, data)` — SSL-specific methods that enable caching sessions to upstream servers. The implementation is provided by the round-robin balancing method.
+  Cette méthode décrémente aussi le compteur `tries`.
+- `notify(pc, data, type)` — Actuellement inutilisée dans la version libre.
+- `set_session(pc, data)` et `save_session(pc, data)` — Méthodes propres à SSL qui permettent de mettre en cache les sessions vers les serveurs amont. L'implémentation est fournie par la méthode round-robin.
 
-## Examples
+## Exemples
 
-The [nginx-dev-examples](https://github.com/nginx/nginx-dev-examples) repository provides nginx module examples.
+Le dépôt [nginx-dev-examples](https://github.com/nginx/nginx-dev-examples) fournit des exemples de modules nginx.
 
-## Code style
+## Style de code
 
-### General rules
+### Règles générales
 
-- maximum text width is 80 characters
-- indentation is 4 spaces
-- no tabs, no trailing spaces
-- list elements on the same line are separated with spaces
-- hexadecimal literals are lowercase
-- file names, function and type names, and global variables have the `ngx_` or more specific prefix such as `ngx_http_` and `ngx_mail_`
+- la largeur maximale du texte est de 80 caractères
+- l'indentation est de 4 espaces
+- pas de tabulations, pas d'espaces en fin de ligne
+- les éléments d'une liste sur une même ligne sont séparés par des espaces
+- les littéraux hexadécimaux sont en minuscules
+- les noms de fichiers, de fonctions et de types ainsi que les variables globales ont le préfixe `ngx_` ou un préfixe plus précis comme `ngx_http_` et `ngx_mail_`
 
 ```c
 size_t
@@ -3087,19 +3084,19 @@ ngx_utf8_length(u_char *p, size_t n)
 }
 ```
 
-### Files
+### Fichiers
 
-A typical source file may contain the following sections separated by two empty lines:
+Un fichier source typique peut contenir les sections suivantes, séparées par deux lignes vides :
 
-- copyright statements
-- includes
-- preprocessor definitions
-- type definitions
-- function prototypes
-- variable definitions
-- function definitions
+- mentions de copyright
+- inclusions
+- définitions du préprocesseur
+- définitions de types
+- prototypes de fonctions
+- définitions de variables
+- définitions de fonctions
 
-Copyright statements look like this:
+Les mentions de copyright ressemblent à ceci :
 
 ```
 /*
@@ -3108,9 +3105,9 @@ Copyright statements look like this:
  */
 ```
 
-If the file is modified significantly, the list of authors should be updated, the new author is added to the top.
+Si le fichier est modifié de façon importante, la liste des auteurs doit être mise à jour, le nouvel auteur étant ajouté en tête.
 
-The `ngx_config.h` and `ngx_core.h` files are always included first, followed by one of `ngx_http.h`, `ngx_stream.h`, or `ngx_mail.h`. Then follow optional external header files:
+Les fichiers `ngx_config.h` et `ngx_core.h` sont toujours inclus en premier, suivis de `ngx_http.h`, `ngx_stream.h` ou `ngx_mail.h`. Viennent ensuite les éventuels fichiers d'en-tête externes :
 
 ```c
 #include <ngx_config.h>
@@ -3126,7 +3123,7 @@ The `ngx_config.h` and `ngx_core.h` files are always included first, followed by
 #endif
 ```
 
-Header files should include the so called "header protection":
+Les fichiers d'en-tête doivent inclure la « protection d'en-tête » :
 
 ```
 #ifndef _NGX_PROCESS_CYCLE_H_INCLUDED_
@@ -3135,11 +3132,11 @@ Header files should include the so called "header protection":
 #endif /* _NGX_PROCESS_CYCLE_H_INCLUDED_ */
 ```
 
-### Comments
+### Commentaires
 
-- “`//`” comments are not used
-- text is written in English, American spelling is preferred
-- multi-line comments are formatted like this:
+- les commentaires « `//` » ne sont pas utilisés
+- le texte est écrit en anglais, de préférence en orthographe américaine
+- les commentaires sur plusieurs lignes sont formatés ainsi :
 
   ```
   /*
@@ -3152,9 +3149,9 @@ Header files should include the so called "header protection":
   /* find the server configuration for the address:port */
   ```
 
-### Preprocessor
+### Préprocesseur
 
-Macro names start from `ngx_` or `NGX_` (or more specific) prefix. Macro names for constants are uppercase. Parameterized macros and macros for initializers are lowercase. The macro name and value are separated by at least two spaces:
+Les noms de macros commencent par le préfixe `ngx_` ou `NGX_` (ou plus précis). Les noms des macros de constantes sont en majuscules. Les macros paramétrées et les macros d'initialisation sont en minuscules. Le nom et la valeur de la macro sont séparés par au moins deux espaces :
 
 ```c
 #define NGX_CONF_BUFFER  4096
@@ -3168,7 +3165,7 @@ Macro names start from `ngx_` or `NGX_` (or more specific) prefix. Macro names f
 #define ngx_null_string  { 0, NULL }
 ```
 
-Conditions are inside parentheses, negation is outside:
+Les conditions sont entre parenthèses, la négation à l'extérieur :
 
 ```
 #if (NGX_HAVE_KQUEUE)
@@ -3187,13 +3184,13 @@ Conditions are inside parentheses, negation is outside:
 
 ### Types
 
-Type names end with the “`_t`” suffix. A defined type name is separated by at least two spaces:
+Les noms de types se terminent par le suffixe « `_t` ». Un nom de type défini est séparé par au moins deux espaces :
 
 ```c
 typedef ngx_uint_t  ngx_rbtree_key_t;
 ```
 
-Structure types are defined using `typedef`. Inside structures, member types and names are aligned:
+Les types structure sont définis avec `typedef`. Dans les structures, les types et noms des membres sont alignés :
 
 ```c
 typedef struct {
@@ -3202,7 +3199,7 @@ typedef struct {
 } ngx_str_t;
 ```
 
-Keep alignment identical among different structures in the file. A structure that points to itself has the name, ending with “`_s`”. Adjacent structure definitions are separated with two empty lines:
+Gardez le même alignement pour toutes les structures du fichier. Une structure qui pointe vers elle-même a un nom terminé par « `_s` ». Les définitions de structures adjacentes sont séparées par deux lignes vides :
 
 ```c
 typedef struct ngx_list_part_s  ngx_list_part_t;
@@ -3223,7 +3220,7 @@ typedef struct {
 } ngx_list_t;
 ```
 
-Each structure member is declared on its own line:
+Chaque membre de structure est déclaré sur sa propre ligne :
 
 ```c
 typedef struct {
@@ -3234,7 +3231,7 @@ typedef struct {
 } ngx_table_elt_t;
 ```
 
-Function pointers inside structures have defined types ending with “`_pt`”:
+Les pointeurs de fonction dans les structures ont des types définis terminés par « `_pt` » :
 
 ```c
 typedef ssize_t (*ngx_recv_pt)(ngx_connection_t *c, u_char *buf, size_t size);
@@ -3256,7 +3253,7 @@ typedef struct {
 } ngx_os_io_t;
 ```
 
-Enumerations have types ending with “`_e`”:
+Les énumérations ont des types terminés par « `_e` » :
 
 ```c
 typedef enum {
@@ -3269,7 +3266,7 @@ typedef enum {
 
 ### Variables
 
-Variables are declared sorted by length of a base type, then alphabetically. Type names and variable names are aligned. The type and name “columns” are separated with two spaces. Large arrays are put at the end of a declaration block:
+Les variables sont déclarées triées par longueur du type de base, puis par ordre alphabétique. Les noms de types et de variables sont alignés. Les « colonnes » type et nom sont séparées par deux espaces. Les grands tableaux sont placés à la fin du bloc de déclarations :
 
 ```c
 u_char                      |  | *rv, *p;
@@ -3284,7 +3281,7 @@ ngx_http_upstream_srv_conf_t|  | *us, *uscf;
 u_char                      |  |  text[NGX_SOCKADDR_STRLEN];
 ```
 
-Static and global variables may be initialized on declaration:
+Les variables statiques et globales peuvent être initialisées à la déclaration :
 
 ```c
 static ngx_str_t  ngx_http_memcached_key = ngx_string("memcached_key");
@@ -3302,7 +3299,7 @@ static uint32_t  ngx_crc32_table16[] = {
 };
 ```
 
-There is a bunch of commonly used type/name combinations:
+Voici quelques combinaisons type/nom couramment utilisées :
 
 ```c
 u_char                        *rv;
@@ -3314,9 +3311,9 @@ ngx_peer_connection_t         *pc;
 ngx_http_upstream_srv_conf_t  *us, *uscf;
 ```
 
-### Functions
+### Fonctions
 
-All functions (even static ones) should have prototypes. Prototypes include argument names. Long prototypes are wrapped with a single indentation on continuation lines:
+Toutes les fonctions (même statiques) doivent avoir un prototype. Les prototypes incluent les noms des arguments. Les prototypes longs sont coupés avec une seule indentation sur les lignes de continuation :
 
 ```c
 static char *ngx_http_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf);
@@ -3328,7 +3325,7 @@ static char *ngx_http_merge_servers(ngx_conf_t *cf,
     ngx_uint_t ctx_index);
 ```
 
-The function name in a definition starts with a new line. The function body opening and closing braces are on separate lines. The body of a function is indented. There are two empty lines between functions:
+Dans une définition, le nom de la fonction commence sur une nouvelle ligne. Les accolades ouvrante et fermante du corps sont sur des lignes séparées. Le corps est indenté. Deux lignes vides séparent les fonctions :
 
 ```c
 static ngx_int_t
@@ -3346,7 +3343,7 @@ ngx_http_add_addresses(ngx_conf_t *cf, ngx_http_core_srv_conf_t *cscf,
 }
 ```
 
-There is no space after the function name and opening parenthesis. Long function calls are wrapped such that continuation lines start from the position of the first function argument. If this is impossible, format the first continuation line such that it ends at position 79:
+Il n'y a pas d'espace entre le nom de la fonction et la parenthèse ouvrante. Les appels longs sont coupés de sorte que les lignes de continuation commencent à la position du premier argument. Si c'est impossible, formatez la première ligne de continuation pour qu'elle se termine à la position 79 :
 
 ```c
 ngx_log_debug2(NGX_LOG_DEBUG_HTTP, r->connection->log, 0,
@@ -3357,7 +3354,7 @@ hc->busy = ngx_palloc(r->connection->pool,
                   cscf->large_client_header_buffers.num * sizeof(ngx_buf_t *));
 ```
 
-The `ngx_inline` macro should be used instead of `inline`:
+Utilisez la macro `ngx_inline` au lieu de `inline` :
 
 ```c
 static ngx_inline void ngx_cpuid(uint32_t i, uint32_t *buf);
@@ -3365,7 +3362,7 @@ static ngx_inline void ngx_cpuid(uint32_t i, uint32_t *buf);
 
 ### Expressions
 
-Binary operators except “`.`” and “`−>`” should be separated from their operands by one space. Unary operators and subscripts are not separated from their operands by spaces:
+Les opérateurs binaires, sauf « `.` » et « `−>` », sont séparés de leurs opérandes par un espace. Les opérateurs unaires et les indices ne sont pas séparés de leurs opérandes :
 
 ```c
 width = width * 10 + (*fmt++ - '0');
@@ -3379,13 +3376,13 @@ ch = (u_char) ((decoded << 4) + (ch - '0'));
 r->exten.data = &r->uri.data[i + 1];
 ```
 
-Type casts are separated by one space from casted expressions. An asterisk inside type cast is separated with space from type name:
+Les conversions de type sont séparées par un espace de l'expression convertie. Un astérisque dans une conversion est séparé du nom de type par un espace :
 
 ```c
 len = ngx_sock_ntop((struct sockaddr *) sin6, p, len, 1);
 ```
 
-If an expression does not fit into single line, it is wrapped. The preferred point to break a line is a binary operator. The continuation line is lined up with the start of expression:
+Si une expression ne tient pas sur une ligne, elle est coupée, de préférence sur un opérateur binaire. La ligne de continuation est alignée sur le début de l'expression :
 
 ```c
 if (status == NGX_HTTP_MOVED_PERMANENTLY
@@ -3403,14 +3400,14 @@ p->temp_file->warn = "an upstream response is buffered "
                      "to a temporary file";
 ```
 
-As a last resort, it is possible to wrap an expression so that the continuation line ends at position 79:
+En dernier recours, on peut couper une expression de sorte que la ligne de continuation se termine à la position 79 :
 
 ```c
 hinit->hash = ngx_pcalloc(hinit->pool, sizeof(ngx_hash_wildcard_t)
                                      + size * sizeof(ngx_hash_elt_t *));
 ```
 
-The above rules also apply to sub-expressions, where each sub-expression has its own indentation level:
+Ces règles s'appliquent aussi aux sous-expressions, chacune ayant son propre niveau d'indentation :
 
 ```c
 if (((u->conf->cache_use_stale & NGX_HTTP_UPSTREAM_FT_UPDATING)
@@ -3421,14 +3418,14 @@ if (((u->conf->cache_use_stale & NGX_HTTP_UPSTREAM_FT_UPDATING)
 }
 ```
 
-Sometimes, it is convenient to wrap an expression after a cast. In this case, the continuation line is indented:
+Il est parfois pratique de couper une expression après une conversion de type. La ligne de continuation est alors indentée :
 
 ```c
 node = (ngx_rbtree_node_t *)
            ((u_char *) lr - offsetof(ngx_rbtree_node_t, color));
 ```
 
-Pointers are explicitly compared to `NULL` (not `0`):
+Les pointeurs sont comparés explicitement à `NULL` (pas à `0`) :
 
 ```c
 if (ptr != NULL) {
@@ -3436,9 +3433,9 @@ if (ptr != NULL) {
 }
 ```
 
-### Conditionals and Loops
+### Conditions et boucles
 
-The “`if`” keyword is separated from the condition by one space. Opening brace is located on the same line, or on a dedicated line if the condition takes several lines. Closing brace is located on a dedicated line, optionally followed by “`else if` / `else`”. Usually, there is an empty line before the “`else if` / `else`” part:
+Le mot-clé « `if` » est séparé de la condition par un espace. L'accolade ouvrante est sur la même ligne, ou sur une ligne dédiée si la condition occupe plusieurs lignes. L'accolade fermante est sur une ligne dédiée, éventuellement suivie de « `else if` / `else` ». Une ligne vide précède généralement la partie « `else if` / `else` » :
 
 ```c
 if (node->left == sentinel) {
@@ -3461,7 +3458,7 @@ if (node->left == sentinel) {
 }
 ```
 
-Similar formatting rules are applied to “`do`” and “`while`” loops:
+Des règles de formatage similaires s'appliquent aux boucles « `do` » et « `while` » :
 
 ```c
 while (p < last && *p == ' ') {
@@ -3476,7 +3473,7 @@ do {
 } while (ctx);
 ```
 
-The “`switch`” keyword is separated from the condition by one space. Opening brace is located on the same line. Closing brace is located on a dedicated line. The “`case`” keywords are lined up with “`switch`”:
+Le mot-clé « `switch` » est séparé de la condition par un espace. L'accolade ouvrante est sur la même ligne, l'accolade fermante sur une ligne dédiée. Les mots-clés « `case` » sont alignés sur « `switch` » :
 
 ```c
 switch (ch) {
@@ -3497,7 +3494,7 @@ default:
 }
 ```
 
-Most “`for`” loops are formatted like this:
+La plupart des boucles « `for` » sont formatées ainsi :
 
 ```c
 for (i = 0; i < ccf->env.nelts; i++) {
@@ -3514,7 +3511,7 @@ for (q = ngx_queue_head(locations);
 }
 ```
 
-If some part of the “`for`” statement is omitted, this is indicated by the “`/* void */`” comment:
+Si une partie de l'instruction « `for` » est omise, on l'indique par le commentaire « `/* void */` » :
 
 ```c
 for (i = 0; /* void */ ; i++) {
@@ -3522,13 +3519,13 @@ for (i = 0; /* void */ ; i++) {
 }
 ```
 
-A loop with an empty body is also indicated by the “`/* void */`” comment which may be put on the same line:
+Une boucle au corps vide est aussi signalée par le commentaire « `/* void */` », qui peut être placé sur la même ligne :
 
 ```c
 for (cl = *busy; cl->next; cl = cl->next) { /* void */ }
 ```
 
-An endless loop looks like this:
+Une boucle infinie ressemble à ceci :
 
 ```c
 for ( ;; ) {
@@ -3536,9 +3533,9 @@ for ( ;; ) {
 }
 ```
 
-### Labels
+### Étiquettes
 
-Labels are surrounded with empty lines and are indented at the previous level:
+Les étiquettes sont entourées de lignes vides et indentées au niveau précédent :
 
 ```c
     if (i == 0) {
@@ -3563,62 +3560,62 @@ failed:
     return NGX_ERROR;
 ```
 
-## Debugging memory issues
+## Déboguer les problèmes de mémoire
 
-To debug memory issues such as buffer overruns or use-after-free errors, you can use the [AddressSanitizer](https://en.wikipedia.org/wiki/AddressSanitizer) (ASan) supported by some modern compilers. To enable ASan with `gcc` and `clang`, use the `-fsanitize=address` compiler and linker option. When building nginx, this can be done by adding the option to `--with-cc-opt` and `--with-ld-opt` parameters of the `configure` script.
+Pour déboguer des problèmes de mémoire comme les dépassements de tampon ou les utilisations après libération, vous pouvez utiliser [AddressSanitizer](https://en.wikipedia.org/wiki/AddressSanitizer) (ASan), pris en charge par certains compilateurs modernes. Pour activer ASan avec `gcc` et `clang`, utilisez l'option de compilation et d'édition de liens `-fsanitize=address`. Lors de la compilation de nginx, ajoutez cette option aux paramètres `--with-cc-opt` et `--with-ld-opt` du script `configure`.
 
-Since most allocations in nginx are made from nginx internal pool, enabling ASan may not always be enough to debug memory issues. The internal pool allocates a big chunk of memory from the system and cuts smaller allocations from it. However, this mechanism can be disabled by setting the `NGX_DEBUG_PALLOC` macro to `1`. In this case, allocations are passed directly to the system allocator giving it full control over the buffers boundaries.
+Comme la plupart des allocations de nginx se font dans son pool interne, activer ASan ne suffit pas toujours. Le pool interne alloue un gros bloc de mémoire au système et y découpe les allocations plus petites. Ce mécanisme peut être désactivé en fixant la macro `NGX_DEBUG_PALLOC` à `1` : les allocations sont alors passées directement à l'allocateur système, qui contrôle entièrement les limites des tampons.
 
-The following configuration line summarizes the information provided above. It is recommended while developing third-party modules and testing nginx on different platforms.
+La ligne de configuration suivante résume ces informations. Elle est recommandée pour développer des modules tiers et tester nginx sur différentes plates-formes.
 
 ```
 auto/configure --with-cc-opt='-fsanitize=address -DNGX_DEBUG_PALLOC=1'
                --with-ld-opt=-fsanitize=address
 ```
 
-## Common Pitfalls
+## Pièges courants
 
-### Writing a C module
+### Écrire un module C
 
-The most common pitfall is an attempt to write a full-fledged C module when it can be avoided. In most cases your task can be accomplished by creating a proper configuration. If writing a module is inevitable, try to make it as small and simple as possible. For example, a module can only export some variables.
+Le piège le plus courant est de vouloir écrire un module C complet alors qu'on pourrait l'éviter. Dans la plupart des cas, une configuration adaptée suffit. Si écrire un module est inévitable, faites-le aussi petit et simple que possible. Par exemple, un module peut se contenter d'exporter quelques variables.
 
-Before starting a module, consider the following questions:
+Avant de commencer un module, posez-vous les questions suivantes :
 
-- Is it possible to implement a desired feature using already available modules?
-- Is it possible to solve an issue using built-in scripting languages, such as [[11-modules/02-http/ngx_http_perl_module|Perl]] or [[10-guides/04-njs/00-index|njs]]?
+- La fonction voulue peut-elle être mise en œuvre avec les modules déjà disponibles ?
+- Le problème peut-il être résolu avec les langages de script intégrés, comme [[11-modules/02-http/ngx_http_perl_module|Perl]] ou [[10-guides/04-njs/00-index|njs]] ?
 
-### C Strings
+### Chaînes C
 
-The most used string type in nginx, ngx\_str\_t is not a C-Style zero-terminated string. You cannot pass the data to standard C library functions such as `strlen` or `strstr`. Instead, nginx counterparts that accept either `ngx_str_t` should be used or pointer to data and a length. However, there is a case when `ngx_str_t` holds a pointer to a zero-terminated string: strings that come as a result of configuration file parsing are zero-terminated.
+Le type de chaîne le plus utilisé dans nginx, ngx\_str\_t, n'est pas une chaîne C terminée par un octet nul. On ne peut pas passer ses données aux fonctions de la bibliothèque C standard comme `strlen` ou `strstr`. Il faut utiliser les équivalents nginx, qui acceptent soit un `ngx_str_t`, soit un pointeur vers les données et une longueur. Il existe toutefois un cas où `ngx_str_t` contient un pointeur vers une chaîne terminée par un octet nul : les chaînes issues de l'analyse du fichier de configuration.
 
-### Global Variables
+### Variables globales
 
-Avoid using global variables in your modules. Most likely this is an error to have a global variable. Any global data should be tied to a configuration cycle and be allocated from the corresponding memory pool. This allows nginx to perform graceful configuration reloads. An attempt to use global variables will likely break this feature, because it will be impossible to have two configurations at the same time and get rid of them. Sometimes global variables are required. In this case, special attention is needed to manage reconfiguration properly. Also, check if libraries used by your code have implicit global state that may be broken on reload.
+Évitez les variables globales dans vos modules : une variable globale est très probablement une erreur. Toute donnée globale doit être liée à un cycle de configuration et allouée dans le pool mémoire correspondant. Cela permet à nginx de recharger proprement sa configuration. Utiliser des variables globales casserait probablement cette fonction, car il deviendrait impossible d'avoir deux configurations en même temps puis de s'en débarrasser. Des variables globales sont parfois nécessaires ; il faut alors veiller particulièrement à bien gérer la reconfiguration. Vérifiez aussi si les bibliothèques utilisées par votre code ont un état global implicite susceptible d'être cassé au rechargement.
 
-### Manual Memory Management
+### Gestion manuelle de la mémoire
 
-Instead of dealing with malloc/free approach which is error prone, learn how to use nginx pools. A pool is created and tied to an object - configuration, cycle, connection, or HTTP request. When the object is destroyed, the associated pool is destroyed too. So when working with an object, it is possible to allocate the amount needed from the corresponding pool and don't care about freeing memory even in case of errors.
+Au lieu de l'approche malloc/free, source d'erreurs, apprenez à utiliser les pools de nginx. Un pool est créé et lié à un objet : configuration, cycle, connexion ou requête HTTP. Quand l'objet est détruit, le pool associé l'est aussi. On peut donc allouer depuis le pool de l'objet ce dont on a besoin sans se soucier de libérer la mémoire, même en cas d'erreur.
 
 ### Threads
 
-It is recommended to avoid using threads in nginx because it will definitely break things: most nginx functions are not thread-safe. It is expected that a thread will be executing only system calls and thread-safe library functions. If you need to run some code that is not related to client request processing, the proper way is to schedule a timer in the `init_process` module handler and perform required actions in timer handler. Internally nginx makes use of threads to boost IO-related operations, but this is a special case with a lot of limitations.
+Il est recommandé d'éviter les threads dans nginx, car ils casseront forcément quelque chose : la plupart des fonctions de nginx ne sont pas thread-safe. Un thread ne doit exécuter que des appels système et des fonctions de bibliothèque thread-safe. Pour exécuter du code sans lien avec le traitement des requêtes client, la bonne méthode est de programmer un minuteur dans le gestionnaire de module `init_process` et d'effectuer les actions voulues dans le gestionnaire du minuteur. En interne, nginx utilise des threads pour accélérer les opérations d'E/S, mais c'est un cas particulier avec beaucoup de limites.
 
-### Blocking Libraries
+### Bibliothèques bloquantes
 
-A common mistake is to use libraries that are blocking internally. Most libraries out there are synchronous and blocking by nature. In other words, they perform one operation at a time and waste time waiting for response from other peer. As a result, when a request is processed with such library, whole nginx worker is blocked, thus destroying performance. Use only libraries that provide asynchronous interface and don't block whole process.
+Une erreur courante est d'utiliser des bibliothèques bloquantes en interne. La plupart des bibliothèques sont synchrones et bloquantes par nature : elles effectuent une opération à la fois et perdent du temps à attendre la réponse de l'autre partie. Quand une requête est traitée avec une telle bibliothèque, tout le processus de travail est bloqué, ce qui ruine les performances. N'utilisez que des bibliothèques qui offrent une interface asynchrone et ne bloquent pas tout le processus.
 
-### HTTP Requests to External Services
+### Requêtes HTTP vers des services externes
 
-Often modules need to perform an HTTP call to some external service. A common mistake is to use some external library, such as libcurl, to perform the HTTP request. It is absolutely unnecessary to bring a huge amount of external (probably blocking!) code for the task which can be accomplished by nginx itself.
+Les modules doivent souvent faire un appel HTTP vers un service externe. Une erreur courante est d'utiliser une bibliothèque externe, comme libcurl, pour cela. Il est totalement inutile d'embarquer une énorme quantité de code externe (probablement bloquant !) pour une tâche que nginx sait accomplir lui-même.
 
-There are two basic usage scenarios when an external request is needed:
+Il existe deux scénarios de base nécessitant une requête externe :
 
-- in the context of processing a client request (for example, in content handler)
-- in the context of a worker process (for example, timer handler)
+- dans le contexte du traitement d'une requête client (par exemple dans un gestionnaire de contenu)
+- dans le contexte d'un processus de travail (par exemple un gestionnaire de minuteur)
 
-In the first case, the best is to use subrequests API. Instead of directly accessing external service, you declare a location in nginx configuration and direct your subrequest to this location. This location is not limited to [[12-directives/proxy-pass-http-proxy|proxying]] requests, but may contain other nginx directives. An example of such approach is the [[12-directives/auth-request|auth_request]] directive implemented in [ngx\_http\_auth\_request module](https://github.com/nginx/nginx/blob/master/src/http/modules/ngx_http_auth_request_module.c).
+Dans le premier cas, le mieux est d'utiliser l'API des sous-requêtes. Au lieu d'accéder directement au service externe, déclarez une location dans la configuration de nginx et dirigez-y votre sous-requête. Cette location n'est pas limitée au [[12-directives/proxy-pass-http-proxy|relais]] des requêtes : elle peut contenir d'autres directives nginx. La directive [[12-directives/auth-request|auth_request]], mise en œuvre dans le [module ngx\_http\_auth\_request](https://github.com/nginx/nginx/blob/master/src/http/modules/ngx_http_auth_request_module.c), illustre cette approche.
 
-For the second case, it is possible to use basic HTTP client functionality available in nginx. For example, [OCSP module](https://github.com/nginx/nginx/blob/master/src/event/ngx_event_openssl_stapling.c) implements simple HTTP client.
+Dans le second cas, on peut utiliser les fonctions de client HTTP de base disponibles dans nginx. Par exemple, le [module OCSP](https://github.com/nginx/nginx/blob/master/src/event/ngx_event_openssl_stapling.c) met en œuvre un client HTTP simple.
 
 ---
 
