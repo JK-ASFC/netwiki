@@ -14,7 +14,7 @@ Appareil : Android SDK built for x86_64 — versionCode=10000 minSdk=23 targetSd
 
 ![mise-a-jour-proposee](03-mise-a-jour-proposee.png)
 
-| ✅ | Mise à jour proposée au démarrage (version de test 1.0.0) | NetWiki 1.45.0 est disponible |
+| ✅ | Mise à jour proposée au démarrage (version de test 1.0.0) | NetWiki 1.46.0 est disponible |
 | ✅ | Bouton Retour : ferme la fenêtre | fermée |
 
 ![accueil](04-accueil.png)
@@ -31,7 +31,7 @@ Appareil : Android SDK built for x86_64 — versionCode=10000 minSdk=23 targetSd
 
 ![pdf-enregistre](07-pdf-enregistre.png)
 
-| ✅ | Enregistrer en PDF (Téléchargements) | -rwxrwx--- 1 u0_a134 media_rw 501026 2026-11-02 17:21 Présentation\ et\ installation.pdf |
+| ✅ | Enregistrer en PDF (Téléchargements) | -rwxrwx--- 1 u0_a137 media_rw 501267 2026-11-03 08:43 Présentation\ et\ installation.pdf |
 
 ![partage-pdf](08-partage-pdf.png)
 
@@ -59,7 +59,7 @@ Appareil : Android SDK built for x86_64 — versionCode=10000 minSdk=23 targetSd
 
 ![depuis-notification](14-depuis-notification.png)
 
-| ✅ | Notification touchée → fenêtre de mise à jour | NetWiki 1.45.0 est disponible |
+| ✅ | Notification touchée → fenêtre de mise à jour | NetWiki 1.46.0 est disponible |
 | ✅ | Téléchargement vérifié (refus d’un APK signé par une autre clé) | SIGNATURE La nouvelle version est signée avec la clé officielle de JK-ASFC, différente de celle de l'application installée (ancienne version de test). Désinstallez NetWiki une seule fois puis installez la nouvelle version : les mises à jour suivantes seront automatiques. |
 | ✅ | Empreinte incorrecte refusée | Empreinte du fichier téléchargé incorrecte : mise à jour annulée. |
 
