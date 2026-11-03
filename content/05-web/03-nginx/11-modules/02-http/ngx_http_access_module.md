@@ -1,18 +1,15 @@
 ---
 title: "ngx_http_access_module"
-description: "Module nginx ngx_http_access_module — The ngx_http_access_module module allows limiting access to certain client addresses."
+description: "Module nginx ngx_http_access_module — Le module ngx_http_access_module permet de limiter l'accès à certaines adresses de clients."
 tags: [nginx, module, ngx_http_access_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_access_module` permet de limiter l'accès à certaines adresses de clients.
 
-The `ngx_http_access_module` module allows limiting access to certain client addresses.
+L'accès peut aussi être limité par [[11-modules/02-http/ngx_http_auth_basic_module|mot de passe]], par le [[11-modules/02-http/ngx_http_auth_request_module|résultat d'une sous-requête]] ou par [[11-modules/02-http/ngx_http_auth_jwt_module|JWT]]. La limitation simultanée par adresse et par mot de passe est contrôlée par la directive [[12-directives/satisfy|satisfy]].
 
-Access can also be limited by [[11-modules/02-http/ngx_http_auth_basic_module|password]], by the [[11-modules/02-http/ngx_http_auth_request_module|result of subrequest]], or by [[11-modules/02-http/ngx_http_auth_jwt_module|JWT]]. Simultaneous limitation of access by address and by password is controlled by the [[12-directives/satisfy|satisfy]] directive.
-
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {
@@ -24,7 +21,7 @@ location / {
 }
 ```
 
-The rules are checked in sequence until the first match is found. In this example, access is allowed only for IPv4 networks `10.1.1.0/16` and `192.168.1.0/24` excluding the address `192.168.1.1`, and for IPv6 network `2001:0db8::/32`. In case of a lot of rules, the use of the [[11-modules/02-http/ngx_http_geo_module|ngx_http_geo_module]] module variables is preferable.
+Les règles sont vérifiées dans l'ordre jusqu'à la première correspondance. Dans cet exemple, l'accès est autorisé uniquement pour les réseaux IPv4 `10.1.1.0/16` et `192.168.1.0/24`, sauf l'adresse `192.168.1.1`, et pour le réseau IPv6 `2001:0db8::/32`. Lorsque les règles sont nombreuses, il est préférable d'utiliser les variables du module [[11-modules/02-http/ngx_http_geo_module|ngx_http_geo_module]].
 
 ## Directives
 

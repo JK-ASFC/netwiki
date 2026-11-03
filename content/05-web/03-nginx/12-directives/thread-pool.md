@@ -1,12 +1,9 @@
 ---
 title: "thread_pool"
-description: "Directive nginx thread_pool (Core functionality) — Defines the name and parameters of a thread pool used for multi-threaded reading and sending of files without blocking worker processes. The threads parameter defines the number of threads in the…"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx thread_pool (ngx_core_module) — Définit le nom (name) et les paramètres d'un groupe de threads utilisé pour lire et envoyer des fichiers en plusieurs threads sans bloquer les processus de travail. Le paramètre threads définit le…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -14,15 +11,15 @@ icon: settings-2
 | **Valeur par défaut** | `thread_pool default threads=32 max_queue=65536;` |
 | **Contexte** | `main` |
 | **Apparue dans la version** | 1.7.11 |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Defines the *name* and parameters of a thread pool used for multi-threaded reading and sending of files [[12-directives/aio|without blocking]] worker processes.
+Définit le nom (*name*) et les paramètres d'un groupe de threads utilisé pour lire et envoyer des fichiers en plusieurs threads [[12-directives/aio|sans bloquer]] les processus de travail.
 
-The `threads` parameter defines the number of threads in the pool.
+Le paramètre `threads` définit le nombre de threads du groupe.
 
-In the event that all threads in the pool are busy, a new task will wait in the queue. The `max_queue` parameter limits the number of tasks allowed to be waiting in the queue. By default, up to 65536 tasks can wait in the queue. When the queue overflows, the task is completed with an error.
+Si tous les threads du groupe sont occupés, une nouvelle tâche attend dans la file. Le paramètre `max_queue` limite le nombre de tâches autorisées à attendre. Par défaut, jusqu'à 65536 tâches peuvent attendre. Lorsque la file déborde, la tâche se termine en erreur.
 
 ---
 

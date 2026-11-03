@@ -1,12 +1,9 @@
 ---
 title: "root"
-description: "Directive nginx root (ngx_http_core_module) — Sets the root directory for requests. For example, with the following configuration nginx location /i/ { root /data/w3; } The /data/w3/i/top.gif file will be sent in response to the “/i/top.gif”…"
+description: "Directive nginx root (ngx_http_core_module) — Définit le répertoire racine des requêtes. Par exemple, avec la configuration suivante nginx location /i/ { root /data/w3; } le fichier /data/w3/i/top.gif est envoyé en réponse à la requête «…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the root directory for requests. For example, with the following configuration
+Définit le répertoire racine des requêtes. Par exemple, avec la configuration suivante
 
 ```nginx
 location /i/ {
@@ -25,11 +22,11 @@ location /i/ {
 }
 ```
 
-The `/data/w3/i/top.gif` file will be sent in response to the “`/i/top.gif`” request.
+le fichier `/data/w3/i/top.gif` est envoyé en réponse à la requête « `/i/top.gif` ».
 
-The *path* value can contain variables, except `$document_root` and `$realpath_root`.
+La valeur *path* peut contenir des variables, sauf `$document_root` et `$realpath_root`.
 
-A path to the file is constructed by merely adding a URI to the value of the `root` directive. If a URI has to be modified, the [[12-directives/alias|alias]] directive should be used.
+Le chemin du fichier est construit en ajoutant simplement l'URI à la valeur de la directive `root`. Si l'URI doit être modifié, utiliser la directive [[12-directives/alias|alias]].
 
 ---
 

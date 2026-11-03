@@ -1,12 +1,9 @@
 ---
 title: "gzip_types"
-description: "Directive nginx gzip_types (ngx_http_gzip_module) — Enables gzipping of responses for the specified MIME types in addition to “text/html”. The special value “” matches any MIME type (0.8.29). Responses with the “text/html” type are always compressed."
+description: "Directive nginx gzip_types (ngx_http_gzip_module) — Active la compression gzip des réponses pour les types MIME indiqués, en plus de « text/html ». La valeur spéciale « » correspond à tous les types MIME (0.8.29). Les réponses de type « text/html »…"
 tags: [nginx, directive, ngx_http_gzip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables gzipping of responses for the specified MIME types in addition to “`text/html`”. The special value “`*`” matches any MIME type (0.8.29). Responses with the “`text/html`” type are always compressed.
+Active la compression gzip des réponses pour les types MIME indiqués, en plus de « `text/html` ». La valeur spéciale « `*` » correspond à tous les types MIME (0.8.29). Les réponses de type « `text/html` » sont toujours compressées.
 
 ---
 

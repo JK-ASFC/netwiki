@@ -1,12 +1,9 @@
 ---
 title: "port_in_redirect"
-description: "Directive nginx port_in_redirect (ngx_http_core_module) — Enables or disables specifying the port in absolute redirects issued by nginx. The use of the primary server name in redirects is controlled by the server_name_in_redirect directive."
+description: "Directive nginx port_in_redirect (ngx_http_core_module) — Active ou désactive l'indication du port dans les redirections absolues émises par nginx. L'utilisation du nom de serveur principal dans les redirections est contrôlée par la directive…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables specifying the port in [[12-directives/absolute-redirect|absolute]] redirects issued by nginx.
+Active ou désactive l'indication du port dans les redirections [[12-directives/absolute-redirect|absolues]] émises par nginx.
 
-The use of the primary server name in redirects is controlled by the [[12-directives/server-name-in-redirect|server_name_in_redirect]] directive.
+L'utilisation du nom de serveur principal dans les redirections est contrôlée par la directive [[12-directives/server-name-in-redirect|server_name_in_redirect]].
 
 ---
 

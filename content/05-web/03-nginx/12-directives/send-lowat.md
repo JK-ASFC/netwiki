@@ -1,12 +1,9 @@
 ---
 title: "send_lowat"
-description: "Directive nginx send_lowat (ngx_http_core_module) — If the directive is set to a non-zero value, nginx will try to minimize the number of send operations on client sockets by using either NOTE_LOWAT flag of the Connection processing methods method or…"
+description: "Directive nginx send_lowat (ngx_http_core_module) — Si la directive a une valeur non nulle, nginx tente de réduire le nombre d'opérations d'envoi sur les sockets des clients, en utilisant soit l'option NOTE_LOWAT de la méthode kqueue, soit l'option de…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-If the directive is set to a non-zero value, nginx will try to minimize the number of send operations on client sockets by using either `NOTE_LOWAT` flag of the [[10-guides/01-introduction/events|Connection processing methods]] method or the `SO_SNDLOWAT` socket option. In both cases the specified *size* is used.
+Si la directive a une valeur non nulle, nginx tente de réduire le nombre d'opérations d'envoi sur les sockets des clients, en utilisant soit l'option `NOTE_LOWAT` de la méthode [[10-guides/01-introduction/events|kqueue]], soit l'option de socket `SO_SNDLOWAT`. Dans les deux cas, la taille (*size*) indiquée est utilisée.
 
-This directive is ignored on Linux, Solaris, and Windows.
+Cette directive est ignorée sous Linux, Solaris et Windows.
 
 ---
 

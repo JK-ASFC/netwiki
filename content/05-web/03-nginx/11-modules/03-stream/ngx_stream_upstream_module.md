@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_upstream_module` module (1.9.0) is used to define groups of servers that can be referenced by the [[12-directives/proxy-pass-stream-proxy|proxy_pass]] directive.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 upstream backend {

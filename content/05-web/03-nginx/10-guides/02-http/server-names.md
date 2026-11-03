@@ -36,12 +36,12 @@ server {
 }
 ```
 
-The search is performed in the following order of priority and terminates on the first matching variant:
+La recherche s'effectue dans l'ordre de priorité suivant et s'arrête à la première variante correspondante :
 
-1. the exact name
+1. le nom exact
 2. the longest wildcard name starting with an asterisk, e.g. “`*.example.org`”
-3. the longest wildcard name ending with an asterisk, e.g. “`mail.*`”
-4. the first matching regular expression (in order of appearance in the configuration file)
+3. le plus long nom générique se terminant par un astérisque, par exemple « `mail.*` »
+4. la première expression régulière correspondante (dans l'ordre d'apparition dans le fichier de configuration)
 
 ## Wildcard names
 

@@ -1,12 +1,9 @@
 ---
 title: "ssl_object_cache_inheritable"
-description: "Directive nginx ssl_object_cache_inheritable (Core functionality) — If enabled, SSL objects (SSL certificates, secret keys, trusted CA certificates, CRL lists) will be inherited across configuration reloads. SSL objects loaded from a file are inherited if the…"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx ssl_object_cache_inheritable (ngx_core_module) — Si cette option est activée, les objets SSL (certificats, clés secrètes, certificats d'autorités de confiance, listes de révocation) sont conservés d'un rechargement de configuration à l'autre. Les…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -14,18 +11,18 @@ icon: settings-2
 | **Valeur par défaut** | `ssl_object_cache_inheritable on;` |
 | **Contexte** | `main` |
 | **Apparue dans la version** | 1.27.4 |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-If enabled, SSL objects (SSL certificates, secret keys, trusted CA certificates, CRL lists) will be inherited across configuration reloads.
+Si cette option est activée, les objets SSL (certificats, clés secrètes, certificats d'autorités de confiance, listes de révocation) sont conservés d'un rechargement de configuration à l'autre.
 
-SSL objects loaded from a file are inherited if the modification time and file index has not been changed since the previous configuration load. Secret keys specified as `engine:name:id` are never inherited. Secret keys specified as `data:value` are always inherited.
+Les objets SSL chargés depuis un fichier sont conservés si la date de modification et l'index du fichier n'ont pas changé depuis le chargement précédent. Les clés secrètes indiquées sous la forme `engine:name:id` ne sont jamais conservées. Celles indiquées sous la forme `data:value` le sont toujours.
 
 > [!NOTE]
-> SSL objects loaded from variables cannot be inherited.
+> Les objets SSL chargés depuis des variables ne peuvent pas être conservés.
 
-Example:
+Exemple :
 
 ```nginx
 ssl_object_cache_inheritable on;

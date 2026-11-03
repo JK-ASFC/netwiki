@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_core_module` module is available since version 1.9.0. This module is not built by default, it should be enabled with the `--with-stream` configuration parameter.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 worker_processes auto;

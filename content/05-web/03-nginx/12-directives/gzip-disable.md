@@ -1,12 +1,9 @@
 ---
 title: "gzip_disable"
-description: "Directive nginx gzip_disable (ngx_http_gzip_module) — Disables gzipping of responses for requests with User-Agent header fields matching any of the specified regular expressions. The special mask “msie6” (0.7.12) corresponds to the regular expression…"
+description: "Directive nginx gzip_disable (ngx_http_gzip_module) — Désactive la compression gzip des réponses pour les requêtes dont le champ d'en-tête User-Agent correspond à l'une des expressions régulières indiquées. Le masque spécial « msie6 » (0.7.12)…"
 tags: [nginx, directive, ngx_http_gzip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Disables gzipping of responses for requests with `User-Agent` header fields matching any of the specified regular expressions.
+Désactive la compression gzip des réponses pour les requêtes dont le champ d'en-tête `User-Agent` correspond à l'une des expressions régulières indiquées.
 
-The special mask “`msie6`” (0.7.12) corresponds to the regular expression “`MSIE [4-6]\.`”, but works faster. Starting from version 0.8.11, “`MSIE 6.0; ... SV1`” is excluded from this mask.
+Le masque spécial « `msie6` » (0.7.12) correspond à l'expression régulière « `MSIE [4-6]\.` », mais il est plus rapide. Depuis la version 0.8.11, « `MSIE 6.0; ... SV1` » est exclu de ce masque.
 
 ---
 

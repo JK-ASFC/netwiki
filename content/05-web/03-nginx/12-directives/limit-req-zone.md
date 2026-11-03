@@ -1,12 +1,9 @@
 ---
 title: "limit_req_zone"
-description: "Directive nginx limit_req_zone (ngx_http_limit_req_module) — Sets parameters for a shared memory zone that will keep states for various keys. In particular, the state stores the current number of excessive requests. The key can contain text, variables, and…"
+description: "Directive nginx limit_req_zone (ngx_http_limit_req_module) — Définit les paramètres d'une zone de mémoire partagée qui conserve l'état de différentes clés. L'état contient notamment le nombre actuel de requêtes excédentaires. La clé (key) peut contenir du…"
 tags: [nginx, directive, ngx_http_limit_req_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,28 +14,28 @@ icon: settings-2
 
 ## Utilisation
 
-Sets parameters for a shared memory zone that will keep states for various keys. In particular, the state stores the current number of excessive requests. The *key* can contain text, variables, and their combination. Requests with an empty key value are not accounted.
+Définit les paramètres d'une zone de mémoire partagée qui conserve l'état de différentes clés. L'état contient notamment le nombre actuel de requêtes excédentaires. La clé (*key*) peut contenir du texte, des variables ou une combinaison des deux. Les requêtes dont la clé est vide ne sont pas comptabilisées.
 
 > [!NOTE]
-> Prior to version 1.7.6, a *key* could contain exactly one variable.
+> Avant la version 1.7.6, une clé (*key*) devait contenir exactement une variable.
 
-Usage example:
+Exemple d'utilisation :
 
 ```nginx
 limit_req_zone $binary_remote_addr zone=one:10m rate=1r/s;
 ```
 
-Here, the states are kept in a 10 megabyte zone “one”, and an average request processing rate for this zone cannot exceed 1 request per second.
+Ici, les états sont conservés dans une zone « one » de 10 mégaoctets, et le débit moyen de traitement des requêtes pour cette zone ne peut pas dépasser 1 requête par seconde.
 
-A client IP address serves as a key. Note that instead of `$remote_addr`, the `$binary_remote_addr` variable is used here. The `$binary_remote_addr` variable’s size is always 4 bytes for IPv4 addresses or 16 bytes for IPv6 addresses. The stored state always occupies 64 bytes on 32-bit platforms and 128 bytes on 64-bit platforms. One megabyte zone can keep about 16 thousand 64-byte states or about 8 thousand 128-byte states.
+L'adresse IP du client sert de clé. Notez qu'on utilise ici la variable `$binary_remote_addr` au lieu de `$remote_addr`. La taille de `$binary_remote_addr` est toujours de 4 octets pour une adresse IPv4 et de 16 octets pour une adresse IPv6. Un état occupe toujours 64 octets sur les plates-formes 32 bits et 128 octets sur les plates-formes 64 bits. Une zone d'un mégaoctet peut contenir environ 16 000 états de 64 octets ou environ 8 000 états de 128 octets.
 
-If the zone storage is exhausted, the least recently used state is removed. If even after that a new state cannot be created, the request is terminated with an [[12-directives/limit-req-status|error]].
+Lorsque la zone est pleine, l'état le moins récemment utilisé est supprimé. Si même après cela un nouvel état ne peut pas être créé, la requête est terminée avec une [[12-directives/limit-req-status|erreur]].
 
-The rate is specified in requests per second (r/s). If a rate of less than one request per second is desired, it is specified in request per minute (r/m). For example, half-request per second is 30r/m.
+Le débit s'exprime en requêtes par seconde (r/s). Pour un débit inférieur à une requête par seconde, on l'exprime en requêtes par minute (r/m). Par exemple, une demi-requête par seconde s'écrit 30r/m.
 
-Additionally, the following functionality is available as part of our [abonnement commercial](https://nginx.com/products/):
+En outre, les fonctions suivantes sont disponibles dans le cadre de notre [abonnement commercial](https://nginx.com/products/) :
 
-- The `rate` parameter can contain variables (1.31.3). The rate is evaluated at runtime for each request. Example:
+- Le paramètre `rate` peut contenir des variables (1.31.3). Le débit est alors évalué à l'exécution pour chaque requête. Exemple :
 
   ```nginx
   map $uri $rate {
@@ -49,8 +46,8 @@ Additionally, the following functionality is available as part of our [abonnemen
 
   limit_req_zone $binary_remote_addr zone=one:10m rate=$rate;
   ```
-- The `sync` parameter (1.15.3) enables [[12-directives/zone-sync|synchronization]] of the shared memory zone.
-- The [[11-modules/02-http/ngx_http_api_module|status information]] for each such shared memory zone can be [[11-modules/02-http/ngx_http_api_module|obtained]] or [[11-modules/02-http/ngx_http_api_module|reset]] with the [[11-modules/02-http/ngx_http_api_module|API]] since 1.17.7.
+- Le paramètre `sync` (1.15.3) active la [[12-directives/zone-sync|synchronisation]] de la zone de mémoire partagée.
+- Les [[11-modules/02-http/ngx_http_api_module|informations d'état]] de chaque zone de mémoire partagée de ce type peuvent être [[11-modules/02-http/ngx_http_api_module|consultées]] ou [[11-modules/02-http/ngx_http_api_module|remises à zéro]] avec l'[[11-modules/02-http/ngx_http_api_module|API]] depuis la version 1.17.7.
 
 ---
 

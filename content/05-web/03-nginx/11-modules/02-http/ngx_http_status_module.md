@@ -13,7 +13,7 @@ The `ngx_http_status_module` module provides access to various status informatio
 > [!NOTE]
 > This module was available as part of our [abonnement commercial](https://nginx.com/products/) until 1.13.10. It was superseded by the [[11-modules/02-http/ngx_http_api_module|ngx_http_api_module]] module in 1.13.3.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {
@@ -269,11 +269,11 @@ The following status information is provided:
 
     - **`service`**
 
-      The [[11-modules/02-http/ngx_http_upstream_module|ngx_http_upstream_module]] parameter value of the [[12-directives/server-http-upstream|server]] directive.
+      The [[11-modules/02-http/ngx_http_upstream_module|service]] parameter value of the [[12-directives/server-http-upstream|server]] directive.
 
     - **`backup`**
 
-      A boolean value indicating whether the server is a [[11-modules/02-http/ngx_http_upstream_module|ngx_http_upstream_module]] server.
+      A boolean value indicating whether the server is a [[11-modules/02-http/ngx_http_upstream_module|backup]] server.
 
     - **`weight`**
 
@@ -289,7 +289,7 @@ The following status information is provided:
 
     - **`max_conns`**
 
-      The [[11-modules/02-http/ngx_http_upstream_module|ngx_http_upstream_module]] limit for the server.
+      The [[11-modules/02-http/ngx_http_upstream_module|max_conns]] limit for the server.
 
     - **`requests`**
 
@@ -319,7 +319,7 @@ The following status information is provided:
 
     - **`unavail`**
 
-      How many times the server became unavailable for client requests (state “`unavail`”) due to the number of unsuccessful attempts reaching the [[11-modules/02-http/ngx_http_upstream_module|ngx_http_upstream_module]] threshold.
+      How many times the server became unavailable for client requests (state “`unavail`”) due to the number of unsuccessful attempts reaching the [[11-modules/02-http/ngx_http_upstream_module|max_fails]] threshold.
 
     - **`health_checks`**
 
@@ -489,11 +489,11 @@ The following status information is provided:
 
       - **`service`**
 
-        The [[11-modules/03-stream/ngx_stream_upstream_module|ngx_stream_upstream_module]] parameter value of the [[12-directives/server-stream-upstream|server]] directive.
+        The [[11-modules/03-stream/ngx_stream_upstream_module|service]] parameter value of the [[12-directives/server-stream-upstream|server]] directive.
 
       - **`backup`**
 
-        A boolean value indicating whether the server is a [[11-modules/03-stream/ngx_stream_upstream_module|ngx_stream_upstream_module]] server.
+        A boolean value indicating whether the server is a [[11-modules/03-stream/ngx_stream_upstream_module|backup]] server.
 
       - **`weight`**
 
@@ -509,7 +509,7 @@ The following status information is provided:
 
       - **`max_conns`**
 
-        The [[11-modules/03-stream/ngx_stream_upstream_module|ngx_stream_upstream_module]] limit for the server.
+        The [[11-modules/03-stream/ngx_stream_upstream_module|max_conns]] limit for the server.
 
       - **`connections`**
 
@@ -541,7 +541,7 @@ The following status information is provided:
 
       - **`unavail`**
 
-        How many times the server became unavailable for client connections (state “`unavail`”) due to the number of unsuccessful attempts reaching the [[11-modules/03-stream/ngx_stream_upstream_module|ngx_stream_upstream_module]] threshold.
+        How many times the server became unavailable for client connections (state “`unavail`”) due to the number of unsuccessful attempts reaching the [[11-modules/03-stream/ngx_stream_upstream_module|max_fails]] threshold.
 
       - **`health_checks`**
 

@@ -43,7 +43,7 @@ ssl_session_cache builtin:1000 shared:SSL:10m;
 
 but using only shared cache without the built-in cache should be more efficient.
 
-If the directive is specified on the [[12-directives/server-http-core|server]] level, the value from the default server can be used. Details are provided in the “[[10-guides/02-http/server-names|Virtual server selection]]” section.
+Si la directive est indiquée au niveau [[12-directives/server-http-core|server]], la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « [[10-guides/02-http/server-names|Choix du serveur virtuel]] ».
 
 ---
 

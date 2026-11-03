@@ -29,7 +29,7 @@ where *hash* is a hexadecimal representation of the MD5 hash computed for the co
 
 If the requested link passes the authenticity check, the `$secure_link` variable is set to the link extracted from the request URI. Otherwise, the `$secure_link` variable is set to an empty string.
 
-Example:
+Exemple :
 
 ```nginx
 location /p/ {

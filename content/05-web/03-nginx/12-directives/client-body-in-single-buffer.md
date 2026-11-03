@@ -1,12 +1,9 @@
 ---
 title: "client_body_in_single_buffer"
-description: "Directive nginx client_body_in_single_buffer (ngx_http_core_module) — Determines whether nginx should save the entire client request body in a single buffer. The directive is recommended when using the $request_body variable, to save the number of copy operations…"
+description: "Directive nginx client_body_in_single_buffer (ngx_http_core_module) — Indique si nginx doit conserver tout le corps de la requête du client dans un seul tampon. Recommandé avec la variable $request_body, pour réduire le nombre de copies."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Determines whether nginx should save the entire client request body in a single buffer. The directive is recommended when using the `$request_body` variable, to save the number of copy operations involved.
+Indique si nginx doit conserver tout le corps de la requête du client dans un seul tampon. Recommandé avec la variable `$request_body`, pour réduire le nombre de copies.
 
 ---
 

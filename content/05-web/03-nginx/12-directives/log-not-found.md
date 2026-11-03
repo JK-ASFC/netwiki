@@ -1,12 +1,9 @@
 ---
 title: "log_not_found"
-description: "Directive nginx log_not_found (ngx_http_core_module) — Enables or disables logging of errors about not found files into error_log."
+description: "Directive nginx log_not_found (ngx_http_core_module) — Active ou désactive la journalisation dans error_log des erreurs de fichiers introuvables."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables logging of errors about not found files into [[12-directives/error-log|error_log]].
+Active ou désactive la journalisation dans [[12-directives/error-log|error_log]] des erreurs de fichiers introuvables.
 
 ---
 

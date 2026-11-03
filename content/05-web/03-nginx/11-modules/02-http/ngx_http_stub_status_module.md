@@ -12,7 +12,7 @@ The `ngx_http_stub_status_module` module provides access to basic status informa
 
 This module is not built by default, it should be enabled with the `--with-http_stub_status_module` configuration parameter.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location = /basic_status {

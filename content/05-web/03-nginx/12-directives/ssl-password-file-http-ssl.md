@@ -1,6 +1,6 @@
 ---
 title: "ssl_password_file (ngx_http_ssl_module)"
-description: "Directive nginx ssl_password_file (ngx_http_ssl_module) — Specifies a file with passphrases for secret keys where each passphrase is specified on a separate line. Passphrases are tried in turn when loading the key. Example: nginx http { ssl_password_file…"
+description: "Directive nginx ssl_password_file (ngx_http_ssl_module) — Specifies a file with passphrases for secret keys where each passphrase is specified on a separate line. Passphrases are tried in turn when loading the key. Exemple : nginx http { ssl_password_file…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
@@ -20,7 +20,7 @@ icon: settings-2
 
 Specifies a *file* with passphrases for [[12-directives/ssl-certificate-key-http-ssl|secret keys]] where each passphrase is specified on a separate line. Passphrases are tried in turn when loading the key.
 
-Example:
+Exemple :
 
 ```nginx
 http {

@@ -20,7 +20,7 @@ icon: settings-2
 Limits the rate of response transmission to a client. The rate is limited based on the average bitrate of the MP4 file served. To calculate the rate, the bitrate is multiplied by the specified *factor*. The special value “`on`” corresponds to the factor of 1.1. The special value “`off`” disables rate limiting. The limit is set per a request, and so if a client simultaneously opens two connections, the overall rate will be twice as much as the specified limit.
 
 > [!NOTE]
-> This directive is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

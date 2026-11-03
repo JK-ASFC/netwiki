@@ -1,6 +1,6 @@
 ---
 title: "ngx_mail_realip_module"
-description: "Module nginx ngx_mail_realip_module — The ngx_mail_realip_module module is used to change the client address and port to the ones sent in the PROXY protocol header (1.19.8). The PROXY protocol must be previously enabled by setting the ngx_mail_core_module…"
+description: "Module nginx ngx_mail_realip_module — The ngx_mail_realip_module module is used to change the client address and port to the ones sent in the PROXY protocol header (1.19.8). The PROXY protocol must be previously enabled by setting the proxy_protocol…"
 tags: [nginx, module, ngx_mail_realip_module]
 icon: puzzle
 ---
@@ -8,9 +8,9 @@ icon: puzzle
 > [!NOTE]
 > Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
-The `ngx_mail_realip_module` module is used to change the client address and port to the ones sent in the PROXY protocol header (1.19.8). The PROXY protocol must be previously enabled by setting the [[11-modules/04-mail/ngx_mail_core_module|ngx_mail_core_module]] parameter in the `listen` directive.
+The `ngx_mail_realip_module` module is used to change the client address and port to the ones sent in the PROXY protocol header (1.19.8). The PROXY protocol must be previously enabled by setting the [[11-modules/04-mail/ngx_mail_core_module|proxy_protocol]] parameter in the `listen` directive.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 listen 110 proxy_protocol;

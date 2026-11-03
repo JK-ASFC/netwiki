@@ -1,12 +1,9 @@
 ---
 title: "log_subrequest"
-description: "Directive nginx log_subrequest (ngx_http_core_module) — Enables or disables logging of subrequests into access_log."
+description: "Directive nginx log_subrequest (ngx_http_core_module) — Active ou désactive la journalisation des sous-requêtes dans access_log."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables logging of subrequests into [[12-directives/access-log-http-log|access_log]].
+Active ou désactive la journalisation des sous-requêtes dans [[12-directives/access-log-http-log|access_log]].
 
 ---
 

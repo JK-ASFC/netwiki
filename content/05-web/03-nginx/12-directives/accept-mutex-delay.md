@@ -1,23 +1,20 @@
 ---
 title: "accept_mutex_delay"
-description: "Directive nginx accept_mutex_delay (Core functionality) — If accept_mutex is enabled, specifies the maximum time during which a worker process will try to restart accepting new connections if another worker process is currently accepting new connections."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx accept_mutex_delay (ngx_core_module) — Si accept_mutex est activé, indique la durée maximale pendant laquelle un processus de travail attend avant de réessayer d'accepter de nouvelles connexions lorsqu'un autre processus de travail est en…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `accept_mutex_delay time;` |
 | **Valeur par défaut** | `accept_mutex_delay 500ms;` |
 | **Contexte** | `events` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-If [[12-directives/accept-mutex|accept_mutex]] is enabled, specifies the maximum time during which a worker process will try to restart accepting new connections if another worker process is currently accepting new connections.
+Si [[12-directives/accept-mutex|accept_mutex]] est activé, indique la durée maximale pendant laquelle un processus de travail attend avant de réessayer d'accepter de nouvelles connexions lorsqu'un autre processus de travail est en train d'en accepter.
 
 ---
 

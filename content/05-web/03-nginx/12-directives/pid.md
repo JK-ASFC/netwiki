@@ -1,23 +1,20 @@
 ---
 title: "pid"
-description: "Directive nginx pid (Core functionality) — Defines a file that will store the process ID of the main process."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx pid (ngx_core_module) — Définit le fichier (file) qui contiendra l'identifiant de processus (PID) du processus maître."
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `pid file;` |
 | **Valeur par défaut** | `pid logs/nginx.pid;` |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Defines a *file* that will store the process ID of the main process.
+Définit le fichier (*file*) qui contiendra l'identifiant de processus (PID) du processus maître.
 
 ---
 

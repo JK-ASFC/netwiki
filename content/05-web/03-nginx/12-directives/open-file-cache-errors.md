@@ -1,12 +1,9 @@
 ---
 title: "open_file_cache_errors"
-description: "Directive nginx open_file_cache_errors (ngx_http_core_module) — Enables or disables caching of file lookup errors by open_file_cache."
+description: "Directive nginx open_file_cache_errors (ngx_http_core_module) — Active ou désactive la mise en cache des erreurs de recherche de fichiers par open_file_cache."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables caching of file lookup errors by [[12-directives/open-file-cache|open_file_cache]].
+Active ou désactive la mise en cache des erreurs de recherche de fichiers par [[12-directives/open-file-cache|open_file_cache]].
 
 ---
 

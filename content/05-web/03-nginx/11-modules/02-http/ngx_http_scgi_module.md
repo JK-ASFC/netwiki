@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_scgi_module` module allows passing requests to an SCGI server.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

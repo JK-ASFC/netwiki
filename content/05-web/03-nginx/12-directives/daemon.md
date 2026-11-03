@@ -1,23 +1,20 @@
 ---
 title: "daemon"
-description: "Directive nginx daemon (Core functionality) — Determines whether nginx should become a daemon. Mainly used during development."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx daemon (ngx_core_module) — Détermine si nginx doit devenir un démon. Sert principalement pendant le développement."
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `daemon on \| off;` |
 | **Valeur par défaut** | `daemon on;` |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Determines whether nginx should become a daemon. Mainly used during development.
+Détermine si nginx doit devenir un démon. Sert principalement pendant le développement.
 
 ---
 

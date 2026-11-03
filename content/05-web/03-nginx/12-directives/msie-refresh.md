@@ -1,12 +1,9 @@
 ---
 title: "msie_refresh"
-description: "Directive nginx msie_refresh (ngx_http_core_module) — Enables or disables issuing refreshes instead of redirects for MSIE clients."
+description: "Directive nginx msie_refresh (ngx_http_core_module) — Active ou désactive l'envoi de rafraîchissements au lieu de redirections pour les clients MSIE."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables issuing refreshes instead of redirects for MSIE clients.
+Active ou désactive l'envoi de rafraîchissements au lieu de redirections pour les clients MSIE.
 
 ---
 

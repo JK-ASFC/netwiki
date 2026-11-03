@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_ssl_preread_module` module (1.11.5) allows extracting information from the [ClientHello](https://datatracker.ietf.org/doc/html/rfc5246#section-7.4.1.2) message without terminating SSL/TLS, for example, the server name requested through [SNI](https://datatracker.ietf.org/doc/html/rfc6066#section-3) or protocols advertised in [ALPN](https://datatracker.ietf.org/doc/html/rfc7301). This module is not built by default, it should be enabled with the `--with-stream_ssl_preread_module` configuration parameter.
 
-## Example Configuration
+## Exemple de configuration
 
 Selecting an upstream based on server name:
 

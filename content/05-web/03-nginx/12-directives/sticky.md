@@ -85,7 +85,7 @@ Enables session affinity, which causes requests from the same client to be passe
 
   The parameters of the `route` method specify variables that may contain routing information. The first non-empty variable is used to find the matching server.
 
-  Example:
+  Exemple :
 
   ```nginx
   map $cookie_jsessionid $route_cookie {

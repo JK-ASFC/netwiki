@@ -1,23 +1,20 @@
 ---
 title: "worker_rlimit_nofile"
-description: "Directive nginx worker_rlimit_nofile (Core functionality) — Changes the limit on the maximum number of open files (RLIMIT_NOFILE) for worker processes. Used to increase the limit without restarting the main process."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx worker_rlimit_nofile (ngx_core_module) — Modifie la limite du nombre maximal de fichiers ouverts (RLIMIT_NOFILE) pour les processus de travail. Permet d'augmenter la limite sans redémarrer le processus maître."
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `worker_rlimit_nofile number;` |
 | **Valeur par défaut** | — |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Changes the limit on the maximum number of open files (`RLIMIT_NOFILE`) for worker processes. Used to increase the limit without restarting the main process.
+Modifie la limite du nombre maximal de fichiers ouverts (`RLIMIT_NOFILE`) pour les processus de travail. Permet d'augmenter la limite sans redémarrer le processus maître.
 
 ---
 

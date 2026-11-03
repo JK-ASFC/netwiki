@@ -18,7 +18,7 @@ When using the `PATCH` or `POST` methods, make sure that the payload does not ex
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {
@@ -1368,7 +1368,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     The ID of the master process that started the [worker process](https://nginx.org/en/docs/http/ngx_http_status_module.html#pid).
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -1390,7 +1390,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     The total number of abnormally terminated and respawned child processes.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -1417,7 +1417,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     The current number of idle client connections.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -1481,7 +1481,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
       Other SSL certificate verification errors.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -1523,7 +1523,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     A collection of "Memory Slot" objects
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -1598,7 +1598,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     The current number of client requests.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -1714,7 +1714,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
         Other SSL certificate verification errors.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -1808,7 +1808,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     The total number of bytes sent to clients.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -1940,7 +1940,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
       The total number of bytes written to the cache.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -1995,7 +1995,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     The total number of connections accounted as rejected in the [dry run](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_dry_run) mode.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -2026,7 +2026,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     The total number of requests accounted as rejected in the [dry run](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_dry_run) mode.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -2321,7 +2321,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
       The total number of requests rejected due to the queue overflow.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -2502,7 +2502,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     Hostname of the resolved server. The hostname is assigned automatically and cannot be changed.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -2522,7 +2522,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   Contents of an HTTP keyval shared memory zone when using the GET method.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -2535,7 +2535,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   Contents of an HTTP keyval shared memory zone when using the POST or PATCH methods.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -2639,7 +2639,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
         Other SSL certificate verification errors.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -2687,7 +2687,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     The total number of connections accounted as rejected in the [dry run](https://nginx.org/en/docs/stream/ngx_stream_limit_conn_module.html#limit_conn_dry_run) mode.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -2854,7 +2854,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     The name of the shared memory [zone](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#zone) that keeps the group’s configuration and run-time state.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -2980,7 +2980,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     Hostname of the resolved server. The hostname is assigned automatically and cannot be changed.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -2999,7 +2999,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   Contents of a stream keyval shared memory zone when using the GET method.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -3012,7 +3012,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   Contents of a stream keyval shared memory zone when using the POST or PATCH methods.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -3056,7 +3056,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
       The number of peers this node is connected to.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -3142,7 +3142,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
       The total number of requests completed with an unknown error.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -3199,7 +3199,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     Indicates whether a renewed license token has been [saved as pending](https://nginx.org/en/docs/ngx_mgmt_module.html#license_pending_token) but not yet applied.
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -3234,7 +3234,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     Date and time at which the license expires, in ISO 8601 format. Example: `"2025-12-31T23:59:59Z"`
 
-  Example:
+  Exemple :
 
   ```nginx
   {
@@ -3290,7 +3290,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
         The current number of client requests that are currently being processed by the worker process.
 
-  Example:
+  Exemple :
 
   ```nginx
   {

@@ -21,7 +21,7 @@ Sets the *name* and *size* of the shared memory zone that keeps the key-value da
 
 The optional `state` parameter specifies a *file* that keeps the current state of the key-value database in the JSON format and makes it persistent across nginx restarts. Changing the file content directly should be avoided.
 
-Examples:
+Exemples :
 
 ```nginx
 keyval_zone zone=one:32k state=/var/lib/nginx/state/one.keyval; # path for Linux

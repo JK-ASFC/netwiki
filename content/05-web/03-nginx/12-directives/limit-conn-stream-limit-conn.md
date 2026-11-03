@@ -28,11 +28,11 @@ server {
 }
 ```
 
-allow only one connection per an IP address at a time.
+n'autorisent qu'une seule connexion à la fois par adresse IP.
 
 When several `limit_conn` directives are specified, any configured limit will apply.
 
-These directives are inherited from the previous configuration level if and only if there are no `limit_conn` directives defined on the current level.
+Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `limit_conn` n'est définie au niveau courant.
 
 ---
 

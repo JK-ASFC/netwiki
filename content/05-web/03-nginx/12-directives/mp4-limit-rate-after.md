@@ -1,6 +1,6 @@
 ---
 title: "mp4_limit_rate_after"
-description: "Directive nginx mp4_limit_rate_after (ngx_http_mp4_module) — Sets the initial amount of media data (measured in playback time) after which the further transmission of the response to a client will be rate limited. NOTE This directive is available as part of…"
+description: "Directive nginx mp4_limit_rate_after (ngx_http_mp4_module) — Sets the initial amount of media data (measured in playback time) after which the further transmission of the response to a client will be rate limited. NOTE Cette directive est disponible dans le…"
 tags: [nginx, directive, ngx_http_mp4_module]
 icon: settings-2
 ---
@@ -20,7 +20,7 @@ icon: settings-2
 Sets the initial amount of media data (measured in playback time) after which the further transmission of the response to a client will be rate limited.
 
 > [!NOTE]
-> This directive is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

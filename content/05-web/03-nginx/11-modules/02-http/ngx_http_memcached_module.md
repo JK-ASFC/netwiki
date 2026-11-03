@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_memcached_module` module is used to obtain responses from a memcached server. The key is set in the `$memcached_key` variable. A response should be put in memcached in advance by means external to nginx.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 server {

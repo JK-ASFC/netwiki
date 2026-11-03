@@ -1,12 +1,9 @@
 ---
 title: "open_file_cache_min_uses"
-description: "Directive nginx open_file_cache_min_uses (ngx_http_core_module) — Sets the minimum number of file accesses during the period configured by the inactive parameter of the open_file_cache directive, required for a file descriptor to remain open in the cache."
+description: "Directive nginx open_file_cache_min_uses (ngx_http_core_module) — Définit le nombre (number) minimal d'accès à un fichier pendant la période définie par le paramètre inactive de la directive open_file_cache pour que son descripteur reste ouvert dans le cache."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the minimum *number* of file accesses during the period configured by the `inactive` parameter of the [[12-directives/open-file-cache|open_file_cache]] directive, required for a file descriptor to remain open in the cache.
+Définit le nombre (*number*) minimal d'accès à un fichier pendant la période définie par le paramètre `inactive` de la directive [[12-directives/open-file-cache|open_file_cache]] pour que son descripteur reste ouvert dans le cache.
 
 ---
 

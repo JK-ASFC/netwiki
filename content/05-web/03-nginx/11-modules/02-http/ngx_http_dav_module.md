@@ -15,7 +15,7 @@ This module is not built by default, it should be enabled with the `--with-http_
 > [!NOTE]
 > WebDAV clients that require additional WebDAV methods to operate will not work with this module.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

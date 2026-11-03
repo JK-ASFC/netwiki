@@ -1,12 +1,9 @@
 ---
 title: "allow (ngx_http_access_module)"
-description: "Directive nginx allow (ngx_http_access_module) — Allows access for the specified network or address. If the special value unix: is specified (1.5.1), allows access for all UNIX-domain sockets. Several allow directives can be specified on the same…"
+description: "Directive nginx allow (ngx_http_access_module) — Autorise l'accès pour le réseau ou l'adresse indiqués. Avec la valeur spéciale unix: (1.5.1), autorise l'accès pour tous les sockets de domaine UNIX. Plusieurs directives allow peuvent être indiquées…"
 tags: [nginx, directive, ngx_http_access_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Allows access for the specified network or address. If the special value `unix:` is specified (1.5.1), allows access for all UNIX-domain sockets.
+Autorise l'accès pour le réseau ou l'adresse indiqués. Avec la valeur spéciale `unix:` (1.5.1), autorise l'accès pour tous les sockets de domaine UNIX.
 
-Several `allow` directives can be specified on the same level. These directives are inherited from the previous configuration level if and only if there are no `allow` and `deny` directives defined on the current level.
+Plusieurs directives `allow` peuvent être indiquées au même niveau. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `allow` ni `deny` n'est définie au niveau courant.
 
 ---
 

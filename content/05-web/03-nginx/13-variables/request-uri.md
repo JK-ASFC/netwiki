@@ -1,19 +1,16 @@
 ---
 title: "$request_uri"
-description: "Variable nginx $request_uri (ngx_http_core_module) — full original request URI (with arguments)"
+description: "Variable nginx $request_uri (ngx_http_core_module) — URI d'origine complet de la requête (avec les arguments)"
 tags: [nginx, variable, ngx_http_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$request_uri` |
 | **Module** | [[11-modules/02-http/ngx_http_core_module\|ngx_http_core_module]] |
 
-full original request URI (with arguments)
+URI d'origine complet de la requête (avec les arguments)
 
 ---
 

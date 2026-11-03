@@ -1,16 +1,13 @@
 ---
 title: "ngx_http_headers_module"
-description: "Module nginx ngx_http_headers_module — The ngx_http_headers_module module allows adding the Expires and Cache-Control header fields, and arbitrary fields, to a response header."
+description: "Module nginx ngx_http_headers_module — Le module ngx_http_headers_module permet d'ajouter à l'en-tête de réponse les champs Expires et Cache-Control, ainsi que des champs quelconques."
 tags: [nginx, module, ngx_http_headers_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_headers_module` permet d'ajouter à l'en-tête de réponse les champs `Expires` et `Cache-Control`, ainsi que des champs quelconques.
 
-The `ngx_http_headers_module` module allows adding the `Expires` and `Cache-Control` header fields, and arbitrary fields, to a response header.
-
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 expires    24h;

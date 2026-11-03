@@ -1,12 +1,9 @@
 ---
 title: "error_log_tag"
-description: "Directive nginx error_log_tag (ngx_http_core_module) — Defines an additional context tag for HTTP error log messages in text or JSON format, in addition to default tags. The value can contain text, variables, and their combination: nginx error_log_tag…"
+description: "Directive nginx error_log_tag (ngx_http_core_module) — Définit une étiquette de contexte supplémentaire pour les messages du journal d'erreurs HTTP au format texte ou JSON, en plus des étiquettes par défaut. value peut contenir du texte, des variables ou…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,16 +15,16 @@ icon: settings-2
 
 ## Utilisation
 
-Defines an additional context tag for HTTP [[12-directives/error-log|error log]] messages in text or [[11-modules/01-coeur/Core functionality|JSON]] format, in addition to default tags. The `value` can contain text, variables, and their combination:
+Définit une étiquette de contexte supplémentaire pour les messages du [[12-directives/error-log|journal d'erreurs]] HTTP au format texte ou [[11-modules/01-coeur/ngx_core_module|JSON]], en plus des étiquettes par défaut. `value` peut contenir du texte, des variables ou une combinaison des deux :
 
 ```nginx
 error_log_tag  request_id  $request_id;
 ```
 
-Several `error_log_tag` directives can be specified on the same level. These directives are inherited from the previous configuration level if and only if there are no `error_log_tag` directives defined on the current level.
+Plusieurs directives `error_log_tag` peuvent être indiquées au même niveau. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `error_log_tag` n'est définie au niveau courant.
 
 > [!NOTE]
-> This directive is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

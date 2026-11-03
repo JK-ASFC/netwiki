@@ -1,12 +1,9 @@
 ---
 title: "variables_hash_bucket_size (ngx_stream_core_module)"
-description: "Directive nginx variables_hash_bucket_size (ngx_stream_core_module) — Sets the bucket size for the variables hash table. The details of setting up hash tables are provided in a separate document."
+description: "Directive nginx variables_hash_bucket_size (ngx_stream_core_module) — Définit la taille des compartiments de la table de hachage des variables. Le réglage des tables de hachage est détaillé dans un document distinct."
 tags: [nginx, directive, ngx_stream_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the bucket size for the variables hash table. The details of setting up hash tables are provided in a separate [[10-guides/01-introduction/hash|document]].
+Définit la taille des compartiments de la table de hachage des variables. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]].
 
 ---
 

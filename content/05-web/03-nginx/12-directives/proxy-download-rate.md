@@ -20,7 +20,7 @@ icon: settings-2
 
 Limits the speed of reading the data from the proxied server. The *rate* is specified in bytes per second. The zero value disables rate limiting. The limit is set per a connection, so if nginx simultaneously opens two connections to the proxied server, the overall rate will be twice as much as the specified limit.
 
-Parameter value can contain variables (1.17.0). It may be useful in cases where rate should be limited depending on a certain condition:
+La valeur du paramètre peut contenir des variables (1.17.0). C'est utile lorsque le débit doit être limité selon une condition :
 
 ```nginx
 map $slow $rate {

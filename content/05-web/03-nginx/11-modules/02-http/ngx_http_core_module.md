@@ -5,9 +5,6 @@ tags: [nginx, module, ngx_http_core_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 ## Directives
 
 - [[12-directives/absolute-redirect|absolute_redirect]]

@@ -1,23 +1,20 @@
 ---
 title: "user"
-description: "Directive nginx user (Core functionality) — Defines user and group credentials used by worker processes. If group is omitted, a group whose name equals that of user is used."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx user (ngx_core_module) — Définit l'utilisateur (user) et le groupe (group) sous lesquels s'exécutent les processus de travail. Si group est omis, le groupe portant le même nom que user est utilisé."
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `user user [group];` |
 | **Valeur par défaut** | `user nobody nobody;` |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Defines *user* and *group* credentials used by worker processes. If *group* is omitted, a group whose name equals that of *user* is used.
+Définit l'utilisateur (*user*) et le groupe (*group*) sous lesquels s'exécutent les processus de travail. Si *group* est omis, le groupe portant le même nom que *user* est utilisé.
 
 ---
 

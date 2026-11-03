@@ -24,7 +24,7 @@ Specifies that a group should use a load balancing method where requests are dis
 
 If one of the servers needs to be temporarily removed, it should be marked with the `down` parameter in order to preserve the current hashing of client IP addresses.
 
-Example:
+Exemple :
 
 ```nginx
 upstream backend {

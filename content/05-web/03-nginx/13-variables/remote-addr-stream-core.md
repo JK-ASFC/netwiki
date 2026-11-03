@@ -1,19 +1,16 @@
 ---
 title: "$remote_addr (ngx_stream_core_module)"
-description: "Variable nginx $remote_addr (ngx_stream_core_module) — client address"
+description: "Variable nginx $remote_addr (ngx_stream_core_module) — adresse du client"
 tags: [nginx, variable, ngx_stream_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$remote_addr` |
 | **Module** | [[11-modules/03-stream/ngx_stream_core_module\|ngx_stream_core_module]] |
 
-client address
+adresse du client
 
 ---
 

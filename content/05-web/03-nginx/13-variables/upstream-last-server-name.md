@@ -1,6 +1,6 @@
 ---
 title: "$upstream_last_server_name"
-description: "Variable nginx $upstream_last_server_name (ngx_http_upstream_module) — keeps the name of last selected upstream server (1.25.3); allows passing it through SNI: nginx proxy_ssl_server_name on; proxy_ssl_name $upstream_last_server_name; NOTE This variable is available as…"
+description: "Variable nginx $upstream_last_server_name (ngx_http_upstream_module) — keeps the name of last selected upstream server (1.25.3); allows passing it through SNI: nginx proxy_ssl_server_name on; proxy_ssl_name $upstream_last_server_name; NOTE Cette variable est disponible…"
 tags: [nginx, variable, ngx_http_upstream_module]
 icon: dollar-sign
 ---
@@ -21,7 +21,7 @@ proxy_ssl_name        $upstream_last_server_name;
 ```
 
 > [!NOTE]
-> This variable is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette variable est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

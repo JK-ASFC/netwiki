@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_proxy_module` module allows passing requests to another server.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

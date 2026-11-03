@@ -1,18 +1,15 @@
 ---
 title: "ngx_http_realip_module"
-description: "Module nginx ngx_http_realip_module — The ngx_http_realip_module module is used to change the client address and optional port to those sent in the specified header field."
+description: "Module nginx ngx_http_realip_module — Le module ngx_http_realip_module sert à remplacer l'adresse du client, et éventuellement son port, par ceux transmis dans le champ d'en-tête indiqué."
 tags: [nginx, module, ngx_http_realip_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_realip_module` sert à remplacer l'adresse du client, et éventuellement son port, par ceux transmis dans le champ d'en-tête indiqué.
 
-The `ngx_http_realip_module` module is used to change the client address and optional port to those sent in the specified header field.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_realip_module`.
 
-This module is not built by default, it should be enabled with the `--with-http_realip_module` configuration parameter.
-
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 set_real_ip_from  192.168.1.0/24;

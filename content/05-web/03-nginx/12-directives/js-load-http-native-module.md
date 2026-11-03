@@ -22,7 +22,7 @@ Loads a [[10-guides/04-njs/native-modules|native module]] (shared library) for u
 
 The *path* parameter specifies the absolute path to the shared library file. The optional `as` *name* parameter provides an alias name for importing the module in JavaScript code. If not specified, the module can be imported using its filename.
 
-Example:
+Exemple :
 
 ```nginx
 js_load_http_native_module /path/to/mylib.so;

@@ -1,19 +1,16 @@
 ---
 title: "$connection_requests"
-description: "Variable nginx $connection_requests (ngx_http_core_module) — current number of requests made through a connection (1.3.8, 1.2.5)"
+description: "Variable nginx $connection_requests (ngx_http_core_module) — nombre actuel de requêtes faites sur une connexion (1.3.8, 1.2.5)"
 tags: [nginx, variable, ngx_http_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$connection_requests` |
 | **Module** | [[11-modules/02-http/ngx_http_core_module\|ngx_http_core_module]] |
 
-current number of requests made through a connection (1.3.8, 1.2.5)
+nombre actuel de requêtes faites sur une connexion (1.3.8, 1.2.5)
 
 ---
 

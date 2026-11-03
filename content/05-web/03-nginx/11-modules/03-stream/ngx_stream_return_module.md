@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_return_module` module (1.11.2) allows sending a specified value to the client and then closing the connection.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 server {

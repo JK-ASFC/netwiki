@@ -1,12 +1,9 @@
 ---
 title: "set_real_ip_from (ngx_http_realip_module)"
-description: "Directive nginx set_real_ip_from (ngx_http_realip_module) — Defines trusted addresses that are known to send correct replacement addresses. If the special value unix: is specified, all UNIX-domain sockets will be trusted. Trusted addresses may also be…"
+description: "Directive nginx set_real_ip_from (ngx_http_realip_module) — Définit les adresses de confiance, connues pour transmettre des adresses de remplacement correctes. Avec la valeur spéciale unix:, tous les sockets de domaine UNIX sont considérés comme de confiance.…"
 tags: [nginx, directive, ngx_http_realip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Defines trusted addresses that are known to send correct replacement addresses. If the special value `unix:` is specified, all UNIX-domain sockets will be trusted. Trusted addresses may also be specified using a hostname (1.13.1).
+Définit les adresses de confiance, connues pour transmettre des adresses de remplacement correctes. Avec la valeur spéciale `unix:`, tous les sockets de domaine UNIX sont considérés comme de confiance. Les adresses de confiance peuvent aussi être indiquées par un nom d'hôte (1.13.1).
 
 > [!NOTE]
-> IPv6 addresses are supported starting from versions 1.3.0 and 1.2.1.
+> Les adresses IPv6 sont prises en charge à partir des versions 1.3.0 et 1.2.1.
 
 ---
 

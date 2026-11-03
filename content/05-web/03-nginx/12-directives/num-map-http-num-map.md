@@ -26,15 +26,15 @@ Parameters inside the `num_map` block specify a mapping between source and resul
 
 Source values are specified as numbers or as numeric ranges.
 
-The following special parameters are also supported:
+Les paramètres spéciaux suivants sont aussi pris en charge :
 
 - **`default`**
 
-  sets the resulting value if the source value matches none of the specified variants. When `default` is not specified, the default resulting value will be an empty string.
+  définit la valeur résultante si la valeur source ne correspond à aucune des variantes indiquées. Sans `default`, la valeur résultante par défaut est une chaîne vide.
 
 - **`include`**
 
-  includes a file with values. There can be several inclusions.
+  inclut un fichier de valeurs. Il peut y avoir plusieurs inclusions.
 
 - **`volatile`**
 

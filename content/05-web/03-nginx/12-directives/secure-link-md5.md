@@ -23,7 +23,7 @@ The expression should contain the secured part of a link (resource) and a secret
 
 To prevent unauthorized access, the expression may contain some information about the client, such as its address and browser version.
 
-Example:
+Exemple :
 
 ```nginx
 location /s/ {

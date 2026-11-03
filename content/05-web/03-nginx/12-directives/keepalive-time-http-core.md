@@ -1,12 +1,9 @@
 ---
 title: "keepalive_time (ngx_http_core_module)"
-description: "Directive nginx keepalive_time (ngx_http_core_module) — Limits the maximum time during which requests can be processed through one keep-alive connection. After this time is reached, the connection is closed following the subsequent request processing."
+description: "Directive nginx keepalive_time (ngx_http_core_module) — Limite la durée maximale pendant laquelle des requêtes peuvent être traitées sur une connexion persistante. Une fois cette durée atteinte, la connexion est fermée après le traitement de la requête…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Limits the maximum time during which requests can be processed through one keep-alive connection. After this time is reached, the connection is closed following the subsequent request processing.
+Limite la durée maximale pendant laquelle des requêtes peuvent être traitées sur une connexion persistante. Une fois cette durée atteinte, la connexion est fermée après le traitement de la requête suivante.
 
 ---
 

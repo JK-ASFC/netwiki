@@ -1,12 +1,9 @@
 ---
 title: "large_client_header_buffers"
-description: "Directive nginx large_client_header_buffers (ngx_http_core_module) — Sets the maximum number and size of buffers used for reading large client request header. A request line cannot exceed the size of one buffer, or the 414 Request-URI Too Large error is returned to…"
+description: "Directive nginx large_client_header_buffers (ngx_http_core_module) — Définit le nombre (number) et la taille (size) maximaux des tampons de lecture des en-têtes de requête volumineux. Une ligne de requête ne peut pas dépasser la taille d'un tampon, sinon l'erreur 414…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum *number* and *size* of buffers used for reading large client request header. A request line cannot exceed the size of one buffer, or the `414 Request-URI Too Large` error is returned to the client. A request header field cannot exceed the size of one buffer as well, or the `400 Bad Request` error is returned to the client. Buffers are allocated only on demand. By default, the buffer size is equal to 8K bytes. If after the end of request processing a connection is transitioned into the keep-alive state, these buffers are released.
+Définit le nombre (*number*) et la taille (*size*) maximaux des tampons de lecture des en-têtes de requête volumineux. Une ligne de requête ne peut pas dépasser la taille d'un tampon, sinon l'erreur `414 Request-URI Too Large` est renvoyée au client. Un champ d'en-tête ne peut pas non plus dépasser la taille d'un tampon, sinon l'erreur `400 Bad Request` est renvoyée. Les tampons ne sont alloués qu'à la demande. Par défaut, un tampon fait 8K octets. Si la connexion passe à l'état persistant après le traitement de la requête, ces tampons sont libérés.
 
-The limits are similarly applied in HTTP/2 and HTTP/3 connections. The size of one buffer limits the maximum size of a request header field compressed with [HPACK](https://datatracker.ietf.org/doc/html/rfc7541) and [QPACK](https://datatracker.ietf.org/doc/html/rfc9204), respectively. Note that if Huffman encoding is applied, the actual size of decompressed name and value strings may be larger. The maximum size of the entire request header is limited after decompression.
+Les limites s'appliquent de la même façon aux connexions HTTP/2 et HTTP/3. La taille d'un tampon limite la taille maximale d'un champ d'en-tête compressé avec, respectivement, [HPACK](https://datatracker.ietf.org/doc/html/rfc7541) et [QPACK](https://datatracker.ietf.org/doc/html/rfc9204). Si le codage de Huffman est appliqué, la taille réelle des noms et valeurs décompressés peut être supérieure. La taille maximale de l'en-tête de requête complet est limitée après décompression.
 
-If the directive is specified on the [[12-directives/server-http-core|server]] level, the value from the default server can be used. Details are provided in the “[[10-guides/02-http/server-names|Virtual server selection]]” section.
+Si la directive est indiquée au niveau [[12-directives/server-http-core|server]], la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « [[10-guides/02-http/server-names|Choix du serveur virtuel]] ».
 
 ---
 

@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_upstream_module` module is used to define groups of servers that can be referenced by the [[12-directives/proxy-pass-http-proxy|proxy_pass]], [[12-directives/fastcgi-pass|fastcgi_pass]], [[12-directives/uwsgi-pass|uwsgi_pass]], [[12-directives/scgi-pass|scgi_pass]], [[12-directives/memcached-pass|memcached_pass]], and [[12-directives/grpc-pass|grpc_pass]] directives.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 upstream backend {

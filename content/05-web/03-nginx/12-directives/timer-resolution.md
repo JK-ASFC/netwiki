@@ -1,35 +1,32 @@
 ---
 title: "timer_resolution"
-description: "Directive nginx timer_resolution (Core functionality) — Reduces timer resolution in worker processes, thus reducing the number of gettimeofday system calls made. By default, gettimeofday is called each time a kernel event is received. With reduced…"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx timer_resolution (ngx_core_module) — Réduit la résolution du minuteur dans les processus de travail, et donc le nombre d'appels système gettimeofday. Par défaut, gettimeofday est appelé à chaque événement reçu du noyau. Avec une…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `timer_resolution interval;` |
 | **Valeur par défaut** | — |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Reduces timer resolution in worker processes, thus reducing the number of `gettimeofday` system calls made. By default, `gettimeofday` is called each time a kernel event is received. With reduced resolution, `gettimeofday` is only called once per specified *interval*.
+Réduit la résolution du minuteur dans les processus de travail, et donc le nombre d'appels système `gettimeofday`. Par défaut, `gettimeofday` est appelé à chaque événement reçu du noyau. Avec une résolution réduite, il n'est appelé qu'une fois par intervalle (*interval*) indiqué.
 
-Example:
+Exemple :
 
 ```nginx
 timer_resolution 100ms;
 ```
 
-Internal implementation of the interval depends on the method used:
+La mise en œuvre interne de l'intervalle dépend de la méthode utilisée :
 
-- the `EVFILT_TIMER` filter if `kqueue` is used;
-- `timer_create` if `eventport` is used;
-- `setitimer` otherwise.
+- le filtre `EVFILT_TIMER` si `kqueue` est utilisé ;
+- `timer_create` si `eventport` est utilisé ;
+- `setitimer` dans les autres cas.
 
 ---
 

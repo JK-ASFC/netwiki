@@ -17,7 +17,7 @@ This module is not built by default, it should be enabled with the [[10-guides/0
 
 When using DAT databases with IPv6 support, IPv4 addresses are looked up as IPv4-mapped IPv6 addresses. When using MMDB databases, IPv4-mapped IPv6 addresses are looked up as IPv4 addresses.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 stream {

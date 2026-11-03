@@ -64,7 +64,7 @@ For more information on sending signals to nginx, see [[10-guides/01-introductio
 
 nginx consists of modules which are controlled by directives specified in the configuration file. Directives are divided into simple directives and block directives. A simple directive consists of the name and parameters separated by spaces and ends with a semicolon (`;`). A block directive has the same structure as a simple directive, but instead of the semicolon it ends with a set of additional instructions surrounded by braces (`{` and `}`). If a block directive can have other directives inside braces, it is called a context (examples: [[12-directives/events|events]], [[12-directives/http|http]], [[12-directives/server-http-core|server]], and [[12-directives/location|location]]).
 
-Directives placed in the configuration file outside of any contexts are considered to be in the [[11-modules/01-coeur/Core functionality|main]] context. The `events` and `http` directives reside in the `main` context, `server` in `http`, and `location` in `server`.
+Directives placed in the configuration file outside of any contexts are considered to be in the [[11-modules/01-coeur/ngx_core_module|main]] context. The `events` and `http` directives reside in the `main` context, `server` in `http`, and `location` in `server`.
 
 The rest of a line after the `#` sign is considered a comment.
 

@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_addition_module` module is a filter that adds text before and after a response. This module is not built by default, it should be enabled with the `--with-http_addition_module` configuration parameter.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

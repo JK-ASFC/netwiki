@@ -1,12 +1,9 @@
 ---
 title: "limit_conn_dry_run (ngx_http_limit_conn_module)"
-description: "Directive nginx limit_conn_dry_run (ngx_http_limit_conn_module) — Enables the dry run mode. In this mode, the number of connections is not limited, however, in the shared memory zone, the number of excessive connections is accounted as usual."
+description: "Directive nginx limit_conn_dry_run (ngx_http_limit_conn_module) — Active le mode d'essai à blanc (dry run). Dans ce mode, le nombre de connexions n'est pas limité, mais le nombre de connexions excédentaires est comptabilisé normalement dans la zone de mémoire…"
 tags: [nginx, directive, ngx_http_limit_conn_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the dry run mode. In this mode, the number of connections is not limited, however, in the shared memory zone, the number of excessive connections is accounted as usual.
+Active le mode d'essai à blanc (*dry run*). Dans ce mode, le nombre de connexions n'est pas limité, mais le nombre de connexions excédentaires est comptabilisé normalement dans la zone de mémoire partagée.
 
 ---
 

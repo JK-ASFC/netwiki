@@ -1,23 +1,20 @@
 ---
 title: "events"
-description: "Directive nginx events (Core functionality) — Provides the configuration file context in which the directives that affect connection processing are specified."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx events (ngx_core_module) — Fournit le contexte du fichier de configuration dans lequel sont indiquées les directives qui agissent sur le traitement des connexions."
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `events { ... }` |
 | **Valeur par défaut** | — |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Provides the configuration file context in which the directives that affect connection processing are specified.
+Fournit le contexte du fichier de configuration dans lequel sont indiquées les directives qui agissent sur le traitement des connexions.
 
 ---
 

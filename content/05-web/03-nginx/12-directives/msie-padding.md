@@ -1,12 +1,9 @@
 ---
 title: "msie_padding"
-description: "Directive nginx msie_padding (ngx_http_core_module) — Enables or disables adding comments to responses for MSIE clients with status greater than 400 to increase the response size to 512 bytes."
+description: "Directive nginx msie_padding (ngx_http_core_module) — Active ou désactive l'ajout de commentaires aux réponses de statut supérieur à 400 pour les clients MSIE, afin de porter la taille de la réponse à 512 octets."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables adding comments to responses for MSIE clients with status greater than 400 to increase the response size to 512 bytes.
+Active ou désactive l'ajout de commentaires aux réponses de statut supérieur à 400 pour les clients MSIE, afin de porter la taille de la réponse à 512 octets.
 
 ---
 

@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_userid_module` module sets cookies suitable for client identification. Received and set cookies can be logged using the embedded variables [[13-variables/uid-got|$uid_got]] and [[13-variables/uid-set|$uid_set]]. This module is compatible with the [mod\_uid](http://www.lexa.ru/programs/mod-uid-eng.html) module for Apache.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 userid         on;

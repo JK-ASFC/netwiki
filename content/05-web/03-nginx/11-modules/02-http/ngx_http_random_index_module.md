@@ -12,7 +12,7 @@ The `ngx_http_random_index_module` module processes requests ending with the sla
 
 This module is not built by default, it should be enabled with the `--with-http_random_index_module` configuration parameter.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

@@ -1,12 +1,9 @@
 ---
 title: "server_names_hash_bucket_size (ngx_stream_core_module)"
-description: "Directive nginx server_names_hash_bucket_size (ngx_stream_core_module) — Sets the bucket size for the server names hash tables. The default value depends on the size of the processor’s cache line. The details of setting up hash tables are provided in a separate document."
+description: "Directive nginx server_names_hash_bucket_size (ngx_stream_core_module) — Définit la taille des compartiments des tables de hachage des noms de serveurs. La valeur par défaut dépend de la taille de ligne de cache du processeur. Le réglage des tables de hachage est détaillé…"
 tags: [nginx, directive, ngx_stream_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the bucket size for the server names hash tables. The default value depends on the size of the processor’s cache line. The details of setting up hash tables are provided in a separate [[10-guides/01-introduction/hash|document]].
+Définit la taille des compartiments des tables de hachage des noms de serveurs. La valeur par défaut dépend de la taille de ligne de cache du processeur. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]].
 
 ---
 

@@ -1,25 +1,22 @@
 ---
 title: "include"
-description: "Directive nginx include (Core functionality) — Includes another file, or files matching the specified mask, into configuration. Included files should consist of syntactically correct directives and blocks. Usage example: nginx include mime.types;…"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx include (ngx_core_module) — Inclut dans la configuration un autre fichier (file), ou les fichiers correspondant au masque (mask) indiqué. Les fichiers inclus doivent contenir des directives et des blocs syntaxiquement corrects.…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `include file \| mask;` |
 | **Valeur par défaut** | — |
 | **Contexte** | `` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Includes another *file*, or files matching the specified *mask*, into configuration. Included files should consist of syntactically correct directives and blocks.
+Inclut dans la configuration un autre fichier (*file*), ou les fichiers correspondant au masque (*mask*) indiqué. Les fichiers inclus doivent contenir des directives et des blocs syntaxiquement corrects.
 
-Usage example:
+Exemple d'utilisation :
 
 ```nginx
 include mime.types;

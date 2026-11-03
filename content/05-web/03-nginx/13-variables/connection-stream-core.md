@@ -1,19 +1,16 @@
 ---
 title: "$connection (ngx_stream_core_module)"
-description: "Variable nginx $connection (ngx_stream_core_module) — connection serial number"
+description: "Variable nginx $connection (ngx_stream_core_module) — numéro de série de la connexion"
 tags: [nginx, variable, ngx_stream_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$connection` |
 | **Module** | [[11-modules/03-stream/ngx_stream_core_module\|ngx_stream_core_module]] |
 
-connection serial number
+numéro de série de la connexion
 
 ---
 

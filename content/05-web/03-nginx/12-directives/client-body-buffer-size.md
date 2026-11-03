@@ -1,12 +1,9 @@
 ---
 title: "client_body_buffer_size"
-description: "Directive nginx client_body_buffer_size (ngx_http_core_module) — Sets buffer size for reading client request body. In case the request body is larger than the buffer, the whole body or only its part is written to a temporary file. By default, buffer size is equal…"
+description: "Directive nginx client_body_buffer_size (ngx_http_core_module) — Définit la taille du tampon de lecture du corps de la requête du client. Si le corps est plus grand que le tampon, tout ou partie du corps est écrit dans un fichier temporaire. Par défaut, le tampon…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets buffer size for reading client request body. In case the request body is larger than the buffer, the whole body or only its part is written to a [[12-directives/client-body-temp-path|temporary file]]. By default, buffer size is equal to two memory pages. This is 8K on x86, other 32-bit platforms, and x86-64. It is usually 16K on other 64-bit platforms.
+Définit la taille du tampon de lecture du corps de la requête du client. Si le corps est plus grand que le tampon, tout ou partie du corps est écrit dans un [[12-directives/client-body-temp-path|fichier temporaire]]. Par défaut, le tampon fait deux pages mémoire : 8K sur x86, les autres plates-formes 32 bits et x86-64 ; généralement 16K sur les autres plates-formes 64 bits.
 
 ---
 

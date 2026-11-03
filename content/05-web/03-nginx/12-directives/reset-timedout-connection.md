@@ -1,12 +1,9 @@
 ---
 title: "reset_timedout_connection"
-description: "Directive nginx reset_timedout_connection (ngx_http_core_module) — Enables or disables resetting timed out connections and connections closed with the non-standard code 444 (1.15.2). The reset is performed as follows. Before closing a socket, the SO_LINGER option is…"
+description: "Directive nginx reset_timedout_connection (ngx_http_core_module) — Active ou désactive la réinitialisation des connexions expirées et des connexions fermées avec le code non standard 444 (1.15.2). La réinitialisation se fait ainsi : avant de fermer le socket,…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables resetting timed out connections and connections [[12-directives/return-http-rewrite|closed]] with the non-standard code 444 (1.15.2). The reset is performed as follows. Before closing a socket, the `SO_LINGER` option is set on it with a timeout value of 0. When the socket is closed, TCP RST is sent to the client, and all memory occupied by this socket is released. This helps avoid keeping an already closed socket with filled buffers in a FIN\_WAIT1 state for a long time.
+Active ou désactive la réinitialisation des connexions expirées et des connexions [[12-directives/return-http-rewrite|fermées]] avec le code non standard 444 (1.15.2). La réinitialisation se fait ainsi : avant de fermer le socket, l'option `SO_LINGER` y est réglée avec un délai de 0. À la fermeture du socket, un TCP RST est envoyé au client et toute la mémoire occupée par le socket est libérée. Cela évite de garder longtemps un socket déjà fermé, aux tampons pleins, dans l'état FIN\_WAIT1.
 
-It should be noted that timed out keep-alive connections are closed normally.
+Les connexions persistantes expirées sont, elles, fermées normalement.
 
 ---
 

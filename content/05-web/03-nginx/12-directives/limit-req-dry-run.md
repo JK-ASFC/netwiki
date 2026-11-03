@@ -1,12 +1,9 @@
 ---
 title: "limit_req_dry_run"
-description: "Directive nginx limit_req_dry_run (ngx_http_limit_req_module) — Enables the dry run mode. In this mode, requests processing rate is not limited, however, in the shared memory zone, the number of excessive requests is accounted as usual."
+description: "Directive nginx limit_req_dry_run (ngx_http_limit_req_module) — Active le mode d'essai à blanc (dry run). Dans ce mode, le débit des requêtes n'est pas limité, mais le nombre de requêtes excédentaires est comptabilisé normalement dans la zone de mémoire partagée."
 tags: [nginx, directive, ngx_http_limit_req_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the dry run mode. In this mode, requests processing rate is not limited, however, in the shared memory zone, the number of excessive requests is accounted as usual.
+Active le mode d'essai à blanc (*dry run*). Dans ce mode, le débit des requêtes n'est pas limité, mais le nombre de requêtes excédentaires est comptabilisé normalement dans la zone de mémoire partagée.
 
 ---
 

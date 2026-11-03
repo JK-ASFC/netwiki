@@ -1,12 +1,9 @@
 ---
 title: "limit_rate_after"
-description: "Directive nginx limit_rate_after (ngx_http_core_module) — Sets the initial amount after which the further transmission of a response to a client will be rate limited. Parameter value can contain variables (1.17.0). Example: nginx location /flv/ { flv;…"
+description: "Directive nginx limit_rate_after (ngx_http_core_module) — Définit la quantité initiale au-delà de laquelle la suite de la transmission de la réponse au client est limitée en débit. La valeur du paramètre peut contenir des variables (1.17.0). Exemple : nginx…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the initial amount after which the further transmission of a response to a client will be rate limited. Parameter value can contain variables (1.17.0).
+Définit la quantité initiale au-delà de laquelle la suite de la transmission de la réponse au client est limitée en débit. La valeur du paramètre peut contenir des variables (1.17.0).
 
-Example:
+Exemple :
 
 ```nginx
 location /flv/ {

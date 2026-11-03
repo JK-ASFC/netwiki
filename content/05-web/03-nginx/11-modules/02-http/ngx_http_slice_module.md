@@ -16,7 +16,7 @@ This module is not built by default, it should be enabled with the `--with-http_
 
 Currently, the module does not work as expected in subrequests such as [[12-directives/proxy-cache-background-update|background cache update]]. In this case, a request is constructed without byte-range support.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

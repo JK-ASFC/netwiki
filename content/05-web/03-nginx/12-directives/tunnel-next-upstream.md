@@ -32,7 +32,7 @@ Specifies in which cases a request should be passed to the next server:
   the server [[12-directives/tunnel-allow-upstream|denied]] the connection;
 
   > [!NOTE]
-  > This parameter is available as part of our [abonnement commercial](https://nginx.com/products/).
+  > Ce paramètre est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 - **`off`**
 

@@ -1,12 +1,9 @@
 ---
 title: "pcre_jit"
-description: "Directive nginx pcre_jit (Core functionality) — Enables or disables the use of “just-in-time compilation” (PCRE JIT) for the regular expressions known by the time of configuration parsing. PCRE JIT can speed up processing of regular expressions…"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx pcre_jit (ngx_core_module) — Active ou désactive la « compilation à la volée » (PCRE JIT) des expressions régulières connues au moment de l'analyse de la configuration. PCRE JIT peut accélérer nettement le traitement des…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -14,16 +11,16 @@ icon: settings-2
 | **Valeur par défaut** | `pcre_jit off;` |
 | **Contexte** | `main` |
 | **Apparue dans la version** | 1.1.12 |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Enables or disables the use of “just-in-time compilation” (PCRE JIT) for the regular expressions known by the time of configuration parsing.
+Active ou désactive la « compilation à la volée » (PCRE JIT) des expressions régulières connues au moment de l'analyse de la configuration.
 
-PCRE JIT can speed up processing of regular expressions significantly.
+PCRE JIT peut accélérer nettement le traitement des expressions régulières.
 
 > [!NOTE]
-> The JIT is available in PCRE libraries starting from version 8.20 built with the `--enable-jit` configuration parameter. When the PCRE library is built with nginx (`--with-pcre=`), the JIT support is enabled via the `--with-pcre-jit` configuration parameter.
+> La compilation JIT est disponible dans les bibliothèques PCRE à partir de la version 8.20 compilées avec le paramètre de configuration `--enable-jit`. Lorsque la bibliothèque PCRE est compilée avec nginx (`--with-pcre=`), la prise en charge de JIT s'active avec le paramètre de configuration `--with-pcre-jit`.
 
 ---
 

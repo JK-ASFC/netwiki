@@ -1,12 +1,9 @@
 ---
 title: "try_files"
-description: "Directive nginx try_files (ngx_http_core_module) — Checks the existence of files in the specified order and uses the first found file for request processing; the processing is performed in the current context. The path to a file is constructed from…"
+description: "Directive nginx try_files (ngx_http_core_module) — Vérifie l'existence des fichiers dans l'ordre indiqué et utilise le premier trouvé pour traiter la requête ; le traitement a lieu dans le contexte courant. Le chemin du fichier est construit à partir…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Checks the existence of files in the specified order and uses the first found file for request processing; the processing is performed in the current context. The path to a file is constructed from the *file* parameter according to the [[12-directives/root|root]] and [[12-directives/alias|alias]] directives. It is possible to check directory’s existence by specifying a slash at the end of a name, e.g. “`$uri/`”. If none of the files were found, an internal redirect to the *uri* specified in the last parameter is made. For example:
+Vérifie l'existence des fichiers dans l'ordre indiqué et utilise le premier trouvé pour traiter la requête ; le traitement a lieu dans le contexte courant. Le chemin du fichier est construit à partir du paramètre *file* selon les directives [[12-directives/root|root]] et [[12-directives/alias|alias]]. On peut vérifier l'existence d'un répertoire en terminant le nom par une barre oblique, par exemple « `$uri/` ». Si aucun fichier n'est trouvé, une redirection interne vers l'*uri* indiqué en dernier paramètre a lieu. Par exemple :
 
 ```nginx
 location /images/ {
@@ -29,7 +26,7 @@ location = /images/default.gif {
 }
 ```
 
-The last parameter can also point to a named location, as shown in examples below. Starting from version 0.7.51, the last parameter can also be a *code*:
+Le dernier paramètre peut aussi désigner un bloc location nommé, comme dans les exemples ci-dessous. Depuis la version 0.7.51, il peut aussi être un code (*code*) :
 
 ```nginx
 location / {
@@ -37,7 +34,7 @@ location / {
 }
 ```
 
-Example in proxying Mongrel:
+Exemple de relais vers Mongrel :
 
 ```nginx
 location / {
@@ -51,7 +48,7 @@ location @mongrel {
 }
 ```
 
-Example for Drupal/FastCGI:
+Exemple pour Drupal/FastCGI :
 
 ```nginx
 location / {
@@ -81,7 +78,7 @@ location @drupal {
 }
 ```
 
-In the following example,
+Dans l'exemple suivant,
 
 ```nginx
 location / {
@@ -89,7 +86,7 @@ location / {
 }
 ```
 
-the `try_files` directive is equivalent to
+la directive `try_files` équivaut à
 
 ```nginx
 location / {
@@ -98,7 +95,7 @@ location / {
 }
 ```
 
-And here,
+Et ici,
 
 ```nginx
 location ~ \.php$ {
@@ -112,9 +109,9 @@ location ~ \.php$ {
 }
 ```
 
-`try_files` checks the existence of the PHP file before passing the request to the FastCGI server.
+`try_files` vérifie l'existence du fichier PHP avant de transmettre la requête au serveur FastCGI.
 
-Example for Wordpress and Joomla:
+Exemple pour WordPress et Joomla :
 
 ```nginx
 location / {

@@ -26,7 +26,7 @@ limit_conn_zone $binary_remote_addr zone=addr:10m;
 Here, the key is a client IP address set by the `$binary_remote_addr` variable. The size of `$binary_remote_addr` is 4 bytes for IPv4 addresses or 16 bytes for IPv6 addresses. The stored state always occupies 32 or 64 bytes on 32-bit platforms and 64 bytes on 64-bit platforms. One megabyte zone can keep about 32 thousand 32-byte states or about 16 thousand 64-byte states. If the zone storage is exhausted, the server will close the connection.
 
 > [!NOTE]
-> Additionally, as part of our [abonnement commercial](https://nginx.com/products/), the [[11-modules/02-http/ngx_http_api_module|status information]] for each such shared memory zone can be [[11-modules/02-http/ngx_http_api_module|obtained]] or [[11-modules/02-http/ngx_http_api_module|reset]] with the [[11-modules/02-http/ngx_http_api_module|API]] since 1.17.7.
+> En outre, dans le cadre de notre [abonnement commercial](https://nginx.com/products/), les [[11-modules/02-http/ngx_http_api_module|informations d'état]] de chaque zone de mémoire partagée de ce type peuvent être [[11-modules/02-http/ngx_http_api_module|consultées]] ou [[11-modules/02-http/ngx_http_api_module|remises à zéro]] avec l'[[11-modules/02-http/ngx_http_api_module|API]] depuis la version 1.17.7.
 
 ---
 

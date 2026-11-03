@@ -1,12 +1,9 @@
 ---
 title: "open_log_file_cache (ngx_stream_log_module)"
-description: "Directive nginx open_log_file_cache (ngx_stream_log_module) — Defines a cache that stores the file descriptors of frequently used logs whose names contain variables. The directive has the following parameters: - max sets the maximum number of descriptors in a…"
+description: "Directive nginx open_log_file_cache (ngx_stream_log_module) — Définit un cache qui conserve les descripteurs de fichiers des journaux fréquemment utilisés dont le nom contient des variables. La directive accepte les paramètres suivants : - max définit le nombre…"
 tags: [nginx, directive, ngx_stream_log_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,29 +14,29 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a cache that stores the file descriptors of frequently used logs whose names contain variables. The directive has the following parameters:
+Définit un cache qui conserve les descripteurs de fichiers des journaux fréquemment utilisés dont le nom contient des variables. La directive accepte les paramètres suivants :
 
 - **`max`**
 
-  sets the maximum number of descriptors in a cache; if the cache becomes full the least recently used (LRU) descriptors are closed
+  définit le nombre maximal de descripteurs dans le cache ; lorsque le cache est plein, les descripteurs les moins récemment utilisés (LRU) sont fermés
 
 - **`inactive`**
 
-  sets the time after which the cached descriptor is closed if there were no access during this time; by default, 10 seconds
+  définit la durée au bout de laquelle un descripteur en cache est fermé s'il n'a pas été utilisé ; 10 secondes par défaut
 
 - **`min_uses`**
 
-  sets the minimum number of file uses during the time defined by the `inactive` parameter to let the descriptor stay open in a cache; by default, 1
+  définit le nombre minimal d'utilisations du fichier pendant la durée définie par le paramètre `inactive` pour que le descripteur reste ouvert dans le cache ; 1 par défaut
 
 - **`valid`**
 
-  sets the time after which it should be checked that the file still exists with the same name; by default, 60 seconds
+  définit la durée au bout de laquelle on vérifie que le fichier existe toujours sous le même nom ; 60 secondes par défaut
 
 - **`off`**
 
-  disables caching
+  désactive le cache
 
-Usage example:
+Exemple d'utilisation :
 
 ```nginx
 open_log_file_cache max=1000 inactive=20s valid=1m min_uses=2;

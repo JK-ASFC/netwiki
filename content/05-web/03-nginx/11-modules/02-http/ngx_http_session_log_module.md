@@ -13,7 +13,7 @@ The `ngx_http_session_log_module` module enables logging sessions (that is, aggr
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 The following configuration sets up a session log and maps requests to sessions according to the request client address and `User-Agent` request header field:
 

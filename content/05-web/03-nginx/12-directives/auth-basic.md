@@ -1,12 +1,9 @@
 ---
 title: "auth_basic"
-description: "Directive nginx auth_basic (ngx_http_auth_basic_module) — Enables validation of user name and password using the “HTTP Basic Authentication” protocol. The specified parameter is used as a realm. Parameter value can contain variables (1.3.10, 1.2.7). The…"
+description: "Directive nginx auth_basic (ngx_http_auth_basic_module) — Active la vérification du nom d'utilisateur et du mot de passe selon le protocole « HTTP Basic Authentication ». Le paramètre indiqué sert de domaine d'authentification (realm). Sa valeur peut…"
 tags: [nginx, directive, ngx_http_auth_basic_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables validation of user name and password using the “HTTP Basic Authentication” protocol. The specified parameter is used as a *realm*. Parameter value can contain variables (1.3.10, 1.2.7). The special value `off` cancels the effect of the `auth_basic` directive inherited from the previous configuration level.
+Active la vérification du nom d'utilisateur et du mot de passe selon le protocole « HTTP Basic Authentication ». Le paramètre indiqué sert de domaine d'authentification (*realm*). Sa valeur peut contenir des variables (1.3.10, 1.2.7). La valeur spéciale `off` annule l'effet de la directive `auth_basic` héritée du niveau de configuration précédent.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "set (ngx_stream_set_module)"
-description: "Directive nginx set (ngx_stream_set_module) — Sets a value for the specified variable. The value can contain text, variables, and their combination."
+description: "Directive nginx set (ngx_stream_set_module) — Définit une valeur (value) pour la variable (variable) indiquée. La valeur peut contenir du texte, des variables ou une combinaison des deux."
 tags: [nginx, directive, ngx_stream_set_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a *value* for the specified *variable*. The *value* can contain text, variables, and their combination.
+Définit une valeur (*value*) pour la variable (*variable*) indiquée. La valeur peut contenir du texte, des variables ou une combinaison des deux.
 
 ---
 

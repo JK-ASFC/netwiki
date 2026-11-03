@@ -26,7 +26,7 @@ Before version 1.29.1, 0-RTT support could not be enabled with OpenSSL regardles
 
 The module cannot be built on the Win32 platform.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {

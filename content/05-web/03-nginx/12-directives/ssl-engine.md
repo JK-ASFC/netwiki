@@ -1,26 +1,23 @@
 ---
 title: "ssl_engine"
-description: "Directive nginx ssl_engine (Core functionality) — Defines the name of the hardware SSL accelerator. NOTE The module may be dynamically loaded by OpenSSL during configuration testing."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx ssl_engine (ngx_core_module) — Définit le nom de l'accélérateur SSL matériel. NOTE Le module peut être chargé dynamiquement par OpenSSL lors du test de la configuration."
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `ssl_engine device;` |
 | **Valeur par défaut** | — |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Defines the name of the hardware SSL accelerator.
+Définit le nom de l'accélérateur SSL matériel.
 
 > [!NOTE]
-> The module may be dynamically loaded by OpenSSL during configuration testing.
+> Le module peut être chargé dynamiquement par OpenSSL lors du test de la configuration.
 
 ---
 

@@ -41,7 +41,7 @@ Parameters can be as follows:
 
   the first symbol should be a “`~`”. It should be noted that an expression will be matched against the text starting after the “`http://`” or “`https://`”.
 
-Example:
+Exemple :
 
 ```nginx
 valid_referers none blocked server_names

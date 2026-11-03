@@ -19,7 +19,7 @@ The module may be combined with other access modules, such as [[11-modules/02-ht
 > [!NOTE]
 > Before version 1.7.3, responses to authorization subrequests could not be cached (using [[12-directives/proxy-cache|proxy_cache]], [[12-directives/proxy-store|proxy_store]], etc.).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location /private/ {

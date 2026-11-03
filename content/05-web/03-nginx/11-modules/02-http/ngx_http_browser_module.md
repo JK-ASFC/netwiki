@@ -22,7 +22,7 @@ The `ngx_http_browser_module` module creates variables whose values depend on th
 
   equals “1” if a browser was identified as MSIE of any version.
 
-## Example Configuration
+## Exemple de configuration
 
 Choosing an index file:
 

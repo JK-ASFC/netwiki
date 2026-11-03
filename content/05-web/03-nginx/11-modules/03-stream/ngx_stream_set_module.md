@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_set_module` module (1.19.3) allows setting a value for a variable.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 server {

@@ -24,7 +24,7 @@ For each media file, two URIs are supported:
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

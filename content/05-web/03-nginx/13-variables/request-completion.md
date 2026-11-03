@@ -1,19 +1,16 @@
 ---
 title: "$request_completion"
-description: "Variable nginx $request_completion (ngx_http_core_module) — “OK” if a request has completed, or an empty string otherwise"
+description: "Variable nginx $request_completion (ngx_http_core_module) — « OK » si la requête est terminée, chaîne vide sinon"
 tags: [nginx, variable, ngx_http_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$request_completion` |
 | **Module** | [[11-modules/02-http/ngx_http_core_module\|ngx_http_core_module]] |
 
-“`OK`” if a request has completed, or an empty string otherwise
+« `OK` » si la requête est terminée, chaîne vide sinon
 
 ---
 

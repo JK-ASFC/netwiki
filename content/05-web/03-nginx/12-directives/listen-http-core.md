@@ -1,12 +1,9 @@
 ---
 title: "listen (ngx_http_core_module)"
-description: "Directive nginx listen (ngx_http_core_module) — Sets the address and port for IP, or the path for a UNIX-domain socket on which the server will accept requests. Both address and port, or only address or only port can be specified. An address may…"
+description: "Directive nginx listen (ngx_http_core_module) — Définit l'adresse (address) et le port (port) IP, ou le chemin (path) d'un socket de domaine UNIX, sur lesquels le serveur accepte les requêtes. On peut indiquer l'adresse et le port, ou seulement…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *address* and *port* for IP, or the *path* for a UNIX-domain socket on which the server will accept requests. Both *address* and *port*, or only *address* or only *port* can be specified. An *address* may also be a hostname, for example:
+Définit l'adresse (*address*) et le port (*port*) IP, ou le chemin (*path*) d'un socket de domaine UNIX, sur lesquels le serveur accepte les requêtes. On peut indiquer l'adresse et le port, ou seulement l'adresse, ou seulement le port. L'adresse peut aussi être un nom d'hôte, par exemple :
 
 ```nginx
 listen 127.0.0.1:8000;
@@ -27,114 +24,114 @@ listen *:8000;
 listen localhost:8000;
 ```
 
-IPv6 addresses (0.7.36) are specified in square brackets:
+Les adresses IPv6 (0.7.36) s'écrivent entre crochets :
 
 ```nginx
 listen [::]:8000;
 listen [::1];
 ```
 
-UNIX-domain sockets (0.8.21) are specified with the “`unix:`” prefix:
+Les sockets de domaine UNIX (0.8.21) s'indiquent avec le préfixe « `unix:` » :
 
 ```nginx
 listen unix:/var/run/nginx.sock;
 ```
 
-If only *address* is given, the port 80 is used.
+Si seule l'adresse est indiquée, le port 80 est utilisé.
 
-If the directive is not present then either `*:80` is used if nginx runs with the superuser privileges, or `*:8000` otherwise.
+Si la directive est absente, `*:80` est utilisé si nginx s'exécute avec les privilèges du superutilisateur, `*:8000` sinon.
 
-The `default_server` parameter, if present, will cause the server to become the default server for the specified *address*:*port* pair. If none of the directives have the `default_server` parameter then the first server with the *address*:*port* pair will be the default server for this pair.
-
-> [!NOTE]
-> In versions prior to 0.8.21 this parameter is named simply `default`.
-
-The `ssl` parameter (0.7.14) allows specifying that all connections accepted on this port should work in SSL mode. This allows for a more compact [[10-guides/02-http/configuring-https-servers|configuration]] for the server that handles both HTTP and HTTPS requests.
-
-The `http2` parameter (1.9.5) configures the port to accept [[11-modules/02-http/ngx_http_v2_module|HTTP/2]] connections. Normally, for this to work the `ssl` parameter should be specified as well, but nginx can also be configured to accept HTTP/2 connections without SSL.
+Le paramètre `default_server`, s'il est présent, fait de ce serveur le serveur par défaut pour le couple *address*:*port* indiqué. Si aucune directive n'a le paramètre `default_server`, le premier serveur déclaré avec ce couple *address*:*port* est le serveur par défaut.
 
 > [!NOTE]
-> The parameter is deprecated, the [[12-directives/http2|http2]] directive should be used instead.
+> Dans les versions antérieures à 0.8.21, ce paramètre s'appelait simplement `default`.
 
-The `quic` parameter (1.25.0) configures the port to accept [[11-modules/02-http/ngx_http_v3_module|QUIC]] connections.
+Le paramètre `ssl` (0.7.14) indique que toutes les connexions acceptées sur ce port fonctionnent en mode SSL. Cela permet une [[10-guides/02-http/configuring-https-servers|configuration]] plus compacte pour un serveur qui traite à la fois HTTP et HTTPS.
 
-The `proxy_protocol` parameter (1.5.12) allows specifying that all connections accepted on this port should use the [PROXY protocol](http://www.haproxy.org/download/1.8/doc/proxy-protocol.txt).
-
-> [!NOTE]
-> The PROXY protocol version 2 is supported since version 1.13.11.
-
-The `listen` directive can have several additional parameters specific to socket-related system calls. These parameters can be specified in any `listen` directive, but only once for a given *address*:*port* pair.
+Le paramètre `http2` (1.9.5) configure le port pour accepter les connexions [[11-modules/02-http/ngx_http_v2_module|HTTP/2]]. Normalement, il faut aussi indiquer le paramètre `ssl`, mais nginx peut également accepter des connexions HTTP/2 sans SSL.
 
 > [!NOTE]
-> In versions prior to 0.8.21, they could only be specified in the `listen` directive together with the `default` parameter.
+> Ce paramètre est obsolète ; utiliser plutôt la directive [[12-directives/http2|http2]].
+
+Le paramètre `quic` (1.25.0) configure le port pour accepter les connexions [[11-modules/02-http/ngx_http_v3_module|QUIC]].
+
+Le paramètre `proxy_protocol` (1.5.12) indique que toutes les connexions acceptées sur ce port utilisent le [protocole PROXY](http://www.haproxy.org/download/1.8/doc/proxy-protocol.txt).
+
+> [!NOTE]
+> La version 2 du protocole PROXY est prise en charge depuis la version 1.13.11.
+
+La directive `listen` accepte plusieurs paramètres supplémentaires propres aux appels système des sockets. Ils peuvent figurer dans n'importe quelle directive `listen`, mais une seule fois pour un couple *address*:*port* donné.
+
+> [!NOTE]
+> Dans les versions antérieures à 0.8.21, ils ne pouvaient figurer que dans la directive `listen` portant le paramètre `default`.
 
 - **`setfib`=*number***
 
-  this parameter (0.8.44) sets the associated routing table, FIB (the `SO_SETFIB` option) for the listening socket. This currently works only on FreeBSD.
+  ce paramètre (0.8.44) définit la table de routage associée (FIB, option `SO_SETFIB`) du socket d'écoute. Ne fonctionne actuellement que sous FreeBSD.
 
 - **`fastopen`=*number***
 
-  enables “[TCP Fast Open](http://en.wikipedia.org/wiki/TCP_Fast_Open)” for the listening socket (1.5.8) and [limits](https://datatracker.ietf.org/doc/html/rfc7413#section-5.1) the maximum length for the queue of connections that have not yet completed the three-way handshake.
+  active « [TCP Fast Open](http://en.wikipedia.org/wiki/TCP_Fast_Open) » pour le socket d'écoute (1.5.8) et [limite](https://datatracker.ietf.org/doc/html/rfc7413#section-5.1) la longueur maximale de la file des connexions dont la poignée de main en trois temps n'est pas terminée.
 
   > [!NOTE]
-  > Do not enable this feature unless the server can handle receiving the [same SYN packet with data](https://datatracker.ietf.org/doc/html/rfc7413#section-6.1) more than once.
+  > N'activez cette fonction que si le serveur sait gérer la réception du [même paquet SYN avec données](https://datatracker.ietf.org/doc/html/rfc7413#section-6.1) plusieurs fois.
 
 - **`backlog`=*number***
 
-  sets the `backlog` parameter in the `listen` call that limits the maximum length for the queue of pending connections. By default, `backlog` is set to -1 on FreeBSD, DragonFly BSD, and macOS, and to 511 on other platforms.
+  définit le paramètre `backlog` de l'appel `listen`, qui limite la longueur maximale de la file des connexions en attente. Par défaut, `backlog` vaut -1 sous FreeBSD, DragonFly BSD et macOS, et 511 sur les autres plates-formes.
 
 - **`rcvbuf`=*size***
 
-  sets the receive buffer size (the `SO_RCVBUF` option) for the listening socket.
+  définit la taille du tampon de réception (option `SO_RCVBUF`) du socket d'écoute.
 
 - **`sndbuf`=*size***
 
-  sets the send buffer size (the `SO_SNDBUF` option) for the listening socket.
+  définit la taille du tampon d'envoi (option `SO_SNDBUF`) du socket d'écoute.
 
 - **`accept_filter`=*filter***
 
-  sets the name of accept filter (the `SO_ACCEPTFILTER` option) for the listening socket that filters incoming connections before passing them to `accept`. This works only on FreeBSD and NetBSD 5.0+. Possible values are [dataready](http://man.freebsd.org/accf_data) and [httpready](http://man.freebsd.org/accf_http).
+  définit le nom du filtre d'acceptation (option `SO_ACCEPTFILTER`) du socket d'écoute, qui filtre les connexions entrantes avant de les transmettre à `accept`. Ne fonctionne que sous FreeBSD et NetBSD 5.0+. Valeurs possibles : [dataready](http://man.freebsd.org/accf_data) et [httpready](http://man.freebsd.org/accf_http).
 
 - **`deferred`**
 
-  instructs to use a deferred `accept` (the `TCP_DEFER_ACCEPT` socket option) on Linux.
+  demande l'utilisation d'un `accept` différé (option de socket `TCP_DEFER_ACCEPT`) sous Linux.
 
 - **`bind`**
 
-  instructs to make a separate `bind` call for a given *address*:*port* pair. This is useful because if there are several `listen` directives with the same port but different addresses, and one of the `listen` directives listens on all addresses for the given port (`*:`*port*), nginx will `bind` only to `*:`*port*. It should be noted that the `getsockname` system call will be made in this case to determine the address that accepted the connection. If the `setfib`, `fastopen`, `backlog`, `rcvbuf`, `sndbuf`, `accept_filter`, `deferred`, `ipv6only`, `reuseport`, `multipath`, or `so_keepalive` parameters are used then for a given *address*:*port* pair a separate `bind` call will always be made.
+  demande un appel `bind` distinct pour le couple *address*:*port* donné. C'est utile car, s'il existe plusieurs directives `listen` avec le même port mais des adresses différentes, et que l'une d'elles écoute sur toutes les adresses pour ce port (`*:`*port*), nginx ne fait `bind` que sur `*:`*port*. Dans ce cas, l'appel système `getsockname` est utilisé pour déterminer l'adresse qui a accepté la connexion. Si les paramètres `setfib`, `fastopen`, `backlog`, `rcvbuf`, `sndbuf`, `accept_filter`, `deferred`, `ipv6only`, `reuseport`, `multipath` ou `so_keepalive` sont utilisés, un appel `bind` distinct est toujours fait pour le couple *address*:*port* concerné.
 
 - **`ipv6only`=`on`|`off`**
 
-  this parameter (0.7.42) determines (via the `IPV6_V6ONLY` socket option) whether an IPv6 socket listening on a wildcard address `[::]` will accept only IPv6 connections or both IPv6 and IPv4 connections. This parameter is turned on by default. It can only be set once on start.
+  ce paramètre (0.7.42) détermine (option de socket `IPV6_V6ONLY`) si un socket IPv6 écoutant sur l'adresse générique `[::]` accepte uniquement les connexions IPv6 ou à la fois IPv6 et IPv4. Il est activé par défaut et ne peut être défini qu'une fois, au démarrage.
 
   > [!NOTE]
-  > Prior to version 1.3.4, if this parameter was omitted then the operating system’s settings were in effect for the socket.
+  > Avant la version 1.3.4, si ce paramètre était omis, les réglages du système d'exploitation s'appliquaient au socket.
 
 - **`reuseport`**
 
-  this parameter (1.9.1) instructs to create an individual listening socket for each worker process (using the `SO_REUSEPORT` socket option on Linux 3.9+ and DragonFly BSD, or `SO_REUSEPORT_LB` on FreeBSD 12+), allowing a kernel to distribute incoming connections between worker processes. This currently works only on Linux 3.9+, DragonFly BSD, and FreeBSD 12+ (1.15.1).
+  ce paramètre (1.9.1) crée un socket d'écoute distinct pour chaque processus de travail (option de socket `SO_REUSEPORT` sous Linux 3.9+ et DragonFly BSD, ou `SO_REUSEPORT_LB` sous FreeBSD 12+), ce qui permet au noyau de répartir les connexions entrantes entre les processus de travail. Ne fonctionne actuellement que sous Linux 3.9+, DragonFly BSD et FreeBSD 12+ (1.15.1).
 
   > [!NOTE]
-  > Inappropriate use of this option may have its security [implications](http://man7.org/linux/man-pages/man7/socket.7.html).
+  > Une mauvaise utilisation de cette option peut avoir des [conséquences](http://man7.org/linux/man-pages/man7/socket.7.html) sur la sécurité.
 
 - **`multipath`**
 
-  this parameter (1.29.7) configures the [Multipath TCP](https://datatracker.ietf.org/doc/html/rfc8684) protocol (`IPPROTO_MPTCP`) for the listening socket. This currently works only on Linux 5.6+.
+  ce paramètre (1.29.7) configure le protocole [Multipath TCP](https://datatracker.ietf.org/doc/html/rfc8684) (`IPPROTO_MPTCP`) pour le socket d'écoute. Ne fonctionne actuellement que sous Linux 5.6+.
 
   > [!NOTE]
-  > Adding or removing this parameter will also enable the `SO_REUSEPORT` socket option, which may have its security [implications](http://man7.org/linux/man-pages/man7/socket.7.html).
+  > Ajouter ou retirer ce paramètre active aussi l'option de socket `SO_REUSEPORT`, ce qui peut avoir des [conséquences](http://man7.org/linux/man-pages/man7/socket.7.html) sur la sécurité.
 
 - **`so_keepalive`=`on`|`off`|\[*keepidle*\]:\[*keepintvl*\]:\[*keepcnt*\]**
 
-  this parameter (1.1.11) configures the “TCP keepalive” behavior for the listening socket. If this parameter is omitted then the operating system’s settings will be in effect for the socket. If it is set to the value “`on`”, the `SO_KEEPALIVE` option is turned on for the socket. If it is set to the value “`off`”, the `SO_KEEPALIVE` option is turned off for the socket. Some operating systems support setting of TCP keepalive parameters on a per-socket basis using the `TCP_KEEPIDLE`, `TCP_KEEPINTVL`, and `TCP_KEEPCNT` socket options. On such systems (currently, Linux, NetBSD, Dragonfly, FreeBSD, and macOS), they can be configured using the *keepidle*, *keepintvl*, and *keepcnt* parameters. One or two parameters may be omitted, in which case the system default setting for the corresponding socket option will be in effect. For example,
+  ce paramètre (1.1.11) configure le comportement « TCP keepalive » du socket d'écoute. S'il est omis, les réglages du système d'exploitation s'appliquent. Avec la valeur « `on` », l'option `SO_KEEPALIVE` est activée pour le socket ; avec « `off` », elle est désactivée. Certains systèmes permettent de régler les paramètres TCP keepalive par socket avec les options `TCP_KEEPIDLE`, `TCP_KEEPINTVL` et `TCP_KEEPCNT`. Sur ces systèmes (actuellement Linux, NetBSD, Dragonfly, FreeBSD et macOS), ils se règlent avec les paramètres *keepidle*, *keepintvl* et *keepcnt*. Un ou deux paramètres peuvent être omis ; le réglage système par défaut de l'option correspondante s'applique alors. Par exemple,
 
   ```nginx
   so_keepalive=30m::10
   ```
 
-  will set the idle timeout (`TCP_KEEPIDLE`) to 30 minutes, leave the probe interval (`TCP_KEEPINTVL`) at its system default, and set the probes count (`TCP_KEEPCNT`) to 10 probes.
+  fixe le délai d'inactivité (`TCP_KEEPIDLE`) à 30 minutes, laisse l'intervalle des sondes (`TCP_KEEPINTVL`) à sa valeur système par défaut et fixe le nombre de sondes (`TCP_KEEPCNT`) à 10.
 
-Example:
+Exemple :
 
 ```nginx
 listen 127.0.0.1 default_server accept_filter=dataready backlog=1024;

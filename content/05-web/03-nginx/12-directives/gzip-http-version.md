@@ -1,12 +1,9 @@
 ---
 title: "gzip_http_version"
-description: "Directive nginx gzip_http_version (ngx_http_gzip_module) — Sets the minimum HTTP version of a request required to compress a response."
+description: "Directive nginx gzip_http_version (ngx_http_gzip_module) — Définit la version HTTP minimale d'une requête pour que la réponse soit compressée."
 tags: [nginx, directive, ngx_http_gzip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the minimum HTTP version of a request required to compress a response.
+Définit la version HTTP minimale d'une requête pour que la réponse soit compressée.
 
 ---
 

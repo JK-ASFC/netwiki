@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_mirror_module` module (1.13.4) implements mirroring of an original request by creating background mirror subrequests. Responses to mirror subrequests are ignored.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

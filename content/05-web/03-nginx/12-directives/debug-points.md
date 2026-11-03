@@ -1,25 +1,22 @@
 ---
 title: "debug_points"
-description: "Directive nginx debug_points (Core functionality) — This directive is used for debugging. When internal error is detected, e.g. the leak of sockets on restart of working processes, enabling debug_points leads to a core file creation (abort) or to…"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx debug_points (ngx_core_module) — Cette directive sert au débogage. Lorsqu'une erreur interne est détectée, par exemple une fuite de sockets au redémarrage des processus de travail, l'activation de debug_points provoque la création…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `debug_points abort \| stop;` |
 | **Valeur par défaut** | — |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-This directive is used for debugging.
+Cette directive sert au débogage.
 
-When internal error is detected, e.g. the leak of sockets on restart of working processes, enabling `debug_points` leads to a core file creation (`abort`) or to stopping of a process (`stop`) for further analysis using a system debugger.
+Lorsqu'une erreur interne est détectée, par exemple une fuite de sockets au redémarrage des processus de travail, l'activation de `debug_points` provoque la création d'un fichier core (`abort`) ou l'arrêt du processus (`stop`) pour une analyse ultérieure avec un débogueur système.
 
 ---
 

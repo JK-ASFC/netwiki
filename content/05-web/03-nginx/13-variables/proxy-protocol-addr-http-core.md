@@ -1,21 +1,18 @@
 ---
 title: "$proxy_protocol_addr (ngx_http_core_module)"
-description: "Variable nginx $proxy_protocol_addr (ngx_http_core_module) — client address from the PROXY protocol header (1.5.12) The PROXY protocol must be previously enabled by setting the proxy_protocol parameter in the listen directive."
+description: "Variable nginx $proxy_protocol_addr (ngx_http_core_module) — adresse du client issue de l'en-tête du protocole PROXY (1.5.12) Le protocole PROXY doit au préalable être activé avec le paramètre proxy_protocol de la directive listen."
 tags: [nginx, variable, ngx_http_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$proxy_protocol_addr` |
 | **Module** | [[11-modules/02-http/ngx_http_core_module\|ngx_http_core_module]] |
 
-client address from the PROXY protocol header (1.5.12)
+adresse du client issue de l'en-tête du protocole PROXY (1.5.12)
 
-The PROXY protocol must be previously enabled by setting the `proxy_protocol` parameter in the [[12-directives/listen-http-core|listen]] directive.
+Le protocole PROXY doit au préalable être activé avec le paramètre `proxy_protocol` de la directive [[12-directives/listen-http-core|listen]].
 
 ---
 

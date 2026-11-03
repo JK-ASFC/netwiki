@@ -1,12 +1,9 @@
 ---
 title: "etag"
-description: "Directive nginx etag (ngx_http_core_module) — Enables or disables automatic generation of the ETag response header field for static resources."
+description: "Directive nginx etag (ngx_http_core_module) — Active ou désactive la génération automatique du champ d'en-tête de réponse ETag pour les ressources statiques."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables automatic generation of the `ETag` response header field for static resources.
+Active ou désactive la génération automatique du champ d'en-tête de réponse `ETag` pour les ressources statiques.
 
 ---
 

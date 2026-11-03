@@ -1,12 +1,9 @@
 ---
 title: "lingering_close"
-description: "Directive nginx lingering_close (ngx_http_core_module) — Controls how nginx closes client connections. The default value “on” instructs nginx to wait for and process additional data from a client before fully closing a connection, but only if heuristics…"
+description: "Directive nginx lingering_close (ngx_http_core_module) — Contrôle la façon dont nginx ferme les connexions des clients. La valeur par défaut « on » demande à nginx d'attendre et de traiter les données supplémentaires du client avant de fermer complètement…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,15 +15,15 @@ icon: settings-2
 
 ## Utilisation
 
-Controls how nginx closes client connections.
+Contrôle la façon dont nginx ferme les connexions des clients.
 
-The default value “`on`” instructs nginx to [[12-directives/lingering-timeout|wait for]] and [[12-directives/lingering-time|process]] additional data from a client before fully closing a connection, but only if heuristics suggests that a client may be sending more data.
+La valeur par défaut « `on` » demande à nginx d'[[12-directives/lingering-timeout|attendre]] et de [[12-directives/lingering-time|traiter]] les données supplémentaires du client avant de fermer complètement la connexion, mais seulement si l'heuristique suggère que le client peut encore envoyer des données.
 
-The value “`always`” will cause nginx to unconditionally wait for and process additional client data.
+La valeur « `always` » fait attendre et traiter sans condition les données supplémentaires du client.
 
-The value “`off`” tells nginx to never wait for more data and close the connection immediately. This behavior breaks the protocol and should not be used under normal circumstances.
+La valeur « `off` » indique à nginx de ne jamais attendre d'autres données et de fermer immédiatement la connexion. Ce comportement enfreint le protocole et ne doit pas être utilisé en temps normal.
 
-To control closing [[11-modules/02-http/ngx_http_v2_module|HTTP/2]] connections, the directive must be specified on the [[12-directives/server-http-core|server]] level (1.19.1).
+Pour contrôler la fermeture des connexions [[11-modules/02-http/ngx_http_v2_module|HTTP/2]], la directive doit être indiquée au niveau [[12-directives/server-http-core|server]] (1.19.1).
 
 ---
 

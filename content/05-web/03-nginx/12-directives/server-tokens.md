@@ -1,12 +1,9 @@
 ---
 title: "server_tokens"
-description: "Directive nginx server_tokens (ngx_http_core_module) — Enables or disables emitting nginx version on error pages and in the Server response header field. The build parameter (1.11.10) enables emitting a build name along with nginx version. Additionally,…"
+description: "Directive nginx server_tokens (ngx_http_core_module) — Active ou désactive l'affichage de la version de nginx dans les pages d'erreur et dans le champ d'en-tête de réponse Server. Le paramètre build (1.11.10) ajoute le nom de compilation à la version de…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables emitting nginx version on error pages and in the `Server` response header field.
+Active ou désactive l'affichage de la version de nginx dans les pages d'erreur et dans le champ d'en-tête de réponse `Server`.
 
-The `build` parameter (1.11.10) enables emitting a [[10-guides/01-introduction/configure|build name]] along with nginx version.
+Le paramètre `build` (1.11.10) ajoute le [[10-guides/01-introduction/configure|nom de compilation]] à la version de nginx.
 
-Additionally, as part of our [abonnement commercial](https://nginx.com/products/), starting from version 1.9.13 the signature on error pages and the `Server` response header field value can be set explicitly using the *string* with variables. An empty string disables the emission of the `Server` field.
+En outre, dans le cadre de notre [abonnement commercial](https://nginx.com/products/), depuis la version 1.9.13, la signature des pages d'erreur et la valeur du champ d'en-tête de réponse `Server` peuvent être définies explicitement par une chaîne (*string*) avec variables. Une chaîne vide supprime le champ `Server`.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "upstream (ngx_http_upstream_module)"
-description: "Directive nginx upstream (ngx_http_upstream_module) — Defines a group of servers. Servers can listen on different ports. In addition, servers listening on TCP and UNIX-domain sockets can be mixed. Example: nginx upstream backend { server…"
+description: "Directive nginx upstream (ngx_http_upstream_module) — Defines a group of servers. Servers can listen on different ports. In addition, servers listening on TCP and UNIX-domain sockets can be mixed. Exemple : nginx upstream backend { server…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
@@ -19,7 +19,7 @@ icon: settings-2
 
 Defines a group of servers. Servers can listen on different ports. In addition, servers listening on TCP and UNIX-domain sockets can be mixed.
 
-Example:
+Exemple :
 
 ```nginx
 upstream backend {

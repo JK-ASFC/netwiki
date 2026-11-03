@@ -1,12 +1,9 @@
 ---
 title: "client_max_body_size"
-description: "Directive nginx client_max_body_size (ngx_http_core_module) — Sets the maximum allowed size of the client request body. If the size in a request exceeds the configured value, the 413 Request Entity Too Large error is returned to the client. Please be aware that…"
+description: "Directive nginx client_max_body_size (ngx_http_core_module) — Définit la taille maximale autorisée du corps de la requête du client. Si la taille dépasse la valeur configurée, l'erreur 413 Request Entity Too Large est renvoyée au client. Attention : les…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum allowed size of the client request body. If the size in a request exceeds the configured value, the `413 Request Entity Too Large` error is returned to the client. Please be aware that browsers cannot correctly display this error. Setting *size* to 0 disables checking of client request body size.
+Définit la taille maximale autorisée du corps de la requête du client. Si la taille dépasse la valeur configurée, l'erreur `413 Request Entity Too Large` est renvoyée au client. Attention : les navigateurs n'affichent pas correctement cette erreur. Une taille (*size*) de 0 désactive la vérification de la taille du corps.
 
 ---
 

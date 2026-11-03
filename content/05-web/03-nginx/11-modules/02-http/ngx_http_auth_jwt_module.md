@@ -42,7 +42,7 @@ JWE key management algorithms (1.19.9):
 - dir — direct use of a shared symmetric key as the content encryption key
 - RSA-OAEP, RSA-OAEP-256, RSA-OAEP-384, RSA-OAEP-512 (1.21.0)
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

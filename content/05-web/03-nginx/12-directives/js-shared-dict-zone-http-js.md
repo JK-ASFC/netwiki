@@ -28,7 +28,7 @@ The optional `evict` parameter removes the oldest key-value pair when the zone s
 
 The optional `state` parameter specifies a *file* that keeps the shared dictionary state in JSON format and makes it persistent across nginx restarts (0.9.1).
 
-Example:
+Exemple :
 
 ```nginx
 example.conf:

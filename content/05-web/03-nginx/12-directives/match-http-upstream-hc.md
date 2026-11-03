@@ -90,7 +90,7 @@ If several tests are specified, the response matches only if it matches all test
 > [!NOTE]
 > Only the first 256k of the response body are examined.
 
-Examples:
+Exemples :
 
 ```nginx
 # status is 200, content type is "text/html",

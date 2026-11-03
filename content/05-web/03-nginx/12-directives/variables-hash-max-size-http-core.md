@@ -1,12 +1,9 @@
 ---
 title: "variables_hash_max_size (ngx_http_core_module)"
-description: "Directive nginx variables_hash_max_size (ngx_http_core_module) — Sets the maximum size of the variables hash table. The details of setting up hash tables are provided in a separate document. NOTE Prior to version 1.5.13, the default value was 512."
+description: "Directive nginx variables_hash_max_size (ngx_http_core_module) — Définit la taille (size) maximale de la table de hachage des variables. Le réglage des tables de hachage est détaillé dans un document distinct. NOTE Avant la version 1.5.13, la valeur par défaut…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum *size* of the variables hash table. The details of setting up hash tables are provided in a separate [[10-guides/01-introduction/hash|document]].
+Définit la taille (*size*) maximale de la table de hachage des variables. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]].
 
 > [!NOTE]
-> Prior to version 1.5.13, the default value was 512.
+> Avant la version 1.5.13, la valeur par défaut était 512.
 
 ---
 

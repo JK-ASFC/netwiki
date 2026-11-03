@@ -1,12 +1,9 @@
 ---
 title: "server_name_in_redirect"
-description: "Directive nginx server_name_in_redirect (ngx_http_core_module) — Enables or disables the use of the primary server name, specified by the server_name directive, in absolute redirects issued by nginx. When the use of the primary server name is disabled, the name…"
+description: "Directive nginx server_name_in_redirect (ngx_http_core_module) — Active ou désactive l'utilisation du nom de serveur principal, défini par la directive server_name, dans les redirections absolues émises par nginx. Si elle est désactivée, le nom du champ d'en-tête…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables the use of the primary server name, specified by the [[12-directives/server-name-http-core|server_name]] directive, in [[12-directives/absolute-redirect|absolute]] redirects issued by nginx. When the use of the primary server name is disabled, the name from the `Host` request header field is used. If this field is not present, the IP address of the server is used.
+Active ou désactive l'utilisation du nom de serveur principal, défini par la directive [[12-directives/server-name-http-core|server_name]], dans les redirections [[12-directives/absolute-redirect|absolues]] émises par nginx. Si elle est désactivée, le nom du champ d'en-tête de requête `Host` est utilisé ; à défaut, l'adresse IP du serveur.
 
-The use of a port in redirects is controlled by the [[12-directives/port-in-redirect|port_in_redirect]] directive.
+L'utilisation d'un port dans les redirections est contrôlée par la directive [[12-directives/port-in-redirect|port_in_redirect]].
 
 ---
 

@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_log_module` module (1.11.4) writes session logs in the specified format.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 log_format basic '$remote_addr [$time_local] '

@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_map_module` module (1.11.2) creates variables whose values depend on values of other variables.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 map $remote_addr $limit {

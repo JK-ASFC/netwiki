@@ -1,12 +1,9 @@
 ---
 title: "keepalive_requests (ngx_http_core_module)"
-description: "Directive nginx keepalive_requests (ngx_http_core_module) — Sets the maximum number of requests that can be served through one keep-alive connection. After the maximum number of requests are made, the connection is closed. Closing connections periodically is…"
+description: "Directive nginx keepalive_requests (ngx_http_core_module) — Définit le nombre maximal de requêtes pouvant être servies sur une connexion persistante. Une fois ce nombre atteint, la connexion est fermée. Fermer périodiquement les connexions est nécessaire pour…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,12 +15,12 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum number of requests that can be served through one keep-alive connection. After the maximum number of requests are made, the connection is closed.
+Définit le nombre maximal de requêtes pouvant être servies sur une connexion persistante. Une fois ce nombre atteint, la connexion est fermée.
 
-Closing connections periodically is necessary to free per-connection memory allocations. Therefore, using too high maximum number of requests could result in excessive memory usage and not recommended.
+Fermer périodiquement les connexions est nécessaire pour libérer la mémoire allouée par connexion. Un nombre maximal de requêtes trop élevé peut donc entraîner une consommation de mémoire excessive et n'est pas recommandé.
 
 > [!NOTE]
-> Prior to version 1.19.10, the default value was 100.
+> Avant la version 1.19.10, la valeur par défaut était 100.
 
 ---
 

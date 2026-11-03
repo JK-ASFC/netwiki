@@ -1,12 +1,9 @@
 ---
 title: "output_buffers"
-description: "Directive nginx output_buffers (ngx_http_core_module) — Sets the number and size of the buffers used for reading a response from a disk. NOTE Prior to version 1.9.5, the default value was 1 32k."
+description: "Directive nginx output_buffers (ngx_http_core_module) — Définit le nombre (number) et la taille (size) des tampons utilisés pour lire une réponse depuis le disque. NOTE Avant la version 1.9.5, la valeur par défaut était 1 32k."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *number* and *size* of the buffers used for reading a response from a disk.
+Définit le nombre (*number*) et la taille (*size*) des tampons utilisés pour lire une réponse depuis le disque.
 
 > [!NOTE]
-> Prior to version 1.9.5, the default value was 1 32k.
+> Avant la version 1.9.5, la valeur par défaut était 1 32k.
 
 ---
 

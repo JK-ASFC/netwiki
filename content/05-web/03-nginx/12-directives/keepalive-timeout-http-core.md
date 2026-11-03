@@ -1,12 +1,9 @@
 ---
 title: "keepalive_timeout (ngx_http_core_module)"
-description: "Directive nginx keepalive_timeout (ngx_http_core_module) — The first parameter sets a timeout during which a keep-alive client connection will stay open on the server side. The zero value disables keep-alive client connections. The optional second parameter…"
+description: "Directive nginx keepalive_timeout (ngx_http_core_module) — Le premier paramètre définit le délai pendant lequel une connexion persistante du client reste ouverte côté serveur. La valeur zéro désactive les connexions persistantes. Le second paramètre…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-The first parameter sets a timeout during which a keep-alive client connection will stay open on the server side. The zero value disables keep-alive client connections. The optional second parameter sets a value in the `Keep-Alive: timeout=time` response header field. Two parameters may differ.
+Le premier paramètre définit le délai pendant lequel une connexion persistante du client reste ouverte côté serveur. La valeur zéro désactive les connexions persistantes. Le second paramètre facultatif définit la valeur du champ d'en-tête de réponse `Keep-Alive: timeout=time`. Les deux paramètres peuvent différer.
 
-The `Keep-Alive: timeout=time` header field is recognized by Mozilla and Konqueror. MSIE closes keep-alive connections by itself in about 60 seconds.
+Le champ d'en-tête `Keep-Alive: timeout=time` est reconnu par Mozilla et Konqueror. MSIE ferme lui-même les connexions persistantes au bout d'environ 60 secondes.
 
 ---
 

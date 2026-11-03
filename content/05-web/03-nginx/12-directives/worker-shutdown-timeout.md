@@ -1,12 +1,9 @@
 ---
 title: "worker_shutdown_timeout"
-description: "Directive nginx worker_shutdown_timeout (Core functionality) — Configures a timeout for a graceful shutdown of worker processes. When the time expires, nginx will try to close all the connections currently open to facilitate shutdown."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx worker_shutdown_timeout (ngx_core_module) — Configure un délai pour l'arrêt en douceur des processus de travail. Une fois ce délai (time) écoulé, nginx tente de fermer toutes les connexions encore ouvertes pour faciliter l'arrêt."
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -14,11 +11,11 @@ icon: settings-2
 | **Valeur par défaut** | — |
 | **Contexte** | `main` |
 | **Apparue dans la version** | 1.11.11 |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Configures a timeout for a graceful shutdown of worker processes. When the *time* expires, nginx will try to close all the connections currently open to facilitate shutdown.
+Configure un délai pour l'arrêt en douceur des processus de travail. Une fois ce délai (*time*) écoulé, nginx tente de fermer toutes les connexions encore ouvertes pour faciliter l'arrêt.
 
 ---
 

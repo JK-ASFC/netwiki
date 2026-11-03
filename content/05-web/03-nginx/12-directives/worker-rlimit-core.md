@@ -1,23 +1,20 @@
 ---
 title: "worker_rlimit_core"
-description: "Directive nginx worker_rlimit_core (Core functionality) — Changes the limit on the largest size of a core file (RLIMIT_CORE) for worker processes. Used to increase the limit without restarting the main process."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx worker_rlimit_core (ngx_core_module) — Modifie la limite de taille maximale d'un fichier core (RLIMIT_CORE) pour les processus de travail. Permet d'augmenter la limite sans redémarrer le processus maître."
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `worker_rlimit_core size;` |
 | **Valeur par défaut** | — |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Changes the limit on the largest size of a core file (`RLIMIT_CORE`) for worker processes. Used to increase the limit without restarting the main process.
+Modifie la limite de taille maximale d'un fichier core (`RLIMIT_CORE`) pour les processus de travail. Permet d'augmenter la limite sans redémarrer le processus maître.
 
 ---
 

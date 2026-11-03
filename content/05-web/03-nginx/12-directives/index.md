@@ -1,12 +1,9 @@
 ---
 title: "index"
-description: "Directive nginx index (ngx_http_index_module) — Defines files that will be used as an index. The file name can contain variables. Files are checked in the specified order. The last element of the list can be a file with an absolute path. Example:…"
+description: "Directive nginx index (ngx_http_index_module) — Définit les fichiers utilisés comme index. Le nom de fichier (file) peut contenir des variables. Les fichiers sont vérifiés dans l'ordre indiqué. Le dernier élément de la liste peut être un fichier…"
 tags: [nginx, directive, ngx_http_index_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Defines files that will be used as an index. The *file* name can contain variables. Files are checked in the specified order. The last element of the list can be a file with an absolute path. Example:
+Définit les fichiers utilisés comme index. Le nom de fichier (*file*) peut contenir des variables. Les fichiers sont vérifiés dans l'ordre indiqué. Le dernier élément de la liste peut être un fichier avec un chemin absolu. Exemple :
 
 ```nginx
 index index.$geo.html index.0.html /index.html;
 ```
 
-It should be noted that using an index file causes an internal redirect, and the request can be processed in a different location. For example, with the following configuration:
+À noter : l'utilisation d'un fichier d'index provoque une redirection interne, et la requête peut alors être traitée dans un autre bloc location. Par exemple, avec la configuration suivante :
 
 ```nginx
 location = / {
@@ -35,7 +32,7 @@ location / {
 }
 ```
 
-a “`/`” request will actually be processed in the second location as “`/index.html`”.
+une requête « `/` » sera en réalité traitée dans le second bloc location sous la forme « `/index.html` ».
 
 ---
 

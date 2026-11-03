@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_split_clients_module` module (1.11.3) creates variables suitable for A/B testing, also known as split testing.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 stream {

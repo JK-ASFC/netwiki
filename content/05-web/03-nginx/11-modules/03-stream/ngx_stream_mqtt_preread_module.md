@@ -13,7 +13,7 @@ The `ngx_stream_mqtt_preread_module` module (1.23.4) allows extracting informati
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 mqtt_preread on;

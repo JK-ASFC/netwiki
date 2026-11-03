@@ -1,12 +1,9 @@
 ---
 title: "auth_basic_user_file"
-description: "Directive nginx auth_basic_user_file (ngx_http_auth_basic_module) — Specifies a file that keeps user names and passwords, in the following format: nginx comment name1:password1 name2:password2:comment name3:password3 The file name can contain variables. The following…"
+description: "Directive nginx auth_basic_user_file (ngx_http_auth_basic_module) — Indique le fichier qui contient les noms d'utilisateur et les mots de passe, au format suivant : nginx comment name1:password1 name2:password2:comment name3:password3 Le nom de fichier (file) peut…"
 tags: [nginx, directive, ngx_http_auth_basic_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a file that keeps user names and passwords, in the following format:
+Indique le fichier qui contient les noms d'utilisateur et les mots de passe, au format suivant :
 
 ```nginx
 # comment
@@ -26,16 +23,16 @@ name2:password2:comment
 name3:password3
 ```
 
-The *file* name can contain variables.
+Le nom de fichier (*file*) peut contenir des variables.
 
-The following password types are supported:
+Les types de mots de passe suivants sont pris en charge :
 
-- encrypted with the `crypt` function; can be generated using the “`htpasswd`” utility from the Apache HTTP Server distribution or the “`openssl passwd`” command;
-- hashed with the Apache variant of the MD5-based password algorithm (apr1); can be generated with the same tools;
-- specified by the “`{`*scheme*`}`*data*” syntax (1.0.3+) as described in [RFC 2307](https://datatracker.ietf.org/doc/html/rfc2307#section-5.3); currently implemented schemes include `PLAIN` (an example one, should not be used), `SHA` (1.3.13) (plain SHA-1 hashing, should not be used) and `SSHA` (salted SHA-1 hashing, used by some software packages, notably OpenLDAP and Dovecot).
+- chiffré avec la fonction `crypt` ; peut être généré avec l'utilitaire « `htpasswd` » fourni avec Apache HTTP Server ou avec la commande « `openssl passwd` » ;
+- haché avec la variante Apache de l'algorithme de mot de passe fondé sur MD5 (apr1) ; peut être généré avec les mêmes outils ;
+- indiqué selon la syntaxe « `{`*scheme*`}`*data* » (1.0.3+) décrite dans la [RFC 2307](https://datatracker.ietf.org/doc/html/rfc2307#section-5.3) ; les schémas actuellement disponibles sont `PLAIN` (exemple, à ne pas utiliser), `SHA` (1.3.13) (hachage SHA-1 simple, à ne pas utiliser) et `SSHA` (hachage SHA-1 salé, utilisé par certains logiciels, notamment OpenLDAP et Dovecot).
 
   > [!NOTE]
-  > Support for `SHA` scheme was added only to aid in migration from other web servers. It should not be used for new passwords, since unsalted SHA-1 hashing that it employs is vulnerable to [rainbow table](http://en.wikipedia.org/wiki/Rainbow_attack) attacks.
+  > La prise en charge du schéma `SHA` n'a été ajoutée que pour faciliter la migration depuis d'autres serveurs web. Il ne doit pas être utilisé pour de nouveaux mots de passe, car le hachage SHA-1 non salé qu'il emploie est vulnérable aux attaques par [tables arc-en-ciel](http://en.wikipedia.org/wiki/Rainbow_attack).
 
 ---
 

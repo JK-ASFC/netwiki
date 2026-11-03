@@ -1,12 +1,9 @@
 ---
 title: "gzip_proxied"
-description: "Directive nginx gzip_proxied (ngx_http_gzip_module) — Enables or disables gzipping of responses for proxied requests depending on the request and response. The fact that the request is proxied is determined by the presence of the Via request header…"
+description: "Directive nginx gzip_proxied (ngx_http_gzip_module) — Active ou désactive la compression gzip des réponses aux requêtes relayées par un mandataire, selon la requête et la réponse. Une requête est considérée comme relayée si le champ d'en-tête de requête…"
 tags: [nginx, directive, ngx_http_gzip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,43 +14,43 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables gzipping of responses for proxied requests depending on the request and response. The fact that the request is proxied is determined by the presence of the `Via` request header field. The directive accepts multiple parameters:
+Active ou désactive la compression gzip des réponses aux requêtes relayées par un mandataire, selon la requête et la réponse. Une requête est considérée comme relayée si le champ d'en-tête de requête `Via` est présent. La directive accepte plusieurs paramètres :
 
 - **`off`**
 
-  disables compression for all proxied requests, ignoring other parameters;
+  désactive la compression pour toutes les requêtes relayées, sans tenir compte des autres paramètres ;
 
 - **`expired`**
 
-  enables compression if a response header includes the `Expires` field with a value that disables caching;
+  active la compression si l'en-tête de réponse contient le champ `Expires` avec une valeur qui désactive la mise en cache ;
 
 - **`no-cache`**
 
-  enables compression if a response header includes the `Cache-Control` field with the “`no-cache`” parameter;
+  active la compression si l'en-tête de réponse contient le champ `Cache-Control` avec le paramètre « `no-cache` » ;
 
 - **`no-store`**
 
-  enables compression if a response header includes the `Cache-Control` field with the “`no-store`” parameter;
+  active la compression si l'en-tête de réponse contient le champ `Cache-Control` avec le paramètre « `no-store` » ;
 
 - **`private`**
 
-  enables compression if a response header includes the `Cache-Control` field with the “`private`” parameter;
+  active la compression si l'en-tête de réponse contient le champ `Cache-Control` avec le paramètre « `private` » ;
 
 - **`no_last_modified`**
 
-  enables compression if a response header does not include the `Last-Modified` field;
+  active la compression si l'en-tête de réponse ne contient pas le champ `Last-Modified` ;
 
 - **`no_etag`**
 
-  enables compression if a response header does not include the `ETag` field;
+  active la compression si l'en-tête de réponse ne contient pas le champ `ETag` ;
 
 - **`auth`**
 
-  enables compression if a request header includes the `Authorization` field;
+  active la compression si l'en-tête de requête contient le champ `Authorization` ;
 
 - **`any`**
 
-  enables compression for all proxied requests.
+  active la compression pour toutes les requêtes relayées.
 
 ---
 

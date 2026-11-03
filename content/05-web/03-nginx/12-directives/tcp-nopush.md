@@ -1,12 +1,9 @@
 ---
 title: "tcp_nopush"
-description: "Directive nginx tcp_nopush (ngx_http_core_module) — Enables or disables the use of the TCP_NOPUSH socket option on FreeBSD or the TCP_CORK socket option on Linux. The options are enabled only when sendfile is used. Enabling the option allows - sending…"
+description: "Directive nginx tcp_nopush (ngx_http_core_module) — Active ou désactive l'option de socket TCP_NOPUSH sous FreeBSD ou TCP_CORK sous Linux. Ces options ne sont activées qu'avec sendfile. Les activer permet - d'envoyer l'en-tête de réponse et le début…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables the use of the `TCP_NOPUSH` socket option on FreeBSD or the `TCP_CORK` socket option on Linux. The options are enabled only when [[12-directives/sendfile|sendfile]] is used. Enabling the option allows
+Active ou désactive l'option de socket `TCP_NOPUSH` sous FreeBSD ou `TCP_CORK` sous Linux. Ces options ne sont activées qu'avec [[12-directives/sendfile|sendfile]]. Les activer permet
 
-- sending the response header and the beginning of a file in one packet, on Linux and FreeBSD 4.\*;
-- sending a file in full packets.
+- d'envoyer l'en-tête de réponse et le début du fichier dans un seul paquet, sous Linux et FreeBSD 4.\* ;
+- d'envoyer un fichier en paquets pleins.
 
 ---
 

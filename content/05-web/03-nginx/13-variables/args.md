@@ -1,19 +1,16 @@
 ---
 title: "$args"
-description: "Variable nginx $args (ngx_http_core_module) — arguments in the request line"
+description: "Variable nginx $args (ngx_http_core_module) — arguments de la ligne de requête"
 tags: [nginx, variable, ngx_http_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$args` |
 | **Module** | [[11-modules/02-http/ngx_http_core_module\|ngx_http_core_module]] |
 
-arguments in the request line
+arguments de la ligne de requête
 
 ---
 

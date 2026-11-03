@@ -55,9 +55,9 @@ The `udp` parameter configures a listening socket for working with datagrams (1.
 The `proxy_protocol` parameter (1.11.4) allows specifying that all connections accepted on this port should use the [PROXY protocol](http://www.haproxy.org/download/1.8/doc/proxy-protocol.txt).
 
 > [!NOTE]
-> The PROXY protocol version 2 is supported since version 1.13.11.
+> La version 2 du protocole PROXY est prise en charge depuis la version 1.13.11.
 
-The `listen` directive can have several additional parameters specific to socket-related system calls. These parameters can be specified in any `listen` directive, but only once for a given *address*:*port* pair.
+La directive `listen` accepte plusieurs paramètres supplémentaires propres aux appels système des sockets. Ils peuvent figurer dans n'importe quelle directive `listen`, mais une seule fois pour un couple *address*:*port* donné.
 
 - **`setfib`=*number***
 
@@ -68,7 +68,7 @@ The `listen` directive can have several additional parameters specific to socket
   enables “[TCP Fast Open](http://en.wikipedia.org/wiki/TCP_Fast_Open)” for the listening socket (1.21.0) and [limits](https://datatracker.ietf.org/doc/html/rfc7413#section-5.1) the maximum length for the queue of connections that have not yet completed the three-way handshake.
 
   > [!NOTE]
-  > Do not enable this feature unless the server can handle receiving the [same SYN packet with data](https://datatracker.ietf.org/doc/html/rfc7413#section-6.1) more than once.
+  > N'activez cette fonction que si le serveur sait gérer la réception du [même paquet SYN avec données](https://datatracker.ietf.org/doc/html/rfc7413#section-6.1) plusieurs fois.
 
 - **`backlog`=*number***
 
@@ -100,17 +100,17 @@ The `listen` directive can have several additional parameters specific to socket
 
 - **`reuseport`**
 
-  this parameter (1.9.1) instructs to create an individual listening socket for each worker process (using the `SO_REUSEPORT` socket option on Linux 3.9+ and DragonFly BSD, or `SO_REUSEPORT_LB` on FreeBSD 12+), allowing a kernel to distribute incoming connections between worker processes. This currently works only on Linux 3.9+, DragonFly BSD, and FreeBSD 12+ (1.15.1).
+  ce paramètre (1.9.1) crée un socket d'écoute distinct pour chaque processus de travail (option de socket `SO_REUSEPORT` sous Linux 3.9+ et DragonFly BSD, ou `SO_REUSEPORT_LB` sous FreeBSD 12+), ce qui permet au noyau de répartir les connexions entrantes entre les processus de travail. Ne fonctionne actuellement que sous Linux 3.9+, DragonFly BSD et FreeBSD 12+ (1.15.1).
 
   > [!NOTE]
-  > Inappropriate use of this option may have its security [implications](http://man7.org/linux/man-pages/man7/socket.7.html).
+  > Une mauvaise utilisation de cette option peut avoir des [conséquences](http://man7.org/linux/man-pages/man7/socket.7.html) sur la sécurité.
 
 - **`multipath`**
 
-  this parameter (1.29.7) configures the [Multipath TCP](https://datatracker.ietf.org/doc/html/rfc8684) protocol (`IPPROTO_MPTCP`) for the listening socket. This currently works only on Linux 5.6+.
+  ce paramètre (1.29.7) configure le protocole [Multipath TCP](https://datatracker.ietf.org/doc/html/rfc8684) (`IPPROTO_MPTCP`) pour le socket d'écoute. Ne fonctionne actuellement que sous Linux 5.6+.
 
   > [!NOTE]
-  > Adding or removing this parameter will also enable the `SO_REUSEPORT` socket option, which may have its security [implications](http://man7.org/linux/man-pages/man7/socket.7.html).
+  > Ajouter ou retirer ce paramètre active aussi l'option de socket `SO_REUSEPORT`, ce qui peut avoir des [conséquences](http://man7.org/linux/man-pages/man7/socket.7.html) sur la sécurité.
 
 - **`so_keepalive`=`on`|`off`|\[*keepidle*\]:\[*keepintvl*\]:\[*keepcnt*\]**
 
@@ -120,7 +120,7 @@ The `listen` directive can have several additional parameters specific to socket
   so_keepalive=30m::10
   ```
 
-  will set the idle timeout (`TCP_KEEPIDLE`) to 30 minutes, leave the probe interval (`TCP_KEEPINTVL`) at its system default, and set the probes count (`TCP_KEEPCNT`) to 10 probes.
+  fixe le délai d'inactivité (`TCP_KEEPIDLE`) à 30 minutes, laisse l'intervalle des sondes (`TCP_KEEPINTVL`) à sa valeur système par défaut et fixe le nombre de sondes (`TCP_KEEPCNT`) à 10.
 
 > [!NOTE]
 > Before version 1.25.5, different servers must listen on different *address*:*port* pairs.

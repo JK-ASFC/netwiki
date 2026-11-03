@@ -1,12 +1,9 @@
 ---
 title: "access_log (ngx_http_log_module)"
-description: "Directive nginx access_log (ngx_http_log_module) — Sets the path, format, and configuration for a buffered log write. Several logs can be specified on the same configuration level. Logging to syslog can be configured by specifying the “syslog:”…"
+description: "Directive nginx access_log (ngx_http_log_module) — Définit le chemin, le format et la configuration de l'écriture tamponnée d'un journal. Plusieurs journaux peuvent être définis au même niveau de configuration. La journalisation vers syslog se…"
 tags: [nginx, directive, ngx_http_log_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,36 +14,36 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the path, format, and configuration for a buffered log write. Several logs can be specified on the same configuration level. Logging to [[10-guides/01-introduction/syslog|syslog]] can be configured by specifying the “`syslog:`” prefix in the first parameter. The special value `off` cancels all `access_log` directives on the current level. If the format is not specified then the predefined “`combined`” format is used.
+Définit le chemin, le format et la configuration de l'écriture tamponnée d'un journal. Plusieurs journaux peuvent être définis au même niveau de configuration. La journalisation vers [[10-guides/01-introduction/syslog|syslog]] se configure avec le préfixe « `syslog:` » dans le premier paramètre. La valeur spéciale `off` annule toutes les directives `access_log` du niveau courant. Si le format n'est pas indiqué, le format prédéfini « `combined` » est utilisé.
 
-If either the `buffer` or `gzip` (1.3.10, 1.2.7) parameter is used, writes to log will be buffered.
+Si le paramètre `buffer` ou `gzip` (1.3.10, 1.2.7) est utilisé, les écritures dans le journal sont tamponnées.
 
 > [!NOTE]
-> The buffer size must not exceed the size of an atomic write to a disk file. For FreeBSD this size is unlimited.
+> La taille du tampon ne doit pas dépasser la taille d'une écriture atomique dans un fichier sur disque. Sous FreeBSD, cette taille est illimitée.
 
-When buffering is enabled, the data will be written to the file:
+Lorsque le tampon est activé, les données sont écrites dans le fichier :
 
-- if the next log line does not fit into the buffer;
-- if the buffered data is older than specified by the `flush` parameter (1.3.10, 1.2.7);
-- when a worker process is [[10-guides/01-introduction/control|re-opening]] log files or is shutting down.
+- si la ligne de journal suivante ne tient pas dans le tampon ;
+- si les données tamponnées sont plus anciennes que la durée indiquée par le paramètre `flush` (1.3.10, 1.2.7) ;
+- lorsqu'un processus de travail [[10-guides/01-introduction/control|rouvre]] les fichiers journaux ou s'arrête.
 
-If the `gzip` parameter is used, then the buffered data will be compressed before writing to the file. The compression level can be set between 1 (fastest, less compression) and 9 (slowest, best compression). By default, the buffer size is equal to 64K bytes, and the compression level is set to 1. Since the data is compressed in atomic blocks, the log file can be decompressed or read by “`zcat`” at any time.
+Si le paramètre `gzip` est utilisé, les données tamponnées sont compressées avant d'être écrites dans le fichier. Le niveau de compression va de 1 (le plus rapide, compression moindre) à 9 (le plus lent, meilleure compression). Par défaut, le tampon fait 64K octets et le niveau de compression est 1. Comme les données sont compressées par blocs atomiques, le fichier journal peut être décompressé ou lu avec « `zcat` » à tout moment.
 
-Example:
+Exemple :
 
 ```nginx
 access_log /path/to/log.gz combined gzip flush=5m;
 ```
 
 > [!NOTE]
-> For gzip compression to work, nginx must be built with the zlib library.
+> Pour que la compression gzip fonctionne, nginx doit être compilé avec la bibliothèque zlib.
 
-The file path can contain variables (0.7.6+), but such logs have some constraints:
+Le chemin du fichier peut contenir des variables (0.7.6+), mais ces journaux ont certaines contraintes :
 
-- the [[12-directives/user|user]] whose credentials are used by worker processes should have permissions to create files in a directory with such logs;
-- buffered writes do not work;
-- the file is opened and closed for each log write. However, since the descriptors of frequently used files can be stored in a [[12-directives/open-log-file-cache-http-log|cache]], writing to the old file can continue during the time specified by the [[12-directives/open-log-file-cache-http-log|open_log_file_cache]] directive’s `valid` parameter
-- during each log write the existence of the request’s [[12-directives/root|root directory]] is checked, and if it does not exist the log is not created. It is thus a good idea to specify both [[12-directives/root|root]] and `access_log` on the same configuration level:
+- l'[[12-directives/user|utilisateur]] sous lequel s'exécutent les processus de travail doit avoir le droit de créer des fichiers dans le répertoire de ces journaux ;
+- l'écriture tamponnée ne fonctionne pas ;
+- le fichier est ouvert et fermé à chaque écriture. Toutefois, comme les descripteurs des fichiers fréquemment utilisés peuvent être conservés dans un [[12-directives/open-log-file-cache-http-log|cache]], l'écriture dans l'ancien fichier peut se poursuivre pendant la durée indiquée par le paramètre `valid` de la directive [[12-directives/open-log-file-cache-http-log|open_log_file_cache]]
+- à chaque écriture, l'existence du [[12-directives/root|répertoire racine]] de la requête est vérifiée ; s'il n'existe pas, le journal n'est pas créé. Il est donc conseillé d'indiquer [[12-directives/root|root]] et `access_log` au même niveau de configuration :
 
   ```nginx
   server {
@@ -55,7 +52,7 @@ The file path can contain variables (0.7.6+), but such logs have some constraint
       ...
   ```
 
-The `if` parameter (1.7.0) enables conditional logging. A request will not be logged if the *condition* evaluates to “0” or an empty string. In the following example, the requests with response codes 2xx and 3xx will not be logged:
+Le paramètre `if` (1.7.0) active la journalisation conditionnelle. Une requête n'est pas journalisée si la condition (*condition*) vaut « 0 » ou une chaîne vide. Dans l'exemple suivant, les requêtes dont le code de réponse est 2xx ou 3xx ne sont pas journalisées :
 
 ```nginx
 map $status $loggable {

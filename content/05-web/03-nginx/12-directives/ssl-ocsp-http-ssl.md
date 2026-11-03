@@ -24,7 +24,7 @@ For the OCSP validation to work, the [[12-directives/ssl-verify-client-http-ssl|
 
 To resolve the OCSP responder hostname, the [[12-directives/resolver-http-core|resolver]] directive should also be specified.
 
-Example:
+Exemple :
 
 ```nginx
 ssl_verify_client on;

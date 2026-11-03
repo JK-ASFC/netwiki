@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_ssi_module` module is a filter that processes SSI (Server Side Includes) commands in responses passing through it. Currently, the list of supported SSI commands is incomplete.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {
@@ -37,7 +37,7 @@ The following commands are supported:
 
     block name.
 
-  Example:
+  Exemple :
 
   ```nginx
   <!--# block name="one" -->

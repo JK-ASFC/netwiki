@@ -1,6 +1,6 @@
 ---
 title: "$upstream_last_addr (ngx_http_upstream_module)"
-description: "Variable nginx $upstream_last_addr (ngx_http_upstream_module) — keeps the IP address or the path to the UNIX-domain socket of the last selected upstream server (1.29.3). NOTE This variable is available as part of our abonnement commercial."
+description: "Variable nginx $upstream_last_addr (ngx_http_upstream_module) — keeps the IP address or the path to the UNIX-domain socket of the last selected upstream server (1.29.3). NOTE Cette variable est disponible dans le cadre de notre abonnement commercial."
 tags: [nginx, variable, ngx_http_upstream_module]
 icon: dollar-sign
 ---
@@ -16,7 +16,7 @@ icon: dollar-sign
 keeps the IP address or the path to the UNIX-domain socket of the last selected upstream server (1.29.3).
 
 > [!NOTE]
-> This variable is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette variable est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

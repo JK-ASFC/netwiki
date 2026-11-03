@@ -126,6 +126,7 @@ def h(text):
 
 def needs_tr(md):
     plain = re.sub(r'`[^`]*`', '', md)
+    plain = re.sub(r'\*[\w$.:-]+\*', '', plain)
     plain = re.sub(r'\[\[[^\]|]*\\?\|', '', plain)
     plain = re.sub(r'https?://\S+', '', plain)
     return len(re.findall(r'[A-Za-z]{3,}', plain)) >= 1 and re.search(r'[A-Za-z]{2,}\s+[A-Za-z]{2,}|[A-Za-z]{4,}', plain)
@@ -150,7 +151,7 @@ for link in index.iter('link'):
 
 for rel in mod_files:
     root = load(rel)
-    name = root.get('name', '').replace('Module ', '').strip()
+    name = os.path.basename(rel)[:-4]
     grp = mod_group(rel)
     pages[rel] = (f'{D_MODS}/{grp}/{name}', name)
     modules.append((rel, grp, name))
@@ -255,7 +256,7 @@ class Conv:
                 return self.wl(f"{D_VARS}/{v['slug']}", re.sub(r'[`*\\]', '', label) or v['name'])
         if target_rel in pages and (doc or not lid):
             t, title = pages[target_rel]
-            return self.wl(t, re.sub(r'[`*\\]', '', label) or title)
+            return self.wl(t, re.sub(r'[`*\\]', '', label) or lid or title)
         if target_rel in pages and lid and target_rel != self.rel:
             t, title = pages[target_rel]
             return self.wl(t, re.sub(r'[`*\\]', '', label) or lid)
@@ -588,9 +589,12 @@ def generate():
 
 stats, missing = generate()
 if MODE == '--manquants':
-    out = {}
+    out, seen = {}, set()
     for rel in MODE_ARGS:
-        out.update(missing.get(rel, {}))
+        segs = {k: v for k, v in missing.get(rel, {}).items() if k not in seen}
+        seen.update(segs)
+        if segs:
+            out[rel] = segs
     print(json.dumps(out, ensure_ascii=False, indent=0))
 elif MODE == '--stats':
     for rel in sorted(missing, key=lambda r: -len(missing[r])):

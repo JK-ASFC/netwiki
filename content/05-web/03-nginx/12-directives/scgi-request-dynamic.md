@@ -21,7 +21,7 @@ icon: settings-2
 Enables or disables creation of a separate request instance for each SCGI server. By default, a single request is used for all SCGI servers. If enabled, a separate request instance is created, allowing per-server request customization.
 
 > [!NOTE]
-> This directive is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

@@ -14,7 +14,7 @@ A document is parsed only once per request, no matter how many variables are ext
 
 This module is not built by default, it should be enabled with the `--with-http_json_module` configuration parameter.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {

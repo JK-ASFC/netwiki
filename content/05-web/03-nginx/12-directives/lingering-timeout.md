@@ -1,12 +1,9 @@
 ---
 title: "lingering_timeout"
-description: "Directive nginx lingering_timeout (ngx_http_core_module) — When lingering_close is in effect, this directive specifies the maximum waiting time for more client data to arrive. If data are not received during this time, the connection is closed. Otherwise,…"
+description: "Directive nginx lingering_timeout (ngx_http_core_module) — Lorsque lingering_close s'applique, cette directive indique le délai d'attente maximal de nouvelles données du client. Si aucune donnée n'arrive pendant ce délai, la connexion est fermée. Sinon, les…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-When [[12-directives/lingering-close|lingering_close]] is in effect, this directive specifies the maximum waiting time for more client data to arrive. If data are not received during this time, the connection is closed. Otherwise, the data are read and ignored, and nginx starts waiting for more data again. The “wait-read-ignore” cycle is repeated, but no longer than specified by the [[12-directives/lingering-time|lingering_time]] directive.
+Lorsque [[12-directives/lingering-close|lingering_close]] s'applique, cette directive indique le délai d'attente maximal de nouvelles données du client. Si aucune donnée n'arrive pendant ce délai, la connexion est fermée. Sinon, les données sont lues et ignorées, et nginx se remet à attendre. Ce cycle « attendre-lire-ignorer » se répète, mais pas au-delà de la durée fixée par la directive [[12-directives/lingering-time|lingering_time]].
 
 ---
 

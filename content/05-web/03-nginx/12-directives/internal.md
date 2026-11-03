@@ -1,12 +1,9 @@
 ---
 title: "internal"
-description: "Directive nginx internal (ngx_http_core_module) — Specifies that a given location can only be used for internal requests. For external requests, the client error 404 Not Found is returned. Internal requests are the following: - requests redirected…"
+description: "Directive nginx internal (ngx_http_core_module) — Indique que le bloc location ne peut servir qu'aux requêtes internes. Pour les requêtes externes, l'erreur client 404 Not Found est renvoyée. Les requêtes internes sont : - les requêtes redirigées…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,14 +14,14 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies that a given location can only be used for internal requests. For external requests, the client error `404 Not Found` is returned. Internal requests are the following:
+Indique que le bloc location ne peut servir qu'aux requêtes internes. Pour les requêtes externes, l'erreur client `404 Not Found` est renvoyée. Les requêtes internes sont :
 
-- requests redirected by the [[12-directives/error-page|error_page]], [[12-directives/index|index]], [[12-directives/internal-redirect|internal_redirect]], [[12-directives/random-index|random_index]], and [[12-directives/try-files|try_files]] directives;
-- requests redirected by the `X-Accel-Redirect` response header field from an upstream server;
-- subrequests formed by the “`include virtual`” command of the [[11-modules/02-http/ngx_http_ssi_module|ngx_http_ssi_module]] module, by the [[11-modules/02-http/ngx_http_addition_module|ngx_http_addition_module]] module directives, and by [[12-directives/auth-request|auth_request]] and [[12-directives/mirror|mirror]] directives;
-- requests changed by the [[12-directives/rewrite|rewrite]] directive.
+- les requêtes redirigées par les directives [[12-directives/error-page|error_page]], [[12-directives/index|index]], [[12-directives/internal-redirect|internal_redirect]], [[12-directives/random-index|random_index]] et [[12-directives/try-files|try_files]] ;
+- les requêtes redirigées par le champ d'en-tête de réponse `X-Accel-Redirect` d'un serveur amont ;
+- les sous-requêtes créées par la commande « `include virtual` » du module [[11-modules/02-http/ngx_http_ssi_module|ngx_http_ssi_module]], par les directives du module [[11-modules/02-http/ngx_http_addition_module|ngx_http_addition_module]] et par les directives [[12-directives/auth-request|auth_request]] et [[12-directives/mirror|mirror]] ;
+- les requêtes modifiées par la directive [[12-directives/rewrite|rewrite]].
 
-Example:
+Exemple :
 
 ```nginx
 error_page 404 /404.html;
@@ -35,7 +32,7 @@ location = /404.html {
 ```
 
 > [!NOTE]
-> There is a limit of 10 internal redirects per request to prevent request processing cycles that can occur in incorrect configurations. If this limit is reached, the error `500 Internal Server Error` is returned. In such cases, the “rewrite or internal redirection cycle” message can be seen in the error log.
+> Le nombre de redirections internes est limité à 10 par requête pour éviter les boucles de traitement que peut provoquer une configuration incorrecte. Lorsque cette limite est atteinte, l'erreur `500 Internal Server Error` est renvoyée ; le message « rewrite or internal redirection cycle » apparaît alors dans le journal d'erreurs.
 
 ---
 

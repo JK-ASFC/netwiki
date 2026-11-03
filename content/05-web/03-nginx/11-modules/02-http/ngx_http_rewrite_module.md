@@ -1,29 +1,26 @@
 ---
 title: "ngx_http_rewrite_module"
-description: "Module nginx ngx_http_rewrite_module — The ngx_http_rewrite_module module is used to change request URI using PCRE regular expressions, return redirects, and conditionally select configurations."
+description: "Module nginx ngx_http_rewrite_module — Le module ngx_http_rewrite_module sert à modifier l'URI de la requête à l'aide d'expressions régulières PCRE, à renvoyer des redirections et à choisir une configuration selon des conditions."
 tags: [nginx, module, ngx_http_rewrite_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_rewrite_module` sert à modifier l'URI de la requête à l'aide d'expressions régulières PCRE, à renvoyer des redirections et à choisir une configuration selon des conditions.
 
-The `ngx_http_rewrite_module` module is used to change request URI using PCRE regular expressions, return redirects, and conditionally select configurations.
+Les directives [[12-directives/break|break]], [[12-directives/if|if]], [[12-directives/return-http-rewrite|return]], [[12-directives/rewrite|rewrite]] et [[12-directives/set-http-rewrite|set]] sont traitées dans l'ordre suivant :
 
-The [[12-directives/break|break]], [[12-directives/if|if]], [[12-directives/return-http-rewrite|return]], [[12-directives/rewrite|rewrite]], and [[12-directives/set-http-rewrite|set]] directives are processed in the following order:
+- les directives de ce module indiquées au niveau [[12-directives/server-http-core|server]] sont exécutées dans l'ordre ;
+- puis, de façon répétée :
 
-- the directives of this module specified on the [[12-directives/server-http-core|server]] level are executed sequentially;
-- repeatedly:
+  - un bloc [[12-directives/location|location]] est recherché d'après l'URI de la requête ;
+  - les directives de ce module indiquées dans le bloc location trouvé sont exécutées dans l'ordre ;
+  - la boucle recommence si l'URI de la requête a été [[12-directives/rewrite|réécrite]], mais pas plus de [[12-directives/internal|10 fois]].
 
-  - a [[12-directives/location|location]] is searched based on a request URI;
-  - the directives of this module specified inside the found location are executed sequentially;
-  - the loop is repeated if a request URI was [[12-directives/rewrite|rewritten]], but not more than [[12-directives/internal|10 times]].
+## Fonctionnement interne
 
-## Internal Implementation
+Les directives du module `ngx_http_rewrite_module` sont compilées, lors de la lecture de la configuration, en instructions internes interprétées pendant le traitement de la requête. L'interpréteur est une simple machine virtuelle à pile.
 
-The `ngx_http_rewrite_module` module directives are compiled at the configuration stage into internal instructions that are interpreted during request processing. An interpreter is a simple virtual stack machine.
-
-For example, the directives
+Par exemple, les directives
 
 ```nginx
 location /download/ {
@@ -39,7 +36,7 @@ location /download/ {
 }
 ```
 
-will be translated into these instructions:
+sont traduites en ces instructions :
 
 ```nginx
 variable $forbidden
@@ -58,21 +55,21 @@ end of regular expression
 end of code
 ```
 
-Note that there are no instructions for the [[12-directives/limit-rate|limit_rate]] directive above as it is unrelated to the `ngx_http_rewrite_module` module. A separate configuration is created for the [[12-directives/if|if]] block. If the condition holds true, a request is assigned this configuration where `limit_rate` equals to 10k.
+Il n'y a pas d'instruction pour la directive [[12-directives/limit-rate|limit_rate]] ci-dessus, car elle ne relève pas du module `ngx_http_rewrite_module`. Une configuration distincte est créée pour le bloc [[12-directives/if|if]]. Si la condition est vraie, la requête reçoit cette configuration, dans laquelle `limit_rate` vaut 10k.
 
-The directive
+La directive
 
 ```nginx
 rewrite ^/(download/.*)/media/(.*)\..*$ /$1/mp3/$2.mp3 break;
 ```
 
-can be made smaller by one instruction if the first slash in the regular expression is put inside the parentheses:
+peut compter une instruction de moins si la première barre oblique de l'expression régulière est placée entre les parenthèses :
 
 ```nginx
 rewrite ^(/download/.*)/media/(.*)\..*$ $1/mp3/$2.mp3 break;
 ```
 
-The corresponding instructions will then look like this:
+Les instructions correspondantes sont alors :
 
 ```nginx
 match of regular expression

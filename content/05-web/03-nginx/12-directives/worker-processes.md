@@ -1,28 +1,25 @@
 ---
 title: "worker_processes"
-description: "Directive nginx worker_processes (Core functionality) — Defines the number of worker processes. The optimal value depends on many factors including (but not limited to) the number of CPU cores, the number of hard disk drives that store data, and load…"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx worker_processes (ngx_core_module) — Définit le nombre de processus de travail. La valeur optimale dépend de nombreux facteurs, notamment (mais pas seulement) du nombre de cœurs de processeur, du nombre de disques qui stockent les…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `worker_processes number \| auto;` |
 | **Valeur par défaut** | `worker_processes 1;` |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Defines the number of worker processes.
+Définit le nombre de processus de travail.
 
-The optimal value depends on many factors including (but not limited to) the number of CPU cores, the number of hard disk drives that store data, and load pattern. When one is in doubt, setting it to the number of available CPU cores would be a good start (the value “`auto`” will try to autodetect it).
+La valeur optimale dépend de nombreux facteurs, notamment (mais pas seulement) du nombre de cœurs de processeur, du nombre de disques qui stockent les données et du profil de charge. Dans le doute, le nombre de cœurs disponibles est un bon point de départ (la valeur « `auto` » tente de le détecter automatiquement).
 
 > [!NOTE]
-> The `auto` parameter is supported starting from versions 1.3.8 and 1.2.5.
+> Le paramètre `auto` est pris en charge à partir des versions 1.3.8 et 1.2.5.
 
 ---
 

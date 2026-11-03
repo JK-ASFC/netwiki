@@ -17,7 +17,7 @@ The module can be combined with other access modules via the [[12-directives/sat
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {

@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_geo_module` module creates variables with values depending on the client IP address.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 geo $geo {

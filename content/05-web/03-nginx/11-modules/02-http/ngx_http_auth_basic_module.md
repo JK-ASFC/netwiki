@@ -1,18 +1,15 @@
 ---
 title: "ngx_http_auth_basic_module"
-description: "Module nginx ngx_http_auth_basic_module — The ngx_http_auth_basic_module module allows limiting access to resources by validating the user name and password using the “HTTP Basic Authentication” protocol."
+description: "Module nginx ngx_http_auth_basic_module — Le module ngx_http_auth_basic_module permet de limiter l'accès aux ressources en vérifiant le nom d'utilisateur et le mot de passe selon le protocole « HTTP Basic Authentication »."
 tags: [nginx, module, ngx_http_auth_basic_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_auth_basic_module` permet de limiter l'accès aux ressources en vérifiant le nom d'utilisateur et le mot de passe selon le protocole « HTTP Basic Authentication ».
 
-The `ngx_http_auth_basic_module` module allows limiting access to resources by validating the user name and password using the “HTTP Basic Authentication” protocol.
+L'accès peut aussi être limité par [[11-modules/02-http/ngx_http_access_module|adresse]], par le [[11-modules/02-http/ngx_http_auth_request_module|résultat d'une sous-requête]] ou par [[11-modules/02-http/ngx_http_auth_jwt_module|JWT]]. La limitation simultanée par adresse et par mot de passe est contrôlée par la directive [[12-directives/satisfy|satisfy]].
 
-Access can also be limited by [[11-modules/02-http/ngx_http_access_module|address]], by the [[11-modules/02-http/ngx_http_auth_request_module|result of subrequest]], or by [[11-modules/02-http/ngx_http_auth_jwt_module|JWT]]. Simultaneous limitation of access by address and by password is controlled by the [[12-directives/satisfy|satisfy]] directive.
-
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

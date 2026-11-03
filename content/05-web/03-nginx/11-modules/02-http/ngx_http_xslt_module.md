@@ -15,7 +15,7 @@ This module is not built by default, it should be enabled with the `--with-http_
 > [!NOTE]
 > This module requires the [libxml2](http://xmlsoft.org) and [libxslt](http://xmlsoft.org/XSLT/) libraries.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

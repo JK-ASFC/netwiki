@@ -1,12 +1,9 @@
 ---
 title: "expires"
-description: "Directive nginx expires (ngx_http_headers_module) — Enables or disables adding or modifying the Expires and Cache-Control response header fields provided that the response code equals 200, 201 (1.3.10), 204, 206, 301, 302, 303, 304, 307 (1.1.16,…"
+description: "Directive nginx expires (ngx_http_headers_module) — Active ou désactive l'ajout ou la modification des champs d'en-tête de réponse Expires et Cache-Control si le code de réponse vaut 200, 201 (1.3.10), 204, 206, 301, 302, 303, 304, 307 (1.1.16,…"
 tags: [nginx, directive, ngx_http_headers_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,28 +14,28 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables adding or modifying the `Expires` and `Cache-Control` response header fields provided that the response code equals 200, 201 (1.3.10), 204, 206, 301, 302, 303, 304, 307 (1.1.16, 1.0.13), or 308 (1.13.0). The parameter can be a positive or negative [[10-guides/01-introduction/syntax|time]].
+Active ou désactive l'ajout ou la modification des champs d'en-tête de réponse `Expires` et `Cache-Control` si le code de réponse vaut 200, 201 (1.3.10), 204, 206, 301, 302, 303, 304, 307 (1.1.16, 1.0.13) ou 308 (1.13.0). Le paramètre peut être une [[10-guides/01-introduction/syntax|durée]] positive ou négative.
 
-The time in the `Expires` field is computed as a sum of the current time and *time* specified in the directive. If the `modified` parameter is used (0.7.0, 0.6.32) then the time is computed as a sum of the file’s modification time and the *time* specified in the directive.
+L'heure du champ `Expires` est calculée en ajoutant à l'heure actuelle la durée (*time*) indiquée dans la directive. Avec le paramètre `modified` (0.7.0, 0.6.32), elle est calculée en ajoutant cette durée à la date de modification du fichier.
 
-In addition, it is possible to specify a time of day using the “`@`” prefix (0.7.9, 0.6.34):
+Il est aussi possible d'indiquer une heure de la journée avec le préfixe « `@` » (0.7.9, 0.6.34) :
 
 ```nginx
 expires @15h30m;
 ```
 
-The contents of the `Cache-Control` field depends on the sign of the specified time:
+Le contenu du champ `Cache-Control` dépend du signe de la durée indiquée :
 
-- time is negative — `Cache-Control: no-cache`.
-- time is positive or zero — `Cache-Control: max-age=t`, where *t* is a time specified in the directive, in seconds.
+- durée négative : `Cache-Control: no-cache`.
+- durée positive ou nulle : `Cache-Control: max-age=t`, où *t* est la durée indiquée dans la directive, en secondes.
 
-The `epoch` parameter sets `Expires` to the value “`Thu, 01 Jan 1970 00:00:01 GMT`”, and `Cache-Control` to “`no-cache`”.
+Le paramètre `epoch` donne à `Expires` la valeur « `Thu, 01 Jan 1970 00:00:01 GMT` » et à `Cache-Control` la valeur « `no-cache` ».
 
-The `max` parameter sets `Expires` to the value “`Thu, 31 Dec 2037 23:55:55 GMT`”, and `Cache-Control` to 10 years.
+Le paramètre `max` donne à `Expires` la valeur « `Thu, 31 Dec 2037 23:55:55 GMT` » et règle `Cache-Control` sur 10 ans.
 
-The `off` parameter disables adding or modifying the `Expires` and `Cache-Control` response header fields.
+Le paramètre `off` désactive l'ajout ou la modification des champs d'en-tête de réponse `Expires` et `Cache-Control`.
 
-The last parameter value can contain variables (1.7.9):
+La valeur du dernier paramètre peut contenir des variables (1.7.9) :
 
 ```nginx
 map $sent_http_content_type $expires {

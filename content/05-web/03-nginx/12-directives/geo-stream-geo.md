@@ -32,7 +32,7 @@ If the value of a variable does not represent a valid IP address then the “`25
 
 Addresses are specified either as prefixes in CIDR notation (including individual addresses) or as ranges.
 
-The following special parameters are also supported:
+Les paramètres spéciaux suivants sont aussi pris en charge :
 
 - **`delete`**
 
@@ -54,7 +54,7 @@ The following special parameters are also supported:
 
   indicates that the variable is not cacheable (1.29.3).
 
-Example:
+Exemple :
 
 ```nginx
 geo $country {

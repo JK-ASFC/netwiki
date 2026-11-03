@@ -1,25 +1,22 @@
 ---
 title: "worker_priority"
-description: "Directive nginx worker_priority (Core functionality) — Defines the scheduling priority for worker processes like it is done by the nice command: a negative number means higher priority. Allowed range normally varies from -20 to 20. Example: nginx…"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx worker_priority (ngx_core_module) — Définit la priorité d'ordonnancement des processus de travail, comme la commande nice : un nombre (number) négatif signifie une priorité plus élevée. La plage autorisée va normalement de -20 à 20.…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `worker_priority number;` |
 | **Valeur par défaut** | `worker_priority 0;` |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Defines the scheduling priority for worker processes like it is done by the `nice` command: a negative *number* means higher priority. Allowed range normally varies from -20 to 20.
+Définit la priorité d'ordonnancement des processus de travail, comme la commande `nice` : un nombre (*number*) négatif signifie une priorité plus élevée. La plage autorisée va normalement de -20 à 20.
 
-Example:
+Exemple :
 
 ```nginx
 worker_priority -10;

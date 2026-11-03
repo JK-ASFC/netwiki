@@ -38,7 +38,7 @@ Health check is passed if:
 - the data obtained from the server matched the string or regular expression from the `expect` parameter, if specified;
 - the time elapsed does not exceed the value specified in the [[12-directives/health-check-timeout|health_check_timeout]] directive.
 
-Example:
+Exemple :
 
 ```nginx
 upstream backend {

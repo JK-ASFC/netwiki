@@ -1,18 +1,15 @@
 ---
 title: "ngx_http_log_module"
-description: "Module nginx ngx_http_log_module — The ngx_http_log_module module writes request logs in the specified format."
+description: "Module nginx ngx_http_log_module — Le module ngx_http_log_module écrit les journaux des requêtes au format indiqué."
 tags: [nginx, module, ngx_http_log_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_log_module` écrit les journaux des requêtes au format indiqué.
 
-The `ngx_http_log_module` module writes request logs in the specified format.
+Les requêtes sont journalisées dans le contexte du bloc location où leur traitement se termine. Il peut différer du bloc location d'origine si une [[12-directives/internal|redirection interne]] a lieu pendant le traitement.
 
-Requests are logged in the context of a location where processing ends. It may be different from the original location, if an [[12-directives/internal|internal redirect]] happens during request processing.
-
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 log_format compression '$remote_addr - $remote_user [$time_local] '

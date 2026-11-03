@@ -1,12 +1,9 @@
 ---
 title: "default_type"
-description: "Directive nginx default_type (ngx_http_core_module) — Defines the default MIME type of a response. Mapping of file name extensions to MIME types can be set with the types directive."
+description: "Directive nginx default_type (ngx_http_core_module) — Définit le type MIME par défaut d'une réponse. La correspondance entre extensions de fichiers et types MIME se règle avec la directive types."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the default MIME type of a response. Mapping of file name extensions to MIME types can be set with the [[12-directives/types|types]] directive.
+Définit le type MIME par défaut d'une réponse. La correspondance entre extensions de fichiers et types MIME se règle avec la directive [[12-directives/types|types]].
 
 ---
 

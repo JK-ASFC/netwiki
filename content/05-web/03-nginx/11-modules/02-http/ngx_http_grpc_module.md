@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_grpc_module` module allows passing requests to a gRPC server (1.13.10). The module requires the [[11-modules/02-http/ngx_http_v2_module|ngx_http_v2_module]] module.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 server {

@@ -18,7 +18,7 @@ Before version 1.9.14, buffering of a client request body could not be disabled 
 
 Before version 1.19.1, the [[12-directives/lingering-close|lingering_close]] mechanism was not used to control closing HTTP/2 connections.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 server {

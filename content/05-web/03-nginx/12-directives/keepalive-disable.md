@@ -1,12 +1,9 @@
 ---
 title: "keepalive_disable"
-description: "Directive nginx keepalive_disable (ngx_http_core_module) — Disables keep-alive connections with misbehaving browsers. The browser parameters specify which browsers will be affected. The value msie6 disables keep-alive connections with old versions of MSIE,…"
+description: "Directive nginx keepalive_disable (ngx_http_core_module) — Désactive les connexions persistantes avec les navigateurs au comportement incorrect. Les paramètres browser indiquent les navigateurs concernés. La valeur msie6 désactive les connexions persistantes…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Disables keep-alive connections with misbehaving browsers. The *browser* parameters specify which browsers will be affected. The value `msie6` disables keep-alive connections with old versions of MSIE, once a POST request is received. The value `safari` disables keep-alive connections with Safari and Safari-like browsers on macOS and macOS-like operating systems. The value `none` enables keep-alive connections with all browsers.
+Désactive les connexions persistantes avec les navigateurs au comportement incorrect. Les paramètres *browser* indiquent les navigateurs concernés. La valeur `msie6` désactive les connexions persistantes avec les anciennes versions de MSIE dès qu'une requête POST est reçue. La valeur `safari` les désactive avec Safari et les navigateurs similaires sous macOS et les systèmes similaires. La valeur `none` active les connexions persistantes avec tous les navigateurs.
 
 > [!NOTE]
-> Prior to version 1.1.18, the value `safari` matched all Safari and Safari-like browsers on all operating systems, and keep-alive connections with them were disabled by default.
+> Avant la version 1.1.18, la valeur `safari` concernait Safari et les navigateurs similaires sur tous les systèmes, et les connexions persistantes avec eux étaient désactivées par défaut.
 
 ---
 

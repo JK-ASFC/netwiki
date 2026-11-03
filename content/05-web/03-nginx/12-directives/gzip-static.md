@@ -1,12 +1,9 @@
 ---
 title: "gzip_static"
-description: "Directive nginx gzip_static (ngx_http_gzip_static_module) — Enables (“on”) or disables (“off”) checking the existence of precompressed files. The following directives are also taken into account: gzip_http_version, gzip_proxied, gzip_disable, and gzip_vary.…"
+description: "Directive nginx gzip_static (ngx_http_gzip_static_module) — Active (« on ») ou désactive (« off ») la recherche de fichiers précompressés. Les directives suivantes sont également prises en compte : gzip_http_version, gzip_proxied, gzip_disable et gzip_vary.…"
 tags: [nginx, directive, ngx_http_gzip_static_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Enables (“`on`”) or disables (“`off`”) checking the existence of precompressed files. The following directives are also taken into account: [[12-directives/gzip-http-version|gzip_http_version]], [[12-directives/gzip-proxied|gzip_proxied]], [[12-directives/gzip-disable|gzip_disable]], and [[12-directives/gzip-vary|gzip_vary]].
+Active (« `on` ») ou désactive (« `off` ») la recherche de fichiers précompressés. Les directives suivantes sont également prises en compte : [[12-directives/gzip-http-version|gzip_http_version]], [[12-directives/gzip-proxied|gzip_proxied]], [[12-directives/gzip-disable|gzip_disable]] et [[12-directives/gzip-vary|gzip_vary]].
 
-With the “`always`” value (1.3.6), gzipped file is used in all cases, without checking if the client supports it. It is useful if there are no uncompressed files on the disk anyway or the [[11-modules/02-http/ngx_http_gunzip_module|ngx_http_gunzip_module]] is used.
+Avec la valeur « `always` » (1.3.6), le fichier compressé est utilisé dans tous les cas, sans vérifier si le client le prend en charge. C'est utile s'il n'existe de toute façon aucun fichier non compressé sur le disque ou si le module [[11-modules/02-http/ngx_http_gunzip_module|ngx_http_gunzip_module]] est utilisé.
 
-The files can be compressed using the `gzip` command, or any other compatible one. It is recommended that the modification date and time of original and compressed files be the same.
+Les fichiers peuvent être compressés avec la commande `gzip` ou toute autre commande compatible. Il est recommandé que les fichiers d'origine et compressés aient la même date et la même heure de modification.
 
 ---
 

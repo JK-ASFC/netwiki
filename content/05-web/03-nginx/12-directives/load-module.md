@@ -1,12 +1,9 @@
 ---
 title: "load_module"
-description: "Directive nginx load_module (Core functionality) — Loads a dynamic module. Example: nginx load_module modules/ngx_mail_module.so;"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx load_module (ngx_core_module) — Charge un module dynamique. Exemple : nginx load_module modules/ngx_mail_module.so;"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -14,13 +11,13 @@ icon: settings-2
 | **Valeur par défaut** | — |
 | **Contexte** | `main` |
 | **Apparue dans la version** | 1.9.11 |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Loads a dynamic module.
+Charge un module dynamique.
 
-Example:
+Exemple :
 
 ```nginx
 load_module modules/ngx_mail_module.so;

@@ -12,7 +12,7 @@ The `ngx_http_sub_module` module is a filter that modifies a response by replaci
 
 This module is not built by default, it should be enabled with the `--with-http_sub_module` configuration parameter.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

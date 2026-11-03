@@ -12,7 +12,7 @@ The `ngx_http_js_module` module is used to implement location, variable, and fil
 
 Download and install instructions are available [[10-guides/04-njs/install|here]].
 
-## Example Configuration
+## Exemple de configuration
 
 The example works since 0.4.0.
 

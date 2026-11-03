@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_fastcgi_module` module allows passing requests to a FastCGI server.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

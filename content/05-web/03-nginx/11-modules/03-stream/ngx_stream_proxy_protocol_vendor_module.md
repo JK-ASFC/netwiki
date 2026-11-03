@@ -21,7 +21,7 @@ The PROXY protocol must be previously enabled by setting the `proxy_protocol` pa
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 server {

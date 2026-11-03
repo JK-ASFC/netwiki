@@ -1,12 +1,9 @@
 ---
 title: "add_trailer_inherit"
-description: "Directive nginx add_trailer_inherit (ngx_http_headers_module) — Allows altering inheritance rules for the values specified in the add_trailer directives. By default, the standard inheritance model is used. The merge parameter enables appending values from the…"
+description: "Directive nginx add_trailer_inherit (ngx_http_headers_module) — Permet de modifier les règles d'héritage des valeurs définies dans les directives add_trailer. Par défaut, le modèle d'héritage standard s'applique. Le paramètre merge ajoute les valeurs du niveau…"
 tags: [nginx, directive, ngx_http_headers_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,13 +15,13 @@ icon: settings-2
 
 ## Utilisation
 
-Allows altering inheritance rules for the values specified in the [[12-directives/add-trailer|add_trailer]] directives. By default, the standard inheritance model is used.
+Permet de modifier les règles d'héritage des valeurs définies dans les directives [[12-directives/add-trailer|add_trailer]]. Par défaut, le modèle d'héritage standard s'applique.
 
-The `merge` parameter enables appending values from the previous level to the values defined at the current level.
+Le paramètre `merge` ajoute les valeurs du niveau précédent à celles définies au niveau courant.
 
-The `off` parameter cancels inheritance of the values from the previous configuration level.
+Le paramètre `off` annule l'héritage des valeurs du niveau de configuration précédent.
 
-The inheritance rules themselves are inherited in a standard way. For example, `add_trailer_inherit merge;` specified at the top level will be inherited in all nested levels recursively unless redefined later.
+Les règles d'héritage sont elles-mêmes héritées de façon standard. Par exemple, `add_trailer_inherit merge;` indiqué au niveau le plus haut est hérité récursivement par tous les niveaux imbriqués, sauf redéfinition plus bas.
 
 ---
 

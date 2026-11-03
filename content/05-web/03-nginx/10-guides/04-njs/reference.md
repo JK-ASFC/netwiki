@@ -905,7 +905,7 @@ The `ngx` global object is available since 0.5.0.
 
     enables or disables verification of the HTTPS server certificate, by default is `true` (0.7.0)
 
-  Example:
+  Exemple :
 
   ```nginx
   let reply = await ngx.fetch('http://nginx.org/');
@@ -3030,7 +3030,7 @@ The Query String module provides support for parsing and formatting URL query st
 
 The XML module allows working with XML documents (since 0.7.10). The XML module object is imported using `import xml from 'xml'`.
 
-Example:
+Exemple :
 
 ```nginx
 import xml from 'xml';

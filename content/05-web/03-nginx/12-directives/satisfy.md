@@ -1,12 +1,9 @@
 ---
 title: "satisfy"
-description: "Directive nginx satisfy (ngx_http_core_module) — Allows access if all (all) or at least one (any) of the ngx_http_access_module, ngx_http_auth_basic_module, ngx_http_auth_request_module, ngx_http_auth_jwt_module (1.13.10), or…"
+description: "Directive nginx satisfy (ngx_http_core_module) — Autorise l'accès si tous (all) ou au moins un (any) des modules ngx_http_access_module, ngx_http_auth_basic_module, ngx_http_auth_request_module, ngx_http_auth_jwt_module (1.13.10) ou…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Allows access if all (`all`) or at least one (`any`) of the [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]], [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]], [[11-modules/02-http/ngx_http_auth_request_module|ngx_http_auth_request_module]], [[11-modules/02-http/ngx_http_auth_jwt_module|ngx_http_auth_jwt_module]] (1.13.10), or [[11-modules/02-http/ngx_http_auth_jwt_module|ngx_http_auth_oidc_module]] (1.27.4) modules allow access.
+Autorise l'accès si tous (`all`) ou au moins un (`any`) des modules [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]], [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]], [[11-modules/02-http/ngx_http_auth_request_module|ngx_http_auth_request_module]], [[11-modules/02-http/ngx_http_auth_jwt_module|ngx_http_auth_jwt_module]] (1.13.10) ou [[11-modules/02-http/ngx_http_auth_jwt_module|ngx_http_auth_oidc_module]] (1.27.4) l'autorisent.
 
-Example:
+Exemple :
 
 ```nginx
 location / {

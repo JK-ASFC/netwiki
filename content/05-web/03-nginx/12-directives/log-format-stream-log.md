@@ -30,7 +30,7 @@ The `escape` parameter (1.11.8) allows setting `json` or `default` characters es
 
 For `default` escaping, characters “`"`”, “`\`”, and other characters with values less than 32 or above 126 are escaped as “`\xXX`”. If the variable value is not found, a hyphen (“`-`”) will be logged.
 
-For `json` escaping, all characters not allowed in JSON [strings](https://datatracker.ietf.org/doc/html/rfc8259#section-7) will be escaped: characters “`"`” and “`\`” are escaped as “`\"`” and “`\\`”, characters with values less than 32 are escaped as “`\n`”, “`\r`”, “`\t`”, “`\b`”, “`\f`”, or “`\u00XX`”.
+Avec l'échappement `json`, tous les caractères interdits dans les [chaînes](https://datatracker.ietf.org/doc/html/rfc8259#section-7) JSON sont échappés : les caractères « `"` » et « `\` » deviennent « `\"` » et « `\\` », les caractères de valeur inférieure à 32 deviennent « `\n` », « `\r` », « `\t` », « `\b` », « `\f` » ou « `\u00XX` ».
 
 ---
 

@@ -1,16 +1,13 @@
 ---
 title: "ngx_http_index_module"
-description: "Module nginx ngx_http_index_module — The ngx_http_index_module module processes requests ending with the slash character (‘/’). Such requests can also be processed by the ngx_http_autoindex_module and ngx_http_random_index_module modules."
+description: "Module nginx ngx_http_index_module — Le module ngx_http_index_module traite les requêtes qui se terminent par une barre oblique (‘/’). Ces requêtes peuvent aussi être traitées par les modules ngx_http_autoindex_module et ngx_http_random_index_module."
 tags: [nginx, module, ngx_http_index_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_index_module` traite les requêtes qui se terminent par une barre oblique (‘`/`’). Ces requêtes peuvent aussi être traitées par les modules [[11-modules/02-http/ngx_http_autoindex_module|ngx_http_autoindex_module]] et [[11-modules/02-http/ngx_http_random_index_module|ngx_http_random_index_module]].
 
-The `ngx_http_index_module` module processes requests ending with the slash character (‘`/`’). Such requests can also be processed by the [[11-modules/02-http/ngx_http_autoindex_module|ngx_http_autoindex_module]] and [[11-modules/02-http/ngx_http_random_index_module|ngx_http_random_index_module]] modules.
-
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

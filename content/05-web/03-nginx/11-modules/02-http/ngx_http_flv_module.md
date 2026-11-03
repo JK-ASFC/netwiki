@@ -14,7 +14,7 @@ It handles requests with the `start` argument in the request URI’s query strin
 
 This module is not built by default, it should be enabled with the `--with-http_flv_module` configuration parameter.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location ~ \.flv$ {

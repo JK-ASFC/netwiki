@@ -1,12 +1,9 @@
 ---
 title: "gzip"
-description: "Directive nginx gzip (ngx_http_gzip_module) — Enables or disables gzipping of responses."
+description: "Directive nginx gzip (ngx_http_gzip_module) — Active ou désactive la compression gzip des réponses."
 tags: [nginx, directive, ngx_http_gzip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables gzipping of responses.
+Active ou désactive la compression gzip des réponses.
 
 ---
 

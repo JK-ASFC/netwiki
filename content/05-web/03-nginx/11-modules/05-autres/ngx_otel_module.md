@@ -14,7 +14,7 @@ The source code of the module is available [here](https://github.com/nginx/nginx
 
 The module is also available in a prebuilt `nginx-module-otel` package since 1.25.3 and in `nginx-plus-module-otel` package as part of our [abonnement commercial](https://nginx.com/products/) since 1.23.4.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 load_module modules/ngx_otel_module.so;

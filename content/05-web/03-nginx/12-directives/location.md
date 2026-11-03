@@ -1,12 +1,9 @@
 ---
 title: "location"
-description: "Directive nginx location (ngx_http_core_module) — Sets configuration depending on a request URI or the value of a variable (1.31.5). The matching is performed against a normalized URI, after decoding the text encoded in the “%XX” form, resolving…"
+description: "Directive nginx location (ngx_http_core_module) — Définit une configuration selon l'URI de la requête ou la valeur d'une variable (1.31.5). La correspondance porte sur l'URI normalisé, après décodage du texte encodé sous la forme « %XX », résolution…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,31 +14,31 @@ icon: settings-2
 
 ## Utilisation
 
-Sets configuration depending on a request URI or the value of a variable (1.31.5).
+Définit une configuration selon l'URI de la requête ou la valeur d'une variable (1.31.5).
 
-The matching is performed against a normalized URI, after decoding the text encoded in the “`%XX`” form, resolving references to relative path components “`.`” and “`..`”, and possible [[12-directives/merge-slashes|compression]] of two or more adjacent slashes into a single slash.
+La correspondance porte sur l'URI normalisé, après décodage du texte encodé sous la forme « `%XX` », résolution des composantes relatives « `.` » et « `..` » et éventuelle [[12-directives/merge-slashes|fusion]] de plusieurs barres obliques consécutives en une seule.
 
-A location can be defined by a prefix string, a regular expression, or a predicate (1.31.5). Regular expressions are specified with the preceding “`~*`” modifier (for case-insensitive matching), or the “`~`” modifier (for case-sensitive matching). A predicate is specified with the preceding “`$`” and contains a variable evaluated during request processing. A predicate location matches if the variable value is not empty and is not equal to “0”.
-
-> [!NOTE]
-> The value of a cacheable variable is evaluated once per request, and is also used when locations are searched after an internal redirect and in subrequests. To evaluate a predicate on each location search, a non-cacheable variable can be used, for example, a [[12-directives/map-http-map|map]] variable with the `volatile` parameter.
-
-To find location matching a given request, nginx first checks locations defined using the prefix strings (prefix locations). Among them, the location with the longest matching prefix is selected and remembered. Then regular expressions are checked, in the order of their appearance in the configuration file. The search of regular expressions terminates on the first match, and the corresponding configuration is used. If no match with a regular expression is found, predicate locations are checked in the order of their appearance in the configuration file. If no predicate location matches, the configuration of the prefix location remembered earlier is used.
-
-`location` blocks can be nested, with some exceptions mentioned below.
-
-For case-insensitive operating systems such as macOS and Cygwin, matching with prefix strings ignores a case (0.7.7). However, comparison is limited to one-byte locales.
-
-Regular expressions can contain captures (0.7.40) that can later be used in other directives, see [[10-guides/01-introduction/regex-captures|Regular expression captures]].
-
-If the longest matching prefix location has the “`^~`” modifier, then regular expressions and predicate locations are not checked.
-
-Also, using the “`=`” modifier it is possible to define an exact match of URI and location. If an exact match is found, the search terminates. For example, if a “`/`” request happens frequently, defining “`location = /`” will speed up the processing of these requests, as search terminates right after the first comparison. Such a location cannot obviously contain nested locations.
+Un bloc location peut être défini par une chaîne de préfixe, une expression régulière ou un prédicat (1.31.5). Les expressions régulières sont précédées du modificateur « `~*` » (correspondance insensible à la casse) ou « `~` » (sensible à la casse). Un prédicat est précédé de « `$` » et contient une variable évaluée pendant le traitement de la requête ; il correspond si la valeur de la variable n'est ni vide ni égale à « 0 ».
 
 > [!NOTE]
-> In versions from 0.7.1 to 0.8.41, if a request matched the prefix location without the “`=`” and “`^~`” modifiers, the search also terminated and regular expressions were not checked.
+> La valeur d'une variable mise en cache est évaluée une fois par requête ; elle sert aussi lors de la recherche des blocs location après une redirection interne et dans les sous-requêtes. Pour évaluer un prédicat à chaque recherche, on peut utiliser une variable non mise en cache, par exemple une variable [[12-directives/map-http-map|map]] avec le paramètre `volatile`.
 
-Let’s illustrate the above by an example:
+Pour trouver le bloc location qui correspond à une requête, nginx examine d'abord les blocs définis par des chaînes de préfixe (blocs à préfixe). Parmi eux, celui dont le préfixe correspondant est le plus long est retenu et mémorisé. Ensuite, les expressions régulières sont examinées dans l'ordre d'apparition dans le fichier de configuration. La recherche s'arrête à la première correspondance, dont la configuration est utilisée. Si aucune expression régulière ne correspond, les blocs à prédicat sont examinés dans l'ordre d'apparition. Si aucun ne correspond, la configuration du bloc à préfixe mémorisé précédemment est utilisée.
+
+Les blocs `location` peuvent être imbriqués, avec quelques exceptions décrites ci-dessous.
+
+Sur les systèmes d'exploitation insensibles à la casse, comme macOS et Cygwin, la comparaison avec les chaînes de préfixe ignore la casse (0.7.7). Elle est toutefois limitée aux paramètres régionaux à un octet.
+
+Les expressions régulières peuvent contenir des captures (0.7.40) réutilisables ensuite dans d'autres directives ; voir [[10-guides/01-introduction/regex-captures|Captures des expressions régulières]].
+
+Si le bloc à préfixe correspondant le plus long porte le modificateur « `^~` », les expressions régulières et les blocs à prédicat ne sont pas examinés.
+
+Le modificateur « `=` » permet en outre de définir une correspondance exacte entre l'URI et le bloc location. Si une correspondance exacte est trouvée, la recherche s'arrête. Par exemple, si les requêtes « `/` » sont fréquentes, définir « `location = /` » accélère leur traitement, car la recherche s'arrête dès la première comparaison. Un tel bloc ne peut évidemment pas contenir de blocs imbriqués.
+
+> [!NOTE]
+> Dans les versions 0.7.1 à 0.8.41, si une requête correspondait à un bloc à préfixe sans les modificateurs « `=` » et « `^~` », la recherche s'arrêtait aussi et les expressions régulières n'étaient pas examinées.
+
+Illustrons cela par un exemple :
 
 ```nginx
 location = / {
@@ -69,11 +66,11 @@ location $arg_pred {
 }
 ```
 
-The “`/`” request will match configuration A, the “`/index.html`” request will match configuration B, the “`/documents/document.html`” request will match configuration C, the “`/images/1.gif`” request will match configuration D, the “`/documents/1.jpg`” request will match configuration E, and the “`/documents/index.html?pred=1`” request will match configuration F.
+La requête « `/` » correspond à la configuration A, « `/index.html` » à la configuration B, « `/documents/document.html` » à la configuration C, « `/images/1.gif` » à la configuration D, « `/documents/1.jpg` » à la configuration E et « `/documents/index.html?pred=1` » à la configuration F.
 
-The “`@`” prefix defines a named location. Such a location is not used for a regular request processing, but instead used for request redirection. They cannot be nested, and cannot contain nested locations.
+Le préfixe « `@` » définit un bloc location nommé. Un tel bloc ne sert pas au traitement normal des requêtes, mais à leur redirection. Ces blocs ne peuvent pas être imbriqués ni contenir de blocs imbriqués.
 
-If a location is defined by a prefix string that ends with the slash character, and requests are processed by one of [[12-directives/proxy-pass-http-proxy|proxy_pass]], [[12-directives/fastcgi-pass|fastcgi_pass]], [[12-directives/uwsgi-pass|uwsgi_pass]], [[12-directives/scgi-pass|scgi_pass]], [[12-directives/memcached-pass|memcached_pass]], or [[12-directives/grpc-pass|grpc_pass]], then the special processing is performed. In response to a request with URI equal to this string, but without the trailing slash, a permanent redirect with the code 301 will be returned to the requested URI with the slash appended. If this is not desired, an exact match of the URI and location could be defined like this:
+Si un bloc location est défini par une chaîne de préfixe terminée par une barre oblique et que les requêtes sont traitées par [[12-directives/proxy-pass-http-proxy|proxy_pass]], [[12-directives/fastcgi-pass|fastcgi_pass]], [[12-directives/uwsgi-pass|uwsgi_pass]], [[12-directives/scgi-pass|scgi_pass]], [[12-directives/memcached-pass|memcached_pass]] ou [[12-directives/grpc-pass|grpc_pass]], un traitement particulier s'applique : une requête dont l'URI est égal à cette chaîne, mais sans la barre oblique finale, reçoit une redirection permanente (code 301) vers l'URI demandé suivi de la barre oblique. Si ce n'est pas souhaité, on peut définir une correspondance exacte de l'URI et du bloc location, comme ceci :
 
 ```nginx
 location /user/ {

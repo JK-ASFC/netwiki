@@ -1,12 +1,9 @@
 ---
 title: "disable_symlinks"
-description: "Directive nginx disable_symlinks (ngx_http_core_module) — Determines how symbolic links should be treated when opening files: - off Symbolic links in the pathname are allowed and not checked. This is the default behavior. - on If any component of the…"
+description: "Directive nginx disable_symlinks (ngx_http_core_module) — Détermine le traitement des liens symboliques à l'ouverture des fichiers : - off Les liens symboliques du chemin sont autorisés et ne sont pas vérifiés. C'est le comportement par défaut. - on Si…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,39 +15,39 @@ icon: settings-2
 
 ## Utilisation
 
-Determines how symbolic links should be treated when opening files:
+Détermine le traitement des liens symboliques à l'ouverture des fichiers :
 
 - **`off`**
 
-  Symbolic links in the pathname are allowed and not checked. This is the default behavior.
+  Les liens symboliques du chemin sont autorisés et ne sont pas vérifiés. C'est le comportement par défaut.
 
 - **`on`**
 
-  If any component of the pathname is a symbolic link, access to a file is denied.
+  Si l'une des composantes du chemin est un lien symbolique, l'accès au fichier est refusé.
 
 - **`if_not_owner`**
 
-  Access to a file is denied if any component of the pathname is a symbolic link, and the link and object that the link points to have different owners.
+  L'accès au fichier est refusé si l'une des composantes du chemin est un lien symbolique et que le lien et l'objet visé n'ont pas le même propriétaire.
 
 - **`from`=*part***
 
-  When checking symbolic links (parameters `on` and `if_not_owner`), all components of the pathname are normally checked. Checking of symbolic links in the initial part of the pathname may be avoided by specifying additionally the `from`=*part* parameter. In this case, symbolic links are checked only from the pathname component that follows the specified initial part. If the value is not an initial part of the pathname checked, the whole pathname is checked as if this parameter was not specified at all. If the value matches the whole file name, symbolic links are not checked. The parameter value can contain variables.
+  Lors de la vérification des liens symboliques (paramètres `on` et `if_not_owner`), toutes les composantes du chemin sont normalement vérifiées. On peut éviter de vérifier la partie initiale du chemin en ajoutant le paramètre `from`=*part* : les liens symboliques ne sont alors vérifiés qu'à partir de la composante qui suit cette partie initiale. Si la valeur n'est pas une partie initiale du chemin vérifié, tout le chemin est vérifié comme si ce paramètre était absent. Si la valeur correspond au nom de fichier complet, les liens symboliques ne sont pas vérifiés. La valeur du paramètre peut contenir des variables.
 
-Example:
+Exemple :
 
 ```nginx
 disable_symlinks on from=$document_root;
 ```
 
-This directive is only available on systems that have the `openat` and `fstatat` interfaces. Such systems include modern versions of FreeBSD, Linux, and Solaris.
+Cette directive n'est disponible que sur les systèmes qui disposent des interfaces `openat` et `fstatat`, notamment les versions récentes de FreeBSD, Linux et Solaris.
 
-Parameters `on` and `if_not_owner` add a processing overhead.
-
-> [!NOTE]
-> On systems that do not support opening of directories only for search, to use these parameters it is required that worker processes have read permissions for all directories being checked.
+Les paramètres `on` et `if_not_owner` ajoutent un surcoût de traitement.
 
 > [!NOTE]
-> The [[11-modules/02-http/ngx_http_autoindex_module|ngx_http_autoindex_module]], [[11-modules/02-http/ngx_http_random_index_module|ngx_http_random_index_module]], and [[11-modules/02-http/ngx_http_dav_module|ngx_http_dav_module]] modules currently ignore this directive.
+> Sur les systèmes qui ne permettent pas d'ouvrir des répertoires uniquement pour la recherche, l'utilisation de ces paramètres exige que les processus de travail aient le droit de lecture sur tous les répertoires vérifiés.
+
+> [!NOTE]
+> Les modules [[11-modules/02-http/ngx_http_autoindex_module|ngx_http_autoindex_module]], [[11-modules/02-http/ngx_http_random_index_module|ngx_http_random_index_module]] et [[11-modules/02-http/ngx_http_dav_module|ngx_http_dav_module]] ignorent actuellement cette directive.
 
 ---
 

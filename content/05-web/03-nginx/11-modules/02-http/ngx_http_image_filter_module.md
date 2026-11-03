@@ -18,7 +18,7 @@ This module is not built by default, it should be enabled with the `--with-http_
 > [!NOTE]
 > The WebP format support appeared in version 1.11.6. To transform images in this format, the `libgd` library must be compiled with the WebP support.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location /img/ {

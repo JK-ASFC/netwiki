@@ -1,12 +1,9 @@
 ---
 title: "gzip_vary"
-description: "Directive nginx gzip_vary (ngx_http_gzip_module) — Enables or disables inserting the Vary: Accept-Encoding response header field if the directives gzip, gzip_static, or gunzip are active."
+description: "Directive nginx gzip_vary (ngx_http_gzip_module) — Active ou désactive l'ajout du champ d'en-tête de réponse Vary: Accept-Encoding si l'une des directives gzip, gzip_static ou gunzip est active."
 tags: [nginx, directive, ngx_http_gzip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables inserting the `Vary: Accept-Encoding` response header field if the directives [[12-directives/gzip|gzip]], [[12-directives/gzip-static|gzip_static]], or [[12-directives/gunzip|gunzip]] are active.
+Active ou désactive l'ajout du champ d'en-tête de réponse `Vary: Accept-Encoding` si l'une des directives [[12-directives/gzip|gzip]], [[12-directives/gzip-static|gzip_static]] ou [[12-directives/gunzip|gunzip]] est active.
 
 ---
 

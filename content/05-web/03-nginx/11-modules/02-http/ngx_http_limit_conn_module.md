@@ -1,18 +1,15 @@
 ---
 title: "ngx_http_limit_conn_module"
-description: "Module nginx ngx_http_limit_conn_module — The ngx_http_limit_conn_module module is used to limit the number of connections per the defined key, in particular, the number of connections from a single IP address."
+description: "Module nginx ngx_http_limit_conn_module — Le module ngx_http_limit_conn_module sert à limiter le nombre de connexions par clé définie, en particulier le nombre de connexions provenant d'une même adresse IP."
 tags: [nginx, module, ngx_http_limit_conn_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_limit_conn_module` sert à limiter le nombre de connexions par clé définie, en particulier le nombre de connexions provenant d'une même adresse IP.
 
-The `ngx_http_limit_conn_module` module is used to limit the number of connections per the defined key, in particular, the number of connections from a single IP address.
+Toutes les connexions ne sont pas comptées : une connexion n'est comptée que si une requête est en cours de traitement par le serveur et que tout l'en-tête de la requête a déjà été lu.
 
-Not all connections are counted. A connection is counted only if it has a request being processed by the server and the whole request header has already been read.
-
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {

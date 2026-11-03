@@ -1,55 +1,52 @@
 ---
 title: "worker_cpu_affinity"
-description: "Directive nginx worker_cpu_affinity (Core functionality) — Binds worker processes to the sets of CPUs. Each CPU set is represented by a bitmask of allowed CPUs. There should be a separate set defined for each of the worker processes. By default, worker…"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx worker_cpu_affinity (ngx_core_module) — Associe les processus de travail à des ensembles de processeurs. Chaque ensemble est représenté par un masque de bits des processeurs autorisés. Un ensemble distinct doit être défini pour chaque…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `worker_cpu_affinity cpumask ...;` ou `worker_cpu_affinity auto [cpumask];` |
 | **Valeur par défaut** | — |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Binds worker processes to the sets of CPUs. Each CPU set is represented by a bitmask of allowed CPUs. There should be a separate set defined for each of the worker processes. By default, worker processes are not bound to any specific CPUs.
+Associe les processus de travail à des ensembles de processeurs. Chaque ensemble est représenté par un masque de bits des processeurs autorisés. Un ensemble distinct doit être défini pour chaque processus de travail. Par défaut, les processus de travail ne sont associés à aucun processeur particulier.
 
-For example,
+Par exemple,
 
 ```nginx
 worker_processes    4;
 worker_cpu_affinity 0001 0010 0100 1000;
 ```
 
-binds each worker process to a separate CPU, while
+associe chaque processus de travail à un processeur distinct, tandis que
 
 ```nginx
 worker_processes    2;
 worker_cpu_affinity 0101 1010;
 ```
 
-binds the first worker process to CPU0/CPU2, and the second worker process to CPU1/CPU3. The second example is suitable for hyper-threading.
+associe le premier processus de travail à CPU0/CPU2 et le second à CPU1/CPU3. Le second exemple convient à l'hyper-threading.
 
-The special value `auto` (1.9.10) allows binding worker processes automatically to available CPUs:
+La valeur spéciale `auto` (1.9.10) associe automatiquement les processus de travail aux processeurs disponibles :
 
 ```nginx
 worker_processes auto;
 worker_cpu_affinity auto;
 ```
 
-The optional mask parameter can be used to limit the CPUs available for automatic binding:
+Le paramètre facultatif de masque permet de limiter les processeurs disponibles pour l'association automatique :
 
 ```nginx
 worker_cpu_affinity auto 01010101;
 ```
 
 > [!NOTE]
-> The directive is only available on FreeBSD and Linux.
+> Cette directive n'est disponible que sous FreeBSD et Linux.
 
 ---
 

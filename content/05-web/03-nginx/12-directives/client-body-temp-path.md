@@ -1,12 +1,9 @@
 ---
 title: "client_body_temp_path"
-description: "Directive nginx client_body_temp_path (ngx_http_core_module) — Defines a directory for storing temporary files holding client request bodies. Up to three-level subdirectory hierarchy can be used under the specified directory. For example, in the following…"
+description: "Directive nginx client_body_temp_path (ngx_http_core_module) — Définit le répertoire des fichiers temporaires contenant le corps des requêtes des clients. Jusqu'à trois niveaux de sous-répertoires peuvent être utilisés sous ce répertoire. Par exemple, avec la…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a directory for storing temporary files holding client request bodies. Up to three-level subdirectory hierarchy can be used under the specified directory. For example, in the following configuration
+Définit le répertoire des fichiers temporaires contenant le corps des requêtes des clients. Jusqu'à trois niveaux de sous-répertoires peuvent être utilisés sous ce répertoire. Par exemple, avec la configuration suivante
 
 ```nginx
 client_body_temp_path /spool/nginx/client_temp 1 2;
 ```
 
-a path to a temporary file might look like this:
+le chemin d'un fichier temporaire peut ressembler à ceci :
 
 ```nginx
 /spool/nginx/client_temp/7/45/00000123457

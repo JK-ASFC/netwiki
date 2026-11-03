@@ -1,0 +1,6 @@
+{
+ "4e45449dd5ed": "Le module `ngx_http_gunzip_module` est un filtre qui décompresse les réponses portant « `Content-Encoding: gzip` » pour les clients qui ne prennent pas en charge la méthode d'encodage « gzip ». Il est utile lorsqu'on souhaite stocker les données compressées pour gagner de la place et réduire les entrées-sorties.",
+ "7007753c01bd": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_gunzip_module`.",
+ "ef064ba56da4": "Définit le nombre (*number*) et la taille (*size*) des tampons utilisés pour décompresser une réponse. Par défaut, la taille d'un tampon est égale à une page mémoire, soit 4K ou 8K selon la plate-forme.",
+ "fc16c154862e": "Active ou désactive la décompression des réponses compressées pour les clients qui ne prennent pas en charge gzip. Si elle est activée, les directives suivantes sont également prises en compte pour déterminer si les clients prennent en charge gzip : [[12-directives/gzip-http-version|gzip_http_version]], [[12-directives/gzip-proxied|gzip_proxied]] et [[12-directives/gzip-disable|gzip_disable]]. Voir aussi la directive [[12-directives/gzip-vary|gzip_vary]]."
+}

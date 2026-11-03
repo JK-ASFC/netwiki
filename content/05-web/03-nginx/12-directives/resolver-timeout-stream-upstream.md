@@ -1,6 +1,6 @@
 ---
 title: "resolver_timeout (ngx_stream_upstream_module)"
-description: "Directive nginx resolver_timeout (ngx_stream_upstream_module) — Sets a timeout for name resolution, for example: nginx resolver_timeout 5s; NOTE Since version 1.17.5 and prior to version 1.27.3, this directive was available only as part of our abonnement…"
+description: "Directive nginx resolver_timeout (ngx_stream_upstream_module) — Définit le délai de résolution des noms, par exemple : nginx resolver_timeout 5s; NOTE Since version 1.17.5 and prior to version 1.27.3, this directive was available only as part of our abonnement…"
 tags: [nginx, directive, ngx_stream_upstream_module]
 icon: settings-2
 ---
@@ -18,7 +18,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a timeout for name resolution, for example:
+Définit le délai de résolution des noms, par exemple :
 
 ```nginx
 resolver_timeout 5s;

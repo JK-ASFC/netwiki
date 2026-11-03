@@ -1,23 +1,20 @@
 ---
 title: "master_process"
-description: "Directive nginx master_process (Core functionality) — Determines whether worker processes are started. This directive is intended for nginx developers."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx master_process (ngx_core_module) — Détermine si les processus de travail sont démarrés. Cette directive est destinée aux développeurs de nginx."
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `master_process on \| off;` |
 | **Valeur par défaut** | `master_process on;` |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Determines whether worker processes are started. This directive is intended for nginx developers.
+Détermine si les processus de travail sont démarrés. Cette directive est destinée aux développeurs de nginx.
 
 ---
 

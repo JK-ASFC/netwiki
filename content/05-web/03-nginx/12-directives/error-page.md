@@ -1,12 +1,9 @@
 ---
 title: "error_page"
-description: "Directive nginx error_page (ngx_http_core_module) — Defines the URI that will be shown for the specified errors. A uri value can contain variables. Example: nginx error_page 404 /404.html; error_page 500 502 503 504 /50x.html; This causes an internal…"
+description: "Directive nginx error_page (ngx_http_core_module) — Définit l'URI affiché pour les erreurs indiquées. La valeur uri peut contenir des variables. Exemple : nginx error_page 404 /404.html; error_page 500 502 503 504 /50x.html; Cela provoque une…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,30 +14,30 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the URI that will be shown for the specified errors. A *uri* value can contain variables.
+Définit l'URI affiché pour les erreurs indiquées. La valeur *uri* peut contenir des variables.
 
-Example:
+Exemple :
 
 ```nginx
 error_page 404             /404.html;
 error_page 500 502 503 504 /50x.html;
 ```
 
-This causes an internal redirect to the specified *uri* with the client request method changed to “`GET`” (for all methods other than “`GET`” and “`HEAD`”).
+Cela provoque une redirection interne vers l'*uri* indiqué, la méthode de la requête du client devenant « `GET` » (pour toutes les méthodes autres que « `GET` » et « `HEAD` »).
 
-Furthermore, it is possible to change the response code to another using the “`=`*response*” syntax, for example:
+Il est en outre possible de remplacer le code de réponse par un autre avec la syntaxe « `=`*response* », par exemple :
 
 ```nginx
 error_page 404 =200 /empty.gif;
 ```
 
-If an error response is processed by a proxied server or a FastCGI/uwsgi/SCGI/gRPC server, and the server may return different response codes (e.g., 200, 302, 401 or 404), it is possible to respond with the code it returns:
+Si une réponse d'erreur est traitée par un serveur mandaté ou un serveur FastCGI/uwsgi/SCGI/gRPC, et que ce serveur peut renvoyer différents codes de réponse (par exemple 200, 302, 401 ou 404), il est possible de répondre avec le code qu'il renvoie :
 
 ```nginx
 error_page 404 = /404.php;
 ```
 
-If there is no need to change URI and method during internal redirection it is possible to pass error processing into a named location:
+S'il n'est pas nécessaire de modifier l'URI et la méthode lors de la redirection interne, le traitement de l'erreur peut être confié à un bloc location nommé :
 
 ```nginx
 location / {
@@ -53,24 +50,24 @@ location @fallback {
 ```
 
 > [!NOTE]
-> If *uri* processing leads to an error, the status code of the last occurred error is returned to the client.
+> Si le traitement de l'*uri* provoque une erreur, le code de statut de la dernière erreur survenue est renvoyé au client.
 
-It is also possible to use URL redirects for error processing:
+Il est aussi possible d'utiliser des redirections d'URL pour traiter les erreurs :
 
 ```nginx
 error_page 403      http://example.com/forbidden.html;
 error_page 404 =301 http://example.com/notfound.html;
 ```
 
-In this case, by default, the response code 302 is returned to the client. It can only be changed to one of the redirect status codes (301, 302, 303, 307, and 308).
+Dans ce cas, le code de réponse 302 est renvoyé par défaut au client. Il ne peut être remplacé que par l'un des codes de redirection (301, 302, 303, 307 et 308).
 
 > [!NOTE]
-> The code 307 was not treated as a redirect until versions 1.1.16 and 1.0.13.
+> Le code 307 n'était pas traité comme une redirection avant les versions 1.1.16 et 1.0.13.
 
 > [!NOTE]
-> The code 308 was not treated as a redirect until version 1.13.0.
+> Le code 308 n'était pas traité comme une redirection avant la version 1.13.0.
 
-These directives are inherited from the previous configuration level if and only if there are no `error_page` directives defined on the current level.
+Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `error_page` n'est définie au niveau courant.
 
 ---
 

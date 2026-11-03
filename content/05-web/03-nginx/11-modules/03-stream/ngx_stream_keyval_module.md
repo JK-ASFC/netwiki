@@ -13,7 +13,7 @@ The `ngx_stream_keyval_module` module (1.13.7) creates variables with values tak
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {

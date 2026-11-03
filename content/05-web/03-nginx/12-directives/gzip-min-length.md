@@ -1,12 +1,9 @@
 ---
 title: "gzip_min_length"
-description: "Directive nginx gzip_min_length (ngx_http_gzip_module) — Sets the minimum length of a response that will be gzipped. The length is determined only from the Content-Length response header field."
+description: "Directive nginx gzip_min_length (ngx_http_gzip_module) — Définit la longueur minimale d'une réponse pour qu'elle soit compressée. La longueur est déterminée uniquement à partir du champ d'en-tête de réponse Content-Length."
 tags: [nginx, directive, ngx_http_gzip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the minimum length of a response that will be gzipped. The length is determined only from the `Content-Length` response header field.
+Définit la longueur minimale d'une réponse pour qu'elle soit compressée. La longueur est déterminée uniquement à partir du champ d'en-tête de réponse `Content-Length`.
 
 ---
 

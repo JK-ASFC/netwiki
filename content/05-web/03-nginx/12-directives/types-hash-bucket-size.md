@@ -1,12 +1,9 @@
 ---
 title: "types_hash_bucket_size"
-description: "Directive nginx types_hash_bucket_size (ngx_http_core_module) — Sets the bucket size for the types hash tables. The details of setting up hash tables are provided in a separate document. NOTE Prior to version 1.5.13, the default value depended on the size of the…"
+description: "Directive nginx types_hash_bucket_size (ngx_http_core_module) — Définit la taille des compartiments des tables de hachage des types. Le réglage des tables de hachage est détaillé dans un document distinct. NOTE Avant la version 1.5.13, la valeur par défaut…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the bucket size for the types hash tables. The details of setting up hash tables are provided in a separate [[10-guides/01-introduction/hash|document]].
+Définit la taille des compartiments des tables de hachage des types. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]].
 
 > [!NOTE]
-> Prior to version 1.5.13, the default value depended on the size of the processor’s cache line.
+> Avant la version 1.5.13, la valeur par défaut dépendait de la taille de ligne de cache du processeur.
 
 ---
 

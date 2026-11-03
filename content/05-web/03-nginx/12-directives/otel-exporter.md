@@ -43,7 +43,7 @@ Specifies OTel data export parameters:
 
   the number of pending batches per worker, spans exceeding the limit are dropped, by default is `4`.
 
-Example:
+Exemple :
 
 ```nginx
 otel_exporter {

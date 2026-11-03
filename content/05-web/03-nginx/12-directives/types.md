@@ -1,12 +1,9 @@
 ---
 title: "types"
-description: "Directive nginx types (ngx_http_core_module) — Maps file name extensions to MIME types of responses. Extensions are case-insensitive. Several extensions can be mapped to one type, for example: nginx types { application/octet-stream bin exe dll;…"
+description: "Directive nginx types (ngx_http_core_module) — Associe des extensions de noms de fichiers aux types MIME des réponses. Les extensions sont insensibles à la casse. Plusieurs extensions peuvent être associées à un même type, par exemple : nginx…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Maps file name extensions to MIME types of responses. Extensions are case-insensitive. Several extensions can be mapped to one type, for example:
+Associe des extensions de noms de fichiers aux types MIME des réponses. Les extensions sont insensibles à la casse. Plusieurs extensions peuvent être associées à un même type, par exemple :
 
 ```nginx
 types {
@@ -27,9 +24,9 @@ types {
 }
 ```
 
-A sufficiently full mapping table is distributed with nginx in the `conf/mime.types` file.
+Une table de correspondance assez complète est fournie avec nginx dans le fichier `conf/mime.types`.
 
-To make a particular location emit the “`application/octet-stream`” MIME type for all requests, the following configuration can be used:
+Pour qu'un bloc location renvoie le type MIME « `application/octet-stream` » pour toutes les requêtes, on peut utiliser la configuration suivante :
 
 ```nginx
 location /download/ {

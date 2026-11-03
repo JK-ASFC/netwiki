@@ -13,7 +13,7 @@ The `ngx_stream_mqtt_filter_module` module (1.23.4) provides support for Message
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 listen            127.0.0.1:18883;

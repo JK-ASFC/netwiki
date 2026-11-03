@@ -1,12 +1,9 @@
 ---
 title: "gzip_comp_level"
-description: "Directive nginx gzip_comp_level (ngx_http_gzip_module) — Sets a gzip compression level of a response. Acceptable values are in the range from 1 to 9."
+description: "Directive nginx gzip_comp_level (ngx_http_gzip_module) — Définit le niveau (level) de compression gzip d'une réponse. Les valeurs acceptées vont de 1 à 9."
 tags: [nginx, directive, ngx_http_gzip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a gzip compression *level* of a response. Acceptable values are in the range from 1 to 9.
+Définit le niveau (*level*) de compression gzip d'une réponse. Les valeurs acceptées vont de 1 à 9.
 
 ---
 

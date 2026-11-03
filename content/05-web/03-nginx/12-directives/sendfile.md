@@ -1,12 +1,9 @@
 ---
 title: "sendfile"
-description: "Directive nginx sendfile (ngx_http_core_module) — Enables or disables the use of sendfile. Starting from nginx 0.8.12 and FreeBSD 5.2.1, aio can be used to pre-load data for sendfile: nginx location /video/ { sendfile on; tcp_nopush on; aio on; } In…"
+description: "Directive nginx sendfile (ngx_http_core_module) — Active ou désactive l'utilisation de sendfile. À partir de nginx 0.8.12 et FreeBSD 5.2.1, aio permet de précharger les données pour sendfile : nginx location /video/ { sendfile on; tcp_nopush on; aio…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables the use of `sendfile`.
+Active ou désactive l'utilisation de `sendfile`.
 
-Starting from nginx 0.8.12 and FreeBSD 5.2.1, [[12-directives/aio|aio]] can be used to pre-load data for `sendfile`:
+À partir de nginx 0.8.12 et FreeBSD 5.2.1, [[12-directives/aio|aio]] permet de précharger les données pour `sendfile` :
 
 ```nginx
 location /video/ {
@@ -29,10 +26,10 @@ location /video/ {
 }
 ```
 
-In this configuration, `sendfile` is called with the `SF_NODISKIO` flag which causes it not to block on disk I/O, but, instead, report back that the data are not in memory. nginx then initiates an asynchronous data load by reading one byte. On the first read, the FreeBSD kernel loads the first 128K bytes of a file into memory, although next reads will only load data in 16K chunks. This can be changed using the [[12-directives/read-ahead|read_ahead]] directive.
+Dans cette configuration, `sendfile` est appelé avec l'option `SF_NODISKIO`, qui l'empêche de bloquer sur les entrées-sorties disque et lui fait signaler que les données ne sont pas en mémoire. nginx lance alors un chargement asynchrone en lisant un octet. À la première lecture, le noyau FreeBSD charge en mémoire les premiers 128K octets du fichier ; les lectures suivantes ne chargent que des blocs de 16K. Ce comportement se modifie avec la directive [[12-directives/read-ahead|read_ahead]].
 
 > [!NOTE]
-> Before version 1.7.11, pre-loading could be enabled with `aio sendfile;`.
+> Avant la version 1.7.11, le préchargement s'activait avec `aio sendfile;`.
 
 ---
 

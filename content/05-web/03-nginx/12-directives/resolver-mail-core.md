@@ -1,6 +1,6 @@
 ---
 title: "resolver (ngx_mail_core_module)"
-description: "Directive nginx resolver (ngx_mail_core_module) — Configures name servers used to find the client’s hostname to pass it to the authentication server, and in the XCLIENT command when proxying SMTP. For example: nginx resolver 127.0.0.1 ::1:5353; The…"
+description: "Directive nginx resolver (ngx_mail_core_module) — Configures name servers used to find the client’s hostname to pass it to the authentication server, and in the XCLIENT command when proxying SMTP. For example: nginx resolver 127.0.0.1 ::1:5353;…"
 tags: [nginx, directive, ngx_mail_core_module]
 icon: settings-2
 ---
@@ -23,29 +23,29 @@ Configures name servers used to find the client’s hostname to pass it to the [
 resolver 127.0.0.1 [::1]:5353;
 ```
 
-The address can be specified as a domain name or IP address, with an optional port (1.3.1, 1.2.2). If port is not specified, the port 53 is used. Name servers are queried in a round-robin fashion.
+L'adresse peut être un nom de domaine ou une adresse IP, avec un port facultatif (1.3.1, 1.2.2). Sans port, le port 53 est utilisé. Les serveurs de noms sont interrogés à tour de rôle.
 
 > [!NOTE]
-> Before version 1.1.7, only a single name server could be configured. Specifying name servers using IPv6 addresses is supported starting from versions 1.3.1 and 1.2.2.
+> Avant la version 1.1.7, un seul serveur de noms pouvait être configuré. L'indication de serveurs de noms par adresse IPv6 est prise en charge à partir des versions 1.3.1 et 1.2.2.
 
-By default, nginx will look up both IPv4 and IPv6 addresses while resolving. If looking up of IPv4 or IPv6 addresses is not desired, the `ipv4=off` (1.23.1) or the `ipv6=off` parameter can be specified.
+Par défaut, nginx recherche à la fois les adresses IPv4 et IPv6 lors de la résolution. Si l'on ne souhaite pas rechercher les adresses IPv4 ou IPv6, on peut indiquer le paramètre `ipv4=off` (1.23.1) ou `ipv6=off`.
 
 > [!NOTE]
-> Resolving of names into IPv6 addresses is supported starting from version 1.5.8.
+> La résolution de noms en adresses IPv6 est prise en charge à partir de la version 1.5.8.
 
-By default, nginx caches answers using the TTL value of a response. An optional `valid` parameter allows overriding it:
+Par défaut, nginx met les réponses en cache selon la valeur TTL de la réponse. Le paramètre facultatif `valid` permet de la remplacer :
 
 ```nginx
 resolver 127.0.0.1 [::1]:5353 valid=30s;
 ```
 
 > [!NOTE]
-> Before version 1.1.9, tuning of caching time was not possible, and nginx always cached answers for the duration of 5 minutes.
+> Avant la version 1.1.9, la durée de mise en cache n'était pas réglable et nginx mettait toujours les réponses en cache pendant 5 minutes.
 
 > [!NOTE]
-> To prevent DNS spoofing, it is recommended configuring DNS servers in a properly secured trusted local network.
+> Pour éviter l'usurpation DNS, il est recommandé de configurer des serveurs DNS dans un réseau local de confiance correctement sécurisé.
 
-The optional `status_zone` parameter (1.17.1) enables [[11-modules/02-http/ngx_http_api_module|collection]] of DNS server statistics of requests and responses in the specified *zone*. The parameter is available as part of our [abonnement commercial](https://nginx.com/products/).
+Le paramètre facultatif `status_zone` (1.17.1) active la [[11-modules/02-http/ngx_http_api_module|collecte]] des statistiques de requêtes et de réponses des serveurs DNS dans la zone (*zone*) indiquée. Ce paramètre est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 The special value `off` disables resolving.
 

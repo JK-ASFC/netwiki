@@ -26,7 +26,7 @@ proxy_set_header      Host $upstream_last_server_name;
 ```
 
 > [!NOTE]
-> This directive is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

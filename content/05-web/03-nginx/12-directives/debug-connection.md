@@ -1,23 +1,20 @@
 ---
 title: "debug_connection"
-description: "Directive nginx debug_connection (Core functionality) — Enables debugging log for selected client connections. Other connections will use logging level set by the error_log directive. Debugged connections are specified by IPv4 or IPv6 (1.3.0, 1.2.1)…"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx debug_connection (ngx_core_module) — Active le journal de débogage pour certaines connexions clientes. Les autres connexions utilisent le niveau de journalisation défini par la directive error_log. Les connexions déboguées sont…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `debug_connection address \| CIDR \| unix:;` |
 | **Valeur par défaut** | — |
 | **Contexte** | `events` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Enables debugging log for selected client connections. Other connections will use logging level set by the [[12-directives/error-log|error_log]] directive. Debugged connections are specified by IPv4 or IPv6 (1.3.0, 1.2.1) address or network. A connection may also be specified using a hostname. For connections using UNIX-domain sockets (1.3.0, 1.2.1), debugging log is enabled by the “`unix:`” parameter.
+Active le journal de débogage pour certaines connexions clientes. Les autres connexions utilisent le niveau de journalisation défini par la directive [[12-directives/error-log|error_log]]. Les connexions déboguées sont désignées par une adresse ou un réseau IPv4 ou IPv6 (1.3.0, 1.2.1). Une connexion peut aussi être désignée par un nom d'hôte. Pour les connexions par sockets de domaine UNIX (1.3.0, 1.2.1), le journal de débogage est activé par le paramètre « `unix:` ».
 
 ```nginx
 events {
@@ -32,7 +29,7 @@ events {
 ```
 
 > [!NOTE]
-> For this directive to work, nginx needs to be built with `--with-debug`, see “[[10-guides/01-introduction/debugging-log|A debugging log]]”.
+> Pour que cette directive fonctionne, nginx doit être compilé avec `--with-debug` ; voir « [[10-guides/01-introduction/debugging-log|Le journal de débogage]] ».
 
 ---
 

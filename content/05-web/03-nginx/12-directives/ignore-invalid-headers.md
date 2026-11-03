@@ -1,12 +1,9 @@
 ---
 title: "ignore_invalid_headers"
-description: "Directive nginx ignore_invalid_headers (ngx_http_core_module) — Controls whether header fields with invalid names should be ignored. Valid names are composed of English letters, digits, hyphens, and possibly underscores (as controlled by the…"
+description: "Directive nginx ignore_invalid_headers (ngx_http_core_module) — Indique si les champs d'en-tête dont le nom n'est pas valide doivent être ignorés. Un nom valide se compose de lettres anglaises, de chiffres, de tirets et éventuellement de tirets bas (selon la…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Controls whether header fields with invalid names should be ignored. Valid names are composed of English letters, digits, hyphens, and possibly underscores (as controlled by the [[12-directives/underscores-in-headers|underscores_in_headers]] directive).
+Indique si les champs d'en-tête dont le nom n'est pas valide doivent être ignorés. Un nom valide se compose de lettres anglaises, de chiffres, de tirets et éventuellement de tirets bas (selon la directive [[12-directives/underscores-in-headers|underscores_in_headers]]).
 
-If the directive is specified on the [[12-directives/server-http-core|server]] level, the value from the default server can be used. Details are provided in the “[[10-guides/02-http/server-names|Virtual server selection]]” section.
+Si la directive est indiquée au niveau [[12-directives/server-http-core|server]], la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « [[10-guides/02-http/server-names|Choix du serveur virtuel]] ».
 
 ---
 

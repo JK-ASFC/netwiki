@@ -1,6 +1,6 @@
 ---
 title: "grpc_ssl_certificate_cache"
-description: "Directive nginx grpc_ssl_certificate_cache (ngx_http_grpc_module) — Defines a cache that stores SSL certificates and secret keys specified with variables. The directive has the following parameters: - max sets the maximum number of elements in the cache; on cache…"
+description: "Directive nginx grpc_ssl_certificate_cache (ngx_http_grpc_module) — Defines a cache that stores SSL certificates and secret keys specified with variables. La directive accepte les paramètres suivants : - max définit le nombre maximal d'éléments dans le cache ; en cas…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
@@ -20,11 +20,11 @@ icon: settings-2
 
 Defines a cache that stores [[12-directives/grpc-ssl-certificate|SSL certificates]] and [[12-directives/grpc-ssl-certificate-key|secret keys]] specified with variables.
 
-The directive has the following parameters:
+La directive accepte les paramètres suivants :
 
 - **`max`**
 
-  sets the maximum number of elements in the cache; on cache overflow the least recently used (LRU) elements are removed;
+  définit le nombre maximal d'éléments dans le cache ; en cas de débordement, les éléments les moins récemment utilisés (LRU) sont supprimés ;
 
 - **`inactive`**
 
@@ -36,9 +36,9 @@ The directive has the following parameters:
 
 - **`off`**
 
-  disables the cache.
+  désactive le cache.
 
-Example:
+Exemple :
 
 ```nginx
 grpc_ssl_certificate       $grpc_ssl_server_name.crt;

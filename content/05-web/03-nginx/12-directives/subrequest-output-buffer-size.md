@@ -1,12 +1,9 @@
 ---
 title: "subrequest_output_buffer_size"
-description: "Directive nginx subrequest_output_buffer_size (ngx_http_core_module) — Sets the size of the buffer used for storing the response body of a subrequest. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform. It can be…"
+description: "Directive nginx subrequest_output_buffer_size (ngx_http_core_module) — Définit la taille (size) du tampon qui stocke le corps de la réponse d'une sous-requête. Par défaut, le tampon fait une page mémoire, soit 4K ou 8K selon la plate-forme. Il peut toutefois être…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *size* of the buffer used for storing the response body of a subrequest. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform. It can be made smaller, however.
+Définit la taille (*size*) du tampon qui stocke le corps de la réponse d'une sous-requête. Par défaut, le tampon fait une page mémoire, soit 4K ou 8K selon la plate-forme. Il peut toutefois être réduit.
 
-The directive is applicable only for subrequests with response bodies saved into memory. For example, such subrequests are created by [[11-modules/02-http/ngx_http_ssi_module|SSI]].
+La directive ne s'applique qu'aux sous-requêtes dont le corps de réponse est conservé en mémoire, comme celles créées par [[11-modules/02-http/ngx_http_ssi_module|SSI]].
 
 ---
 

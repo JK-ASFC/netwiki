@@ -1,12 +1,9 @@
 ---
 title: "limit_conn_log_level (ngx_stream_limit_conn_module)"
-description: "Directive nginx limit_conn_log_level (ngx_stream_limit_conn_module) — Sets the desired logging level for cases when the server limits the number of connections."
+description: "Directive nginx limit_conn_log_level (ngx_stream_limit_conn_module) — Définit le niveau de journalisation souhaité lorsque le serveur limite le nombre de connexions."
 tags: [nginx, directive, ngx_stream_limit_conn_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the desired logging level for cases when the server limits the number of connections.
+Définit le niveau de journalisation souhaité lorsque le serveur limite le nombre de connexions.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "limit_req_log_level"
-description: "Directive nginx limit_req_log_level (ngx_http_limit_req_module) — Sets the desired logging level for cases when the server refuses to process requests due to rate exceeding, or delays request processing. Logging level for delays is one point less than for refusals;…"
+description: "Directive nginx limit_req_log_level (ngx_http_limit_req_module) — Définit le niveau de journalisation souhaité lorsque le serveur refuse de traiter des requêtes à cause d'un dépassement de débit, ou retarde leur traitement. Le niveau des retards est inférieur d'un…"
 tags: [nginx, directive, ngx_http_limit_req_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the desired logging level for cases when the server refuses to process requests due to rate exceeding, or delays request processing. Logging level for delays is one point less than for refusals; for example, if “`limit_req_log_level notice`” is specified, delays are logged with the `info` level.
+Définit le niveau de journalisation souhaité lorsque le serveur refuse de traiter des requêtes à cause d'un dépassement de débit, ou retarde leur traitement. Le niveau des retards est inférieur d'un cran à celui des refus ; par exemple, avec « `limit_req_log_level notice` », les retards sont journalisés au niveau `info`.
 
 ---
 

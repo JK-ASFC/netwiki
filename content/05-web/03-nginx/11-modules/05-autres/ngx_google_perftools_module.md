@@ -15,7 +15,7 @@ This module is not built by default, it should be enabled with the `--with-googl
 > [!NOTE]
 > This module requires the [gperftools](https://github.com/gperftools/gperftools) library.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 google_perftools_profiles /path/to/profile;

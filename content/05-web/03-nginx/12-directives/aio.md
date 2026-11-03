@@ -1,12 +1,9 @@
 ---
 title: "aio"
-description: "Directive nginx aio (ngx_http_core_module) — Enables or disables the use of asynchronous file I/O (AIO) on FreeBSD and Linux: nginx location /video/ { aio on; output_buffers 1 64k; } On FreeBSD, AIO can be used starting from FreeBSD 4.3. Prior…"
+description: "Directive nginx aio (ngx_http_core_module) — Active ou désactive l'utilisation des entrées-sorties asynchrones sur fichiers (AIO) sous FreeBSD et Linux : nginx location /video/ { aio on; output_buffers 1 64k; } Sous FreeBSD, AIO est utilisable…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables the use of asynchronous file I/O (AIO) on FreeBSD and Linux:
+Active ou désactive l'utilisation des entrées-sorties asynchrones sur fichiers (AIO) sous FreeBSD et Linux :
 
 ```nginx
 location /video/ {
@@ -27,19 +24,19 @@ location /video/ {
 }
 ```
 
-On FreeBSD, AIO can be used starting from FreeBSD 4.3. Prior to FreeBSD 11.0, AIO can either be linked statically into a kernel:
+Sous FreeBSD, AIO est utilisable à partir de FreeBSD 4.3. Avant FreeBSD 11.0, AIO peut être soit intégré statiquement au noyau :
 
 ```nginx
 options VFS_AIO
 ```
 
-or loaded dynamically as a kernel loadable module:
+soit chargé dynamiquement comme module du noyau :
 
 ```nginx
 kldload aio
 ```
 
-On Linux, AIO can be used starting from kernel version 2.6.22. Also, it is necessary to enable [[12-directives/directio|directio]], or otherwise reading will be blocking:
+Sous Linux, AIO est utilisable à partir du noyau 2.6.22. Il faut aussi activer [[12-directives/directio|directio]], sinon la lecture sera bloquante :
 
 ```nginx
 location /video/ {
@@ -49,9 +46,9 @@ location /video/ {
 }
 ```
 
-On Linux, [[12-directives/directio|directio]] can only be used for reading blocks that are aligned on 512-byte boundaries (or 4K for XFS). File’s unaligned end is read in blocking mode. The same holds true for byte range requests and for FLV requests not from the beginning of a file: reading of unaligned data at the beginning and end of a file will be blocking.
+Sous Linux, [[12-directives/directio|directio]] ne permet de lire que des blocs alignés sur 512 octets (ou 4K pour XFS). La fin non alignée du fichier est lue en mode bloquant. Il en va de même pour les requêtes de plages d'octets et pour les requêtes FLV qui ne partent pas du début du fichier : la lecture des données non alignées au début et à la fin du fichier est bloquante.
 
-When both AIO and [[12-directives/sendfile|sendfile]] are enabled on Linux, AIO is used for files that are larger than or equal to the size specified in the [[12-directives/directio|directio]] directive, while [[12-directives/sendfile|sendfile]] is used for files of smaller sizes or when [[12-directives/directio|directio]] is disabled.
+Lorsque AIO et [[12-directives/sendfile|sendfile]] sont tous deux activés sous Linux, AIO est utilisé pour les fichiers dont la taille est supérieure ou égale à celle indiquée dans la directive [[12-directives/directio|directio]], et [[12-directives/sendfile|sendfile]] pour les fichiers plus petits ou lorsque [[12-directives/directio|directio]] est désactivé.
 
 ```nginx
 location /video/ {
@@ -61,7 +58,7 @@ location /video/ {
 }
 ```
 
-Finally, files can be read and [[12-directives/sendfile|sent]] using multi-threading (1.7.11), without blocking a worker process:
+Enfin, les fichiers peuvent être lus et [[12-directives/sendfile|envoyés]] en plusieurs threads (1.7.11), sans bloquer le processus de travail :
 
 ```nginx
 location /video/ {
@@ -70,15 +67,15 @@ location /video/ {
 }
 ```
 
-Read and send file operations are offloaded to threads of the specified [[12-directives/thread-pool|pool]]. If the pool name is omitted, the pool with the name “`default`” is used. The pool name can also be set with variables:
+Les opérations de lecture et d'envoi de fichiers sont confiées aux threads du [[12-directives/thread-pool|groupe]] indiqué. Si le nom du groupe est omis, le groupe nommé « `default` » est utilisé. Le nom du groupe peut aussi être défini par des variables :
 
 ```nginx
 aio threads=pool$disk;
 ```
 
-By default, multi-threading is disabled, it should be enabled with the `--with-threads` configuration parameter. Currently, multi-threading is compatible only with the [[10-guides/01-introduction/events|Connection processing methods]], [[10-guides/01-introduction/events|Connection processing methods]], and [[10-guides/01-introduction/events|Connection processing methods]] methods. Multi-threaded sending of files is only supported on Linux.
+Par défaut, le multithreading est désactivé ; il doit être activé avec le paramètre de configuration `--with-threads`. Actuellement, il n'est compatible qu'avec les méthodes [[10-guides/01-introduction/events|epoll]], [[10-guides/01-introduction/events|kqueue]] et [[10-guides/01-introduction/events|eventport]]. L'envoi de fichiers en plusieurs threads n'est pris en charge que sous Linux.
 
-See also the [[12-directives/sendfile|sendfile]] directive.
+Voir aussi la directive [[12-directives/sendfile|sendfile]].
 
 ---
 

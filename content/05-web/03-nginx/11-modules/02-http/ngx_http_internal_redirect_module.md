@@ -13,7 +13,7 @@ The `ngx_http_internal_redirect_module` module (1.23.4) allows making an interna
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 limit_req_zone $jwt_claim_sub zone=jwt_sub:10m rate=1r/s;

@@ -1,12 +1,9 @@
 ---
 title: "open_file_cache_valid"
-description: "Directive nginx open_file_cache_valid (ngx_http_core_module) — Sets a time after which open_file_cache elements should be validated."
+description: "Directive nginx open_file_cache_valid (ngx_http_core_module) — Définit la durée au bout de laquelle les éléments de open_file_cache doivent être revalidés."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a time after which [[12-directives/open-file-cache|open_file_cache]] elements should be validated.
+Définit la durée au bout de laquelle les éléments de [[12-directives/open-file-cache|open_file_cache]] doivent être revalidés.
 
 ---
 

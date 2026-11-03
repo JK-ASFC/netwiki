@@ -1,12 +1,9 @@
 ---
 title: "real_ip_recursive"
-description: "Directive nginx real_ip_recursive (ngx_http_realip_module) — If recursive search is disabled, the original client address that matches one of the trusted addresses is replaced by the last address sent in the request header field defined by the real_ip_header…"
+description: "Directive nginx real_ip_recursive (ngx_http_realip_module) — Si la recherche récursive est désactivée, l'adresse d'origine du client qui correspond à l'une des adresses de confiance est remplacée par la dernière adresse transmise dans le champ d'en-tête défini…"
 tags: [nginx, directive, ngx_http_realip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-If recursive search is disabled, the original client address that matches one of the trusted addresses is replaced by the last address sent in the request header field defined by the [[12-directives/real-ip-header|real_ip_header]] directive. If recursive search is enabled, the original client address that matches one of the trusted addresses is replaced by the last non-trusted address sent in the request header field.
+Si la recherche récursive est désactivée, l'adresse d'origine du client qui correspond à l'une des adresses de confiance est remplacée par la dernière adresse transmise dans le champ d'en-tête défini par la directive [[12-directives/real-ip-header|real_ip_header]]. Si la recherche récursive est activée, elle est remplacée par la dernière adresse non fiable transmise dans ce champ.
 
 ---
 

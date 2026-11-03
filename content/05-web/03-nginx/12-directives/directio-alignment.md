@@ -1,12 +1,9 @@
 ---
 title: "directio_alignment"
-description: "Directive nginx directio_alignment (ngx_http_core_module) — Sets the alignment for directio. In most cases, a 512-byte alignment is enough. However, when using XFS under Linux, it needs to be increased to 4K."
+description: "Directive nginx directio_alignment (ngx_http_core_module) — Définit l'alignement pour directio. Dans la plupart des cas, un alignement de 512 octets suffit. Avec XFS sous Linux, il faut toutefois le porter à 4K."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the alignment for [[12-directives/directio|directio]]. In most cases, a 512-byte alignment is enough. However, when using XFS under Linux, it needs to be increased to 4K.
+Définit l'alignement pour [[12-directives/directio|directio]]. Dans la plupart des cas, un alignement de 512 octets suffit. Avec XFS sous Linux, il faut toutefois le porter à 4K.
 
 ---
 

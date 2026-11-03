@@ -1,12 +1,9 @@
 ---
 title: "early_hints"
-description: "Directive nginx early_hints (ngx_http_core_module) — Defines conditions under which the 103 Early Hints response will be passed to a client. If at least one value of the string parameters is not empty and is not equal to “0” then the response will be…"
+description: "Directive nginx early_hints (ngx_http_core_module) — Définit les conditions dans lesquelles la réponse 103 Early Hints est transmise au client. Si au moins une des chaînes en paramètre n'est ni vide ni égale à « 0 », la réponse est transmise : nginx…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines conditions under which the `103 Early Hints` response will be passed to a client. If at least one value of the string parameters is not empty and is not equal to “0” then the response will be passed:
+Définit les conditions dans lesquelles la réponse `103 Early Hints` est transmise au client. Si au moins une des chaînes en paramètre n'est ni vide ni égale à « 0 », la réponse est transmise :
 
 ```nginx
 map $http_sec_fetch_mode $early_hints {
@@ -35,7 +32,7 @@ server {
 ```
 
 > [!NOTE]
-> `103 Early Hints` responses received from an upstream server are passed to a client as is, without interpretation.
+> Les réponses `103 Early Hints` reçues d'un serveur amont sont transmises telles quelles au client, sans interprétation.
 
 ---
 

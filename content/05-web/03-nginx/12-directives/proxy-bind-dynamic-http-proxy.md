@@ -1,6 +1,6 @@
 ---
 title: "proxy_bind_dynamic (ngx_http_proxy_module)"
-description: "Directive nginx proxy_bind_dynamic (ngx_http_proxy_module) — When enabled, makes the bind operation at each connection attempt. NOTE This directive is available as part of our abonnement commercial."
+description: "Directive nginx proxy_bind_dynamic (ngx_http_proxy_module) — When enabled, makes the bind operation at each connection attempt. NOTE Cette directive est disponible dans le cadre de notre abonnement commercial."
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
@@ -21,7 +21,7 @@ icon: settings-2
 When enabled, makes the [[12-directives/proxy-bind-http-proxy|bind]] operation at each connection attempt.
 
 > [!NOTE]
-> This directive is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

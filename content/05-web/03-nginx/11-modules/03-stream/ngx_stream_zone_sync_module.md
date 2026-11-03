@@ -13,7 +13,7 @@ The `ngx_stream_zone_sync_module` module (1.13.8) provides the necessary support
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 Minimal configuration:
 

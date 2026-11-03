@@ -21,7 +21,7 @@ Automatic license renewal is supported since 1.29.0 ([NGINX Plus R35](https://do
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 mgmt {

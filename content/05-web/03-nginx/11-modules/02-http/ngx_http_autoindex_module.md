@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_autoindex_module` module processes requests ending with the slash character (‘`/`’) and produces a directory listing. Usually a request is passed to the `ngx_http_autoindex_module` module when the [[11-modules/02-http/ngx_http_index_module|ngx_http_index_module]] module cannot find an index file.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location / {

@@ -1,6 +1,6 @@
 ---
 title: "$proxy_protocol_server_port (ngx_stream_core_module)"
-description: "Variable nginx $proxy_protocol_server_port (ngx_stream_core_module) — server port from the PROXY protocol header (1.17.6) The PROXY protocol must be previously enabled by setting the proxy_protocol parameter in the listen directive."
+description: "Variable nginx $proxy_protocol_server_port (ngx_stream_core_module) — port du serveur issu de l'en-tête du protocole PROXY (1.17.6) The PROXY protocol must be previously enabled by setting the proxy_protocol parameter in the listen directive."
 tags: [nginx, variable, ngx_stream_core_module]
 icon: dollar-sign
 ---
@@ -13,7 +13,7 @@ icon: dollar-sign
 | **Variable** | `$proxy_protocol_server_port` |
 | **Module** | [[11-modules/03-stream/ngx_stream_core_module\|ngx_stream_core_module]] |
 
-server port from the PROXY protocol header (1.17.6)
+port du serveur issu de l'en-tête du protocole PROXY (1.17.6)
 
 The PROXY protocol must be previously enabled by setting the `proxy_protocol` parameter in the [[12-directives/listen-stream-core|listen]] directive.
 

@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_referer_module` module is used to block access to a site for requests with invalid values in the `Referer` header field. It should be kept in mind that fabricating a request with an appropriate `Referer` field value is quite easy, and so the intended purpose of this module is not to block such requests thoroughly but to block the mass flow of requests sent by regular browsers. It should also be taken into consideration that regular browsers may not send the `Referer` field even for valid requests.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 valid_referers none blocked server_names

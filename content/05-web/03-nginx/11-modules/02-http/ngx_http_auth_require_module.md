@@ -13,7 +13,7 @@ The `ngx_http_auth_require_module` module (1.29.0) implements variable-based cli
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {

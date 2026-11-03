@@ -1,12 +1,9 @@
 ---
 title: "absolute_redirect"
-description: "Directive nginx absolute_redirect (ngx_http_core_module) — If disabled, redirects issued by nginx will be relative. See also server_name_in_redirect and port_in_redirect directives."
+description: "Directive nginx absolute_redirect (ngx_http_core_module) — Si cette option est désactivée, les redirections émises par nginx sont relatives. Voir aussi les directives server_name_in_redirect et port_in_redirect."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-If disabled, redirects issued by nginx will be relative.
+Si cette option est désactivée, les redirections émises par nginx sont relatives.
 
-See also [[12-directives/server-name-in-redirect|server_name_in_redirect]] and [[12-directives/port-in-redirect|port_in_redirect]] directives.
+Voir aussi les directives [[12-directives/server-name-in-redirect|server_name_in_redirect]] et [[12-directives/port-in-redirect|port_in_redirect]].
 
 ---
 

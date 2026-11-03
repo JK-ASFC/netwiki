@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_empty_gif_module` module emits single-pixel transparent GIF.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location = /_.gif {

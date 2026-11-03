@@ -1,12 +1,9 @@
 ---
 title: "resolver_timeout (ngx_http_core_module)"
-description: "Directive nginx resolver_timeout (ngx_http_core_module) — Sets a timeout for name resolution, for example: nginx resolver_timeout 5s;"
+description: "Directive nginx resolver_timeout (ngx_http_core_module) — Définit le délai de résolution des noms, par exemple : nginx resolver_timeout 5s;"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a timeout for name resolution, for example:
+Définit le délai de résolution des noms, par exemple :
 
 ```nginx
 resolver_timeout 5s;

@@ -13,7 +13,7 @@ The `ngx_http_upstream_conf_module` module allows configuring upstream server gr
 > [!NOTE]
 > This module was available as part of our [abonnement commercial](https://nginx.com/products/) until 1.13.10. It was superseded by the [[11-modules/02-http/ngx_http_api_module|ngx_http_api_module]] module in 1.13.3.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 upstream backend {

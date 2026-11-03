@@ -1,12 +1,9 @@
 ---
 title: "tcp_nodelay (ngx_http_core_module)"
-description: "Directive nginx tcp_nodelay (ngx_http_core_module) — Enables or disables the use of the TCP_NODELAY option. The option is enabled when a connection is transitioned into the keep-alive state. Additionally, it is enabled on SSL connections, for…"
+description: "Directive nginx tcp_nodelay (ngx_http_core_module) — Active ou désactive l'option TCP_NODELAY. L'option est activée lorsque la connexion passe à l'état persistant, ainsi que sur les connexions SSL, pour le relais sans tampon et pour le relais WebSocket."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables the use of the `TCP_NODELAY` option. The option is enabled when a connection is transitioned into the keep-alive state. Additionally, it is enabled on SSL connections, for unbuffered proxying, and for [[10-guides/02-http/websocket|WebSocket]] proxying.
+Active ou désactive l'option `TCP_NODELAY`. L'option est activée lorsque la connexion passe à l'état persistant, ainsi que sur les connexions SSL, pour le relais sans tampon et pour le relais [[10-guides/02-http/websocket|WebSocket]].
 
 ---
 

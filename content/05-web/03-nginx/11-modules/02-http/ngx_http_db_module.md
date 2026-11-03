@@ -17,7 +17,7 @@ Lookup results can be [[12-directives/db-cache|cached]] in a [[12-directives/key
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 Redis authentication and database selection:
 

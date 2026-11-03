@@ -1,12 +1,9 @@
 ---
 title: "limit_except"
-description: "Directive nginx limit_except (ngx_http_core_module) — Limits allowed HTTP methods inside a location. The method parameter can be one of the following: GET, HEAD, POST, PUT, DELETE, MKCOL, COPY, MOVE, OPTIONS, PROPFIND, PROPPATCH, LOCK, UNLOCK, or PATCH.…"
+description: "Directive nginx limit_except (ngx_http_core_module) — Limite les méthodes HTTP autorisées dans un bloc location. Le paramètre method peut valoir : GET, HEAD, POST, PUT, DELETE, MKCOL, COPY, MOVE, OPTIONS, PROPFIND, PROPPATCH, LOCK, UNLOCK ou PATCH.…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Limits allowed HTTP methods inside a location. The *method* parameter can be one of the following: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `MKCOL`, `COPY`, `MOVE`, `OPTIONS`, `PROPFIND`, `PROPPATCH`, `LOCK`, `UNLOCK`, or `PATCH`. Allowing the `GET` method makes the `HEAD` method also allowed. Access to other methods can be limited using the [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]], [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]], and [[11-modules/02-http/ngx_http_auth_jwt_module|ngx_http_auth_jwt_module]] (1.13.10) modules directives:
+Limite les méthodes HTTP autorisées dans un bloc location. Le paramètre *method* peut valoir : `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `MKCOL`, `COPY`, `MOVE`, `OPTIONS`, `PROPFIND`, `PROPPATCH`, `LOCK`, `UNLOCK` ou `PATCH`. Autoriser la méthode `GET` autorise aussi `HEAD`. L'accès aux autres méthodes peut être limité avec les directives des modules [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]], [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]] et [[11-modules/02-http/ngx_http_auth_jwt_module|ngx_http_auth_jwt_module]] (1.13.10) :
 
 ```nginx
 limit_except GET {
@@ -26,7 +23,7 @@ limit_except GET {
 }
 ```
 
-Please note that this will limit access to all methods *except* GET and HEAD.
+Attention : cela limite l'accès à toutes les méthodes *sauf* GET et HEAD.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "uninitialized_variable_warn"
-description: "Directive nginx uninitialized_variable_warn (ngx_http_rewrite_module) — Controls whether warnings about uninitialized variables are logged."
+description: "Directive nginx uninitialized_variable_warn (ngx_http_rewrite_module) — Indique si les avertissements concernant les variables non initialisées sont journalisés."
 tags: [nginx, directive, ngx_http_rewrite_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Controls whether warnings about uninitialized variables are logged.
+Indique si les avertissements concernant les variables non initialisées sont journalisés.
 
 ---
 

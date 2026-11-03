@@ -1,19 +1,16 @@
 ---
 title: "$pipe"
-description: "Variable nginx $pipe (ngx_http_core_module) — “p” if request was pipelined, “.” otherwise (1.3.12, 1.2.7)"
+description: "Variable nginx $pipe (ngx_http_core_module) — « p » si la requête a été envoyée en pipeline, « . » sinon (1.3.12, 1.2.7)"
 tags: [nginx, variable, ngx_http_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$pipe` |
 | **Module** | [[11-modules/02-http/ngx_http_core_module\|ngx_http_core_module]] |
 
-“`p`” if request was pipelined, “`.`” otherwise (1.3.12, 1.2.7)
+« `p` » si la requête a été envoyée en pipeline, « `.` » sinon (1.3.12, 1.2.7)
 
 ---
 

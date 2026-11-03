@@ -1,12 +1,9 @@
 ---
 title: "rewrite_log"
-description: "Directive nginx rewrite_log (ngx_http_rewrite_module) — Enables or disables logging of ngx_http_rewrite_module module directives processing results into the error_log at the notice level."
+description: "Directive nginx rewrite_log (ngx_http_rewrite_module) — Active ou désactive la journalisation, au niveau notice dans error_log, des résultats du traitement des directives du module ngx_http_rewrite_module."
 tags: [nginx, directive, ngx_http_rewrite_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables logging of `ngx_http_rewrite_module` module directives processing results into the [[12-directives/error-log|error_log]] at the `notice` level.
+Active ou désactive la journalisation, au niveau `notice` dans [[12-directives/error-log|error_log]], des résultats du traitement des directives du module `ngx_http_rewrite_module`.
 
 ---
 

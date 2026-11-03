@@ -17,7 +17,7 @@ Usual pre-processing with Adobe’s f4fpackager is required, see relevant docume
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location /video/ {

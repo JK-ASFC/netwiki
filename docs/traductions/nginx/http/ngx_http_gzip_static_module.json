@@ -1,0 +1,7 @@
+{
+ "1381a293e545": "Active (« `on` ») ou désactive (« `off` ») la recherche de fichiers précompressés. Les directives suivantes sont également prises en compte : [[12-directives/gzip-http-version|gzip_http_version]], [[12-directives/gzip-proxied|gzip_proxied]], [[12-directives/gzip-disable|gzip_disable]] et [[12-directives/gzip-vary|gzip_vary]].",
+ "1a1207002bd2": "Les fichiers peuvent être compressés avec la commande `gzip` ou toute autre commande compatible. Il est recommandé que les fichiers d'origine et compressés aient la même date et la même heure de modification.",
+ "261fa51d03ba": "Le module `ngx_http_gzip_static_module` permet d'envoyer des fichiers précompressés portant l'extension « `.gz` » à la place des fichiers ordinaires.",
+ "d634714eda7a": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_gzip_static_module`.",
+ "dcaa51c82a03": "Avec la valeur « `always` » (1.3.6), le fichier compressé est utilisé dans tous les cas, sans vérifier si le client le prend en charge. C'est utile s'il n'existe de toute façon aucun fichier non compressé sur le disque ou si le module [[11-modules/02-http/ngx_http_gunzip_module|ngx_http_gunzip_module]] est utilisé."
+}

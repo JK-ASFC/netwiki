@@ -1,19 +1,16 @@
 ---
 title: "$request"
-description: "Variable nginx $request (ngx_http_core_module) — full original request line"
+description: "Variable nginx $request (ngx_http_core_module) — ligne de requête d'origine complète"
 tags: [nginx, variable, ngx_http_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$request` |
 | **Module** | [[11-modules/02-http/ngx_http_core_module\|ngx_http_core_module]] |
 
-full original request line
+ligne de requête d'origine complète
 
 ---
 

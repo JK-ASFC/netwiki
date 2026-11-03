@@ -35,7 +35,7 @@ Addresses are specified either as prefixes in CIDR notation (including individua
 > [!NOTE]
 > IPv6 prefixes are supported starting from versions 1.3.10 and 1.2.7.
 
-The following special parameters are also supported:
+Les paramètres spéciaux suivants sont aussi pris en charge :
 
 - **`delete`**
 
@@ -68,7 +68,7 @@ The following special parameters are also supported:
 
   indicates that the variable is not cacheable (1.29.3).
 
-Example:
+Exemple :
 
 ```nginx
 geo $country {

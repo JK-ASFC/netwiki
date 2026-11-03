@@ -1,6 +1,6 @@
 ---
 title: "ssl_key_log (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_key_log (ngx_stream_ssl_module) — Enables logging of client connection SSL keys and specifies the path to the key log file. Keys are logged in the SSLKEYLOGFILE format compatible with Wireshark. NOTE This directive is available as…"
+description: "Directive nginx ssl_key_log (ngx_stream_ssl_module) — Enables logging of client connection SSL keys and specifies the path to the key log file. Keys are logged in the SSLKEYLOGFILE format compatible with Wireshark. NOTE Cette directive est disponible…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
@@ -21,7 +21,7 @@ icon: settings-2
 Enables logging of client connection SSL keys and specifies the path to the key log file. Keys are logged in the [SSLKEYLOGFILE](https://datatracker.ietf.org/doc/html/rfc9850) format compatible with Wireshark.
 
 > [!NOTE]
-> This directive is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

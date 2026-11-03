@@ -1,12 +1,9 @@
 ---
 title: "keepalive_min_timeout"
-description: "Directive nginx keepalive_min_timeout (ngx_http_core_module) — Sets a timeout during which a keep-alive client connection will not be closed on the server side for connection reuse or on graceful shutdown of worker processes."
+description: "Directive nginx keepalive_min_timeout (ngx_http_core_module) — Définit un délai pendant lequel une connexion persistante du client n'est pas fermée côté serveur, afin d'être réutilisée ou lors de l'arrêt en douceur des processus de travail."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a timeout during which a keep-alive client connection will not be closed on the server side for connection reuse or on graceful shutdown of worker processes.
+Définit un délai pendant lequel une connexion persistante du client n'est pas fermée côté serveur, afin d'être réutilisée ou lors de l'arrêt en douceur des processus de travail.
 
 ---
 

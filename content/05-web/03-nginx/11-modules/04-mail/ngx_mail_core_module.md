@@ -10,7 +10,7 @@ icon: puzzle
 
 This module is not built by default, it should be enabled with the `--with-mail` configuration parameter.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 worker_processes auto;

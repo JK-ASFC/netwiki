@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_http_tunnel_module` (1.31.0) handles HTTP/1.1 [CONNECT](https://datatracker.ietf.org/doc/html/rfc9110#section-9.3.6) requests and establishes an end-to-end virtual connection.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {

@@ -1,12 +1,9 @@
 ---
 title: "server (ngx_http_core_module)"
-description: "Directive nginx server (ngx_http_core_module) — Sets configuration for a virtual server. There is no clear separation between IP-based (based on the IP address) and name-based (based on the Host request header field) virtual servers. Instead, the…"
+description: "Directive nginx server (ngx_http_core_module) — Définit la configuration d'un serveur virtuel. Il n'y a pas de séparation nette entre serveurs virtuels par adresse IP et par nom (selon le champ d'en-tête de requête Host). Les directives listen…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets configuration for a virtual server. There is no clear separation between IP-based (based on the IP address) and name-based (based on the `Host` request header field) virtual servers. Instead, the [[12-directives/listen-http-core|listen]] directives describe all addresses and ports that should accept connections for the server, and the [[12-directives/server-name-http-core|server_name]] directive lists all server names. Example configurations are provided in the “[[10-guides/02-http/request-processing|How nginx processes a request]]” document.
+Définit la configuration d'un serveur virtuel. Il n'y a pas de séparation nette entre serveurs virtuels par adresse IP et par nom (selon le champ d'en-tête de requête `Host`). Les directives [[12-directives/listen-http-core|listen]] décrivent toutes les adresses et tous les ports sur lesquels le serveur accepte des connexions, et la directive [[12-directives/server-name-http-core|server_name]] liste tous les noms du serveur. Des exemples de configuration figurent dans le document « [[10-guides/02-http/request-processing|Comment nginx traite une requête]] ».
 
 ---
 

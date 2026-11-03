@@ -14,7 +14,7 @@ The source code of the module is available [here](https://github.com/nginx/nginx
 
 The module is also available in a prebuilt `nginx-module-acme` package and in `nginx-plus-module-acme` package as part of our [abonnement commercial](https://nginx.com/products/) since 1.29.0.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 resolver 127.0.0.1:53;

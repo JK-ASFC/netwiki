@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_geo_module` module (1.11.3) creates variables with values depending on the client IP address.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 geo $geo {

@@ -1,12 +1,9 @@
 ---
 title: "recursive_error_pages"
-description: "Directive nginx recursive_error_pages (ngx_http_core_module) — Enables or disables doing several redirects using the error_page directive. The number of such redirects is limited."
+description: "Directive nginx recursive_error_pages (ngx_http_core_module) — Active ou désactive l'enchaînement de plusieurs redirections avec la directive error_page. Le nombre de ces redirections est limité."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables doing several redirects using the [[12-directives/error-page|error_page]] directive. The number of such redirects is [[12-directives/internal|limited]].
+Active ou désactive l'enchaînement de plusieurs redirections avec la directive [[12-directives/error-page|error_page]]. Le nombre de ces redirections est [[12-directives/internal|limité]].
 
 ---
 

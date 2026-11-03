@@ -1,12 +1,9 @@
 ---
 title: "client_header_timeout"
-description: "Directive nginx client_header_timeout (ngx_http_core_module) — Defines a timeout for reading client request header. If a client does not transmit the entire header within this time, the request is terminated with the 408 Request Time-out error."
+description: "Directive nginx client_header_timeout (ngx_http_core_module) — Définit le délai de lecture de l'en-tête de la requête du client. Si le client n'envoie pas tout l'en-tête pendant ce délai, la requête se termine par l'erreur 408 Request Time-out."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a timeout for reading client request header. If a client does not transmit the entire header within this time, the request is terminated with the `408 Request Time-out` error.
+Définit le délai de lecture de l'en-tête de la requête du client. Si le client n'envoie pas tout l'en-tête pendant ce délai, la requête se termine par l'erreur `408 Request Time-out`.
 
 ---
 

@@ -19,7 +19,7 @@ icon: settings-2
 
 Describes the conversion table from one charset to another. A reverse conversion table is built using the same data. Character codes are given in hexadecimal. Missing characters in the range 80-FF are replaced with “`?`”. When converting from UTF-8, characters missing in a one-byte charset are replaced with “`&#XXXX;`”.
 
-Example:
+Exemple :
 
 ```nginx
 charset_map koi8-r windows-1251 {

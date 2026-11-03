@@ -15,7 +15,7 @@ This module is not built by default, it should be enabled with the `--with-mail_
 > [!NOTE]
 > This module requires the [OpenSSL](http://www.openssl.org) library.
 
-## Example Configuration
+## Exemple de configuration
 
 To reduce the processor load, it is recommended to
 

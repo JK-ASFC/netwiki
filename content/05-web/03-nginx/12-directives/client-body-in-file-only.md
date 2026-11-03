@@ -1,12 +1,9 @@
 ---
 title: "client_body_in_file_only"
-description: "Directive nginx client_body_in_file_only (ngx_http_core_module) — Determines whether nginx should save the entire client request body into a file. This directive can be used during debugging, or when using the $request_body_file variable, or the…"
+description: "Directive nginx client_body_in_file_only (ngx_http_core_module) — Indique si nginx doit enregistrer tout le corps de la requête du client dans un fichier. Cette directive peut servir au débogage, ou avec la variable $request_body_file ou la méthode…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Determines whether nginx should save the entire client request body into a file. This directive can be used during debugging, or when using the `$request_body_file` variable, or the [[11-modules/02-http/ngx_http_perl_module|$r->request_body_file]] method of the module [[11-modules/02-http/ngx_http_perl_module|ngx_http_perl_module]].
+Indique si nginx doit enregistrer tout le corps de la requête du client dans un fichier. Cette directive peut servir au débogage, ou avec la variable `$request_body_file` ou la méthode [[11-modules/02-http/ngx_http_perl_module|$r->request_body_file]] du module [[11-modules/02-http/ngx_http_perl_module|ngx_http_perl_module]].
 
-When set to the value `on`, temporary files are not removed after request processing.
+Avec la valeur `on`, les fichiers temporaires ne sont pas supprimés après le traitement de la requête.
 
-The value `clean` will cause the temporary files left after request processing to be removed.
+La valeur `clean` supprime les fichiers temporaires restant après le traitement de la requête.
 
 ---
 

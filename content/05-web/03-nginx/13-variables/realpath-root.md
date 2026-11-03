@@ -1,19 +1,16 @@
 ---
 title: "$realpath_root"
-description: "Variable nginx $realpath_root (ngx_http_core_module) — an absolute pathname corresponding to the root or alias directive’s value for the current request, with all symbolic links resolved to real paths"
+description: "Variable nginx $realpath_root (ngx_http_core_module) — chemin absolu correspondant à la valeur de la directive root ou alias pour la requête courante, tous les liens symboliques étant résolus en chemins réels"
 tags: [nginx, variable, ngx_http_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$realpath_root` |
 | **Module** | [[11-modules/02-http/ngx_http_core_module\|ngx_http_core_module]] |
 
-an absolute pathname corresponding to the [[12-directives/root|root]] or [[12-directives/alias|alias]] directive’s value for the current request, with all symbolic links resolved to real paths
+chemin absolu correspondant à la valeur de la directive [[12-directives/root|root]] ou [[12-directives/alias|alias]] pour la requête courante, tous les liens symboliques étant résolus en chemins réels
 
 ---
 

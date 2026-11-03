@@ -1,19 +1,16 @@
 ---
 title: "ngx_http_gzip_module"
-description: "Module nginx ngx_http_gzip_module — The ngx_http_gzip_module module is a filter that compresses responses using the “gzip” method. This often helps to reduce the size of transmitted data by half or even more."
+description: "Module nginx ngx_http_gzip_module — Le module ngx_http_gzip_module est un filtre qui compresse les réponses avec la méthode « gzip ». Cela permet souvent de réduire de moitié, voire davantage, la taille des données transmises."
 tags: [nginx, module, ngx_http_gzip_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_gzip_module` module is a filter that compresses responses using the “gzip” method. This often helps to reduce the size of transmitted data by half or even more.
+Le module `ngx_http_gzip_module` est un filtre qui compresse les réponses avec la méthode « gzip ». Cela permet souvent de réduire de moitié, voire davantage, la taille des données transmises.
 
 > [!NOTE]
-> When using the SSL/TLS protocol, compressed responses may be subject to [BREACH](https://en.wikipedia.org/wiki/BREACH) attacks.
+> Avec le protocole SSL/TLS, les réponses compressées peuvent être exposées aux attaques [BREACH](https://en.wikipedia.org/wiki/BREACH).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 gzip            on;
@@ -22,7 +19,7 @@ gzip_proxied    expired no-cache no-store private auth;
 gzip_types      text/plain application/xml;
 ```
 
-The `$gzip_ratio` variable can be used to log the achieved compression ratio.
+La variable `$gzip_ratio` permet de journaliser le taux de compression obtenu.
 
 ## Directives
 

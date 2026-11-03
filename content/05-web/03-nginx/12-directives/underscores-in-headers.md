@@ -1,12 +1,9 @@
 ---
 title: "underscores_in_headers"
-description: "Directive nginx underscores_in_headers (ngx_http_core_module) — Enables or disables the use of underscores in client request header fields. When the use of underscores is disabled, request header fields whose names contain underscores are marked as invalid and…"
+description: "Directive nginx underscores_in_headers (ngx_http_core_module) — Active ou désactive l'utilisation des tirets bas dans les champs d'en-tête des requêtes des clients. Si elle est désactivée, les champs dont le nom contient un tiret bas sont marqués non valides et…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables the use of underscores in client request header fields. When the use of underscores is disabled, request header fields whose names contain underscores are marked as invalid and become subject to the [[12-directives/ignore-invalid-headers|ignore_invalid_headers]] directive.
+Active ou désactive l'utilisation des tirets bas dans les champs d'en-tête des requêtes des clients. Si elle est désactivée, les champs dont le nom contient un tiret bas sont marqués non valides et relèvent de la directive [[12-directives/ignore-invalid-headers|ignore_invalid_headers]].
 
-If the directive is specified on the [[12-directives/server-http-core|server]] level, the value from the default server can be used. Details are provided in the “[[10-guides/02-http/server-names|Virtual server selection]]” section.
+Si la directive est indiquée au niveau [[12-directives/server-http-core|server]], la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « [[10-guides/02-http/server-names|Choix du serveur virtuel]] ».
 
 ---
 

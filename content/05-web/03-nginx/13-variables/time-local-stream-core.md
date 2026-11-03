@@ -1,19 +1,16 @@
 ---
 title: "$time_local (ngx_stream_core_module)"
-description: "Variable nginx $time_local (ngx_stream_core_module) — local time in the Common Log Format"
+description: "Variable nginx $time_local (ngx_stream_core_module) — heure locale au format Common Log Format"
 tags: [nginx, variable, ngx_stream_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$time_local` |
 | **Module** | [[11-modules/03-stream/ngx_stream_core_module\|ngx_stream_core_module]] |
 
-local time in the Common Log Format
+heure locale au format Common Log Format
 
 ---
 

@@ -20,7 +20,7 @@ icon: settings-2
 
 Configures a forward proxy URL with [[10-guides/04-njs/reference|Fetch API]]. The *url* supports the HTTP scheme only and can contain optional user credentials in the format `http://[user:password@]host:port` for Basic authentication. Supports both HTTP and HTTPS connections to destination servers. If the *url* is empty, proxy routing is disabled. The parameter value can contain variables.
 
-Example:
+Exemple :
 
 ```nginx
 location /fetch {

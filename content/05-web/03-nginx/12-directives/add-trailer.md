@@ -1,12 +1,9 @@
 ---
 title: "add_trailer"
-description: "Directive nginx add_trailer (ngx_http_headers_module) — Adds the specified field to the end of a response provided that the response code equals 200, 201, 206, 301, 302, 303, 307, or 308. Parameter value can contain variables. There could be several…"
+description: "Directive nginx add_trailer (ngx_http_headers_module) — Ajoute le champ indiqué à la fin de la réponse si le code de réponse vaut 200, 201, 206, 301, 302, 303, 307 ou 308. La valeur du paramètre peut contenir des variables. Il peut y avoir plusieurs…"
 tags: [nginx, directive, ngx_http_headers_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,11 +15,11 @@ icon: settings-2
 
 ## Utilisation
 
-Adds the specified field to the end of a response provided that the response code equals 200, 201, 206, 301, 302, 303, 307, or 308. Parameter value can contain variables.
+Ajoute le champ indiqué à la fin de la réponse si le code de réponse vaut 200, 201, 206, 301, 302, 303, 307 ou 308. La valeur du paramètre peut contenir des variables.
 
-There could be several `add_trailer` directives. These directives are inherited from the previous configuration level if and only if there are no `add_trailer` directives defined on the current level. Inheritance rules can be redefined with the [[12-directives/add-trailer-inherit|add_trailer_inherit]] directive (1.29.3).
+Il peut y avoir plusieurs directives `add_trailer`. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `add_trailer` n'est définie au niveau courant. Les règles d'héritage peuvent être modifiées avec la directive [[12-directives/add-trailer-inherit|add_trailer_inherit]] (1.29.3).
 
-If the `always` parameter is specified the specified field will be added regardless of the response code.
+Avec le paramètre `always`, le champ indiqué est ajouté quel que soit le code de réponse.
 
 ---
 

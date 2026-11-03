@@ -1,12 +1,9 @@
 ---
 title: "client_header_buffer_size"
-description: "Directive nginx client_header_buffer_size (ngx_http_core_module) — Sets buffer size for reading client request header. For most requests, a buffer of 1K bytes is enough. However, if a request includes long cookies, or comes from a WAP client, it may not fit into 1K.…"
+description: "Directive nginx client_header_buffer_size (ngx_http_core_module) — Définit la taille du tampon de lecture de l'en-tête de la requête du client. Pour la plupart des requêtes, un tampon de 1K octets suffit. Mais si la requête contient de longs cookies ou provient d'un…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets buffer size for reading client request header. For most requests, a buffer of 1K bytes is enough. However, if a request includes long cookies, or comes from a WAP client, it may not fit into 1K. If a request line or a request header field does not fit into this buffer then larger buffers, configured by the [[12-directives/large-client-header-buffers|large_client_header_buffers]] directive, are allocated.
+Définit la taille du tampon de lecture de l'en-tête de la requête du client. Pour la plupart des requêtes, un tampon de 1K octets suffit. Mais si la requête contient de longs cookies ou provient d'un client WAP, elle peut dépasser 1K. Si une ligne de requête ou un champ d'en-tête ne tient pas dans ce tampon, des tampons plus grands, configurés par la directive [[12-directives/large-client-header-buffers|large_client_header_buffers]], sont alloués.
 
-If the directive is specified on the [[12-directives/server-http-core|server]] level, the value from the default server can be used. Details are provided in the “[[10-guides/02-http/server-names|Virtual server selection]]” section.
+Si la directive est indiquée au niveau [[12-directives/server-http-core|server]], la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « [[10-guides/02-http/server-names|Choix du serveur virtuel]] ».
 
 ---
 

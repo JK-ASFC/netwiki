@@ -1,6 +1,6 @@
 ---
 title: "server_name (ngx_stream_core_module)"
-description: "Directive nginx server_name (ngx_stream_core_module) — Sets names of a virtual server, for example: nginx server { server_name example.com www.example.com; } The first name becomes the primary server name. Server names can include an asterisk (“”)…"
+description: "Directive nginx server_name (ngx_stream_core_module) — Définit les noms d'un serveur virtuel, par exemple : nginx server { server_name example.com www.example.com; } Le premier nom devient le nom principal du serveur. Les noms de serveurs peuvent…"
 tags: [nginx, directive, ngx_stream_core_module]
 icon: settings-2
 ---
@@ -18,7 +18,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets names of a virtual server, for example:
+Définit les noms d'un serveur virtuel, par exemple :
 
 ```nginx
 server {
@@ -26,9 +26,9 @@ server {
 }
 ```
 
-The first name becomes the primary server name.
+Le premier nom devient le nom principal du serveur.
 
-Server names can include an asterisk (“`*`”) replacing the first or last part of a name:
+Les noms de serveurs peuvent contenir un astérisque (« `*` ») remplaçant la première ou la dernière partie du nom :
 
 ```nginx
 server {
@@ -36,9 +36,9 @@ server {
 }
 ```
 
-Such names are called wildcard names.
+On les appelle noms génériques.
 
-The first two of the names mentioned above can be combined in one:
+Les deux premiers noms ci-dessus peuvent être combinés en un seul :
 
 ```nginx
 server {
@@ -46,7 +46,7 @@ server {
 }
 ```
 
-It is also possible to use regular expressions in server names, preceding the name with a tilde (“`~`”):
+On peut aussi utiliser des expressions régulières dans les noms de serveurs, en faisant précéder le nom d'un tilde (« `~` ») :
 
 ```nginx
 server {
@@ -76,12 +76,12 @@ server {
 
 If the directive’s parameter is set to “`$hostname`”, the machine’s hostname is inserted.
 
-The search is performed in the following order of priority and terminates on the first matching variant:
+La recherche s'effectue dans l'ordre de priorité suivant et s'arrête à la première variante correspondante :
 
-1. the exact name
-2. the longest wildcard name starting with an asterisk, e.g. “`*.example.com`”
-3. the longest wildcard name ending with an asterisk, e.g. “`mail.*`”
-4. the first matching regular expression (in order of appearance in the configuration file)
+1. le nom exact
+2. le plus long nom générique commençant par un astérisque, par exemple « `*.example.com` »
+3. le plus long nom générique se terminant par un astérisque, par exemple « `mail.*` »
+4. la première expression régulière correspondante (dans l'ordre d'apparition dans le fichier de configuration)
 
 > [!NOTE]
 > The server is selected by name at the [[10-guides/03-stream/stream-processing|SSL]] or [[10-guides/03-stream/stream-processing|preread]] phase. Directives processed at earlier phases, such as [[12-directives/set-real-ip-from-stream-realip|set_real_ip_from]], [[12-directives/limit-conn-stream-limit-conn|limit_conn]], [[12-directives/set-stream-set|set]], [[12-directives/allow-stream-access|allow]], and [[12-directives/deny-stream-access|deny]], are taken from the default server for the corresponding address:port pair.

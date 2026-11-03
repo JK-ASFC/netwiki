@@ -13,7 +13,7 @@ nginx supports the following command-line parameters:
 - `-?` | `-h` — print help for command-line parameters.
 - `-c file` — use an alternative configuration *file* instead of a default file.
 - `-e file` — use an alternative error log *file* to store the log instead of a default file (1.19.5). The special value `stderr` selects the standard error file.
-- `-g directives` — set [[11-modules/01-coeur/Core functionality|global configuration directives]], for example,
+- `-g directives` — set [[11-modules/01-coeur/ngx_core_module|global configuration directives]], for example,
 
   ```
   nginx -g "pid /var/run/nginx.pid; worker_processes `sysctl -n hw.ncpu`;"

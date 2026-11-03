@@ -26,7 +26,7 @@ In Stream, the cache is maintained separately for each server configuration. A v
 
 When enabled, keepalive assumes that destination servers send valid HTTP responses.
 
-Example:
+Exemple :
 
 ```nginx
 server {

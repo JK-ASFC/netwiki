@@ -1,19 +1,16 @@
 ---
 title: "$hostname (ngx_http_core_module)"
-description: "Variable nginx $hostname (ngx_http_core_module) — host name"
+description: "Variable nginx $hostname (ngx_http_core_module) — nom d'hôte"
 tags: [nginx, variable, ngx_http_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$hostname` |
 | **Module** | [[11-modules/02-http/ngx_http_core_module\|ngx_http_core_module]] |
 
-host name
+nom d'hôte
 
 ---
 

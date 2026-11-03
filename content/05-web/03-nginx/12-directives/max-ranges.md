@@ -1,12 +1,9 @@
 ---
 title: "max_ranges"
-description: "Directive nginx max_ranges (ngx_http_core_module) — Limits the maximum allowed number of ranges in byte-range requests. Requests that exceed the limit are processed as if there were no byte ranges specified. By default, the number of ranges is not…"
+description: "Directive nginx max_ranges (ngx_http_core_module) — Limite le nombre maximal de plages autorisées dans les requêtes de plages d'octets. Les requêtes qui dépassent la limite sont traitées comme si aucune plage n'était indiquée. Par défaut, le nombre de…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Limits the maximum allowed number of ranges in byte-range requests. Requests that exceed the limit are processed as if there were no byte ranges specified. By default, the number of ranges is not limited. The zero value disables the byte-range support completely.
+Limite le nombre maximal de plages autorisées dans les requêtes de plages d'octets. Les requêtes qui dépassent la limite sont traitées comme si aucune plage n'était indiquée. Par défaut, le nombre de plages n'est pas limité. La valeur zéro désactive complètement la prise en charge des plages d'octets.
 
 ---
 

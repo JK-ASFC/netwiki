@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_proxy_module` module (1.9.0) allows proxying data streams over TCP, UDP (1.9.13), and UNIX-domain sockets.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 server {

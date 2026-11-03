@@ -1,23 +1,20 @@
 ---
 title: "use"
-description: "Directive nginx use (Core functionality) — Specifies the connection processing method to use. There is normally no need to specify it explicitly, because nginx will by default use the most efficient method."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx use (ngx_core_module) — Indique la méthode (method) de traitement des connexions à utiliser. Il n'est normalement pas nécessaire de l'indiquer, car nginx utilise par défaut la méthode la plus efficace."
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `use method;` |
 | **Valeur par défaut** | — |
 | **Contexte** | `events` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Specifies the [[10-guides/01-introduction/events|connection processing]] *method* to use. There is normally no need to specify it explicitly, because nginx will by default use the most efficient method.
+Indique la méthode (*method*) de [[10-guides/01-introduction/events|traitement des connexions]] à utiliser. Il n'est normalement pas nécessaire de l'indiquer, car nginx utilise par défaut la méthode la plus efficace.
 
 ---
 

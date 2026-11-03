@@ -1,12 +1,9 @@
 ---
 title: "merge_slashes"
-description: "Directive nginx merge_slashes (ngx_http_core_module) — Enables or disables compression of two or more adjacent slashes in a URI into a single slash. Note that compression is essential for the correct matching of prefix string and regular expression…"
+description: "Directive nginx merge_slashes (ngx_http_core_module) — Active ou désactive la fusion de plusieurs barres obliques consécutives d'un URI en une seule. Cette fusion est indispensable pour que les blocs location à chaîne de préfixe et à expression régulière…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables compression of two or more adjacent slashes in a URI into a single slash.
+Active ou désactive la fusion de plusieurs barres obliques consécutives d'un URI en une seule.
 
-Note that compression is essential for the correct matching of prefix string and regular expression locations. Without it, the “`//scripts/one.php`” request would not match
+Cette fusion est indispensable pour que les blocs location à chaîne de préfixe et à expression régulière correspondent correctement. Sans elle, la requête « `//scripts/one.php` » ne correspondrait pas à
 
 ```nginx
 location /scripts/ {
@@ -27,11 +24,11 @@ location /scripts/ {
 }
 ```
 
-and might be processed as a static file. So it gets converted to “`/scripts/one.php`”.
+et pourrait être traitée comme un fichier statique. Elle est donc convertie en « `/scripts/one.php` ».
 
-Turning the compression `off` can become necessary if a URI contains base64-encoded names, since base64 uses the “`/`” character internally. However, for security considerations, it is better to avoid turning the compression off.
+Désactiver la fusion (`off`) peut devenir nécessaire si un URI contient des noms encodés en base64, car base64 utilise le caractère « `/` ». Pour des raisons de sécurité, il vaut toutefois mieux éviter de la désactiver.
 
-If the directive is specified on the [[12-directives/server-http-core|server]] level, the value from the default server can be used. Details are provided in the “[[10-guides/02-http/server-names|Virtual server selection]]” section.
+Si la directive est indiquée au niveau [[12-directives/server-http-core|server]], la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « [[10-guides/02-http/server-names|Choix du serveur virtuel]] ».
 
 ---
 

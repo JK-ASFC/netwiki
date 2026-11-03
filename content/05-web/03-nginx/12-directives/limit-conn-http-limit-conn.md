@@ -1,12 +1,9 @@
 ---
 title: "limit_conn (ngx_http_limit_conn_module)"
-description: "Directive nginx limit_conn (ngx_http_limit_conn_module) — Sets the shared memory zone and the maximum allowed number of connections for a given key value. When this limit is exceeded, the server will return the error in reply to a request. For example, the…"
+description: "Directive nginx limit_conn (ngx_http_limit_conn_module) — Définit la zone de mémoire partagée et le nombre maximal de connexions autorisées pour une valeur de clé donnée. Au-delà de cette limite, le serveur renvoie une erreur en réponse à la requête. Par…"
 tags: [nginx, directive, ngx_http_limit_conn_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the shared memory zone and the maximum allowed number of connections for a given key value. When this limit is exceeded, the server will return the [[12-directives/limit-conn-status|error]] in reply to a request. For example, the directives
+Définit la zone de mémoire partagée et le nombre maximal de connexions autorisées pour une valeur de clé donnée. Au-delà de cette limite, le serveur renvoie une [[12-directives/limit-conn-status|erreur]] en réponse à la requête. Par exemple, les directives
 
 ```nginx
 limit_conn_zone $binary_remote_addr zone=addr:10m;
@@ -28,12 +25,12 @@ server {
     }
 ```
 
-allow only one connection per an IP address at a time.
+n'autorisent qu'une seule connexion à la fois par adresse IP.
 
 > [!NOTE]
-> In HTTP/2 and HTTP/3, each concurrent request is considered a separate connection.
+> En HTTP/2 et HTTP/3, chaque requête simultanée est considérée comme une connexion distincte.
 
-There could be several `limit_conn` directives. For example, the following configuration will limit the number of connections to the server per a client IP and, at the same time, the total number of connections to the virtual server:
+Il peut y avoir plusieurs directives `limit_conn`. Par exemple, la configuration suivante limite le nombre de connexions au serveur par adresse IP de client et, en même temps, le nombre total de connexions au serveur virtuel :
 
 ```nginx
 limit_conn_zone $binary_remote_addr zone=perip:10m;
@@ -46,7 +43,7 @@ server {
 }
 ```
 
-These directives are inherited from the previous configuration level if and only if there are no `limit_conn` directives defined on the current level.
+Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `limit_conn` n'est définie au niveau courant.
 
 ---
 

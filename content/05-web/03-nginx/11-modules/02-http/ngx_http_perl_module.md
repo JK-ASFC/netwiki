@@ -33,7 +33,7 @@ There is a possibility that the main process and then worker processes will grow
 
 While the Perl module is performing a long-running operation, such as resolving a domain name, connecting to another server, or querying a database, other requests assigned to the current worker process will not be processed. It is thus recommended to perform only such operations that have predictable and short execution time, such as accessing the local file system.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {

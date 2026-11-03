@@ -1,12 +1,9 @@
 ---
 title: "connection_pool_size"
-description: "Directive nginx connection_pool_size (ngx_http_core_module) — Allows accurate tuning of per-connection memory allocations. This directive has minimal impact on performance and should not generally be used. By default, the size is equal to 256 bytes on 32-bit…"
+description: "Directive nginx connection_pool_size (ngx_http_core_module) — Permet un réglage précis des allocations mémoire par connexion. Cette directive a un impact minime sur les performances et ne doit généralement pas être utilisée. Par défaut, la taille est de 256…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Allows accurate tuning of per-connection memory allocations. This directive has minimal impact on performance and should not generally be used. By default, the size is equal to 256 bytes on 32-bit platforms and 512 bytes on 64-bit platforms.
+Permet un réglage précis des allocations mémoire par connexion. Cette directive a un impact minime sur les performances et ne doit généralement pas être utilisée. Par défaut, la taille est de 256 octets sur les plates-formes 32 bits et de 512 octets sur les plates-formes 64 bits.
 
 > [!NOTE]
-> Prior to version 1.9.8, the default value was 256 on all platforms.
+> Avant la version 1.9.8, la valeur par défaut était 256 sur toutes les plates-formes.
 
 ---
 

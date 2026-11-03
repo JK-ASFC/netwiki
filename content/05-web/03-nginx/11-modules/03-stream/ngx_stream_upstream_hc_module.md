@@ -15,7 +15,7 @@ If a health check fails, the server will be considered unhealthy. If several hea
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 upstream tcp {

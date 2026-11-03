@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_pass_module` module (1.25.5) allows passing the accepted connection directly to any configured listening socket in `http`, `stream`, `mail`, and other similar modules.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {

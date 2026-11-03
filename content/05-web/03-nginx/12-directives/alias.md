@@ -1,12 +1,9 @@
 ---
 title: "alias"
-description: "Directive nginx alias (ngx_http_core_module) — Defines a replacement for the specified location. For example, with the following configuration nginx location /i/ { alias /data/w3/images/; } on request of “/i/top.gif”, the file…"
+description: "Directive nginx alias (ngx_http_core_module) — Définit un remplacement pour le bloc location indiqué. Par exemple, avec la configuration suivante nginx location /i/ { alias /data/w3/images/; } à la requête « /i/top.gif », c'est le fichier…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a replacement for the specified location. For example, with the following configuration
+Définit un remplacement pour le bloc location indiqué. Par exemple, avec la configuration suivante
 
 ```nginx
 location /i/ {
@@ -25,11 +22,11 @@ location /i/ {
 }
 ```
 
-on request of “`/i/top.gif`”, the file `/data/w3/images/top.gif` will be sent.
+à la requête « `/i/top.gif` », c'est le fichier `/data/w3/images/top.gif` qui est envoyé.
 
-The *path* value can contain variables, except `$document_root` and `$realpath_root`.
+La valeur *path* peut contenir des variables, sauf `$document_root` et `$realpath_root`.
 
-If `alias` is used inside a location defined with a regular expression then its value specifies a complete file path (0.7.40). Such path should typically refer to the captures contained within the regular expression:
+Si `alias` est utilisé dans un bloc location défini par une expression régulière, sa valeur indique un chemin de fichier complet (0.7.40). Ce chemin fait généralement référence aux captures de l'expression régulière :
 
 ```nginx
 location ~ ^/users/(.+\.(?:gif|jpe?g|png))$ {
@@ -37,9 +34,9 @@ location ~ ^/users/(.+\.(?:gif|jpe?g|png))$ {
 }
 ```
 
-If `alias` is used inside a predicate location then its value specifies a complete file path.
+Si `alias` est utilisé dans un bloc location à prédicat, sa valeur indique un chemin de fichier complet.
 
-When location matches the last part of the directive’s value:
+Lorsque le bloc location correspond à la dernière partie de la valeur de la directive :
 
 ```nginx
 location /images/ {
@@ -47,7 +44,7 @@ location /images/ {
 }
 ```
 
-it is better to use the [[12-directives/root|root]] directive instead:
+il vaut mieux utiliser la directive [[12-directives/root|root]] :
 
 ```nginx
 location /images/ {

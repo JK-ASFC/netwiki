@@ -1,14 +1,11 @@
 ---
-title: "Core functionality"
-description: "Module nginx Core functionality — error_log /var/log/nginx-error.log info;"
-tags: [nginx, module, Core functionality]
+title: "ngx_core_module"
+description: "Module nginx ngx_core_module — error_log /var/log/nginx-error.log info;"
+tags: [nginx, module, ngx_core_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 user www www;

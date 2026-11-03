@@ -1,12 +1,9 @@
 ---
 title: "if_modified_since"
-description: "Directive nginx if_modified_since (ngx_http_core_module) — Specifies how to compare modification time of a response with the time in the If-Modified-Since request header field: - off the response is always considered modified (0.7.34); - exact exact match; -…"
+description: "Directive nginx if_modified_since (ngx_http_core_module) — Indique comment comparer la date de modification d'une réponse avec l'heure du champ d'en-tête de requête If-Modified-Since : - off la réponse est toujours considérée comme modifiée (0.7.34) ; -…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,19 +15,19 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies how to compare modification time of a response with the time in the `If-Modified-Since` request header field:
+Indique comment comparer la date de modification d'une réponse avec l'heure du champ d'en-tête de requête `If-Modified-Since` :
 
 - **`off`**
 
-  the response is always considered modified (0.7.34);
+  la réponse est toujours considérée comme modifiée (0.7.34) ;
 
 - **`exact`**
 
-  exact match;
+  correspondance exacte ;
 
 - **`before`**
 
-  modification time of the response is less than or equal to the time in the `If-Modified-Since` request header field.
+  la date de modification de la réponse est antérieure ou égale à l'heure du champ d'en-tête de requête `If-Modified-Since`.
 
 ---
 

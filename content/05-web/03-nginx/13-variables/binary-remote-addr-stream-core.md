@@ -1,19 +1,16 @@
 ---
 title: "$binary_remote_addr (ngx_stream_core_module)"
-description: "Variable nginx $binary_remote_addr (ngx_stream_core_module) — client address in a binary form, value’s length is always 4 bytes for IPv4 addresses or 16 bytes for IPv6 addresses"
+description: "Variable nginx $binary_remote_addr (ngx_stream_core_module) — adresse du client sous forme binaire ; la valeur fait toujours 4 octets pour une adresse IPv4 et 16 octets pour une adresse IPv6"
 tags: [nginx, variable, ngx_stream_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$binary_remote_addr` |
 | **Module** | [[11-modules/03-stream/ngx_stream_core_module\|ngx_stream_core_module]] |
 
-client address in a binary form, value’s length is always 4 bytes for IPv4 addresses or 16 bytes for IPv6 addresses
+adresse du client sous forme binaire ; la valeur fait toujours 4 octets pour une adresse IPv4 et 16 octets pour une adresse IPv6
 
 ---
 

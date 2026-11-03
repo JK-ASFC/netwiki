@@ -1,12 +1,9 @@
 ---
 title: "read_ahead"
-description: "Directive nginx read_ahead (ngx_http_core_module) — Sets the amount of pre-reading for the kernel when working with file. On Linux, the posix_fadvise(0, 0, 0, POSIX_FADV_SEQUENTIAL) system call is used, and so the size parameter is ignored. On…"
+description: "Directive nginx read_ahead (ngx_http_core_module) — Définit la quantité de lecture anticipée par le noyau lors du travail sur un fichier. Sous Linux, l'appel système posix_fadvise(0, 0, 0, POSIX_FADV_SEQUENTIAL) est utilisé ; le paramètre size est…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the amount of pre-reading for the kernel when working with file.
+Définit la quantité de lecture anticipée par le noyau lors du travail sur un fichier.
 
-On Linux, the `posix_fadvise(0, 0, 0, POSIX_FADV_SEQUENTIAL)` system call is used, and so the *size* parameter is ignored.
+Sous Linux, l'appel système `posix_fadvise(0, 0, 0, POSIX_FADV_SEQUENTIAL)` est utilisé ; le paramètre *size* est donc ignoré.
 
-On FreeBSD, the `fcntl(O_READAHEAD,` *size*`)` system call, supported since FreeBSD 9.0-CURRENT, is used. FreeBSD 7 has to be [patched](http://sysoev.ru/freebsd/patch.readahead.txt).
+Sous FreeBSD, l'appel système `fcntl(O_READAHEAD,` *size*`)`, disponible depuis FreeBSD 9.0-CURRENT, est utilisé. FreeBSD 7 doit être [corrigé](http://sysoev.ru/freebsd/patch.readahead.txt).
 
 ---
 

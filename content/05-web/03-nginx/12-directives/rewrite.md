@@ -1,12 +1,9 @@
 ---
 title: "rewrite"
-description: "Directive nginx rewrite (ngx_http_rewrite_module) — If the specified regular expression matches a request URI, URI is changed as specified in the replacement string. The rewrite directives are executed sequentially in order of their appearance in the…"
+description: "Directive nginx rewrite (ngx_http_rewrite_module) — Si l'expression régulière indiquée correspond à l'URI de la requête, l'URI est modifié selon la chaîne de remplacement (replacement). Les directives rewrite sont exécutées dans l'ordre où elles…"
 tags: [nginx, directive, ngx_http_rewrite_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,29 +14,29 @@ icon: settings-2
 
 ## Utilisation
 
-If the specified regular expression matches a request URI, URI is changed as specified in the *replacement* string. The `rewrite` directives are executed sequentially in order of their appearance in the configuration file. It is possible to terminate further processing of the directives using flags. If a replacement string starts with “`http://`”, “`https://`”, or “`$scheme`”, the processing stops and the redirect is returned to a client.
+Si l'expression régulière indiquée correspond à l'URI de la requête, l'URI est modifié selon la chaîne de remplacement (*replacement*). Les directives `rewrite` sont exécutées dans l'ordre où elles apparaissent dans le fichier de configuration. Des drapeaux permettent d'interrompre le traitement des directives suivantes. Si la chaîne de remplacement commence par « `http://` », « `https://` » ou « `$scheme` », le traitement s'arrête et la redirection est renvoyée au client.
 
-An optional *flag* parameter can be one of:
+Le paramètre facultatif *flag* peut valoir :
 
 - **`last`**
 
-  stops processing the current set of `ngx_http_rewrite_module` directives and starts a search for a new location matching the changed URI;
+  arrête le traitement de l'ensemble courant de directives `ngx_http_rewrite_module` et lance la recherche d'un nouveau bloc location correspondant à l'URI modifié ;
 
 - **`break`**
 
-  stops processing the current set of `ngx_http_rewrite_module` directives as with the [[12-directives/break|break]] directive;
+  arrête le traitement de l'ensemble courant de directives `ngx_http_rewrite_module`, comme la directive [[12-directives/break|break]] ;
 
 - **`redirect`**
 
-  returns a temporary redirect with the 302 code; used if a replacement string does not start with “`http://`”, “`https://`”, or “`$scheme`”;
+  renvoie une redirection temporaire avec le code 302 ; utilisé si la chaîne de remplacement ne commence pas par « `http://` », « `https://` » ou « `$scheme` » ;
 
 - **`permanent`**
 
-  returns a permanent redirect with the 301 code.
+  renvoie une redirection permanente avec le code 301.
 
-The full redirect URL is formed according to the request scheme (`$scheme`) and the [[12-directives/server-name-in-redirect|server_name_in_redirect]] and [[12-directives/port-in-redirect|port_in_redirect]] directives.
+L'URL de redirection complète est formée d'après le schéma de la requête (`$scheme`) et les directives [[12-directives/server-name-in-redirect|server_name_in_redirect]] et [[12-directives/port-in-redirect|port_in_redirect]].
 
-Example:
+Exemple :
 
 ```nginx
 server {
@@ -51,7 +48,7 @@ server {
 }
 ```
 
-But if these directives are put inside the “`/download/`” location, the `last` flag should be replaced by `break`, or otherwise nginx will make 10 cycles and return the 500 error:
+Mais si ces directives sont placées dans le bloc location « `/download/` », le drapeau `last` doit être remplacé par `break` ; sinon nginx effectuera 10 cycles et renverra une erreur 500 :
 
 ```nginx
 location /download/ {
@@ -61,13 +58,13 @@ location /download/ {
 }
 ```
 
-If a *replacement* string includes the new request arguments, the previous request arguments are appended after them. If this is undesired, putting a question mark at the end of a replacement string avoids having them appended, for example:
+Si la chaîne de remplacement (*replacement*) contient de nouveaux arguments de requête, les arguments précédents sont ajoutés après eux. Pour éviter cet ajout, placer un point d'interrogation à la fin de la chaîne de remplacement, par exemple :
 
 ```nginx
 rewrite ^/users/(.*)$ /show?user=$1? last;
 ```
 
-If a regular expression includes the “`}`” or “`;`” characters, the whole expressions should be enclosed in single or double quotes.
+Si une expression régulière contient les caractères « `}` » ou « `;` », l'expression entière doit être placée entre guillemets simples ou doubles.
 
 ---
 

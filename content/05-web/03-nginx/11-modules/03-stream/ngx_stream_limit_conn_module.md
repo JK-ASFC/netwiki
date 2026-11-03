@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_limit_conn_module` module (1.9.3) is used to limit the number of connections per the defined key, in particular, the number of connections from a single IP address.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 stream {

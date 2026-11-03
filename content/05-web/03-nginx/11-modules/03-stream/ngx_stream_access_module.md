@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_access_module` module (1.9.2) allows limiting access to certain client addresses.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 server {

@@ -21,7 +21,7 @@ icon: settings-2
 Enables terminating all sessions to a proxied server after it was removed from the group or marked as permanently unavailable. This can occur because of [[12-directives/resolver-stream-core|re-resolve]] or with the API [[11-modules/02-http/ngx_http_api_module|DELETE]] command. A server can be marked as permanently unavailable if it is considered [[12-directives/health-check-stream-upstream-hc|unhealthy]] or with the API [[11-modules/02-http/ngx_http_api_module|PATCH]] command. Each session is terminated when the next read or write event is processed for the client or proxied server.
 
 > [!NOTE]
-> This directive is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

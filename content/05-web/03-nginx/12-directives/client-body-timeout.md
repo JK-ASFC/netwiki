@@ -1,12 +1,9 @@
 ---
 title: "client_body_timeout"
-description: "Directive nginx client_body_timeout (ngx_http_core_module) — Defines a timeout for reading client request body. The timeout is set only for a period between two successive read operations, not for the transmission of the whole request body. If a client does…"
+description: "Directive nginx client_body_timeout (ngx_http_core_module) — Définit le délai de lecture du corps de la requête du client. Ce délai porte uniquement sur l'intervalle entre deux lectures successives, pas sur la transmission de tout le corps. Si le client…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a timeout for reading client request body. The timeout is set only for a period between two successive read operations, not for the transmission of the whole request body. If a client does not transmit anything within this time, the request is terminated with the `408 Request Time-out` error.
+Définit le délai de lecture du corps de la requête du client. Ce délai porte uniquement sur l'intervalle entre deux lectures successives, pas sur la transmission de tout le corps. Si le client n'envoie rien pendant ce délai, la requête se termine par l'erreur `408 Request Time-out`.
 
 ---
 

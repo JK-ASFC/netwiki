@@ -1,12 +1,9 @@
 ---
 title: "limit_rate"
-description: "Directive nginx limit_rate (ngx_http_core_module) — Limits the rate of response transmission to a client. The rate is specified in bytes per second. The zero value disables rate limiting. The limit is set per a request, and so if a client…"
+description: "Directive nginx limit_rate (ngx_http_core_module) — Limite le débit de transmission de la réponse au client. Le débit (rate) s'exprime en octets par seconde. La valeur zéro désactive la limitation. La limite s'applique par requête : si un client ouvre…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Limits the rate of response transmission to a client. The *rate* is specified in bytes per second. The zero value disables rate limiting. The limit is set per a request, and so if a client simultaneously opens two connections, the overall rate will be twice as much as the specified limit.
+Limite le débit de transmission de la réponse au client. Le débit (*rate*) s'exprime en octets par seconde. La valeur zéro désactive la limitation. La limite s'applique par requête : si un client ouvre deux connexions simultanées, le débit total sera le double de la limite indiquée.
 
-Parameter value can contain variables (1.17.0). It may be useful in cases where rate should be limited depending on a certain condition:
+La valeur du paramètre peut contenir des variables (1.17.0). C'est utile lorsque le débit doit être limité selon une condition :
 
 ```nginx
 map $slow $rate {
@@ -30,7 +27,7 @@ map $slow $rate {
 limit_rate $rate;
 ```
 
-Rate limit can also be set in the [[13-variables/limit-rate|$limit_rate]] variable, however, since version 1.17.0, this method is not recommended:
+La limite de débit peut aussi être définie dans la variable [[13-variables/limit-rate|$limit_rate]], mais depuis la version 1.17.0 cette méthode n'est pas recommandée :
 
 ```nginx
 server {
@@ -43,7 +40,7 @@ server {
 }
 ```
 
-Rate limit can also be set in the `X-Accel-Limit-Rate` header field of a proxied server response. This capability can be disabled using the [[12-directives/proxy-ignore-headers|proxy_ignore_headers]], [[12-directives/fastcgi-ignore-headers|fastcgi_ignore_headers]], [[12-directives/uwsgi-ignore-headers|uwsgi_ignore_headers]], and [[12-directives/scgi-ignore-headers|scgi_ignore_headers]] directives.
+La limite de débit peut aussi être définie dans le champ d'en-tête `X-Accel-Limit-Rate` de la réponse d'un serveur mandaté. Cette possibilité peut être désactivée avec les directives [[12-directives/proxy-ignore-headers|proxy_ignore_headers]], [[12-directives/fastcgi-ignore-headers|fastcgi_ignore_headers]], [[12-directives/uwsgi-ignore-headers|uwsgi_ignore_headers]] et [[12-directives/scgi-ignore-headers|scgi_ignore_headers]].
 
 ---
 

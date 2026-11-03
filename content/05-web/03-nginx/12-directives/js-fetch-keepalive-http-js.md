@@ -26,7 +26,7 @@ In HTTP, the cache is maintained separately for each effective location configur
 
 When enabled, keepalive assumes that destination servers send valid HTTP responses.
 
-Example:
+Exemple :
 
 ```nginx
 location /fetch {

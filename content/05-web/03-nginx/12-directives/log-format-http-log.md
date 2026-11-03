@@ -1,12 +1,9 @@
 ---
 title: "log_format (ngx_http_log_module)"
-description: "Directive nginx log_format (ngx_http_log_module) — Specifies log format. The escape parameter (1.11.8) allows setting json or default characters escaping in variables, by default, default escaping is used. The none value (1.13.10) disables escaping.…"
+description: "Directive nginx log_format (ngx_http_log_module) — Définit le format du journal. Le paramètre escape (1.11.8) permet de choisir l'échappement des caractères dans les variables : json ou default (par défaut). La valeur none (1.13.10) désactive…"
 tags: [nginx, directive, ngx_http_log_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,62 +14,62 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies log format.
+Définit le format du journal.
 
-The `escape` parameter (1.11.8) allows setting `json` or `default` characters escaping in variables, by default, `default` escaping is used. The `none` value (1.13.10) disables escaping.
+Le paramètre `escape` (1.11.8) permet de choisir l'échappement des caractères dans les variables : `json` ou `default` (par défaut). La valeur `none` (1.13.10) désactive l'échappement.
 
-For `default` escaping, characters “`"`”, “`\`”, and other characters with values less than 32 (0.7.0) or above 126 (1.1.6) are escaped as “`\xXX`”. If the variable value is not found, a hyphen (“`-`”) will be logged.
+Avec l'échappement `default`, les caractères « `"` », « `\` » et les autres caractères de valeur inférieure à 32 (0.7.0) ou supérieure à 126 (1.1.6) sont échappés sous la forme « `\xXX` ». Si la valeur de la variable est introuvable, un tiret (« `-` ») est journalisé.
 
-For `json` escaping, all characters not allowed in JSON [strings](https://datatracker.ietf.org/doc/html/rfc8259#section-7) will be escaped: characters “`"`” and “`\`” are escaped as “`\"`” and “`\\`”, characters with values less than 32 are escaped as “`\n`”, “`\r`”, “`\t`”, “`\b`”, “`\f`”, or “`\u00XX`”.
+Avec l'échappement `json`, tous les caractères interdits dans les [chaînes](https://datatracker.ietf.org/doc/html/rfc8259#section-7) JSON sont échappés : les caractères « `"` » et « `\` » deviennent « `\"` » et « `\\` », les caractères de valeur inférieure à 32 deviennent « `\n` », « `\r` », « `\t` », « `\b` », « `\f` » ou « `\u00XX` ».
 
-The log format can contain common variables, and variables that exist only at the time of a log write:
+Le format du journal peut contenir les variables courantes ainsi que des variables qui n'existent qu'au moment de l'écriture du journal :
 
 - **`$bytes_sent`**
 
-  the number of bytes sent to a client
+  le nombre d'octets envoyés au client
 
 - **`$connection`**
 
-  connection serial number
+  numéro de série de la connexion
 
 - **`$connection_requests`**
 
-  the current number of requests made through a connection (1.1.18)
+  le nombre actuel de requêtes faites sur une connexion (1.1.18)
 
 - **`$msec`**
 
-  time in seconds with a milliseconds resolution at the time of the log write
+  heure en secondes, avec une résolution à la milliseconde, au moment de l'écriture du journal
 
 - **`$pipe`**
 
-  “`p`” if request was pipelined, “`.`” otherwise
+  « `p` » si la requête a été envoyée en pipeline, « `.` » sinon
 
 - **`$request_length`**
 
-  request length (including request line, header, and request body)
+  longueur de la requête (ligne de requête, en-tête et corps compris)
 
 - **`$request_time`**
 
-  request processing time in seconds with a milliseconds resolution; time elapsed between the first bytes were read from the client and the log write after the last bytes were sent to the client
+  durée de traitement de la requête en secondes, avec une résolution à la milliseconde : temps écoulé entre la lecture des premiers octets envoyés par le client et l'écriture du journal après l'envoi des derniers octets au client
 
 - **`$status`**
 
-  response status
+  statut de la réponse
 
 - **`$time_iso8601`**
 
-  local time in the ISO 8601 standard format
+  heure locale au format standard ISO 8601
 
 - **`$time_local`**
 
-  local time in the Common Log Format
+  heure locale au format Common Log Format
 
 > [!NOTE]
-> In the modern nginx versions variables [[13-variables/status-http-core|$status]] (1.3.2, 1.2.2), [[13-variables/bytes-sent-http-core|$bytes_sent]] (1.3.8, 1.2.5), [[13-variables/connection-http-core|$connection]] (1.3.8, 1.2.5), [[13-variables/connection-requests|$connection_requests]] (1.3.8, 1.2.5), [[13-variables/msec-http-core|$msec]] (1.3.9, 1.2.6), [[13-variables/request-time|$request_time]] (1.3.9, 1.2.6), [[13-variables/pipe|$pipe]] (1.3.12, 1.2.7), [[13-variables/request-length|$request_length]] (1.3.12, 1.2.7), [[13-variables/time-iso8601-http-core|$time_iso8601]] (1.3.12, 1.2.7), and [[13-variables/time-local-http-core|$time_local]] (1.3.12, 1.2.7) are also available as common variables.
+> Dans les versions récentes de nginx, les variables [[13-variables/status-http-core|$status]] (1.3.2, 1.2.2), [[13-variables/bytes-sent-http-core|$bytes_sent]] (1.3.8, 1.2.5), [[13-variables/connection-http-core|$connection]] (1.3.8, 1.2.5), [[13-variables/connection-requests|$connection_requests]] (1.3.8, 1.2.5), [[13-variables/msec-http-core|$msec]] (1.3.9, 1.2.6), [[13-variables/request-time|$request_time]] (1.3.9, 1.2.6), [[13-variables/pipe|$pipe]] (1.3.12, 1.2.7), [[13-variables/request-length|$request_length]] (1.3.12, 1.2.7), [[13-variables/time-iso8601-http-core|$time_iso8601]] (1.3.12, 1.2.7) et [[13-variables/time-local-http-core|$time_local]] (1.3.12, 1.2.7) sont aussi disponibles comme variables courantes.
 
-Header lines sent to a client have the prefix “`sent_http_`”, for example, `$sent_http_content_range`.
+Les lignes d'en-tête envoyées au client portent le préfixe « `sent_http_` », par exemple `$sent_http_content_range`.
 
-The configuration always includes the predefined “`combined`” format:
+La configuration contient toujours le format prédéfini « `combined` » :
 
 ```nginx
 log_format combined '$remote_addr - $remote_user [$time_local] '

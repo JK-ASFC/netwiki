@@ -1,6 +1,6 @@
 ---
 title: "fastcgi_send_lowat"
-description: "Directive nginx fastcgi_send_lowat (ngx_http_fastcgi_module) — If the directive is set to a non-zero value, nginx will try to minimize the number of send operations on outgoing connections to a FastCGI server by using either NOTE_LOWAT flag of the Connection…"
+description: "Directive nginx fastcgi_send_lowat (ngx_http_fastcgi_module) — If the directive is set to a non-zero value, nginx will try to minimize the number of send operations on outgoing connections to a FastCGI server by using either NOTE_LOWAT flag of the kqueue method,…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
@@ -17,9 +17,9 @@ icon: settings-2
 
 ## Utilisation
 
-If the directive is set to a non-zero value, nginx will try to minimize the number of send operations on outgoing connections to a FastCGI server by using either `NOTE_LOWAT` flag of the [[10-guides/01-introduction/events|Connection processing methods]] method, or the `SO_SNDLOWAT` socket option, with the specified *size*.
+If the directive is set to a non-zero value, nginx will try to minimize the number of send operations on outgoing connections to a FastCGI server by using either `NOTE_LOWAT` flag of the [[10-guides/01-introduction/events|kqueue]] method, or the `SO_SNDLOWAT` socket option, with the specified *size*.
 
-This directive is ignored on Linux, Solaris, and Windows.
+Cette directive est ignorée sous Linux, Solaris et Windows.
 
 ---
 

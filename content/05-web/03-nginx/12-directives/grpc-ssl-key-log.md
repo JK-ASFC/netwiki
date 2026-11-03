@@ -1,6 +1,6 @@
 ---
 title: "grpc_ssl_key_log"
-description: "Directive nginx grpc_ssl_key_log (ngx_http_grpc_module) — Enables logging of gRPC SSL server connection SSL keys and specifies the path to the key log file. Keys are logged in the SSLKEYLOGFILE format compatible with Wireshark. NOTE This directive is…"
+description: "Directive nginx grpc_ssl_key_log (ngx_http_grpc_module) — Enables logging of gRPC SSL server connection SSL keys and specifies the path to the key log file. Keys are logged in the SSLKEYLOGFILE format compatible with Wireshark. NOTE Cette directive est…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
@@ -21,7 +21,7 @@ icon: settings-2
 Enables logging of gRPC SSL server connection SSL keys and specifies the path to the key log file. Keys are logged in the [SSLKEYLOGFILE](https://datatracker.ietf.org/doc/html/rfc9850) format compatible with Wireshark.
 
 > [!NOTE]
-> This directive is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

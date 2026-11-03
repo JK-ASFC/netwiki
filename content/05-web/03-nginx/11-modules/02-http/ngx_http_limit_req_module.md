@@ -1,16 +1,13 @@
 ---
 title: "ngx_http_limit_req_module"
-description: "Module nginx ngx_http_limit_req_module — The ngx_http_limit_req_module module (0.7.21) is used to limit the request processing rate per a defined key, in particular, the processing rate of requests coming from a single IP address. The limitation is done using…"
+description: "Module nginx ngx_http_limit_req_module — Le module ngx_http_limit_req_module (0.7.21) sert à limiter le débit de traitement des requêtes par clé définie, en particulier le débit des requêtes provenant d'une même adresse IP. La limitation utilise la méthode du…"
 tags: [nginx, module, ngx_http_limit_req_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_limit_req_module` (0.7.21) sert à limiter le débit de traitement des requêtes par clé définie, en particulier le débit des requêtes provenant d'une même adresse IP. La limitation utilise la méthode du « seau percé » (*leaky bucket*).
 
-The `ngx_http_limit_req_module` module (0.7.21) is used to limit the request processing rate per a defined key, in particular, the processing rate of requests coming from a single IP address. The limitation is done using the “leaky bucket” method.
-
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {

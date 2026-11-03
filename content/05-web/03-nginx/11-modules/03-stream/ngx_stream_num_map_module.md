@@ -13,7 +13,7 @@ The `ngx_stream_num_map_module` module (1.29.3) creates variables whose values d
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 num_map $remote_port $port_allow {

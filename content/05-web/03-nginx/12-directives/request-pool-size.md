@@ -1,12 +1,9 @@
 ---
 title: "request_pool_size"
-description: "Directive nginx request_pool_size (ngx_http_core_module) — Allows accurate tuning of per-request memory allocations. This directive has minimal impact on performance and should not generally be used."
+description: "Directive nginx request_pool_size (ngx_http_core_module) — Permet un réglage précis des allocations mémoire par requête. Cette directive a un impact minime sur les performances et ne doit généralement pas être utilisée."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Allows accurate tuning of per-request memory allocations. This directive has minimal impact on performance and should not generally be used.
+Permet un réglage précis des allocations mémoire par requête. Cette directive a un impact minime sur les performances et ne doit généralement pas être utilisée.
 
 ---
 

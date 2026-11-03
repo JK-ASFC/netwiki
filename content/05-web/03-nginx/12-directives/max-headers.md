@@ -1,12 +1,9 @@
 ---
 title: "max_headers"
-description: "Directive nginx max_headers (ngx_http_core_module) — Sets the maximum allowed number of header lines in requests. If this limit is reached, the error 400 Bad Request is returned."
+description: "Directive nginx max_headers (ngx_http_core_module) — Définit le nombre maximal de lignes d'en-tête autorisées dans les requêtes. Si cette limite est atteinte, l'erreur 400 Bad Request est renvoyée."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum allowed number of header lines in requests. If this limit is reached, the error `400 Bad Request` is returned.
+Définit le nombre maximal de lignes d'en-tête autorisées dans les requêtes. Si cette limite est atteinte, l'erreur `400 Bad Request` est renvoyée.
 
 ---
 

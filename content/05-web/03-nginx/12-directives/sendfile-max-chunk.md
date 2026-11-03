@@ -1,12 +1,9 @@
 ---
 title: "sendfile_max_chunk"
-description: "Directive nginx sendfile_max_chunk (ngx_http_core_module) — Limits the amount of data that can be transferred in a single sendfile call. Without the limit, one fast connection may seize the worker process entirely. NOTE Prior to version 1.21.4, by default…"
+description: "Directive nginx sendfile_max_chunk (ngx_http_core_module) — Limite la quantité de données transférables en un seul appel sendfile. Sans limite, une connexion rapide peut accaparer entièrement le processus de travail. NOTE Avant la version 1.21.4, il n'y avait…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Limits the amount of data that can be transferred in a single `sendfile` call. Without the limit, one fast connection may seize the worker process entirely.
+Limite la quantité de données transférables en un seul appel `sendfile`. Sans limite, une connexion rapide peut accaparer entièrement le processus de travail.
 
 > [!NOTE]
-> Prior to version 1.21.4, by default there was no limit.
+> Avant la version 1.21.4, il n'y avait pas de limite par défaut.
 
 ---
 

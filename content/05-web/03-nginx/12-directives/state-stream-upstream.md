@@ -1,6 +1,6 @@
 ---
 title: "state (ngx_stream_upstream_module)"
-description: "Directive nginx state (ngx_stream_upstream_module) — Specifies a file that keeps the state of the dynamically configurable group. Examples: nginx state /var/lib/nginx/state/servers.conf; path for Linux state /var/db/nginx/state/servers.conf; path for…"
+description: "Directive nginx state (ngx_stream_upstream_module) — Specifies a file that keeps the state of the dynamically configurable group. Exemples : nginx state /var/lib/nginx/state/servers.conf; path for Linux state /var/db/nginx/state/servers.conf; path for…"
 tags: [nginx, directive, ngx_stream_upstream_module]
 icon: settings-2
 ---
@@ -20,7 +20,7 @@ icon: settings-2
 
 Specifies a *file* that keeps the state of the dynamically configurable group.
 
-Examples:
+Exemples :
 
 ```nginx
 state /var/lib/nginx/state/servers.conf; # path for Linux
@@ -33,7 +33,7 @@ The state is currently limited to the list of servers with their parameters. The
 > Changes made during [[10-guides/01-introduction/control|configuration reload]] or [[10-guides/01-introduction/control|binary upgrade]] can be lost.
 
 > [!NOTE]
-> This directive is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

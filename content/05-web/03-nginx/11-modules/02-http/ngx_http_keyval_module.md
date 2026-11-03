@@ -13,7 +13,7 @@ The `ngx_http_keyval_module` module (1.13.3) creates variables with values taken
 > [!NOTE]
 > This module is available as part of our [abonnement commercial](https://nginx.com/products/).
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 http {

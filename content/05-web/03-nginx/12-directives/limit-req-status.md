@@ -1,12 +1,9 @@
 ---
 title: "limit_req_status"
-description: "Directive nginx limit_req_status (ngx_http_limit_req_module) — Sets the status code to return in response to rejected requests."
+description: "Directive nginx limit_req_status (ngx_http_limit_req_module) — Définit le code de statut renvoyé pour les requêtes rejetées."
 tags: [nginx, directive, ngx_http_limit_req_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the status code to return in response to rejected requests.
+Définit le code de statut renvoyé pour les requêtes rejetées.
 
 ---
 

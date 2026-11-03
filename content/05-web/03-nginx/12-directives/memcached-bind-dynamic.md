@@ -1,6 +1,6 @@
 ---
 title: "memcached_bind_dynamic"
-description: "Directive nginx memcached_bind_dynamic (ngx_http_memcached_module) — When enabled, makes the bind operation at each connection attempt. NOTE This directive is available as part of our abonnement commercial."
+description: "Directive nginx memcached_bind_dynamic (ngx_http_memcached_module) — When enabled, makes the bind operation at each connection attempt. NOTE Cette directive est disponible dans le cadre de notre abonnement commercial."
 tags: [nginx, directive, ngx_http_memcached_module]
 icon: settings-2
 ---
@@ -21,7 +21,7 @@ icon: settings-2
 When enabled, makes the [[12-directives/memcached-bind|bind]] operation at each connection attempt.
 
 > [!NOTE]
-> This directive is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "limit_req"
-description: "Directive nginx limit_req (ngx_http_limit_req_module) — Sets the shared memory zone and the maximum burst size of requests. If the requests rate exceeds the rate configured for a zone, their processing is delayed such that requests are processed at a…"
+description: "Directive nginx limit_req (ngx_http_limit_req_module) — Définit la zone de mémoire partagée et la taille maximale des rafales de requêtes. Si le débit des requêtes dépasse celui configuré pour la zone, leur traitement est retardé pour respecter le débit…"
 tags: [nginx, directive, ngx_http_limit_req_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the shared memory zone and the maximum burst size of requests. If the requests rate exceeds the rate configured for a zone, their processing is delayed such that requests are processed at a defined rate. Excessive requests are delayed until their number exceeds the maximum burst size in which case the request is terminated with an [[12-directives/limit-req-status|error]]. By default, the maximum burst size is equal to zero. For example, the directives
+Définit la zone de mémoire partagée et la taille maximale des rafales de requêtes. Si le débit des requêtes dépasse celui configuré pour la zone, leur traitement est retardé pour respecter le débit défini. Les requêtes excédentaires sont retardées jusqu'à ce que leur nombre dépasse la taille maximale de rafale ; la requête est alors terminée avec une [[12-directives/limit-req-status|erreur]]. Par défaut, la taille maximale de rafale est nulle. Par exemple, les directives
 
 ```nginx
 limit_req_zone $binary_remote_addr zone=one:10m rate=1r/s;
@@ -28,17 +25,17 @@ server {
     }
 ```
 
-allow not more than 1 request per second at an average, with bursts not exceeding 5 requests.
+autorisent au plus 1 requête par seconde en moyenne, avec des rafales d'au plus 5 requêtes.
 
-If delaying of excessive requests while requests are being limited is not desired, the parameter `nodelay` should be used:
+Si l'on ne souhaite pas retarder les requêtes excédentaires pendant la limitation, utiliser le paramètre `nodelay` :
 
 ```nginx
 limit_req zone=one burst=5 nodelay;
 ```
 
-The `delay` parameter (1.15.7) specifies a limit at which excessive requests become delayed. Default value is zero, i.e. all excessive requests are delayed.
+Le paramètre `delay` (1.15.7) indique le seuil à partir duquel les requêtes excédentaires sont retardées. La valeur par défaut est zéro : toutes les requêtes excédentaires sont retardées.
 
-There could be several `limit_req` directives. For example, the following configuration will limit the processing rate of requests coming from a single IP address and, at the same time, the request processing rate by the virtual server:
+Il peut y avoir plusieurs directives `limit_req`. Par exemple, la configuration suivante limite le débit des requêtes provenant d'une même adresse IP et, en même temps, le débit des requêtes traitées par le serveur virtuel :
 
 ```nginx
 limit_req_zone $binary_remote_addr zone=perip:10m rate=1r/s;
@@ -51,7 +48,7 @@ server {
 }
 ```
 
-These directives are inherited from the previous configuration level if and only if there are no `limit_req` directives defined on the current level.
+Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `limit_req` n'est définie au niveau courant.
 
 ---
 

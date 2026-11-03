@@ -1,19 +1,16 @@
 ---
 title: "$host"
-description: "Variable nginx $host (ngx_http_core_module) — in this order of precedence: host name from the request line, or host name from the Host request header field, or the server name matching a request"
+description: "Variable nginx $host (ngx_http_core_module) — dans cet ordre de priorité : nom d'hôte de la ligne de requête, sinon nom d'hôte du champ d'en-tête de requête Host, sinon nom du serveur correspondant à la requête"
 tags: [nginx, variable, ngx_http_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$host` |
 | **Module** | [[11-modules/02-http/ngx_http_core_module\|ngx_http_core_module]] |
 
-in this order of precedence: host name from the request line, or host name from the `Host` request header field, or the server name matching a request
+dans cet ordre de priorité : nom d'hôte de la ligne de requête, sinon nom d'hôte du champ d'en-tête de requête `Host`, sinon nom du serveur correspondant à la requête
 
 ---
 

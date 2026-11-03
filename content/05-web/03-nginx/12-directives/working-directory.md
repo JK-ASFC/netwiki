@@ -1,23 +1,20 @@
 ---
 title: "working_directory"
-description: "Directive nginx working_directory (Core functionality) — Defines the current working directory for a worker process. It is primarily used when writing a core-file, in which case a worker process should have write permission for the specified directory."
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx working_directory (ngx_core_module) — Définit le répertoire de travail courant d'un processus de travail. Il sert surtout à l'écriture d'un fichier core : le processus de travail doit alors avoir le droit d'écriture sur ce répertoire."
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `working_directory directory;` |
 | **Valeur par défaut** | — |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-Defines the current working directory for a worker process. It is primarily used when writing a core-file, in which case a worker process should have write permission for the specified directory.
+Définit le répertoire de travail courant d'un processus de travail. Il sert surtout à l'écriture d'un fichier core : le processus de travail doit alors avoir le droit d'écriture sur ce répertoire.
 
 ---
 

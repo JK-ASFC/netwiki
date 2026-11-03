@@ -26,7 +26,7 @@ The optional `jitter` parameter sets the time within which the location content 
 
 By default, the `js_periodic` handler is executed on worker process 0. The optional `worker_affinity` parameter allows specifying particular worker processes where the location content handler should be executed. Each worker process set is represented by a bitmask of allowed worker processes. The `all` mask allows the handler to be executed in all worker processes.
 
-Example:
+Exemple :
 
 ```nginx
 example.conf:

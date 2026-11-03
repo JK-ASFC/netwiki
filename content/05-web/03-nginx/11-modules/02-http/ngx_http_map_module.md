@@ -1,16 +1,13 @@
 ---
 title: "ngx_http_map_module"
-description: "Module nginx ngx_http_map_module — The ngx_http_map_module module creates variables whose values depend on values of other variables."
+description: "Module nginx ngx_http_map_module — Le module ngx_http_map_module crée des variables dont la valeur dépend de la valeur d'autres variables."
 tags: [nginx, module, ngx_http_map_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_map_module` crée des variables dont la valeur dépend de la valeur d'autres variables.
 
-The `ngx_http_map_module` module creates variables whose values depend on values of other variables.
-
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 map $http_host $name {

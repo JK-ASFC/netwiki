@@ -41,7 +41,7 @@ This module is not built by default, it should be enabled with the `--with-http_
 
 A similar pseudo-streaming support for FLV files is provided by the [[11-modules/02-http/ngx_http_flv_module|ngx_http_flv_module]] module.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location /video/ {

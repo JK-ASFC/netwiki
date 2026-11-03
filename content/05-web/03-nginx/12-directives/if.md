@@ -1,12 +1,9 @@
 ---
 title: "if"
-description: "Directive nginx if (ngx_http_rewrite_module) — The specified condition is evaluated. If true, this module directives specified inside the braces are executed, and the request is assigned the configuration inside the if directive. Configurations…"
+description: "Directive nginx if (ngx_http_rewrite_module) — La condition (condition) indiquée est évaluée. Si elle est vraie, les directives de ce module placées entre les accolades sont exécutées et la requête reçoit la configuration définie dans la…"
 tags: [nginx, directive, ngx_http_rewrite_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,22 +14,22 @@ icon: settings-2
 
 ## Utilisation
 
-The specified *condition* is evaluated. If true, this module directives specified inside the braces are executed, and the request is assigned the configuration inside the `if` directive. Configurations inside the `if` directives are inherited from the previous configuration level.
+La condition (*condition*) indiquée est évaluée. Si elle est vraie, les directives de ce module placées entre les accolades sont exécutées et la requête reçoit la configuration définie dans la directive `if`. Les configurations à l'intérieur des directives `if` héritent du niveau de configuration précédent.
 
-A condition may be any of the following:
+Une condition peut être :
 
-- a variable name; false if the value of a variable is an empty string or “`0`”;
+- un nom de variable ; la condition est fausse si la valeur de la variable est une chaîne vide ou « `0` » ;
 
   > [!NOTE]
-  > Before version 1.0.1, any string starting with “`0`” was considered a false value.
-- comparison of a variable with a string using the “`=`” and “`!=`” operators;
-- matching of a variable against a regular expression using the “`~`” (for case-sensitive matching) and “`~*`” (for case-insensitive matching) operators. Regular expressions can contain captures that are made available for later reuse in the `$1`..`$9` variables (see [[10-guides/01-introduction/regex-captures|Regular expression captures]]). Negative operators “`!~`” and “`!~*`” are also available. If a regular expression includes the “`}`” or “`;`” characters, the whole expressions should be enclosed in single or double quotes.
-- checking of a file existence with the “`-f`” and “`!-f`” operators;
-- checking of a directory existence with the “`-d`” and “`!-d`” operators;
-- checking of a file, directory, or symbolic link existence with the “`-e`” and “`!-e`” operators;
-- checking for an executable file with the “`-x`” and “`!-x`” operators.
+  > Avant la version 1.0.1, toute chaîne commençant par « `0` » était considérée comme fausse.
+- la comparaison d'une variable avec une chaîne à l'aide des opérateurs « `=` » et « `!=` » ;
+- la correspondance d'une variable avec une expression régulière à l'aide des opérateurs « `~` » (sensible à la casse) et « `~*` » (insensible à la casse). Les expressions régulières peuvent contenir des captures réutilisables ensuite dans les variables `$1`..`$9` (voir [[10-guides/01-introduction/regex-captures|Captures des expressions régulières]]). Les opérateurs de négation « `!~` » et « `!~*` » sont aussi disponibles. Si une expression régulière contient les caractères « `}` » ou « `;` », l'expression entière doit être placée entre guillemets simples ou doubles.
+- la vérification de l'existence d'un fichier avec les opérateurs « `-f` » et « `!-f` » ;
+- la vérification de l'existence d'un répertoire avec les opérateurs « `-d` » et « `!-d` » ;
+- la vérification de l'existence d'un fichier, d'un répertoire ou d'un lien symbolique avec les opérateurs « `-e` » et « `!-e` » ;
+- la vérification d'un fichier exécutable avec les opérateurs « `-x` » et « `!-x` ».
 
-Examples:
+Exemples :
 
 ```nginx
 if ($http_user_agent ~ MSIE) {
@@ -57,7 +54,7 @@ if ($invalid_referer) {
 ```
 
 > [!NOTE]
-> A value of the `$invalid_referer` embedded variable is set by the [[12-directives/valid-referers|valid_referers]] directive.
+> La valeur de la variable intégrée `$invalid_referer` est définie par la directive [[12-directives/valid-referers|valid_referers]].
 
 ---
 

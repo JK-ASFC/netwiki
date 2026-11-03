@@ -1,19 +1,16 @@
 ---
 title: "$is_args"
-description: "Variable nginx $is_args (ngx_http_core_module) — “?” if a request line has arguments, or an empty string otherwise"
+description: "Variable nginx $is_args (ngx_http_core_module) — « ? » si la ligne de requête comporte des arguments, chaîne vide sinon"
 tags: [nginx, variable, ngx_http_core_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$is_args` |
 | **Module** | [[11-modules/02-http/ngx_http_core_module\|ngx_http_core_module]] |
 
-“`?`” if a request line has arguments, or an empty string otherwise
+« `?` » si la ligne de requête comporte des arguments, chaîne vide sinon
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "client_body_early_read"
-description: "Directive nginx client_body_early_read (ngx_http_core_module) — Enables reading of the client request body immediately after the request headers are received, using the request body read settings from the server block. If at least one value of the string…"
+description: "Directive nginx client_body_early_read (ngx_http_core_module) — Active la lecture du corps de la requête du client dès la réception des en-têtes, avec les réglages de lecture du corps du bloc server. Si au moins une des chaînes en paramètre n'est ni vide ni égale…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,13 +15,13 @@ icon: settings-2
 
 ## Utilisation
 
-Enables reading of the client request body immediately after the request headers are received, using the request body read settings from the `server` block. If at least one value of the string parameters is not empty and is not equal to “0”, then nginx reads the request body early.
+Active la lecture du corps de la requête du client dès la réception des en-têtes, avec les réglages de lecture du corps du bloc `server`. Si au moins une des chaînes en paramètre n'est ni vide ni égale à « 0 », nginx lit le corps de la requête de façon anticipée.
 
-The directive is incompatible with modules that use unbuffered request body processing, such as the [[11-modules/02-http/ngx_http_grpc_module|ngx_http_grpc_module]] module. The directive is also incompatible with modules which write the request body to a file, such as [[11-modules/02-http/ngx_http_dav_module|ngx_http_dav_module]] module.
+Cette directive est incompatible avec les modules qui traitent le corps de la requête sans tampon, comme [[11-modules/02-http/ngx_http_grpc_module|ngx_http_grpc_module]]. Elle est aussi incompatible avec les modules qui écrivent le corps de la requête dans un fichier, comme [[11-modules/02-http/ngx_http_dav_module|ngx_http_dav_module]].
 
-The [[12-directives/client-body-in-file-only|client_body_in_file_only]] directive is ignored when the request body is read early.
+La directive [[12-directives/client-body-in-file-only|client_body_in_file_only]] est ignorée lorsque le corps de la requête est lu de façon anticipée.
 
-Example:
+Exemple :
 
 ```nginx
 map $http_content_type $is_json {

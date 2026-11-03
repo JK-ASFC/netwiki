@@ -1,31 +1,28 @@
 ---
 title: "env"
-description: "Directive nginx env (Core functionality) — By default, nginx removes all environment variables inherited from its parent process except the TZ variable. This directive allows preserving some of the inherited variables, changing their values,…"
-tags: [nginx, directive, Core functionality]
+description: "Directive nginx env (ngx_core_module) — Par défaut, nginx supprime toutes les variables d'environnement héritées de son processus parent, sauf la variable TZ. Cette directive permet de conserver certaines variables héritées, de modifier…"
+tags: [nginx, directive, ngx_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `env variable[=value];` |
 | **Valeur par défaut** | `env TZ;` |
 | **Contexte** | `main` |
-| **Module** | [[11-modules/01-coeur/Core functionality\|Core functionality]] |
+| **Module** | [[11-modules/01-coeur/ngx_core_module\|ngx_core_module]] |
 
 ## Utilisation
 
-By default, nginx removes all environment variables inherited from its parent process except the TZ variable. This directive allows preserving some of the inherited variables, changing their values, or creating new environment variables. These variables are then:
+Par défaut, nginx supprime toutes les variables d'environnement héritées de son processus parent, sauf la variable TZ. Cette directive permet de conserver certaines variables héritées, de modifier leur valeur ou de créer de nouvelles variables d'environnement. Ces variables sont ensuite :
 
-- inherited during a [[10-guides/01-introduction/control|live upgrade]] of an executable file;
-- used by the [[11-modules/02-http/ngx_http_perl_module|ngx_http_perl_module]] module;
-- used by worker processes. One should bear in mind that controlling system libraries in this way is not always possible as it is common for libraries to check variables only during initialization, well before they can be set using this directive. An exception from this is an above mentioned [[10-guides/01-introduction/control|live upgrade]] of an executable file.
+- héritées lors d'une [[10-guides/01-introduction/control|mise à jour à chaud]] de l'exécutable ;
+- utilisées par le module [[11-modules/02-http/ngx_http_perl_module|ngx_http_perl_module]] ;
+- utilisées par les processus de travail. Il faut garder à l'esprit qu'il n'est pas toujours possible de piloter ainsi les bibliothèques système, car elles ne lisent souvent les variables qu'à leur initialisation, bien avant que cette directive ne puisse les définir. La [[10-guides/01-introduction/control|mise à jour à chaud]] de l'exécutable, citée plus haut, fait exception.
 
-The TZ variable is always inherited and available to the [[11-modules/02-http/ngx_http_perl_module|ngx_http_perl_module]] module, unless it is configured explicitly.
+La variable TZ est toujours héritée et disponible pour le module [[11-modules/02-http/ngx_http_perl_module|ngx_http_perl_module]], sauf si elle est configurée explicitement.
 
-Usage example:
+Exemple d'utilisation :
 
 ```nginx
 env MALLOC_OPTIONS;
@@ -34,7 +31,7 @@ env OPENSSL_ALLOW_PROXY_CERTS=1;
 ```
 
 > [!NOTE]
-> The NGINX environment variable is used internally by nginx and should not be set directly by the user.
+> La variable d'environnement NGINX est utilisée en interne par nginx et ne doit pas être définie directement par l'utilisateur.
 
 ---
 

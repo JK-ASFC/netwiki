@@ -1,12 +1,9 @@
 ---
 title: "postpone_output"
-description: "Directive nginx postpone_output (ngx_http_core_module) — If possible, the transmission of client data will be postponed until nginx has at least size bytes of data to send. The zero value disables postponing data transmission."
+description: "Directive nginx postpone_output (ngx_http_core_module) — Si possible, la transmission des données au client est différée jusqu'à ce que nginx ait au moins size octets à envoyer. La valeur zéro désactive ce report."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-If possible, the transmission of client data will be postponed until nginx has at least *size* bytes of data to send. The zero value disables postponing data transmission.
+Si possible, la transmission des données au client est différée jusqu'à ce que nginx ait au moins *size* octets à envoyer. La valeur zéro désactive ce report.
 
 ---
 

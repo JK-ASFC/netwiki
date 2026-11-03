@@ -1,12 +1,9 @@
 ---
 title: "gzip_buffers"
-description: "Directive nginx gzip_buffers (ngx_http_gzip_module) — Sets the number and size of buffers used to compress a response. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform. NOTE Until version 0.7.28,…"
+description: "Directive nginx gzip_buffers (ngx_http_gzip_module) — Définit le nombre (number) et la taille (size) des tampons utilisés pour compresser une réponse. Par défaut, la taille d'un tampon est égale à une page mémoire, soit 4K ou 8K selon la plate-forme.…"
 tags: [nginx, directive, ngx_http_gzip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *number* and *size* of buffers used to compress a response. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform.
+Définit le nombre (*number*) et la taille (*size*) des tampons utilisés pour compresser une réponse. Par défaut, la taille d'un tampon est égale à une page mémoire, soit 4K ou 8K selon la plate-forme.
 
 > [!NOTE]
-> Until version 0.7.28, four 4K or 8K buffers were used by default.
+> Jusqu'à la version 0.7.28, quatre tampons de 4K ou 8K étaient utilisés par défaut.
 
 ---
 

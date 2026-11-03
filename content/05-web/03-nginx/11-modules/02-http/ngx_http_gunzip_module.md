@@ -1,18 +1,15 @@
 ---
 title: "ngx_http_gunzip_module"
-description: "Module nginx ngx_http_gunzip_module — The ngx_http_gunzip_module module is a filter that decompresses responses with “Content-Encoding: gzip” for clients that do not support “gzip” encoding method. The module will be useful when it is desirable to store…"
+description: "Module nginx ngx_http_gunzip_module — Le module ngx_http_gunzip_module est un filtre qui décompresse les réponses portant « Content-Encoding: gzip » pour les clients qui ne prennent pas en charge la méthode d'encodage « gzip ». Il est utile lorsqu'on…"
 tags: [nginx, module, ngx_http_gunzip_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_gunzip_module` est un filtre qui décompresse les réponses portant « `Content-Encoding: gzip` » pour les clients qui ne prennent pas en charge la méthode d'encodage « gzip ». Il est utile lorsqu'on souhaite stocker les données compressées pour gagner de la place et réduire les entrées-sorties.
 
-The `ngx_http_gunzip_module` module is a filter that decompresses responses with “`Content-Encoding: gzip`” for clients that do not support “gzip” encoding method. The module will be useful when it is desirable to store data compressed to save space and reduce I/O costs.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_gunzip_module`.
 
-This module is not built by default, it should be enabled with the `--with-http_gunzip_module` configuration parameter.
-
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 location /storage/ {

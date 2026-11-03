@@ -14,7 +14,7 @@ The `ngx_http_charset_module` module adds the specified charset to the `Content-
 - only single-byte charsets can be converted
 - or single-byte charsets to/from UTF-8.
 
-## Example Configuration
+## Exemple de configuration
 
 ```nginx
 include        conf/koi-win;

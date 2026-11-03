@@ -1,12 +1,9 @@
 ---
 title: "server_name (ngx_http_core_module)"
-description: "Directive nginx server_name (ngx_http_core_module) — Sets names of a virtual server, for example: nginx server { server_name example.com www.example.com; } The first name becomes the primary server name. Server names can include an asterisk (“”)…"
+description: "Directive nginx server_name (ngx_http_core_module) — Définit les noms d'un serveur virtuel, par exemple : nginx server { server_name example.com www.example.com; } Le premier nom devient le nom principal du serveur. Les noms de serveurs peuvent…"
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets names of a virtual server, for example:
+Définit les noms d'un serveur virtuel, par exemple :
 
 ```nginx
 server {
@@ -25,9 +22,9 @@ server {
 }
 ```
 
-The first name becomes the primary server name.
+Le premier nom devient le nom principal du serveur.
 
-Server names can include an asterisk (“`*`”) replacing the first or last part of a name:
+Les noms de serveurs peuvent contenir un astérisque (« `*` ») remplaçant la première ou la dernière partie du nom :
 
 ```nginx
 server {
@@ -35,9 +32,9 @@ server {
 }
 ```
 
-Such names are called wildcard names.
+On les appelle noms génériques.
 
-The first two of the names mentioned above can be combined in one:
+Les deux premiers noms ci-dessus peuvent être combinés en un seul :
 
 ```nginx
 server {
@@ -45,7 +42,7 @@ server {
 }
 ```
 
-It is also possible to use regular expressions in server names, preceding the name with a tilde (“`~`”):
+On peut aussi utiliser des expressions régulières dans les noms de serveurs, en faisant précéder le nom d'un tilde (« `~` ») :
 
 ```nginx
 server {
@@ -53,7 +50,7 @@ server {
 }
 ```
 
-Regular expressions can contain captures (0.7.40) that can later be used in other directives (see [[10-guides/01-introduction/regex-captures|Regular expression captures]]):
+Les expressions régulières peuvent contenir des captures (0.7.40) réutilisables ensuite dans d'autres directives (voir [[10-guides/01-introduction/regex-captures|Captures des expressions régulières]]) :
 
 ```nginx
 server {
@@ -73,7 +70,7 @@ server {
 }
 ```
 
-Named captures in regular expressions create variables (0.8.25) that can later be used in other directives:
+Les captures nommées des expressions régulières créent des variables (0.8.25) réutilisables ensuite dans d'autres directives :
 
 ```nginx
 server {
@@ -93,9 +90,9 @@ server {
 }
 ```
 
-If the directive’s parameter is set to “`$hostname`” (0.9.4), the machine’s hostname is inserted.
+Si le paramètre de la directive vaut « `$hostname` » (0.9.4), le nom d'hôte de la machine est inséré.
 
-It is also possible to specify an empty server name (0.7.11):
+On peut aussi indiquer un nom de serveur vide (0.7.11) :
 
 ```nginx
 server {
@@ -103,19 +100,19 @@ server {
 }
 ```
 
-It allows this server to process requests without the `Host` header field — instead of the default server — for the given address:port pair. This is the default setting.
+Cela permet à ce serveur de traiter les requêtes sans champ d'en-tête `Host`, à la place du serveur par défaut, pour le couple adresse:port donné. C'est le réglage par défaut.
 
 > [!NOTE]
-> Before 0.8.48, the machine’s hostname was used by default.
+> Avant la version 0.8.48, le nom d'hôte de la machine était utilisé par défaut.
 
-The search is performed in the following order of priority and terminates on the first matching variant:
+La recherche s'effectue dans l'ordre de priorité suivant et s'arrête à la première variante correspondante :
 
-1. the exact name
-2. the longest wildcard name starting with an asterisk, e.g. “`*.example.com`”
-3. the longest wildcard name ending with an asterisk, e.g. “`mail.*`”
-4. the first matching regular expression (in order of appearance in the configuration file)
+1. le nom exact
+2. le plus long nom générique commençant par un astérisque, par exemple « `*.example.com` »
+3. le plus long nom générique se terminant par un astérisque, par exemple « `mail.*` »
+4. la première expression régulière correspondante (dans l'ordre d'apparition dans le fichier de configuration)
 
-Detailed description of server names is provided in a separate [[10-guides/02-http/server-names|Server names]] document.
+Les noms de serveurs sont décrits en détail dans le document [[10-guides/02-http/server-names|Noms de serveurs]].
 
 ---
 

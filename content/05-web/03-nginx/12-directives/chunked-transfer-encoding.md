@@ -1,12 +1,9 @@
 ---
 title: "chunked_transfer_encoding"
-description: "Directive nginx chunked_transfer_encoding (ngx_http_core_module) — Allows disabling chunked transfer encoding in HTTP/1.1. It may come in handy when using a software failing to support chunked encoding despite the standard’s requirement."
+description: "Directive nginx chunked_transfer_encoding (ngx_http_core_module) — Permet de désactiver l'encodage de transfert par morceaux (chunked) en HTTP/1.1. Utile avec un logiciel qui ne prend pas en charge cet encodage malgré l'exigence de la norme."
 tags: [nginx, directive, ngx_http_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Allows disabling chunked transfer encoding in HTTP/1.1. It may come in handy when using a software failing to support chunked encoding despite the standard’s requirement.
+Permet de désactiver l'encodage de transfert par morceaux (*chunked*) en HTTP/1.1. Utile avec un logiciel qui ne prend pas en charge cet encodage malgré l'exigence de la norme.
 
 ---
 

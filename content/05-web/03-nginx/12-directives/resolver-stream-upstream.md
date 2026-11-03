@@ -1,6 +1,6 @@
 ---
 title: "resolver (ngx_stream_upstream_module)"
-description: "Directive nginx resolver (ngx_stream_upstream_module) — Configures name servers used to resolve names of upstream servers into addresses, for example: nginx resolver 127.0.0.1 ::1:5353; The address can be specified as a domain name or IP address, with an…"
+description: "Directive nginx resolver (ngx_stream_upstream_module) — Configure les serveurs de noms utilisés pour résoudre en adresses les noms des serveurs amont, par exemple : nginx resolver 127.0.0.1 ::1:5353; The address can be specified as a domain name or IP…"
 tags: [nginx, directive, ngx_stream_upstream_module]
 icon: settings-2
 ---
@@ -18,7 +18,7 @@ icon: settings-2
 
 ## Utilisation
 
-Configures name servers used to resolve names of upstream servers into addresses, for example:
+Configure les serveurs de noms utilisés pour résoudre en adresses les noms des serveurs amont, par exemple :
 
 ```nginx
 resolver 127.0.0.1 [::1]:5353;
@@ -26,7 +26,7 @@ resolver 127.0.0.1 [::1]:5353;
 
 The address can be specified as a domain name or IP address, with an optional port. If port is not specified, the port 53 is used. Name servers are queried in a round-robin fashion.
 
-By default, nginx will look up both IPv4 and IPv6 addresses while resolving. If looking up of IPv4 or IPv6 addresses is not desired, the `ipv4=off` (1.23.1) or the `ipv6=off` parameter can be specified.
+Par défaut, nginx recherche à la fois les adresses IPv4 et IPv6 lors de la résolution. Si l'on ne souhaite pas rechercher les adresses IPv4 ou IPv6, on peut indiquer le paramètre `ipv4=off` (1.23.1) ou `ipv6=off`.
 
 By default, nginx caches answers using the TTL value of a response. The optional `valid` parameter allows overriding it:
 
@@ -35,7 +35,7 @@ resolver 127.0.0.1 [::1]:5353 valid=30s;
 ```
 
 > [!NOTE]
-> To prevent DNS spoofing, it is recommended configuring DNS servers in a properly secured trusted local network.
+> Pour éviter l'usurpation DNS, il est recommandé de configurer des serveurs DNS dans un réseau local de confiance correctement sécurisé.
 
 The optional `status_zone` parameter (1.17.5) enables [[11-modules/02-http/ngx_http_api_module|collection]] of DNS server statistics of requests and responses in the specified *zone*. The parameter is available as part of our [abonnement commercial](https://nginx.com/products/).
 
