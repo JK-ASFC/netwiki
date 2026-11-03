@@ -1,12 +1,9 @@
 ---
 title: "ssi"
-description: "Directive nginx ssi (ngx_http_ssi_module) — Enables or disables processing of SSI commands in responses."
+description: "Directive nginx ssi (ngx_http_ssi_module) — Active ou désactive le traitement des commandes SSI dans les réponses."
 tags: [nginx, directive, ngx_http_ssi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables processing of SSI commands in responses.
+Active ou désactive le traitement des commandes SSI dans les réponses.
 
 ---
 

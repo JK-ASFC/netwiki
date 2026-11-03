@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_mirror_module"
-description: "Module nginx ngx_http_mirror_module — The ngx_http_mirror_module module (1.13.4) implements mirroring of an original request by creating background mirror subrequests. Responses to mirror subrequests are ignored."
+description: "Module nginx ngx_http_mirror_module — Le module ngx_http_mirror_module (1.13.4) duplique la requête d'origine en créant des sous-requêtes miroirs en arrière-plan. Les réponses aux sous-requêtes miroirs sont ignorées."
 tags: [nginx, module, ngx_http_mirror_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_mirror_module` module (1.13.4) implements mirroring of an original request by creating background mirror subrequests. Responses to mirror subrequests are ignored.
+Le module `ngx_http_mirror_module` (1.13.4) duplique la requête d'origine en créant des sous-requêtes miroirs en arrière-plan. Les réponses aux sous-requêtes miroirs sont ignorées.
 
 ## Exemple de configuration
 

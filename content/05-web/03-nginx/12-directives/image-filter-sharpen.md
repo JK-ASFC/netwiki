@@ -1,12 +1,9 @@
 ---
 title: "image_filter_sharpen"
-description: "Directive nginx image_filter_sharpen (ngx_http_image_filter_module) — Increases sharpness of the final image. The sharpness percentage can exceed 100. The zero value disables sharpening. Parameter value can contain variables."
+description: "Directive nginx image_filter_sharpen (ngx_http_image_filter_module) — Augmente la netteté de l'image finale. Le pourcentage de netteté peut dépasser 100. La valeur zéro désactive l'accentuation. La valeur du paramètre peut contenir des variables."
 tags: [nginx, directive, ngx_http_image_filter_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Increases sharpness of the final image. The sharpness percentage can exceed 100. The zero value disables sharpening. Parameter value can contain variables.
+Augmente la netteté de l'image finale. Le pourcentage de netteté peut dépasser 100. La valeur zéro désactive l'accentuation. La valeur du paramètre peut contenir des variables.
 
 ---
 

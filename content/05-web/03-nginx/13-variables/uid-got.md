@@ -1,19 +1,16 @@
 ---
 title: "$uid_got"
-description: "Variable nginx $uid_got (ngx_http_userid_module) — The cookie name and received client identifier."
+description: "Variable nginx $uid_got (ngx_http_userid_module) — Nom du cookie et identifiant client reçu."
 tags: [nginx, variable, ngx_http_userid_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$uid_got` |
 | **Module** | [[11-modules/02-http/ngx_http_userid_module\|ngx_http_userid_module]] |
 
-The cookie name and received client identifier.
+Nom du cookie et identifiant client reçu.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "userid_mark"
-description: "Directive nginx userid_mark (ngx_http_userid_module) — If the parameter is not off, enables the cookie marking mechanism and sets the character used as a mark. This mechanism is used to add or change userid_p3p and/or a cookie expiration time while…"
+description: "Directive nginx userid_mark (ngx_http_userid_module) — Si le paramètre n'est pas off, active le mécanisme de marquage des cookies et définit le caractère servant de marque. Ce mécanisme sert à ajouter ou modifier userid_p3p et/ou la date d'expiration du…"
 tags: [nginx, directive, ngx_http_userid_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-If the parameter is not `off`, enables the cookie marking mechanism and sets the character used as a mark. This mechanism is used to add or change [[12-directives/userid-p3p|userid_p3p]] and/or a cookie expiration time while preserving the client identifier. A mark can be any letter of the English alphabet (case-sensitive), digit, or the “`=`” character.
+Si le paramètre n'est pas `off`, active le mécanisme de marquage des cookies et définit le caractère servant de marque. Ce mécanisme sert à ajouter ou modifier [[12-directives/userid-p3p|userid_p3p]] et/ou la date d'expiration du cookie tout en conservant l'identifiant du client. La marque peut être une lettre de l'alphabet anglais (casse comprise), un chiffre ou le caractère « `=` ».
 
-If the mark is set, it is compared with the first padding symbol in the base64 representation of the client identifier passed in a cookie. If they do not match, the cookie is resent with the specified mark, expiration time, and `P3P` header.
+Si la marque est définie, elle est comparée au premier caractère de remplissage de la représentation base64 de l'identifiant transmis dans le cookie. S'ils diffèrent, le cookie est renvoyé avec la marque, la date d'expiration et l'en-tête `P3P` indiqués.
 
 ---
 

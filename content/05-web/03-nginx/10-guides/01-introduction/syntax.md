@@ -1,46 +1,43 @@
 ---
-title: "Configuration file measurement units"
-description: "Nginx — Configuration file measurement units. nginx supports several measurement units for specifying sizes, offsets, and time intervals within configuration files."
+title: "Unités de mesure du fichier de configuration"
+description: "Nginx — Unités de mesure du fichier de configuration. nginx prend en charge plusieurs unités de mesure pour indiquer des tailles, des décalages et des intervalles de temps dans les fichiers de configuration."
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+nginx prend en charge plusieurs unités de mesure pour indiquer des tailles, des décalages et des intervalles de temps dans les fichiers de configuration.
 
-nginx supports several measurement units for specifying sizes, offsets, and time intervals within configuration files.
+## Tailles et décalages
 
-## Sizes and offsets
+Les tailles peuvent s'exprimer en octets, kilooctets ou mégaoctets avec les suffixes suivants :
 
-Sizes can be specified in bytes, kilobytes, or megabytes using the following suffixes:
+- `k` et `K` pour les kilooctets
+- `m` et `M` pour les mégaoctets
 
-- `k` and `K` for kilobytes
-- `m` and `M` for megabytes
+Par exemple, « `1024` », « `8k` », « `1m` ».
 
-For example, “`1024`”, “`8k`”, “`1m`”.
+Les décalages peuvent aussi s'exprimer en gigaoctets avec les suffixes `g` ou `G`.
 
-Offsets can be also specified in gigabytes using the `g` or `G` suffixes.
+## Intervalles de temps
 
-## Time intervals
-
-Time intervals can be specified in milliseconds, seconds, minutes, hours, days and so on, using the following suffixes:
+Les intervalles de temps peuvent s'exprimer en millisecondes, secondes, minutes, heures, jours, etc., avec les suffixes suivants :
 
 |   |   |
 | --- | --- |
-| ms | milliseconds |
-| s | seconds (default) |
+| ms | millisecondes |
+| s | secondes (par défaut) |
 | m | minutes |
-| h | hours |
-| d | days |
-| w | weeks |
-| M | months, 30 days |
-| y | years, 365 days |
+| h | heures |
+| d | jours |
+| w | semaines |
+| M | mois, 30 jours |
+| y | années, 365 jours |
 
-Multiple units can be combined in a single value by specifying them in the order from the most to the least significant, and optionally separated by whitespace. For example, “`1h 30m`” specifies the same time as “`90m`” or “`5400s`”.
+Plusieurs unités peuvent être combinées dans une même valeur, de la plus grande à la plus petite, éventuellement séparées par des espaces. Par exemple, « `1h 30m` » représente la même durée que « `90m` » ou « `5400s` ».
 
-- A value without a suffix means seconds.
-- It is recommended to always specify a suffix.
-- Certain time intervals can be specified only with a seconds resolution.
+- Une valeur sans suffixe s'exprime en secondes.
+- Il est recommandé de toujours indiquer un suffixe.
+- Certains intervalles de temps ne peuvent être indiqués qu'à la seconde près.
 
 ---
 

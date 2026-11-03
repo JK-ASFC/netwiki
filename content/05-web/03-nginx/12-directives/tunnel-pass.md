@@ -1,12 +1,9 @@
 ---
 title: "tunnel_pass"
-description: "Directive nginx tunnel_pass (ngx_http_tunnel_module) — Enables handling of CONNECT requests and sets the address of a backend server. By default, the address is $host:$request_port and is taken from the client request. In most cases, tunnel_pass does not…"
+description: "Directive nginx tunnel_pass (ngx_http_tunnel_module) — Active le traitement des requêtes CONNECT et définit l'adresse du serveur d'arrière-plan. Par défaut, l'adresse (address) vaut $host:$request_port et est prise dans la requête du client. Dans la…"
 tags: [nginx, directive, ngx_http_tunnel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Enables handling of CONNECT requests and sets the address of a backend server. By default, the `address` is *$host:$request\_port* and is taken from the client request. In most cases, `tunnel_pass` does not require configuring any arguments.
+Active le traitement des requêtes CONNECT et définit l'adresse du serveur d'arrière-plan. Par défaut, l'adresse (`address`) vaut *$host:$request\_port* et est prise dans la requête du client. Dans la plupart des cas, `tunnel_pass` ne nécessite aucun argument.
 
-The address can be specified as a domain name or IP address, and a port:
+L'adresse peut être un nom de domaine ou une adresse IP, avec un port :
 
 ```nginx
 tunnel_pass localhost:9000;

@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_mail_ssl_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `ssl_session_cache off \| none \| [builtin[:size]] [shared:name:size];` |
@@ -33,7 +30,7 @@ Définit les types et tailles des caches qui conservent les paramètres de sessi
 
 - **`shared`**
 
-  a cache shared between all worker processes. The cache size is specified in bytes; one megabyte can store about 4000 sessions. Each shared cache should have an arbitrary name. A cache with the same name can be used in several servers. It is also used to automatically generate, store, and periodically rotate TLS session ticket keys (1.23.2) unless configured explicitly using the [[12-directives/ssl-session-ticket-key-mail-ssl|ssl_session_ticket_key]] directive.
+  cache partagé entre tous les processus de travail. Sa taille s'exprime en octets ; un mégaoctet peut contenir environ 4000 sessions. Chaque cache partagé doit avoir un nom quelconque. Un cache de même nom peut servir à plusieurs serveurs. Il sert aussi à générer, conserver et renouveler périodiquement et automatiquement les clés des tickets de session TLS (1.23.2), sauf si elles sont configurées explicitement avec la directive [[12-directives/ssl-session-ticket-key-mail-ssl|ssl_session_ticket_key]].
 
 Les deux types de cache peuvent être utilisés ensemble, par exemple :
 

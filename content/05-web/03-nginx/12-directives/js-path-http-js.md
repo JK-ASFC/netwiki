@@ -1,12 +1,9 @@
 ---
 title: "js_path (ngx_http_js_module)"
-description: "Directive nginx js_path (ngx_http_js_module) — Sets an additional path for njs modules. NOTE The directive can be specified on the server and location level since 0.7.7."
+description: "Directive nginx js_path (ngx_http_js_module) — Définit un chemin supplémentaire pour les modules njs. NOTE La directive peut être indiquée aux niveaux server et location depuis la version 0.7.7."
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,10 +15,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an additional path for njs modules.
+Définit un chemin supplémentaire pour les modules njs.
 
 > [!NOTE]
-> The directive can be specified on the `server` and `location` level since 0.7.7.
+> La directive peut être indiquée aux niveaux `server` et `location` depuis la version 0.7.7.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "js_import (ngx_stream_js_module)"
-description: "Directive nginx js_import (ngx_stream_js_module) — Imports a module that implements session and variable handlers in njs. The export_name is used as a namespace to access module functions. If the export_name is not specified, the module name will be…"
+description: "Directive nginx js_import (ngx_stream_js_module) — Importe un module qui met en œuvre des gestionnaires de session et de variables en njs. export_name sert d'espace de noms pour accéder aux fonctions du module. S'il n'est pas indiqué, le nom du…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,18 +15,18 @@ icon: settings-2
 
 ## Utilisation
 
-Imports a module that implements session and variable handlers in njs. The `export_name` is used as a namespace to access module functions. If the `export_name` is not specified, the module name will be used as a namespace.
+Importe un module qui met en œuvre des gestionnaires de session et de variables en njs. `export_name` sert d'espace de noms pour accéder aux fonctions du module. S'il n'est pas indiqué, le nom du module sert d'espace de noms.
 
 ```nginx
 js_import stream.js;
 ```
 
-Here, the module name `stream` is used as a namespace while accessing exports. If the imported module exports `foo()`, `stream.foo` is used to refer to it.
+Ici, le nom de module `stream` sert d'espace de noms pour accéder aux exports. Si le module importé exporte `foo()`, on y fait référence avec `stream.foo`.
 
-Several `js_import` directives can be specified.
+Plusieurs directives `js_import` peuvent être indiquées.
 
 > [!NOTE]
-> The directive can be specified on the `server` level since 0.7.7.
+> La directive peut être indiquée au niveau `server` depuis la version 0.7.7.
 
 ---
 

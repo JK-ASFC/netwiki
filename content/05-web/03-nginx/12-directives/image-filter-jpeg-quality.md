@@ -1,12 +1,9 @@
 ---
 title: "image_filter_jpeg_quality"
-description: "Directive nginx image_filter_jpeg_quality (ngx_http_image_filter_module) — Sets the desired quality of the transformed JPEG images. Acceptable values are in the range from 1 to 100. Lesser values usually imply both lower image quality and less data to transfer. The maximum…"
+description: "Directive nginx image_filter_jpeg_quality (ngx_http_image_filter_module) — Définit la qualité (quality) souhaitée des images JPEG transformées. Les valeurs acceptées vont de 1 à 100. Une valeur plus faible implique généralement une qualité d'image moindre et moins de…"
 tags: [nginx, directive, ngx_http_image_filter_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the desired *quality* of the transformed JPEG images. Acceptable values are in the range from 1 to 100. Lesser values usually imply both lower image quality and less data to transfer. The maximum recommended value is 95. Parameter value can contain variables.
+Définit la qualité (*quality*) souhaitée des images JPEG transformées. Les valeurs acceptées vont de 1 à 100. Une valeur plus faible implique généralement une qualité d'image moindre et moins de données à transférer. La valeur maximale recommandée est 95. La valeur du paramètre peut contenir des variables.
 
 ---
 

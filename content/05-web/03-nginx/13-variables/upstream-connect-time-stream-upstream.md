@@ -1,19 +1,16 @@
 ---
 title: "$upstream_connect_time (ngx_stream_upstream_module)"
-description: "Variable nginx $upstream_connect_time (ngx_stream_upstream_module) — time to connect to the upstream server (1.11.4); the time is kept in seconds with millisecond resolution. Times of several connections are separated by commas like addresses in the $upstream_addr…"
+description: "Variable nginx $upstream_connect_time (ngx_stream_upstream_module) — temps de connexion au serveur amont (1.11.4), en secondes à la milliseconde près. Les temps de plusieurs connexions sont séparés par des virgules, comme les adresses de la variable $upstream_addr."
 tags: [nginx, variable, ngx_stream_upstream_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$upstream_connect_time` |
 | **Module** | [[11-modules/03-stream/ngx_stream_upstream_module\|ngx_stream_upstream_module]] |
 
-time to connect to the upstream server (1.11.4); the time is kept in seconds with millisecond resolution. Times of several connections are separated by commas like addresses in the [[13-variables/upstream-addr-stream-upstream|$upstream_addr]] variable.
+temps de connexion au serveur amont (1.11.4), en secondes à la milliseconde près. Les temps de plusieurs connexions sont séparés par des virgules, comme les adresses de la variable [[13-variables/upstream-addr-stream-upstream|$upstream_addr]].
 
 ---
 

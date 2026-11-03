@@ -1,20 +1,17 @@
 ---
-title: "WebSocket proxying"
-description: "Nginx — WebSocket proxying. To turn a connection between a client and server from HTTP/1.1 into WebSocket, the protocol switch mechanism available in HTTP/1.1 is used."
+title: "Relais WebSocket"
+description: "Nginx — Relais WebSocket. Pour transformer une connexion HTTP/1.1 entre un client et un serveur en connexion WebSocket, on utilise le mécanisme de changement de protocole de HTTP/1.1."
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Pour transformer une connexion HTTP/1.1 entre un client et un serveur en connexion WebSocket, on utilise le mécanisme de [changement de protocole](https://datatracker.ietf.org/doc/html/rfc2616#section-14.42) de HTTP/1.1.
 
-To turn a connection between a client and server from HTTP/1.1 into WebSocket, the [protocol switch](https://datatracker.ietf.org/doc/html/rfc2616#section-14.42) mechanism available in HTTP/1.1 is used.
+Il y a toutefois une subtilité : `Upgrade` étant un en-tête [saut par saut](https://datatracker.ietf.org/doc/html/rfc2616#section-13.5.1) (*hop-by-hop*), il n'est pas transmis du client au serveur mandaté. Avec un mandataire direct, les clients peuvent utiliser la méthode `CONNECT` pour contourner ce problème. Cela ne fonctionne pas avec un mandataire inverse, car les clients ignorent l'existence de tout mandataire : un traitement particulier est donc nécessaire sur le mandataire.
 
-There is one subtlety however: since the `Upgrade` is a [hop-by-hop](https://datatracker.ietf.org/doc/html/rfc2616#section-13.5.1) header, it is not passed from a client to proxied server. With forward proxying, clients may use the `CONNECT` method to circumvent this issue. This does not work with reverse proxying however, since clients are not aware of any proxy servers, and special processing on a proxy server is required.
+Depuis la version 1.3.13, nginx dispose d'un mode de fonctionnement particulier qui établit un tunnel entre le client et le serveur mandaté lorsque celui-ci renvoie une réponse de code `101 Switching Protocols` et que le client a demandé un changement de protocole avec l'en-tête `Upgrade` de sa requête.
 
-Since version 1.3.13, nginx implements special mode of operation that allows setting up a tunnel between a client and proxied server if the proxied server returned a response with the code `101 Switching Protocols`, and the client asked for a protocol switch via the `Upgrade` header in a request.
-
-As noted above, hop-by-hop headers including `Upgrade` and `Connection` are not passed from a client to proxied server, therefore in order for the proxied server to know about the client’s intention to switch a protocol to WebSocket, these headers have to be passed explicitly:
+Comme indiqué plus haut, les en-têtes saut par saut comme `Upgrade` et `Connection` ne sont pas transmis du client au serveur mandaté ; pour que celui-ci sache que le client veut passer au protocole WebSocket, il faut donc les transmettre explicitement :
 
 ```
 location /chat/ {
@@ -25,7 +22,7 @@ location /chat/ {
 }
 ```
 
-A more sophisticated example in which a value of the `Connection` header field in a request to the proxied server depends on the presence of the `Upgrade` field in the client request header:
+Exemple plus élaboré, où la valeur du champ `Connection` de la requête au serveur mandaté dépend de la présence du champ `Upgrade` dans l'en-tête de la requête du client :
 
 ```
 http {
@@ -46,7 +43,7 @@ http {
     }
 ```
 
-By default, the connection will be closed if the proxied server does not transmit any data within 60 seconds. This timeout can be increased with the [[12-directives/proxy-read-timeout|proxy_read_timeout]] directive. Alternatively, the proxied server can be configured to periodically send WebSocket ping frames to reset the timeout and check if the connection is still alive.
+Par défaut, la connexion est fermée si le serveur mandaté ne transmet aucune donnée pendant 60 secondes. Ce délai peut être augmenté avec la directive [[12-directives/proxy-read-timeout|proxy_read_timeout]]. On peut aussi configurer le serveur mandaté pour qu'il envoie périodiquement des trames ping WebSocket, afin de réinitialiser le délai et de vérifier que la connexion est toujours active.
 
 ---
 

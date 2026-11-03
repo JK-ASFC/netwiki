@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_memcached_module"
-description: "Module nginx ngx_http_memcached_module — The ngx_http_memcached_module module is used to obtain responses from a memcached server. The key is set in the $memcached_key variable. A response should be put in memcached in advance by means external to nginx."
+description: "Module nginx ngx_http_memcached_module — Le module ngx_http_memcached_module sert à obtenir les réponses d'un serveur memcached. La clé est définie dans la variable $memcached_key. La réponse doit avoir été placée dans memcached au préalable par un moyen…"
 tags: [nginx, module, ngx_http_memcached_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_memcached_module` module is used to obtain responses from a memcached server. The key is set in the `$memcached_key` variable. A response should be put in memcached in advance by means external to nginx.
+Le module `ngx_http_memcached_module` sert à obtenir les réponses d'un serveur memcached. La clé est définie dans la variable `$memcached_key`. La réponse doit avoir été placée dans memcached au préalable par un moyen extérieur à nginx.
 
 ## Exemple de configuration
 

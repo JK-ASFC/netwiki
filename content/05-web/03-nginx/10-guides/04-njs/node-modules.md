@@ -1,47 +1,44 @@
 ---
-title: "Using node modules with njs"
-description: "Nginx — Using node modules with njs. Often, a developer wants to use 3rd-party code, usually available as a library of some kind. In the JavaScript world, the concept of a module is relatively new, so there was no standard until recently. Many platforms…"
+title: "Utiliser des modules Node avec njs"
+description: "Nginx — Utiliser des modules Node avec njs. Un développeur souhaite souvent utiliser du code tiers, généralement disponible sous forme de bibliothèque. Dans le monde JavaScript, la notion de module est relativement récente et il n'existait pas de norme jusqu'à…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-Often, a developer wants to use 3rd-party code, usually available as a library of some kind. In the JavaScript world, the concept of a module is relatively new, so there was no standard until recently. Many platforms (browsers) still don't support modules, which makes code reuse harder. This article describes ways to reuse [Node.js](https://nodejs.org/) code in njs.
+Un développeur souhaite souvent utiliser du code tiers, généralement disponible sous forme de bibliothèque. Dans le monde JavaScript, la notion de module est relativement récente et il n'existait pas de norme jusqu'à récemment. Beaucoup de plates-formes (navigateurs) ne prennent toujours pas en charge les modules, ce qui complique la réutilisation du code. Cet article décrit des moyens de réutiliser du code [Node.js](https://nodejs.org/) dans njs.
 
 > [!NOTE]
-> Examples in this article use features that appeared in [[10-guides/04-njs/00-index|njs]] 0.3.8
+> Les exemples de cet article utilisent des fonctions apparues dans [[10-guides/04-njs/00-index|njs]] 0.3.8
 
-There is a number of issues that may arise when 3rd-party code is added to njs:
+Plusieurs problèmes peuvent survenir lors de l'ajout de code tiers dans njs :
 
-- Multiple files that reference each other and their dependencies
-- Platform-specific APIs
-- Modern standard language constructions
+- Plusieurs fichiers qui se référencent entre eux et leurs dépendances
+- API propres à une plate-forme
+- Constructions modernes du langage
 
-The good news is that such problems are not something new or specific to njs. JavaScript developers face them daily when trying to support multiple disparate platforms with very different properties. There are instruments designed to resolve the above-mentioned issues.
+Ces problèmes ne sont ni nouveaux ni propres à njs : les développeurs JavaScript y sont confrontés chaque jour pour prendre en charge des plates-formes très différentes. Des outils existent pour les résoudre.
 
-- Multiple files that reference each other, and their dependencies
+- Plusieurs fichiers qui se référencent entre eux, et leurs dépendances
 
-  This can be solved by merging all the interdependent code into a single file. Tools like [browserify](http://browserify.org/) or [webpack](https://webpack.js.org/) accept an entire project and produce a single file containing your code and all the dependencies.
-- Platform-specific APIs
+  On résout ce problème en regroupant tout le code interdépendant dans un seul fichier. Des outils comme [browserify](http://browserify.org/) ou [webpack](https://webpack.js.org/) prennent un projet entier et produisent un seul fichier contenant votre code et toutes ses dépendances.
+- API propres à une plate-forme
 
-  You can use multiple libraries that implement such APIs in a platform-agnostic manner (at the expense of performance, though). Particular features can also be implemented using the [polyfill](https://polyfill.io/v3/) approach.
-- Modern standard language constructions
+  On peut utiliser des bibliothèques qui mettent en œuvre ces API de façon indépendante de la plate-forme (au prix des performances). Certaines fonctions peuvent aussi être mises en œuvre par l'approche des [polyfills](https://polyfill.io/v3/).
+- Constructions modernes du langage
 
-  Such code can be transpiled: this means performing a number of transformations that rewrite newer language features in accordance with an older standard. For example, [babel](https://babeljs.io/) project can be used to this purpose.
+  Ce code peut être transpilé : une série de transformations réécrit les fonctions récentes du langage selon une norme plus ancienne. On peut par exemple utiliser le projet [babel](https://babeljs.io/).
 
-In this guide, we will use two relatively large npm-hosted libraries:
+Dans ce guide, nous utilisons deux bibliothèques assez volumineuses hébergées sur npm :
 
-- [protobufjs](https://www.npmjs.com/package/protobufjs) — a library for creating and parsing protobuf messages used by the [gRPC](https://grpc.io/) protocol
-- [dns-packet](https://www.npmjs.com/package/dns-packet) — a library for processing DNS protocol packets
+- [protobufjs](https://www.npmjs.com/package/protobufjs) : bibliothèque de création et d'analyse des messages protobuf utilisés par le protocole [gRPC](https://grpc.io/)
+- [dns-packet](https://www.npmjs.com/package/dns-packet) : bibliothèque de traitement des paquets du protocole DNS
 
-## Environment
+## Environnement
 
 > [!NOTE]
-> This document mostly employs a generic approach and avoids specific best practice advices concerning Node.js and JavaScript. Make sure to consult the corresponding package's manual before following the steps suggested here.
+> Ce document adopte surtout une approche générique et évite les conseils de bonnes pratiques propres à Node.js et JavaScript. Consultez le manuel de chaque paquet avant de suivre les étapes proposées ici.
 
-First (assuming Node.js is installed and operational), let's create an empty project and install some dependencies; the commands below assume we are in the working directory:
+Commençons (Node.js étant installé et fonctionnel) par créer un projet vide et installer quelques dépendances ; les commandes ci-dessous supposent que nous sommes dans le répertoire de travail :
 
 ```nginx
 $ mkdir my_project && cd my_project
@@ -69,18 +66,18 @@ $ npm install browserify
 
 ## Protobufjs
 
-The library provides a parser for the `.proto` interface definitions and a code generator for message parsing and generation.
+La bibliothèque fournit un analyseur des définitions d'interface `.proto` et un générateur de code pour analyser et produire les messages.
 
-In this example, we will use the [helloworld.proto](https://github.com/grpc/grpc/blob/master/examples/protos/helloworld.proto) file from the gRPC examples. Our goal is to create two messages: `HelloRequest` and `HelloResponse`. We will use the [static](https://github.com/protobufjs/protobuf.js/blob/master/README.md#reflection-vs-static-code) mode of protobufjs instead of dynamically generating classes, because njs doesn't support adding new functions dynamically due to security considerations.
+Dans cet exemple, nous utilisons le fichier [helloworld.proto](https://github.com/grpc/grpc/blob/master/examples/protos/helloworld.proto) des exemples gRPC. L'objectif est de créer deux messages : `HelloRequest` et `HelloResponse`. Nous utilisons le mode [statique](https://github.com/protobufjs/protobuf.js/blob/master/README.md#reflection-vs-static-code) de protobufjs plutôt que la génération dynamique de classes, car njs ne permet pas d'ajouter dynamiquement de nouvelles fonctions pour des raisons de sécurité.
 
-Next, the library is installed and the JavaScript code implementing message marshalling is generated from the protocol definition:
+On installe ensuite la bibliothèque et on génère, à partir de la définition du protocole, le code JavaScript de sérialisation des messages :
 
 ```nginx
 $ npm install protobufjs
 $ npx pbjs -t static-module helloworld.proto > static.js
 ```
 
-Thus, the `static.js` file becomes our new dependency, storing all the code we need to implement message processing. The `set_buffer()` function contains code that uses the library to create a buffer with the serialized `HelloRequest` message. The code resides in the `code.js` file:
+Le fichier `static.js` devient ainsi notre nouvelle dépendance ; il contient tout le code nécessaire au traitement des messages. La fonction `set_buffer()` utilise la bibliothèque pour créer un tampon contenant le message `HelloRequest` sérialisé. Ce code se trouve dans le fichier `code.js` :
 
 ```nginx
 var pb = require('./static.js');
@@ -115,7 +112,7 @@ function set_buffer(pb)
 var frame = set_buffer(pb);
 ```
 
-To ensure it works, we execute the code using node:
+Pour vérifier qu'il fonctionne, exécutons le code avec node :
 
 ```nginx
 $ node ./code.js
@@ -126,7 +123,7 @@ Uint8Array [
 ]
 ```
 
-You can see that this got us a properly encoded `gRPC` frame. Now let's run it with njs:
+On obtient bien une trame `gRPC` correctement encodée. Exécutons maintenant le code avec njs :
 
 ```nginx
 $ njs ./code.js
@@ -136,28 +133,28 @@ Error: Cannot find module "./static.js"
     at main (native)
 ```
 
-Modules are not supported, so we've received an exception. To overcome this issue, let's use `browserify` or other similar tool.
+Les modules ne sont pas pris en charge : nous obtenons une exception. Pour contourner ce problème, utilisons `browserify` ou un outil similaire.
 
-An attempt to process our existing `code.js` file will result in a bunch of JS code that is supposed to run in a browser, i.e. immediately upon loading. This isn't something we actually want. Instead, we want to have an exported function that can be referenced from the nginx configuration. This requires some wrapper code.
+Traiter tel quel notre fichier `code.js` produirait un code JS destiné à s'exécuter dans un navigateur, c'est-à-dire dès son chargement, ce que nous ne voulons pas. Nous voulons plutôt une fonction exportée qu'on peut appeler depuis la configuration de nginx, ce qui nécessite un peu de code d'enrobage.
 
 > [!NOTE]
-> In this guide, we use njs [[10-guides/04-njs/cli|cli]] in all examples for the sake of simplicity. In real life, you will be using nginx njs module to run your code.
+> Dans ce guide, nous utilisons l'[[10-guides/04-njs/cli|utilitaire en ligne de commande]] njs dans tous les exemples, par simplicité. En pratique, vous utiliserez le module njs de nginx pour exécuter votre code.
 
-The `load.js` file contains the library-loading code that stores its handle in the global namespace:
+Le fichier `load.js` contient le code de chargement de la bibliothèque, qui conserve sa référence dans l'espace de noms global :
 
 ```nginx
 global.hello = require('./static.js');
 ```
 
-This code will be replaced with merged content. Our code will be using the "`global.hello`" handle to access the library.
+Ce code sera remplacé par le contenu regroupé. Notre code utilisera la référence « `global.hello` » pour accéder à la bibliothèque.
 
-Next, we process it with `browserify` to get all dependencies into a single file:
+Traitons-le ensuite avec `browserify` pour réunir toutes les dépendances dans un seul fichier :
 
 ```nginx
 $ npx browserify load.js -o bundle.js -d
 ```
 
-The result is a huge file that contains all our dependencies:
+On obtient un énorme fichier qui contient toutes nos dépendances :
 
 ```nginx
 (function(){function......
@@ -167,7 +164,7 @@ The result is a huge file that contains all our dependencies:
 //# sourceMappingURL..............
 ```
 
-To get final "`njs_bundle.js`" file we concatenate "`bundle.js`" and the following code:
+Pour obtenir le fichier final « `njs_bundle.js` », nous concaténons « `bundle.js` » et le code suivant :
 
 ```nginx
 // Example usage of protobuf library: prepare a buffer to send
@@ -208,7 +205,7 @@ var frame = setbuf();
 console.log(frame);
 ```
 
-Let's run the file using node to make sure things still work:
+Exécutons le fichier avec node pour vérifier que tout fonctionne encore :
 
 ```nginx
 $ node ./njs_bundle.js
@@ -219,14 +216,14 @@ Uint8Array [
 ]
 ```
 
-Now let's proceed further with njs:
+Poursuivons maintenant avec njs :
 
 ```nginx
 $ njs ./njs_bundle.js
 Uint8Array [0,0,0,0,12,10,10,84,101,115,116,83,116,114,105,110,103]
 ```
 
-The last thing will be to use njs-specific API to convert array into byte string, so it could be usable by nginx module. We can add the following snippet before the line `return frame; }`:
+Il reste à utiliser l'API propre à njs pour convertir le tableau en chaîne d'octets, utilisable par le module nginx. Ajoutons le fragment suivant avant la ligne `return frame; }` :
 
 ```nginx
 if (global.njs) {
@@ -234,7 +231,7 @@ if (global.njs) {
 }
 ```
 
-Finally, we got it working:
+Enfin, cela fonctionne :
 
 ```nginx
 $ njs ./njs_bundle.js |hexdump -C
@@ -243,7 +240,7 @@ $ njs ./njs_bundle.js |hexdump -C
 00000012
 ```
 
-This is the intended result. Response parsing can be implemented similarly:
+C'est le résultat attendu. L'analyse de la réponse se met en œuvre de façon similaire :
 
 ```nginx
 function parse_msg(pb, msg)
@@ -277,9 +274,9 @@ function parse_msg(pb, msg)
 
 ## DNS-packet
 
-This example uses a library for generation and parsing of DNS packets. This a case worth considering because the library and its dependencies use modern language constructions not yet supported by njs. In turn, this requires from us an extra step: transpiling the source code.
+Cet exemple utilise une bibliothèque de génération et d'analyse de paquets DNS. Le cas est intéressant, car la bibliothèque et ses dépendances utilisent des constructions modernes du langage que njs ne prend pas encore en charge. Cela nous impose une étape supplémentaire : transpiler le code source.
 
-Additional node packages are needed:
+Des paquets Node supplémentaires sont nécessaires :
 
 ```nginx
 $ npm install @babel/core @babel/cli @babel/preset-env babel-loader
@@ -288,7 +285,7 @@ $ npm install buffer
 $ npm install dns-packet
 ```
 
-The configuration file, webpack.config.js:
+Le fichier de configuration webpack.config.js :
 
 ```nginx
 const path = require('path');
@@ -321,26 +318,26 @@ module.exports = {
 };
 ```
 
-Note we are using "`production`" mode. In this mode webpack does not use "`eval`" construction not supported by njs. The referenced `load.js` file is our entry point:
+Nous utilisons le mode « `production` » : dans ce mode, webpack n'utilise pas la construction « `eval` », non prise en charge par njs. Le fichier `load.js` référencé est notre point d'entrée :
 
 ```nginx
 global.dns = require('dns-packet')
 global.Buffer = require('buffer/').Buffer
 ```
 
-We start the same way, by producing a single file for the libraries:
+Commençons de la même façon, en produisant un seul fichier pour les bibliothèques :
 
 ```nginx
 $ npx browserify load.js -o bundle.js -d
 ```
 
-Next, we process the file with webpack, which itself invokes babel:
+Traitons ensuite le fichier avec webpack, qui appelle lui-même babel :
 
 ```nginx
 $ npx webpack --config webpack.config.js
 ```
 
-This command produces the `dist/wp_out.js` file, which is a transpiled version of `bundle.js`. We need to concatenate it with `code.js` that stores our code:
+Cette commande produit le fichier `dist/wp_out.js`, version transpilée de `bundle.js`. Il faut le concaténer avec `code.js`, qui contient notre code :
 
 ```nginx
 function set_buffer(dnsPacket)
@@ -360,20 +357,20 @@ function set_buffer(dnsPacket)
 }
 ```
 
-Note that in this example generated code is not wrapped into function and we do not need to call it explicitly. The result is in the "`dist`" directory:
+Dans cet exemple, le code généré n'est pas enrobé dans une fonction et il n'est pas nécessaire de l'appeler explicitement. Le résultat se trouve dans le répertoire « `dist` » :
 
 ```nginx
 $ cat dist/wp_out.js code.js > njs_dns_bundle.js
 ```
 
-Let's call our code at the end of a file:
+Appelons notre code à la fin du fichier :
 
 ```nginx
 var b = set_buffer(global.dns);
 console.log(b);
 ```
 
-And execute it using node:
+Et exécutons-le avec node :
 
 ```nginx
 $ node ./njs_dns_bundle_final.js
@@ -385,14 +382,14 @@ Buffer [Uint8Array] [
 ]
 ```
 
-Make sure this works as expected, and then run it with njs:
+Vérifiez que cela fonctionne comme prévu, puis exécutez-le avec njs :
 
 ```nginx
 $ njs ./njs_dns_bundle_final.js
 Uint8Array [0,1,1,0,0,1,0,0,0,0,0,0,6,103,111,111,103,108,101,3,99,111,109,0,0,1,0,1]
 ```
 
-The response can be parsed as follows:
+La réponse peut être analysée ainsi :
 
 ```nginx
 function parse_response(buf)

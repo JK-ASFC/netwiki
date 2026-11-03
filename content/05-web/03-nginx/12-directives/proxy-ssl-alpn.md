@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_alpn"
-description: "Directive nginx proxy_ssl_alpn (ngx_stream_proxy_module) — Specifies the list of protocols to advertise via the ALPN extension when establishing a connection with the proxied server. For example: nginx proxy_ssl_alpn h2 http/1.1; Parameter value can contain…"
+description: "Directive nginx proxy_ssl_alpn (ngx_stream_proxy_module) — Indique la liste des protocoles annoncés via l'extension ALPN lors de l'établissement d'une connexion avec le serveur mandaté. Par exemple : nginx proxy_ssl_alpn h2 http/1.1; La valeur peut contenir…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,13 +15,13 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the list of protocols to advertise via the [ALPN](https://datatracker.ietf.org/doc/html/rfc7301) extension when establishing a connection with the proxied server. For example:
+Indique la liste des protocoles annoncés via l'extension [ALPN](https://datatracker.ietf.org/doc/html/rfc7301) lors de l'établissement d'une connexion avec le serveur mandaté. Par exemple :
 
 ```nginx
 proxy_ssl_alpn h2 http/1.1;
 ```
 
-Parameter value can contain variables:
+La valeur peut contenir des variables :
 
 ```nginx
 proxy_ssl_alpn $ssl_alpn_protocol;

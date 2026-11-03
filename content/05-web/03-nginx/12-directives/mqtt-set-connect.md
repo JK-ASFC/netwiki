@@ -1,12 +1,9 @@
 ---
 title: "mqtt_set_connect"
-description: "Directive nginx mqtt_set_connect (ngx_stream_mqtt_filter_module) — Sets the message field to the given value for CONNECT message. The following fields are supported: clientid, username, and password. The value can contain text, variables, and their combination.…"
+description: "Directive nginx mqtt_set_connect (ngx_stream_mqtt_filter_module) — Fixe le champ field du message CONNECT à la valeur value. Champs pris en charge : clientid, username et password. La valeur peut contenir du texte, des variables et leur combinaison. Plusieurs…"
 tags: [nginx, directive, ngx_stream_mqtt_filter_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the message `field` to the given `value` for CONNECT message. The following fields are supported: `clientid`, `username`, and `password`. The value can contain text, variables, and their combination.
+Fixe le champ `field` du message CONNECT à la valeur `value`. Champs pris en charge : `clientid`, `username` et `password`. La valeur peut contenir du texte, des variables et leur combinaison.
 
-Several `mqtt_set_connect` directives can be specified on the same level:
+Plusieurs directives `mqtt_set_connect` peuvent être indiquées au même niveau :
 
 ```nginx
 mqtt_set_connect clientid "$client";

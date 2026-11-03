@@ -1,20 +1,17 @@
 ---
 title: "ngx_http_slice_module"
-description: "Module nginx ngx_http_slice_module — The ngx_http_slice_module module (1.9.8) is a filter that splits a request into subrequests, each returning a certain range of response. The filter provides more effective caching of big responses."
+description: "Module nginx ngx_http_slice_module — Le module ngx_http_slice_module (1.9.8) est un filtre qui découpe une requête en sous-requêtes renvoyant chacune une plage de la réponse. Il permet une mise en cache plus efficace des grosses réponses."
 tags: [nginx, module, ngx_http_slice_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_slice_module` (1.9.8) est un filtre qui découpe une requête en sous-requêtes renvoyant chacune une plage de la réponse. Il permet une mise en cache plus efficace des grosses réponses.
 
-The `ngx_http_slice_module` module (1.9.8) is a filter that splits a request into subrequests, each returning a certain range of response. The filter provides more effective caching of big responses.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_slice_module`.
 
-This module is not built by default, it should be enabled with the `--with-http_slice_module` configuration parameter.
+## Problèmes connus
 
-## Known Issues
-
-Currently, the module does not work as expected in subrequests such as [[12-directives/proxy-cache-background-update|background cache update]]. In this case, a request is constructed without byte-range support.
+Actuellement, le module ne fonctionne pas comme prévu dans les sous-requêtes comme la [[12-directives/proxy-cache-background-update|mise à jour du cache en arrière-plan]] : la requête est alors construite sans prise en charge des plages d'octets.
 
 ## Exemple de configuration
 
@@ -29,7 +26,7 @@ location / {
 }
 ```
 
-In this example, the response is split into 1-megabyte cacheable slices.
+Dans cet exemple, la réponse est découpée en tranches d'un mégaoctet pouvant être mises en cache.
 
 ## Directives
 

@@ -1,12 +1,9 @@
 ---
 title: "tcp_nodelay (ngx_stream_core_module)"
-description: "Directive nginx tcp_nodelay (ngx_stream_core_module) — Enables or disables the use of the TCP_NODELAY option. The option is enabled for both client and proxied server connections."
+description: "Directive nginx tcp_nodelay (ngx_stream_core_module) — Active ou désactive l'option TCP_NODELAY. L'option est activée pour les connexions client comme pour celles vers le serveur mandaté."
 tags: [nginx, directive, ngx_stream_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables the use of the `TCP_NODELAY` option. The option is enabled for both client and proxied server connections.
+Active ou désactive l'option `TCP_NODELAY`. L'option est activée pour les connexions client comme pour celles vers le serveur mandaté.
 
 ---
 

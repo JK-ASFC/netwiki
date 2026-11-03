@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_split_clients_module"
-description: "Module nginx ngx_http_split_clients_module — The ngx_http_split_clients_module module creates variables suitable for A/B testing, also known as split testing."
+description: "Module nginx ngx_http_split_clients_module — Le module ngx_http_split_clients_module crée des variables pour les tests A/B (split testing)."
 tags: [nginx, module, ngx_http_split_clients_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_split_clients_module` module creates variables suitable for A/B testing, also known as split testing.
+Le module `ngx_http_split_clients_module` crée des variables pour les tests A/B (*split testing*).
 
 ## Exemple de configuration
 

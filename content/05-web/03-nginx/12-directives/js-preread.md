@@ -1,12 +1,9 @@
 ---
 title: "js_preread"
-description: "Directive nginx js_preread (ngx_stream_js_module) — Sets an njs function which will be called at the preread phase. Since 0.4.0, a module function can be referenced. The function is called once at the moment when the stream session reaches the preread…"
+description: "Directive nginx js_preread (ngx_stream_js_module) — Définit une fonction njs appelée à la phase de prélecture. Depuis la version 0.4.0, une fonction de module peut être référencée. La fonction est appelée une fois, au moment où la session stream…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,18 +14,18 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an njs function which will be called at the [[10-guides/03-stream/stream-processing|preread]] phase. Since 0.4.0, a module function can be referenced.
+Définit une fonction njs appelée à la phase de [[10-guides/03-stream/stream-processing|prélecture]]. Depuis la version 0.4.0, une fonction de module peut être référencée.
 
-The function is called once at the moment when the stream session reaches the [[10-guides/03-stream/stream-processing|preread]] phase for the first time. The function is called with the following arguments:
+La fonction est appelée une fois, au moment où la session stream atteint pour la première fois la phase de [[10-guides/03-stream/stream-processing|prélecture]]. Elle reçoit les arguments suivants :
 
 - **`s`**
 
-  the [[10-guides/04-njs/reference|Stream Session]] object
+  l'objet [[10-guides/04-njs/reference|Stream Session]]
 
-At this phase, it is possible to perform initialization or register a callback with the [[10-guides/04-njs/reference|s.on()]] method for each incoming data chunk until one of the following methods are called: [[10-guides/04-njs/reference|s.allow()]], [[10-guides/04-njs/reference|s.decline()]], [[10-guides/04-njs/reference|s.done()]]. When one of these methods is called, the stream session switches to the [[10-guides/03-stream/stream-processing|next phase]] and all current [[10-guides/04-njs/reference|s.on()]] callbacks are dropped.
+À cette phase, on peut effectuer une initialisation ou enregistrer, avec la méthode [[10-guides/04-njs/reference|s.on()]], une fonction de rappel pour chaque bloc de données entrant, jusqu'à l'appel de l'une des méthodes suivantes : [[10-guides/04-njs/reference|s.allow()]], [[10-guides/04-njs/reference|s.decline()]], [[10-guides/04-njs/reference|s.done()]]. Quand l'une d'elles est appelée, la session stream passe à la [[10-guides/03-stream/stream-processing|phase suivante]] et toutes les fonctions de rappel [[10-guides/04-njs/reference|s.on()]] en cours sont abandonnées.
 
 > [!NOTE]
-> As the `js_preread` handler returns its result immediately, it supports only synchronous callbacks. Thus, asynchronous callbacks such as [[10-guides/04-njs/reference|ngx.fetch()]] or [[10-guides/04-njs/reference|setTimeout()]] are not supported. Nevertheless, asynchronous operations are supported in [[10-guides/04-njs/reference|s.on()]] callbacks in the [[10-guides/03-stream/stream-processing|preread]] phase. See [this example](https://github.com/nginx/njs-examples#authorizing-connections-using-ngx-fetch-as-auth-request-stream-auth-request) for more information.
+> Comme le gestionnaire `js_preread` renvoie son résultat immédiatement, il ne prend en charge que les fonctions de rappel synchrones. Les fonctions asynchrones comme [[10-guides/04-njs/reference|ngx.fetch()]] ou [[10-guides/04-njs/reference|setTimeout()]] ne sont donc pas prises en charge. Les opérations asynchrones sont en revanche possibles dans les fonctions de rappel [[10-guides/04-njs/reference|s.on()]] de la phase de [[10-guides/03-stream/stream-processing|prélecture]]. Voir [cet exemple](https://github.com/nginx/njs-examples#authorizing-connections-using-ngx-fetch-as-auth-request-stream-auth-request) pour plus d'informations.
 
 ---
 

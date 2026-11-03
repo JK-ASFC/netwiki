@@ -1,12 +1,9 @@
 ---
 title: "js_fetch_max_response_buffer_size (ngx_http_js_module)"
-description: "Directive nginx js_fetch_max_response_buffer_size (ngx_http_js_module) — Sets the maximum size of the response received with Fetch API."
+description: "Directive nginx js_fetch_max_response_buffer_size (ngx_http_js_module) — Définit la taille (size) maximale de la réponse reçue avec l'API Fetch."
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum *size* of the response received with [[10-guides/04-njs/reference|Fetch API]].
+Définit la taille (*size*) maximale de la réponse reçue avec l'[[10-guides/04-njs/reference|API Fetch]].
 
 ---
 

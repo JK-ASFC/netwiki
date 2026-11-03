@@ -1,20 +1,17 @@
 ---
-title: "Regular expression captures"
-description: "Nginx — Regular expression captures. Regular expressions used in the location, server_name, if, map, and several other directives can contain captures. A captured substring is referred to either positionally, as “$1”...“$9”, or by name. The two forms…"
+title: "Captures des expressions régulières"
+description: "Nginx — Captures des expressions régulières. Les expressions régulières utilisées dans les directives location, server_name, if, map et quelques autres peuvent contenir des captures. Une sous-chaîne capturée est désignée soit par sa position, « $1 »...« $9 », soit…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Les expressions régulières utilisées dans les directives [[12-directives/location|location]], [[12-directives/server-name-http-core|server_name]], [[12-directives/if|if]], [[12-directives/map-http-map|map]] et quelques autres peuvent contenir des captures. Une sous-chaîne capturée est désignée soit par sa position, « `$1` »...« `$9` », soit par son nom. Les deux formes diffèrent par la durée pendant laquelle la valeur capturée reste disponible.
 
-Regular expressions used in the [[12-directives/location|location]], [[12-directives/server-name-http-core|server_name]], [[12-directives/if|if]], [[12-directives/map-http-map|map]], and several other directives can contain captures. A captured substring is referred to either positionally, as “`$1`”...“`$9`”, or by name. The two forms differ in how long the captured value stays available.
+Tout ce qui suit s'applique aussi aux directives [[12-directives/server-name-stream-core|server_name]] et [[12-directives/map-stream-map|map]] du module stream.
 
-Everything described below also applies to the [[12-directives/server-name-stream-core|server_name]] and [[12-directives/map-stream-map|map]] directives of the stream module.
+## Captures positionnelles
 
-## Positional captures
-
-Positional captures are numbered in the order the capturing groups appear in a regular expression:
+Les captures positionnelles sont numérotées dans l'ordre d'apparition des groupes capturants dans l'expression régulière :
 
 ```
 location ~ ^/images/(.*)\.([a-z]+)$ {
@@ -23,9 +20,9 @@ location ~ ^/images/(.*)\.([a-z]+)$ {
 }
 ```
 
-Positional captures are not variables. They form a single set of values shared by all these directives while a request or a connection is processed. A successful match replaces the whole set, and an unsuccessful match may clear it. The values therefore remain available only until the next match, which may happen in an unrelated directive.
+Les captures positionnelles ne sont pas des variables. Elles forment un ensemble unique de valeurs, partagé par toutes ces directives pendant le traitement d'une requête ou d'une connexion. Une correspondance réussie remplace l'ensemble entier, et un échec peut le vider. Les valeurs ne restent donc disponibles que jusqu'à la correspondance suivante, qui peut avoir lieu dans une directive sans rapport.
 
-A match may also happen implicitly. Since variables are evaluated only when they are used, referring to a [[12-directives/map-http-map|map]] variable with regular expressions in source values matches them at that moment, and a successful match replaces the positional captures:
+Une correspondance peut aussi se produire implicitement. Comme les variables ne sont évaluées qu'à leur utilisation, faire référence à une variable [[12-directives/map-http-map|map]] dont les valeurs sources sont des expressions régulières les évalue à ce moment, et une correspondance réussie remplace les captures positionnelles :
 
 ```
 map $uri $mapped {
@@ -39,9 +36,9 @@ location ~ ^/images/(.*)$ {
 }
 ```
 
-## Named captures
+## Captures nommées
 
-A capture can be given a name:
+Une capture peut recevoir un nom :
 
 ```
 location ~ ^/images/(?<name>.*)\.(?<ext>[a-z]+)$ {
@@ -49,19 +46,19 @@ location ~ ^/images/(?<name>.*)\.(?<ext>[a-z]+)$ {
 }
 ```
 
-Named captures create ordinary nginx variables, in this case `$name` and `$ext`. Their values are not replaced when another regular expression is matched, unless it uses the same capture name. This makes named captures the preferred way to pass a captured value to a directive other than the one that has performed the match.
+Les captures nommées créent des variables nginx ordinaires, ici `$name` et `$ext`. Leurs valeurs ne sont pas remplacées quand une autre expression régulière correspond, sauf si elle utilise le même nom de capture. Les captures nommées sont donc le moyen recommandé de transmettre une valeur capturée à une autre directive que celle qui a effectué la correspondance.
 
-The PCRE library supports named captures using the following syntax:
+La bibliothèque PCRE prend en charge les captures nommées avec la syntaxe suivante :
 
 |   |   |
 | --- | --- |
-| `?<name>` | Perl compatible syntax |
-| `?'name'` | Perl compatible syntax |
-| `?P<name>` | Python compatible syntax |
+| `?<name>` | Syntaxe compatible Perl |
+| `?'name'` | Syntaxe compatible Perl |
+| `?P<name>` | Syntaxe compatible Python |
 
-## Preserving a positional capture
+## Conserver une capture positionnelle
 
-If a positional capture is needed later and cannot be replaced with a named one, its value should be copied into a variable right after the match, using the [[12-directives/set-http-rewrite|set]] directive ([[12-directives/set-stream-set|set]] in the stream module):
+Si une capture positionnelle est nécessaire plus tard et ne peut pas être remplacée par une capture nommée, copiez sa valeur dans une variable juste après la correspondance, avec la directive [[12-directives/set-http-rewrite|set]] ([[12-directives/set-stream-set|set]] dans le module stream) :
 
 ```
 location ~ ^/images/(.*)$ {

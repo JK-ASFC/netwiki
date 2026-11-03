@@ -1,12 +1,9 @@
 ---
 title: "auth_http"
-description: "Directive nginx auth_http (ngx_mail_auth_http_module) — Sets the URL of the HTTP authentication server. The protocol is described below."
+description: "Directive nginx auth_http (ngx_mail_auth_http_module) — Définit l'URL du serveur d'authentification HTTP. Le protocole est décrit plus bas."
 tags: [nginx, directive, ngx_mail_auth_http_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the URL of the HTTP authentication server. The protocol is described below.
+Définit l'URL du serveur d'authentification HTTP. Le protocole est décrit plus bas.
 
 ---
 

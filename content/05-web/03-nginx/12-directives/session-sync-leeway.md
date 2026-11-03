@@ -1,12 +1,9 @@
 ---
 title: "session_sync_leeway"
-description: "Directive nginx session_sync_leeway (ngx_http_oidc_module) — Sets the maximum wait time for a session to appear in the key-value zone if a request contains a session cookie but the corresponding session is not found. This allows for session synchronization…"
+description: "Directive nginx session_sync_leeway (ngx_http_oidc_module) — Définit le temps d'attente maximal pour qu'une session apparaisse dans la zone clé-valeur lorsqu'une requête contient un cookie de session mais que la session correspondante est introuvable. Cela…"
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum wait time for a session to appear in the [[12-directives/session-store|key-value zone]] if a request contains a session cookie but the corresponding session is not found. This allows for session [[11-modules/03-stream/ngx_stream_zone_sync_module|synchronization]] delays between cluster nodes.
+Définit le temps d'attente maximal pour qu'une session apparaisse dans la [[12-directives/session-store|zone clé-valeur]] lorsqu'une requête contient un cookie de session mais que la session correspondante est introuvable. Cela tient compte des délais de [[11-modules/03-stream/ngx_stream_zone_sync_module|synchronisation]] des sessions entre les nœuds d'un cluster.
 
-The value must be in the range from `0` to `5s`. The default value of `0` disables waiting. It is recommended to set the smallest possible value.
+La valeur doit être comprise entre `0` et `5s`. La valeur par défaut `0` désactive l'attente. Il est recommandé de choisir la plus petite valeur possible.
 
 ---
 

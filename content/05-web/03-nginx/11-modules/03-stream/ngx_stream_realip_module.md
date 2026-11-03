@@ -1,16 +1,13 @@
 ---
 title: "ngx_stream_realip_module"
-description: "Module nginx ngx_stream_realip_module — The ngx_stream_realip_module module is used to change the client address and port to the ones sent in the PROXY protocol header (1.11.4). The PROXY protocol must be previously enabled by setting the proxy_protocol…"
+description: "Module nginx ngx_stream_realip_module — Le module ngx_stream_realip_module sert à remplacer l'adresse et le port du client par ceux envoyés dans l'en-tête du protocole PROXY (1.11.4). Le protocole PROXY doit d'abord être activé avec le paramètre…"
 tags: [nginx, module, ngx_stream_realip_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_stream_realip_module` sert à remplacer l'adresse et le port du client par ceux envoyés dans l'en-tête du protocole PROXY (1.11.4). Le protocole PROXY doit d'abord être activé avec le paramètre [[11-modules/03-stream/ngx_stream_core_module|proxy_protocol]] de la directive `listen`.
 
-The `ngx_stream_realip_module` module is used to change the client address and port to the ones sent in the PROXY protocol header (1.11.4). The PROXY protocol must be previously enabled by setting the [[11-modules/03-stream/ngx_stream_core_module|proxy_protocol]] parameter in the `listen` directive.
-
-This module is not built by default, it should be enabled with the `--with-stream_realip_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; activez-le avec le paramètre de configuration `--with-stream_realip_module`.
 
 ## Exemple de configuration
 

@@ -1,12 +1,9 @@
 ---
 title: "preread_buffer_size"
-description: "Directive nginx preread_buffer_size (ngx_stream_core_module) — Specifies a size of the preread buffer."
+description: "Directive nginx preread_buffer_size (ngx_stream_core_module) — Définit la taille du tampon de prélecture."
 tags: [nginx, directive, ngx_stream_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *size* of the [[10-guides/03-stream/stream-processing|preread]] buffer.
+Définit la *taille* du tampon de [[10-guides/03-stream/stream-processing|prélecture]].
 
 ---
 

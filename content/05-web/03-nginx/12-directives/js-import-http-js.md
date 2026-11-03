@@ -1,12 +1,9 @@
 ---
 title: "js_import (ngx_http_js_module)"
-description: "Directive nginx js_import (ngx_http_js_module) — Imports a module that implements location, variable, and filter handlers in njs. The export_name is used as a namespace to access module functions. If the export_name is not specified, the module…"
+description: "Directive nginx js_import (ngx_http_js_module) — Importe un module qui met en œuvre des gestionnaires de location, de variables et de filtres en njs. export_name sert d'espace de noms pour accéder aux fonctions du module ; s'il n'est pas indiqué,…"
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,20 +15,20 @@ icon: settings-2
 
 ## Utilisation
 
-Imports a module that implements location, variable, and filter handlers in njs. The `export_name` is used as a namespace to access module functions. If the `export_name` is not specified, the module name will be used as a namespace.
+Importe un module qui met en œuvre des gestionnaires de location, de variables et de filtres en njs. `export_name` sert d'espace de noms pour accéder aux fonctions du module ; s'il n'est pas indiqué, le nom du module est utilisé.
 
 ```nginx
 js_import http.js;
 ```
 
-Here, the module name `http` is used as a namespace while accessing exports. If the imported module exports `foo()`, `http.foo` is used to refer to it.
+Ici, le nom de module `http` sert d'espace de noms pour accéder aux exports. Si le module importé exporte `foo()`, on y fait référence par `http.foo`.
 
-Several `js_import` directives can be specified.
+Plusieurs directives `js_import` peuvent être indiquées.
 
-When `js_import` is specified inside a [[12-directives/location|location]], the imported modules are visible only if no JavaScript code has been invoked earlier in the request. A single VM is created per request when a [[12-directives/js-set-http-js|js_set]] variable is first accessed or when a [[12-directives/js-content|js_content]], [[12-directives/js-header-filter|js_header_filter]], [[12-directives/js-body-filter|js_body_filter]], or [[12-directives/js-access-http-js|js_access]] handler is first invoked. The VM is cloned from the configuration scope active at that moment, and all subsequent JavaScript invocations within the request reuse it. Thus, if any of the above is referenced before the request is mapped to its final location, for example from a server-level [[12-directives/set-http-rewrite|set]], the VM is bound to the import set of the outer scope, and modules imported in the matched `location` will not be visible. To avoid this, declare such imports in a common parent scope.
+Lorsque `js_import` est indiqué dans un bloc [[12-directives/location|location]], les modules importés ne sont visibles que si aucun code JavaScript n'a été appelé plus tôt dans la requête. Une seule machine virtuelle est créée par requête, lors du premier accès à une variable [[12-directives/js-set-http-js|js_set]] ou du premier appel d'un gestionnaire [[12-directives/js-content|js_content]], [[12-directives/js-header-filter|js_header_filter]], [[12-directives/js-body-filter|js_body_filter]] ou [[12-directives/js-access-http-js|js_access]]. Elle est clonée depuis le contexte de configuration actif à ce moment, et tous les appels JavaScript suivants de la requête la réutilisent. Ainsi, si l'un de ces éléments est utilisé avant que la requête ne soit associée à son bloc location final, par exemple depuis un [[12-directives/set-http-rewrite|set]] au niveau server, la machine virtuelle est liée aux imports du contexte extérieur et les modules importés dans le `location` correspondant ne sont pas visibles. Pour l'éviter, déclarez ces imports dans un contexte parent commun.
 
 > [!NOTE]
-> The directive can be specified on the `server` and `location` level since 0.7.7.
+> La directive peut être indiquée aux niveaux `server` et `location` depuis la version 0.7.7.
 
 ---
 

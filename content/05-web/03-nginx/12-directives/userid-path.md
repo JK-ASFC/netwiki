@@ -1,12 +1,9 @@
 ---
 title: "userid_path"
-description: "Directive nginx userid_path (ngx_http_userid_module) — Defines a path for which the cookie is set."
+description: "Directive nginx userid_path (ngx_http_userid_module) — Définit le chemin pour lequel le cookie est défini."
 tags: [nginx, directive, ngx_http_userid_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a path for which the cookie is set.
+Définit le chemin pour lequel le cookie est défini.
 
 ---
 

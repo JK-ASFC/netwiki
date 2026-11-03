@@ -1,19 +1,16 @@
 ---
 title: "ngx_http_xslt_module"
-description: "Module nginx ngx_http_xslt_module — The ngx_http_xslt_module (0.7.8+) is a filter that transforms XML responses using one or more XSLT stylesheets."
+description: "Module nginx ngx_http_xslt_module — Le module ngx_http_xslt_module (0.7.8+) est un filtre qui transforme les réponses XML à l'aide d'une ou plusieurs feuilles de style XSLT."
 tags: [nginx, module, ngx_http_xslt_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_xslt_module` (0.7.8+) est un filtre qui transforme les réponses XML à l'aide d'une ou plusieurs feuilles de style XSLT.
 
-The `ngx_http_xslt_module` (0.7.8+) is a filter that transforms XML responses using one or more XSLT stylesheets.
-
-This module is not built by default, it should be enabled with the `--with-http_xslt_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_xslt_module`.
 
 > [!NOTE]
-> This module requires the [libxml2](http://xmlsoft.org) and [libxslt](http://xmlsoft.org/XSLT/) libraries.
+> Ce module nécessite les bibliothèques [libxml2](http://xmlsoft.org) et [libxslt](http://xmlsoft.org/XSLT/).
 
 ## Exemple de configuration
 

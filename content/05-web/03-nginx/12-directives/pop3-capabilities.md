@@ -1,12 +1,9 @@
 ---
 title: "pop3_capabilities"
-description: "Directive nginx pop3_capabilities (ngx_mail_pop3_module) — Sets the POP3 protocol extensions list that is passed to the client in response to the CAPA command. The authentication methods specified in the pop3_auth directive (SASL extension) and STLS are…"
+description: "Directive nginx pop3_capabilities (ngx_mail_pop3_module) — Définit la liste des extensions du protocole POP3 transmise au client en réponse à la commande CAPA. Les méthodes d'authentification indiquées dans la directive pop3_auth (extension SASL) et STLS…"
 tags: [nginx, directive, ngx_mail_pop3_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the [POP3 protocol](https://datatracker.ietf.org/doc/html/rfc2449) extensions list that is passed to the client in response to the `CAPA` command. The authentication methods specified in the [[12-directives/pop3-auth|pop3_auth]] directive ([SASL](https://datatracker.ietf.org/doc/html/rfc2449) extension) and [STLS](https://datatracker.ietf.org/doc/html/rfc2595) are automatically added to this list depending on the [[12-directives/starttls|starttls]] directive value.
+Définit la liste des extensions du [protocole POP3](https://datatracker.ietf.org/doc/html/rfc2449) transmise au client en réponse à la commande `CAPA`. Les méthodes d'authentification indiquées dans la directive [[12-directives/pop3-auth|pop3_auth]] (extension [SASL](https://datatracker.ietf.org/doc/html/rfc2449)) et [STLS](https://datatracker.ietf.org/doc/html/rfc2595) sont ajoutées automatiquement à cette liste selon la valeur de la directive [[12-directives/starttls|starttls]].
 
-It makes sense to specify the extensions supported by the POP3 backends to which the clients are proxied (if these extensions are related to commands used after the authentication, when nginx transparently proxies the client connection to the backend).
+Il est utile d'indiquer les extensions prises en charge par les serveurs POP3 d'arrière-plan vers lesquels les clients sont relayés (si elles concernent des commandes utilisées après l'authentification, lorsque nginx relaie de façon transparente la connexion du client).
 
-The current list of standardized extensions is published at [www.iana.org](http://www.iana.org/assignments/pop3-extension-mechanism).
+La liste actuelle des extensions normalisées est publiée sur [www.iana.org](http://www.iana.org/assignments/pop3-extension-mechanism).
 
 ---
 

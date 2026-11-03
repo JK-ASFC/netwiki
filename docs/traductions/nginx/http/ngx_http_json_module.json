@@ -1,0 +1,11 @@
+{
+ "074ff418c973": "Affecte à la variable (*variable*) la valeur extraite, au chemin (*path*) donné, du document JSON contenu dans la variable source (*source*).",
+ "0be7e8b09f45": "Si le membre ou l'élément désigné est absent, la variable est introuvable. Si la variable source (*source*) est vide ou introuvable, ou si sa valeur n'est pas un document JSON valide et complet, toutes les variables extraites de cette source sont introuvables.",
+ "0d2cb1fdc9e5": "La valeur d'une chaîne JSON est stockée sans échappement. Les nombres, booléens et `null` sont stockés tels qu'ils apparaissent dans le document. Si le chemin désigne un objet ou un tableau, tout son texte est stocké, accolades ou crochets compris.",
+ "4e9d80ea0415": "Le document n'est analysé qu'une fois par requête, quel que soit le nombre de variables extraites. L'analyse a lieu au premier accès à l'une de ces variables.",
+ "5f93a7fb4f71": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_json_module`.",
+ "95f0c7b962cd": "Dans un chemin, les membres d'objet sont séparés par un point et les éléments de tableau désignés par un indice commençant à zéro entre crochets :",
+ "b75d26dcb7e2": "Définit la profondeur d'imbrication maximale des documents JSON. Un document plus profondément imbriqué est considéré comme non valide. Les valeurs acceptées vont de 1 à 256.",
+ "cdcda90e0252": "Un nom de membre vide ou contenant « `.` », « `[` » ou « `]` » s'écrit comme une chaîne JSON entre crochets. Comme un tel chemin contient des guillemets doubles, tout l'argument doit être placé entre guillemets dans le fichier de configuration :",
+ "d6f20de01c04": "Le module `ngx_http_json_module` (1.31.5) extrait des valeurs d'un document JSON stocké dans une variable et les rend disponibles sous forme de variables."
+}

@@ -1,12 +1,9 @@
 ---
 title: "split_clients (ngx_stream_split_clients_module)"
-description: "Directive nginx split_clients (ngx_stream_split_clients_module) — Creates a variable for A/B testing, for example: nginx split_clients \"${remote_addr}AAA\" $variant { 0.5% .one; 2.0% .two; \"\"; } The value of the original string is hashed using MurmurHash2. In the…"
+description: "Directive nginx split_clients (ngx_stream_split_clients_module) — Crée une variable pour les tests A/B, par exemple : nginx split_clients \"${remote_addr}AAA\" $variant { 0.5% .one; 2.0% .two; \"\"; } La chaîne d'origine est hachée avec MurmurHash2. Dans l'exemple, les…"
 tags: [nginx, directive, ngx_stream_split_clients_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Creates a variable for A/B testing, for example:
+Crée une variable pour les tests A/B, par exemple :
 
 ```nginx
 split_clients "${remote_addr}AAA" $variant {
@@ -27,7 +24,7 @@ split_clients "${remote_addr}AAA" $variant {
 }
 ```
 
-The value of the original string is hashed using MurmurHash2. In the example given, hash values from 0 to 21474835 (0.5%) correspond to the value `".one"` of the `$variant` variable, hash values from 21474836 to 107374180 (2%) correspond to the value `".two"`, and hash values from 107374181 to 4294967295 correspond to the value `""` (an empty string).
+La chaîne d'origine est hachée avec MurmurHash2. Dans l'exemple, les valeurs de hachage de 0 à 21474835 (0,5 %) donnent la valeur `".one"` à la variable `$variant`, celles de 21474836 à 107374180 (2 %) la valeur `".two"`, et celles de 107374181 à 4294967295 la valeur `""` (chaîne vide).
 
 ---
 

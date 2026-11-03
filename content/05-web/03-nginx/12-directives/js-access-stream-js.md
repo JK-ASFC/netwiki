@@ -1,12 +1,9 @@
 ---
 title: "js_access (ngx_stream_js_module)"
-description: "Directive nginx js_access (ngx_stream_js_module) — Sets an njs function which will be called at the access phase. Since 0.4.0, a module function can be referenced. The function is called once at the moment when the stream session reaches the access…"
+description: "Directive nginx js_access (ngx_stream_js_module) — Définit une fonction njs appelée à la phase d'accès. Depuis la version 0.4.0, une fonction de module peut être référencée. La fonction est appelée une fois, au moment où la session stream atteint…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,15 +14,15 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an njs function which will be called at the [[10-guides/03-stream/stream-processing|access]] phase. Since 0.4.0, a module function can be referenced.
+Définit une fonction njs appelée à la phase d'[[10-guides/03-stream/stream-processing|accès]]. Depuis la version 0.4.0, une fonction de module peut être référencée.
 
-The function is called once at the moment when the stream session reaches the [[10-guides/03-stream/stream-processing|access]] phase for the first time. The function is called with the following arguments:
+La fonction est appelée une fois, au moment où la session stream atteint pour la première fois la phase d'[[10-guides/03-stream/stream-processing|accès]]. Elle reçoit les arguments suivants :
 
 - **`s`**
 
-  the [[10-guides/04-njs/reference|Stream Session]] object
+  l'objet [[10-guides/04-njs/reference|Stream Session]]
 
-At this phase, it is possible to perform initialization or register a callback with the [[10-guides/04-njs/reference|s.on()]] method for each incoming data chunk until one of the following methods are called: [[10-guides/04-njs/reference|s.allow()]], [[10-guides/04-njs/reference|s.decline()]], [[10-guides/04-njs/reference|s.done()]]. As soon as one of these methods is called, the stream session processing switches to the [[10-guides/03-stream/stream-processing|next phase]] and all current [[10-guides/04-njs/reference|s.on()]] callbacks are dropped.
+À cette phase, on peut effectuer une initialisation ou enregistrer, avec la méthode [[10-guides/04-njs/reference|s.on()]], une fonction de rappel pour chaque bloc de données entrant, jusqu'à l'appel de l'une des méthodes suivantes : [[10-guides/04-njs/reference|s.allow()]], [[10-guides/04-njs/reference|s.decline()]], [[10-guides/04-njs/reference|s.done()]]. Dès que l'une d'elles est appelée, le traitement de la session stream passe à la [[10-guides/03-stream/stream-processing|phase suivante]] et toutes les fonctions de rappel [[10-guides/04-njs/reference|s.on()]] en cours sont abandonnées.
 
 ---
 

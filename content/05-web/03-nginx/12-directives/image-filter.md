@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_http_image_filter_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `image_filter off;` ou `image_filter test;` ou `image_filter size;` ou `image_filter rotate 90 \| 180 \| 270;` ou `image_filter resize width height;` ou `image_filter crop width height;` |
@@ -29,13 +26,13 @@ Définit le type de transformation à appliquer aux images :
 
 - **`size`**
 
-  outputs information about images in a JSON format, e.g.:
+  renvoie des informations sur les images au format JSON, par exemple :
 
   ```nginx
   { "img" : { "width": 100, "height": 100, "type": "gif" } }
   ```
 
-  In case of an error, the output is as follows:
+  En cas d'erreur, la sortie est la suivante :
 
   ```nginx
   {}
@@ -43,15 +40,15 @@ Définit le type de transformation à appliquer aux images :
 
 - **`rotate` `90`|`180`|`270`**
 
-  rotates images counter-clockwise by the specified number of degrees. Parameter value can contain variables. This mode can be used either alone or along with the `resize` and `crop` transformations.
+  fait pivoter les images dans le sens inverse des aiguilles d'une montre du nombre de degrés indiqué. La valeur du paramètre peut contenir des variables. Ce mode peut s'utiliser seul ou avec les transformations `resize` et `crop`.
 
 - **`resize` *width* *height***
 
-  proportionally reduces an image to the specified sizes. To reduce by only one dimension, another dimension can be specified as “`-`”. In case of an error, the server will return code `415 Unsupported Media Type`. Parameter values can contain variables. When used along with the `rotate` parameter, the rotation happens *after* reduction.
+  réduit proportionnellement une image aux dimensions indiquées. Pour ne réduire qu'une dimension, l'autre peut être indiquée par « `-` ». En cas d'erreur, le serveur renvoie le code `415 Unsupported Media Type`. Les valeurs des paramètres peuvent contenir des variables. Avec le paramètre `rotate`, la rotation a lieu *après* la réduction.
 
 - **`crop` *width* *height***
 
-  proportionally reduces an image to the larger side size and crops extraneous edges by another side. To reduce by only one dimension, another dimension can be specified as “`-`”. In case of an error, the server will return code `415 Unsupported Media Type`. Parameter values can contain variables. When used along with the `rotate` parameter, the rotation happens *before* reduction.
+  réduit proportionnellement une image à la dimension du plus grand côté et rogne les bords superflus de l'autre côté. Pour ne réduire qu'une dimension, l'autre peut être indiquée par « `-` ». En cas d'erreur, le serveur renvoie le code `415 Unsupported Media Type`. Les valeurs des paramètres peuvent contenir des variables. Avec le paramètre `rotate`, la rotation a lieu *avant* la réduction.
 
 ---
 

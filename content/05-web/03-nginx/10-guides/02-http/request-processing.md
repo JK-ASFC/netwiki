@@ -1,16 +1,13 @@
 ---
-title: "How nginx processes a request"
-description: "Nginx — How nginx processes a request. nginx first decides which server should process the request. Let’s start with a simple configuration where all three virtual servers listen on port :80:"
+title: "Comment nginx traite une requête"
+description: "Nginx — Comment nginx traite une requête. nginx détermine d'abord quel serveur (server) doit traiter la requête. Commençons par une configuration simple où les trois serveurs virtuels écoutent sur le port :80 :"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+## Serveurs virtuels par nom
 
-## Name-based virtual servers
-
-nginx first decides which *server* should process the request. Let’s start with a simple configuration where all three virtual servers listen on port \*:80:
+nginx détermine d'abord quel serveur (*server*) doit traiter la requête. Commençons par une configuration simple où les trois serveurs virtuels écoutent sur le port \*:80 :
 
 ```
 server {
@@ -32,7 +29,7 @@ server {
 }
 ```
 
-In this configuration nginx tests only the request’s header field `Host` to determine which server the request should be routed to. If its value does not match any server name, or the request does not contain this header field at all, then nginx will route the request to the default server for this port. In the configuration above, the default server is the first one — which is nginx’s standard default behaviour. It can also be set explicitly which server should be default, with the `default_server` parameter in the [[12-directives/listen-http-core|listen]] directive:
+Dans cette configuration, nginx examine uniquement le champ d'en-tête `Host` de la requête pour déterminer vers quel serveur l'acheminer. Si sa valeur ne correspond à aucun nom de serveur, ou si la requête ne contient pas ce champ, nginx achemine la requête vers le serveur par défaut de ce port. Dans la configuration ci-dessus, le serveur par défaut est le premier, comportement standard de nginx. On peut aussi désigner explicitement le serveur par défaut avec le paramètre `default_server` de la directive [[12-directives/listen-http-core|listen]] :
 
 ```
 server {
@@ -43,13 +40,13 @@ server {
 ```
 
 > [!NOTE]
-> The `default_server` parameter has been available since version 0.8.21. In earlier versions the `default` parameter should be used instead.
+> Le paramètre `default_server` est disponible depuis la version 0.8.21. Dans les versions antérieures, il faut utiliser le paramètre `default`.
 
-Note that the default server is a property of the listen port and not of the server name. More about this later.
+Le serveur par défaut est une propriété du port d'écoute, et non du nom de serveur. Nous y reviendrons.
 
-## How to prevent processing requests with undefined server names
+## Empêcher le traitement des requêtes sans nom de serveur défini
 
-If requests without the `Host` header field should not be allowed, a server that just drops the requests can be defined:
+Si les requêtes sans champ d'en-tête `Host` ne doivent pas être acceptées, on peut définir un serveur qui les rejette simplement :
 
 ```
 server {
@@ -59,14 +56,14 @@ server {
 }
 ```
 
-Here, the server name is set to an empty string that will match requests without the `Host` header field, and a special nginx’s non-standard code 444 is returned that closes the connection.
+Ici, le nom de serveur est une chaîne vide, qui correspond aux requêtes sans champ `Host`, et le code non standard 444 de nginx est renvoyé, ce qui ferme la connexion.
 
 > [!NOTE]
-> Since version 0.8.48, this is the default setting for the server name, so the `server_name ""` can be omitted. In earlier versions, the machine’s *hostname* was used as a default server name.
+> Depuis la version 0.8.48, c'est le réglage par défaut du nom de serveur : `server_name ""` peut donc être omis. Dans les versions antérieures, le nom d'hôte (*hostname*) de la machine servait de nom de serveur par défaut.
 
-## Mixed name-based and IP-based virtual servers
+## Serveurs virtuels mixtes, par nom et par adresse IP
 
-Let’s look at a more complex configuration where some virtual servers listen on different addresses:
+Prenons une configuration plus complexe où certains serveurs virtuels écoutent sur des adresses différentes :
 
 ```
 server {
@@ -88,9 +85,9 @@ server {
 }
 ```
 
-In this configuration, nginx first tests the IP address and port of the request against the [[12-directives/listen-http-core|listen]] directives of the [[12-directives/server-http-core|server]] blocks. It then tests the `Host` header field of the request against the [[12-directives/server-name-http-core|server_name]] entries of the [[12-directives/server-http-core|server]] blocks that matched the IP address and port. If the server name is not found, the request will be processed by the default server. For example, a request for `www.example.com` received on the 192.168.1.1:80 port will be handled by the default server of the 192.168.1.1:80 port, i.e., by the first server, since there is no `www.example.com` defined for this port.
+Dans cette configuration, nginx compare d'abord l'adresse IP et le port de la requête aux directives [[12-directives/listen-http-core|listen]] des blocs [[12-directives/server-http-core|server]]. Il compare ensuite le champ `Host` de la requête aux entrées [[12-directives/server-name-http-core|server_name]] des blocs [[12-directives/server-http-core|server]] qui correspondent à cette adresse et à ce port. Si le nom de serveur n'est pas trouvé, la requête est traitée par le serveur par défaut. Par exemple, une requête pour `www.example.com` reçue sur le port 192.168.1.1:80 est traitée par le serveur par défaut de ce port, c'est-à-dire le premier, car aucun `www.example.com` n'est défini pour ce port.
 
-As already stated, a default server is a property of the listen port, and different default servers may be defined for different ports:
+Comme indiqué plus haut, le serveur par défaut est une propriété du port d'écoute, et des serveurs par défaut différents peuvent être définis pour des ports différents :
 
 ```
 server {
@@ -112,9 +109,9 @@ server {
 }
 ```
 
-## A simple PHP site configuration
+## Configuration d'un site PHP simple
 
-Now let’s look at how nginx chooses a *location* to process a request for a typical, simple PHP site:
+Voyons maintenant comment nginx choisit le bloc *location* qui traite une requête pour un site PHP simple et typique :
 
 ```
 server {
@@ -139,30 +136,30 @@ server {
 }
 ```
 
-nginx first searches for the most specific prefix location given by literal strings regardless of the listed order. In the configuration above the only prefix location is “`/`” and since it matches any request it will be used as a last resort. Then nginx checks locations given by regular expression in the order listed in the configuration file. The first matching expression stops the search and nginx will use this location. If no regular expression matches a request, then nginx uses the most specific prefix location found earlier.
+nginx recherche d'abord le bloc location à préfixe littéral le plus précis, quel que soit l'ordre des blocs. Dans la configuration ci-dessus, le seul bloc à préfixe est « `/` » ; comme il correspond à toute requête, il sert en dernier recours. nginx examine ensuite les blocs location à expression régulière, dans l'ordre du fichier de configuration. La première expression correspondante arrête la recherche et nginx utilise ce bloc. Si aucune expression régulière ne correspond, nginx utilise le bloc à préfixe le plus précis trouvé auparavant.
 
-Note that locations of all types test only a URI part of request line without arguments. This is done because arguments in the query string may be given in several ways, for example:
+Tous les types de blocs location ne testent que la partie URI de la ligne de requête, sans les arguments, car les arguments de la chaîne de requête peuvent s'écrire de plusieurs façons, par exemple :
 
 ```
 /index.php?user=john&page=1
 /index.php?page=1&user=john
 ```
 
-Besides, anyone may request anything in the query string:
+De plus, n'importe qui peut demander n'importe quoi dans la chaîne de requête :
 
 ```
 /index.php?page=1&something+else&user=john
 ```
 
-Now let’s look at how requests would be processed in the configuration above:
+Voyons maintenant comment les requêtes sont traitées dans la configuration ci-dessus :
 
-- A request “`/logo.gif`” is matched by the prefix location “`/`” first and then by the regular expression “`\.(gif|jpg|png)$`”, therefore, it is handled by the latter location. Using the directive “`root /data/www`” the request is mapped to the file `/data/www/logo.gif`, and the file is sent to the client.
+- La requête « `/logo.gif` » correspond d'abord au bloc à préfixe « `/` », puis à l'expression régulière « `\.(gif|jpg|png)$` » : c'est donc ce dernier bloc qui la traite. Avec la directive « `root /data/www` », la requête est associée au fichier `/data/www/logo.gif`, qui est envoyé au client.
 
-- A request “`/index.php`” is also matched by the prefix location “`/`” first and then by the regular expression “`\.(php)$`”. Therefore, it is handled by the latter location and the request is passed to a FastCGI server listening on localhost:9000. The [[12-directives/fastcgi-param|fastcgi_param]] directive sets the FastCGI parameter `SCRIPT_FILENAME` to “`/data/www/index.php`”, and the FastCGI server executes the file. The variable `$document_root` is equal to the value of the [[12-directives/root|root]] directive and the variable `$fastcgi_script_name` is equal to the request URI, i.e. “`/index.php`”.
+- La requête « `/index.php` » correspond aussi d'abord au bloc à préfixe « `/` », puis à l'expression régulière « `\.(php)$` » : elle est donc traitée par ce dernier bloc et transmise au serveur FastCGI qui écoute sur localhost:9000. La directive [[12-directives/fastcgi-param|fastcgi_param]] règle le paramètre FastCGI `SCRIPT_FILENAME` sur « `/data/www/index.php` », et le serveur FastCGI exécute le fichier. La variable `$document_root` vaut la valeur de la directive [[12-directives/root|root]], et `$fastcgi_script_name` l'URI de la requête, soit « `/index.php` ».
 
-- A request “`/about.html`” is matched by the prefix location “`/`” only, therefore, it is handled in this location. Using the directive “`root /data/www`” the request is mapped to the file `/data/www/about.html`, and the file is sent to the client.
+- La requête « `/about.html` » ne correspond qu'au bloc à préfixe « `/` » et est donc traitée par lui. Avec la directive « `root /data/www` », elle est associée au fichier `/data/www/about.html`, qui est envoyé au client.
 
-- Handling a request “`/`” is more complex. It is matched by the prefix location “`/`” only, therefore, it is handled by this location. Then the [[12-directives/index|index]] directive tests for the existence of index files according to its parameters and the “`root /data/www`” directive. If the file `/data/www/index.html` does not exist, and the file `/data/www/index.php` exists, then the directive does an internal redirect to “`/index.php`”, and nginx searches the locations again as if the request had been sent by a client. As we saw before, the redirected request will eventually be handled by the FastCGI server.
+- Le traitement de la requête « `/` » est plus complexe. Elle ne correspond qu'au bloc à préfixe « `/` » et est donc traitée par lui. La directive [[12-directives/index|index]] vérifie alors l'existence des fichiers d'index selon ses paramètres et la directive « `root /data/www` ». Si le fichier `/data/www/index.html` n'existe pas mais que `/data/www/index.php` existe, la directive effectue une redirection interne vers « `/index.php` », et nginx recherche de nouveau les blocs location comme si la requête venait du client. Comme vu plus haut, la requête redirigée finit par être traitée par le serveur FastCGI.
 
 ---
 

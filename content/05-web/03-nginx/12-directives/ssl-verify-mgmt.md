@@ -1,12 +1,9 @@
 ---
 title: "ssl_verify (ngx_mgmt_module)"
-description: "Directive nginx ssl_verify (ngx_mgmt_module) — Enables or disables verification of the usage reporting endpoint certificate. NOTE Before 1.27.2, the default value was off."
+description: "Directive nginx ssl_verify (ngx_mgmt_module) — Active ou désactive la vérification du certificat du point de terminaison du rapport d'utilisation. NOTE Avant la version 1.27.2, la valeur par défaut était off."
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables verification of the usage reporting endpoint certificate.
+Active ou désactive la vérification du certificat du point de terminaison du rapport d'utilisation.
 
 > [!NOTE]
-> Before 1.27.2, the default value was `off`.
+> Avant la version 1.27.2, la valeur par défaut était `off`.
 
 ---
 

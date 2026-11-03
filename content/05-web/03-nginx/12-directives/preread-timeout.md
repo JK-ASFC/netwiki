@@ -1,12 +1,9 @@
 ---
 title: "preread_timeout"
-description: "Directive nginx preread_timeout (ngx_stream_core_module) — Specifies a timeout of the preread phase."
+description: "Directive nginx preread_timeout (ngx_stream_core_module) — Définit le délai de la phase de prélecture."
 tags: [nginx, directive, ngx_stream_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *timeout* of the [[10-guides/03-stream/stream-processing|preread]] phase.
+Définit le *délai* de la phase de [[10-guides/03-stream/stream-processing|prélecture]].
 
 ---
 

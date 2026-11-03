@@ -1,1 +1,7 @@
-{}
+{
+ "01b7426d7b8c": "Définit les paramètres d'une zone de mémoire partagée qui conserve l'état des différentes clés. L'état comprend notamment le nombre courant de connexions. La *clé* peut contenir du texte, des variables et leurs combinaisons (1.11.2). Les connexions dont la clé est vide ne sont pas comptées. Exemple :",
+ "1fd085b2fb06": "Définit la zone de mémoire partagée et le nombre maximal de connexions autorisées pour une valeur de clé donnée. Au-delà de cette limite, le serveur ferme la connexion. Par exemple, les directives",
+ "369e37606577": "Le module `ngx_stream_limit_conn_module` (1.9.3) sert à limiter le nombre de connexions par clé définie, en particulier le nombre de connexions depuis une même adresse IP.",
+ "64e9b0537af5": "Ici, la clé est l'adresse IP du client, fournie par la variable `$binary_remote_addr`. Sa taille est de 4 octets pour les adresses IPv4 ou 16 octets pour les adresses IPv6. Un état stocké occupe toujours 32 ou 64 octets sur les plates-formes 32 bits et 64 octets sur les plates-formes 64 bits. Une zone d'un mégaoctet peut contenir environ 32 000 états de 32 octets ou environ 16 000 états de 64 octets. Si la zone est pleine, le serveur ferme la connexion.",
+ "c55cb12d6556": "Quand plusieurs directives `limit_conn` sont indiquées, chaque limite configurée s'applique."
+}

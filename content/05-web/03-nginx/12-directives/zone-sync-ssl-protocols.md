@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_ssl_protocols"
-description: "Directive nginx zone_sync_ssl_protocols (ngx_stream_zone_sync_module) — Enables the specified protocols for connections to another cluster server."
+description: "Directive nginx zone_sync_ssl_protocols (ngx_stream_zone_sync_module) — Active les protocoles indiqués pour les connexions vers un autre serveur du cluster."
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the specified protocols for connections to another cluster server.
+Active les protocoles indiqués pour les connexions vers un autre serveur du cluster.
 
 ---
 

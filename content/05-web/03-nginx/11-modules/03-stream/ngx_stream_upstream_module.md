@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_upstream_module"
-description: "Module nginx ngx_stream_upstream_module — The ngx_stream_upstream_module module (1.9.0) is used to define groups of servers that can be referenced by the proxy_pass directive."
+description: "Module nginx ngx_stream_upstream_module — Le module ngx_stream_upstream_module (1.9.0) sert à définir des groupes de serveurs référençables par la directive proxy_pass."
 tags: [nginx, module, ngx_stream_upstream_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_upstream_module` module (1.9.0) is used to define groups of servers that can be referenced by the [[12-directives/proxy-pass-stream-proxy|proxy_pass]] directive.
+Le module `ngx_stream_upstream_module` (1.9.0) sert à définir des groupes de serveurs référençables par la directive [[12-directives/proxy-pass-stream-proxy|proxy_pass]].
 
 ## Exemple de configuration
 

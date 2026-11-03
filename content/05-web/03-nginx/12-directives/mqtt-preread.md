@@ -1,12 +1,9 @@
 ---
 title: "mqtt_preread"
-description: "Directive nginx mqtt_preread (ngx_stream_mqtt_preread_module) — Enables extracting information from the MQTT CONNECT message at the preread phase."
+description: "Directive nginx mqtt_preread (ngx_stream_mqtt_preread_module) — Active l'extraction d'informations du message MQTT CONNECT à la phase de prélecture."
 tags: [nginx, directive, ngx_stream_mqtt_preread_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables extracting information from the MQTT CONNECT message at the [[10-guides/03-stream/stream-processing|preread]] phase.
+Active l'extraction d'informations du message MQTT CONNECT à la phase de [[10-guides/03-stream/stream-processing|prélecture]].
 
 ---
 

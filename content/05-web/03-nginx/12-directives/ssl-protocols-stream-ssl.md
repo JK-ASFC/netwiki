@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `ssl_protocols [SSLv2] [SSLv3] [TLSv1] [TLSv1.1] [TLSv1.2] [TLSv1.3];` |
@@ -22,7 +19,7 @@ Active les protocoles indiqués.
 Si la directive est indiquée au niveau [[12-directives/server-stream-core|server]], la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « [[10-guides/02-http/server-names|Choix du serveur virtuel]] ».
 
 > [!NOTE]
-> The `TLSv1.1` and `TLSv1.2` parameters work only when OpenSSL 1.0.1 or higher is used.
+> Les paramètres `TLSv1.1` et `TLSv1.2` ne fonctionnent qu'avec OpenSSL 1.0.1 ou supérieur.
 
 > [!NOTE]
 > Le paramètre `TLSv1.3` (1.13.0) ne fonctionne qu'avec OpenSSL 1.1.1 ou plus récent.

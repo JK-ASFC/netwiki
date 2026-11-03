@@ -1,12 +1,9 @@
 ---
 title: "userid"
-description: "Directive nginx userid (ngx_http_userid_module) — Enables or disables setting cookies and logging the received cookies: - on enables the setting of version 2 cookies and logging of the received cookies; - v1 enables the setting of version 1 cookies…"
+description: "Directive nginx userid (ngx_http_userid_module) — Active ou désactive la définition des cookies et la journalisation des cookies reçus : - on active la définition des cookies de version 2 et la journalisation des cookies reçus ; - v1 active la…"
 tags: [nginx, directive, ngx_http_userid_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,23 +14,23 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables setting cookies and logging the received cookies:
+Active ou désactive la définition des cookies et la journalisation des cookies reçus :
 
 - **`on`**
 
-  enables the setting of version 2 cookies and logging of the received cookies;
+  active la définition des cookies de version 2 et la journalisation des cookies reçus ;
 
 - **`v1`**
 
-  enables the setting of version 1 cookies and logging of the received cookies;
+  active la définition des cookies de version 1 et la journalisation des cookies reçus ;
 
 - **`log`**
 
-  disables the setting of cookies, but enables logging of the received cookies;
+  désactive la définition des cookies, mais active la journalisation des cookies reçus ;
 
 - **`off`**
 
-  disables the setting of cookies and logging of the received cookies.
+  désactive la définition des cookies et la journalisation des cookies reçus.
 
 ---
 

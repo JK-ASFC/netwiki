@@ -1,0 +1,4 @@
+{
+ "4e4e10e6186a": "Indique la *valeur* à envoyer au client. Elle peut contenir du texte, des variables et leur combinaison.",
+ "a8d7783cf3b7": "Le module `ngx_stream_return_module` (1.11.2) permet d'envoyer une valeur donnée au client, puis de fermer la connexion."
+}

@@ -1,0 +1,6 @@
+{
+ "3b61aa137b2b": "la valeur `username` du message CONNECT",
+ "afe3c965f3a7": "Le module `ngx_stream_mqtt_preread_module` (1.23.4) permet d'extraire des informations du message CONNECT du protocole Message Queuing Telemetry Transport (MQTT) versions [3.1.1](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html) et [5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html), par exemple un nom d'utilisateur ou un identifiant client.",
+ "b6e95879b22c": "la valeur `clientid` du message CONNECT",
+ "f88e455acaf2": "Active l'extraction d'informations du message MQTT CONNECT à la phase de [[10-guides/03-stream/stream-processing|prélecture]]."
+}

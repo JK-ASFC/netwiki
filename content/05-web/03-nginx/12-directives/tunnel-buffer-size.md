@@ -1,12 +1,9 @@
 ---
 title: "tunnel_buffer_size"
-description: "Directive nginx tunnel_buffer_size (ngx_http_tunnel_module) — Sets the size of the buffer used for reading data from the backend server. Also sets the size of the buffer used for reading data from the client."
+description: "Directive nginx tunnel_buffer_size (ngx_http_tunnel_module) — Définit la taille (size) du tampon utilisé pour lire les données du serveur d'arrière-plan, ainsi que celle du tampon de lecture des données du client."
 tags: [nginx, directive, ngx_http_tunnel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *size* of the buffer used for reading data from the backend server. Also sets the *size* of the buffer used for reading data from the client.
+Définit la taille (*size*) du tampon utilisé pour lire les données du serveur d'arrière-plan, ainsi que celle du tampon de lecture des données du client.
 
 ---
 

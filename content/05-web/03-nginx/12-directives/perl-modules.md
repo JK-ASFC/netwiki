@@ -1,12 +1,9 @@
 ---
 title: "perl_modules"
-description: "Directive nginx perl_modules (ngx_http_perl_module) — Sets an additional path for Perl modules."
+description: "Directive nginx perl_modules (ngx_http_perl_module) — Définit un chemin supplémentaire pour les modules Perl."
 tags: [nginx, directive, ngx_http_perl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an additional path for Perl modules.
+Définit un chemin supplémentaire pour les modules Perl.
 
 ---
 

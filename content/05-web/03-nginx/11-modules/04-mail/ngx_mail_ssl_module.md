@@ -1,16 +1,13 @@
 ---
 title: "ngx_mail_ssl_module"
-description: "Module nginx ngx_mail_ssl_module — The ngx_mail_ssl_module module provides the necessary support for a mail proxy server to work with the SSL/TLS protocol."
+description: "Module nginx ngx_mail_ssl_module — Le module ngx_mail_ssl_module fournit la prise en charge nécessaire pour que le mandataire de messagerie fonctionne avec le protocole SSL/TLS."
 tags: [nginx, module, ngx_mail_ssl_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_mail_ssl_module` fournit la prise en charge nécessaire pour que le mandataire de messagerie fonctionne avec le protocole SSL/TLS.
 
-The `ngx_mail_ssl_module` module provides the necessary support for a mail proxy server to work with the SSL/TLS protocol.
-
-This module is not built by default, it should be enabled with the `--with-mail_ssl_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-mail_ssl_module`.
 
 > [!NOTE]
 > Ce module nécessite la bibliothèque [OpenSSL](http://www.openssl.org).

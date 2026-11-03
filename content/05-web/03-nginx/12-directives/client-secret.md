@@ -1,12 +1,9 @@
 ---
 title: "client_secret"
-description: "Directive nginx client_secret (ngx_http_oidc_module) — Specifies a secret value used to authenticate the Relying Party with the OpenID Provider. The supported authentication methods are client_secret_basic and client_secret_post (1.29.3). The method is…"
+description: "Directive nginx client_secret (ngx_http_oidc_module) — Indique un secret servant à authentifier la partie de confiance auprès du fournisseur OpenID. Les méthodes d'authentification prises en charge sont client_secret_basic et client_secret_post (1.29.3).…"
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a secret value used to authenticate the Relying Party with the OpenID Provider. The supported [authentication methods](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication) are `client_secret_basic` and `client_secret_post` (1.29.3). The method is selected based on the OpenID Provider metadata with a preference to `client_secret_basic`.
+Indique un secret servant à authentifier la partie de confiance auprès du fournisseur OpenID. Les [méthodes d'authentification](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication) prises en charge sont `client_secret_basic` et `client_secret_post` (1.29.3). La méthode est choisie d'après les métadonnées du fournisseur, avec une préférence pour `client_secret_basic`.
 
 ---
 

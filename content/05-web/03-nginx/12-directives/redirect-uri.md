@@ -1,12 +1,9 @@
 ---
 title: "redirect_uri"
-description: "Directive nginx redirect_uri (ngx_http_oidc_module) — Defines the Redirection URI path for post-authentication redirects expected by the module from the OpenID Provider. The uri must match the configuration on the Provider's side. Absolute “https” URIs…"
+description: "Directive nginx redirect_uri (ngx_http_oidc_module) — Définit le chemin de l'URI de redirection que le module attend du fournisseur OpenID après l'authentification. L'uri doit correspondre à la configuration côté fournisseur. Les URI « https » absolus…"
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the Redirection URI path for post-authentication redirects expected by the module from the OpenID Provider. The *uri* must match the configuration on the Provider's side.
+Définit le chemin de l'URI de redirection que le module attend du fournisseur OpenID après l'authentification. L'*uri* doit correspondre à la configuration côté fournisseur.
 
-Absolute “`https`” URIs are supported since 1.29.0.
+Les URI « `https` » absolus sont pris en charge depuis la version 1.29.0.
 
 ---
 

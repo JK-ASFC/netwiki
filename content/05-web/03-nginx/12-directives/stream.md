@@ -1,12 +1,9 @@
 ---
 title: "stream"
-description: "Directive nginx stream (ngx_stream_core_module) — Provides the configuration file context in which the stream server directives are specified."
+description: "Directive nginx stream (ngx_stream_core_module) — Fournit le contexte du fichier de configuration dans lequel sont indiquées les directives des serveurs stream."
 tags: [nginx, directive, ngx_stream_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Provides the configuration file context in which the stream server directives are specified.
+Fournit le contexte du fichier de configuration dans lequel sont indiquées les directives des serveurs stream.
 
 ---
 

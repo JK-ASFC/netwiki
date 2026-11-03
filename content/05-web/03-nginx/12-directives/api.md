@@ -1,12 +1,9 @@
 ---
 title: "api"
-description: "Directive nginx api (ngx_http_api_module) — Turns on the REST API interface in the surrounding location. Access to this location should be limited. The write parameter determines whether the API is read-only or read-write. By default, the API…"
+description: "Directive nginx api (ngx_http_api_module) — Active l'interface de l'API REST dans la location englobante. L'accès à cette location doit être restreint. Le paramètre write détermine si l'API est en lecture seule ou en lecture-écriture. Par…"
 tags: [nginx, directive, ngx_http_api_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Turns on the REST API interface in the surrounding location. Access to this location should be [[12-directives/satisfy|limited]].
+Active l'interface de l'API REST dans la location englobante. L'accès à cette location doit être [[12-directives/satisfy|restreint]].
 
-The `write` parameter determines whether the API is read-only or read-write. By default, the API is read-only.
+Le paramètre `write` détermine si l'API est en lecture seule ou en lecture-écriture. Par défaut, elle est en lecture seule.
 
-All API requests should contain a supported API version in the URI. If the request URI equals the location prefix, the list of supported API versions is returned. The current API version is “`10`”.
+Toutes les requêtes à l'API doivent contenir une version d'API prise en charge dans l'URI. Si l'URI de la requête est égale au préfixe de la location, la liste des versions prises en charge est renvoyée. La version actuelle de l'API est « `10` ».
 
-The optional “`fields`” argument in the request line specifies which fields of the requested objects will be output:
+L'argument facultatif « `fields` » de la ligne de requête indique quels champs des objets demandés seront affichés :
 
 ```nginx
 http://127.0.0.1/api/10/nginx?fields=version,build

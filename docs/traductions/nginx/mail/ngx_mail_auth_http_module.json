@@ -1,0 +1,22 @@
+{
+ "0b683314085a": "Exemples de requêtes et de réponses :",
+ "17adc287beda": "Pour SMTP, la réponse tient aussi compte de l'en-tête `Auth-Error-Code` : s'il est présent, il sert de code de réponse en cas d'erreur ; sinon, le code 535 5.7.0 est ajouté à l'en-tête `Auth-Status`.",
+ "1ed77c3f7ffc": "Protocole",
+ "4467153a5a61": "Si le client a présenté un certificat, ses détails sont transmis dans les en-têtes de requête `Auth-SSL-Subject`, `Auth-SSL-Issuer`, `Auth-SSL-Serial` et `Auth-SSL-Fingerprint`. Si [[12-directives/auth-http-pass-client-cert|auth_http_pass_client_cert]] est activé, le certificat lui-même est transmis dans l'en-tête `Auth-SSL-Cert`. Le protocole et la suite de chiffrement de la connexion sont transmis dans les en-têtes `Auth-SSL-Protocol` et `Auth-SSL-Cipher` (1.21.2). La requête ressemble à ceci :",
+ "5ee59afdd701": "S'il n'y a pas d'en-tête `Auth-Wait`, une erreur est renvoyée et la connexion fermée. La mise en œuvre actuelle alloue de la mémoire à chaque tentative d'authentification, libérée seulement à la fin de la session. Le nombre de tentatives d'authentification non valides dans une même session doit donc être limité : le serveur doit répondre sans l'en-tête `Auth-Wait` après 10 à 20 tentatives (le numéro de tentative est transmis dans l'en-tête `Auth-Login-Attempt`).",
+ "650bcb42f47e": "Par exemple, si le serveur d'authentification renvoie la réponse suivante :",
+ "7c06ef229ebc": "Si le relais SMTP ne nécessite pas d'authentification, la requête ressemble à ceci :",
+ "a0bd44b1953b": "Définit l'URL du serveur d'authentification HTTP. Le protocole est décrit plus bas.",
+ "a56a26eb618b": "Si l'en-tête `Auth-User` est présent dans la réponse, il remplace le nom d'utilisateur utilisé pour s'authentifier auprès du serveur d'arrière-plan.",
+ "a6e04910d324": "Avec APOP ou CRAM-MD5, la requête et la réponse ressemblent à ceci :",
+ "a92e95743e7e": "Avec le [[11-modules/04-mail/ngx_mail_core_module|protocole PROXY]], ses détails sont transmis dans les en-têtes de requête `Proxy-Protocol-Addr`, `Proxy-Protocol-Port`, `Proxy-Protocol-Server-Addr` et `Proxy-Protocol-Server-Port` (1.19.8).",
+ "abb388efd51a": "Réponse négative :",
+ "b0e3517e02c9": "Le protocole HTTP sert à communiquer avec le serveur d'authentification. Les données du corps de la réponse sont ignorées ; les informations ne sont transmises que dans les en-têtes.",
+ "bddf706e12f7": "Ajoute aux requêtes envoyées au serveur d'authentification l'en-tête `Auth-SSL-Cert` contenant le certificat du [[12-directives/ssl-verify-client-mail-ssl|client]] au format PEM (encodé pour URL).",
+ "bf92488ca25c": "Ajoute l'en-tête indiqué aux requêtes envoyées au serveur d'authentification. Cet en-tête peut servir de secret partagé pour vérifier que la requête provient de nginx. Par exemple :",
+ "c6aff63863d0": "Réponse positive :",
+ "c9dd21c1677c": "le client SMTP reçoit l'erreur",
+ "d77f01ce0136": "Définit le délai de communication avec le serveur d'authentification.",
+ "e6db96fb4d83": "Pour une connexion cliente SSL/TLS (1.7.11), l'en-tête `Auth-SSL` est ajouté, et `Auth-SSL-Verify` contient le résultat de la vérification du certificat du client si elle est [[12-directives/ssl-verify-client-mail-ssl|activée]] : « `SUCCESS` », « `FAILED:`*reason* », ou « `NONE` » si aucun certificat n'a été présenté.",
+ "ec0e7ce9ae95": "Requête :"
+}

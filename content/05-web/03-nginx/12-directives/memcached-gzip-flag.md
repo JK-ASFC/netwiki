@@ -1,12 +1,9 @@
 ---
 title: "memcached_gzip_flag"
-description: "Directive nginx memcached_gzip_flag (ngx_http_memcached_module) — Enables the test for the flag presence in the memcached server response and sets the “Content-Encoding” response header field to “gzip” if the flag is set."
+description: "Directive nginx memcached_gzip_flag (ngx_http_memcached_module) — Active la recherche du drapeau (flag) dans la réponse du serveur memcached et, s'il est présent, règle le champ d'en-tête de réponse « Content-Encoding » sur « gzip »."
 tags: [nginx, directive, ngx_http_memcached_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the test for the *flag* presence in the memcached server response and sets the “`Content-Encoding`” response header field to “`gzip`” if the flag is set.
+Active la recherche du drapeau (*flag*) dans la réponse du serveur memcached et, s'il est présent, règle le champ d'en-tête de réponse « `Content-Encoding` » sur « `gzip` ».
 
 ---
 

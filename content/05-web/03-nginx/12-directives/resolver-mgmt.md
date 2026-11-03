@@ -1,12 +1,9 @@
 ---
 title: "resolver (ngx_mgmt_module)"
-description: "Directive nginx resolver (ngx_mgmt_module) — Configures name servers used to resolve usage reporting endpoint name. By default, the system resolver is used. See resolver for details."
+description: "Directive nginx resolver (ngx_mgmt_module) — Configure les serveurs de noms utilisés pour résoudre le nom du point de terminaison du rapport d'utilisation. Par défaut, le résolveur du système est utilisé. Voir resolver pour les détails."
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Configures name servers used to resolve usage reporting endpoint name. By default, the system resolver is used.
+Configure les serveurs de noms utilisés pour résoudre le nom du point de terminaison du rapport d'utilisation. Par défaut, le résolveur du système est utilisé.
 
-See [[12-directives/resolver-http-core|resolver]] for details.
+Voir [[12-directives/resolver-http-core|resolver]] pour les détails.
 
 ---
 

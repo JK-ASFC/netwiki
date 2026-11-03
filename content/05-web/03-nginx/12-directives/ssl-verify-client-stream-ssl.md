@@ -1,12 +1,9 @@
 ---
 title: "ssl_verify_client (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_verify_client (ngx_stream_ssl_module) — Enables verification of client certificates. The verification result is stored in the $ssl_client_verify variable. If an error has occurred during the client certificate verification or a client has…"
+description: "Directive nginx ssl_verify_client (ngx_stream_ssl_module) — Active la vérification des certificats client. Le résultat est stocké dans la variable $ssl_client_verify. Si une erreur survient pendant la vérification ou si le client n'a pas présenté le…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,11 +15,11 @@ icon: settings-2
 
 ## Utilisation
 
-Enables verification of client certificates. The verification result is stored in the [[13-variables/ssl-client-verify-stream-ssl|$ssl_client_verify]] variable. If an error has occurred during the client certificate verification or a client has not presented the required certificate, the connection is closed.
+Active la vérification des certificats client. Le résultat est stocké dans la variable [[13-variables/ssl-client-verify-stream-ssl|$ssl_client_verify]]. Si une erreur survient pendant la vérification ou si le client n'a pas présenté le certificat requis, la connexion est fermée.
 
-The `optional` parameter requests the client certificate and verifies it if the certificate is present.
+Le paramètre `optional` demande le certificat du client et le vérifie s'il est présent.
 
-The `optional_no_ca` parameter requests the client certificate but does not require it to be signed by a trusted CA certificate. This is intended for the use in cases when a service that is external to nginx performs the actual certificate verification. The contents of the certificate is accessible through the [[13-variables/ssl-client-cert-stream-ssl|$ssl_client_cert]] variable.
+Le paramètre `optional_no_ca` demande le certificat client sans exiger qu'il soit signé par un certificat d'AC de confiance. Il est destiné aux cas où un service extérieur à nginx effectue la vérification réelle du certificat. Le contenu du certificat est accessible via la variable [[13-variables/ssl-client-cert-stream-ssl|$ssl_client_cert]].
 
 ---
 

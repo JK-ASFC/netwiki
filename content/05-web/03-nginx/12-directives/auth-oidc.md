@@ -1,12 +1,9 @@
 ---
 title: "auth_oidc"
-description: "Directive nginx auth_oidc (ngx_http_oidc_module) — Enables end user authentication with the specified OpenID Provider. Parameter value can contain variables (1.29.0). The special value off cancels the effect of the auth_oidc directive inherited from…"
+description: "Directive nginx auth_oidc (ngx_http_oidc_module) — Active l'authentification des utilisateurs auprès du fournisseur OpenID indiqué. La valeur du paramètre peut contenir des variables (1.29.0). La valeur spéciale off annule l'effet de la directive…"
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Enables end user authentication with the [[12-directives/oidc-provider|specified]] OpenID Provider.
+Active l'authentification des utilisateurs auprès du fournisseur OpenID [[12-directives/oidc-provider|indiqué]].
 
-Parameter value can contain variables (1.29.0).
+La valeur du paramètre peut contenir des variables (1.29.0).
 
-The special value `off` cancels the effect of the `auth_oidc` directive inherited from the previous configuration level.
+La valeur spéciale `off` annule l'effet de la directive `auth_oidc` héritée du niveau de configuration précédent.
 
 ---
 

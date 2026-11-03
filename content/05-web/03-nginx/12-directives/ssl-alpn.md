@@ -1,12 +1,9 @@
 ---
 title: "ssl_alpn"
-description: "Directive nginx ssl_alpn (ngx_stream_ssl_module) — Specifies the list of supported ALPN protocols. One of the protocols must be negotiated if the client uses ALPN: nginx map $ssl_alpn_protocol $proxy { h2 127.0.0.1:8001; http/1.1 127.0.0.1:8002; }…"
+description: "Directive nginx ssl_alpn (ngx_stream_ssl_module) — Indique la liste des protocoles ALPN pris en charge. L'un d'eux doit être négocié si le client utilise ALPN : nginx map $ssl_alpn_protocol $proxy { h2 127.0.0.1:8001; http/1.1 127.0.0.1:8002; }…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the list of supported [ALPN](https://datatracker.ietf.org/doc/html/rfc7301) protocols. One of the protocols must be [[13-variables/ssl-alpn-protocol-stream-ssl|negotiated]] if the client uses ALPN:
+Indique la liste des protocoles [ALPN](https://datatracker.ietf.org/doc/html/rfc7301) pris en charge. L'un d'eux doit être [[13-variables/ssl-alpn-protocol-stream-ssl|négocié]] si le client utilise ALPN :
 
 ```nginx
 map $ssl_alpn_protocol $proxy {

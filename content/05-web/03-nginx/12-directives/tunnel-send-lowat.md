@@ -1,12 +1,9 @@
 ---
 title: "tunnel_send_lowat"
-description: "Directive nginx tunnel_send_lowat (ngx_http_tunnel_module) — If the directive is set to a non-zero value, nginx will try to minimize the number of send operations on outgoing connections to a backend server by using either NOTE_LOWAT flag of the kqueue method,…"
+description: "Directive nginx tunnel_send_lowat (ngx_http_tunnel_module) — Si la directive a une valeur non nulle, nginx tente de réduire le nombre d'opérations d'envoi sur les connexions sortantes vers un serveur d'arrière-plan, en utilisant soit l'option NOTE_LOWAT de la…"
 tags: [nginx, directive, ngx_http_tunnel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-If the directive is set to a non-zero value, nginx will try to minimize the number of send operations on outgoing connections to a backend server by using either `NOTE_LOWAT` flag of the [[10-guides/01-introduction/events|kqueue]] method, or the `SO_SNDLOWAT` socket option, with the specified *size*.
+Si la directive a une valeur non nulle, nginx tente de réduire le nombre d'opérations d'envoi sur les connexions sortantes vers un serveur d'arrière-plan, en utilisant soit l'option `NOTE_LOWAT` de la méthode [[10-guides/01-introduction/events|kqueue]], soit l'option de socket `SO_SNDLOWAT`, avec la taille (*size*) indiquée.
 
 Cette directive est ignorée sous Linux, Solaris et Windows.
 

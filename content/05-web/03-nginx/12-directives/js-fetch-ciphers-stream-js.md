@@ -1,12 +1,9 @@
 ---
 title: "js_fetch_ciphers (ngx_stream_js_module)"
-description: "Directive nginx js_fetch_ciphers (ngx_stream_js_module) — Specifies the enabled ciphers for HTTPS connections with Fetch API. The ciphers are specified in the format understood by the OpenSSL library. La liste complète s'affiche avec la commande « openssl…"
+description: "Directive nginx js_fetch_ciphers (ngx_stream_js_module) — Indique les chiffrements activés pour les connexions HTTPS de l'API Fetch. Les chiffrements sont donnés au format compris par la bibliothèque OpenSSL. La liste complète s'affiche avec la commande «…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the enabled ciphers for HTTPS connections with [[10-guides/04-njs/reference|Fetch API]]. The ciphers are specified in the format understood by the OpenSSL library.
+Indique les chiffrements activés pour les connexions HTTPS de l'[[10-guides/04-njs/reference|API Fetch]]. Les chiffrements sont donnés au format compris par la bibliothèque OpenSSL.
 
 La liste complète s'affiche avec la commande « `openssl ciphers` ».
 

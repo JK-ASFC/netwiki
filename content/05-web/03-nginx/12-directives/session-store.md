@@ -1,12 +1,9 @@
 ---
 title: "session_store"
-description: "Directive nginx session_store (ngx_http_oidc_module) — Specifies a custom key-value database that stores session data. By default, an 8-megabyte key-value database named oidc_default_store_<provider name is created automatically. NOTE A separate…"
+description: "Directive nginx session_store (ngx_http_oidc_module) — Indique une base clé-valeur personnalisée qui stocke les données de session. Par défaut, une base clé-valeur de 8 mégaoctets nommée oidc_default_store_<provider name est créée automatiquement. NOTE…"
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a custom [[12-directives/keyval-zone-http-keyval|key-value database]] that stores session data. By default, an 8-megabyte key-value database named `oidc_default_store_<provider name>` is created automatically.
+Indique une [[12-directives/keyval-zone-http-keyval|base clé-valeur]] personnalisée qui stocke les données de session. Par défaut, une base clé-valeur de 8 mégaoctets nommée `oidc_default_store_<provider name>` est créée automatiquement.
 
 > [!NOTE]
-> A separate key-value database should be configured for each Provider to prevent session reuse across providers.
+> Il faut configurer une base clé-valeur distincte pour chaque fournisseur afin d'empêcher la réutilisation des sessions d'un fournisseur à l'autre.
 
 ---
 

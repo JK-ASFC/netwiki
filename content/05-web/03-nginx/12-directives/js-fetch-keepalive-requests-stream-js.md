@@ -1,12 +1,9 @@
 ---
 title: "js_fetch_keepalive_requests (ngx_stream_js_module)"
-description: "Directive nginx js_fetch_keepalive_requests (ngx_stream_js_module) — Sets the maximum number of requests that can be served through one keepalive connection with Fetch API. After the maximum number of requests is made, the connection is closed. Fermer périodiquement…"
+description: "Directive nginx js_fetch_keepalive_requests (ngx_stream_js_module) — Définit le nombre maximal de requêtes pouvant être servies sur une connexion persistante avec l'API Fetch. Une fois ce nombre atteint, la connexion est fermée. Fermer périodiquement les connexions…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum number of requests that can be served through one keepalive connection with [[10-guides/04-njs/reference|Fetch API]]. After the maximum number of requests is made, the connection is closed.
+Définit le nombre maximal de requêtes pouvant être servies sur une connexion persistante avec l'[[10-guides/04-njs/reference|API Fetch]]. Une fois ce nombre atteint, la connexion est fermée.
 
 Fermer périodiquement les connexions est nécessaire pour libérer la mémoire allouée par connexion. Un nombre maximal de requêtes trop élevé peut donc entraîner une consommation de mémoire excessive et n'est pas recommandé.
 

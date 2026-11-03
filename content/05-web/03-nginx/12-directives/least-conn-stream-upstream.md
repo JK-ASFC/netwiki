@@ -1,12 +1,9 @@
 ---
 title: "least_conn (ngx_stream_upstream_module)"
-description: "Directive nginx least_conn (ngx_stream_upstream_module) — Specifies that a group should use a load balancing method where a connection is passed to the server with the least number of active connections, taking into account weights of servers. If there are…"
+description: "Directive nginx least_conn (ngx_stream_upstream_module) — Indique qu'un groupe doit utiliser une méthode de répartition où la connexion est passée au serveur ayant le moins de connexions actives, en tenant compte des poids des serveurs. S'il y en a…"
 tags: [nginx, directive, ngx_stream_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies that a group should use a load balancing method where a connection is passed to the server with the least number of active connections, taking into account weights of servers. If there are several such servers, they are tried in turn using a weighted round-robin balancing method.
+Indique qu'un groupe doit utiliser une méthode de répartition où la connexion est passée au serveur ayant le moins de connexions actives, en tenant compte des poids des serveurs. S'il y en a plusieurs, ils sont essayés à tour de rôle selon une méthode round-robin pondérée.
 
 ---
 

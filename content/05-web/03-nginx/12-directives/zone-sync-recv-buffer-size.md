@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_recv_buffer_size"
-description: "Directive nginx zone_sync_recv_buffer_size (ngx_stream_zone_sync_module) — Sets size of a per-connection receive buffer used to parse incoming stream of synchronization messages. The buffer size must be equal or greater than one of the zone_sync_buffers. By default, the…"
+description: "Directive nginx zone_sync_recv_buffer_size (ngx_stream_zone_sync_module) — Définit la taille du tampon de réception, par connexion, utilisé pour analyser le flux entrant de messages de synchronisation. Elle doit être supérieure ou égale à celle d'un des tampons…"
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets *size* of a per-connection receive buffer used to parse incoming stream of synchronization messages. The buffer size must be equal or greater than one of the [[12-directives/zone-sync-buffers|zone_sync_buffers]]. By default, the buffer size is equal to [[12-directives/zone-sync-buffers|zone_sync_buffers]] *size* multiplied by *number*.
+Définit la *taille* du tampon de réception, par connexion, utilisé pour analyser le flux entrant de messages de synchronisation. Elle doit être supérieure ou égale à celle d'un des tampons [[12-directives/zone-sync-buffers|zone_sync_buffers]]. Par défaut, elle vaut la *taille* de [[12-directives/zone-sync-buffers|zone_sync_buffers]] multipliée par leur *nombre*.
 
 ---
 

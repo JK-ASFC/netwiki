@@ -1,12 +1,9 @@
 ---
 title: "otel_resource_attr"
-description: "Directive nginx otel_resource_attr (ngx_otel_module) — Sets a custom OTel resource attribute."
+description: "Directive nginx otel_resource_attr (ngx_otel_module) — Définit un attribut personnalisé de la ressource OTel."
 tags: [nginx, directive, ngx_otel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a custom OTel resource attribute.
+Définit un attribut personnalisé de la ressource OTel.
 
 ---
 

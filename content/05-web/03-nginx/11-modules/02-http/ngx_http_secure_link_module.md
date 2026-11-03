@@ -1,20 +1,17 @@
 ---
 title: "ngx_http_secure_link_module"
-description: "Module nginx ngx_http_secure_link_module — The ngx_http_secure_link_module module (0.7.18) is used to check authenticity of requested links, protect resources from unauthorized access, and limit link lifetime."
+description: "Module nginx ngx_http_secure_link_module — Le module ngx_http_secure_link_module (0.7.18) sert à vérifier l'authenticité des liens demandés, à protéger les ressources contre les accès non autorisés et à limiter la durée de vie des liens."
 tags: [nginx, module, ngx_http_secure_link_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_secure_link_module` (0.7.18) sert à vérifier l'authenticité des liens demandés, à protéger les ressources contre les accès non autorisés et à limiter la durée de vie des liens.
 
-The `ngx_http_secure_link_module` module (0.7.18) is used to check authenticity of requested links, protect resources from unauthorized access, and limit link lifetime.
+L'authenticité d'un lien est vérifiée en comparant la somme de contrôle transmise dans la requête à celle calculée pour la requête. Si le lien a une durée de vie limitée et qu'elle est dépassée, il est considéré comme périmé. Le résultat de ces vérifications est disponible dans la variable `$secure_link`.
 
-The authenticity of a requested link is verified by comparing the checksum value passed in a request with the value computed for the request. If a link has a limited lifetime and the time has expired, the link is considered outdated. The status of these checks is made available in the `$secure_link` variable.
+Le module propose deux modes de fonctionnement. Le premier, activé par la directive [[12-directives/secure-link-secret|secure_link_secret]], sert à vérifier l'authenticité des liens et à protéger les ressources contre les accès non autorisés. Le second (0.8.50), activé par les directives [[12-directives/secure-link|secure_link]] et [[12-directives/secure-link-md5|secure_link_md5]], sert aussi à limiter la durée de vie des liens.
 
-The module provides two alternative operation modes. The first mode is enabled by the [[12-directives/secure-link-secret|secure_link_secret]] directive and is used to check authenticity of requested links as well as protect resources from unauthorized access. The second mode (0.8.50) is enabled by the [[12-directives/secure-link|secure_link]] and [[12-directives/secure-link-md5|secure_link_md5]] directives and is also used to limit lifetime of links.
-
-This module is not built by default, it should be enabled with the `--with-http_secure_link_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_secure_link_module`.
 
 ## Directives
 

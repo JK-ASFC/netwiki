@@ -1,0 +1,7 @@
+{
+ "045b10aa7b7c": "Définit l'adresse du serveur auquel passer la connexion client. L'adresse peut être une adresse IP et un port :",
+ "26e6c85e4cf5": "Si le [[11-modules/03-stream/ngx_stream_core_module|protocole PROXY]] est utilisé, l'en-tête est lu avant le passage de la connexion ; le paramètre `proxy_protocol` doit donc être indiqué sur la socket d'écoute du serveur d'origine :",
+ "2eeacfa84b9f": "L'adresse peut aussi être indiquée avec des variables :",
+ "372eb56e471f": "Le module `ngx_stream_pass_module` (1.25.5) permet de passer la connexion acceptée directement à n'importe quelle socket d'écoute configurée dans les modules `http`, `stream`, `mail` et autres modules similaires.",
+ "b45882a0a604": "Dans cet exemple, après terminaison SSL/TLS dans le module `stream`, la connexion est passée au module `http`."
+}

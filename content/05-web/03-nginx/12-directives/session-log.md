@@ -1,12 +1,9 @@
 ---
 title: "session_log"
-description: "Directive nginx session_log (ngx_http_session_log_module) — Enables the use of the specified session log. The special value off cancels the effect of the session_log directives inherited from the previous configuration level."
+description: "Directive nginx session_log (ngx_http_session_log_module) — Active l'utilisation du journal de sessions indiqué. La valeur spéciale off annule l'effet des directives session_log héritées du niveau de configuration précédent."
 tags: [nginx, directive, ngx_http_session_log_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the use of the specified session log. The special value `off` cancels the effect of the `session_log` directives inherited from the previous configuration level.
+Active l'utilisation du journal de sessions indiqué. La valeur spéciale `off` annule l'effet des directives `session_log` héritées du niveau de configuration précédent.
 
 ---
 

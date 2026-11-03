@@ -1,12 +1,9 @@
 ---
 title: "userid_flags"
-description: "Directive nginx userid_flags (ngx_http_userid_module) — If the parameter is not off, defines one or more additional flags for the cookie: secure, httponly, samesite=strict, samesite=lax, samesite=none."
+description: "Directive nginx userid_flags (ngx_http_userid_module) — Si le paramètre n'est pas off, définit un ou plusieurs attributs supplémentaires du cookie : secure, httponly, samesite=strict, samesite=lax, samesite=none."
 tags: [nginx, directive, ngx_http_userid_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-If the parameter is not `off`, defines one or more additional flags for the cookie: `secure`, `httponly`, `samesite=strict`, `samesite=lax`, `samesite=none`.
+Si le paramètre n'est pas `off`, définit un ou plusieurs attributs supplémentaires du cookie : `secure`, `httponly`, `samesite=strict`, `samesite=lax`, `samesite=none`.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "status"
-description: "Directive nginx status (ngx_http_status_module) — The status information will be accessible from the surrounding location. Access to this location should be limited."
+description: "Directive nginx status (ngx_http_status_module) — Les informations d'état sont accessibles depuis le bloc location englobant, dont l'accès doit être limité."
 tags: [nginx, directive, ngx_http_status_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-The status information will be accessible from the surrounding location. Access to this location should be [[12-directives/satisfy|limited]].
+Les informations d'état sont accessibles depuis le bloc location englobant, dont l'accès doit être [[12-directives/satisfy|limité]].
 
 ---
 

@@ -1,21 +1,18 @@
 ---
 title: "ngx_stream_geoip_module"
-description: "Module nginx ngx_stream_geoip_module — The ngx_stream_geoip_module module (1.11.3) creates variables with values depending on the client IP address, using the precompiled MaxMind databases. Since 1.31.7, the module supports databases in MaxMind DB (MMDB)…"
+description: "Module nginx ngx_stream_geoip_module — Le module ngx_stream_geoip_module (1.11.3) crée des variables dont les valeurs dépendent de l'adresse IP du client, à l'aide des bases MaxMind précompilées. Depuis la version 1.31.7, le module prend en charge les bases…"
 tags: [nginx, module, ngx_stream_geoip_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_stream_geoip_module` (1.11.3) crée des variables dont les valeurs dépendent de l'adresse IP du client, à l'aide des bases [MaxMind](https://www.maxmind.com) précompilées. Depuis la version 1.31.7, le module prend en charge les bases au format MaxMind DB (MMDB).
 
-The `ngx_stream_geoip_module` module (1.11.3) creates variables with values depending on the client IP address, using the precompiled [MaxMind](https://www.maxmind.com) databases. Since 1.31.7, the module supports databases in MaxMind DB (MMDB) format.
-
-This module is not built by default, it should be enabled with the [[10-guides/01-introduction/configure|--with-stream_geoip_module]] configuration parameter.
+Ce module n'est pas compilé par défaut ; activez-le avec le paramètre de configuration [[10-guides/01-introduction/configure|--with-stream_geoip_module]].
 
 > [!NOTE]
 > Ce module nécessite la bibliothèque [libmaxminddb](https://github.com/maxmind/libmaxminddb) pour les bases au format MMDB (1.31.7) ou la bibliothèque [GeoIP Legacy C](https://github.com/maxmind/geoip-api-c) pour les bases au format DAT.
 
-When using DAT databases with IPv6 support, IPv4 addresses are looked up as IPv4-mapped IPv6 addresses. When using MMDB databases, IPv4-mapped IPv6 addresses are looked up as IPv4 addresses.
+Avec des bases DAT prenant en charge IPv6, les adresses IPv4 sont recherchées comme adresses IPv6 mappées IPv4. Avec des bases MMDB, les adresses IPv6 mappées IPv4 sont recherchées comme adresses IPv4.
 
 ## Exemple de configuration
 

@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl"
-description: "Directive nginx proxy_ssl (ngx_stream_proxy_module) — Enables the SSL/TLS protocol for connections to a proxied server."
+description: "Directive nginx proxy_ssl (ngx_stream_proxy_module) — Active le protocole SSL/TLS pour les connexions vers un serveur mandaté."
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the SSL/TLS protocol for connections to a proxied server.
+Active le protocole SSL/TLS pour les connexions vers un serveur mandaté.
 
 ---
 

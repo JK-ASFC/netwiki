@@ -1,12 +1,9 @@
 ---
 title: "xml_entities"
-description: "Directive nginx xml_entities (ngx_http_xslt_module) — Specifies the DTD file that declares character entities. This file is compiled at the configuration stage. For technical reasons, the module is unable to use the external subset declared in the…"
+description: "Directive nginx xml_entities (ngx_http_xslt_module) — Indique le fichier DTD qui déclare les entités de caractères. Ce fichier est compilé lors de la configuration. Pour des raisons techniques, le module ne peut pas utiliser le sous-ensemble externe…"
 tags: [nginx, directive, ngx_http_xslt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the DTD file that declares character entities. This file is compiled at the configuration stage. For technical reasons, the module is unable to use the external subset declared in the processed XML, so it is ignored and a specially defined file is used instead. This file should not describe the XML structure. It is enough to declare just the required character entities, for example:
+Indique le fichier DTD qui déclare les entités de caractères. Ce fichier est compilé lors de la configuration. Pour des raisons techniques, le module ne peut pas utiliser le sous-ensemble externe déclaré dans le XML traité : il est ignoré et un fichier défini spécialement est utilisé à la place. Ce fichier ne doit pas décrire la structure XML ; il suffit d'y déclarer les entités de caractères nécessaires, par exemple :
 
 ```nginx
 <!ENTITY nbsp "&#xa0;">

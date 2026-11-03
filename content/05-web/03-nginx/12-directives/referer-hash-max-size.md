@@ -1,12 +1,9 @@
 ---
 title: "referer_hash_max_size"
-description: "Directive nginx referer_hash_max_size (ngx_http_referer_module) — Sets the maximum size of the valid referers hash tables. The details of setting up hash tables are provided in a separate document."
+description: "Directive nginx referer_hash_max_size (ngx_http_referer_module) — Définit la taille (size) maximale des tables de hachage des référents valides. Le réglage des tables de hachage est détaillé dans un document distinct."
 tags: [nginx, directive, ngx_http_referer_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum *size* of the valid referers hash tables. The details of setting up hash tables are provided in a separate [[10-guides/01-introduction/hash|document]].
+Définit la taille (*size*) maximale des tables de hachage des référents valides. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]].
 
 ---
 

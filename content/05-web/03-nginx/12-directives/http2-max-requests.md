@@ -1,12 +1,9 @@
 ---
 title: "http2_max_requests"
-description: "Directive nginx http2_max_requests (ngx_http_v2_module) — NOTE This directive is obsolete since version 1.19.7. The keepalive_requests directive should be used instead. Sets the maximum number of requests (including push requests) that can be served through…"
+description: "Directive nginx http2_max_requests (ngx_http_v2_module) — NOTE Cette directive est obsolète depuis la version 1.19.7. Utiliser à la place la directive keepalive_requests. Définit le nombre maximal de requêtes (requêtes push comprises) pouvant être servies…"
 tags: [nginx, directive, ngx_http_v2_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -19,9 +16,9 @@ icon: settings-2
 ## Utilisation
 
 > [!NOTE]
-> This directive is obsolete since version 1.19.7. The [[12-directives/keepalive-requests-http-core|keepalive_requests]] directive should be used instead.
+> Cette directive est obsolète depuis la version 1.19.7. Utiliser à la place la directive [[12-directives/keepalive-requests-http-core|keepalive_requests]].
 
-Sets the maximum number of requests (including [[12-directives/http2-push|push]] requests) that can be served through one HTTP/2 connection, after which the next client request will lead to connection closing and the need of establishing a new connection.
+Définit le nombre maximal de requêtes (requêtes [[12-directives/http2-push|push]] comprises) pouvant être servies sur une connexion HTTP/2 ; la requête suivante du client provoque alors la fermeture de la connexion et l'établissement d'une nouvelle.
 
 Fermer périodiquement les connexions est nécessaire pour libérer la mémoire allouée par connexion. Un nombre maximal de requêtes trop élevé peut donc entraîner une consommation de mémoire excessive et n'est pas recommandé.
 

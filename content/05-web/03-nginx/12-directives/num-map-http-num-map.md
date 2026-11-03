@@ -1,12 +1,9 @@
 ---
 title: "num_map (ngx_http_num_map_module)"
-description: "Directive nginx num_map (ngx_http_num_map_module) — Describes how the values of the specified variable depend on numeric values or numeric value ranges. NOTE Since variables are evaluated only when used, the mere existence of even a large number of…"
+description: "Directive nginx num_map (ngx_http_num_map_module) — Décrit la dépendance entre les valeurs de la variable indiquée et des valeurs ou plages de valeurs numériques. NOTE Comme les variables ne sont évaluées que lorsqu'elles sont utilisées, la simple…"
 tags: [nginx, directive, ngx_http_num_map_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,14 +14,14 @@ icon: settings-2
 
 ## Utilisation
 
-Describes how the values of the specified variable depend on numeric values or numeric value ranges.
+Décrit la dépendance entre les valeurs de la variable indiquée et des valeurs ou plages de valeurs numériques.
 
 > [!NOTE]
-> Since variables are evaluated only when used, the mere existence of even a large number of declared “`num_map`” variables does not cause any extra costs for request processing.
+> Comme les variables ne sont évaluées que lorsqu'elles sont utilisées, la simple existence d'un grand nombre de variables « `num_map` » déclarées n'ajoute aucun coût au traitement des requêtes.
 
-Parameters inside the `num_map` block specify a mapping between source and resulting values.
+Les paramètres du bloc `num_map` définissent la correspondance entre les valeurs sources et les valeurs résultantes.
 
-Source values are specified as numbers or as numeric ranges.
+Les valeurs sources sont des nombres ou des plages numériques.
 
 Les paramètres spéciaux suivants sont aussi pris en charge :
 
@@ -38,7 +35,7 @@ Les paramètres spéciaux suivants sont aussi pris en charge :
 
 - **`volatile`**
 
-  indicates that the variable is not cacheable.
+  indique que la variable ne peut pas être mise en cache.
 
 ---
 

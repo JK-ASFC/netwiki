@@ -1,0 +1,9 @@
+{
+ "316314f8eb4d": "Permet de conserver le champ d'en-tête `Last-Modified` de la réponse d'origine pendant le remplacement, pour faciliter la mise en cache.",
+ "514f8766a39e": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_sub_module`.",
+ "55400e78b936": "Active le remplacement de chaînes dans les réponses des types MIME indiqués, en plus de « `text/html` ». La valeur spéciale « `*` » correspond à tous les types MIME (0.8.29).",
+ "578678c620c1": "Le module `ngx_http_sub_module` est un filtre qui modifie une réponse en remplaçant une chaîne par une autre.",
+ "91ef11b0886a": "Définit la chaîne à remplacer et la chaîne de remplacement. La chaîne à remplacer est recherchée sans tenir compte de la casse. La chaîne à remplacer (1.9.4) et la chaîne de remplacement peuvent contenir des variables. Plusieurs directives `sub_filter` peuvent être indiquées au même niveau de configuration (1.9.4). Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `sub_filter` n'est définie au niveau courant.",
+ "9b21569d57aa": "Par défaut, ce champ est supprimé, car le contenu de la réponse est modifié pendant le traitement.",
+ "fc943be6378c": "Indique si chaque chaîne à remplacer est recherchée une seule fois ou de façon répétée."
+}

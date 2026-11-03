@@ -1,42 +1,39 @@
 ---
-title: "How nginx processes a TCP/UDP session"
-description: "Nginx — How nginx processes a TCP/UDP session. A TCP/UDP session from a client is processed in successive steps called phases:"
+title: "Comment nginx traite une session TCP/UDP"
+description: "Nginx — Comment nginx traite une session TCP/UDP. Une session TCP/UDP d'un client est traitée en étapes successives appelées phases :"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-A TCP/UDP session from a client is processed in successive steps called **phases**:
+Une session TCP/UDP d'un client est traitée en étapes successives appelées **phases** :
 
 - **`Post-accept`**
 
-  The first phase after accepting a client connection. The [[11-modules/03-stream/ngx_stream_realip_module|ngx_stream_realip_module]] module is invoked at this phase.
+  Première phase après l'acceptation d'une connexion client. Le module [[11-modules/03-stream/ngx_stream_realip_module|ngx_stream_realip_module]] est appelé à cette phase.
 
 - **`Pre-access`**
 
-  Preliminary check for access. The [[11-modules/03-stream/ngx_stream_limit_conn_module|ngx_stream_limit_conn_module]] and [[11-modules/03-stream/ngx_stream_set_module|ngx_stream_set_module]] modules are invoked at this phase.
+  Vérification préliminaire de l'accès. Les modules [[11-modules/03-stream/ngx_stream_limit_conn_module|ngx_stream_limit_conn_module]] et [[11-modules/03-stream/ngx_stream_set_module|ngx_stream_set_module]] sont appelés à cette phase.
 
 - **`Access`**
 
-  Client access limitation before actual data processing. At this phase, the [[11-modules/03-stream/ngx_stream_access_module|ngx_stream_access_module]] module is invoked, for [[10-guides/04-njs/00-index|njs]], the [[12-directives/js-access-stream-js|js_access]] directive is invoked.
+  Restriction de l'accès client avant le traitement effectif des données. À cette phase, le module [[11-modules/03-stream/ngx_stream_access_module|ngx_stream_access_module]] est appelé et, pour [[10-guides/04-njs/00-index|njs]], la directive [[12-directives/js-access-stream-js|js_access]].
 
 - **`SSL`**
 
-  TLS/SSL termination. The [[11-modules/03-stream/ngx_stream_ssl_module|ngx_stream_ssl_module]] module is invoked at this phase.
+  Terminaison TLS/SSL. Le module [[11-modules/03-stream/ngx_stream_ssl_module|ngx_stream_ssl_module]] est appelé à cette phase.
 
 - **`Preread`**
 
-  Reading initial bytes of data into the [[12-directives/preread-buffer-size|preread buffer]] to allow modules such as [[11-modules/03-stream/ngx_stream_ssl_preread_module|ngx_stream_ssl_preread_module]] analyze the data before its processing. For [[10-guides/04-njs/00-index|njs]], the [[12-directives/js-preread|js_preread]] directive is invoked at this phase.
+  Lecture des premiers octets de données dans le [[12-directives/preread-buffer-size|tampon de prélecture]] pour permettre à des modules comme [[11-modules/03-stream/ngx_stream_ssl_preread_module|ngx_stream_ssl_preread_module]] d'analyser les données avant leur traitement. Pour [[10-guides/04-njs/00-index|njs]], la directive [[12-directives/js-preread|js_preread]] est appelée à cette phase.
 
 - **`Content`**
 
-  Mandatory phase where data is actually processed, usually [[11-modules/03-stream/ngx_stream_proxy_module|proxied]] to [[11-modules/03-stream/ngx_stream_upstream_module|upstream]] servers, or a specified value is [[11-modules/03-stream/ngx_stream_return_module|returned]] to a client. For [[10-guides/04-njs/00-index|njs]], the [[12-directives/js-filter|js_filter]] directive is invoked at this phase.
+  Phase obligatoire où les données sont réellement traitées, généralement [[11-modules/03-stream/ngx_stream_proxy_module|relayées]] vers des serveurs [[11-modules/03-stream/ngx_stream_upstream_module|amont]], ou bien une valeur donnée est [[11-modules/03-stream/ngx_stream_return_module|renvoyée]] au client. Pour [[10-guides/04-njs/00-index|njs]], la directive [[12-directives/js-filter|js_filter]] est appelée à cette phase.
 
 - **`Log`**
 
-  The final phase where the result of a client session processing is recorded. The [[11-modules/03-stream/ngx_stream_log_module|ngx_stream_log_module]] module is invoked at this phase.
+  Phase finale où le résultat du traitement de la session client est enregistré. Le module [[11-modules/03-stream/ngx_stream_log_module|ngx_stream_log_module]] est appelé à cette phase.
 
 ---
 

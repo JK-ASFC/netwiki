@@ -1,12 +1,9 @@
 ---
 title: "pass"
-description: "Directive nginx pass (ngx_stream_pass_module) — Sets server address to pass client connection to. The address can be specified as an IP address and a port: nginx pass 127.0.0.1:12345; ou le chemin d'un socket de domaine UNIX : nginx pass…"
+description: "Directive nginx pass (ngx_stream_pass_module) — Définit l'adresse du serveur auquel passer la connexion client. L'adresse peut être une adresse IP et un port : nginx pass 127.0.0.1:12345; ou le chemin d'un socket de domaine UNIX : nginx pass…"
 tags: [nginx, directive, ngx_stream_pass_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets server address to pass client connection to. The address can be specified as an IP address and a port:
+Définit l'adresse du serveur auquel passer la connexion client. L'adresse peut être une adresse IP et un port :
 
 ```nginx
 pass 127.0.0.1:12345;
@@ -29,14 +26,14 @@ ou le chemin d'un socket de domaine UNIX :
 pass unix:/tmp/stream.socket;
 ```
 
-The address can also be specified using variables:
+L'adresse peut aussi être indiquée avec des variables :
 
 ```nginx
 pass $upstream;
 ```
 
 > [!NOTE]
-> If the [[11-modules/03-stream/ngx_stream_core_module|PROXY protocol]] is used, the header is read before the connection is passed, so the `proxy_protocol` parameter should be specified on the listening socket of the original server:
+> Si le [[11-modules/03-stream/ngx_stream_core_module|protocole PROXY]] est utilisé, l'en-tête est lu avant le passage de la connexion ; le paramètre `proxy_protocol` doit donc être indiqué sur la socket d'écoute du serveur d'origine :
 >
 > ```nginx
 > server {

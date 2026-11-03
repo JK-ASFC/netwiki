@@ -1,12 +1,9 @@
 ---
 title: "http3"
-description: "Directive nginx http3 (ngx_http_v3_module) — Enables HTTP/3 protocol negotiation."
+description: "Directive nginx http3 (ngx_http_v3_module) — Active la négociation du protocole HTTP/3."
 tags: [nginx, directive, ngx_http_v3_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables [HTTP/3](https://datatracker.ietf.org/doc/html/rfc9114) protocol negotiation.
+Active la négociation du protocole [HTTP/3](https://datatracker.ietf.org/doc/html/rfc9114).
 
 ---
 

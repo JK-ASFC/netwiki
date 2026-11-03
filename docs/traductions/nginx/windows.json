@@ -1,0 +1,21 @@
+{
+ "2e2da3bfb1d1": "Les fonctions UDP (et donc QUIC) ne sont pas prises en charge.",
+ "4155c3edcf1c": "L'un des processus est le processus maître, l'autre le processus de travail. Si nginx ne démarre pas, cherchez la raison dans le fichier journal d'erreurs `logs\\error.log`. Si ce fichier n'a pas été créé, la raison doit figurer dans le journal des événements Windows. Si une page d'erreur s'affiche au lieu de la page attendue, cherchez aussi la raison dans `logs\\error.log`.",
+ "43117625590c": "modifier la configuration, démarrer de nouveaux processus de travail avec la nouvelle configuration, arrêter proprement les anciens",
+ "4924f2321a23": "nginx -s reload",
+ "62435c5f99c5": "Améliorations envisagées",
+ "63257654529c": "Plusieurs processus de travail peuvent être démarrés, mais un seul travaille réellement.",
+ "6648a26b3a1c": "nginx -s stop",
+ "6ce8f97799c4": "Utilisation des ports de complétion d'E/S comme méthode de traitement des connexions.",
+ "7fc2992d2e27": "nginx -s reopen",
+ "8525ddb00f0f": "nginx pour Windows",
+ "96b6b1abb047": "Exécution en tant que service.",
+ "a689dc742ef2": "La version de nginx pour Windows utilise l'API Win32 native (et non la couche d'émulation Cygwin). Seules les méthodes de traitement des connexions `select` et `poll` (1.15.9) sont actuellement utilisées : il ne faut donc pas s'attendre à de hautes performances ni à une grande capacité de montée en charge. Pour cette raison et d'autres problèmes connus, la version Windows est considérée comme une version *bêta*. Elle offre actuellement presque les mêmes fonctions que la version UNIX, sauf le filtre XSLT, le filtre d'images, le module GeoIP et le langage Perl intégré.",
+ "a6f1a8c85620": "Pour installer nginx/Windows, téléchargez la dernière distribution de la branche mainline (), qui contient tous les correctifs connus. Décompressez ensuite l'archive, allez dans le répertoire nginx- et lancez `nginx`. Exemple pour la racine du lecteur C: :",
+ "ae59fbd01797": "Utilisation de plusieurs threads de travail dans un même processus de travail.",
+ "b05203cf89b6": "Problèmes connus",
+ "bd82c9428263": "nginx/Windows utilise le répertoire depuis lequel il a été lancé comme préfixe des chemins relatifs de la configuration. Dans l'exemple ci-dessus, le préfixe est `C:\\nginx-\\`. Les chemins d'un fichier de configuration doivent être écrits à la manière UNIX, avec des barres obliques :",
+ "cb8be89e9996": "nginx -s quit",
+ "d3aaca5b1164": "nginx/Windows s'exécute comme une application console standard (pas comme un service) et se gère avec les commandes suivantes :",
+ "dc38753501c8": "Lancez l'utilitaire en ligne de commande `tasklist` pour voir les processus nginx :"
+}

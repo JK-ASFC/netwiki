@@ -1,12 +1,9 @@
 ---
 title: "ssi_value_length"
-description: "Directive nginx ssi_value_length (ngx_http_ssi_module) — Sets the maximum length of parameter values in SSI commands."
+description: "Directive nginx ssi_value_length (ngx_http_ssi_module) — Définit la longueur maximale des valeurs des paramètres des commandes SSI."
 tags: [nginx, directive, ngx_http_ssi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum length of parameter values in SSI commands.
+Définit la longueur maximale des valeurs des paramètres des commandes SSI.
 
 ---
 

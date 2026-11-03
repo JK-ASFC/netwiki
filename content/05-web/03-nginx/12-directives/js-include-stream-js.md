@@ -1,12 +1,9 @@
 ---
 title: "js_include (ngx_stream_js_module)"
-description: "Directive nginx js_include (ngx_stream_js_module) — Specifies a file that implements server and variable handlers in njs: nginx nginx.conf: js_include stream.js; js_set $js_addr address; server { listen 127.0.0.1:12345; return $js_addr; } stream.js:…"
+description: "Directive nginx js_include (ngx_stream_js_module) — Indique un fichier qui met en œuvre des gestionnaires de serveur et de variables en njs : nginx nginx.conf: js_include stream.js; js_set $js_addr address; server { listen 127.0.0.1:12345; return…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a file that implements server and variable handlers in njs:
+Indique un fichier qui met en œuvre des gestionnaires de serveur et de variables en njs :
 
 ```nginx
 nginx.conf:
@@ -34,7 +31,7 @@ function address(s) {
 }
 ```
 
-The directive was made obsolete in version 0.4.0 and was removed in version 0.7.1. The [[12-directives/js-import-stream-js|js_import]] directive should be used instead.
+Cette directive est devenue obsolète en version 0.4.0 et a été supprimée en version 0.7.1. Utiliser à la place la directive [[12-directives/js-import-stream-js|js_import]].
 
 ---
 

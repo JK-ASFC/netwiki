@@ -1,12 +1,9 @@
 ---
 title: "ssi_silent_errors"
-description: "Directive nginx ssi_silent_errors (ngx_http_ssi_module) — If enabled, suppresses the output of the “an error occurred while processing the directive” string if an error occurred during SSI processing."
+description: "Directive nginx ssi_silent_errors (ngx_http_ssi_module) — Si cette option est activée, supprime l'affichage de la chaîne « an error occurred while processing the directive » en cas d'erreur pendant le traitement SSI."
 tags: [nginx, directive, ngx_http_ssi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-If enabled, suppresses the output of the “`[an error occurred while processing the directive]`” string if an error occurred during SSI processing.
+Si cette option est activée, supprime l'affichage de la chaîne « `[an error occurred while processing the directive]` » en cas d'erreur pendant le traitement SSI.
 
 ---
 

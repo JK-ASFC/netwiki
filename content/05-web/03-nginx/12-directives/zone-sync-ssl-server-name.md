@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_ssl_server_name"
-description: "Directive nginx zone_sync_ssl_server_name (ngx_stream_zone_sync_module) — Enables or disables passing of the server name through TLS Server Name Indication extension (SNI, RFC 6066) when establishing a connection with another cluster server."
+description: "Directive nginx zone_sync_ssl_server_name (ngx_stream_zone_sync_module) — Active ou désactive la transmission du nom de serveur via l'extension TLS Server Name Indication (SNI, RFC 6066) lors de l'établissement d'une connexion avec un autre serveur du cluster."
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables passing of the server name through [TLS Server Name Indication extension](http://en.wikipedia.org/wiki/Server_Name_Indication) (SNI, RFC 6066) when establishing a connection with another cluster server.
+Active ou désactive la transmission du nom de serveur via l'[extension TLS Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication) (SNI, RFC 6066) lors de l'établissement d'une connexion avec un autre serveur du cluster.
 
 ---
 

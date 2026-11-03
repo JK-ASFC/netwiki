@@ -1,12 +1,9 @@
 ---
 title: "proxy_download_rate"
-description: "Directive nginx proxy_download_rate (ngx_stream_proxy_module) — Limits the speed of reading the data from the proxied server. The rate is specified in bytes per second. The zero value disables rate limiting. The limit is set per a connection, so if nginx…"
+description: "Directive nginx proxy_download_rate (ngx_stream_proxy_module) — Limite la vitesse de lecture des données du serveur mandaté. Le débit s'exprime en octets par seconde. La valeur zéro désactive la limitation. La limite s'applique par connexion : si nginx ouvre…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Limits the speed of reading the data from the proxied server. The *rate* is specified in bytes per second. The zero value disables rate limiting. The limit is set per a connection, so if nginx simultaneously opens two connections to the proxied server, the overall rate will be twice as much as the specified limit.
+Limite la vitesse de lecture des données du serveur mandaté. Le *débit* s'exprime en octets par seconde. La valeur zéro désactive la limitation. La limite s'applique par connexion : si nginx ouvre simultanément deux connexions vers le serveur mandaté, le débit global sera le double de la limite indiquée.
 
 La valeur du paramètre peut contenir des variables (1.17.0). C'est utile lorsque le débit doit être limité selon une condition :
 

@@ -1,20 +1,17 @@
 ---
 title: "ngx_http_js_module"
-description: "Module nginx ngx_http_js_module — The ngx_http_js_module module is used to implement location, variable, and filter handlers in JavaScript with njs."
+description: "Module nginx ngx_http_js_module — Le module ngx_http_js_module sert à écrire en JavaScript, avec njs, des gestionnaires de location, de variables et de filtres."
 tags: [nginx, module, ngx_http_js_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_js_module` sert à écrire en JavaScript, avec [[10-guides/04-njs/00-index|njs]], des gestionnaires de location, de variables et de filtres.
 
-The `ngx_http_js_module` module is used to implement location, variable, and filter handlers in JavaScript with [[10-guides/04-njs/00-index|njs]].
-
-Download and install instructions are available [[10-guides/04-njs/install|here]].
+Les instructions de téléchargement et d'installation sont disponibles [[10-guides/04-njs/install|ici]].
 
 ## Exemple de configuration
 
-The example works since 0.4.0.
+L'exemple fonctionne depuis la version 0.4.0.
 
 ```nginx
 http {
@@ -60,7 +57,7 @@ http {
 }
 ```
 
-The `http.js` file:
+Le fichier `http.js` :
 
 ```nginx
 function foo(r) {
@@ -126,9 +123,9 @@ async function hash(r) {
 export default {foo, summary, baz, hello, fetch, hash};
 ```
 
-## Request Argument
+## Argument de la requête
 
-Each HTTP njs handler receives one argument, a request [[10-guides/04-njs/reference|object]].
+Chaque gestionnaire njs HTTP reçoit un argument : un [[10-guides/04-njs/reference|objet]] requête.
 
 ## Directives
 

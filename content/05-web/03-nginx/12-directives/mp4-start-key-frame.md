@@ -1,12 +1,9 @@
 ---
 title: "mp4_start_key_frame"
-description: "Directive nginx mp4_start_key_frame (ngx_http_mp4_module) — Forces output video to always start with a key video frame. If the start argument does not point to a key frame, initial frames are hidden using an mp4 edit list. Edit lists are supported by major…"
+description: "Directive nginx mp4_start_key_frame (ngx_http_mp4_module) — Fait toujours commencer la vidéo de sortie par une image clé. Si l'argument start ne désigne pas une image clé, les premières images sont masquées à l'aide d'une liste de montage mp4. Les listes de…"
 tags: [nginx, directive, ngx_http_mp4_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Forces output video to always start with a key video frame. If the `start` argument does not point to a key frame, initial frames are hidden using an mp4 edit list. Edit lists are supported by major players and browsers such as Chrome, Safari, QuickTime and ffmpeg, partially supported by Firefox.
+Fait toujours commencer la vidéo de sortie par une image clé. Si l'argument `start` ne désigne pas une image clé, les premières images sont masquées à l'aide d'une liste de montage mp4. Les listes de montage sont prises en charge par les principaux lecteurs et navigateurs comme Chrome, Safari, QuickTime et ffmpeg, et partiellement par Firefox.
 
 ---
 

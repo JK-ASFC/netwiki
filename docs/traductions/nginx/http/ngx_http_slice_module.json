@@ -1,0 +1,10 @@
+{
+ "3ba4479f689b": "plage de la tranche courante au format [plage d'octets HTTP](https://datatracker.ietf.org/doc/html/rfc7233#section-2.1), par exemple `bytes=0-1048575`.",
+ "5396964e2a59": "Dans cet exemple, la réponse est découpée en tranches d'un mégaoctet pouvant être mises en cache.",
+ "6d038a5dd1fd": "Actuellement, le module ne fonctionne pas comme prévu dans les sous-requêtes comme la [[12-directives/proxy-cache-background-update|mise à jour du cache en arrière-plan]] : la requête est alors construite sans prise en charge des plages d'octets.",
+ "839c5c68bf17": "Le module `ngx_http_slice_module` (1.9.8) est un filtre qui découpe une requête en sous-requêtes renvoyant chacune une plage de la réponse. Il permet une mise en cache plus efficace des grosses réponses.",
+ "a6b70f7fd47c": "Définit la taille (*size*) des tranches. La valeur zéro désactive le découpage des réponses. Une valeur trop faible peut entraîner une consommation de mémoire excessive et l'ouverture d'un grand nombre de fichiers.",
+ "e0d050a75999": "Le module `ngx_http_slice_module` fournit les variables intégrées suivantes :",
+ "e6c372eb6763": "Pour qu'une sous-requête renvoie la plage voulue, la variable `$slice_range` doit être [[12-directives/proxy-set-header|transmise]] au serveur mandaté dans le champ d'en-tête de requête `Range`. Si le [[12-directives/proxy-cache|cache]] est activé, `$slice_range` doit être ajoutée à la [[12-directives/proxy-cache-key|clé de cache]] et la mise en cache des réponses de statut 206 doit être [[12-directives/proxy-cache-valid|activée]].",
+ "e7e6e95a2822": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_slice_module`."
+}

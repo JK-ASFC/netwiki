@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_proxy_module"
-description: "Module nginx ngx_stream_proxy_module — The ngx_stream_proxy_module module (1.9.0) allows proxying data streams over TCP, UDP (1.9.13), and UNIX-domain sockets."
+description: "Module nginx ngx_stream_proxy_module — Le module ngx_stream_proxy_module (1.9.0) permet de mandater des flux de données sur TCP, UDP (1.9.13) et sockets de domaine UNIX."
 tags: [nginx, module, ngx_stream_proxy_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_proxy_module` module (1.9.0) allows proxying data streams over TCP, UDP (1.9.13), and UNIX-domain sockets.
+Le module `ngx_stream_proxy_module` (1.9.0) permet de mandater des flux de données sur TCP, UDP (1.9.13) et sockets de domaine UNIX.
 
 ## Exemple de configuration
 

@@ -1,1 +1,3 @@
-{}
+{
+ "648fdb553f5f": "Le module `ngx_stream_split_clients_module` (1.11.3) crée des variables adaptées aux tests A/B, aussi appelés tests fractionnés."
+}

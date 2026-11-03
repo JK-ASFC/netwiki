@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_buffers"
-description: "Directive nginx zone_sync_buffers (ngx_stream_zone_sync_module) — Sets the number and size of the per-zone buffers used for pushing zone contents. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform. NOTE A…"
+description: "Directive nginx zone_sync_buffers (ngx_stream_zone_sync_module) — Définit le nombre et la taille des tampons par zone utilisés pour pousser le contenu des zones. Par défaut, la taille vaut une page mémoire, soit 4K ou 8K selon la plate-forme. NOTE Un seul tampon…"
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *number* and *size* of the per-zone buffers used for pushing zone contents. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform.
+Définit le *nombre* et la *taille* des tampons par zone utilisés pour pousser le contenu des zones. Par défaut, la taille vaut une page mémoire, soit 4K ou 8K selon la plate-forme.
 
 > [!NOTE]
-> A single buffer must be large enough to hold any entry of each zone being synchronized.
+> Un seul tampon doit pouvoir contenir n'importe quelle entrée de chaque zone synchronisée.
 
 ---
 

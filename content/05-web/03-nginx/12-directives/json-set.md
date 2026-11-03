@@ -1,12 +1,9 @@
 ---
 title: "json_set"
-description: "Directive nginx json_set (ngx_http_json_module) — Sets the variable to the value extracted from the JSON document held in the source variable at the given path. In a path, object members are separated by a dot, and array elements are addressed by a…"
+description: "Directive nginx json_set (ngx_http_json_module) — Affecte à la variable (variable) la valeur extraite, au chemin (path) donné, du document JSON contenu dans la variable source (source). Dans un chemin, les membres d'objet sont séparés par un point…"
 tags: [nginx, directive, ngx_http_json_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *variable* to the value extracted from the JSON document held in the *source* variable at the given *path*.
+Affecte à la variable (*variable*) la valeur extraite, au chemin (*path*) donné, du document JSON contenu dans la variable source (*source*).
 
-In a path, object members are separated by a dot, and array elements are addressed by a zero-based index in square brackets:
+Dans un chemin, les membres d'objet sont séparés par un point et les éléments de tableau désignés par un indice commençant à zéro entre crochets :
 
 ```nginx
 client_body_early_read on;
@@ -29,16 +26,16 @@ json_set $enabled    $request_body settings.enabled;
 json_set $first_item $request_body items[0];
 ```
 
-A member name that is empty or contains “`.`”, “`[`”, or “`]`” is written as a JSON string in square brackets. Since such a path contains double quotes, the whole argument needs to be quoted in the configuration file:
+Un nom de membre vide ou contenant « `.` », « `[` » ou « `]` » s'écrit comme une chaîne JSON entre crochets. Comme un tel chemin contient des guillemets doubles, tout l'argument doit être placé entre guillemets dans le fichier de configuration :
 
 ```nginx
 json_set $domain $request_body '["a.b.com"]';
 json_set $nested $request_body 'obj["a.b"].c[2]';
 ```
 
-The value of a JSON string is stored unescaped. The values of numbers, booleans, and `null` are stored as they appear in the document. If the path addresses an object or an array, its whole text is stored, including the enclosing braces or brackets.
+La valeur d'une chaîne JSON est stockée sans échappement. Les nombres, booléens et `null` sont stockés tels qu'ils apparaissent dans le document. Si le chemin désigne un objet ou un tableau, tout son texte est stocké, accolades ou crochets compris.
 
-If the addressed member or element is absent, the variable is not found. If the *source* variable is empty or not found, or if its value is not a valid, complete JSON document, then all variables extracted from this source are not found.
+Si le membre ou l'élément désigné est absent, la variable est introuvable. Si la variable source (*source*) est vide ou introuvable, ou si sa valeur n'est pas un document JSON valide et complet, toutes les variables extraites de cette source sont introuvables.
 
 ---
 

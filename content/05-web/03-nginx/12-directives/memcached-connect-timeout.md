@@ -1,12 +1,9 @@
 ---
 title: "memcached_connect_timeout"
-description: "Directive nginx memcached_connect_timeout (ngx_http_memcached_module) — Defines a timeout for establishing a connection with a memcached server. It should be noted that this timeout cannot usually exceed 75 seconds."
+description: "Directive nginx memcached_connect_timeout (ngx_http_memcached_module) — Définit le délai d'établissement de la connexion avec un serveur memcached. Ce délai ne peut généralement pas dépasser 75 secondes."
 tags: [nginx, directive, ngx_http_memcached_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a timeout for establishing a connection with a memcached server. It should be noted that this timeout cannot usually exceed 75 seconds.
+Définit le délai d'établissement de la connexion avec un serveur memcached. Ce délai ne peut généralement pas dépasser 75 secondes.
 
 ---
 

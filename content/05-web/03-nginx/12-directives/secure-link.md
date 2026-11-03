@@ -1,12 +1,9 @@
 ---
 title: "secure_link"
-description: "Directive nginx secure_link (ngx_http_secure_link_module) — Defines a string with variables from which the checksum value and lifetime of a link will be extracted. Variables used in an expression are usually associated with a request; see example below. The…"
+description: "Directive nginx secure_link (ngx_http_secure_link_module) — Définit une chaîne avec variables d'où sont extraites la somme de contrôle et la durée de vie du lien. Les variables utilisées dans expression sont généralement liées à la requête ; voir l'exemple…"
 tags: [nginx, directive, ngx_http_secure_link_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a string with variables from which the checksum value and lifetime of a link will be extracted.
+Définit une chaîne avec variables d'où sont extraites la somme de contrôle et la durée de vie du lien.
 
-Variables used in an *expression* are usually associated with a request; see [[12-directives/secure-link-md5|example]] below.
+Les variables utilisées dans *expression* sont généralement liées à la requête ; voir l'[[12-directives/secure-link-md5|exemple]] ci-dessous.
 
-The checksum value extracted from the string is compared with the MD5 hash value of the expression defined by the [[12-directives/secure-link-md5|secure_link_md5]] directive. If the checksums are different, the `$secure_link` variable is set to an empty string. If the checksums are the same, the link lifetime is checked. If the link has a limited lifetime and the time has expired, the `$secure_link` variable is set to “`0`”. Otherwise, it is set to “`1`”. The MD5 hash value passed in a request is encoded in [base64url](https://datatracker.ietf.org/doc/html/rfc4648#section-5).
+La somme de contrôle extraite de la chaîne est comparée à l'empreinte MD5 de l'expression définie par la directive [[12-directives/secure-link-md5|secure_link_md5]]. Si elles diffèrent, la variable `$secure_link` vaut une chaîne vide. Si elles sont identiques, la durée de vie du lien est vérifiée : si elle est limitée et dépassée, `$secure_link` vaut « `0` » ; sinon, « `1` ». L'empreinte MD5 transmise dans la requête est encodée en [base64url](https://datatracker.ietf.org/doc/html/rfc4648#section-5).
 
-If a link has a limited lifetime, the expiration time is set in seconds since Epoch (Thu, 01 Jan 1970 00:00:00 GMT). The value is specified in the expression after the MD5 hash, and is separated by a comma. The expiration time passed in a request is available through the `$secure_link_expires` variable for a use in the [[12-directives/secure-link-md5|secure_link_md5]] directive. If the expiration time is not specified, a link has the unlimited lifetime.
+Si le lien a une durée de vie limitée, l'heure d'expiration s'exprime en secondes depuis l'Epoch (Thu, 01 Jan 1970 00:00:00 GMT). Elle figure dans l'expression après l'empreinte MD5, séparée par une virgule. L'heure d'expiration transmise dans la requête est disponible dans la variable `$secure_link_expires` pour la directive [[12-directives/secure-link-md5|secure_link_md5]]. Sans heure d'expiration, le lien a une durée de vie illimitée.
 
 ---
 

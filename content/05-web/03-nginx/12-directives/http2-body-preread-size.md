@@ -1,12 +1,9 @@
 ---
 title: "http2_body_preread_size"
-description: "Directive nginx http2_body_preread_size (ngx_http_v2_module) — Sets the size of the buffer per each request in which the request body may be saved before it is started to be processed."
+description: "Directive nginx http2_body_preread_size (ngx_http_v2_module) — Définit la taille (size) du tampon, par requête, dans lequel le corps de la requête peut être conservé avant le début de son traitement."
 tags: [nginx, directive, ngx_http_v2_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *size* of the buffer per each request in which the request body may be saved before it is started to be processed.
+Définit la taille (*size*) du tampon, par requête, dans lequel le corps de la requête peut être conservé avant le début de son traitement.
 
 ---
 

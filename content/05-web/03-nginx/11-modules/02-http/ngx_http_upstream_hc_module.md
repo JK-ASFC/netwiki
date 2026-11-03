@@ -1,19 +1,16 @@
 ---
 title: "ngx_http_upstream_hc_module"
-description: "Module nginx ngx_http_upstream_hc_module — The ngx_http_upstream_hc_module module allows enabling periodic health checks of the servers in a group referenced in the surrounding location. The server group must reside in the shared memory."
+description: "Module nginx ngx_http_upstream_hc_module — Le module ngx_http_upstream_hc_module permet d'activer des vérifications d'état périodiques des serveurs d'un groupe utilisé dans le bloc location englobant. Le groupe de serveurs doit être en mémoire partagée."
 tags: [nginx, module, ngx_http_upstream_hc_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_upstream_hc_module` permet d'activer des vérifications d'état périodiques des serveurs d'un [[12-directives/upstream-http-upstream|groupe]] utilisé dans le bloc location englobant. Le groupe de serveurs doit être en [[12-directives/zone-http-upstream|mémoire partagée]].
 
-The `ngx_http_upstream_hc_module` module allows enabling periodic health checks of the servers in a [[12-directives/upstream-http-upstream|group]] referenced in the surrounding location. The server group must reside in the [[12-directives/zone-http-upstream|shared memory]].
-
-If a health check fails, the server will be considered unhealthy. If several health checks are defined for the same group of servers, a single failure of any check will make the corresponding server be considered unhealthy. Client requests are not passed to unhealthy servers and servers in the “checking” state.
+Si une vérification d'état échoue, le serveur est considéré comme défaillant. Si plusieurs vérifications sont définies pour un même groupe, un seul échec de l'une d'elles suffit. Les requêtes des clients ne sont pas transmises aux serveurs défaillants ni aux serveurs dans l'état « checking ».
 
 > [!NOTE]
-> Please note that most of the variables will have empty values when used with health checks.
+> La plupart des variables ont une valeur vide lorsqu'elles sont utilisées avec les vérifications d'état.
 
 > [!NOTE]
 > Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
@@ -40,9 +37,9 @@ server {
 }
 ```
 
-With this configuration, nginx will send “`/`” requests to each server in the `backend` group every five seconds. If any communication error or timeout occurs, or a proxied server responds with the status code other than 2xx or 3xx, the health check will fail, and the server will be considered unhealthy.
+Avec cette configuration, nginx envoie des requêtes « `/` » à chaque serveur du groupe `backend` toutes les cinq secondes. En cas d'erreur de communication ou de dépassement de délai, ou si le serveur mandaté répond avec un code autre que 2xx ou 3xx, la vérification échoue et le serveur est considéré comme défaillant.
 
-Health checks can be configured to test the status code of a response, presence of certain header fields and their values, and the body contents. Tests are configured separately using the [[12-directives/match-http-upstream-hc|match]] directive and referenced in the `match` parameter of the [[12-directives/health-check-http-upstream-hc|health_check]] directive:
+Les vérifications d'état peuvent tester le code de statut de la réponse, la présence de certains champs d'en-tête et leurs valeurs, ainsi que le contenu du corps. Les tests se configurent séparément avec la directive [[12-directives/match-http-upstream-hc|match]] et sont désignés par le paramètre `match` de la directive [[12-directives/health-check-http-upstream-hc|health_check]] :
 
 ```nginx
 http {
@@ -62,7 +59,7 @@ http {
 }
 ```
 
-This configuration shows that in order for a health check to pass, the response to a health check request should succeed, have status 200, and contain “`Welcome to nginx!`” in the body.
+Cette configuration indique que, pour qu'une vérification réussisse, la réponse doit aboutir, avoir le statut 200 et contenir « `Welcome to nginx!` » dans son corps.
 
 ## Directives
 

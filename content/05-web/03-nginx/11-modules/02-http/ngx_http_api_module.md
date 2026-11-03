@@ -1,19 +1,16 @@
 ---
 title: "ngx_http_api_module"
-description: "Module nginx ngx_http_api_module — The ngx_http_api_module module (1.13.3) provides REST API for accessing various status information, configuring upstream server groups on-the-fly, and managing key-value pairs without the need of reconfiguring nginx."
+description: "Module nginx ngx_http_api_module — Le module ngx_http_api_module (1.13.3) fournit une API REST pour consulter diverses informations d'état, configurer à la volée des groupes de serveurs amont et gérer des paires clé-valeur sans reconfigurer nginx."
 tags: [nginx, module, ngx_http_api_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_api_module` module (1.13.3) provides REST API for accessing various status information, configuring upstream server groups on-the-fly, and managing [[11-modules/02-http/ngx_http_keyval_module|key-value pairs]] without the need of reconfiguring nginx.
+Le module `ngx_http_api_module` (1.13.3) fournit une API REST pour consulter diverses informations d'état, configurer à la volée des groupes de serveurs amont et gérer des [[11-modules/02-http/ngx_http_keyval_module|paires clé-valeur]] sans reconfigurer nginx.
 
 > [!NOTE]
-> The module supersedes the [[11-modules/02-http/ngx_http_status_module|ngx_http_status_module]] and [[11-modules/02-http/ngx_http_upstream_conf_module|ngx_http_upstream_conf_module]] modules.
+> Ce module remplace les modules [[11-modules/02-http/ngx_http_status_module|ngx_http_status_module]] et [[11-modules/02-http/ngx_http_upstream_conf_module|ngx_http_upstream_conf_module]].
 
-When using the `PATCH` or `POST` methods, make sure that the payload does not exceed the [[12-directives/client-body-buffer-size|buffer size]] for reading the client request body, otherwise, the `413 Request Entity Too Large` error may be returned.
+Avec les méthodes `PATCH` ou `POST`, veillez à ce que les données envoyées ne dépassent pas la [[12-directives/client-body-buffer-size|taille du tampon]] de lecture du corps de la requête client, sinon l'erreur `413 Request Entity Too Large` peut être renvoyée.
 
 > [!NOTE]
 > Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
@@ -75,7 +72,7 @@ stream {
 }
 ```
 
-All API requests include a supported API version in the URI. Examples of API requests with this configuration:
+Toutes les requêtes à l'API incluent une version d'API prise en charge dans l'URI. Exemples de requêtes avec cette configuration :
 
 ```nginx
 http://127.0.0.1/api/10/
@@ -98,1275 +95,1275 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
 ## Compatibilité
 
-- [[12-directives/license-pending-token|Deferred autorenewal]] of JWT license tokens: the “`PUT`” method for adding a JWT license token, and the “`pending_renewal`” field were added to the /license data in version 10.
-- The “`response_time_hist`” data for each HTTP upstream were added in version 9 (1.29.8).
-- The “`uuid`” field was added to the /license data in version 9 (1.29.0).
-- The /license data were added in version 9 (1.27.2).
-- The /workers/ data were added in version 9.
-- Detailed failure counters were added to SSL statistics in version 8 (1.23.2).
-- The `ssl` data for each HTTP upstream, server zone, and stream upstream, server zone, were added in version 8 (1.21.6).
-- The `codes` data in `responses` for each HTTP upstream, server zone, and location zone were added in version 7.
-- The /stream/limit\_conns/ data were added in version 6.
-- The /http/limit\_conns/ data were added in version 6.
-- The /http/limit\_reqs/ data were added in version 6.
-- The “`expire`” parameter of a [[11-modules/02-http/ngx_http_keyval_module|key-value]] pair can be set or changed since version 5.
-- The /resolvers/ data were added in version 5.
-- The /http/location\_zones/ data were added in version 5.
-- The `path` and `method` fields of nginx error object were removed in version 4. These fields continue to exist in earlier api versions, but show an empty value.
-- The /stream/zone\_sync/ data were added in version 3.
-- The drain parameter was added in version 2.
-- The /stream/keyvals/ data were added in version 2.
+- [[12-directives/license-pending-token|Renouvellement automatique différé]] des jetons de licence JWT : la méthode « `PUT` » pour ajouter un jeton de licence JWT et le champ « `pending_renewal` » ont été ajoutés aux données /license en version 10.
+- Les données « `response_time_hist` » de chaque groupe amont HTTP ont été ajoutées en version 9 (1.29.8).
+- Le champ « `uuid` » a été ajouté aux données /license en version 9 (1.29.0).
+- Les données /license ont été ajoutées en version 9 (1.27.2).
+- Les données /workers/ ont été ajoutées en version 9.
+- Des compteurs d'échecs détaillés ont été ajoutés aux statistiques SSL en version 8 (1.23.2).
+- Les données `ssl` de chaque groupe amont et zone de serveur HTTP, et de chaque groupe amont et zone de serveur stream, ont été ajoutées en version 8 (1.21.6).
+- Les données `codes` de `responses` pour chaque groupe amont, zone de serveur et zone de location HTTP ont été ajoutées en version 7.
+- Les données /stream/limit\_conns/ ont été ajoutées en version 6.
+- Les données /http/limit\_conns/ ont été ajoutées en version 6.
+- Les données /http/limit\_reqs/ ont été ajoutées en version 6.
+- Le paramètre « `expire` » d'une paire [[11-modules/02-http/ngx_http_keyval_module|clé-valeur]] peut être défini ou modifié depuis la version 5.
+- Les données /resolvers/ ont été ajoutées en version 5.
+- Les données /http/location\_zones/ ont été ajoutées en version 5.
+- Les champs `path` et `method` de l'objet erreur nginx ont été supprimés en version 4. Ils existent toujours dans les versions antérieures de l'API, mais avec une valeur vide.
+- Les données /stream/zone\_sync/ ont été ajoutées en version 3.
+- Le paramètre drain a été ajouté en version 2.
+- Les données /stream/keyvals/ ont été ajoutées en version 2.
 
-## Endpoints
+## Points d'accès
 
 - **`/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return list of root endpoints
+  - `GET` - Renvoie la liste des points d'accès racine
 
-    Returns a list of root endpoints.
+    Renvoie la liste des points d'accès racine.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns an array of strings
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie un tableau de chaînes
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/nginx`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of nginx running instance
+  - `GET` - Renvoie l'état de l'instance nginx en cours d'exécution
 
-    Returns nginx version, build name, address, number of configuration reloads, IDs of master and worker processes.
+    Renvoie la version de nginx, le nom de build, l'adresse, le nombre de rechargements de configuration, les identifiants des processus maître et de travail.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of nginx running instance will be output.
+      Limite les champs de l'instance nginx en cours d'exécution qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns nginx
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie nginx
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/processes`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return nginx processes status
+  - `GET` - Renvoie l'état des processus nginx
 
-    Returns the number of abnormally terminated and respawned child processes.
+    Renvoie le nombre de processus fils terminés anormalement et relancés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Processes
-    - 404 - Unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset nginx processes statistics
+    - 200 - Succès, renvoie Processes
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques des processus nginx
 
-    Resets counters of abnormally terminated and respawned child processes.
+    Réinitialise les compteurs de processus fils terminés anormalement et relancés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/connections`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return client connections statistics
+  - `GET` - Renvoie les statistiques des connexions client
 
-    Returns statistics of client connections.
+    Renvoie les statistiques des connexions client.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the connections statistics will be output.
+      Limite les champs des statistiques de connexions qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Connections
-    - 404 - Unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset client connections statistics
+    - 200 - Succès, renvoie Connections
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques des connexions client
 
-    Resets statistics of accepted and dropped client connections.
+    Réinitialise les statistiques des connexions client acceptées et rejetées.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/slabs/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of all slabs
+  - `GET` - Renvoie l'état de tous les slabs
 
-    Returns status of slabs for each shared memory zone with slab allocator.
+    Renvoie l'état des slabs de chaque zone de mémoire partagée utilisant l'allocateur slab.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of slab zones will be output. If the “`fields`” value is empty, then only zone names will be output.
+      Limite les champs des zones slab qui seront affichés. Si la valeur de « `fields` » est vide, seuls les noms des zones sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "Shared memory zone with slab allocator" objects for all slabs
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « Shared memory zone with slab allocator » pour tous les slabs
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/slabs/{slabZoneName}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`slabZoneName` (`string`, required)**
+  - **`slabZoneName` (`string`, obligatoire)**
 
-    The name of the shared memory zone with slab allocator.
+    Nom de la zone de mémoire partagée utilisant l'allocateur slab.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of a slab
+  - `GET` - Renvoie l'état d'un slab
 
-    Returns status of slabs for a particular shared memory zone with slab allocator.
+    Renvoie l'état des slabs d'une zone de mémoire partagée donnée utilisant l'allocateur slab.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the slab zone will be output.
+      Limite les champs de la zone slab qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Shared memory zone with slab allocator
-    - 404 - Slab not found (`SlabNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset slab statistics
+    - 200 - Succès, renvoie Shared memory zone with slab allocator
+    - 404 - Slab introuvable (`SlabNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques d'un slab
 
-    Resets the “`reqs`” and “`fails`” metrics for each memory slot.
+    Réinitialise les métriques « `reqs` » et « `fails` » de chaque emplacement mémoire.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Slab not found (`SlabNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Slab introuvable (`SlabNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/http/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return list of HTTP-related endpoints
+  - `GET` - Renvoie la liste des points d'accès HTTP
 
-    Returns a list of first level HTTP endpoints.
+    Renvoie la liste des points d'accès HTTP de premier niveau.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns an array of strings
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie un tableau de chaînes
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/http/requests`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return HTTP requests statistics
+  - `GET` - Renvoie les statistiques des requêtes HTTP
 
-    Returns status of client HTTP requests.
+    Renvoie l'état des requêtes HTTP client.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of client HTTP requests statistics will be output.
+      Limite les champs des statistiques des requêtes HTTP client qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns HTTP Requests
-    - 404 - Unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset HTTP requests statistics
+    - 200 - Succès, renvoie HTTP Requests
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques des requêtes HTTP
 
-    Resets the number of total client HTTP requests.
+    Réinitialise le nombre total de requêtes HTTP client.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/http/server_zones/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of all HTTP server zones
+  - `GET` - Renvoie l'état de toutes les zones de serveur HTTP
 
-    Returns status information for each HTTP [server zone](https://nginx.org/en/docs/http/ngx_http_api_module.html#status_zone).
+    Renvoie les informations d'état de chaque [zone de serveur](https://nginx.org/en/docs/http/ngx_http_api_module.html#status_zone) HTTP.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of server zones will be output. If the “`fields`” value is empty, then only server zone names will be output.
+      Limite les champs des zones de serveur qui seront affichés. Si la valeur de « `fields` » est vide, seuls les noms des zones de serveur sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "HTTP Server Zone" objects for all HTTP server zones
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « HTTP Server Zone » pour toutes les zones de serveur HTTP
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/http/server_zones/{httpServerZoneName}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`httpServerZoneName` (`string`, required)**
+  - **`httpServerZoneName` (`string`, obligatoire)**
 
-    The name of an HTTP server zone.
+    Nom d'une zone de serveur HTTP.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of an HTTP server zone
+  - `GET` - Renvoie l'état d'une zone de serveur HTTP
 
-    Returns status of a particular HTTP server zone.
+    Renvoie l'état d'une zone de serveur HTTP donnée.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the server zone will be output.
+      Limite les champs de la zone de serveur qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns HTTP Server Zone
-    - 404 - Server zone not found (`ServerZoneNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset statistics for an HTTP server zone
+    - 200 - Succès, renvoie HTTP Server Zone
+    - 404 - Zone de serveur introuvable (`ServerZoneNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques d'une zone de serveur HTTP
 
-    Resets statistics of accepted and discarded requests, responses, received and sent bytes, counters of SSL handshakes and session reuses in a particular HTTP server zone.
+    Réinitialise, pour une zone de serveur HTTP donnée, les statistiques des requêtes acceptées et rejetées, des réponses, des octets reçus et envoyés, ainsi que les compteurs de poignées de main SSL et de réutilisations de session.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Server zone not found (`ServerZoneNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Zone de serveur introuvable (`ServerZoneNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/http/location_zones/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of all HTTP location zones
+  - `GET` - Renvoie l'état de toutes les zones de location HTTP
 
-    Returns status information for each HTTP [location zone](https://nginx.org/en/docs/http/ngx_http_api_module.html#status_zone_location).
+    Renvoie les informations d'état de chaque [zone de location](https://nginx.org/en/docs/http/ngx_http_api_module.html#status_zone_location) HTTP.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of location zones will be output. If the “`fields`” value is empty, then only zone names will be output.
+      Limite les champs des zones de location qui seront affichés. Si la valeur de « `fields` » est vide, seuls les noms des zones sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "HTTP Location Zone" objects for all HTTP location zones
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « HTTP Location Zone » pour toutes les zones de location HTTP
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/http/location_zones/{httpLocationZoneName}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`httpLocationZoneName` (`string`, required)**
+  - **`httpLocationZoneName` (`string`, obligatoire)**
 
-    The name of an HTTP [location zone](https://nginx.org/en/docs/http/ngx_http_api_module.html#status_zone_location).
+    Nom d'une [zone de location](https://nginx.org/en/docs/http/ngx_http_api_module.html#status_zone_location) HTTP.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of an HTTP location zone
+  - `GET` - Renvoie l'état d'une zone de location HTTP
 
-    Returns status of a particular HTTP [location zone](https://nginx.org/en/docs/http/ngx_http_api_module.html#status_zone_location).
+    Renvoie l'état d'une [zone de location](https://nginx.org/en/docs/http/ngx_http_api_module.html#status_zone_location) HTTP donnée.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the location zone will be output.
+      Limite les champs de la zone de location qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns HTTP Location Zone
-    - 404 - Location zone not found (`LocationZoneNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset statistics for a location zone.
+    - 200 - Succès, renvoie HTTP Location Zone
+    - 404 - Zone de location introuvable (`LocationZoneNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques d'une zone de location.
 
-    Resets statistics of accepted and discarded requests, responses, received and sent bytes in a particular location zone.
+    Réinitialise, pour une zone de location donnée, les statistiques des requêtes acceptées et rejetées, des réponses, des octets reçus et envoyés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Location zone not found (`LocationZoneNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Zone de location introuvable (`LocationZoneNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/http/caches/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of all caches
+  - `GET` - Renvoie l'état de tous les caches
 
-    Returns status of each cache configured by [proxy\_cache\_path](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_path) and other “`*_cache_path`” directives.
+    Renvoie l'état de chaque cache configuré par [proxy\_cache\_path](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_path) et les autres directives « `*_cache_path` ».
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of cache zones will be output. If the “`fields`” value is empty, then only names of cache zones will be output.
+      Limite les champs des zones de cache qui seront affichés. Si la valeur de « `fields` » est vide, seuls les noms des zones de cache sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "HTTP Cache" objects for all HTTP caches
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « HTTP Cache » pour tous les caches HTTP
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/http/caches/{httpCacheZoneName}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`httpCacheZoneName` (`string`, required)**
+  - **`httpCacheZoneName` (`string`, obligatoire)**
 
-    The name of the cache zone.
+    Nom de la zone de cache.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of a cache
+  - `GET` - Renvoie l'état d'un cache
 
-    Returns status of a particular cache.
+    Renvoie l'état d'un cache donné.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the cache zone will be output.
+      Limite les champs de la zone de cache qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns HTTP Cache
-    - 404 - Cache not found (`CacheNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset cache statistics
+    - 200 - Succès, renvoie HTTP Cache
+    - 404 - Cache introuvable (`CacheNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques du cache
 
-    Resets statistics of cache hits/misses in a particular cache zone.
+    Réinitialise les statistiques de succès/échecs du cache dans une zone de cache donnée.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Cache not found (`CacheNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Cache introuvable (`CacheNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/http/limit_conns/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of all HTTP limit\_conn zones
+  - `GET` - Renvoie l'état de toutes les zones limit\_conn HTTP
 
-    Returns status information for each HTTP [limit\_conn zone](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_zone).
+    Renvoie les informations d'état de chaque [zone limit\_conn](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_zone) HTTP.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of limit\_conn zones will be output. If the “`fields`” value is empty, then only zone names will be output.
+      Limite les champs des zones limit\_conn qui seront affichés. Si la valeur de « `fields` » est vide, seuls les noms des zones sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "HTTP Connections Limiting" objects for all HTTP limit conns
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « HTTP Connections Limiting » pour toutes les limitations de connexions HTTP
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/http/limit_conns/{httpLimitConnZoneName}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`httpLimitConnZoneName` (`string`, required)**
+  - **`httpLimitConnZoneName` (`string`, obligatoire)**
 
-    The name of a [limit\_conn zone](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_zone).
+    Nom d'une [zone limit\_conn](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_zone).
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of an HTTP limit\_conn zone
+  - `GET` - Renvoie l'état d'une zone limit\_conn HTTP
 
-    Returns status of a particular HTTP [limit\_conn zone](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_zone).
+    Renvoie l'état d'une [zone limit\_conn](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_zone) HTTP donnée.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the [limit\_conn zone](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_zone) will be output.
+      Limite les champs de la [zone limit\_conn](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_zone) qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns HTTP Connections Limiting
-    - 404 - limit\_conn not found (`LimitConnNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset statistics for an HTTP limit\_conn zone
+    - 200 - Succès, renvoie HTTP Connections Limiting
+    - 404 - limit\_conn introuvable (`LimitConnNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques d'une zone limit\_conn HTTP
 
-    Resets the connection limiting statistics.
+    Réinitialise les statistiques de limitation des connexions.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - limit\_conn not found (`LimitConnNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - limit\_conn introuvable (`LimitConnNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/http/limit_reqs/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of all HTTP limit\_req zones
+  - `GET` - Renvoie l'état de toutes les zones limit\_req HTTP
 
-    Returns status information for each HTTP [limit\_req zone](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_zone).
+    Renvoie les informations d'état de chaque [zone limit\_req](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_zone) HTTP.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of limit\_req zones will be output. If the “`fields`” value is empty, then only zone names will be output.
+      Limite les champs des zones limit\_req qui seront affichés. Si la valeur de « `fields` » est vide, seuls les noms des zones sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "HTTP Requests Rate Limiting" objects for all HTTP limit reqs
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « HTTP Requests Rate Limiting » pour toutes les limitations de requêtes HTTP
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/http/limit_reqs/{httpLimitReqZoneName}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`httpLimitReqZoneName` (`string`, required)**
+  - **`httpLimitReqZoneName` (`string`, obligatoire)**
 
-    The name of a [limit\_req zone](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_zone).
+    Nom d'une [zone limit\_req](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_zone).
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of an HTTP limit\_req zone
+  - `GET` - Renvoie l'état d'une zone limit\_req HTTP
 
-    Returns status of a particular HTTP [limit\_req zone](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_zone).
+    Renvoie l'état d'une [zone limit\_req](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_zone) HTTP donnée.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the [limit\_req zone](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_zone) will be output.
+      Limite les champs de la [zone limit\_req](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_zone) qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns HTTP Requests Rate Limiting
-    - 404 - limit\_req not found (`LimitReqNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset statistics for an HTTP limit\_req zone
+    - 200 - Succès, renvoie HTTP Requests Rate Limiting
+    - 404 - limit\_req introuvable (`LimitReqNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques d'une zone limit\_req HTTP
 
-    Resets the requests limiting statistics.
+    Réinitialise les statistiques de limitation des requêtes.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - limit\_req not found (`LimitReqNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - limit\_req introuvable (`LimitReqNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/http/upstreams/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of all HTTP upstream server groups
+  - `GET` - Renvoie l'état de tous les groupes de serveurs amont HTTP
 
-    Returns status of each HTTP upstream server group and its servers.
+    Renvoie l'état de chaque groupe de serveurs amont HTTP et de ses serveurs.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of upstream server groups will be output. If the “`fields`” value is empty, only names of upstreams will be output.
+      Limite les champs des groupes de serveurs amont qui seront affichés. Si la valeur de « `fields` » est vide, seuls les noms des groupes amont sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "HTTP Upstream" objects for all HTTP upstreams
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « HTTP Upstream » pour tous les groupes amont HTTP
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/http/upstreams/{httpUpstreamName}/`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`httpUpstreamName` (`string`, required)**
+  - **`httpUpstreamName` (`string`, obligatoire)**
 
-    The name of an HTTP upstream server group.
+    Nom d'un groupe de serveurs amont HTTP.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of an HTTP upstream server group
+  - `GET` - Renvoie l'état d'un groupe de serveurs amont HTTP
 
-    Returns status of a particular HTTP upstream server group and its servers.
+    Renvoie l'état d'un groupe de serveurs amont HTTP donné et de ses serveurs.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the upstream server group will be output.
+      Limite les champs du groupe de serveurs amont qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns HTTP Upstream
-    - 400 - Upstream is static (`UpstreamStatic`), returns Error
-    - 404 - Unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-  - `DELETE` - Reset statistics of an HTTP upstream server group
+    - 200 - Succès, renvoie HTTP Upstream
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), renvoie Error
+    - 404 - Version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques d'un groupe de serveurs amont HTTP
 
-    Resets the statistics for each upstream server in an upstream server group and queue statistics.
+    Réinitialise les statistiques de chaque serveur amont d'un groupe ainsi que les statistiques de file d'attente.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 400 - Upstream is static (`UpstreamStatic`), returns Error
-    - 404 - Unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), renvoie Error
+    - 404 - Version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/http/upstreams/{httpUpstreamName}/servers/`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`httpUpstreamName` (`string`, required)**
+  - **`httpUpstreamName` (`string`, obligatoire)**
 
-    The name of an upstream server group.
+    Nom d'un groupe de serveurs amont.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return configuration of all servers in an HTTP upstream server group
+  - `GET` - Renvoie la configuration de tous les serveurs d'un groupe amont HTTP
 
-    Returns configuration of each server in a particular HTTP upstream server group.
+    Renvoie la configuration de chaque serveur d'un groupe de serveurs amont HTTP donné.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns an array of HTTP Upstream Servers
-    - 400 - Upstream is static (`UpstreamStatic`), returns Error
-    - 404 - Unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-  - `POST` - Add a server to an HTTP upstream server group
+    - 200 - Succès, renvoie un tableau de HTTP Upstream Servers
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), renvoie Error
+    - 404 - Version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+  - `POST` - Ajoute un serveur à un groupe de serveurs amont HTTP
 
-    Adds a new server to an HTTP upstream server group. Server parameters are specified in the JSON format.
+    Ajoute un nouveau serveur à un groupe de serveurs amont HTTP. Les paramètres du serveur sont indiqués au format JSON.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`postHttpUpstreamServer` (HTTP Upstream Server, required)**
+    - **`postHttpUpstreamServer` (HTTP Upstream Server, obligatoire)**
 
-      Address of a new server and other optional parameters in the JSON format. The “`ID`”, “`backup`”, and “`service`” parameters cannot be changed.
+      Adresse du nouveau serveur et autres paramètres facultatifs au format JSON. Les paramètres « `ID` », « `backup` » et « `service` » ne peuvent pas être modifiés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 201 - Created, returns HTTP Upstream Server
-    - 400 - Upstream is static (`UpstreamStatic`), invalid “*parameter*” value (`UpstreamConfFormatError`), missing “`server`” argument (`UpstreamConfFormatError`), unknown parameter “*name*” (`UpstreamConfFormatError`), nested object or list (`UpstreamConfFormatError`), “`error`” while parsing (`UpstreamBadAddress`), service upstream “`host`” may not have port (`UpstreamBadAddress`), service upstream “`host`” requires domain name (`UpstreamBadAddress`), invalid “`weight`” (`UpstreamBadWeight`), invalid “`max_conns`” (`UpstreamBadMaxConns`), invalid “`max_fails`” (`UpstreamBadMaxFails`), invalid “`fail_timeout`” (`UpstreamBadFailTimeout`), invalid “`slow_start`” (`UpstreamBadSlowStart`), reading request body failed `BodyReadError`), route is too long (`UpstreamBadRoute`), “`service`” is empty (`UpstreamBadService`), no resolver defined to resolve (`UpstreamConfNoResolver`), upstream “*name*” has no backup (`UpstreamNoBackup`), upstream “*name*” memory exhausted (`UpstreamOutOfMemory`), returns Error
-    - 404 - Unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
-    - 409 - Entry exists (`EntryExists`), returns Error
-    - 415 - JSON error (`JsonError`), returns Error
+    - 201 - Créé, renvoie HTTP Upstream Server
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), valeur « *paramètre* » invalide (`UpstreamConfFormatError`), argument « `server` » manquant (`UpstreamConfFormatError`), paramètre inconnu « *nom* » (`UpstreamConfFormatError`), objet ou liste imbriqués (`UpstreamConfFormatError`), « `error` » lors de l'analyse (`UpstreamBadAddress`), le groupe amont de service « `host` » ne doit pas avoir de port (`UpstreamBadAddress`), le groupe amont de service « `host` » exige un nom de domaine (`UpstreamBadAddress`), « `weight` » invalide (`UpstreamBadWeight`), « `max_conns` » invalide (`UpstreamBadMaxConns`), « `max_fails` » invalide (`UpstreamBadMaxFails`), « `fail_timeout` » invalide (`UpstreamBadFailTimeout`), « `slow_start` » invalide (`UpstreamBadSlowStart`), échec de lecture du corps de la requête `BodyReadError`), route trop longue (`UpstreamBadRoute`), « `service` » vide (`UpstreamBadService`), aucun résolveur défini (`UpstreamConfNoResolver`), le groupe amont « *nom* » n'a pas de serveur de secours (`UpstreamNoBackup`), mémoire épuisée pour le groupe amont « *nom* » (`UpstreamOutOfMemory`), renvoie Error
+    - 404 - Version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
+    - 409 - L'entrée existe (`EntryExists`), renvoie Error
+    - 415 - Erreur JSON (`JsonError`), renvoie Error
 
 - **`/http/upstreams/{httpUpstreamName}/servers/{httpUpstreamServerId}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`httpUpstreamName` (`string`, required)**
+  - **`httpUpstreamName` (`string`, obligatoire)**
 
-    The name of the upstream server group.
+    Nom du groupe de serveurs amont.
 
-  - **`httpUpstreamServerId` (`string`, required)**
+  - **`httpUpstreamServerId` (`string`, obligatoire)**
 
-    The ID of the server.
+    Identifiant du serveur.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return configuration of a server in an HTTP upstream server group
+  - `GET` - Renvoie la configuration d'un serveur d'un groupe amont HTTP
 
-    Returns configuration of a particular server in the HTTP upstream server group.
+    Renvoie la configuration d'un serveur donné du groupe de serveurs amont HTTP.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns HTTP Upstream Server
-    - 400 - Upstream is static (`UpstreamStatic`), invalid server ID (`UpstreamBadServerId`), returns Error
-    - 404 - Server with ID “*id*” does not exist (`UpstreamServerNotFound`), unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-  - `PATCH` - Modify a server in an HTTP upstream server group
+    - 200 - Succès, renvoie HTTP Upstream Server
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), identifiant de serveur invalide (`UpstreamBadServerId`), renvoie Error
+    - 404 - Le serveur d'identifiant « *id* » n'existe pas (`UpstreamServerNotFound`), version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+  - `PATCH` - Modifie un serveur d'un groupe de serveurs amont HTTP
 
-    Modifies settings of a particular server in an HTTP upstream server group. Server parameters are specified in the JSON format.
+    Modifie les paramètres d'un serveur donné d'un groupe de serveurs amont HTTP. Les paramètres sont indiqués au format JSON.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`patchHttpUpstreamServer` (HTTP Upstream Server, required)**
+    - **`patchHttpUpstreamServer` (HTTP Upstream Server, obligatoire)**
 
-      Server parameters, specified in the JSON format. The “`ID`”, “`backup`”, and “`service`” parameters cannot be changed.
+      Paramètres du serveur, au format JSON. Les paramètres « `ID` », « `backup` » et « `service` » ne peuvent pas être modifiés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns HTTP Upstream Server
-    - 400 - Upstream is static (`UpstreamStatic`), invalid “*parameter*” value (`UpstreamConfFormatError`), unknown parameter “*name*” (`UpstreamConfFormatError`), nested object or list (`UpstreamConfFormatError`), “`error`” while parsing (`UpstreamBadAddress`), invalid “`server`” argument (`UpstreamBadAddress`), invalid server ID (`UpstreamBadServerId`), invalid “`weight`” (`UpstreamBadWeight`), invalid “`max_conns`” (`UpstreamBadMaxConns`), invalid “`max_fails`” (`UpstreamBadMaxFails`), invalid “`fail_timeout`” (`UpstreamBadFailTimeout`), invalid “`slow_start`” (`UpstreamBadSlowStart`), reading request body failed `BodyReadError`), route is too long (`UpstreamBadRoute`), “`service`” is empty (`UpstreamBadService`), server “*ID*” address is immutable (`UpstreamServerImmutable`), server “`ID`” weight is immutable (`UpstreamServerWeightImmutable`), upstream “`name`” memory exhausted (`UpstreamOutOfMemory`), returns Error
-    - 404 - Server with ID “*id*” does not exist (`UpstreamServerNotFound`), unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
-    - 415 - JSON error (`JsonError`), returns Error
-  - `DELETE` - Remove a server from an HTTP upstream server group
+    - 200 - Succès, renvoie HTTP Upstream Server
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), valeur « *paramètre* » invalide (`UpstreamConfFormatError`), paramètre inconnu « *nom* » (`UpstreamConfFormatError`), objet ou liste imbriqués (`UpstreamConfFormatError`), « `error` » lors de l'analyse (`UpstreamBadAddress`), argument « `server` » invalide (`UpstreamBadAddress`), identifiant de serveur invalide (`UpstreamBadServerId`), « `weight` » invalide (`UpstreamBadWeight`), « `max_conns` » invalide (`UpstreamBadMaxConns`), « `max_fails` » invalide (`UpstreamBadMaxFails`), « `fail_timeout` » invalide (`UpstreamBadFailTimeout`), « `slow_start` » invalide (`UpstreamBadSlowStart`), échec de lecture du corps de la requête `BodyReadError`), route trop longue (`UpstreamBadRoute`), « `service` » vide (`UpstreamBadService`), l'adresse du serveur « *ID* » est immuable (`UpstreamServerImmutable`), le poids du serveur « `ID` » est immuable (`UpstreamServerWeightImmutable`), mémoire épuisée pour le groupe amont « `name` » (`UpstreamOutOfMemory`), renvoie Error
+    - 404 - Le serveur d'identifiant « *id* » n'existe pas (`UpstreamServerNotFound`), version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
+    - 415 - Erreur JSON (`JsonError`), renvoie Error
+  - `DELETE` - Retire un serveur d'un groupe de serveurs amont HTTP
 
-    Removes a server from an HTTP upstream server group.
+    Retire un serveur d'un groupe de serveurs amont HTTP.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns an array of HTTP Upstream Servers
-    - 400 - Upstream is static (`UpstreamStatic`), invalid server ID (`UpstreamBadServerId`), server “*id*” not removable (`UpstreamServerImmutable`), returns Error
-    - 404 - Server with ID “*id*” does not exist (`UpstreamServerNotFound`), unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 200 - Succès, renvoie un tableau de HTTP Upstream Servers
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), identifiant de serveur invalide (`UpstreamBadServerId`), le serveur « *id* » ne peut pas être retiré (`UpstreamServerImmutable`), renvoie Error
+    - 404 - Le serveur d'identifiant « *id* » n'existe pas (`UpstreamServerNotFound`), version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/http/keyvals/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return key-value pairs from all HTTP keyval zones
+  - `GET` - Renvoie les paires clé-valeur de toutes les zones keyval HTTP
 
-    Returns key-value pairs for each HTTP keyval shared memory [zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone).
+    Renvoie les paires clé-valeur de chaque [zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone) de mémoire partagée keyval HTTP.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      If the “`fields`” value is empty, then only HTTP keyval zone names will be output.
+      Si la valeur de « `fields` » est vide, seuls les noms des zones keyval HTTP sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "HTTP Keyval Shared Memory Zone" objects for all HTTP keyvals
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « HTTP Keyval Shared Memory Zone » pour toutes les zones keyval HTTP
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/http/keyvals/{httpKeyvalZoneName}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`httpKeyvalZoneName` (`string`, required)**
+  - **`httpKeyvalZoneName` (`string`, obligatoire)**
 
-    The name of an HTTP keyval shared memory zone.
+    Nom d'une zone de mémoire partagée keyval HTTP.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return key-value pairs from an HTTP keyval zone
+  - `GET` - Renvoie les paires clé-valeur d'une zone keyval HTTP
 
-    Returns key-value pairs stored in a particular HTTP keyval shared memory [zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone).
+    Renvoie les paires clé-valeur stockées dans une [zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone) de mémoire partagée keyval HTTP donnée.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`key` (`string`, optional)**
+    - **`key` (`string`, facultatif)**
 
-      Get a particular key-value pair from the HTTP keyval zone.
+      Récupère une paire clé-valeur donnée de la zone keyval HTTP.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns HTTP Keyval Shared Memory Zone
-    - 404 - Keyval not found (`KeyvalNotFound`), keyval key not found (`KeyvalKeyNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `POST` - Add a key-value pair to the HTTP keyval zone
+    - 200 - Succès, renvoie HTTP Keyval Shared Memory Zone
+    - 404 - Keyval introuvable (`KeyvalNotFound`), clé keyval introuvable (`KeyvalKeyNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `POST` - Ajoute une paire clé-valeur à la zone keyval HTTP
 
-    Adds a new key-value pair to the HTTP keyval shared memory [zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone). Several key-value pairs can be entered if the HTTP keyval shared memory zone is empty.
+    Ajoute une nouvelle paire clé-valeur à la [zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone) de mémoire partagée keyval HTTP. Plusieurs paires peuvent être saisies si la zone est vide.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`Key-value` (HTTP Keyval Shared Memory Zone, required)**
+    - **`Key-value` (HTTP Keyval Shared Memory Zone, obligatoire)**
 
-      A key-value pair is specified in the JSON format. Several key-value pairs can be entered if the HTTP keyval shared memory zone is empty. Expiration time in milliseconds can be specified for a key-value pair with the `expire` parameter which overrides the [`timeout`](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_timeout) parameter of the [keyval\_zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone) directive.
+      Une paire clé-valeur s'indique au format JSON. Plusieurs paires peuvent être saisies si la zone de mémoire partagée keyval HTTP est vide. Une durée d'expiration en millisecondes peut être indiquée pour une paire avec le paramètre `expire`, qui remplace le paramètre [`timeout`](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_timeout) de la directive [keyval\_zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone).
 
-    Possible responses:
+    Réponses possibles :
 
-    - 201 - Created
-    - 400 - Invalid JSON (`KeyvalFormatError`), invalid key format (`KeyvalFormatError`), key required (`KeyvalFormatError`), keyval timeout is not enabled (`KeyvalFormatError`), only one key can be added (`KeyvalFormatError`), reading request body failed `BodyReadError`), returns Error
-    - 404 - Keyval not found (`KeyvalNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
-    - 409 - Entry exists (`EntryExists`), key already exists (`KeyvalKeyExists`), returns Error
-    - 413 - Request Entity Too Large, returns Error
-    - 415 - JSON error (`JsonError`), returns Error
-  - `PATCH` - Modify a key-value or delete a key
+    - 201 - Créé
+    - 400 - JSON invalide (`KeyvalFormatError`), format de clé invalide (`KeyvalFormatError`), clé requise (`KeyvalFormatError`), le délai keyval n'est pas activé (`KeyvalFormatError`), une seule clé peut être ajoutée (`KeyvalFormatError`), échec de lecture du corps de la requête `BodyReadError`), renvoie Error
+    - 404 - Keyval introuvable (`KeyvalNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
+    - 409 - L'entrée existe (`EntryExists`), la clé existe déjà (`KeyvalKeyExists`), renvoie Error
+    - 413 - Request Entity Too Large, renvoie Error
+    - 415 - Erreur JSON (`JsonError`), renvoie Error
+  - `PATCH` - Modifie une valeur ou supprime une clé
 
-    Changes the value of the selected key in the key-value pair, deletes a key by setting the key value to `null`, changes expiration time of a key-value pair. If [synchronization](https://nginx.org/en/docs/stream/ngx_stream_zone_sync_module.html#zone_sync) of keyval zones in a cluster is enabled, deletes a key only on a target cluster node. Expiration time in milliseconds can be specified for a key-value pair with the `expire` parameter which overrides the [`timeout`](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_timeout) parameter of the [keyval\_zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone) directive.
+    Modifie la valeur de la clé choisie dans la paire clé-valeur, supprime une clé en mettant sa valeur à `null`, modifie la durée d'expiration d'une paire. Si la [synchronisation](https://nginx.org/en/docs/stream/ngx_stream_zone_sync_module.html#zone_sync) des zones keyval dans un cluster est activée, la clé n'est supprimée que sur le nœud cible. Une durée d'expiration en millisecondes peut être indiquée avec le paramètre `expire`, qui remplace le paramètre [`timeout`](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_timeout) de la directive [keyval\_zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone).
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`httpKeyvalZoneKeyValue` (HTTP Keyval Shared Memory Zone, required)**
+    - **`httpKeyvalZoneKeyValue` (HTTP Keyval Shared Memory Zone, obligatoire)**
 
-      A new value for the key is specified in the JSON format.
+      La nouvelle valeur de la clé s'indique au format JSON.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 400 - Invalid JSON (`KeyvalFormatError`), key required (`KeyvalFormatError`), keyval timeout is not enabled (`KeyvalFormatError`), only one key can be updated (`KeyvalFormatError`), reading request body failed `BodyReadError`), returns Error
-    - 404 - Keyval not found (`KeyvalNotFound`), keyval key not found (`KeyvalKeyNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
-    - 413 - Request Entity Too Large, returns Error
-    - 415 - JSON error (`JsonError`), returns Error
-  - `DELETE` - Empty the HTTP keyval zone
+    - 204 - Succès
+    - 400 - JSON invalide (`KeyvalFormatError`), clé requise (`KeyvalFormatError`), le délai keyval n'est pas activé (`KeyvalFormatError`), une seule clé peut être mise à jour (`KeyvalFormatError`), échec de lecture du corps de la requête `BodyReadError`), renvoie Error
+    - 404 - Keyval introuvable (`KeyvalNotFound`), clé keyval introuvable (`KeyvalKeyNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
+    - 413 - Request Entity Too Large, renvoie Error
+    - 415 - Erreur JSON (`JsonError`), renvoie Error
+  - `DELETE` - Vide la zone keyval HTTP
 
-    Deletes all key-value pairs from the HTTP keyval shared memory [zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone). If [synchronization](https://nginx.org/en/docs/stream/ngx_stream_zone_sync_module.html#zone_sync) of keyval zones in a cluster is enabled, empties the keyval zone only on a target cluster node.
+    Supprime toutes les paires clé-valeur de la [zone](https://nginx.org/en/docs/http/ngx_http_keyval_module.html#keyval_zone) de mémoire partagée keyval HTTP. Si la [synchronisation](https://nginx.org/en/docs/stream/ngx_stream_zone_sync_module.html#zone_sync) des zones keyval dans un cluster est activée, la zone n'est vidée que sur le nœud cible.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Keyval not found (`KeyvalNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Keyval introuvable (`KeyvalNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/stream/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return list of stream-related endpoints
+  - `GET` - Renvoie la liste des points d'accès stream
 
-    Returns a list of first level stream endpoints.
+    Renvoie la liste des points d'accès stream de premier niveau.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns an array of strings
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie un tableau de chaînes
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/stream/server_zones/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of all stream server zones
+  - `GET` - Renvoie l'état de toutes les zones de serveur stream
 
-    Returns status information for each stream [server zone](https://nginx.org/en/docs/http/ngx_http_api_module.html#status_zone).
+    Renvoie les informations d'état de chaque [zone de serveur](https://nginx.org/en/docs/http/ngx_http_api_module.html#status_zone) stream.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of server zones will be output. If the “`fields`” value is empty, then only server zone names will be output.
+      Limite les champs des zones de serveur qui seront affichés. Si la valeur de « `fields` » est vide, seuls les noms des zones de serveur sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "Stream Server Zone" objects for all stream server zones
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « Stream Server Zone » pour toutes les zones de serveur stream
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/stream/server_zones/{streamServerZoneName}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`streamServerZoneName` (`string`, required)**
+  - **`streamServerZoneName` (`string`, obligatoire)**
 
-    The name of a stream server zone.
+    Nom d'une zone de serveur stream.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of a stream server zone
+  - `GET` - Renvoie l'état d'une zone de serveur stream
 
-    Returns status of a particular stream server zone.
+    Renvoie l'état d'une zone de serveur stream donnée.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the server zone will be output.
+      Limite les champs de la zone de serveur qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Stream Server Zone
-    - 404 - Server zone not found (`ServerZoneNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset statistics for a stream server zone
+    - 200 - Succès, renvoie Stream Server Zone
+    - 404 - Zone de serveur introuvable (`ServerZoneNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques d'une zone de serveur stream
 
-    Resets statistics of accepted and discarded connections, sessions, received and sent bytes, counters of SSL handshakes and session reuses in a particular stream server zone.
+    Réinitialise, pour une zone de serveur stream donnée, les statistiques des connexions acceptées et rejetées, des sessions, des octets reçus et envoyés, ainsi que les compteurs de poignées de main SSL et de réutilisations de session.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Server zone not found (`ServerZoneNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Zone de serveur introuvable (`ServerZoneNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/stream/limit_conns/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of all stream limit\_conn zones
+  - `GET` - Renvoie l'état de toutes les zones limit\_conn stream
 
-    Returns status information for each stream [limit\_conn zone](https://nginx.org/en/docs/stream/ngx_stream_limit_conn_module.html#limit_conn_zone).
+    Renvoie les informations d'état de chaque [zone limit\_conn](https://nginx.org/en/docs/stream/ngx_stream_limit_conn_module.html#limit_conn_zone) stream.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of limit\_conn zones will be output. If the “`fields`” value is empty, then only zone names will be output.
+      Limite les champs des zones limit\_conn qui seront affichés. Si la valeur de « `fields` » est vide, seuls les noms des zones sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "Stream Connections Limiting" objects for all stream limit conns
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « Stream Connections Limiting » pour toutes les limitations de connexions stream
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/stream/limit_conns/{streamLimitConnZoneName}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`streamLimitConnZoneName` (`string`, required)**
+  - **`streamLimitConnZoneName` (`string`, obligatoire)**
 
-    The name of a [limit\_conn zone](https://nginx.org/en/docs/stream/ngx_stream_limit_conn_module.html#limit_conn_zone).
+    Nom d'une [zone limit\_conn](https://nginx.org/en/docs/stream/ngx_stream_limit_conn_module.html#limit_conn_zone).
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of an stream limit\_conn zone
+  - `GET` - Renvoie l'état d'une zone limit\_conn stream
 
-    Returns status of a particular stream [limit\_conn zone](https://nginx.org/en/docs/stream/ngx_stream_limit_conn_module.html#limit_conn_zone).
+    Renvoie l'état d'une [zone limit\_conn](https://nginx.org/en/docs/stream/ngx_stream_limit_conn_module.html#limit_conn_zone) stream donnée.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the [limit\_conn zone](https://nginx.org/en/docs/stream/ngx_stream_limit_conn_module.html#limit_conn_zone) will be output.
+      Limite les champs de la [zone limit\_conn](https://nginx.org/en/docs/stream/ngx_stream_limit_conn_module.html#limit_conn_zone) qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Stream Connections Limiting
-    - 404 - limit\_conn not found (`LimitConnNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset statistics for a stream limit\_conn zone
+    - 200 - Succès, renvoie Stream Connections Limiting
+    - 404 - limit\_conn introuvable (`LimitConnNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques d'une zone limit\_conn stream
 
-    Resets the connection limiting statistics.
+    Réinitialise les statistiques de limitation des connexions.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - limit\_conn not found (`LimitConnNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - limit\_conn introuvable (`LimitConnNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/stream/upstreams/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of all stream upstream server groups
+  - `GET` - Renvoie l'état de tous les groupes de serveurs amont stream
 
-    Returns status of each stream upstream server group and its servers.
+    Renvoie l'état de chaque groupe de serveurs amont stream et de ses serveurs.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of upstream server groups will be output. If the “`fields`” value is empty, only names of upstreams will be output.
+      Limite les champs des groupes de serveurs amont qui seront affichés. Si la valeur de « `fields` » est vide, seuls les noms des groupes amont sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "Stream Upstream" objects for all stream upstreams
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « Stream Upstream » pour tous les groupes amont stream
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/stream/upstreams/{streamUpstreamName}/`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`streamUpstreamName` (`string`, required)**
+  - **`streamUpstreamName` (`string`, obligatoire)**
 
-    The name of a stream upstream server group.
+    Nom d'un groupe de serveurs amont stream.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of a stream upstream server group
+  - `GET` - Renvoie l'état d'un groupe de serveurs amont stream
 
-    Returns status of a particular stream upstream server group and its servers.
+    Renvoie l'état d'un groupe de serveurs amont stream donné et de ses serveurs.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the upstream server group will be output.
+      Limite les champs du groupe de serveurs amont qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Stream Upstream
-    - 400 - Upstream is static (`UpstreamStatic`), returns Error
-    - 404 - Unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-  - `DELETE` - Reset statistics of a stream upstream server group
+    - 200 - Succès, renvoie Stream Upstream
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), renvoie Error
+    - 404 - Version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques d'un groupe de serveurs amont stream
 
-    Resets the statistics for each upstream server in an upstream server group.
+    Réinitialise les statistiques de chaque serveur amont d'un groupe de serveurs amont.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 400 - Upstream is static (`UpstreamStatic`), returns Error
-    - 404 - Unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), renvoie Error
+    - 404 - Version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/stream/upstreams/{streamUpstreamName}/servers/`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`streamUpstreamName` (`string`, required)**
+  - **`streamUpstreamName` (`string`, obligatoire)**
 
-    The name of an upstream server group.
+    Nom d'un groupe de serveurs amont.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return configuration of all servers in a stream upstream server group
+  - `GET` - Renvoie la configuration de tous les serveurs d'un groupe amont stream
 
-    Returns configuration of each server in a particular stream upstream server group.
+    Renvoie la configuration de chaque serveur d'un groupe de serveurs amont stream donné.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns an array of Stream Upstream Servers
-    - 400 - Upstream is static (`UpstreamStatic`), returns Error
-    - 404 - Unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-  - `POST` - Add a server to a stream upstream server group
+    - 200 - Succès, renvoie un tableau de Stream Upstream Servers
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), renvoie Error
+    - 404 - Version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+  - `POST` - Ajoute un serveur à un groupe de serveurs amont stream
 
-    Adds a new server to a stream upstream server group. Server parameters are specified in the JSON format.
+    Ajoute un nouveau serveur à un groupe de serveurs amont stream. Les paramètres du serveur sont indiqués au format JSON.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`postStreamUpstreamServer` (Stream Upstream Server, required)**
+    - **`postStreamUpstreamServer` (Stream Upstream Server, obligatoire)**
 
-      Address of a new server and other optional parameters in the JSON format. The “`ID`”, “`backup`”, and “`service`” parameters cannot be changed.
+      Adresse du nouveau serveur et autres paramètres facultatifs au format JSON. Les paramètres « `ID` », « `backup` » et « `service` » ne peuvent pas être modifiés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 201 - Created, returns Stream Upstream Server
-    - 400 - Upstream is static (`UpstreamStatic`), invalid “*parameter*” value (`UpstreamConfFormatError`), missing “`server`” argument (`UpstreamConfFormatError`), unknown parameter “*name*” (`UpstreamConfFormatError`), nested object or list (`UpstreamConfFormatError`), “`error`” while parsing (`UpstreamBadAddress`), no port in server “`host`” (`UpstreamBadAddress`), service upstream “`host`” may not have port (`UpstreamBadAddress`), service upstream “`host`” requires domain name (`UpstreamBadAddress`), invalid “`weight`” (`UpstreamBadWeight`), invalid “`max_conns`” (`UpstreamBadMaxConns`), invalid “`max_fails`” (`UpstreamBadMaxFails`), invalid “`fail_timeout`” (`UpstreamBadFailTimeout`), invalid “`slow_start`” (`UpstreamBadSlowStart`), “`service`” is empty (`UpstreamBadService`), no resolver defined to resolve (`UpstreamConfNoResolver`), upstream “*name*” has no backup (`UpstreamNoBackup`), upstream “*name*” memory exhausted (`UpstreamOutOfMemory`), reading request body failed `BodyReadError`), returns Error
-    - 404 - Unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
-    - 409 - Entry exists (`EntryExists`), returns Error
-    - 415 - JSON error (`JsonError`), returns Error
+    - 201 - Créé, renvoie Stream Upstream Server
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), valeur « *paramètre* » invalide (`UpstreamConfFormatError`), argument « `server` » manquant (`UpstreamConfFormatError`), paramètre inconnu « *nom* » (`UpstreamConfFormatError`), objet ou liste imbriqués (`UpstreamConfFormatError`), « `error` » lors de l'analyse (`UpstreamBadAddress`), pas de port dans le serveur « `host` » (`UpstreamBadAddress`), le groupe amont de service « `host` » ne doit pas avoir de port (`UpstreamBadAddress`), le groupe amont de service « `host` » exige un nom de domaine (`UpstreamBadAddress`), « `weight` » invalide (`UpstreamBadWeight`), « `max_conns` » invalide (`UpstreamBadMaxConns`), « `max_fails` » invalide (`UpstreamBadMaxFails`), « `fail_timeout` » invalide (`UpstreamBadFailTimeout`), « `slow_start` » invalide (`UpstreamBadSlowStart`), « `service` » vide (`UpstreamBadService`), aucun résolveur défini (`UpstreamConfNoResolver`), le groupe amont « *nom* » n'a pas de serveur de secours (`UpstreamNoBackup`), mémoire épuisée pour le groupe amont « *nom* » (`UpstreamOutOfMemory`), échec de lecture du corps de la requête `BodyReadError`), renvoie Error
+    - 404 - Version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
+    - 409 - L'entrée existe (`EntryExists`), renvoie Error
+    - 415 - Erreur JSON (`JsonError`), renvoie Error
 
 - **`/stream/upstreams/{streamUpstreamName}/servers/{streamUpstreamServerId}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`streamUpstreamName` (`string`, required)**
+  - **`streamUpstreamName` (`string`, obligatoire)**
 
-    The name of the upstream server group.
+    Nom du groupe de serveurs amont.
 
-  - **`streamUpstreamServerId` (`string`, required)**
+  - **`streamUpstreamServerId` (`string`, obligatoire)**
 
-    The ID of the server.
+    Identifiant du serveur.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return configuration of a server in a stream upstream server group
+  - `GET` - Renvoie la configuration d'un serveur d'un groupe amont stream
 
-    Returns configuration of a particular server in the stream upstream server group.
+    Renvoie la configuration d'un serveur donné du groupe de serveurs amont stream.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Stream Upstream Server
-    - 400 - Upstream is static (`UpstreamStatic`), invalid server ID (`UpstreamBadServerId`), returns Error
-    - 404 - Unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), server with ID “*id*” does not exist (`UpstreamServerNotFound`), returns Error
-  - `PATCH` - Modify a server in a stream upstream server group
+    - 200 - Succès, renvoie Stream Upstream Server
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), identifiant de serveur invalide (`UpstreamBadServerId`), renvoie Error
+    - 404 - Version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), le serveur d'identifiant « *id* » n'existe pas (`UpstreamServerNotFound`), renvoie Error
+  - `PATCH` - Modifie un serveur d'un groupe de serveurs amont stream
 
-    Modifies settings of a particular server in a stream upstream server group. Server parameters are specified in the JSON format.
+    Modifie les paramètres d'un serveur donné d'un groupe de serveurs amont stream. Les paramètres sont indiqués au format JSON.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`patchStreamUpstreamServer` (Stream Upstream Server, required)**
+    - **`patchStreamUpstreamServer` (Stream Upstream Server, obligatoire)**
 
-      Server parameters, specified in the JSON format. The “`ID`”, “`backup`”, and “`service`” parameters cannot be changed.
+      Paramètres du serveur, au format JSON. Les paramètres « `ID` », « `backup` » et « `service` » ne peuvent pas être modifiés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Stream Upstream Server
-    - 400 - Upstream is static (`UpstreamStatic`), invalid “*parameter*” value (`UpstreamConfFormatError`), unknown parameter “*name*” (`UpstreamConfFormatError`), nested object or list (`UpstreamConfFormatError`), “`error`” while parsing (`UpstreamBadAddress`), invalid “`server`” argument (`UpstreamBadAddress`), no port in server “`host`” (`UpstreamBadAddress`), invalid server ID (`UpstreamBadServerId`), invalid “`weight`” (`UpstreamBadWeight`), invalid “`max_conns`” (`UpstreamBadMaxConns`), invalid “`max_fails`” (`UpstreamBadMaxFails`), invalid “`fail_timeout`” (`UpstreamBadFailTimeout`), invalid “`slow_start`” (`UpstreamBadSlowStart`), reading request body failed `BodyReadError`), “`service`” is empty (`UpstreamBadService`), server “*ID*” address is immutable (`UpstreamServerImmutable`), server “*ID*” weight is immutable (`UpstreamServerWeightImmutable`), upstream “`name`” memory exhausted (`UpstreamOutOfMemory`), returns Error
-    - 404 - Server with ID “*id*” does not exist (`UpstreamServerNotFound`), unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
-    - 415 - JSON error (`JsonError`), returns Error
-  - `DELETE` - Remove a server from a stream upstream server group
+    - 200 - Succès, renvoie Stream Upstream Server
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), valeur « *paramètre* » invalide (`UpstreamConfFormatError`), paramètre inconnu « *nom* » (`UpstreamConfFormatError`), objet ou liste imbriqués (`UpstreamConfFormatError`), « `error` » lors de l'analyse (`UpstreamBadAddress`), argument « `server` » invalide (`UpstreamBadAddress`), pas de port dans le serveur « `host` » (`UpstreamBadAddress`), identifiant de serveur invalide (`UpstreamBadServerId`), « `weight` » invalide (`UpstreamBadWeight`), « `max_conns` » invalide (`UpstreamBadMaxConns`), « `max_fails` » invalide (`UpstreamBadMaxFails`), « `fail_timeout` » invalide (`UpstreamBadFailTimeout`), « `slow_start` » invalide (`UpstreamBadSlowStart`), échec de lecture du corps de la requête `BodyReadError`), « `service` » vide (`UpstreamBadService`), l'adresse du serveur « *ID* » est immuable (`UpstreamServerImmutable`), le poids du serveur « *ID* » est immuable (`UpstreamServerWeightImmutable`), mémoire épuisée pour le groupe amont « `name` » (`UpstreamOutOfMemory`), renvoie Error
+    - 404 - Le serveur d'identifiant « *id* » n'existe pas (`UpstreamServerNotFound`), version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
+    - 415 - Erreur JSON (`JsonError`), renvoie Error
+  - `DELETE` - Retire un serveur d'un groupe de serveurs amont stream
 
-    Removes a server from a stream server group.
+    Retire un serveur d'un groupe de serveurs stream.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns an array of Stream Upstream Servers
-    - 400 - Upstream is static (`UpstreamStatic`), invalid server ID (`UpstreamBadServerId`), server “*id*” not removable (`UpstreamServerImmutable`), returns Error
-    - 404 - Server with ID “*id*” does not exist (`UpstreamServerNotFound`), unknown version (`UnknownVersion`), upstream not found (`UpstreamNotFound`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 200 - Succès, renvoie un tableau de Stream Upstream Servers
+    - 400 - Le groupe amont est statique (`UpstreamStatic`), identifiant de serveur invalide (`UpstreamBadServerId`), le serveur « *id* » ne peut pas être retiré (`UpstreamServerImmutable`), renvoie Error
+    - 404 - Le serveur d'identifiant « *id* » n'existe pas (`UpstreamServerNotFound`), version inconnue (`UnknownVersion`), groupe amont introuvable (`UpstreamNotFound`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/stream/keyvals/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return key-value pairs from all stream keyval zones
+  - `GET` - Renvoie les paires clé-valeur de toutes les zones keyval stream
 
-    Returns key-value pairs for each stream keyval shared memory [zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone).
+    Renvoie les paires clé-valeur de chaque [zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone) de mémoire partagée keyval stream.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      If the “`fields`” value is empty, then only stream keyval zone names will be output.
+      Si la valeur de « `fields` » est vide, seuls les noms des zones keyval stream sont affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "Stream Keyval Shared Memory Zone" objects for all stream keyvals
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « Stream Keyval Shared Memory Zone » pour toutes les zones keyval stream
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/stream/keyvals/{streamKeyvalZoneName}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`streamKeyvalZoneName` (`string`, required)**
+  - **`streamKeyvalZoneName` (`string`, obligatoire)**
 
-    The name of a stream keyval shared memory zone.
+    Nom d'une zone de mémoire partagée keyval stream.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return key-value pairs from a stream keyval zone
+  - `GET` - Renvoie les paires clé-valeur d'une zone keyval stream
 
-    Returns key-value pairs stored in a particular stream keyval shared memory [zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone).
+    Renvoie les paires clé-valeur stockées dans une [zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone) de mémoire partagée keyval stream donnée.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`key` (`string`, optional)**
+    - **`key` (`string`, facultatif)**
 
-      Get a particular key-value pair from the stream keyval zone.
+      Récupère une paire clé-valeur donnée de la zone keyval stream.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Stream Keyval Shared Memory Zone
-    - 404 - Keyval not found (`KeyvalNotFound`), keyval key not found (`KeyvalKeyNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `POST` - Add a key-value pair to the stream keyval zone
+    - 200 - Succès, renvoie Stream Keyval Shared Memory Zone
+    - 404 - Keyval introuvable (`KeyvalNotFound`), clé keyval introuvable (`KeyvalKeyNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `POST` - Ajoute une paire clé-valeur à la zone keyval stream
 
-    Adds a new key-value pair to the stream keyval shared memory [zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone). Several key-value pairs can be entered if the stream keyval shared memory zone is empty.
+    Ajoute une nouvelle paire clé-valeur à la [zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone) de mémoire partagée keyval stream. Plusieurs paires peuvent être saisies si la zone est vide.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`Key-value` (Stream Keyval Shared Memory Zone, required)**
+    - **`Key-value` (Stream Keyval Shared Memory Zone, obligatoire)**
 
-      A key-value pair is specified in the JSON format. Several key-value pairs can be entered if the stream keyval shared memory zone is empty. Expiration time in milliseconds can be specified for a key-value pair with the `expire` parameter which overrides the [`timeout`](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_timeout) parameter of the [keyval\_zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone) directive.
+      Une paire clé-valeur s'indique au format JSON. Plusieurs paires peuvent être saisies si la zone de mémoire partagée keyval stream est vide. Une durée d'expiration en millisecondes peut être indiquée pour une paire avec le paramètre `expire`, qui remplace le paramètre [`timeout`](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_timeout) de la directive [keyval\_zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone).
 
-    Possible responses:
+    Réponses possibles :
 
-    - 201 - Created
-    - 400 - Invalid JSON (`KeyvalFormatError`), invalid key format (`KeyvalFormatError`), key required (`KeyvalFormatError`), keyval timeout is not enabled (`KeyvalFormatError`), only one key can be added (`KeyvalFormatError`), reading request body failed `BodyReadError`), returns Error
-    - 404 - Keyval not found (`KeyvalNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
-    - 409 - Entry exists (`EntryExists`), key already exists (`KeyvalKeyExists`), returns Error
-    - 413 - Request Entity Too Large, returns Error
-    - 415 - JSON error (`JsonError`), returns Error
-  - `PATCH` - Modify a key-value or delete a key
+    - 201 - Créé
+    - 400 - JSON invalide (`KeyvalFormatError`), format de clé invalide (`KeyvalFormatError`), clé requise (`KeyvalFormatError`), le délai keyval n'est pas activé (`KeyvalFormatError`), une seule clé peut être ajoutée (`KeyvalFormatError`), échec de lecture du corps de la requête `BodyReadError`), renvoie Error
+    - 404 - Keyval introuvable (`KeyvalNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
+    - 409 - L'entrée existe (`EntryExists`), la clé existe déjà (`KeyvalKeyExists`), renvoie Error
+    - 413 - Request Entity Too Large, renvoie Error
+    - 415 - Erreur JSON (`JsonError`), renvoie Error
+  - `PATCH` - Modifie une valeur ou supprime une clé
 
-    Changes the value of the selected key in the key-value pair, deletes a key by setting the key value to `null`, changes expiration time of a key-value pair. If [synchronization](https://nginx.org/en/docs/stream/ngx_stream_zone_sync_module.html#zone_sync) of keyval zones in a cluster is enabled, deletes a key only on a target cluster node. Expiration time is specified in milliseconds with the `expire` parameter which overrides the [`timeout`](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_timeout) parameter of the [keyval\_zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone) directive.
+    Modifie la valeur de la clé choisie dans la paire clé-valeur, supprime une clé en mettant sa valeur à `null`, modifie la durée d'expiration d'une paire. Si la [synchronisation](https://nginx.org/en/docs/stream/ngx_stream_zone_sync_module.html#zone_sync) des zones keyval dans un cluster est activée, la clé n'est supprimée que sur le nœud cible. La durée d'expiration s'indique en millisecondes avec le paramètre `expire`, qui remplace le paramètre [`timeout`](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_timeout) de la directive [keyval\_zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone).
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`streamKeyvalZoneKeyValue` (Stream Keyval Shared Memory Zone, required)**
+    - **`streamKeyvalZoneKeyValue` (Stream Keyval Shared Memory Zone, obligatoire)**
 
-      A new value for the key is specified in the JSON format.
+      La nouvelle valeur de la clé s'indique au format JSON.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 400 - Invalid JSON (`KeyvalFormatError`), key required (`KeyvalFormatError`), keyval timeout is not enabled (`KeyvalFormatError`), only one key can be updated (`KeyvalFormatError`), reading request body failed `BodyReadError`), returns Error
-    - 404 - Keyval not found (`KeyvalNotFound`), keyval key not found (`KeyvalKeyNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
-    - 413 - Request Entity Too Large, returns Error
-    - 415 - JSON error (`JsonError`), returns Error
-  - `DELETE` - Empty the stream keyval zone
+    - 204 - Succès
+    - 400 - JSON invalide (`KeyvalFormatError`), clé requise (`KeyvalFormatError`), le délai keyval n'est pas activé (`KeyvalFormatError`), une seule clé peut être mise à jour (`KeyvalFormatError`), échec de lecture du corps de la requête `BodyReadError`), renvoie Error
+    - 404 - Keyval introuvable (`KeyvalNotFound`), clé keyval introuvable (`KeyvalKeyNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
+    - 413 - Request Entity Too Large, renvoie Error
+    - 415 - Erreur JSON (`JsonError`), renvoie Error
+  - `DELETE` - Vide la zone keyval stream
 
-    Deletes all key-value pairs from the stream keyval shared memory [zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone). If [synchronization](https://nginx.org/en/docs/stream/ngx_stream_zone_sync_module.html#zone_sync) of keyval zones in a cluster is enabled, empties the keyval zone only on a target cluster node.
+    Supprime toutes les paires clé-valeur de la [zone](https://nginx.org/en/docs/stream/ngx_stream_keyval_module.html#keyval_zone) de mémoire partagée keyval stream. Si la [synchronisation](https://nginx.org/en/docs/stream/ngx_stream_zone_sync_module.html#zone_sync) des zones keyval dans un cluster est activée, la zone n'est vidée que sur le nœud cible.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Keyval not found (`KeyvalNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Keyval introuvable (`KeyvalNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/stream/zone_sync/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return sync status of a node
+  - `GET` - Renvoie l'état de synchronisation d'un nœud
 
-    Returns synchronization status of a cluster node.
+    Renvoie l'état de synchronisation d'un nœud du cluster.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Stream Zone Sync Node
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie Stream Zone Sync Node
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/resolvers/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status for all resolver zones
+  - `GET` - Renvoie l'état de toutes les zones de résolveur
 
-    Returns status information for each [resolver zone](https://nginx.org/en/docs/http/ngx_http_core_module.html#resolver_status_zone).
+    Renvoie les informations d'état de chaque [zone de résolveur](https://nginx.org/en/docs/http/ngx_http_core_module.html#resolver_status_zone).
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of resolvers statistics will be output.
+      Limite les champs des statistiques des résolveurs qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "Resolver Zone" objects for all resolvers
-    - 404 - Unknown version (`UnknownVersion`), returns Error
+    - 200 - Succès, renvoie une collection d'objets « Resolver Zone » pour tous les résolveurs
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
 
 - **`/resolvers/{resolverZoneName}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`resolverZoneName` (`string`, required)**
+  - **`resolverZoneName` (`string`, obligatoire)**
 
-    The name of a resolver zone.
+    Nom d'une zone de résolveur.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return statistics of a resolver zone
+  - `GET` - Renvoie les statistiques d'une zone de résolveur
 
-    Returns statistics stored in a particular resolver [zone](https://nginx.org/en/docs/http/ngx_http_core_module.html#resolver_status_zone).
+    Renvoie les statistiques stockées dans une [zone](https://nginx.org/en/docs/http/ngx_http_core_module.html#resolver_status_zone) de résolveur donnée.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of the resolver zone will be output (requests, responses, or both).
+      Limite les champs de la zone de résolveur qui seront affichés (requêtes, réponses, ou les deux).
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Resolver Zone
-    - 404 - Resolver zone not found (`ResolverZoneNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset statistics for a resolver zone.
+    - 200 - Succès, renvoie Resolver Zone
+    - 404 - Zone de résolveur introuvable (`ResolverZoneNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques d'une zone de résolveur.
 
-    Resets statistics in a particular resolver zone.
+    Réinitialise les statistiques d'une zone de résolveur donnée.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Resolver zone not found (`ResolverZoneNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Zone de résolveur introuvable (`ResolverZoneNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/ssl`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return SSL statistics
+  - `GET` - Renvoie les statistiques SSL
 
-    Returns SSL statistics.
+    Renvoie les statistiques SSL.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of SSL statistics will be output.
+      Limite les champs des statistiques SSL qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns SSL
-    - 404 - Unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset SSL statistics
+    - 200 - Succès, renvoie SSL
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques SSL
 
-    Resets counters of SSL handshakes and session reuses.
+    Réinitialise les compteurs de poignées de main SSL et de réutilisations de session.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/license`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return license info
+  - `GET` - Renvoie les informations de licence
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns License
-    - 404 - Unknown version (`UnknownVersion`), returns Error
-  - `PUT` - Apply a license token
+    - 200 - Succès, renvoie License
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
+  - `PUT` - Applique un jeton de licence
 
-    Accepts a raw JWT license token, validates it, saves to the [active token path](https://nginx.org/en/docs/ngx_mgmt_module.html#state_path), and applies it in-memory. Requires the [license\_pending\_token](https://nginx.org/en/docs/ngx_mgmt_module.html#license_pending_token) directive to be configured.
+    Accepte un jeton de licence JWT brut, le valide, l'enregistre dans le [chemin du jeton actif](https://nginx.org/en/docs/ngx_mgmt_module.html#state_path) et l'applique en mémoire. Nécessite la configuration de la directive [license\_pending\_token](https://nginx.org/en/docs/ngx_mgmt_module.html#license_pending_token).
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`putLicenseToken` (A raw JWT license token string to be validated and applied, required)**
+    - **`putLicenseToken` (chaîne de jeton de licence JWT brut à valider et appliquer, obligatoire)**
 
-      A raw JWT license token string to be validated and applied
+      Chaîne de jeton de licence JWT brut à valider et appliquer
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns JWT licence token information
-    - 400 - Invalid license token (`LicenseFormatError`), Request body is empty (`LicenseFormatError`), returns Error
-    - 404 - Unknown version (`UnknownVersion`), returns Error
-    - 409 - Renewed license does not match the current one (`LicenseMismatch`), returns Error
+    - 200 - Succès, renvoie les informations du jeton de licence JWT
+    - 400 - Jeton de licence invalide (`LicenseFormatError`), corps de la requête vide (`LicenseFormatError`), renvoie Error
+    - 404 - Version inconnue (`UnknownVersion`), renvoie Error
+    - 409 - La licence renouvelée ne correspond pas à la licence actuelle (`LicenseMismatch`), renvoie Error
 
 - **`/workers/`**
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return statistics for all worker processes
+  - `GET` - Renvoie les statistiques de tous les processus de travail
 
-    Returns statistics for all worker processes such as accepted, dropped, active, idle connections, total and current requests.
+    Renvoie les statistiques de tous les processus de travail : connexions acceptées, rejetées, actives, inactives, requêtes totales et en cours.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of worker process statistics will be output.
+      Limite les champs des statistiques des processus de travail qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns a collection of "Worker process" objects for all workers
-    - 404 - Worker not found (`WorkerNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset statistics for all worker processes.
+    - 200 - Succès, renvoie une collection d'objets « Worker process » pour tous les processus de travail
+    - 404 - Processus de travail introuvable (`WorkerNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques de tous les processus de travail.
 
-    Resets statistics for all worker processes such as accepted, dropped, active, idle connections, total and current requests.
+    Réinitialise les statistiques de tous les processus de travail : connexions acceptées, rejetées, actives, inactives, requêtes totales et en cours.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Worker not found (`WorkerNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Processus de travail introuvable (`WorkerNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
 - **`/workers/{workerId}`**
 
-  Parameters common for all methods:
+  Paramètres communs à toutes les méthodes :
 
-  - **`workerId` (`string`, required)**
+  - **`workerId` (`string`, obligatoire)**
 
-    The ID of the worker process.
+    Identifiant du processus de travail.
 
-  Supported methods:
+  Méthodes prises en charge :
 
-  - `GET` - Return status of a worker process
+  - `GET` - Renvoie l'état d'un processus de travail
 
-    Returns status of a particular worker process.
+    Renvoie l'état d'un processus de travail donné.
 
-    Request parameters:
+    Paramètres de la requête :
 
-    - **`fields` (`string`, optional)**
+    - **`fields` (`string`, facultatif)**
 
-      Limits which fields of worker process statistics will be output.
+      Limite les champs des statistiques des processus de travail qui seront affichés.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 200 - Success, returns Worker process
-    - 404 - Worker not found (`WorkerNotFound`), unknown version (`UnknownVersion`), returns Error
-  - `DELETE` - Reset statistics for a worker process.
+    - 200 - Succès, renvoie Worker process
+    - 404 - Processus de travail introuvable (`WorkerNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+  - `DELETE` - Réinitialise les statistiques d'un processus de travail.
 
-    Resets statistics of accepted, dropped, active, idle connections, as well as total and current requests.
+    Réinitialise les statistiques des connexions acceptées, rejetées, actives et inactives, ainsi que des requêtes totales et en cours.
 
-    Possible responses:
+    Réponses possibles :
 
-    - 204 - Success
-    - 404 - Worker not found (`WorkerNotFound`), unknown version (`UnknownVersion`), returns Error
-    - 405 - Method disabled (`MethodDisabled`), returns Error
+    - 204 - Succès
+    - 404 - Processus de travail introuvable (`WorkerNotFound`), version inconnue (`UnknownVersion`), renvoie Error
+    - 405 - Méthode désactivée (`MethodDisabled`), renvoie Error
 
-## Response Objects
+## Objets de réponse
 
-- nginx:
+- nginx :
 
-  General information about nginx:
+  Informations générales sur nginx :
 
   - **`version` (`string`)**
 
-    Version of nginx.
+    Version de nginx.
 
   - **`build` (`string`)**
 
-    Name of nginx build.
+    Nom de compilation de nginx.
 
   - **`address` (`string`)**
 
-    The address of the server that accepted status request.
+    Adresse du serveur qui a accepté la requête d'état.
 
   - **`generation` (`integer`)**
 
-    The total number of configuration [reloads](https://nginx.org/en/docs/control.html#reconfiguration).
+    Nombre total de [rechargements](https://nginx.org/en/docs/control.html#reconfiguration) de configuration.
 
   - **`load_timestamp` (`string`)**
 
-    Time of the last reload of configuration, in the ISO 8601 format with millisecond resolution.
+    Heure du dernier rechargement de la configuration, au format ISO 8601 à la milliseconde près.
 
   - **`timestamp` (`string`)**
 
-    Current time in the ISO 8601 format with millisecond resolution.
+    Heure courante au format ISO 8601 à la milliseconde près.
 
   - **`pid` (`integer`)**
 
-    The ID of the worker process that handled status request.
+    Identifiant du processus de travail qui a traité la requête d'état.
 
   - **`ppid` (`integer`)**
 
-    The ID of the master process that started the [worker process](https://nginx.org/en/docs/http/ngx_http_status_module.html#pid).
+    Identifiant du processus maître qui a démarré le [processus de travail](https://nginx.org/en/docs/http/ngx_http_status_module.html#pid).
 
   Exemple :
 
@@ -1384,11 +1381,11 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- Processes:
+- Processus :
 
   - **`respawned` (`integer`)**
 
-    The total number of abnormally terminated and respawned child processes.
+    Nombre total de processus enfants terminés anormalement et relancés.
 
   Exemple :
 
@@ -1397,25 +1394,25 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "respawned" : 0
   }
   ```
-- Connections:
+- Connexions :
 
-  The number of accepted, dropped, active, and idle connections.
+  Nombre de connexions acceptées, rejetées, actives et inactives.
 
   - **`accepted` (`integer`)**
 
-    The total number of accepted client connections.
+    Nombre total de connexions clientes acceptées.
 
   - **`dropped` (`integer`)**
 
-    The total number of dropped client connections.
+    Nombre total de connexions clientes abandonnées.
 
   - **`active` (`integer`)**
 
-    The current number of active client connections.
+    Nombre actuel de connexions clientes actives.
 
   - **`idle` (`integer`)**
 
-    The current number of idle client connections.
+    Nombre actuel de connexions clientes inactives.
 
   Exemple :
 
@@ -1431,55 +1428,55 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`handshakes` (`integer`)**
 
-    The total number of successful SSL handshakes.
+    Nombre total de négociations SSL réussies.
 
   - **`handshakes_failed` (`integer`)**
 
-    The total number of failed SSL handshakes.
+    Nombre total de négociations SSL échouées.
 
   - **`session_reuses` (`integer`)**
 
-    The total number of session reuses during SSL handshake.
+    Nombre total de réutilisations de session lors des négociations SSL.
 
   - **`no_common_protocol` (`integer`)**
 
-    The number of SSL handshakes failed because of no common protocol.
+    Nombre de poignées de main SSL échouées faute de protocole commun.
 
   - **`no_common_cipher` (`integer`)**
 
-    The number of SSL handshakes failed because of no shared cipher.
+    Nombre de poignées de main SSL échouées faute de chiffrement partagé.
 
   - **`handshake_timeout` (`integer`)**
 
-    The number of SSL handshakes failed because of a timeout.
+    Nombre de poignées de main SSL échouées pour dépassement de délai.
 
   - **`peer_rejected_cert` (`integer`)**
 
-    The number of failed SSL handshakes when nginx presented the certificate to the client but it was rejected with a corresponding alert message.
+    Nombre de poignées de main SSL échouées où nginx a présenté son certificat au client, qui l'a rejeté avec un message d'alerte correspondant.
 
   - **`verify_failures`**
 
-    SSL certificate verification errors
+    Erreurs de vérification des certificats SSL
 
     - **`no_cert` (`integer`)**
 
-      A client did not provide the required certificate.
+      Un client n'a pas fourni le certificat requis.
 
     - **`expired_cert` (`integer`)**
 
-      An expired or not yet valid certificate was presented by a client.
+      Un client a présenté un certificat expiré ou pas encore valide.
 
     - **`revoked_cert` (`integer`)**
 
-      A revoked certificate was presented by a client.
+      Un client a présenté un certificat révoqué.
 
     - **`hostname_mismatch` (`integer`)**
 
-      Server's certificate doesn't match the hostname.
+      Le certificat du serveur ne correspond pas au nom d'hôte.
 
     - **`other` (`integer`)**
 
-      Other SSL certificate verification errors.
+      Autres erreurs de vérification des certificats SSL.
 
   Exemple :
 
@@ -1501,27 +1498,27 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- Shared memory zone with slab allocator:
+- Zone de mémoire partagée avec allocateur slab :
 
-  Shared memory zone with slab allocator
+  Zone de mémoire partagée avec allocateur slab
 
   - **`pages`**
 
-    The number of free and used memory pages.
+    Nombre de pages mémoire libres et utilisées.
 
     - **`used` (`integer`)**
 
-      The current number of used memory pages.
+      Nombre actuel de pages mémoire utilisées.
 
     - **`free` (`integer`)**
 
-      The current number of free memory pages.
+      Nombre actuel de pages mémoire libres.
 
   - **`slots`**
 
-    Status data for memory slots (8, 16, 32, 64, 128, etc.)
+    Données d'état des emplacements mémoire (8, 16, 32, 64, 128, etc.)
 
-    A collection of "Memory Slot" objects
+    Une collection d'objets « Memory Slot »
 
   Exemple :
 
@@ -1571,32 +1568,32 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- Memory Slot:
+- Emplacement mémoire :
 
   - **`used` (`integer`)**
 
-    The current number of used memory slots.
+    Nombre actuel d'emplacements mémoire utilisés.
 
   - **`free` (`integer`)**
 
-    The current number of free memory slots.
+    Nombre actuel d'emplacements mémoire libres.
 
   - **`reqs` (`integer`)**
 
-    The total number of attempts to allocate memory of specified size.
+    Nombre total de tentatives d'allocation de mémoire de la taille indiquée.
 
   - **`fails` (`integer`)**
 
-    The number of unsuccessful attempts to allocate memory of specified size.
-- HTTP Requests:
+    Nombre de tentatives d'allocation de mémoire de la taille indiquée qui ont échoué.
+- Requêtes HTTP :
 
   - **`total` (`integer`)**
 
-    The total number of client requests.
+    Nombre total de requêtes des clients.
 
   - **`current` (`integer`)**
 
-    The current number of client requests.
+    Nombre actuel de requêtes des clients.
 
   Exemple :
 
@@ -1606,113 +1603,113 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "current" : 4
   }
   ```
-- HTTP Server Zone:
+- Zone de serveur HTTP :
 
   - **`processing` (`integer`)**
 
-    The number of client requests that are currently being processed.
+    Nombre de requêtes des clients en cours de traitement.
 
   - **`requests` (`integer`)**
 
-    The total number of client requests received from clients.
+    Nombre total de requêtes reçues des clients.
 
   - **`responses`**
 
-    The total number of responses sent to clients, the number of responses with status codes “`1xx`”, “`2xx`”, “`3xx`”, “`4xx`”, and “`5xx`”, and the number of responses per each status code.
+    Nombre total de réponses envoyées aux clients, nombre de réponses avec les codes d'état « `1xx` », « `2xx` », « `3xx` », « `4xx` » et « `5xx` », et nombre de réponses par code d'état.
 
     - **`1xx` (`integer`)**
 
-      The number of responses with “`1xx`” status codes.
+      Nombre de réponses avec un code d'état « `1xx` ».
 
     - **`2xx` (`integer`)**
 
-      The number of responses with “`2xx`” status codes.
+      Nombre de réponses avec un code d'état « `2xx` ».
 
     - **`3xx` (`integer`)**
 
-      The number of responses with “`3xx`” status codes.
+      Nombre de réponses avec un code d'état « `3xx` ».
 
     - **`4xx` (`integer`)**
 
-      The number of responses with “`4xx`” status codes.
+      Nombre de réponses avec un code d'état « `4xx` ».
 
     - **`5xx` (`integer`)**
 
-      The number of responses with “`5xx`” status codes.
+      Nombre de réponses avec un code d'état « `5xx` ».
 
     - **`codes`**
 
-      The number of responses per each status code.
+      Nombre de réponses par code d'état.
 
       - **`codeNumber` (`integer`)**
 
-        The number of responses with this particular status code.
+        Nombre de réponses avec ce code d'état précis.
 
     - **`total` (`integer`)**
 
-      The total number of responses sent to clients.
+      Nombre total de réponses envoyées aux clients.
 
   - **`discarded` (`integer`)**
 
-    The total number of requests completed without sending a response.
+    Nombre total de requêtes terminées sans envoi de réponse.
 
   - **`received` (`integer`)**
 
-    The total number of bytes received from clients.
+    Nombre total d'octets reçus des clients.
 
   - **`sent` (`integer`)**
 
-    The total number of bytes sent to clients.
+    Nombre total d'octets envoyés aux clients.
 
   - **`ssl`**
 
     - **`handshakes` (`integer`)**
 
-      The total number of successful SSL handshakes.
+      Nombre total de négociations SSL réussies.
 
     - **`handshakes_failed` (`integer`)**
 
-      The total number of failed SSL handshakes.
+      Nombre total de négociations SSL échouées.
 
     - **`session_reuses` (`integer`)**
 
-      The total number of session reuses during SSL handshake.
+      Nombre total de réutilisations de session lors des négociations SSL.
 
     - **`no_common_protocol` (`integer`)**
 
-      The number of SSL handshakes failed because of no common protocol.
+      Nombre de poignées de main SSL échouées faute de protocole commun.
 
     - **`no_common_cipher` (`integer`)**
 
-      The number of SSL handshakes failed because of no shared cipher.
+      Nombre de poignées de main SSL échouées faute de chiffrement partagé.
 
     - **`handshake_timeout` (`integer`)**
 
-      The number of SSL handshakes failed because of a timeout.
+      Nombre de poignées de main SSL échouées pour dépassement de délai.
 
     - **`peer_rejected_cert` (`integer`)**
 
-      The number of failed SSL handshakes when nginx presented the certificate to the client but it was rejected with a corresponding alert message.
+      Nombre de poignées de main SSL échouées où nginx a présenté son certificat au client, qui l'a rejeté avec un message d'alerte correspondant.
 
     - **`verify_failures`**
 
-      SSL certificate verification errors
+      Erreurs de vérification des certificats SSL
 
       - **`no_cert` (`integer`)**
 
-        A client did not provide the required certificate.
+        Un client n'a pas fourni le certificat requis.
 
       - **`expired_cert` (`integer`)**
 
-        An expired or not yet valid certificate was presented by a client.
+        Un client a présenté un certificat expiré ou pas encore valide.
 
       - **`revoked_cert` (`integer`)**
 
-        A revoked certificate was presented by a client.
+        Un client a présenté un certificat révoqué.
 
       - **`other` (`integer`)**
 
-        Other SSL certificate verification errors.
+        Autres erreurs de vérification des certificats SSL.
 
   Exemple :
 
@@ -1754,59 +1751,59 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- HTTP Location Zone:
+- Zone de location HTTP :
 
   - **`requests` (`integer`)**
 
-    The total number of client requests received from clients.
+    Nombre total de requêtes reçues des clients.
 
   - **`responses`**
 
-    The total number of responses sent to clients, the number of responses with status codes “`1xx`”, “`2xx`”, “`3xx`”, “`4xx`”, and “`5xx`”, and the number of responses per each status code.
+    Nombre total de réponses envoyées aux clients, nombre de réponses avec les codes d'état « `1xx` », « `2xx` », « `3xx` », « `4xx` » et « `5xx` », et nombre de réponses par code d'état.
 
     - **`1xx` (`integer`)**
 
-      The number of responses with “`1xx`” status codes.
+      Nombre de réponses avec un code d'état « `1xx` ».
 
     - **`2xx` (`integer`)**
 
-      The number of responses with “`2xx`” status codes.
+      Nombre de réponses avec un code d'état « `2xx` ».
 
     - **`3xx` (`integer`)**
 
-      The number of responses with “`3xx`” status codes.
+      Nombre de réponses avec un code d'état « `3xx` ».
 
     - **`4xx` (`integer`)**
 
-      The number of responses with “`4xx`” status codes.
+      Nombre de réponses avec un code d'état « `4xx` ».
 
     - **`5xx` (`integer`)**
 
-      The number of responses with “`5xx`” status codes.
+      Nombre de réponses avec un code d'état « `5xx` ».
 
     - **`codes`**
 
-      The number of responses per each status code.
+      Nombre de réponses par code d'état.
 
       - **`codeNumber` (`integer`)**
 
-        The number of responses with this particular status code.
+        Nombre de réponses avec ce code d'état précis.
 
     - **`total` (`integer`)**
 
-      The total number of responses sent to clients.
+      Nombre total de réponses envoyées aux clients.
 
   - **`discarded` (`integer`)**
 
-    The total number of requests completed without sending a response.
+    Nombre total de requêtes terminées sans envoi de réponse.
 
   - **`received` (`integer`)**
 
-    The total number of bytes received from clients.
+    Nombre total d'octets reçus des clients.
 
   - **`sent` (`integer`)**
 
-    The total number of bytes sent to clients.
+    Nombre total d'octets envoyés aux clients.
 
   Exemple :
 
@@ -1832,113 +1829,113 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "sent" : 19415530115
   }
   ```
-- HTTP Cache:
+- Cache HTTP :
 
   - **`size` (`integer`)**
 
-    The current size of the cache.
+    Taille actuelle du cache.
 
   - **`max_size` (`integer`)**
 
-    The limit on the maximum size of the cache specified in the configuration.
+    Limite de taille maximale du cache indiquée dans la configuration.
 
   - **`cold` (`boolean`)**
 
-    A boolean value indicating whether the “cache loader” process is still loading data from disk into the cache.
+    Booléen indiquant si le processus « chargeur de cache » charge encore des données du disque vers le cache.
 
   - **`hit`**
 
     - **`responses` (`integer`)**
 
-      The total number of [valid](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_valid) responses read from the cache.
+      Nombre total de réponses [valides](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_valid) lues depuis le cache.
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the cache.
+      Nombre total d'octets lus dans le cache.
 
   - **`stale`**
 
     - **`responses` (`integer`)**
 
-      The total number of expired responses read from the cache (see [proxy\_cache\_use\_stale](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_use_stale) and other “`*_cache_use_stale`” directives).
+      Nombre total de réponses expirées lues depuis le cache (voir [proxy\_cache\_use\_stale](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_use_stale) et les autres directives « `*_cache_use_stale` »).
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the cache.
+      Nombre total d'octets lus dans le cache.
 
   - **`updating`**
 
     - **`responses` (`integer`)**
 
-      The total number of expired responses read from the cache while responses were being updated (see [proxy\_cache\_use\_stale](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_use_stale_updating) and other “`*_cache_use_stale`” directives).
+      Nombre total de réponses expirées lues depuis le cache pendant la mise à jour des réponses (voir [proxy\_cache\_use\_stale](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_use_stale_updating) et les autres directives « `*_cache_use_stale` »).
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the cache.
+      Nombre total d'octets lus dans le cache.
 
   - **`revalidated`**
 
     - **`responses` (`integer`)**
 
-      The total number of expired and revalidated responses read from the cache (see [proxy\_cache\_revalidate](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_revalidate) and other “`*_cache_revalidate`” directives.
+      Nombre total de réponses expirées et revalidées lues depuis le cache (voir [proxy\_cache\_revalidate](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_revalidate) et les autres directives « `*_cache_revalidate` »).
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the cache.
+      Nombre total d'octets lus dans le cache.
 
   - **`miss`**
 
     - **`responses` (`integer`)**
 
-      The total number of responses not found in the cache.
+      Nombre total de réponses absentes du cache.
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the proxied server.
+      Nombre total d'octets lus depuis le serveur mandaté.
 
     - **`responses_written` (`integer`)**
 
-      The total number of responses written to the cache.
+      Nombre total de réponses écrites dans le cache.
 
     - **`bytes_written` (`integer`)**
 
-      The total number of bytes written to the cache.
+      Nombre total d'octets écrits dans le cache.
 
   - **`expired`**
 
     - **`responses` (`integer`)**
 
-      The total number of expired responses not taken from the cache.
+      Nombre total de réponses expirées non prises dans le cache.
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the proxied server.
+      Nombre total d'octets lus depuis le serveur mandaté.
 
     - **`responses_written` (`integer`)**
 
-      The total number of responses written to the cache.
+      Nombre total de réponses écrites dans le cache.
 
     - **`bytes_written` (`integer`)**
 
-      The total number of bytes written to the cache.
+      Nombre total d'octets écrits dans le cache.
 
   - **`bypass`**
 
     - **`responses` (`integer`)**
 
-      The total number of responses not looked up in the cache due to the [proxy\_cache\_bypass](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_bypass) and other “`*_cache_bypass`” directives.
+      Nombre total de réponses non recherchées dans le cache à cause de la directive [proxy\_cache\_bypass](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_bypass) et des autres directives « `*_cache_bypass` ».
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the proxied server.
+      Nombre total d'octets lus depuis le serveur mandaté.
 
     - **`responses_written` (`integer`)**
 
-      The total number of responses written to the cache.
+      Nombre total de réponses écrites dans le cache.
 
     - **`bytes_written` (`integer`)**
 
-      The total number of bytes written to the cache.
+      Nombre total d'octets écrits dans le cache.
 
   Exemple :
 
@@ -1981,19 +1978,19 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- HTTP Connections Limiting:
+- Limitation des connexions HTTP :
 
   - **`passed` (`integer`)**
 
-    The total number of connections that were neither limited nor accounted as limited.
+    Nombre total de connexions ni limitées ni comptées comme limitées.
 
   - **`rejected` (`integer`)**
 
-    The total number of connections that were rejected.
+    Nombre total de connexions rejetées.
 
   - **`rejected_dry_run` (`integer`)**
 
-    The total number of connections accounted as rejected in the [dry run](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_dry_run) mode.
+    Nombre total de connexions comptées comme rejetées en mode [simulation](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html#limit_conn_dry_run).
 
   Exemple :
 
@@ -2004,27 +2001,27 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "rejected_dry_run" : 2
   }
   ```
-- HTTP Requests Rate Limiting:
+- Limitation du débit des requêtes HTTP :
 
   - **`passed` (`integer`)**
 
-    The total number of requests that were neither limited nor accounted as limited.
+    Nombre total de requêtes ni limitées ni comptées comme limitées.
 
   - **`delayed` (`integer`)**
 
-    The total number of requests that were delayed.
+    Nombre total de requêtes retardées.
 
   - **`rejected` (`integer`)**
 
-    The total number of requests that were rejected.
+    Nombre total de requêtes rejetées.
 
   - **`delayed_dry_run` (`integer`)**
 
-    The total number of requests accounted as delayed in the [dry run](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_dry_run) mode.
+    Nombre total de requêtes comptées comme retardées en mode [simulation](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_dry_run).
 
   - **`rejected_dry_run` (`integer`)**
 
-    The total number of requests accounted as rejected in the [dry run](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_dry_run) mode.
+    Nombre total de requêtes comptées comme rejetées en mode [simulation](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html#limit_req_dry_run).
 
   Exemple :
 
@@ -2037,289 +2034,289 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "rejected_dry_run" : 2
   }
   ```
-- HTTP Upstream:
+- Groupe amont HTTP :
 
   - **`peers`**
 
-    An array of:
+    Un tableau de :
 
     - **`id` (`integer`)**
 
-      The ID of the server.
+      Identifiant du serveur.
 
     - **`server` (`string`)**
 
-      An [address](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#server) of the server.
+      [Adresse](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#server) du serveur.
 
     - **`service` (`string`)**
 
-      The [service](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#service) parameter value of the [server](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#server) directive.
+      Valeur du paramètre [service](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#service) de la directive [server](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#server).
 
     - **`name` (`string`)**
 
-      The name of the server specified in the [server](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#server) directive.
+      Nom du serveur indiqué dans la directive [server](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#server).
 
     - **`backup` (`boolean`)**
 
-      A boolean value indicating whether the server is a [backup](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#backup) server.
+      Booléen indiquant si le serveur est un serveur de [secours](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#backup).
 
     - **`weight` (`integer`)**
 
-      [Weight](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#weight) of the server.
+      [Poids](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#weight) du serveur.
 
     - **`state` (`string`)**
 
-      Current state, which may be one of “`up`”, “`draining`”, “`down`”, “`unavail`”, “`checking`”, and “`unhealthy`”.
+      État courant, parmi « `up` », « `draining` », « `down` », « `unavail` », « `checking` » et « `unhealthy` ».
 
     - **`active` (`integer`)**
 
-      The current number of active connections.
+      Nombre actuel de connexions actives.
 
     - **`ssl`**
 
       - **`handshakes` (`integer`)**
 
-        The total number of successful SSL handshakes.
+        Nombre total de négociations SSL réussies.
 
       - **`handshakes_failed` (`integer`)**
 
-        The total number of failed SSL handshakes.
+        Nombre total de négociations SSL échouées.
 
       - **`session_reuses` (`integer`)**
 
-        The total number of session reuses during SSL handshake.
+        Nombre total de réutilisations de session lors des négociations SSL.
 
       - **`no_common_protocol` (`integer`)**
 
-        The number of SSL handshakes failed because of no common protocol.
+        Nombre de poignées de main SSL échouées faute de protocole commun.
 
       - **`handshake_timeout` (`integer`)**
 
-        The number of SSL handshakes failed because of a timeout.
+        Nombre de poignées de main SSL échouées pour dépassement de délai.
 
       - **`peer_rejected_cert` (`integer`)**
 
-        The number of failed SSL handshakes when nginx presented the certificate to the upstream server but it was rejected with a corresponding alert message.
+        Nombre de poignées de main SSL échouées où nginx a présenté son certificat au serveur amont, qui l'a rejeté avec un message d'alerte correspondant.
 
       - **`verify_failures`**
 
-        SSL certificate verification errors
+        Erreurs de vérification des certificats SSL
 
         - **`expired_cert` (`integer`)**
 
-          An expired or not yet valid certificate was presented by an upstream server.
+          Un serveur amont a présenté un certificat expiré ou pas encore valide.
 
         - **`revoked_cert` (`integer`)**
 
-          A revoked certificate was presented by an upstream server.
+          Un serveur amont a présenté un certificat révoqué.
 
         - **`hostname_mismatch` (`integer`)**
 
-          Server's certificate doesn't match the hostname.
+          Le certificat du serveur ne correspond pas au nom d'hôte.
 
         - **`other` (`integer`)**
 
-          Other SSL certificate verification errors.
+          Autres erreurs de vérification des certificats SSL.
 
     - **`max_conns` (`integer`)**
 
-      The [max\_conns](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#max_conns) limit for the server.
+      Limite [max\_conns](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#max_conns) du serveur.
 
     - **`requests` (`integer`)**
 
-      The total number of client requests forwarded to this server.
+      Nombre total de requêtes des clients transmises à ce serveur.
 
     - **`responses`**
 
       - **`1xx` (`integer`)**
 
-        The number of responses with “`1xx`” status codes.
+        Nombre de réponses avec un code d'état « `1xx` ».
 
       - **`2xx` (`integer`)**
 
-        The number of responses with “`2xx`” status codes.
+        Nombre de réponses avec un code d'état « `2xx` ».
 
       - **`3xx` (`integer`)**
 
-        The number of responses with “`3xx`” status codes.
+        Nombre de réponses avec un code d'état « `3xx` ».
 
       - **`4xx` (`integer`)**
 
-        The number of responses with “`4xx`” status codes.
+        Nombre de réponses avec un code d'état « `4xx` ».
 
       - **`5xx` (`integer`)**
 
-        The number of responses with “`5xx`” status codes.
+        Nombre de réponses avec un code d'état « `5xx` ».
 
       - **`codes`**
 
-        The number of responses per each status code.
+        Nombre de réponses par code d'état.
 
         - **`codeNumber` (`integer`)**
 
-          The number of responses with this particular status code.
+          Nombre de réponses avec ce code d'état précis.
 
       - **`total` (`integer`)**
 
-        The total number of responses obtained from this server.
+        Nombre total de réponses obtenues de ce serveur.
 
     - **`sent` (`integer`)**
 
-      The total number of bytes sent to this server.
+      Nombre total d'octets envoyés à ce serveur.
 
     - **`received` (`integer`)**
 
-      The total number of bytes received from this server.
+      Nombre total d'octets reçus de ce serveur.
 
     - **`fails` (`integer`)**
 
-      The total number of unsuccessful attempts to communicate with the server.
+      Nombre total de tentatives de communication échouées avec le serveur.
 
     - **`unavail` (`integer`)**
 
-      How many times the server became unavailable for client requests (state “`unavail`”) due to the number of unsuccessful attempts reaching the [max\_fails](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#max_fails) threshold.
+      Nombre de fois où le serveur est devenu indisponible pour les requêtes client (état « `unavail` ») parce que le nombre de tentatives infructueuses a atteint le seuil [max\_fails](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#max_fails).
 
     - **`health_checks`**
 
       - **`checks` (`integer`)**
 
-        The total number of [health check](https://nginx.org/en/docs/http/ngx_http_upstream_hc_module.html#health_check) requests made.
+        Nombre total de requêtes de [vérification de santé](https://nginx.org/en/docs/http/ngx_http_upstream_hc_module.html#health_check) effectuées.
 
       - **`fails` (`integer`)**
 
-        The number of failed health checks.
+        Nombre de vérifications d'état échouées.
 
       - **`unhealthy` (`integer`)**
 
-        How many times the server became unhealthy (state “`unhealthy`”).
+        Nombre de fois où le serveur est devenu défaillant (état « `unhealthy` »).
 
       - **`last_passed` (`boolean`)**
 
-        Boolean indicating if the last health check request was successful and passed [tests](https://nginx.org/en/docs/http/ngx_http_upstream_hc_module.html#match).
+        Booléen indiquant si la dernière requête de vérification de santé a réussi et passé les [tests](https://nginx.org/en/docs/http/ngx_http_upstream_hc_module.html#match).
 
     - **`downtime` (`integer`)**
 
-      Total time the server was in the “`unavail`”, “`checking`”, and “`unhealthy`” states.
+      Durée totale passée par le serveur dans les états « `unavail` », « `checking` » et « `unhealthy` ».
 
     - **`downstart` (`string`)**
 
-      The time when the server became “`unavail`”, “`checking`”, or “`unhealthy`”, in the ISO 8601 format with millisecond resolution.
+      Heure à laquelle le serveur est passé à l'état « `unavail` », « `checking` » ou « `unhealthy` », au format ISO 8601 à la milliseconde près.
 
     - **`selected` (`string`)**
 
-      The time when the server was last selected to process a request, in the ISO 8601 format with millisecond resolution.
+      Heure à laquelle le serveur a été choisi pour la dernière fois pour traiter une requête, au format ISO 8601 à la milliseconde près.
 
     - **`header_time` (`integer`)**
 
-      The average time to get the [response header](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#var_upstream_header_time) from the server.
+      Temps moyen d'obtention de l'[en-tête de réponse](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#var_upstream_header_time) du serveur.
 
     - **`response_time` (`integer`)**
 
-      The average time to get the [full response](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#var_upstream_response_time) from the server.
+      Temps moyen d'obtention de la [réponse complète](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#var_upstream_response_time) du serveur.
 
     - **`response_time_hist`**
 
-      Histogram of upstream response times collected per upstream server.
+      Histogramme des temps de réponse amont, collecté par serveur amont.
 
       - **`count` (`integer`)**
 
-        Total number of recorded responses.
+        Nombre total de réponses enregistrées.
 
       - **`sum` (`integer`)**
 
-        Sum of all recorded upstream response times, in milliseconds.
+        Somme de tous les temps de réponse amont enregistrés, en millisecondes.
 
       - **`buckets`**
 
-        Histogram bucket counters for upstream response times, in milliseconds. Each bucket name ("5","10","25","50", etc.) is a time limit in milliseconds. Each bucket value is the number of responses within that time bucket. The "inf" bucket counts responses greater than 10000 ms.
+        Compteurs des tranches de l'histogramme des temps de réponse amont, en millisecondes. Chaque nom de tranche (« 5 », « 10 », « 25 », « 50 », etc.) est une limite de temps en millisecondes, et chaque valeur le nombre de réponses dans cette tranche. La tranche « inf » compte les réponses de plus de 10000 ms.
 
         - **`5` (`integer`)**
 
-          The total number of responses with response time less than or equal to 5 ms.
+          Nombre total de réponses dont le temps est inférieur ou égal à 5 ms.
 
         - **`10` (`integer`)**
 
-          The total number of responses with response time greater than 5 ms and less than or equal to 10 ms.
+          Nombre total de réponses dont le temps est supérieur à 5 ms et inférieur ou égal à 10 ms.
 
         - **`25` (`integer`)**
 
-          The total number of responses with response time greater than 10 ms and less than or equal to 25 ms.
+          Nombre total de réponses dont le temps est supérieur à 10 ms et inférieur ou égal à 25 ms.
 
         - **`50` (`integer`)**
 
-          The total number of responses with response time greater than 25 ms and less than or equal to 50 ms.
+          Nombre total de réponses dont le temps est supérieur à 25 ms et inférieur ou égal à 50 ms.
 
         - **`75` (`integer`)**
 
-          The total number of responses with response time greater than 50 ms and less than or equal to 75 ms.
+          Nombre total de réponses dont le temps est supérieur à 50 ms et inférieur ou égal à 75 ms.
 
         - **`100` (`integer`)**
 
-          The total number of responses with response time greater than 75 ms and less than or equal to 100 ms.
+          Nombre total de réponses dont le temps est supérieur à 75 ms et inférieur ou égal à 100 ms.
 
         - **`250` (`integer`)**
 
-          The total number of responses with response time greater than 100 ms and less than or equal to 250 ms.
+          Nombre total de réponses dont le temps est supérieur à 100 ms et inférieur ou égal à 250 ms.
 
         - **`500` (`integer`)**
 
-          The total number of responses with response time greater than 250 ms and less than or equal to 500 ms.
+          Nombre total de réponses dont le temps est supérieur à 250 ms et inférieur ou égal à 500 ms.
 
         - **`750` (`integer`)**
 
-          The total number of responses with response time greater than 500 ms and less than or equal to 750 ms.
+          Nombre total de réponses dont le temps est supérieur à 500 ms et inférieur ou égal à 750 ms.
 
         - **`1000` (`integer`)**
 
-          The total number of responses with response time greater than 750 ms and less than or equal to 1000 ms.
+          Nombre total de réponses dont le temps est supérieur à 750 ms et inférieur ou égal à 1000 ms.
 
         - **`2500` (`integer`)**
 
-          The total number of responses with response time greater than 1000 ms and less than or equal to 2500 ms.
+          Nombre total de réponses dont le temps est supérieur à 1000 ms et inférieur ou égal à 2500 ms.
 
         - **`5000` (`integer`)**
 
-          The total number of responses with response time greater than 2500 ms and less than or equal to 5000 ms.
+          Nombre total de réponses dont le temps est supérieur à 2500 ms et inférieur ou égal à 5000 ms.
 
         - **`7500` (`integer`)**
 
-          The total number of responses with response time greater than 5000 ms and less than or equal to 7500 ms.
+          Nombre total de réponses dont le temps est supérieur à 5000 ms et inférieur ou égal à 7500 ms.
 
         - **`10000` (`integer`)**
 
-          The total number of responses with response time greater than 7500 ms and less than or equal to 10000 ms.
+          Nombre total de réponses dont le temps est supérieur à 7500 ms et inférieur ou égal à 10000 ms.
 
         - **`inf` (`integer`)**
 
-          The total number of observations with response time greater than 10000 ms.
+          Nombre total d'observations dont le temps de réponse dépasse 10000 ms.
 
   - **`keepalive` (`integer`)**
 
-    The current number of idle [keepalive](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive) connections.
+    Nombre courant de connexions [keepalive](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive) inactives.
 
   - **`zombies` (`integer`)**
 
-    The current number of servers removed from the group but still processing active client requests.
+    Nombre actuel de serveurs retirés du groupe mais qui traitent encore des requêtes actives.
 
   - **`zone` (`string`)**
 
-    The name of the shared memory [zone](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#zone) that keeps the group’s configuration and run-time state.
+    Nom de la [zone](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#zone) de mémoire partagée qui conserve la configuration et l'état d'exécution du groupe.
 
   - **`queue`**
 
-    For the requests [queue](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#queue), the following data are provided:
+    Pour la [file d'attente](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#queue) des requêtes, les données suivantes sont fournies :
 
     - **`size` (`integer`)**
 
-      The current number of requests in the queue.
+      Nombre actuel de requêtes dans la file.
 
     - **`max_size` (`integer`)**
 
-      The maximum number of requests that can be in the queue at the same time.
+      Nombre maximal de requêtes pouvant se trouver simultanément dans la file.
 
     - **`overflows` (`integer`)**
 
-      The total number of requests rejected due to the queue overflow.
+      Nombre total de requêtes rejetées pour cause de file pleine.
 
   Exemple :
 
@@ -2442,65 +2439,65 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- HTTP Upstream Server:
+- Serveur amont HTTP :
 
-  Dynamically configurable parameters of an HTTP upstream [server](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#server):
+  Paramètres configurables dynamiquement d'un [serveur](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#server) amont HTTP :
 
   - **`id` (`integer`)**
 
-    The ID of the HTTP upstream server. The ID is assigned automatically and cannot be changed.
+    Identifiant du serveur amont HTTP. Il est attribué automatiquement et ne peut pas être modifié.
 
   - **`server` (`string`)**
 
-    Same as the [address](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#server) parameter of the HTTP upstream server. When adding a server, it is possible to specify it as a domain name. In this case, changes of the IP addresses that correspond to a domain name will be monitored and automatically applied to the upstream configuration without the need of restarting nginx. This requires the [resolver](https://nginx.org/en/docs/http/ngx_http_core_module.html#resolver) directive in the “`http`” block. See also the [resolve](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#resolve) parameter of the HTTP upstream server.
+    Identique au paramètre [address](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#server) du serveur amont HTTP. Lors de l'ajout d'un serveur, on peut l'indiquer sous forme de nom de domaine. Les changements des adresses IP correspondantes sont alors surveillés et appliqués automatiquement à la configuration amont sans redémarrer nginx. Cela nécessite la directive [resolver](https://nginx.org/en/docs/http/ngx_http_core_module.html#resolver) dans le bloc « `http` ». Voir aussi le paramètre [resolve](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#resolve) du serveur amont HTTP.
 
   - **`service` (`string`)**
 
-    Same as the [service](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#service) parameter of the HTTP upstream server. This parameter cannot be changed.
+    Identique au paramètre [service](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#service) du serveur amont HTTP. Ce paramètre ne peut pas être modifié.
 
   - **`weight` (`integer`)**
 
-    Same as the [weight](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#weight) parameter of the HTTP upstream server.
+    Identique au paramètre [weight](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#weight) du serveur amont HTTP.
 
   - **`max_conns` (`integer`)**
 
-    Same as the [max\_conns](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#max_conns) parameter of the HTTP upstream server.
+    Identique au paramètre [max\_conns](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#max_conns) du serveur amont HTTP.
 
   - **`max_fails` (`integer`)**
 
-    Same as the [max\_fails](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#max_fails) parameter of the HTTP upstream server.
+    Identique au paramètre [max\_fails](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#max_fails) du serveur amont HTTP.
 
   - **`fail_timeout` (`string`)**
 
-    Same as the [fail\_timeout](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#fail_timeout) parameter of the HTTP upstream server.
+    Identique au paramètre [fail\_timeout](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#fail_timeout) du serveur amont HTTP.
 
   - **`slow_start` (`string`)**
 
-    Same as the [slow\_start](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#slow_start) parameter of the HTTP upstream server.
+    Identique au paramètre [slow\_start](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#slow_start) du serveur amont HTTP.
 
   - **`route` (`string`)**
 
-    Same as the [route](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#route) parameter of the HTTP upstream server.
+    Identique au paramètre [route](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#route) du serveur amont HTTP.
 
   - **`backup` (`boolean`)**
 
-    When `true`, adds a [backup](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#backup) server. This parameter cannot be changed.
+    Avec `true`, ajoute un serveur de [secours](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#backup). Ce paramètre ne peut pas être modifié.
 
   - **`down` (`boolean`)**
 
-    Same as the [down](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#down) parameter of the HTTP upstream server.
+    Identique au paramètre [down](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#down) du serveur amont HTTP.
 
   - **`drain` (`boolean`)**
 
-    Same as the [drain](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#drain) parameter of the HTTP upstream server.
+    Identique au paramètre [drain](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#drain) du serveur amont HTTP.
 
   - **`parent` (`string`)**
 
-    Parent server ID of the resolved server. The ID is assigned automatically and cannot be changed.
+    Identifiant du serveur parent du serveur résolu. Il est attribué automatiquement et ne peut pas être modifié.
 
   - **`host` (`string`)**
 
-    Hostname of the resolved server. The hostname is assigned automatically and cannot be changed.
+    Nom d'hôte du serveur résolu. Il est attribué automatiquement et ne peut pas être modifié.
 
   Exemple :
 
@@ -2518,9 +2515,9 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "down" : true
   }
   ```
-- HTTP Keyval Shared Memory Zone:
+- Zone de mémoire partagée keyval HTTP :
 
-  Contents of an HTTP keyval shared memory zone when using the GET method.
+  Contenu d'une zone de mémoire partagée keyval HTTP avec la méthode GET.
 
   Exemple :
 
@@ -2531,9 +2528,9 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "key3" : "value3"
   }
   ```
-- HTTP Keyval Shared Memory Zone:
+- Zone de mémoire partagée keyval HTTP :
 
-  Contents of an HTTP keyval shared memory zone when using the POST or PATCH methods.
+  Contenu d'une zone de mémoire partagée keyval HTTP avec les méthodes POST ou PATCH.
 
   Exemple :
 
@@ -2547,97 +2544,97 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- Stream Server Zone:
+- Zone de serveur stream :
 
   - **`processing` (`integer`)**
 
-    The number of client connections that are currently being processed.
+    Nombre de connexions clientes en cours de traitement.
 
   - **`connections` (`integer`)**
 
-    The total number of connections accepted from clients.
+    Nombre total de connexions acceptées des clients.
 
   - **`sessions`**
 
-    The total number of completed sessions, and the number of sessions completed with status codes “`2xx`”, “`4xx`”, or “`5xx`”.
+    Nombre total de sessions terminées, et nombre de sessions terminées avec les codes d'état « `2xx` », « `4xx` » ou « `5xx` ».
 
     - **`2xx` (`integer`)**
 
-      The total number of sessions completed with [status codes](https://nginx.org/en/docs/stream/ngx_stream_core_module.html#var_status) “`2xx`”.
+      Nombre total de sessions terminées avec les [codes d'état](https://nginx.org/en/docs/stream/ngx_stream_core_module.html#var_status) « `2xx` ».
 
     - **`4xx` (`integer`)**
 
-      The total number of sessions completed with [status codes](https://nginx.org/en/docs/stream/ngx_stream_core_module.html#var_status) “`4xx`”.
+      Nombre total de sessions terminées avec les [codes d'état](https://nginx.org/en/docs/stream/ngx_stream_core_module.html#var_status) « `4xx` ».
 
     - **`5xx` (`integer`)**
 
-      The total number of sessions completed with [status codes](https://nginx.org/en/docs/stream/ngx_stream_core_module.html#var_status) “`5xx`”.
+      Nombre total de sessions terminées avec les [codes d'état](https://nginx.org/en/docs/stream/ngx_stream_core_module.html#var_status) « `5xx` ».
 
     - **`total` (`integer`)**
 
-      The total number of completed client sessions.
+      Nombre total de sessions clientes terminées.
 
   - **`discarded` (`integer`)**
 
-    The total number of connections completed without creating a session.
+    Nombre total de connexions terminées sans création de session.
 
   - **`received` (`integer`)**
 
-    The total number of bytes received from clients.
+    Nombre total d'octets reçus des clients.
 
   - **`sent` (`integer`)**
 
-    The total number of bytes sent to clients.
+    Nombre total d'octets envoyés aux clients.
 
   - **`ssl`**
 
     - **`handshakes` (`integer`)**
 
-      The total number of successful SSL handshakes.
+      Nombre total de négociations SSL réussies.
 
     - **`handshakes_failed` (`integer`)**
 
-      The total number of failed SSL handshakes.
+      Nombre total de négociations SSL échouées.
 
     - **`session_reuses` (`integer`)**
 
-      The total number of session reuses during SSL handshake.
+      Nombre total de réutilisations de session lors des négociations SSL.
 
     - **`no_common_protocol` (`integer`)**
 
-      The number of SSL handshakes failed because of no common protocol.
+      Nombre de poignées de main SSL échouées faute de protocole commun.
 
     - **`no_common_cipher` (`integer`)**
 
-      The number of SSL handshakes failed because of no shared cipher.
+      Nombre de poignées de main SSL échouées faute de chiffrement partagé.
 
     - **`handshake_timeout` (`integer`)**
 
-      The number of SSL handshakes failed because of a timeout.
+      Nombre de poignées de main SSL échouées pour dépassement de délai.
 
     - **`peer_rejected_cert` (`integer`)**
 
-      The number of failed SSL handshakes when nginx presented the certificate to the client but it was rejected with a corresponding alert message.
+      Nombre de poignées de main SSL échouées où nginx a présenté son certificat au client, qui l'a rejeté avec un message d'alerte correspondant.
 
     - **`verify_failures`**
 
-      SSL certificate verification errors
+      Erreurs de vérification des certificats SSL
 
       - **`no_cert` (`integer`)**
 
-        A client did not provide the required certificate.
+        Un client n'a pas fourni le certificat requis.
 
       - **`expired_cert` (`integer`)**
 
-        An expired or not yet valid certificate was presented by a client.
+        Un client a présenté un certificat expiré ou pas encore valide.
 
       - **`revoked_cert` (`integer`)**
 
-        A revoked certificate was presented by a client.
+        Un client a présenté un certificat révoqué.
 
       - **`other` (`integer`)**
 
-        Other SSL certificate verification errors.
+        Autres erreurs de vérification des certificats SSL.
 
   Exemple :
 
@@ -2673,19 +2670,19 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- Stream Connections Limiting:
+- Limitation des connexions stream :
 
   - **`passed` (`integer`)**
 
-    The total number of connections that were neither limited nor accounted as limited.
+    Nombre total de connexions ni limitées ni comptées comme limitées.
 
   - **`rejected` (`integer`)**
 
-    The total number of connections that were rejected.
+    Nombre total de connexions rejetées.
 
   - **`rejected_dry_run` (`integer`)**
 
-    The total number of connections accounted as rejected in the [dry run](https://nginx.org/en/docs/stream/ngx_stream_limit_conn_module.html#limit_conn_dry_run) mode.
+    Nombre total de connexions comptées comme rejetées en mode [simulation](https://nginx.org/en/docs/stream/ngx_stream_limit_conn_module.html#limit_conn_dry_run).
 
   Exemple :
 
@@ -2696,163 +2693,163 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "rejected_dry_run" : 2
   }
   ```
-- Stream Upstream:
+- Groupe amont stream :
 
   - **`peers`**
 
-    An array of:
+    Un tableau de :
 
     - **`id` (`integer`)**
 
-      The ID of the server.
+      Identifiant du serveur.
 
     - **`server` (`string`)**
 
-      An [address](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#server) of the server.
+      [Adresse](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#server) du serveur.
 
     - **`service` (`string`)**
 
-      The [service](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#service) parameter value of the [server](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#server) directive.
+      Valeur du paramètre [service](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#service) de la directive [server](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#server).
 
     - **`name` (`string`)**
 
-      The name of the server specified in the [server](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#server) directive.
+      Nom du serveur indiqué dans la directive [server](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#server).
 
     - **`backup` (`boolean`)**
 
-      A boolean value indicating whether the server is a [backup](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#backup) server.
+      Booléen indiquant si le serveur est un serveur de [secours](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#backup).
 
     - **`weight` (`integer`)**
 
-      [Weight](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#weight) of the server.
+      [Poids](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#weight) du serveur.
 
     - **`state` (`string`)**
 
-      Current state, which may be one of “`up`”, “`down`”, “`unavail`”, “`checking`”, or “`unhealthy`”.
+      État actuel : « `up` », « `down` », « `unavail` », « `checking` » ou « `unhealthy` ».
 
     - **`active` (`integer`)**
 
-      The current number of connections.
+      Nombre actuel de connexions.
 
     - **`ssl`**
 
       - **`handshakes` (`integer`)**
 
-        The total number of successful SSL handshakes.
+        Nombre total de négociations SSL réussies.
 
       - **`handshakes_failed` (`integer`)**
 
-        The total number of failed SSL handshakes.
+        Nombre total de négociations SSL échouées.
 
       - **`session_reuses` (`integer`)**
 
-        The total number of session reuses during SSL handshake.
+        Nombre total de réutilisations de session lors des négociations SSL.
 
       - **`no_common_protocol` (`integer`)**
 
-        The number of SSL handshakes failed because of no common protocol.
+        Nombre de poignées de main SSL échouées faute de protocole commun.
 
       - **`handshake_timeout` (`integer`)**
 
-        The number of SSL handshakes failed because of a timeout.
+        Nombre de poignées de main SSL échouées pour dépassement de délai.
 
       - **`peer_rejected_cert` (`integer`)**
 
-        The number of failed SSL handshakes when nginx presented the certificate to the upstream server but it was rejected with a corresponding alert message.
+        Nombre de poignées de main SSL échouées où nginx a présenté son certificat au serveur amont, qui l'a rejeté avec un message d'alerte correspondant.
 
       - **`verify_failures`**
 
-        SSL certificate verification errors
+        Erreurs de vérification des certificats SSL
 
         - **`expired_cert` (`integer`)**
 
-          An expired or not yet valid certificate was presented by an upstream server.
+          Un serveur amont a présenté un certificat expiré ou pas encore valide.
 
         - **`revoked_cert` (`integer`)**
 
-          A revoked certificate was presented by an upstream server.
+          Un serveur amont a présenté un certificat révoqué.
 
         - **`hostname_mismatch` (`integer`)**
 
-          Server's certificate doesn't match the hostname.
+          Le certificat du serveur ne correspond pas au nom d'hôte.
 
         - **`other` (`integer`)**
 
-          Other SSL certificate verification errors.
+          Autres erreurs de vérification des certificats SSL.
 
     - **`max_conns` (`integer`)**
 
-      The [max\_conns](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#max_conns) limit for the server.
+      Limite [max\_conns](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#max_conns) du serveur.
 
     - **`connections` (`integer`)**
 
-      The total number of client connections forwarded to this server.
+      Nombre total de connexions clientes transmises à ce serveur.
 
     - **`connect_time` (`integer`)**
 
-      The average time to connect to the upstream server.
+      Temps moyen de connexion au serveur amont.
 
     - **`first_byte_time` (`integer`)**
 
-      The average time to receive the first byte of data.
+      Temps moyen de réception du premier octet de données.
 
     - **`response_time` (`integer`)**
 
-      The average time to receive the last byte of data.
+      Temps moyen de réception du dernier octet de données.
 
     - **`sent` (`integer`)**
 
-      The total number of bytes sent to this server.
+      Nombre total d'octets envoyés à ce serveur.
 
     - **`received` (`integer`)**
 
-      The total number of bytes received from this server.
+      Nombre total d'octets reçus de ce serveur.
 
     - **`fails` (`integer`)**
 
-      The total number of unsuccessful attempts to communicate with the server.
+      Nombre total de tentatives de communication échouées avec le serveur.
 
     - **`unavail` (`integer`)**
 
-      How many times the server became unavailable for client connections (state “`unavail`”) due to the number of unsuccessful attempts reaching the [max\_fails](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#max_fails) threshold.
+      Nombre de fois où le serveur est devenu indisponible pour les connexions client (état « `unavail` ») parce que le nombre de tentatives infructueuses a atteint le seuil [max\_fails](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#max_fails).
 
     - **`health_checks`**
 
       - **`checks` (`integer`)**
 
-        The total number of [health check](https://nginx.org/en/docs/stream/ngx_stream_upstream_hc_module.html#health_check) requests made.
+        Nombre total de requêtes de [vérification de santé](https://nginx.org/en/docs/stream/ngx_stream_upstream_hc_module.html#health_check) effectuées.
 
       - **`fails` (`integer`)**
 
-        The number of failed health checks.
+        Nombre de vérifications d'état échouées.
 
       - **`unhealthy` (`integer`)**
 
-        How many times the server became unhealthy (state “`unhealthy`”).
+        Nombre de fois où le serveur est devenu défaillant (état « `unhealthy` »).
 
       - **`last_passed` (`boolean`)**
 
-        Boolean indicating whether the last health check request was successful and passed [tests](https://nginx.org/en/docs/stream/ngx_stream_upstream_hc_module.html#match).
+        Booléen indiquant si la dernière requête de vérification de santé a réussi et passé les [tests](https://nginx.org/en/docs/stream/ngx_stream_upstream_hc_module.html#match).
 
     - **`downtime` (`integer`)**
 
-      Total time the server was in the “`unavail`”, “`checking`”, and “`unhealthy`” states.
+      Durée totale passée par le serveur dans les états « `unavail` », « `checking` » et « `unhealthy` ».
 
     - **`downstart` (`string`)**
 
-      The time when the server became “`unavail`”, “`checking`”, or “`unhealthy`”, in the ISO 8601 format with millisecond resolution.
+      Heure à laquelle le serveur est passé à l'état « `unavail` », « `checking` » ou « `unhealthy` », au format ISO 8601 à la milliseconde près.
 
     - **`selected` (`string`)**
 
-      The time when the server was last selected to process a connection, in the ISO 8601 format with millisecond resolution.
+      Heure à laquelle le serveur a été choisi pour la dernière fois pour traiter une connexion, au format ISO 8601 à la milliseconde près.
 
   - **`zombies` (`integer`)**
 
-    The current number of servers removed from the group but still processing active client connections.
+    Nombre actuel de serveurs retirés du groupe mais qui traitent encore des connexions actives.
 
   - **`zone` (`string`)**
 
-    The name of the shared memory [zone](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#zone) that keeps the group’s configuration and run-time state.
+    Nom de la [zone](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#zone) de mémoire partagée qui conserve la configuration et l'état d'exécution du groupe.
 
   Exemple :
 
@@ -2928,57 +2925,57 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- Stream Upstream Server:
+- Serveur amont stream :
 
-  Dynamically configurable parameters of a stream upstream [server](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#server):
+  Paramètres configurables dynamiquement d'un [serveur](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#server) amont stream :
 
   - **`id` (`integer`)**
 
-    The ID of the stream upstream server. The ID is assigned automatically and cannot be changed.
+    Identifiant du serveur amont stream. Il est attribué automatiquement et ne peut pas être modifié.
 
   - **`server` (`string`)**
 
-    Same as the [address](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#server) parameter of the stream upstream server. When adding a server, it is possible to specify it as a domain name. In this case, changes of the IP addresses that correspond to a domain name will be monitored and automatically applied to the upstream configuration without the need of restarting nginx. This requires the [resolver](https://nginx.org/en/docs/stream/ngx_stream_core_module.html#resolver) directive in the “`stream`” block. See also the [resolve](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#resolve) parameter of the stream upstream server.
+    Identique au paramètre [address](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#server) du serveur amont stream. Lors de l'ajout d'un serveur, on peut l'indiquer sous forme de nom de domaine. Les changements des adresses IP correspondantes sont alors surveillés et appliqués automatiquement à la configuration amont sans redémarrer nginx. Cela nécessite la directive [resolver](https://nginx.org/en/docs/stream/ngx_stream_core_module.html#resolver) dans le bloc « `stream` ». Voir aussi le paramètre [resolve](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#resolve) du serveur amont stream.
 
   - **`service` (`string`)**
 
-    Same as the [service](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#service) parameter of the stream upstream server. This parameter cannot be changed.
+    Identique au paramètre [service](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#service) du serveur amont stream. Ce paramètre ne peut pas être modifié.
 
   - **`weight` (`integer`)**
 
-    Same as the [weight](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#weight) parameter of the stream upstream server.
+    Identique au paramètre [weight](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#weight) du serveur amont stream.
 
   - **`max_conns` (`integer`)**
 
-    Same as the [max\_conns](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#max_conns) parameter of the stream upstream server.
+    Identique au paramètre [max\_conns](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#max_conns) du serveur amont stream.
 
   - **`max_fails` (`integer`)**
 
-    Same as the [max\_fails](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#max_fails) parameter of the stream upstream server.
+    Identique au paramètre [max\_fails](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#max_fails) du serveur amont stream.
 
   - **`fail_timeout` (`string`)**
 
-    Same as the [fail\_timeout](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#fail_timeout) parameter of the stream upstream server.
+    Identique au paramètre [fail\_timeout](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#fail_timeout) du serveur amont stream.
 
   - **`slow_start` (`string`)**
 
-    Same as the [slow\_start](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#slow_start) parameter of the stream upstream server.
+    Identique au paramètre [slow\_start](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#slow_start) du serveur amont stream.
 
   - **`backup` (`boolean`)**
 
-    When `true`, adds a [backup](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#backup) server. This parameter cannot be changed.
+    Avec `true`, ajoute un serveur de [secours](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#backup). Ce paramètre ne peut pas être modifié.
 
   - **`down` (`boolean`)**
 
-    Same as the [down](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#down) parameter of the stream upstream server.
+    Identique au paramètre [down](https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#down) du serveur amont stream.
 
   - **`parent` (`string`)**
 
-    Parent server ID of the resolved server. The ID is assigned automatically and cannot be changed.
+    Identifiant du serveur parent du serveur résolu. Il est attribué automatiquement et ne peut pas être modifié.
 
   - **`host` (`string`)**
 
-    Hostname of the resolved server. The hostname is assigned automatically and cannot be changed.
+    Nom d'hôte du serveur résolu. Il est attribué automatiquement et ne peut pas être modifié.
 
   Exemple :
 
@@ -2995,9 +2992,9 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "down" : false
   }
   ```
-- Stream Keyval Shared Memory Zone:
+- Zone de mémoire partagée keyval stream :
 
-  Contents of a stream keyval shared memory zone when using the GET method.
+  Contenu d'une zone de mémoire partagée keyval stream avec la méthode GET.
 
   Exemple :
 
@@ -3008,9 +3005,9 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "key3" : "value3"
   }
   ```
-- Stream Keyval Shared Memory Zone:
+- Zone de mémoire partagée keyval stream :
 
-  Contents of a stream keyval shared memory zone when using the POST or PATCH methods.
+  Contenu d'une zone de mémoire partagée keyval stream avec les méthodes POST ou PATCH.
 
   Exemple :
 
@@ -3024,37 +3021,37 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- Stream Zone Sync Node:
+- Nœud de synchronisation de zones stream :
 
   - **`zones`**
 
-    Synchronization information per each shared memory zone.
+    Informations de synchronisation par zone de mémoire partagée.
 
-    A collection of "Sync Zone" objects
+    Une collection d'objets « Sync Zone »
 
   - **`status`**
 
-    Synchronization information per node in a cluster.
+    Informations de synchronisation par nœud du cluster.
 
     - **`bytes_in` (`integer`)**
 
-      The number of bytes received by this node.
+      Nombre d'octets reçus par ce nœud.
 
     - **`msgs_in` (`integer`)**
 
-      The number of messages received by this node.
+      Nombre de messages reçus par ce nœud.
 
     - **`msgs_out` (`integer`)**
 
-      The number of messages sent by this node.
+      Nombre de messages envoyés par ce nœud.
 
     - **`bytes_out` (`integer`)**
 
-      The number of bytes sent by this node.
+      Nombre d'octets envoyés par ce nœud.
 
     - **`nodes_online` (`integer`)**
 
-      The number of peers this node is connected to.
+      Nombre de pairs auxquels ce nœud est connecté.
 
   Exemple :
 
@@ -3079,68 +3076,68 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- Sync Zone:
+- Zone synchronisée :
 
-  Synchronization status of a shared memory zone.
+  État de synchronisation d'une zone de mémoire partagée.
 
   - **`records_pending` (`integer`)**
 
-    The number of records that need to be sent to the cluster.
+    Nombre d'enregistrements à envoyer au cluster.
 
   - **`records_total` (`integer`)**
 
-    The total number of records stored in the shared memory zone.
-- Resolver Zone:
+    Nombre total d'enregistrements stockés dans la zone de mémoire partagée.
+- Zone de résolveur :
 
-  Statistics of DNS requests and responses per particular [resolver zone](https://nginx.org/en/docs/http/ngx_http_core_module.html#resolver_status_zone).
+  Statistiques des requêtes et réponses DNS par [zone de résolveur](https://nginx.org/en/docs/http/ngx_http_core_module.html#resolver_status_zone).
 
   - **`requests`**
 
     - **`name` (`integer`)**
 
-      The total number of requests to resolve names to addresses.
+      Nombre total de requêtes de résolution de noms en adresses.
 
     - **`srv` (`integer`)**
 
-      The total number of requests to resolve SRV records.
+      Nombre total de requêtes de résolution d'enregistrements SRV.
 
     - **`addr` (`integer`)**
 
-      The total number of requests to resolve addresses to names.
+      Nombre total de requêtes de résolution d'adresses en noms.
 
   - **`responses`**
 
     - **`noerror` (`integer`)**
 
-      The total number of successful responses.
+      Nombre total de réponses réussies.
 
     - **`formerr` (`integer`)**
 
-      The total number of FORMERR (`Format error`) responses.
+      Nombre total de réponses FORMERR (`Format error`).
 
     - **`servfail` (`integer`)**
 
-      The total number of SERVFAIL (`Server failure`) responses.
+      Nombre total de réponses SERVFAIL (`Server failure`).
 
     - **`nxdomain` (`integer`)**
 
-      The total number of NXDOMAIN (`Host not found`) responses.
+      Nombre total de réponses NXDOMAIN (`Host not found`).
 
     - **`notimp` (`integer`)**
 
-      The total number of NOTIMP (`Unimplemented`) responses.
+      Nombre total de réponses NOTIMP (`Unimplemented`).
 
     - **`refused` (`integer`)**
 
-      The total number of REFUSED (`Operation refused`) responses.
+      Nombre total de réponses REFUSED (`Operation refused`).
 
     - **`timedout` (`integer`)**
 
-      The total number of timed out requests.
+      Nombre total de requêtes ayant dépassé le délai.
 
     - **`unknown` (`integer`)**
 
-      The total number of requests completed with an unknown error.
+      Nombre total de requêtes terminées par une erreur inconnue.
 
   Exemple :
 
@@ -3165,39 +3162,39 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- License:
+- Licence :
 
-  License and usage reporting status of NGINX Plus instance.
+  État de la licence et du signalement d'usage de l'instance NGINX Plus.
 
   - **`eval` (`boolean`)**
 
-    Indicates whether NGINX Plus license is trial.
+    Indique si la licence NGINX Plus est une licence d'essai.
 
   - **`active_till` (`integer`)**
 
-    The Unix timestamp of license expiration.
+    Horodatage Unix d'expiration de la licence.
 
   - **`reporting`**
 
     - **`healthy` (`boolean`)**
 
-      Indicates whether the reporting state is still considered healthy despite recent failed attempts.
+      Indique si l'état du signalement est toujours considéré comme sain malgré de récentes tentatives échouées.
 
     - **`fails` (`integer`)**
 
-      The number of failed reporting attempts, reset each time the usage report is successfully sent.
+      Nombre de tentatives de signalement échouées, remis à zéro à chaque envoi réussi du rapport d'usage.
 
     - **`grace` (`integer`)**
 
-      The number of seconds before traffic processing is stopped after unsuccessful report attempt.
+      Nombre de secondes avant l'arrêt du traitement du trafic après une tentative de signalement échouée.
 
     - **`uuid` (`string`)**
 
-      The ID of NGINX Plus instance in the UUID format.
+      Identifiant de l'instance NGINX Plus au format UUID.
 
   - **`pending_renewal` (`boolean`)**
 
-    Indicates whether a renewed license token has been [saved as pending](https://nginx.org/en/docs/ngx_mgmt_module.html#license_pending_token) but not yet applied.
+    Indique si un jeton de licence renouvelé a été [enregistré en attente](https://nginx.org/en/docs/ngx_mgmt_module.html#license_pending_token) sans être encore appliqué.
 
   Exemple :
 
@@ -3214,25 +3211,25 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "pending_renewal" : false
   }
   ```
-- JWT licence token information:
+- Informations du jeton de licence JWT :
 
-  Represents the JWT license status and related metadata.
+  Représente l'état de la licence JWT et les métadonnées associées.
 
   - **`id` (`string`)**
 
-    Unique identifier of the license. Example: `"abc123"`
+    Identifiant unique de la licence. Exemple : `"abc123"`
 
   - **`type` (`string`)**
 
-    Type of license. Example: `"commercial"`
+    Type de licence. Exemple : `"commercial"`
 
   - **`status` (`string`)**
 
-    Current status of the license. Example: `"active"`
+    État courant de la licence. Exemple : `"active"`
 
   - **`expires` (`string`)**
 
-    Date and time at which the license expires, in ISO 8601 format. Example: `"2025-12-31T23:59:59Z"`
+    Date et heure d'expiration de la licence, au format ISO 8601. Exemple : `"2025-12-31T23:59:59Z"`
 
   Exemple :
 
@@ -3244,51 +3241,51 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     "expires" : "2025-12-31T23:59:59Z"
   }
   ```
-- Worker process:
+- Processus de travail :
 
-  Statistics per each worker process.
+  Statistiques par processus de travail.
 
   - **`id` (`integer`)**
 
-    The ID of the worker process.
+    Identifiant du processus de travail.
 
   - **`pid` (`integer`)**
 
-    The PID identifier of the worker process used by the operating system.
+    Identifiant PID du processus de travail utilisé par le système d'exploitation.
 
   - **`connections`**
 
-    The number of accepted, dropped, active, and idle connections per worker process.
+    Nombre de connexions acceptées, rejetées, actives et inactives par processus de travail.
 
     - **`accepted` (`integer`)**
 
-      The total number of client connections accepted by the worker process.
+      Nombre total de connexions client acceptées par le processus de travail.
 
     - **`dropped` (`integer`)**
 
-      The total number of client connections dropped by the worker process.
+      Nombre total de connexions client rejetées par le processus de travail.
 
     - **`active` (`integer`)**
 
-      The current number of active client connections that are currently being handled by the worker process.
+      Nombre courant de connexions client actives traitées par le processus de travail.
 
     - **`idle` (`integer`)**
 
-      The number of idle client connections that are currently being handled by the worker process.
+      Nombre de connexions client inactives actuellement traitées par le processus de travail.
 
   - **`http`**
 
     - **`requests`**
 
-      The total number of client requests handled by the worker process.
+      Nombre total de requêtes client traitées par le processus de travail.
 
       - **`total` (`integer`)**
 
-        The total number of client requests received by the worker process.
+        Nombre total de requêtes client reçues par le processus de travail.
 
       - **`current` (`integer`)**
 
-        The current number of client requests that are currently being processed by the worker process.
+        Nombre courant de requêtes client en cours de traitement par le processus de travail.
 
   Exemple :
 
@@ -3310,31 +3307,31 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
     }
   }
   ```
-- Error:
+- Erreur :
 
-  nginx error object.
+  Objet erreur de nginx.
 
   - **`error`**
 
     - **`status` (`integer`)**
 
-      HTTP error code.
+      Code d'erreur HTTP.
 
     - **`text` (`string`)**
 
-      Error description.
+      Description de l'erreur.
 
     - **`code` (`string`)**
 
-      Internal nginx error code.
+      Code d'erreur interne de nginx.
 
   - **`request_id` (`string`)**
 
-    The ID of the request, equals the value of the [$request\_id](https://nginx.org/en/docs/http/ngx_http_core_module.html#var_request_id) variable.
+    Identifiant de la requête, égal à la valeur de la variable [$request\_id](https://nginx.org/en/docs/http/ngx_http_core_module.html#var_request_id).
 
   - **`href` (`string`)**
 
-    Link to reference documentation.
+    Lien vers la documentation de référence.
 
 ## Directives
 

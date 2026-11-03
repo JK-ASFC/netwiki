@@ -1,38 +1,35 @@
 ---
-title: "Understanding preloaded objects"
-description: "Nginx — Understanding preloaded objects. For each incoming request njs creates a separate virtual machine. This brings a lot of benefits such as predictable memory consumption or requests isolation. However, as all requests are isolated, if a request handler…"
+title: "Comprendre les objets préchargés"
+description: "Nginx — Comprendre les objets préchargés. Pour chaque requête entrante, njs crée une machine virtuelle distincte, ce qui présente de nombreux avantages, comme une consommation de mémoire prévisible ou l'isolement des requêtes. Mais comme toutes les requêtes…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
 > [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+> Les objets préchargés ne sont pris en charge qu'avec le moteur JavaScript [[10-guides/04-njs/engine|njs]] ; ils ne sont pas disponibles avec le moteur [[10-guides/04-njs/engine|QuickJS]].
 
-> [!NOTE]
-> Preloaded objects are supported only with the [[10-guides/04-njs/engine|njs]] JavaScript engine and are not available with the [[10-guides/04-njs/engine|QuickJS]] engine.
+Pour chaque requête entrante, njs crée une machine virtuelle distincte, ce qui présente de nombreux avantages, comme une consommation de mémoire prévisible ou l'isolement des requêtes. Mais comme toutes les requêtes sont isolées, un gestionnaire qui a besoin de certaines données doit les lire lui-même, ce qui est inefficace, surtout pour de gros volumes de données.
 
-For each incoming request njs creates a separate virtual machine. This brings a lot of benefits such as predictable memory consumption or requests isolation. However, as all requests are isolated, if a request handler needs to access some data, it has to read it by itself. This is not efficient especially when the amount of data is large.
+Pour pallier cette limite, des objets partagés préchargés ont été introduits. Ils sont créés immuables et n'ont pas de chaîne de prototypes : leurs valeurs ne peuvent pas être modifiées, et on ne peut ni ajouter ni supprimer de propriétés.
 
-To address this limitation, a preloaded shared object was introduced. Such objects are created immutable and do not have prototype chains: their values cannot be changed, properties cannot be added or removed.
+## Travailler avec les objets préchargés
 
-## Working with preload objects
+Voici quelques exemples d'utilisation d'un objet préchargé dans njs :
 
-Here are some examples of how to work with a preload object in njs:
-
-- access properties by name:
+- accéder aux propriétés par leur nom :
 
   ```
   preloaded_object.prop_name
   preloaded_object[prop_name]
   ```
-- enumerate properties:
+- énumérer les propriétés :
 
   ```c
   for (i in preloaded_object_name) {
       ...
   }
   ```
-- apply non-modifying built-in methods using `call()`:
+- appliquer des méthodes intégrées non modifiantes avec `call()` :
 
   ```
   Array.prototype.filter.call(preloaded_object_name, ...)

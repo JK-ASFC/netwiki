@@ -1,12 +1,9 @@
 ---
 title: "image_filter_buffer"
-description: "Directive nginx image_filter_buffer (ngx_http_image_filter_module) — Sets the maximum size of the buffer used for reading images. When the size is exceeded the server returns error 415 Unsupported Media Type."
+description: "Directive nginx image_filter_buffer (ngx_http_image_filter_module) — Définit la taille maximale du tampon utilisé pour lire les images. Au-delà, le serveur renvoie l'erreur 415 Unsupported Media Type."
 tags: [nginx, directive, ngx_http_image_filter_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum size of the buffer used for reading images. When the size is exceeded the server returns error `415 Unsupported Media Type`.
+Définit la taille maximale du tampon utilisé pour lire les images. Au-delà, le serveur renvoie l'erreur `415 Unsupported Media Type`.
 
 ---
 

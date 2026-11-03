@@ -1,22 +1,19 @@
 ---
-title: "Support for QUIC and HTTP/3"
-description: "Nginx — Support for QUIC and HTTP/3. Support for QUIC and HTTP/3 protocols is available since 1.25.0, it is included in Linux binary packages. Please refer to the ngx_http_v3_module documentation."
+title: "Prise en charge de QUIC et HTTP/3"
+description: "Nginx — Prise en charge de QUIC et HTTP/3. La prise en charge des protocoles QUIC et HTTP/3 est disponible depuis la version 1.25.0 et incluse dans les paquets binaires Linux. Consultez la documentation de ngx_http_v3_module."
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+La prise en charge des protocoles [QUIC](https://datatracker.ietf.org/doc/html/rfc9000) et [HTTP/3](https://datatracker.ietf.org/doc/html/rfc9114) est disponible depuis la version 1.25.0 et incluse dans les paquets binaires Linux. Consultez la documentation de [[11-modules/02-http/ngx_http_v3_module|ngx_http_v3_module]].
 
-Support for [QUIC](https://datatracker.ietf.org/doc/html/rfc9000) and [HTTP/3](https://datatracker.ietf.org/doc/html/rfc9114) protocols is available since 1.25.0, it is included in Linux binary packages. Please refer to the [[11-modules/02-http/ngx_http_v3_module|ngx_http_v3_module]] documentation.
+## Compilation à partir des sources
 
-## Building from sources
+La compilation se configure avec la commande `configure`. Voir [[10-guides/01-introduction/configure|Compiler nginx à partir des sources]] pour plus de détails.
 
-The build is configured using the `configure` command. Please refer to [[10-guides/01-introduction/configure|Building nginx from Sources]] for details.
+La bibliothèque [OpenSSL](https://openssl.org) 3.5.1 ou supérieure est recommandée pour compiler nginx avec QUIC. Sinon, une couche de compatibilité [OpenSSL](https://openssl.org) est utilisée, qui ne prend pas en charge les [[12-directives/ssl-early-data|données précoces]]. Les bibliothèques précompilées [BoringSSL](https://boringssl.googlesource.com/boringssl), [LibreSSL](https://www.libressl.org) ou [QuicTLS](https://github.com/quictls/openssl) peuvent aussi être utilisées.
 
-The [OpenSSL](https://openssl.org) library version 3.5.1 or higher is recommended to build nginx with QUIC support. Otherwise, the [OpenSSL](https://openssl.org) compatibility layer will be used that does not support [[12-directives/ssl-early-data|early data]]. Alternatively, [BoringSSL](https://boringssl.googlesource.com/boringssl), [LibreSSL](https://www.libressl.org), or [QuicTLS](https://github.com/quictls/openssl) prebuilt libraries can be used.
-
-Use the following command to configure nginx with [BoringSSL](https://boringssl.googlesource.com/boringssl):
+Commande pour configurer nginx avec [BoringSSL](https://boringssl.googlesource.com/boringssl) :
 
 ```
 ./configure
@@ -26,7 +23,7 @@ Use the following command to configure nginx with [BoringSSL](https://boringssl.
     --with-ld-opt="-L../boringssl/build -lstdc++"
 ```
 
-Alternatively, nginx can be configured with [QuicTLS](https://github.com/quictls/openssl):
+nginx peut aussi être configuré avec [QuicTLS](https://github.com/quictls/openssl) :
 
 ```
 ./configure
@@ -36,7 +33,7 @@ Alternatively, nginx can be configured with [QuicTLS](https://github.com/quictls
     --with-ld-opt="-L../quictls/build/lib"
 ```
 
-Alternatively, nginx can be configured with [LibreSSL](https://www.libressl.org):
+nginx peut aussi être configuré avec [LibreSSL](https://www.libressl.org) :
 
 ```
 ./configure
@@ -48,49 +45,49 @@ Alternatively, nginx can be configured with [LibreSSL](https://www.libressl.org)
 
 Après la configuration, nginx est compilé et installé avec `make`.
 
-## Configuration tips
+## Conseils de configuration
 
-The [[12-directives/listen-http-core|listen]] directive in [[11-modules/02-http/ngx_http_core_module|ngx_http_core_module]] module got a new parameter [[11-modules/02-http/ngx_http_core_module|quic]] which enables HTTP/3 over QUIC on the specified port.
+La directive [[12-directives/listen-http-core|listen]] du module [[11-modules/02-http/ngx_http_core_module|ngx_http_core_module]] dispose d'un nouveau paramètre [[11-modules/02-http/ngx_http_core_module|quic]] qui active HTTP/3 sur QUIC sur le port indiqué.
 
-Along with the `quic` parameter it is also possible to specify the [[11-modules/02-http/ngx_http_core_module|reuseport]] parameter to make it work properly with multiple workers.
+Avec le paramètre `quic`, on peut aussi indiquer le paramètre [[11-modules/02-http/ngx_http_core_module|reuseport]] pour un bon fonctionnement avec plusieurs processus de travail.
 
-To [[12-directives/quic-retry|enable]] address validation:
+Pour [[12-directives/quic-retry|activer]] la validation d'adresse :
 
 ```c
 quic_retry on;
 ```
 
-To [[12-directives/ssl-early-data|enable]] 0-RTT:
+Pour [[12-directives/ssl-early-data|activer]] le 0-RTT :
 
 ```c
 ssl_early_data on;
 ```
 
-To [[12-directives/quic-gso|enable]] GSO (Generic Segmentation Offloading):
+Pour [[12-directives/quic-gso|activer]] le GSO (Generic Segmentation Offloading) :
 
 ```c
 quic_gso on;
 ```
 
-To [[12-directives/quic-host-key|set]] host key for various tokens:
+Pour [[12-directives/quic-host-key|définir]] la clé d'hôte des différents jetons :
 
 ```c
 quic_host_key <filename>;
 ```
 
-QUIC requires TLSv1.3 protocol version which is enabled by default in the [[12-directives/ssl-protocols-http-ssl|ssl_protocols]] directive.
+QUIC nécessite le protocole TLSv1.3, activé par défaut dans la directive [[12-directives/ssl-protocols-http-ssl|ssl_protocols]].
 
-By default, [GSO Linux-specific optimization](http://vger.kernel.org/lpc_net2018_talks/willemdebruijn-lpc2018-udpgso-paper-DRAFT-1.pdf) is disabled. Enable it in case a corresponding network interface is configured to support GSO.
+Par défaut, l'[optimisation GSO propre à Linux](http://vger.kernel.org/lpc_net2018_talks/willemdebruijn-lpc2018-udpgso-paper-DRAFT-1.pdf) est désactivée. Activez-la si l'interface réseau correspondante est configurée pour prendre en charge le GSO.
 
-## Troubleshooting
+## Dépannage
 
-Tips that may help to identify problems:
+Conseils pour identifier les problèmes :
 
-- Ensure nginx is built with the proper SSL library.
-- Ensure nginx is using the proper SSL library in runtime (the `nginx -V` shows what it is currently used).
-- Ensure a client is actually sending requests over QUIC. It is recommended to start with a simple console client such as [ngtcp2](https://nghttp2.org/ngtcp2) to ensure the server is configured properly before trying with real browsers that may be quite picky with certificates.
-- Build nginx with [[10-guides/01-introduction/debugging-log|debug support]] and check the debug log. It should contain all details about the connection and why it failed. All related messages contain the “`quic`” prefix and can be easily filtered out.
-- For a deeper investigation, additional debugging can be enabled using the following macros: `NGX_QUIC_DEBUG_PACKETS`, `NGX_QUIC_DEBUG_FRAMES`, `NGX_QUIC_DEBUG_ALLOC`, `NGX_QUIC_DEBUG_CRYPTO`.
+- Vérifiez que nginx est compilé avec la bonne bibliothèque SSL.
+- Vérifiez que nginx utilise la bonne bibliothèque SSL à l'exécution (`nginx -V` affiche celle utilisée).
+- Vérifiez que le client envoie réellement ses requêtes en QUIC. Il est conseillé de commencer avec un client console simple comme [ngtcp2](https://nghttp2.org/ngtcp2) pour vérifier la configuration du serveur avant d'essayer de vrais navigateurs, parfois très exigeants sur les certificats.
+- Compilez nginx avec la [[10-guides/01-introduction/debugging-log|prise en charge du débogage]] et consultez le journal de débogage. Il contient tous les détails sur la connexion et la raison de son échec. Tous les messages concernés portent le préfixe « `quic` » et se filtrent facilement.
+- Pour aller plus loin, un débogage supplémentaire peut être activé avec les macros suivantes : `NGX_QUIC_DEBUG_PACKETS`, `NGX_QUIC_DEBUG_FRAMES`, `NGX_QUIC_DEBUG_ALLOC`, `NGX_QUIC_DEBUG_CRYPTO`.
 
   ```
   ./configure

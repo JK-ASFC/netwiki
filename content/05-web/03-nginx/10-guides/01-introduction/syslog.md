@@ -1,39 +1,36 @@
 ---
-title: "Logging to syslog"
-description: "Nginx — Logging to syslog. The error_log and access_log directives support logging to syslog. The following parameters configure logging to syslog:"
+title: "Journalisation vers syslog"
+description: "Nginx — Journalisation vers syslog. Les directives error_log et access_log prennent en charge la journalisation vers syslog. Les paramètres suivants la configurent :"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The [[12-directives/error-log|error_log]] and [[12-directives/access-log-http-log|access_log]] directives support logging to syslog. The following parameters configure logging to syslog:
+Les directives [[12-directives/error-log|error_log]] et [[12-directives/access-log-http-log|access_log]] prennent en charge la journalisation vers syslog. Les paramètres suivants la configurent :
 
 - **`server=`*address***
 
-  Defines the address of a syslog server. The address can be specified as a domain name or IP address, with an optional port, or as a UNIX-domain socket path specified after the “`unix:`” prefix. If port is not specified, the UDP port 514 is used. If a domain name resolves to several IP addresses, the first resolved address is used.
+  Définit l'adresse d'un serveur syslog. L'adresse peut être un nom de domaine ou une adresse IP, avec un port facultatif, ou un chemin de socket de domaine UNIX précédé du préfixe « `unix:` ». Sans port, le port UDP 514 est utilisé. Si un nom de domaine se résout en plusieurs adresses IP, la première est utilisée.
 
 - **`facility=`*string***
 
-  Sets facility of syslog messages, as defined in [RFC 3164](https://datatracker.ietf.org/doc/html/rfc3164#section-4.1.1). Facility can be one of “`kern`”, “`user`”, “`mail`”, “`daemon`”, “`auth`”, “`intern`”, “`lpr`”, “`news`”, “`uucp`”, “`clock`”, “`authpriv`”, “`ftp`”, “`ntp`”, “`audit`”, “`alert`”, “`cron`”, “`local0`”..“`local7`”. Default is “`local7`”.
+  Définit la catégorie (facility) des messages syslog, telle que définie dans la [RFC 3164](https://datatracker.ietf.org/doc/html/rfc3164#section-4.1.1). Valeurs possibles : « `kern` », « `user` », « `mail` », « `daemon` », « `auth` », « `intern` », « `lpr` », « `news` », « `uucp` », « `clock` », « `authpriv` », « `ftp` », « `ntp` », « `audit` », « `alert` », « `cron` », « `local0` »..« `local7` ». Par défaut : « `local7` ».
 
 - **`severity=`*string***
 
-  Sets severity of syslog messages for [[12-directives/access-log-http-log|access_log]], as defined in [RFC 3164](https://datatracker.ietf.org/doc/html/rfc3164#section-4.1.1). Possible values are the same as for the second parameter (level) of the [[12-directives/error-log|error_log]] directive. Default is “`info`”.
+  Définit la gravité des messages syslog pour [[12-directives/access-log-http-log|access_log]], telle que définie dans la [RFC 3164](https://datatracker.ietf.org/doc/html/rfc3164#section-4.1.1). Les valeurs possibles sont celles du deuxième paramètre (niveau) de la directive [[12-directives/error-log|error_log]]. Par défaut : « `info` ».
 
   > [!NOTE]
-  > Severity of error messages is determined by nginx, thus the parameter is ignored in the `error_log` directive.
+  > La gravité des messages d'erreur est déterminée par nginx ; le paramètre est donc ignoré dans la directive `error_log`.
 
 - **`tag=`*string***
 
-  Sets the tag of syslog messages. Default is “`nginx`”.
+  Définit l'étiquette des messages syslog. Par défaut : « `nginx` ».
 
 - **`nohostname`**
 
-  Disables adding the “hostname” field into the syslog message header (1.9.7).
+  Désactive l'ajout du champ « hostname » dans l'en-tête du message syslog (1.9.7).
 
-Example syslog configuration:
+Exemple de configuration syslog :
 
 ```nginx
 error_log syslog:server=192.168.1.1 debug;
@@ -43,7 +40,7 @@ access_log syslog:server=[2001:db8::1]:12345,facility=local7,tag=nginx,severity=
 ```
 
 > [!NOTE]
-> Logging to syslog is available since version 1.7.1. As part of our [abonnement commercial](https://nginx.com/products/) logging to syslog is available since version 1.5.3.
+> La journalisation vers syslog est disponible depuis la version 1.7.1. Dans notre [abonnement commercial](https://nginx.com/products/), elle est disponible depuis la version 1.5.3.
 
 ---
 

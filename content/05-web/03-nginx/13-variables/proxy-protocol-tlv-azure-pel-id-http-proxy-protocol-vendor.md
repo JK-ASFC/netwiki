@@ -1,19 +1,16 @@
 ---
 title: "$proxy_protocol_tlv_azure_pel_id (ngx_http_proxy_protocol_vendor_module)"
-description: "Variable nginx $proxy_protocol_tlv_azure_pel_id (ngx_http_proxy_protocol_vendor_module) — TLV value from the PROXY Protocol header representing the LinkID of Azure private endpoint"
+description: "Variable nginx $proxy_protocol_tlv_azure_pel_id (ngx_http_proxy_protocol_vendor_module) — valeur TLV de l'en-tête du protocole PROXY représentant le LinkID du point de terminaison privé Azure"
 tags: [nginx, variable, ngx_http_proxy_protocol_vendor_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$proxy_protocol_tlv_azure_pel_id` |
 | **Module** | [[11-modules/02-http/ngx_http_proxy_protocol_vendor_module\|ngx_http_proxy_protocol_vendor_module]] |
 
-TLV value from the PROXY Protocol header representing the [LinkID of Azure private endpoint](https://learn.microsoft.com/en-us/azure/private-link/private-link-service-overview#getting-connection-information-using-tcp-proxy-v2)
+valeur TLV de l'en-tête du protocole PROXY représentant le [LinkID du point de terminaison privé Azure](https://learn.microsoft.com/en-us/azure/private-link/private-link-service-overview#getting-connection-information-using-tcp-proxy-v2)
 
 ---
 

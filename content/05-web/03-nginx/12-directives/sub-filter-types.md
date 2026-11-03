@@ -1,12 +1,9 @@
 ---
 title: "sub_filter_types"
-description: "Directive nginx sub_filter_types (ngx_http_sub_module) — Enables string replacement in responses with the specified MIME types in addition to “text/html”. The special value “” matches any MIME type (0.8.29)."
+description: "Directive nginx sub_filter_types (ngx_http_sub_module) — Active le remplacement de chaînes dans les réponses des types MIME indiqués, en plus de « text/html ». La valeur spéciale « » correspond à tous les types MIME (0.8.29)."
 tags: [nginx, directive, ngx_http_sub_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables string replacement in responses with the specified MIME types in addition to “`text/html`”. The special value “`*`” matches any MIME type (0.8.29).
+Active le remplacement de chaînes dans les réponses des types MIME indiqués, en plus de « `text/html` ». La valeur spéciale « `*` » correspond à tous les types MIME (0.8.29).
 
 ---
 

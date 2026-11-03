@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_userid_module"
-description: "Module nginx ngx_http_userid_module — The ngx_http_userid_module module sets cookies suitable for client identification. Received and set cookies can be logged using the embedded variables $uid_got and $uid_set. This module is compatible with the mod_uid…"
+description: "Module nginx ngx_http_userid_module — Le module ngx_http_userid_module définit des cookies permettant d'identifier les clients. Les cookies reçus et définis peuvent être journalisés avec les variables intégrées $uid_got et $uid_set. Ce module est compatible…"
 tags: [nginx, module, ngx_http_userid_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_userid_module` module sets cookies suitable for client identification. Received and set cookies can be logged using the embedded variables [[13-variables/uid-got|$uid_got]] and [[13-variables/uid-set|$uid_set]]. This module is compatible with the [mod\_uid](http://www.lexa.ru/programs/mod-uid-eng.html) module for Apache.
+Le module `ngx_http_userid_module` définit des cookies permettant d'identifier les clients. Les cookies reçus et définis peuvent être journalisés avec les variables intégrées [[13-variables/uid-got|$uid_got]] et [[13-variables/uid-set|$uid_set]]. Ce module est compatible avec le module [mod\_uid](http://www.lexa.ru/programs/mod-uid-eng.html) d'Apache.
 
 ## Exemple de configuration
 

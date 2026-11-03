@@ -1,12 +1,9 @@
 ---
 title: "perl_require"
-description: "Directive nginx perl_require (ngx_http_perl_module) — Defines the name of a module that will be loaded during each reconfiguration. Several perl_require directives can be present."
+description: "Directive nginx perl_require (ngx_http_perl_module) — Définit le nom d'un module chargé à chaque reconfiguration. Plusieurs directives perl_require peuvent être présentes."
 tags: [nginx, directive, ngx_http_perl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the name of a module that will be loaded during each reconfiguration. Several `perl_require` directives can be present.
+Définit le nom d'un module chargé à chaque reconfiguration. Plusieurs directives `perl_require` peuvent être présentes.
 
 ---
 

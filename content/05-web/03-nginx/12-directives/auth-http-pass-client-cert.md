@@ -1,12 +1,9 @@
 ---
 title: "auth_http_pass_client_cert"
-description: "Directive nginx auth_http_pass_client_cert (ngx_mail_auth_http_module) — Appends the Auth-SSL-Cert header with the client certificate in the PEM format (urlencoded) to requests sent to the authentication server."
+description: "Directive nginx auth_http_pass_client_cert (ngx_mail_auth_http_module) — Ajoute aux requêtes envoyées au serveur d'authentification l'en-tête Auth-SSL-Cert contenant le certificat du client au format PEM (encodé pour URL)."
 tags: [nginx, directive, ngx_mail_auth_http_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Appends the `Auth-SSL-Cert` header with the [[12-directives/ssl-verify-client-mail-ssl|client]] certificate in the PEM format (urlencoded) to requests sent to the authentication server.
+Ajoute aux requêtes envoyées au serveur d'authentification l'en-tête `Auth-SSL-Cert` contenant le certificat du [[12-directives/ssl-verify-client-mail-ssl|client]] au format PEM (encodé pour URL).
 
 ---
 

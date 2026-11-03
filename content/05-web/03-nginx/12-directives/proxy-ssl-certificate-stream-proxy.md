@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_certificate (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_ssl_certificate (ngx_stream_proxy_module) — Specifies a file with the certificate in the PEM format used for authentication to a proxied server. Depuis la version 1.21.0, le nom de fichier (file) peut contenir des variables."
+description: "Directive nginx proxy_ssl_certificate (ngx_stream_proxy_module) — Indique un fichier contenant le certificat au format PEM utilisé pour s'authentifier auprès d'un serveur mandaté. Depuis la version 1.21.0, le nom de fichier (file) peut contenir des variables."
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with the certificate in the PEM format used for authentication to a proxied server.
+Indique un *fichier* contenant le certificat au format PEM utilisé pour s'authentifier auprès d'un serveur mandaté.
 
 Depuis la version 1.21.0, le nom de fichier (*file*) peut contenir des variables.
 

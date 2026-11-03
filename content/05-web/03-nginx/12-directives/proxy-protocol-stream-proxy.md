@@ -1,12 +1,9 @@
 ---
 title: "proxy_protocol (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_protocol (ngx_stream_proxy_module) — Enables the PROXY protocol for connections to a proxied server. The on parameter enables version 1 of the PROXY protocol (text format). The v2 parameter (1.31.4) enables version 2 of the PROXY…"
+description: "Directive nginx proxy_protocol (ngx_stream_proxy_module) — Active le protocole PROXY pour les connexions vers un serveur mandaté. Le paramètre on active la version 1 du protocole PROXY (format texte). Le paramètre v2 (1.31.4) active la version 2 (format…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the [PROXY protocol](http://www.haproxy.org/download/1.8/doc/proxy-protocol.txt) for connections to a proxied server. The `on` parameter enables version 1 of the PROXY protocol (text format). The `v2` parameter (1.31.4) enables version 2 of the PROXY protocol (binary format).
+Active le [protocole PROXY](http://www.haproxy.org/download/1.8/doc/proxy-protocol.txt) pour les connexions vers un serveur mandaté. Le paramètre `on` active la version 1 du protocole PROXY (format texte). Le paramètre `v2` (1.31.4) active la version 2 (format binaire).
 
 ---
 

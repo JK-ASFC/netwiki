@@ -1,12 +1,9 @@
 ---
 title: "license_token"
-description: "Directive nginx license_token (ngx_mgmt_module) — Specifies a JWT license file. By default, the license.jwt file is expected to be at /etc/nginx/ for Linux or at /usr/local/etc/nginx/ for FreeBSD."
+description: "Directive nginx license_token (ngx_mgmt_module) — Indique un fichier (file) de licence JWT. Par défaut, le fichier license.jwt est attendu dans /etc/nginx/ sous Linux ou /usr/local/etc/nginx/ sous FreeBSD."
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a JWT license *file*. By default, the *license.jwt* file is expected to be at `/etc/nginx/` for Linux or at `/usr/local/etc/nginx/` for FreeBSD.
+Indique un fichier (*file*) de licence JWT. Par défaut, le fichier *license.jwt* est attendu dans `/etc/nginx/` sous Linux ou `/usr/local/etc/nginx/` sous FreeBSD.
 
 ---
 

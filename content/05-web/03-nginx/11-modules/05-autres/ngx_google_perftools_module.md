@@ -1,19 +1,16 @@
 ---
 title: "ngx_google_perftools_module"
-description: "Module nginx ngx_google_perftools_module — The ngx_google_perftools_module module (0.6.29) enables profiling of nginx worker processes using Google Performance Tools. The module is intended for nginx developers."
+description: "Module nginx ngx_google_perftools_module — Le module ngx_google_perftools_module (0.6.29) permet de profiler les processus de travail de nginx avec Google Performance Tools. Il est destiné aux développeurs de nginx."
 tags: [nginx, module, ngx_google_perftools_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_google_perftools_module` (0.6.29) permet de profiler les processus de travail de nginx avec [Google Performance Tools](https://github.com/gperftools/gperftools). Il est destiné aux développeurs de nginx.
 
-The `ngx_google_perftools_module` module (0.6.29) enables profiling of nginx worker processes using [Google Performance Tools](https://github.com/gperftools/gperftools). The module is intended for nginx developers.
-
-This module is not built by default, it should be enabled with the `--with-google_perftools_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-google_perftools_module`.
 
 > [!NOTE]
-> This module requires the [gperftools](https://github.com/gperftools/gperftools) library.
+> Ce module nécessite la bibliothèque [gperftools](https://github.com/gperftools/gperftools).
 
 ## Exemple de configuration
 
@@ -21,7 +18,7 @@ This module is not built by default, it should be enabled with the `--with-googl
 google_perftools_profiles /path/to/profile;
 ```
 
-Profiles will be stored as `/path/to/profile.<worker_pid>`.
+Les profils sont enregistrés sous `/path/to/profile.<worker_pid>`.
 
 ## Directives
 

@@ -1,19 +1,16 @@
 ---
 title: "$otel_parent_id"
-description: "Variable nginx $otel_parent_id (ngx_otel_module) — the identifier of the parent span, for example, dc94d281b0f884ea"
+description: "Variable nginx $otel_parent_id (ngx_otel_module) — identifiant du span parent, par exemple dc94d281b0f884ea"
 tags: [nginx, variable, ngx_otel_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$otel_parent_id` |
 | **Module** | [[11-modules/05-autres/ngx_otel_module\|ngx_otel_module]] |
 
-the identifier of the parent span, for example, `dc94d281b0f884ea`
+identifiant du span parent, par exemple `dc94d281b0f884ea`
 
 ---
 

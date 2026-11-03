@@ -1,17 +1,14 @@
 ---
 title: "ngx_http_status_module"
-description: "Module nginx ngx_http_status_module — The ngx_http_status_module module provides access to various status information."
+description: "Module nginx ngx_http_status_module — Le module ngx_http_status_module donne accès à diverses informations d'état."
 tags: [nginx, module, ngx_http_status_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_status_module` module provides access to various status information.
+Le module `ngx_http_status_module` donne accès à diverses informations d'état.
 
 > [!NOTE]
-> This module was available as part of our [abonnement commercial](https://nginx.com/products/) until 1.13.10. It was superseded by the [[11-modules/02-http/ngx_http_api_module|ngx_http_api_module]] module in 1.13.3.
+> Ce module était disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/) jusqu'à la version 1.13.10. Il a été remplacé par le module [[11-modules/02-http/ngx_http_api_module|ngx_http_api_module]] en version 1.13.3.
 
 ## Exemple de configuration
 
@@ -72,7 +69,7 @@ stream {
 }
 ```
 
-Examples of status requests with this configuration:
+Exemples de requêtes d'état avec cette configuration :
 
 ```nginx
 http://127.0.0.1/status
@@ -89,522 +86,522 @@ http://127.0.0.1/status/stream/upstreams/backend/peers/1
 http://127.0.0.1/status/stream/upstreams/backend/peers/1/weight
 ```
 
-The simple monitoring page is shipped with this distribution, accessible as “`/status.html`” in the default configuration. It requires the locations “`/status`” and “`/status.html`” to be configured as shown above.
+Une page de supervision simple est fournie avec la distribution, accessible à « `/status.html` » dans la configuration par défaut. Elle nécessite que les blocs location « `/status` » et « `/status.html` » soient configurés comme ci-dessus.
 
-## Data
+## Données
 
-The following status information is provided:
+Les informations d'état suivantes sont fournies :
 
 - **`version`**
 
-  Version of the provided data set. The current version is 8.
+  Version du jeu de données fourni. La version actuelle est 8.
 
 - **`nginx_version`**
 
-  Version of nginx.
+  Version de nginx.
 
 - **`nginx_build`**
 
-  Name of nginx build.
+  Nom de compilation de nginx.
 
 - **`address`**
 
-  The address of the server that accepted status request.
+  Adresse du serveur qui a accepté la requête d'état.
 
 - **`generation`**
 
-  The total number of configuration [[10-guides/01-introduction/control|reloads]].
+  Nombre total de [[10-guides/01-introduction/control|rechargements]] de la configuration.
 
 - **`load_timestamp`**
 
-  Time of the last reload of configuration, in milliseconds since Epoch.
+  Heure du dernier rechargement de la configuration, en millisecondes depuis l'Epoch.
 
 - **`timestamp`**
 
-  Current time in milliseconds since Epoch.
+  Heure actuelle en millisecondes depuis l'Epoch.
 
 - **`pid`**
 
-  The ID of the worker process that handled status request.
+  Identifiant du processus de travail qui a traité la requête d'état.
 
 - **`ppid`**
 
-  The ID of the master process that started the worker process.
+  Identifiant du processus maître qui a lancé le processus de travail.
 
 - **`processes`**
 
   - **`respawned`**
 
-    The total number of abnormally terminated and respawned child processes.
+    Nombre total de processus enfants terminés anormalement et relancés.
 
 - **`connections`**
 
   - **`accepted`**
 
-    The total number of accepted client connections.
+    Nombre total de connexions clientes acceptées.
 
   - **`dropped`**
 
-    The total number of dropped client connections.
+    Nombre total de connexions clientes abandonnées.
 
   - **`active`**
 
-    The current number of active client connections.
+    Nombre actuel de connexions clientes actives.
 
   - **`idle`**
 
-    The current number of idle client connections.
+    Nombre actuel de connexions clientes inactives.
 
 - **`ssl`**
 
   - **`handshakes`**
 
-    The total number of successful SSL handshakes.
+    Nombre total de négociations SSL réussies.
 
   - **`handshakes_failed`**
 
-    The total number of failed SSL handshakes.
+    Nombre total de négociations SSL échouées.
 
   - **`session_reuses`**
 
-    The total number of session reuses during SSL handshake.
+    Nombre total de réutilisations de session lors des négociations SSL.
 
 - **`requests`**
 
   - **`total`**
 
-    The total number of client requests.
+    Nombre total de requêtes des clients.
 
   - **`current`**
 
-    The current number of client requests.
+    Nombre actuel de requêtes des clients.
 
 - **`server_zones`**
 
-  For each [[12-directives/status-zone-http-status|status_zone]]:
+  Pour chaque [[12-directives/status-zone-http-status|status_zone]] :
 
   - **`processing`**
 
-    The number of client requests that are currently being processed.
+    Nombre de requêtes des clients en cours de traitement.
 
   - **`requests`**
 
-    The total number of client requests received from clients.
+    Nombre total de requêtes reçues des clients.
 
   - **`responses`**
 
     - **`total`**
 
-      The total number of responses sent to clients.
+      Nombre total de réponses envoyées aux clients.
 
     - **`1xx`, `2xx`, `3xx`, `4xx`, `5xx`**
 
-      The number of responses with status codes 1xx, 2xx, 3xx, 4xx, and 5xx.
+      Nombre de réponses de codes de statut 1xx, 2xx, 3xx, 4xx et 5xx.
 
   - **`discarded`**
 
-    The total number of requests completed without sending a response.
+    Nombre total de requêtes terminées sans envoi de réponse.
 
   - **`received`**
 
-    The total number of bytes received from clients.
+    Nombre total d'octets reçus des clients.
 
   - **`sent`**
 
-    The total number of bytes sent to clients.
+    Nombre total d'octets envoyés aux clients.
 
 - **`slabs`**
 
-  For each shared memory zone that uses slab allocator:
+  Pour chaque zone de mémoire partagée utilisant l'allocateur slab :
 
   - **`pages`**
 
     - **`used`**
 
-      The current number of used memory pages.
+      Nombre actuel de pages mémoire utilisées.
 
     - **`free`**
 
-      The current number of free memory pages.
+      Nombre actuel de pages mémoire libres.
 
   - **`slots`**
 
-    For each memory slot size (8, 16, 32, 64, 128, etc.) the following data are provided:
+    Pour chaque taille d'emplacement mémoire (8, 16, 32, 64, 128, etc.), les données suivantes sont fournies :
 
     - **`used`**
 
-      The current number of used memory slots.
+      Nombre actuel d'emplacements mémoire utilisés.
 
     - **`free`**
 
-      The current number of free memory slots.
+      Nombre actuel d'emplacements mémoire libres.
 
     - **`reqs`**
 
-      The total number of attempts to allocate memory of specified size.
+      Nombre total de tentatives d'allocation de mémoire de la taille indiquée.
 
     - **`fails`**
 
-      The number of unsuccessful attempts to allocate memory of specified size.
+      Nombre de tentatives d'allocation de mémoire de la taille indiquée qui ont échoué.
 
 - **`upstreams`**
 
-  For each [[12-directives/zone-http-upstream|dynamically configurable]] [[12-directives/upstream-http-upstream|group]], the following data are provided:
+  Pour chaque [[12-directives/upstream-http-upstream|groupe]] [[12-directives/zone-http-upstream|configurable dynamiquement]], les données suivantes sont fournies :
 
   - **`peers`**
 
-    For each [[12-directives/server-http-upstream|server]], the following data are provided:
+    Pour chaque [[12-directives/server-http-upstream|serveur]], les données suivantes sont fournies :
 
     - **`id`**
 
-      The ID of the server.
+      Identifiant du serveur.
 
     - **`server`**
 
-      An [[12-directives/server-http-upstream|address]] of the server.
+      [[12-directives/server-http-upstream|Adresse]] du serveur.
 
     - **`name`**
 
-      The name of the server specified in the [[12-directives/server-http-upstream|server]] directive.
+      Nom du serveur indiqué dans la directive [[12-directives/server-http-upstream|server]].
 
     - **`service`**
 
-      The [[11-modules/02-http/ngx_http_upstream_module|service]] parameter value of the [[12-directives/server-http-upstream|server]] directive.
+      Valeur du paramètre [[11-modules/02-http/ngx_http_upstream_module|service]] de la directive [[12-directives/server-http-upstream|server]].
 
     - **`backup`**
 
-      A boolean value indicating whether the server is a [[11-modules/02-http/ngx_http_upstream_module|backup]] server.
+      Booléen indiquant si le serveur est un serveur de [[11-modules/02-http/ngx_http_upstream_module|secours]].
 
     - **`weight`**
 
-      [[11-modules/02-http/ngx_http_upstream_module|Weight]] of the server.
+      [[11-modules/02-http/ngx_http_upstream_module|Poids]] du serveur.
 
     - **`state`**
 
-      Current state, which may be one of “`up`”, “`draining`”, “`down`”, “`unavail`”, “`checking`”, or “`unhealthy`”.
+      État actuel : « `up` », « `draining` », « `down` », « `unavail` », « `checking` » ou « `unhealthy` ».
 
     - **`active`**
 
-      The current number of active connections.
+      Nombre actuel de connexions actives.
 
     - **`max_conns`**
 
-      The [[11-modules/02-http/ngx_http_upstream_module|max_conns]] limit for the server.
+      Limite [[11-modules/02-http/ngx_http_upstream_module|max_conns]] du serveur.
 
     - **`requests`**
 
-      The total number of client requests forwarded to this server.
+      Nombre total de requêtes des clients transmises à ce serveur.
 
     - **`responses`**
 
       - **`total`**
 
-        The total number of responses obtained from this server.
+        Nombre total de réponses obtenues de ce serveur.
 
       - **`1xx`, `2xx`, `3xx`, `4xx`, `5xx`**
 
-        The number of responses with status codes 1xx, 2xx, 3xx, 4xx, and 5xx.
+        Nombre de réponses de codes de statut 1xx, 2xx, 3xx, 4xx et 5xx.
 
     - **`sent`**
 
-      The total number of bytes sent to this server.
+      Nombre total d'octets envoyés à ce serveur.
 
     - **`received`**
 
-      The total number of bytes received from this server.
+      Nombre total d'octets reçus de ce serveur.
 
     - **`fails`**
 
-      The total number of unsuccessful attempts to communicate with the server.
+      Nombre total de tentatives de communication échouées avec le serveur.
 
     - **`unavail`**
 
-      How many times the server became unavailable for client requests (state “`unavail`”) due to the number of unsuccessful attempts reaching the [[11-modules/02-http/ngx_http_upstream_module|max_fails]] threshold.
+      Nombre de fois où le serveur est devenu indisponible pour les requêtes des clients (état « `unavail` ») parce que le nombre de tentatives échouées a atteint le seuil [[11-modules/02-http/ngx_http_upstream_module|max_fails]].
 
     - **`health_checks`**
 
       - **`checks`**
 
-        The total number of [[12-directives/health-check-http-upstream-hc|health check]] requests made.
+        Nombre total de requêtes de [[12-directives/health-check-http-upstream-hc|vérification d'état]] effectuées.
 
       - **`fails`**
 
-        The number of failed health checks.
+        Nombre de vérifications d'état échouées.
 
       - **`unhealthy`**
 
-        How many times the server became unhealthy (state “`unhealthy`”).
+        Nombre de fois où le serveur est devenu défaillant (état « `unhealthy` »).
 
       - **`last_passed`**
 
-        Boolean indicating if the last health check request was successful and passed [[12-directives/match-http-upstream-hc|tests]].
+        Booléen indiquant si la dernière vérification d'état a réussi et passé les [[12-directives/match-http-upstream-hc|tests]].
 
     - **`downtime`**
 
-      Total time the server was in the “`unavail`”, “`checking`”, and “`unhealthy`” states.
+      Durée totale passée par le serveur dans les états « `unavail` », « `checking` » et « `unhealthy` ».
 
     - **`downstart`**
 
-      The time (in milliseconds since Epoch) when the server became “`unavail`”, “`checking`”, or “`unhealthy`”.
+      Heure (en millisecondes depuis l'Epoch) à laquelle le serveur est passé à l'état « `unavail` », « `checking` » ou « `unhealthy` ».
 
     - **`selected`**
 
-      The time (in milliseconds since Epoch) when the server was last selected to process a request (1.7.5).
+      Heure (en millisecondes depuis l'Epoch) à laquelle le serveur a été choisi pour la dernière fois pour traiter une requête (1.7.5).
 
     - **`header_time`**
 
-      The average time to get the [[13-variables/upstream-header-time|response header]] from the server (1.7.10). Prior to version 1.11.6, the field was available only when using the [[12-directives/least-time-http-upstream|least_time]] load balancing method.
+      Durée moyenne d'obtention de l'[[13-variables/upstream-header-time|en-tête de réponse]] du serveur (1.7.10). Avant la version 1.11.6, ce champ n'était disponible qu'avec la méthode de répartition [[12-directives/least-time-http-upstream|least_time]].
 
     - **`response_time`**
 
-      The average time to get the [[13-variables/upstream-response-time|full response]] from the server (1.7.10). Prior to version 1.11.6, the field was available only when using the [[12-directives/least-time-http-upstream|least_time]] load balancing method.
+      Durée moyenne d'obtention de la [[13-variables/upstream-response-time|réponse complète]] du serveur (1.7.10). Avant la version 1.11.6, ce champ n'était disponible qu'avec la méthode de répartition [[12-directives/least-time-http-upstream|least_time]].
 
   - **`keepalive`**
 
-    The current number of idle [[12-directives/keepalive|keepalive]] connections.
+    Nombre actuel de connexions [[12-directives/keepalive|persistantes]] inactives.
 
   - **`zombies`**
 
-    The current number of servers removed from the group but still processing active client requests.
+    Nombre actuel de serveurs retirés du groupe mais qui traitent encore des requêtes actives.
 
   - **`zone`**
 
-    The name of the shared memory [[12-directives/zone-http-upstream|zone]] that keeps the group’s configuration and run-time state.
+    Nom de la [[12-directives/zone-http-upstream|zone]] de mémoire partagée qui conserve la configuration et l'état d'exécution du groupe.
 
   - **`queue`**
 
-    For the requests [[12-directives/queue|queue]], the following data are provided:
+    Pour la [[12-directives/queue|file d'attente]] des requêtes, les données suivantes sont fournies :
 
     - **`size`**
 
-      The current number of requests in the queue.
+      Nombre actuel de requêtes dans la file.
 
     - **`max_size`**
 
-      The maximum number of requests that can be in the queue at the same time.
+      Nombre maximal de requêtes pouvant se trouver simultanément dans la file.
 
     - **`overflows`**
 
-      The total number of requests rejected due to the queue overflow.
+      Nombre total de requêtes rejetées pour cause de file pleine.
 
 - **`caches`**
 
-  For each cache (configured by [[12-directives/proxy-cache-path|proxy_cache_path]] and the likes):
+  Pour chaque cache (configuré par [[12-directives/proxy-cache-path|proxy_cache_path]] et équivalents) :
 
   - **`size`**
 
-    The current size of the cache.
+    Taille actuelle du cache.
 
   - **`max_size`**
 
-    The limit on the maximum size of the cache specified in the configuration.
+    Limite de taille maximale du cache indiquée dans la configuration.
 
   - **`cold`**
 
-    A boolean value indicating whether the “cache loader” process is still loading data from disk into the cache.
+    Booléen indiquant si le processus « chargeur de cache » charge encore des données du disque vers le cache.
 
   - **`hit`, `stale`, `updating`, `revalidated`**
 
     - **`responses`**
 
-      The total number of responses read from the cache (hits, or stale responses due to [[12-directives/proxy-cache-use-stale|proxy_cache_use_stale]] and the likes).
+      Nombre total de réponses lues dans le cache (succès, ou réponses périmées dues à [[12-directives/proxy-cache-use-stale|proxy_cache_use_stale]] et équivalents).
 
     - **`bytes`**
 
-      The total number of bytes read from the cache.
+      Nombre total d'octets lus dans le cache.
 
   - **`miss`, `expired`, `bypass`**
 
     - **`responses`**
 
-      The total number of responses not taken from the cache (misses, expires, or bypasses due to [[12-directives/proxy-cache-bypass|proxy_cache_bypass]] and the likes).
+      Nombre total de réponses non prises dans le cache (absences, expirations ou contournements dus à [[12-directives/proxy-cache-bypass|proxy_cache_bypass]] et équivalents).
 
     - **`bytes`**
 
-      The total number of bytes read from the proxied server.
+      Nombre total d'octets lus depuis le serveur mandaté.
 
     - **`responses_written`**
 
-      The total number of responses written to the cache.
+      Nombre total de réponses écrites dans le cache.
 
     - **`bytes_written`**
 
-      The total number of bytes written to the cache.
+      Nombre total d'octets écrits dans le cache.
 
 - **`stream`**
 
   - **`server_zones`**
 
-    For each [[12-directives/status-zone-http-status|status_zone]]:
+    Pour chaque [[12-directives/status-zone-http-status|status_zone]] :
 
     - **`processing`**
 
-      The number of client connections that are currently being processed.
+      Nombre de connexions clientes en cours de traitement.
 
     - **`connections`**
 
-      The total number of connections accepted from clients.
+      Nombre total de connexions acceptées des clients.
 
     - **`sessions`**
 
       - **`total`**
 
-        The total number of completed client sessions.
+        Nombre total de sessions clientes terminées.
 
       - **`2xx`, `4xx`, `5xx`**
 
-        The number of sessions completed with [[13-variables/status-stream-core|status codes]] 2xx, 4xx, or 5xx.
+        Nombre de sessions terminées avec les [[13-variables/status-stream-core|codes de statut]] 2xx, 4xx ou 5xx.
 
     - **`discarded`**
 
-      The total number of connections completed without creating a session.
+      Nombre total de connexions terminées sans création de session.
 
     - **`received`**
 
-      The total number of bytes received from clients.
+      Nombre total d'octets reçus des clients.
 
     - **`sent`**
 
-      The total number of bytes sent to clients.
+      Nombre total d'octets envoyés aux clients.
 
   - **`upstreams`**
 
-    For each [[12-directives/zone-stream-upstream|dynamically configurable]] [[12-directives/upstream-stream-upstream|group]], the following data are provided:
+    Pour chaque [[12-directives/upstream-stream-upstream|groupe]] [[12-directives/zone-stream-upstream|configurable dynamiquement]], les données suivantes sont fournies :
 
     - **`peers`**
 
-      For each [[12-directives/server-stream-upstream|server]] the following data are provided:
+      Pour chaque [[12-directives/server-stream-upstream|serveur]], les données suivantes sont fournies :
 
       - **`id`**
 
-        The ID of the server.
+        Identifiant du serveur.
 
       - **`server`**
 
-        An [[12-directives/server-stream-upstream|address]] of the server.
+        [[12-directives/server-stream-upstream|Adresse]] du serveur.
 
       - **`name`**
 
-        The name of the server specified in the [[12-directives/server-stream-upstream|server]] directive.
+        Nom du serveur indiqué dans la directive [[12-directives/server-stream-upstream|server]].
 
       - **`service`**
 
-        The [[11-modules/03-stream/ngx_stream_upstream_module|service]] parameter value of the [[12-directives/server-stream-upstream|server]] directive.
+        Valeur du paramètre [[11-modules/03-stream/ngx_stream_upstream_module|service]] de la directive [[12-directives/server-stream-upstream|server]].
 
       - **`backup`**
 
-        A boolean value indicating whether the server is a [[11-modules/03-stream/ngx_stream_upstream_module|backup]] server.
+        Booléen indiquant si le serveur est un serveur de [[11-modules/03-stream/ngx_stream_upstream_module|secours]].
 
       - **`weight`**
 
-        [[11-modules/03-stream/ngx_stream_upstream_module|Weight]] of the server.
+        [[11-modules/03-stream/ngx_stream_upstream_module|Poids]] du serveur.
 
       - **`state`**
 
-        Current state, which may be one of “`up`”, “`down`”, “`unavail`”, “`checking`”, or “`unhealthy`”.
+        État actuel : « `up` », « `down` », « `unavail` », « `checking` » ou « `unhealthy` ».
 
       - **`active`**
 
-        The current number of connections.
+        Nombre actuel de connexions.
 
       - **`max_conns`**
 
-        The [[11-modules/03-stream/ngx_stream_upstream_module|max_conns]] limit for the server.
+        Limite [[11-modules/03-stream/ngx_stream_upstream_module|max_conns]] du serveur.
 
       - **`connections`**
 
-        The total number of client connections forwarded to this server.
+        Nombre total de connexions clientes transmises à ce serveur.
 
       - **`connect_time`**
 
-        The average time to connect to the upstream server. Prior to version 1.11.6, the field was available only when using the [[12-directives/least-time-stream-upstream|least_time]] load balancing method.
+        Durée moyenne de connexion au serveur amont. Avant la version 1.11.6, ce champ n'était disponible qu'avec la méthode de répartition [[12-directives/least-time-stream-upstream|least_time]].
 
       - **`first_byte_time`**
 
-        The average time to receive the first byte of data. Prior to version 1.11.6, the field was available only when using the [[12-directives/least-time-stream-upstream|least_time]] load balancing method.
+        Durée moyenne de réception du premier octet de données. Avant la version 1.11.6, ce champ n'était disponible qu'avec la méthode de répartition [[12-directives/least-time-stream-upstream|least_time]].
 
       - **`response_time`**
 
-        The average time to receive the last byte of data. Prior to version 1.11.6, the field was available only when using the [[12-directives/least-time-stream-upstream|least_time]] load balancing method.
+        Durée moyenne de réception du dernier octet de données. Avant la version 1.11.6, ce champ n'était disponible qu'avec la méthode de répartition [[12-directives/least-time-stream-upstream|least_time]].
 
       - **`sent`**
 
-        The total number of bytes sent to this server.
+        Nombre total d'octets envoyés à ce serveur.
 
       - **`received`**
 
-        The total number of bytes received from this server.
+        Nombre total d'octets reçus de ce serveur.
 
       - **`fails`**
 
-        The total number of unsuccessful attempts to communicate with the server.
+        Nombre total de tentatives de communication échouées avec le serveur.
 
       - **`unavail`**
 
-        How many times the server became unavailable for client connections (state “`unavail`”) due to the number of unsuccessful attempts reaching the [[11-modules/03-stream/ngx_stream_upstream_module|max_fails]] threshold.
+        Nombre de fois où le serveur est devenu indisponible pour les connexions des clients (état « `unavail` ») parce que le nombre de tentatives échouées a atteint le seuil [[11-modules/03-stream/ngx_stream_upstream_module|max_fails]].
 
       - **`health_checks`**
 
         - **`checks`**
 
-          The total number of [[12-directives/health-check-stream-upstream-hc|health check]] requests made.
+          Nombre total de requêtes de [[12-directives/health-check-stream-upstream-hc|vérification d'état]] effectuées.
 
         - **`fails`**
 
-          The number of failed health checks.
+          Nombre de vérifications d'état échouées.
 
         - **`unhealthy`**
 
-          How many times the server became unhealthy (state “`unhealthy`”).
+          Nombre de fois où le serveur est devenu défaillant (état « `unhealthy` »).
 
         - **`last_passed`**
 
-          Boolean indicating if the last health check request was successful and passed [[12-directives/match-stream-upstream-hc|tests]].
+          Booléen indiquant si la dernière vérification d'état a réussi et passé les [[12-directives/match-stream-upstream-hc|tests]].
 
       - **`downtime`**
 
-        Total time the server was in the “`unavail`”, “`checking`”, and “`unhealthy`” states.
+        Durée totale passée par le serveur dans les états « `unavail` », « `checking` » et « `unhealthy` ».
 
       - **`downstart`**
 
-        The time (in milliseconds since Epoch) when the server became “`unavail`”, “`checking`”, or “`unhealthy`”.
+        Heure (en millisecondes depuis l'Epoch) à laquelle le serveur est passé à l'état « `unavail` », « `checking` » ou « `unhealthy` ».
 
       - **`selected`**
 
-        The time (in milliseconds since Epoch) when the server was last selected to process a connection.
+        Heure (en millisecondes depuis l'Epoch) à laquelle le serveur a été choisi pour la dernière fois pour traiter une connexion.
 
     - **`zombies`**
 
-      The current number of servers removed from the group but still processing active client connections.
+      Nombre actuel de serveurs retirés du groupe mais qui traitent encore des connexions actives.
 
     - **`zone`**
 
-      The name of the shared memory [[12-directives/zone-stream-upstream|zone]] that keeps the group’s configuration and run-time state.
+      Nom de la [[12-directives/zone-stream-upstream|zone]] de mémoire partagée qui conserve la configuration et l'état d'exécution du groupe.
 
 ## Compatibilité
 
-- The `zone` field in http and stream upstreams was added in `version` 8.
-- The `slabs` status data were added in `version` 8.
-- The checking state was added in `version` 8.
-- The `name` and `service` fields in http and stream upstreams were added in `version` 8.
-- The `nginx_build` and `ppid` fields were added in `version` 8.
-- The `sessions` status data and the discarded field in stream server\_zones were added in `version` 7.
-- The `zombies` field was moved from nginx [[10-guides/01-introduction/debugging-log|debug]] version in `version` 6.
-- The `ssl` status data were added in `version` 6.
-- The `discarded` field in `server_zones` was added in `version` 6.
-- The `queue` status data were added in `version` 6.
-- The `pid` field was added in `version` 6.
-- The list of servers in `upstreams` was moved into `peers` in `version` 6.
-- The `keepalive` field of an upstream server was removed in `version` 5.
-- The stream status data were added in `version` 5.
-- The `generation` field was added in `version` 5.
-- The `respawned` field in `processes` was added in `version` 5.
-- The `header_time` and `response_time` fields in `upstreams` were added in `version` 5.
-- The `selected` field in `upstreams` was added in `version` 4.
-- The draining state in `upstreams` was added in `version` 4.
-- The `id` and `max_conns` fields in `upstreams` were added in `version` 3.
-- The `revalidated` field in `caches` was added in `version` 3.
-- The `server_zones`, `caches`, and `load_timestamp` status data were added in `version` 2.
+- Le champ `zone` des groupes amont http et stream a été ajouté en `version` 8.
+- Les données d'état `slabs` ont été ajoutées en `version` 8.
+- L'état checking a été ajouté en `version` 8.
+- Les champs `name` et `service` des groupes amont http et stream ont été ajoutés en `version` 8.
+- Les champs `nginx_build` et `ppid` ont été ajoutés en `version` 8.
+- Les données d'état `sessions` et le champ discarded des server\_zones stream ont été ajoutés en `version` 7.
+- Le champ `zombies` a été déplacé de la version de [[10-guides/01-introduction/debugging-log|débogage]] de nginx en `version` 6.
+- Les données d'état `ssl` ont été ajoutées en `version` 6.
+- Le champ `discarded` des `server_zones` a été ajouté en `version` 6.
+- Les données d'état `queue` ont été ajoutées en `version` 6.
+- Le champ `pid` a été ajouté en `version` 6.
+- La liste des serveurs des `upstreams` a été déplacée dans `peers` en `version` 6.
+- Le champ `keepalive` d'un serveur amont a été supprimé en `version` 5.
+- Les données d'état stream ont été ajoutées en `version` 5.
+- Le champ `generation` a été ajouté en `version` 5.
+- Le champ `respawned` de `processes` a été ajouté en `version` 5.
+- Les champs `header_time` et `response_time` des `upstreams` ont été ajoutés en `version` 5.
+- Le champ `selected` des `upstreams` a été ajouté en `version` 4.
+- L'état draining des `upstreams` a été ajouté en `version` 4.
+- Les champs `id` et `max_conns` des `upstreams` ont été ajoutés en `version` 3.
+- Le champ `revalidated` des `caches` a été ajouté en `version` 3.
+- Les données d'état `server_zones`, `caches` et `load_timestamp` ont été ajoutées en `version` 2.
 
 ## Directives
 

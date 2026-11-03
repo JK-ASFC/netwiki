@@ -1,12 +1,9 @@
 ---
 title: "xslt_stylesheet"
-description: "Directive nginx xslt_stylesheet (ngx_http_xslt_module) — Defines the XSLT stylesheet and its optional parameters. A stylesheet is compiled at the configuration stage. Parameters can either be specified separately, or grouped in a single line using the “:”…"
+description: "Directive nginx xslt_stylesheet (ngx_http_xslt_module) — Définit la feuille de style XSLT et ses paramètres facultatifs. La feuille de style est compilée lors de la configuration. Les paramètres peuvent être indiqués séparément ou regroupés sur une ligne…"
 tags: [nginx, directive, ngx_http_xslt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,15 +14,15 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the XSLT stylesheet and its optional parameters. A stylesheet is compiled at the configuration stage.
+Définit la feuille de style XSLT et ses paramètres facultatifs. La feuille de style est compilée lors de la configuration.
 
-Parameters can either be specified separately, or grouped in a single line using the “`:`” delimiter. If a parameter includes the “`:`” character, it should be escaped as “`%3A`”. Also, `libxslt` requires to enclose parameters that contain non-alphanumeric characters into single or double quotes, for example:
+Les paramètres peuvent être indiqués séparément ou regroupés sur une ligne avec le séparateur « `:` ». Si un paramètre contient le caractère « `:` », il doit être échappé en « `%3A` ». En outre, `libxslt` exige que les paramètres contenant des caractères non alphanumériques soient placés entre guillemets simples ou doubles, par exemple :
 
 ```nginx
 param1='http%3A//www.example.com':param2=value2
 ```
 
-The parameters description can contain variables, for example, the whole line of parameters can be taken from a single variable:
+La description des paramètres peut contenir des variables ; par exemple, toute la ligne de paramètres peut provenir d'une seule variable :
 
 ```nginx
 location / {
@@ -36,7 +33,7 @@ location / {
 }
 ```
 
-It is possible to specify several stylesheets. They will be applied sequentially in the specified order.
+On peut indiquer plusieurs feuilles de style ; elles sont appliquées successivement dans l'ordre indiqué.
 
 ---
 

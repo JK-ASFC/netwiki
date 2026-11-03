@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_ssi_module"
-description: "Module nginx ngx_http_ssi_module — The ngx_http_ssi_module module is a filter that processes SSI (Server Side Includes) commands in responses passing through it. Currently, the list of supported SSI commands is incomplete."
+description: "Module nginx ngx_http_ssi_module — Le module ngx_http_ssi_module est un filtre qui traite les commandes SSI (Server Side Includes) des réponses qui le traversent. Actuellement, la liste des commandes SSI prises en charge est incomplète."
 tags: [nginx, module, ngx_http_ssi_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_ssi_module` module is a filter that processes SSI (Server Side Includes) commands in responses passing through it. Currently, the list of supported SSI commands is incomplete.
+Le module `ngx_http_ssi_module` est un filtre qui traite les commandes SSI (Server Side Includes) des réponses qui le traversent. Actuellement, la liste des commandes SSI prises en charge est incomplète.
 
 ## Exemple de configuration
 
@@ -19,23 +16,23 @@ location / {
 }
 ```
 
-## SSI Commands
+## Commandes SSI
 
-SSI commands have the following generic format:
+Les commandes SSI ont le format général suivant :
 
 ```nginx
 <!--# command parameter1=value1 parameter2=value2 ... -->
 ```
 
-The following commands are supported:
+Les commandes suivantes sont prises en charge :
 
 - **`block`**
 
-  Defines a block that can be used as a stub in the `include` command. The block can contain other SSI commands. The command has the following parameter:
+  Définit un bloc utilisable comme remplacement dans la commande `include`. Le bloc peut contenir d'autres commandes SSI. La commande accepte le paramètre suivant :
 
   - **`name`**
 
-    block name.
+    nom du bloc.
 
   Exemple :
 
@@ -47,11 +44,11 @@ The following commands are supported:
 
 - **`config`**
 
-  Sets some parameters used during SSI processing, namely:
+  Définit certains paramètres du traitement SSI :
 
   - **`errmsg`**
 
-    a string that is output if an error occurs during SSI processing. By default, the following string is output:
+    chaîne affichée si une erreur survient pendant le traitement SSI. Par défaut, la chaîne suivante est affichée :
 
     ```nginx
     [an error occurred while processing the directive]
@@ -59,35 +56,35 @@ The following commands are supported:
 
   - **`timefmt`**
 
-    a format string passed to the `strftime` function used to output date and time. By default, the following format is used:
+    chaîne de format transmise à la fonction `strftime` pour afficher la date et l'heure. Par défaut, le format suivant est utilisé :
 
     ```nginx
     "%A, %d-%b-%Y %H:%M:%S %Z"
     ```
 
-    The “`%s`” format is suitable to output time in seconds.
+    Le format « `%s` » permet d'afficher l'heure en secondes.
 
 - **`echo`**
 
-  Outputs the value of a variable. The command has the following parameters:
+  Affiche la valeur d'une variable. La commande accepte les paramètres suivants :
 
   - **`var`**
 
-    the variable name.
+    le nom de la variable.
 
   - **`encoding`**
 
-    the encoding method. Possible values include `none`, `url`, and `entity`. By default, `entity` is used.
+    la méthode d'encodage. Valeurs possibles : `none`, `url` et `entity` (par défaut).
 
   - **`default`**
 
-    a non-standard parameter that sets a string to be output if a variable is undefined. By default, “`(none)`” is output. The command
+    paramètre non standard qui définit la chaîne affichée si la variable n'est pas définie. Par défaut, « `(none)` » est affiché. La commande
 
     ```nginx
     <!--# echo var="name" default="no" -->
     ```
 
-    replaces the following sequence of commands:
+    remplace la suite de commandes suivante :
 
     ```nginx
     <!--# if expr="$name" --><!--# echo var="name" --><!--#
@@ -96,7 +93,7 @@ The following commands are supported:
 
 - **`if`**
 
-  Performs a conditional inclusion. The following commands are supported:
+  Effectue une inclusion conditionnelle. Les commandes suivantes sont prises en charge :
 
   ```nginx
   <!--# if expr="..." -->
@@ -108,31 +105,31 @@ The following commands are supported:
   <!--# endif -->
   ```
 
-  Only one level of nesting is currently supported. The command has the following parameter:
+  Un seul niveau d'imbrication est actuellement pris en charge. La commande accepte le paramètre suivant :
 
   - **`expr`**
 
-    expression. An expression can be:
+    expression. Une expression peut être :
 
-    - variable existence check:
+    - la vérification de l'existence d'une variable :
 
       ```nginx
       <!--# if expr="$name" -->
       ```
-    - comparison of a variable with a text:
+    - la comparaison d'une variable avec un texte :
 
       ```nginx
       <!--# if expr="$name = text" -->
       <!--# if expr="$name != text" -->
       ```
-    - comparison of a variable with a regular expression:
+    - la comparaison d'une variable avec une expression régulière :
 
       ```nginx
       <!--# if expr="$name = /text/" -->
       <!--# if expr="$name != /text/" -->
       ```
 
-    If a *text* contains variables, their values are substituted. A regular expression can contain positional and named captures that can later be used through variables, for example:
+    Si un texte (*text*) contient des variables, leurs valeurs sont substituées. Une expression régulière peut contenir des captures positionnelles et nommées, utilisables ensuite par des variables, par exemple :
 
     ```nginx
     <!--# if expr="$name = /(.+)@(?P<domain>.+)/" -->
@@ -143,11 +140,11 @@ The following commands are supported:
 
 - **`include`**
 
-  Includes the result of another request into a response. The command has the following parameters:
+  Inclut le résultat d'une autre requête dans la réponse. La commande accepte les paramètres suivants :
 
   - **`file`**
 
-    specifies an included file, for example:
+    indique un fichier inclus, par exemple :
 
     ```nginx
     <!--# include file="footer.html" -->
@@ -155,28 +152,28 @@ The following commands are supported:
 
   - **`virtual`**
 
-    specifies an included request, for example:
+    indique une requête incluse, par exemple :
 
     ```nginx
     <!--# include virtual="/remote/body.php?argument=value" -->
     ```
 
-    Several requests specified on one page and processed by proxied or FastCGI/uwsgi/SCGI/gRPC servers run in parallel. If sequential processing is desired, the `wait` parameter should be used.
+    Plusieurs requêtes indiquées dans une même page et traitées par des serveurs mandatés ou FastCGI/uwsgi/SCGI/gRPC s'exécutent en parallèle. Pour un traitement séquentiel, utilisez le paramètre `wait`.
 
   - **`stub`**
 
-    a non-standard parameter that names the block whose content will be output if the included request results in an empty body or if an error occurs during the request processing, for example:
+    paramètre non standard qui nomme le bloc dont le contenu est affiché si la requête incluse donne un corps vide ou si une erreur survient pendant son traitement, par exemple :
 
     ```nginx
     <!--# block name="one" -->&nbsp;<!--# endblock -->
     <!--# include virtual="/remote/body.php?argument=value" stub="one" -->
     ```
 
-    The replacement block content is processed in the included request context.
+    Le contenu du bloc de remplacement est traité dans le contexte de la requête incluse.
 
   - **`wait`**
 
-    a non-standard parameter that instructs to wait for a request to fully complete before continuing with SSI processing, for example:
+    paramètre non standard qui demande d'attendre la fin complète d'une requête avant de poursuivre le traitement SSI, par exemple :
 
     ```nginx
     <!--# include virtual="/remote/body.php?argument=value" wait="yes" -->
@@ -184,13 +181,13 @@ The following commands are supported:
 
   - **`set`**
 
-    a non-standard parameter that instructs to write a successful result of request processing to the specified variable, for example:
+    paramètre non standard qui demande d'écrire le résultat d'un traitement réussi dans la variable indiquée, par exemple :
 
     ```nginx
     <!--# include virtual="/remote/body.php?argument=value" set="one" -->
     ```
 
-    The maximum size of the response is set by the [[12-directives/subrequest-output-buffer-size|subrequest_output_buffer_size]] directive (1.13.10):
+    La taille maximale de la réponse est définie par la directive [[12-directives/subrequest-output-buffer-size|subrequest_output_buffer_size]] (1.13.10) :
 
     ```nginx
     location /remote/ {
@@ -199,19 +196,19 @@ The following commands are supported:
     }
     ```
 
-    Prior to version 1.13.10, only the results of responses obtained using the [[11-modules/02-http/ngx_http_proxy_module|ngx_http_proxy_module]], [[11-modules/02-http/ngx_http_memcached_module|ngx_http_memcached_module]], [[11-modules/02-http/ngx_http_fastcgi_module|ngx_http_fastcgi_module]] (1.5.6), [[11-modules/02-http/ngx_http_uwsgi_module|ngx_http_uwsgi_module]] (1.5.6), and [[11-modules/02-http/ngx_http_scgi_module|ngx_http_scgi_module]] (1.5.6) modules could be written into variables. The maximum size of the response was set with the [[12-directives/proxy-buffer-size-http-proxy|proxy_buffer_size]], [[12-directives/memcached-buffer-size|memcached_buffer_size]], [[12-directives/fastcgi-buffer-size|fastcgi_buffer_size]], [[12-directives/uwsgi-buffer-size|uwsgi_buffer_size]], and [[12-directives/scgi-buffer-size|scgi_buffer_size]] directives.
+    Avant la version 1.13.10, seuls les résultats des réponses obtenues avec les modules [[11-modules/02-http/ngx_http_proxy_module|ngx_http_proxy_module]], [[11-modules/02-http/ngx_http_memcached_module|ngx_http_memcached_module]], [[11-modules/02-http/ngx_http_fastcgi_module|ngx_http_fastcgi_module]] (1.5.6), [[11-modules/02-http/ngx_http_uwsgi_module|ngx_http_uwsgi_module]] (1.5.6) et [[11-modules/02-http/ngx_http_scgi_module|ngx_http_scgi_module]] (1.5.6) pouvaient être écrits dans des variables. La taille maximale de la réponse était définie par les directives [[12-directives/proxy-buffer-size-http-proxy|proxy_buffer_size]], [[12-directives/memcached-buffer-size|memcached_buffer_size]], [[12-directives/fastcgi-buffer-size|fastcgi_buffer_size]], [[12-directives/uwsgi-buffer-size|uwsgi_buffer_size]] et [[12-directives/scgi-buffer-size|scgi_buffer_size]].
 
 - **`set`**
 
-  Sets a value of a variable. The command has the following parameters:
+  Définit la valeur d'une variable. La commande accepte les paramètres suivants :
 
   - **`var`**
 
-    the variable name.
+    le nom de la variable.
 
   - **`value`**
 
-    the variable value. If an assigned value contains variables, their values are substituted.
+    la valeur de la variable. Si la valeur contient des variables, leurs valeurs sont substituées.
 
 ## Directives
 

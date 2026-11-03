@@ -1,0 +1,5 @@
+{
+ "433870f3dc5c": "Le module `ngx_http_mirror_module` (1.13.4) duplique la requête d'origine en créant des sous-requêtes miroirs en arrière-plan. Les réponses aux sous-requêtes miroirs sont ignorées.",
+ "60eb649906ff": "Indique si le corps de la requête du client est dupliqué. Si cette option est activée, le corps est lu avant la création des sous-requêtes miroirs ; le relais sans tampon du corps de la requête, défini par les directives [[12-directives/proxy-request-buffering|proxy_request_buffering]], [[12-directives/fastcgi-request-buffering|fastcgi_request_buffering]], [[12-directives/scgi-request-buffering|scgi_request_buffering]] et [[12-directives/uwsgi-request-buffering|uwsgi_request_buffering]], est alors désactivé.",
+ "776425f12d11": "Définit l'URI vers lequel la requête d'origine est dupliquée. Plusieurs miroirs peuvent être indiqués au même niveau de configuration."
+}

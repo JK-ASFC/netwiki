@@ -1,12 +1,9 @@
 ---
 title: "resolver (ngx_mail_core_module)"
-description: "Directive nginx resolver (ngx_mail_core_module) — Configures name servers used to find the client’s hostname to pass it to the authentication server, and in the XCLIENT command when proxying SMTP. For example: nginx resolver 127.0.0.1 ::1:5353;…"
+description: "Directive nginx resolver (ngx_mail_core_module) — Configure les serveurs de noms utilisés pour trouver le nom d'hôte du client, afin de le transmettre au serveur d'authentification et dans la commande XCLIENT lors du relais SMTP. Par exemple : nginx…"
 tags: [nginx, directive, ngx_mail_core_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Configures name servers used to find the client’s hostname to pass it to the [[11-modules/04-mail/ngx_mail_auth_http_module|authentication server]], and in the [[12-directives/xclient|XCLIENT]] command when proxying SMTP. For example:
+Configure les serveurs de noms utilisés pour trouver le nom d'hôte du client, afin de le transmettre au [[11-modules/04-mail/ngx_mail_auth_http_module|serveur d'authentification]] et dans la commande [[12-directives/xclient|XCLIENT]] lors du relais SMTP. Par exemple :
 
 ```nginx
 resolver 127.0.0.1 [::1]:5353;
@@ -47,7 +44,7 @@ resolver 127.0.0.1 [::1]:5353 valid=30s;
 
 Le paramètre facultatif `status_zone` (1.17.1) active la [[11-modules/02-http/ngx_http_api_module|collecte]] des statistiques de requêtes et de réponses des serveurs DNS dans la zone (*zone*) indiquée. Ce paramètre est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
-The special value `off` disables resolving.
+La valeur spéciale `off` désactive la résolution.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "proxy_connect_timeout (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_connect_timeout (ngx_stream_proxy_module) — Defines a timeout for establishing a connection with a proxied server."
+description: "Directive nginx proxy_connect_timeout (ngx_stream_proxy_module) — Définit le délai d'établissement d'une connexion avec un serveur mandaté."
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a timeout for establishing a connection with a proxied server.
+Définit le délai d'établissement d'une connexion avec un serveur mandaté.
 
 ---
 

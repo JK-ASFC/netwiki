@@ -1,12 +1,9 @@
 ---
 title: "proxy_pass_error_message"
-description: "Directive nginx proxy_pass_error_message (ngx_mail_proxy_module) — Indicates whether to pass the error message obtained during the authentication on the backend to the client. Usually, if the authentication in nginx is a success, the backend cannot return an error.…"
+description: "Directive nginx proxy_pass_error_message (ngx_mail_proxy_module) — Indique s'il faut transmettre au client le message d'erreur obtenu lors de l'authentification auprès du serveur d'arrière-plan. En général, si l'authentification réussit dans nginx, le serveur…"
 tags: [nginx, directive, ngx_mail_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Indicates whether to pass the error message obtained during the authentication on the backend to the client.
+Indique s'il faut transmettre au client le message d'erreur obtenu lors de l'authentification auprès du serveur d'arrière-plan.
 
-Usually, if the authentication in nginx is a success, the backend cannot return an error. If it nevertheless returns an error, it means some internal error has occurred. In such case the backend message can contain information that should not be shown to the client. However, responding with an error for the correct password is a normal behavior for some POP3 servers. For example, CommuniGatePro informs a user about [mailbox overflow](http://www.stalker.com/CommuniGatePro/Alerts.html#Quota) or other events by periodically outputting the [authentication error](http://www.stalker.com/CommuniGatePro/POP.html#Alerts). The directive should be enabled in this case.
+En général, si l'authentification réussit dans nginx, le serveur d'arrière-plan ne peut pas renvoyer d'erreur. S'il en renvoie une, c'est qu'une erreur interne s'est produite, et son message peut contenir des informations à ne pas montrer au client. Toutefois, répondre par une erreur malgré un mot de passe correct est un comportement normal pour certains serveurs POP3 : par exemple, CommuniGatePro informe l'utilisateur d'un [dépassement de boîte aux lettres](http://www.stalker.com/CommuniGatePro/Alerts.html#Quota) ou d'autres événements en renvoyant périodiquement une [erreur d'authentification](http://www.stalker.com/CommuniGatePro/POP.html#Alerts). Il faut alors activer cette directive.
 
 ---
 

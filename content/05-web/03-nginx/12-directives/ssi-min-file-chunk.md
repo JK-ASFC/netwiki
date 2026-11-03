@@ -1,12 +1,9 @@
 ---
 title: "ssi_min_file_chunk"
-description: "Directive nginx ssi_min_file_chunk (ngx_http_ssi_module) — Sets the minimum size for parts of a response stored on disk, starting from which it makes sense to send them using sendfile."
+description: "Directive nginx ssi_min_file_chunk (ngx_http_ssi_module) — Définit la taille (size) minimale des parties d'une réponse stockées sur disque à partir de laquelle il est intéressant de les envoyer avec sendfile."
 tags: [nginx, directive, ngx_http_ssi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the minimum *size* for parts of a response stored on disk, starting from which it makes sense to send them using [[12-directives/sendfile|sendfile]].
+Définit la taille (*size*) minimale des parties d'une réponse stockées sur disque à partir de laquelle il est intéressant de les envoyer avec [[12-directives/sendfile|sendfile]].
 
 ---
 

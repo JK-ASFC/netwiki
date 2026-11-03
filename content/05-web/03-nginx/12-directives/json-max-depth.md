@@ -1,12 +1,9 @@
 ---
 title: "json_max_depth"
-description: "Directive nginx json_max_depth (ngx_http_json_module) — Sets the maximum nesting depth of JSON documents. A document nested deeper is considered invalid. Acceptable values are in the range from 1 to 256."
+description: "Directive nginx json_max_depth (ngx_http_json_module) — Définit la profondeur d'imbrication maximale des documents JSON. Un document plus profondément imbriqué est considéré comme non valide. Les valeurs acceptées vont de 1 à 256."
 tags: [nginx, directive, ngx_http_json_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum nesting depth of JSON documents. A document nested deeper is considered invalid. Acceptable values are in the range from 1 to 256.
+Définit la profondeur d'imbrication maximale des documents JSON. Un document plus profondément imbriqué est considéré comme non valide. Les valeurs acceptées vont de 1 à 256.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "otel_service_name"
-description: "Directive nginx otel_service_name (ngx_otel_module) — Sets the “service.name” attribute of the OTel resource."
+description: "Directive nginx otel_service_name (ngx_otel_module) — Définit l'attribut « service.name » de la ressource OTel."
 tags: [nginx, directive, ngx_otel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the “[`service.name`](https://opentelemetry.io/docs/reference/specification/resource/semantic_conventions/#service)” attribute of the OTel resource.
+Définit l'attribut « [`service.name`](https://opentelemetry.io/docs/reference/specification/resource/semantic_conventions/#service) » de la ressource OTel.
 
 ---
 

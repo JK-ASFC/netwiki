@@ -1,38 +1,35 @@
 ---
-title: "Native modules"
-description: "Nginx — Native modules. Native modules allow loading C-based shared libraries (.so files) into NGINX JavaScript for performance-critical operations or system-level integrations. This feature is available only with the QuickJS engine and is not…"
+title: "Modules natifs"
+description: "Nginx — Modules natifs. Les modules natifs permettent de charger des bibliothèques partagées écrites en C (fichiers .so) dans NGINX JavaScript, pour des opérations critiques en performances ou des intégrations système. Cette fonction n'est…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+## Présentation
 
-## Overview
+Les modules natifs permettent de charger des bibliothèques partagées écrites en C (fichiers .so) dans NGINX JavaScript, pour des opérations critiques en performances ou des intégrations système. Cette fonction n'est disponible qu'avec le [[10-guides/04-njs/engine|moteur QuickJS]] et n'est pas prise en charge par le moteur natif njs. Elle existe depuis la version 0.9.5.
 
-Native modules allow loading C-based shared libraries (.so files) into NGINX JavaScript for performance-critical operations or system-level integrations. This feature is available only with the [[10-guides/04-njs/engine|QuickJS engine]] and is not supported by the njs native engine. Native module support has been available since 0.9.5.
+## Quand utiliser des modules natifs
 
-## When to use native modules
+Les modules natifs sont utiles dans les cas suivants :
 
-Native modules are useful in the following scenarios:
+- Opérations critiques en performances qui dépassent les capacités de JavaScript
+- Intégrations système nécessitant des bibliothèques C
+- Réutilisation de code C/C++ existant
 
-- Performance-critical operations that exceed JavaScript capabilities
-- System-level integrations requiring C libraries
-- Leveraging existing C/C++ codebases
+Les modules natifs doivent servir à des primitives de bas niveau plutôt qu'à une logique métier complexe : opérations cryptographiques (hachage, chiffrement), compression et décompression de données, analyse de protocoles binaires, opérations rapides sur les chaînes ou calculs mathématiques. La logique applicative complexe doit rester en JavaScript, plus facile à maintenir, déboguer et modifier.
 
-Native modules should be used for low-level primitives rather than for complex business logic, for example, for cryptographic operations (hashing, encryption), data compression/decompression, binary protocol parsing, high-performance string operations, or mathematical computations. Complex application logic should remain in JavaScript where it's easier to maintain, debug, and modify.
+Limites :
 
-Limitations:
+- Les modules natifs doivent être compilés pour la même architecture que NGINX
+- Les modules natifs s'exécutent avec tous les privilèges du processus et nécessitent une relecture de sécurité attentive
 
-- Native modules must be compiled for the same architecture as NGINX
-- Native modules run with full process privileges and require careful security review
+## Charger des modules natifs dans NGINX
 
-## Loading native modules in NGINX
+Les modules natifs se chargent avec ces directives, indiquées dans le contexte `main` :
 
-Native modules are loaded using these directives specified in the `main` context:
-
-- [[12-directives/js-load-http-native-module|js_load_http_native_module]] for HTTP context
-- [[12-directives/js-load-stream-native-module|js_load_stream_native_module]] for Stream context
+- [[12-directives/js-load-http-native-module|js_load_http_native_module]] pour le contexte HTTP
+- [[12-directives/js-load-stream-native-module|js_load_stream_native_module]] pour le contexte Stream
 
 Exemple de configuration :
 
@@ -52,7 +49,7 @@ http {
 }
 ```
 
-Once loaded, the module can be imported in JavaScript code:
+Une fois chargé, le module peut être importé dans le code JavaScript :
 
 ```nginx
 // Import by filename
@@ -69,11 +66,11 @@ function handler(r) {
 export default { handler };
 ```
 
-## Building native modules
+## Compiler des modules natifs
 
-Native modules must implement the `js_init_module` function as the entry point. This function is called by QuickJS when the module is loaded.
+Les modules natifs doivent mettre en œuvre la fonction `js_init_module` comme point d'entrée. QuickJS l'appelle au chargement du module.
 
-A complete example of a simple native module that exports two functions:
+Exemple complet d'un module natif simple qui exporte deux fonctions :
 
 ```nginx
 #include <quickjs.h>
@@ -171,23 +168,23 @@ js_init_module(JSContext *ctx, const char *module_name)
 }
 ```
 
-To compile the native module:
+Pour compiler le module natif :
 
 ```nginx
 gcc -fPIC -shared -I/path/to/quickjs -o mymodule.so mymodule.c
 ```
 
-where `/path/to/quickjs` is the directory containing the QuickJS header files.
+où `/path/to/quickjs` est le répertoire contenant les fichiers d'en-tête de QuickJS.
 
 > [!NOTE]
-> For proper memory tracking, always use QuickJS memory allocation functions (`js_malloc`, `js_free`) instead of standard library functions (`malloc`, `free`).
+> Pour un suivi correct de la mémoire, utilisez toujours les fonctions d'allocation de QuickJS (`js_malloc`, `js_free`) au lieu de celles de la bibliothèque standard (`malloc`, `free`).
 
-## Additional resources
+## Ressources supplémentaires
 
-For more information about the QuickJS C API:
+Pour en savoir plus sur l'API C de QuickJS :
 
-- [QuickJS official website](https://bellard.org/quickjs/)
-- QuickJS header file (`quickjs.h`) contains comprehensive API documentation
+- [Site officiel de QuickJS](https://bellard.org/quickjs/)
+- Le fichier d'en-tête de QuickJS (`quickjs.h`) contient une documentation complète de l'API
 
 ---
 

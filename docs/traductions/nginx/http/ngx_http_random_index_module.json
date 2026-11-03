@@ -1,0 +1,5 @@
+{
+ "68679789d0c2": "Le module `ngx_http_random_index_module` traite les requêtes se terminant par une barre oblique (‘`/`’) et choisit au hasard un fichier du répertoire comme fichier d'index. Il est traité avant le module [[11-modules/02-http/ngx_http_index_module|ngx_http_index_module]].",
+ "7e09730a57f6": "Active ou désactive le traitement par le module dans le bloc location englobant.",
+ "c80318c6b91b": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_random_index_module`."
+}

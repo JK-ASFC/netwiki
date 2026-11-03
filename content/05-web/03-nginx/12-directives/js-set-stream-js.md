@@ -1,12 +1,9 @@
 ---
 title: "js_set (ngx_stream_js_module)"
-description: "Directive nginx js_set (ngx_stream_js_module) — Sets an njs function for the specified variable. Since 0.4.0, a module function can be referenced. The function is called when the variable is referenced for the first time for a given request. The…"
+description: "Directive nginx js_set (ngx_stream_js_module) — Définit une fonction njs (function) pour la variable (variable) indiquée. Depuis la version 0.4.0, on peut faire référence à une fonction de module. La fonction est appelée lors du premier accès à la…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,17 +14,17 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an njs `function` for the specified `variable`. Since 0.4.0, a module function can be referenced.
+Définit une fonction njs (`function`) pour la variable (`variable`) indiquée. Depuis la version 0.4.0, on peut faire référence à une fonction de module.
 
-The function is called when the variable is referenced for the first time for a given request. The exact moment depends on a [[10-guides/03-stream/stream-processing|phase]] at which the variable is referenced. This can be used to perform some logic not related to variable evaluation. For example, if the variable is referenced only in the [[12-directives/log-format-stream-log|log_format]] directive, its handler will not be executed until the log phase. This handler can be used to do some cleanup right before the request is freed.
+La fonction est appelée lors du premier accès à la variable pour une requête donnée. Le moment exact dépend de la [[10-guides/03-stream/stream-processing|phase]] à laquelle la variable est référencée. On peut s'en servir pour exécuter une logique sans rapport avec l'évaluation de la variable. Par exemple, si la variable n'est référencée que dans la directive [[12-directives/log-format-stream-log|log_format]], son gestionnaire ne s'exécute qu'à la phase de journalisation. Ce gestionnaire peut servir à faire du nettoyage juste avant la libération de la requête.
 
-Since 0.8.6, when optional argument `nocache` is provided the handler is called every time it is referenced. Due to current limitations of the [[11-modules/03-stream/ngx_stream_set_module|ngx_stream_set_module]] module, when a `nocache` variable is referenced by the [[12-directives/set-stream-set|set]] directive its handler should always return a fixed-length value.
-
-> [!NOTE]
-> As the `js_set` handler returns its result immediately, it supports only synchronous callbacks. Thus, asynchronous callbacks such as [[10-guides/04-njs/reference|ngx.fetch()]] or [[10-guides/04-njs/reference|setTimeout()]] are not supported.
+Depuis la version 0.8.6, avec l'argument facultatif `nocache`, le gestionnaire est appelé à chaque référence. En raison des limites actuelles du module [[11-modules/03-stream/ngx_stream_set_module|ngx_stream_set_module]], quand une variable `nocache` est référencée par la directive [[12-directives/set-stream-set|set]], son gestionnaire doit toujours renvoyer une valeur de longueur fixe.
 
 > [!NOTE]
-> The directive can be specified on the `server` level since 0.7.7.
+> Comme le gestionnaire `js_set` renvoie son résultat immédiatement, il ne prend en charge que les fonctions de rappel synchrones. Les fonctions asynchrones comme [[10-guides/04-njs/reference|ngx.fetch()]] ou [[10-guides/04-njs/reference|setTimeout()]] ne sont donc pas prises en charge.
+
+> [!NOTE]
+> La directive peut être indiquée au niveau `server` depuis la version 0.7.7.
 
 ---
 

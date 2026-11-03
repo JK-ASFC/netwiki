@@ -1,12 +1,9 @@
 ---
 title: "perl_set"
-description: "Directive nginx perl_set (ngx_http_perl_module) — Installs a Perl handler for the specified variable."
+description: "Directive nginx perl_set (ngx_http_perl_module) — Associe un gestionnaire Perl à la variable indiquée."
 tags: [nginx, directive, ngx_http_perl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Installs a Perl handler for the specified variable.
+Associe un gestionnaire Perl à la variable indiquée.
 
 ---
 

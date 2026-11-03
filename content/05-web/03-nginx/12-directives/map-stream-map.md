@@ -1,12 +1,9 @@
 ---
 title: "map (ngx_stream_map_module)"
-description: "Directive nginx map (ngx_stream_map_module) — Crée une nouvelle variable dont la valeur dépend de celle d'une ou plusieurs variables sources indiquées dans le premier paramètre. NOTE Since variables are evaluated only when they are used, the…"
+description: "Directive nginx map (ngx_stream_map_module) — Crée une nouvelle variable dont la valeur dépend de celle d'une ou plusieurs variables sources indiquées dans le premier paramètre. NOTE Comme les variables ne sont évaluées qu'à leur utilisation, la…"
 tags: [nginx, directive, ngx_stream_map_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -20,19 +17,19 @@ icon: settings-2
 Crée une nouvelle variable dont la valeur dépend de celle d'une ou plusieurs variables sources indiquées dans le premier paramètre.
 
 > [!NOTE]
-> Since variables are evaluated only when they are used, the mere declaration even of a large number of “`map`” variables does not add any extra costs to connection processing.
+> Comme les variables ne sont évaluées qu'à leur utilisation, la simple déclaration d'un grand nombre de variables « `map` » n'ajoute aucun coût au traitement des connexions.
 
 Les paramètres du bloc `map` définissent la correspondance entre les valeurs sources et les valeurs résultantes.
 
-Source values are specified as strings or regular expressions.
+Les valeurs sources sont des chaînes ou des expressions régulières.
 
 Les chaînes sont comparées sans tenir compte de la casse.
 
-A regular expression should either start from the “`~`” symbol for a case-sensitive matching, or from the “`~*`” symbols for case-insensitive matching. A regular expression can contain named and positional captures that can later be used in other directives along with the resulting variable. The regular expressions are matched when the resulting variable is evaluated, and a successful match replaces the positional captures “`$1`”...“`$9`” set by previously matched regular expressions, see [[10-guides/01-introduction/regex-captures|Regular expression captures]].
+Une expression régulière doit commencer par le symbole « `~` » pour une correspondance sensible à la casse, ou par « `~*` » pour une correspondance insensible à la casse. Elle peut contenir des captures nommées et positionnelles réutilisables ensuite dans d'autres directives avec la variable résultante. Les expressions régulières sont évaluées lors de l'évaluation de la variable résultante, et une correspondance réussie remplace les captures positionnelles « `$1` »...« `$9` » définies par les expressions précédentes ; voir [[10-guides/01-introduction/regex-captures|Captures des expressions régulières]].
 
 Si une valeur source correspond au nom de l'un des paramètres spéciaux décrits ci-dessous, elle doit être précédée du symbole « `\` ».
 
-The resulting value can contain text, variable, and their combination.
+La valeur résultante peut contenir du texte, une variable et leur combinaison.
 
 Les paramètres spéciaux suivants sont aussi pris en charge :
 

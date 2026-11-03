@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_server"
-description: "Directive nginx zone_sync_server (ngx_stream_zone_sync_module) — Defines the address of a cluster node. The address can be specified as a domain name or IP address with a mandatory port, or as a UNIX-domain socket path specified after the “unix:” prefix. A domain…"
+description: "Directive nginx zone_sync_server (ngx_stream_zone_sync_module) — Définit l'adresse d'un nœud du cluster. L'adresse peut être un nom de domaine ou une adresse IP avec un port obligatoire, ou un chemin de socket de domaine UNIX précédé du préfixe « unix: ». Un nom…"
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,19 +14,19 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the *address* of a cluster node. The address can be specified as a domain name or IP address with a mandatory port, or as a UNIX-domain socket path specified after the “`unix:`” prefix. A domain name that resolves to several IP addresses defines multiple nodes at once.
+Définit l'*adresse* d'un nœud du cluster. L'adresse peut être un nom de domaine ou une adresse IP avec un port obligatoire, ou un chemin de socket de domaine UNIX précédé du préfixe « `unix:` ». Un nom de domaine qui se résout en plusieurs adresses IP définit plusieurs nœuds à la fois.
 
-The `resolve` parameter instructs nginx to monitor changes of the IP addresses that correspond to a domain name of the node and automatically modify the configuration without the need of restarting nginx.
+Le paramètre `resolve` demande à nginx de surveiller les changements des adresses IP correspondant au nom de domaine du nœud et de modifier automatiquement la configuration sans redémarrer nginx.
 
-Cluster nodes are specified either dynamically as a single `zone_sync_server` directive with the `resolve` parameter, or statically as a series of several directives without the parameter.
-
-> [!NOTE]
-> Each cluster node should be specified only once.
+Les nœuds du cluster sont indiqués soit dynamiquement, par une seule directive `zone_sync_server` avec le paramètre `resolve`, soit statiquement, par une série de directives sans ce paramètre.
 
 > [!NOTE]
-> All cluster nodes should use the same configuration.
+> Chaque nœud du cluster ne doit être indiqué qu'une fois.
 
-In order for the `resolve` parameter to work, the [[12-directives/resolver-stream-core|resolver]] directive must be specified in the [[12-directives/stream|stream]] block. Example:
+> [!NOTE]
+> Tous les nœuds du cluster doivent utiliser la même configuration.
+
+Pour que le paramètre `resolve` fonctionne, la directive [[12-directives/resolver-stream-core|resolver]] doit être indiquée dans le bloc [[12-directives/stream|stream]]. Exemple :
 
 ```nginx
 stream {

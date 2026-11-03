@@ -1,12 +1,9 @@
 ---
 title: "sub_filter"
-description: "Directive nginx sub_filter (ngx_http_sub_module) — Sets a string to replace and a replacement string. The string to replace is matched ignoring the case. The string to replace (1.9.4) and replacement string can contain variables. Several sub_filter…"
+description: "Directive nginx sub_filter (ngx_http_sub_module) — Définit la chaîne à remplacer et la chaîne de remplacement. La chaîne à remplacer est recherchée sans tenir compte de la casse. La chaîne à remplacer (1.9.4) et la chaîne de remplacement peuvent…"
 tags: [nginx, directive, ngx_http_sub_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a string to replace and a replacement string. The string to replace is matched ignoring the case. The string to replace (1.9.4) and replacement string can contain variables. Several `sub_filter` directives can be specified on the same configuration level (1.9.4). These directives are inherited from the previous configuration level if and only if there are no `sub_filter` directives defined on the current level.
+Définit la chaîne à remplacer et la chaîne de remplacement. La chaîne à remplacer est recherchée sans tenir compte de la casse. La chaîne à remplacer (1.9.4) et la chaîne de remplacement peuvent contenir des variables. Plusieurs directives `sub_filter` peuvent être indiquées au même niveau de configuration (1.9.4). Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `sub_filter` n'est définie au niveau courant.
 
 ---
 

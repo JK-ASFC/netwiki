@@ -1,12 +1,9 @@
 ---
 title: "allow (ngx_stream_access_module)"
-description: "Directive nginx allow (ngx_stream_access_module) — Allows access for the specified network or address. If the special value unix: is specified, allows access for all UNIX-domain sockets."
+description: "Directive nginx allow (ngx_stream_access_module) — Autorise l'accès pour le réseau ou l'adresse indiqués. Avec la valeur spéciale unix:, autorise l'accès pour toutes les sockets de domaine UNIX."
 tags: [nginx, directive, ngx_stream_access_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Allows access for the specified network or address. If the special value `unix:` is specified, allows access for all UNIX-domain sockets.
+Autorise l'accès pour le réseau ou l'adresse indiqués. Avec la valeur spéciale `unix:`, autorise l'accès pour toutes les sockets de domaine UNIX.
 
 ---
 

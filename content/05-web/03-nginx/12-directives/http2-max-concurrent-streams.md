@@ -1,12 +1,9 @@
 ---
 title: "http2_max_concurrent_streams"
-description: "Directive nginx http2_max_concurrent_streams (ngx_http_v2_module) — Sets the maximum number of concurrent HTTP/2 streams in a connection."
+description: "Directive nginx http2_max_concurrent_streams (ngx_http_v2_module) — Définit le nombre maximal de flux HTTP/2 simultanés sur une connexion."
 tags: [nginx, directive, ngx_http_v2_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum number of concurrent HTTP/2 streams in a connection.
+Définit le nombre maximal de flux HTTP/2 simultanés sur une connexion.
 
 ---
 

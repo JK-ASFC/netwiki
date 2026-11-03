@@ -1,12 +1,9 @@
 ---
 title: "js_periodic (ngx_stream_js_module)"
-description: "Directive nginx js_periodic (ngx_stream_js_module) — Specifies a content handler to run at regular interval. The handler receives a session object as its first argument, it also has access to global objects such as ngx. The optional interval parameter…"
+description: "Directive nginx js_periodic (ngx_stream_js_module) — Indique un gestionnaire de contenu à exécuter à intervalle régulier. Il reçoit en premier argument un objet session et a aussi accès aux objets globaux comme ngx. Le paramètre facultatif interval…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,13 +15,13 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a content handler to run at regular interval. The handler receives a [[10-guides/04-njs/reference|session object]] as its first argument, it also has access to global objects such as [[10-guides/04-njs/reference|ngx]].
+Indique un gestionnaire de contenu à exécuter à intervalle régulier. Il reçoit en premier argument un [[10-guides/04-njs/reference|objet session]] et a aussi accès aux objets globaux comme [[10-guides/04-njs/reference|ngx]].
 
-The optional `interval` parameter sets the interval between two consecutive runs, by default, 5 seconds.
+Le paramètre facultatif `interval` définit l'intervalle entre deux exécutions consécutives ; 5 secondes par défaut.
 
-The optional `jitter` parameter sets the time within which the location content handler will be randomly delayed, by default, there is no delay.
+Le paramètre facultatif `jitter` définit la durée dans laquelle l'exécution du gestionnaire est retardée aléatoirement ; par défaut, aucun retard.
 
-By default, the `js_periodic` handler is executed on worker process 0. The optional `worker_affinity` parameter allows specifying particular worker processes where the location content handler should be executed. Each worker process set is represented by a bitmask of allowed worker processes. The `all` mask allows the handler to be executed in all worker processes.
+Par défaut, le gestionnaire `js_periodic` s'exécute sur le processus de travail 0. Le paramètre facultatif `worker_affinity` permet d'indiquer les processus de travail où il doit s'exécuter. Chaque ensemble de processus est représenté par un masque de bits des processus autorisés. Le masque `all` permet l'exécution dans tous les processus de travail.
 
 Exemple :
 

@@ -1,0 +1,10 @@
+{
+ "482dde1b9cad": "Google Cloud Platform",
+ "60b7ec211c2e": "valeur TLV de l'en-tête du protocole PROXY représentant le [LinkID du point de terminaison privé Azure](https://learn.microsoft.com/en-us/azure/private-link/private-link-service-overview#getting-connection-information-using-tcp-proxy-v2)",
+ "705c73fbb03f": "valeur TLV de l'en-tête du protocole PROXY représentant l'[identifiant de connexion Google Cloud PSC](https://cloud.google.com/vpc/docs/configure-private-service-connect-producer#proxy-protocol)",
+ "749c5a65a0e7": "valeur TLV de l'en-tête du protocole PROXY représentant l'[identifiant du point de terminaison AWS VPC](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#proxy-protocol)",
+ "a85dec0c4fcd": "Plates-formes cloud prises en charge :",
+ "bbf395c407b1": "Le module `ngx_http_proxy_protocol_vendor_module` (1.23.3) permet d'obtenir des informations supplémentaires sur une connexion dans les plates-formes cloud, à partir des TLV propres à chaque application de l'en-tête du [protocole PROXY](http://www.haproxy.org/download/1.8/doc/proxy-protocol.txt).",
+ "ce1b25befca3": "Microsoft Azure",
+ "d3e00d24b349": "Amazon Web Services"
+}

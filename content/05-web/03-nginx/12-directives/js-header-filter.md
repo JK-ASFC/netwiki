@@ -1,12 +1,9 @@
 ---
 title: "js_header_filter"
-description: "Directive nginx js_header_filter (ngx_http_js_module) — Sets an njs function as a response header filter. The directive allows changing arbitrary header fields of a response header. NOTE As the js_header_filter handler returns its result immediately, it…"
+description: "Directive nginx js_header_filter (ngx_http_js_module) — Définit une fonction njs comme filtre de l'en-tête de réponse. La directive permet de modifier n'importe quel champ de l'en-tête de réponse. NOTE Comme le gestionnaire js_header_filter renvoie son…"
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,13 +15,13 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an njs function as a response header filter. The directive allows changing arbitrary header fields of a response header.
+Définit une fonction njs comme filtre de l'en-tête de réponse. La directive permet de modifier n'importe quel champ de l'en-tête de réponse.
 
 > [!NOTE]
-> As the `js_header_filter` handler returns its result immediately, it supports only synchronous operations. Thus, asynchronous operations such as [[10-guides/04-njs/reference|r.subrequest()]] or [[10-guides/04-njs/reference|setTimeout()]] are not supported.
+> Comme le gestionnaire `js_header_filter` renvoie son résultat immédiatement, il ne prend en charge que les opérations synchrones. Les opérations asynchrones comme [[10-guides/04-njs/reference|r.subrequest()]] ou [[10-guides/04-njs/reference|setTimeout()]] ne sont donc pas prises en charge.
 
 > [!NOTE]
-> The directive can be specified inside the [[12-directives/if|if]] block since 0.7.7.
+> La directive peut être indiquée dans un bloc [[12-directives/if|if]] depuis la version 0.7.7.
 
 ---
 

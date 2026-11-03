@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_stream_core_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `server_name name ...;` |
@@ -54,7 +51,7 @@ server {
 }
 ```
 
-Regular expressions can contain captures that can later be used in other directives (see [[10-guides/01-introduction/regex-captures|Regular expression captures]]):
+Les expressions régulières peuvent contenir des captures réutilisables ensuite dans d'autres directives (voir [[10-guides/01-introduction/regex-captures|Captures des expressions régulières]]) :
 
 ```nginx
 server {
@@ -64,7 +61,7 @@ server {
 }
 ```
 
-Named captures in regular expressions create variables that can later be used in other directives:
+Les captures nommées des expressions régulières créent des variables réutilisables ensuite dans d'autres directives :
 
 ```nginx
 server {
@@ -74,7 +71,7 @@ server {
 }
 ```
 
-If the directive’s parameter is set to “`$hostname`”, the machine’s hostname is inserted.
+Si le paramètre de la directive vaut « `$hostname` », le nom d'hôte de la machine est inséré.
 
 La recherche s'effectue dans l'ordre de priorité suivant et s'arrête à la première variante correspondante :
 
@@ -84,7 +81,7 @@ La recherche s'effectue dans l'ordre de priorité suivant et s'arrête à la pre
 4. la première expression régulière correspondante (dans l'ordre d'apparition dans le fichier de configuration)
 
 > [!NOTE]
-> The server is selected by name at the [[10-guides/03-stream/stream-processing|SSL]] or [[10-guides/03-stream/stream-processing|preread]] phase. Directives processed at earlier phases, such as [[12-directives/set-real-ip-from-stream-realip|set_real_ip_from]], [[12-directives/limit-conn-stream-limit-conn|limit_conn]], [[12-directives/set-stream-set|set]], [[12-directives/allow-stream-access|allow]], and [[12-directives/deny-stream-access|deny]], are taken from the default server for the corresponding address:port pair.
+> Le serveur est choisi par son nom à la phase [[10-guides/03-stream/stream-processing|SSL]] ou de [[10-guides/03-stream/stream-processing|prélecture]]. Les directives traitées aux phases antérieures, comme [[12-directives/set-real-ip-from-stream-realip|set_real_ip_from]], [[12-directives/limit-conn-stream-limit-conn|limit_conn]], [[12-directives/set-stream-set|set]], [[12-directives/allow-stream-access|allow]] et [[12-directives/deny-stream-access|deny]], sont prises dans le serveur par défaut de la paire adresse:port correspondante.
 
 ---
 

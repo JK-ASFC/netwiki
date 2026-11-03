@@ -1,12 +1,9 @@
 ---
 title: "status_zone (ngx_http_status_module)"
-description: "Directive nginx status_zone (ngx_http_status_module) — Enables collection of virtual http or stream (1.7.11) server status information in the specified zone. Several servers may share the same zone."
+description: "Directive nginx status_zone (ngx_http_status_module) — Active la collecte des informations d'état des serveurs virtuels http ou stream (1.7.11) dans la zone (zone) indiquée. Plusieurs serveurs peuvent partager la même zone."
 tags: [nginx, directive, ngx_http_status_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables collection of virtual [[12-directives/server-http-core|http]] or [[12-directives/server-stream-core|stream]] (1.7.11) server status information in the specified *zone*. Several servers may share the same zone.
+Active la collecte des informations d'état des serveurs virtuels [[12-directives/server-http-core|http]] ou [[12-directives/server-stream-core|stream]] (1.7.11) dans la zone (*zone*) indiquée. Plusieurs serveurs peuvent partager la même zone.
 
 ---
 

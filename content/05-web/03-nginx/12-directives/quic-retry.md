@@ -1,12 +1,9 @@
 ---
 title: "quic_retry"
-description: "Directive nginx quic_retry (ngx_http_v3_module) — Enables the QUIC Address Validation feature. This includes sending a new token in a Retry packet or a NEW_TOKEN frame and validating a token received in the Initial packet."
+description: "Directive nginx quic_retry (ngx_http_v3_module) — Active la validation d'adresse QUIC : envoi d'un nouveau jeton dans un paquet Retry ou une trame NEW_TOKEN, et validation du jeton reçu dans le paquet Initial."
 tags: [nginx, directive, ngx_http_v3_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the [QUIC Address Validation](https://datatracker.ietf.org/doc/html/rfc9000#name-address-validation) feature. This includes sending a new token in a `Retry` packet or a `NEW_TOKEN` frame and validating a token received in the `Initial` packet.
+Active la [validation d'adresse QUIC](https://datatracker.ietf.org/doc/html/rfc9000#name-address-validation) : envoi d'un nouveau jeton dans un paquet `Retry` ou une trame `NEW_TOKEN`, et validation du jeton reçu dans le paquet `Initial`.
 
 ---
 

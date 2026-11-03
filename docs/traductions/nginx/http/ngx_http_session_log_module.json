@@ -1,0 +1,13 @@
+{
+ "02b235d59ea6": "Indique le format de sortie du journal. La valeur de la variable `$body_bytes_sent` est cumulée sur toutes les requêtes de la session. Les valeurs de toutes les autres variables disponibles correspondent à la première requête de la session.",
+ "29e11c329a69": "Le paramètre `id` identifie la session à laquelle la requête est associée. Il contient la représentation hexadécimale d'une empreinte MD5 (obtenue par exemple d'un cookie à l'aide de variables). S'il n'est pas indiqué ou n'est pas une empreinte MD5 valide, nginx calcule l'empreinte MD5 de la valeur du paramètre `md5` et crée une nouvelle session avec cette empreinte. Les paramètres `id` et `md5` peuvent contenir des variables.",
+ "2d83f90161b0": "Le module `ngx_http_session_log_module` fournit deux variables intégrées :",
+ "2f881f353c72": "La configuration suivante met en place un journal de sessions et associe les requêtes aux sessions selon l'adresse du client et le champ d'en-tête de requête `User-Agent` :",
+ "62193f740528": "Active l'utilisation du journal de sessions indiqué. La valeur spéciale `off` annule l'effet des directives `session_log` héritées du niveau de configuration précédent.",
+ "640de2720657": "identifiant de la session courante sous forme binaire (16 octets).",
+ "6ed8428a9760": "identifiant de la session courante ;",
+ "6f1d6fd87b27": "Une session est considérée comme active tant que le temps écoulé depuis sa dernière requête ne dépasse pas le délai `timeout` indiqué (30 secondes par défaut). Une fois inactive, elle est écrite dans le journal.",
+ "c256a35ae29d": "Le module `ngx_http_session_log_module` permet de journaliser des sessions (agrégats de plusieurs requêtes HTTP) au lieu de requêtes HTTP individuelles.",
+ "ca8d6dd9f803": "Le paramètre `format` définit le format personnalisé du journal de sessions configuré par la directive [[12-directives/session-log-format|session_log_format]]. Sans `format`, le format prédéfini « `combined` » est utilisé.",
+ "d74405b3f21c": "Définit le chemin du fichier journal et configure la zone de mémoire partagée qui stocke les sessions actives."
+}

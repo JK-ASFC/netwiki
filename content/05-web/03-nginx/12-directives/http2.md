@@ -1,12 +1,9 @@
 ---
 title: "http2"
-description: "Directive nginx http2 (ngx_http_v2_module) — Enables the HTTP/2 protocol."
+description: "Directive nginx http2 (ngx_http_v2_module) — Active le protocole HTTP/2."
 tags: [nginx, directive, ngx_http_v2_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the [HTTP/2](https://datatracker.ietf.org/doc/html/rfc9113) protocol.
+Active le protocole [HTTP/2](https://datatracker.ietf.org/doc/html/rfc9113).
 
 ---
 

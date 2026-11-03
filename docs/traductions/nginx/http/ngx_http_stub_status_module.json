@@ -1,0 +1,17 @@
+{
+ "15d62f06aac7": "Nombre actuel de connexions dont nginx lit l'en-tête de requête.",
+ "2f716af6d715": "Les informations d'état de base sont accessibles depuis le bloc location englobant.",
+ "3619f97d06d8": "Le module `ngx_http_stub_status_module` donne accès aux informations d'état de base.",
+ "37415903f518": "Nombre total de connexions traitées. En général, il est égal à `accepts`, sauf si certaines limites de ressources ont été atteintes (par exemple la limite [[12-directives/worker-connections|worker_connections]]).",
+ "3eabc664e685": "Nombre actuel de connexions clientes inactives en attente d'une requête.",
+ "45b1c563bb1a": "identique à la valeur `Writing` ;",
+ "53f1fc0f6d02": "identique à la valeur `Reading` ;",
+ "6e9e845fa8ee": "Le module `ngx_http_stub_status_module` fournit les variables intégrées suivantes (1.3.14) :",
+ "8b818ad9eb3a": "identique à la valeur `Active connections` ;",
+ "b892f198bd4d": "Cette configuration crée une page web simple avec les données d'état de base, qui peut ressembler à ceci :",
+ "b96b2c1a75cc": "Nombre actuel de connexions clientes actives, connexions `Waiting` comprises.",
+ "d8c8b4cccd32": "identique à la valeur `Waiting`.",
+ "db2b7a241b8e": "Dans les versions antérieures à 1.7.5, la syntaxe de la directive exigeait un argument quelconque, par exemple « `stub_status on` ».",
+ "e21e7556ce2f": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_stub_status_module`.",
+ "ef012bcf8ae3": "Nombre actuel de connexions sur lesquelles nginx écrit la réponse au client."
+}

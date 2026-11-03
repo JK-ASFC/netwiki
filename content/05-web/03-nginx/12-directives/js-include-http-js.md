@@ -1,12 +1,9 @@
 ---
 title: "js_include (ngx_http_js_module)"
-description: "Directive nginx js_include (ngx_http_js_module) — Specifies a file that implements location and variable handlers in njs: nginx nginx.conf: js_include http.js; location /version { js_content version; } http.js: function version(r) { r.return(200,…"
+description: "Directive nginx js_include (ngx_http_js_module) — Indique un fichier qui met en œuvre des gestionnaires de location et de variables en njs : nginx nginx.conf: js_include http.js; location /version { js_content version; } http.js: function version(r)…"
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a file that implements location and variable handlers in njs:
+Indique un fichier qui met en œuvre des gestionnaires de location et de variables en njs :
 
 ```nginx
 nginx.conf:
@@ -32,7 +29,7 @@ function version(r) {
 }
 ```
 
-The directive was made obsolete in version 0.4.0 and was removed in version 0.7.1. The [[12-directives/js-import-http-js|js_import]] directive should be used instead.
+Cette directive est devenue obsolète en version 0.4.0 et a été supprimée en version 0.7.1. Utiliser à la place la directive [[12-directives/js-import-http-js|js_import]].
 
 ---
 

@@ -1,8 +1,22 @@
 {
  "0d74a3ebf0d0": "Cette directive est devenue obsolète en version 1.15.0 et a été supprimée en version 1.25.1. Utiliser à la place le paramètre `ssl` de la directive [[12-directives/listen-mail-core|listen]].",
+ "18d355dedf12": "Le paramètre `optional_no_ca` demande le certificat du client sans exiger qu'il soit signé par une autorité de confiance. Il est destiné aux cas où un service extérieur à nginx effectue la vérification réelle du certificat. Le contenu du certificat est accessible par les requêtes [[12-directives/auth-http-pass-client-cert|envoyées]] au serveur d'authentification.",
+ "51146e8948fb": "Le paramètre `optional` demande le certificat du client et le vérifie s'il est présent.",
+ "563a40950de9": "On peut indiquer `data`:*key* à la place de *file* (1.15.10) pour charger la clé secrète sans fichier intermédiaire. Une mauvaise utilisation de cette syntaxe peut avoir des conséquences sur la sécurité, comme l'écriture de données de clé secrète dans le [[12-directives/error-log|journal d'erreurs]].",
+ "5b1b8941bef5": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-mail_ssl_module`.",
  "6233cd060eb3": "Contrairement au certificat défini par [[12-directives/ssl-client-certificate-mail-ssl|ssl_client_certificate]], la liste de ces certificats n'est pas envoyée aux clients.",
+ "7f96c86ccffe": "interdit les commandes `STLS` et `STARTTLS` ;",
  "8c4c84dd104a": "et éventuellement augmenter la [[12-directives/ssl-session-timeout-mail-ssl|durée de vie]] des sessions (5 minutes par défaut) :",
+ "9090ee4f98c2": "Active la vérification des certificats des clients. Le résultat est transmis dans l'en-tête `Auth-SSL-Verify` de la requête d'[[12-directives/auth-http|authentification]].",
+ "96cc9a1c5b83": "Indique le fichier (*file*) contenant la clé secrète au format PEM pour le serveur.",
  "a61718d732ba": "Indique le fichier (*file*) contenant les certificats révoqués (CRL) au format PEM utilisé pour [[12-directives/ssl-verify-client-mail-ssl|vérifier]] les certificats des clients. Avec des certificats intermédiaires, leurs CRL doivent figurer dans le même fichier.",
  "b1f16adc8589": "Indique un fichier (*file*) de phrases de passe pour les [[12-directives/ssl-certificate-key-mail-ssl|clés secrètes]], une phrase par ligne. Les phrases sont essayées tour à tour au chargement de la clé.",
- "cfe57c0e6f09": "La liste des certificats est envoyée aux clients. Si ce n'est pas souhaité, on peut utiliser la directive [[12-directives/ssl-trusted-certificate-mail-ssl|ssl_trusted_certificate]]."
+ "c558fccb7d83": "exige le passage préalable à TLS.",
+ "cdbcf189fc5c": "On peut indiquer `data`:*certificate* à la place de *file* (1.15.10) pour charger le certificat sans fichier intermédiaire. Une mauvaise utilisation de cette syntaxe peut avoir des conséquences sur la sécurité, comme l'écriture de données de clé secrète dans le [[12-directives/error-log|journal d'erreurs]].",
+ "cfe57c0e6f09": "La liste des certificats est envoyée aux clients. Si ce n'est pas souhaité, on peut utiliser la directive [[12-directives/ssl-trusted-certificate-mail-ssl|ssl_trusted_certificate]].",
+ "ecc94c52e2fe": "Indique le fichier (*file*) contenant les certificats d'autorités de confiance au format PEM utilisé pour [[12-directives/ssl-verify-client-mail-ssl|vérifier]] les certificats des clients.",
+ "f109c5de36cf": "Indique le fichier (*file*) contenant le certificat au format PEM pour le serveur. Si des certificats intermédiaires doivent accompagner le certificat principal, ils se placent dans le même fichier, dans cet ordre : d'abord le certificat principal, puis les certificats intermédiaires. Une clé secrète au format PEM peut figurer dans le même fichier.",
+ "f13d4059fb75": "Le module `ngx_mail_ssl_module` fournit la prise en charge nécessaire pour que le mandataire de messagerie fonctionne avec le protocole SSL/TLS.",
+ "fa7a948901d7": "cache partagé entre tous les processus de travail. Sa taille s'exprime en octets ; un mégaoctet peut contenir environ 4000 sessions. Chaque cache partagé doit avoir un nom quelconque. Un cache de même nom peut servir à plusieurs serveurs. Il sert aussi à générer, conserver et renouveler périodiquement et automatiquement les clés des tickets de session TLS (1.23.2), sauf si elles sont configurées explicitement avec la directive [[12-directives/ssl-session-ticket-key-mail-ssl|ssl_session_ticket_key]].",
+ "fb3a85f02666": "autorise la commande `STLS` pour POP3 et la commande `STARTTLS` pour IMAP et SMTP ;"
 }

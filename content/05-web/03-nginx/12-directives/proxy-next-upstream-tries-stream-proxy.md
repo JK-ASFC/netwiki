@@ -1,12 +1,9 @@
 ---
 title: "proxy_next_upstream_tries (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_next_upstream_tries (ngx_stream_proxy_module) — Limits the number of possible tries for passing a connection to the next server. The 0 value turns off this limitation."
+description: "Directive nginx proxy_next_upstream_tries (ngx_stream_proxy_module) — Limite le nombre de tentatives possibles pour passer une connexion au serveur suivant. La valeur 0 supprime cette limite."
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Limits the number of possible tries for passing a connection to the [[12-directives/proxy-next-upstream-stream-proxy|next server]]. The `0` value turns off this limitation.
+Limite le nombre de tentatives possibles pour passer une connexion au [[12-directives/proxy-next-upstream-stream-proxy|serveur suivant]]. La valeur `0` supprime cette limite.
 
 ---
 

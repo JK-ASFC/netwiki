@@ -1,12 +1,9 @@
 ---
 title: "smtp_auth"
-description: "Directive nginx smtp_auth (ngx_mail_smtp_module) — Sets permitted methods of SASL authentication for SMTP clients. Supported methods are: - plain AUTH PLAIN - login AUTH LOGIN - cram-md5 AUTH CRAM-MD5. In order for this method to work, the password…"
+description: "Directive nginx smtp_auth (ngx_mail_smtp_module) — Définit les méthodes d'authentification SASL autorisées pour les clients SMTP. Les méthodes prises en charge sont : - plain AUTH PLAIN - login AUTH LOGIN - cram-md5 AUTH CRAM-MD5. Pour que cette…"
 tags: [nginx, directive, ngx_mail_smtp_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets permitted methods of [SASL authentication](https://datatracker.ietf.org/doc/html/rfc2554) for SMTP clients. Supported methods are:
+Définit les méthodes d'[authentification SASL](https://datatracker.ietf.org/doc/html/rfc2554) autorisées pour les clients SMTP. Les méthodes prises en charge sont :
 
 - **`plain`**
 
@@ -29,7 +26,7 @@ Sets permitted methods of [SASL authentication](https://datatracker.ietf.org/doc
 
 - **`cram-md5`**
 
-  [AUTH CRAM-MD5](https://datatracker.ietf.org/doc/html/rfc2195). In order for this method to work, the password must be stored unencrypted.
+  [AUTH CRAM-MD5](https://datatracker.ietf.org/doc/html/rfc2195). Pour que cette méthode fonctionne, le mot de passe doit être stocké en clair.
 
 - **`external`**
 
@@ -37,9 +34,9 @@ Sets permitted methods of [SASL authentication](https://datatracker.ietf.org/doc
 
 - **`none`**
 
-  Authentication is not required.
+  L'authentification n'est pas exigée.
 
-Plain text authentication methods (`AUTH PLAIN` and `AUTH LOGIN`) are always enabled, though if the `plain` and `login` methods are not specified, `AUTH PLAIN` and `AUTH LOGIN` will not be automatically included in [[12-directives/smtp-capabilities|smtp_capabilities]].
+Les méthodes d'authentification en texte clair (`AUTH PLAIN` et `AUTH LOGIN`) sont toujours activées, mais si les méthodes `plain` et `login` ne sont pas indiquées, `AUTH PLAIN` et `AUTH LOGIN` ne sont pas ajoutées automatiquement à [[12-directives/smtp-capabilities|smtp_capabilities]].
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "js_var (ngx_stream_js_module)"
-description: "Directive nginx js_var (ngx_stream_js_module) — Declares a writable variable. The value can contain text, variables, and their combination. NOTE The directive can be specified on the server level since 0.7.7."
+description: "Directive nginx js_var (ngx_stream_js_module) — Déclare une variable modifiable. La valeur peut contenir du texte, des variables et leur combinaison. NOTE La directive peut être indiquée au niveau server depuis la version 0.7.7."
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,10 +15,10 @@ icon: settings-2
 
 ## Utilisation
 
-Declares a [[10-guides/04-njs/reference|writable]] variable. The value can contain text, variables, and their combination.
+Déclare une variable [[10-guides/04-njs/reference|modifiable]]. La valeur peut contenir du texte, des variables et leur combinaison.
 
 > [!NOTE]
-> The directive can be specified on the `server` level since 0.7.7.
+> La directive peut être indiquée au niveau `server` depuis la version 0.7.7.
 
 ---
 

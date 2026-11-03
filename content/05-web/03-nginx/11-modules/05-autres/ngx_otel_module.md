@@ -1,18 +1,15 @@
 ---
 title: "ngx_otel_module"
-description: "Module nginx ngx_otel_module — The ngx_otel_module module provides OpenTelemetry distributed tracing support. The module supports W3C context propagation and OTLP/gRPC export protocol."
+description: "Module nginx ngx_otel_module — Le module ngx_otel_module fournit la prise en charge du traçage distribué OpenTelemetry. Il prend en charge la propagation de contexte W3C et le protocole d'export OTLP/gRPC."
 tags: [nginx, module, ngx_otel_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_otel_module` fournit la prise en charge du traçage distribué [OpenTelemetry](https://opentelemetry.io). Il prend en charge la propagation de contexte [W3C](https://w3c.github.io/trace-context) et le protocole d'export OTLP/gRPC.
 
-The `ngx_otel_module` module provides [OpenTelemetry](https://opentelemetry.io) distributed tracing support. The module supports [W3C](https://w3c.github.io/trace-context) context propagation and OTLP/gRPC export protocol.
+Le code source du module est disponible [ici](https://github.com/nginx/nginx-otel). Les instructions de téléchargement et d'installation sont disponibles [ici](https://github.com/nginx/nginx-otel/blob/main/README.md).
 
-The source code of the module is available [here](https://github.com/nginx/nginx-otel). Download and install instructions are available [here](https://github.com/nginx/nginx-otel/blob/main/README.md).
-
-The module is also available in a prebuilt `nginx-module-otel` package since 1.25.3 and in `nginx-plus-module-otel` package as part of our [abonnement commercial](https://nginx.com/products/) since 1.23.4.
+Le module est aussi disponible dans le paquet précompilé `nginx-module-otel` depuis la version 1.25.3 et, dans le cadre de notre [abonnement commercial](https://nginx.com/products/), dans le paquet `nginx-plus-module-otel` depuis la version 1.23.4.
 
 ## Exemple de configuration
 
@@ -41,9 +38,9 @@ http {
 }
 ```
 
-## Default span attributes
+## Attributs de span par défaut
 
-The following [span attributes](https://opentelemetry.io/docs/specs/semconv/registry/attributes/http/) are added automatically:
+Les [attributs de span](https://opentelemetry.io/docs/specs/semconv/registry/attributes/http/) suivants sont ajoutés automatiquement :
 
 - `http.method`
 - `http.target`

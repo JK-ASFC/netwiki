@@ -1,12 +1,9 @@
 ---
 title: "js_engine (ngx_stream_js_module)"
-description: "Directive nginx js_engine (ngx_stream_js_module) — Sets a JavaScript engine to be used for njs scripts. The njs parameter sets the njs engine, also used by default. The qjs parameter sets the QuickJS engine. NOTE The njs engine is deprecated since…"
+description: "Directive nginx js_engine (ngx_stream_js_module) — Définit le moteur JavaScript utilisé pour les scripts njs. Le paramètre njs choisit le moteur njs, utilisé par défaut ; le paramètre qjs choisit le moteur QuickJS. NOTE Le moteur njs est obsolète…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,10 +15,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a [[10-guides/04-njs/engine|JavaScript engine]] to be used for njs scripts. The `njs` parameter sets the njs engine, also used by default. The `qjs` parameter sets the QuickJS engine.
+Définit le [[10-guides/04-njs/engine|moteur JavaScript]] utilisé pour les scripts njs. Le paramètre `njs` choisit le moteur njs, utilisé par défaut ; le paramètre `qjs` choisit le moteur QuickJS.
 
 > [!NOTE]
-> The `njs` engine is deprecated since 1.0.0; new configurations should use the `qjs` ([[10-guides/04-njs/engine|QuickJS]]) engine.
+> Le moteur `njs` est obsolète depuis la version 1.0.0 ; les nouvelles configurations doivent utiliser le moteur `qjs` ([[10-guides/04-njs/engine|QuickJS]]).
 
 ---
 

@@ -1,0 +1,14 @@
+{
+ "233bd7720575": "L'index est stocké dans la même zone de mémoire partagée et occupe donc de la place supplémentaire.",
+ "33b842d0f6ed": "Définit le nom (*name*) et la taille (*size*) de la zone de mémoire partagée qui contient la base clé-valeur. Les paires clé-valeur sont gérées par l'[[11-modules/02-http/ngx_http_api_module|API]].",
+ "67a7f0da42ca": "par défaut, aucun index : la recherche se fait par correspondance exacte entre la clé de l'enregistrement et la clé recherchée",
+ "6ea205646250": "Le paramètre facultatif `sync` (1.15.0) active la [[12-directives/zone-sync|synchronisation]] de la zone de mémoire partagée. La synchronisation nécessite de définir le paramètre `timeout`.",
+ "995b3fbabcea": "Le module `ngx_http_keyval_module` (1.13.3) crée des variables dont la valeur provient de paires clé-valeur gérées par l'[[11-modules/02-http/ngx_http_api_module|API]] ou par une variable (1.15.10), également modifiable avec [njs](https://github.com/nginx/njs-examples/#logging-the-number-of-requests-per-client-http-logging-num-requests).",
+ "aeaccbb45c8c": "Crée une nouvelle variable *$variable* dont la valeur est recherchée par la clé (*key*) dans la base clé-valeur. Les règles de correspondance sont définies par le paramètre `type` de la directive [[12-directives/keyval-zone-http-keyval|keyval_zone]]. La base est stockée dans la zone de mémoire partagée indiquée par le paramètre `zone`.",
+ "b42e6ce32cfb": "la recherche se fait par correspondance de préfixe entre la clé de l'enregistrement et la clé recherchée (1.17.5) ; pour correspondre, la clé de l'enregistrement doit être un préfixe de la clé recherchée",
+ "b750de206199": "la clé recherchée est la représentation textuelle d'une adresse IPv4 ou IPv6 ou d'une plage CIDR ; pour correspondre, elle doit appartenir au sous-réseau désigné par la clé de l'enregistrement ou correspondre exactement à une adresse IP",
+ "c933cc79d84f": "Le paramètre facultatif `type` (1.17.1) active un index supplémentaire optimisé pour un certain type de clé et définit les règles de correspondance lors de l'évaluation d'une variable [[12-directives/keyval-http-keyval|keyval]] `$variable`.",
+ "d40f3aa8aa57": "Le paramètre facultatif `state` indique un fichier (*file*) qui conserve l'état actuel de la base clé-valeur au format JSON et la rend persistante entre les redémarrages de nginx. Il faut éviter de modifier directement le contenu de ce fichier.",
+ "fece0568e3fe": "Le paramètre facultatif `timeout` (1.15.0) définit la durée au bout de laquelle les paires clé-valeur sont supprimées de la zone.",
+ "ff38c5b05d25": "Si la synchronisation est activée, la suppression des paires clé-valeur (qu'il s'agisse d'[[11-modules/02-http/ngx_http_api_module|une seule]] ou de [[11-modules/02-http/ngx_http_api_module|toutes]]) n'a lieu que sur le nœud ciblé du cluster. Les mêmes paires sur les autres nœuds sont supprimées à l'expiration de `timeout`."
+}

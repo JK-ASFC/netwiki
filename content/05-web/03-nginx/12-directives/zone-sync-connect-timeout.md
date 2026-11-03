@@ -1,12 +1,9 @@
 ---
 title: "zone_sync_connect_timeout"
-description: "Directive nginx zone_sync_connect_timeout (ngx_stream_zone_sync_module) — Defines a timeout for establishing a connection with another cluster node."
+description: "Directive nginx zone_sync_connect_timeout (ngx_stream_zone_sync_module) — Définit le délai d'établissement d'une connexion avec un autre nœud du cluster."
 tags: [nginx, directive, ngx_stream_zone_sync_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a timeout for establishing a connection with another cluster node.
+Définit le délai d'établissement d'une connexion avec un autre nœud du cluster.
 
 ---
 

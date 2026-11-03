@@ -1,0 +1,4 @@
+{
+ "9e17f7655dcc": "Comme les variables ne sont évaluées qu'à leur utilisation, la simple existence d'un grand nombre de variables « `num_map` » déclarées n'entraîne aucun coût supplémentaire pour le traitement des connexions.",
+ "aee3d07ecb34": "Le module `ngx_stream_num_map_module` (1.29.3) crée des variables dont la valeur dépend de valeurs numériques ou de plages de valeurs numériques."
+}

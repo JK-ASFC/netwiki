@@ -1,14 +1,11 @@
 ---
-title: "A message “ ‘sys_errlist’                 is deprecated;                 use ‘strerror’ or ‘strerror_r’                 instead ”"
-description: "Nginx — A message “ ‘sys_errlist’ is deprecated; use ‘strerror’ or ‘strerror_r’ instead ”. Q: While building nginx version 0.7.66, 0.8.35 or higher on Linux the following warning messages are issued:"
+title: "Un message « ‘sys_errlist’ is deprecated; use ‘strerror’ or ‘strerror_r’ instead »"
+description: "Nginx — Un message « ‘sys_errlist’ is deprecated; use ‘strerror’ or ‘strerror_r’ instead ». Q : Lors de la compilation de nginx 0.7.66, 0.8.35 ou supérieur sous Linux, les avertissements suivants apparaissent :"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-Q: While building nginx version 0.7.66, 0.8.35 or higher on Linux the following warning messages are issued:
+Q : Lors de la compilation de nginx 0.7.66, 0.8.35 ou supérieur sous Linux, les avertissements suivants apparaissent :
 
 ```c
 warning: `sys_errlist' is deprecated;
@@ -17,7 +14,7 @@ warning: `sys_nerr' is deprecated;
     use `strerror' or `strerror_r' instead
 ```
 
-A: This is normal: nginx has to use the deprecated sys\_errlist\[\] and sys\_nerr in signal handlers because strerror() and strerror\_r() functions are not Async-Signal-Safe.
+R : C'est normal : nginx doit utiliser les obsolètes sys\_errlist\[\] et sys\_nerr dans les gestionnaires de signaux, car les fonctions strerror() et strerror\_r() ne sont pas sûres vis-à-vis des signaux asynchrones (Async-Signal-Safe).
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "frontchannel_logout_uri"
-description: "Directive nginx frontchannel_logout_uri (ngx_http_oidc_module) — Defines the URI path for triggering front-channel logout. For the logout request to be associated with a user session, it must either include the module session cookie or provide both the “iss” and…"
+description: "Directive nginx frontchannel_logout_uri (ngx_http_oidc_module) — Définit le chemin d'URI qui déclenche la déconnexion par canal frontal. Pour être associée à une session utilisateur, la demande de déconnexion doit contenir le cookie de session du module ou fournir…"
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the URI path for triggering [front-channel logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). For the logout request to be associated with a user session, it must either include the module session cookie or provide both the “`iss`” and “`sid`” arguments. It is recommended to configure the OpenID Provider to set the “`iss`” and “`sid`” arguments when invoking this endpoint.
+Définit le chemin d'URI qui déclenche la [déconnexion par canal frontal](https://openid.net/specs/openid-connect-frontchannel-1_0.html). Pour être associée à une session utilisateur, la demande de déconnexion doit contenir le cookie de session du module ou fournir les arguments « `iss` » et « `sid` ». Il est recommandé de configurer le fournisseur OpenID pour qu'il transmette « `iss` » et « `sid` » lors de l'appel à ce point de terminaison.
 
 ---
 

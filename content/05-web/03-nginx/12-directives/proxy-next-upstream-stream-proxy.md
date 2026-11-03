@@ -1,12 +1,9 @@
 ---
 title: "proxy_next_upstream (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_next_upstream (ngx_stream_proxy_module) — When a connection to the proxied server cannot be established, determines whether a client connection will be passed to the next server. Passing a connection to the next server can be limited by the…"
+description: "Directive nginx proxy_next_upstream (ngx_stream_proxy_module) — Quand une connexion au serveur mandaté ne peut pas être établie, détermine si la connexion client est passée au serveur suivant. Le passage d'une connexion au serveur suivant peut être limité par le…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-When a connection to the proxied server cannot be established, determines whether a client connection will be passed to the next server.
+Quand une connexion au serveur mandaté ne peut pas être établie, détermine si la connexion client est passée au serveur suivant.
 
-Passing a connection to the next server can be limited by [[12-directives/proxy-next-upstream-tries-stream-proxy|the number of tries]] and by [[12-directives/proxy-next-upstream-timeout-stream-proxy|time]].
+Le passage d'une connexion au serveur suivant peut être limité par [[12-directives/proxy-next-upstream-tries-stream-proxy|le nombre de tentatives]] et par [[12-directives/proxy-next-upstream-timeout-stream-proxy|la durée]].
 
 ---
 

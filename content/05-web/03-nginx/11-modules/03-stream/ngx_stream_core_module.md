@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_core_module"
-description: "Module nginx ngx_stream_core_module — The ngx_stream_core_module module is available since version 1.9.0. This module is not built by default, it should be enabled with the --with-stream configuration parameter."
+description: "Module nginx ngx_stream_core_module — Le module ngx_stream_core_module est disponible depuis la version 1.9.0. Il n'est pas compilé par défaut ; activez-le avec le paramètre de configuration --with-stream."
 tags: [nginx, module, ngx_stream_core_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_core_module` module is available since version 1.9.0. This module is not built by default, it should be enabled with the `--with-stream` configuration parameter.
+Le module `ngx_stream_core_module` est disponible depuis la version 1.9.0. Il n'est pas compilé par défaut ; activez-le avec le paramètre de configuration `--with-stream`.
 
 ## Exemple de configuration
 

@@ -1,12 +1,9 @@
 ---
 title: "xslt_last_modified"
-description: "Directive nginx xslt_last_modified (ngx_http_xslt_module) — Allows preserving the Last-Modified header field from the original response during XSLT transformations to facilitate response caching. By default, the header field is removed as contents of the…"
+description: "Directive nginx xslt_last_modified (ngx_http_xslt_module) — Permet de conserver le champ d'en-tête Last-Modified de la réponse d'origine pendant les transformations XSLT, pour faciliter la mise en cache. Par défaut, ce champ est supprimé, car le contenu de la…"
 tags: [nginx, directive, ngx_http_xslt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Allows preserving the `Last-Modified` header field from the original response during XSLT transformations to facilitate response caching.
+Permet de conserver le champ d'en-tête `Last-Modified` de la réponse d'origine pendant les transformations XSLT, pour faciliter la mise en cache.
 
-By default, the header field is removed as contents of the response are modified during transformations and may contain dynamically generated elements or parts that are changed independently of the original response.
+Par défaut, ce champ est supprimé, car le contenu de la réponse est modifié pendant les transformations et peut contenir des éléments générés dynamiquement ou des parties qui changent indépendamment de la réponse d'origine.
 
 ---
 

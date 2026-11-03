@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_access_module"
-description: "Module nginx ngx_stream_access_module — The ngx_stream_access_module module (1.9.2) allows limiting access to certain client addresses."
+description: "Module nginx ngx_stream_access_module — Le module ngx_stream_access_module (1.9.2) permet de restreindre l'accès à certaines adresses client."
 tags: [nginx, module, ngx_stream_access_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_access_module` module (1.9.2) allows limiting access to certain client addresses.
+Le module `ngx_stream_access_module` (1.9.2) permet de restreindre l'accès à certaines adresses client.
 
 ## Exemple de configuration
 
@@ -23,7 +20,7 @@ server {
 }
 ```
 
-The rules are checked in sequence until the first match is found. In this example, access is allowed only for IPv4 networks `10.1.1.0/16` and `192.168.1.0/24` excluding the address `192.168.1.1`, and for IPv6 network `2001:0db8::/32`.
+Les règles sont vérifiées dans l'ordre jusqu'à la première correspondance. Dans cet exemple, l'accès n'est autorisé que pour les réseaux IPv4 `10.1.1.0/16` et `192.168.1.0/24`, à l'exception de l'adresse `192.168.1.1`, et pour le réseau IPv6 `2001:0db8::/32`.
 
 ## Directives
 

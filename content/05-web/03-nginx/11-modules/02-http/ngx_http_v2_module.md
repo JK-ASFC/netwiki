@@ -1,22 +1,19 @@
 ---
 title: "ngx_http_v2_module"
-description: "Module nginx ngx_http_v2_module — The ngx_http_v2_module module (1.9.5) provides support for HTTP/2."
+description: "Module nginx ngx_http_v2_module — Le module ngx_http_v2_module (1.9.5) fournit la prise en charge de HTTP/2."
 tags: [nginx, module, ngx_http_v2_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_v2_module` (1.9.5) fournit la prise en charge de [HTTP/2](https://datatracker.ietf.org/doc/html/rfc7540).
 
-The `ngx_http_v2_module` module (1.9.5) provides support for [HTTP/2](https://datatracker.ietf.org/doc/html/rfc7540).
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_v2_module`.
 
-This module is not built by default, it should be enabled with the `--with-http_v2_module` configuration parameter.
+## Problèmes connus
 
-## Known Issues
+Avant la version 1.9.14, la mise en tampon du corps de la requête du client ne pouvait pas être désactivée, quelles que soient les valeurs des directives [[12-directives/proxy-request-buffering|proxy_request_buffering]], [[12-directives/fastcgi-request-buffering|fastcgi_request_buffering]], [[12-directives/uwsgi-request-buffering|uwsgi_request_buffering]] et [[12-directives/scgi-request-buffering|scgi_request_buffering]].
 
-Before version 1.9.14, buffering of a client request body could not be disabled regardless of [[12-directives/proxy-request-buffering|proxy_request_buffering]], [[12-directives/fastcgi-request-buffering|fastcgi_request_buffering]], [[12-directives/uwsgi-request-buffering|uwsgi_request_buffering]], and [[12-directives/scgi-request-buffering|scgi_request_buffering]] directive values.
-
-Before version 1.19.1, the [[12-directives/lingering-close|lingering_close]] mechanism was not used to control closing HTTP/2 connections.
+Avant la version 1.19.1, le mécanisme [[12-directives/lingering-close|lingering_close]] n'était pas utilisé pour la fermeture des connexions HTTP/2.
 
 ## Exemple de configuration
 
@@ -31,9 +28,9 @@ server {
 }
 ```
 
-Note that accepting HTTP/2 connections over TLS requires the “Application-Layer Protocol Negotiation” (ALPN) TLS extension support, which is available since [OpenSSL](http://www.openssl.org) version 1.0.2.
+L'acceptation des connexions HTTP/2 sur TLS nécessite la prise en charge de l'extension TLS « Application-Layer Protocol Negotiation » (ALPN), disponible depuis [OpenSSL](http://www.openssl.org) 1.0.2.
 
-Also note that if the [[12-directives/ssl-prefer-server-ciphers-http-ssl|ssl_prefer_server_ciphers]] directive is set to the value “`on`”, the [[12-directives/ssl-ciphers-http-ssl|ciphers]] should be configured to comply with [RFC 9113, Appendix A](https://datatracker.ietf.org/doc/html/rfc9113#appendix-A) black list and supported by clients.
+Si la directive [[12-directives/ssl-prefer-server-ciphers-http-ssl|ssl_prefer_server_ciphers]] vaut « `on` », les [[12-directives/ssl-ciphers-http-ssl|suites de chiffrement]] doivent respecter la liste noire de la [RFC 9113, annexe A](https://datatracker.ietf.org/doc/html/rfc9113#appendix-A) et être prises en charge par les clients.
 
 ## Directives
 

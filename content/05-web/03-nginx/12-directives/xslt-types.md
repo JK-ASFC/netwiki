@@ -1,12 +1,9 @@
 ---
 title: "xslt_types"
-description: "Directive nginx xslt_types (ngx_http_xslt_module) — Enables transformations in responses with the specified MIME types in addition to “text/xml”. The special value “” matches any MIME type (0.8.29). If the transformation result is an HTML response,…"
+description: "Directive nginx xslt_types (ngx_http_xslt_module) — Active les transformations dans les réponses des types MIME indiqués, en plus de « text/xml ». La valeur spéciale « » correspond à tous les types MIME (0.8.29). Si le résultat de la transformation…"
 tags: [nginx, directive, ngx_http_xslt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables transformations in responses with the specified MIME types in addition to “`text/xml`”. The special value “`*`” matches any MIME type (0.8.29). If the transformation result is an HTML response, its MIME type is changed to “`text/html`”.
+Active les transformations dans les réponses des types MIME indiqués, en plus de « `text/xml` ». La valeur spéciale « `*` » correspond à tous les types MIME (0.8.29). Si le résultat de la transformation est une réponse HTML, son type MIME devient « `text/html` ».
 
 ---
 

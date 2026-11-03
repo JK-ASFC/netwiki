@@ -1,12 +1,9 @@
 ---
 title: "ssi_last_modified"
-description: "Directive nginx ssi_last_modified (ngx_http_ssi_module) — Allows preserving the Last-Modified header field from the original response during SSI processing to facilitate response caching. By default, the header field is removed as contents of the response…"
+description: "Directive nginx ssi_last_modified (ngx_http_ssi_module) — Permet de conserver le champ d'en-tête Last-Modified de la réponse d'origine pendant le traitement SSI, pour faciliter la mise en cache. Par défaut, ce champ est supprimé, car le contenu de la…"
 tags: [nginx, directive, ngx_http_ssi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Allows preserving the `Last-Modified` header field from the original response during SSI processing to facilitate response caching.
+Permet de conserver le champ d'en-tête `Last-Modified` de la réponse d'origine pendant le traitement SSI, pour faciliter la mise en cache.
 
-By default, the header field is removed as contents of the response are modified during processing and may contain dynamically generated elements or parts that are changed independently of the original response.
+Par défaut, ce champ est supprimé, car le contenu de la réponse est modifié pendant le traitement et peut contenir des éléments générés dynamiquement ou des parties qui changent indépendamment de la réponse d'origine.
 
 ---
 

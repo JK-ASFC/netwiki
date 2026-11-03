@@ -1,0 +1,8 @@
+{
+ "22c4f10009aa": "Le module `ngx_http_num_map_module` (1.29.3) crée des variables dont la valeur dépend de valeurs numériques ou de plages de valeurs numériques.",
+ "796a6f514895": "Comme les variables ne sont évaluées que lorsqu'elles sont utilisées, la simple existence d'un grand nombre de variables « `num_map` » déclarées n'ajoute aucun coût au traitement des requêtes.",
+ "8c91cb7ee03b": "indique que la variable ne peut pas être mise en cache.",
+ "94a741e78bcd": "Les valeurs sources sont des nombres ou des plages numériques.",
+ "ee30269d3013": "Décrit la dépendance entre les valeurs de la variable indiquée et des valeurs ou plages de valeurs numériques.",
+ "ef29308ae747": "Les paramètres du bloc `num_map` définissent la correspondance entre les valeurs sources et les valeurs résultantes."
+}

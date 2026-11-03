@@ -1,12 +1,9 @@
 ---
 title: "js_fetch_keepalive_time (ngx_http_js_module)"
-description: "Directive nginx js_fetch_keepalive_time (ngx_http_js_module) — Limits the maximum time during which requests can be processed through one keepalive connection with Fetch API. After this time is reached, the connection is closed following the subsequent request…"
+description: "Directive nginx js_fetch_keepalive_time (ngx_http_js_module) — Limite la durée maximale pendant laquelle des requêtes peuvent être traitées sur une connexion persistante avec l'API Fetch. Une fois cette durée atteinte, la connexion est fermée après le traitement…"
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Limits the maximum time during which requests can be processed through one keepalive connection with [[10-guides/04-njs/reference|Fetch API]]. After this time is reached, the connection is closed following the subsequent request processing.
+Limite la durée maximale pendant laquelle des requêtes peuvent être traitées sur une connexion persistante avec l'[[10-guides/04-njs/reference|API Fetch]]. Une fois cette durée atteinte, la connexion est fermée après le traitement de la requête suivante.
 
 ---
 

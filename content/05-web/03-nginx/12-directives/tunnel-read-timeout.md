@@ -1,12 +1,9 @@
 ---
 title: "tunnel_read_timeout"
-description: "Directive nginx tunnel_read_timeout (ngx_http_tunnel_module) — Sets the timeout between two successive read or write operations on client or backend server connections. If no data is transmitted within this time, the connection is closed."
+description: "Directive nginx tunnel_read_timeout (ngx_http_tunnel_module) — Définit le délai entre deux opérations de lecture ou d'écriture successives sur les connexions du client ou du serveur d'arrière-plan. Si aucune donnée n'est transmise pendant ce délai, la connexion…"
 tags: [nginx, directive, ngx_http_tunnel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the timeout between two successive read or write operations on client or backend server connections. If no data is transmitted within this time, the connection is closed.
+Définit le délai entre deux opérations de lecture ou d'écriture successives sur les connexions du client ou du serveur d'arrière-plan. Si aucune donnée n'est transmise pendant ce délai, la connexion est fermée.
 
 ---
 

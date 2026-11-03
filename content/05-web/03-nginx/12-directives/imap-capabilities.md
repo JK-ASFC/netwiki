@@ -1,12 +1,9 @@
 ---
 title: "imap_capabilities"
-description: "Directive nginx imap_capabilities (ngx_mail_imap_module) — Sets the IMAP protocol extensions list that is passed to the client in response to the CAPABILITY command. The authentication methods specified in the imap_auth directive and STARTTLS are…"
+description: "Directive nginx imap_capabilities (ngx_mail_imap_module) — Définit la liste des extensions du protocole IMAP transmise au client en réponse à la commande CAPABILITY. Les méthodes d'authentification indiquées dans la directive imap_auth et STARTTLS sont…"
 tags: [nginx, directive, ngx_mail_imap_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the [IMAP protocol](https://datatracker.ietf.org/doc/html/rfc3501) extensions list that is passed to the client in response to the `CAPABILITY` command. The authentication methods specified in the [[12-directives/imap-auth|imap_auth]] directive and [STARTTLS](https://datatracker.ietf.org/doc/html/rfc2595) are automatically added to this list depending on the [[12-directives/starttls|starttls]] directive value.
+Définit la liste des extensions du [protocole IMAP](https://datatracker.ietf.org/doc/html/rfc3501) transmise au client en réponse à la commande `CAPABILITY`. Les méthodes d'authentification indiquées dans la directive [[12-directives/imap-auth|imap_auth]] et [STARTTLS](https://datatracker.ietf.org/doc/html/rfc2595) sont ajoutées automatiquement à cette liste selon la valeur de la directive [[12-directives/starttls|starttls]].
 
-It makes sense to specify the extensions supported by the IMAP backends to which the clients are proxied (if these extensions are related to commands used after the authentication, when nginx transparently proxies a client connection to the backend).
+Il est utile d'indiquer les extensions prises en charge par les serveurs IMAP d'arrière-plan vers lesquels les clients sont relayés (si elles concernent des commandes utilisées après l'authentification, lorsque nginx relaie de façon transparente la connexion du client).
 
-The current list of standardized extensions is published at [www.iana.org](http://www.iana.org/assignments/imap4-capabilities).
+La liste actuelle des extensions normalisées est publiée sur [www.iana.org](http://www.iana.org/assignments/imap4-capabilities).
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "config_url"
-description: "Directive nginx config_url (ngx_http_oidc_module) — Sets a custom URL to retrieve the OpenID Provider metadata."
+description: "Directive nginx config_url (ngx_http_oidc_module) — Définit une URL personnalisée pour récupérer les métadonnées du fournisseur OpenID."
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a custom URL to retrieve the OpenID Provider metadata.
+Définit une URL personnalisée pour récupérer les métadonnées du fournisseur OpenID.
 
 ---
 

@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_num_map_module"
-description: "Module nginx ngx_stream_num_map_module — The ngx_stream_num_map_module module (1.29.3) creates variables whose values depend on numeric values or numeric value ranges."
+description: "Module nginx ngx_stream_num_map_module — Le module ngx_stream_num_map_module (1.29.3) crée des variables dont la valeur dépend de valeurs numériques ou de plages de valeurs numériques."
 tags: [nginx, module, ngx_stream_num_map_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_num_map_module` module (1.29.3) creates variables whose values depend on numeric values or numeric value ranges.
+Le module `ngx_stream_num_map_module` (1.29.3) crée des variables dont la valeur dépend de valeurs numériques ou de plages de valeurs numériques.
 
 > [!NOTE]
 > Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).

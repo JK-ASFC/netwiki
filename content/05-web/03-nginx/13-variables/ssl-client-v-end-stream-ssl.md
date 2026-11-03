@@ -1,19 +1,16 @@
 ---
 title: "$ssl_client_v_end (ngx_stream_ssl_module)"
-description: "Variable nginx $ssl_client_v_end (ngx_stream_ssl_module) — returns the end date of the client certificate (1.11.8);"
+description: "Variable nginx $ssl_client_v_end (ngx_stream_ssl_module) — renvoie la date de fin de validité du certificat client (1.11.8) ;"
 tags: [nginx, variable, ngx_stream_ssl_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$ssl_client_v_end` |
 | **Module** | [[11-modules/03-stream/ngx_stream_ssl_module\|ngx_stream_ssl_module]] |
 
-returns the end date of the client certificate (1.11.8);
+renvoie la date de fin de validité du certificat client (1.11.8) ;
 
 ---
 

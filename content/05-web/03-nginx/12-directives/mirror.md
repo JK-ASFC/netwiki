@@ -1,12 +1,9 @@
 ---
 title: "mirror"
-description: "Directive nginx mirror (ngx_http_mirror_module) — Sets the URI to which an original request will be mirrored. Several mirrors can be specified on the same configuration level."
+description: "Directive nginx mirror (ngx_http_mirror_module) — Définit l'URI vers lequel la requête d'origine est dupliquée. Plusieurs miroirs peuvent être indiqués au même niveau de configuration."
 tags: [nginx, directive, ngx_http_mirror_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the URI to which an original request will be mirrored. Several mirrors can be specified on the same configuration level.
+Définit l'URI vers lequel la requête d'origine est dupliquée. Plusieurs miroirs peuvent être indiqués au même niveau de configuration.
 
 ---
 

@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_set_module"
-description: "Module nginx ngx_stream_set_module — The ngx_stream_set_module module (1.19.3) allows setting a value for a variable."
+description: "Module nginx ngx_stream_set_module — Le module ngx_stream_set_module (1.19.3) permet d'affecter une valeur à une variable."
 tags: [nginx, module, ngx_stream_set_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_set_module` module (1.19.3) allows setting a value for a variable.
+Le module `ngx_stream_set_module` (1.19.3) permet d'affecter une valeur à une variable.
 
 ## Exemple de configuration
 

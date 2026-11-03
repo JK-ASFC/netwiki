@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_geo_module"
-description: "Module nginx ngx_stream_geo_module — The ngx_stream_geo_module module (1.11.3) creates variables with values depending on the client IP address."
+description: "Module nginx ngx_stream_geo_module — Le module ngx_stream_geo_module (1.11.3) crée des variables dont les valeurs dépendent de l'adresse IP du client."
 tags: [nginx, module, ngx_stream_geo_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_geo_module` module (1.11.3) creates variables with values depending on the client IP address.
+Le module `ngx_stream_geo_module` (1.11.3) crée des variables dont les valeurs dépendent de l'adresse IP du client.
 
 ## Exemple de configuration
 

@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_pass_module"
-description: "Module nginx ngx_stream_pass_module — The ngx_stream_pass_module module (1.25.5) allows passing the accepted connection directly to any configured listening socket in http, stream, mail, and other similar modules."
+description: "Module nginx ngx_stream_pass_module — Le module ngx_stream_pass_module (1.25.5) permet de passer la connexion acceptée directement à n'importe quelle socket d'écoute configurée dans les modules http, stream, mail et autres modules similaires."
 tags: [nginx, module, ngx_stream_pass_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_pass_module` module (1.25.5) allows passing the accepted connection directly to any configured listening socket in `http`, `stream`, `mail`, and other similar modules.
+Le module `ngx_stream_pass_module` (1.25.5) permet de passer la connexion acceptée directement à n'importe quelle socket d'écoute configurée dans les modules `http`, `stream`, `mail` et autres modules similaires.
 
 ## Exemple de configuration
 
@@ -35,7 +32,7 @@ stream {
 }
 ```
 
-In the example, after terminating SSL/TLS in the `stream` module the connection is passed to the `http` module.
+Dans cet exemple, après terminaison SSL/TLS dans le module `stream`, la connexion est passée au module `http`.
 
 ## Directives
 

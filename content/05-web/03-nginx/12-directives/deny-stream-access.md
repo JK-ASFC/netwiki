@@ -1,12 +1,9 @@
 ---
 title: "deny (ngx_stream_access_module)"
-description: "Directive nginx deny (ngx_stream_access_module) — Denies access for the specified network or address. If the special value unix: is specified, denies access for all UNIX-domain sockets."
+description: "Directive nginx deny (ngx_stream_access_module) — Refuse l'accès pour le réseau ou l'adresse indiqués. Avec la valeur spéciale unix:, refuse l'accès pour toutes les sockets de domaine UNIX."
 tags: [nginx, directive, ngx_stream_access_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Denies access for the specified network or address. If the special value `unix:` is specified, denies access for all UNIX-domain sockets.
+Refuse l'accès pour le réseau ou l'adresse indiqués. Avec la valeur spéciale `unix:`, refuse l'accès pour toutes les sockets de domaine UNIX.
 
 ---
 

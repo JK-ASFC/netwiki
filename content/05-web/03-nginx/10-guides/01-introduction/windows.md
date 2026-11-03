@@ -1,16 +1,13 @@
 ---
-title: "nginx for Windows"
-description: "Nginx — nginx for Windows. Version of nginx for Windows uses the native Win32 API (not the Cygwin emulation layer). Only the select and poll (1.15.9) connection processing methods are currently used, so high performance and scalability should not…"
+title: "nginx pour Windows"
+description: "Nginx — nginx pour Windows. La version de nginx pour Windows utilise l'API Win32 native (et non la couche d'émulation Cygwin). Seules les méthodes de traitement des connexions select et poll (1.15.9) sont actuellement utilisées : il ne faut donc…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+La version de nginx pour Windows utilise l'API Win32 native (et non la couche d'émulation Cygwin). Seules les méthodes de traitement des connexions `select` et `poll` (1.15.9) sont actuellement utilisées : il ne faut donc pas s'attendre à de hautes performances ni à une grande capacité de montée en charge. Pour cette raison et d'autres problèmes connus, la version Windows est considérée comme une version *bêta*. Elle offre actuellement presque les mêmes fonctions que la version UNIX, sauf le filtre XSLT, le filtre d'images, le module GeoIP et le langage Perl intégré.
 
-Version of nginx for Windows uses the native Win32 API (not the Cygwin emulation layer). Only the `select` and `poll` (1.15.9) connection processing methods are currently used, so high performance and scalability should not be expected. Due to this and some other known issues version of nginx for Windows is considered to be a *beta* version. At this time, it provides almost the same functionality as a UNIX version of nginx except for XSLT filter, image filter, GeoIP module, and embedded Perl language.
-
-To install nginx/Windows, download the latest mainline version distribution (), since the mainline branch of nginx contains all known fixes. Then unpack the distribution, go to the nginx- directory, and run `nginx`. Here is an example for the drive C: root directory:
+Pour installer nginx/Windows, téléchargez la dernière distribution de la branche mainline (), qui contient tous les correctifs connus. Décompressez ensuite l'archive, allez dans le répertoire nginx- et lancez `nginx`. Exemple pour la racine du lecteur C: :
 
 ```
 cd c:\
@@ -19,7 +16,7 @@ cd nginx-
 start nginx
 ```
 
-Run the `tasklist` command-line utility to see nginx processes:
+Lancez l'utilitaire en ligne de commande `tasklist` pour voir les processus nginx :
 
 ```
 C:\nginx->tasklist /fi "imagename eq nginx.exe"
@@ -30,34 +27,34 @@ nginx.exe            652 Console                 0      2 780 K
 nginx.exe           1332 Console                 0      3 112 K
 ```
 
-One of the processes is the master process and another is the worker process. If nginx does not start, look for the reason in the error log file `logs\error.log`. If the log file has not been created, the reason for this should be reported in the Windows Event Log. If an error page is displayed instead of the expected page, also look for the reason in the `logs\error.log` file.
+L'un des processus est le processus maître, l'autre le processus de travail. Si nginx ne démarre pas, cherchez la raison dans le fichier journal d'erreurs `logs\error.log`. Si ce fichier n'a pas été créé, la raison doit figurer dans le journal des événements Windows. Si une page d'erreur s'affiche au lieu de la page attendue, cherchez aussi la raison dans `logs\error.log`.
 
-nginx/Windows uses the directory where it has been run as the prefix for relative paths in the configuration. In the example above, the prefix is `C:\nginx-\`. Paths in a configuration file must be specified in UNIX-style using forward slashes:
+nginx/Windows utilise le répertoire depuis lequel il a été lancé comme préfixe des chemins relatifs de la configuration. Dans l'exemple ci-dessus, le préfixe est `C:\nginx-\`. Les chemins d'un fichier de configuration doivent être écrits à la manière UNIX, avec des barres obliques :
 
 ```c
 access_log   logs/site.log;
 root         C:/web/html;
 ```
 
-nginx/Windows runs as a standard console application (not a service), and it can be managed using the following commands:
+nginx/Windows s'exécute comme une application console standard (pas comme un service) et se gère avec les commandes suivantes :
 
 |   |   |
 | --- | --- |
 | nginx -s stop | arrêt rapide |
 | nginx -s quit | arrêt en douceur |
-| nginx -s reload | changing configuration, starting new worker processes with a new configuration, graceful shutdown of old worker processes |
+| nginx -s reload | modifier la configuration, démarrer de nouveaux processus de travail avec la nouvelle configuration, arrêter proprement les anciens |
 | nginx -s reopen | réouverture des fichiers journaux |
 
-## Known issues
+## Problèmes connus
 
-- Although several workers can be started, only one of them actually does any work.
-- The UDP (and, inherently, QUIC) functionality is not supported.
+- Plusieurs processus de travail peuvent être démarrés, mais un seul travaille réellement.
+- Les fonctions UDP (et donc QUIC) ne sont pas prises en charge.
 
-## Possible future enhancements
+## Améliorations envisagées
 
-- Running as a service.
-- Using the I/O completion ports as a connection processing method.
-- Using multiple worker threads inside a single worker process.
+- Exécution en tant que service.
+- Utilisation des ports de complétion d'E/S comme méthode de traitement des connexions.
+- Utilisation de plusieurs threads de travail dans un même processus de travail.
 
 ---
 

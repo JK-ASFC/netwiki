@@ -1,12 +1,9 @@
 ---
 title: "image_filter_transparency"
-description: "Directive nginx image_filter_transparency (ngx_http_image_filter_module) — Defines whether transparency should be preserved when transforming GIF images or PNG images with colors specified by a palette. The loss of transparency results in images of a better quality. The…"
+description: "Directive nginx image_filter_transparency (ngx_http_image_filter_module) — Indique si la transparence doit être conservée lors de la transformation des images GIF ou PNG à palette de couleurs. La perte de transparence donne des images de meilleure qualité. La transparence…"
 tags: [nginx, directive, ngx_http_image_filter_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines whether transparency should be preserved when transforming GIF images or PNG images with colors specified by a palette. The loss of transparency results in images of a better quality. The alpha channel transparency in PNG is always preserved.
+Indique si la transparence doit être conservée lors de la transformation des images GIF ou PNG à palette de couleurs. La perte de transparence donne des images de meilleure qualité. La transparence par canal alpha des PNG est toujours conservée.
 
 ---
 

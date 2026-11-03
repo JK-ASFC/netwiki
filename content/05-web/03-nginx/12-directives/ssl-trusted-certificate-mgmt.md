@@ -1,12 +1,9 @@
 ---
 title: "ssl_trusted_certificate (ngx_mgmt_module)"
-description: "Directive nginx ssl_trusted_certificate (ngx_mgmt_module) — Specifies a file with trusted CA certificates in the PEM format used to verify the certificate of the usage reporting endpoint."
+description: "Directive nginx ssl_trusted_certificate (ngx_mgmt_module) — Indique le fichier (file) contenant les certificats d'autorités de confiance au format PEM utilisé pour vérifier le certificat du point de terminaison du rapport d'utilisation."
 tags: [nginx, directive, ngx_mgmt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with trusted CA certificates in the PEM format used to [[12-directives/ssl-verify-mgmt|verify]] the certificate of the usage reporting endpoint.
+Indique le fichier (*file*) contenant les certificats d'autorités de confiance au format PEM utilisé pour [[12-directives/ssl-verify-mgmt|vérifier]] le certificat du point de terminaison du rapport d'utilisation.
 
 ---
 

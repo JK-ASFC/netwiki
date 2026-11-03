@@ -1,12 +1,9 @@
 ---
 title: "status_zone (ngx_http_api_module)"
-description: "Directive nginx status_zone (ngx_http_api_module) — Enables collection of virtual http or stream server status information in the specified zone. Several servers may share the same zone. Starting from 1.17.0, status information can be collected per…"
+description: "Directive nginx status_zone (ngx_http_api_module) — Active la collecte des informations d'état des serveurs virtuels http ou stream dans la zone indiquée. Plusieurs serveurs peuvent partager la même zone. Depuis la version 1.17.0, les informations…"
 tags: [nginx, directive, ngx_http_api_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Enables collection of virtual [[12-directives/server-http-core|http]] or [[12-directives/server-stream-core|stream]] server status information in the specified *zone*. Several servers may share the same zone.
+Active la collecte des informations d'état des serveurs virtuels [[12-directives/server-http-core|http]] ou [[12-directives/server-stream-core|stream]] dans la *zone* indiquée. Plusieurs serveurs peuvent partager la même zone.
 
-Starting from 1.17.0, status information can be collected per [[12-directives/location|location]]. The special value `off` disables statistics collection in nested location blocks. Note that the statistics is collected in the context of a location where processing ends. It may be different from the original location, if an [[12-directives/internal|internal redirect]] happens during request processing.
+Depuis la version 1.17.0, les informations d'état peuvent être collectées par [[12-directives/location|location]]. La valeur spéciale `off` désactive la collecte dans les blocs location imbriqués. Notez que les statistiques sont collectées dans le contexte de la location où le traitement se termine, qui peut différer de la location d'origine en cas de [[12-directives/internal|redirection interne]] pendant le traitement.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "session_timeout"
-description: "Directive nginx session_timeout (ngx_http_oidc_module) — Sets a timeout after which the session is deleted, unless it was refreshed."
+description: "Directive nginx session_timeout (ngx_http_oidc_module) — Définit le délai au bout duquel la session est supprimée, sauf si elle a été rafraîchie."
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a timeout after which the session is deleted, unless it was [refreshed](https://openid.net/specs/openid-connect-core-1_0.html#RefreshTokens).
+Définit le délai au bout duquel la session est supprimée, sauf si elle a été [rafraîchie](https://openid.net/specs/openid-connect-core-1_0.html#RefreshTokens).
 
 ---
 

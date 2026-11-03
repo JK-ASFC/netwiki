@@ -1,12 +1,9 @@
 ---
 title: "quic_active_connection_id_limit"
-description: "Directive nginx quic_active_connection_id_limit (ngx_http_v3_module) — Sets the QUIC active_connection_id_limit transport parameter value. This is the maximum number of client connection IDs which can be stored on the server."
+description: "Directive nginx quic_active_connection_id_limit (ngx_http_v3_module) — Définit la valeur du paramètre de transport QUIC active_connection_id_limit, soit le nombre maximal d'identifiants de connexion du client que le serveur peut conserver."
 tags: [nginx, directive, ngx_http_v3_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the QUIC `active_connection_id_limit` transport parameter value. This is the maximum number of client connection IDs which can be stored on the server.
+Définit la valeur du paramètre de transport QUIC `active_connection_id_limit`, soit le nombre maximal d'identifiants de connexion du client que le serveur peut conserver.
 
 ---
 
