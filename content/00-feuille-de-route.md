@@ -93,6 +93,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 77 | Catalogue — forges, revue de code et gestion de versions : Gogs, OneDev, SourceHut, Pagure, RhodeCode, Gerrit, Review Board, Subversion, Mercurial, Fossil (Phorge déjà présent) | ✅ |
 | 78 | Catalogue — registres, artefacts et analyse de code : Harbor, Distribution, Zot, Nexus, Artifactory, Verdaccio, SonarQube for IDE, Semgrep, CodeQL, PMD, Checkstyle, SpotBugs, ESLint, Prettier | ✅ |
 | 79 | Catalogue — analyse Python et chaîne d'approvisionnement : Ruff, Pylint, mypy, Bandit, Syft, Grype, Cosign, in-toto, Tekton Chains | ✅ |
+| 80 | Catalogue — dépendances, modernisation et tests : Renovate, Dependabot, Mend Renovate, OpenRewrite, Allure Report, ReportPortal, Sonobuoy, OWASP Juice Shop, WebGoat | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -274,6 +275,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[15-analyse-code/01-outils-analyse\|Semgrep, CodeQL, PMD, Checkstyle, SpotBugs, ESLint, Prettier]] | pip, npm, Java | pip, npm, Java | brew, npm | ✅ |
 | [[15-analyse-code/02-python\|Ruff, Pylint, mypy, Bandit]] | pip, uv | pip, uv | pip, brew | ✅ |
 | [[16-chaine-approvisionnement/01-sbom-signature-attestations\|Syft, Grype, Cosign, in-toto, Tekton Chains]] | binaires, pip, Kubernetes | binaires, pip | brew | ✅ |
+| [[17-dependances-modernisation/01-renovate-dependabot\|Renovate, Dependabot, Mend Renovate]], [[17-dependances-modernisation/02-openrewrite\|OpenRewrite]] | Docker, npm, Maven, Gradle | npm, Maven, Gradle | npm, brew | ✅ |
+| [[18-tests/01-rapports-tests-sonobuoy\|Allure, ReportPortal, Sonobuoy]], [[18-tests/03-applications-vulnerables\|Juice Shop, WebGoat]] | npm, Docker, binaire | npm, Docker | npm, brew, Docker | ✅ |
 
 ## Supervision & métriques
 

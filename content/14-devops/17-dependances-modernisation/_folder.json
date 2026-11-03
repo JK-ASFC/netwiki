@@ -1,0 +1,1 @@
+{ "title": "Dépendances et modernisation du code", "icon": "package-check", "color": "#0891b2", "description": "Mise à jour automatique des dépendances (Renovate, Dependabot, Mend Renovate) et refactorisation automatisée (OpenRewrite)." }

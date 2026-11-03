@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 184 (14 %) | 586 | 2 | 539 (41 %) |
+| 1311 | 184 (14 %) | 595 | 2 | 530 (40 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -767,7 +767,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OCS Inventory NG | Inventaire IT | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/07-ocs-inventory` |
 | FusionInventory | Inventaire IT (ancien) | Windows, Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
 
-## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 39/56
+## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 48/56
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -810,13 +810,13 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Cosign | Signature artefacts | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
 | in-toto | Chaîne approvisionnement | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
 | Tekton Chains | Signature pipelines | Linux | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
-| Renovate | Mise à jour dépendances | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Dependabot (service GitHub) | Mise à jour dépendances | Cloud | ⏳ à faire | → `14-devops` |
-| Mend Renovate CLI | Mise à jour dépendances | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| OpenRewrite | Modernisation code | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Allure Report | Rapports tests | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| ReportPortal | Rapports tests | Linux | ⏳ à faire | → `14-devops` |
-| Sonobuoy | Tests Kubernetes | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
+| Renovate | Mise à jour dépendances | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/17-dependances-modernisation` |
+| Dependabot (service GitHub) | Mise à jour dépendances | Cloud | 🆕 fait (lot 80) | `14-devops/17-dependances-modernisation` |
+| Mend Renovate CLI | Mise à jour dépendances | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/17-dependances-modernisation` |
+| OpenRewrite | Modernisation code | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/17-dependances-modernisation` |
+| Allure Report | Rapports tests | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
+| ReportPortal | Rapports tests | Linux | 🆕 fait (lot 80) | `14-devops/18-tests` |
+| Sonobuoy | Tests Kubernetes | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 | k6 | Tests de charge | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
 | Apache JMeter | Tests de charge | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
 | Locust | Tests de charge | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
@@ -825,8 +825,8 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | wrk | Tests HTTP | Linux, macOS | ⏳ à faire | → `14-devops` |
 | hey | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
 | Siege | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| OWASP Juice Shop | Application de test sécurité | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| WebGoat | Application de test sécurité | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
+| OWASP Juice Shop | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
+| WebGoat | Application de test sécurité | Windows, Linux, macOS | 🆕 fait (lot 80) | `14-devops/18-tests` |
 
 ## 15. SERVICES WINDOWS, GESTION PARC ET OUTILS D'ADMINISTRATION — 6/41
 
