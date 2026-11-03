@@ -19,3 +19,14 @@ npx prettier . --check ; npx prettier . --write
 pip install pre-commit && pre-commit install && pre-commit run --all-files
 code --install-extension SonarSource.sonarlint-vscode
 ```
+
+## Python (Ruff, Pylint, mypy, Bandit)
+
+Explications : [[02-python|Ruff, Pylint, mypy et Bandit]].
+
+```bash
+ruff check . ; ruff check . --fix ; ruff format . ; ruff check --output-format=github .
+pylint src/ ; pylint --generate-rcfile > .pylintrc
+mypy src/ ; mypy --strict src/
+bandit -r src/ -ll ; bandit -r src/ -f sarif -o bandit.sarif
+```

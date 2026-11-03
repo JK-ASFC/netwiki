@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 184 (14 %) | 577 | 2 | 548 (42 %) |
+| 1311 | 184 (14 %) | 586 | 2 | 539 (41 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -767,7 +767,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OCS Inventory NG | Inventaire IT | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/07-ocs-inventory` |
 | FusionInventory | Inventaire IT (ancien) | Windows, Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
 
-## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 30/56
+## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 39/56
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -801,15 +801,15 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | SpotBugs | Analyse Java | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
 | ESLint | Analyse JavaScript | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
 | Prettier | Formatage code | Windows, Linux, macOS | 🆕 fait (lot 78) | `14-devops/15-analyse-code` |
-| Ruff | Lint Python | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Pylint | Lint Python | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Mypy | Types Python | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Bandit | Sécurité Python | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Grype | Scan vulnérabilités | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Syft | SBOM | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Cosign | Signature artefacts | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| in-toto | Chaîne approvisionnement | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Tekton Chains | Signature pipelines | Linux | ⏳ à faire | → `14-devops` |
+| Ruff | Lint Python | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/15-analyse-code` |
+| Pylint | Lint Python | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/15-analyse-code` |
+| Mypy | Types Python | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/15-analyse-code` |
+| Bandit | Sécurité Python | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/15-analyse-code` |
+| Grype | Scan vulnérabilités | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
+| Syft | SBOM | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
+| Cosign | Signature artefacts | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
+| in-toto | Chaîne approvisionnement | Windows, Linux, macOS | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
+| Tekton Chains | Signature pipelines | Linux | 🆕 fait (lot 79) | `14-devops/16-chaine-approvisionnement` |
 | Renovate | Mise à jour dépendances | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
 | Dependabot (service GitHub) | Mise à jour dépendances | Cloud | ⏳ à faire | → `14-devops` |
 | Mend Renovate CLI | Mise à jour dépendances | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
