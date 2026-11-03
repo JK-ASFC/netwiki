@@ -98,6 +98,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 82 | Catalogue — outils Windows (nouvelle catégorie Gestion de parc) : Windows Terminal, WinGet, Chocolatey, Scoop, NSSM, WinSW, WSL, Cygwin, MSYS2, Git for Windows, OpenSSH pour Windows, PowerToys (PowerShell 7 déjà présent) | ✅ |
 | 83 | Catalogue — bureau distant : Apache Guacamole, FreeRDP, xrdp, Remmina, RDPY, TigerVNC, TightVNC, UltraVNC, X2Go | ✅ |
 | 84 | Catalogue — supports, déploiement, RMM et automatisation : Rufus, Ventoy, FOG, opsi, WAPT, Open-AudIT, Tactical RMM, RPort, Remotely, AutoHotkey, AutoIt, Actiona (Winbind déjà présent) | ✅ |
+| 85 | Catalogue — gestionnaires de paquets : Homebrew, MacPorts, Nix, GNU Guix, Flatpak, Snap, AppImage, équivalences apt/dnf/yum/zypper/pacman/apk/Portage (déjà traités par distribution) | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -371,6 +372,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | IA et productivité | [[05-ia-productivite/01-chatgpt\|ChatGPT]], [[05-ia-productivite/02-github-copilot\|GitHub Copilot]], [[05-ia-productivite/03-cursor\|Cursor]], [[05-ia-productivite/04-ollama-open-webui\|Ollama, Open WebUI]], [[05-ia-productivite/05-jupyterlab\|JupyterLab]], [[05-ia-productivite/06-n8n\|n8n]], [[05-ia-productivite/07-power-automate\|Power Automate]], [[05-ia-productivite/08-obsidian\|Obsidian]], [[05-ia-productivite/09-bookstack\|BookStack]] | ✅ |
 | Support et prise en main | [[06-support-parc/01-anydesk-teamviewer\|AnyDesk, TeamViewer]], [[06-support-parc/02-rustdesk\|RustDesk]], [[06-support-parc/03-meshcentral\|MeshCentral]], [[06-support-parc/04-glpi-installation\|GLPI]], [[06-support-parc/06-zammad\|Zammad]], [[06-support-parc/12-chatwoot\|Chatwoot]], [[06-support-parc/13-freescout\|FreeScout]], [[06-support-parc/14-osticket\|osTicket]], [[06-support-parc/15-itop\|iTop]], [[06-support-parc/16-otobo-znuny\|OTOBO et Znuny]], [[06-support-parc/17-request-tracker\|Request Tracker]], [[06-support-parc/18-uvdesk-faveo\|UVdesk et Faveo]], [[06-support-parc/07-ocs-inventory\|OCS Inventory NG]], [[06-support-parc/08-lansweeper\|Lansweeper]], [[06-support-parc/09-pdq-deploy\|PDQ Deploy]], [[06-support-parc/10-intune-inscription\|Intune]] | ✅ |
 | Disques et récupération | [[07-disques-recuperation/01-gparted\|GParted]], [[07-disques-recuperation/02-clonezilla\|Clonezilla]], [[07-disques-recuperation/03-testdisk-photorec\|TestDisk, PhotoRec]] | ✅ |
+| Gestionnaires de paquets | [[08-gestionnaires-paquets/01-homebrew-macports\|Homebrew, MacPorts]], [[08-gestionnaires-paquets/02-nix-guix\|Nix, Guix]], [[08-gestionnaires-paquets/03-flatpak-snap-appimage\|Flatpak, Snap, AppImage]], [[08-gestionnaires-paquets/04-equivalences-distributions\|équivalences apt, dnf, zypper, pacman, apk, Portage]] | ✅ |
 
 ## Équipements réseau par constructeur
 

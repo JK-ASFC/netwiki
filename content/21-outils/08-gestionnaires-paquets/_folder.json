@@ -1,0 +1,1 @@
+{ "title": "Gestionnaires de paquets", "icon": "package", "color": "#d97706", "description": "Homebrew, MacPorts, Nix, GNU Guix, Flatpak, Snap et AppImage, avec les équivalences entre gestionnaires des distributions (apt, dnf, zypper, pacman, apk, portage)." }

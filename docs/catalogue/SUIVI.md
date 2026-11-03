@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 186 (14 %) | 636 | 2 | 487 (37 %) |
+| 1311 | 193 (15 %) | 643 | 2 | 473 (36 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -874,24 +874,24 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | AutoIt | Automatisation Windows | Windows | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
 | PowerToys | Utilitaires Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 
-## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 3/67
+## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 17/67
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| Homebrew | Gestionnaire paquets | macOS, Linux | ⏳ à faire | → `21-outils` |
-| MacPorts | Gestionnaire paquets | macOS | ⏳ à faire | → `21-outils` |
-| Nix | Gestionnaire paquets reproductible | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| GNU Guix | Gestionnaire paquets | Linux | ⏳ à faire | → `21-outils` |
-| Flatpak | Applications sandbox | Linux | ⏳ à faire | → `21-outils` |
-| Snapd | Gestionnaire paquets | Linux | ⏳ à faire | → `21-outils` |
-| AppImage | Format applications portables | Linux | ⏳ à faire | → `21-outils` |
-| Apt | Gestionnaire paquets | Debian/Ubuntu | ⏳ à faire | → `21-outils` |
-| DNF | Gestionnaire paquets | Fedora/RHEL-like | ⏳ à faire | → `21-outils` |
-| YUM | Gestionnaire paquets historique | CentOS/RHEL | ⏳ à faire | → `21-outils` |
-| Zypper | Gestionnaire paquets | openSUSE/SLES | ⏳ à faire | → `21-outils` |
-| Pacman | Gestionnaire paquets | Arch Linux | ⏳ à faire | → `21-outils` |
-| APK | Gestionnaire paquets | Alpine Linux | ⏳ à faire | → `21-outils` |
-| Portage | Gestionnaire paquets | Gentoo | ⏳ à faire | → `21-outils` |
+| Homebrew | Gestionnaire paquets | macOS, Linux | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| MacPorts | Gestionnaire paquets | macOS | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| Nix | Gestionnaire paquets reproductible | Windows, Linux, macOS | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| GNU Guix | Gestionnaire paquets | Linux | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| Flatpak | Applications sandbox | Linux | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| Snapd | Gestionnaire paquets | Linux | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| AppImage | Format applications portables | Linux | 🆕 fait (lot 85) | `21-outils/08-gestionnaires-paquets` |
+| Apt | Gestionnaire paquets | Debian/Ubuntu | ✅ existant (lot 85) | `24-systemes-exploitation/01-debian-ubuntu` |
+| DNF | Gestionnaire paquets | Fedora/RHEL-like | ✅ existant (lot 85) | `24-systemes-exploitation/02-famille-red-hat` |
+| YUM | Gestionnaire paquets historique | CentOS/RHEL | ✅ existant (lot 85) | `24-systemes-exploitation/02-famille-red-hat` |
+| Zypper | Gestionnaire paquets | openSUSE/SLES | ✅ existant (lot 85) | `24-systemes-exploitation/03-opensuse` |
+| Pacman | Gestionnaire paquets | Arch Linux | ✅ existant (lot 85) | `24-systemes-exploitation/04-arch-linux` |
+| APK | Gestionnaire paquets | Alpine Linux | ✅ existant (lot 85) | `24-systemes-exploitation/06-alpine-linux` |
+| Portage | Gestionnaire paquets | Gentoo | ✅ existant (lot 85) | `24-systemes-exploitation/05-gentoo` |
 | OpenRC | Init et services | Linux, BSD | ⏳ à faire | → `21-outils` |
 | systemd | Init et services | Linux | ⏳ à faire | → `21-outils` |
 | runit | Init et services | Linux, BSD | ⏳ à faire | → `21-outils` |
