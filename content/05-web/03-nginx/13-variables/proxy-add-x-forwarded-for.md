@@ -1,19 +1,16 @@
 ---
 title: "$proxy_add_x_forwarded_for"
-description: "Variable nginx $proxy_add_x_forwarded_for (ngx_http_proxy_module) — the X-Forwarded-For client request header field with the $remote_addr variable appended to it, separated by a comma. If the X-Forwarded-For field is not present in the client request header, the…"
+description: "Variable nginx $proxy_add_x_forwarded_for (ngx_http_proxy_module) — le champ d'en-tête de requête du client X-Forwarded-For, suivi de la variable $remote_addr, séparés par une virgule. Si le champ X-Forwarded-For est absent de l'en-tête de la requête du client, la…"
 tags: [nginx, variable, ngx_http_proxy_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$proxy_add_x_forwarded_for` |
 | **Module** | [[11-modules/02-http/ngx_http_proxy_module\|ngx_http_proxy_module]] |
 
-the `X-Forwarded-For` client request header field with the `$remote_addr` variable appended to it, separated by a comma. If the `X-Forwarded-For` field is not present in the client request header, the `$proxy_add_x_forwarded_for` variable is equal to the `$remote_addr` variable.
+le champ d'en-tête de requête du client `X-Forwarded-For`, suivi de la variable `$remote_addr`, séparés par une virgule. Si le champ `X-Forwarded-For` est absent de l'en-tête de la requête du client, la variable `$proxy_add_x_forwarded_for` est égale à la variable `$remote_addr`.
 
 ---
 

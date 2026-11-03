@@ -1,12 +1,9 @@
 ---
 title: "proxy_cache_lock_timeout"
-description: "Directive nginx proxy_cache_lock_timeout (ngx_http_proxy_module) — Sets a timeout for proxy_cache_lock. When the time expires, the request will be passed to the proxied server, however, the response will not be cached. NOTE Before 1.7.8, the response could be cached."
+description: "Directive nginx proxy_cache_lock_timeout (ngx_http_proxy_module) — Définit un délai pour proxy_cache_lock. Une fois ce délai (time) écoulé, la requête est transmise au serveur mandaté, mais la réponse n'est pas mise en cache. NOTE Avant la version 1.7.8, la réponse…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,10 +15,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a timeout for [[12-directives/proxy-cache-lock|proxy_cache_lock]]. When the *time* expires, the request will be passed to the proxied server, however, the response will not be cached.
+Définit un délai pour [[12-directives/proxy-cache-lock|proxy_cache_lock]]. Une fois ce délai (*time*) écoulé, la requête est transmise au serveur mandaté, mais la réponse n'est pas mise en cache.
 
 > [!NOTE]
-> Before 1.7.8, the response could be cached.
+> Avant la version 1.7.8, la réponse pouvait être mise en cache.
 
 ---
 

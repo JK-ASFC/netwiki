@@ -20,13 +20,13 @@ icon: settings-2
 
 Makes outgoing connections to a proxied server originate from the specified local IP *address*. Parameter value can contain variables (1.11.2). The special value `off` cancels the effect of the `proxy_bind` directive inherited from the previous configuration level, which allows the system to auto-assign the local IP address.
 
-The `transparent` parameter (1.11.0) allows outgoing connections to a proxied server originate from a non-local IP address, for example, from a real IP address of a client:
+Le paramètre `transparent` (1.11.0) permet aux connexions sortantes vers un serveur mandaté de partir d'une adresse IP non locale, par exemple de l'adresse IP réelle du client :
 
 ```nginx
 proxy_bind $remote_addr transparent;
 ```
 
-In order for this parameter to work, it is usually necessary to run nginx worker processes with the [[12-directives/user|superuser]] privileges. On Linux it is not required (1.13.8) as if the `transparent` parameter is specified, worker processes inherit the `CAP_NET_RAW` capability from the master process. It is also necessary to configure kernel routing table to intercept network traffic from the proxied server.
+Pour que ce paramètre fonctionne, il faut généralement exécuter les processus de travail de nginx avec les privilèges du [[12-directives/user|superutilisateur]]. Sous Linux, ce n'est pas nécessaire (1.13.8) : avec le paramètre `transparent`, les processus de travail héritent de la capacité `CAP_NET_RAW` du processus maître. Il faut aussi configurer la table de routage du noyau pour intercepter le trafic réseau provenant du serveur mandaté.
 
 ---
 

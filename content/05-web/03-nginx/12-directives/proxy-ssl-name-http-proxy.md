@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_name (ngx_http_proxy_module)"
-description: "Directive nginx proxy_ssl_name (ngx_http_proxy_module) — Allows overriding the server name used to verify the certificate of the proxied HTTPS server and to be passed through SNI when establishing a connection with the proxied HTTPS server. By default, the…"
+description: "Directive nginx proxy_ssl_name (ngx_http_proxy_module) — Permet de remplacer le nom de serveur utilisé pour vérifier le certificat du serveur HTTPS mandaté et transmis via SNI lors de l'établissement de la connexion avec ce serveur. Par défaut, la partie…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Allows overriding the server name used to [[12-directives/proxy-ssl-verify-http-proxy|verify]] the certificate of the proxied HTTPS server and to be [[12-directives/proxy-ssl-server-name-http-proxy|passed through SNI]] when establishing a connection with the proxied HTTPS server.
+Permet de remplacer le nom de serveur utilisé pour [[12-directives/proxy-ssl-verify-http-proxy|vérifier]] le certificat du serveur HTTPS mandaté et [[12-directives/proxy-ssl-server-name-http-proxy|transmis via SNI]] lors de l'établissement de la connexion avec ce serveur.
 
-By default, the host part of the [[12-directives/proxy-pass-http-proxy|proxy_pass]] URL is used.
+Par défaut, la partie hôte de l'URL de [[12-directives/proxy-pass-http-proxy|proxy_pass]] est utilisée.
 
 ---
 

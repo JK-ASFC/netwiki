@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_password_file (ngx_http_proxy_module)"
-description: "Directive nginx proxy_ssl_password_file (ngx_http_proxy_module) — Specifies a file with passphrases for secret keys where each passphrase is specified on a separate line. Passphrases are tried in turn when loading the key."
+description: "Directive nginx proxy_ssl_password_file (ngx_http_proxy_module) — Indique un fichier (file) de phrases de passe pour les clés secrètes, une phrase par ligne. Les phrases sont essayées tour à tour au chargement de la clé."
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with passphrases for [[12-directives/proxy-ssl-certificate-key-http-proxy|secret keys]] where each passphrase is specified on a separate line. Passphrases are tried in turn when loading the key.
+Indique un fichier (*file*) de phrases de passe pour les [[12-directives/proxy-ssl-certificate-key-http-proxy|clés secrètes]], une phrase par ligne. Les phrases sont essayées tour à tour au chargement de la clé.
 
 ---
 

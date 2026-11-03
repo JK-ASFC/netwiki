@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_verify_depth (ngx_http_proxy_module)"
-description: "Directive nginx proxy_ssl_verify_depth (ngx_http_proxy_module) — Sets the verification depth in the proxied HTTPS server certificates chain."
+description: "Directive nginx proxy_ssl_verify_depth (ngx_http_proxy_module) — Définit la profondeur de vérification dans la chaîne de certificats du serveur HTTPS mandaté."
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the verification depth in the proxied HTTPS server certificates chain.
+Définit la profondeur de vérification dans la chaîne de certificats du serveur HTTPS mandaté.
 
 ---
 

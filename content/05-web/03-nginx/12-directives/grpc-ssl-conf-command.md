@@ -1,6 +1,6 @@
 ---
 title: "grpc_ssl_conf_command"
-description: "Directive nginx grpc_ssl_conf_command (ngx_http_grpc_module) — Sets arbitrary OpenSSL configuration commands when establishing a connection with the gRPC SSL server. NOTE The directive is supported when using OpenSSL 1.0.2 or higher. Several…"
+description: "Directive nginx grpc_ssl_conf_command (ngx_http_grpc_module) — Sets arbitrary OpenSSL configuration commands when establishing a connection with the gRPC SSL server. NOTE Cette directive est prise en charge avec OpenSSL 1.0.2 ou plus récent. Several…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
@@ -21,12 +21,12 @@ icon: settings-2
 Sets arbitrary OpenSSL configuration [commands](https://www.openssl.org/docs/man1.1.1/man3/SSL_CONF_cmd.html) when establishing a connection with the gRPC SSL server.
 
 > [!NOTE]
-> The directive is supported when using OpenSSL 1.0.2 or higher.
+> Cette directive est prise en charge avec OpenSSL 1.0.2 ou plus récent.
 
 Several `grpc_ssl_conf_command` directives can be specified on the same level. These directives are inherited from the previous configuration level if and only if there are no `grpc_ssl_conf_command` directives defined on the current level.
 
 > [!NOTE]
-> Note that configuring OpenSSL directly might result in unexpected behavior.
+> Configurer OpenSSL directement peut provoquer un comportement inattendu.
 
 ---
 

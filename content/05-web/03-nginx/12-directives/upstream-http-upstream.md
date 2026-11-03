@@ -1,12 +1,9 @@
 ---
 title: "upstream (ngx_http_upstream_module)"
-description: "Directive nginx upstream (ngx_http_upstream_module) — Defines a group of servers. Servers can listen on different ports. In addition, servers listening on TCP and UNIX-domain sockets can be mixed. Exemple : nginx upstream backend { server…"
+description: "Directive nginx upstream (ngx_http_upstream_module) — Définit un groupe de serveurs. Les serveurs peuvent écouter sur des ports différents, et des serveurs écoutant sur des sockets TCP et de domaine UNIX peuvent être mélangés. Exemple : nginx upstream…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a group of servers. Servers can listen on different ports. In addition, servers listening on TCP and UNIX-domain sockets can be mixed.
+Définit un groupe de serveurs. Les serveurs peuvent écouter sur des ports différents, et des serveurs écoutant sur des sockets TCP et de domaine UNIX peuvent être mélangés.
 
 Exemple :
 
@@ -31,7 +28,7 @@ upstream backend {
 }
 ```
 
-By default, requests are distributed between the servers using a weighted round-robin balancing method. In the above example, each 7 requests will be distributed as follows: 5 requests go to `backend1.example.com` and one request to each of the second and third servers. If an error occurs during communication with a server, the request will be passed to the next server, and so on until all of the functioning servers will be tried. If a successful response could not be obtained from any of the servers, the client will receive the result of the communication with the last server.
+Par défaut, les requêtes sont réparties entre les serveurs selon la méthode du tourniquet pondéré (*weighted round-robin*). Dans l'exemple ci-dessus, sur 7 requêtes, 5 vont à `backend1.example.com` et une à chacun des deuxième et troisième serveurs. Si une erreur survient lors de la communication avec un serveur, la requête est transmise au serveur suivant, et ainsi de suite jusqu'à ce que tous les serveurs en fonctionnement aient été essayés. Si aucun serveur ne donne de réponse valide, le client reçoit le résultat de la communication avec le dernier serveur.
 
 ---
 

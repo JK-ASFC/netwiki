@@ -1,6 +1,6 @@
 ---
 title: "proxy_ssl_certificate_key (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_ssl_certificate_key (ngx_stream_proxy_module) — The value store:scheme:id can be specified instead of the file (1.29.0), which is used to load a secret key with a specified id and OpenSSL provider registered URI scheme, such as pkcs11. Specifies a…"
+description: "Directive nginx proxy_ssl_certificate_key (ngx_stream_proxy_module) — On peut indiquer store:scheme:id à la place de file (1.29.0) pour charger la clé secrète d'identifiant id via le schéma d'URI scheme enregistré par un fournisseur OpenSSL, par exemple pkcs11.…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
@@ -17,11 +17,11 @@ icon: settings-2
 
 ## Utilisation
 
-The value `store`:*scheme*:*id* can be specified instead of the *file* (1.29.0), which is used to load a secret key with a specified *id* and OpenSSL provider registered URI *scheme*, such as [`pkcs11`](https://datatracker.ietf.org/doc/html/rfc7512).
+On peut indiquer `store`:*scheme*:*id* à la place de *file* (1.29.0) pour charger la clé secrète d'identifiant *id* via le schéma d'URI *scheme* enregistré par un fournisseur OpenSSL, par exemple [`pkcs11`](https://datatracker.ietf.org/doc/html/rfc7512).
 
 Specifies a *file* with the secret key in the PEM format used for authentication to a proxied server.
 
-Since version 1.21.0, variables can be used in the *file* name.
+Depuis la version 1.21.0, le nom de fichier (*file*) peut contenir des variables.
 
 ---
 

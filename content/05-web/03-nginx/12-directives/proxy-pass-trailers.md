@@ -1,12 +1,9 @@
 ---
 title: "proxy_pass_trailers"
-description: "Directive nginx proxy_pass_trailers (ngx_http_proxy_module) — Permits passing trailer fields from a proxied server to a client. NOTE A trailer section should be explicitly enabled: nginx location / { proxy_http_version 1.1; for versions before 1.29.7…"
+description: "Directive nginx proxy_pass_trailers (ngx_http_proxy_module) — Autorise la transmission des champs de fin de réponse (trailers) du serveur mandaté au client. NOTE La section de fin de réponse doit être explicitement activée : nginx location / {…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,10 +15,10 @@ icon: settings-2
 
 ## Utilisation
 
-Permits passing trailer fields from a proxied server to a client.
+Autorise la transmission des champs de fin de réponse (*trailers*) du serveur mandaté au client.
 
 > [!NOTE]
-> A trailer section should be [explicitly enabled](https://datatracker.ietf.org/doc/html/rfc9110#section-6.5.1):
+> La section de fin de réponse doit être [explicitement activée](https://datatracker.ietf.org/doc/html/rfc9110#section-6.5.1) :
 
 ```nginx
 location / {
@@ -35,7 +32,7 @@ location / {
 ```
 
 > [!NOTE]
-> Trailer fields received from an upstream server are passed to a client as is, without interpretation.
+> Les champs de fin de réponse reçus d'un serveur amont sont transmis tels quels au client, sans interprétation.
 
 ---
 

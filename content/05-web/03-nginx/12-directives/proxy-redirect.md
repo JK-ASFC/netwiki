@@ -1,12 +1,9 @@
 ---
 title: "proxy_redirect"
-description: "Directive nginx proxy_redirect (ngx_http_proxy_module) — Sets the text that should be changed in the Location and Refresh header fields of a proxied server response. Suppose a proxied server returned the header field “Location:…"
+description: "Directive nginx proxy_redirect (ngx_http_proxy_module) — Définit le texte à modifier dans les champs d'en-tête Location et Refresh de la réponse d'un serveur mandaté. Supposons que le serveur mandaté renvoie le champ « Location:…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,23 +14,23 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the text that should be changed in the `Location` and `Refresh` header fields of a proxied server response. Suppose a proxied server returned the header field “`Location: http://localhost:8000/two/some/uri/`”. The directive
+Définit le texte à modifier dans les champs d'en-tête `Location` et `Refresh` de la réponse d'un serveur mandaté. Supposons que le serveur mandaté renvoie le champ « `Location: http://localhost:8000/two/some/uri/` ». La directive
 
 ```nginx
 proxy_redirect http://localhost:8000/two/ http://frontend/one/;
 ```
 
-will rewrite this string to “`Location: http://frontend/one/some/uri/`”.
+réécrit cette chaîne en « `Location: http://frontend/one/some/uri/` ».
 
-A server name may be omitted in the *replacement* string:
+Le nom de serveur peut être omis dans la chaîne *replacement* :
 
 ```nginx
 proxy_redirect http://localhost:8000/two/ /;
 ```
 
-then the primary server’s name and port, if different from 80, will be inserted.
+le nom du serveur principal et son port, s'il diffère de 80, sont alors insérés.
 
-The default replacement specified by the `default` parameter uses the parameters of the [[12-directives/location|location]] and [[12-directives/proxy-pass-http-proxy|proxy_pass]] directives. Hence, the two configurations below are equivalent:
+Le remplacement par défaut, défini par le paramètre `default`, utilise les paramètres des directives [[12-directives/location|location]] et [[12-directives/proxy-pass-http-proxy|proxy_pass]]. Les deux configurations ci-dessous sont donc équivalentes :
 
 ```nginx
 location /one/ {
@@ -47,28 +44,28 @@ location /one/ {
     proxy_redirect http://upstream:port/two/ /one/;
 ```
 
-The `default` parameter is not permitted if [[12-directives/proxy-pass-http-proxy|proxy_pass]] is specified using variables.
+Le paramètre `default` n'est pas autorisé si [[12-directives/proxy-pass-http-proxy|proxy_pass]] contient des variables.
 
-A *replacement* string can contain variables:
+La chaîne *replacement* peut contenir des variables :
 
 ```nginx
 proxy_redirect http://localhost:8000/ http://$host:$server_port/;
 ```
 
-A *redirect* can also contain (1.1.11) variables:
+*redirect* peut aussi contenir des variables (1.1.11) :
 
 ```nginx
 proxy_redirect http://$proxy_host:8000/ /;
 ```
 
-The directive can be specified (1.1.11) using regular expressions. In this case, *redirect* should either start with the “`~`” symbol for a case-sensitive matching, or with the “`~*`” symbols for case-insensitive matching. The regular expression can contain named and positional captures, and *replacement* can reference them:
+La directive peut utiliser des expressions régulières (1.1.11). Dans ce cas, *redirect* doit commencer par le symbole « `~` » pour une correspondance sensible à la casse, ou par « `~*` » pour une correspondance insensible à la casse. L'expression régulière peut contenir des captures nommées et positionnelles, auxquelles *replacement* peut faire référence :
 
 ```nginx
 proxy_redirect ~^(http://[^:]+):\d+(/.+)$ $1$2;
 proxy_redirect ~*/user/([^/]+)/(.+)$      http://$1.example.com/$2;
 ```
 
-Several `proxy_redirect` directives can be specified on the same level:
+Plusieurs directives `proxy_redirect` peuvent être indiquées au même niveau :
 
 ```nginx
 proxy_redirect default;
@@ -76,11 +73,11 @@ proxy_redirect http://localhost:8000/  /;
 proxy_redirect http://www.example.com/ /;
 ```
 
-If several directives can be applied to the header fields of a proxied server response, the first matching directive will be chosen.
+Si plusieurs directives peuvent s'appliquer aux champs d'en-tête de la réponse du serveur mandaté, la première qui correspond est retenue.
 
-The `off` parameter cancels the effect of the `proxy_redirect` directives inherited from the previous configuration level.
+Le paramètre `off` annule l'effet des directives `proxy_redirect` héritées du niveau de configuration précédent.
 
-Using this directive, it is also possible to add host names to relative redirects issued by a proxied server:
+Cette directive permet aussi d'ajouter des noms d'hôtes aux redirections relatives émises par un serveur mandaté :
 
 ```nginx
 proxy_redirect / /;

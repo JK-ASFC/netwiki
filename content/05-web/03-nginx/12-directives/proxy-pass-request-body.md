@@ -1,12 +1,9 @@
 ---
 title: "proxy_pass_request_body"
-description: "Directive nginx proxy_pass_request_body (ngx_http_proxy_module) — Indicates whether the original request body is passed to the proxied server. nginx location /x-accel-redirect-here/ { proxy_method GET; proxy_pass_request_body off; proxy_set_header Content-Length…"
+description: "Directive nginx proxy_pass_request_body (ngx_http_proxy_module) — Indique si le corps de la requête d'origine est transmis au serveur mandaté. nginx location /x-accel-redirect-here/ { proxy_method GET; proxy_pass_request_body off; proxy_set_header Content-Length…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Indicates whether the original request body is passed to the proxied server.
+Indique si le corps de la requête d'origine est transmis au serveur mandaté.
 
 ```nginx
 location /x-accel-redirect-here/ {
@@ -29,7 +26,7 @@ location /x-accel-redirect-here/ {
 }
 ```
 
-See also the [[12-directives/proxy-set-header|proxy_set_header]] and [[12-directives/proxy-pass-request-headers|proxy_pass_request_headers]] directives.
+Voir aussi les directives [[12-directives/proxy-set-header|proxy_set_header]] et [[12-directives/proxy-pass-request-headers|proxy_pass_request_headers]].
 
 ---
 

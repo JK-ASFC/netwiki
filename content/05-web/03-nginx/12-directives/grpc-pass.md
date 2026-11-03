@@ -41,12 +41,12 @@ To use gRPC over SSL, the “`grpcs://`” scheme should be used:
 grpc_pass grpcs://127.0.0.1:443;
 ```
 
-If a domain name resolves to several addresses, all of them will be used in a round-robin fashion. In addition, an address can be specified as a [[11-modules/02-http/ngx_http_upstream_module|server group]].
+Si un nom de domaine se résout en plusieurs adresses, elles sont toutes utilisées à tour de rôle. Une adresse peut aussi désigner un [[11-modules/02-http/ngx_http_upstream_module|groupe de serveurs]].
 
 Parameter value can contain variables (1.17.8). In this case, if an address is specified as a domain name, the name is searched among the described [[11-modules/02-http/ngx_http_upstream_module|server groups]], and, if not found, is determined using a [[12-directives/resolver-http-core|resolver]].
 
 > [!NOTE]
-> Trailer fields received from an upstream server are passed to a client as is, without interpretation.
+> Les champs de fin de réponse reçus d'un serveur amont sont transmis tels quels au client, sans interprétation.
 
 ---
 

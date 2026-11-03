@@ -1,12 +1,9 @@
 ---
 title: "proxy_cache_max_range_offset"
-description: "Directive nginx proxy_cache_max_range_offset (ngx_http_proxy_module) — Sets an offset in bytes for byte-range requests. If the range is beyond the offset, the range request will be passed to the proxied server and the response will not be cached."
+description: "Directive nginx proxy_cache_max_range_offset (ngx_http_proxy_module) — Définit un décalage en octets pour les requêtes de plages d'octets. Si la plage se situe au-delà de ce décalage, la requête est transmise au serveur mandaté et la réponse n'est pas mise en cache."
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an offset in bytes for byte-range requests. If the range is beyond the offset, the range request will be passed to the proxied server and the response will not be cached.
+Définit un décalage en octets pour les requêtes de plages d'octets. Si la plage se situe au-delà de ce décalage, la requête est transmise au serveur mandaté et la réponse n'est pas mise en cache.
 
 ---
 

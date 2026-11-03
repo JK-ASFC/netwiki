@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_proxy_module"
-description: "Module nginx ngx_http_proxy_module — The ngx_http_proxy_module module allows passing requests to another server."
+description: "Module nginx ngx_http_proxy_module — Le module ngx_http_proxy_module permet de transmettre les requêtes à un autre serveur."
 tags: [nginx, module, ngx_http_proxy_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_proxy_module` module allows passing requests to another server.
+Le module `ngx_http_proxy_module` permet de transmettre les requêtes à un autre serveur.
 
 ## Exemple de configuration
 

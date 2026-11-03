@@ -1,12 +1,9 @@
 ---
 title: "least_time (ngx_http_upstream_module)"
-description: "Directive nginx least_time (ngx_http_upstream_module) — Specifies that a group should use a load balancing method where a request is passed to the server with the least average response time and least number of active connections, taking into account…"
+description: "Directive nginx least_time (ngx_http_upstream_module) — Indique que le groupe utilise une méthode de répartition qui transmet la requête au serveur ayant le temps de réponse moyen le plus court et le moins de connexions actives, en tenant compte des…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,15 +15,15 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies that a group should use a load balancing method where a request is passed to the server with the least average response time and least number of active connections, taking into account weights of servers. If there are several such servers, they are tried in turn using a weighted round-robin balancing method.
+Indique que le groupe utilise une méthode de répartition qui transmet la requête au serveur ayant le temps de réponse moyen le plus court et le moins de connexions actives, en tenant compte des poids. Si plusieurs serveurs sont à égalité, ils sont essayés à tour de rôle selon le tourniquet pondéré.
 
-If the `header` parameter is specified, time to receive the [[13-variables/upstream-header-time|response header]] is used. If the `last_byte` parameter is specified, time to receive the [[13-variables/upstream-response-time|full response]] is used. If the `inflight` parameter is specified (1.11.6), incomplete requests are also taken into account.
-
-> [!NOTE]
-> Prior to version 1.11.6, incomplete requests were taken into account by default.
+Avec le paramètre `header`, c'est la durée de réception de l'[[13-variables/upstream-header-time|en-tête de réponse]] qui est utilisée ; avec `last_byte`, la durée de réception de la [[13-variables/upstream-response-time|réponse complète]]. Avec le paramètre `inflight` (1.11.6), les requêtes non terminées sont aussi prises en compte.
 
 > [!NOTE]
-> Prior to version 1.31.0, this directive was available only as part of our [abonnement commercial](https://nginx.com/products/).
+> Avant la version 1.11.6, les requêtes non terminées étaient prises en compte par défaut.
+
+> [!NOTE]
+> Avant la version 1.31.0, cette directive n'était disponible que dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

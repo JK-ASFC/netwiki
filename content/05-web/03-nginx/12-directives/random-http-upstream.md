@@ -1,12 +1,9 @@
 ---
 title: "random (ngx_http_upstream_module)"
-description: "Directive nginx random (ngx_http_upstream_module) — Specifies that a group should use a load balancing method where a request is passed to a randomly selected server, taking into account weights of servers. The optional two parameter instructs nginx…"
+description: "Directive nginx random (ngx_http_upstream_module) — Indique que le groupe utilise une méthode de répartition qui transmet la requête à un serveur choisi au hasard, en tenant compte des poids. Le paramètre facultatif two demande à nginx de choisir au…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,14 +15,14 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies that a group should use a load balancing method where a request is passed to a randomly selected server, taking into account weights of servers.
+Indique que le groupe utilise une méthode de répartition qui transmet la requête à un serveur choisi au hasard, en tenant compte des poids.
 
-The optional `two` parameter instructs nginx to randomly select [two](https://homes.cs.washington.edu/~karlin/papers/balls.pdf) servers and then choose a server using the specified `method`. The default method is `least_conn` which passes a request to a server with the least number of active connections.
+Le paramètre facultatif `two` demande à nginx de choisir au hasard [deux](https://homes.cs.washington.edu/~karlin/papers/balls.pdf) serveurs, puis d'en retenir un selon la méthode (`method`) indiquée. La méthode par défaut est `least_conn`, qui transmet la requête au serveur ayant le moins de connexions actives.
 
-The `least_time` method passes a request to a server with the least average response time and least number of active connections. If `least_time=header` is specified, the time to receive the [[13-variables/upstream-header-time|response header]] is used. If `least_time=last_byte` is specified, the time to receive the [[13-variables/upstream-response-time|full response]] is used.
+La méthode `least_time` transmet la requête au serveur ayant le temps de réponse moyen le plus court et le moins de connexions actives. Avec `least_time=header`, c'est la durée de réception de l'[[13-variables/upstream-header-time|en-tête de réponse]] qui est utilisée ; avec `least_time=last_byte`, celle de la [[13-variables/upstream-response-time|réponse complète]].
 
 > [!NOTE]
-> The `least_time` method is available as a part of our [abonnement commercial](https://nginx.com/products/).
+> La méthode `least_time` est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

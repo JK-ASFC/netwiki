@@ -1,12 +1,9 @@
 ---
 title: "proxy_cache_background_update"
-description: "Directive nginx proxy_cache_background_update (ngx_http_proxy_module) — Allows starting a background subrequest to update an expired cache item, while a stale cached response is returned to the client. Note that it is necessary to allow the usage of a stale cached…"
+description: "Directive nginx proxy_cache_background_update (ngx_http_proxy_module) — Permet de lancer une sous-requête en arrière-plan pour mettre à jour un élément expiré du cache, pendant qu'une réponse en cache périmée est renvoyée au client. Il faut alors autoriser l'utilisation…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Allows starting a background subrequest to update an expired cache item, while a stale cached response is returned to the client. Note that it is necessary to allow the usage of a stale cached response when it is being updated.
+Permet de lancer une sous-requête en arrière-plan pour mettre à jour un élément expiré du cache, pendant qu'une réponse en cache périmée est renvoyée au client. Il faut alors autoriser l'utilisation d'une réponse en cache périmée pendant sa mise à jour.
 
 ---
 

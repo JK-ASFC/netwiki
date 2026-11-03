@@ -1,6 +1,6 @@
 ---
 title: "fastcgi_no_cache"
-description: "Directive nginx fastcgi_no_cache (ngx_http_fastcgi_module) — Defines conditions under which the response will not be saved to a cache. If at least one value of the string parameters is not empty and is not equal to “0” then the response will not be saved:…"
+description: "Directive nginx fastcgi_no_cache (ngx_http_fastcgi_module) — Définit les conditions dans lesquelles la réponse n'est pas enregistrée dans le cache. Si au moins une des chaînes en paramètre n'est ni vide ni égale à « 0 », la réponse n'est pas enregistrée :…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
@@ -17,7 +17,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines conditions under which the response will not be saved to a cache. If at least one value of the string parameters is not empty and is not equal to “0” then the response will not be saved:
+Définit les conditions dans lesquelles la réponse n'est pas enregistrée dans le cache. Si au moins une des chaînes en paramètre n'est ni vide ni égale à « 0 », la réponse n'est pas enregistrée :
 
 ```nginx
 fastcgi_no_cache $cookie_nocache $arg_nocache$arg_comment;

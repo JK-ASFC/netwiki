@@ -22,7 +22,7 @@ Sets arbitrary OpenSSL configuration [commands](https://www.openssl.org/docs/man
 Several `db_ssl_conf_command` directives can be specified on the same level. These directives are inherited from the previous configuration level if and only if there are no `db_ssl_conf_command` directives defined on the current level.
 
 > [!NOTE]
-> Note that configuring OpenSSL directly might result in unexpected behavior.
+> Configurer OpenSSL directement peut provoquer un comportement inattendu.
 
 ---
 

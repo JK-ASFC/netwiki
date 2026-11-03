@@ -1,6 +1,6 @@
 ---
 title: "fastcgi_request_buffering"
-description: "Directive nginx fastcgi_request_buffering (ngx_http_fastcgi_module) — Enables or disables buffering of a client request body. When buffering is enabled, the entire request body is read from the client before sending the request to a FastCGI server. When buffering is…"
+description: "Directive nginx fastcgi_request_buffering (ngx_http_fastcgi_module) — Active ou désactive la mise en tampon du corps de la requête du client. When buffering is enabled, the entire request body is read from the client before sending the request to a FastCGI server. When…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
@@ -18,7 +18,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables buffering of a client request body.
+Active ou désactive la mise en tampon du corps de la requête du client.
 
 When buffering is enabled, the entire request body is [[12-directives/client-body-buffer-size|read]] from the client before sending the request to a FastCGI server.
 

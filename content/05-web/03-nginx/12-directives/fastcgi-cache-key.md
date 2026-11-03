@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_cache_key"
-description: "Directive nginx fastcgi_cache_key (ngx_http_fastcgi_module) — Defines a key for caching, for example nginx fastcgi_cache_key localhost:9000$request_uri;"
+description: "Directive nginx fastcgi_cache_key (ngx_http_fastcgi_module) — Définit une clé de cache, par exemple nginx fastcgi_cache_key localhost:9000$request_uri;"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a key for caching, for example
+Définit une clé de cache, par exemple
 
 ```nginx
 fastcgi_cache_key localhost:9000$request_uri;

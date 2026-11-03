@@ -1,12 +1,9 @@
 ---
 title: "queue"
-description: "Directive nginx queue (ngx_http_upstream_module) — If an upstream server cannot be selected immediately while processing a request, the request will be placed into the queue. The directive specifies the maximum number of requests that can be in the…"
+description: "Directive nginx queue (ngx_http_upstream_module) — Si aucun serveur amont ne peut être choisi immédiatement pendant le traitement d'une requête, celle-ci est placée dans la file d'attente. La directive indique le nombre (number) maximal de requêtes…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,12 +15,12 @@ icon: settings-2
 
 ## Utilisation
 
-If an upstream server cannot be selected immediately while processing a request, the request will be placed into the queue. The directive specifies the maximum *number* of requests that can be in the queue at the same time. If the queue is filled up, or the server to pass the request to cannot be selected within the time period specified in the `timeout` parameter, the `502 Bad Gateway` error will be returned to the client.
+Si aucun serveur amont ne peut être choisi immédiatement pendant le traitement d'une requête, celle-ci est placée dans la file d'attente. La directive indique le nombre (*number*) maximal de requêtes pouvant se trouver simultanément dans la file. Si la file est pleine, ou si aucun serveur ne peut être choisi dans le délai indiqué par le paramètre `timeout`, l'erreur `502 Bad Gateway` est renvoyée au client.
 
-The default value of the `timeout` parameter is 60 seconds.
+La valeur par défaut du paramètre `timeout` est de 60 secondes.
 
 > [!NOTE]
-> When using load balancer methods other than the default round-robin method, it is necessary to activate them before the `queue` directive.
+> Avec une méthode de répartition autre que le tourniquet par défaut, il faut l'activer avant la directive `queue`.
 
 > [!NOTE]
 > Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).

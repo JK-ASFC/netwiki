@@ -1,6 +1,6 @@
 ---
 title: "scgi_request_buffering"
-description: "Directive nginx scgi_request_buffering (ngx_http_scgi_module) — Enables or disables buffering of a client request body. When buffering is enabled, the entire request body is read from the client before sending the request to an SCGI server. When buffering is…"
+description: "Directive nginx scgi_request_buffering (ngx_http_scgi_module) — Active ou désactive la mise en tampon du corps de la requête du client. When buffering is enabled, the entire request body is read from the client before sending the request to an SCGI server. When…"
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
@@ -18,7 +18,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables buffering of a client request body.
+Active ou désactive la mise en tampon du corps de la requête du client.
 
 When buffering is enabled, the entire request body is [[12-directives/client-body-buffer-size|read]] from the client before sending the request to an SCGI server.
 

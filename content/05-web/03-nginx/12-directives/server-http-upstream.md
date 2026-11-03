@@ -1,12 +1,9 @@
 ---
 title: "server (ngx_http_upstream_module)"
-description: "Directive nginx server (ngx_http_upstream_module) — Defines the address and other parameters of a server. The address can be specified as a domain name or IP address, with an optional port, or as a UNIX-domain socket path specified after the “unix:”…"
+description: "Directive nginx server (ngx_http_upstream_module) — Définit l'adresse (address) et les autres paramètres (parameters) d'un serveur. L'adresse peut être un nom de domaine ou une adresse IP, avec un port facultatif, ou le chemin d'un socket de domaine…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,107 +14,107 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the *address* and other *parameters* of a server. The address can be specified as a domain name or IP address, with an optional port, or as a UNIX-domain socket path specified after the “`unix:`” prefix. If a port is not specified, the port 80 is used. A domain name that resolves to several IP addresses defines multiple servers at once.
+Définit l'adresse (*address*) et les autres paramètres (*parameters*) d'un serveur. L'adresse peut être un nom de domaine ou une adresse IP, avec un port facultatif, ou le chemin d'un socket de domaine UNIX précédé du préfixe « `unix:` ». Sans port, le port 80 est utilisé. Un nom de domaine qui se résout en plusieurs adresses IP définit plusieurs serveurs à la fois.
 
-The following parameters can be defined:
+Les paramètres suivants peuvent être définis :
 
 - **`weight`=*number***
 
-  sets the weight of the server, by default, 1.
+  définit le poids du serveur ; 1 par défaut.
 
 - **`max_conns`=*number***
 
-  limits the maximum *number* of simultaneous active connections to the proxied server (1.11.5). Default value is zero, meaning there is no limit. If the server group does not reside in the [[12-directives/zone-http-upstream|shared memory]], the limitation works per each worker process.
+  limite le nombre (*number*) maximal de connexions actives simultanées vers le serveur mandaté (1.11.5). La valeur par défaut, zéro, signifie qu'il n'y a pas de limite. Si le groupe de serveurs n'est pas en [[12-directives/zone-http-upstream|mémoire partagée]], la limite s'applique à chaque processus de travail.
 
   > [!NOTE]
-  > If [[12-directives/keepalive|idle keepalive]] connections, multiple [[12-directives/worker-processes|workers]], and the [[12-directives/zone-http-upstream|shared memory]] are enabled, the total number of active and idle connections to the proxied server may exceed the `max_conns` value.
+  > Si les connexions [[12-directives/keepalive|persistantes inactives]], plusieurs [[12-directives/worker-processes|processus de travail]] et la [[12-directives/zone-http-upstream|mémoire partagée]] sont activés, le nombre total de connexions actives et inactives vers le serveur mandaté peut dépasser la valeur `max_conns`.
 
   > [!NOTE]
-  > Since version 1.5.9 and prior to version 1.11.5, this parameter was available as part of our [abonnement commercial](https://nginx.com/products/).
+  > De la version 1.5.9 à la version 1.11.5, ce paramètre était disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 - **`max_fails`=*number***
 
-  sets the number of unsuccessful attempts to communicate with the server that should happen in the duration set by the `fail_timeout` parameter to consider the server unavailable for a duration also set by the `fail_timeout` parameter. By default, the number of unsuccessful attempts is set to 1. The zero value disables the accounting of attempts. What is considered an unsuccessful attempt is defined by the [[12-directives/proxy-next-upstream-http-proxy|proxy_next_upstream]], [[12-directives/fastcgi-next-upstream|fastcgi_next_upstream]], [[12-directives/uwsgi-next-upstream|uwsgi_next_upstream]], [[12-directives/scgi-next-upstream|scgi_next_upstream]], [[12-directives/memcached-next-upstream|memcached_next_upstream]], and [[12-directives/grpc-next-upstream|grpc_next_upstream]] directives.
+  définit le nombre de tentatives de communication échouées avec le serveur, survenues pendant la durée fixée par le paramètre `fail_timeout`, au-delà duquel le serveur est considéré comme indisponible, pendant une durée également fixée par `fail_timeout`. Par défaut, ce nombre est 1. La valeur zéro désactive le décompte des tentatives. Ce qui est considéré comme une tentative échouée est défini par les directives [[12-directives/proxy-next-upstream-http-proxy|proxy_next_upstream]], [[12-directives/fastcgi-next-upstream|fastcgi_next_upstream]], [[12-directives/uwsgi-next-upstream|uwsgi_next_upstream]], [[12-directives/scgi-next-upstream|scgi_next_upstream]], [[12-directives/memcached-next-upstream|memcached_next_upstream]] et [[12-directives/grpc-next-upstream|grpc_next_upstream]].
 
 - **`fail_timeout`=*time***
 
-  sets
+  définit
 
-  - the time during which the specified number of unsuccessful attempts to communicate with the server should happen to consider the server unavailable;
-  - and the period of time the server will be considered unavailable.
+  - la durée pendant laquelle le nombre indiqué de tentatives échouées doit survenir pour que le serveur soit considéré comme indisponible ;
+  - et la durée pendant laquelle le serveur est considéré comme indisponible.
 
-  By default, the parameter is set to 10 seconds.
+  Par défaut, ce paramètre vaut 10 secondes.
 
 - **`backup`**
 
-  marks the server as a backup server. It will be passed requests when the primary servers are unavailable.
+  désigne le serveur comme serveur de secours. Il reçoit les requêtes lorsque les serveurs principaux sont indisponibles.
 
   > [!NOTE]
-  > The parameter cannot be used along with the [[12-directives/hash-http-upstream|hash]], [[12-directives/ip-hash|ip_hash]], and [[12-directives/random-http-upstream|random]] load balancing methods.
+  > Ce paramètre ne peut pas être utilisé avec les méthodes de répartition [[12-directives/hash-http-upstream|hash]], [[12-directives/ip-hash|ip_hash]] et [[12-directives/random-http-upstream|random]].
 
 - **`down`**
 
-  marks the server as permanently unavailable.
+  désigne le serveur comme indisponible en permanence.
 
 - **`resolve`**
 
-  monitors changes of the IP addresses that correspond to a domain name of the server, and automatically modifies the upstream configuration without the need of restarting nginx (1.5.12). The server group must reside in the [[12-directives/zone-http-upstream|shared memory]].
+  surveille les changements des adresses IP correspondant au nom de domaine du serveur et modifie automatiquement la configuration du groupe amont sans redémarrer nginx (1.5.12). Le groupe de serveurs doit être en [[12-directives/zone-http-upstream|mémoire partagée]].
 
-  In order for this parameter to work, the `resolver` directive must be specified in the [[12-directives/resolver-http-core|http]] block or in the corresponding [[12-directives/resolver-http-upstream|upstream]] block.
+  Pour que ce paramètre fonctionne, la directive `resolver` doit être indiquée dans le bloc [[12-directives/resolver-http-core|http]] ou dans le bloc [[12-directives/resolver-http-upstream|upstream]] correspondant.
 
   > [!NOTE]
-  > Prior to version 1.27.3, this parameter was available only as part of our [abonnement commercial](https://nginx.com/products/).
+  > Avant la version 1.27.3, ce paramètre n'était disponible que dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 - **`service`=*name***
 
-  enables resolving of DNS [SRV](https://datatracker.ietf.org/doc/html/rfc2782) records and sets the service *name* (1.9.13). In order for this parameter to work, it is necessary to specify the `resolve` parameter for the server and specify a hostname without a port number.
+  active la résolution des enregistrements DNS [SRV](https://datatracker.ietf.org/doc/html/rfc2782) et définit le nom (*name*) du service (1.9.13). Pour que ce paramètre fonctionne, il faut indiquer le paramètre `resolve` pour le serveur et un nom d'hôte sans numéro de port.
 
-  If the service name does not contain a dot (“`.`”), then the [RFC](https://datatracker.ietf.org/doc/html/rfc2782)-compliant name is constructed and the TCP protocol is added to the service prefix. For example, to look up the `_http._tcp.backend.example.com` SRV record, it is necessary to specify the directive:
+  Si le nom du service ne contient pas de point (« `.` »), le nom conforme à la [RFC](https://datatracker.ietf.org/doc/html/rfc2782) est construit et le protocole TCP est ajouté au préfixe du service. Par exemple, pour rechercher l'enregistrement SRV `_http._tcp.backend.example.com`, il faut indiquer la directive :
 
   ```nginx
   server backend.example.com service=http resolve;
   ```
 
-  If the service name contains one or more dots, then the name is constructed by joining the service prefix and the server name. For example, to look up the `_http._tcp.backend.example.com` and `server1.backend.example.com` SRV records, it is necessary to specify the directives:
+  Si le nom du service contient un ou plusieurs points, le nom est construit en joignant le préfixe du service et le nom du serveur. Par exemple, pour rechercher les enregistrements SRV `_http._tcp.backend.example.com` et `server1.backend.example.com`, il faut indiquer les directives :
 
   ```nginx
   server backend.example.com service=_http._tcp resolve;
   server example.com service=server1.backend resolve;
   ```
 
-  Highest-priority SRV records (records with the same lowest-number priority value) are resolved as primary servers, the rest of SRV records are resolved as backup servers. If the `backup` parameter is specified for the server, high-priority SRV records are resolved as backup servers, the rest of SRV records are ignored.
+  Les enregistrements SRV de plus haute priorité (ceux qui partagent la plus petite valeur de priorité) deviennent les serveurs principaux, les autres des serveurs de secours. Si le paramètre `backup` est indiqué pour le serveur, les enregistrements de haute priorité deviennent des serveurs de secours et les autres sont ignorés.
 
   > [!NOTE]
-  > Prior to version 1.27.3, this parameter was available only as part of our [abonnement commercial](https://nginx.com/products/).
+  > Avant la version 1.27.3, ce paramètre n'était disponible que dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 - **`route`=*string***
 
-  sets the server route name.
+  définit le nom de route du serveur.
 
   > [!NOTE]
-  > Prior to version 1.29.6, this parameter was available only as part of our [abonnement commercial](https://nginx.com/products/).
+  > Avant la version 1.29.6, ce paramètre n'était disponible que dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 - **`drain`**
 
-  puts the server into the “draining” mode (1.13.6). In this mode, only requests [[12-directives/sticky|bound]] to the server will be proxied to it.
+  met le serveur en mode « vidage » (*draining*, 1.13.6). Dans ce mode, seules les requêtes [[12-directives/sticky|liées]] au serveur lui sont transmises.
 
   > [!NOTE]
-  > Prior to version 1.13.6, the parameter could be changed only with the [[11-modules/02-http/ngx_http_api_module|API]] module.
+  > Avant la version 1.13.6, ce paramètre ne pouvait être modifié qu'avec le module [[11-modules/02-http/ngx_http_api_module|API]].
 
   > [!NOTE]
-  > Prior to version 1.29.6, the parameter was available only as part of our [abonnement commercial](https://nginx.com/products/).
+  > Avant la version 1.29.6, ce paramètre n'était disponible que dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
-Additionally, the following parameters are available as part of our [abonnement commercial](https://nginx.com/products/):
+En outre, les paramètres suivants sont disponibles dans le cadre de notre [abonnement commercial](https://nginx.com/products/) :
 
 - **`slow_start`=*time***
 
-  sets the *time* during which the server will recover its weight from zero to a nominal value, when unhealthy server becomes [[12-directives/health-check-http-upstream-hc|healthy]], or when the server becomes available after a period of time it was considered unavailable. Default value is zero, i.e. slow start is disabled.
+  définit la durée (*time*) pendant laquelle le serveur fait remonter son poids de zéro à sa valeur nominale, lorsqu'un serveur défaillant redevient [[12-directives/health-check-http-upstream-hc|sain]] ou lorsqu'il redevient disponible après avoir été considéré comme indisponible. La valeur par défaut, zéro, désactive ce démarrage progressif.
 
   > [!NOTE]
-  > The parameter cannot be used along with the [[12-directives/hash-http-upstream|hash]], [[12-directives/ip-hash|ip_hash]], and [[12-directives/random-http-upstream|random]] load balancing methods.
+  > Ce paramètre ne peut pas être utilisé avec les méthodes de répartition [[12-directives/hash-http-upstream|hash]], [[12-directives/ip-hash|ip_hash]] et [[12-directives/random-http-upstream|random]].
 
 > [!NOTE]
-> If there is only a single server in a group, `max_fails`, `fail_timeout` and `slow_start` parameters are ignored, and such a server will never be considered unavailable.
+> S'il n'y a qu'un seul serveur dans un groupe, les paramètres `max_fails`, `fail_timeout` et `slow_start` sont ignorés et ce serveur n'est jamais considéré comme indisponible.
 
 ---
 

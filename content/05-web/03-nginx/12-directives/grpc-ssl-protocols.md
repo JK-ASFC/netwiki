@@ -1,6 +1,6 @@
 ---
 title: "grpc_ssl_protocols"
-description: "Directive nginx grpc_ssl_protocols (ngx_http_grpc_module) — Enables the specified protocols for requests to a gRPC SSL server. NOTE The TLSv1.3 parameter is used by default since 1.23.4."
+description: "Directive nginx grpc_ssl_protocols (ngx_http_grpc_module) — Enables the specified protocols for requests to a gRPC SSL server. NOTE Le paramètre TLSv1.3 est utilisé par défaut depuis la version 1.23.4."
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
@@ -20,7 +20,7 @@ icon: settings-2
 Enables the specified protocols for requests to a gRPC SSL server.
 
 > [!NOTE]
-> The `TLSv1.3` parameter is used by default since 1.23.4.
+> Le paramètre `TLSv1.3` est utilisé par défaut depuis la version 1.23.4.
 
 ---
 

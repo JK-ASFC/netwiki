@@ -1,12 +1,9 @@
 ---
 title: "proxy_pass (ngx_http_proxy_module)"
-description: "Directive nginx proxy_pass (ngx_http_proxy_module) — Sets the protocol and address of a proxied server and an optional URI to which a location should be mapped. As a protocol, “http” or “https” can be specified. The address can be specified as a domain…"
+description: "Directive nginx proxy_pass (ngx_http_proxy_module) — Définit le protocole et l'adresse d'un serveur mandaté, ainsi qu'un URI facultatif auquel le bloc location doit correspondre. Le protocole peut être « http » ou « https ». L'adresse peut être un nom…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,25 +14,25 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the protocol and address of a proxied server and an optional URI to which a location should be mapped. As a protocol, “`http`” or “`https`” can be specified. The address can be specified as a domain name or IP address, and an optional port:
+Définit le protocole et l'adresse d'un serveur mandaté, ainsi qu'un URI facultatif auquel le bloc location doit correspondre. Le protocole peut être « `http` » ou « `https` ». L'adresse peut être un nom de domaine ou une adresse IP, avec un port facultatif :
 
 ```nginx
 proxy_pass http://localhost:8000/uri/;
 ```
 
-or as a UNIX-domain socket path specified after the word “`unix`” and enclosed in colons:
+ou le chemin d'un socket de domaine UNIX, indiqué après le mot « `unix` » et encadré de deux-points :
 
 ```nginx
 proxy_pass http://unix:/tmp/backend.socket:/uri/;
 ```
 
-If a domain name resolves to several addresses, all of them will be used in a round-robin fashion. In addition, an address can be specified as a [[11-modules/02-http/ngx_http_upstream_module|server group]].
+Si un nom de domaine se résout en plusieurs adresses, elles sont toutes utilisées à tour de rôle. Une adresse peut aussi désigner un [[11-modules/02-http/ngx_http_upstream_module|groupe de serveurs]].
 
-Parameter value can contain variables. In this case, if an address is specified as a domain name, the name is searched among the described server groups, and, if not found, is determined using a [[12-directives/resolver-http-core|resolver]].
+La valeur du paramètre peut contenir des variables. Dans ce cas, si l'adresse est un nom de domaine, le nom est recherché parmi les groupes de serveurs définis puis, s'il est introuvable, résolu à l'aide d'un [[12-directives/resolver-http-core|résolveur]].
 
-A request URI is passed to the server as follows:
+L'URI de la requête est transmis au serveur de la façon suivante :
 
-- If the `proxy_pass` directive is specified with a URI, then when a request is passed to the server, the part of a [[12-directives/location|normalized]] request URI matching the location is replaced by a URI specified in the directive:
+- Si la directive `proxy_pass` contient un URI, la partie de l'URI de requête [[12-directives/location|normalisé]] qui correspond au bloc location est remplacée par l'URI indiqué dans la directive :
 
   ```nginx
   location /name/ {
@@ -43,7 +40,7 @@ A request URI is passed to the server as follows:
   }
   ```
 
-- If `proxy_pass` is specified without a URI, the request URI is passed to the server in the same form as sent by a client when the original request is processed, or the full normalized request URI is passed when processing the changed URI:
+- Si `proxy_pass` ne contient pas d'URI, l'URI de requête est transmis au serveur sous la forme envoyée par le client lors du traitement de la requête d'origine, ou l'URI normalisé complet est transmis lors du traitement d'un URI modifié :
 
   ```nginx
   location /some/path/ {
@@ -52,15 +49,15 @@ A request URI is passed to the server as follows:
   ```
 
   > [!NOTE]
-  > Before version 1.1.12, if `proxy_pass` is specified without a URI, the original request URI might be passed instead of the changed URI in some cases.
+  > Avant la version 1.1.12, si `proxy_pass` ne contenait pas d'URI, l'URI d'origine pouvait dans certains cas être transmis à la place de l'URI modifié.
 
-In some cases, the part of a request URI to be replaced cannot be determined:
+Dans certains cas, la partie de l'URI de requête à remplacer ne peut pas être déterminée :
 
-- When location is specified using a regular expression, and also inside named locations.
+- Lorsque le bloc location est défini par une expression régulière, et dans les blocs location nommés.
 
-  In these cases, `proxy_pass` should be specified without a URI.
+  Dans ces cas, `proxy_pass` doit être indiqué sans URI.
 
-- When the URI is changed inside a proxied location using the [[12-directives/rewrite|rewrite]] directive, and this same configuration will be used to process a request (`break`):
+- Lorsque l'URI est modifié dans un bloc location relayé par la directive [[12-directives/rewrite|rewrite]] et que cette même configuration sert à traiter la requête (`break`) :
 
   ```nginx
   location /name/ {
@@ -69,9 +66,9 @@ In some cases, the part of a request URI to be replaced cannot be determined:
   }
   ```
 
-  In this case, the URI specified in the directive is ignored and the full changed request URI is passed to the server.
+  Dans ce cas, l'URI indiqué dans la directive est ignoré et l'URI de requête modifié complet est transmis au serveur.
 
-- When variables are used in `proxy_pass`:
+- Lorsque des variables sont utilisées dans `proxy_pass` :
 
   ```nginx
   location /name/ {
@@ -79,9 +76,9 @@ In some cases, the part of a request URI to be replaced cannot be determined:
   }
   ```
 
-  In this case, if URI is specified in the directive, it is passed to the server as is, replacing the original request URI.
+  Dans ce cas, si la directive contient un URI, il est transmis tel quel au serveur, à la place de l'URI de la requête d'origine.
 
-[[10-guides/02-http/websocket|WebSocket]] proxying requires special configuration and is supported since version 1.3.13.
+Le relais [[10-guides/02-http/websocket|WebSocket]] nécessite une configuration particulière ; il est pris en charge depuis la version 1.3.13.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_cache"
-description: "Directive nginx uwsgi_cache (ngx_http_uwsgi_module) — Defines a shared memory zone used for caching. The same zone can be used in several places. Parameter value can contain variables (1.7.9). The off parameter disables caching inherited from the…"
+description: "Directive nginx uwsgi_cache (ngx_http_uwsgi_module) — Définit une zone de mémoire partagée utilisée pour le cache. La même zone peut servir à plusieurs endroits. La valeur du paramètre peut contenir des variables (1.7.9). Le paramètre off désactive le…"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a shared memory zone used for caching. The same zone can be used in several places. Parameter value can contain variables (1.7.9). The `off` parameter disables caching inherited from the previous configuration level.
+Définit une zone de mémoire partagée utilisée pour le cache. La même zone peut servir à plusieurs endroits. La valeur du paramètre peut contenir des variables (1.7.9). Le paramètre `off` désactive le cache hérité du niveau de configuration précédent.
 
 ---
 

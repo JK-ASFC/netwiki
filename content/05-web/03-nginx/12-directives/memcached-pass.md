@@ -29,7 +29,7 @@ or as a UNIX-domain socket path:
 memcached_pass unix:/tmp/memcached.socket;
 ```
 
-If a domain name resolves to several addresses, all of them will be used in a round-robin fashion. In addition, an address can be specified as a [[11-modules/02-http/ngx_http_upstream_module|server group]].
+Si un nom de domaine se résout en plusieurs adresses, elles sont toutes utilisées à tour de rôle. Une adresse peut aussi désigner un [[11-modules/02-http/ngx_http_upstream_module|groupe de serveurs]].
 
 ---
 

@@ -1,19 +1,16 @@
 ---
 title: "$proxy_port"
-description: "Variable nginx $proxy_port (ngx_http_proxy_module) — port of a proxied server as specified in the proxy_pass directive, or the protocol’s default port;"
+description: "Variable nginx $proxy_port (ngx_http_proxy_module) — port du serveur mandaté, tel qu'indiqué dans la directive proxy_pass, ou port par défaut du protocole ;"
 tags: [nginx, variable, ngx_http_proxy_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$proxy_port` |
 | **Module** | [[11-modules/02-http/ngx_http_proxy_module\|ngx_http_proxy_module]] |
 
-port of a proxied server as specified in the [[12-directives/proxy-pass-http-proxy|proxy_pass]] directive, or the protocol’s default port;
+port du serveur mandaté, tel qu'indiqué dans la directive [[12-directives/proxy-pass-http-proxy|proxy_pass]], ou port par défaut du protocole ;
 
 ---
 

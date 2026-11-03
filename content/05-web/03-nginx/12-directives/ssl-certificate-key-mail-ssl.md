@@ -1,6 +1,6 @@
 ---
 title: "ssl_certificate_key (ngx_mail_ssl_module)"
-description: "Directive nginx ssl_certificate_key (ngx_mail_ssl_module) — Specifies a file with the secret key in the PEM format for the given server. The value engine:name:id can be specified instead of the file (1.7.9), which loads a secret key with a specified id from…"
+description: "Directive nginx ssl_certificate_key (ngx_mail_ssl_module) — Specifies a file with the secret key in the PEM format for the given server. On peut indiquer engine:name:id à la place de file (1.7.9) pour charger la clé secrète d'identifiant id depuis le moteur…"
 tags: [nginx, directive, ngx_mail_ssl_module]
 icon: settings-2
 ---
@@ -19,9 +19,9 @@ icon: settings-2
 
 Specifies a *file* with the secret key in the PEM format for the given server.
 
-The value `engine`:*name*:*id* can be specified instead of the *file* (1.7.9), which loads a secret key with a specified *id* from the OpenSSL engine *name*.
+On peut indiquer `engine`:*name*:*id* à la place de *file* (1.7.9) pour charger la clé secrète d'identifiant *id* depuis le moteur OpenSSL *name*.
 
-The value `store`:*scheme*:*id* can be specified instead of the *file* (1.29.0), which is used to load a secret key with a specified *id* and OpenSSL provider registered URI *scheme*, such as [`pkcs11`](https://datatracker.ietf.org/doc/html/rfc7512).
+On peut indiquer `store`:*scheme*:*id* à la place de *file* (1.29.0) pour charger la clé secrète d'identifiant *id* via le schéma d'URI *scheme* enregistré par un fournisseur OpenSSL, par exemple [`pkcs11`](https://datatracker.ietf.org/doc/html/rfc7512).
 
 The value `data`:*key* can be specified instead of the *file* (1.15.10), which loads a secret key without using intermediate files. Note that inappropriate use of this syntax may have its security implications, such as writing secret key data to [[12-directives/error-log|error log]].
 

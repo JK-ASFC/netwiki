@@ -28,11 +28,11 @@ La directive accepte les paramètres suivants :
 
 - **`inactive`**
 
-  defines a time after which an element is removed from the cache if it has not been accessed during this time; by default, it is 10 seconds;
+  définit la durée au bout de laquelle un élément est supprimé du cache s'il n'a pas été utilisé ; 10 secondes par défaut ;
 
 - **`valid`**
 
-  defines a time during which an element in the cache is considered valid and can be reused; by default, it is 60 seconds. Certificates that exceed this time will be reloaded or revalidated;
+  définit la durée pendant laquelle un élément du cache est considéré comme valide et réutilisable ; 60 secondes par défaut. Les certificats qui dépassent cette durée sont rechargés ou revalidés ;
 
 - **`off`**
 

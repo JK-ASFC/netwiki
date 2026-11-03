@@ -1,12 +1,9 @@
 ---
 title: "proxy_next_upstream_timeout (ngx_http_proxy_module)"
-description: "Directive nginx proxy_next_upstream_timeout (ngx_http_proxy_module) — Limits the time during which a request can be passed to the next server. The 0 value turns off this limitation."
+description: "Directive nginx proxy_next_upstream_timeout (ngx_http_proxy_module) — Limite la durée pendant laquelle une requête peut être transmise au serveur suivant. La valeur 0 supprime cette limite."
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Limits the time during which a request can be passed to the [[12-directives/proxy-next-upstream-http-proxy|next server]]. The `0` value turns off this limitation.
+Limite la durée pendant laquelle une requête peut être transmise au [[12-directives/proxy-next-upstream-http-proxy|serveur suivant]]. La valeur `0` supprime cette limite.
 
 ---
 

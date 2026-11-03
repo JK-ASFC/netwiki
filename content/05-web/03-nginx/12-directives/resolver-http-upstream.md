@@ -1,12 +1,9 @@
 ---
 title: "resolver (ngx_http_upstream_module)"
-description: "Directive nginx resolver (ngx_http_upstream_module) — Configure les serveurs de noms utilisés pour résoudre en adresses les noms des serveurs amont, par exemple : nginx resolver 127.0.0.1 ::1:5353; The address can be specified as a domain name or IP…"
+description: "Directive nginx resolver (ngx_http_upstream_module) — Configure les serveurs de noms utilisés pour résoudre en adresses les noms des serveurs amont, par exemple : nginx resolver 127.0.0.1 ::1:5353; L'adresse peut être un nom de domaine ou une adresse…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -24,7 +21,7 @@ Configure les serveurs de noms utilisés pour résoudre en adresses les noms des
 resolver 127.0.0.1 [::1]:5353;
 ```
 
-The address can be specified as a domain name or IP address, with an optional port. If port is not specified, the port 53 is used. Name servers are queried in a round-robin fashion.
+L'adresse peut être un nom de domaine ou une adresse IP, avec un port facultatif. Sans port, le port 53 est utilisé. Les serveurs de noms sont interrogés à tour de rôle.
 
 Par défaut, nginx recherche à la fois les adresses IPv4 et IPv6 lors de la résolution. Si l'on ne souhaite pas rechercher les adresses IPv4 ou IPv6, on peut indiquer le paramètre `ipv4=off` (1.23.1) ou `ipv6=off`.
 
@@ -37,10 +34,10 @@ resolver 127.0.0.1 [::1]:5353 valid=30s;
 > [!NOTE]
 > Pour éviter l'usurpation DNS, il est recommandé de configurer des serveurs DNS dans un réseau local de confiance correctement sécurisé.
 
-The optional `status_zone` parameter (1.17.5) enables [[11-modules/02-http/ngx_http_api_module|collection]] of DNS server statistics of requests and responses in the specified *zone*. The parameter is available as part of our [abonnement commercial](https://nginx.com/products/).
+Le paramètre facultatif `status_zone` (1.17.5) active la [[11-modules/02-http/ngx_http_api_module|collecte]] des statistiques de requêtes et de réponses des serveurs DNS dans la zone (*zone*) indiquée. Ce paramètre est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 > [!NOTE]
-> Since version 1.17.5 and prior to version 1.27.3, this directive was available only as part of our [abonnement commercial](https://nginx.com/products/).
+> De la version 1.17.5 à la version 1.27.3, cette directive n'était disponible que dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

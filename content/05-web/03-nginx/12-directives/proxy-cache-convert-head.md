@@ -1,12 +1,9 @@
 ---
 title: "proxy_cache_convert_head"
-description: "Directive nginx proxy_cache_convert_head (ngx_http_proxy_module) — Enables or disables the conversion of the “HEAD” method to “GET” for caching. When the conversion is disabled, the cache key should be configured to include the $request_method."
+description: "Directive nginx proxy_cache_convert_head (ngx_http_proxy_module) — Active ou désactive la conversion de la méthode « HEAD » en « GET » pour la mise en cache. Si la conversion est désactivée, la clé de cache doit inclure $request_method."
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables the conversion of the “`HEAD`” method to “`GET`” for caching. When the conversion is disabled, the [[12-directives/proxy-cache-key|cache key]] should be configured to include the `$request_method`.
+Active ou désactive la conversion de la méthode « `HEAD` » en « `GET` » pour la mise en cache. Si la conversion est désactivée, la [[12-directives/proxy-cache-key|clé de cache]] doit inclure `$request_method`.
 
 ---
 

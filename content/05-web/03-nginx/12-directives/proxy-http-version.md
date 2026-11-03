@@ -1,12 +1,9 @@
 ---
 title: "proxy_http_version"
-description: "Directive nginx proxy_http_version (ngx_http_proxy_module) — Sets the HTTP protocol version for proxying. Since 1.29.7, version 1.1 is used by default. Before 1.29.7, version 1.0 was used by default. Version 1.1 or 2 (1.29.4) is recommended for use with…"
+description: "Directive nginx proxy_http_version (ngx_http_proxy_module) — Définit la version du protocole HTTP utilisée pour le relais. Depuis la version 1.29.7, la version 1.1 est utilisée par défaut ; auparavant, c'était la version 1.0. Les versions 1.1 ou 2 (1.29.4)…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,10 +15,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the HTTP protocol version for proxying. Since 1.29.7, version 1.1 is used by default. Before 1.29.7, version 1.0 was used by default. Version 1.1 or 2 (1.29.4) is recommended for use with [[12-directives/keepalive|keepalive]] connections and [[12-directives/ntlm|NTLM authentication]].
+Définit la version du protocole HTTP utilisée pour le relais. Depuis la version 1.29.7, la version 1.1 est utilisée par défaut ; auparavant, c'était la version 1.0. Les versions 1.1 ou 2 (1.29.4) sont recommandées avec les connexions [[12-directives/keepalive|keepalive]] et l'[[12-directives/ntlm|authentification NTLM]].
 
 > [!NOTE]
-> Version 2 requires the [[11-modules/02-http/ngx_http_v2_module|ngx_http_v2_module]] module.
+> La version 2 nécessite le module [[11-modules/02-http/ngx_http_v2_module|ngx_http_v2_module]].
 
 ---
 

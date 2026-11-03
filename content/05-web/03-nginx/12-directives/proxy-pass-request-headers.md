@@ -1,12 +1,9 @@
 ---
 title: "proxy_pass_request_headers"
-description: "Directive nginx proxy_pass_request_headers (ngx_http_proxy_module) — Indicates whether the header fields of the original request are passed to the proxied server. nginx location /x-accel-redirect-here/ { proxy_method GET; proxy_pass_request_headers off;…"
+description: "Directive nginx proxy_pass_request_headers (ngx_http_proxy_module) — Indique si les champs d'en-tête de la requête d'origine sont transmis au serveur mandaté. nginx location /x-accel-redirect-here/ { proxy_method GET; proxy_pass_request_headers off;…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Indicates whether the header fields of the original request are passed to the proxied server.
+Indique si les champs d'en-tête de la requête d'origine sont transmis au serveur mandaté.
 
 ```nginx
 location /x-accel-redirect-here/ {
@@ -29,7 +26,7 @@ location /x-accel-redirect-here/ {
 }
 ```
 
-See also the [[12-directives/proxy-set-header|proxy_set_header]] and [[12-directives/proxy-pass-request-body|proxy_pass_request_body]] directives.
+Voir aussi les directives [[12-directives/proxy-set-header|proxy_set_header]] et [[12-directives/proxy-pass-request-body|proxy_pass_request_body]].
 
 ---
 

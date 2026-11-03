@@ -23,7 +23,7 @@ Defines a directory for storing temporary files with data received from SCGI ser
 scgi_temp_path /spool/nginx/scgi_temp 1 2;
 ```
 
-a temporary file might look like this:
+un fichier temporaire peut ressembler à ceci :
 
 ```nginx
 /spool/nginx/scgi_temp/7/45/00000123457

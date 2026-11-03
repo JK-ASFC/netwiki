@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_cache_min_uses"
-description: "Directive nginx uwsgi_cache_min_uses (ngx_http_uwsgi_module) — Sets the number of requests after which the response will be cached."
+description: "Directive nginx uwsgi_cache_min_uses (ngx_http_uwsgi_module) — Définit le nombre (number) de requêtes au bout duquel la réponse est mise en cache."
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *number* of requests after which the response will be cached.
+Définit le nombre (*number*) de requêtes au bout duquel la réponse est mise en cache.
 
 ---
 

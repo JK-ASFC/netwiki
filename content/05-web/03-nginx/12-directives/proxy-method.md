@@ -1,12 +1,9 @@
 ---
 title: "proxy_method"
-description: "Directive nginx proxy_method (ngx_http_proxy_module) — Specifies the HTTP method to use in requests forwarded to the proxied server instead of the method from the client request. Parameter value can contain variables (1.11.6)."
+description: "Directive nginx proxy_method (ngx_http_proxy_module) — Indique la méthode (method) HTTP à utiliser dans les requêtes transmises au serveur mandaté, à la place de celle de la requête du client. La valeur du paramètre peut contenir des variables (1.11.6)."
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the HTTP *method* to use in requests forwarded to the proxied server instead of the method from the client request. Parameter value can contain variables (1.11.6).
+Indique la méthode (*method*) HTTP à utiliser dans les requêtes transmises au serveur mandaté, à la place de celle de la requête du client. La valeur du paramètre peut contenir des variables (1.11.6).
 
 ---
 

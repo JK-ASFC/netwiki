@@ -1,12 +1,9 @@
 ---
 title: "keepalive_requests (ngx_http_upstream_module)"
-description: "Directive nginx keepalive_requests (ngx_http_upstream_module) — Sets the maximum number of requests that can be served through one keepalive connection. After the maximum number of requests is made, the connection is closed. Fermer périodiquement les connexions…"
+description: "Directive nginx keepalive_requests (ngx_http_upstream_module) — Définit le nombre maximal de requêtes pouvant être servies sur une connexion persistante. Une fois ce nombre atteint, la connexion est fermée. Fermer périodiquement les connexions est nécessaire pour…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum number of requests that can be served through one keepalive connection. After the maximum number of requests is made, the connection is closed.
+Définit le nombre maximal de requêtes pouvant être servies sur une connexion persistante. Une fois ce nombre atteint, la connexion est fermée.
 
 Fermer périodiquement les connexions est nécessaire pour libérer la mémoire allouée par connexion. Un nombre maximal de requêtes trop élevé peut donc entraîner une consommation de mémoire excessive et n'est pas recommandé.
 

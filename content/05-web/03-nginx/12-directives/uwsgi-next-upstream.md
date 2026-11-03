@@ -1,6 +1,6 @@
 ---
 title: "uwsgi_next_upstream"
-description: "Directive nginx uwsgi_next_upstream (ngx_http_uwsgi_module) — Specifies in which cases a request should be passed to the next server: - error an error occurred while establishing a connection with the server, passing a request to it, or reading the response…"
+description: "Directive nginx uwsgi_next_upstream (ngx_http_uwsgi_module) — Indique dans quels cas une requête doit être transmise au serveur suivant : - error une erreur s'est produite lors de l'établissement de la connexion avec le serveur, de la transmission de la requête…"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
@@ -17,15 +17,15 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies in which cases a request should be passed to the next server:
+Indique dans quels cas une requête doit être transmise au serveur suivant :
 
 - **`error`**
 
-  an error occurred while establishing a connection with the server, passing a request to it, or reading the response header;
+  une erreur s'est produite lors de l'établissement de la connexion avec le serveur, de la transmission de la requête ou de la lecture de l'en-tête de réponse ;
 
 - **`timeout`**
 
-  a timeout has occurred while establishing a connection with the server, passing a request to it, or reading the response header;
+  un délai a expiré lors de l'établissement de la connexion avec le serveur, de la transmission de la requête ou de la lecture de l'en-tête de réponse ;
 
 - **`denied`**
 
@@ -36,37 +36,37 @@ Specifies in which cases a request should be passed to the next server:
 
 - **`invalid_header`**
 
-  a server returned an empty or invalid response;
+  le serveur a renvoyé une réponse vide ou non valide ;
 
 - **`http_500`**
 
-  a server returned a response with the code 500;
+  le serveur a renvoyé une réponse de code 500 ;
 
 - **`http_503`**
 
-  a server returned a response with the code 503;
+  le serveur a renvoyé une réponse de code 503 ;
 
 - **`http_403`**
 
-  a server returned a response with the code 403;
+  le serveur a renvoyé une réponse de code 403 ;
 
 - **`http_404`**
 
-  a server returned a response with the code 404;
+  le serveur a renvoyé une réponse de code 404 ;
 
 - **`http_429`**
 
-  a server returned a response with the code 429 (1.11.13);
+  le serveur a renvoyé une réponse de code 429 (1.11.13) ;
 
 - **`non_idempotent`**
 
-  normally, requests with a [non-idempotent](https://datatracker.ietf.org/doc/html/rfc7231#section-4.2.2) method (`POST`, `LOCK`, `PATCH`) are not passed to the next server if a request has been sent to an upstream server (1.9.13); enabling this option explicitly allows retrying such requests;
+  normalement, les requêtes dont la méthode n'est pas [idempotente](https://datatracker.ietf.org/doc/html/rfc7231#section-4.2.2) (`POST`, `LOCK`, `PATCH`) ne sont pas transmises au serveur suivant si la requête a déjà été envoyée à un serveur amont (1.9.13) ; cette option autorise explicitement à les réessayer ;
 
 - **`off`**
 
-  disables passing a request to the next server.
+  désactive la transmission de la requête au serveur suivant.
 
-One should bear in mind that passing a request to the next server is only possible if nothing has been sent to a client yet. That is, if an error or timeout occurs in the middle of the transferring of a response, fixing this is impossible.
+La requête ne peut être transmise au serveur suivant que si rien n'a encore été envoyé au client. Si une erreur ou un dépassement de délai survient au milieu du transfert de la réponse, il est impossible d'y remédier.
 
 The directive also defines what is considered an [[11-modules/02-http/ngx_http_upstream_module|unsuccessful attempt]] of communication with a server. The cases of `error`, `timeout`, `denied` and `invalid_header` are always considered unsuccessful attempts, even if they are not specified in the directive. The cases of `http_500`, `http_503`, and `http_429` are considered unsuccessful attempts only if they are specified in the directive. The cases of `http_403` and `http_404` are never considered unsuccessful attempts.
 

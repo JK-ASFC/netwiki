@@ -1,12 +1,9 @@
 ---
 title: "keepalive"
-description: "Directive nginx keepalive (ngx_http_upstream_module) — Enables or disables caching of keepalive connections to upstream servers. Since 1.29.7, by default the cache for connections is activated and these connections are not shared between different…"
+description: "Directive nginx keepalive (ngx_http_upstream_module) — Active ou désactive le cache des connexions persistantes vers les serveurs amont. Depuis la version 1.29.7, ce cache est activé par défaut et ces connexions ne sont pas partagées entre les différents…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,22 +15,22 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables caching of keepalive connections to upstream servers. Since 1.29.7, by default the cache for connections is activated and these connections are not shared between different [[12-directives/location|locations]].
+Active ou désactive le cache des connexions persistantes vers les serveurs amont. Depuis la version 1.29.7, ce cache est activé par défaut et ces connexions ne sont pas partagées entre les différents blocs [[12-directives/location|location]].
 
-The `local` parameter (1.29.7) disables sharing of cached keepalive connections across different locations even if the upstream server address matches. If the `local` parameter is not specified, any matching cached connection to the same upstream server can be reused regardless of a location.
+Le paramètre `local` (1.29.7) empêche le partage des connexions persistantes en cache entre blocs location différents, même si l'adresse du serveur amont est la même. Sans ce paramètre, toute connexion en cache vers le même serveur amont peut être réutilisée, quel que soit le bloc location.
 
-The *connections* parameter sets the maximum number of idle keepalive connections to upstream servers that are preserved in the cache of each worker process. When this number is exceeded, the least recently used connections are closed. The zero value disables keepalive connections to upstream servers.
-
-> [!NOTE]
-> Since 1.29.7, keepalive connections are enabled by default, with a default limit of *32* connections per each worker process.
+Le paramètre *connections* définit le nombre maximal de connexions persistantes inactives vers les serveurs amont conservées dans le cache de chaque processus de travail. Au-delà, les connexions les moins récemment utilisées sont fermées. La valeur zéro désactive les connexions persistantes vers les serveurs amont.
 
 > [!NOTE]
-> It should be particularly noted that the `keepalive` directive does not limit the total number of connections to upstream servers that an nginx worker process can open. The *connections* parameter should be set to a number small enough to let upstream servers process new incoming connections as well.
+> Depuis la version 1.29.7, les connexions persistantes sont activées par défaut, avec une limite par défaut de *32* connexions par processus de travail.
 
 > [!NOTE]
-> Before 1.29.7, when using load balancing methods other than the default round-robin method, it was necessary to activate them before the `keepalive` directive.
+> La directive `keepalive` ne limite pas le nombre total de connexions qu'un processus de travail de nginx peut ouvrir vers les serveurs amont. Le paramètre *connections* doit être assez petit pour que les serveurs amont puissent aussi traiter de nouvelles connexions entrantes.
 
-Example configuration of memcached upstream with keepalive connections:
+> [!NOTE]
+> Avant la version 1.29.7, avec une méthode de répartition autre que le tourniquet par défaut, il fallait l'activer avant la directive `keepalive`.
+
+Exemple de configuration d'un groupe amont memcached avec connexions persistantes :
 
 ```nginx
 upstream memcached_backend {
@@ -54,7 +51,7 @@ server {
 }
 ```
 
-For HTTP, the [[12-directives/proxy-http-version|proxy_http_version]] directive should be “`1.1`” (by default since 1.29.7) or set to “`2`” and the `Connection` header field should be cleared. This example is for versions prior to 1.29.7:
+En HTTP, la directive [[12-directives/proxy-http-version|proxy_http_version]] doit valoir « `1.1` » (valeur par défaut depuis 1.29.7) ou « `2` », et le champ d'en-tête `Connection` doit être vidé. Cet exemple concerne les versions antérieures à 1.29.7 :
 
 ```nginx
 upstream http_backend {
@@ -76,9 +73,9 @@ server {
 ```
 
 > [!NOTE]
-> Alternatively, HTTP/1.0 persistent connections can be used by passing the `Connection: Keep-Alive` header field to an upstream server, though this method is not recommended.
+> On peut aussi utiliser les connexions persistantes HTTP/1.0 en transmettant le champ d'en-tête `Connection: Keep-Alive` au serveur amont, mais cette méthode n'est pas recommandée.
 
-For FastCGI servers, it is required to set [[12-directives/fastcgi-keep-conn|fastcgi_keep_conn]] for keepalive connections to work:
+Pour les serveurs FastCGI, il faut activer [[12-directives/fastcgi-keep-conn|fastcgi_keep_conn]] pour que les connexions persistantes fonctionnent :
 
 ```nginx
 upstream fastcgi_backend {
@@ -99,7 +96,7 @@ server {
 ```
 
 > [!NOTE]
-> SCGI and uwsgi protocols do not have a notion of keepalive connections.
+> Les protocoles SCGI et uwsgi n'ont pas de notion de connexion persistante.
 
 ---
 

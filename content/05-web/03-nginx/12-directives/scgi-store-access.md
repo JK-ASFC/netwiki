@@ -1,12 +1,9 @@
 ---
 title: "scgi_store_access"
-description: "Directive nginx scgi_store_access (ngx_http_scgi_module) — Sets access permissions for newly created files and directories, e.g.: nginx scgi_store_access user:rw group:rw all:r; If any group or all access permissions are specified then user permissions may…"
+description: "Directive nginx scgi_store_access (ngx_http_scgi_module) — Définit les droits d'accès des fichiers et répertoires nouvellement créés, par exemple : nginx scgi_store_access user:rw group:rw all:r; Si des droits group ou all sont indiqués, les droits user…"
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Sets access permissions for newly created files and directories, e.g.:
+Définit les droits d'accès des fichiers et répertoires nouvellement créés, par exemple :
 
 ```nginx
 scgi_store_access user:rw group:rw all:r;
 ```
 
-If any `group` or `all` access permissions are specified then `user` permissions may be omitted:
+Si des droits `group` ou `all` sont indiqués, les droits `user` peuvent être omis :
 
 ```nginx
 scgi_store_access group:rw all:r;

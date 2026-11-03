@@ -1,12 +1,9 @@
 ---
 title: "proxy_cache_use_stale"
-description: "Directive nginx proxy_cache_use_stale (ngx_http_proxy_module) — Determines in which cases a stale cached response can be used during communication with the proxied server. The directive’s parameters match the parameters of the proxy_next_upstream directive. The…"
+description: "Directive nginx proxy_cache_use_stale (ngx_http_proxy_module) — Détermine dans quels cas une réponse en cache périmée peut être utilisée lors des échanges avec le serveur mandaté. Les paramètres de la directive correspondent à ceux de la directive…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,19 +14,19 @@ icon: settings-2
 
 ## Utilisation
 
-Determines in which cases a stale cached response can be used during communication with the proxied server. The directive’s parameters match the parameters of the [[12-directives/proxy-next-upstream-http-proxy|proxy_next_upstream]] directive.
+Détermine dans quels cas une réponse en cache périmée peut être utilisée lors des échanges avec le serveur mandaté. Les paramètres de la directive correspondent à ceux de la directive [[12-directives/proxy-next-upstream-http-proxy|proxy_next_upstream]].
 
-The `error` parameter also permits using a stale cached response if a proxied server to process a request cannot be selected.
+Le paramètre `error` autorise aussi l'utilisation d'une réponse en cache périmée si aucun serveur mandaté ne peut être choisi pour traiter la requête.
 
-Additionally, the `updating` parameter permits using a stale cached response if it is currently being updated. This allows minimizing the number of accesses to proxied servers when updating cached data.
+En outre, le paramètre `updating` autorise l'utilisation d'une réponse en cache périmée pendant sa mise à jour. Cela réduit le nombre d'accès aux serveurs mandatés lors de la mise à jour des données en cache.
 
-Using a stale cached response can also be enabled directly in the response header for a specified number of seconds after the response became stale (1.11.10). This has lower priority than using the directive parameters.
+L'utilisation d'une réponse en cache périmée peut aussi être autorisée directement dans l'en-tête de réponse, pendant un nombre de secondes donné après sa péremption (1.11.10). Cela a une priorité inférieure à celle des paramètres de la directive.
 
-- The “[stale-while-revalidate](https://datatracker.ietf.org/doc/html/rfc5861#section-3)” extension of the `Cache-Control` header field permits using a stale cached response if it is currently being updated.
+- L'extension « [stale-while-revalidate](https://datatracker.ietf.org/doc/html/rfc5861#section-3) » du champ d'en-tête `Cache-Control` autorise l'utilisation d'une réponse en cache périmée pendant sa mise à jour.
 
-- The “[stale-if-error](https://datatracker.ietf.org/doc/html/rfc5861#section-4)” extension of the `Cache-Control` header field permits using a stale cached response in case of an error.
+- L'extension « [stale-if-error](https://datatracker.ietf.org/doc/html/rfc5861#section-4) » du champ d'en-tête `Cache-Control` autorise l'utilisation d'une réponse en cache périmée en cas d'erreur.
 
-To minimize the number of accesses to proxied servers when populating a new cache element, the [[12-directives/proxy-cache-lock|proxy_cache_lock]] directive can be used.
+Pour réduire le nombre d'accès aux serveurs mandatés lors de l'alimentation d'un nouvel élément de cache, on peut utiliser la directive [[12-directives/proxy-cache-lock|proxy_cache_lock]].
 
 ---
 

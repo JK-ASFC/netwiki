@@ -26,7 +26,7 @@ Enables the specified protocols.
 > The `TLSv1.3` parameter (1.13.0) works only when OpenSSL 1.1.1 or higher is used.
 
 > [!NOTE]
-> The `TLSv1.3` parameter is used by default since 1.23.4.
+> Le paramètre `TLSv1.3` est utilisé par défaut depuis la version 1.23.4.
 
 ---
 

@@ -22,7 +22,7 @@ Defines conditions under which the request will be considered a cache purge requ
 
 If the [[12-directives/uwsgi-cache-key|cache key]] of a purge request ends with an asterisk (“`*`”), all cache entries matching the wildcard key will be removed from the cache. However, these entries will remain on the disk until they are deleted for either [[12-directives/uwsgi-cache-path|inactivity]], or processed by the cache purger (1.7.12), or a client attempts to access them.
 
-Example configuration:
+Exemple de configuration :
 
 ```nginx
 uwsgi_cache_path /data/nginx/cache keys_zone=cache_zone:10m;
@@ -44,7 +44,7 @@ server {
 ```
 
 > [!NOTE]
-> This functionality is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Cette fonction est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

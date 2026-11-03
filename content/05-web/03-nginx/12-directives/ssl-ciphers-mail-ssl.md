@@ -1,6 +1,6 @@
 ---
 title: "ssl_ciphers (ngx_mail_ssl_module)"
-description: "Directive nginx ssl_ciphers (ngx_mail_ssl_module) — Specifies the enabled ciphers. The ciphers are specified in the format understood by the OpenSSL library, for example: nginx ssl_ciphers ALL:aNULL:EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; The…"
+description: "Directive nginx ssl_ciphers (ngx_mail_ssl_module) — Specifies the enabled ciphers. The ciphers are specified in the format understood by the OpenSSL library, for example: nginx ssl_ciphers ALL:aNULL:EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; La…"
 tags: [nginx, directive, ngx_mail_ssl_module]
 icon: settings-2
 ---
@@ -23,7 +23,7 @@ Specifies the enabled ciphers. The ciphers are specified in the format understoo
 ssl_ciphers ALL:!aNULL:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
 ```
 
-The full list can be viewed using the “`openssl ciphers`” command.
+La liste complète s'affiche avec la commande « `openssl ciphers` ».
 
 > [!NOTE]
 > The previous versions of nginx used [[10-guides/02-http/configuring-https-servers|different]] ciphers by default.

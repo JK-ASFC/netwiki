@@ -1,12 +1,9 @@
 ---
 title: "proxy_headers_hash_bucket_size"
-description: "Directive nginx proxy_headers_hash_bucket_size (ngx_http_proxy_module) — Sets the bucket size for hash tables used by the proxy_hide_header and proxy_set_header directives. The details of setting up hash tables are provided in a separate document."
+description: "Directive nginx proxy_headers_hash_bucket_size (ngx_http_proxy_module) — Définit la taille (size) des compartiments des tables de hachage utilisées par les directives proxy_hide_header et proxy_set_header. Le réglage des tables de hachage est détaillé dans un document…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the bucket *size* for hash tables used by the [[12-directives/proxy-hide-header|proxy_hide_header]] and [[12-directives/proxy-set-header|proxy_set_header]] directives. The details of setting up hash tables are provided in a separate [[10-guides/01-introduction/hash|document]].
+Définit la taille (*size*) des compartiments des tables de hachage utilisées par les directives [[12-directives/proxy-hide-header|proxy_hide_header]] et [[12-directives/proxy-set-header|proxy_set_header]]. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]].
 
 ---
 

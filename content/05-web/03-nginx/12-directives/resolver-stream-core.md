@@ -1,6 +1,6 @@
 ---
 title: "resolver (ngx_stream_core_module)"
-description: "Directive nginx resolver (ngx_stream_core_module) — Configure les serveurs de noms utilisés pour résoudre en adresses les noms des serveurs amont, par exemple : nginx resolver 127.0.0.1 ::1:5353; The address can be specified as a domain name or IP…"
+description: "Directive nginx resolver (ngx_stream_core_module) — Configure les serveurs de noms utilisés pour résoudre en adresses les noms des serveurs amont, par exemple : nginx resolver 127.0.0.1 ::1:5353; L'adresse peut être un nom de domaine ou une adresse…"
 tags: [nginx, directive, ngx_stream_core_module]
 icon: settings-2
 ---
@@ -24,7 +24,7 @@ Configure les serveurs de noms utilisés pour résoudre en adresses les noms des
 resolver 127.0.0.1 [::1]:5353;
 ```
 
-The address can be specified as a domain name or IP address, with an optional port. If port is not specified, the port 53 is used. Name servers are queried in a round-robin fashion.
+L'adresse peut être un nom de domaine ou une adresse IP, avec un port facultatif. Sans port, le port 53 est utilisé. Les serveurs de noms sont interrogés à tour de rôle.
 
 Par défaut, nginx recherche à la fois les adresses IPv4 et IPv6 lors de la résolution. Si l'on ne souhaite pas rechercher les adresses IPv4 ou IPv6, on peut indiquer le paramètre `ipv4=off` (1.23.1) ou `ipv6=off`.
 

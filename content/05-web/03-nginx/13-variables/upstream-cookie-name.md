@@ -1,19 +1,16 @@
 ---
 title: "$upstream_cookie_name"
-description: "Variable nginx $upstream_cookie_name (ngx_http_upstream_module) — cookie with the specified name sent by the upstream server in the Set-Cookie response header field (1.7.1). Only the cookies from the response of the last server are saved."
+description: "Variable nginx $upstream_cookie_name (ngx_http_upstream_module) — cookie de nom name envoyé par le serveur amont dans le champ d'en-tête de réponse Set-Cookie (1.7.1). Seuls les cookies de la réponse du dernier serveur sont conservés."
 tags: [nginx, variable, ngx_http_upstream_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$upstream_cookie_name` |
 | **Module** | [[11-modules/02-http/ngx_http_upstream_module\|ngx_http_upstream_module]] |
 
-cookie with the specified *name* sent by the upstream server in the `Set-Cookie` response header field (1.7.1). Only the cookies from the response of the last server are saved.
+cookie de nom *name* envoyé par le serveur amont dans le champ d'en-tête de réponse `Set-Cookie` (1.7.1). Seuls les cookies de la réponse du dernier serveur sont conservés.
 
 ---
 

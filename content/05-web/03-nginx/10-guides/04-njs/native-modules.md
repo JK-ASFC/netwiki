@@ -34,7 +34,7 @@ Native modules are loaded using these directives specified in the `main` context
 - [[12-directives/js-load-http-native-module|js_load_http_native_module]] for HTTP context
 - [[12-directives/js-load-stream-native-module|js_load_stream_native_module]] for Stream context
 
-Example configuration:
+Exemple de configuration :
 
 ```nginx
 js_load_http_native_module /path/to/mylib.so;

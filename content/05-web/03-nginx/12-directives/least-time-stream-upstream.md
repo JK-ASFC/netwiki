@@ -26,7 +26,7 @@ If the `connect` parameter is specified, time to [[13-variables/upstream-connect
 > Prior to version 1.11.6, incomplete connections were taken into account by default.
 
 > [!NOTE]
-> Prior to version 1.31.0, this directive was available only as part of our [abonnement commercial](https://nginx.com/products/).
+> Avant la version 1.31.0, cette directive n'était disponible que dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "proxy_cookie_domain"
-description: "Directive nginx proxy_cookie_domain (ngx_http_proxy_module) — Sets a text that should be changed in the domain attribute of the Set-Cookie header fields of a proxied server response. Suppose a proxied server returned the Set-Cookie header field with the…"
+description: "Directive nginx proxy_cookie_domain (ngx_http_proxy_module) — Définit le texte à modifier dans l'attribut domain des champs d'en-tête Set-Cookie de la réponse d'un serveur mandaté. Supposons que le serveur mandaté renvoie le champ Set-Cookie avec l'attribut «…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,38 +15,38 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a text that should be changed in the `domain` attribute of the `Set-Cookie` header fields of a proxied server response. Suppose a proxied server returned the `Set-Cookie` header field with the attribute “`domain=localhost`”. The directive
+Définit le texte à modifier dans l'attribut `domain` des champs d'en-tête `Set-Cookie` de la réponse d'un serveur mandaté. Supposons que le serveur mandaté renvoie le champ `Set-Cookie` avec l'attribut « `domain=localhost` ». La directive
 
 ```nginx
 proxy_cookie_domain localhost example.org;
 ```
 
-will rewrite this attribute to “`domain=example.org`”.
+réécrit cet attribut en « `domain=example.org` ».
 
-A dot at the beginning of the *domain* and *replacement* strings and the `domain` attribute is ignored. Matching is case-insensitive.
+Un point au début des chaînes *domain* et *replacement* et de l'attribut `domain` est ignoré. La comparaison est insensible à la casse.
 
-The *domain* and *replacement* strings can contain variables:
+Les chaînes *domain* et *replacement* peuvent contenir des variables :
 
 ```nginx
 proxy_cookie_domain www.$host $host;
 ```
 
-The directive can also be specified using regular expressions. In this case, *domain* should start from the “`~`” symbol. A regular expression can contain named and positional captures, and *replacement* can reference them:
+La directive peut aussi utiliser des expressions régulières. Dans ce cas, *domain* doit commencer par le symbole « `~` ». L'expression régulière peut contenir des captures nommées et positionnelles, auxquelles *replacement* peut faire référence :
 
 ```nginx
 proxy_cookie_domain ~\.(?P<sl_domain>[-0-9a-z]+\.[a-z]+)$ $sl_domain;
 ```
 
-Several `proxy_cookie_domain` directives can be specified on the same level:
+Plusieurs directives `proxy_cookie_domain` peuvent être indiquées au même niveau :
 
 ```nginx
 proxy_cookie_domain localhost example.org;
 proxy_cookie_domain ~\.([a-z]+\.[a-z]+)$ $1;
 ```
 
-If several directives can be applied to the cookie, the first matching directive will be chosen.
+Si plusieurs directives peuvent s'appliquer au cookie, la première qui correspond est retenue.
 
-The `off` parameter cancels the effect of the `proxy_cookie_domain` directives inherited from the previous configuration level.
+Le paramètre `off` annule l'effet des directives `proxy_cookie_domain` héritées du niveau de configuration précédent.
 
 ---
 

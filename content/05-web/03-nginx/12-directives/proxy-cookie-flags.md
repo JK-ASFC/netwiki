@@ -1,12 +1,9 @@
 ---
 title: "proxy_cookie_flags"
-description: "Directive nginx proxy_cookie_flags (ngx_http_proxy_module) — Sets one or more flags for the cookie. The cookie can contain text, variables, and their combinations. The flag can contain text, variables, and their combinations (1.19.8). The secure, httponly,…"
+description: "Directive nginx proxy_cookie_flags (ngx_http_proxy_module) — Définit un ou plusieurs attributs (drapeaux) du cookie. cookie peut contenir du texte, des variables ou une combinaison des deux, de même que flag (1.19.8). Les paramètres secure, httponly,…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,20 +15,20 @@ icon: settings-2
 
 ## Utilisation
 
-Sets one or more flags for the cookie. The *cookie* can contain text, variables, and their combinations. The *flag* can contain text, variables, and their combinations (1.19.8). The `secure`, `httponly`, `samesite=strict`, `samesite=lax`, `samesite=none` parameters add the corresponding flags. The `nosecure`, `nohttponly`, `nosamesite` parameters remove the corresponding flags.
+Définit un ou plusieurs attributs (drapeaux) du cookie. *cookie* peut contenir du texte, des variables ou une combinaison des deux, de même que *flag* (1.19.8). Les paramètres `secure`, `httponly`, `samesite=strict`, `samesite=lax` et `samesite=none` ajoutent les drapeaux correspondants ; `nosecure`, `nohttponly` et `nosamesite` les retirent.
 
-The cookie can also be specified using regular expressions. In this case, *cookie* should start from the “`~`” symbol.
+Le cookie peut aussi être désigné par une expression régulière. Dans ce cas, *cookie* doit commencer par le symbole « `~` ».
 
-Several `proxy_cookie_flags` directives can be specified on the same configuration level:
+Plusieurs directives `proxy_cookie_flags` peuvent être indiquées au même niveau de configuration :
 
 ```nginx
 proxy_cookie_flags one httponly;
 proxy_cookie_flags ~ nosecure samesite=strict;
 ```
 
-If several directives can be applied to the cookie, the first matching directive will be chosen. In the example, the `httponly` flag is added to the cookie `one`, for all other cookies the `samesite=strict` flag is added and the `secure` flag is deleted.
+Si plusieurs directives peuvent s'appliquer au cookie, la première qui correspond est retenue. Dans l'exemple, le drapeau `httponly` est ajouté au cookie `one` ; pour tous les autres cookies, le drapeau `samesite=strict` est ajouté et le drapeau `secure` est retiré.
 
-The `off` parameter cancels the effect of the `proxy_cookie_flags` directives inherited from the previous configuration level.
+Le paramètre `off` annule l'effet des directives `proxy_cookie_flags` héritées du niveau de configuration précédent.
 
 ---
 

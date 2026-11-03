@@ -25,7 +25,7 @@ hash $remote_addr;
 
 Note that adding or removing a server from the group may result in remapping most of the keys to different servers. The method is compatible with the [Cache::Memcached](https://metacpan.org/pod/Cache::Memcached) Perl library.
 
-If the `consistent` parameter is specified, the [ketama](https://www.metabrew.com/article/libketama-consistent-hashing-algo-memcached-clients) consistent hashing method will be used instead. The method ensures that only a few keys will be remapped to different servers when a server is added to or removed from the group. This helps to achieve a higher cache hit ratio for caching servers. The method is compatible with the [Cache::Memcached::Fast](https://metacpan.org/pod/Cache::Memcached::Fast) Perl library with the *ketama\_points* parameter set to 160.
+Avec le paramètre `consistent`, la méthode de hachage cohérent [ketama](https://www.metabrew.com/article/libketama-consistent-hashing-algo-memcached-clients) est utilisée à la place. Elle garantit que seules quelques clés sont réaffectées lorsqu'un serveur est ajouté au groupe ou en est retiré, ce qui améliore le taux de réussite des serveurs de cache. Cette méthode est compatible avec la bibliothèque Perl [Cache::Memcached::Fast](https://metacpan.org/pod/Cache::Memcached::Fast) avec le paramètre *ketama\_points* fixé à 160.
 
 ---
 

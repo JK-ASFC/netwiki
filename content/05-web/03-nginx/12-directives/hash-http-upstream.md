@@ -1,12 +1,9 @@
 ---
 title: "hash (ngx_http_upstream_module)"
-description: "Directive nginx hash (ngx_http_upstream_module) — Specifies a load balancing method for a server group where the client-server mapping is based on the hashed key value. The key can contain text, variables, and their combinations. Note that adding or…"
+description: "Directive nginx hash (ngx_http_upstream_module) — Indique une méthode de répartition de charge pour un groupe de serveurs, dans laquelle l'association client-serveur repose sur la valeur hachée de la clé (key). La clé peut contenir du texte, des…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a load balancing method for a server group where the client-server mapping is based on the hashed *key* value. The *key* can contain text, variables, and their combinations. Note that adding or removing a server from the group may result in remapping most of the keys to different servers. The method is compatible with the [Cache::Memcached](https://metacpan.org/pod/Cache::Memcached) Perl library.
+Indique une méthode de répartition de charge pour un groupe de serveurs, dans laquelle l'association client-serveur repose sur la valeur hachée de la clé (*key*). La clé peut contenir du texte, des variables ou une combinaison des deux. L'ajout ou le retrait d'un serveur du groupe peut réaffecter la plupart des clés à d'autres serveurs. Cette méthode est compatible avec la bibliothèque Perl [Cache::Memcached](https://metacpan.org/pod/Cache::Memcached).
 
-If the `consistent` parameter is specified, the [ketama](https://www.metabrew.com/article/libketama-consistent-hashing-algo-memcached-clients) consistent hashing method will be used instead. The method ensures that only a few keys will be remapped to different servers when a server is added to or removed from the group. This helps to achieve a higher cache hit ratio for caching servers. The method is compatible with the [Cache::Memcached::Fast](https://metacpan.org/pod/Cache::Memcached::Fast) Perl library with the *ketama\_points* parameter set to 160.
+Avec le paramètre `consistent`, la méthode de hachage cohérent [ketama](https://www.metabrew.com/article/libketama-consistent-hashing-algo-memcached-clients) est utilisée à la place. Elle garantit que seules quelques clés sont réaffectées lorsqu'un serveur est ajouté au groupe ou en est retiré, ce qui améliore le taux de réussite des serveurs de cache. Cette méthode est compatible avec la bibliothèque Perl [Cache::Memcached::Fast](https://metacpan.org/pod/Cache::Memcached::Fast) avec le paramètre *ketama\_points* fixé à 160.
 
 ---
 

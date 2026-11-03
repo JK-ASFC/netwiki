@@ -1,12 +1,9 @@
 ---
 title: "proxy_cache_bypass"
-description: "Directive nginx proxy_cache_bypass (ngx_http_proxy_module) — Defines conditions under which the response will not be taken from a cache. If at least one value of the string parameters is not empty and is not equal to “0” then the response will not be taken…"
+description: "Directive nginx proxy_cache_bypass (ngx_http_proxy_module) — Définit les conditions dans lesquelles la réponse n'est pas prise dans le cache. Si au moins une des chaînes en paramètre n'est ni vide ni égale à « 0 », la réponse n'est pas prise dans le cache :…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,14 +14,14 @@ icon: settings-2
 
 ## Utilisation
 
-Defines conditions under which the response will not be taken from a cache. If at least one value of the string parameters is not empty and is not equal to “0” then the response will not be taken from the cache:
+Définit les conditions dans lesquelles la réponse n'est pas prise dans le cache. Si au moins une des chaînes en paramètre n'est ni vide ni égale à « 0 », la réponse n'est pas prise dans le cache :
 
 ```nginx
 proxy_cache_bypass $cookie_nocache $arg_nocache$arg_comment;
 proxy_cache_bypass $http_pragma    $http_authorization;
 ```
 
-Can be used along with the [[12-directives/proxy-no-cache|proxy_no_cache]] directive.
+Peut s'utiliser avec la directive [[12-directives/proxy-no-cache|proxy_no_cache]].
 
 ---
 

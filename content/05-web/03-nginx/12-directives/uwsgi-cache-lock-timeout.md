@@ -1,6 +1,6 @@
 ---
 title: "uwsgi_cache_lock_timeout"
-description: "Directive nginx uwsgi_cache_lock_timeout (ngx_http_uwsgi_module) — Sets a timeout for uwsgi_cache_lock. When the time expires, the request will be passed to the uwsgi server, however, the response will not be cached. NOTE Before 1.7.8, the response could be cached."
+description: "Directive nginx uwsgi_cache_lock_timeout (ngx_http_uwsgi_module) — Sets a timeout for uwsgi_cache_lock. When the time expires, the request will be passed to the uwsgi server, however, the response will not be cached. NOTE Avant la version 1.7.8, la réponse pouvait…"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
@@ -21,7 +21,7 @@ icon: settings-2
 Sets a timeout for [[12-directives/uwsgi-cache-lock|uwsgi_cache_lock]]. When the *time* expires, the request will be passed to the uwsgi server, however, the response will not be cached.
 
 > [!NOTE]
-> Before 1.7.8, the response could be cached.
+> Avant la version 1.7.8, la réponse pouvait être mise en cache.
 
 ---
 

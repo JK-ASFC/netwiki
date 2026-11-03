@@ -1,6 +1,6 @@
 ---
 title: "uwsgi_cache_valid"
-description: "Directive nginx uwsgi_cache_valid (ngx_http_uwsgi_module) — Sets caching time for different response codes. For example, the following directives nginx uwsgi_cache_valid 200 302 10m; uwsgi_cache_valid 404 1m; set 10 minutes of caching for responses with codes…"
+description: "Directive nginx uwsgi_cache_valid (ngx_http_uwsgi_module) — Définit la durée de mise en cache selon le code de réponse. Par exemple, les directives suivantes nginx uwsgi_cache_valid 200 302 10m; uwsgi_cache_valid 404 1m; mettent en cache pendant 10 minutes…"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
@@ -17,24 +17,24 @@ icon: settings-2
 
 ## Utilisation
 
-Sets caching time for different response codes. For example, the following directives
+Définit la durée de mise en cache selon le code de réponse. Par exemple, les directives suivantes
 
 ```nginx
 uwsgi_cache_valid 200 302 10m;
 uwsgi_cache_valid 404      1m;
 ```
 
-set 10 minutes of caching for responses with codes 200 and 302 and 1 minute for responses with code 404.
+mettent en cache pendant 10 minutes les réponses de code 200 et 302, et pendant 1 minute celles de code 404.
 
-If only caching *time* is specified
+Si seule la durée (*time*) de mise en cache est indiquée
 
 ```nginx
 uwsgi_cache_valid 5m;
 ```
 
-then only 200, 301, and 302 responses are cached.
+seules les réponses 200, 301 et 302 sont mises en cache.
 
-In addition, the `any` parameter can be specified to cache any responses:
+On peut aussi indiquer le paramètre `any` pour mettre en cache toutes les réponses :
 
 ```nginx
 uwsgi_cache_valid 200 302 10m;
@@ -42,15 +42,15 @@ uwsgi_cache_valid 301      1h;
 uwsgi_cache_valid any      1m;
 ```
 
-Parameters of caching can also be set directly in the response header. This has higher priority than setting of caching time using the directive.
+Les paramètres de mise en cache peuvent aussi être définis directement dans l'en-tête de la réponse. Cela a priorité sur la durée définie par la directive.
 
-- The `X-Accel-Expires` header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the `@` prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+- Le champ d'en-tête `X-Accel-Expires` définit la durée de mise en cache de la réponse, en secondes. La valeur zéro désactive la mise en cache de la réponse. Si la valeur commence par le préfixe `@`, elle indique une date absolue, en secondes depuis l'Epoch, jusqu'à laquelle la réponse peut être mise en cache.
 
-- If the header does not include the `X-Accel-Expires` field, parameters of caching may be set in the header fields `Expires` or `Cache-Control`.
+- Si l'en-tête ne contient pas le champ `X-Accel-Expires`, les paramètres de mise en cache peuvent être définis dans les champs `Expires` ou `Cache-Control`.
 
-- If the header includes the `Set-Cookie` field, such a response will not be cached.
+- Si l'en-tête contient le champ `Set-Cookie`, la réponse n'est pas mise en cache.
 
-- If the header includes the `Vary` field with the special value “`*`”, such a response will not be cached (1.7.7). If the header includes the `Vary` field with another value, such a response will be cached taking into account the corresponding request header fields (1.7.7).
+- Si l'en-tête contient le champ `Vary` avec la valeur spéciale « `*` », la réponse n'est pas mise en cache (1.7.7). S'il contient le champ `Vary` avec une autre valeur, la réponse est mise en cache en tenant compte des champs d'en-tête de requête correspondants (1.7.7).
 
 Processing of one or more of these response header fields can be disabled using the [[12-directives/uwsgi-ignore-headers|uwsgi_ignore_headers]] directive.
 

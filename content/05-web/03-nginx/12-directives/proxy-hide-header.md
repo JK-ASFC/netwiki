@@ -1,12 +1,9 @@
 ---
 title: "proxy_hide_header"
-description: "Directive nginx proxy_hide_header (ngx_http_proxy_module) — By default, nginx does not pass the header fields Date, Server, X-Pad, and X-Accel-... from the response of a proxied server to a client. The proxy_hide_header directive sets additional fields that…"
+description: "Directive nginx proxy_hide_header (ngx_http_proxy_module) — Par défaut, nginx ne transmet pas au client les champs d'en-tête Date, Server, X-Pad et X-Accel-... de la réponse d'un serveur mandaté. La directive proxy_hide_header ajoute d'autres champs à ne pas…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-By default, nginx does not pass the header fields `Date`, `Server`, `X-Pad`, and `X-Accel-...` from the response of a proxied server to a client. The `proxy_hide_header` directive sets additional fields that will not be passed. If, on the contrary, the passing of fields needs to be permitted, the [[12-directives/proxy-pass-header|proxy_pass_header]] directive can be used.
+Par défaut, nginx ne transmet pas au client les champs d'en-tête `Date`, `Server`, `X-Pad` et `X-Accel-...` de la réponse d'un serveur mandaté. La directive `proxy_hide_header` ajoute d'autres champs à ne pas transmettre. Pour au contraire autoriser la transmission de champs, utiliser la directive [[12-directives/proxy-pass-header|proxy_pass_header]].
 
 ---
 

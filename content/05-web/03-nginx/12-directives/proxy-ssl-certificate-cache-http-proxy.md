@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_certificate_cache (ngx_http_proxy_module)"
-description: "Directive nginx proxy_ssl_certificate_cache (ngx_http_proxy_module) — Defines a cache that stores SSL certificates and secret keys specified with variables. La directive accepte les paramètres suivants : - max définit le nombre maximal d'éléments dans le cache ; en cas…"
+description: "Directive nginx proxy_ssl_certificate_cache (ngx_http_proxy_module) — Définit un cache qui conserve les certificats SSL et les clés secrètes indiqués par des variables. La directive accepte les paramètres suivants : - max définit le nombre maximal d'éléments dans le…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a cache that stores [[12-directives/proxy-ssl-certificate-http-proxy|SSL certificates]] and [[12-directives/proxy-ssl-certificate-key-http-proxy|secret keys]] specified with variables.
+Définit un cache qui conserve les [[12-directives/proxy-ssl-certificate-http-proxy|certificats SSL]] et les [[12-directives/proxy-ssl-certificate-key-http-proxy|clés secrètes]] indiqués par des variables.
 
 La directive accepte les paramètres suivants :
 
@@ -28,11 +25,11 @@ La directive accepte les paramètres suivants :
 
 - **`inactive`**
 
-  defines a time after which an element is removed from the cache if it has not been accessed during this time; by default, it is 10 seconds;
+  définit la durée au bout de laquelle un élément est supprimé du cache s'il n'a pas été utilisé ; 10 secondes par défaut ;
 
 - **`valid`**
 
-  defines a time during which an element in the cache is considered valid and can be reused; by default, it is 60 seconds. Certificates that exceed this time will be reloaded or revalidated;
+  définit la durée pendant laquelle un élément du cache est considéré comme valide et réutilisable ; 60 secondes par défaut. Les certificats qui dépassent cette durée sont rechargés ou revalidés ;
 
 - **`off`**
 

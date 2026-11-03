@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_upstream_module"
-description: "Module nginx ngx_http_upstream_module — The ngx_http_upstream_module module is used to define groups of servers that can be referenced by the proxy_pass, fastcgi_pass, uwsgi_pass, scgi_pass, memcached_pass, and grpc_pass directives."
+description: "Module nginx ngx_http_upstream_module — Le module ngx_http_upstream_module sert à définir des groupes de serveurs auxquels peuvent faire référence les directives proxy_pass, fastcgi_pass, uwsgi_pass, scgi_pass, memcached_pass et grpc_pass."
 tags: [nginx, module, ngx_http_upstream_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_upstream_module` module is used to define groups of servers that can be referenced by the [[12-directives/proxy-pass-http-proxy|proxy_pass]], [[12-directives/fastcgi-pass|fastcgi_pass]], [[12-directives/uwsgi-pass|uwsgi_pass]], [[12-directives/scgi-pass|scgi_pass]], [[12-directives/memcached-pass|memcached_pass]], and [[12-directives/grpc-pass|grpc_pass]] directives.
+Le module `ngx_http_upstream_module` sert à définir des groupes de serveurs auxquels peuvent faire référence les directives [[12-directives/proxy-pass-http-proxy|proxy_pass]], [[12-directives/fastcgi-pass|fastcgi_pass]], [[12-directives/uwsgi-pass|uwsgi_pass]], [[12-directives/scgi-pass|scgi_pass]], [[12-directives/memcached-pass|memcached_pass]] et [[12-directives/grpc-pass|grpc_pass]].
 
 ## Exemple de configuration
 
@@ -29,7 +26,7 @@ server {
 }
 ```
 
-Dynamically configurable group with periodic [[11-modules/02-http/ngx_http_upstream_hc_module|health checks]] is available as part of our [abonnement commercial](https://nginx.com/products/):
+Un groupe configurable dynamiquement, avec [[11-modules/02-http/ngx_http_upstream_hc_module|vérifications d'état]] périodiques, est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/) :
 
 ```nginx
 resolver 10.0.0.1;

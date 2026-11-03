@@ -1,12 +1,9 @@
 ---
 title: "zone (ngx_http_upstream_module)"
-description: "Directive nginx zone (ngx_http_upstream_module) — Defines the name and size of the shared memory zone that keeps the group’s configuration and run-time state that are shared between worker processes. Several groups may share the same zone. In this…"
+description: "Directive nginx zone (ngx_http_upstream_module) — Définit le nom (name) et la taille (size) de la zone de mémoire partagée qui conserve la configuration du groupe et son état d'exécution, partagés entre les processus de travail. Plusieurs groupes…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,12 +15,12 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the *name* and *size* of the shared memory zone that keeps the group’s configuration and run-time state that are shared between worker processes. Several groups may share the same zone. In this case, it is enough to specify the *size* only once.
+Définit le nom (*name*) et la taille (*size*) de la zone de mémoire partagée qui conserve la configuration du groupe et son état d'exécution, partagés entre les processus de travail. Plusieurs groupes peuvent partager la même zone ; il suffit alors d'indiquer la taille une seule fois.
 
-Additionally, as part of our [abonnement commercial](https://nginx.com/products/), such groups allow changing the group membership or modifying the settings of a particular server without the need of restarting nginx. The configuration is accessible via the [[11-modules/02-http/ngx_http_api_module|API]] module (1.13.3).
+En outre, dans le cadre de notre [abonnement commercial](https://nginx.com/products/), ces groupes permettent de modifier la composition du groupe ou les réglages d'un serveur sans redémarrer nginx. La configuration est accessible par le module [[11-modules/02-http/ngx_http_api_module|API]] (1.13.3).
 
 > [!NOTE]
-> Prior to version 1.13.3, the configuration was accessible only via a special location handled by [[12-directives/upstream-conf|upstream_conf]].
+> Avant la version 1.13.3, la configuration n'était accessible que par un bloc location spécial traité par [[12-directives/upstream-conf|upstream_conf]].
 
 ---
 

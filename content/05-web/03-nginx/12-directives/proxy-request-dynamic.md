@@ -1,12 +1,9 @@
 ---
 title: "proxy_request_dynamic"
-description: "Directive nginx proxy_request_dynamic (ngx_http_proxy_module) — Enables or disables creation of a separate request instance for each proxied server. By default, a single request is used for all proxied servers. If enabled, a separate request instance is created,…"
+description: "Directive nginx proxy_request_dynamic (ngx_http_proxy_module) — Active ou désactive la création d'une instance de requête distincte pour chaque serveur mandaté. Par défaut, une seule requête sert pour tous les serveurs mandatés. Si l'option est activée, une…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables creation of a separate request instance for each proxied server. By default, a single request is used for all proxied servers. If enabled, a separate request instance is created, allowing per-server request customization. For example, the server-specific `Host` request header field can be set:
+Active ou désactive la création d'une instance de requête distincte pour chaque serveur mandaté. Par défaut, une seule requête sert pour tous les serveurs mandatés. Si l'option est activée, une instance distincte est créée, ce qui permet de personnaliser la requête par serveur. Par exemple, on peut définir un champ d'en-tête `Host` propre à chaque serveur :
 
 ```nginx
 proxy_request_dynamic on;

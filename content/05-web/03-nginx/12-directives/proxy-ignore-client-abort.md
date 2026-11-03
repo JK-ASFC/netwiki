@@ -1,12 +1,9 @@
 ---
 title: "proxy_ignore_client_abort"
-description: "Directive nginx proxy_ignore_client_abort (ngx_http_proxy_module) — Determines whether the connection with a proxied server should be closed when a client closes the connection without waiting for a response."
+description: "Directive nginx proxy_ignore_client_abort (ngx_http_proxy_module) — Indique si la connexion avec le serveur mandaté doit être fermée lorsque le client ferme la connexion sans attendre la réponse."
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Determines whether the connection with a proxied server should be closed when a client closes the connection without waiting for a response.
+Indique si la connexion avec le serveur mandaté doit être fermée lorsque le client ferme la connexion sans attendre la réponse.
 
 ---
 

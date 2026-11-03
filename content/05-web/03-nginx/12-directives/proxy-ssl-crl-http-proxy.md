@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_crl (ngx_http_proxy_module)"
-description: "Directive nginx proxy_ssl_crl (ngx_http_proxy_module) — Specifies a file with revoked certificates (CRL) in the PEM format used to verify the certificate of the proxied HTTPS server. When using intermediate certificates, their CRLs should be specified in…"
+description: "Directive nginx proxy_ssl_crl (ngx_http_proxy_module) — Indique le fichier (file) contenant les certificats révoqués (CRL) au format PEM utilisé pour vérifier le certificat du serveur HTTPS mandaté. Avec des certificats intermédiaires, leurs CRL doivent…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with revoked certificates (CRL) in the PEM format used to [[12-directives/proxy-ssl-verify-http-proxy|verify]] the certificate of the proxied HTTPS server. When using intermediate certificates, their CRLs should be specified in the same file.
+Indique le fichier (*file*) contenant les certificats révoqués (CRL) au format PEM utilisé pour [[12-directives/proxy-ssl-verify-http-proxy|vérifier]] le certificat du serveur HTTPS mandaté. Avec des certificats intermédiaires, leurs CRL doivent figurer dans le même fichier.
 
 ---
 

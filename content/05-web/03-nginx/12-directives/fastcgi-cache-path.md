@@ -23,7 +23,7 @@ Sets the path and other parameters of a cache. Cache data are stored in files. B
 fastcgi_cache_path /data/nginx/cache levels=1:2 keys_zone=one:10m;
 ```
 
-file names in a cache will look like this:
+les noms des fichiers du cache ressemblent à ceci :
 
 ```nginx
 /data/nginx/cache/c/29/b7f54b2df7773722d382f4809d65029c
@@ -31,18 +31,18 @@ file names in a cache will look like this:
 
 A cached response is first written to a temporary file, and then the file is renamed. Starting from version 0.8.9, temporary files and the cache can be put on different file systems. However, be aware that in this case a file is copied across two file systems instead of the cheap renaming operation. It is thus recommended that for any given location both cache and a directory holding temporary files are put on the same file system. A directory for temporary files is set based on the `use_temp_path` parameter (1.7.10). If this parameter is omitted or set to the value `on`, the directory set by the [[12-directives/fastcgi-temp-path|fastcgi_temp_path]] directive for the given location will be used. If the value is set to `off`, temporary files will be put directly in the cache directory.
 
-In addition, all active keys and information about data are stored in a shared memory zone, whose *name* and *size* are configured by the `keys_zone` parameter. One megabyte zone can store about 8 thousand keys.
+En outre, toutes les clés actives et les informations sur les données sont conservées dans une zone de mémoire partagée dont le nom (*name*) et la taille (*size*) se règlent avec le paramètre `keys_zone`. Une zone d'un mégaoctet peut contenir environ 8 000 clés.
 
 > [!NOTE]
-> As part of [abonnement commercial](https://nginx.com/products/), the shared memory zone also stores extended cache [[11-modules/02-http/ngx_http_api_module|information]], thus, it is required to specify a larger zone size for the same number of keys. For example, one megabyte zone can store about 4 thousand keys.
+> Dans le cadre de l'[abonnement commercial](https://nginx.com/products/), la zone de mémoire partagée contient aussi des [[11-modules/02-http/ngx_http_api_module|informations]] étendues sur le cache ; il faut donc prévoir une zone plus grande pour le même nombre de clés. Par exemple, une zone d'un mégaoctet peut contenir environ 4 000 clés.
 
-Cached data that are not accessed during the time specified by the `inactive` parameter get removed from the cache regardless of their freshness. By default, `inactive` is set to 10 minutes.
+Les données en cache non consultées pendant la durée indiquée par le paramètre `inactive` sont supprimées du cache, qu'elles soient fraîches ou non. Par défaut, `inactive` vaut 10 minutes.
 
-The special “cache manager” process monitors the maximum cache size set by the `max_size` parameter, and the minimum amount of free space set by the `min_free` (1.19.1) parameter on the file system with cache. When the size is exceeded or there is not enough free space, it removes the least recently used data. The data is removed in iterations configured by `manager_files`, `manager_threshold`, and `manager_sleep` parameters (1.11.5). During one iteration no more than `manager_files` items are deleted (by default, 100). The duration of one iteration is limited by the `manager_threshold` parameter (by default, 200 milliseconds). Between iterations, a pause configured by the `manager_sleep` parameter (by default, 50 milliseconds) is made.
+Un processus spécial, le « gestionnaire de cache » (*cache manager*), surveille la taille maximale du cache définie par le paramètre `max_size` et l'espace libre minimal défini par le paramètre `min_free` (1.19.1) sur le système de fichiers du cache. Si la taille est dépassée ou que l'espace libre est insuffisant, il supprime les données les moins récemment utilisées. La suppression se fait par itérations réglées par les paramètres `manager_files`, `manager_threshold` et `manager_sleep` (1.11.5). Une itération supprime au plus `manager_files` éléments (100 par défaut) et sa durée est limitée par `manager_threshold` (200 millisecondes par défaut). Entre deux itérations, une pause définie par `manager_sleep` (50 millisecondes par défaut) est observée.
 
-A minute after the start the special “cache loader” process is activated. It loads information about previously cached data stored on file system into a cache zone. The loading is also done in iterations. During one iteration no more than `loader_files` items are loaded (by default, 100). Besides, the duration of one iteration is limited by the `loader_threshold` parameter (by default, 200 milliseconds). Between iterations, a pause configured by the `loader_sleep` parameter (by default, 50 milliseconds) is made.
+Une minute après le démarrage, un processus spécial, le « chargeur de cache » (*cache loader*), est activé. Il charge dans la zone de cache les informations sur les données mises en cache précédemment et stockées sur le système de fichiers. Le chargement se fait aussi par itérations : une itération charge au plus `loader_files` éléments (100 par défaut) et sa durée est limitée par le paramètre `loader_threshold` (200 millisecondes par défaut). Entre deux itérations, une pause définie par `loader_sleep` (50 millisecondes par défaut) est observée.
 
-Additionally, the following parameters are available as part of our [abonnement commercial](https://nginx.com/products/):
+En outre, les paramètres suivants sont disponibles dans le cadre de notre [abonnement commercial](https://nginx.com/products/) :
 
 - **`purger`=`on`|`off`**
 
@@ -50,18 +50,18 @@ Additionally, the following parameters are available as part of our [abonnement 
 
 - **`purger_files`=*number***
 
-  Sets the number of items that will be scanned during one iteration (1.7.12). By default, `purger_files` is set to 10.
+  Définit le nombre d'éléments examinés pendant une itération (1.7.12). Par défaut, `purger_files` vaut 10.
 
 - **`purger_threshold`=*number***
 
-  Sets the duration of one iteration (1.7.12). By default, `purger_threshold` is set to 50 milliseconds.
+  Définit la durée d'une itération (1.7.12). Par défaut, `purger_threshold` vaut 50 millisecondes.
 
 - **`purger_sleep`=*number***
 
-  Sets a pause between iterations (1.7.12). By default, `purger_sleep` is set to 50 milliseconds.
+  Définit la pause entre deux itérations (1.7.12). Par défaut, `purger_sleep` vaut 50 millisecondes.
 
 > [!NOTE]
-> In versions 1.7.3, 1.7.7, and 1.11.10 cache header format has been changed. Previously cached responses will be considered invalid after upgrading to a newer nginx version.
+> Dans les versions 1.7.3, 1.7.7 et 1.11.10, le format de l'en-tête du cache a changé. Les réponses mises en cache auparavant sont considérées comme non valides après la mise à niveau vers une version plus récente de nginx.
 
 ---
 

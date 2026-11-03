@@ -25,7 +25,7 @@ The optional `two` parameter instructs nginx to randomly select [two](https://ho
 The `least_time` method passes a connection to a server with the least average time and least number of active connections. If `least_time=connect` parameter is specified, time to [[13-variables/upstream-connect-time-stream-upstream|connect]] to the upstream server is used. If `least_time=first_byte` parameter is specified, time to receive the [[13-variables/upstream-first-byte-time|first byte]] of data is used. If `least_time=last_byte` is specified, time to receive the [[13-variables/upstream-session-time|last byte]] of data is used.
 
 > [!NOTE]
-> The `least_time` method is available as a part of our [abonnement commercial](https://nginx.com/products/).
+> La méthode `least_time` est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ---
 

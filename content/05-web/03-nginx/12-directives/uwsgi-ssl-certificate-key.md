@@ -1,6 +1,6 @@
 ---
 title: "uwsgi_ssl_certificate_key"
-description: "Directive nginx uwsgi_ssl_certificate_key (ngx_http_uwsgi_module) — Specifies a file with the secret key in the PEM format used for authentication to a secured uwsgi server. The value engine:name:id can be specified instead of the file (1.7.9), which loads a secret…"
+description: "Directive nginx uwsgi_ssl_certificate_key (ngx_http_uwsgi_module) — Specifies a file with the secret key in the PEM format used for authentication to a secured uwsgi server. On peut indiquer engine:name:id à la place de file (1.7.9) pour charger la clé secrète…"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
@@ -20,11 +20,11 @@ icon: settings-2
 
 Specifies a *file* with the secret key in the PEM format used for authentication to a secured uwsgi server.
 
-The value `engine`:*name*:*id* can be specified instead of the *file* (1.7.9), which loads a secret key with a specified *id* from the OpenSSL engine *name*.
+On peut indiquer `engine`:*name*:*id* à la place de *file* (1.7.9) pour charger la clé secrète d'identifiant *id* depuis le moteur OpenSSL *name*.
 
-The value `store`:*scheme*:*id* can be specified instead of the *file* (1.29.0), which is used to load a secret key with a specified *id* and OpenSSL provider registered URI *scheme*, such as [`pkcs11`](https://datatracker.ietf.org/doc/html/rfc7512).
+On peut indiquer `store`:*scheme*:*id* à la place de *file* (1.29.0) pour charger la clé secrète d'identifiant *id* via le schéma d'URI *scheme* enregistré par un fournisseur OpenSSL, par exemple [`pkcs11`](https://datatracker.ietf.org/doc/html/rfc7512).
 
-Since version 1.21.0, variables can be used in the *file* name.
+Depuis la version 1.21.0, le nom de fichier (*file*) peut contenir des variables.
 
 ---
 

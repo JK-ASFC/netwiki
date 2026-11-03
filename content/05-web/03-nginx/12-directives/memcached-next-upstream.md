@@ -1,6 +1,6 @@
 ---
 title: "memcached_next_upstream"
-description: "Directive nginx memcached_next_upstream (ngx_http_memcached_module) — Specifies in which cases a request should be passed to the next server: - error an error occurred while establishing a connection with the server, passing a request to it, or reading the response…"
+description: "Directive nginx memcached_next_upstream (ngx_http_memcached_module) — Indique dans quels cas une requête doit être transmise au serveur suivant : - error une erreur s'est produite lors de l'établissement de la connexion avec le serveur, de la transmission de la requête…"
 tags: [nginx, directive, ngx_http_memcached_module]
 icon: settings-2
 ---
@@ -17,15 +17,15 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies in which cases a request should be passed to the next server:
+Indique dans quels cas une requête doit être transmise au serveur suivant :
 
 - **`error`**
 
-  an error occurred while establishing a connection with the server, passing a request to it, or reading the response header;
+  une erreur s'est produite lors de l'établissement de la connexion avec le serveur, de la transmission de la requête ou de la lecture de l'en-tête de réponse ;
 
 - **`timeout`**
 
-  a timeout has occurred while establishing a connection with the server, passing a request to it, or reading the response header;
+  un délai a expiré lors de l'établissement de la connexion avec le serveur, de la transmission de la requête ou de la lecture de l'en-tête de réponse ;
 
 - **`denied`**
 
@@ -36,7 +36,7 @@ Specifies in which cases a request should be passed to the next server:
 
 - **`invalid_response`**
 
-  a server returned an empty or invalid response;
+  le serveur a renvoyé une réponse vide ou non valide ;
 
 - **`not_found`**
 
@@ -44,9 +44,9 @@ Specifies in which cases a request should be passed to the next server:
 
 - **`off`**
 
-  disables passing a request to the next server.
+  désactive la transmission de la requête au serveur suivant.
 
-One should bear in mind that passing a request to the next server is only possible if nothing has been sent to a client yet. That is, if an error or timeout occurs in the middle of the transferring of a response, fixing this is impossible.
+La requête ne peut être transmise au serveur suivant que si rien n'a encore été envoyé au client. Si une erreur ou un dépassement de délai survient au milieu du transfert de la réponse, il est impossible d'y remédier.
 
 The directive also defines what is considered an [[11-modules/02-http/ngx_http_upstream_module|unsuccessful attempt]] of communication with a server. The cases of `error`, `timeout`, `denied` and `invalid_response` are always considered unsuccessful attempts, even if they are not specified in the directive. The case of `not_found` is never considered an unsuccessful attempt.
 

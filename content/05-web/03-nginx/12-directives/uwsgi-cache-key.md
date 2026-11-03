@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_cache_key"
-description: "Directive nginx uwsgi_cache_key (ngx_http_uwsgi_module) — Defines a key for caching, for example nginx uwsgi_cache_key localhost:9000$request_uri;"
+description: "Directive nginx uwsgi_cache_key (ngx_http_uwsgi_module) — Définit une clé de cache, par exemple nginx uwsgi_cache_key localhost:9000$request_uri;"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a key for caching, for example
+Définit une clé de cache, par exemple
 
 ```nginx
 uwsgi_cache_key localhost:9000$request_uri;

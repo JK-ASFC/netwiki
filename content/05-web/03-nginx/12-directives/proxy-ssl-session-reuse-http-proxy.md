@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_session_reuse (ngx_http_proxy_module)"
-description: "Directive nginx proxy_ssl_session_reuse (ngx_http_proxy_module) — Determines whether SSL sessions can be reused when working with the proxied server. If the errors “digest check failed” appear in the logs, try disabling session reuse."
+description: "Directive nginx proxy_ssl_session_reuse (ngx_http_proxy_module) — Indique si les sessions SSL peuvent être réutilisées avec le serveur mandaté. Si des erreurs « digest check failed » apparaissent dans les journaux, essayez de désactiver la réutilisation des…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Determines whether SSL sessions can be reused when working with the proxied server. If the errors “`digest check failed`” appear in the logs, try disabling session reuse.
+Indique si les sessions SSL peuvent être réutilisées avec le serveur mandaté. Si des erreurs « `digest check failed` » apparaissent dans les journaux, essayez de désactiver la réutilisation des sessions.
 
 ---
 

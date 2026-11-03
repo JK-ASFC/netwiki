@@ -19,17 +19,17 @@ icon: settings-2
 
 Disables processing of certain response header fields from the FastCGI server. The following fields can be ignored: `X-Accel-Redirect`, `X-Accel-Expires`, `X-Accel-Limit-Rate` (1.1.6), `X-Accel-Buffering` (1.1.6), `X-Accel-Charset` (1.1.6), `Expires`, `Cache-Control`, `Set-Cookie` (0.8.44), and `Vary` (1.7.7).
 
-If not disabled, processing of these header fields has the following effect:
+S'il n'est pas désactivé, le traitement de ces champs a l'effet suivant :
 
 - `X-Accel-Expires`, `Expires`, `Cache-Control`, `Set-Cookie`, and `Vary` set the parameters of response [[12-directives/fastcgi-cache-valid|caching]];
 
-- `X-Accel-Redirect` performs an [[12-directives/internal|internal redirect]] to the specified URI;
+- `X-Accel-Redirect` effectue une [[12-directives/internal|redirection interne]] vers l'URI indiqué ;
 
-- `X-Accel-Limit-Rate` sets the [[12-directives/limit-rate|rate limit]] for transmission of a response to a client;
+- `X-Accel-Limit-Rate` définit la [[12-directives/limit-rate|limite de débit]] de transmission de la réponse au client ;
 
 - `X-Accel-Buffering` enables or disables [[12-directives/fastcgi-buffering|buffering]] of a response;
 
-- `X-Accel-Charset` sets the desired [[12-directives/charset|charset]] of a response.
+- `X-Accel-Charset` définit le [[12-directives/charset|jeu de caractères]] souhaité pour la réponse.
 
 ---
 

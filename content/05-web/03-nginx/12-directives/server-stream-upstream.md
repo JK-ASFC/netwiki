@@ -19,11 +19,11 @@ icon: settings-2
 
 Defines the *address* and other *parameters* of a server. The address can be specified as a domain name or IP address with an obligatory port, or as a UNIX-domain socket path specified after the “`unix:`” prefix. A domain name that resolves to several IP addresses defines multiple servers at once.
 
-The following parameters can be defined:
+Les paramètres suivants peuvent être définis :
 
 - **`weight`=*number***
 
-  sets the weight of the server, by default, 1.
+  définit le poids du serveur ; 1 par défaut.
 
 - **`max_conns`=*number***
 
@@ -38,12 +38,12 @@ The following parameters can be defined:
 
 - **`fail_timeout`=*time***
 
-  sets
+  définit
 
-  - the time during which the specified number of unsuccessful attempts to communicate with the server should happen to consider the server unavailable;
-  - and the period of time the server will be considered unavailable.
+  - la durée pendant laquelle le nombre indiqué de tentatives échouées doit survenir pour que le serveur soit considéré comme indisponible ;
+  - et la durée pendant laquelle le serveur est considéré comme indisponible.
 
-  By default, the parameter is set to 10 seconds.
+  Par défaut, ce paramètre vaut 10 secondes.
 
 - **`backup`**
 
@@ -54,7 +54,7 @@ The following parameters can be defined:
 
 - **`down`**
 
-  marks the server as permanently unavailable.
+  désigne le serveur comme indisponible en permanence.
 
 - **`resolve`**
 
@@ -63,31 +63,31 @@ The following parameters can be defined:
   In order for this parameter to work, the `resolver` directive must be specified in the [[12-directives/resolver-stream-core|stream]] block or in the corresponding [[12-directives/resolver-stream-upstream|upstream]] block.
 
   > [!NOTE]
-  > Prior to version 1.27.3, this parameter was available only as part of our [abonnement commercial](https://nginx.com/products/).
+  > Avant la version 1.27.3, ce paramètre n'était disponible que dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 - **`service`=*name***
 
-  enables resolving of DNS [SRV](https://datatracker.ietf.org/doc/html/rfc2782) records and sets the service *name* (1.9.13). In order for this parameter to work, it is necessary to specify the `resolve` parameter for the server and specify a hostname without a port number.
+  active la résolution des enregistrements DNS [SRV](https://datatracker.ietf.org/doc/html/rfc2782) et définit le nom (*name*) du service (1.9.13). Pour que ce paramètre fonctionne, il faut indiquer le paramètre `resolve` pour le serveur et un nom d'hôte sans numéro de port.
 
-  If the service name does not contain a dot (“`.`”), then the [RFC](https://datatracker.ietf.org/doc/html/rfc2782)-compliant name is constructed and the TCP protocol is added to the service prefix. For example, to look up the `_http._tcp.backend.example.com` SRV record, it is necessary to specify the directive:
+  Si le nom du service ne contient pas de point (« `.` »), le nom conforme à la [RFC](https://datatracker.ietf.org/doc/html/rfc2782) est construit et le protocole TCP est ajouté au préfixe du service. Par exemple, pour rechercher l'enregistrement SRV `_http._tcp.backend.example.com`, il faut indiquer la directive :
 
   ```nginx
   server backend.example.com service=http resolve;
   ```
 
-  If the service name contains one or more dots, then the name is constructed by joining the service prefix and the server name. For example, to look up the `_http._tcp.backend.example.com` and `server1.backend.example.com` SRV records, it is necessary to specify the directives:
+  Si le nom du service contient un ou plusieurs points, le nom est construit en joignant le préfixe du service et le nom du serveur. Par exemple, pour rechercher les enregistrements SRV `_http._tcp.backend.example.com` et `server1.backend.example.com`, il faut indiquer les directives :
 
   ```nginx
   server backend.example.com service=_http._tcp resolve;
   server example.com service=server1.backend resolve;
   ```
 
-  Highest-priority SRV records (records with the same lowest-number priority value) are resolved as primary servers, the rest of SRV records are resolved as backup servers. If the `backup` parameter is specified for the server, high-priority SRV records are resolved as backup servers, the rest of SRV records are ignored.
+  Les enregistrements SRV de plus haute priorité (ceux qui partagent la plus petite valeur de priorité) deviennent les serveurs principaux, les autres des serveurs de secours. Si le paramètre `backup` est indiqué pour le serveur, les enregistrements de haute priorité deviennent des serveurs de secours et les autres sont ignorés.
 
   > [!NOTE]
-  > Prior to version 1.27.3, this parameter was available only as part of our [abonnement commercial](https://nginx.com/products/).
+  > Avant la version 1.27.3, ce paramètre n'était disponible que dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
-Additionally, the following parameters are available as part of our [abonnement commercial](https://nginx.com/products/):
+En outre, les paramètres suivants sont disponibles dans le cadre de notre [abonnement commercial](https://nginx.com/products/) :
 
 - **`slow_start`=*time***
 
@@ -97,7 +97,7 @@ Additionally, the following parameters are available as part of our [abonnement 
   > The parameter cannot be used along with the [[12-directives/hash-stream-upstream|hash]] and [[12-directives/random-stream-upstream|random]] load balancing methods.
 
 > [!NOTE]
-> If there is only a single server in a group, `max_fails`, `fail_timeout` and `slow_start` parameters are ignored, and such a server will never be considered unavailable.
+> S'il n'y a qu'un seul serveur dans un groupe, les paramètres `max_fails`, `fail_timeout` et `slow_start` sont ignorés et ce serveur n'est jamais considéré comme indisponible.
 
 ---
 

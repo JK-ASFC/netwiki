@@ -1,12 +1,9 @@
 ---
 title: "proxy_cache_key"
-description: "Directive nginx proxy_cache_key (ngx_http_proxy_module) — Defines a key for caching, for example nginx proxy_cache_key \"$host$request_uri $cookie_user\"; By default, the directive’s value is close to the string nginx proxy_cache_key…"
+description: "Directive nginx proxy_cache_key (ngx_http_proxy_module) — Définit une clé de cache, par exemple nginx proxy_cache_key \"$host$request_uri $cookie_user\"; Par défaut, la valeur de la directive est proche de la chaîne nginx proxy_cache_key…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a key for caching, for example
+Définit une clé de cache, par exemple
 
 ```nginx
 proxy_cache_key "$host$request_uri $cookie_user";
 ```
 
-By default, the directive’s value is close to the string
+Par défaut, la valeur de la directive est proche de la chaîne
 
 ```nginx
 proxy_cache_key $scheme$proxy_host$uri$is_args$args;

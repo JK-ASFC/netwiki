@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_conf_command (ngx_http_proxy_module)"
-description: "Directive nginx proxy_ssl_conf_command (ngx_http_proxy_module) — Sets arbitrary OpenSSL configuration commands when establishing a connection with the proxied HTTPS server. NOTE The directive is supported when using OpenSSL 1.0.2 or higher. Several…"
+description: "Directive nginx proxy_ssl_conf_command (ngx_http_proxy_module) — Définit des commandes de configuration OpenSSL quelconques à appliquer lors de l'établissement de la connexion avec le serveur HTTPS mandaté. NOTE Cette directive est prise en charge avec OpenSSL…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,15 +15,15 @@ icon: settings-2
 
 ## Utilisation
 
-Sets arbitrary OpenSSL configuration [commands](https://www.openssl.org/docs/man1.1.1/man3/SSL_CONF_cmd.html) when establishing a connection with the proxied HTTPS server.
+Définit des [commandes](https://www.openssl.org/docs/man1.1.1/man3/SSL_CONF_cmd.html) de configuration OpenSSL quelconques à appliquer lors de l'établissement de la connexion avec le serveur HTTPS mandaté.
 
 > [!NOTE]
-> The directive is supported when using OpenSSL 1.0.2 or higher.
+> Cette directive est prise en charge avec OpenSSL 1.0.2 ou plus récent.
 
-Several `proxy_ssl_conf_command` directives can be specified on the same level. These directives are inherited from the previous configuration level if and only if there are no `proxy_ssl_conf_command` directives defined on the current level.
+Plusieurs directives `proxy_ssl_conf_command` peuvent être indiquées au même niveau. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `proxy_ssl_conf_command` n'est définie au niveau courant.
 
 > [!NOTE]
-> Note that configuring OpenSSL directly might result in unexpected behavior.
+> Configurer OpenSSL directement peut provoquer un comportement inattendu.
 
 ---
 

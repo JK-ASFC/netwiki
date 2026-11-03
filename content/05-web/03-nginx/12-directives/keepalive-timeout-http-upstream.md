@@ -1,12 +1,9 @@
 ---
 title: "keepalive_timeout (ngx_http_upstream_module)"
-description: "Directive nginx keepalive_timeout (ngx_http_upstream_module) — Sets a timeout during which an idle keepalive connection to an upstream server will stay open."
+description: "Directive nginx keepalive_timeout (ngx_http_upstream_module) — Définit le délai pendant lequel une connexion persistante inactive vers un serveur amont reste ouverte."
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a timeout during which an idle keepalive connection to an upstream server will stay open.
+Définit le délai pendant lequel une connexion persistante inactive vers un serveur amont reste ouverte.
 
 ---
 

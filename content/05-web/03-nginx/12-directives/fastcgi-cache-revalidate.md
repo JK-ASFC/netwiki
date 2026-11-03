@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_cache_revalidate"
-description: "Directive nginx fastcgi_cache_revalidate (ngx_http_fastcgi_module) — Enables revalidation of expired cache items using conditional requests with the If-Modified-Since and If-None-Match header fields."
+description: "Directive nginx fastcgi_cache_revalidate (ngx_http_fastcgi_module) — Active la revalidation des éléments expirés du cache à l'aide de requêtes conditionnelles avec les champs d'en-tête If-Modified-Since et If-None-Match."
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables revalidation of expired cache items using conditional requests with the `If-Modified-Since` and `If-None-Match` header fields.
+Active la revalidation des éléments expirés du cache à l'aide de requêtes conditionnelles avec les champs d'en-tête `If-Modified-Since` et `If-None-Match`.
 
 ---
 

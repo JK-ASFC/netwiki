@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_ciphers (ngx_http_proxy_module)"
-description: "Directive nginx proxy_ssl_ciphers (ngx_http_proxy_module) — Specifies the enabled ciphers for requests to a proxied HTTPS server. The ciphers are specified in the format understood by the OpenSSL library. The full list can be viewed using the “openssl…"
+description: "Directive nginx proxy_ssl_ciphers (ngx_http_proxy_module) — Indique les suites de chiffrement activées pour les requêtes vers un serveur HTTPS mandaté. Elles s'écrivent au format reconnu par la bibliothèque OpenSSL. La liste complète s'affiche avec la…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the enabled ciphers for requests to a proxied HTTPS server. The ciphers are specified in the format understood by the OpenSSL library.
+Indique les suites de chiffrement activées pour les requêtes vers un serveur HTTPS mandaté. Elles s'écrivent au format reconnu par la bibliothèque OpenSSL.
 
-The full list can be viewed using the “`openssl ciphers`” command.
+La liste complète s'affiche avec la commande « `openssl ciphers` ».
 
 ---
 

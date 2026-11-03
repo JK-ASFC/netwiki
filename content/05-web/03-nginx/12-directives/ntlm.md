@@ -1,12 +1,9 @@
 ---
 title: "ntlm"
-description: "Directive nginx ntlm (ngx_http_upstream_module) — Allows proxying requests with NTLM Authentication. The upstream connection is bound to the client connection once the client sends a request with the Authorization header field value starting with…"
+description: "Directive nginx ntlm (ngx_http_upstream_module) — Permet de relayer les requêtes utilisant l'authentification NTLM. La connexion amont est liée à la connexion du client dès que celui-ci envoie une requête dont le champ d'en-tête Authorization…"
 tags: [nginx, directive, ngx_http_upstream_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Allows proxying requests with [NTLM Authentication](https://en.wikipedia.org/wiki/Integrated_Windows_Authentication). The upstream connection is bound to the client connection once the client sends a request with the `Authorization` header field value starting with “`Negotiate`” or “`NTLM`”. Further client requests will be proxied through the same upstream connection, keeping the authentication context.
+Permet de relayer les requêtes utilisant l'[authentification NTLM](https://en.wikipedia.org/wiki/Integrated_Windows_Authentication). La connexion amont est liée à la connexion du client dès que celui-ci envoie une requête dont le champ d'en-tête `Authorization` commence par « `Negotiate` » ou « `NTLM` ». Les requêtes suivantes du client passent par la même connexion amont, ce qui conserve le contexte d'authentification.
 
-In order for NTLM authentication to work, it is necessary to enable keepalive connections to upstream servers. The [[12-directives/proxy-http-version|proxy_http_version]] directive should be “`1.1`” (by default since 1.29.7) or set to “`2`” and the `Connection` header field should be cleared. This example is for versions prior to 1.29.7:
+Pour que l'authentification NTLM fonctionne, il faut activer les connexions persistantes vers les serveurs amont. La directive [[12-directives/proxy-http-version|proxy_http_version]] doit valoir « `1.1` » (valeur par défaut depuis 1.29.7) ou « `2` », et le champ d'en-tête `Connection` doit être vidé. Cet exemple concerne les versions antérieures à 1.29.7 :
 
 ```nginx
 upstream http_backend {
@@ -42,7 +39,7 @@ server {
 ```
 
 > [!NOTE]
-> When using load balancer methods other than the default round-robin method, it is necessary to activate them before the `ntlm` directive.
+> Avec une méthode de répartition autre que le tourniquet par défaut, il faut l'activer avant la directive `ntlm`.
 
 > [!NOTE]
 > Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).

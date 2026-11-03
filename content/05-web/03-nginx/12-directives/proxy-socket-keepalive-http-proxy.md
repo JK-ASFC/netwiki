@@ -1,12 +1,9 @@
 ---
 title: "proxy_socket_keepalive (ngx_http_proxy_module)"
-description: "Directive nginx proxy_socket_keepalive (ngx_http_proxy_module) — Configures the “TCP keepalive” behavior for outgoing connections to a proxied server. By default, the operating system’s settings are in effect for the socket. If the directive is set to the value…"
+description: "Directive nginx proxy_socket_keepalive (ngx_http_proxy_module) — Configure le comportement « TCP keepalive » des connexions sortantes vers un serveur mandaté. Par défaut, les réglages du système d'exploitation s'appliquent au socket. Avec la valeur « on »,…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Configures the “TCP keepalive” behavior for outgoing connections to a proxied server. By default, the operating system’s settings are in effect for the socket. If the directive is set to the value “`on`”, the `SO_KEEPALIVE` socket option is turned on for the socket.
+Configure le comportement « TCP keepalive » des connexions sortantes vers un serveur mandaté. Par défaut, les réglages du système d'exploitation s'appliquent au socket. Avec la valeur « `on` », l'option de socket `SO_KEEPALIVE` est activée.
 
 ---
 

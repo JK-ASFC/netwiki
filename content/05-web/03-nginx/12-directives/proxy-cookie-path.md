@@ -1,12 +1,9 @@
 ---
 title: "proxy_cookie_path"
-description: "Directive nginx proxy_cookie_path (ngx_http_proxy_module) — Sets a text that should be changed in the path attribute of the Set-Cookie header fields of a proxied server response. Suppose a proxied server returned the Set-Cookie header field with the attribute…"
+description: "Directive nginx proxy_cookie_path (ngx_http_proxy_module) — Définit le texte à modifier dans l'attribut path des champs d'en-tête Set-Cookie de la réponse d'un serveur mandaté. Supposons que le serveur mandaté renvoie le champ Set-Cookie avec l'attribut «…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,36 +15,36 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a text that should be changed in the `path` attribute of the `Set-Cookie` header fields of a proxied server response. Suppose a proxied server returned the `Set-Cookie` header field with the attribute “`path=/two/some/uri/`”. The directive
+Définit le texte à modifier dans l'attribut `path` des champs d'en-tête `Set-Cookie` de la réponse d'un serveur mandaté. Supposons que le serveur mandaté renvoie le champ `Set-Cookie` avec l'attribut « `path=/two/some/uri/` ». La directive
 
 ```nginx
 proxy_cookie_path /two/ /;
 ```
 
-will rewrite this attribute to “`path=/some/uri/`”.
+réécrit cet attribut en « `path=/some/uri/` ».
 
-The *path* and *replacement* strings can contain variables:
+Les chaînes *path* et *replacement* peuvent contenir des variables :
 
 ```nginx
 proxy_cookie_path $uri /some$uri;
 ```
 
-The directive can also be specified using regular expressions. In this case, *path* should either start from the “`~`” symbol for a case-sensitive matching, or from the “`~*`” symbols for case-insensitive matching. The regular expression can contain named and positional captures, and *replacement* can reference them:
+La directive peut aussi utiliser des expressions régulières. Dans ce cas, *path* doit commencer par le symbole « `~` » pour une correspondance sensible à la casse, ou par « `~*` » pour une correspondance insensible à la casse. L'expression régulière peut contenir des captures nommées et positionnelles, auxquelles *replacement* peut faire référence :
 
 ```nginx
 proxy_cookie_path ~*^/user/([^/]+) /u/$1;
 ```
 
-Several `proxy_cookie_path` directives can be specified on the same level:
+Plusieurs directives `proxy_cookie_path` peuvent être indiquées au même niveau :
 
 ```nginx
 proxy_cookie_path /one/ /;
 proxy_cookie_path / /two/;
 ```
 
-If several directives can be applied to the cookie, the first matching directive will be chosen.
+Si plusieurs directives peuvent s'appliquer au cookie, la première qui correspond est retenue.
 
-The `off` parameter cancels the effect of the `proxy_cookie_path` directives inherited from the previous configuration level.
+Le paramètre `off` annule l'effet des directives `proxy_cookie_path` héritées du niveau de configuration précédent.
 
 ---
 

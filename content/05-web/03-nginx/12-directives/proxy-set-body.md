@@ -1,12 +1,9 @@
 ---
 title: "proxy_set_body"
-description: "Directive nginx proxy_set_body (ngx_http_proxy_module) — Allows redefining the request body passed to the proxied server. The value can contain text, variables, and their combination."
+description: "Directive nginx proxy_set_body (ngx_http_proxy_module) — Permet de redéfinir le corps de la requête transmis au serveur mandaté. La valeur (value) peut contenir du texte, des variables ou une combinaison des deux."
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Allows redefining the request body passed to the proxied server. The *value* can contain text, variables, and their combination.
+Permet de redéfinir le corps de la requête transmis au serveur mandaté. La valeur (*value*) peut contenir du texte, des variables ou une combinaison des deux.
 
 ---
 

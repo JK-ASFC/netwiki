@@ -1,12 +1,9 @@
 ---
 title: "proxy_set_header"
-description: "Directive nginx proxy_set_header (ngx_http_proxy_module) — Allows redefining or appending fields to the request header passed to the proxied server. The value can contain text, variables, and their combinations. These directives are inherited from the…"
+description: "Directive nginx proxy_set_header (ngx_http_proxy_module) — Permet de redéfinir ou d'ajouter des champs à l'en-tête de la requête transmis au serveur mandaté. La valeur (value) peut contenir du texte, des variables ou une combinaison des deux. Ces directives…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,38 +14,38 @@ icon: settings-2
 
 ## Utilisation
 
-Allows redefining or appending fields to the request header [[12-directives/proxy-pass-request-headers|passed]] to the proxied server. The *value* can contain text, variables, and their combinations. These directives are inherited from the previous configuration level if and only if there are no `proxy_set_header` directives defined on the current level.
+Permet de redéfinir ou d'ajouter des champs à l'en-tête de la requête [[12-directives/proxy-pass-request-headers|transmis]] au serveur mandaté. La valeur (*value*) peut contenir du texte, des variables ou une combinaison des deux. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `proxy_set_header` n'est définie au niveau courant.
 
-By default, the header fields `Host` and `Connection` from the original request are not passed to the proxied server. If HTTP/1.0 or HTTP/1.1 is [[12-directives/proxy-http-version|enabled]] for proxying, these fields are redefined:
+Par défaut, les champs d'en-tête `Host` et `Connection` de la requête d'origine ne sont pas transmis au serveur mandaté. Si HTTP/1.0 ou HTTP/1.1 est [[12-directives/proxy-http-version|activé]] pour le relais, ces champs sont redéfinis :
 
 ```nginx
 proxy_set_header Host       $proxy_host;
 proxy_set_header Connection close;
 ```
 
-For HTTP/2, the `:authority` pseudo-header field with the *$proxy\_host* value is sent by default, unless it is replaced with an explicit `Host` header field.
+En HTTP/2, le pseudo-champ d'en-tête `:authority` est envoyé par défaut avec la valeur *$proxy\_host*, sauf s'il est remplacé par un champ d'en-tête `Host` explicite.
 
-If caching is enabled, the header fields `If-Modified-Since`, `If-Unmodified-Since`, `If-None-Match`, `If-Match`, `Range`, and `If-Range` from the original request are not passed to the proxied server.
+Si le cache est activé, les champs d'en-tête `If-Modified-Since`, `If-Unmodified-Since`, `If-None-Match`, `If-Match`, `Range` et `If-Range` de la requête d'origine ne sont pas transmis au serveur mandaté.
 
-An unchanged `Host` request header field can be passed like this:
+Un champ d'en-tête de requête `Host` inchangé peut être transmis ainsi :
 
 ```nginx
 proxy_set_header Host       $http_host;
 ```
 
-However, if this field is not present in a client request header then nothing will be passed. In such a case it is better to use the `$host` variable — its value equals the server name in the `Host` request header field or the primary server name if this field is not present:
+Mais si ce champ est absent de l'en-tête de la requête du client, rien n'est transmis. Dans ce cas, il vaut mieux utiliser la variable `$host` : sa valeur est le nom de serveur du champ d'en-tête `Host`, ou le nom du serveur principal si ce champ est absent :
 
 ```nginx
 proxy_set_header Host       $host;
 ```
 
-In addition, the server name can be passed together with the port of the proxied server:
+On peut aussi transmettre le nom du serveur accompagné du port du serveur mandaté :
 
 ```nginx
 proxy_set_header Host       $host:$proxy_port;
 ```
 
-If the value of a header field is an empty string then this field will not be passed to a proxied server:
+Si la valeur d'un champ d'en-tête est une chaîne vide, ce champ n'est pas transmis au serveur mandaté :
 
 ```nginx
 proxy_set_header Accept-Encoding "";

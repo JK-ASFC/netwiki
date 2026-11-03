@@ -1,12 +1,9 @@
 ---
 title: "proxy_temp_file_write_size"
-description: "Directive nginx proxy_temp_file_write_size (ngx_http_proxy_module) — Limits the size of data written to a temporary file at a time, when buffering of responses from the proxied server to temporary files is enabled. By default, size is limited by two buffers set by the…"
+description: "Directive nginx proxy_temp_file_write_size (ngx_http_proxy_module) — Limite la taille (size) des données écrites en une fois dans un fichier temporaire, lorsque la mise en tampon des réponses du serveur mandaté dans des fichiers temporaires est activée. Par défaut,…"
 tags: [nginx, directive, ngx_http_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Limits the *size* of data written to a temporary file at a time, when buffering of responses from the proxied server to temporary files is enabled. By default, *size* is limited by two buffers set by the [[12-directives/proxy-buffer-size-http-proxy|proxy_buffer_size]] and [[12-directives/proxy-buffers|proxy_buffers]] directives. The maximum size of a temporary file is set by the [[12-directives/proxy-max-temp-file-size|proxy_max_temp_file_size]] directive.
+Limite la taille (*size*) des données écrites en une fois dans un fichier temporaire, lorsque la mise en tampon des réponses du serveur mandaté dans des fichiers temporaires est activée. Par défaut, *size* est limitée à deux tampons définis par les directives [[12-directives/proxy-buffer-size-http-proxy|proxy_buffer_size]] et [[12-directives/proxy-buffers|proxy_buffers]]. La taille maximale d'un fichier temporaire est définie par la directive [[12-directives/proxy-max-temp-file-size|proxy_max_temp_file_size]].
 
 ---
 

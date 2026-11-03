@@ -1,6 +1,6 @@
 ---
 title: "scgi_store"
-description: "Directive nginx scgi_store (ngx_http_scgi_module) — Enables saving of files to a disk. The on parameter saves files with paths corresponding to the directives alias or root. The off parameter disables saving of files. In addition, the file name can be…"
+description: "Directive nginx scgi_store (ngx_http_scgi_module) — Active l'enregistrement des fichiers sur le disque. Le paramètre on enregistre les fichiers avec les chemins correspondant aux directives alias ou root. Le paramètre off désactive l'enregistrement.…"
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
@@ -17,7 +17,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables saving of files to a disk. The `on` parameter saves files with paths corresponding to the directives [[12-directives/alias|alias]] or [[12-directives/root|root]]. The `off` parameter disables saving of files. In addition, the file name can be set explicitly using the *string* with variables:
+Active l'enregistrement des fichiers sur le disque. Le paramètre `on` enregistre les fichiers avec les chemins correspondant aux directives [[12-directives/alias|alias]] ou [[12-directives/root|root]]. Le paramètre `off` désactive l'enregistrement. Le nom de fichier peut aussi être défini explicitement par une chaîne (*string*) avec variables :
 
 ```nginx
 scgi_store /data/www$original_uri;
@@ -25,7 +25,7 @@ scgi_store /data/www$original_uri;
 
 The modification time of files is set according to the received `Last-Modified` response header field. The response is first written to a temporary file, and then the file is renamed. Starting from version 0.8.9, temporary files and the persistent store can be put on different file systems. However, be aware that in this case a file is copied across two file systems instead of the cheap renaming operation. It is thus recommended that for any given location both saved files and a directory holding temporary files, set by the [[12-directives/scgi-temp-path|scgi_temp_path]] directive, are put on the same file system.
 
-This directive can be used to create local copies of static unchangeable files, e.g.:
+Cette directive permet de créer des copies locales de fichiers statiques qui ne changent pas, par exemple :
 
 ```nginx
 location /images/ {

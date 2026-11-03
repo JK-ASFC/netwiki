@@ -1,6 +1,6 @@
 ---
 title: "tunnel_next_upstream"
-description: "Directive nginx tunnel_next_upstream (ngx_http_tunnel_module) — Specifies in which cases a request should be passed to the next server: - error an error occurred while establishing a connection with the server or reading data from the server; - timeout a timeout…"
+description: "Directive nginx tunnel_next_upstream (ngx_http_tunnel_module) — Indique dans quels cas une requête doit être transmise au serveur suivant : - error an error occurred while establishing a connection with the server or reading data from the server; - timeout a…"
 tags: [nginx, directive, ngx_http_tunnel_module]
 icon: settings-2
 ---
@@ -17,7 +17,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies in which cases a request should be passed to the next server:
+Indique dans quels cas une requête doit être transmise au serveur suivant :
 
 - **`error`**
 
@@ -36,9 +36,9 @@ Specifies in which cases a request should be passed to the next server:
 
 - **`off`**
 
-  disables passing a request to the next server.
+  désactive la transmission de la requête au serveur suivant.
 
-One should bear in mind that passing a request to the next server is only possible if nothing has been sent to a client yet. That is, if an error or timeout occurs in the middle of the transferring of a response, fixing this is impossible.
+La requête ne peut être transmise au serveur suivant que si rien n'a encore été envoyé au client. Si une erreur ou un dépassement de délai survient au milieu du transfert de la réponse, il est impossible d'y remédier.
 
 The directive also defines what is considered an [[11-modules/02-http/ngx_http_upstream_module|unsuccessful attempt]] of communication with a server. The cases of `error`, `timeout`, and `denied` are always considered unsuccessful attempts, even if they are not specified in the directive.
 
