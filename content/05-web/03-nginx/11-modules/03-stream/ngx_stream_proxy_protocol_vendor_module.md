@@ -10,7 +10,7 @@ icon: puzzle
 
 The `ngx_stream_proxy_protocol_vendor_module` module (1.23.3) allows obtaining additional information about a connection in cloud platforms from application-specific TLVs of the [PROXY protocol](http://www.haproxy.org/download/1.8/doc/proxy-protocol.txt) header.
 
-Supported cloud platforms:
+Plates-formes cloud prises en charge :
 
 - Amazon Web Services
 - Google Cloud Platform

@@ -1,18 +1,15 @@
 ---
 title: "ngx_http_oidc_module"
-description: "Module nginx ngx_http_oidc_module — The ngx_http_oidc_module module (1.27.4) implements authentication as a Relying Party in OpenID Connect using the Authorization Code Flow."
+description: "Module nginx ngx_http_oidc_module — Le module ngx_http_oidc_module (1.27.4) met en œuvre l'authentification en tant que partie de confiance (Relying Party) OpenID Connect avec le flux de code d'autorisation."
 tags: [nginx, module, ngx_http_oidc_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_oidc_module` (1.27.4) met en œuvre l'authentification en tant que partie de confiance (*Relying Party*) OpenID Connect avec le [flux de code d'autorisation](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth).
 
-The `ngx_http_oidc_module` module (1.27.4) implements authentication as a Relying Party in OpenID Connect using the [Authorization Code Flow](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth).
+Le module attend que la configuration du fournisseur OpenID soit disponible via ses [métadonnées](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) et nécessite un [[12-directives/resolver-http-core|résolveur]] dynamique.
 
-The module expects the OpenID Provider's configuration to be available via [metadata](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) and requires dynamic [[12-directives/resolver-http-core|resolver]].
-
-The module can be combined with other access modules via the [[12-directives/satisfy|satisfy]] directive. Note that the module may still block requests even with `satisfy any;` as an OpenID Provider might not redirect the user back to nginx.
+Le module peut être combiné avec d'autres modules d'accès à l'aide de la directive [[12-directives/satisfy|satisfy]]. Il peut toutefois bloquer des requêtes même avec `satisfy any;`, car un fournisseur OpenID peut ne pas rediriger l'utilisateur vers nginx.
 
 > [!NOTE]
 > Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
@@ -40,7 +37,7 @@ http {
 }
 ```
 
-The example assumes that the “`https://<nginx-host>/oidc_callback`” Redirection URI is configured on the OpenID Provider's side. The path can be customized with the [[12-directives/redirect-uri|redirect_uri]] directive.
+L'exemple suppose que l'URI de redirection « `https://<nginx-host>/oidc_callback` » est configuré côté fournisseur OpenID. Le chemin se personnalise avec la directive [[12-directives/redirect-uri|redirect_uri]].
 
 ## Directives
 

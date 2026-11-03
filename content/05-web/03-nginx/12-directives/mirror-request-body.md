@@ -1,12 +1,9 @@
 ---
 title: "mirror_request_body"
-description: "Directive nginx mirror_request_body (ngx_http_mirror_module) — Indicates whether the client request body is mirrored. When enabled, the client request body will be read prior to creating mirror subrequests. In this case, unbuffered client request body proxying…"
+description: "Directive nginx mirror_request_body (ngx_http_mirror_module) — Indique si le corps de la requête du client est dupliqué. Si cette option est activée, le corps est lu avant la création des sous-requêtes miroirs ; le relais sans tampon du corps de la requête,…"
 tags: [nginx, directive, ngx_http_mirror_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Indicates whether the client request body is mirrored. When enabled, the client request body will be read prior to creating mirror subrequests. In this case, unbuffered client request body proxying set by the [[12-directives/proxy-request-buffering|proxy_request_buffering]], [[12-directives/fastcgi-request-buffering|fastcgi_request_buffering]], [[12-directives/scgi-request-buffering|scgi_request_buffering]], and [[12-directives/uwsgi-request-buffering|uwsgi_request_buffering]] directives will be disabled.
+Indique si le corps de la requête du client est dupliqué. Si cette option est activée, le corps est lu avant la création des sous-requêtes miroirs ; le relais sans tampon du corps de la requête, défini par les directives [[12-directives/proxy-request-buffering|proxy_request_buffering]], [[12-directives/fastcgi-request-buffering|fastcgi_request_buffering]], [[12-directives/scgi-request-buffering|scgi_request_buffering]] et [[12-directives/uwsgi-request-buffering|uwsgi_request_buffering]], est alors désactivé.
 
 ```nginx
 location / {

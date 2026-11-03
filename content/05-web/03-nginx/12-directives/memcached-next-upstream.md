@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_http_memcached_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `memcached_next_upstream error \| timeout \| denied \| invalid_response \| not_found \| off ...;` |
@@ -29,7 +26,7 @@ Indique dans quels cas une requête doit être transmise au serveur suivant :
 
 - **`denied`**
 
-  the server [[12-directives/memcached-allow-upstream|denied]] the connection (1.29.3);
+  le serveur a [[12-directives/memcached-allow-upstream|refusé]] la connexion (1.29.3) ;
 
   > [!NOTE]
   > Ce paramètre est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
@@ -40,7 +37,7 @@ Indique dans quels cas une requête doit être transmise au serveur suivant :
 
 - **`not_found`**
 
-  a response was not found on the server;
+  la réponse est introuvable sur le serveur ;
 
 - **`off`**
 
@@ -48,9 +45,9 @@ Indique dans quels cas une requête doit être transmise au serveur suivant :
 
 La requête ne peut être transmise au serveur suivant que si rien n'a encore été envoyé au client. Si une erreur ou un dépassement de délai survient au milieu du transfert de la réponse, il est impossible d'y remédier.
 
-The directive also defines what is considered an [[11-modules/02-http/ngx_http_upstream_module|unsuccessful attempt]] of communication with a server. The cases of `error`, `timeout`, `denied` and `invalid_response` are always considered unsuccessful attempts, even if they are not specified in the directive. The case of `not_found` is never considered an unsuccessful attempt.
+La directive définit aussi ce qui est considéré comme une [[11-modules/02-http/ngx_http_upstream_module|tentative échouée]] de communication avec un serveur. Les cas `error`, `timeout`, `denied` et `invalid_response` sont toujours considérés comme des échecs, même s'ils ne figurent pas dans la directive. Le cas `not_found` n'est jamais considéré comme un échec.
 
-Passing a request to the next server can be limited by [[12-directives/memcached-next-upstream-tries|the number of tries]] and by [[12-directives/memcached-next-upstream-timeout|time]].
+La transmission d'une requête au serveur suivant peut être limitée par le [[12-directives/memcached-next-upstream-tries|nombre de tentatives]] et par la [[12-directives/memcached-next-upstream-timeout|durée]].
 
 ---
 

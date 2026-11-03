@@ -543,7 +543,7 @@ The stream session object is available only in the [[11-modules/03-stream/ngx_st
 
   - **`last`**
 
-    a boolean value, true if data is a last buffer.
+    un booléen, vrai si les données sont le dernier tampon.
 
 - **`s.remoteAddress`**
 

@@ -1,12 +1,9 @@
 ---
 title: "internal_redirect"
-description: "Directive nginx internal_redirect (ngx_http_internal_redirect_module) — Sets the URI for internal redirection of the request. It is also possible to use a named location instead of the URI. The uri value can contain variables. If the uri value is empty, then the redirect…"
+description: "Directive nginx internal_redirect (ngx_http_internal_redirect_module) — Définit l'URI de redirection interne de la requête. On peut aussi utiliser un bloc location nommé à la place de l'URI. La valeur uri peut contenir des variables. Si elle est vide, la redirection n'a…"
 tags: [nginx, directive, ngx_http_internal_redirect_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the URI for internal redirection of the request. It is also possible to use a [[11-modules/02-http/ngx_http_core_module|named location]] instead of the URI. The *uri* value can contain variables. If the *uri* value is empty, then the redirect will not be made.
+Définit l'URI de redirection interne de la requête. On peut aussi utiliser un [[11-modules/02-http/ngx_http_core_module|bloc location nommé]] à la place de l'URI. La valeur *uri* peut contenir des variables. Si elle est vide, la redirection n'a pas lieu.
 
 ---
 

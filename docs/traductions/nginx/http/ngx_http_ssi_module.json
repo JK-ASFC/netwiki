@@ -1,0 +1,8 @@
+{
+ "4d14a8c3f627": "nom du bloc.",
+ "5c81010aa82e": "Le module `ngx_http_ssi_module` est un filtre qui traite les commandes SSI (Server Side Includes) des réponses qui le traversent. Actuellement, la liste des commandes SSI prises en charge est incomplète.",
+ "8850ec9362a7": "Les commandes suivantes sont prises en charge :",
+ "a6560d6c1729": "Définit un bloc utilisable comme remplacement dans la commande `include`. Le bloc peut contenir d'autres commandes SSI. La commande accepte le paramètre suivant :",
+ "b7078db941c7": "Les commandes SSI ont le format général suivant :",
+ "fdde40168cb4": "Commandes SSI"
+}

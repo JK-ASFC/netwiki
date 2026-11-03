@@ -1,12 +1,9 @@
 ---
 title: "keyval (ngx_http_keyval_module)"
-description: "Directive nginx keyval (ngx_http_keyval_module) — Creates a new $variable whose value is looked up by the key in the key-value database. Matching rules are defined by the type parameter of the keyval_zone directive. The database is stored in a…"
+description: "Directive nginx keyval (ngx_http_keyval_module) — Crée une nouvelle variable $variable dont la valeur est recherchée par la clé (key) dans la base clé-valeur. Les règles de correspondance sont définies par le paramètre type de la directive…"
 tags: [nginx, directive, ngx_http_keyval_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Creates a new *$variable* whose value is looked up by the *key* in the key-value database. Matching rules are defined by the `type` parameter of the [[12-directives/keyval-zone-http-keyval|keyval_zone]] directive. The database is stored in a shared memory zone specified by the `zone` parameter.
+Crée une nouvelle variable *$variable* dont la valeur est recherchée par la clé (*key*) dans la base clé-valeur. Les règles de correspondance sont définies par le paramètre `type` de la directive [[12-directives/keyval-zone-http-keyval|keyval_zone]]. La base est stockée dans la zone de mémoire partagée indiquée par le paramètre `zone`.
 
 ---
 

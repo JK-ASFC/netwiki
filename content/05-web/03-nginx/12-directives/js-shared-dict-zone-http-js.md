@@ -1,12 +1,9 @@
 ---
 title: "js_shared_dict_zone (ngx_http_js_module)"
-description: "Directive nginx js_shared_dict_zone (ngx_http_js_module) — Sets the name and size of the shared memory zone that keeps the key-value dictionary shared between worker processes. By default the shared dictionary uses a string as a key and a value. The optional…"
+description: "Directive nginx js_shared_dict_zone (ngx_http_js_module) — Définit le nom (name) et la taille (size) de la zone de mémoire partagée qui conserve le dictionnaire clé-valeur partagé entre les processus de travail. Par défaut, le dictionnaire partagé utilise…"
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,15 +15,15 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *name* and *size* of the shared memory zone that keeps the key-value [[10-guides/04-njs/reference|dictionary]] shared between worker processes.
+Définit le nom (*name*) et la taille (*size*) de la zone de mémoire partagée qui conserve le [[10-guides/04-njs/reference|dictionnaire]] clé-valeur partagé entre les processus de travail.
 
-By default the shared dictionary uses a string as a key and a value. The optional `type` parameter allows redefining the value type to number.
+Par défaut, le dictionnaire partagé utilise des chaînes pour les clés et les valeurs. Le paramètre facultatif `type` permet de choisir le type nombre pour les valeurs.
 
-The optional `timeout` parameter sets the time in milliseconds after which all shared dictionary entries are removed from the zone. If some entries require a different removal time, it can be set with the `timeout` argument of the [[10-guides/04-njs/reference|add]], [[10-guides/04-njs/reference|incr]], and [[10-guides/04-njs/reference|set]] methods (0.8.5).
+Le paramètre facultatif `timeout` définit la durée, en millisecondes, au bout de laquelle toutes les entrées du dictionnaire sont supprimées de la zone. Si certaines entrées nécessitent une durée différente, elle se règle avec l'argument `timeout` des méthodes [[10-guides/04-njs/reference|add]], [[10-guides/04-njs/reference|incr]] et [[10-guides/04-njs/reference|set]] (0.8.5).
 
-The optional `evict` parameter removes the oldest key-value pair when the zone storage is exhausted.
+Le paramètre facultatif `evict` supprime la paire clé-valeur la plus ancienne lorsque la zone est pleine.
 
-The optional `state` parameter specifies a *file* that keeps the shared dictionary state in JSON format and makes it persistent across nginx restarts (0.9.1).
+Le paramètre facultatif `state` indique un fichier (*file*) qui conserve l'état du dictionnaire partagé au format JSON et le rend persistant entre les redémarrages de nginx (0.9.1).
 
 Exemple :
 

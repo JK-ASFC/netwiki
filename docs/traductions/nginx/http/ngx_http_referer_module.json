@@ -1,0 +1,15 @@
+{
+ "193d4c78f507": "définit un nom de serveur et un préfixe d'URI facultatif. Un nom de serveur peut commencer ou se terminer par « `*` ». Lors de la vérification, le port du serveur dans le champ `Referer` est ignoré ;",
+ "38b60606a92a": "le champ `Referer` est présent, mais sa valeur a été supprimée par un pare-feu ou un serveur mandataire ; ces valeurs sont des chaînes qui ne commencent ni par « `http://` » ni par « `https://` » ;",
+ "3fa7a42ea8e6": "expression régulière",
+ "4bc437e6c4b9": "le champ `Referer` est absent de l'en-tête de la requête ;",
+ "54552c8b4cd9": "Indique les valeurs du champ d'en-tête de requête `Referer` pour lesquelles la variable intégrée `$invalid_referer` vaut une chaîne vide ; sinon, elle vaut « `1` ». La comparaison est insensible à la casse.",
+ "5d3efe5b15d0": "Définit la taille des compartiments des tables de hachage des référents valides. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]].",
+ "91c5f8270566": "Chaîne vide si la valeur du champ d'en-tête de requête `Referer` est considérée comme [[12-directives/valid-referers|valide]], « `1` » sinon.",
+ "d6f4f28f4dc8": "le champ d'en-tête de requête `Referer` contient l'un des noms du serveur ;",
+ "dbb38c145422": "chaîne quelconque",
+ "dbe3c3de380b": "Définit la taille (*size*) maximale des tables de hachage des référents valides. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]].",
+ "e8c4a4a549aa": "Les paramètres peuvent être :",
+ "f3573e3a9c20": "Le module `ngx_http_referer_module` sert à bloquer l'accès à un site pour les requêtes dont le champ d'en-tête `Referer` a une valeur non valide. Il est assez facile de fabriquer une requête avec un champ `Referer` approprié : le but de ce module n'est donc pas de bloquer complètement ces requêtes, mais le flux massif de requêtes envoyées par des navigateurs ordinaires. Les navigateurs ordinaires peuvent aussi ne pas envoyer de champ `Referer`, même pour des requêtes valides.",
+ "f95b39fd3e6f": "le premier caractère doit être « `~` ». L'expression est comparée au texte qui suit « `http://` » ou « `https://` »."
+}

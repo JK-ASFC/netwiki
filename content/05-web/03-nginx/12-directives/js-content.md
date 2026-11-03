@@ -1,12 +1,9 @@
 ---
 title: "js_content"
-description: "Directive nginx js_content (ngx_http_js_module) — Sets an njs function as a location content handler. Since 0.4.0, a module function can be referenced. NOTE The directive can be specified inside the if block since 0.7.7."
+description: "Directive nginx js_content (ngx_http_js_module) — Définit une fonction njs comme gestionnaire de contenu d'un bloc location. Depuis la version 0.4.0, on peut faire référence à une fonction de module. NOTE La directive peut être indiquée dans un bloc…"
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an njs function as a location content handler. Since 0.4.0, a module function can be referenced.
+Définit une fonction njs comme gestionnaire de contenu d'un bloc location. Depuis la version 0.4.0, on peut faire référence à une fonction de module.
 
 > [!NOTE]
-> The directive can be specified inside the [[12-directives/if|if]] block since 0.7.7.
+> La directive peut être indiquée dans un bloc [[12-directives/if|if]] depuis la version 0.7.7.
 
 ---
 

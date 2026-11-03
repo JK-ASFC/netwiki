@@ -1,12 +1,9 @@
 ---
 title: "logout_uri"
-description: "Directive nginx logout_uri (ngx_http_oidc_module) — Defines the URI path for initiating session logout. Upon session termination, the user is redirected to Provider's Logout Endpoint or to the post logout page. If neither is configured, the built-in…"
+description: "Directive nginx logout_uri (ngx_http_oidc_module) — Définit le chemin d'URI qui déclenche la déconnexion de la session. À la fin de la session, l'utilisateur est redirigé vers le point de terminaison de déconnexion du fournisseur ou vers la page…"
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the URI path for initiating session logout. Upon session termination, the user is redirected to [Provider's Logout Endpoint](https://openid.net/specs/openid-connect-rpinitiated-1_0.html#OPMetadata) or to the [[12-directives/post-logout-uri|post logout page]]. If neither is configured, the built-in post logout page is displayed.
+Définit le chemin d'URI qui déclenche la déconnexion de la session. À la fin de la session, l'utilisateur est redirigé vers le [point de terminaison de déconnexion du fournisseur](https://openid.net/specs/openid-connect-rpinitiated-1_0.html#OPMetadata) ou vers la [[12-directives/post-logout-uri|page d'après déconnexion]]. Si aucun n'est configuré, la page d'après déconnexion intégrée s'affiche.
 
 ---
 

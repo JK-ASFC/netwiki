@@ -1,12 +1,9 @@
 ---
 title: "logout_token_hint"
-description: "Directive nginx logout_token_hint (ngx_http_oidc_module) — Adds the id_token_hint argument to the Provider's Logout Endpoint when redirecting user during logout. This argument can be required by some OpenID Providers."
+description: "Directive nginx logout_token_hint (ngx_http_oidc_module) — Ajoute l'argument id_token_hint au point de terminaison de déconnexion du fournisseur lors de la redirection de l'utilisateur à la déconnexion. Certains fournisseurs OpenID l'exigent."
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Adds the [`id_token_hint`](https://openid.net/specs/openid-connect-rpinitiated-1_0.html#RPLogout) argument to the [Provider's Logout Endpoint](https://openid.net/specs/openid-connect-rpinitiated-1_0.html#OPMetadata) when redirecting user during logout. This argument can be required by some OpenID Providers.
+Ajoute l'argument [`id_token_hint`](https://openid.net/specs/openid-connect-rpinitiated-1_0.html#RPLogout) au [point de terminaison de déconnexion du fournisseur](https://openid.net/specs/openid-connect-rpinitiated-1_0.html#OPMetadata) lors de la redirection de l'utilisateur à la déconnexion. Certains fournisseurs OpenID l'exigent.
 
 ---
 

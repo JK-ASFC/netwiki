@@ -1,12 +1,9 @@
 ---
 title: "js_var (ngx_http_js_module)"
-description: "Directive nginx js_var (ngx_http_js_module) — Declares a writable variable. The value can contain text, variables, and their combination. The variable is not overwritten after a redirect unlike variables created with the set directive. NOTE The…"
+description: "Directive nginx js_var (ngx_http_js_module) — Déclare une variable modifiable. La valeur peut contenir du texte, des variables ou une combinaison des deux. Contrairement aux variables créées avec la directive set, la variable n'est pas écrasée…"
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,10 +15,10 @@ icon: settings-2
 
 ## Utilisation
 
-Declares a [[10-guides/04-njs/reference|writable]] variable. The value can contain text, variables, and their combination. The variable is not overwritten after a redirect unlike variables created with the [[12-directives/set-http-rewrite|set]] directive.
+Déclare une variable [[10-guides/04-njs/reference|modifiable]]. La valeur peut contenir du texte, des variables ou une combinaison des deux. Contrairement aux variables créées avec la directive [[12-directives/set-http-rewrite|set]], la variable n'est pas écrasée après une redirection.
 
 > [!NOTE]
-> The directive can be specified on the `server` and `location` level since 0.7.7.
+> La directive peut être indiquée aux niveaux `server` et `location` depuis la version 0.7.7.
 
 ---
 

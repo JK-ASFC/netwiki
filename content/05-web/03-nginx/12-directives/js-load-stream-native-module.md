@@ -1,6 +1,6 @@
 ---
 title: "js_load_stream_native_module"
-description: "Directive nginx js_load_stream_native_module (ngx_stream_js_module) — Loads a native module (shared library) for use in Stream JavaScript code. The directive is QuickJS-only and is not available when using the njs built-in JavaScript engine. The path parameter…"
+description: "Directive nginx js_load_stream_native_module (ngx_stream_js_module) — Loads a native module (shared library) for use in Stream JavaScript code. The directive is QuickJS-only and is not available when using the njs built-in JavaScript engine. Le paramètre path indique…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
@@ -20,7 +20,7 @@ icon: settings-2
 
 Loads a [[10-guides/04-njs/native-modules|native module]] (shared library) for use in Stream JavaScript code. The directive is [[10-guides/04-njs/engine|QuickJS]]-only and is not available when using the njs built-in JavaScript engine.
 
-The *path* parameter specifies the absolute path to the shared library file. The optional `as` *name* parameter provides an alias name for importing the module in JavaScript code. If not specified, the module can be imported using its filename.
+Le paramètre *path* indique le chemin absolu du fichier de bibliothèque partagée. Le paramètre facultatif `as` *name* donne un alias pour importer le module dans le code JavaScript ; sinon, le module s'importe par son nom de fichier.
 
 Exemple :
 
@@ -34,7 +34,7 @@ stream {
 }
 ```
 
-In JavaScript code:
+Dans le code JavaScript :
 
 ```nginx
 // Import by filename
@@ -48,7 +48,7 @@ let result = mylib.add(5, 10);
 ```
 
 > [!NOTE]
-> For security reasons, this directive is only allowed in the `main` configuration context. Native modules run with full process privileges; use absolute paths and ensure proper code review.
+> Pour des raisons de sécurité, cette directive n'est autorisée que dans le contexte de configuration `main`. Les modules natifs s'exécutent avec tous les privilèges du processus : utilisez des chemins absolus et faites relire le code.
 
 ---
 

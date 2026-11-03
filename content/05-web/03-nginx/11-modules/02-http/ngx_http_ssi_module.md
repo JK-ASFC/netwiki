@@ -1,6 +1,6 @@
 ---
 title: "ngx_http_ssi_module"
-description: "Module nginx ngx_http_ssi_module — The ngx_http_ssi_module module is a filter that processes SSI (Server Side Includes) commands in responses passing through it. Currently, the list of supported SSI commands is incomplete."
+description: "Module nginx ngx_http_ssi_module — Le module ngx_http_ssi_module est un filtre qui traite les commandes SSI (Server Side Includes) des réponses qui le traversent. Actuellement, la liste des commandes SSI prises en charge est incomplète."
 tags: [nginx, module, ngx_http_ssi_module]
 icon: puzzle
 ---
@@ -8,7 +8,7 @@ icon: puzzle
 > [!NOTE]
 > Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
-The `ngx_http_ssi_module` module is a filter that processes SSI (Server Side Includes) commands in responses passing through it. Currently, the list of supported SSI commands is incomplete.
+Le module `ngx_http_ssi_module` est un filtre qui traite les commandes SSI (Server Side Includes) des réponses qui le traversent. Actuellement, la liste des commandes SSI prises en charge est incomplète.
 
 ## Exemple de configuration
 
@@ -19,23 +19,23 @@ location / {
 }
 ```
 
-## SSI Commands
+## Commandes SSI
 
-SSI commands have the following generic format:
+Les commandes SSI ont le format général suivant :
 
 ```nginx
 <!--# command parameter1=value1 parameter2=value2 ... -->
 ```
 
-The following commands are supported:
+Les commandes suivantes sont prises en charge :
 
 - **`block`**
 
-  Defines a block that can be used as a stub in the `include` command. The block can contain other SSI commands. The command has the following parameter:
+  Définit un bloc utilisable comme remplacement dans la commande `include`. Le bloc peut contenir d'autres commandes SSI. La commande accepte le paramètre suivant :
 
   - **`name`**
 
-    block name.
+    nom du bloc.
 
   Exemple :
 

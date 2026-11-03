@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_referer_module"
-description: "Module nginx ngx_http_referer_module — The ngx_http_referer_module module is used to block access to a site for requests with invalid values in the Referer header field. It should be kept in mind that fabricating a request with an appropriate Referer field…"
+description: "Module nginx ngx_http_referer_module — Le module ngx_http_referer_module sert à bloquer l'accès à un site pour les requêtes dont le champ d'en-tête Referer a une valeur non valide. Il est assez facile de fabriquer une requête avec un champ Referer approprié…"
 tags: [nginx, module, ngx_http_referer_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_referer_module` module is used to block access to a site for requests with invalid values in the `Referer` header field. It should be kept in mind that fabricating a request with an appropriate `Referer` field value is quite easy, and so the intended purpose of this module is not to block such requests thoroughly but to block the mass flow of requests sent by regular browsers. It should also be taken into consideration that regular browsers may not send the `Referer` field even for valid requests.
+Le module `ngx_http_referer_module` sert à bloquer l'accès à un site pour les requêtes dont le champ d'en-tête `Referer` a une valeur non valide. Il est assez facile de fabriquer une requête avec un champ `Referer` approprié : le but de ce module n'est donc pas de bloquer complètement ces requêtes, mais le flux massif de requêtes envoyées par des navigateurs ordinaires. Les navigateurs ordinaires peuvent aussi ne pas envoyer de champ `Referer`, même pour des requêtes valides.
 
 ## Exemple de configuration
 

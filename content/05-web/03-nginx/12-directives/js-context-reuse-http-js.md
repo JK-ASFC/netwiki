@@ -1,12 +1,9 @@
 ---
 title: "js_context_reuse (ngx_http_js_module)"
-description: "Directive nginx js_context_reuse (ngx_http_js_module) — Sets a maximum number of JS context to be reused for QuickJS engine. Each context is used for a single request. The finished context is put into a pool of reusable contexts. If the pool is full, the…"
+description: "Directive nginx js_context_reuse (ngx_http_js_module) — Définit le nombre maximal de contextes JS réutilisables pour le moteur QuickJS. Chaque contexte sert à une seule requête. Un contexte terminé est placé dans un groupe de contextes réutilisables ; si…"
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a maximum number of JS context to be reused for [[10-guides/04-njs/engine|QuickJS engine]]. Each context is used for a single request. The finished context is put into a pool of reusable contexts. If the pool is full, the context is destroyed.
+Définit le nombre maximal de contextes JS réutilisables pour le [[10-guides/04-njs/engine|moteur QuickJS]]. Chaque contexte sert à une seule requête. Un contexte terminé est placé dans un groupe de contextes réutilisables ; si le groupe est plein, il est détruit.
 
 ---
 

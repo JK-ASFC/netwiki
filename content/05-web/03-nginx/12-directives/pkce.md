@@ -1,12 +1,9 @@
 ---
 title: "pkce"
-description: "Directive nginx pkce (ngx_http_oidc_module) — Explicitly enables or disables PKCE. By default, PKCE is automatically enabled based on OpenID Provider metadata."
+description: "Directive nginx pkce (ngx_http_oidc_module) — Active ou désactive explicitement PKCE. Par défaut, PKCE est activé automatiquement selon les métadonnées du fournisseur OpenID."
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Explicitly enables or disables PKCE. By default, PKCE is automatically enabled based on OpenID Provider metadata.
+Active ou désactive explicitement PKCE. Par défaut, PKCE est activé automatiquement selon les métadonnées du fournisseur OpenID.
 
 ---
 

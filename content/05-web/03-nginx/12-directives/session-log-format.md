@@ -1,12 +1,9 @@
 ---
 title: "session_log_format"
-description: "Directive nginx session_log_format (ngx_http_session_log_module) — Specifies the output format of a log. The value of the $body_bytes_sent variable is aggregated across all requests in a session. The values of all other variables available for logging correspond to…"
+description: "Directive nginx session_log_format (ngx_http_session_log_module) — Indique le format de sortie du journal. La valeur de la variable $body_bytes_sent est cumulée sur toutes les requêtes de la session. Les valeurs de toutes les autres variables disponibles…"
 tags: [nginx, directive, ngx_http_session_log_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the output format of a log. The value of the `$body_bytes_sent` variable is aggregated across all requests in a session. The values of all other variables available for logging correspond to the first request in a session.
+Indique le format de sortie du journal. La valeur de la variable `$body_bytes_sent` est cumulée sur toutes les requêtes de la session. Les valeurs de toutes les autres variables disponibles correspondent à la première requête de la session.
 
 ---
 

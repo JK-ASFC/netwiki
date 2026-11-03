@@ -1,12 +1,9 @@
 ---
 title: "issuer"
-description: "Directive nginx issuer (ngx_http_oidc_module) — Sets the Issuer Identifier URL of the OpenID Provider; required directive. The URL must exactly match the value of “issuer” in the OpenID Provider metadata and requires the “https” scheme."
+description: "Directive nginx issuer (ngx_http_oidc_module) — Définit l'URL d'identifiant de l'émetteur (Issuer Identifier) du fournisseur OpenID ; directive obligatoire. L'URL doit correspondre exactement à la valeur « issuer » des métadonnées du fournisseur…"
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the Issuer Identifier URL of the OpenID Provider; required directive. The URL must exactly match the value of “`issuer`” in the OpenID Provider metadata and requires the “`https`” scheme.
+Définit l'URL d'identifiant de l'émetteur (*Issuer Identifier*) du fournisseur OpenID ; directive obligatoire. L'URL doit correspondre exactement à la valeur « `issuer` » des métadonnées du fournisseur et utiliser le schéma « `https` ».
 
 ---
 

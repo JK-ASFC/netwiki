@@ -1,12 +1,9 @@
 ---
 title: "valid_referers"
-description: "Directive nginx valid_referers (ngx_http_referer_module) — Specifies the Referer request header field values that will cause the embedded $invalid_referer variable to be set to an empty string. Otherwise, the variable will be set to “1”. Search for a match…"
+description: "Directive nginx valid_referers (ngx_http_referer_module) — Indique les valeurs du champ d'en-tête de requête Referer pour lesquelles la variable intégrée $invalid_referer vaut une chaîne vide ; sinon, elle vaut « 1 ». La comparaison est insensible à la…"
 tags: [nginx, directive, ngx_http_referer_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,29 +14,29 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the `Referer` request header field values that will cause the embedded `$invalid_referer` variable to be set to an empty string. Otherwise, the variable will be set to “`1`”. Search for a match is case-insensitive.
+Indique les valeurs du champ d'en-tête de requête `Referer` pour lesquelles la variable intégrée `$invalid_referer` vaut une chaîne vide ; sinon, elle vaut « `1` ». La comparaison est insensible à la casse.
 
-Parameters can be as follows:
+Les paramètres peuvent être :
 
 - **`none`**
 
-  the `Referer` field is missing in the request header;
+  le champ `Referer` est absent de l'en-tête de la requête ;
 
 - **`blocked`**
 
-  the `Referer` field is present in the request header, but its value has been deleted by a firewall or proxy server; such values are strings that do not start with “`http://`” or “`https://`”;
+  le champ `Referer` est présent, mais sa valeur a été supprimée par un pare-feu ou un serveur mandataire ; ces valeurs sont des chaînes qui ne commencent ni par « `http://` » ni par « `https://` » ;
 
 - **`server_names`**
 
-  the `Referer` request header field contains one of the server names;
+  le champ d'en-tête de requête `Referer` contient l'un des noms du serveur ;
 
-- **arbitrary string**
+- **chaîne quelconque**
 
-  defines a server name and an optional URI prefix. A server name can have an “`*`” at the beginning or end. During the checking, the server’s port in the `Referer` field is ignored;
+  définit un nom de serveur et un préfixe d'URI facultatif. Un nom de serveur peut commencer ou se terminer par « `*` ». Lors de la vérification, le port du serveur dans le champ `Referer` est ignoré ;
 
-- **regular expression**
+- **expression régulière**
 
-  the first symbol should be a “`~`”. It should be noted that an expression will be matched against the text starting after the “`http://`” or “`https://`”.
+  le premier caractère doit être « `~` ». L'expression est comparée au texte qui suit « `http://` » ou « `https://` ».
 
 Exemple :
 

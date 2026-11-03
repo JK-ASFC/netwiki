@@ -1,12 +1,9 @@
 ---
 title: "post_logout_uri"
-description: "Directive nginx post_logout_uri (ngx_http_oidc_module) — Defines the path or absolute URI to redirect the user to after the logout. The uri must match the configuration on the Provider's side. If the post logout page is served by NGINX, the OIDC module…"
+description: "Directive nginx post_logout_uri (ngx_http_oidc_module) — Définit le chemin ou l'URI absolu vers lequel l'utilisateur est redirigé après la déconnexion. L'uri doit correspondre à la configuration côté fournisseur. Si la page d'après déconnexion est servie…"
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the path or absolute URI to redirect the user to after the logout. The *uri* must match the configuration on the Provider's side. If the post logout page is served by NGINX, the OIDC module shouldn't be enabled for this location:
+Définit le chemin ou l'URI absolu vers lequel l'utilisateur est redirigé après la déconnexion. L'*uri* doit correspondre à la configuration côté fournisseur. Si la page d'après déconnexion est servie par NGINX, le module OIDC ne doit pas être activé pour ce bloc location :
 
 ```nginx
 http {

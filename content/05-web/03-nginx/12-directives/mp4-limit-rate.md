@@ -1,12 +1,9 @@
 ---
 title: "mp4_limit_rate"
-description: "Directive nginx mp4_limit_rate (ngx_http_mp4_module) — Limits the rate of response transmission to a client. The rate is limited based on the average bitrate of the MP4 file served. To calculate the rate, the bitrate is multiplied by the specified…"
+description: "Directive nginx mp4_limit_rate (ngx_http_mp4_module) — Limite le débit de transmission de la réponse au client. Le débit est limité en fonction du débit binaire moyen du fichier MP4 servi : ce débit binaire est multiplié par le facteur (factor) indiqué.…"
 tags: [nginx, directive, ngx_http_mp4_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Limits the rate of response transmission to a client. The rate is limited based on the average bitrate of the MP4 file served. To calculate the rate, the bitrate is multiplied by the specified *factor*. The special value “`on`” corresponds to the factor of 1.1. The special value “`off`” disables rate limiting. The limit is set per a request, and so if a client simultaneously opens two connections, the overall rate will be twice as much as the specified limit.
+Limite le débit de transmission de la réponse au client. Le débit est limité en fonction du débit binaire moyen du fichier MP4 servi : ce débit binaire est multiplié par le facteur (*factor*) indiqué. La valeur spéciale « `on` » correspond au facteur 1,1 ; « `off` » désactive la limitation. La limite s'applique par requête : si un client ouvre deux connexions simultanées, le débit total sera le double de la limite indiquée.
 
 > [!NOTE]
 > Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).

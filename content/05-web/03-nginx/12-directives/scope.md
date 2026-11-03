@@ -1,12 +1,9 @@
 ---
 title: "scope"
-description: "Directive nginx scope (ngx_http_oidc_module) — Sets requested scopes. The openid scope is always required by OIDC."
+description: "Directive nginx scope (ngx_http_oidc_module) — Définit les portées (scopes) demandées. La portée openid est toujours exigée par OIDC."
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets requested scopes. The `openid` scope is always required by OIDC.
+Définit les portées (*scopes*) demandées. La portée `openid` est toujours exigée par OIDC.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "oidc_provider"
-description: "Directive nginx oidc_provider (ngx_http_oidc_module) — Defines an OpenID Provider for use with the auth_oidc directive."
+description: "Directive nginx oidc_provider (ngx_http_oidc_module) — Définit un fournisseur OpenID utilisable avec la directive auth_oidc."
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines an OpenID Provider for use with the [[12-directives/auth-oidc|auth_oidc]] directive.
+Définit un fournisseur OpenID utilisable avec la directive [[12-directives/auth-oidc|auth_oidc]].
 
 ---
 

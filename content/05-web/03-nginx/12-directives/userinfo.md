@@ -1,12 +1,9 @@
 ---
 title: "userinfo"
-description: "Directive nginx userinfo (ngx_http_oidc_module) — Enables downloading of the UserInfo data and makes UserInfo claims available via the $oidc_claim_name variables."
+description: "Directive nginx userinfo (ngx_http_oidc_module) — Active le téléchargement des données UserInfo et rend leurs revendications accessibles par les variables $oidc_claim_name."
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables downloading of the [UserInfo](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo) data and makes UserInfo claims available via the $oidc\_claim\_`name` variables.
+Active le téléchargement des données [UserInfo](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo) et rend leurs revendications accessibles par les variables $oidc\_claim\_`name`.
 
 ---
 

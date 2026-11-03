@@ -1,12 +1,9 @@
 ---
 title: "image_filter_interlace"
-description: "Directive nginx image_filter_interlace (ngx_http_image_filter_module) — If enabled, final images will be interlaced. For JPEG, final images will be in “progressive JPEG” format."
+description: "Directive nginx image_filter_interlace (ngx_http_image_filter_module) — Si cette option est activée, les images finales sont entrelacées. Pour le JPEG, elles sont au format « JPEG progressif »."
 tags: [nginx, directive, ngx_http_image_filter_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-If enabled, final images will be interlaced. For JPEG, final images will be in “progressive JPEG” format.
+Si cette option est activée, les images finales sont entrelacées. Pour le JPEG, elles sont au format « JPEG progressif ».
 
 ---
 

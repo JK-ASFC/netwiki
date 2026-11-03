@@ -10,11 +10,11 @@ icon: puzzle
 
 The `ngx_stream_js_module` module is used to implement session and variable handlers in JavaScript with [[10-guides/04-njs/00-index|njs]].
 
-Download and install instructions are available [[10-guides/04-njs/install|here]].
+Les instructions de téléchargement et d'installation sont disponibles [[10-guides/04-njs/install|ici]].
 
 ## Exemple de configuration
 
-The example works since 0.4.0.
+L'exemple fonctionne depuis la version 0.4.0.
 
 ```nginx
 stream {

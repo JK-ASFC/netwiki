@@ -1,25 +1,22 @@
 ---
 title: "ngx_http_perl_module"
-description: "Module nginx ngx_http_perl_module — The ngx_http_perl_module module is used to implement location and variable handlers in Perl and insert Perl calls into SSI."
+description: "Module nginx ngx_http_perl_module — Le module ngx_http_perl_module sert à écrire en Perl des gestionnaires de location et de variables, et à insérer des appels Perl dans les SSI."
 tags: [nginx, module, ngx_http_perl_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_perl_module` sert à écrire en Perl des gestionnaires de location et de variables, et à insérer des appels Perl dans les SSI.
 
-The `ngx_http_perl_module` module is used to implement location and variable handlers in Perl and insert Perl calls into SSI.
-
-This module is not built by default, it should be enabled with the `--with-http_perl_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_perl_module`.
 
 > [!NOTE]
-> This module requires [Perl](https://www.perl.org/get.html) version 5.6.1 or higher. The C compiler should be compatible with the one used to build Perl.
+> Ce module nécessite [Perl](https://www.perl.org/get.html) 5.6.1 ou plus récent. Le compilateur C doit être compatible avec celui qui a servi à compiler Perl.
 
-## Known Issues
+## Problèmes connus
 
-The module is experimental, caveat emptor applies.
+Le module est expérimental : à utiliser à vos risques.
 
-In order for Perl to recompile the modified modules during reconfiguration, it should be built with the `-Dusemultiplicity=yes` or `-Dusethreads=yes` parameters. Also, to make Perl leak less memory at run time, it should be built with the `-Dusemymalloc=no` parameter. To check the values of these parameters in an already built Perl (preferred values are specified in the example), run:
+Pour que Perl recompile les modules modifiés lors d'une reconfiguration, il doit être compilé avec les paramètres `-Dusemultiplicity=yes` ou `-Dusethreads=yes`. Pour limiter ses fuites de mémoire à l'exécution, il doit aussi être compilé avec `-Dusemymalloc=no`. Pour vérifier ces paramètres sur un Perl déjà compilé (les valeurs préférées figurent dans l'exemple), exécutez :
 
 ```nginx
 $ perl -V:usemultiplicity -V:usemymalloc
@@ -27,11 +24,11 @@ usemultiplicity='define';
 usemymalloc='n';
 ```
 
-Note that after rebuilding Perl with the new `-Dusemultiplicity=yes` or `-Dusethreads=yes` parameters, all binary Perl modules will have to be rebuilt as well — they will just stop working with the new Perl.
+Après recompilation de Perl avec les nouveaux paramètres `-Dusemultiplicity=yes` ou `-Dusethreads=yes`, tous les modules Perl binaires doivent aussi être recompilés : ils cesseront simplement de fonctionner avec le nouveau Perl.
 
-There is a possibility that the main process and then worker processes will grow in size after every reconfiguration. If the main process grows to an unacceptable size, the [[10-guides/01-introduction/control|live upgrade]] procedure can be applied without changing the executable file.
+Le processus principal, puis les processus de travail, peuvent grossir à chaque reconfiguration. Si le processus principal atteint une taille inacceptable, on peut appliquer la procédure de [[10-guides/01-introduction/control|mise à jour à chaud]] sans changer l'exécutable.
 
-While the Perl module is performing a long-running operation, such as resolving a domain name, connecting to another server, or querying a database, other requests assigned to the current worker process will not be processed. It is thus recommended to perform only such operations that have predictable and short execution time, such as accessing the local file system.
+Pendant que le module Perl effectue une opération longue (résolution d'un nom de domaine, connexion à un autre serveur, interrogation d'une base de données…), les autres requêtes affectées au processus de travail courant ne sont pas traitées. Il est donc recommandé de n'effectuer que des opérations à durée courte et prévisible, comme l'accès au système de fichiers local.
 
 ## Exemple de configuration
 
@@ -61,7 +58,7 @@ http {
     }
 ```
 
-The `perl/lib/hello.pm` module:
+Le module `perl/lib/hello.pm` :
 
 ```nginx
 package hello;
@@ -87,28 +84,28 @@ sub handler {
 __END__
 ```
 
-## Calling Perl from SSI
+## Appeler Perl depuis SSI
 
-An SSI command calling Perl has the following format:
+Une commande SSI qui appelle Perl a le format suivant :
 
 ```nginx
 <!--# perl sub="module::function" arg="parameter1" arg="parameter2" ...
 -->
 ```
 
-## The $r Request Object Methods
+## Méthodes de l'objet requête $r
 
 - **`$r->args`**
 
-  returns request arguments.
+  renvoie les arguments de la requête.
 
 - **`$r->filename`**
 
-  returns a filename corresponding to the request URI.
+  renvoie le nom du fichier correspondant à l'URI de la requête.
 
 - **`$r->has_request_body(handler)`**
 
-  returns 0 if there is no body in a request. If there is a body, the specified handler is set for the request and 1 is returned. After reading the request body, nginx will call the specified handler. Note that the handler function should be passed by reference. Example:
+  renvoie 0 si la requête n'a pas de corps. S'il y en a un, le gestionnaire indiqué est associé à la requête et 1 est renvoyé. Après lecture du corps, nginx appelle ce gestionnaire. La fonction gestionnaire doit être passée par référence. Exemple :
 
   ```nginx
   package hello;
@@ -147,74 +144,74 @@ An SSI command calling Perl has the following format:
 
 - **`$r->allow_ranges`**
 
-  enables the use of byte ranges when sending responses.
+  active l'utilisation des plages d'octets lors de l'envoi des réponses.
 
 - **`$r->discard_request_body`**
 
-  instructs nginx to discard the request body.
+  demande à nginx d'ignorer le corps de la requête.
 
 - **`$r->header_in(field)`**
 
-  returns the value of the specified client request header field.
+  renvoie la valeur du champ d'en-tête de requête du client indiqué.
 
 - **`$r->header_only`**
 
-  determines whether the whole response or only its header should be sent to the client.
+  indique si la réponse entière ou seulement son en-tête doit être envoyée au client.
 
 - **`$r->header_out(field, value)`**
 
-  sets a value for the specified response header field.
+  définit la valeur du champ d'en-tête de réponse indiqué.
 
 - **`$r->internal_redirect(uri)`**
 
-  does an internal redirect to the specified *uri*. An actual redirect happens after the Perl handler execution is completed.
+  effectue une redirection interne vers l'*uri* indiqué. La redirection a réellement lieu après la fin de l'exécution du gestionnaire Perl.
 
   > [!NOTE]
-  > Since version 1.17.2, the method accepts escaped URIs and supports redirections to named locations.
+  > Depuis la version 1.17.2, la méthode accepte les URI échappés et prend en charge les redirections vers des blocs location nommés.
 
 - **`$r->log_error(errno, message)`**
 
-  writes the specified *message* into the [[12-directives/error-log|error_log]]. If *errno* is non-zero, an error code and its description will be appended to the message.
+  écrit le message (*message*) indiqué dans [[12-directives/error-log|error_log]]. Si *errno* n'est pas nul, un code d'erreur et sa description sont ajoutés au message.
 
 - **`$r->print(text, ...)`**
 
-  passes data to a client.
+  transmet des données au client.
 
 - **`$r->request_body`**
 
-  returns the client request body if it has not been written to a temporary file. To ensure that the client request body is in memory, its size should be limited by [[12-directives/client-max-body-size|client_max_body_size]], and a sufficient buffer size should be set using [[12-directives/client-body-buffer-size|client_body_buffer_size]].
+  renvoie le corps de la requête du client s'il n'a pas été écrit dans un fichier temporaire. Pour garantir que le corps est en mémoire, limitez sa taille avec [[12-directives/client-max-body-size|client_max_body_size]] et définissez un tampon suffisant avec [[12-directives/client-body-buffer-size|client_body_buffer_size]].
 
 - **`$r->request_body_file`**
 
-  returns the name of the file with the client request body. After the processing, the file should be removed. To always write a request body to a file, [[12-directives/client-body-in-file-only|client_body_in_file_only]] should be enabled.
+  renvoie le nom du fichier contenant le corps de la requête du client. Après le traitement, le fichier doit être supprimé. Pour toujours écrire le corps dans un fichier, activez [[12-directives/client-body-in-file-only|client_body_in_file_only]].
 
 - **`$r->request_method`**
 
-  returns the client request HTTP method.
+  renvoie la méthode HTTP de la requête du client.
 
 - **`$r->remote_addr`**
 
-  returns the client IP address.
+  renvoie l'adresse IP du client.
 
 - **`$r->flush`**
 
-  immediately sends data to the client.
+  envoie immédiatement les données au client.
 
 - **`$r->sendfile(name[, offset[, length]])`**
 
-  sends the specified file content to the client. Optional parameters specify the initial offset and length of the data to be transmitted. The actual data transmission happens after the Perl handler has completed.
+  envoie au client le contenu du fichier indiqué. Les paramètres facultatifs indiquent le décalage initial et la longueur des données à transmettre. La transmission a réellement lieu après la fin du gestionnaire Perl.
 
 - **`$r->send_http_header([type])`**
 
-  sends the response header to the client. The optional *type* parameter sets the value of the `Content-Type` response header field. If the value is an empty string, the `Content-Type` header field will not be sent.
+  envoie l'en-tête de réponse au client. Le paramètre facultatif *type* définit la valeur du champ d'en-tête de réponse `Content-Type`. Si la valeur est une chaîne vide, le champ `Content-Type` n'est pas envoyé.
 
 - **`$r->status(code)`**
 
-  sets a response code.
+  définit le code de réponse.
 
 - **`$r->sleep(milliseconds, handler)`**
 
-  sets the specified handler and stops request processing for the specified time. In the meantime, nginx continues to process other requests. After the specified time has elapsed, nginx will call the installed handler. Note that the handler function should be passed by reference. In order to pass data between handlers, `$r->variable()` should be used. Example:
+  associe le gestionnaire indiqué et suspend le traitement de la requête pendant la durée indiquée. Pendant ce temps, nginx continue de traiter les autres requêtes. Une fois la durée écoulée, nginx appelle le gestionnaire. La fonction gestionnaire doit être passée par référence. Pour transmettre des données entre gestionnaires, utilisez `$r->variable()`. Exemple :
 
   ```nginx
   package hello;
@@ -247,15 +244,15 @@ An SSI command calling Perl has the following format:
 
 - **`$r->unescape(text)`**
 
-  decodes a text encoded in the “%XX” form.
+  décode un texte encodé sous la forme « %XX ».
 
 - **`$r->uri`**
 
-  returns a request URI.
+  renvoie l'URI de la requête.
 
 - **`$r->variable(name[, value])`**
 
-  returns or sets the value of the specified variable. Variables are local to each request.
+  renvoie ou définit la valeur de la variable indiquée. Les variables sont propres à chaque requête.
 
 ## Directives
 

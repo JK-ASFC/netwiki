@@ -1,12 +1,9 @@
 ---
 title: "cookie_name"
-description: "Directive nginx cookie_name (ngx_http_oidc_module) — Sets the name of a session cookie."
+description: "Directive nginx cookie_name (ngx_http_oidc_module) — Définit le nom du cookie de session."
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the name of a session cookie.
+Définit le nom du cookie de session.
 
 ---
 

@@ -26,7 +26,7 @@ js_import stream.js;
 
 Here, the module name `stream` is used as a namespace while accessing exports. If the imported module exports `foo()`, `stream.foo` is used to refer to it.
 
-Several `js_import` directives can be specified.
+Plusieurs directives `js_import` peuvent être indiquées.
 
 > [!NOTE]
 > The directive can be specified on the `server` level since 0.7.7.

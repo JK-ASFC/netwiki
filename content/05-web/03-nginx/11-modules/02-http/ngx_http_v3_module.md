@@ -18,9 +18,9 @@ This module is not built by default, it should be enabled with the `--with-http_
 > [!NOTE]
 > 0-RTT support requires the [OpenSSL](http://www.openssl.org) library version 3.5.1 or higher. Alternatively, [BoringSSL](https://boringssl.googlesource.com/boringssl), [LibreSSL](https://www.libressl.org), or [QuicTLS](https://github.com/quictls/openssl) libraries can be used to build and run this module.
 
-## Known Issues
+## Problèmes connus
 
-The module is experimental, caveat emptor applies.
+Le module est expérimental : à utiliser à vos risques.
 
 Before version 1.29.1, 0-RTT support could not be enabled with OpenSSL regardless of the [[12-directives/ssl-early-data|ssl_early_data]] directive value.
 

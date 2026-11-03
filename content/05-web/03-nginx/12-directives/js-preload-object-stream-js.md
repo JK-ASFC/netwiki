@@ -1,12 +1,9 @@
 ---
 title: "js_preload_object (ngx_stream_js_module)"
-description: "Directive nginx js_preload_object (ngx_stream_js_module) — Preloads an immutable object at configure time. The name is used as a name of the global variable though which the object is available in njs code. If the name is not specified, the file name will be…"
+description: "Directive nginx js_preload_object (ngx_stream_js_module) — Précharge un objet immuable lors de la configuration. name est le nom de la variable globale par laquelle l'objet est accessible dans le code njs ; s'il n'est pas indiqué, le nom du fichier est…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,15 +15,15 @@ icon: settings-2
 
 ## Utilisation
 
-Preloads an [[10-guides/04-njs/preload-objects|immutable object]] at configure time. The `name` is used as a name of the global variable though which the object is available in njs code. If the `name` is not specified, the file name will be used instead.
+Précharge un [[10-guides/04-njs/preload-objects|objet immuable]] lors de la configuration. `name` est le nom de la variable globale par laquelle l'objet est accessible dans le code njs ; s'il n'est pas indiqué, le nom du fichier est utilisé.
 
 ```nginx
 js_preload_object map.json;
 ```
 
-Here, the `map` is used as a name while accessing the preloaded object.
+Ici, `map` sert de nom pour accéder à l'objet préchargé.
 
-Several `js_preload_object` directives can be specified.
+Plusieurs directives `js_preload_object` peuvent être indiquées.
 
 ---
 

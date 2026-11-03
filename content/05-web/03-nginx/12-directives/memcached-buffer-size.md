@@ -1,12 +1,9 @@
 ---
 title: "memcached_buffer_size"
-description: "Directive nginx memcached_buffer_size (ngx_http_memcached_module) — Sets the size of the buffer used for reading the response received from the memcached server. The response is passed to the client synchronously, as soon as it is received."
+description: "Directive nginx memcached_buffer_size (ngx_http_memcached_module) — Définit la taille (size) du tampon utilisé pour lire la réponse reçue du serveur memcached. La réponse est transmise au client de façon synchrone, dès sa réception."
 tags: [nginx, directive, ngx_http_memcached_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *size* of the buffer used for reading the response received from the memcached server. The response is passed to the client synchronously, as soon as it is received.
+Définit la taille (*size*) du tampon utilisé pour lire la réponse reçue du serveur memcached. La réponse est transmise au client de façon synchrone, dès sa réception.
 
 ---
 

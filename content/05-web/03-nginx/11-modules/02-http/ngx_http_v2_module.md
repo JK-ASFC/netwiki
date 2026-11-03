@@ -12,7 +12,7 @@ The `ngx_http_v2_module` module (1.9.5) provides support for [HTTP/2](https://da
 
 This module is not built by default, it should be enabled with the `--with-http_v2_module` configuration parameter.
 
-## Known Issues
+## Problèmes connus
 
 Before version 1.9.14, buffering of a client request body could not be disabled regardless of [[12-directives/proxy-request-buffering|proxy_request_buffering]], [[12-directives/fastcgi-request-buffering|fastcgi_request_buffering]], [[12-directives/uwsgi-request-buffering|uwsgi_request_buffering]], and [[12-directives/scgi-request-buffering|scgi_request_buffering]] directive values.
 

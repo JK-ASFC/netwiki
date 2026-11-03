@@ -1,12 +1,9 @@
 ---
 title: "js_fetch_timeout (ngx_stream_js_module)"
-description: "Directive nginx js_fetch_timeout (ngx_stream_js_module) — Defines a timeout for reading and writing for Fetch API. The timeout is set only between two successive read/write operations, not for the whole response. If no data is transmitted within this time,…"
+description: "Directive nginx js_fetch_timeout (ngx_stream_js_module) — Définit le délai de lecture et d'écriture pour l'API Fetch. Ce délai porte uniquement sur l'intervalle entre deux opérations de lecture ou d'écriture successives, pas sur toute la réponse. Si aucune…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a timeout for reading and writing for [[10-guides/04-njs/reference|Fetch API]]. The timeout is set only between two successive read/write operations, not for the whole response. If no data is transmitted within this time, the connection is closed.
+Définit le délai de lecture et d'écriture pour l'[[10-guides/04-njs/reference|API Fetch]]. Ce délai porte uniquement sur l'intervalle entre deux opérations de lecture ou d'écriture successives, pas sur toute la réponse. Si aucune donnée n'est transmise pendant ce délai, la connexion est fermée.
 
 ---
 

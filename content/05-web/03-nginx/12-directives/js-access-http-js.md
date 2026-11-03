@@ -1,12 +1,9 @@
 ---
 title: "js_access (ngx_http_js_module)"
-description: "Directive nginx js_access (ngx_http_js_module) — Sets an njs function as a handler in the access phase. Asynchronous operations such as r.subrequest(), ngx.fetch(), and setTimeout() are supported. A handler that returns without calling r.return()…"
+description: "Directive nginx js_access (ngx_http_js_module) — Définit une fonction njs comme gestionnaire de la phase d'accès. Les opérations asynchrones comme r.subrequest(), ngx.fetch() et setTimeout() sont prises en charge. Un gestionnaire qui se termine…"
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an njs function as a handler in the [[10-guides/06-developpement/development-guide|access phase]]. Asynchronous operations such as [[10-guides/04-njs/reference|r.subrequest()]], [[10-guides/04-njs/reference|ngx.fetch()]], and [[10-guides/04-njs/reference|setTimeout()]] are supported.
+Définit une fonction njs comme gestionnaire de la [[10-guides/06-developpement/development-guide|phase d'accès]]. Les opérations asynchrones comme [[10-guides/04-njs/reference|r.subrequest()]], [[10-guides/04-njs/reference|ngx.fetch()]] et [[10-guides/04-njs/reference|setTimeout()]] sont prises en charge.
 
-A handler that returns without calling [[10-guides/04-njs/reference|r.return()]] or [[10-guides/04-njs/reference|r.decline()]] grants access. To deny access or send a custom response (for example, a redirect), the handler may call [[10-guides/04-njs/reference|r.return()]]. To make the handler express no opinion, deferring the decision to other access checkers under [[12-directives/satisfy|satisfy any]], the handler may call [[10-guides/04-njs/reference|r.decline()]].
+Un gestionnaire qui se termine sans appeler [[10-guides/04-njs/reference|r.return()]] ni [[10-guides/04-njs/reference|r.decline()]] accorde l'accès. Pour refuser l'accès ou envoyer une réponse personnalisée (par exemple une redirection), le gestionnaire peut appeler [[10-guides/04-njs/reference|r.return()]]. Pour ne pas se prononcer et laisser la décision aux autres vérifications d'accès avec [[12-directives/satisfy|satisfy any]], il peut appeler [[10-guides/04-njs/reference|r.decline()]].
 
 Par exemple :
 

@@ -1,12 +1,9 @@
 ---
 title: "mp4_max_buffer_size"
-description: "Directive nginx mp4_max_buffer_size (ngx_http_mp4_module) — During metadata processing, a larger buffer may become necessary. Its size cannot exceed the specified size, or else nginx will return the 500 Internal Server Error server error, and log the…"
+description: "Directive nginx mp4_max_buffer_size (ngx_http_mp4_module) — Pendant le traitement des métadonnées, un tampon plus grand peut être nécessaire. Sa taille ne peut pas dépasser la taille (size) indiquée ; sinon, nginx renvoie l'erreur serveur 500 Internal Server…"
 tags: [nginx, directive, ngx_http_mp4_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-During metadata processing, a larger buffer may become necessary. Its size cannot exceed the specified *size*, or else nginx will return the `500 Internal Server Error` server error, and log the following message:
+Pendant le traitement des métadonnées, un tampon plus grand peut être nécessaire. Sa taille ne peut pas dépasser la taille (*size*) indiquée ; sinon, nginx renvoie l'erreur serveur `500 Internal Server Error` et journalise le message suivant :
 
 ```nginx
 "/some/movie/file.mp4" mp4 moov atom is too large:

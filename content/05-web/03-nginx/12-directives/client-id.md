@@ -1,12 +1,9 @@
 ---
 title: "client_id"
-description: "Directive nginx client_id (ngx_http_oidc_module) — Specifies the client ID of the Relying Party; required directive."
+description: "Directive nginx client_id (ngx_http_oidc_module) — Indique l'identifiant client de la partie de confiance ; directive obligatoire."
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the client ID of the Relying Party; required directive.
+Indique l'identifiant client de la partie de confiance ; directive obligatoire.
 
 ---
 

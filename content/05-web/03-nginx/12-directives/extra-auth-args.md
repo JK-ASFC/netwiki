@@ -1,12 +1,9 @@
 ---
 title: "extra_auth_args"
-description: "Directive nginx extra_auth_args (ngx_http_oidc_module) — Sets additional query arguments for the authentication request URL. nginx extra_auth_args \"display=page&prompt=login\";"
+description: "Directive nginx extra_auth_args (ngx_http_oidc_module) — Définit des arguments de requête supplémentaires pour l'URL de la demande d'authentification. nginx extra_auth_args \"display=page&prompt=login\";"
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets additional query arguments for the [authentication request](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) URL.
+Définit des arguments de requête supplémentaires pour l'URL de la [demande d'authentification](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest).
 
 ```nginx
 extra_auth_args "display=page&prompt=login";

@@ -1,9 +1,20 @@
 {
  "0df01127cf12": "Ce module utilise la bibliothèque [libgd](http://libgd.org). Il est recommandé d'utiliser la version la plus récente de la bibliothèque.",
+ "172a63bb7be1": "Définit la qualité (*quality*) souhaitée des images WebP transformées. Les valeurs acceptées vont de 1 à 100. Une valeur plus faible implique généralement une qualité d'image moindre et moins de données à transférer. La valeur du paramètre peut contenir des variables.",
  "4df51244361f": "Définit le type de transformation à appliquer aux images :",
  "5602c10fac54": "vérifie que les réponses sont des images au format JPEG, GIF, PNG ou WebP ; sinon, l'erreur `415 Unsupported Media Type` est renvoyée.",
+ "5f45772bac11": "Définit la taille maximale du tampon utilisé pour lire les images. Au-delà, le serveur renvoie l'erreur `415 Unsupported Media Type`.",
+ "648d7d8f7d90": "Indique si la transparence doit être conservée lors de la transformation des images GIF ou PNG à palette de couleurs. La perte de transparence donne des images de meilleure qualité. La transparence par canal alpha des PNG est toujours conservée.",
+ "68092456ac82": "renvoie des informations sur les images au format JSON, par exemple :",
+ "7641e61dabb0": "réduit proportionnellement une image aux dimensions indiquées. Pour ne réduire qu'une dimension, l'autre peut être indiquée par « `-` ». En cas d'erreur, le serveur renvoie le code `415 Unsupported Media Type`. Les valeurs des paramètres peuvent contenir des variables. Avec le paramètre `rotate`, la rotation a lieu *après* la réduction.",
+ "7fb2c131ff71": "Si cette option est activée, les images finales sont entrelacées. Pour le JPEG, elles sont au format « JPEG progressif ».",
+ "8efd19ba40c2": "fait pivoter les images dans le sens inverse des aiguilles d'une montre du nombre de degrés indiqué. La valeur du paramètre peut contenir des variables. Ce mode peut s'utiliser seul ou avec les transformations `resize` et `crop`.",
+ "9523a4f3b030": "En cas d'erreur, la sortie est la suivante :",
+ "98c93bc91a7d": "réduit proportionnellement une image à la dimension du plus grand côté et rogne les bords superflus de l'autre côté. Pour ne réduire qu'une dimension, l'autre peut être indiquée par « `-` ». En cas d'erreur, le serveur renvoie le code `415 Unsupported Media Type`. Les valeurs des paramètres peuvent contenir des variables. Avec le paramètre `rotate`, la rotation a lieu *avant* la réduction.",
  "b8d5b8e57104": "désactive le traitement par le module dans le bloc location englobant.",
  "bdaf55d34457": "Le module `ngx_http_image_filter_module` (0.7.54+) est un filtre qui transforme les images aux formats JPEG, GIF, PNG et WebP.",
  "bf95f0aac4e9": "La prise en charge du format WebP est apparue en version 1.11.6. Pour transformer des images dans ce format, la bibliothèque `libgd` doit être compilée avec la prise en charge de WebP.",
+ "e1bc5e7e5c04": "Augmente la netteté de l'image finale. Le pourcentage de netteté peut dépasser 100. La valeur zéro désactive l'accentuation. La valeur du paramètre peut contenir des variables.",
+ "e45fc1d1332d": "Définit la qualité (*quality*) souhaitée des images JPEG transformées. Les valeurs acceptées vont de 1 à 100. Une valeur plus faible implique généralement une qualité d'image moindre et moins de données à transférer. La valeur maximale recommandée est 95. La valeur du paramètre peut contenir des variables.",
  "ff74f9e8731a": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_image_filter_module`."
 }

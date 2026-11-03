@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_internal_redirect_module"
-description: "Module nginx ngx_http_internal_redirect_module — The ngx_http_internal_redirect_module module (1.23.4) allows making an internal redirect. In contrast to rewriting URIs, the redirection is made after checking request and connection processing limits, and access limits."
+description: "Module nginx ngx_http_internal_redirect_module — Le module ngx_http_internal_redirect_module (1.23.4) permet d'effectuer une redirection interne. Contrairement à la réécriture d'URI, la redirection a lieu après la vérification des limites de traitement des requêtes et…"
 tags: [nginx, module, ngx_http_internal_redirect_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_internal_redirect_module` module (1.23.4) allows making an internal redirect. In contrast to [[11-modules/02-http/ngx_http_rewrite_module|rewriting URIs]], the redirection is made after checking [[11-modules/02-http/ngx_http_limit_req_module|request]] and [[11-modules/02-http/ngx_http_limit_conn_module|connection]] processing limits, and [[11-modules/02-http/ngx_http_access_module|access]] limits.
+Le module `ngx_http_internal_redirect_module` (1.23.4) permet d'effectuer une redirection interne. Contrairement à la [[11-modules/02-http/ngx_http_rewrite_module|réécriture d'URI]], la redirection a lieu après la vérification des limites de traitement des [[11-modules/02-http/ngx_http_limit_req_module|requêtes]] et des [[11-modules/02-http/ngx_http_limit_conn_module|connexions]] et des limites d'[[11-modules/02-http/ngx_http_access_module|accès]].
 
 > [!NOTE]
 > Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
@@ -35,7 +32,7 @@ server {
 }
 ```
 
-The example implements [per-user](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.2) [[11-modules/02-http/ngx_http_limit_req_module|rate limiting]]. Implementation without [[12-directives/internal-redirect|internal_redirect]] is vulnerable to DoS attacks by unsigned JWTs, as normally the [[12-directives/limit-req|limit_req]] check is performed [[10-guides/06-developpement/development-guide|before]] [[12-directives/auth-jwt|auth_jwt]] check. Using [[12-directives/internal-redirect|internal_redirect]] allows reordering these checks.
+L'exemple met en œuvre une [[11-modules/02-http/ngx_http_limit_req_module|limitation de débit]] [par utilisateur](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.2). Sans [[12-directives/internal-redirect|internal_redirect]], la mise en œuvre est vulnérable aux attaques par déni de service avec des JWT non signés, car la vérification [[12-directives/limit-req|limit_req]] a normalement lieu [[10-guides/06-developpement/development-guide|avant]] la vérification [[12-directives/auth-jwt|auth_jwt]]. [[12-directives/internal-redirect|internal_redirect]] permet de réordonner ces vérifications.
 
 ## Directives
 

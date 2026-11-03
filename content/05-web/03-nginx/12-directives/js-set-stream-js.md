@@ -1,6 +1,6 @@
 ---
 title: "js_set (ngx_stream_js_module)"
-description: "Directive nginx js_set (ngx_stream_js_module) — Sets an njs function for the specified variable. Since 0.4.0, a module function can be referenced. The function is called when the variable is referenced for the first time for a given request. The…"
+description: "Directive nginx js_set (ngx_stream_js_module) — Définit une fonction njs (function) pour la variable (variable) indiquée. Depuis la version 0.4.0, on peut faire référence à une fonction de module. The function is called when the variable is…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
@@ -17,7 +17,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an njs `function` for the specified `variable`. Since 0.4.0, a module function can be referenced.
+Définit une fonction njs (`function`) pour la variable (`variable`) indiquée. Depuis la version 0.4.0, on peut faire référence à une fonction de module.
 
 The function is called when the variable is referenced for the first time for a given request. The exact moment depends on a [[10-guides/03-stream/stream-processing|phase]] at which the variable is referenced. This can be used to perform some logic not related to variable evaluation. For example, if the variable is referenced only in the [[12-directives/log-format-stream-log|log_format]] directive, its handler will not be executed until the log phase. This handler can be used to do some cleanup right before the request is freed.
 

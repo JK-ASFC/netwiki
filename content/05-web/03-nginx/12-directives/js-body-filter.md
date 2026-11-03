@@ -1,12 +1,9 @@
 ---
 title: "js_body_filter"
-description: "Directive nginx js_body_filter (ngx_http_js_module) — Sets an njs function as a response body filter. The filter function is called for each data chunk of a response body with the following arguments: - r the HTTP request object - data the incoming data…"
+description: "Directive nginx js_body_filter (ngx_http_js_module) — Définit une fonction njs comme filtre du corps de la réponse. La fonction de filtre est appelée pour chaque bloc de données du corps de la réponse, avec les arguments suivants : - r l'objet requête…"
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,25 +15,25 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an njs function as a response body filter. The filter function is called for each data chunk of a response body with the following arguments:
+Définit une fonction njs comme filtre du corps de la réponse. La fonction de filtre est appelée pour chaque bloc de données du corps de la réponse, avec les arguments suivants :
 
 - **`r`**
 
-  the [[10-guides/04-njs/reference|HTTP request]] object
+  l'objet [[10-guides/04-njs/reference|requête HTTP]]
 
 - **`data`**
 
-  the incoming data chunk, may be a string or Buffer depending on the `buffer_type` value, by default is a string. Since 0.8.5, the `data` value is implicitly converted to a valid UTF-8 string by default. For binary data, the `buffer_type` value should be set to `buffer`.
+  le bloc de données entrant, chaîne ou Buffer selon la valeur de `buffer_type` (chaîne par défaut). Depuis la version 0.8.5, la valeur `data` est convertie implicitement par défaut en chaîne UTF-8 valide. Pour les données binaires, `buffer_type` doit valoir `buffer`.
 
 - **`flags`**
 
-  an object with the following properties:
+  un objet avec les propriétés suivantes :
 
   - **`last`**
 
-    a boolean value, true if data is a last buffer.
+    un booléen, vrai si les données sont le dernier tampon.
 
-The filter function can pass its own modified version of the input data chunk to the next body filter by calling [[10-guides/04-njs/reference|r.sendBuffer()]]. For example, to transform all the lowercase letters in the response body:
+La fonction de filtre peut transmettre au filtre de corps suivant sa propre version modifiée du bloc de données en appelant [[10-guides/04-njs/reference|r.sendBuffer()]]. Par exemple, pour transformer toutes les minuscules du corps de la réponse :
 
 ```nginx
 function filter(r, data, flags) {
@@ -44,7 +41,7 @@ function filter(r, data, flags) {
 }
 ```
 
-If the filter function changes the length of the response body, the `Content-Length` response header (if present) should be cleared in [[12-directives/js-header-filter|js_header_filter]] to enforce chunked transfer encoding:
+Si la fonction de filtre modifie la longueur du corps de la réponse, l'en-tête de réponse `Content-Length` (s'il est présent) doit être supprimé dans [[12-directives/js-header-filter|js_header_filter]] pour imposer l'encodage de transfert par morceaux :
 
 ```nginx
 example.conf:
@@ -61,7 +58,7 @@ example.js:
  }
 ```
 
-To stop filtering and pass the data chunks to the client without calling `js_body_filter`, [[10-guides/04-njs/reference|r.done()]] can be used. For example, to prepend some data to the response body:
+Pour arrêter le filtrage et transmettre les blocs de données au client sans appeler `js_body_filter`, on peut utiliser [[10-guides/04-njs/reference|r.done()]]. Par exemple, pour ajouter des données au début du corps de la réponse :
 
 ```nginx
 function prepend(r, data, flags) {
@@ -72,10 +69,10 @@ function prepend(r, data, flags) {
 ```
 
 > [!NOTE]
-> As the `js_body_filter` handler returns its result immediately, it supports only synchronous operations. Thus, asynchronous operations such as [[10-guides/04-njs/reference|r.subrequest()]] or [[10-guides/04-njs/reference|setTimeout()]] are not supported.
+> Comme le gestionnaire `js_body_filter` renvoie son résultat immédiatement, il ne prend en charge que les opérations synchrones. Les opérations asynchrones comme [[10-guides/04-njs/reference|r.subrequest()]] ou [[10-guides/04-njs/reference|setTimeout()]] ne sont donc pas prises en charge.
 
 > [!NOTE]
-> The directive can be specified inside the [[12-directives/if|if]] block since 0.7.7.
+> La directive peut être indiquée dans un bloc [[12-directives/if|if]] depuis la version 0.7.7.
 
 ---
 

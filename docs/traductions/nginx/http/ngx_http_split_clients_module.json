@@ -1,0 +1,5 @@
+{
+ "53699cfa9b0f": "Le module `ngx_http_split_clients_module` crée des variables pour les tests A/B (*split testing*).",
+ "605485cca202": "Crée une variable pour les tests A/B, par exemple :",
+ "f08753bd19ad": "La chaîne d'origine est hachée avec MurmurHash2. Dans l'exemple, les valeurs de hachage de 0 à 21474835 (0,5 %) donnent la valeur `\".one\"` à la variable `$variant`, celles de 21474836 à 107374180 (2 %) la valeur `\".two\"`, et celles de 107374181 à 4294967295 la valeur `\"\"` (chaîne vide)."
+}

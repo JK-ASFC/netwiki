@@ -1,12 +1,9 @@
 ---
 title: "mp4_buffer_size"
-description: "Directive nginx mp4_buffer_size (ngx_http_mp4_module) — Sets the initial size of the buffer used for processing MP4 files."
+description: "Directive nginx mp4_buffer_size (ngx_http_mp4_module) — Définit la taille (size) initiale du tampon utilisé pour traiter les fichiers MP4."
 tags: [nginx, directive, ngx_http_mp4_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the initial *size* of the buffer used for processing MP4 files.
+Définit la taille (*size*) initiale du tampon utilisé pour traiter les fichiers MP4.
 
 ---
 

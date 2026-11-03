@@ -1,12 +1,9 @@
 ---
 title: "ssl_trusted_certificate (ngx_http_oidc_module)"
-description: "Directive nginx ssl_trusted_certificate (ngx_http_oidc_module) — Specifies a file with trusted CA certificates in the PEM format used to verify the certificates of the OpenID Provider endpoints."
+description: "Directive nginx ssl_trusted_certificate (ngx_http_oidc_module) — Indique le fichier (file) contenant les certificats d'autorités de confiance au format PEM utilisé pour vérifier les certificats des points de terminaison du fournisseur OpenID."
 tags: [nginx, directive, ngx_http_oidc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with trusted CA certificates in the PEM format used to verify the certificates of the OpenID Provider endpoints.
+Indique le fichier (*file*) contenant les certificats d'autorités de confiance au format PEM utilisé pour vérifier les certificats des points de terminaison du fournisseur OpenID.
 
 ---
 

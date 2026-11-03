@@ -1,21 +1,18 @@
 ---
 title: "ngx_http_session_log_module"
-description: "Module nginx ngx_http_session_log_module — The ngx_http_session_log_module module enables logging sessions (that is, aggregates of multiple HTTP requests) instead of individual HTTP requests."
+description: "Module nginx ngx_http_session_log_module — Le module ngx_http_session_log_module permet de journaliser des sessions (agrégats de plusieurs requêtes HTTP) au lieu de requêtes HTTP individuelles."
 tags: [nginx, module, ngx_http_session_log_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_session_log_module` module enables logging sessions (that is, aggregates of multiple HTTP requests) instead of individual HTTP requests.
+Le module `ngx_http_session_log_module` permet de journaliser des sessions (agrégats de plusieurs requêtes HTTP) au lieu de requêtes HTTP individuelles.
 
 > [!NOTE]
 > Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 
-The following configuration sets up a session log and maps requests to sessions according to the request client address and `User-Agent` request header field:
+La configuration suivante met en place un journal de sessions et associe les requêtes aux sessions selon l'adresse du client et le champ d'en-tête de requête `User-Agent` :
 
 ```nginx
 session_log_zone /path/to/log format=combined

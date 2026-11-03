@@ -1,12 +1,9 @@
 ---
 title: "js_fetch_trusted_certificate (ngx_stream_js_module)"
-description: "Directive nginx js_fetch_trusted_certificate (ngx_stream_js_module) — Specifies a file with trusted CA certificates in the PEM format used to verify the HTTPS certificate with Fetch API."
+description: "Directive nginx js_fetch_trusted_certificate (ngx_stream_js_module) — Indique le fichier (file) contenant les certificats d'autorités de confiance au format PEM utilisé pour vérifier le certificat HTTPS avec l'API Fetch."
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with trusted CA certificates in the PEM format used to [[10-guides/04-njs/reference|verify]] the HTTPS certificate with [[10-guides/04-njs/reference|Fetch API]].
+Indique le fichier (*file*) contenant les certificats d'autorités de confiance au format PEM utilisé pour [[10-guides/04-njs/reference|vérifier]] le certificat HTTPS avec l'[[10-guides/04-njs/reference|API Fetch]].
 
 ---
 

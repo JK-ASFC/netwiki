@@ -1,12 +1,9 @@
 ---
 title: "perl"
-description: "Directive nginx perl (ngx_http_perl_module) — Sets a Perl handler for the given location."
+description: "Directive nginx perl (ngx_http_perl_module) — Définit un gestionnaire Perl pour le bloc location."
 tags: [nginx, directive, ngx_http_perl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a Perl handler for the given location.
+Définit un gestionnaire Perl pour le bloc location.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "js_fetch_keepalive (ngx_stream_js_module)"
-description: "Directive nginx js_fetch_keepalive (ngx_stream_js_module) — Activates the cache for connections to destination servers. When the value is greater than 0, enables keepalive connections for Fetch API. The connections parameter sets the maximum number of idle…"
+description: "Directive nginx js_fetch_keepalive (ngx_stream_js_module) — Active le cache des connexions vers les serveurs de destination. Une valeur supérieure à 0 active les connexions persistantes pour l'API Fetch. Le paramètre connections définit le nombre maximal de…"
 tags: [nginx, directive, ngx_stream_js_module]
 icon: settings-2
 ---
@@ -18,13 +18,13 @@ icon: settings-2
 
 ## Utilisation
 
-Activates the cache for connections to destination servers. When the value is greater than `0`, enables keepalive connections for [[10-guides/04-njs/reference|Fetch API]].
+Active le cache des connexions vers les serveurs de destination. Une valeur supérieure à `0` active les connexions persistantes pour l'[[10-guides/04-njs/reference|API Fetch]].
 
-The *connections* parameter sets the maximum number of idle keepalive connections to destination servers that are preserved in the cache of each worker process. When this number is exceeded, the least recently used connections are closed.
+Le paramètre *connections* définit le nombre maximal de connexions persistantes inactives vers les serveurs de destination conservées dans le cache de chaque processus de travail. Au-delà, les connexions les moins récemment utilisées sont fermées.
 
 In Stream, the cache is maintained separately for each server configuration. A value set at the `stream` level is inherited by servers, but each server uses its own cache. Cached connections are reused for requests with the same protocol, host, and port.
 
-When enabled, keepalive assumes that destination servers send valid HTTP responses.
+Lorsqu'il est activé, le mode persistant suppose que les serveurs de destination envoient des réponses HTTP valides.
 
 Exemple :
 

@@ -1,19 +1,16 @@
 ---
 title: "$proxy_protocol_tlv_gcp_conn_id (ngx_stream_proxy_protocol_vendor_module)"
-description: "Variable nginx $proxy_protocol_tlv_gcp_conn_id (ngx_stream_proxy_protocol_vendor_module) — TLV value from the PROXY Protocol header representing Google Cloud PSC connection ID"
+description: "Variable nginx $proxy_protocol_tlv_gcp_conn_id (ngx_stream_proxy_protocol_vendor_module) — valeur TLV de l'en-tête du protocole PROXY représentant l'identifiant de connexion Google Cloud PSC"
 tags: [nginx, variable, ngx_stream_proxy_protocol_vendor_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$proxy_protocol_tlv_gcp_conn_id` |
 | **Module** | [[11-modules/03-stream/ngx_stream_proxy_protocol_vendor_module\|ngx_stream_proxy_protocol_vendor_module]] |
 
-TLV value from the PROXY Protocol header representing [Google Cloud PSC connection ID](https://cloud.google.com/vpc/docs/configure-private-service-connect-producer#proxy-protocol)
+valeur TLV de l'en-tête du protocole PROXY représentant l'[identifiant de connexion Google Cloud PSC](https://cloud.google.com/vpc/docs/configure-private-service-connect-producer#proxy-protocol)
 
 ---
 

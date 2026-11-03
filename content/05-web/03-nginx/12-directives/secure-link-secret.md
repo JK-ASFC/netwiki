@@ -1,12 +1,9 @@
 ---
 title: "secure_link_secret"
-description: "Directive nginx secure_link_secret (ngx_http_secure_link_module) — Defines a secret word used to check authenticity of requested links. The full URI of a requested link looks as follows: nginx /prefix/hash/link where hash is a hexadecimal representation of the MD5…"
+description: "Directive nginx secure_link_secret (ngx_http_secure_link_module) — Définit le mot secret (word) utilisé pour vérifier l'authenticité des liens demandés. L'URI complet d'un lien demandé a la forme suivante : nginx /prefix/hash/link où hash est la représentation…"
 tags: [nginx, directive, ngx_http_secure_link_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,17 +14,17 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a secret *word* used to check authenticity of requested links.
+Définit le mot secret (*word*) utilisé pour vérifier l'authenticité des liens demandés.
 
-The full URI of a requested link looks as follows:
+L'URI complet d'un lien demandé a la forme suivante :
 
 ```nginx
 /prefix/hash/link
 ```
 
-where *hash* is a hexadecimal representation of the MD5 hash computed for the concatenation of the link and secret word, and *prefix* is an arbitrary string without slashes.
+où *hash* est la représentation hexadécimale de l'empreinte MD5 calculée sur la concaténation du lien et du mot secret, et *prefix* une chaîne quelconque sans barre oblique.
 
-If the requested link passes the authenticity check, the `$secure_link` variable is set to the link extracted from the request URI. Otherwise, the `$secure_link` variable is set to an empty string.
+Si le lien demandé passe la vérification d'authenticité, la variable `$secure_link` reçoit le lien extrait de l'URI de la requête ; sinon, une chaîne vide.
 
 Exemple :
 
@@ -47,9 +44,9 @@ location /secure/ {
 }
 ```
 
-A request of “`/p/5e814704a28d9bc1914ff19fa0c4a00a/link`” will be internally redirected to “`/secure/link`”.
+Une requête « `/p/5e814704a28d9bc1914ff19fa0c4a00a/link` » est redirigée en interne vers « `/secure/link` ».
 
-On UNIX, the hash value for this example can be obtained as:
+Sous UNIX, l'empreinte de cet exemple s'obtient ainsi :
 
 ```nginx
 echo -n 'linksecret' | openssl md5 -hex

@@ -1,12 +1,9 @@
 ---
 title: "js_load_http_native_module"
-description: "Directive nginx js_load_http_native_module (ngx_http_js_module) — Loads a native module (shared library) for use in HTTP JavaScript code. The directive is QuickJS-only and is not available when using the njs built-in JavaScript engine. The path parameter specifies…"
+description: "Directive nginx js_load_http_native_module (ngx_http_js_module) — Charge un module natif (bibliothèque partagée) utilisable dans le code JavaScript HTTP. Cette directive est réservée à QuickJS et n'est pas disponible avec le moteur JavaScript njs intégré. Le…"
 tags: [nginx, directive, ngx_http_js_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Loads a [[10-guides/04-njs/native-modules|native module]] (shared library) for use in HTTP JavaScript code. The directive is [[10-guides/04-njs/engine|QuickJS]]-only and is not available when using the njs built-in JavaScript engine.
+Charge un [[10-guides/04-njs/native-modules|module natif]] (bibliothèque partagée) utilisable dans le code JavaScript HTTP. Cette directive est réservée à [[10-guides/04-njs/engine|QuickJS]] et n'est pas disponible avec le moteur JavaScript njs intégré.
 
-The *path* parameter specifies the absolute path to the shared library file. The optional `as` *name* parameter provides an alias name for importing the module in JavaScript code. If not specified, the module can be imported using its filename.
+Le paramètre *path* indique le chemin absolu du fichier de bibliothèque partagée. Le paramètre facultatif `as` *name* donne un alias pour importer le module dans le code JavaScript ; sinon, le module s'importe par son nom de fichier.
 
 Exemple :
 
@@ -34,7 +31,7 @@ http {
 }
 ```
 
-In JavaScript code:
+Dans le code JavaScript :
 
 ```nginx
 // Import by filename
@@ -48,7 +45,7 @@ let result = mylib.add(5, 10);
 ```
 
 > [!NOTE]
-> For security reasons, this directive is only allowed in the `main` configuration context. Native modules run with full process privileges; use absolute paths and ensure proper code review.
+> Pour des raisons de sécurité, cette directive n'est autorisée que dans le contexte de configuration `main`. Les modules natifs s'exécutent avec tous les privilèges du processus : utilisez des chemins absolus et faites relire le code.
 
 ---
 

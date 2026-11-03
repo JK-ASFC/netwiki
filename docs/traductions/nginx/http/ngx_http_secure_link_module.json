@@ -1,0 +1,23 @@
+{
+ "0322725c083f": "Le lien « `/s/link?md5=_e4Nc3iduzkWRm01TBBNYw&expires=2147483647` » restreint l'accès à « `/s/link` » au client d'adresse IP 127.0.0.1. Sa durée de vie est limitée au 19 janvier 2038 (GMT).",
+ "056724170b3d": "La somme de contrôle extraite de la chaîne est comparée à l'empreinte MD5 de l'expression définie par la directive [[12-directives/secure-link-md5|secure_link_md5]]. Si elles diffèrent, la variable `$secure_link` vaut une chaîne vide. Si elles sont identiques, la durée de vie du lien est vérifiée : si elle est limitée et dépassée, `$secure_link` vaut « `0` » ; sinon, « `1` ». L'empreinte MD5 transmise dans la requête est encodée en [base64url](https://datatracker.ietf.org/doc/html/rfc4648#section-5).",
+ "1be06b961037": "Sous UNIX, la valeur de l'argument *md5* s'obtient ainsi :",
+ "1e62550cb404": "Le module `ngx_http_secure_link_module` (0.7.18) sert à vérifier l'authenticité des liens demandés, à protéger les ressources contre les accès non autorisés et à limiter la durée de vie des liens.",
+ "2797239c3f32": "Définit l'expression dont l'empreinte MD5 est calculée et comparée à la valeur transmise dans la requête.",
+ "2b9d26bb3c76": "Le module propose deux modes de fonctionnement. Le premier, activé par la directive [[12-directives/secure-link-secret|secure_link_secret]], sert à vérifier l'authenticité des liens et à protéger les ressources contre les accès non autorisés. Le second (0.8.50), activé par les directives [[12-directives/secure-link|secure_link]] et [[12-directives/secure-link-md5|secure_link_md5]], sert aussi à limiter la durée de vie des liens.",
+ "2c26c1a9c070": "Sous UNIX, l'empreinte de cet exemple s'obtient ainsi :",
+ "39e3724bb15e": "Durée de vie d'un lien transmise dans la requête ; à utiliser uniquement dans la directive [[12-directives/secure-link-md5|secure_link_md5]].",
+ "4b0c75dfbf38": "L'URI complet d'un lien demandé a la forme suivante :",
+ "5b33d4afe1a7": "Définit une chaîne avec variables d'où sont extraites la somme de contrôle et la durée de vie du lien.",
+ "654733a7ad33": "Résultat de la vérification d'un lien. La valeur dépend du mode de fonctionnement choisi.",
+ "6a1aa493c31b": "Si le lien demandé passe la vérification d'authenticité, la variable `$secure_link` reçoit le lien extrait de l'URI de la requête ; sinon, une chaîne vide.",
+ "6ff155a16e10": "Pour empêcher les accès non autorisés, l'expression peut contenir des informations sur le client, comme son adresse et la version de son navigateur.",
+ "716215d59f77": "Une requête « `/p/5e814704a28d9bc1914ff19fa0c4a00a/link` » est redirigée en interne vers « `/secure/link` ».",
+ "870618c7beb5": "Définit le mot secret (*word*) utilisé pour vérifier l'authenticité des liens demandés.",
+ "8b13bdc357e5": "Si le lien a une durée de vie limitée, l'heure d'expiration s'exprime en secondes depuis l'Epoch (Thu, 01 Jan 1970 00:00:00 GMT). Elle figure dans l'expression après l'empreinte MD5, séparée par une virgule. L'heure d'expiration transmise dans la requête est disponible dans la variable `$secure_link_expires` pour la directive [[12-directives/secure-link-md5|secure_link_md5]]. Sans heure d'expiration, le lien a une durée de vie illimitée.",
+ "bc5e21539a13": "L'authenticité d'un lien est vérifiée en comparant la somme de contrôle transmise dans la requête à celle calculée pour la requête. Si le lien a une durée de vie limitée et qu'elle est dépassée, il est considéré comme périmé. Le résultat de ces vérifications est disponible dans la variable `$secure_link`.",
+ "cc3a8d4dc079": "Les variables utilisées dans *expression* sont généralement liées à la requête ; voir l'[[12-directives/secure-link-md5|exemple]] ci-dessous.",
+ "e19e29da75f3": "où *hash* est la représentation hexadécimale de l'empreinte MD5 calculée sur la concaténation du lien et du mot secret, et *prefix* une chaîne quelconque sans barre oblique.",
+ "e9a9c6454714": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_secure_link_module`.",
+ "f58a2c7f33c3": "L'expression doit contenir la partie protégée du lien (la ressource) et un ingrédient secret. Si le lien a une durée de vie limitée, elle doit aussi contenir `$secure_link_expires`."
+}

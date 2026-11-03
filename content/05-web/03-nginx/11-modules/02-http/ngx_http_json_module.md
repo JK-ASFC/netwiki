@@ -1,18 +1,15 @@
 ---
 title: "ngx_http_json_module"
-description: "Module nginx ngx_http_json_module — The ngx_http_json_module module (1.31.5) extracts values from a JSON document stored in a variable and makes them available as variables."
+description: "Module nginx ngx_http_json_module — Le module ngx_http_json_module (1.31.5) extrait des valeurs d'un document JSON stocké dans une variable et les rend disponibles sous forme de variables."
 tags: [nginx, module, ngx_http_json_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_json_module` (1.31.5) extrait des valeurs d'un document JSON stocké dans une variable et les rend disponibles sous forme de variables.
 
-The `ngx_http_json_module` module (1.31.5) extracts values from a JSON document stored in a variable and makes them available as variables.
+Le document n'est analysé qu'une fois par requête, quel que soit le nombre de variables extraites. L'analyse a lieu au premier accès à l'une de ces variables.
 
-A document is parsed only once per request, no matter how many variables are extracted from it. Parsing is performed on the first access to any of these variables.
-
-This module is not built by default, it should be enabled with the `--with-http_json_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_json_module`.
 
 ## Exemple de configuration
 
