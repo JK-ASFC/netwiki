@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_scgi_module"
-description: "Module nginx ngx_http_scgi_module — The ngx_http_scgi_module module allows passing requests to an SCGI server."
+description: "Module nginx ngx_http_scgi_module — Le module ngx_http_scgi_module permet de transmettre les requêtes à un serveur SCGI."
 tags: [nginx, module, ngx_http_scgi_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_scgi_module` module allows passing requests to an SCGI server.
+Le module `ngx_http_scgi_module` permet de transmettre les requêtes à un serveur SCGI.
 
 ## Exemple de configuration
 

@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_pass_header"
-description: "Directive nginx fastcgi_pass_header (ngx_http_fastcgi_module) — Permits passing otherwise disabled header fields from a FastCGI server to a client."
+description: "Directive nginx fastcgi_pass_header (ngx_http_fastcgi_module) — Autorise la transmission au client de champs d'en-tête du serveur FastCGI normalement masqués."
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Permits passing [[12-directives/fastcgi-hide-header|otherwise disabled]] header fields from a FastCGI server to a client.
+Autorise la transmission au client de champs d'en-tête du serveur FastCGI [[12-directives/fastcgi-hide-header|normalement masqués]].
 
 ---
 

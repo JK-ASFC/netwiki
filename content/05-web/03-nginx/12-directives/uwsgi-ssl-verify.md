@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_ssl_verify"
-description: "Directive nginx uwsgi_ssl_verify (ngx_http_uwsgi_module) — Enables or disables verification of the secured uwsgi server certificate."
+description: "Directive nginx uwsgi_ssl_verify (ngx_http_uwsgi_module) — Active ou désactive la vérification du certificat du serveur uwsgi sécurisé."
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables verification of the secured uwsgi server certificate.
+Active ou désactive la vérification du certificat du serveur uwsgi sécurisé.
 
 ---
 

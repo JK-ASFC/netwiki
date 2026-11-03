@@ -1,12 +1,9 @@
 ---
 title: "ssl_protocols (ngx_http_ssl_module)"
-description: "Directive nginx ssl_protocols (ngx_http_ssl_module) — Enables the specified protocols. Si la directive est indiquée au niveau server, la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « Choix du serveur virtuel ».…"
+description: "Directive nginx ssl_protocols (ngx_http_ssl_module) — Active les protocoles indiqués. Si la directive est indiquée au niveau server, la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « Choix du serveur virtuel ».…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,15 +14,15 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the specified protocols.
+Active les protocoles indiqués.
 
 Si la directive est indiquée au niveau [[12-directives/server-http-core|server]], la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « [[10-guides/02-http/server-names|Choix du serveur virtuel]] ».
 
 > [!NOTE]
-> The `TLSv1.1` and `TLSv1.2` parameters (1.1.13, 1.0.12) work only when OpenSSL 1.0.1 or higher is used.
+> Les paramètres `TLSv1.1` et `TLSv1.2` (1.1.13, 1.0.12) ne fonctionnent qu'avec OpenSSL 1.0.1 ou plus récent.
 
 > [!NOTE]
-> The `TLSv1.3` parameter (1.13.0) works only when OpenSSL 1.1.1 or higher is used.
+> Le paramètre `TLSv1.3` (1.13.0) ne fonctionne qu'avec OpenSSL 1.1.1 ou plus récent.
 
 > [!NOTE]
 > Le paramètre `TLSv1.3` est utilisé par défaut depuis la version 1.23.4.

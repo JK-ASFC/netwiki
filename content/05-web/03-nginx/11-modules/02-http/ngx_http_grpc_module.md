@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_grpc_module"
-description: "Module nginx ngx_http_grpc_module — The ngx_http_grpc_module module allows passing requests to a gRPC server (1.13.10). The module requires the ngx_http_v2_module module."
+description: "Module nginx ngx_http_grpc_module — Le module ngx_http_grpc_module permet de transmettre les requêtes à un serveur gRPC (1.13.10). Il nécessite le module ngx_http_v2_module."
 tags: [nginx, module, ngx_http_grpc_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_grpc_module` module allows passing requests to a gRPC server (1.13.10). The module requires the [[11-modules/02-http/ngx_http_v2_module|ngx_http_v2_module]] module.
+Le module `ngx_http_grpc_module` permet de transmettre les requêtes à un serveur gRPC (1.13.10). Il nécessite le module [[11-modules/02-http/ngx_http_v2_module|ngx_http_v2_module]].
 
 ## Exemple de configuration
 

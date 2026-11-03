@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_pass_request_headers"
-description: "Directive nginx fastcgi_pass_request_headers (ngx_http_fastcgi_module) — Indicates whether the header fields of the original request are passed to the FastCGI server. See also the fastcgi_pass_request_body directive."
+description: "Directive nginx fastcgi_pass_request_headers (ngx_http_fastcgi_module) — Indique si les champs d'en-tête de la requête d'origine sont transmis au serveur FastCGI. Voir aussi la directive fastcgi_pass_request_body."
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Indicates whether the header fields of the original request are passed to the FastCGI server. See also the [[12-directives/fastcgi-pass-request-body|fastcgi_pass_request_body]] directive.
+Indique si les champs d'en-tête de la requête d'origine sont transmis au serveur FastCGI. Voir aussi la directive [[12-directives/fastcgi-pass-request-body|fastcgi_pass_request_body]].
 
 ---
 

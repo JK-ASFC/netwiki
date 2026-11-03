@@ -1,12 +1,9 @@
 ---
 title: "grpc_ssl_name"
-description: "Directive nginx grpc_ssl_name (ngx_http_grpc_module) — Allows overriding the server name used to verify the certificate of the gRPC SSL server and to be passed through SNI when establishing a connection with the gRPC SSL server. By default, the host part…"
+description: "Directive nginx grpc_ssl_name (ngx_http_grpc_module) — Permet de remplacer le nom de serveur utilisé pour vérifier le certificat du serveur gRPC SSL et transmis via SNI lors de l'établissement de la connexion avec ce serveur. Par défaut, la partie hôte…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Allows overriding the server name used to [[12-directives/grpc-ssl-verify|verify]] the certificate of the gRPC SSL server and to be [[12-directives/grpc-ssl-server-name|passed through SNI]] when establishing a connection with the gRPC SSL server.
+Permet de remplacer le nom de serveur utilisé pour [[12-directives/grpc-ssl-verify|vérifier]] le certificat du serveur gRPC SSL et [[12-directives/grpc-ssl-server-name|transmis via SNI]] lors de l'établissement de la connexion avec ce serveur.
 
-By default, the host part from [[12-directives/grpc-pass|grpc_pass]] is used.
+Par défaut, la partie hôte de [[12-directives/grpc-pass|grpc_pass]] est utilisée.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "scgi_buffering"
-description: "Directive nginx scgi_buffering (ngx_http_scgi_module) — Enables or disables buffering of responses from the SCGI server. When buffering is enabled, nginx receives a response from the SCGI server as soon as possible, saving it into the buffers set by the…"
+description: "Directive nginx scgi_buffering (ngx_http_scgi_module) — Active ou désactive la mise en tampon des réponses du serveur SCGI. Lorsque la mise en tampon est activée, nginx reçoit la réponse du serveur SCGI le plus vite possible et la conserve dans les…"
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables buffering of responses from the SCGI server.
+Active ou désactive la mise en tampon des réponses du serveur SCGI.
 
-When buffering is enabled, nginx receives a response from the SCGI server as soon as possible, saving it into the buffers set by the [[12-directives/scgi-buffer-size|scgi_buffer_size]] and [[12-directives/scgi-buffers|scgi_buffers]] directives. If the whole response does not fit into memory, a part of it can be saved to a [[12-directives/scgi-temp-path|temporary file]] on the disk. Writing to temporary files is controlled by the [[12-directives/scgi-max-temp-file-size|scgi_max_temp_file_size]] and [[12-directives/scgi-temp-file-write-size|scgi_temp_file_write_size]] directives.
+Lorsque la mise en tampon est activée, nginx reçoit la réponse du serveur SCGI le plus vite possible et la conserve dans les tampons définis par les directives [[12-directives/scgi-buffer-size|scgi_buffer_size]] et [[12-directives/scgi-buffers|scgi_buffers]]. Si toute la réponse ne tient pas en mémoire, une partie peut être enregistrée dans un [[12-directives/scgi-temp-path|fichier temporaire]] sur le disque. L'écriture dans les fichiers temporaires est contrôlée par les directives [[12-directives/scgi-max-temp-file-size|scgi_max_temp_file_size]] et [[12-directives/scgi-temp-file-write-size|scgi_temp_file_write_size]].
 
-When buffering is disabled, the response is passed to a client synchronously, immediately as it is received. nginx will not try to read the whole response from the SCGI server. The maximum size of the data that nginx can receive from the server at a time is set by the [[12-directives/scgi-buffer-size|scgi_buffer_size]] directive.
+Lorsque la mise en tampon est désactivée, la réponse est transmise au client de façon synchrone, dès sa réception. nginx ne tente pas de lire toute la réponse du serveur SCGI. La quantité maximale de données que nginx peut recevoir du serveur en une fois est définie par la directive [[12-directives/scgi-buffer-size|scgi_buffer_size]].
 
-Buffering can also be enabled or disabled by passing “`yes`” or “`no`” in the `X-Accel-Buffering` response header field. This capability can be disabled using the [[12-directives/scgi-ignore-headers|scgi_ignore_headers]] directive.
+La mise en tampon peut aussi être activée ou désactivée en transmettant « `yes` » ou « `no` » dans le champ d'en-tête de réponse `X-Accel-Buffering`. Cette possibilité peut être désactivée avec la directive [[12-directives/scgi-ignore-headers|scgi_ignore_headers]].
 
 ---
 

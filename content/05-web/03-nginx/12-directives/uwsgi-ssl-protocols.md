@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_ssl_protocols"
-description: "Directive nginx uwsgi_ssl_protocols (ngx_http_uwsgi_module) — Enables the specified protocols for requests to a secured uwsgi server. NOTE Le paramètre TLSv1.3 est utilisé par défaut depuis la version 1.23.4."
+description: "Directive nginx uwsgi_ssl_protocols (ngx_http_uwsgi_module) — Active les protocoles indiqués pour les requêtes vers un serveur uwsgi sécurisé. NOTE Le paramètre TLSv1.3 est utilisé par défaut depuis la version 1.23.4."
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the specified protocols for requests to a secured uwsgi server.
+Active les protocoles indiqués pour les requêtes vers un serveur uwsgi sécurisé.
 
 > [!NOTE]
 > Le paramètre `TLSv1.3` est utilisé par défaut depuis la version 1.23.4.

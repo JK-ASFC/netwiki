@@ -1,12 +1,9 @@
 ---
 title: "grpc_hide_header"
-description: "Directive nginx grpc_hide_header (ngx_http_grpc_module) — By default, nginx does not pass the header fields Date, Server, and X-Accel-... from the response of a gRPC server to a client. The grpc_hide_header directive sets additional fields that will not be…"
+description: "Directive nginx grpc_hide_header (ngx_http_grpc_module) — Par défaut, nginx ne transmet pas au client les champs d'en-tête Date, Server et X-Accel-... de la réponse d'un serveur gRPC. La directive grpc_hide_header ajoute d'autres champs à ne pas…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-By default, nginx does not pass the header fields `Date`, `Server`, and `X-Accel-...` from the response of a gRPC server to a client. The `grpc_hide_header` directive sets additional fields that will not be passed. If, on the contrary, the passing of fields needs to be permitted, the [[12-directives/grpc-pass-header|grpc_pass_header]] directive can be used.
+Par défaut, nginx ne transmet pas au client les champs d'en-tête `Date`, `Server` et `X-Accel-...` de la réponse d'un serveur gRPC. La directive `grpc_hide_header` ajoute d'autres champs à ne pas transmettre. Pour au contraire autoriser la transmission de champs, utiliser la directive [[12-directives/grpc-pass-header|grpc_pass_header]].
 
 ---
 

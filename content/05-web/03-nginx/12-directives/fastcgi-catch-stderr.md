@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_catch_stderr"
-description: "Directive nginx fastcgi_catch_stderr (ngx_http_fastcgi_module) — Sets a string to search for in the error stream of a response received from a FastCGI server. If the string is found then it is considered that the FastCGI server has returned an invalid response.…"
+description: "Directive nginx fastcgi_catch_stderr (ngx_http_fastcgi_module) — Définit une chaîne à rechercher dans le flux d'erreurs d'une réponse reçue d'un serveur FastCGI. Si la chaîne (string) est trouvée, le serveur FastCGI est considéré comme ayant renvoyé une réponse…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a string to search for in the error stream of a response received from a FastCGI server. If the *string* is found then it is considered that the FastCGI server has returned an [[12-directives/fastcgi-next-upstream|invalid response]]. This allows handling application errors in nginx, for example:
+Définit une chaîne à rechercher dans le flux d'erreurs d'une réponse reçue d'un serveur FastCGI. Si la chaîne (*string*) est trouvée, le serveur FastCGI est considéré comme ayant renvoyé une [[12-directives/fastcgi-next-upstream|réponse non valide]]. Cela permet de traiter les erreurs applicatives dans nginx, par exemple :
 
 ```nginx
 location /php/ {

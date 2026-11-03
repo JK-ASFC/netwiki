@@ -1,12 +1,9 @@
 ---
 title: "grpc_ssl_certificate_key"
-description: "Directive nginx grpc_ssl_certificate_key (ngx_http_grpc_module) — Specifies a file with the secret key in the PEM format used for authentication to a gRPC SSL server. The value engine:name:id can be specified instead of the file, which loads a secret key with a…"
+description: "Directive nginx grpc_ssl_certificate_key (ngx_http_grpc_module) — Indique le fichier (file) contenant la clé secrète au format PEM utilisée pour s'authentifier auprès d'un serveur gRPC SSL. On peut indiquer engine:name:id à la place de file pour charger la clé…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with the secret key in the PEM format used for authentication to a gRPC SSL server.
+Indique le fichier (*file*) contenant la clé secrète au format PEM utilisée pour s'authentifier auprès d'un serveur gRPC SSL.
 
-The value `engine`:*name*:*id* can be specified instead of the *file*, which loads a secret key with a specified *id* from the OpenSSL engine *name*.
+On peut indiquer `engine`:*name*:*id* à la place de *file* pour charger la clé secrète d'identifiant *id* depuis le moteur OpenSSL *name*.
 
 On peut indiquer `store`:*scheme*:*id* à la place de *file* (1.29.0) pour charger la clé secrète d'identifiant *id* via le schéma d'URI *scheme* enregistré par un fournisseur OpenSSL, par exemple [`pkcs11`](https://datatracker.ietf.org/doc/html/rfc7512).
 

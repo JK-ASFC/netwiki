@@ -1,12 +1,9 @@
 ---
 title: "grpc_socket_keepalive"
-description: "Directive nginx grpc_socket_keepalive (ngx_http_grpc_module) — Configures the “TCP keepalive” behavior for outgoing connections to a gRPC server. By default, the operating system’s settings are in effect for the socket. If the directive is set to the value “on”,…"
+description: "Directive nginx grpc_socket_keepalive (ngx_http_grpc_module) — Configure le comportement « TCP keepalive » des connexions sortantes vers un serveur gRPC. Par défaut, les réglages du système d'exploitation s'appliquent au socket. Avec la valeur « on », l'option…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Configures the “TCP keepalive” behavior for outgoing connections to a gRPC server. By default, the operating system’s settings are in effect for the socket. If the directive is set to the value “`on`”, the `SO_KEEPALIVE` socket option is turned on for the socket.
+Configure le comportement « TCP keepalive » des connexions sortantes vers un serveur gRPC. Par défaut, les réglages du système d'exploitation s'appliquent au socket. Avec la valeur « `on` », l'option de socket `SO_KEEPALIVE` est activée.
 
 ---
 

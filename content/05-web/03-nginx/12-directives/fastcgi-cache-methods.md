@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_cache_methods"
-description: "Directive nginx fastcgi_cache_methods (ngx_http_fastcgi_module) — If the client request method is listed in this directive then the response will be cached. “GET” and “HEAD” methods are always added to the list, though it is recommended to specify them explicitly.…"
+description: "Directive nginx fastcgi_cache_methods (ngx_http_fastcgi_module) — Si la méthode de la requête du client figure dans cette directive, la réponse est mise en cache. Les méthodes « GET » et « HEAD » sont toujours ajoutées à la liste, mais il est recommandé de les…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-If the client request method is listed in this directive then the response will be cached. “`GET`” and “`HEAD`” methods are always added to the list, though it is recommended to specify them explicitly. See also the [[12-directives/fastcgi-no-cache|fastcgi_no_cache]] directive.
+Si la méthode de la requête du client figure dans cette directive, la réponse est mise en cache. Les méthodes « `GET` » et « `HEAD` » sont toujours ajoutées à la liste, mais il est recommandé de les indiquer explicitement. Voir aussi la directive [[12-directives/fastcgi-no-cache|fastcgi_no_cache]].
 
 ---
 

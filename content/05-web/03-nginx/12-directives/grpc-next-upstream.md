@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `grpc_next_upstream error \| timeout \| denied \| invalid_header \| http_500 \| http_502 \| http_503 \| http_504 \| http_403 \| http_404 \| http_429 \| non_idempotent \| off ...;` |
@@ -29,7 +26,7 @@ Indique dans quels cas une requête doit être transmise au serveur suivant :
 
 - **`denied`**
 
-  the server [[12-directives/grpc-allow-upstream|denied]] the connection (1.29.3);
+  le serveur a [[12-directives/grpc-allow-upstream|refusé]] la connexion (1.29.3) ;
 
   > [!NOTE]
   > Ce paramètre est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
@@ -64,11 +61,11 @@ Indique dans quels cas une requête doit être transmise au serveur suivant :
 
 - **`http_429`**
 
-  a server returned a response with the code 429;
+  le serveur a renvoyé une réponse de code 429 ;
 
 - **`non_idempotent`**
 
-  normally, requests with a [non-idempotent](https://datatracker.ietf.org/doc/html/rfc7231#section-4.2.2) method (`POST`, `LOCK`, `PATCH`) are not passed to the next server if a request has been sent to an upstream server; enabling this option explicitly allows retrying such requests;
+  normalement, les requêtes dont la méthode n'est pas [idempotente](https://datatracker.ietf.org/doc/html/rfc7231#section-4.2.2) (`POST`, `LOCK`, `PATCH`) ne sont pas transmises au serveur suivant si la requête a déjà été envoyée à un serveur amont ; cette option autorise explicitement à les réessayer ;
 
 - **`off`**
 
@@ -78,7 +75,7 @@ La requête ne peut être transmise au serveur suivant que si rien n'a encore é
 
 La directive définit aussi ce qui est considéré comme une [[11-modules/02-http/ngx_http_upstream_module|tentative échouée]] de communication avec un serveur. Les cas `error`, `timeout`, `denied` et `invalid_header` sont toujours considérés comme des échecs, même s'ils ne figurent pas dans la directive. Les cas `http_500`, `http_502`, `http_503`, `http_504` et `http_429` ne sont considérés comme des échecs que s'ils figurent dans la directive. Les cas `http_403` et `http_404` ne sont jamais considérés comme des échecs.
 
-Passing a request to the next server can be limited by [[12-directives/grpc-next-upstream-tries|the number of tries]] and by [[12-directives/grpc-next-upstream-timeout|time]].
+La transmission d'une requête au serveur suivant peut être limitée par le [[12-directives/grpc-next-upstream-tries|nombre de tentatives]] et par la [[12-directives/grpc-next-upstream-timeout|durée]].
 
 ---
 

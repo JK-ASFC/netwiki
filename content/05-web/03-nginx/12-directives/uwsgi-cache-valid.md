@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `uwsgi_cache_valid [code ...] time;` |
@@ -52,7 +49,7 @@ Les paramètres de mise en cache peuvent aussi être définis directement dans l
 
 - Si l'en-tête contient le champ `Vary` avec la valeur spéciale « `*` », la réponse n'est pas mise en cache (1.7.7). S'il contient le champ `Vary` avec une autre valeur, la réponse est mise en cache en tenant compte des champs d'en-tête de requête correspondants (1.7.7).
 
-Processing of one or more of these response header fields can be disabled using the [[12-directives/uwsgi-ignore-headers|uwsgi_ignore_headers]] directive.
+Le traitement d'un ou plusieurs de ces champs d'en-tête de réponse peut être désactivé avec la directive [[12-directives/uwsgi-ignore-headers|uwsgi_ignore_headers]].
 
 ---
 

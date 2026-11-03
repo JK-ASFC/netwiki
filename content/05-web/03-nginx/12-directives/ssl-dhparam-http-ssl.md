@@ -1,12 +1,9 @@
 ---
 title: "ssl_dhparam (ngx_http_ssl_module)"
-description: "Directive nginx ssl_dhparam (ngx_http_ssl_module) — Specifies a file with DH parameters for DHE ciphers. By default no parameters are set, and therefore DHE ciphers will not be used. NOTE Prior to version 1.11.0, builtin parameters were used by…"
+description: "Directive nginx ssl_dhparam (ngx_http_ssl_module) — Indique le fichier (file) contenant les paramètres DH pour les suites de chiffrement DHE. Par défaut, aucun paramètre n'est défini ; les suites DHE ne sont donc pas utilisées. NOTE Avant la version…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,12 +15,12 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with DH parameters for DHE ciphers.
+Indique le fichier (*file*) contenant les paramètres DH pour les suites de chiffrement DHE.
 
-By default no parameters are set, and therefore DHE ciphers will not be used.
+Par défaut, aucun paramètre n'est défini ; les suites DHE ne sont donc pas utilisées.
 
 > [!NOTE]
-> Prior to version 1.11.0, builtin parameters were used by default.
+> Avant la version 1.11.0, des paramètres intégrés étaient utilisés par défaut.
 
 ---
 

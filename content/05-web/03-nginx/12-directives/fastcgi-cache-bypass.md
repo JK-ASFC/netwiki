@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `fastcgi_cache_bypass string ...;` |
@@ -24,7 +21,7 @@ fastcgi_cache_bypass $cookie_nocache $arg_nocache$arg_comment;
 fastcgi_cache_bypass $http_pragma    $http_authorization;
 ```
 
-Can be used along with the [[12-directives/fastcgi-no-cache|fastcgi_no_cache]] directive.
+Peut s'utiliser avec la directive [[12-directives/fastcgi-no-cache|fastcgi_no_cache]].
 
 ---
 

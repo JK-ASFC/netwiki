@@ -1,29 +1,26 @@
 ---
 title: "ngx_http_ssl_module"
-description: "Module nginx ngx_http_ssl_module — The ngx_http_ssl_module module provides the necessary support for HTTPS."
+description: "Module nginx ngx_http_ssl_module — Le module ngx_http_ssl_module fournit la prise en charge nécessaire à HTTPS."
 tags: [nginx, module, ngx_http_ssl_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_ssl_module` fournit la prise en charge nécessaire à HTTPS.
 
-The `ngx_http_ssl_module` module provides the necessary support for HTTPS.
-
-This module is not built by default, it should be enabled with the `--with-http_ssl_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_ssl_module`.
 
 > [!NOTE]
-> This module requires the [OpenSSL](http://www.openssl.org) library.
+> Ce module nécessite la bibliothèque [OpenSSL](http://www.openssl.org).
 
 ## Exemple de configuration
 
-To reduce the processor load, it is recommended to
+Pour réduire la charge du processeur, il est recommandé de
 
-- set the number of [[12-directives/worker-processes|worker processes]] equal to the number of processors,
-- enable [[12-directives/keepalive-timeout-http-core|keep-alive]] connections,
-- enable the shared session cache,
-- disable the built-in session cache,
-- and possibly increase the session [[12-directives/ssl-session-timeout-http-ssl|lifetime]] (by default, 5 minutes):
+- régler le nombre de [[12-directives/worker-processes|processus de travail]] sur le nombre de processeurs,
+- activer les connexions [[12-directives/keepalive-timeout-http-core|persistantes]],
+- activer le cache de sessions partagé,
+- désactiver le cache de sessions intégré,
+- et éventuellement augmenter la [[12-directives/ssl-session-timeout-http-ssl|durée de vie]] des sessions (5 minutes par défaut) :
 
 ```nginx
 worker_processes auto;
@@ -47,23 +44,23 @@ http {
     }
 ```
 
-## Error Processing
+## Traitement des erreurs
 
-The `ngx_http_ssl_module` module supports several non-standard error codes that can be used for redirects using the [[12-directives/error-page|error_page]] directive:
+Le module `ngx_http_ssl_module` prend en charge plusieurs codes d'erreur non standard utilisables pour des redirections avec la directive [[12-directives/error-page|error_page]] :
 
 - **495**
 
-  an error has occurred during the client certificate verification;
+  une erreur s'est produite lors de la vérification du certificat du client ;
 
 - **496**
 
-  a client has not presented the required certificate;
+  le client n'a pas présenté le certificat exigé ;
 
 - **497**
 
-  a regular request has been sent to the HTTPS port.
+  une requête ordinaire a été envoyée sur le port HTTPS.
 
-The redirection happens after the request is fully parsed and the variables, such as `$request_uri`, `$uri`, `$args` and others, are available.
+La redirection a lieu après l'analyse complète de la requête ; les variables comme `$request_uri`, `$uri`, `$args` et les autres sont alors disponibles.
 
 ## Directives
 

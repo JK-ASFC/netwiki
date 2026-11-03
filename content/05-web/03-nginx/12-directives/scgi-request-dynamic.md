@@ -1,12 +1,9 @@
 ---
 title: "scgi_request_dynamic"
-description: "Directive nginx scgi_request_dynamic (ngx_http_scgi_module) — Enables or disables creation of a separate request instance for each SCGI server. By default, a single request is used for all SCGI servers. If enabled, a separate request instance is created,…"
+description: "Directive nginx scgi_request_dynamic (ngx_http_scgi_module) — Active ou désactive la création d'une instance de requête distincte pour chaque serveur SCGI. Par défaut, une seule requête sert pour tous les serveurs SCGI. Si l'option est activée, une instance…"
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables creation of a separate request instance for each SCGI server. By default, a single request is used for all SCGI servers. If enabled, a separate request instance is created, allowing per-server request customization.
+Active ou désactive la création d'une instance de requête distincte pour chaque serveur SCGI. Par défaut, une seule requête sert pour tous les serveurs SCGI. Si l'option est activée, une instance distincte est créée, ce qui permet de personnaliser la requête par serveur.
 
 > [!NOTE]
 > Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).

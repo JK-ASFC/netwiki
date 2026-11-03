@@ -1,12 +1,9 @@
 ---
 title: "ssl_stapling (ngx_http_ssl_module)"
-description: "Directive nginx ssl_stapling (ngx_http_ssl_module) — Enables or disables stapling of OCSP responses by the server. Example: nginx ssl_stapling on; resolver 192.0.2.1; For the OCSP stapling to work, the certificate of the server certificate issuer…"
+description: "Directive nginx ssl_stapling (ngx_http_ssl_module) — Active ou désactive l'agrafage des réponses OCSP (OCSP stapling) par le serveur. Exemple : nginx ssl_stapling on; resolver 192.0.2.1; Pour que l'agrafage OCSP fonctionne, le certificat de l'émetteur…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,16 +15,16 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables [stapling of OCSP responses](https://datatracker.ietf.org/doc/html/rfc6066#section-8) by the server. Example:
+Active ou désactive l'[agrafage des réponses OCSP](https://datatracker.ietf.org/doc/html/rfc6066#section-8) (*OCSP stapling*) par le serveur. Exemple :
 
 ```nginx
 ssl_stapling on;
 resolver 192.0.2.1;
 ```
 
-For the OCSP stapling to work, the certificate of the server certificate issuer should be known. If the [[12-directives/ssl-certificate-http-ssl|ssl_certificate]] file does not contain intermediate certificates, the certificate of the server certificate issuer should be present in the [[12-directives/ssl-trusted-certificate-http-ssl|ssl_trusted_certificate]] file.
+Pour que l'agrafage OCSP fonctionne, le certificat de l'émetteur du certificat du serveur doit être connu. Si le fichier [[12-directives/ssl-certificate-http-ssl|ssl_certificate]] ne contient pas les certificats intermédiaires, le certificat de l'émetteur doit figurer dans le fichier [[12-directives/ssl-trusted-certificate-http-ssl|ssl_trusted_certificate]].
 
-For a resolution of the OCSP responder hostname, the [[12-directives/resolver-http-core|resolver]] directive should also be specified.
+Pour résoudre le nom d'hôte du répondeur OCSP, la directive [[12-directives/resolver-http-core|resolver]] doit aussi être indiquée.
 
 ---
 

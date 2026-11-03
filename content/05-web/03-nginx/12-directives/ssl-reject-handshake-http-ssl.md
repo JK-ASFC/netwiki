@@ -1,12 +1,9 @@
 ---
 title: "ssl_reject_handshake (ngx_http_ssl_module)"
-description: "Directive nginx ssl_reject_handshake (ngx_http_ssl_module) — If enabled, SSL handshakes in the server block will be rejected. For example, in the following configuration, SSL handshakes with server names other than example.com are rejected: nginx server {…"
+description: "Directive nginx ssl_reject_handshake (ngx_http_ssl_module) — Si cette option est activée, les négociations SSL dans le bloc server sont rejetées. Par exemple, dans la configuration suivante, les négociations SSL avec un nom de serveur autre que example.com…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-If enabled, SSL handshakes in the [[12-directives/server-http-core|server]] block will be rejected.
+Si cette option est activée, les négociations SSL dans le bloc [[12-directives/server-http-core|server]] sont rejetées.
 
-For example, in the following configuration, SSL handshakes with server names other than `example.com` are rejected:
+Par exemple, dans la configuration suivante, les négociations SSL avec un nom de serveur autre que `example.com` sont rejetées :
 
 ```nginx
 server {

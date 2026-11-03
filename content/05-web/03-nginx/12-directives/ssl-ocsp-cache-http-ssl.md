@@ -1,12 +1,9 @@
 ---
 title: "ssl_ocsp_cache (ngx_http_ssl_module)"
-description: "Directive nginx ssl_ocsp_cache (ngx_http_ssl_module) — Sets name and size of the cache that stores client certificates status for OCSP validation. The cache is shared between all worker processes. A cache with the same name can be used in several virtual…"
+description: "Directive nginx ssl_ocsp_cache (ngx_http_ssl_module) — Définit le nom (name) et la taille (size) du cache qui conserve l'état des certificats clients pour la validation OCSP. Le cache est partagé entre tous les processus de travail. Un cache de même nom…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets `name` and `size` of the cache that stores client certificates status for OCSP validation. The cache is shared between all worker processes. A cache with the same name can be used in several virtual servers.
+Définit le nom (`name`) et la taille (`size`) du cache qui conserve l'état des certificats clients pour la validation OCSP. Le cache est partagé entre tous les processus de travail. Un cache de même nom peut servir à plusieurs serveurs virtuels.
 
-The `off` parameter prohibits the use of the cache.
+Le paramètre `off` interdit l'utilisation du cache.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "ssl_trusted_certificate (ngx_http_ssl_module)"
-description: "Directive nginx ssl_trusted_certificate (ngx_http_ssl_module) — Specifies a file with trusted CA certificates in the PEM format used to verify client certificates and OCSP responses if ssl_stapling is enabled. In contrast to the certificate set by…"
+description: "Directive nginx ssl_trusted_certificate (ngx_http_ssl_module) — Indique le fichier (file) contenant les certificats d'autorités de confiance au format PEM utilisé pour vérifier les certificats des clients et les réponses OCSP si ssl_stapling est activé.…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with trusted CA certificates in the PEM format used to [[12-directives/ssl-verify-client-http-ssl|verify]] client certificates and OCSP responses if [[12-directives/ssl-stapling-http-ssl|ssl_stapling]] is enabled.
+Indique le fichier (*file*) contenant les certificats d'autorités de confiance au format PEM utilisé pour [[12-directives/ssl-verify-client-http-ssl|vérifier]] les certificats des clients et les réponses OCSP si [[12-directives/ssl-stapling-http-ssl|ssl_stapling]] est activé.
 
-In contrast to the certificate set by [[12-directives/ssl-client-certificate-http-ssl|ssl_client_certificate]], the list of these certificates will not be sent to clients.
+Contrairement au certificat défini par [[12-directives/ssl-client-certificate-http-ssl|ssl_client_certificate]], la liste de ces certificats n'est pas envoyée aux clients.
 
 ---
 

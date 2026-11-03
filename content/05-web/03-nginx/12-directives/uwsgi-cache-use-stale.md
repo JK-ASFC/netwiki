@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_cache_use_stale"
-description: "Directive nginx uwsgi_cache_use_stale (ngx_http_uwsgi_module) — Determines in which cases a stale cached response can be used when an error occurs during communication with the uwsgi server. The directive’s parameters match the parameters of the…"
+description: "Directive nginx uwsgi_cache_use_stale (ngx_http_uwsgi_module) — Détermine dans quels cas une réponse en cache périmée peut être utilisée lorsqu'une erreur survient pendant la communication avec le serveur uwsgi. Les paramètres de la directive correspondent à ceux…"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Determines in which cases a stale cached response can be used when an error occurs during communication with the uwsgi server. The directive’s parameters match the parameters of the [[12-directives/uwsgi-next-upstream|uwsgi_next_upstream]] directive.
+Détermine dans quels cas une réponse en cache périmée peut être utilisée lorsqu'une erreur survient pendant la communication avec le serveur uwsgi. Les paramètres de la directive correspondent à ceux de la directive [[12-directives/uwsgi-next-upstream|uwsgi_next_upstream]].
 
-The `error` parameter also permits using a stale cached response if a uwsgi server to process a request cannot be selected.
+Le paramètre `error` autorise aussi l'utilisation d'une réponse en cache périmée si aucun serveur uwsgi ne peut être choisi pour traiter la requête.
 
-Additionally, the `updating` parameter permits using a stale cached response if it is currently being updated. This allows minimizing the number of accesses to uwsgi servers when updating cached data.
+En outre, le paramètre `updating` autorise l'utilisation d'une réponse en cache périmée pendant sa mise à jour. Cela réduit le nombre d'accès aux serveurs uwsgi lors de la mise à jour des données en cache.
 
 L'utilisation d'une réponse en cache périmée peut aussi être autorisée directement dans l'en-tête de réponse, pendant un nombre de secondes donné après sa péremption (1.11.10). Cela a une priorité inférieure à celle des paramètres de la directive.
 
@@ -29,7 +26,7 @@ L'utilisation d'une réponse en cache périmée peut aussi être autorisée dire
 
 - L'extension « [stale-if-error](https://datatracker.ietf.org/doc/html/rfc5861#section-4) » du champ d'en-tête `Cache-Control` autorise l'utilisation d'une réponse en cache périmée en cas d'erreur.
 
-To minimize the number of accesses to uwsgi servers when populating a new cache element, the [[12-directives/uwsgi-cache-lock|uwsgi_cache_lock]] directive can be used.
+Pour réduire le nombre d'accès aux serveurs uwsgi lors de l'alimentation d'un nouvel élément de cache, on peut utiliser la directive [[12-directives/uwsgi-cache-lock|uwsgi_cache_lock]].
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "grpc_ssl_trusted_certificate"
-description: "Directive nginx grpc_ssl_trusted_certificate (ngx_http_grpc_module) — Specifies a file with trusted CA certificates in the PEM format used to verify the certificate of the gRPC SSL server."
+description: "Directive nginx grpc_ssl_trusted_certificate (ngx_http_grpc_module) — Indique le fichier (file) contenant les certificats d'autorités de confiance au format PEM utilisé pour vérifier le certificat du serveur gRPC SSL."
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with trusted CA certificates in the PEM format used to [[12-directives/grpc-ssl-verify|verify]] the certificate of the gRPC SSL server.
+Indique le fichier (*file*) contenant les certificats d'autorités de confiance au format PEM utilisé pour [[12-directives/grpc-ssl-verify|vérifier]] le certificat du serveur gRPC SSL.
 
 ---
 

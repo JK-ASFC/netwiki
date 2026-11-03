@@ -1,6 +1,6 @@
 ---
 title: "memcached_pass"
-description: "Directive nginx memcached_pass (ngx_http_memcached_module) — Sets the memcached server address. The address can be specified as a domain name or IP address, and a port: nginx memcached_pass localhost:11211; or as a UNIX-domain socket path: nginx memcached_pass…"
+description: "Directive nginx memcached_pass (ngx_http_memcached_module) — Sets the memcached server address. The address can be specified as a domain name or IP address, and a port: nginx memcached_pass localhost:11211; ou le chemin d'un socket de domaine UNIX : nginx…"
 tags: [nginx, directive, ngx_http_memcached_module]
 icon: settings-2
 ---
@@ -23,7 +23,7 @@ Sets the memcached server address. The address can be specified as a domain name
 memcached_pass localhost:11211;
 ```
 
-or as a UNIX-domain socket path:
+ou le chemin d'un socket de domaine UNIX :
 
 ```nginx
 memcached_pass unix:/tmp/memcached.socket;

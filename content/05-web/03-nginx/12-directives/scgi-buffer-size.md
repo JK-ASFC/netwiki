@@ -1,12 +1,9 @@
 ---
 title: "scgi_buffer_size"
-description: "Directive nginx scgi_buffer_size (ngx_http_scgi_module) — Sets the size of the buffer used for reading the first part of the response received from the SCGI server. This part usually contains a small response header; if it exceeds the buffer size, the…"
+description: "Directive nginx scgi_buffer_size (ngx_http_scgi_module) — Définit la taille (size) du tampon utilisé pour lire la première partie de la réponse reçue du serveur SCGI. Cette partie contient généralement un petit en-tête de réponse ; si elle dépasse la taille…"
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *size* of the buffer used for reading the first part of the response received from the SCGI server. This part usually contains a small response header; if it exceeds the buffer size, the response is considered invalid. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform. It can be made smaller, however.
+Définit la taille (*size*) du tampon utilisé pour lire la première partie de la réponse reçue du serveur SCGI. Cette partie contient généralement un petit en-tête de réponse ; si elle dépasse la taille du tampon, la réponse est considérée comme non valide. Par défaut, le tampon fait une page mémoire, soit 4K ou 8K selon la plate-forme. Il peut toutefois être réduit.
 
 ---
 

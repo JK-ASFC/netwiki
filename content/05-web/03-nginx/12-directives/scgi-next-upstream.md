@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `scgi_next_upstream error \| timeout \| denied \| invalid_header \| http_500 \| http_503 \| http_403 \| http_404 \| http_429 \| non_idempotent \| off ...;` |
@@ -29,7 +26,7 @@ Indique dans quels cas une requête doit être transmise au serveur suivant :
 
 - **`denied`**
 
-  the server [[12-directives/scgi-allow-upstream|denied]] the connection (1.29.3);
+  le serveur a [[12-directives/scgi-allow-upstream|refusé]] la connexion (1.29.3) ;
 
   > [!NOTE]
   > Ce paramètre est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
@@ -68,9 +65,9 @@ Indique dans quels cas une requête doit être transmise au serveur suivant :
 
 La requête ne peut être transmise au serveur suivant que si rien n'a encore été envoyé au client. Si une erreur ou un dépassement de délai survient au milieu du transfert de la réponse, il est impossible d'y remédier.
 
-The directive also defines what is considered an [[11-modules/02-http/ngx_http_upstream_module|unsuccessful attempt]] of communication with a server. The cases of `error`, `timeout`, `denied` and `invalid_header` are always considered unsuccessful attempts, even if they are not specified in the directive. The cases of `http_500`, `http_503`, and `http_429` are considered unsuccessful attempts only if they are specified in the directive. The cases of `http_403` and `http_404` are never considered unsuccessful attempts.
+La directive définit aussi ce qui est considéré comme une [[11-modules/02-http/ngx_http_upstream_module|tentative échouée]] de communication avec un serveur. Les cas `error`, `timeout`, `denied` et `invalid_header` sont toujours considérés comme des échecs, même s'ils ne figurent pas dans la directive. Les cas `http_500`, `http_503` et `http_429` ne sont considérés comme des échecs que s'ils figurent dans la directive. Les cas `http_403` et `http_404` ne sont jamais considérés comme des échecs.
 
-Passing a request to the next server can be limited by [[12-directives/scgi-next-upstream-tries|the number of tries]] and by [[12-directives/scgi-next-upstream-timeout|time]].
+La transmission d'une requête au serveur suivant peut être limitée par le [[12-directives/scgi-next-upstream-tries|nombre de tentatives]] et par la [[12-directives/scgi-next-upstream-timeout|durée]].
 
 ---
 

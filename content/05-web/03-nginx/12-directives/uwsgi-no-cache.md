@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `uwsgi_no_cache string ...;` |
@@ -24,7 +21,7 @@ uwsgi_no_cache $cookie_nocache $arg_nocache$arg_comment;
 uwsgi_no_cache $http_pragma    $http_authorization;
 ```
 
-Can be used along with the [[12-directives/uwsgi-cache-bypass|uwsgi_cache_bypass]] directive.
+Peut s'utiliser avec la directive [[12-directives/uwsgi-cache-bypass|uwsgi_cache_bypass]].
 
 ---
 

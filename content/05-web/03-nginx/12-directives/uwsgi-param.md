@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_param"
-description: "Directive nginx uwsgi_param (ngx_http_uwsgi_module) — Sets a parameter that should be passed to the uwsgi server. The value can contain text, variables, and their combination. These directives are inherited from the previous configuration level if and…"
+description: "Directive nginx uwsgi_param (ngx_http_uwsgi_module) — Définit un paramètre (parameter) à transmettre au serveur uwsgi. La valeur (value) peut contenir du texte, des variables ou une combinaison des deux. Ces directives sont héritées du niveau de…"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a *parameter* that should be passed to the uwsgi server. The *value* can contain text, variables, and their combination. These directives are inherited from the previous configuration level if and only if there are no `uwsgi_param` directives defined on the current level.
+Définit un paramètre (*parameter*) à transmettre au serveur uwsgi. La valeur (*value*) peut contenir du texte, des variables ou une combinaison des deux. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `uwsgi_param` n'est définie au niveau courant.
 
-Standard [CGI environment variables](https://datatracker.ietf.org/doc/html/rfc3875#section-4.1) should be provided as uwsgi headers, see the `uwsgi_params` file provided in the distribution:
+Les [variables d'environnement CGI](https://datatracker.ietf.org/doc/html/rfc3875#section-4.1) standard doivent être fournies sous forme d'en-têtes uwsgi ; voir le fichier `uwsgi_params` fourni avec la distribution :
 
 ```nginx
 location / {
@@ -28,7 +25,7 @@ location / {
 }
 ```
 
-If the directive is specified with `if_not_empty` (1.1.11) then such a parameter will be passed to the server only if its value is not empty:
+Si la directive porte `if_not_empty` (1.1.11), le paramètre n'est transmis au serveur que si sa valeur n'est pas vide :
 
 ```nginx
 uwsgi_param HTTPS $https if_not_empty;

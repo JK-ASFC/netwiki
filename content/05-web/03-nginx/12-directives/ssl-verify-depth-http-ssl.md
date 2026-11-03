@@ -1,12 +1,9 @@
 ---
 title: "ssl_verify_depth (ngx_http_ssl_module)"
-description: "Directive nginx ssl_verify_depth (ngx_http_ssl_module) — Sets the verification depth in the client certificates chain."
+description: "Directive nginx ssl_verify_depth (ngx_http_ssl_module) — Définit la profondeur de vérification dans la chaîne de certificats du client."
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the verification depth in the client certificates chain.
+Définit la profondeur de vérification dans la chaîne de certificats du client.
 
 ---
 

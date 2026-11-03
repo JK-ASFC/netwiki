@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_cache_use_stale"
-description: "Directive nginx fastcgi_cache_use_stale (ngx_http_fastcgi_module) — Determines in which cases a stale cached response can be used when an error occurs during communication with the FastCGI server. The directive’s parameters match the parameters of the…"
+description: "Directive nginx fastcgi_cache_use_stale (ngx_http_fastcgi_module) — Détermine dans quels cas une réponse en cache périmée peut être utilisée lorsqu'une erreur survient pendant la communication avec le serveur FastCGI. Les paramètres de la directive correspondent à…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Determines in which cases a stale cached response can be used when an error occurs during communication with the FastCGI server. The directive’s parameters match the parameters of the [[12-directives/fastcgi-next-upstream|fastcgi_next_upstream]] directive.
+Détermine dans quels cas une réponse en cache périmée peut être utilisée lorsqu'une erreur survient pendant la communication avec le serveur FastCGI. Les paramètres de la directive correspondent à ceux de la directive [[12-directives/fastcgi-next-upstream|fastcgi_next_upstream]].
 
-The `error` parameter also permits using a stale cached response if a FastCGI server to process a request cannot be selected.
+Le paramètre `error` autorise aussi l'utilisation d'une réponse en cache périmée si aucun serveur FastCGI ne peut être choisi pour traiter la requête.
 
-Additionally, the `updating` parameter permits using a stale cached response if it is currently being updated. This allows minimizing the number of accesses to FastCGI servers when updating cached data.
+En outre, le paramètre `updating` autorise l'utilisation d'une réponse en cache périmée pendant sa mise à jour. Cela réduit le nombre d'accès aux serveurs FastCGI lors de la mise à jour des données en cache.
 
 L'utilisation d'une réponse en cache périmée peut aussi être autorisée directement dans l'en-tête de réponse, pendant un nombre de secondes donné après sa péremption (1.11.10). Cela a une priorité inférieure à celle des paramètres de la directive.
 
@@ -29,7 +26,7 @@ L'utilisation d'une réponse en cache périmée peut aussi être autorisée dire
 
 - L'extension « [stale-if-error](https://datatracker.ietf.org/doc/html/rfc5861#section-4) » du champ d'en-tête `Cache-Control` autorise l'utilisation d'une réponse en cache périmée en cas d'erreur.
 
-To minimize the number of accesses to FastCGI servers when populating a new cache element, the [[12-directives/fastcgi-cache-lock|fastcgi_cache_lock]] directive can be used.
+Pour réduire le nombre d'accès aux serveurs FastCGI lors de l'alimentation d'un nouvel élément de cache, on peut utiliser la directive [[12-directives/fastcgi-cache-lock|fastcgi_cache_lock]].
 
 ---
 

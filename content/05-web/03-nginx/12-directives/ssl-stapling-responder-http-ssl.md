@@ -1,12 +1,9 @@
 ---
 title: "ssl_stapling_responder (ngx_http_ssl_module)"
-description: "Directive nginx ssl_stapling_responder (ngx_http_ssl_module) — Overrides the URL of the OCSP responder specified in the “Authority Information Access” certificate extension. Only “http://” OCSP responders are supported: nginx ssl_stapling_responder…"
+description: "Directive nginx ssl_stapling_responder (ngx_http_ssl_module) — Remplace l'URL du répondeur OCSP indiquée dans l'extension de certificat « Authority Information Access ». Seuls les répondeurs OCSP « http:// » sont pris en charge : nginx ssl_stapling_responder…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Overrides the URL of the OCSP responder specified in the “[Authority Information Access](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.1)” certificate extension.
+Remplace l'URL du répondeur OCSP indiquée dans l'extension de certificat « [Authority Information Access](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.1) ».
 
-Only “`http://`” OCSP responders are supported:
+Seuls les répondeurs OCSP « `http://` » sont pris en charge :
 
 ```nginx
 ssl_stapling_responder http://ocsp.example.com/;

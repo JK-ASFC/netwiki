@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_modifier2"
-description: "Directive nginx uwsgi_modifier2 (ngx_http_uwsgi_module) — Sets the value of the modifier2 field in the uwsgi packet header."
+description: "Directive nginx uwsgi_modifier2 (ngx_http_uwsgi_module) — Définit la valeur du champ modifier2 de l'en-tête de paquet uwsgi."
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the value of the `modifier2` field in the [uwsgi packet header](http://uwsgi-docs.readthedocs.org/en/latest/Protocol.html#uwsgi-packet-header).
+Définit la valeur du champ `modifier2` de l'[en-tête de paquet uwsgi](http://uwsgi-docs.readthedocs.org/en/latest/Protocol.html#uwsgi-packet-header).
 
 ---
 

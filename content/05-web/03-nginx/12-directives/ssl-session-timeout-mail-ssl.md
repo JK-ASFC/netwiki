@@ -1,12 +1,9 @@
 ---
 title: "ssl_session_timeout (ngx_mail_ssl_module)"
-description: "Directive nginx ssl_session_timeout (ngx_mail_ssl_module) — Specifies a time during which a client may reuse the session parameters."
+description: "Directive nginx ssl_session_timeout (ngx_mail_ssl_module) — Indique la durée pendant laquelle un client peut réutiliser les paramètres de session."
 tags: [nginx, directive, ngx_mail_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a time during which a client may reuse the session parameters.
+Indique la durée pendant laquelle un client peut réutiliser les paramètres de session.
 
 ---
 

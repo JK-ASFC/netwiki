@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_intercept_errors"
-description: "Directive nginx fastcgi_intercept_errors (ngx_http_fastcgi_module) — Determines whether FastCGI server responses with codes greater than or equal to 300 should be passed to a client or be intercepted and redirected to nginx for processing with the error_page directive."
+description: "Directive nginx fastcgi_intercept_errors (ngx_http_fastcgi_module) — Indique si les réponses du serveur FastCGI de code supérieur ou égal à 300 doivent être transmises au client, ou interceptées et confiées à nginx pour être traitées par la directive error_page."
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Determines whether FastCGI server responses with codes greater than or equal to 300 should be passed to a client or be intercepted and redirected to nginx for processing with the [[12-directives/error-page|error_page]] directive.
+Indique si les réponses du serveur FastCGI de code supérieur ou égal à 300 doivent être transmises au client, ou interceptées et confiées à nginx pour être traitées par la directive [[12-directives/error-page|error_page]].
 
 ---
 

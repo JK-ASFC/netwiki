@@ -1,12 +1,9 @@
 ---
 title: "scgi_cache_lock_age"
-description: "Directive nginx scgi_cache_lock_age (ngx_http_scgi_module) — If the last request passed to the SCGI server for populating a new cache element has not completed for the specified time, one more request may be passed to the SCGI server."
+description: "Directive nginx scgi_cache_lock_age (ngx_http_scgi_module) — Si la dernière requête transmise au serveur SCGI pour alimenter un nouvel élément de cache ne s'est pas terminée dans la durée (time) indiquée, une requête supplémentaire peut être transmise au…"
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-If the last request passed to the SCGI server for populating a new cache element has not completed for the specified *time*, one more request may be passed to the SCGI server.
+Si la dernière requête transmise au serveur SCGI pour alimenter un nouvel élément de cache ne s'est pas terminée dans la durée (*time*) indiquée, une requête supplémentaire peut être transmise au serveur SCGI.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "scgi_cache_path"
-description: "Directive nginx scgi_cache_path (ngx_http_scgi_module) — Sets the path and other parameters of a cache. Cache data are stored in files. The file name in a cache is a result of applying the MD5 function to the cache key. The levels parameter defines…"
+description: "Directive nginx scgi_cache_path (ngx_http_scgi_module) — Définit le chemin et les autres paramètres d'un cache. Les données du cache sont stockées dans des fichiers. Le nom d'un fichier du cache est le résultat de la fonction MD5 appliquée à la clé de…"
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the path and other parameters of a cache. Cache data are stored in files. The file name in a cache is a result of applying the MD5 function to the [[12-directives/scgi-cache-key|cache key]]. The `levels` parameter defines hierarchy levels of a cache: from 1 to 3, each level accepts values 1 or 2. For example, in the following configuration
+Définit le chemin et les autres paramètres d'un cache. Les données du cache sont stockées dans des fichiers. Le nom d'un fichier du cache est le résultat de la fonction MD5 appliquée à la [[12-directives/scgi-cache-key|clé de cache]]. Le paramètre `levels` définit les niveaux de hiérarchie du cache : de 1 à 3, chaque niveau acceptant les valeurs 1 ou 2. Par exemple, avec la configuration suivante
 
 ```nginx
 scgi_cache_path /data/nginx/cache levels=1:2 keys_zone=one:10m;
@@ -29,7 +26,7 @@ les noms des fichiers du cache ressemblent à ceci :
 /data/nginx/cache/c/29/b7f54b2df7773722d382f4809d65029c
 ```
 
-A cached response is first written to a temporary file, and then the file is renamed. Starting from version 0.8.9, temporary files and the cache can be put on different file systems. However, be aware that in this case a file is copied across two file systems instead of the cheap renaming operation. It is thus recommended that for any given location both cache and a directory holding temporary files are put on the same file system. A directory for temporary files is set based on the `use_temp_path` parameter (1.7.10). If this parameter is omitted or set to the value `on`, the directory set by the [[12-directives/scgi-temp-path|scgi_temp_path]] directive for the given location will be used. If the value is set to `off`, temporary files will be put directly in the cache directory.
+Une réponse mise en cache est d'abord écrite dans un fichier temporaire, puis le fichier est renommé. Depuis la version 0.8.9, les fichiers temporaires et le cache peuvent se trouver sur des systèmes de fichiers différents ; mais le fichier est alors copié d'un système de fichiers à l'autre au lieu d'un simple renommage, peu coûteux. Il est donc recommandé, pour un bloc location donné, de placer le cache et le répertoire des fichiers temporaires sur le même système de fichiers. Le répertoire des fichiers temporaires dépend du paramètre `use_temp_path` (1.7.10) : s'il est omis ou vaut `on`, le répertoire défini par la directive [[12-directives/scgi-temp-path|scgi_temp_path]] pour ce bloc location est utilisé ; s'il vaut `off`, les fichiers temporaires sont placés directement dans le répertoire du cache.
 
 En outre, toutes les clés actives et les informations sur les données sont conservées dans une zone de mémoire partagée dont le nom (*name*) et la taille (*size*) se règlent avec le paramètre `keys_zone`. Une zone d'un mégaoctet peut contenir environ 8 000 clés.
 
@@ -46,7 +43,7 @@ En outre, les paramètres suivants sont disponibles dans le cadre de notre [abon
 
 - **`purger`=`on`|`off`**
 
-  Instructs whether cache entries that match a [[12-directives/scgi-cache-purge|wildcard key]] will be removed from the disk by the cache purger (1.7.12). Setting the parameter to `on` (default is `off`) will activate the “cache purger” process that permanently iterates through all cache entries and deletes the entries that match the wildcard key.
+  Indique si les entrées du cache correspondant à une [[12-directives/scgi-cache-purge|clé générique]] sont supprimées du disque par le purgeur de cache (1.7.12). Avec la valeur `on` (par défaut `off`), le processus « purgeur de cache » parcourt en permanence toutes les entrées du cache et supprime celles qui correspondent à la clé générique.
 
 - **`purger_files`=*number***
 

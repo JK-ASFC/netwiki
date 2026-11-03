@@ -118,6 +118,7 @@ class Trad:
 
 
 TR = Trad()
+ALL_SEGMENTS = {}  # fichier → {empreinte: anglais}, pour --tous
 
 
 def h(text):
@@ -226,11 +227,15 @@ class Conv:
             return md
         self.total += 1
         k = h(md)
+        ALL_SEGMENTS.setdefault(self.rel, {})[k] = md
         fr = self.tr.get(k)
         if fr:
             return fr
         self.missing[k] = md
         return md
+
+    def __del__(self):
+        pass
 
     # ---- liens
     def wl(self, target, label):
@@ -596,6 +601,8 @@ if MODE == '--manquants':
         if segs:
             out[rel] = segs
     print(json.dumps(out, ensure_ascii=False, indent=0))
+elif MODE == '--tous':
+    print(json.dumps(ALL_SEGMENTS, ensure_ascii=False))
 elif MODE == '--stats':
     for rel in sorted(missing, key=lambda r: -len(missing[r])):
         if missing[rel]:

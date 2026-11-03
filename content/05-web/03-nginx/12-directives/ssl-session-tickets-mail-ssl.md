@@ -1,12 +1,9 @@
 ---
 title: "ssl_session_tickets (ngx_mail_ssl_module)"
-description: "Directive nginx ssl_session_tickets (ngx_mail_ssl_module) — Enables or disables session resumption through TLS session tickets."
+description: "Directive nginx ssl_session_tickets (ngx_mail_ssl_module) — Active ou désactive la reprise de session par tickets de session TLS."
 tags: [nginx, directive, ngx_mail_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables session resumption through [TLS session tickets](https://datatracker.ietf.org/doc/html/rfc5077).
+Active ou désactive la reprise de session par [tickets de session TLS](https://datatracker.ietf.org/doc/html/rfc5077).
 
 ---
 

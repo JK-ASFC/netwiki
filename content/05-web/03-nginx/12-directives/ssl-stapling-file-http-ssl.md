@@ -1,12 +1,9 @@
 ---
 title: "ssl_stapling_file (ngx_http_ssl_module)"
-description: "Directive nginx ssl_stapling_file (ngx_http_ssl_module) — When set, the stapled OCSP response will be taken from the specified file instead of querying the OCSP responder specified in the server certificate. The file should be in the DER format as produced…"
+description: "Directive nginx ssl_stapling_file (ngx_http_ssl_module) — Si cette directive est définie, la réponse OCSP agrafée est lue dans le fichier (file) indiqué au lieu d'interroger le répondeur OCSP désigné dans le certificat du serveur. Le fichier doit être au…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-When set, the stapled OCSP response will be taken from the specified *file* instead of querying the OCSP responder specified in the server certificate.
+Si cette directive est définie, la réponse OCSP agrafée est lue dans le fichier (*file*) indiqué au lieu d'interroger le répondeur OCSP désigné dans le certificat du serveur.
 
-The file should be in the DER format as produced by the “`openssl ocsp`” command.
+Le fichier doit être au format DER, tel que produit par la commande « `openssl ocsp` ».
 
 ---
 

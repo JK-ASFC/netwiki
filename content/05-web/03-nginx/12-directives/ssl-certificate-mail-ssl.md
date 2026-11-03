@@ -19,7 +19,7 @@ icon: settings-2
 
 Specifies a *file* with the certificate in the PEM format for the given server. If intermediate certificates should be specified in addition to a primary certificate, they should be specified in the same file in the following order: the primary certificate comes first, then the intermediate certificates. A secret key in the PEM format may be placed in the same file.
 
-Since version 1.11.0, this directive can be specified multiple times to load certificates of different types, for example, RSA and ECDSA:
+Depuis la version 1.11.0, cette directive peut être indiquée plusieurs fois pour charger des certificats de types différents, par exemple RSA et ECDSA :
 
 ```nginx
 server {
@@ -36,7 +36,7 @@ server {
 ```
 
 > [!NOTE]
-> Only OpenSSL 1.0.2 or higher supports separate [[10-guides/02-http/configuring-https-servers|certificate chains]] for different certificates. With older versions, only one certificate chain can be used.
+> Seul OpenSSL 1.0.2 ou plus récent prend en charge des [[10-guides/02-http/configuring-https-servers|chaînes de certificats]] distinctes pour différents certificats. Avec les versions plus anciennes, une seule chaîne peut être utilisée.
 
 The value `data`:*certificate* can be specified instead of the *file* (1.15.10), which loads a certificate without using intermediate files. Note that inappropriate use of this syntax may have its security implications, such as writing secret key data to [[12-directives/error-log|error log]].
 

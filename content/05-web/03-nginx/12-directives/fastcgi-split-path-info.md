@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_split_path_info"
-description: "Directive nginx fastcgi_split_path_info (ngx_http_fastcgi_module) — Defines a regular expression that captures a value for the $fastcgi_path_info variable. The regular expression should have two captures: the first becomes a value of the $fastcgi_script_name…"
+description: "Directive nginx fastcgi_split_path_info (ngx_http_fastcgi_module) — Définit une expression régulière qui capture une valeur pour la variable $fastcgi_path_info. L'expression régulière doit avoir deux captures : la première devient la valeur de la variable…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a regular expression that captures a value for the `$fastcgi_path_info` variable. The regular expression should have two captures: the first becomes a value of the `$fastcgi_script_name` variable, the second becomes a value of the `$fastcgi_path_info` variable. For example, with these settings
+Définit une expression régulière qui capture une valeur pour la variable `$fastcgi_path_info`. L'expression régulière doit avoir deux captures : la première devient la valeur de la variable `$fastcgi_script_name`, la seconde celle de `$fastcgi_path_info`. Par exemple, avec ces réglages
 
 ```nginx
 location ~ ^(.+\.php)(.*)$ {
@@ -26,7 +23,7 @@ location ~ ^(.+\.php)(.*)$ {
     fastcgi_param PATH_INFO       $fastcgi_path_info;
 ```
 
-and the “`/show.php/article/0001`” request, the `SCRIPT_FILENAME` parameter will be equal to “`/path/to/php/show.php`”, and the `PATH_INFO` parameter will be equal to “`/article/0001`”.
+et la requête « `/show.php/article/0001` », le paramètre `SCRIPT_FILENAME` vaut « `/path/to/php/show.php` » et le paramètre `PATH_INFO` vaut « `/article/0001` ».
 
 ---
 

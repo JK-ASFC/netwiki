@@ -1,12 +1,9 @@
 ---
 title: "scgi_socket_sndbuf"
-description: "Directive nginx scgi_socket_sndbuf (ngx_http_scgi_module) — Sets the send buffer size (the SO_SNDBUF option) for outgoing connections to an SCGI server. The special value 0 cancels the effect of the scgi_socket_sndbuf directive inherited from the previous…"
+description: "Directive nginx scgi_socket_sndbuf (ngx_http_scgi_module) — Définit la taille du tampon d'envoi (option SO_SNDBUF) des connexions sortantes vers un serveur SCGI. La valeur spéciale 0 annule l'effet de la directive scgi_socket_sndbuf héritée du niveau de…"
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the send buffer size (the `SO_SNDBUF` option) for outgoing connections to an SCGI server. The special value `0` cancels the effect of the `scgi_socket_sndbuf` directive inherited from the previous configuration level, which allows keeping the operating system’s settings in effect for the socket.
+Définit la taille du tampon d'envoi (option `SO_SNDBUF`) des connexions sortantes vers un serveur SCGI. La valeur spéciale `0` annule l'effet de la directive `scgi_socket_sndbuf` héritée du niveau de configuration précédent, ce qui laisse s'appliquer les réglages du système d'exploitation.
 
 ---
 

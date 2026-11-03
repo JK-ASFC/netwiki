@@ -1,12 +1,9 @@
 ---
 title: "ssl_buffer_size"
-description: "Directive nginx ssl_buffer_size (ngx_http_ssl_module) — Sets the size of the buffer used for sending data. By default, the buffer size is 16k, which corresponds to minimal overhead when sending big responses. To minimize Time To First Byte it may be…"
+description: "Directive nginx ssl_buffer_size (ngx_http_ssl_module) — Définit la taille du tampon utilisé pour envoyer les données. Par défaut, le tampon fait 16k, ce qui minimise le surcoût pour l'envoi de grosses réponses. Pour réduire le délai avant le premier octet…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the size of the buffer used for sending data.
+Définit la taille du tampon utilisé pour envoyer les données.
 
-By default, the buffer size is 16k, which corresponds to minimal overhead when sending big responses. To minimize Time To First Byte it may be beneficial to use smaller values, for example:
+Par défaut, le tampon fait 16k, ce qui minimise le surcoût pour l'envoi de grosses réponses. Pour réduire le délai avant le premier octet (*Time To First Byte*), il peut être utile de choisir une valeur plus petite, par exemple :
 
 ```nginx
 ssl_buffer_size 4k;

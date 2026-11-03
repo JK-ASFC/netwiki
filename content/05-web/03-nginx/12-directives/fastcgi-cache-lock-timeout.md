@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_cache_lock_timeout"
-description: "Directive nginx fastcgi_cache_lock_timeout (ngx_http_fastcgi_module) — Sets a timeout for fastcgi_cache_lock. When the time expires, the request will be passed to the FastCGI server, however, the response will not be cached. NOTE Avant la version 1.7.8, la réponse…"
+description: "Directive nginx fastcgi_cache_lock_timeout (ngx_http_fastcgi_module) — Définit un délai pour fastcgi_cache_lock. Une fois ce délai (time) écoulé, la requête est transmise au serveur FastCGI, mais la réponse n'est pas mise en cache. NOTE Avant la version 1.7.8, la…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a timeout for [[12-directives/fastcgi-cache-lock|fastcgi_cache_lock]]. When the *time* expires, the request will be passed to the FastCGI server, however, the response will not be cached.
+Définit un délai pour [[12-directives/fastcgi-cache-lock|fastcgi_cache_lock]]. Une fois ce délai (*time*) écoulé, la requête est transmise au serveur FastCGI, mais la réponse n'est pas mise en cache.
 
 > [!NOTE]
 > Avant la version 1.7.8, la réponse pouvait être mise en cache.

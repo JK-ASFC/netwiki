@@ -111,7 +111,7 @@ Auth-SMTP-To: RCPT TO: <postmaster@mail.example.com>
 For the SSL/TLS client connection (1.7.11), the `Auth-SSL` header is added, and `Auth-SSL-Verify` will contain the result of client certificate verification, if [[12-directives/ssl-verify-client-mail-ssl|enabled]]: “`SUCCESS`”, “`FAILED:`*reason*”, and “`NONE`” if a certificate was not present.
 
 > [!NOTE]
-> Prior to version 1.11.7, the “`FAILED`” result did not contain the *reason* string.
+> Avant la version 1.11.7, le résultat « `FAILED` » ne contenait pas la chaîne *reason*.
 
 When the client certificate was present, its details are passed in the following request headers: `Auth-SSL-Subject`, `Auth-SSL-Issuer`, `Auth-SSL-Serial`, and `Auth-SSL-Fingerprint`. If [[12-directives/auth-http-pass-client-cert|auth_http_pass_client_cert]] is enabled, the certificate itself is passed in the `Auth-SSL-Cert` header. The protocol and cipher of the established connection are passed in the `Auth-SSL-Protocol` and `Auth-SSL-Cipher` headers (1.21.2). The request will look as follows:
 

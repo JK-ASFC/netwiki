@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_ssl_verify_depth"
-description: "Directive nginx uwsgi_ssl_verify_depth (ngx_http_uwsgi_module) — Sets the verification depth in the secured uwsgi server certificates chain."
+description: "Directive nginx uwsgi_ssl_verify_depth (ngx_http_uwsgi_module) — Définit la profondeur de vérification dans la chaîne de certificats du serveur uwsgi sécurisé."
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the verification depth in the secured uwsgi server certificates chain.
+Définit la profondeur de vérification dans la chaîne de certificats du serveur uwsgi sécurisé.
 
 ---
 

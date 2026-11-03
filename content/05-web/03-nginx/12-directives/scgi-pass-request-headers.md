@@ -1,12 +1,9 @@
 ---
 title: "scgi_pass_request_headers"
-description: "Directive nginx scgi_pass_request_headers (ngx_http_scgi_module) — Indicates whether the header fields of the original request are passed to the SCGI server. See also the scgi_pass_request_body directive."
+description: "Directive nginx scgi_pass_request_headers (ngx_http_scgi_module) — Indique si les champs d'en-tête de la requête d'origine sont transmis au serveur SCGI. Voir aussi la directive scgi_pass_request_body."
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Indicates whether the header fields of the original request are passed to the SCGI server. See also the [[12-directives/scgi-pass-request-body|scgi_pass_request_body]] directive.
+Indique si les champs d'en-tête de la requête d'origine sont transmis au serveur SCGI. Voir aussi la directive [[12-directives/scgi-pass-request-body|scgi_pass_request_body]].
 
 ---
 

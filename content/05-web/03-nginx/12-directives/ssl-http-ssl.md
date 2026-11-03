@@ -1,12 +1,9 @@
 ---
 title: "ssl (ngx_http_ssl_module)"
-description: "Directive nginx ssl (ngx_http_ssl_module) — This directive was made obsolete in version 1.15.0 and was removed in version 1.25.1. The ssl parameter of the listen directive should be used instead."
+description: "Directive nginx ssl (ngx_http_ssl_module) — Cette directive est devenue obsolète en version 1.15.0 et a été supprimée en version 1.25.1. Utiliser à la place le paramètre ssl de la directive listen."
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-This directive was made obsolete in version 1.15.0 and was removed in version 1.25.1. The `ssl` parameter of the [[12-directives/listen-http-core|listen]] directive should be used instead.
+Cette directive est devenue obsolète en version 1.15.0 et a été supprimée en version 1.25.1. Utiliser à la place le paramètre `ssl` de la directive [[12-directives/listen-http-core|listen]].
 
 ---
 

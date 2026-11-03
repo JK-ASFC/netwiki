@@ -1,12 +1,9 @@
 ---
 title: "grpc_pass"
-description: "Directive nginx grpc_pass (ngx_http_grpc_module) — Sets the gRPC server address. The address can be specified as a domain name or IP address, and a port: nginx grpc_pass localhost:9000; or as a UNIX-domain socket path: nginx grpc_pass…"
+description: "Directive nginx grpc_pass (ngx_http_grpc_module) — Définit l'adresse du serveur gRPC. L'adresse peut être un nom de domaine ou une adresse IP, avec un port : nginx grpc_pass localhost:9000; ou le chemin d'un socket de domaine UNIX : nginx grpc_pass…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,25 +14,25 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the gRPC server address. The address can be specified as a domain name or IP address, and a port:
+Définit l'adresse du serveur gRPC. L'adresse peut être un nom de domaine ou une adresse IP, avec un port :
 
 ```nginx
 grpc_pass localhost:9000;
 ```
 
-or as a UNIX-domain socket path:
+ou le chemin d'un socket de domaine UNIX :
 
 ```nginx
 grpc_pass unix:/tmp/grpc.socket;
 ```
 
-Alternatively, the “`grpc://`” scheme can be used:
+On peut aussi utiliser le schéma « `grpc://` » :
 
 ```nginx
 grpc_pass grpc://127.0.0.1:9000;
 ```
 
-To use gRPC over SSL, the “`grpcs://`” scheme should be used:
+Pour utiliser gRPC sur SSL, utiliser le schéma « `grpcs://` » :
 
 ```nginx
 grpc_pass grpcs://127.0.0.1:443;
@@ -43,7 +40,7 @@ grpc_pass grpcs://127.0.0.1:443;
 
 Si un nom de domaine se résout en plusieurs adresses, elles sont toutes utilisées à tour de rôle. Une adresse peut aussi désigner un [[11-modules/02-http/ngx_http_upstream_module|groupe de serveurs]].
 
-Parameter value can contain variables (1.17.8). In this case, if an address is specified as a domain name, the name is searched among the described [[11-modules/02-http/ngx_http_upstream_module|server groups]], and, if not found, is determined using a [[12-directives/resolver-http-core|resolver]].
+La valeur du paramètre peut contenir des variables (1.17.8). Dans ce cas, si l'adresse est un nom de domaine, le nom est recherché parmi les [[11-modules/02-http/ngx_http_upstream_module|groupes de serveurs]] définis puis, s'il est introuvable, résolu à l'aide d'un [[12-directives/resolver-http-core|résolveur]].
 
 > [!NOTE]
 > Les champs de fin de réponse reçus d'un serveur amont sont transmis tels quels au client, sans interprétation.

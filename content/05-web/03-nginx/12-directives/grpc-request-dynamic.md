@@ -1,12 +1,9 @@
 ---
 title: "grpc_request_dynamic"
-description: "Directive nginx grpc_request_dynamic (ngx_http_grpc_module) — Enables or disables creation of a separate request instance for each gRPC server. By default, a single request is used for all gRPC servers. If enabled, a separate request instance is created,…"
+description: "Directive nginx grpc_request_dynamic (ngx_http_grpc_module) — Active ou désactive la création d'une instance de requête distincte pour chaque serveur gRPC. Par défaut, une seule requête sert pour tous les serveurs gRPC. Si l'option est activée, une instance…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables creation of a separate request instance for each gRPC server. By default, a single request is used for all gRPC servers. If enabled, a separate request instance is created, allowing per-server request customization. For example, the server-specific `Host` request header field can be set:
+Active ou désactive la création d'une instance de requête distincte pour chaque serveur gRPC. Par défaut, une seule requête sert pour tous les serveurs gRPC. Si l'option est activée, une instance distincte est créée, ce qui permet de personnaliser la requête par serveur. Par exemple, on peut définir un champ d'en-tête `Host` propre à chaque serveur :
 
 ```nginx
 grpc_request_dynamic on;

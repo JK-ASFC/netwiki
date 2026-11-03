@@ -1,12 +1,9 @@
 ---
 title: "ssl_ech_file (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_ech_file (ngx_stream_ssl_module) — Specifies a file with encrypted ClientHello configuration (ECHConfig) in the PEM format used to enable TLS 1.3 ECH in shared mode. NOTE The directive is supported when using OpenSSL 4.0 or higher."
+description: "Directive nginx ssl_ech_file (ngx_stream_ssl_module) — Indique le fichier (file) contenant la configuration de ClientHello chiffré (ECHConfig) au format PEM, utilisée pour activer ECH TLS 1.3 en mode partagé. NOTE Cette directive est prise en charge avec…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,10 +15,10 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with encrypted ClientHello configuration (`ECHConfig`) in the [PEM](https://datatracker.ietf.org/doc/html/rfc9934) format used to enable TLS 1.3 [ECH](https://datatracker.ietf.org/doc/html/rfc9849) in shared mode.
+Indique le fichier (*file*) contenant la configuration de ClientHello chiffré (`ECHConfig`) au format [PEM](https://datatracker.ietf.org/doc/html/rfc9934), utilisée pour activer [ECH](https://datatracker.ietf.org/doc/html/rfc9849) TLS 1.3 en mode partagé.
 
 > [!NOTE]
-> The directive is supported when using OpenSSL 4.0 or higher.
+> Cette directive est prise en charge avec OpenSSL 4.0 ou plus récent.
 
 ---
 

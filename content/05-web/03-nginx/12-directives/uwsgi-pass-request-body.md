@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_pass_request_body"
-description: "Directive nginx uwsgi_pass_request_body (ngx_http_uwsgi_module) — Indicates whether the original request body is passed to the uwsgi server. See also the uwsgi_pass_request_headers directive."
+description: "Directive nginx uwsgi_pass_request_body (ngx_http_uwsgi_module) — Indique si le corps de la requête d'origine est transmis au serveur uwsgi. Voir aussi la directive uwsgi_pass_request_headers."
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Indicates whether the original request body is passed to the uwsgi server. See also the [[12-directives/uwsgi-pass-request-headers|uwsgi_pass_request_headers]] directive.
+Indique si le corps de la requête d'origine est transmis au serveur uwsgi. Voir aussi la directive [[12-directives/uwsgi-pass-request-headers|uwsgi_pass_request_headers]].
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "pass"
-description: "Directive nginx pass (ngx_stream_pass_module) — Sets server address to pass client connection to. The address can be specified as an IP address and a port: nginx pass 127.0.0.1:12345; or as a UNIX-domain socket path: nginx pass…"
+description: "Directive nginx pass (ngx_stream_pass_module) — Sets server address to pass client connection to. The address can be specified as an IP address and a port: nginx pass 127.0.0.1:12345; ou le chemin d'un socket de domaine UNIX : nginx pass…"
 tags: [nginx, directive, ngx_stream_pass_module]
 icon: settings-2
 ---
@@ -23,7 +23,7 @@ Sets server address to pass client connection to. The address can be specified a
 pass 127.0.0.1:12345;
 ```
 
-or as a UNIX-domain socket path:
+ou le chemin d'un socket de domaine UNIX :
 
 ```nginx
 pass unix:/tmp/stream.socket;

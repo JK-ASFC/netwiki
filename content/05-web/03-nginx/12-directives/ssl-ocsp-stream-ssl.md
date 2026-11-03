@@ -1,6 +1,6 @@
 ---
 title: "ssl_ocsp (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_ocsp (ngx_stream_ssl_module) — Enables OCSP validation of the client certificate chain. The leaf parameter enables validation of the client certificate only. For the OCSP validation to work, the ssl_verify_client directive should…"
+description: "Directive nginx ssl_ocsp (ngx_stream_ssl_module) — Active la validation OCSP de la chaîne de certificats du client. Le paramètre leaf limite la validation au seul certificat du client. For the OCSP validation to work, the ssl_verify_client directive…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
@@ -18,7 +18,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables OCSP validation of the client certificate chain. The `leaf` parameter enables validation of the client certificate only.
+Active la validation OCSP de la chaîne de certificats du client. Le paramètre `leaf` limite la validation au seul certificat du client.
 
 For the OCSP validation to work, the [[12-directives/ssl-verify-client-stream-ssl|ssl_verify_client]] directive should be set to `on` or `optional`.
 

@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_ssl_certificate_key"
-description: "Directive nginx uwsgi_ssl_certificate_key (ngx_http_uwsgi_module) — Specifies a file with the secret key in the PEM format used for authentication to a secured uwsgi server. On peut indiquer engine:name:id à la place de file (1.7.9) pour charger la clé secrète…"
+description: "Directive nginx uwsgi_ssl_certificate_key (ngx_http_uwsgi_module) — Indique le fichier (file) contenant la clé secrète au format PEM utilisée pour s'authentifier auprès d'un serveur uwsgi sécurisé. On peut indiquer engine:name:id à la place de file (1.7.9) pour…"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with the secret key in the PEM format used for authentication to a secured uwsgi server.
+Indique le fichier (*file*) contenant la clé secrète au format PEM utilisée pour s'authentifier auprès d'un serveur uwsgi sécurisé.
 
 On peut indiquer `engine`:*name*:*id* à la place de *file* (1.7.9) pour charger la clé secrète d'identifiant *id* depuis le moteur OpenSSL *name*.
 

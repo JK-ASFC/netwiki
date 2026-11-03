@@ -1,12 +1,9 @@
 ---
 title: "scgi_request_buffering"
-description: "Directive nginx scgi_request_buffering (ngx_http_scgi_module) — Active ou désactive la mise en tampon du corps de la requête du client. When buffering is enabled, the entire request body is read from the client before sending the request to an SCGI server. When…"
+description: "Directive nginx scgi_request_buffering (ngx_http_scgi_module) — Active ou désactive la mise en tampon du corps de la requête du client. Lorsque la mise en tampon est activée, tout le corps de la requête est lu depuis le client avant l'envoi de la requête au…"
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -20,11 +17,11 @@ icon: settings-2
 
 Active ou désactive la mise en tampon du corps de la requête du client.
 
-When buffering is enabled, the entire request body is [[12-directives/client-body-buffer-size|read]] from the client before sending the request to an SCGI server.
+Lorsque la mise en tampon est activée, tout le corps de la requête est [[12-directives/client-body-buffer-size|lu]] depuis le client avant l'envoi de la requête au serveur SCGI.
 
-When buffering is disabled, the request body is sent to the SCGI server immediately as it is received. In this case, the request cannot be passed to the [[12-directives/scgi-next-upstream|next server]] if nginx already started sending the request body.
+Lorsque la mise en tampon est désactivée, le corps de la requête est envoyé au serveur SCGI dès sa réception. Dans ce cas, la requête ne peut pas être transmise au [[12-directives/scgi-next-upstream|serveur suivant]] si nginx a déjà commencé à envoyer le corps.
 
-When HTTP/1.1 chunked transfer encoding is used to send the original request body, the request body will be buffered regardless of the directive value.
+Si le corps de la requête d'origine est envoyé avec l'encodage de transfert par morceaux de HTTP/1.1, il est mis en tampon quelle que soit la valeur de la directive.
 
 ---
 

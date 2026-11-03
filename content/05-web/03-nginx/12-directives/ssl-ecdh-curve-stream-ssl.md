@@ -1,12 +1,9 @@
 ---
 title: "ssl_ecdh_curve (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_ecdh_curve (ngx_stream_ssl_module) — Specifies a curve for ECDHE ciphers. When using OpenSSL 1.0.2 or higher, it is possible to specify multiple curves (1.11.0), for example: nginx ssl_ecdh_curve prime256v1:secp384r1; The special value…"
+description: "Directive nginx ssl_ecdh_curve (ngx_stream_ssl_module) — Indique la courbe (curve) pour les suites de chiffrement ECDHE. Avec OpenSSL 1.0.2 ou plus récent, on peut indiquer plusieurs courbes (1.11.0), par exemple : nginx ssl_ecdh_curve…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,21 +14,21 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *curve* for ECDHE ciphers.
+Indique la courbe (*curve*) pour les suites de chiffrement ECDHE.
 
-When using OpenSSL 1.0.2 or higher, it is possible to specify multiple curves (1.11.0), for example:
+Avec OpenSSL 1.0.2 ou plus récent, on peut indiquer plusieurs courbes (1.11.0), par exemple :
 
 ```nginx
 ssl_ecdh_curve prime256v1:secp384r1;
 ```
 
-The special value `auto` (1.11.0) instructs nginx to use a list built into the OpenSSL library when using OpenSSL 1.0.2 or higher, or `prime256v1` with older versions.
+La valeur spéciale `auto` (1.11.0) demande à nginx d'utiliser la liste intégrée à OpenSSL avec OpenSSL 1.0.2 ou plus récent, ou `prime256v1` avec les versions plus anciennes.
 
 > [!NOTE]
-> Prior to version 1.11.0, the `prime256v1` curve was used by default.
+> Avant la version 1.11.0, la courbe `prime256v1` était utilisée par défaut.
 
 > [!NOTE]
-> When using OpenSSL 1.0.2 or higher, this directive sets the list of curves supported by the server. Thus, in order for ECDSA certificates to work, it is important to include the curves used in the certificates.
+> Avec OpenSSL 1.0.2 ou plus récent, cette directive définit la liste des courbes prises en charge par le serveur. Pour que les certificats ECDSA fonctionnent, il est donc important d'y inclure les courbes utilisées par ces certificats.
 
 ---
 

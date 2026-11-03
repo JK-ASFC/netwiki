@@ -1,22 +1,19 @@
 ---
 title: "$ssl_client_i_dn_legacy"
-description: "Variable nginx $ssl_client_i_dn_legacy (ngx_http_ssl_module) — returns the “issuer DN” string of the client certificate for an established SSL connection; NOTE Prior to version 1.11.6, the variable name was $ssl_client_i_dn."
+description: "Variable nginx $ssl_client_i_dn_legacy (ngx_http_ssl_module) — renvoie la chaîne « DN de l'émetteur » (issuer DN) du certificat du client pour la connexion SSL établie ; NOTE Avant la version 1.11.6, cette variable s'appelait $ssl_client_i_dn."
 tags: [nginx, variable, ngx_http_ssl_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$ssl_client_i_dn_legacy` |
 | **Module** | [[11-modules/02-http/ngx_http_ssl_module\|ngx_http_ssl_module]] |
 
-returns the “issuer DN” string of the client certificate for an established SSL connection;
+renvoie la chaîne « DN de l'émetteur » (*issuer DN*) du certificat du client pour la connexion SSL établie ;
 
 > [!NOTE]
-> Prior to version 1.11.6, the variable name was `$ssl_client_i_dn`.
+> Avant la version 1.11.6, cette variable s'appelait `$ssl_client_i_dn`.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "grpc_ssl_verify_depth"
-description: "Directive nginx grpc_ssl_verify_depth (ngx_http_grpc_module) — Sets the verification depth in the gRPC SSL server certificates chain."
+description: "Directive nginx grpc_ssl_verify_depth (ngx_http_grpc_module) — Définit la profondeur de vérification dans la chaîne de certificats du serveur gRPC SSL."
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the verification depth in the gRPC SSL server certificates chain.
+Définit la profondeur de vérification dans la chaîne de certificats du serveur gRPC SSL.
 
 ---
 

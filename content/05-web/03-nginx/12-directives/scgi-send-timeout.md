@@ -1,12 +1,9 @@
 ---
 title: "scgi_send_timeout"
-description: "Directive nginx scgi_send_timeout (ngx_http_scgi_module) — Sets a timeout for transmitting a request to the SCGI server. The timeout is set only between two successive write operations, not for the transmission of the whole request. If the SCGI server does…"
+description: "Directive nginx scgi_send_timeout (ngx_http_scgi_module) — Définit le délai de transmission d'une requête au serveur SCGI. Ce délai porte uniquement sur l'intervalle entre deux écritures successives, pas sur la transmission de toute la requête. Si le serveur…"
 tags: [nginx, directive, ngx_http_scgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a timeout for transmitting a request to the SCGI server. The timeout is set only between two successive write operations, not for the transmission of the whole request. If the SCGI server does not receive anything within this time, the connection is closed.
+Définit le délai de transmission d'une requête au serveur SCGI. Ce délai porte uniquement sur l'intervalle entre deux écritures successives, pas sur la transmission de toute la requête. Si le serveur SCGI ne reçoit rien pendant ce délai, la connexion est fermée.
 
 ---
 

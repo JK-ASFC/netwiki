@@ -1,12 +1,9 @@
 ---
 title: "grpc_socket_rcvbuf"
-description: "Directive nginx grpc_socket_rcvbuf (ngx_http_grpc_module) — Sets the receive buffer size (the SO_RCVBUF option) for outgoing connections to a gRPC server. The special value 0 cancels the effect of the grpc_socket_rcvbuf directive inherited from the previous…"
+description: "Directive nginx grpc_socket_rcvbuf (ngx_http_grpc_module) — Définit la taille du tampon de réception (option SO_RCVBUF) des connexions sortantes vers un serveur gRPC. La valeur spéciale 0 annule l'effet de la directive grpc_socket_rcvbuf héritée du niveau de…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the receive buffer size (the `SO_RCVBUF` option) for outgoing connections to a gRPC server. The special value `0` cancels the effect of the `grpc_socket_rcvbuf` directive inherited from the previous configuration level, which allows keeping the operating system’s settings in effect for the socket.
+Définit la taille du tampon de réception (option `SO_RCVBUF`) des connexions sortantes vers un serveur gRPC. La valeur spéciale `0` annule l'effet de la directive `grpc_socket_rcvbuf` héritée du niveau de configuration précédent, ce qui laisse s'appliquer les réglages du système d'exploitation.
 
 ---
 

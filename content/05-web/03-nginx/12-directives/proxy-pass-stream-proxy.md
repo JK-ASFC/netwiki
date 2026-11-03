@@ -1,6 +1,6 @@
 ---
 title: "proxy_pass (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_pass (ngx_stream_proxy_module) — Sets the address of a proxied server. The address can be specified as a domain name or IP address, and a port: nginx proxy_pass localhost:12345; or as a UNIX-domain socket path: nginx proxy_pass…"
+description: "Directive nginx proxy_pass (ngx_stream_proxy_module) — Sets the address of a proxied server. The address can be specified as a domain name or IP address, and a port: nginx proxy_pass localhost:12345; ou le chemin d'un socket de domaine UNIX : nginx…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
@@ -23,7 +23,7 @@ Sets the address of a proxied server. The address can be specified as a domain n
 proxy_pass localhost:12345;
 ```
 
-or as a UNIX-domain socket path:
+ou le chemin d'un socket de domaine UNIX :
 
 ```nginx
 proxy_pass unix:/tmp/stream.socket;

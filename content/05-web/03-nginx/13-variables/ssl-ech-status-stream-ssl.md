@@ -1,6 +1,6 @@
 ---
 title: "$ssl_ech_status (ngx_stream_ssl_module)"
-description: "Variable nginx $ssl_ech_status (ngx_stream_ssl_module) — returns the result of TLS 1.3 ECH processing: “FAILED”, “BACKEND”, “GREASE”, “SUCCESS”, or “NOT_TRIED” (1.29.4); NOTE The variable is supported only when using OpenSSL version 4.0 or higher. With…"
+description: "Variable nginx $ssl_ech_status (ngx_stream_ssl_module) — returns the result of TLS 1.3 ECH processing: “FAILED”, “BACKEND”, “GREASE”, “SUCCESS”, or “NOT_TRIED” (1.29.4); NOTE La variable n'est prise en charge qu'avec OpenSSL 4.0 ou plus récent. Avec les…"
 tags: [nginx, variable, ngx_stream_ssl_module]
 icon: dollar-sign
 ---
@@ -16,7 +16,7 @@ icon: dollar-sign
 returns the result of TLS 1.3 [[12-directives/ssl-ech-file-stream-ssl|ECH]] processing: “`FAILED`”, “`BACKEND`”, “`GREASE`”, “`SUCCESS`”, or “`NOT_TRIED`” (1.29.4);
 
 > [!NOTE]
-> The variable is supported only when using OpenSSL version 4.0 or higher. With older versions, the variable value will be an empty string.
+> La variable n'est prise en charge qu'avec OpenSSL 4.0 ou plus récent. Avec les versions plus anciennes, sa valeur est une chaîne vide.
 
 ---
 

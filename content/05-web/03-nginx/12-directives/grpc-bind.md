@@ -1,12 +1,9 @@
 ---
 title: "grpc_bind"
-description: "Directive nginx grpc_bind (ngx_http_grpc_module) — Makes outgoing connections to a gRPC server originate from the specified local IP address with an optional port. Parameter value can contain variables. The special value off cancels the effect of the…"
+description: "Directive nginx grpc_bind (ngx_http_grpc_module) — Fait partir les connexions sortantes vers un serveur gRPC de l'adresse IP locale indiquée, avec un port facultatif. La valeur du paramètre peut contenir des variables. La valeur spéciale off annule…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,15 +14,15 @@ icon: settings-2
 
 ## Utilisation
 
-Makes outgoing connections to a gRPC server originate from the specified local IP address with an optional port. Parameter value can contain variables. The special value `off` cancels the effect of the `grpc_bind` directive inherited from the previous configuration level, which allows the system to auto-assign the local IP address and port.
+Fait partir les connexions sortantes vers un serveur gRPC de l'adresse IP locale indiquée, avec un port facultatif. La valeur du paramètre peut contenir des variables. La valeur spéciale `off` annule l'effet de la directive `grpc_bind` héritée du niveau de configuration précédent, ce qui laisse le système choisir l'adresse IP et le port locaux.
 
-The `transparent` parameter allows outgoing connections to a gRPC server originate from a non-local IP address, for example, from a real IP address of a client:
+Le paramètre `transparent` permet aux connexions sortantes vers un serveur gRPC de partir d'une adresse IP non locale, par exemple de l'adresse IP réelle du client :
 
 ```nginx
 grpc_bind $remote_addr transparent;
 ```
 
-In order for this parameter to work, it is usually necessary to run nginx worker processes with the [[12-directives/user|superuser]] privileges. On Linux it is not required as if the `transparent` parameter is specified, worker processes inherit the `CAP_NET_RAW` capability from the master process. It is also necessary to configure kernel routing table to intercept network traffic from the gRPC server.
+Pour que ce paramètre fonctionne, il faut généralement exécuter les processus de travail de nginx avec les privilèges du [[12-directives/user|superutilisateur]]. Sous Linux, ce n'est pas nécessaire : avec le paramètre `transparent`, les processus de travail héritent de la capacité `CAP_NET_RAW` du processus maître. Il faut aussi configurer la table de routage du noyau pour intercepter le trafic réseau provenant du serveur gRPC.
 
 ---
 

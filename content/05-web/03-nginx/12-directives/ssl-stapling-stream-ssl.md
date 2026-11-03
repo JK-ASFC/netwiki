@@ -1,6 +1,6 @@
 ---
 title: "ssl_stapling (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_stapling (ngx_stream_ssl_module) — Enables or disables stapling of OCSP responses by the server. Example: nginx ssl_stapling on; resolver 192.0.2.1; For the OCSP stapling to work, the certificate of the server certificate issuer…"
+description: "Directive nginx ssl_stapling (ngx_stream_ssl_module) — Active ou désactive l'agrafage des réponses OCSP (OCSP stapling) par le serveur. Exemple : nginx ssl_stapling on; resolver 192.0.2.1; For the OCSP stapling to work, the certificate of the server…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
@@ -18,7 +18,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables [stapling of OCSP responses](https://datatracker.ietf.org/doc/html/rfc6066#section-8) by the server. Example:
+Active ou désactive l'[agrafage des réponses OCSP](https://datatracker.ietf.org/doc/html/rfc6066#section-8) (*OCSP stapling*) par le serveur. Exemple :
 
 ```nginx
 ssl_stapling on;

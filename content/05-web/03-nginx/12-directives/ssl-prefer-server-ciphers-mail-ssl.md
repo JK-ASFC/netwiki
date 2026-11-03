@@ -1,12 +1,9 @@
 ---
 title: "ssl_prefer_server_ciphers (ngx_mail_ssl_module)"
-description: "Directive nginx ssl_prefer_server_ciphers (ngx_mail_ssl_module) — Specifies that server ciphers should be preferred over client ciphers when the SSLv3 and TLS protocols are used."
+description: "Directive nginx ssl_prefer_server_ciphers (ngx_mail_ssl_module) — Indique que les suites de chiffrement du serveur doivent être préférées à celles du client avec les protocoles SSLv3 et TLS."
 tags: [nginx, directive, ngx_mail_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies that server ciphers should be preferred over client ciphers when the SSLv3 and TLS protocols are used.
+Indique que les suites de chiffrement du serveur doivent être préférées à celles du client avec les protocoles SSLv3 et TLS.
 
 ---
 

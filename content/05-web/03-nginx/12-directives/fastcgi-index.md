@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_index"
-description: "Directive nginx fastcgi_index (ngx_http_fastcgi_module) — Sets a file name that will be appended after a URI that ends with a slash, in the value of the $fastcgi_script_name variable. For example, with these settings nginx fastcgi_index index.php;…"
+description: "Directive nginx fastcgi_index (ngx_http_fastcgi_module) — Définit le nom de fichier ajouté après un URI se terminant par une barre oblique, dans la valeur de la variable $fastcgi_script_name. Par exemple, avec ces réglages nginx fastcgi_index index.php;…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,14 +14,14 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a file name that will be appended after a URI that ends with a slash, in the value of the `$fastcgi_script_name` variable. For example, with these settings
+Définit le nom de fichier ajouté après un URI se terminant par une barre oblique, dans la valeur de la variable `$fastcgi_script_name`. Par exemple, avec ces réglages
 
 ```nginx
 fastcgi_index index.php;
 fastcgi_param SCRIPT_FILENAME /home/www/scripts/php$fastcgi_script_name;
 ```
 
-and the “`/page.php`” request, the `SCRIPT_FILENAME` parameter will be equal to “`/home/www/scripts/php/page.php`”, and with the “`/`” request it will be equal to “`/home/www/scripts/php/index.php`”.
+et la requête « `/page.php` », le paramètre `SCRIPT_FILENAME` vaut « `/home/www/scripts/php/page.php` » ; avec la requête « `/` », il vaut « `/home/www/scripts/php/index.php` ».
 
 ---
 

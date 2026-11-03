@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_force_ranges"
-description: "Directive nginx fastcgi_force_ranges (ngx_http_fastcgi_module) — Enables byte-range support for both cached and uncached responses from the FastCGI server regardless of the Accept-Ranges field in these responses."
+description: "Directive nginx fastcgi_force_ranges (ngx_http_fastcgi_module) — Active la prise en charge des plages d'octets pour les réponses du serveur FastCGI, en cache ou non, quel que soit le champ Accept-Ranges de ces réponses."
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables byte-range support for both cached and uncached responses from the FastCGI server regardless of the `Accept-Ranges` field in these responses.
+Active la prise en charge des plages d'octets pour les réponses du serveur FastCGI, en cache ou non, quel que soit le champ `Accept-Ranges` de ces réponses.
 
 ---
 

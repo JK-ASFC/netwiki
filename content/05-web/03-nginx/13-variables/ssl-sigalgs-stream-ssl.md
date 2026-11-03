@@ -1,29 +1,26 @@
 ---
 title: "$ssl_sigalgs (ngx_stream_ssl_module)"
-description: "Variable nginx $ssl_sigalgs (ngx_stream_ssl_module) — returns the list of signature algorithms supported by the client (1.31.2). Known values are listed by names, unknown are shown in hexadecimal, for example: nginx…"
+description: "Variable nginx $ssl_sigalgs (ngx_stream_ssl_module) — renvoie la liste des algorithmes de signature pris en charge par le client (1.31.2). Les valeurs connues sont listées par leur nom, les inconnues en hexadécimal, par exemple : nginx…"
 tags: [nginx, variable, ngx_stream_ssl_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$ssl_sigalgs` |
 | **Module** | [[11-modules/03-stream/ngx_stream_ssl_module\|ngx_stream_ssl_module]] |
 
-returns the list of [signature algorithms](https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-16) supported by the client (1.31.2). Known values are listed by names, unknown are shown in hexadecimal, for example:
+renvoie la liste des [algorithmes de signature](https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-16) pris en charge par le client (1.31.2). Les valeurs connues sont listées par leur nom, les inconnues en hexadécimal, par exemple :
 
 ```nginx
 0xfe00:rsa_pkcs1_sha256:rsa_pss_rsae_sha256:ecdsa_secp256r1_sha256
 ```
 
 > [!NOTE]
-> The variable is fully supported only when using OpenSSL version 4.0 or higher. For OpenSSL versions 1.0.2+, the values are always shown in hexadecimal. With older versions, the variable value will be an empty string.
+> La variable n'est entièrement prise en charge qu'avec OpenSSL 4.0 ou plus récent. Avec OpenSSL 1.0.2 et suivants, les valeurs sont toujours affichées en hexadécimal. Avec les versions plus anciennes, sa valeur est une chaîne vide.
 
 > [!NOTE]
-> The variable is available only for new sessions.
+> La variable n'est disponible que pour les nouvelles sessions.
 
 ---
 

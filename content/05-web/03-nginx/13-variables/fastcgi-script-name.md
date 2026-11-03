@@ -1,28 +1,25 @@
 ---
 title: "$fastcgi_script_name"
-description: "Variable nginx $fastcgi_script_name (ngx_http_fastcgi_module) — request URI or, if a URI ends with a slash, request URI with an index file name configured by the fastcgi_index directive appended to it. This variable can be used to set the SCRIPT_FILENAME and…"
+description: "Variable nginx $fastcgi_script_name (ngx_http_fastcgi_module) — URI de la requête ou, si l'URI se termine par une barre oblique, URI de la requête suivi du nom de fichier d'index défini par la directive fastcgi_index. Cette variable permet de définir les…"
 tags: [nginx, variable, ngx_http_fastcgi_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$fastcgi_script_name` |
 | **Module** | [[11-modules/02-http/ngx_http_fastcgi_module\|ngx_http_fastcgi_module]] |
 
-request URI or, if a URI ends with a slash, request URI with an index file name configured by the [[12-directives/fastcgi-index|fastcgi_index]] directive appended to it. This variable can be used to set the `SCRIPT_FILENAME` and `PATH_TRANSLATED` parameters that determine the script name in PHP. For example, for the “`/info/`” request with the following directives
+URI de la requête ou, si l'URI se termine par une barre oblique, URI de la requête suivi du nom de fichier d'index défini par la directive [[12-directives/fastcgi-index|fastcgi_index]]. Cette variable permet de définir les paramètres `SCRIPT_FILENAME` et `PATH_TRANSLATED`, qui déterminent le nom du script en PHP. Par exemple, pour la requête « `/info/` » avec les directives suivantes
 
 ```nginx
 fastcgi_index index.php;
 fastcgi_param SCRIPT_FILENAME /home/www/scripts/php$fastcgi_script_name;
 ```
 
-the `SCRIPT_FILENAME` parameter will be equal to “`/home/www/scripts/php/info/index.php`”.
+le paramètre `SCRIPT_FILENAME` vaut « `/home/www/scripts/php/info/index.php` ».
 
-When using the [[12-directives/fastcgi-split-path-info|fastcgi_split_path_info]] directive, the `$fastcgi_script_name` variable equals the value of the first capture set by the directive.
+Avec la directive [[12-directives/fastcgi-split-path-info|fastcgi_split_path_info]], la variable `$fastcgi_script_name` prend la valeur de la première capture définie par la directive.
 
 ---
 

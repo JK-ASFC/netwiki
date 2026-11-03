@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_uwsgi_module"
-description: "Module nginx ngx_http_uwsgi_module — The ngx_http_uwsgi_module module allows passing requests to a uwsgi server."
+description: "Module nginx ngx_http_uwsgi_module — Le module ngx_http_uwsgi_module permet de transmettre les requêtes à un serveur uwsgi."
 tags: [nginx, module, ngx_http_uwsgi_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_uwsgi_module` module allows passing requests to a uwsgi server.
+Le module `ngx_http_uwsgi_module` permet de transmettre les requêtes à un serveur uwsgi.
 
 ## Exemple de configuration
 

@@ -1,6 +1,6 @@
 ---
 title: "ssl_stapling_verify (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_stapling_verify (ngx_stream_ssl_module) — Enables or disables verification of OCSP responses by the server. For verification to work, the certificate of the server certificate issuer, the root certificate, and all intermediate certificates…"
+description: "Directive nginx ssl_stapling_verify (ngx_stream_ssl_module) — Active ou désactive la vérification des réponses OCSP par le serveur. For verification to work, the certificate of the server certificate issuer, the root certificate, and all intermediate…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
@@ -18,7 +18,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables verification of OCSP responses by the server.
+Active ou désactive la vérification des réponses OCSP par le serveur.
 
 For verification to work, the certificate of the server certificate issuer, the root certificate, and all intermediate certificates should be configured as trusted using the [[12-directives/ssl-trusted-certificate-stream-ssl|ssl_trusted_certificate]] directive.
 

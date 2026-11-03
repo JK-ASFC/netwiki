@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_busy_buffers_size"
-description: "Directive nginx uwsgi_busy_buffers_size (ngx_http_uwsgi_module) — When buffering of responses from the uwsgi server is enabled, limits the total size of buffers that can be busy sending a response to the client while the response is not yet fully read. In the…"
+description: "Directive nginx uwsgi_busy_buffers_size (ngx_http_uwsgi_module) — Lorsque la mise en tampon des réponses du serveur uwsgi est activée, limite la taille (size) totale des tampons occupés à envoyer la réponse au client tant qu'elle n'est pas entièrement lue. Pendant…"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-When [[12-directives/uwsgi-buffering|buffering]] of responses from the uwsgi server is enabled, limits the total *size* of buffers that can be busy sending a response to the client while the response is not yet fully read. In the meantime, the rest of the buffers can be used for reading the response and, if needed, buffering part of the response to a temporary file. By default, *size* is limited by the size of two buffers set by the [[12-directives/uwsgi-buffer-size|uwsgi_buffer_size]] and [[12-directives/uwsgi-buffers|uwsgi_buffers]] directives.
+Lorsque la [[12-directives/uwsgi-buffering|mise en tampon]] des réponses du serveur uwsgi est activée, limite la taille (*size*) totale des tampons occupés à envoyer la réponse au client tant qu'elle n'est pas entièrement lue. Pendant ce temps, les autres tampons servent à lire la réponse et, si besoin, à en placer une partie dans un fichier temporaire. Par défaut, *size* est limitée à la taille de deux tampons définis par les directives [[12-directives/uwsgi-buffer-size|uwsgi_buffer_size]] et [[12-directives/uwsgi-buffers|uwsgi_buffers]].
 
 ---
 

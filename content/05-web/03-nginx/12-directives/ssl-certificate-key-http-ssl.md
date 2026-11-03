@@ -1,12 +1,9 @@
 ---
 title: "ssl_certificate_key (ngx_http_ssl_module)"
-description: "Directive nginx ssl_certificate_key (ngx_http_ssl_module) — Specifies a file with the secret key in the PEM format for the given virtual server. On peut indiquer engine:name:id à la place de file (1.7.9) pour charger la clé secrète d'identifiant id depuis le…"
+description: "Directive nginx ssl_certificate_key (ngx_http_ssl_module) — Indique le fichier (file) contenant la clé secrète au format PEM pour le serveur virtuel. On peut indiquer engine:name:id à la place de file (1.7.9) pour charger la clé secrète d'identifiant id…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,15 +14,15 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with the secret key in the PEM format for the given virtual server.
+Indique le fichier (*file*) contenant la clé secrète au format PEM pour le serveur virtuel.
 
 On peut indiquer `engine`:*name*:*id* à la place de *file* (1.7.9) pour charger la clé secrète d'identifiant *id* depuis le moteur OpenSSL *name*.
 
 On peut indiquer `store`:*scheme*:*id* à la place de *file* (1.29.0) pour charger la clé secrète d'identifiant *id* via le schéma d'URI *scheme* enregistré par un fournisseur OpenSSL, par exemple [`pkcs11`](https://datatracker.ietf.org/doc/html/rfc7512).
 
-The value `data`:*$variable* can be specified instead of the *file* (1.15.10), which loads a secret key from a variable without using intermediate files. Note that inappropriate use of this syntax may have its security implications, such as writing secret key data to [[12-directives/error-log|error log]].
+On peut indiquer `data`:*$variable* à la place de *file* (1.15.10) pour charger la clé secrète depuis une variable, sans fichier intermédiaire. Une mauvaise utilisation de cette syntaxe peut avoir des conséquences sur la sécurité, comme l'écriture de données de clé secrète dans le [[12-directives/error-log|journal d'erreurs]].
 
-Since version 1.15.9, variables can be used in the *file* name when using OpenSSL 1.0.2 or higher.
+Depuis la version 1.15.9, le nom de fichier (*file*) peut contenir des variables avec OpenSSL 1.0.2 ou plus récent.
 
 ---
 

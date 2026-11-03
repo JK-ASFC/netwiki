@@ -1,19 +1,16 @@
 ---
 title: "$ssl_client_serial (ngx_http_ssl_module)"
-description: "Variable nginx $ssl_client_serial (ngx_http_ssl_module) — returns the serial number of the client certificate for an established SSL connection;"
+description: "Variable nginx $ssl_client_serial (ngx_http_ssl_module) — renvoie le numéro de série du certificat du client pour la connexion SSL établie ;"
 tags: [nginx, variable, ngx_http_ssl_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$ssl_client_serial` |
 | **Module** | [[11-modules/02-http/ngx_http_ssl_module\|ngx_http_ssl_module]] |
 
-returns the serial number of the client certificate for an established SSL connection;
+renvoie le numéro de série du certificat du client pour la connexion SSL établie ;
 
 ---
 

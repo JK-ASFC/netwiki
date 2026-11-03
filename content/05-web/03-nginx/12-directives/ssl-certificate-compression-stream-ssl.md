@@ -1,12 +1,9 @@
 ---
 title: "ssl_certificate_compression (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_certificate_compression (ngx_stream_ssl_module) — Enables TLS 1.3 compression of server certificates. NOTE The directive is supported when using OpenSSL 3.2 or higher; the list of supported compression algorithms is provided by the library. NOTE The…"
+description: "Directive nginx ssl_certificate_compression (ngx_stream_ssl_module) — Active la compression TLS 1.3 des certificats du serveur. NOTE Cette directive est prise en charge avec OpenSSL 3.2 ou plus récent ; la liste des algorithmes de compression disponibles est fournie…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,13 +15,13 @@ icon: settings-2
 
 ## Utilisation
 
-Enables TLS 1.3 [compression](https://datatracker.ietf.org/doc/html/rfc8879) of server certificates.
+Active la [compression](https://datatracker.ietf.org/doc/html/rfc8879) TLS 1.3 des certificats du serveur.
 
 > [!NOTE]
-> The directive is supported when using OpenSSL 3.2 or higher; the list of supported compression algorithms is provided by the library.
+> Cette directive est prise en charge avec OpenSSL 3.2 ou plus récent ; la liste des algorithmes de compression disponibles est fournie par la bibliothèque.
 
 > [!NOTE]
-> The directive is supported when using BoringSSL; the list of supported compression algorithms includes `zlib` (1.29.3).
+> Cette directive est prise en charge avec BoringSSL ; les algorithmes de compression disponibles incluent `zlib` (1.29.3).
 
 ---
 

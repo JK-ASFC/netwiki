@@ -1,12 +1,9 @@
 ---
 title: "grpc_ssl_ciphers"
-description: "Directive nginx grpc_ssl_ciphers (ngx_http_grpc_module) — Specifies the enabled ciphers for requests to a gRPC SSL server. The ciphers are specified in the format understood by the OpenSSL library. La liste complète s'affiche avec la commande « openssl…"
+description: "Directive nginx grpc_ssl_ciphers (ngx_http_grpc_module) — Indique les suites de chiffrement activées pour les requêtes vers un serveur gRPC SSL. Elles s'écrivent au format reconnu par la bibliothèque OpenSSL. La liste complète s'affiche avec la commande «…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the enabled ciphers for requests to a gRPC SSL server. The ciphers are specified in the format understood by the OpenSSL library.
+Indique les suites de chiffrement activées pour les requêtes vers un serveur gRPC SSL. Elles s'écrivent au format reconnu par la bibliothèque OpenSSL.
 
 La liste complète s'affiche avec la commande « `openssl ciphers` ».
 

@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_fastcgi_module"
-description: "Module nginx ngx_http_fastcgi_module — The ngx_http_fastcgi_module module allows passing requests to a FastCGI server."
+description: "Module nginx ngx_http_fastcgi_module — Le module ngx_http_fastcgi_module permet de transmettre les requêtes à un serveur FastCGI."
 tags: [nginx, module, ngx_http_fastcgi_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_fastcgi_module` module allows passing requests to a FastCGI server.
+Le module `ngx_http_fastcgi_module` permet de transmettre les requêtes à un serveur FastCGI.
 
 ## Exemple de configuration
 
@@ -25,9 +22,9 @@ location / {
 }
 ```
 
-## Parameters Passed to a FastCGI Server
+## Paramètres transmis au serveur FastCGI
 
-HTTP request header fields are passed to a FastCGI server as parameters. In applications and scripts running as FastCGI servers, these parameters are usually made available as environment variables. For example, the `User-Agent` header field is passed as the `HTTP_USER_AGENT` parameter. In addition to HTTP request header fields, it is possible to pass arbitrary parameters using the [[12-directives/fastcgi-param|fastcgi_param]] directive.
+Les champs d'en-tête de la requête HTTP sont transmis au serveur FastCGI sous forme de paramètres. Dans les applications et scripts qui tournent comme serveurs FastCGI, ces paramètres sont généralement accessibles comme variables d'environnement. Par exemple, le champ d'en-tête `User-Agent` est transmis sous la forme du paramètre `HTTP_USER_AGENT`. En plus des champs d'en-tête, on peut transmettre des paramètres quelconques avec la directive [[12-directives/fastcgi-param|fastcgi_param]].
 
 ## Directives
 

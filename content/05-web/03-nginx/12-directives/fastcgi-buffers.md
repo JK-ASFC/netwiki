@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_buffers"
-description: "Directive nginx fastcgi_buffers (ngx_http_fastcgi_module) — Sets the number and size of the buffers used for reading a response from the FastCGI server, for a single connection. By default, the buffer size is equal to one memory page. This is either 4K or 8K,…"
+description: "Directive nginx fastcgi_buffers (ngx_http_fastcgi_module) — Définit le nombre (number) et la taille (size) des tampons utilisés pour lire une réponse du serveur FastCGI, pour une connexion. Par défaut, un tampon fait une page mémoire, soit 4K ou 8K selon la…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *number* and *size* of the buffers used for reading a response from the FastCGI server, for a single connection. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform.
+Définit le nombre (*number*) et la taille (*size*) des tampons utilisés pour lire une réponse du serveur FastCGI, pour une connexion. Par défaut, un tampon fait une page mémoire, soit 4K ou 8K selon la plate-forme.
 
 ---
 

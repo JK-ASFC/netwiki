@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_pass_request_headers"
-description: "Directive nginx uwsgi_pass_request_headers (ngx_http_uwsgi_module) — Indicates whether the header fields of the original request are passed to the uwsgi server. See also the uwsgi_pass_request_body directive."
+description: "Directive nginx uwsgi_pass_request_headers (ngx_http_uwsgi_module) — Indique si les champs d'en-tête de la requête d'origine sont transmis au serveur uwsgi. Voir aussi la directive uwsgi_pass_request_body."
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Indicates whether the header fields of the original request are passed to the uwsgi server. See also the [[12-directives/uwsgi-pass-request-body|uwsgi_pass_request_body]] directive.
+Indique si les champs d'en-tête de la requête d'origine sont transmis au serveur uwsgi. Voir aussi la directive [[12-directives/uwsgi-pass-request-body|uwsgi_pass_request_body]].
 
 ---
 

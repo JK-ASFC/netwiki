@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_cache_purge"
-description: "Directive nginx fastcgi_cache_purge (ngx_http_fastcgi_module) — Defines conditions under which the request will be considered a cache purge request. If at least one value of the string parameters is not empty and is not equal to “0” then the cache entry with a…"
+description: "Directive nginx fastcgi_cache_purge (ngx_http_fastcgi_module) — Définit les conditions dans lesquelles la requête est considérée comme une demande de purge du cache. Si au moins une des chaînes en paramètre n'est ni vide ni égale à « 0 », l'entrée du cache…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Defines conditions under which the request will be considered a cache purge request. If at least one value of the string parameters is not empty and is not equal to “0” then the cache entry with a corresponding [[12-directives/fastcgi-cache-key|cache key]] is removed. The result of successful operation is indicated by returning the `204 No Content` response.
+Définit les conditions dans lesquelles la requête est considérée comme une demande de purge du cache. Si au moins une des chaînes en paramètre n'est ni vide ni égale à « 0 », l'entrée du cache correspondant à la [[12-directives/fastcgi-cache-key|clé de cache]] est supprimée. Une opération réussie renvoie la réponse `204 No Content`.
 
-If the [[12-directives/fastcgi-cache-key|cache key]] of a purge request ends with an asterisk (“`*`”), all cache entries matching the wildcard key will be removed from the cache. However, these entries will remain on the disk until they are deleted for either [[12-directives/fastcgi-cache-path|inactivity]], or processed by the cache purger (1.7.12), or a client attempts to access them.
+Si la [[12-directives/fastcgi-cache-key|clé de cache]] d'une demande de purge se termine par un astérisque (« `*` »), toutes les entrées correspondant à cette clé générique sont supprimées du cache. Elles restent toutefois sur le disque jusqu'à leur suppression pour [[12-directives/fastcgi-cache-path|inactivité]], leur traitement par le purgeur de cache (1.7.12) ou une tentative d'accès d'un client.
 
 Exemple de configuration :
 

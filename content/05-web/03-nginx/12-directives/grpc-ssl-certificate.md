@@ -1,12 +1,9 @@
 ---
 title: "grpc_ssl_certificate"
-description: "Directive nginx grpc_ssl_certificate (ngx_http_grpc_module) — Specifies a file with the certificate in the PEM format used for authentication to a gRPC SSL server. Depuis la version 1.21.0, le nom de fichier (file) peut contenir des variables."
+description: "Directive nginx grpc_ssl_certificate (ngx_http_grpc_module) — Indique le fichier (file) contenant le certificat au format PEM utilisé pour s'authentifier auprès d'un serveur gRPC SSL. Depuis la version 1.21.0, le nom de fichier (file) peut contenir des…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with the certificate in the PEM format used for authentication to a gRPC SSL server.
+Indique le fichier (*file*) contenant le certificat au format PEM utilisé pour s'authentifier auprès d'un serveur gRPC SSL.
 
 Depuis la version 1.21.0, le nom de fichier (*file*) peut contenir des variables.
 

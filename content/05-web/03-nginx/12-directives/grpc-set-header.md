@@ -1,12 +1,9 @@
 ---
 title: "grpc_set_header"
-description: "Directive nginx grpc_set_header (ngx_http_grpc_module) — Allows redefining or appending fields to the request header passed to the gRPC server. The value can contain text, variables, and their combinations. These directives are inherited from the previous…"
+description: "Directive nginx grpc_set_header (ngx_http_grpc_module) — Permet de redéfinir ou d'ajouter des champs à l'en-tête de la requête transmis au serveur gRPC. La valeur (value) peut contenir du texte, des variables ou une combinaison des deux. Ces directives…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Allows redefining or appending fields to the request header passed to the gRPC server. The *value* can contain text, variables, and their combinations. These directives are inherited from the previous configuration level if and only if there are no `grpc_set_header` directives defined on the current level.
+Permet de redéfinir ou d'ajouter des champs à l'en-tête de la requête transmis au serveur gRPC. La valeur (*value*) peut contenir du texte, des variables ou une combinaison des deux. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `grpc_set_header` n'est définie au niveau courant.
 
-If the value of a header field is an empty string then this field will not be passed to a gRPC server:
+Si la valeur d'un champ d'en-tête est une chaîne vide, ce champ n'est pas transmis au serveur gRPC :
 
 ```nginx
 grpc_set_header Accept-Encoding "";

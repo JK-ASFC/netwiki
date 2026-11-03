@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_keep_conn"
-description: "Directive nginx fastcgi_keep_conn (ngx_http_fastcgi_module) — By default, a FastCGI server will close a connection right after sending the response. However, when this directive is set to the value on, nginx will instruct a FastCGI server to keep connections…"
+description: "Directive nginx fastcgi_keep_conn (ngx_http_fastcgi_module) — Par défaut, un serveur FastCGI ferme la connexion juste après avoir envoyé la réponse. Avec la valeur on, nginx demande au serveur FastCGI de garder les connexions ouvertes. C'est notamment…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-By default, a FastCGI server will close a connection right after sending the response. However, when this directive is set to the value `on`, nginx will instruct a FastCGI server to keep connections open. This is necessary, in particular, for [[12-directives/keepalive|keepalive]] connections to FastCGI servers to function.
+Par défaut, un serveur FastCGI ferme la connexion juste après avoir envoyé la réponse. Avec la valeur `on`, nginx demande au serveur FastCGI de garder les connexions ouvertes. C'est notamment nécessaire au fonctionnement des connexions [[12-directives/keepalive|persistantes]] vers les serveurs FastCGI.
 
 ---
 

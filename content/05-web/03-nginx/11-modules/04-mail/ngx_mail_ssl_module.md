@@ -13,15 +13,15 @@ The `ngx_mail_ssl_module` module provides the necessary support for a mail proxy
 This module is not built by default, it should be enabled with the `--with-mail_ssl_module` configuration parameter.
 
 > [!NOTE]
-> This module requires the [OpenSSL](http://www.openssl.org) library.
+> Ce module nécessite la bibliothèque [OpenSSL](http://www.openssl.org).
 
 ## Exemple de configuration
 
-To reduce the processor load, it is recommended to
+Pour réduire la charge du processeur, il est recommandé de
 
-- set the number of [[12-directives/worker-processes|worker processes]] equal to the number of processors,
-- enable the shared session cache,
-- disable the built-in session cache,
+- régler le nombre de [[12-directives/worker-processes|processus de travail]] sur le nombre de processeurs,
+- activer le cache de sessions partagé,
+- désactiver le cache de sessions intégré,
 - and possibly increase the session [[12-directives/ssl-session-timeout-mail-ssl|lifetime]] (by default, 5 minutes):
 
 ```nginx

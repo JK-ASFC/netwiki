@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `fastcgi_store on \| off \| string;` |
@@ -23,7 +20,7 @@ Active l'enregistrement des fichiers sur le disque. Le paramètre `on` enregistr
 fastcgi_store /data/www$original_uri;
 ```
 
-The modification time of files is set according to the received `Last-Modified` response header field. The response is first written to a temporary file, and then the file is renamed. Starting from version 0.8.9, temporary files and the persistent store can be put on different file systems. However, be aware that in this case a file is copied across two file systems instead of the cheap renaming operation. It is thus recommended that for any given location both saved files and a directory holding temporary files, set by the [[12-directives/fastcgi-temp-path|fastcgi_temp_path]] directive, are put on the same file system.
+La date de modification des fichiers est fixée d'après le champ d'en-tête de réponse `Last-Modified` reçu. La réponse est d'abord écrite dans un fichier temporaire, puis le fichier est renommé. Depuis la version 0.8.9, les fichiers temporaires et le stockage permanent peuvent se trouver sur des systèmes de fichiers différents ; mais le fichier est alors copié d'un système de fichiers à l'autre au lieu d'un simple renommage, peu coûteux. Il est donc recommandé, pour un bloc location donné, de placer les fichiers enregistrés et le répertoire des fichiers temporaires, défini par la directive [[12-directives/fastcgi-temp-path|fastcgi_temp_path]], sur le même système de fichiers.
 
 Cette directive permet de créer des copies locales de fichiers statiques qui ne changent pas, par exemple :
 

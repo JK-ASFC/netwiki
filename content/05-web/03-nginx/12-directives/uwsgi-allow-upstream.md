@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_allow_upstream"
-description: "Directive nginx uwsgi_allow_upstream (ngx_http_uwsgi_module) — Defines conditions under which access to a uwsgi server is allowed or denied. If all string parameters are not empty and not equal to “0” then the access is allowed. The conditions are evaluated each…"
+description: "Directive nginx uwsgi_allow_upstream (ngx_http_uwsgi_module) — Définit les conditions dans lesquelles l'accès à un serveur uwsgi est autorisé ou refusé. Si toutes les chaînes en paramètre ne sont ni vides ni égales à « 0 », l'accès est autorisé. Les conditions…"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines conditions under which access to a uwsgi server is allowed or denied. If all string parameters are not empty and not equal to “0” then the access is allowed. The conditions are evaluated each time before a connection to a uwsgi server is established. Parameter values can contain variables:
+Définit les conditions dans lesquelles l'accès à un serveur uwsgi est autorisé ou refusé. Si toutes les chaînes en paramètre ne sont ni vides ni égales à « 0 », l'accès est autorisé. Les conditions sont évaluées avant chaque connexion au serveur uwsgi. Les valeurs des paramètres peuvent contenir des variables :
 
 ```nginx
 geo $upstream_last_addr $allow {

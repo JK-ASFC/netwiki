@@ -1,12 +1,9 @@
 ---
 title: "uwsgi_ssl_ciphers"
-description: "Directive nginx uwsgi_ssl_ciphers (ngx_http_uwsgi_module) — Specifies the enabled ciphers for requests to a secured uwsgi server. The ciphers are specified in the format understood by the OpenSSL library. La liste complète s'affiche avec la commande « openssl…"
+description: "Directive nginx uwsgi_ssl_ciphers (ngx_http_uwsgi_module) — Indique les suites de chiffrement activées pour les requêtes vers un serveur uwsgi sécurisé. Elles s'écrivent au format reconnu par la bibliothèque OpenSSL. La liste complète s'affiche avec la…"
 tags: [nginx, directive, ngx_http_uwsgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the enabled ciphers for requests to a secured uwsgi server. The ciphers are specified in the format understood by the OpenSSL library.
+Indique les suites de chiffrement activées pour les requêtes vers un serveur uwsgi sécurisé. Elles s'écrivent au format reconnu par la bibliothèque OpenSSL.
 
 La liste complète s'affiche avec la commande « `openssl ciphers` ».
 

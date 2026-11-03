@@ -1,26 +1,23 @@
 ---
 title: "$ssl_ciphers (ngx_http_ssl_module)"
-description: "Variable nginx $ssl_ciphers (ngx_http_ssl_module) — returns the list of ciphers supported by the client (1.11.7). Known ciphers are listed by names, unknown are shown in hexadecimal, for example: nginx AES128-SHA:AES256-SHA:0x00ff NOTE The variable is…"
+description: "Variable nginx $ssl_ciphers (ngx_http_ssl_module) — renvoie la liste des suites de chiffrement prises en charge par le client (1.11.7). Les suites connues sont listées par leur nom, les inconnues en hexadécimal, par exemple : nginx…"
 tags: [nginx, variable, ngx_http_ssl_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$ssl_ciphers` |
 | **Module** | [[11-modules/02-http/ngx_http_ssl_module\|ngx_http_ssl_module]] |
 
-returns the list of ciphers supported by the client (1.11.7). Known ciphers are listed by names, unknown are shown in hexadecimal, for example:
+renvoie la liste des suites de chiffrement prises en charge par le client (1.11.7). Les suites connues sont listées par leur nom, les inconnues en hexadécimal, par exemple :
 
 ```nginx
 AES128-SHA:AES256-SHA:0x00ff
 ```
 
 > [!NOTE]
-> The variable is fully supported only when using OpenSSL version 1.0.2 or higher. With older versions, the variable is available only for new sessions and lists only known ciphers.
+> La variable n'est entièrement prise en charge qu'avec OpenSSL 1.0.2 ou plus récent. Avec les versions plus anciennes, elle n'est disponible que pour les nouvelles sessions et ne liste que les suites connues.
 
 ---
 

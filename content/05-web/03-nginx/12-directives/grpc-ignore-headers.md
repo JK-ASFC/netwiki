@@ -1,12 +1,9 @@
 ---
 title: "grpc_ignore_headers"
-description: "Directive nginx grpc_ignore_headers (ngx_http_grpc_module) — Disables processing of certain response header fields from the gRPC server. The following fields can be ignored: X-Accel-Redirect and X-Accel-Charset. S'il n'est pas désactivé, le traitement de ces…"
+description: "Directive nginx grpc_ignore_headers (ngx_http_grpc_module) — Désactive le traitement de certains champs d'en-tête de réponse du serveur gRPC. Les champs suivants peuvent être ignorés : X-Accel-Redirect et X-Accel-Charset. S'il n'est pas désactivé, le…"
 tags: [nginx, directive, ngx_http_grpc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Disables processing of certain response header fields from the gRPC server. The following fields can be ignored: `X-Accel-Redirect` and `X-Accel-Charset`.
+Désactive le traitement de certains champs d'en-tête de réponse du serveur gRPC. Les champs suivants peuvent être ignorés : `X-Accel-Redirect` et `X-Accel-Charset`.
 
 S'il n'est pas désactivé, le traitement de ces champs a l'effet suivant :
 

@@ -1,12 +1,9 @@
 ---
 title: "ssl_ciphers (ngx_http_ssl_module)"
-description: "Directive nginx ssl_ciphers (ngx_http_ssl_module) — Specifies the enabled ciphers. The ciphers are specified in the format understood by the OpenSSL library, for example: nginx ssl_ciphers ALL:aNULL:EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; La…"
+description: "Directive nginx ssl_ciphers (ngx_http_ssl_module) — Indique les suites de chiffrement activées, au format reconnu par la bibliothèque OpenSSL, par exemple : nginx ssl_ciphers ALL:aNULL:EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; La liste complète…"
 tags: [nginx, directive, ngx_http_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the enabled ciphers. The ciphers are specified in the format understood by the OpenSSL library, for example:
+Indique les suites de chiffrement activées, au format reconnu par la bibliothèque OpenSSL, par exemple :
 
 ```nginx
 ssl_ciphers ALL:!aNULL:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
@@ -26,7 +23,7 @@ ssl_ciphers ALL:!aNULL:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
 La liste complète s'affiche avec la commande « `openssl ciphers` ».
 
 > [!NOTE]
-> The previous versions of nginx used [[10-guides/02-http/configuring-https-servers|different]] ciphers by default.
+> Les versions précédentes de nginx utilisaient par défaut des suites de chiffrement [[10-guides/02-http/configuring-https-servers|différentes]].
 
 ---
 

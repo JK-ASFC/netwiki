@@ -1,29 +1,26 @@
 ---
 title: "$ssl_curves (ngx_stream_ssl_module)"
-description: "Variable nginx $ssl_curves (ngx_stream_ssl_module) — returns the list of curves supported by the client (1.11.7). Known curves are listed by names, unknown are shown in hexadecimal, for example: nginx 0x001d:prime256v1:secp521r1:secp384r1 NOTE The…"
+description: "Variable nginx $ssl_curves (ngx_stream_ssl_module) — renvoie la liste des courbes prises en charge par le client (1.11.7). Les courbes connues sont listées par leur nom, les inconnues en hexadécimal, par exemple : nginx…"
 tags: [nginx, variable, ngx_stream_ssl_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$ssl_curves` |
 | **Module** | [[11-modules/03-stream/ngx_stream_ssl_module\|ngx_stream_ssl_module]] |
 
-returns the list of curves supported by the client (1.11.7). Known curves are listed by names, unknown are shown in hexadecimal, for example:
+renvoie la liste des courbes prises en charge par le client (1.11.7). Les courbes connues sont listées par leur nom, les inconnues en hexadécimal, par exemple :
 
 ```nginx
 0x001d:prime256v1:secp521r1:secp384r1
 ```
 
 > [!NOTE]
-> The variable is supported only when using OpenSSL version 1.0.2 or higher. With older versions, the variable value will be an empty string.
+> La variable n'est prise en charge qu'avec OpenSSL 1.0.2 ou plus récent. Avec les versions plus anciennes, sa valeur est une chaîne vide.
 
 > [!NOTE]
-> The variable is available only for new sessions.
+> La variable n'est disponible que pour les nouvelles sessions.
 
 ---
 

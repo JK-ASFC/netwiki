@@ -1,12 +1,9 @@
 ---
 title: "fastcgi_max_temp_file_size"
-description: "Directive nginx fastcgi_max_temp_file_size (ngx_http_fastcgi_module) — When buffering of responses from the FastCGI server is enabled, and the whole response does not fit into the buffers set by the fastcgi_buffer_size and fastcgi_buffers directives, a part of the…"
+description: "Directive nginx fastcgi_max_temp_file_size (ngx_http_fastcgi_module) — Lorsque la mise en tampon des réponses du serveur FastCGI est activée et que toute la réponse ne tient pas dans les tampons définis par les directives fastcgi_buffer_size et fastcgi_buffers, une…"
 tags: [nginx, directive, ngx_http_fastcgi_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,12 +14,12 @@ icon: settings-2
 
 ## Utilisation
 
-When [[12-directives/fastcgi-buffering|buffering]] of responses from the FastCGI server is enabled, and the whole response does not fit into the buffers set by the [[12-directives/fastcgi-buffer-size|fastcgi_buffer_size]] and [[12-directives/fastcgi-buffers|fastcgi_buffers]] directives, a part of the response can be saved to a temporary file. This directive sets the maximum *size* of the temporary file. The size of data written to the temporary file at a time is set by the [[12-directives/fastcgi-temp-file-write-size|fastcgi_temp_file_write_size]] directive.
+Lorsque la [[12-directives/fastcgi-buffering|mise en tampon]] des réponses du serveur FastCGI est activée et que toute la réponse ne tient pas dans les tampons définis par les directives [[12-directives/fastcgi-buffer-size|fastcgi_buffer_size]] et [[12-directives/fastcgi-buffers|fastcgi_buffers]], une partie de la réponse peut être enregistrée dans un fichier temporaire. Cette directive définit la taille (*size*) maximale de ce fichier. La quantité de données écrite en une fois dans le fichier temporaire est définie par la directive [[12-directives/fastcgi-temp-file-write-size|fastcgi_temp_file_write_size]].
 
 La valeur zéro désactive la mise en tampon des réponses dans des fichiers temporaires.
 
 > [!NOTE]
-> This restriction does not apply to responses that will be [[12-directives/fastcgi-cache|cached]] or [[12-directives/fastcgi-store|stored]] on disk.
+> Cette restriction ne s'applique pas aux réponses qui seront [[12-directives/fastcgi-cache|mises en cache]] ou [[12-directives/fastcgi-store|enregistrées]] sur le disque.
 
 ---
 
