@@ -1,12 +1,9 @@
 ---
 title: "http2_push_preload"
-description: "Directive nginx http2_push_preload (ngx_http_v2_module) — NOTE This directive is obsolete since version 1.25.1. Enables automatic conversion of preload links specified in the Link response header fields into push requests."
+description: "Directive nginx http2_push_preload (ngx_http_v2_module) — NOTE Cette directive est obsolète depuis la version 1.25.1. Active la conversion automatique des liens de préchargement indiqués dans les champs d'en-tête de réponse Link en requêtes push."
 tags: [nginx, directive, ngx_http_v2_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -19,9 +16,9 @@ icon: settings-2
 ## Utilisation
 
 > [!NOTE]
-> This directive is obsolete since version 1.25.1.
+> Cette directive est obsolète depuis la version 1.25.1.
 
-Enables automatic conversion of [preload links](https://www.w3.org/TR/preload/#server-push-http-2) specified in the `Link` response header fields into [push](https://datatracker.ietf.org/doc/html/rfc9113#section-8.4) requests.
+Active la conversion automatique des [liens de préchargement](https://www.w3.org/TR/preload/#server-push-http-2) indiqués dans les champs d'en-tête de réponse `Link` en requêtes [push](https://datatracker.ietf.org/doc/html/rfc9113#section-8.4).
 
 ---
 

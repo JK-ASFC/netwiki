@@ -1,12 +1,9 @@
 ---
 title: "http2_max_concurrent_pushes"
-description: "Directive nginx http2_max_concurrent_pushes (ngx_http_v2_module) — NOTE This directive is obsolete since version 1.25.1. Limits the maximum number of concurrent push requests in a connection."
+description: "Directive nginx http2_max_concurrent_pushes (ngx_http_v2_module) — NOTE Cette directive est obsolète depuis la version 1.25.1. Limite le nombre maximal de requêtes push simultanées sur une connexion."
 tags: [nginx, directive, ngx_http_v2_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -19,9 +16,9 @@ icon: settings-2
 ## Utilisation
 
 > [!NOTE]
-> This directive is obsolete since version 1.25.1.
+> Cette directive est obsolète depuis la version 1.25.1.
 
-Limits the maximum number of concurrent [[12-directives/http2-push|push]] requests in a connection.
+Limite le nombre maximal de requêtes [[12-directives/http2-push|push]] simultanées sur une connexion.
 
 ---
 

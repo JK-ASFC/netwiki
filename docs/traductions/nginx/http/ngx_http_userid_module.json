@@ -1,0 +1,21 @@
+{
+ "316da3e166ab": "Si les identifiants sont émis par plusieurs serveurs (services), chacun doit recevoir son propre numéro (*number*) pour garantir l'unicité des identifiants. Pour les cookies de version 1, la valeur par défaut est zéro ; pour la version 2, c'est le nombre formé par les quatre derniers octets de l'adresse IP du serveur.",
+ "47576340b8b5": "Nom du cookie et identifiant client reçu.",
+ "475fd16cf8fa": "désactive la définition des cookies et la journalisation des cookies reçus.",
+ "4b121c90028b": "Si la marque est définie, elle est comparée au premier caractère de remplissage de la représentation base64 de l'identifiant transmis dans le cookie. S'ils diffèrent, le cookie est renvoyé avec la marque, la date d'expiration et l'en-tête `P3P` indiqués.",
+ "4c2b1f3c90a8": "Si la variable reçoit une chaîne non vide différente de « `0` », les identifiants des clients sont réinitialisés. La valeur spéciale « `log` » écrit en plus dans [[12-directives/error-log|error_log]] des messages sur les identifiants réinitialisés.",
+ "511b5e3cba1a": "Définit la valeur du champ d'en-tête `P3P` envoyé avec le cookie. Avec la valeur spéciale `none`, l'en-tête `P3P` n'est pas envoyé.",
+ "8736850d0328": "Si le paramètre n'est pas `off`, active le mécanisme de marquage des cookies et définit le caractère servant de marque. Ce mécanisme sert à ajouter ou modifier [[12-directives/userid-p3p|userid_p3p]] et/ou la date d'expiration du cookie tout en conservant l'identifiant du client. La marque peut être une lettre de l'alphabet anglais (casse comprise), un chiffre ou le caractère « `=` ».",
+ "8b0041fc3aed": "Définit le chemin pour lequel le cookie est défini.",
+ "8fe2b47d5782": "Si le paramètre n'est pas `off`, définit un ou plusieurs attributs supplémentaires du cookie : `secure`, `httponly`, `samesite=strict`, `samesite=lax`, `samesite=none`.",
+ "9b8ec09c7199": "Définit la durée pendant laquelle le navigateur doit conserver le cookie. Le paramètre `max` le fait expirer le « `31 Dec 2037 23:55:55 GMT` », le paramètre `off` à la fin de la session du navigateur.",
+ "aeceedae4888": "désactive la définition des cookies, mais active la journalisation des cookies reçus ;",
+ "c18788f0dcaf": "Le module `ngx_http_userid_module` définit des cookies permettant d'identifier les clients. Les cookies reçus et définis peuvent être journalisés avec les variables intégrées [[13-variables/uid-got|$uid_got]] et [[13-variables/uid-set|$uid_set]]. Ce module est compatible avec le module [mod\\_uid](http://www.lexa.ru/programs/mod-uid-eng.html) d'Apache.",
+ "c6183371cf8a": "Le module `ngx_http_userid_module` fournit les variables intégrées suivantes :",
+ "c6271450c8a6": "active la définition des cookies de version 1 et la journalisation des cookies reçus ;",
+ "d36ec46c4dbb": "Définit le nom du cookie.",
+ "e047a0da53e5": "Active ou désactive la définition des cookies et la journalisation des cookies reçus :",
+ "e07f21e09fed": "Nom du cookie et identifiant client envoyé.",
+ "e135e22f1495": "Définit le domaine pour lequel le cookie est défini. Le paramètre `none` désactive l'indication d'un domaine.",
+ "f557d120160a": "active la définition des cookies de version 2 et la journalisation des cookies reçus ;"
+}

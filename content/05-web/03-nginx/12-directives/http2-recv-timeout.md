@@ -1,12 +1,9 @@
 ---
 title: "http2_recv_timeout"
-description: "Directive nginx http2_recv_timeout (ngx_http_v2_module) — NOTE This directive is obsolete since version 1.19.7. The client_header_timeout directive should be used instead. Sets the timeout for expecting more data from the client, after which the connection…"
+description: "Directive nginx http2_recv_timeout (ngx_http_v2_module) — NOTE Cette directive est obsolète depuis la version 1.19.7. Utiliser à la place la directive client_header_timeout. Définit le délai d'attente de nouvelles données du client, au-delà duquel la…"
 tags: [nginx, directive, ngx_http_v2_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 ## Utilisation
 
 > [!NOTE]
-> This directive is obsolete since version 1.19.7. The [[12-directives/client-header-timeout|client_header_timeout]] directive should be used instead.
+> Cette directive est obsolète depuis la version 1.19.7. Utiliser à la place la directive [[12-directives/client-header-timeout|client_header_timeout]].
 
-Sets the timeout for expecting more data from the client, after which the connection is closed.
+Définit le délai d'attente de nouvelles données du client, au-delà duquel la connexion est fermée.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "userid_name"
-description: "Directive nginx userid_name (ngx_http_userid_module) — Sets the cookie name."
+description: "Directive nginx userid_name (ngx_http_userid_module) — Définit le nom du cookie."
 tags: [nginx, directive, ngx_http_userid_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the cookie name.
+Définit le nom du cookie.
 
 ---
 

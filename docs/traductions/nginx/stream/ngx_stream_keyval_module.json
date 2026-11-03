@@ -1,1 +1,4 @@
-{}
+{
+ "6ed3697f39a3": "Crée une nouvelle variable *$variable* dont la valeur est recherchée par la clé (*key*) dans la base clé-valeur. Les règles de correspondance sont définies par le paramètre `type` de la directive [[12-directives/keyval-zone-stream-keyval|keyval_zone]]. La base est stockée dans la zone de mémoire partagée indiquée par le paramètre `zone`.",
+ "9dd1c28b23d9": "Le paramètre facultatif `type` (1.17.1) active un index supplémentaire optimisé pour un certain type de clé et définit les règles de correspondance lors de l'évaluation d'une variable [[12-directives/keyval-stream-keyval|keyval]] `$variable`."
+}

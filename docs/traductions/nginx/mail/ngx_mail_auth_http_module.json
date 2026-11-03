@@ -1,0 +1,4 @@
+{
+ "1ed77c3f7ffc": "Protocole",
+ "b0e3517e02c9": "Le protocole HTTP sert à communiquer avec le serveur d'authentification. Les données du corps de la réponse sont ignorées ; les informations ne sont transmises que dans les en-têtes."
+}

@@ -1,19 +1,16 @@
 ---
 title: "$date_gmt"
-description: "Variable nginx $date_gmt (ngx_http_ssi_module) — current time in GMT. The format is set by the config command with the timefmt parameter."
+description: "Variable nginx $date_gmt (ngx_http_ssi_module) — heure actuelle en GMT. Le format est défini par la commande config avec le paramètre timefmt."
 tags: [nginx, variable, ngx_http_ssi_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$date_gmt` |
 | **Module** | [[11-modules/02-http/ngx_http_ssi_module\|ngx_http_ssi_module]] |
 
-current time in GMT. The format is set by the `config` command with the `timefmt` parameter.
+heure actuelle en GMT. Le format est défini par la commande `config` avec le paramètre `timefmt`.
 
 ---
 

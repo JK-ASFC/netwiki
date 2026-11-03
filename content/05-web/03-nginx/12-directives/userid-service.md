@@ -1,12 +1,9 @@
 ---
 title: "userid_service"
-description: "Directive nginx userid_service (ngx_http_userid_module) — If identifiers are issued by multiple servers (services), each service should be assigned its own number to ensure that client identifiers are unique. For version 1 cookies, the default value is…"
+description: "Directive nginx userid_service (ngx_http_userid_module) — Si les identifiants sont émis par plusieurs serveurs (services), chacun doit recevoir son propre numéro (number) pour garantir l'unicité des identifiants. Pour les cookies de version 1, la valeur par…"
 tags: [nginx, directive, ngx_http_userid_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-If identifiers are issued by multiple servers (services), each service should be assigned its own *number* to ensure that client identifiers are unique. For version 1 cookies, the default value is zero. For version 2 cookies, the default value is the number composed from the last four octets of the server’s IP address.
+Si les identifiants sont émis par plusieurs serveurs (services), chacun doit recevoir son propre numéro (*number*) pour garantir l'unicité des identifiants. Pour les cookies de version 1, la valeur par défaut est zéro ; pour la version 2, c'est le nombre formé par les quatre derniers octets de l'adresse IP du serveur.
 
 ---
 

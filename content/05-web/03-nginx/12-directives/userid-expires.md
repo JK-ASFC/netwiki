@@ -1,12 +1,9 @@
 ---
 title: "userid_expires"
-description: "Directive nginx userid_expires (ngx_http_userid_module) — Sets a time during which a browser should keep the cookie. The parameter max will cause the cookie to expire on “31 Dec 2037 23:55:55 GMT”. The parameter off will cause the cookie to expire at the…"
+description: "Directive nginx userid_expires (ngx_http_userid_module) — Définit la durée pendant laquelle le navigateur doit conserver le cookie. Le paramètre max le fait expirer le « 31 Dec 2037 23:55:55 GMT », le paramètre off à la fin de la session du navigateur."
 tags: [nginx, directive, ngx_http_userid_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a time during which a browser should keep the cookie. The parameter `max` will cause the cookie to expire on “`31 Dec 2037 23:55:55 GMT`”. The parameter `off` will cause the cookie to expire at the end of a browser session.
+Définit la durée pendant laquelle le navigateur doit conserver le cookie. Le paramètre `max` le fait expirer le « `31 Dec 2037 23:55:55 GMT` », le paramètre `off` à la fin de la session du navigateur.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "http2_push"
-description: "Directive nginx http2_push (ngx_http_v2_module) — NOTE This directive is obsolete since version 1.25.1. The early_hints directive can be used instead. Pre-emptively sends (pushes) a request to the specified uri along with the response to the…"
+description: "Directive nginx http2_push (ngx_http_v2_module) — NOTE Cette directive est obsolète depuis la version 1.25.1. On peut utiliser à la place la directive early_hints. Envoie par anticipation (push) une requête vers l'uri indiqué en même temps que la…"
 tags: [nginx, directive, ngx_http_v2_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -19,17 +16,17 @@ icon: settings-2
 ## Utilisation
 
 > [!NOTE]
-> This directive is obsolete since version 1.25.1. The [[12-directives/early-hints|early_hints]] directive can be used instead.
+> Cette directive est obsolète depuis la version 1.25.1. On peut utiliser à la place la directive [[12-directives/early-hints|early_hints]].
 
-Pre-emptively sends ([pushes](https://datatracker.ietf.org/doc/html/rfc9113#section-8.4)) a request to the specified *uri* along with the response to the original request. Only relative URIs with absolute path will be processed, for example:
+Envoie par anticipation ([push](https://datatracker.ietf.org/doc/html/rfc9113#section-8.4)) une requête vers l'*uri* indiqué en même temps que la réponse à la requête d'origine. Seuls les URI relatifs avec un chemin absolu sont traités, par exemple :
 
 ```nginx
 http2_push /static/css/main.css;
 ```
 
-The *uri* value can contain variables.
+La valeur *uri* peut contenir des variables.
 
-Several `http2_push` directives can be specified on the same configuration level. The `off` parameter cancels the effect of the `http2_push` directives inherited from the previous configuration level.
+Plusieurs directives `http2_push` peuvent être indiquées au même niveau de configuration. Le paramètre `off` annule l'effet des directives `http2_push` héritées du niveau de configuration précédent.
 
 ---
 

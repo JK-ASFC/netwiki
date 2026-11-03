@@ -1,12 +1,9 @@
 ---
 title: "userid_p3p"
-description: "Directive nginx userid_p3p (ngx_http_userid_module) — Sets a value for the P3P header field that will be sent along with the cookie. If the directive is set to the special value none, the P3P header will not be sent in a response."
+description: "Directive nginx userid_p3p (ngx_http_userid_module) — Définit la valeur du champ d'en-tête P3P envoyé avec le cookie. Avec la valeur spéciale none, l'en-tête P3P n'est pas envoyé."
 tags: [nginx, directive, ngx_http_userid_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a value for the `P3P` header field that will be sent along with the cookie. If the directive is set to the special value `none`, the `P3P` header will not be sent in a response.
+Définit la valeur du champ d'en-tête `P3P` envoyé avec le cookie. Avec la valeur spéciale `none`, l'en-tête `P3P` n'est pas envoyé.
 
 ---
 

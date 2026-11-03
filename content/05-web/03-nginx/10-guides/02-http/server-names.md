@@ -1,14 +1,11 @@
 ---
-title: "Server names"
-description: "Nginx — Server names. Server names are defined using the server_name directive and determine which server block is used for a given request. See also “How nginx processes a request”. They may be defined using exact names, wildcard names, or…"
+title: "Noms de serveurs"
+description: "Nginx — Noms de serveurs. Les noms de serveurs se définissent avec la directive server_name et déterminent quel bloc server traite une requête donnée. Voir aussi « Comment nginx traite une requête ». Ils peuvent être définis par des noms exacts,…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-Server names are defined using the [[12-directives/server-name-http-core|server_name]] directive and determine which [[12-directives/server-http-core|server]] block is used for a given request. See also “[[10-guides/02-http/request-processing|How nginx processes a request]]”. They may be defined using exact names, wildcard names, or regular expressions:
+Les noms de serveurs se définissent avec la directive [[12-directives/server-name-http-core|server_name]] et déterminent quel bloc [[12-directives/server-http-core|server]] traite une requête donnée. Voir aussi « [[10-guides/02-http/request-processing|Comment nginx traite une requête]] ». Ils peuvent être définis par des noms exacts, des noms génériques ou des expressions régulières :
 
 ```
 server {
@@ -39,37 +36,37 @@ server {
 La recherche s'effectue dans l'ordre de priorité suivant et s'arrête à la première variante correspondante :
 
 1. le nom exact
-2. the longest wildcard name starting with an asterisk, e.g. “`*.example.org`”
+2. le plus long nom générique commençant par un astérisque, par exemple « `*.example.org` »
 3. le plus long nom générique se terminant par un astérisque, par exemple « `mail.*` »
 4. la première expression régulière correspondante (dans l'ordre d'apparition dans le fichier de configuration)
 
-## Wildcard names
+## Noms génériques
 
-A wildcard name may contain an asterisk only on the name’s start or end, and only on a dot border. The names “`www.*.example.org`” and “`w*.example.org`” are invalid. However, these names can be specified using regular expressions, for example, “`~^www\..+\.example\.org$`” and “`~^w.*\.example\.org$`”. An asterisk can match several name parts. The name “`*.example.org`” matches not only `www.example.org` but `www.sub.example.org` as well.
+Un nom générique ne peut contenir un astérisque qu'au début ou à la fin du nom, et seulement à la limite d'un point. Les noms « `www.*.example.org` » et « `w*.example.org` » ne sont pas valides ; ils peuvent toutefois s'écrire avec des expressions régulières, par exemple « `~^www\..+\.example\.org$` » et « `~^w.*\.example\.org$` ». Un astérisque peut correspondre à plusieurs parties du nom : « `*.example.org` » correspond à `www.example.org` mais aussi à `www.sub.example.org`.
 
-A special wildcard name in the form “`.example.org`” can be used to match both the exact name “`example.org`” and the wildcard name “`*.example.org`”.
+Le nom générique spécial de la forme « `.example.org` » correspond à la fois au nom exact « `example.org` » et au nom générique « `*.example.org` ».
 
-## Regular expressions names
+## Noms en expressions régulières
 
-The regular expressions used by nginx are compatible with those used by the Perl programming language (PCRE). To use a regular expression, the server name must start with the tilde character:
+Les expressions régulières de nginx sont compatibles avec celles du langage Perl (PCRE). Pour utiliser une expression régulière, le nom de serveur doit commencer par un tilde :
 
 ```c
 server_name  ~^www\d+\.example\.net$;
 ```
 
-otherwise it will be treated as an exact name, or if the expression contains an asterisk, as a wildcard name (and most likely as an invalid one). Do not forget to set “`^`” and “`$`” anchors. They are not required syntactically, but logically. Also note that domain name dots should be escaped with a backslash. A regular expression containing the characters “`{`” and “`}`” should be quoted:
+sinon il est traité comme un nom exact ou, s'il contient un astérisque, comme un nom générique (très probablement non valide). N'oubliez pas les ancres « `^` » et « `$` » : elles ne sont pas obligatoires syntaxiquement, mais logiquement. Les points des noms de domaine doivent aussi être échappés par une barre oblique inverse. Une expression régulière contenant les caractères « `{` » et « `}` » doit être placée entre guillemets :
 
 ```c
 server_name  "~^(?<name>\w\d{1,3}+)\.example\.net$";
 ```
 
-otherwise nginx will fail to start and display the error message:
+sinon nginx ne démarre pas et affiche le message d'erreur :
 
 ```
 directive "server_name" is not terminated by ";" in ...
 ```
 
-A named regular expression capture can be used later as a variable:
+Une capture nommée d'expression régulière peut ensuite servir de variable :
 
 ```
 server {
@@ -81,7 +78,7 @@ server {
 }
 ```
 
-The captures can also be used in positional form:
+Les captures peuvent aussi être utilisées sous forme positionnelle :
 
 ```
 server {
@@ -93,13 +90,13 @@ server {
 }
 ```
 
-However, such usage should be limited to simple cases (like the above), since positional captures are easily overwritten by other regular expressions. See “[[10-guides/01-introduction/regex-captures|Regular expression captures]]” for the named capture syntax and for details on how long captured values stay available.
+Cet usage doit toutefois être réservé aux cas simples (comme ci-dessus), car les captures positionnelles sont facilement écrasées par d'autres expressions régulières. Voir « [[10-guides/01-introduction/regex-captures|Captures des expressions régulières]] » pour la syntaxe des captures nommées et la durée de disponibilité des valeurs capturées.
 
-## Miscellaneous names
+## Noms divers
 
-There are some server names that are treated specially.
+Certains noms de serveurs sont traités de façon particulière.
 
-If it is required to process requests without the `Host` header field in a [[12-directives/server-http-core|server]] block which is not the default, an empty name should be specified:
+Pour traiter les requêtes sans champ d'en-tête `Host` dans un bloc [[12-directives/server-http-core|server]] qui n'est pas celui par défaut, il faut indiquer un nom vide :
 
 ```
 server {
@@ -109,14 +106,14 @@ server {
 }
 ```
 
-If no [[12-directives/server-name-http-core|server_name]] is defined in a [[12-directives/server-http-core|server]] block then nginx uses the empty name as the server name.
+Si aucun [[12-directives/server-name-http-core|server_name]] n'est défini dans un bloc [[12-directives/server-http-core|server]], nginx utilise le nom vide comme nom de serveur.
 
 > [!NOTE]
-> nginx versions up to 0.8.48 used the machine’s hostname as the server name in this case.
+> Jusqu'à la version 0.8.48, nginx utilisait dans ce cas le nom d'hôte de la machine.
 
-If a server name is defined as “`$hostname`” (0.9.4), the machine’s hostname is used.
+Si un nom de serveur vaut « `$hostname` » (0.9.4), le nom d'hôte de la machine est utilisé.
 
-If someone makes a request using an IP address instead of a server name, the `Host` request header field will contain the IP address and the request can be handled using the IP address as the server name:
+Si une requête utilise une adresse IP au lieu d'un nom de serveur, le champ d'en-tête de requête `Host` contient l'adresse IP, et la requête peut être traitée en utilisant l'adresse IP comme nom de serveur :
 
 ```
 server {
@@ -130,7 +127,7 @@ server {
 }
 ```
 
-In catch-all server examples the strange name “`_`” can be seen:
+Dans les exemples de serveur « attrape-tout », on voit l'étrange nom « `_` » :
 
 ```
 server {
@@ -140,9 +137,9 @@ server {
 }
 ```
 
-There is nothing special about this name, it is just one of a myriad of invalid domain names which never intersect with any real name. Other invalid names like “`--`” and “`!@#`” may equally be used.
+Ce nom n'a rien de particulier : c'est un nom de domaine non valide parmi une infinité d'autres, qui ne croisent jamais un nom réel. D'autres noms non valides comme « `--` » et « `!@#` » conviennent tout autant.
 
-nginx versions up to 0.6.25 supported the special name “`*`” which was erroneously interpreted to be a catch-all name. It never functioned as a catch-all or wildcard server name. Instead, it supplied the functionality that is now provided by the [[12-directives/server-name-in-redirect|server_name_in_redirect]] directive. The special name “`*`” is now deprecated and the [[12-directives/server-name-in-redirect|server_name_in_redirect]] directive should be used. Note that there is no way to specify the catch-all name or the default server using the [[12-directives/server-name-http-core|server_name]] directive. This is a property of the [[12-directives/listen-http-core|listen]] directive and not of the [[12-directives/server-name-http-core|server_name]] directive. See also “[[10-guides/02-http/request-processing|How nginx processes a request]]”. It is possible to define servers listening on ports \*:80 and \*:8080, and direct that one will be the default server for port \*:8080, while the other will be the default for port \*:80:
+Jusqu'à la version 0.6.25, nginx prenait en charge le nom spécial « `*` », interprété à tort comme un nom attrape-tout. Il n'a jamais fonctionné comme nom attrape-tout ni comme nom générique : il fournissait la fonction aujourd'hui assurée par la directive [[12-directives/server-name-in-redirect|server_name_in_redirect]]. Le nom spécial « `*` » est obsolète ; utilisez la directive [[12-directives/server-name-in-redirect|server_name_in_redirect]]. Il n'existe aucun moyen de désigner le nom attrape-tout ou le serveur par défaut avec la directive [[12-directives/server-name-http-core|server_name]] : c'est une propriété de la directive [[12-directives/listen-http-core|listen]], et non de [[12-directives/server-name-http-core|server_name]]. Voir aussi « [[10-guides/02-http/request-processing|Comment nginx traite une requête]] ». On peut définir des serveurs écoutant sur les ports \*:80 et \*:8080, et faire de l'un le serveur par défaut du port \*:8080 et de l'autre celui du port \*:80 :
 
 ```
 server {
@@ -160,9 +157,9 @@ server {
 }
 ```
 
-## Internationalized names
+## Noms internationalisés
 
-Internationalized domain names ([IDNs](https://en.wikipedia.org/wiki/Internationalized_domain_name)) should be specified using an ASCII (Punycode) representation in the [[12-directives/server-name-http-core|server_name]] directive:
+Les noms de domaine internationalisés ([IDN](https://en.wikipedia.org/wiki/Internationalized_domain_name)) doivent être indiqués sous leur forme ASCII (Punycode) dans la directive [[12-directives/server-name-http-core|server_name]] :
 
 ```
 server {
@@ -172,34 +169,34 @@ server {
 }
 ```
 
-## Virtual server selection
+## Choix du serveur virtuel
 
-First, a connection is created in a default server context. Then, the server name can be determined in the following request processing stages, each involved in server configuration selection:
+Une connexion est d'abord créée dans le contexte d'un serveur par défaut. Le nom de serveur peut ensuite être déterminé aux étapes suivantes du traitement de la requête, chacune intervenant dans le choix de la configuration du serveur :
 
-- during SSL handshake, in advance, according to [[10-guides/02-http/configuring-https-servers|SNI]]
-- after processing the request line
-- after processing the `Host` header field
-- if the server name was not determined after processing the request line or from the `Host` header field, nginx will use the empty name as the server name.
+- pendant la négociation SSL, par anticipation, selon [[10-guides/02-http/configuring-https-servers|SNI]]
+- après le traitement de la ligne de requête
+- après le traitement du champ d'en-tête `Host`
+- si le nom de serveur n'a pas été déterminé par la ligne de requête ni par le champ `Host`, nginx utilise le nom vide comme nom de serveur.
 
-At each of these stages, different server configurations can be applied. As such, certain directives should be specified with caution:
+À chacune de ces étapes, des configurations de serveur différentes peuvent s'appliquer. Certaines directives doivent donc être indiquées avec précaution :
 
-- in case of the [[12-directives/ssl-protocols-http-ssl|ssl_protocols]] directive, the protocol list can be applied from a virtual server configuration only if supported by the underlying library (OpenSSL 1.1.1 or higher, BoringSSL, AWS-LC). For the libraries not listed above, the protocol list is set before the server configuration could be applied according to SNI, thus, protocols should be specified only for a default server;
-- in case of the [[12-directives/ssl-session-cache-http-ssl|ssl_session_cache]], [[12-directives/ssl-session-tickets-http-ssl|ssl_session_tickets]], [[12-directives/ssl-session-timeout-http-ssl|ssl_session_timeout]], and, consequently, [[12-directives/ssl-early-data|ssl_early_data]] directives, SSL sessions are always resumed from the default server context, thus, the directives should be specified only for a default server;
-- the [[12-directives/client-header-buffer-size|client_header_buffer_size]] and [[12-directives/merge-slashes|merge_slashes]] directives are involved before reading the request line, thus, such directives use a default server configuration or the server configuration chosen by SNI;
-- in case of the [[12-directives/ignore-invalid-headers|ignore_invalid_headers]], [[12-directives/large-client-header-buffers|large_client_header_buffers]], and [[12-directives/underscores-in-headers|underscores_in_headers]] directives involved in processing request header fields, it additionally depends whether the server configuration was updated according to the request line or the `Host` header field;
-- an error response will be handled with the [[12-directives/error-page|error_page]] directive in the server that currently fulfills the request.
+- pour la directive [[12-directives/ssl-protocols-http-ssl|ssl_protocols]], la liste des protocoles d'un serveur virtuel ne peut s'appliquer que si la bibliothèque sous-jacente le permet (OpenSSL 1.1.1 ou plus récent, BoringSSL, AWS-LC). Avec les autres bibliothèques, la liste des protocoles est fixée avant que la configuration du serveur puisse s'appliquer selon SNI : les protocoles ne doivent alors être indiqués que pour le serveur par défaut ;
+- pour les directives [[12-directives/ssl-session-cache-http-ssl|ssl_session_cache]], [[12-directives/ssl-session-tickets-http-ssl|ssl_session_tickets]], [[12-directives/ssl-session-timeout-http-ssl|ssl_session_timeout]] et, par conséquent, [[12-directives/ssl-early-data|ssl_early_data]], les sessions SSL sont toujours reprises depuis le contexte du serveur par défaut : ces directives ne doivent donc être indiquées que pour le serveur par défaut ;
+- les directives [[12-directives/client-header-buffer-size|client_header_buffer_size]] et [[12-directives/merge-slashes|merge_slashes]] interviennent avant la lecture de la ligne de requête : elles utilisent la configuration du serveur par défaut ou celle choisie selon SNI ;
+- pour les directives [[12-directives/ignore-invalid-headers|ignore_invalid_headers]], [[12-directives/large-client-header-buffers|large_client_header_buffers]] et [[12-directives/underscores-in-headers|underscores_in_headers]], qui interviennent dans le traitement des champs d'en-tête, cela dépend en outre de la mise à jour éventuelle de la configuration du serveur selon la ligne de requête ou le champ `Host` ;
+- une réponse d'erreur est traitée par la directive [[12-directives/error-page|error_page]] du serveur qui traite la requête à ce moment.
 
-## Optimization
+## Optimisation
 
-Exact names, wildcard names starting with an asterisk, and wildcard names ending with an asterisk are stored in three hash tables bound to the listen ports. The sizes of hash tables are optimized at the configuration phase so that a name can be found with the fewest CPU cache misses. The details of setting up hash tables are provided in a separate [[10-guides/01-introduction/hash|document]].
+Les noms exacts, les noms génériques commençant par un astérisque et ceux se terminant par un astérisque sont stockés dans trois tables de hachage liées aux ports d'écoute. Leurs tailles sont optimisées lors de la configuration pour qu'un nom soit trouvé avec le moins possible de défauts de cache processeur. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]].
 
-The exact names hash table is searched first. If a name is not found, the hash table with wildcard names starting with an asterisk is searched. If the name is not found there, the hash table with wildcard names ending with an asterisk is searched.
+La table des noms exacts est consultée en premier. Si le nom n'y est pas, c'est la table des noms génériques commençant par un astérisque, puis celle des noms génériques se terminant par un astérisque.
 
-Searching wildcard names hash table is slower than searching exact names hash table because names are searched by domain parts. Note that the special wildcard form “`.example.org`” is stored in a wildcard names hash table and not in an exact names hash table.
+La recherche dans les tables de noms génériques est plus lente que dans celle des noms exacts, car les noms sont recherchés par parties du domaine. La forme spéciale « `.example.org` » est stockée dans une table de noms génériques et non dans celle des noms exacts.
 
-Regular expressions are tested sequentially and therefore are the slowest method and are non-scalable.
+Les expressions régulières sont testées l'une après l'autre : c'est la méthode la plus lente, et elle ne passe pas à l'échelle.
 
-For these reasons, it is better to use exact names where possible. For example, if the most frequently requested names of a server are `example.org` and `www.example.org`, it is more efficient to define them explicitly:
+Il vaut donc mieux utiliser des noms exacts quand c'est possible. Par exemple, si les noms les plus demandés d'un serveur sont `example.org` et `www.example.org`, il est plus efficace de les définir explicitement :
 
 ```
 server {
@@ -209,7 +206,7 @@ server {
 }
 ```
 
-than to use the simplified form:
+que d'utiliser la forme simplifiée :
 
 ```
 server {
@@ -219,14 +216,14 @@ server {
 }
 ```
 
-If a large number of server names are defined, or unusually long server names are defined, tuning the [[12-directives/server-names-hash-max-size-http-core|server_names_hash_max_size]] and [[12-directives/server-names-hash-bucket-size-http-core|server_names_hash_bucket_size]] directives at the *http* level may become necessary. The default value of the [[12-directives/server-names-hash-bucket-size-http-core|server_names_hash_bucket_size]] directive may be equal to 32, or 64, or another value, depending on CPU cache line size. If the default value is 32 and server name is defined as “`too.long.server.name.example.org`” then nginx will fail to start and display the error message:
+Si un grand nombre de noms de serveurs, ou des noms particulièrement longs, sont définis, il peut devenir nécessaire d'ajuster les directives [[12-directives/server-names-hash-max-size-http-core|server_names_hash_max_size]] et [[12-directives/server-names-hash-bucket-size-http-core|server_names_hash_bucket_size]] au niveau *http*. La valeur par défaut de [[12-directives/server-names-hash-bucket-size-http-core|server_names_hash_bucket_size]] peut être 32, 64 ou une autre valeur selon la taille de ligne de cache du processeur. Si elle vaut 32 et qu'un nom de serveur est « `too.long.server.name.example.org` », nginx ne démarre pas et affiche le message d'erreur :
 
 ```
 could not build the server_names_hash,
 you should increase server_names_hash_bucket_size: 32
 ```
 
-In this case, the directive value should be increased to the next power of two:
+Il faut alors porter la valeur de la directive à la puissance de deux suivante :
 
 ```
 http {
@@ -234,7 +231,7 @@ http {
     ...
 ```
 
-If a large number of server names are defined, another error message will appear:
+Si un grand nombre de noms de serveurs sont définis, un autre message d'erreur apparaît :
 
 ```
 could not build the server_names_hash,
@@ -242,22 +239,22 @@ you should increase either server_names_hash_max_size: 512
 or server_names_hash_bucket_size: 32
 ```
 
-In such a case, first try to set [[12-directives/server-names-hash-max-size-http-core|server_names_hash_max_size]] to a number close to the number of server names. Only if this does not help, or if nginx’s start time is unacceptably long, try to increase [[12-directives/server-names-hash-bucket-size-http-core|server_names_hash_bucket_size]].
+Essayez alors d'abord de régler [[12-directives/server-names-hash-max-size-http-core|server_names_hash_max_size]] à un nombre proche du nombre de noms de serveurs. Seulement si cela ne suffit pas, ou si le démarrage de nginx devient trop long, augmentez [[12-directives/server-names-hash-bucket-size-http-core|server_names_hash_bucket_size]].
 
-If a server is the only server for a listen port, then nginx will not test server names at all (and will not build the hash tables for the listen port). However, there is one exception. If a server name is a regular expression with captures, then nginx has to execute the expression to get the captures.
+Si un serveur est le seul sur un port d'écoute, nginx ne teste pas du tout les noms de serveurs (et ne construit pas les tables de hachage de ce port). Exception : si un nom de serveur est une expression régulière avec captures, nginx doit l'exécuter pour obtenir les captures.
 
 ## Compatibilité
 
-- The special server name “`$hostname`” has been supported since 0.9.4.
-- A default server name value is an empty name “” since 0.8.48.
-- Named regular expression server name captures have been supported since 0.8.25.
-- Regular expression server name captures have been supported since 0.7.40.
-- An empty server name “” has been supported since 0.7.12.
-- A wildcard server name or regular expression has been supported for use as the first server name since 0.6.25.
-- Regular expression server names have been supported since 0.6.7.
-- Wildcard form `example.*` has been supported since 0.6.0.
-- The special form `.example.org` has been supported since 0.3.18.
-- Wildcard form `*.example.org` has been supported since 0.1.13.
+- Le nom de serveur spécial « `$hostname` » est pris en charge depuis la version 0.9.4.
+- Le nom de serveur par défaut est le nom vide « » depuis la version 0.8.48.
+- Les captures nommées d'expressions régulières dans les noms de serveurs sont prises en charge depuis la version 0.8.25.
+- Les captures d'expressions régulières dans les noms de serveurs sont prises en charge depuis la version 0.7.40.
+- Le nom de serveur vide « » est pris en charge depuis la version 0.7.12.
+- Un nom générique ou une expression régulière peut servir de premier nom de serveur depuis la version 0.6.25.
+- Les noms de serveurs en expressions régulières sont pris en charge depuis la version 0.6.7.
+- La forme générique `example.*` est prise en charge depuis la version 0.6.0.
+- La forme spéciale `.example.org` est prise en charge depuis la version 0.3.18.
+- La forme générique `*.example.org` est prise en charge depuis la version 0.1.13.
 
 ---
 

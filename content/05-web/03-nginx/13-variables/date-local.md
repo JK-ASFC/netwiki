@@ -1,19 +1,16 @@
 ---
 title: "$date_local"
-description: "Variable nginx $date_local (ngx_http_ssi_module) — current time in the local time zone. The format is set by the config command with the timefmt parameter."
+description: "Variable nginx $date_local (ngx_http_ssi_module) — heure actuelle dans le fuseau horaire local. Le format est défini par la commande config avec le paramètre timefmt."
 tags: [nginx, variable, ngx_http_ssi_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$date_local` |
 | **Module** | [[11-modules/02-http/ngx_http_ssi_module\|ngx_http_ssi_module]] |
 
-current time in the local time zone. The format is set by the `config` command with the `timefmt` parameter.
+heure actuelle dans le fuseau horaire local. Le format est défini par la commande `config` avec le paramètre `timefmt`.
 
 ---
 

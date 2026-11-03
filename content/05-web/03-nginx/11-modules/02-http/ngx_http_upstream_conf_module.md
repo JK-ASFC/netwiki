@@ -1,17 +1,14 @@
 ---
 title: "ngx_http_upstream_conf_module"
-description: "Module nginx ngx_http_upstream_conf_module — The ngx_http_upstream_conf_module module allows configuring upstream server groups on-the-fly via a simple HTTP interface without the need of restarting nginx. The http or stream server group must reside in the shared…"
+description: "Module nginx ngx_http_upstream_conf_module — Le module ngx_http_upstream_conf_module permet de configurer à chaud les groupes de serveurs amont par une interface HTTP simple, sans redémarrer nginx. Le groupe de serveurs http ou stream doit être en mémoire partagée."
 tags: [nginx, module, ngx_http_upstream_conf_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_upstream_conf_module` module allows configuring upstream server groups on-the-fly via a simple HTTP interface without the need of restarting nginx. The [[12-directives/zone-http-upstream|http]] or [[12-directives/zone-stream-upstream|stream]] server group must reside in the shared memory.
+Le module `ngx_http_upstream_conf_module` permet de configurer à chaud les groupes de serveurs amont par une interface HTTP simple, sans redémarrer nginx. Le groupe de serveurs [[12-directives/zone-http-upstream|http]] ou [[12-directives/zone-stream-upstream|stream]] doit être en mémoire partagée.
 
 > [!NOTE]
-> This module was available as part of our [abonnement commercial](https://nginx.com/products/) until 1.13.10. It was superseded by the [[11-modules/02-http/ngx_http_api_module|ngx_http_api_module]] module in 1.13.3.
+> Ce module était disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/) jusqu'à la version 1.13.10. Il a été remplacé par le module [[11-modules/02-http/ngx_http_api_module|ngx_http_api_module]] en version 1.13.3.
 
 ## Exemple de configuration
 

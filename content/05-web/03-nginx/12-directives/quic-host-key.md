@@ -1,12 +1,9 @@
 ---
 title: "quic_host_key"
-description: "Directive nginx quic_host_key (ngx_http_v3_module) — Sets a file with the secret key used to encrypt stateless reset and address validation tokens. By default, a random key is generated on each reload. Tokens generated with old keys are not accepted."
+description: "Directive nginx quic_host_key (ngx_http_v3_module) — Indique le fichier (file) contenant la clé secrète servant à chiffrer les jetons de réinitialisation sans état et de validation d'adresse. Par défaut, une clé aléatoire est générée à chaque…"
 tags: [nginx, directive, ngx_http_v3_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a *file* with the secret key used to encrypt stateless reset and address validation tokens. By default, a random key is generated on each reload. Tokens generated with old keys are not accepted.
+Indique le fichier (*file*) contenant la clé secrète servant à chiffrer les jetons de réinitialisation sans état et de validation d'adresse. Par défaut, une clé aléatoire est générée à chaque rechargement ; les jetons générés avec d'anciennes clés ne sont pas acceptés.
 
 ---
 

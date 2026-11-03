@@ -1,30 +1,27 @@
 ---
 title: "ngx_http_v3_module"
-description: "Module nginx ngx_http_v3_module — The ngx_http_v3_module module (1.25.0) provides experimental support for HTTP/3."
+description: "Module nginx ngx_http_v3_module — Le module ngx_http_v3_module (1.25.0) fournit une prise en charge expérimentale de HTTP/3."
 tags: [nginx, module, ngx_http_v3_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_v3_module` (1.25.0) fournit une prise en charge expérimentale de [HTTP/3](https://datatracker.ietf.org/doc/html/rfc9114).
 
-The `ngx_http_v3_module` module (1.25.0) provides experimental support for [HTTP/3](https://datatracker.ietf.org/doc/html/rfc9114).
-
-This module is not built by default, it should be enabled with the `--with-http_v3_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_v3_module`.
 
 > [!NOTE]
-> This module requires the [OpenSSL](http://www.openssl.org) library version 1.1.1 or higher.
+> Ce module nécessite la bibliothèque [OpenSSL](http://www.openssl.org) 1.1.1 ou plus récente.
 
 > [!NOTE]
-> 0-RTT support requires the [OpenSSL](http://www.openssl.org) library version 3.5.1 or higher. Alternatively, [BoringSSL](https://boringssl.googlesource.com/boringssl), [LibreSSL](https://www.libressl.org), or [QuicTLS](https://github.com/quictls/openssl) libraries can be used to build and run this module.
+> La prise en charge de 0-RTT nécessite la bibliothèque [OpenSSL](http://www.openssl.org) 3.5.1 ou plus récente. On peut aussi utiliser les bibliothèques [BoringSSL](https://boringssl.googlesource.com/boringssl), [LibreSSL](https://www.libressl.org) ou [QuicTLS](https://github.com/quictls/openssl) pour compiler et exécuter ce module.
 
 ## Problèmes connus
 
 Le module est expérimental : à utiliser à vos risques.
 
-Before version 1.29.1, 0-RTT support could not be enabled with OpenSSL regardless of the [[12-directives/ssl-early-data|ssl_early_data]] directive value.
+Avant la version 1.29.1, 0-RTT ne pouvait pas être activé avec OpenSSL, quelle que soit la valeur de la directive [[12-directives/ssl-early-data|ssl_early_data]].
 
-The module cannot be built on the Win32 platform.
+Le module ne peut pas être compilé sous Win32.
 
 ## Exemple de configuration
 

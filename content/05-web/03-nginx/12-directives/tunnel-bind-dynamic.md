@@ -1,12 +1,9 @@
 ---
 title: "tunnel_bind_dynamic"
-description: "Directive nginx tunnel_bind_dynamic (ngx_http_tunnel_module) — When enabled, makes the tunnel_bind operation at each connection attempt: nginx geo $upstream_last_addr $bind_addr { volatile; 10.0.0.0/24 10.0.0.1; 192.168.0.0/24 192.168.0.1; } tunnel_bind…"
+description: "Directive nginx tunnel_bind_dynamic (ngx_http_tunnel_module) — Si cette option est activée, l'opération tunnel_bind est effectuée à chaque tentative de connexion : nginx geo $upstream_last_addr $bind_addr { volatile; 10.0.0.0/24 10.0.0.1; 192.168.0.0/24…"
 tags: [nginx, directive, ngx_http_tunnel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-When enabled, makes the [[12-directives/tunnel-bind|tunnel_bind]] operation at each connection attempt:
+Si cette option est activée, l'opération [[12-directives/tunnel-bind|tunnel_bind]] est effectuée à chaque tentative de connexion :
 
 ```nginx
 geo $upstream_last_addr $bind_addr {

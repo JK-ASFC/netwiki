@@ -1,0 +1,19 @@
+{
+ "03b350f44c89": "Pour empêcher la lecture de fichiers locaux quelconques accessibles au processus de travail, il est recommandé de n'activer les entités externes que si le XML traité est de confiance.",
+ "27e1defc6415": "La description des paramètres peut contenir des variables ; par exemple, toute la ligne de paramètres peut provenir d'une seule variable :",
+ "312bd3605c5a": "Il peut y avoir plusieurs directives `xslt_string_param`. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive [[12-directives/xslt-param|xslt_param]] ni `xslt_string_param` n'est définie au niveau courant.",
+ "4249e508295c": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_xslt_module`.",
+ "4463034471a4": "Les paramètres peuvent être indiqués séparément ou regroupés sur une ligne avec le séparateur « `:` ». Si un paramètre contient le caractère « `:` », il doit être échappé en « `%3A` ». En outre, `libxslt` exige que les paramètres contenant des caractères non alphanumériques soient placés entre guillemets simples ou doubles, par exemple :",
+ "7027d94bde1b": "Permet de conserver le champ d'en-tête `Last-Modified` de la réponse d'origine pendant les transformations XSLT, pour faciliter la mise en cache.",
+ "711c526d58b6": "Il peut y avoir plusieurs directives `xslt_param`. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `xslt_param` ni [[12-directives/xslt-string-param|xslt_string_param]] n'est définie au niveau courant.",
+ "af4d6d80fee4": "On peut indiquer plusieurs feuilles de style ; elles sont appliquées successivement dans l'ordre indiqué.",
+ "b5ae790cf8be": "Le module `ngx_http_xslt_module` (0.7.8+) est un filtre qui transforme les réponses XML à l'aide d'une ou plusieurs feuilles de style XSLT.",
+ "bc475509a54b": "Ce module nécessite les bibliothèques [libxml2](http://xmlsoft.org) et [libxslt](http://xmlsoft.org/XSLT/).",
+ "be27a218f490": "Par défaut, ce champ est supprimé, car le contenu de la réponse est modifié pendant les transformations et peut contenir des éléments générés dynamiquement ou des parties qui changent indépendamment de la réponse d'origine.",
+ "ca878cf56ced": "Définit les paramètres des feuilles de style XSLT. La valeur (*value*) est traitée comme une expression XPath et peut contenir des variables. Pour transmettre une chaîne à une feuille de style, utilisez la directive [[12-directives/xslt-string-param|xslt_string_param]].",
+ "dc13822a9d6e": "Active les transformations dans les réponses des types MIME indiqués, en plus de « `text/xml` ». La valeur spéciale « `*` » correspond à tous les types MIME (0.8.29). Si le résultat de la transformation est une réponse HTML, son type MIME devient « `text/html` ».",
+ "de41a84761c8": "Active ou désactive le chargement des entités externes déclarées dans le sous-ensemble DTD interne du XML traité. Seul le chargement d'entités externes à partir de fichiers est pris en charge.",
+ "e2cbf0829768": "Définit les paramètres chaînes des feuilles de style XSLT. Les expressions XPath de la valeur (*value*) ne sont pas interprétées. La valeur peut contenir des variables.",
+ "e99c6dd9661c": "Définit la feuille de style XSLT et ses paramètres facultatifs. La feuille de style est compilée lors de la configuration.",
+ "ea586ab74670": "Indique le fichier DTD qui déclare les entités de caractères. Ce fichier est compilé lors de la configuration. Pour des raisons techniques, le module ne peut pas utiliser le sous-ensemble externe déclaré dans le XML traité : il est ignoré et un fichier défini spécialement est utilisé à la place. Ce fichier ne doit pas décrire la structure XML ; il suffit d'y déclarer les entités de caractères nécessaires, par exemple :"
+}

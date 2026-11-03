@@ -1,0 +1,3 @@
+{
+ "fa7d2eac04fb": "définit le port utilisé pour se connecter au serveur lors d'une vérification (1.9.7). Par défaut, c'est le port du [[12-directives/server-stream-upstream|serveur]]."
+}

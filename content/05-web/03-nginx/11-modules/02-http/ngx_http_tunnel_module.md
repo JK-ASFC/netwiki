@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_tunnel_module"
-description: "Module nginx ngx_http_tunnel_module — The ngx_http_tunnel_module (1.31.0) handles HTTP/1.1 CONNECT requests and establishes an end-to-end virtual connection."
+description: "Module nginx ngx_http_tunnel_module — Le module ngx_http_tunnel_module (1.31.0) traite les requêtes HTTP/1.1 CONNECT et établit une connexion virtuelle de bout en bout."
 tags: [nginx, module, ngx_http_tunnel_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_tunnel_module` (1.31.0) handles HTTP/1.1 [CONNECT](https://datatracker.ietf.org/doc/html/rfc9110#section-9.3.6) requests and establishes an end-to-end virtual connection.
+Le module `ngx_http_tunnel_module` (1.31.0) traite les requêtes HTTP/1.1 [CONNECT](https://datatracker.ietf.org/doc/html/rfc9110#section-9.3.6) et établit une connexion virtuelle de bout en bout.
 
 ## Exemple de configuration
 

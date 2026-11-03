@@ -1,12 +1,9 @@
 ---
 title: "http3_hq"
-description: "Directive nginx http3_hq (ngx_http_v3_module) — Enables HTTP/0.9 protocol negotiation used in QUIC interoperability tests."
+description: "Directive nginx http3_hq (ngx_http_v3_module) — Active la négociation du protocole HTTP/0.9 utilisé dans les tests d'interopérabilité QUIC."
 tags: [nginx, directive, ngx_http_v3_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables HTTP/0.9 protocol negotiation used in [QUIC interoperability tests](https://github.com/marten-seemann/quic-interop-runner).
+Active la négociation du protocole HTTP/0.9 utilisé dans les [tests d'interopérabilité QUIC](https://github.com/marten-seemann/quic-interop-runner).
 
 ---
 

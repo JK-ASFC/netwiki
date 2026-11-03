@@ -1,6 +1,6 @@
 ---
 title: "ngx_mail_auth_http_module"
-description: "Module nginx ngx_mail_auth_http_module — The HTTP protocol is used to communicate with the authentication server. The data in the response body is ignored, the information is passed only in the headers."
+description: "Module nginx ngx_mail_auth_http_module — Le protocole HTTP sert à communiquer avec le serveur d'authentification. Les données du corps de la réponse sont ignorées ; les informations ne sont transmises que dans les en-têtes."
 tags: [nginx, module, ngx_mail_auth_http_module]
 icon: puzzle
 ---
@@ -8,9 +8,9 @@ icon: puzzle
 > [!NOTE]
 > Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
-## Protocol
+## Protocole
 
-The HTTP protocol is used to communicate with the authentication server. The data in the response body is ignored, the information is passed only in the headers.
+Le protocole HTTP sert à communiquer avec le serveur d'authentification. Les données du corps de la réponse sont ignorées ; les informations ne sont transmises que dans les en-têtes.
 
 Examples of requests and responses:
 

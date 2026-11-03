@@ -1,0 +1,10 @@
+{
+ "22bb541dc6bc": "Installation sous Linux",
+ "3b77503c00a1": "Sous Linux, on peut utiliser les paquets nginx de nginx.org.",
+ "50d54d95599a": "Sous FreeBSD, nginx s'installe soit à partir des [paquets](https://docs.freebsd.org/en/books/handbook/ports/#pkgng-intro), soit avec le système des [ports](https://docs.freebsd.org/en/books/handbook/ports/#ports-using). Les ports offrent plus de souplesse, avec un large choix d'options : le port compile nginx avec les options indiquées et l'installe.",
+ "830defcc4bcc": "Installation sous FreeBSD",
+ "84daa17da2ea": "nginx s'installe de façon différente selon le système d'exploitation.",
+ "c45ed5921ef8": "Si une fonction particulière, absente des paquets et des ports, est nécessaire, nginx peut aussi être compilé à partir des sources. Plus souple, cette méthode peut être complexe pour un débutant. Pour plus d'informations, voir [[10-guides/01-introduction/configure|Compiler nginx à partir des sources]].",
+ "ca98ef2d18bb": "Installer nginx",
+ "e5108445c535": "Compilation à partir des sources"
+}

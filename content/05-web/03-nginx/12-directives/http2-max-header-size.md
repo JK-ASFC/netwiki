@@ -1,12 +1,9 @@
 ---
 title: "http2_max_header_size"
-description: "Directive nginx http2_max_header_size (ngx_http_v2_module) — NOTE This directive is obsolete since version 1.19.7. The large_client_header_buffers directive should be used instead. Limits the maximum size of the entire request header list after HPACK…"
+description: "Directive nginx http2_max_header_size (ngx_http_v2_module) — NOTE Cette directive est obsolète depuis la version 1.19.7. Utiliser à la place la directive large_client_header_buffers. Limite la taille maximale de la liste complète des en-têtes de requête après…"
 tags: [nginx, directive, ngx_http_v2_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 ## Utilisation
 
 > [!NOTE]
-> This directive is obsolete since version 1.19.7. The [[12-directives/large-client-header-buffers|large_client_header_buffers]] directive should be used instead.
+> Cette directive est obsolète depuis la version 1.19.7. Utiliser à la place la directive [[12-directives/large-client-header-buffers|large_client_header_buffers]].
 
-Limits the maximum size of the entire request header list after [HPACK](https://datatracker.ietf.org/doc/html/rfc7541) decompression. For most requests, the default limit should be enough.
+Limite la taille maximale de la liste complète des en-têtes de requête après décompression [HPACK](https://datatracker.ietf.org/doc/html/rfc7541). Pour la plupart des requêtes, la limite par défaut suffit.
 
 ---
 

@@ -1,16 +1,13 @@
 ---
 title: "ngx_http_sub_module"
-description: "Module nginx ngx_http_sub_module — The ngx_http_sub_module module is a filter that modifies a response by replacing one specified string by another."
+description: "Module nginx ngx_http_sub_module — Le module ngx_http_sub_module est un filtre qui modifie une réponse en remplaçant une chaîne par une autre."
 tags: [nginx, module, ngx_http_sub_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_sub_module` est un filtre qui modifie une réponse en remplaçant une chaîne par une autre.
 
-The `ngx_http_sub_module` module is a filter that modifies a response by replacing one specified string by another.
-
-This module is not built by default, it should be enabled with the `--with-http_sub_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_sub_module`.
 
 ## Exemple de configuration
 

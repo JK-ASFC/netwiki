@@ -1,12 +1,9 @@
 ---
 title: "tunnel_bind"
-description: "Directive nginx tunnel_bind (ngx_http_tunnel_module) — Makes outgoing connections to a backend server originate from the specified local IP address with an optional port. Parameter value can contain variables. The special value off cancels the effect of…"
+description: "Directive nginx tunnel_bind (ngx_http_tunnel_module) — Fait partir les connexions sortantes vers un serveur d'arrière-plan de l'adresse IP locale indiquée, avec un port facultatif. La valeur du paramètre peut contenir des variables. La valeur spéciale…"
 tags: [nginx, directive, ngx_http_tunnel_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Makes outgoing connections to a backend server originate from the specified local IP address with an optional port. Parameter value can contain variables. The special value `off` cancels the effect of the `tunnel_bind` directive inherited from the previous configuration level, which allows the system to auto-assign the local IP address and port.
+Fait partir les connexions sortantes vers un serveur d'arrière-plan de l'adresse IP locale indiquée, avec un port facultatif. La valeur du paramètre peut contenir des variables. La valeur spéciale `off` annule l'effet de la directive `tunnel_bind` héritée du niveau de configuration précédent, ce qui laisse le système choisir l'adresse IP et le port locaux.
 
 ---
 

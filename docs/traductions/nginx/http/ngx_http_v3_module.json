@@ -1,0 +1,22 @@
+{
+ "07ea2552e4af": "Définit le nombre maximal de flux de requête HTTP/3 simultanés sur une connexion.",
+ "19337de46079": "Avant la version 1.29.1, 0-RTT ne pouvait pas être activé avec OpenSSL, quelle que soit la valeur de la directive [[12-directives/ssl-early-data|ssl_early_data]].",
+ "229428ce229c": "Active l'envoi en mode lot optimisé grâce au déchargement de la segmentation.",
+ "2a21d0e52fb6": "Active le routage des paquets QUIC avec [eBPF](https://ebpf.io/), ce qui permet la migration des connexions QUIC. Depuis la version 1.31.7, cela permet aussi de conserver les connexions QUIC établies lors des [[10-guides/01-introduction/control|rechargements de configuration]] et des [[10-guides/01-introduction/control|mises à jour à chaud]].",
+ "2a9a32433e13": "identifiant du protocole négocié : « `h3` » pour les connexions HTTP/3, « `hq` » pour les connexions hq, chaîne vide sinon.",
+ "364f267f0ffa": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_v3_module`.",
+ "49ae9635e6b3": "La valeur de la directive ne peut pas être modifiée lors d'un rechargement de configuration ; il faut redémarrer nginx. La directive ne peut pas être désactivée lors d'une mise à jour à chaud si les tables BPF QUIC sont héritées de l'instance précédente de nginx.",
+ "58fb6acc1fe1": "Active la négociation du protocole HTTP/0.9 utilisé dans les [tests d'interopérabilité QUIC](https://github.com/marten-seemann/quic-interop-runner).",
+ "705dd45787d5": "Active la négociation du protocole [HTTP/3](https://datatracker.ietf.org/doc/html/rfc9114).",
+ "7f84b0925b64": "L'envoi optimisé n'est pris en charge que sous Linux avec `UDP_SEGMENT`.",
+ "89583bbc11ab": "Définit la taille du tampon de lecture et d'écriture des flux QUIC.",
+ "8bc9dc976961": "Indique le fichier (*file*) contenant la clé secrète servant à chiffrer les jetons de réinitialisation sans état et de validation d'adresse. Par défaut, une clé aléatoire est générée à chaque rechargement ; les jetons générés avec d'anciennes clés ne sont pas acceptés.",
+ "8efc9856a130": "Le module ne peut pas être compilé sous Win32.",
+ "93d8f509fc29": "Le module `ngx_http_v3_module` (1.25.0) fournit une prise en charge expérimentale de [HTTP/3](https://datatracker.ietf.org/doc/html/rfc9114).",
+ "9e5f1240de56": "La prise en charge de 0-RTT nécessite la bibliothèque [OpenSSL](http://www.openssl.org) 3.5.1 ou plus récente. On peut aussi utiliser les bibliothèques [BoringSSL](https://boringssl.googlesource.com/boringssl), [LibreSSL](https://www.libressl.org) ou [QuicTLS](https://github.com/quictls/openssl) pour compiler et exécuter ce module.",
+ "ac9a3c861bd9": "Active la [validation d'adresse QUIC](https://datatracker.ietf.org/doc/html/rfc9000#name-address-validation) : envoi d'un nouveau jeton dans un paquet `Retry` ou une trame `NEW_TOKEN`, et validation du jeton reçu dans le paquet `Initial`.",
+ "add2ec3160d6": "Le module `ngx_http_v3_module` fournit les variables intégrées suivantes :",
+ "cf91b1ebd3c7": "Ce module nécessite la bibliothèque [OpenSSL](http://www.openssl.org) 1.1.1 ou plus récente.",
+ "ee9c1240c33a": "Définit la valeur du paramètre de transport QUIC `active_connection_id_limit`, soit le nombre maximal d'identifiants de connexion du client que le serveur peut conserver.",
+ "efc2d0488b31": "Cette directive n'est prise en charge que sous Linux 5.7+."
+}

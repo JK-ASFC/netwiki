@@ -1,12 +1,9 @@
 ---
 title: "sub_filter_once"
-description: "Directive nginx sub_filter_once (ngx_http_sub_module) — Indicates whether to look for each string to replace once or repeatedly."
+description: "Directive nginx sub_filter_once (ngx_http_sub_module) — Indique si chaque chaîne à remplacer est recherchée une seule fois ou de façon répétée."
 tags: [nginx, directive, ngx_http_sub_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Indicates whether to look for each string to replace once or repeatedly.
+Indique si chaque chaîne à remplacer est recherchée une seule fois ou de façon répétée.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "userid_domain"
-description: "Directive nginx userid_domain (ngx_http_userid_module) — Defines a domain for which the cookie is set. The none parameter disables setting of a domain for the cookie."
+description: "Directive nginx userid_domain (ngx_http_userid_module) — Définit le domaine pour lequel le cookie est défini. Le paramètre none désactive l'indication d'un domaine."
 tags: [nginx, directive, ngx_http_userid_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a domain for which the cookie is set. The `none` parameter disables setting of a domain for the cookie.
+Définit le domaine pour lequel le cookie est défini. Le paramètre `none` désactive l'indication d'un domaine.
 
 ---
 

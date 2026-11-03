@@ -1,12 +1,9 @@
 ---
 title: "sub_filter_last_modified"
-description: "Directive nginx sub_filter_last_modified (ngx_http_sub_module) — Allows preserving the Last-Modified header field from the original response during replacement to facilitate response caching. By default, the header field is removed as contents of the response are…"
+description: "Directive nginx sub_filter_last_modified (ngx_http_sub_module) — Permet de conserver le champ d'en-tête Last-Modified de la réponse d'origine pendant le remplacement, pour faciliter la mise en cache. Par défaut, ce champ est supprimé, car le contenu de la réponse…"
 tags: [nginx, directive, ngx_http_sub_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Allows preserving the `Last-Modified` header field from the original response during replacement to facilitate response caching.
+Permet de conserver le champ d'en-tête `Last-Modified` de la réponse d'origine pendant le remplacement, pour faciliter la mise en cache.
 
-By default, the header field is removed as contents of the response are modified during processing.
+Par défaut, ce champ est supprimé, car le contenu de la réponse est modifié pendant le traitement.
 
 ---
 

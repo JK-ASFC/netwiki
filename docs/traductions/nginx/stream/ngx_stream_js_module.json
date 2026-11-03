@@ -1,1 +1,3 @@
-{}
+{
+ "c36d9da83584": "Cette directive est devenue obsolète en version 0.4.0 et a été supprimée en version 0.7.1. Utiliser à la place la directive [[12-directives/js-import-stream-js|js_import]]."
+}

@@ -1,26 +1,23 @@
 ---
-title: "Installing nginx"
-description: "Nginx — Installing nginx. nginx can be installed differently, depending on the operating system."
+title: "Installer nginx"
+description: "Nginx — Installer nginx. nginx s'installe de façon différente selon le système d'exploitation."
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+nginx s'installe de façon différente selon le système d'exploitation.
 
-nginx can be installed differently, depending on the operating system.
+## Installation sous Linux
 
-## Installation on Linux
+Sous Linux, on peut utiliser les paquets nginx de nginx.org.
 
-For Linux, nginx packages from nginx.org can be used.
+## Installation sous FreeBSD
 
-## Installation on FreeBSD
+Sous FreeBSD, nginx s'installe soit à partir des [paquets](https://docs.freebsd.org/en/books/handbook/ports/#pkgng-intro), soit avec le système des [ports](https://docs.freebsd.org/en/books/handbook/ports/#ports-using). Les ports offrent plus de souplesse, avec un large choix d'options : le port compile nginx avec les options indiquées et l'installe.
 
-On FreeBSD, nginx can be installed either from the [packages](https://docs.freebsd.org/en/books/handbook/ports/#pkgng-intro) or through the [ports](https://docs.freebsd.org/en/books/handbook/ports/#ports-using) system. The ports system provides greater flexibility, allowing selection among a wide range of options. The port will compile nginx with the specified options and install it.
+## Compilation à partir des sources
 
-## Building from Sources
-
-If some special functionality is required, not available with packages and ports, nginx can also be compiled from source files. While more flexible, this approach may be complex for a beginner. For more information, see [[10-guides/01-introduction/configure|Building nginx from Sources]].
+Si une fonction particulière, absente des paquets et des ports, est nécessaire, nginx peut aussi être compilé à partir des sources. Plus souple, cette méthode peut être complexe pour un débutant. Pour plus d'informations, voir [[10-guides/01-introduction/configure|Compiler nginx à partir des sources]].
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "health_check (ngx_http_upstream_hc_module)"
-description: "Directive nginx health_check (ngx_http_upstream_hc_module) — Enables periodic health checks of the servers in a group referenced in the surrounding location. The following optional parameters are supported: - interval=time sets the interval between two…"
+description: "Directive nginx health_check (ngx_http_upstream_hc_module) — Active les vérifications d'état périodiques des serveurs d'un groupe utilisé dans le bloc location englobant. Les paramètres facultatifs suivants sont pris en charge : - interval=time définit…"
 tags: [nginx, directive, ngx_http_upstream_hc_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,57 +14,57 @@ icon: settings-2
 
 ## Utilisation
 
-Enables periodic health checks of the servers in a [[12-directives/upstream-http-upstream|group]] referenced in the surrounding location.
+Active les vérifications d'état périodiques des serveurs d'un [[12-directives/upstream-http-upstream|groupe]] utilisé dans le bloc location englobant.
 
-The following optional parameters are supported:
+Les paramètres facultatifs suivants sont pris en charge :
 
 - **`interval`=*time***
 
-  sets the interval between two consecutive health checks, by default, 5 seconds.
+  définit l'intervalle entre deux vérifications consécutives ; 5 secondes par défaut.
 
 - **`jitter`=*time***
 
-  sets the time within which each health check will be randomly delayed, by default, there is no delay.
+  définit la durée dans laquelle chaque vérification est retardée aléatoirement ; par défaut, aucun retard.
 
 - **`fails`=*number***
 
-  sets the number of consecutive failed health checks of a particular server after which this server will be considered unhealthy, by default, 1.
+  définit le nombre de vérifications échouées consécutives au-delà duquel un serveur est considéré comme défaillant ; 1 par défaut.
 
 - **`passes`=*number***
 
-  sets the number of consecutive passed health checks of a particular server after which the server will be considered healthy, by default, 1.
+  définit le nombre de vérifications réussies consécutives au-delà duquel un serveur est considéré comme sain ; 1 par défaut.
 
 - **`uri`=*uri***
 
-  defines the URI used in health check requests, by default, “`/`”.
+  définit l'URI utilisé dans les requêtes de vérification ; « `/` » par défaut.
 
 - **`mandatory` \[`persistent`\]**
 
-  sets the initial “checking” state for a server until the first health check is completed (1.11.7). Client requests are not passed to servers in the “checking” state. If the parameter is not specified, the server will be initially considered healthy.
+  place le serveur dans l'état initial « checking » jusqu'à la fin de la première vérification (1.11.7). Les requêtes des clients ne sont pas transmises aux serveurs dans cet état. Sans ce paramètre, le serveur est initialement considéré comme sain.
 
-  The `persistent` parameter (1.19.7) sets the initial “up” state for a server after reload if the server was considered healthy before reload.
+  Le paramètre `persistent` (1.19.7) place le serveur dans l'état initial « up » après un rechargement s'il était considéré comme sain avant.
 
 - **`match`=*name***
 
-  specifies the `match` block configuring the tests that a response should pass in order for a health check to pass. By default, the response should have status code 2xx or 3xx.
+  indique le bloc `match` qui configure les tests qu'une réponse doit passer pour que la vérification réussisse. Par défaut, la réponse doit avoir un code 2xx ou 3xx.
 
 - **`port`=*number***
 
-  defines the port used when connecting to a server to perform a health check (1.9.7). By default, equals the [[12-directives/server-http-upstream|server]] port.
+  définit le port utilisé pour se connecter au serveur lors d'une vérification (1.9.7). Par défaut, c'est le port du [[12-directives/server-http-upstream|serveur]].
 
 - **`type`=`grpc` \[`grpc_service`=*name*\] \[`grpc_status`=*code*\]**
 
-  enables periodic [health checks](https://github.com/grpc/grpc/blob/master/doc/health-checking.md#grpc-health-checking-protocol) of a gRPC server or a particular gRPC service specified with the optional `grpc_service` parameter (1.19.5). If the server does not support the gRPC Health Checking Protocol, the optional `grpc_status` parameter can be used to specify non-zero gRPC [status](https://github.com/grpc/grpc/blob/master/doc/statuscodes.md#status-codes-and-their-use-in-grpc) (for example, status code “`12`” / “`UNIMPLEMENTED`”) that will be treated as healthy:
+  active les [vérifications d'état](https://github.com/grpc/grpc/blob/master/doc/health-checking.md#grpc-health-checking-protocol) périodiques d'un serveur gRPC ou d'un service gRPC précis indiqué par le paramètre facultatif `grpc_service` (1.19.5). Si le serveur ne prend pas en charge le protocole gRPC Health Checking, le paramètre facultatif `grpc_status` permet d'indiquer un [statut](https://github.com/grpc/grpc/blob/master/doc/statuscodes.md#status-codes-and-their-use-in-grpc) gRPC non nul (par exemple le code « `12` » / « `UNIMPLEMENTED` ») considéré comme sain :
 
   ```nginx
   health_check mandatory type=grpc grpc_status=12;
   ```
 
-  The `type`=`grpc` parameter must be specified after all other directive parameters, `grpc_service` and `grpc_status` must follow `type`=`grpc`. The parameter is not compatible with `uri` or `match` parameters.
+  Le paramètre `type`=`grpc` doit être indiqué après tous les autres paramètres de la directive ; `grpc_service` et `grpc_status` doivent suivre `type`=`grpc`. Ce paramètre est incompatible avec les paramètres `uri` et `match`.
 
 - **`keepalive_time`=*time***
 
-  enables [[12-directives/keepalive|keepalive]] connections for health checks and specifies the time during which requests can be processed through one keepalive connection (1.21.7). By default keepalive connections are disabled.
+  active les connexions [[12-directives/keepalive|persistantes]] pour les vérifications d'état et indique la durée pendant laquelle des requêtes peuvent être traitées sur une connexion persistante (1.21.7). Par défaut, les connexions persistantes sont désactivées.
 
 ---
 

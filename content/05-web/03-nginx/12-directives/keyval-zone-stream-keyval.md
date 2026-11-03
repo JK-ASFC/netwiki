@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_stream_keyval_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `keyval_zone zone=name:size [state=file] [timeout=time] [type=string\|ip\|prefix] [sync];` |
@@ -30,7 +27,7 @@ keyval_zone zone=one:32k state=/var/db/nginx/state/one.keyval;  # path for FreeB
 
 Le paramètre facultatif `timeout` (1.15.0) définit la durée au bout de laquelle les paires clé-valeur sont supprimées de la zone.
 
-The optional `type` parameter (1.17.1) activates an extra index optimized for matching the key of a certain type and defines matching rules when evaluating a [[12-directives/keyval-stream-keyval|keyval]] `$variable`.
+Le paramètre facultatif `type` (1.17.1) active un index supplémentaire optimisé pour un certain type de clé et définit les règles de correspondance lors de l'évaluation d'une variable [[12-directives/keyval-stream-keyval|keyval]] `$variable`.
 
 > [!NOTE]
 > L'index est stocké dans la même zone de mémoire partagée et occupe donc de la place supplémentaire.

@@ -1,12 +1,9 @@
 ---
 title: "status_format"
-description: "Directive nginx status_format (ngx_http_status_module) — By default, status information is output in the JSON format. Alternatively, data may be output as JSONP. The callback parameter specifies the name of a callback function. Parameter value can contain…"
+description: "Directive nginx status_format (ngx_http_status_module) — Par défaut, les informations d'état sont renvoyées au format JSON. Les données peuvent aussi être renvoyées en JSONP. Le paramètre callback indique le nom de la fonction de rappel ; sa valeur peut…"
 tags: [nginx, directive, ngx_http_status_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-By default, status information is output in the JSON format.
+Par défaut, les informations d'état sont renvoyées au format JSON.
 
-Alternatively, data may be output as JSONP. The *callback* parameter specifies the name of a callback function. Parameter value can contain variables. If parameter is omitted, or the computed value is an empty string, then “`ngx_status_jsonp_callback`” is used.
+Les données peuvent aussi être renvoyées en JSONP. Le paramètre *callback* indique le nom de la fonction de rappel ; sa valeur peut contenir des variables. Si le paramètre est omis ou que sa valeur calculée est vide, « `ngx_status_jsonp_callback` » est utilisé.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "quic_bpf"
-description: "Directive nginx quic_bpf (ngx_http_v3_module) — Enables routing of QUIC packets using eBPF. When enabled, this allows supporting QUIC connection migration. Since 1.31.7, this also allows established QUIC connections to be preserved during…"
+description: "Directive nginx quic_bpf (ngx_http_v3_module) — Active le routage des paquets QUIC avec eBPF, ce qui permet la migration des connexions QUIC. Depuis la version 1.31.7, cela permet aussi de conserver les connexions QUIC établies lors des…"
 tags: [nginx, directive, ngx_http_v3_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Enables routing of QUIC packets using [eBPF](https://ebpf.io/). When enabled, this allows supporting QUIC connection migration. Since 1.31.7, this also allows established QUIC connections to be preserved during [[10-guides/01-introduction/control|configuration reloads]] and during [[10-guides/01-introduction/control|live upgrade]].
+Active le routage des paquets QUIC avec [eBPF](https://ebpf.io/), ce qui permet la migration des connexions QUIC. Depuis la version 1.31.7, cela permet aussi de conserver les connexions QUIC établies lors des [[10-guides/01-introduction/control|rechargements de configuration]] et des [[10-guides/01-introduction/control|mises à jour à chaud]].
 
 > [!NOTE]
-> The directive value cannot be changed during a configuration reload. To change the directive value, nginx must be restarted. The directive cannot be disabled during the live upgrade if QUIC BPF maps are inherited from the previous nginx instance.
+> La valeur de la directive ne peut pas être modifiée lors d'un rechargement de configuration ; il faut redémarrer nginx. La directive ne peut pas être désactivée lors d'une mise à jour à chaud si les tables BPF QUIC sont héritées de l'instance précédente de nginx.
 
 > [!NOTE]
-> The directive is only supported on Linux 5.7+.
+> Cette directive n'est prise en charge que sous Linux 5.7+.
 
 ---
 

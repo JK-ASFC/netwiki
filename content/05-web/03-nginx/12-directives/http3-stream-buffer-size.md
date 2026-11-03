@@ -1,12 +1,9 @@
 ---
 title: "http3_stream_buffer_size"
-description: "Directive nginx http3_stream_buffer_size (ngx_http_v3_module) — Sets the size of the buffer used for reading and writing of the QUIC streams."
+description: "Directive nginx http3_stream_buffer_size (ngx_http_v3_module) — Définit la taille du tampon de lecture et d'écriture des flux QUIC."
 tags: [nginx, directive, ngx_http_v3_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the size of the buffer used for reading and writing of the QUIC streams.
+Définit la taille du tampon de lecture et d'écriture des flux QUIC.
 
 ---
 

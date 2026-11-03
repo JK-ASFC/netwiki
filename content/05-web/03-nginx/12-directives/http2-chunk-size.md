@@ -1,12 +1,9 @@
 ---
 title: "http2_chunk_size"
-description: "Directive nginx http2_chunk_size (ngx_http_v2_module) — Sets the maximum size of chunks into which the response body is sliced. A too low value results in higher overhead. A too high value impairs prioritization due to HOL blocking."
+description: "Directive nginx http2_chunk_size (ngx_http_v2_module) — Définit la taille maximale des blocs en lesquels le corps de la réponse est découpé. Une valeur trop faible augmente le surcoût ; une valeur trop élevée nuit à la priorisation à cause du blocage en…"
 tags: [nginx, directive, ngx_http_v2_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum size of chunks into which the response body is sliced. A too low value results in higher overhead. A too high value impairs prioritization due to [HOL blocking](http://en.wikipedia.org/wiki/Head-of-line_blocking).
+Définit la taille maximale des blocs en lesquels le corps de la réponse est découpé. Une valeur trop faible augmente le surcoût ; une valeur trop élevée nuit à la priorisation à cause du [blocage en tête de file](http://en.wikipedia.org/wiki/Head-of-line_blocking).
 
 ---
 

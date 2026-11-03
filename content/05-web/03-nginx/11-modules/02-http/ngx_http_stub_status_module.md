@@ -1,16 +1,13 @@
 ---
 title: "ngx_http_stub_status_module"
-description: "Module nginx ngx_http_stub_status_module — The ngx_http_stub_status_module module provides access to basic status information."
+description: "Module nginx ngx_http_stub_status_module — Le module ngx_http_stub_status_module donne accès aux informations d'état de base."
 tags: [nginx, module, ngx_http_stub_status_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_stub_status_module` donne accès aux informations d'état de base.
 
-The `ngx_http_stub_status_module` module provides access to basic status information.
-
-This module is not built by default, it should be enabled with the `--with-http_stub_status_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_stub_status_module`.
 
 ## Exemple de configuration
 
@@ -20,7 +17,7 @@ location = /basic_status {
 }
 ```
 
-This configuration creates a simple web page with basic status data which may look like as follows:
+Cette configuration crée une page web simple avec les données d'état de base, qui peut ressembler à ceci :
 
 ```nginx
 Active connections: 291
@@ -29,37 +26,37 @@ server accepts handled requests
 Reading: 6 Writing: 179 Waiting: 106
 ```
 
-## Data
+## Données
 
-The following status information is provided:
+Les informations d'état suivantes sont fournies :
 
 - **`Active connections`**
 
-  The current number of active client connections including `Waiting` connections.
+  Nombre actuel de connexions clientes actives, connexions `Waiting` comprises.
 
 - **`accepts`**
 
-  The total number of accepted client connections.
+  Nombre total de connexions clientes acceptées.
 
 - **`handled`**
 
-  The total number of handled connections. Generally, the parameter value is the same as `accepts` unless some resource limits have been reached (for example, the [[12-directives/worker-connections|worker_connections]] limit).
+  Nombre total de connexions traitées. En général, il est égal à `accepts`, sauf si certaines limites de ressources ont été atteintes (par exemple la limite [[12-directives/worker-connections|worker_connections]]).
 
 - **`requests`**
 
-  The total number of client requests.
+  Nombre total de requêtes des clients.
 
 - **`Reading`**
 
-  The current number of connections where nginx is reading the request header.
+  Nombre actuel de connexions dont nginx lit l'en-tête de requête.
 
 - **`Writing`**
 
-  The current number of connections where nginx is writing the response back to the client.
+  Nombre actuel de connexions sur lesquelles nginx écrit la réponse au client.
 
 - **`Waiting`**
 
-  The current number of idle client connections waiting for a request.
+  Nombre actuel de connexions clientes inactives en attente d'une requête.
 
 ## Directives
 

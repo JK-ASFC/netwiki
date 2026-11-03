@@ -663,7 +663,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`httpUpstreamServerId` (`string`, required)**
 
-    The ID of the server.
+    Identifiant du serveur.
 
   Supported methods:
 
@@ -1016,7 +1016,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`streamUpstreamServerId` (`string`, required)**
 
-    The ID of the server.
+    Identifiant du serveur.
 
   Supported methods:
 
@@ -1338,15 +1338,15 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`version` (`string`)**
 
-    Version of nginx.
+    Version de nginx.
 
   - **`build` (`string`)**
 
-    Name of nginx build.
+    Nom de compilation de nginx.
 
   - **`address` (`string`)**
 
-    The address of the server that accepted status request.
+    Adresse du serveur qui a accepté la requête d'état.
 
   - **`generation` (`integer`)**
 
@@ -1362,7 +1362,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`pid` (`integer`)**
 
-    The ID of the worker process that handled status request.
+    Identifiant du processus de travail qui a traité la requête d'état.
 
   - **`ppid` (`integer`)**
 
@@ -1388,7 +1388,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`respawned` (`integer`)**
 
-    The total number of abnormally terminated and respawned child processes.
+    Nombre total de processus enfants terminés anormalement et relancés.
 
   Exemple :
 
@@ -1403,19 +1403,19 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`accepted` (`integer`)**
 
-    The total number of accepted client connections.
+    Nombre total de connexions clientes acceptées.
 
   - **`dropped` (`integer`)**
 
-    The total number of dropped client connections.
+    Nombre total de connexions clientes abandonnées.
 
   - **`active` (`integer`)**
 
-    The current number of active client connections.
+    Nombre actuel de connexions clientes actives.
 
   - **`idle` (`integer`)**
 
-    The current number of idle client connections.
+    Nombre actuel de connexions clientes inactives.
 
   Exemple :
 
@@ -1431,15 +1431,15 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`handshakes` (`integer`)**
 
-    The total number of successful SSL handshakes.
+    Nombre total de négociations SSL réussies.
 
   - **`handshakes_failed` (`integer`)**
 
-    The total number of failed SSL handshakes.
+    Nombre total de négociations SSL échouées.
 
   - **`session_reuses` (`integer`)**
 
-    The total number of session reuses during SSL handshake.
+    Nombre total de réutilisations de session lors des négociations SSL.
 
   - **`no_common_protocol` (`integer`)**
 
@@ -1511,11 +1511,11 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`used` (`integer`)**
 
-      The current number of used memory pages.
+      Nombre actuel de pages mémoire utilisées.
 
     - **`free` (`integer`)**
 
-      The current number of free memory pages.
+      Nombre actuel de pages mémoire libres.
 
   - **`slots`**
 
@@ -1575,28 +1575,28 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`used` (`integer`)**
 
-    The current number of used memory slots.
+    Nombre actuel d'emplacements mémoire utilisés.
 
   - **`free` (`integer`)**
 
-    The current number of free memory slots.
+    Nombre actuel d'emplacements mémoire libres.
 
   - **`reqs` (`integer`)**
 
-    The total number of attempts to allocate memory of specified size.
+    Nombre total de tentatives d'allocation de mémoire de la taille indiquée.
 
   - **`fails` (`integer`)**
 
-    The number of unsuccessful attempts to allocate memory of specified size.
+    Nombre de tentatives d'allocation de mémoire de la taille indiquée qui ont échoué.
 - HTTP Requests:
 
   - **`total` (`integer`)**
 
-    The total number of client requests.
+    Nombre total de requêtes des clients.
 
   - **`current` (`integer`)**
 
-    The current number of client requests.
+    Nombre actuel de requêtes des clients.
 
   Exemple :
 
@@ -1610,11 +1610,11 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`processing` (`integer`)**
 
-    The number of client requests that are currently being processed.
+    Nombre de requêtes des clients en cours de traitement.
 
   - **`requests` (`integer`)**
 
-    The total number of client requests received from clients.
+    Nombre total de requêtes reçues des clients.
 
   - **`responses`**
 
@@ -1650,33 +1650,33 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`total` (`integer`)**
 
-      The total number of responses sent to clients.
+      Nombre total de réponses envoyées aux clients.
 
   - **`discarded` (`integer`)**
 
-    The total number of requests completed without sending a response.
+    Nombre total de requêtes terminées sans envoi de réponse.
 
   - **`received` (`integer`)**
 
-    The total number of bytes received from clients.
+    Nombre total d'octets reçus des clients.
 
   - **`sent` (`integer`)**
 
-    The total number of bytes sent to clients.
+    Nombre total d'octets envoyés aux clients.
 
   - **`ssl`**
 
     - **`handshakes` (`integer`)**
 
-      The total number of successful SSL handshakes.
+      Nombre total de négociations SSL réussies.
 
     - **`handshakes_failed` (`integer`)**
 
-      The total number of failed SSL handshakes.
+      Nombre total de négociations SSL échouées.
 
     - **`session_reuses` (`integer`)**
 
-      The total number of session reuses during SSL handshake.
+      Nombre total de réutilisations de session lors des négociations SSL.
 
     - **`no_common_protocol` (`integer`)**
 
@@ -1758,7 +1758,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`requests` (`integer`)**
 
-    The total number of client requests received from clients.
+    Nombre total de requêtes reçues des clients.
 
   - **`responses`**
 
@@ -1794,19 +1794,19 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`total` (`integer`)**
 
-      The total number of responses sent to clients.
+      Nombre total de réponses envoyées aux clients.
 
   - **`discarded` (`integer`)**
 
-    The total number of requests completed without sending a response.
+    Nombre total de requêtes terminées sans envoi de réponse.
 
   - **`received` (`integer`)**
 
-    The total number of bytes received from clients.
+    Nombre total d'octets reçus des clients.
 
   - **`sent` (`integer`)**
 
-    The total number of bytes sent to clients.
+    Nombre total d'octets envoyés aux clients.
 
   Exemple :
 
@@ -1836,15 +1836,15 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`size` (`integer`)**
 
-    The current size of the cache.
+    Taille actuelle du cache.
 
   - **`max_size` (`integer`)**
 
-    The limit on the maximum size of the cache specified in the configuration.
+    Limite de taille maximale du cache indiquée dans la configuration.
 
   - **`cold` (`boolean`)**
 
-    A boolean value indicating whether the “cache loader” process is still loading data from disk into the cache.
+    Booléen indiquant si le processus « chargeur de cache » charge encore des données du disque vers le cache.
 
   - **`hit`**
 
@@ -1854,7 +1854,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the cache.
+      Nombre total d'octets lus dans le cache.
 
   - **`stale`**
 
@@ -1864,7 +1864,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the cache.
+      Nombre total d'octets lus dans le cache.
 
   - **`updating`**
 
@@ -1874,7 +1874,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the cache.
+      Nombre total d'octets lus dans le cache.
 
   - **`revalidated`**
 
@@ -1884,7 +1884,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the cache.
+      Nombre total d'octets lus dans le cache.
 
   - **`miss`**
 
@@ -1894,15 +1894,15 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the proxied server.
+      Nombre total d'octets lus depuis le serveur mandaté.
 
     - **`responses_written` (`integer`)**
 
-      The total number of responses written to the cache.
+      Nombre total de réponses écrites dans le cache.
 
     - **`bytes_written` (`integer`)**
 
-      The total number of bytes written to the cache.
+      Nombre total d'octets écrits dans le cache.
 
   - **`expired`**
 
@@ -1912,15 +1912,15 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the proxied server.
+      Nombre total d'octets lus depuis le serveur mandaté.
 
     - **`responses_written` (`integer`)**
 
-      The total number of responses written to the cache.
+      Nombre total de réponses écrites dans le cache.
 
     - **`bytes_written` (`integer`)**
 
-      The total number of bytes written to the cache.
+      Nombre total d'octets écrits dans le cache.
 
   - **`bypass`**
 
@@ -1930,15 +1930,15 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`bytes` (`integer`)**
 
-      The total number of bytes read from the proxied server.
+      Nombre total d'octets lus depuis le serveur mandaté.
 
     - **`responses_written` (`integer`)**
 
-      The total number of responses written to the cache.
+      Nombre total de réponses écrites dans le cache.
 
     - **`bytes_written` (`integer`)**
 
-      The total number of bytes written to the cache.
+      Nombre total d'octets écrits dans le cache.
 
   Exemple :
 
@@ -2045,7 +2045,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`id` (`integer`)**
 
-      The ID of the server.
+      Identifiant du serveur.
 
     - **`server` (`string`)**
 
@@ -2073,21 +2073,21 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`active` (`integer`)**
 
-      The current number of active connections.
+      Nombre actuel de connexions actives.
 
     - **`ssl`**
 
       - **`handshakes` (`integer`)**
 
-        The total number of successful SSL handshakes.
+        Nombre total de négociations SSL réussies.
 
       - **`handshakes_failed` (`integer`)**
 
-        The total number of failed SSL handshakes.
+        Nombre total de négociations SSL échouées.
 
       - **`session_reuses` (`integer`)**
 
-        The total number of session reuses during SSL handshake.
+        Nombre total de réutilisations de session lors des négociations SSL.
 
       - **`no_common_protocol` (`integer`)**
 
@@ -2127,7 +2127,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`requests` (`integer`)**
 
-      The total number of client requests forwarded to this server.
+      Nombre total de requêtes des clients transmises à ce serveur.
 
     - **`responses`**
 
@@ -2161,19 +2161,19 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
       - **`total` (`integer`)**
 
-        The total number of responses obtained from this server.
+        Nombre total de réponses obtenues de ce serveur.
 
     - **`sent` (`integer`)**
 
-      The total number of bytes sent to this server.
+      Nombre total d'octets envoyés à ce serveur.
 
     - **`received` (`integer`)**
 
-      The total number of bytes received from this server.
+      Nombre total d'octets reçus de ce serveur.
 
     - **`fails` (`integer`)**
 
-      The total number of unsuccessful attempts to communicate with the server.
+      Nombre total de tentatives de communication échouées avec le serveur.
 
     - **`unavail` (`integer`)**
 
@@ -2187,11 +2187,11 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
       - **`fails` (`integer`)**
 
-        The number of failed health checks.
+        Nombre de vérifications d'état échouées.
 
       - **`unhealthy` (`integer`)**
 
-        How many times the server became unhealthy (state “`unhealthy`”).
+        Nombre de fois où le serveur est devenu défaillant (état « `unhealthy` »).
 
       - **`last_passed` (`boolean`)**
 
@@ -2199,7 +2199,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`downtime` (`integer`)**
 
-      Total time the server was in the “`unavail`”, “`checking`”, and “`unhealthy`” states.
+      Durée totale passée par le serveur dans les états « `unavail` », « `checking` » et « `unhealthy` ».
 
     - **`downstart` (`string`)**
 
@@ -2299,7 +2299,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`zombies` (`integer`)**
 
-    The current number of servers removed from the group but still processing active client requests.
+    Nombre actuel de serveurs retirés du groupe mais qui traitent encore des requêtes actives.
 
   - **`zone` (`string`)**
 
@@ -2311,15 +2311,15 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`size` (`integer`)**
 
-      The current number of requests in the queue.
+      Nombre actuel de requêtes dans la file.
 
     - **`max_size` (`integer`)**
 
-      The maximum number of requests that can be in the queue at the same time.
+      Nombre maximal de requêtes pouvant se trouver simultanément dans la file.
 
     - **`overflows` (`integer`)**
 
-      The total number of requests rejected due to the queue overflow.
+      Nombre total de requêtes rejetées pour cause de file pleine.
 
   Exemple :
 
@@ -2551,11 +2551,11 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`processing` (`integer`)**
 
-    The number of client connections that are currently being processed.
+    Nombre de connexions clientes en cours de traitement.
 
   - **`connections` (`integer`)**
 
-    The total number of connections accepted from clients.
+    Nombre total de connexions acceptées des clients.
 
   - **`sessions`**
 
@@ -2575,33 +2575,33 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`total` (`integer`)**
 
-      The total number of completed client sessions.
+      Nombre total de sessions clientes terminées.
 
   - **`discarded` (`integer`)**
 
-    The total number of connections completed without creating a session.
+    Nombre total de connexions terminées sans création de session.
 
   - **`received` (`integer`)**
 
-    The total number of bytes received from clients.
+    Nombre total d'octets reçus des clients.
 
   - **`sent` (`integer`)**
 
-    The total number of bytes sent to clients.
+    Nombre total d'octets envoyés aux clients.
 
   - **`ssl`**
 
     - **`handshakes` (`integer`)**
 
-      The total number of successful SSL handshakes.
+      Nombre total de négociations SSL réussies.
 
     - **`handshakes_failed` (`integer`)**
 
-      The total number of failed SSL handshakes.
+      Nombre total de négociations SSL échouées.
 
     - **`session_reuses` (`integer`)**
 
-      The total number of session reuses during SSL handshake.
+      Nombre total de réutilisations de session lors des négociations SSL.
 
     - **`no_common_protocol` (`integer`)**
 
@@ -2704,7 +2704,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`id` (`integer`)**
 
-      The ID of the server.
+      Identifiant du serveur.
 
     - **`server` (`string`)**
 
@@ -2728,25 +2728,25 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`state` (`string`)**
 
-      Current state, which may be one of “`up`”, “`down`”, “`unavail`”, “`checking`”, or “`unhealthy`”.
+      État actuel : « `up` », « `down` », « `unavail` », « `checking` » ou « `unhealthy` ».
 
     - **`active` (`integer`)**
 
-      The current number of connections.
+      Nombre actuel de connexions.
 
     - **`ssl`**
 
       - **`handshakes` (`integer`)**
 
-        The total number of successful SSL handshakes.
+        Nombre total de négociations SSL réussies.
 
       - **`handshakes_failed` (`integer`)**
 
-        The total number of failed SSL handshakes.
+        Nombre total de négociations SSL échouées.
 
       - **`session_reuses` (`integer`)**
 
-        The total number of session reuses during SSL handshake.
+        Nombre total de réutilisations de session lors des négociations SSL.
 
       - **`no_common_protocol` (`integer`)**
 
@@ -2786,7 +2786,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`connections` (`integer`)**
 
-      The total number of client connections forwarded to this server.
+      Nombre total de connexions clientes transmises à ce serveur.
 
     - **`connect_time` (`integer`)**
 
@@ -2802,15 +2802,15 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`sent` (`integer`)**
 
-      The total number of bytes sent to this server.
+      Nombre total d'octets envoyés à ce serveur.
 
     - **`received` (`integer`)**
 
-      The total number of bytes received from this server.
+      Nombre total d'octets reçus de ce serveur.
 
     - **`fails` (`integer`)**
 
-      The total number of unsuccessful attempts to communicate with the server.
+      Nombre total de tentatives de communication échouées avec le serveur.
 
     - **`unavail` (`integer`)**
 
@@ -2824,11 +2824,11 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
       - **`fails` (`integer`)**
 
-        The number of failed health checks.
+        Nombre de vérifications d'état échouées.
 
       - **`unhealthy` (`integer`)**
 
-        How many times the server became unhealthy (state “`unhealthy`”).
+        Nombre de fois où le serveur est devenu défaillant (état « `unhealthy` »).
 
       - **`last_passed` (`boolean`)**
 
@@ -2836,7 +2836,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
     - **`downtime` (`integer`)**
 
-      Total time the server was in the “`unavail`”, “`checking`”, and “`unhealthy`” states.
+      Durée totale passée par le serveur dans les états « `unavail` », « `checking` » et « `unhealthy` ».
 
     - **`downstart` (`string`)**
 
@@ -2848,7 +2848,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 
   - **`zombies` (`integer`)**
 
-    The current number of servers removed from the group but still processing active client connections.
+    Nombre actuel de serveurs retirés du groupe mais qui traitent encore des connexions actives.
 
   - **`zone` (`string`)**
 

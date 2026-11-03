@@ -1,19 +1,16 @@
 ---
 title: "$http2"
-description: "Variable nginx $http2 (ngx_http_v2_module) — negotiated protocol identifier: “h2” for HTTP/2 over TLS, “h2c” for HTTP/2 over cleartext TCP, or an empty string otherwise."
+description: "Variable nginx $http2 (ngx_http_v2_module) — identifiant du protocole négocié : « h2 » pour HTTP/2 sur TLS, « h2c » pour HTTP/2 sur TCP en clair, chaîne vide sinon."
 tags: [nginx, variable, ngx_http_v2_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$http2` |
 | **Module** | [[11-modules/02-http/ngx_http_v2_module\|ngx_http_v2_module]] |
 
-negotiated protocol identifier: “`h2`” for HTTP/2 over TLS, “`h2c`” for HTTP/2 over cleartext TCP, or an empty string otherwise.
+identifiant du protocole négocié : « `h2` » pour HTTP/2 sur TLS, « `h2c` » pour HTTP/2 sur TCP en clair, chaîne vide sinon.
 
 ---
 

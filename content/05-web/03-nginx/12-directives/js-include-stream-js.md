@@ -34,7 +34,7 @@ function address(s) {
 }
 ```
 
-The directive was made obsolete in version 0.4.0 and was removed in version 0.7.1. The [[12-directives/js-import-stream-js|js_import]] directive should be used instead.
+Cette directive est devenue obsolète en version 0.4.0 et a été supprimée en version 0.7.1. Utiliser à la place la directive [[12-directives/js-import-stream-js|js_import]].
 
 ---
 

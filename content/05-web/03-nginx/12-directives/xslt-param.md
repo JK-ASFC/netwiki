@@ -1,12 +1,9 @@
 ---
 title: "xslt_param"
-description: "Directive nginx xslt_param (ngx_http_xslt_module) — Defines the parameters for XSLT stylesheets. The value is treated as an XPath expression. The value can contain variables. To pass a string value to a stylesheet, the xslt_string_param directive can…"
+description: "Directive nginx xslt_param (ngx_http_xslt_module) — Définit les paramètres des feuilles de style XSLT. La valeur (value) est traitée comme une expression XPath et peut contenir des variables. Pour transmettre une chaîne à une feuille de style,…"
 tags: [nginx, directive, ngx_http_xslt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the parameters for XSLT stylesheets. The *value* is treated as an XPath expression. The *value* can contain variables. To pass a string value to a stylesheet, the [[12-directives/xslt-string-param|xslt_string_param]] directive can be used.
+Définit les paramètres des feuilles de style XSLT. La valeur (*value*) est traitée comme une expression XPath et peut contenir des variables. Pour transmettre une chaîne à une feuille de style, utilisez la directive [[12-directives/xslt-string-param|xslt_string_param]].
 
-There could be several `xslt_param` directives. These directives are inherited from the previous configuration level if and only if there are no `xslt_param` and [[12-directives/xslt-string-param|xslt_string_param]] directives defined on the current level.
+Il peut y avoir plusieurs directives `xslt_param`. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `xslt_param` ni [[12-directives/xslt-string-param|xslt_string_param]] n'est définie au niveau courant.
 
 ---
 

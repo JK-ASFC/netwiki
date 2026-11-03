@@ -1,6 +1,6 @@
 ---
 title: "health_check (ngx_stream_upstream_hc_module)"
-description: "Directive nginx health_check (ngx_stream_upstream_hc_module) — Enables periodic health checks of the servers in a group. The following optional parameters are supported: - interval=time sets the interval between two consecutive health checks, by default, 5…"
+description: "Directive nginx health_check (ngx_stream_upstream_hc_module) — Enables periodic health checks of the servers in a group. Les paramètres facultatifs suivants sont pris en charge : - interval=time définit l'intervalle entre deux vérifications consécutives ; 5…"
 tags: [nginx, directive, ngx_stream_upstream_hc_module]
 icon: settings-2
 ---
@@ -19,23 +19,23 @@ icon: settings-2
 
 Enables periodic health checks of the servers in a [[12-directives/upstream-stream-upstream|group]].
 
-The following optional parameters are supported:
+Les paramètres facultatifs suivants sont pris en charge :
 
 - **`interval`=*time***
 
-  sets the interval between two consecutive health checks, by default, 5 seconds.
+  définit l'intervalle entre deux vérifications consécutives ; 5 secondes par défaut.
 
 - **`jitter`=*time***
 
-  sets the time within which each health check will be randomly delayed, by default, there is no delay.
+  définit la durée dans laquelle chaque vérification est retardée aléatoirement ; par défaut, aucun retard.
 
 - **`fails`=*number***
 
-  sets the number of consecutive failed health checks of a particular server after which this server will be considered unhealthy, by default, 1.
+  définit le nombre de vérifications échouées consécutives au-delà duquel un serveur est considéré comme défaillant ; 1 par défaut.
 
 - **`passes`=*number***
 
-  sets the number of consecutive passed health checks of a particular server after which the server will be considered healthy, by default, 1.
+  définit le nombre de vérifications réussies consécutives au-delà duquel un serveur est considéré comme sain ; 1 par défaut.
 
 - **`mandatory` \[`persistent`\]**
 
@@ -52,7 +52,7 @@ The following optional parameters are supported:
 
 - **`port`=*number***
 
-  defines the port used when connecting to a server to perform a health check (1.9.7). By default, equals the [[12-directives/server-stream-upstream|server]] port.
+  définit le port utilisé pour se connecter au serveur lors d'une vérification (1.9.7). Par défaut, c'est le port du [[12-directives/server-stream-upstream|serveur]].
 
 - **`udp`**
 

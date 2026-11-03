@@ -1,12 +1,9 @@
 ---
 title: "xml_external_entities"
-description: "Directive nginx xml_external_entities (ngx_http_xslt_module) — Enables or disables loading of external entities declared in the internal DTD subset of the processed XML. Only loading of file-based external entities is supported. NOTE To prevent reading arbitrary…"
+description: "Directive nginx xml_external_entities (ngx_http_xslt_module) — Active ou désactive le chargement des entités externes déclarées dans le sous-ensemble DTD interne du XML traité. Seul le chargement d'entités externes à partir de fichiers est pris en charge. NOTE…"
 tags: [nginx, directive, ngx_http_xslt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,10 +15,10 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables loading of external entities declared in the internal DTD subset of the processed XML. Only loading of file-based external entities is supported.
+Active ou désactive le chargement des entités externes déclarées dans le sous-ensemble DTD interne du XML traité. Seul le chargement d'entités externes à partir de fichiers est pris en charge.
 
 > [!NOTE]
-> To prevent reading arbitrary local files accessible to the worker process, it is recommended to enable external entities only when the processed XML is trusted.
+> Pour empêcher la lecture de fichiers locaux quelconques accessibles au processus de travail, il est recommandé de n'activer les entités externes que si le XML traité est de confiance.
 
 ---
 

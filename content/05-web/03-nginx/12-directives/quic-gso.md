@@ -1,12 +1,9 @@
 ---
 title: "quic_gso"
-description: "Directive nginx quic_gso (ngx_http_v3_module) — Enables sending in optimized batch mode using segmentation offloading. NOTE Optimized sending is supported only on Linux featuring UDP_SEGMENT."
+description: "Directive nginx quic_gso (ngx_http_v3_module) — Active l'envoi en mode lot optimisé grâce au déchargement de la segmentation. NOTE L'envoi optimisé n'est pris en charge que sous Linux avec UDP_SEGMENT."
 tags: [nginx, directive, ngx_http_v3_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Enables sending in optimized batch mode using segmentation offloading.
+Active l'envoi en mode lot optimisé grâce au déchargement de la segmentation.
 
 > [!NOTE]
-> Optimized sending is supported only on Linux featuring `UDP_SEGMENT`.
+> L'envoi optimisé n'est pris en charge que sous Linux avec `UDP_SEGMENT`.
 
 ---
 

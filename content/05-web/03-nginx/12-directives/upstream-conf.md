@@ -1,12 +1,9 @@
 ---
 title: "upstream_conf"
-description: "Directive nginx upstream_conf (ngx_http_upstream_conf_module) — Turns on the HTTP interface of upstream configuration in the surrounding location. Access to this location should be limited. Configuration commands can be used to: - view the group configuration; -…"
+description: "Directive nginx upstream_conf (ngx_http_upstream_conf_module) — Active l'interface HTTP de configuration des groupes amont dans le bloc location englobant, dont l'accès doit être limité. Les commandes de configuration permettent de : - consulter la configuration…"
 tags: [nginx, directive, ngx_http_upstream_conf_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,18 +14,18 @@ icon: settings-2
 
 ## Utilisation
 
-Turns on the HTTP interface of upstream configuration in the surrounding location. Access to this location should be [[12-directives/satisfy|limited]].
+Active l'interface HTTP de configuration des groupes amont dans le bloc location englobant, dont l'accès doit être [[12-directives/satisfy|limité]].
 
-Configuration commands can be used to:
+Les commandes de configuration permettent de :
 
-- view the group configuration;
-- view, modify, or remove a server;
-- add a new server.
+- consulter la configuration du groupe ;
+- consulter, modifier ou supprimer un serveur ;
+- ajouter un serveur.
 
 > [!NOTE]
-> Since addresses in a group are not required to be unique, specific servers in a group are referenced by their IDs. IDs are assigned automatically and shown when adding a new server or viewing the group configuration.
+> Comme les adresses d'un groupe ne sont pas forcément uniques, les serveurs sont désignés par leur identifiant. Les identifiants sont attribués automatiquement et affichés lors de l'ajout d'un serveur ou de la consultation de la configuration du groupe.
 
-A configuration command consists of parameters passed as request arguments, for example:
+Une commande de configuration se compose de paramètres transmis comme arguments de requête, par exemple :
 
 ```nginx
 http://127.0.0.1/upstream_conf?upstream=backend
@@ -38,136 +35,136 @@ Les paramètres suivants sont pris en charge :
 
 - **`stream=`**
 
-  Selects a [[11-modules/03-stream/ngx_stream_upstream_module|stream]] upstream server group. Without this parameter, selects an [[11-modules/02-http/ngx_http_upstream_module|http]] upstream server group.
+  Choisit un groupe de serveurs amont [[11-modules/03-stream/ngx_stream_upstream_module|stream]]. Sans ce paramètre, c'est un groupe [[11-modules/02-http/ngx_http_upstream_module|http]] qui est choisi.
 
 - **`upstream=`*name***
 
-  Selects a group to work with. This parameter is mandatory.
+  Choisit le groupe à traiter. Ce paramètre est obligatoire.
 
 - **`id=`*number***
 
-  Selects a server for viewing, modifying, or removing.
+  Choisit un serveur à consulter, modifier ou supprimer.
 
 - **`remove=`**
 
-  Removes a server from the group.
+  Supprime un serveur du groupe.
 
 - **`add=`**
 
-  Adds a new server to the group.
+  Ajoute un serveur au groupe.
 
 - **`backup=`**
 
-  Required to add a backup server.
+  Nécessaire pour ajouter un serveur de secours.
 
   > [!NOTE]
-  > Before version 1.7.2, `backup=` was also required to view, modify, or remove existing backup servers.
+  > Avant la version 1.7.2, `backup=` était aussi nécessaire pour consulter, modifier ou supprimer des serveurs de secours existants.
 
 - **`server=`*address***
 
-  Same as the “`address`” parameter of the [[12-directives/server-http-upstream|http]] or [[12-directives/server-stream-upstream|stream]] upstream server.
+  Identique au paramètre « `address` » du serveur amont [[12-directives/server-http-upstream|http]] ou [[12-directives/server-stream-upstream|stream]].
 
-  When adding a server, it is possible to specify it as a domain name. In this case, changes of the IP addresses that correspond to a domain name will be monitored and automatically applied to the upstream configuration without the need of restarting nginx (1.7.2). This requires the “`resolver`” directive in the [[12-directives/resolver-http-core|http]] or [[12-directives/resolver-stream-core|stream]] block. See also the “`resolve`” parameter of the [[11-modules/02-http/ngx_http_upstream_module|http]] or [[11-modules/03-stream/ngx_stream_upstream_module|stream]] upstream server.
+  Lors de l'ajout d'un serveur, on peut l'indiquer par un nom de domaine. Les changements des adresses IP correspondantes sont alors surveillés et appliqués automatiquement à la configuration du groupe amont sans redémarrer nginx (1.7.2). Cela nécessite la directive « `resolver` » dans le bloc [[12-directives/resolver-http-core|http]] ou [[12-directives/resolver-stream-core|stream]]. Voir aussi le paramètre « `resolve` » du serveur amont [[11-modules/02-http/ngx_http_upstream_module|http]] ou [[11-modules/03-stream/ngx_stream_upstream_module|stream]].
 
 - **`service=`*name***
 
-  Same as the “`service`” parameter of the [[11-modules/02-http/ngx_http_upstream_module|http]] or [[11-modules/03-stream/ngx_stream_upstream_module|stream]] upstream server (1.9.13).
+  Identique au paramètre « `service` » du serveur amont [[11-modules/02-http/ngx_http_upstream_module|http]] ou [[11-modules/03-stream/ngx_stream_upstream_module|stream]] (1.9.13).
 
 - **`weight=`*number***
 
-  Same as the “`weight`” parameter of the [[11-modules/02-http/ngx_http_upstream_module|http]] or [[11-modules/03-stream/ngx_stream_upstream_module|stream]] upstream server.
+  Identique au paramètre « `weight` » du serveur amont [[11-modules/02-http/ngx_http_upstream_module|http]] ou [[11-modules/03-stream/ngx_stream_upstream_module|stream]].
 
 - **`max_conns=`*number***
 
-  Same as the “`max_conns`” parameter of the [[11-modules/02-http/ngx_http_upstream_module|http]] or [[11-modules/03-stream/ngx_stream_upstream_module|stream]] upstream server.
+  Identique au paramètre « `max_conns` » du serveur amont [[11-modules/02-http/ngx_http_upstream_module|http]] ou [[11-modules/03-stream/ngx_stream_upstream_module|stream]].
 
 - **`max_fails=`*number***
 
-  Same as the “`max_fails`” parameter of the [[11-modules/02-http/ngx_http_upstream_module|http]] or [[11-modules/03-stream/ngx_stream_upstream_module|stream]] upstream server.
+  Identique au paramètre « `max_fails` » du serveur amont [[11-modules/02-http/ngx_http_upstream_module|http]] ou [[11-modules/03-stream/ngx_stream_upstream_module|stream]].
 
 - **`fail_timeout=`*time***
 
-  Same as the “`fail_timeout`” parameter of the [[11-modules/02-http/ngx_http_upstream_module|http]] or [[11-modules/03-stream/ngx_stream_upstream_module|stream]] upstream server.
+  Identique au paramètre « `fail_timeout` » du serveur amont [[11-modules/02-http/ngx_http_upstream_module|http]] ou [[11-modules/03-stream/ngx_stream_upstream_module|stream]].
 
 - **`slow_start=`*time***
 
-  Same as the “`slow_start`” parameter of the [[11-modules/02-http/ngx_http_upstream_module|http]] or [[11-modules/03-stream/ngx_stream_upstream_module|stream]] upstream server.
+  Identique au paramètre « `slow_start` » du serveur amont [[11-modules/02-http/ngx_http_upstream_module|http]] ou [[11-modules/03-stream/ngx_stream_upstream_module|stream]].
 
 - **`down=`**
 
-  Same as the “`down`” parameter of the [[11-modules/02-http/ngx_http_upstream_module|http]] or [[11-modules/03-stream/ngx_stream_upstream_module|stream]] upstream server.
+  Identique au paramètre « `down` » du serveur amont [[11-modules/02-http/ngx_http_upstream_module|http]] ou [[11-modules/03-stream/ngx_stream_upstream_module|stream]].
 
 - **`drain=`**
 
-  Puts the [[11-modules/02-http/ngx_http_upstream_module|http]] upstream server into the “draining” mode (1.7.5). In this mode, only requests [[12-directives/sticky|bound]] to the server will be proxied to it.
+  Met le serveur amont [[11-modules/02-http/ngx_http_upstream_module|http]] en mode « vidage » (*draining*, 1.7.5). Dans ce mode, seules les requêtes [[12-directives/sticky|liées]] au serveur lui sont transmises.
 
 - **`up=`**
 
-  The opposite of the “`down`” parameter of the [[11-modules/02-http/ngx_http_upstream_module|http]] or [[11-modules/03-stream/ngx_stream_upstream_module|stream]] upstream server.
+  L'inverse du paramètre « `down` » du serveur amont [[11-modules/02-http/ngx_http_upstream_module|http]] ou [[11-modules/03-stream/ngx_stream_upstream_module|stream]].
 
 - **`route=`*string***
 
-  Same as the “`route`” parameter of the [[11-modules/02-http/ngx_http_upstream_module|http]] upstream server.
+  Identique au paramètre « `route` » du serveur amont [[11-modules/02-http/ngx_http_upstream_module|http]].
 
-The first three parameters select an object. This can be either the whole http or stream upstream server group, or a specific server. Without other parameters, the configuration of the selected group or server is shown.
+Les trois premiers paramètres choisissent un objet : soit tout le groupe de serveurs amont http ou stream, soit un serveur précis. Sans autre paramètre, la configuration du groupe ou du serveur choisi est affichée.
 
-For example, to view the configuration of the whole group, send:
+Par exemple, pour consulter la configuration de tout le groupe, envoyez :
 
 ```nginx
 http://127.0.0.1/upstream_conf?upstream=backend
 ```
 
-To view the configuration of a specific server, also specify its ID:
+Pour consulter la configuration d'un serveur précis, indiquez aussi son identifiant :
 
 ```nginx
 http://127.0.0.1/upstream_conf?upstream=backend&id=42
 ```
 
-To add a new server, specify its address in the “`server=`” parameter. Without other parameters specified, a server will be added with other parameters set to their default values (see the [[12-directives/server-http-upstream|http]] or [[12-directives/server-stream-upstream|stream]] “`server`” directive).
+Pour ajouter un serveur, indiquez son adresse dans le paramètre « `server=` ». Sans autre paramètre, le serveur est ajouté avec les autres paramètres à leur valeur par défaut (voir la directive « `server` » [[12-directives/server-http-upstream|http]] ou [[12-directives/server-stream-upstream|stream]]).
 
-For example, to add a new primary server, send:
+Par exemple, pour ajouter un nouveau serveur principal, envoyez :
 
 ```nginx
 http://127.0.0.1/upstream_conf?add=&upstream=backend&server=127.0.0.1:8080
 ```
 
-To add a new backup server, send:
+Pour ajouter un nouveau serveur de secours, envoyez :
 
 ```nginx
 http://127.0.0.1/upstream_conf?add=&upstream=backend&backup=&server=127.0.0.1:8080
 ```
 
-To add a new primary server, set its parameters to non-default values and mark it as “`down`”, send:
+Pour ajouter un nouveau serveur principal avec des paramètres différents des valeurs par défaut et le marquer « `down` », envoyez :
 
 ```nginx
 http://127.0.0.1/upstream_conf?add=&upstream=backend&server=127.0.0.1:8080&weight=2&down=
 ```
 
-To remove a server, specify its ID:
+Pour supprimer un serveur, indiquez son identifiant :
 
 ```nginx
 http://127.0.0.1/upstream_conf?remove=&upstream=backend&id=42
 ```
 
-To mark an existing server as “`down`”, send:
+Pour marquer un serveur existant « `down` », envoyez :
 
 ```nginx
 http://127.0.0.1/upstream_conf?upstream=backend&id=42&down=
 ```
 
-To modify the address of an existing server, send:
+Pour modifier l'adresse d'un serveur existant, envoyez :
 
 ```nginx
 http://127.0.0.1/upstream_conf?upstream=backend&id=42&server=192.0.2.3:8123
 ```
 
-To modify other parameters of an existing server, send:
+Pour modifier les autres paramètres d'un serveur existant, envoyez :
 
 ```nginx
 http://127.0.0.1/upstream_conf?upstream=backend&id=42&max_fails=3&weight=4
 ```
 
-The above examples are for an [[11-modules/02-http/ngx_http_upstream_module|http]] upstream server group. Similar examples for a [[11-modules/03-stream/ngx_stream_upstream_module|stream]] upstream server group require the “`stream=`” parameter.
+Les exemples ci-dessus concernent un groupe de serveurs amont [[11-modules/02-http/ngx_http_upstream_module|http]]. Pour un groupe [[11-modules/03-stream/ngx_stream_upstream_module|stream]], les exemples équivalents nécessitent le paramètre « `stream=` ».
 
 ---
 

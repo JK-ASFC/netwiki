@@ -1,12 +1,9 @@
 ---
 title: "stub_status"
-description: "Directive nginx stub_status (ngx_http_stub_status_module) — The basic status information will be accessible from the surrounding location. NOTE In versions prior to 1.7.5, the directive syntax required an arbitrary argument, for example, “stub_status on”."
+description: "Directive nginx stub_status (ngx_http_stub_status_module) — Les informations d'état de base sont accessibles depuis le bloc location englobant. NOTE Dans les versions antérieures à 1.7.5, la syntaxe de la directive exigeait un argument quelconque, par exemple…"
 tags: [nginx, directive, ngx_http_stub_status_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-The basic status information will be accessible from the surrounding location.
+Les informations d'état de base sont accessibles depuis le bloc location englobant.
 
 > [!NOTE]
-> In versions prior to 1.7.5, the directive syntax required an arbitrary argument, for example, “`stub_status on`”.
+> Dans les versions antérieures à 1.7.5, la syntaxe de la directive exigeait un argument quelconque, par exemple « `stub_status on` ».
 
 ---
 

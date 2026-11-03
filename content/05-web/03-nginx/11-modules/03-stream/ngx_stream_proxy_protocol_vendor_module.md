@@ -1,14 +1,11 @@
 ---
 title: "ngx_stream_proxy_protocol_vendor_module"
-description: "Module nginx ngx_stream_proxy_protocol_vendor_module — The ngx_stream_proxy_protocol_vendor_module module (1.23.3) allows obtaining additional information about a connection in cloud platforms from application-specific TLVs of the PROXY protocol header."
+description: "Module nginx ngx_stream_proxy_protocol_vendor_module — Le module ngx_stream_proxy_protocol_vendor_module (1.23.3) permet d'obtenir des informations supplémentaires sur une connexion dans les plates-formes cloud, à partir des TLV propres à chaque application de l'en-tête du…"
 tags: [nginx, module, ngx_stream_proxy_protocol_vendor_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_stream_proxy_protocol_vendor_module` module (1.23.3) allows obtaining additional information about a connection in cloud platforms from application-specific TLVs of the [PROXY protocol](http://www.haproxy.org/download/1.8/doc/proxy-protocol.txt) header.
+Le module `ngx_stream_proxy_protocol_vendor_module` (1.23.3) permet d'obtenir des informations supplémentaires sur une connexion dans les plates-formes cloud, à partir des TLV propres à chaque application de l'en-tête du [protocole PROXY](http://www.haproxy.org/download/1.8/doc/proxy-protocol.txt).
 
 Plates-formes cloud prises en charge :
 
