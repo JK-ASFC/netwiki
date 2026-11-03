@@ -1,28 +1,25 @@
 ---
 title: "ngx_http_hls_module"
-description: "Module nginx ngx_http_hls_module — The ngx_http_hls_module module provides HTTP Live Streaming (HLS) server-side support for MP4 and MOV media files. Such files typically have the .mp4, .m4v, .m4a, .mov, or .qt filename extensions. The module supports…"
+description: "Module nginx ngx_http_hls_module — Le module ngx_http_hls_module fournit côté serveur la prise en charge de HTTP Live Streaming (HLS) pour les fichiers multimédias MP4 et MOV. Ces fichiers ont généralement l'extension .mp4, .m4v, .m4a, .mov ou .qt. Le…"
 tags: [nginx, module, ngx_http_hls_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_hls_module` fournit côté serveur la prise en charge de HTTP Live Streaming (HLS) pour les fichiers multimédias MP4 et MOV. Ces fichiers ont généralement l'extension `.mp4`, `.m4v`, `.m4a`, `.mov` ou `.qt`. Le module prend en charge le codec vidéo H.264 et les codecs audio AAC et MP3.
 
-The `ngx_http_hls_module` module provides HTTP Live Streaming (HLS) server-side support for MP4 and MOV media files. Such files typically have the `.mp4`, `.m4v`, `.m4a`, `.mov`, or `.qt` filename extensions. The module supports H.264 video codec, AAC and MP3 audio codecs.
+Pour chaque fichier multimédia, deux URI sont pris en charge :
 
-For each media file, two URIs are supported:
+- Un URI de liste de lecture, d'extension « `.m3u8` ». Il accepte des arguments facultatifs :
 
-- A playlist URI with the “`.m3u8`” filename extension. The URI can accept optional arguments:
+  - « `start` » et « `end` » définissent les bornes de la liste de lecture en secondes (1.9.0).
+  - « `offset` » décale la position initiale de lecture du nombre de secondes indiqué (1.9.0). Une valeur positive définit un décalage depuis le début de la liste de lecture, une valeur négative depuis la fin du dernier fragment de la liste.
+  - « `len` » définit la longueur des fragments en secondes.
+- Un URI de fragment, d'extension « `.ts` ». Il accepte des arguments facultatifs :
 
-  - “`start`” and “`end`” define playlist boundaries in seconds (1.9.0).
-  - “`offset`” shifts an initial playback position to the time offset in seconds (1.9.0). A positive value sets a time offset from the beginning of the playlist. A negative value sets a time offset from the end of the last fragment in the playlist.
-  - “`len`” defines the fragment length in seconds.
-- A fragment URI with the “`.ts`” filename extension. The URI can accept optional arguments:
-
-  - “`start`” and “`end`” define fragment boundaries in seconds.
+  - « `start` » et « `end` » définissent les bornes du fragment en secondes.
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 
@@ -37,7 +34,7 @@ location / {
 }
 ```
 
-With this configuration, the following URIs are supported for the “`/var/video/test.mp4`” file:
+Avec cette configuration, les URI suivants sont pris en charge pour le fichier « `/var/video/test.mp4` » :
 
 ```nginx
 http://hls.example.com/test.mp4.m3u8?offset=1.000&start=1.000&end=2.200

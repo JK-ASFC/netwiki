@@ -1,12 +1,9 @@
 ---
 title: "charset_types"
-description: "Directive nginx charset_types (ngx_http_charset_module) — Enables module processing in responses with the specified MIME types in addition to “text/html”. The special value “” matches any MIME type (0.8.29). NOTE Until version 1.5.4,…"
+description: "Directive nginx charset_types (ngx_http_charset_module) — Active le traitement par le module des réponses des types MIME indiqués, en plus de « text/html ». La valeur spéciale « » correspond à tous les types MIME (0.8.29). NOTE Jusqu'à la version 1.5.4, «…"
 tags: [nginx, directive, ngx_http_charset_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,10 +15,10 @@ icon: settings-2
 
 ## Utilisation
 
-Enables module processing in responses with the specified MIME types in addition to “`text/html`”. The special value “`*`” matches any MIME type (0.8.29).
+Active le traitement par le module des réponses des types MIME indiqués, en plus de « `text/html` ». La valeur spéciale « `*` » correspond à tous les types MIME (0.8.29).
 
 > [!NOTE]
-> Until version 1.5.4, “`application/x-javascript`” was used as the default MIME type instead of “`application/javascript`”.
+> Jusqu'à la version 1.5.4, « `application/x-javascript` » était le type MIME par défaut au lieu de « `application/javascript` ».
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "db_ssl_trusted_certificate"
-description: "Directive nginx db_ssl_trusted_certificate (ngx_http_db_module) — Specifies a file with trusted CA certificates in the PEM format used to verify the certificate of the database server."
+description: "Directive nginx db_ssl_trusted_certificate (ngx_http_db_module) — Indique le fichier (file) contenant les certificats d'autorités de confiance au format PEM utilisé pour vérifier le certificat du serveur de base de données."
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with trusted CA certificates in the PEM format used to [[12-directives/db-ssl-verify|verify]] the certificate of the database server.
+Indique le fichier (*file*) contenant les certificats d'autorités de confiance au format PEM utilisé pour [[12-directives/db-ssl-verify|vérifier]] le certificat du serveur de base de données.
 
 ---
 

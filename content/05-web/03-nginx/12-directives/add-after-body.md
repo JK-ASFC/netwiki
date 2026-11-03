@@ -1,12 +1,9 @@
 ---
 title: "add_after_body"
-description: "Directive nginx add_after_body (ngx_http_addition_module) — Adds the text returned as a result of processing a given subrequest after the response body. An empty string (\"\") as a parameter cancels addition inherited from the previous configuration level."
+description: "Directive nginx add_after_body (ngx_http_addition_module) — Ajoute après le corps de la réponse le texte renvoyé par le traitement de la sous-requête indiquée. Une chaîne vide (\"\") en paramètre annule l'ajout hérité du niveau de configuration précédent."
 tags: [nginx, directive, ngx_http_addition_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Adds the text returned as a result of processing a given subrequest after the response body. An empty string (`""`) as a parameter cancels addition inherited from the previous configuration level.
+Ajoute après le corps de la réponse le texte renvoyé par le traitement de la sous-requête indiquée. Une chaîne vide (`""`) en paramètre annule l'ajout hérité du niveau de configuration précédent.
 
 ---
 

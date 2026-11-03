@@ -1,12 +1,9 @@
 ---
 title: "ssl_ocsp_responder (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_ocsp_responder (ngx_stream_ssl_module) — Overrides the URL of the OCSP responder specified in the “Authority Information Access” certificate extension for validation of client certificates. Seuls les répondeurs OCSP « http:// » sont pris en…"
+description: "Directive nginx ssl_ocsp_responder (ngx_stream_ssl_module) — Remplace l'URL du répondeur OCSP indiquée dans l'extension de certificat « Authority Information Access » pour la validation des certificats des clients. Seuls les répondeurs OCSP « http:// » sont…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Overrides the URL of the OCSP responder specified in the “[Authority Information Access](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.1)” certificate extension for [[12-directives/ssl-ocsp-stream-ssl|validation]] of client certificates.
+Remplace l'URL du répondeur OCSP indiquée dans l'extension de certificat « [Authority Information Access](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.1) » pour la [[12-directives/ssl-ocsp-stream-ssl|validation]] des certificats des clients.
 
 Seuls les répondeurs OCSP « `http://` » sont pris en charge :
 

@@ -1,23 +1,20 @@
 ---
 title: "$jwt_claim_name"
-description: "Variable nginx $jwt_claim_name (ngx_http_auth_jwt_module) — returns the value of a specified JWT claim For nested claims and claims including a dot (“.”), the value of the variable cannot be evaluated; the auth_jwt_claim_set directive should be used instead.…"
+description: "Variable nginx $jwt_claim_name (ngx_http_auth_jwt_module) — renvoie la valeur de la revendication JWT indiquée Pour les revendications imbriquées ou contenant un point (« . »), la valeur de la variable ne peut pas être évaluée ; utiliser plutôt la directive…"
 tags: [nginx, variable, ngx_http_auth_jwt_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$jwt_claim_name` |
 | **Module** | [[11-modules/02-http/ngx_http_auth_jwt_module\|ngx_http_auth_jwt_module]] |
 
-returns the value of a specified [JWT claim](https://datatracker.ietf.org/doc/html/rfc7519#section-4)
+renvoie la valeur de la [revendication JWT](https://datatracker.ietf.org/doc/html/rfc7519#section-4) indiquée
 
-For nested claims and claims including a dot (“.”), the value of the variable cannot be evaluated; the [[12-directives/auth-jwt-claim-set|auth_jwt_claim_set]] directive should be used instead.
+Pour les revendications imbriquées ou contenant un point (« . »), la valeur de la variable ne peut pas être évaluée ; utiliser plutôt la directive [[12-directives/auth-jwt-claim-set|auth_jwt_claim_set]].
 
-Variable values for tokens encrypted with JWE are available only after decryption which occurs during the [[10-guides/06-developpement/development-guide|Access]] phase.
+Les valeurs des variables des jetons chiffrés avec JWE ne sont disponibles qu'après déchiffrement, qui a lieu pendant la phase [[10-guides/06-developpement/development-guide|Access]].
 
 ---
 

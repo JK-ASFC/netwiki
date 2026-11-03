@@ -71,7 +71,7 @@ request start sec = 1349162899
 
 Using similar techniques the reader should be able to trace other nginx function calls.
 
-## See also
+## Voir aussi
 
 - [Solaris Dynamic Tracing Guide](http://docs.oracle.com/cd/E19253-01/817-6223/index.html)
 - [Introduction article on DTrace pid provider](http://dtrace.org/blogs/brendan/2011/02/09/dtrace-pid-provider/)

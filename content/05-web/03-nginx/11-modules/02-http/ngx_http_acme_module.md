@@ -1,18 +1,15 @@
 ---
 title: "ngx_http_acme_module"
-description: "Module nginx ngx_http_acme_module — The ngx_http_acme_module module implements the automatic certificate management (ACMEv2) protocol."
+description: "Module nginx ngx_http_acme_module — Le module ngx_http_acme_module met en œuvre le protocole de gestion automatique des certificats (ACMEv2)."
 tags: [nginx, module, ngx_http_acme_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_acme_module` met en œuvre le protocole de gestion automatique des certificats ([ACMEv2](https://datatracker.ietf.org/doc/html/rfc8555)).
 
-The `ngx_http_acme_module` module implements the automatic certificate management ([ACMEv2](https://datatracker.ietf.org/doc/html/rfc8555)) protocol.
+Le code source du module est disponible [ici](https://github.com/nginx/nginx-acme). Les instructions de téléchargement et d'installation sont disponibles [ici](https://github.com/nginx/nginx-acme/blob/main/README.md).
 
-The source code of the module is available [here](https://github.com/nginx/nginx-acme). Download and install instructions are available [here](https://github.com/nginx/nginx-acme/blob/main/README.md).
-
-The module is also available in a prebuilt `nginx-module-acme` package and in `nginx-plus-module-acme` package as part of our [abonnement commercial](https://nginx.com/products/) since 1.29.0.
+Le module est aussi disponible dans le paquet précompilé `nginx-module-acme` et, dans le cadre de notre [abonnement commercial](https://nginx.com/products/), dans le paquet `nginx-plus-module-acme` depuis la version 1.29.0.
 
 ## Exemple de configuration
 

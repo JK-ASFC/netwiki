@@ -1,12 +1,9 @@
 ---
 title: "modern_browser"
-description: "Directive nginx modern_browser (ngx_http_browser_module) — Specifies a version starting from which a browser is considered modern. A browser can be any one of the following: msie, gecko (browsers based on Mozilla), opera, safari, or konqueror. Versions can…"
+description: "Directive nginx modern_browser (ngx_http_browser_module) — Indique la version à partir de laquelle un navigateur est considéré comme moderne. Le navigateur peut être : msie, gecko (navigateurs fondés sur Mozilla), opera, safari ou konqueror. Les versions…"
 tags: [nginx, directive, ngx_http_browser_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a version starting from which a browser is considered modern. A browser can be any one of the following: `msie`, `gecko` (browsers based on Mozilla), `opera`, `safari`, or `konqueror`.
+Indique la version à partir de laquelle un navigateur est considéré comme moderne. Le navigateur peut être : `msie`, `gecko` (navigateurs fondés sur Mozilla), `opera`, `safari` ou `konqueror`.
 
-Versions can be specified in the following formats: X, X.X, X.X.X, or X.X.X.X. The maximum values for each of the format are 4000, 4000.99, 4000.99.99, and 4000.99.99.99, respectively.
+Les versions peuvent s'écrire sous les formes X, X.X, X.X.X ou X.X.X.X. Les valeurs maximales sont respectivement 4000, 4000.99, 4000.99.99 et 4000.99.99.99.
 
-The special value `unlisted` specifies to consider a browser as modern if it was not listed by the `modern_browser` and [[12-directives/ancient-browser|ancient_browser]] directives. Otherwise such a browser is considered ancient. If a request does not provide the `User-Agent` field in the header, the browser is treated as not being listed.
+La valeur spéciale `unlisted` considère comme moderne un navigateur qui ne figure ni dans les directives `modern_browser` ni dans [[12-directives/ancient-browser|ancient_browser]] ; sinon, un tel navigateur est considéré comme ancien. Si la requête ne contient pas de champ `User-Agent`, le navigateur est traité comme non listé.
 
 ---
 

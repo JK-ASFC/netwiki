@@ -1,45 +1,42 @@
 ---
 title: "ngx_http_auth_jwt_module"
-description: "Module nginx ngx_http_auth_jwt_module — The ngx_http_auth_jwt_module module (1.11.3) implements client authorization by validating the provided JSON Web Token (JWT) using the specified keys. The module supports JSON Web Signature (JWS), JSON Web Encryption…"
+description: "Module nginx ngx_http_auth_jwt_module — Le module ngx_http_auth_jwt_module (1.11.3) autorise les clients en validant le JSON Web Token (JWT) fourni à l'aide des clés indiquées. Il prend en charge JSON Web Signature (JWS), JSON Web Encryption (JWE) (1.19.7) et…"
 tags: [nginx, module, ngx_http_auth_jwt_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_auth_jwt_module` (1.11.3) autorise les clients en validant le [JSON Web Token](https://datatracker.ietf.org/doc/html/rfc7519) (JWT) fourni à l'aide des clés indiquées. Il prend en charge [JSON Web Signature](https://datatracker.ietf.org/doc/html/rfc7515) (JWS), [JSON Web Encryption](https://datatracker.ietf.org/doc/html/rfc7516) (JWE) (1.19.7) et les JWT imbriqués (1.21.0). Il peut servir à l'authentification [OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html).
 
-The `ngx_http_auth_jwt_module` module (1.11.3) implements client authorization by validating the provided [JSON Web Token](https://datatracker.ietf.org/doc/html/rfc7519) (JWT) using the specified keys. The module supports [JSON Web Signature](https://datatracker.ietf.org/doc/html/rfc7515) (JWS), [JSON Web Encryption](https://datatracker.ietf.org/doc/html/rfc7516) (JWE) (1.19.7), and Nested JWT (1.21.0). The module can be used for [OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html) authentication.
-
-The module may be combined with other access modules, such as [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]], [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]], and [[11-modules/02-http/ngx_http_auth_request_module|ngx_http_auth_request_module]], via the [[12-directives/satisfy|satisfy]] directive.
+Le module peut être combiné avec d'autres modules d'accès, comme [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]], [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]] et [[11-modules/02-http/ngx_http_auth_request_module|ngx_http_auth_request_module]], à l'aide de la directive [[12-directives/satisfy|satisfy]].
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
-## Supported Algorithms
+## Algorithmes pris en charge
 
-The module supports the following JSON Web [Algorithms](https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms).
+Le module prend en charge les [algorithmes](https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms) JSON Web suivants.
 
-JWS algorithms:
+Algorithmes JWS :
 
 - HS256, HS384, HS512
 - RS256, RS384, RS512
 - ES256, ES384, ES512
-- EdDSA (Ed25519 and Ed448 signatures) (1.15.7)
+- EdDSA (signatures Ed25519 et Ed448) (1.15.7)
 - PS256, PS384, PS512 (1.29.0)
 
 > [!NOTE]
-> Prior to version 1.13.7, only HS256, RS256, ES256 algorithms were supported.
+> Avant la version 1.13.7, seuls les algorithmes HS256, RS256 et ES256 étaient pris en charge.
 
-JWE content encryption algorithms (1.19.7):
+Algorithmes JWE de chiffrement du contenu (1.19.7) :
 
 - A128CBC-HS256, A192CBC-HS384, A256CBC-HS512
 - A128GCM, A192GCM, A256GCM
 
-JWE key management algorithms (1.19.9):
+Algorithmes JWE de gestion des clés (1.19.9) :
 
 - A128KW, A192KW, A256KW
 - A128GCMKW, A192GCMKW, A256GCMKW
-- dir — direct use of a shared symmetric key as the content encryption key
+- dir : utilisation directe d'une clé symétrique partagée comme clé de chiffrement du contenu
 - RSA-OAEP, RSA-OAEP-256, RSA-OAEP-384, RSA-OAEP-512 (1.21.0)
 
 ## Exemple de configuration

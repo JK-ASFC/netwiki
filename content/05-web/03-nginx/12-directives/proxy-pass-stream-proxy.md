@@ -29,7 +29,7 @@ ou le chemin d'un socket de domaine UNIX :
 proxy_pass unix:/tmp/stream.socket;
 ```
 
-If a domain name resolves to several addresses, all of them will be used in a round-robin fashion. In addition, an address can be specified as a [[11-modules/03-stream/ngx_stream_upstream_module|server group]].
+Si un nom de domaine se résout en plusieurs adresses, elles sont toutes utilisées à tour de rôle. Une adresse peut aussi désigner un [[11-modules/03-stream/ngx_stream_upstream_module|groupe de serveurs]].
 
 The address can also be specified using variables (1.11.3):
 

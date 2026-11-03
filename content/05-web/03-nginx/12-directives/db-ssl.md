@@ -1,12 +1,9 @@
 ---
 title: "db_ssl"
-description: "Directive nginx db_ssl (ngx_http_db_module) — Enables TLS for connections to database servers. NOTE Server certificate verification is disabled by default. Verification is configured separately by db_ssl_verify."
+description: "Directive nginx db_ssl (ngx_http_db_module) — Active TLS pour les connexions aux serveurs de base de données. NOTE La vérification du certificat du serveur est désactivée par défaut ; elle se configure séparément avec db_ssl_verify."
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Enables TLS for connections to database servers.
+Active TLS pour les connexions aux serveurs de base de données.
 
 > [!NOTE]
-> Server certificate verification is disabled by default. Verification is configured separately by [[12-directives/db-ssl-verify|db_ssl_verify]].
+> La vérification du certificat du serveur est désactivée par défaut ; elle se configure séparément avec [[12-directives/db-ssl-verify|db_ssl_verify]].
 
 ---
 

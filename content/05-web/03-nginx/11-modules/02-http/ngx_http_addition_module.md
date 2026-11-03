@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_addition_module"
-description: "Module nginx ngx_http_addition_module — The ngx_http_addition_module module is a filter that adds text before and after a response. This module is not built by default, it should be enabled with the --with-http_addition_module configuration parameter."
+description: "Module nginx ngx_http_addition_module — Le module ngx_http_addition_module est un filtre qui ajoute du texte avant et après une réponse. Il n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration --with-http_addition_module."
 tags: [nginx, module, ngx_http_addition_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_addition_module` module is a filter that adds text before and after a response. This module is not built by default, it should be enabled with the `--with-http_addition_module` configuration parameter.
+Le module `ngx_http_addition_module` est un filtre qui ajoute du texte avant et après une réponse. Il n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_addition_module`.
 
 ## Exemple de configuration
 

@@ -1,12 +1,9 @@
 ---
 title: "db_connect_timeout"
-description: "Directive nginx db_connect_timeout (ngx_http_db_module) — Defines a timeout for establishing a connection with a database server. It should be noted that this timeout cannot usually exceed 75 seconds."
+description: "Directive nginx db_connect_timeout (ngx_http_db_module) — Définit le délai d'établissement de la connexion avec un serveur de base de données. Ce délai ne peut généralement pas dépasser 75 secondes."
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a timeout for establishing a connection with a database server. It should be noted that this timeout cannot usually exceed 75 seconds.
+Définit le délai d'établissement de la connexion avec un serveur de base de données. Ce délai ne peut généralement pas dépasser 75 secondes.
 
 ---
 

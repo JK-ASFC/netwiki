@@ -45,7 +45,7 @@ The file path can contain variables, but such logs have some constraints:
 
 - l'[[12-directives/user|utilisateur]] sous lequel s'exécutent les processus de travail doit avoir le droit de créer des fichiers dans le répertoire de ces journaux ;
 - l'écriture tamponnée ne fonctionne pas ;
-- the file is opened and closed for each log write. However, since the descriptors of frequently used files can be stored in a [[12-directives/open-log-file-cache-stream-log|cache]], writing to the old file can continue during the time specified by the [[12-directives/open-log-file-cache-stream-log|open_log_file_cache]] directive’s `valid` parameter
+- le fichier est ouvert et fermé à chaque écriture. Toutefois, comme les descripteurs des fichiers fréquemment utilisés peuvent être conservés dans un [[12-directives/open-log-file-cache-stream-log|cache]], l'écriture dans l'ancien fichier peut se poursuivre pendant la durée indiquée par le paramètre `valid` de la directive [[12-directives/open-log-file-cache-stream-log|open_log_file_cache]]
 
 The `if` parameter enables conditional logging. A session will not be logged if the *condition* evaluates to “0” or an empty string.
 

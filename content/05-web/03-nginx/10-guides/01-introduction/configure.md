@@ -1,539 +1,536 @@
 ---
-title: "Building nginx from Sources"
-description: "Nginx — Building nginx from Sources. The build is configured using the configure command. It defines various aspects of the system, including the methods nginx is allowed to use for connection processing. At the end it creates a Makefile."
+title: "Compiler nginx à partir des sources"
+description: "Nginx — Compiler nginx à partir des sources. La compilation se configure avec la commande configure. Elle définit divers aspects du système, dont les méthodes de traitement des connexions que nginx peut utiliser, et crée à la fin un Makefile."
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+La compilation se configure avec la commande `configure`. Elle définit divers aspects du système, dont les méthodes de traitement des connexions que nginx peut utiliser, et crée à la fin un `Makefile`.
 
-The build is configured using the `configure` command. It defines various aspects of the system, including the methods nginx is allowed to use for connection processing. At the end it creates a `Makefile`.
-
-The `configure` command supports the following parameters:
+La commande `configure` accepte les paramètres suivants :
 
 - **`--help`**
 
-  prints a help message.
+  affiche l'aide.
 
 - **`--prefix=path`**
 
-  defines a directory that will keep server files. This same directory will also be used for all relative paths set by `configure` (except for paths to libraries sources) and in the `nginx.conf` configuration file. It is set to the `/usr/local/nginx` directory by default.
+  définit le répertoire qui contiendra les fichiers du serveur. Ce même répertoire sert aussi pour tous les chemins relatifs définis par `configure` (sauf les chemins des sources des bibliothèques) et dans le fichier de configuration `nginx.conf`. Par défaut, il s'agit de `/usr/local/nginx`.
 
 - **`--sbin-path=path`**
 
-  sets the name of an nginx executable file. This name is used only during installation. By default the file is named `prefix/sbin/nginx`.
+  définit le nom de l'exécutable nginx. Ce nom ne sert que pendant l'installation. Par défaut, le fichier s'appelle `prefix/sbin/nginx`.
 
 - **`--modules-path=path`**
 
-  defines a directory where nginx dynamic modules will be installed. By default the `prefix/modules` directory is used.
+  définit le répertoire où seront installés les modules dynamiques de nginx. Par défaut, le répertoire `prefix/modules` est utilisé.
 
 - **`--conf-path=path`**
 
-  sets the name of an `nginx.conf` configuration file. If needs be, nginx can always be started with a different configuration file, by specifying it in the command-line parameter `-c file`. By default the file is named `prefix/conf/nginx.conf`.
+  définit le nom du fichier de configuration `nginx.conf`. Si besoin, nginx peut toujours être démarré avec un autre fichier de configuration indiqué par le paramètre de ligne de commande `-c file`. Par défaut, le fichier s'appelle `prefix/conf/nginx.conf`.
 
 - **`--error-log-path=path`**
 
-  sets the name of the primary error, warnings, and diagnostic file. After installation, the file name can always be changed in the `nginx.conf` configuration file using the [[12-directives/error-log|error_log]] directive. By default the file is named `prefix/logs/error.log`.
+  définit le nom du fichier principal des erreurs, avertissements et diagnostics. Après l'installation, il peut toujours être modifié dans le fichier de configuration `nginx.conf` avec la directive [[12-directives/error-log|error_log]]. Par défaut, le fichier s'appelle `prefix/logs/error.log`.
 
 - **`--pid-path=path`**
 
-  sets the name of an `nginx.pid` file that will store the process ID of the main process. After installation, the file name can always be changed in the `nginx.conf` configuration file using the [[12-directives/pid|pid]] directive. By default the file is named `prefix/logs/nginx.pid`.
+  définit le nom du fichier `nginx.pid` qui contiendra l'identifiant du processus maître. Après l'installation, il peut toujours être modifié dans le fichier de configuration `nginx.conf` avec la directive [[12-directives/pid|pid]]. Par défaut, le fichier s'appelle `prefix/logs/nginx.pid`.
 
 - **`--lock-path=path`**
 
-  sets a prefix for the names of lock files. After installation, the value can always be changed in the `nginx.conf` configuration file using the [[12-directives/lock-file|lock_file]] directive. By default the value is `prefix/logs/nginx.lock`.
+  définit le préfixe des noms des fichiers de verrou. Après l'installation, la valeur peut toujours être modifiée dans le fichier de configuration `nginx.conf` avec la directive [[12-directives/lock-file|lock_file]]. Par défaut, elle vaut `prefix/logs/nginx.lock`.
 
 - **`--user=name`**
 
-  sets the name of an unprivileged user whose credentials will be used by worker processes. After installation, the name can always be changed in the `nginx.conf` configuration file using the [[12-directives/user|user]] directive. The default user name is nobody.
+  définit le nom de l'utilisateur non privilégié sous lequel s'exécutent les processus de travail. Après l'installation, il peut toujours être modifié dans le fichier de configuration `nginx.conf` avec la directive [[12-directives/user|user]]. L'utilisateur par défaut est nobody.
 
 - **`--group=name`**
 
-  sets the name of a group whose credentials will be used by worker processes. After installation, the name can always be changed in the `nginx.conf` configuration file using the [[12-directives/user|user]] directive. By default, a group name is set to the name of an unprivileged user.
+  définit le nom du groupe sous lequel s'exécutent les processus de travail. Après l'installation, il peut toujours être modifié dans le fichier de configuration `nginx.conf` avec la directive [[12-directives/user|user]]. Par défaut, le groupe porte le nom de l'utilisateur non privilégié.
 
 - **`--build=name`**
 
-  sets an optional nginx build name.
+  définit un nom de compilation facultatif pour nginx.
 
 - **`--builddir=path`**
 
-  sets a build directory.
+  définit le répertoire de compilation.
 
 - **`--with-select_module`
 `--without-select_module`**
 
-  enables or disables building a module that allows the server to work with the `select` method. This module is built automatically if the platform does not appear to support more appropriate methods such as kqueue, epoll, or /dev/poll.
+  active ou désactive la compilation d'un module permettant au serveur d'utiliser la méthode `select`. Ce module est compilé automatiquement si la plate-forme ne semble pas prendre en charge de méthode plus adaptée, comme kqueue, epoll ou /dev/poll.
 
 - **`--with-poll_module`
 `--without-poll_module`**
 
-  enables or disables building a module that allows the server to work with the `poll` method. This module is built automatically if the platform does not appear to support more appropriate methods such as kqueue, epoll, or /dev/poll.
+  active ou désactive la compilation d'un module permettant au serveur d'utiliser la méthode `poll`. Ce module est compilé automatiquement si la plate-forme ne semble pas prendre en charge de méthode plus adaptée, comme kqueue, epoll ou /dev/poll.
 
 - **`--with-control-api`**
 
-  enables the use of [nginx control REST API](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control#control-api) (1.31.5), see also the [[10-guides/01-introduction/switches|-l]] command-line parameter.
+  active l'[API REST de contrôle de nginx](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control#control-api) (1.31.5) ; voir aussi le paramètre de ligne de commande [[10-guides/01-introduction/switches|-l]].
 
 - **`--with-threads`**
 
-  enables the use of [[12-directives/thread-pool|thread pools]].
+  active l'utilisation des [[12-directives/thread-pool|groupes de threads]].
 
 - **`--with-file-aio`**
 
-  enables the use of [[12-directives/aio|asynchronous file I/O]] (AIO) on FreeBSD and Linux.
+  active l'utilisation des [[12-directives/aio|entrées-sorties asynchrones sur fichiers]] (AIO) sous FreeBSD et Linux.
 
 - **`--with-http_ssl_module`**
 
-  enables building a module that adds the [[11-modules/02-http/ngx_http_ssl_module|HTTPS protocol support]] to an HTTP server. This module is not built by default. The OpenSSL library is required to build and run this module.
+  active la compilation d'un module qui ajoute la [[11-modules/02-http/ngx_http_ssl_module|prise en charge du protocole HTTPS]] au serveur HTTP. Ce module n'est pas compilé par défaut. La bibliothèque OpenSSL est nécessaire pour le compiler et l'exécuter.
 
 - **`--with-http_v2_module`**
 
-  enables building a module that provides support for [[11-modules/02-http/ngx_http_v2_module|HTTP/2]]. This module is not built by default.
+  active la compilation d'un module qui prend en charge [[11-modules/02-http/ngx_http_v2_module|HTTP/2]]. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_v3_module`**
 
-  enables building a module that provides support for [[11-modules/02-http/ngx_http_v3_module|HTTP/3]]. This module is not built by default. The OpenSSL library that provides HTTP/3 support is required to build and run this module.
+  active la compilation d'un module qui prend en charge [[11-modules/02-http/ngx_http_v3_module|HTTP/3]]. Ce module n'est pas compilé par défaut. Une bibliothèque OpenSSL prenant en charge HTTP/3 est nécessaire pour le compiler et l'exécuter.
 
 - **`--with-http_realip_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_realip_module|ngx_http_realip_module]] module that changes the client address to the address sent in the specified header field. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_realip_module|ngx_http_realip_module]], qui remplace l'adresse du client par celle transmise dans le champ d'en-tête indiqué. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_addition_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_addition_module|ngx_http_addition_module]] module that adds text before and after a response. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_addition_module|ngx_http_addition_module]], qui ajoute du texte avant et après une réponse. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_xslt_module`
 `--with-http_xslt_module=dynamic`**
 
-  enables building the [[11-modules/02-http/ngx_http_xslt_module|ngx_http_xslt_module]] module that transforms XML responses using one or more XSLT stylesheets. This module is not built by default. The [libxml2](http://xmlsoft.org) and [libxslt](http://xmlsoft.org/XSLT/) libraries are required to build and run this module.
+  active la compilation du module [[11-modules/02-http/ngx_http_xslt_module|ngx_http_xslt_module]], qui transforme les réponses XML à l'aide d'une ou plusieurs feuilles de style XSLT. Ce module n'est pas compilé par défaut. Les bibliothèques [libxml2](http://xmlsoft.org) et [libxslt](http://xmlsoft.org/XSLT/) sont nécessaires pour le compiler et l'exécuter.
 
 - **`--with-http_image_filter_module`
 `--with-http_image_filter_module=dynamic`**
 
-  enables building the [[11-modules/02-http/ngx_http_image_filter_module|ngx_http_image_filter_module]] module that transforms images in JPEG, GIF, PNG, and WebP formats. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_image_filter_module|ngx_http_image_filter_module]], qui transforme les images aux formats JPEG, GIF, PNG et WebP. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_geoip_module`
 `--with-http_geoip_module=dynamic`**
 
-  enables building the [[11-modules/02-http/ngx_http_geoip_module|ngx_http_geoip_module]] module that creates variables depending on the client IP address and the precompiled [MaxMind](https://www.maxmind.com) databases. This module is not built by default. The [libmaxminddb](https://github.com/maxmind/libmaxminddb) library for MMDB databases or [GeoIP Legacy C](https://github.com/maxmind/geoip-api-c) library for DAT databases is required to build and run this module.
+  active la compilation du module [[11-modules/02-http/ngx_http_geoip_module|ngx_http_geoip_module]], qui crée des variables selon l'adresse IP du client et les bases de données précompilées de [MaxMind](https://www.maxmind.com). Ce module n'est pas compilé par défaut. La bibliothèque [libmaxminddb](https://github.com/maxmind/libmaxminddb) (bases MMDB) ou [GeoIP Legacy C](https://github.com/maxmind/geoip-api-c) (bases DAT) est nécessaire pour le compiler et l'exécuter.
 
 - **`--with-http_sub_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_sub_module|ngx_http_sub_module]] module that modifies a response by replacing one specified string by another. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_sub_module|ngx_http_sub_module]], qui modifie une réponse en remplaçant une chaîne par une autre. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_dav_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_dav_module|ngx_http_dav_module]] module that provides file management automation via the WebDAV protocol. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_dav_module|ngx_http_dav_module]], qui automatise la gestion de fichiers via le protocole WebDAV. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_flv_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_flv_module|ngx_http_flv_module]] module that provides pseudo-streaming server-side support for Flash Video (FLV) files. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_flv_module|ngx_http_flv_module]], qui fournit côté serveur la prise en charge de la pseudo-diffusion en continu des fichiers Flash Video (FLV). Ce module n'est pas compilé par défaut.
 
 - **`--with-http_mp4_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_mp4_module|ngx_http_mp4_module]] module that provides pseudo-streaming server-side support for MP4 files. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_mp4_module|ngx_http_mp4_module]], qui fournit côté serveur la prise en charge de la pseudo-diffusion en continu des fichiers MP4. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_gunzip_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_gunzip_module|ngx_http_gunzip_module]] module that decompresses responses with “`Content-Encoding: gzip`” for clients that do not support “gzip” encoding method. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_gunzip_module|ngx_http_gunzip_module]], qui décompresse les réponses portant « `Content-Encoding: gzip` » pour les clients qui ne prennent pas en charge la méthode d'encodage « gzip ». Ce module n'est pas compilé par défaut.
 
 - **`--with-http_gzip_static_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_gzip_static_module|ngx_http_gzip_static_module]] module that enables sending precompressed files with the “`.gz`” filename extension instead of regular files. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_gzip_static_module|ngx_http_gzip_static_module]], qui permet d'envoyer des fichiers précompressés portant l'extension « `.gz` » à la place des fichiers ordinaires. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_auth_request_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_auth_request_module|ngx_http_auth_request_module]] module that implements client authorization based on the result of a subrequest. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_auth_request_module|ngx_http_auth_request_module]], qui autorise les clients selon le résultat d'une sous-requête. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_random_index_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_random_index_module|ngx_http_random_index_module]] module that processes requests ending with the slash character (‘`/`’) and picks a random file in a directory to serve as an index file. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_random_index_module|ngx_http_random_index_module]], qui traite les requêtes se terminant par une barre oblique (‘`/`’) et choisit au hasard un fichier du répertoire comme fichier d'index. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_secure_link_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_secure_link_module|ngx_http_secure_link_module]] module. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_secure_link_module|ngx_http_secure_link_module]]. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_degradation_module`**
 
-  enables building the `ngx_http_degradation_module` module. This module is not built by default.
+  active la compilation du module `ngx_http_degradation_module`. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_slice_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_slice_module|ngx_http_slice_module]] module that splits a request into subrequests, each returning a certain range of response. The module provides more effective caching of big responses. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_slice_module|ngx_http_slice_module]], qui découpe une requête en sous-requêtes renvoyant chacune une plage de la réponse. Ce module permet une mise en cache plus efficace des grosses réponses. Il n'est pas compilé par défaut.
 
 - **`--with-http_stub_status_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_stub_status_module|ngx_http_stub_status_module]] module that provides access to basic status information. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_stub_status_module|ngx_http_stub_status_module]], qui donne accès aux informations d'état de base. Ce module n'est pas compilé par défaut.
 
 - **`--with-http_json_module`**
 
-  enables building the [[11-modules/02-http/ngx_http_json_module|ngx_http_json_module]] module that creates variables with values extracted from a JSON document. This module is not built by default.
+  active la compilation du module [[11-modules/02-http/ngx_http_json_module|ngx_http_json_module]], qui crée des variables dont la valeur est extraite d'un document JSON. Ce module n'est pas compilé par défaut.
 
 - **`--without-http_charset_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_charset_module|ngx_http_charset_module]] module that adds the specified charset to the `Content-Type` response header field and can additionally convert data from one charset to another.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_charset_module|ngx_http_charset_module]], qui ajoute le jeu de caractères indiqué au champ d'en-tête de réponse `Content-Type` et peut convertir les données d'un jeu de caractères à un autre.
 
 - **`--without-http_gzip_module`**
 
-  disables building a module that [[11-modules/02-http/ngx_http_gzip_module|compresses responses]] of an HTTP server. The zlib library is required to build and run this module.
+  désactive la compilation d'un module qui [[11-modules/02-http/ngx_http_gzip_module|compresse les réponses]] du serveur HTTP. La bibliothèque zlib est nécessaire pour compiler et exécuter ce module.
 
 - **`--without-http_ssi_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_ssi_module|ngx_http_ssi_module]] module that processes SSI (Server Side Includes) commands in responses passing through it.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_ssi_module|ngx_http_ssi_module]], qui traite les commandes SSI (Server Side Includes) des réponses qui le traversent.
 
 - **`--without-http_userid_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_userid_module|ngx_http_userid_module]] module that sets cookies suitable for client identification.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_userid_module|ngx_http_userid_module]], qui définit des cookies permettant d'identifier les clients.
 
 - **`--without-http_access_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]] module that allows limiting access to certain client addresses.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]], qui permet de limiter l'accès à certaines adresses de clients.
 
 - **`--without-http_auth_basic_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]] module that allows limiting access to resources by validating the user name and password using the “HTTP Basic Authentication” protocol.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]], qui permet de limiter l'accès aux ressources en vérifiant le nom d'utilisateur et le mot de passe selon le protocole « HTTP Basic Authentication ».
 
 - **`--without-http_mirror_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_mirror_module|ngx_http_mirror_module]] module that implements mirroring of an original request by creating background mirror subrequests.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_mirror_module|ngx_http_mirror_module]], qui duplique la requête d'origine en créant des sous-requêtes miroirs en arrière-plan.
 
 - **`--without-http_autoindex_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_autoindex_module|ngx_http_autoindex_module]] module that processes requests ending with the slash character (‘`/`’) and produces a directory listing in case the [[11-modules/02-http/ngx_http_index_module|ngx_http_index_module]] module cannot find an index file.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_autoindex_module|ngx_http_autoindex_module]], qui traite les requêtes se terminant par une barre oblique (‘`/`’) et produit la liste du contenu du répertoire lorsque le module [[11-modules/02-http/ngx_http_index_module|ngx_http_index_module]] ne trouve pas de fichier d'index.
 
 - **`--without-http_geo_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_geo_module|ngx_http_geo_module]] module that creates variables with values depending on the client IP address.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_geo_module|ngx_http_geo_module]], qui crée des variables dont la valeur dépend de l'adresse IP du client.
 
 - **`--without-http_map_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_map_module|ngx_http_map_module]] module that creates variables with values depending on values of other variables.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_map_module|ngx_http_map_module]], qui crée des variables dont la valeur dépend de celle d'autres variables.
 
 - **`--without-http_split_clients_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_split_clients_module|ngx_http_split_clients_module]] module that creates variables for A/B testing.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_split_clients_module|ngx_http_split_clients_module]], qui crée des variables pour les tests A/B.
 
 - **`--without-http_referer_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_referer_module|ngx_http_referer_module]] module that can block access to a site for requests with invalid values in the `Referer` header field.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_referer_module|ngx_http_referer_module]], qui peut bloquer l'accès à un site pour les requêtes dont le champ d'en-tête `Referer` a une valeur non valide.
 
 - **`--without-http_rewrite_module`**
 
-  disables building a module that allows an HTTP server to [[11-modules/02-http/ngx_http_rewrite_module|redirect requests and change URI of requests]]. The PCRE library is required to build and run this module.
+  désactive la compilation d'un module qui permet au serveur HTTP de [[11-modules/02-http/ngx_http_rewrite_module|rediriger les requêtes et modifier leur URI]]. La bibliothèque PCRE est nécessaire pour compiler et exécuter ce module.
 
 - **`--without-http_proxy_module`**
 
-  disables building an HTTP server [[11-modules/02-http/ngx_http_proxy_module|proxying module]].
+  désactive la compilation du [[11-modules/02-http/ngx_http_proxy_module|module de relais]] du serveur HTTP.
 
 - **`--without-http_fastcgi_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_fastcgi_module|ngx_http_fastcgi_module]] module that passes requests to a FastCGI server.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_fastcgi_module|ngx_http_fastcgi_module]], qui transmet les requêtes à un serveur FastCGI.
 
 - **`--without-http_uwsgi_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_uwsgi_module|ngx_http_uwsgi_module]] module that passes requests to a uwsgi server.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_uwsgi_module|ngx_http_uwsgi_module]], qui transmet les requêtes à un serveur uwsgi.
 
 - **`--without-http_scgi_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_scgi_module|ngx_http_scgi_module]] module that passes requests to an SCGI server.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_scgi_module|ngx_http_scgi_module]], qui transmet les requêtes à un serveur SCGI.
 
 - **`--without-http_grpc_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_grpc_module|ngx_http_grpc_module]] module that passes requests to a gRPC server.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_grpc_module|ngx_http_grpc_module]], qui transmet les requêtes à un serveur gRPC.
 
 - **`--without-http_tunnel_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_tunnel_module|ngx_http_tunnel_module]] module that handles HTTP/1.1 CONNECT requests and establishes an end-to-end virtual connection.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_tunnel_module|ngx_http_tunnel_module]], qui traite les requêtes HTTP/1.1 CONNECT et établit une connexion virtuelle de bout en bout.
 
 - **`--without-http_memcached_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_memcached_module|ngx_http_memcached_module]] module that obtains responses from a memcached server.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_memcached_module|ngx_http_memcached_module]], qui obtient les réponses d'un serveur memcached.
 
 - **`--without-http_limit_conn_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_limit_conn_module|ngx_http_limit_conn_module]] module that limits the number of connections per key, for example, the number of connections from a single IP address.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_limit_conn_module|ngx_http_limit_conn_module]], qui limite le nombre de connexions par clé, par exemple le nombre de connexions provenant d'une même adresse IP.
 
 - **`--without-http_limit_req_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_limit_req_module|ngx_http_limit_req_module]] module that limits the request processing rate per key, for example, the processing rate of requests coming from a single IP address.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_limit_req_module|ngx_http_limit_req_module]], qui limite le débit de traitement des requêtes par clé, par exemple celui des requêtes provenant d'une même adresse IP.
 
 - **`--without-http_empty_gif_module`**
 
-  disables building a module that [[11-modules/02-http/ngx_http_empty_gif_module|emits single-pixel transparent GIF]].
+  désactive la compilation d'un module qui [[11-modules/02-http/ngx_http_empty_gif_module|renvoie un GIF transparent d'un pixel]].
 
 - **`--without-http_browser_module`**
 
-  disables building the [[11-modules/02-http/ngx_http_browser_module|ngx_http_browser_module]] module that creates variables whose values depend on the value of the `User-Agent` request header field.
+  désactive la compilation du module [[11-modules/02-http/ngx_http_browser_module|ngx_http_browser_module]], qui crée des variables dont la valeur dépend du champ d'en-tête de requête `User-Agent`.
 
 - **`--without-http_upstream_hash_module`**
 
-  disables building a module that implements the [[12-directives/hash-http-upstream|hash]] load balancing method.
+  désactive la compilation d'un module qui met en œuvre la méthode de répartition de charge [[12-directives/hash-http-upstream|hash]].
 
 - **`--without-http_upstream_ip_hash_module`**
 
-  disables building a module that implements the [[12-directives/ip-hash|ip_hash]] load balancing method.
+  désactive la compilation d'un module qui met en œuvre la méthode de répartition de charge [[12-directives/ip-hash|ip_hash]].
 
 - **`--without-http_upstream_least_conn_module`**
 
-  disables building a module that implements the [[12-directives/least-conn-http-upstream|least_conn]] load balancing method.
+  désactive la compilation d'un module qui met en œuvre la méthode de répartition de charge [[12-directives/least-conn-http-upstream|least_conn]].
 
 - **`--without-http_upstream_least_time_module`**
 
-  disables building a module that implements the [[12-directives/least-time-http-upstream|least_time]] load balancing method.
+  désactive la compilation d'un module qui met en œuvre la méthode de répartition de charge [[12-directives/least-time-http-upstream|least_time]].
 
 - **`--without-http_upstream_random_module`**
 
-  disables building a module that implements the [[12-directives/random-http-upstream|random]] load balancing method.
+  désactive la compilation d'un module qui met en œuvre la méthode de répartition de charge [[12-directives/random-http-upstream|random]].
 
 - **`--without-http_upstream_keepalive_module`**
 
-  disables building a module that provides [[12-directives/keepalive|caching of connections]] to upstream servers.
+  désactive la compilation d'un module qui fournit le [[12-directives/keepalive|cache des connexions]] vers les serveurs amont.
 
 - **`--without-http_upstream_zone_module`**
 
-  disables building a module that makes it possible to store run-time state of an upstream group in a shared memory [[12-directives/zone-http-upstream|zone]].
+  désactive la compilation d'un module qui permet de conserver l'état d'exécution d'un groupe amont dans une [[12-directives/zone-http-upstream|zone]] de mémoire partagée.
 
 - **`--without-http_upstream_sticky_module`**
 
-  disables building a module that provides [[12-directives/sticky|session affinity]] to upstream servers.
+  désactive la compilation d'un module qui fournit l'[[12-directives/sticky|affinité de session]] avec les serveurs amont.
 
 - **`--with-http_perl_module`
 `--with-http_perl_module=dynamic`**
 
-  enables building the [[11-modules/02-http/ngx_http_perl_module|embedded Perl module]]. This module is not built by default.
+  active la compilation du [[11-modules/02-http/ngx_http_perl_module|module Perl intégré]]. Ce module n'est pas compilé par défaut.
 
 - **`--with-perl_modules_path=path`**
 
-  defines a directory that will keep Perl modules.
+  définit le répertoire qui contiendra les modules Perl.
 
 - **`--with-perl=path`**
 
-  sets the name of the Perl binary.
+  définit le nom de l'exécutable Perl.
 
 - **`--http-log-path=path`**
 
-  sets the name of the primary request log file of the HTTP server. After installation, the file name can always be changed in the `nginx.conf` configuration file using the [[12-directives/access-log-http-log|access_log]] directive. By default the file is named `prefix/logs/access.log`.
+  définit le nom du fichier journal principal des requêtes du serveur HTTP. Après l'installation, il peut toujours être modifié dans le fichier de configuration `nginx.conf` avec la directive [[12-directives/access-log-http-log|access_log]]. Par défaut, le fichier s'appelle `prefix/logs/access.log`.
 
 - **`--http-client-body-temp-path=path`**
 
-  defines a directory for storing temporary files that hold client request bodies. After installation, the directory can always be changed in the `nginx.conf` configuration file using the [[12-directives/client-body-temp-path|client_body_temp_path]] directive. By default the directory is named `prefix/client_body_temp`.
+  définit le répertoire des fichiers temporaires contenant le corps des requêtes des clients. Après l'installation, il peut toujours être modifié dans le fichier de configuration `nginx.conf` avec la directive [[12-directives/client-body-temp-path|client_body_temp_path]]. Par défaut, le répertoire s'appelle `prefix/client_body_temp`.
 
 - **`--http-proxy-temp-path=path`**
 
-  defines a directory for storing temporary files with data received from proxied servers. After installation, the directory can always be changed in the `nginx.conf` configuration file using the [[12-directives/proxy-temp-path|proxy_temp_path]] directive. By default the directory is named `prefix/proxy_temp`.
+  définit le répertoire des fichiers temporaires contenant les données reçues des serveurs mandatés. Après l'installation, il peut toujours être modifié dans le fichier de configuration `nginx.conf` avec la directive [[12-directives/proxy-temp-path|proxy_temp_path]]. Par défaut, le répertoire s'appelle `prefix/proxy_temp`.
 
 - **`--http-fastcgi-temp-path=path`**
 
-  defines a directory for storing temporary files with data received from FastCGI servers. After installation, the directory can always be changed in the `nginx.conf` configuration file using the [[12-directives/fastcgi-temp-path|fastcgi_temp_path]] directive. By default the directory is named `prefix/fastcgi_temp`.
+  définit le répertoire des fichiers temporaires contenant les données reçues des serveurs FastCGI. Après l'installation, il peut toujours être modifié dans le fichier de configuration `nginx.conf` avec la directive [[12-directives/fastcgi-temp-path|fastcgi_temp_path]]. Par défaut, le répertoire s'appelle `prefix/fastcgi_temp`.
 
 - **`--http-uwsgi-temp-path=path`**
 
-  defines a directory for storing temporary files with data received from uwsgi servers. After installation, the directory can always be changed in the `nginx.conf` configuration file using the [[12-directives/uwsgi-temp-path|uwsgi_temp_path]] directive. By default the directory is named `prefix/uwsgi_temp`.
+  définit le répertoire des fichiers temporaires contenant les données reçues des serveurs uwsgi. Après l'installation, il peut toujours être modifié dans le fichier de configuration `nginx.conf` avec la directive [[12-directives/uwsgi-temp-path|uwsgi_temp_path]]. Par défaut, le répertoire s'appelle `prefix/uwsgi_temp`.
 
 - **`--http-scgi-temp-path=path`**
 
-  defines a directory for storing temporary files with data received from SCGI servers. After installation, the directory can always be changed in the `nginx.conf` configuration file using the [[12-directives/scgi-temp-path|scgi_temp_path]] directive. By default the directory is named `prefix/scgi_temp`.
+  définit le répertoire des fichiers temporaires contenant les données reçues des serveurs SCGI. Après l'installation, il peut toujours être modifié dans le fichier de configuration `nginx.conf` avec la directive [[12-directives/scgi-temp-path|scgi_temp_path]]. Par défaut, le répertoire s'appelle `prefix/scgi_temp`.
 
 - **`--without-http`**
 
-  disables the [[11-modules/02-http/ngx_http_core_module|HTTP]] server.
+  désactive le serveur [[11-modules/02-http/ngx_http_core_module|HTTP]].
 
 - **`--without-http-cache`**
 
-  disables HTTP cache.
+  désactive le cache HTTP.
 
 - **`--with-mail`
 `--with-mail=dynamic`**
 
-  enables POP3/IMAP4/SMTP [[11-modules/04-mail/ngx_mail_core_module|mail proxy]] server.
+  active le serveur [[11-modules/04-mail/ngx_mail_core_module|mandataire de messagerie]] POP3/IMAP4/SMTP.
 
 - **`--with-mail_ssl_module`**
 
-  enables building a module that adds the [[11-modules/04-mail/ngx_mail_ssl_module|SSL/TLS protocol support]] to the mail proxy server. This module is not built by default. The OpenSSL library is required to build and run this module.
+  active la compilation d'un module qui ajoute la [[11-modules/04-mail/ngx_mail_ssl_module|prise en charge de SSL/TLS]] au mandataire de messagerie. Ce module n'est pas compilé par défaut. La bibliothèque OpenSSL est nécessaire pour le compiler et l'exécuter.
 
 - **`--without-mail_pop3_module`**
 
-  disables the [[11-modules/04-mail/ngx_mail_pop3_module|POP3]] protocol in mail proxy server.
+  désactive le protocole [[11-modules/04-mail/ngx_mail_pop3_module|POP3]] du mandataire de messagerie.
 
 - **`--without-mail_imap_module`**
 
-  disables the [[11-modules/04-mail/ngx_mail_imap_module|IMAP]] protocol in mail proxy server.
+  désactive le protocole [[11-modules/04-mail/ngx_mail_imap_module|IMAP]] du mandataire de messagerie.
 
 - **`--without-mail_smtp_module`**
 
-  disables the [[11-modules/04-mail/ngx_mail_smtp_module|SMTP]] protocol in mail proxy server.
+  désactive le protocole [[11-modules/04-mail/ngx_mail_smtp_module|SMTP]] du mandataire de messagerie.
 
 - **`--with-stream`
 `--with-stream=dynamic`**
 
-  enables building the [[11-modules/03-stream/ngx_stream_core_module|stream module]] for generic TCP/UDP proxying and load balancing. This module is not built by default.
+  active la compilation du [[11-modules/03-stream/ngx_stream_core_module|module stream]] pour le relais et la répartition de charge TCP/UDP génériques. Ce module n'est pas compilé par défaut.
 
 - **`--with-stream_ssl_module`**
 
-  enables building a module that adds the [[11-modules/03-stream/ngx_stream_ssl_module|SSL/TLS protocol support]] to the stream module. This module is not built by default. The OpenSSL library is required to build and run this module.
+  active la compilation d'un module qui ajoute la [[11-modules/03-stream/ngx_stream_ssl_module|prise en charge de SSL/TLS]] au module stream. Ce module n'est pas compilé par défaut. La bibliothèque OpenSSL est nécessaire pour le compiler et l'exécuter.
 
 - **`--with-stream_realip_module`**
 
-  enables building the [[11-modules/03-stream/ngx_stream_realip_module|ngx_stream_realip_module]] module that changes the client address to the address sent in the PROXY protocol header. This module is not built by default.
+  active la compilation du module [[11-modules/03-stream/ngx_stream_realip_module|ngx_stream_realip_module]], qui remplace l'adresse du client par celle transmise dans l'en-tête du protocole PROXY. Ce module n'est pas compilé par défaut.
 
 - **`--with-stream_geoip_module`
 `--with-stream_geoip_module=dynamic`**
 
-  enables building the [[11-modules/03-stream/ngx_stream_geoip_module|ngx_stream_geoip_module]] module that creates variables depending on the client IP address and the precompiled [MaxMind](https://www.maxmind.com) databases. This module is not built by default. The [libmaxminddb](https://github.com/maxmind/libmaxminddb) library for MMDB databases or [GeoIP Legacy C](https://github.com/maxmind/geoip-api-c) library for DAT databases is required to build and run this module.
+  active la compilation du module [[11-modules/03-stream/ngx_stream_geoip_module|ngx_stream_geoip_module]], qui crée des variables selon l'adresse IP du client et les bases de données précompilées de [MaxMind](https://www.maxmind.com). Ce module n'est pas compilé par défaut. La bibliothèque [libmaxminddb](https://github.com/maxmind/libmaxminddb) (bases MMDB) ou [GeoIP Legacy C](https://github.com/maxmind/geoip-api-c) (bases DAT) est nécessaire pour le compiler et l'exécuter.
 
 - **`--with-stream_ssl_preread_module`**
 
-  enables building the [[11-modules/03-stream/ngx_stream_ssl_preread_module|ngx_stream_ssl_preread_module]] module that allows extracting information from the [ClientHello](https://datatracker.ietf.org/doc/html/rfc5246#section-7.4.1.2) message without terminating SSL/TLS. This module is not built by default.
+  active la compilation du module [[11-modules/03-stream/ngx_stream_ssl_preread_module|ngx_stream_ssl_preread_module]], qui permet d'extraire des informations du message [ClientHello](https://datatracker.ietf.org/doc/html/rfc5246#section-7.4.1.2) sans terminer SSL/TLS. Ce module n'est pas compilé par défaut.
 
 - **`--without-stream_limit_conn_module`**
 
-  disables building the [[11-modules/03-stream/ngx_stream_limit_conn_module|ngx_stream_limit_conn_module]] module that limits the number of connections per key, for example, the number of connections from a single IP address.
+  désactive la compilation du module [[11-modules/03-stream/ngx_stream_limit_conn_module|ngx_stream_limit_conn_module]], qui limite le nombre de connexions par clé, par exemple le nombre de connexions provenant d'une même adresse IP.
 
 - **`--without-stream_access_module`**
 
-  disables building the [[11-modules/03-stream/ngx_stream_access_module|ngx_stream_access_module]] module that allows limiting access to certain client addresses.
+  désactive la compilation du module [[11-modules/03-stream/ngx_stream_access_module|ngx_stream_access_module]], qui permet de limiter l'accès à certaines adresses de clients.
 
 - **`--without-stream_geo_module`**
 
-  disables building the [[11-modules/03-stream/ngx_stream_geo_module|ngx_stream_geo_module]] module that creates variables with values depending on the client IP address.
+  désactive la compilation du module [[11-modules/03-stream/ngx_stream_geo_module|ngx_stream_geo_module]], qui crée des variables dont la valeur dépend de l'adresse IP du client.
 
 - **`--without-stream_map_module`**
 
-  disables building the [[11-modules/03-stream/ngx_stream_map_module|ngx_stream_map_module]] module that creates variables with values depending on values of other variables.
+  désactive la compilation du module [[11-modules/03-stream/ngx_stream_map_module|ngx_stream_map_module]], qui crée des variables dont la valeur dépend de celle d'autres variables.
 
 - **`--without-stream_split_clients_module`**
 
-  disables building the [[11-modules/03-stream/ngx_stream_split_clients_module|ngx_stream_split_clients_module]] module that creates variables for A/B testing.
+  désactive la compilation du module [[11-modules/03-stream/ngx_stream_split_clients_module|ngx_stream_split_clients_module]], qui crée des variables pour les tests A/B.
 
 - **`--without-stream_return_module`**
 
-  disables building the [[11-modules/03-stream/ngx_stream_return_module|ngx_stream_return_module]] module that sends some specified value to the client and then closes the connection.
+  désactive la compilation du module [[11-modules/03-stream/ngx_stream_return_module|ngx_stream_return_module]], qui envoie une valeur donnée au client puis ferme la connexion.
 
 - **`--without-stream_pass_module`**
 
-  disables building the [[11-modules/03-stream/ngx_stream_pass_module|ngx_stream_pass_module]] module that passes accepted connections to other listening sockets.
+  désactive la compilation du module [[11-modules/03-stream/ngx_stream_pass_module|ngx_stream_pass_module]], qui transmet les connexions acceptées à d'autres sockets d'écoute.
 
 - **`--without-stream_set_module`**
 
-  disables building the [[11-modules/03-stream/ngx_stream_set_module|ngx_stream_set_module]] module that sets a value for a variable.
+  désactive la compilation du module [[11-modules/03-stream/ngx_stream_set_module|ngx_stream_set_module]], qui affecte une valeur à une variable.
 
 - **`--without-stream_upstream_hash_module`**
 
-  disables building a module that implements the [[12-directives/hash-stream-upstream|hash]] load balancing method.
+  désactive la compilation d'un module qui met en œuvre la méthode de répartition de charge [[12-directives/hash-stream-upstream|hash]].
 
 - **`--without-stream_upstream_least_conn_module`**
 
-  disables building a module that implements the [[12-directives/least-conn-stream-upstream|least_conn]] load balancing method.
+  désactive la compilation d'un module qui met en œuvre la méthode de répartition de charge [[12-directives/least-conn-stream-upstream|least_conn]].
 
 - **`--without-stream_upstream_least_time_module`**
 
-  disables building a module that implements the [[12-directives/least-time-stream-upstream|least_time]] load balancing method.
+  désactive la compilation d'un module qui met en œuvre la méthode de répartition de charge [[12-directives/least-time-stream-upstream|least_time]].
 
 - **`--without-stream_upstream_random_module`**
 
-  disables building a module that implements the [[12-directives/random-stream-upstream|random]] load balancing method.
+  désactive la compilation d'un module qui met en œuvre la méthode de répartition de charge [[12-directives/random-stream-upstream|random]].
 
 - **`--without-stream_upstream_zone_module`**
 
-  disables building a module that makes it possible to store run-time state of an upstream group in a shared memory [[12-directives/zone-stream-upstream|zone]].
+  désactive la compilation d'un module qui permet de conserver l'état d'exécution d'un groupe amont dans une [[12-directives/zone-stream-upstream|zone]] de mémoire partagée.
 
 - **`--with-google_perftools_module`**
 
-  enables building the [[11-modules/05-autres/ngx_google_perftools_module|ngx_google_perftools_module]] module that enables profiling of nginx worker processes using [Google Performance Tools](https://github.com/gperftools/gperftools). The module is intended for nginx developers and is not built by default.
+  active la compilation du module [[11-modules/05-autres/ngx_google_perftools_module|ngx_google_perftools_module]], qui permet de profiler les processus de travail de nginx avec [Google Performance Tools](https://github.com/gperftools/gperftools). Ce module est destiné aux développeurs de nginx et n'est pas compilé par défaut.
 
 - **`--with-cpp_test_module`**
 
-  enables building the `ngx_cpp_test_module` module.
+  active la compilation du module `ngx_cpp_test_module`.
 
 - **`--add-module=path`**
 
-  enables an external module.
+  active un module externe.
 
 - **`--add-dynamic-module=path`**
 
-  enables an external dynamic module.
+  active un module dynamique externe.
 
 - **`--with-compat`**
 
-  enables dynamic modules compatibility.
+  active la compatibilité des modules dynamiques.
 
 - **`--with-cc=path`**
 
-  sets the name of the C compiler.
+  définit le nom du compilateur C.
 
 - **`--with-cpp=path`**
 
-  sets the name of the C preprocessor.
+  définit le nom du préprocesseur C.
 
 - **`--with-cc-opt=parameters`**
 
-  sets additional parameters that will be added to the CFLAGS variable. When using the system PCRE library under FreeBSD, `--with-cc-opt="-I /usr/local/include"` should be specified. If the number of files supported by `select` needs to be increased it can also be specified here such as this: `--with-cc-opt="-D FD_SETSIZE=2048"`.
+  définit des paramètres supplémentaires ajoutés à la variable CFLAGS. Avec la bibliothèque PCRE du système sous FreeBSD, il faut indiquer `--with-cc-opt="-I /usr/local/include"`. S'il faut augmenter le nombre de fichiers pris en charge par `select`, on peut aussi l'indiquer ici, par exemple : `--with-cc-opt="-D FD_SETSIZE=2048"`.
 
 - **`--with-ld-opt=parameters`**
 
-  sets additional parameters that will be used during linking. When using the system PCRE library under FreeBSD, `--with-ld-opt="-L /usr/local/lib"` should be specified.
+  définit des paramètres supplémentaires utilisés lors de l'édition de liens. Avec la bibliothèque PCRE du système sous FreeBSD, il faut indiquer `--with-ld-opt="-L /usr/local/lib"`.
 
 - **`--with-cpu-opt=cpu`**
 
-  enables building per specified CPU: `pentium`, `pentiumpro`, `pentium3`, `pentium4`, `athlon`, `opteron`, `sparc32`, `sparc64`, `ppc64`.
+  active la compilation pour le processeur indiqué : `pentium`, `pentiumpro`, `pentium3`, `pentium4`, `athlon`, `opteron`, `sparc32`, `sparc64`, `ppc64`.
 
 - **`--without-pcre`**
 
-  disables the usage of the PCRE library.
+  désactive l'utilisation de la bibliothèque PCRE.
 
 - **`--with-pcre`**
 
-  forces the usage of the PCRE library.
+  force l'utilisation de la bibliothèque PCRE.
 
 - **`--with-pcre=path`**
 
-  sets the path to the sources of the PCRE library. The library distribution needs to be downloaded from the [PCRE](http://www.pcre.org) site and extracted. The rest is done by nginx’s `./configure` and `make`. The library is required for regular expressions support in the [[12-directives/location|location]] directive and for the [[11-modules/02-http/ngx_http_rewrite_module|ngx_http_rewrite_module]] module.
+  définit le chemin des sources de la bibliothèque PCRE. La distribution de la bibliothèque doit être téléchargée depuis le site de [PCRE](http://www.pcre.org) et décompressée ; le reste est fait par `./configure` et `make` de nginx. La bibliothèque est nécessaire pour les expressions régulières de la directive [[12-directives/location|location]] et pour le module [[11-modules/02-http/ngx_http_rewrite_module|ngx_http_rewrite_module]].
 
 - **`--with-pcre-opt=parameters`**
 
-  sets additional build options for PCRE.
+  définit des options de compilation supplémentaires pour PCRE.
 
 - **`--with-pcre-jit`**
 
-  builds the PCRE library with “just-in-time compilation” support (1.1.12, the [[12-directives/pcre-jit|pcre_jit]] directive).
+  compile la bibliothèque PCRE avec la prise en charge de la « compilation à la volée » (1.1.12, directive [[12-directives/pcre-jit|pcre_jit]]).
 
 - **`--without-pcre2`**
 
-  disables use of the PCRE2 library instead of the original PCRE library (1.21.5).
+  désactive l'utilisation de la bibliothèque PCRE2 à la place de la bibliothèque PCRE d'origine (1.21.5).
 
 - **`--with-zlib=path`**
 
-  sets the path to the sources of the zlib library. The library distribution needs to be downloaded from the [zlib](http://zlib.net) site and extracted. The rest is done by nginx’s `./configure` and `make`. The library is required for the [[11-modules/02-http/ngx_http_gzip_module|ngx_http_gzip_module]] module.
+  définit le chemin des sources de la bibliothèque zlib. La distribution de la bibliothèque doit être téléchargée depuis le site de [zlib](http://zlib.net) et décompressée ; le reste est fait par `./configure` et `make` de nginx. La bibliothèque est nécessaire pour le module [[11-modules/02-http/ngx_http_gzip_module|ngx_http_gzip_module]].
 
 - **`--with-zlib-opt=parameters`**
 
-  sets additional build options for zlib.
+  définit des options de compilation supplémentaires pour zlib.
 
 - **`--with-zlib-asm=cpu`**
 
-  enables the use of the zlib assembler sources optimized for one of the specified CPUs: `pentium`, `pentiumpro`.
+  active l'utilisation des sources assembleur de zlib optimisées pour l'un des processeurs indiqués : `pentium`, `pentiumpro`.
 
 - **`--with-libatomic`**
 
-  forces the libatomic\_ops library usage.
+  force l'utilisation de la bibliothèque libatomic\_ops.
 
 - **`--with-libatomic=path`**
 
-  sets the path to the libatomic\_ops library sources.
+  définit le chemin des sources de la bibliothèque libatomic\_ops.
 
 - **`--with-openssl=path`**
 
-  sets the path to the OpenSSL library sources.
+  définit le chemin des sources de la bibliothèque OpenSSL.
 
 - **`--with-openssl-opt=parameters`**
 
-  sets additional build options for OpenSSL.
+  définit des options de compilation supplémentaires pour OpenSSL.
 
 - **`--with-debug`**
 
-  enables the [[10-guides/01-introduction/debugging-log|debugging log]].
+  active le [[10-guides/01-introduction/debugging-log|journal de débogage]].
 
-Example of parameters usage (all of this needs to be typed in one line):
+Exemple d'utilisation des paramètres (le tout doit être saisi sur une seule ligne) :
 
 ```
 ./configure
@@ -545,7 +542,7 @@ Example of parameters usage (all of this needs to be typed in one line):
     --with-zlib=../zlib-1.3
 ```
 
-After configuration, nginx is compiled and installed using `make`.
+Après la configuration, nginx est compilé et installé avec `make`.
 
 ---
 

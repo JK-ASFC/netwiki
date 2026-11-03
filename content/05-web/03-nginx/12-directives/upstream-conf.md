@@ -34,7 +34,7 @@ A configuration command consists of parameters passed as request arguments, for 
 http://127.0.0.1/upstream_conf?upstream=backend
 ```
 
-The following parameters are supported:
+Les paramètres suivants sont pris en charge :
 
 - **`stream=`**
 

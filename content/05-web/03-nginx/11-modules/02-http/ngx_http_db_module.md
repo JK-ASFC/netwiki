@@ -1,25 +1,22 @@
 ---
 title: "ngx_http_db_module"
-description: "Module nginx ngx_http_db_module — The ngx_http_db_module module (1.31.6) retrieves values for the specified key from a database and returns them as HTTP response bodies. The key can contain variables. Authentication and database selection are also…"
+description: "Module nginx ngx_http_db_module — Le module ngx_http_db_module (1.31.6) récupère dans une base de données les valeurs de la clé indiquée et les renvoie comme corps de réponse HTTP. La clé peut contenir des variables. L'authentification et le choix de la…"
 tags: [nginx, module, ngx_http_db_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_db_module` (1.31.6) récupère dans une [[12-directives/db-pass|base de données]] les valeurs de la [[12-directives/db-get|clé]] indiquée et les renvoie comme corps de réponse HTTP. La clé peut contenir des variables. L'[[12-directives/db-auth|authentification]] et le [[12-directives/db-name|choix de la base]] sont aussi pris en charge.
 
-The `ngx_http_db_module` module (1.31.6) retrieves values for the specified [[12-directives/db-get|key]] from a [[12-directives/db-pass|database]] and returns them as HTTP response bodies. The key can contain variables. [[12-directives/db-auth|Authentication]] and [[12-directives/db-name|database selection]] are also supported.
+Actuellement, le module prend en charge les recherches d'une seule clé avec la commande `GET` de la base Redis, en TCP ou en TLS.
 
-Currently, the module supports single-key lookups using the `GET` command of Redis database over TCP or TLS.
-
-Lookup results can be [[12-directives/db-cache|cached]] in a [[12-directives/keyval-zone-http-keyval|shared memory zone]]. Retrieved values can be used in [[12-directives/db-var|variables]].
+Les résultats peuvent être [[12-directives/db-cache|mis en cache]] dans une [[12-directives/keyval-zone-http-keyval|zone de mémoire partagée]]. Les valeurs récupérées peuvent être utilisées dans des [[12-directives/db-var|variables]].
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 
-Redis authentication and database selection:
+Authentification Redis et choix de la base :
 
 ```nginx
 upstream redis_backend {
@@ -40,7 +37,7 @@ server {
 }
 ```
 
-Per-database lookup caching:
+Mise en cache des recherches par base :
 
 ```nginx
 keyval_zone zone=dbcache_db0:1m timeout=60s;
@@ -71,7 +68,7 @@ server {
 }
 ```
 
-Verified TLS and mutual TLS connection:
+Connexion TLS vérifiée et TLS mutuel :
 
 ```nginx
 location /db {
@@ -88,7 +85,7 @@ location /db {
 }
 ```
 
-Using database-backed variables, for example, retrieving a resource owner from Redis and adding it to a response header.
+Utilisation de variables alimentées par la base, par exemple pour récupérer le propriétaire d'une ressource dans Redis et l'ajouter à un en-tête de réponse.
 
 ```nginx
 location = /internal/db-get {

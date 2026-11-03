@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_empty_gif_module"
-description: "Module nginx ngx_http_empty_gif_module — The ngx_http_empty_gif_module module emits single-pixel transparent GIF."
+description: "Module nginx ngx_http_empty_gif_module — Le module ngx_http_empty_gif_module renvoie un GIF transparent d'un pixel."
 tags: [nginx, module, ngx_http_empty_gif_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_empty_gif_module` module emits single-pixel transparent GIF.
+Le module `ngx_http_empty_gif_module` renvoie un GIF transparent d'un pixel.
 
 ## Exemple de configuration
 

@@ -1,12 +1,9 @@
 ---
 title: "db_auth"
-description: "Directive nginx db_auth (ngx_http_db_module) — Specifies the password string used to authenticate connections to a database server. An empty value disables authentication. Authentication with a separate username and password arguments is not…"
+description: "Directive nginx db_auth (ngx_http_db_module) — Indique le mot de passe utilisé pour authentifier les connexions au serveur de base de données. Une valeur vide désactive l'authentification. L'authentification avec un nom d'utilisateur et un mot de…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the password string used to authenticate connections to a database server. An empty value disables authentication. Authentication with a separate username and password arguments is not supported.
+Indique le mot de passe utilisé pour authentifier les connexions au serveur de base de données. Une valeur vide désactive l'authentification. L'authentification avec un nom d'utilisateur et un mot de passe distincts n'est pas prise en charge.
 
 ```nginx
 location /db/ {
@@ -27,11 +24,11 @@ location /db/ {
 }
 ```
 
-For the Redis backend, the password is passed as a single argument to the `AUTH` command.
+Avec Redis, le mot de passe est transmis comme argument unique de la commande `AUTH`.
 
-The directive is inherited from the previous configuration level if and only if there are no `db_auth` directives defined on the current level.
+La directive est héritée du niveau de configuration précédent si et seulement si aucune directive `db_auth` n'est définie au niveau courant.
 
-To protect the password, enable SSL/TLS connections to the database server using the [[12-directives/db-ssl|db_ssl]] directive.
+Pour protéger le mot de passe, activez les connexions SSL/TLS vers le serveur de base de données avec la directive [[12-directives/db-ssl|db_ssl]].
 
 ---
 

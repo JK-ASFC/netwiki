@@ -1,12 +1,9 @@
 ---
 title: "autoindex_localtime"
-description: "Directive nginx autoindex_localtime (ngx_http_autoindex_module) — For the HTML format, specifies whether times in the directory listing should be output in the local time zone or UTC."
+description: "Directive nginx autoindex_localtime (ngx_http_autoindex_module) — Pour le format HTML, indique si les heures de la liste sont affichées dans le fuseau horaire local ou en UTC."
 tags: [nginx, directive, ngx_http_autoindex_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-For the HTML [[12-directives/autoindex-format|format]], specifies whether times in the directory listing should be output in the local time zone or UTC.
+Pour le [[12-directives/autoindex-format|format]] HTML, indique si les heures de la liste sont affichées dans le fuseau horaire local ou en UTC.
 
 ---
 

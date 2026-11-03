@@ -1,0 +1,9 @@
+{
+ "261a4f5c4015": "Pour l'erreur 401, le client reçoit aussi l'en-tête `WWW-Authenticate` de la réponse de la sous-requête.",
+ "50de4bdc769c": "Affecte la valeur (*value*) donnée à la variable de requête (*variable*) une fois la requête d'autorisation terminée. La valeur peut contenir des variables de la requête d'autorisation, comme `$upstream_http_*`.",
+ "5dbf325b971e": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_auth_request_module`.",
+ "8027c105c374": "Le module `ngx_http_auth_request_module` (1.5.4+) autorise les clients selon le résultat d'une sous-requête. Si la sous-requête renvoie un code 2xx, l'accès est autorisé. Si elle renvoie 401 ou 403, l'accès est refusé avec le code d'erreur correspondant. Tout autre code renvoyé par la sous-requête est considéré comme une erreur.",
+ "8a82b672fd7c": "Le module peut être combiné avec d'autres modules d'accès, comme [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]], [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]] et [[11-modules/02-http/ngx_http_auth_jwt_module|ngx_http_auth_jwt_module]], à l'aide de la directive [[12-directives/satisfy|satisfy]].",
+ "c29a3234bfcd": "Avant la version 1.7.3, les réponses aux sous-requêtes d'autorisation ne pouvaient pas être mises en cache (avec [[12-directives/proxy-cache|proxy_cache]], [[12-directives/proxy-store|proxy_store]], etc.).",
+ "dd0ffac5842f": "Active l'autorisation selon le résultat d'une sous-requête et définit l'URI auquel elle est envoyée."
+}

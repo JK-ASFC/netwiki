@@ -1,12 +1,9 @@
 ---
 title: "db_name"
-description: "Directive nginx db_name (ngx_http_db_module) — Sets the database to use for lookup requests. For the Redis backend, the parameter specifies the database index passed to the SELECT command. If the directive is not specified or its value is empty,…"
+description: "Directive nginx db_name (ngx_http_db_module) — Définit la base de données utilisée pour les recherches. Avec Redis, le paramètre indique l'index de base transmis à la commande SELECT. Si la directive n'est pas indiquée ou que sa valeur est vide,…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the database to use for lookup requests.
+Définit la base de données utilisée pour les recherches.
 
-For the Redis backend, the parameter specifies the database index passed to the `SELECT` command. If the directive is not specified or its value is empty, database `0` is used:
+Avec Redis, le paramètre indique l'index de base transmis à la commande `SELECT`. Si la directive n'est pas indiquée ou que sa valeur est vide, la base `0` est utilisée :
 
 ```nginx
 location /db/ {

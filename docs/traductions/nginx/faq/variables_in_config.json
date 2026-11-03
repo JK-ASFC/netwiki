@@ -1,0 +1,5 @@
+{
+ "5ca1745a3138": "R : Les variables ne doivent pas servir de macros de modèles. Elles sont évaluées à l'exécution, pendant le traitement de chaque requête : elles coûtent donc bien plus cher qu'une configuration statique simple. Utiliser des variables pour stocker des chaînes statiques est aussi une mauvaise idée. Il vaut mieux générer les configurations par expansion de macros et directives « include », avec des outils externes comme sed + make ou tout autre mécanisme de modèles courant.",
+ "ae11b6c2f72d": "Q : Existe-t-il une bonne façon d'utiliser les variables de nginx comme macros pour raccourcir certaines sections de la configuration et les utiliser comme modèles ?",
+ "f3f0ca2bab73": "Existe-t-il une bonne façon d'utiliser les variables de nginx comme macros pour raccourcir la configuration et en faire des modèles ?"
+}

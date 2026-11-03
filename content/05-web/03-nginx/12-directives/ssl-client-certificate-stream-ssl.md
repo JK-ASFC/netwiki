@@ -1,12 +1,9 @@
 ---
 title: "ssl_client_certificate (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_client_certificate (ngx_stream_ssl_module) — Specifies a file with trusted CA certificates in the PEM format used to verify client certificates and OCSP responses if ssl_stapling is enabled. The list of certificates will be sent to clients. If…"
+description: "Directive nginx ssl_client_certificate (ngx_stream_ssl_module) — Indique le fichier (file) contenant les certificats d'autorités de confiance au format PEM utilisé pour vérifier les certificats des clients et les réponses OCSP si ssl_stapling est activé. La liste…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with trusted CA certificates in the PEM format used to [[12-directives/ssl-verify-client-stream-ssl|verify]] client certificates and OCSP responses if [[12-directives/ssl-stapling-stream-ssl|ssl_stapling]] is enabled.
+Indique le fichier (*file*) contenant les certificats d'autorités de confiance au format PEM utilisé pour [[12-directives/ssl-verify-client-stream-ssl|vérifier]] les certificats des clients et les réponses OCSP si [[12-directives/ssl-stapling-stream-ssl|ssl_stapling]] est activé.
 
-The list of certificates will be sent to clients. If this is not desired, the [[12-directives/ssl-trusted-certificate-stream-ssl|ssl_trusted_certificate]] directive can be used.
+La liste des certificats est envoyée aux clients. Si ce n'est pas souhaité, on peut utiliser la directive [[12-directives/ssl-trusted-certificate-stream-ssl|ssl_trusted_certificate]].
 
 ---
 

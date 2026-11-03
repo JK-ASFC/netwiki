@@ -1,12 +1,9 @@
 ---
 title: "db_ssl_ciphers"
-description: "Directive nginx db_ssl_ciphers (ngx_http_db_module) — Specifies the enabled ciphers for connections to database servers. The ciphers are specified in the format understood by the OpenSSL library."
+description: "Directive nginx db_ssl_ciphers (ngx_http_db_module) — Indique les suites de chiffrement activées pour les connexions aux serveurs de base de données, au format reconnu par la bibliothèque OpenSSL."
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the enabled ciphers for connections to database servers. The ciphers are specified in the format understood by the OpenSSL library.
+Indique les suites de chiffrement activées pour les connexions aux serveurs de base de données, au format reconnu par la bibliothèque OpenSSL.
 
 ---
 

@@ -11,7 +11,7 @@ icon: puzzle
 The `ngx_stream_mqtt_preread_module` module (1.23.4) allows extracting information from the CONNECT message of the Message Queuing Telemetry Transport protocol (MQTT) versions [3.1.1](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html) and [5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html), for example, a username or a client ID.
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 

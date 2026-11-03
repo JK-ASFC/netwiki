@@ -1,16 +1,13 @@
 ---
-title: "What does the following error mean in the log file:                “accept() failed (53: Software caused connection abort)                while accepting new connection on 0.0.0.0:80”?"
-description: "Nginx — What does the following error mean in the log file: “accept() failed (53: Software caused connection abort) while accepting new connection on 0.0.0.0:80”?. Q: What does the following error mean in the log file: \"accept() failed (53: Software caused connection abort) while accepting new connection on 0.0.0.0:80\"?"
+title: "Que signifie l'erreur suivante dans le journal : « accept() failed (53: Software caused connection abort) while accepting new connection on 0.0.0.0:80 » ?"
+description: "Nginx — Que signifie l'erreur suivante dans le journal : « accept() failed (53: Software caused connection abort) while accepting new connection on 0.0.0.0:80 » ?. Q : Que signifie l'erreur suivante dans le journal : « accept() failed (53: Software caused connection abort) while accepting new connection on 0.0.0.0:80 » ?"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Q : Que signifie l'erreur suivante dans le journal : « accept() failed (53: Software caused connection abort) while accepting new connection on 0.0.0.0:80 » ?
 
-Q: What does the following error mean in the log file: "accept() failed (53: Software caused connection abort) while accepting new connection on 0.0.0.0:80"?
-
-A: Such errors stem from the connections that the clients managed to close before nginx was able to process them. For instance, this can happen in a situation when the user didn’t wait for a page heavily populated with images to load fully, and clicked on a different link. In this case user’s browser would close all of the prior connections which aren’t longer necessary. It is a non-critical error.
+R : Ces erreurs proviennent de connexions que les clients ont fermées avant que nginx ait pu les traiter. Cela arrive par exemple quand l'utilisateur n'attend pas le chargement complet d'une page riche en images et clique sur un autre lien : son navigateur ferme alors toutes les connexions précédentes devenues inutiles. Cette erreur n'est pas critique.
 
 ---
 

@@ -1,23 +1,20 @@
 ---
-title: "Converting rewrite rules"
-description: "Nginx — Converting rewrite rules. People who during their shared hosting life used to configure everything using only Apache’s .htaccess files, usually translate the following rules:"
+title: "Convertir des règles de réécriture"
+description: "Nginx — Convertir des règles de réécriture. Ceux qui, du temps de l'hébergement mutualisé, configuraient tout uniquement avec les fichiers .htaccess d'Apache traduisent généralement les règles suivantes :"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+## Redirection vers un site principal
 
-## A redirect to a main site
-
-People who during their shared hosting life used to configure *everything* using *only* Apache’s .htaccess files, usually translate the following rules:
+Ceux qui, du temps de l'hébergement mutualisé, configuraient *tout* *uniquement* avec les fichiers .htaccess d'Apache traduisent généralement les règles suivantes :
 
 ```c
 RewriteCond  %{HTTP_HOST}  example.org
 RewriteRule  (.*)          http://www.example.org$1
 ```
 
-to something like this:
+en quelque chose comme ceci :
 
 ```
 server {
@@ -30,7 +27,7 @@ server {
 }
 ```
 
-This is a wrong, cumbersome, and ineffective way. The right way is to define a separate server for `example.org`:
+C'est une méthode incorrecte, lourde et inefficace. La bonne méthode consiste à définir un serveur distinct pour `example.org` :
 
 ```
 server {
@@ -47,13 +44,13 @@ server {
 ```
 
 > [!NOTE]
-> On versions prior to 0.9.1, redirects can be made with:
+> Dans les versions antérieures à 0.9.1, les redirections peuvent se faire avec :
 >
 > ```c
 > rewrite      ^ http://www.example.org$request_uri?;
 > ```
 
-Another example. Instead of the “upside-down” logic “all that is not `example.com` and is not `www.example.com`”:
+Autre exemple. Au lieu de la logique « à l'envers » « tout ce qui n'est ni `example.com` ni `www.example.com` » :
 
 ```c
 RewriteCond  %{HTTP_HOST}  !example.com
@@ -61,7 +58,7 @@ RewriteCond  %{HTTP_HOST}  !www.example.com
 RewriteRule  (.*)          http://www.example.com$1
 ```
 
-one should simply define `example.com`, `www.example.com`, and “everything else”:
+il suffit de définir `example.com`, `www.example.com` et « tout le reste » :
 
 ```
 server {
@@ -78,15 +75,15 @@ server {
 ```
 
 > [!NOTE]
-> On versions prior to 0.9.1, redirects can be made with:
+> Dans les versions antérieures à 0.9.1, les redirections peuvent se faire avec :
 >
 > ```c
 > rewrite      ^ http://example.com$request_uri?;
 > ```
 
-## Converting Mongrel rules
+## Convertir des règles Mongrel
 
-Typical Mongrel rules:
+Règles Mongrel typiques :
 
 ```c
 DocumentRoot /var/www/myapp.com/current/public
@@ -107,7 +104,7 @@ RewriteRule ^(.*)$ $1.html [QSA,L]
 RewriteRule ^/(.*)$ balancer://mongrel_cluster%{REQUEST_URI} [P,QSA,L]
 ```
 
-should be converted to
+à convertir en
 
 ```
 location / {

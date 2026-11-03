@@ -1,12 +1,9 @@
 ---
 title: "db_cache"
-description: "Directive nginx db_cache (ngx_http_db_module) — Enables caching of database lookup results in a shared memory zone defined by the keyval_zone directive. The cache key is the value of the db_get directive, evaluated for the current request. If a…"
+description: "Directive nginx db_cache (ngx_http_db_module) — Active la mise en cache des résultats de recherche dans une zone de mémoire partagée définie par la directive keyval_zone. La clé de cache est la valeur de la directive db_get évaluée pour la requête…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,25 +14,25 @@ icon: settings-2
 
 ## Utilisation
 
-Enables caching of database lookup results in a shared memory zone defined by the [[12-directives/keyval-zone-http-keyval|keyval_zone]] directive. The cache key is the value of the [[12-directives/db-get|db_get]] directive, evaluated for the current request. If a cached result is found, it is returned without connecting to the database server.
+Active la mise en cache des résultats de recherche dans une zone de mémoire partagée définie par la directive [[12-directives/keyval-zone-http-keyval|keyval_zone]]. La clé de cache est la valeur de la directive [[12-directives/db-get|db_get]] évaluée pour la requête courante. Si un résultat est trouvé dans le cache, il est renvoyé sans connexion au serveur de base de données.
 
-The [[12-directives/db-pass|db_pass]] directive must be specified in the same configuration context.
+La directive [[12-directives/db-pass|db_pass]] doit être indiquée dans le même contexte de configuration.
 
-The following parameters are supported:
+Les paramètres suivants sont pris en charge :
 
 - **`timeout`=*time***
 
-  sets the lifetime of cached values. The parameter defaults to `0`. A nonzero effective timeout should be configured using this parameter or the zone's `timeout` parameter. With an effective timeout of zero, entries may be removed by unrelated writes to the zone.
+  définit la durée de vie des valeurs en cache ; `0` par défaut. Un délai effectif non nul doit être configuré avec ce paramètre ou avec le paramètre `timeout` de la zone. Avec un délai effectif nul, les entrées peuvent être supprimées par des écritures sans rapport dans la zone.
 
 - **`max_size`=*size***
 
-  sets the maximum value size eligible for caching. By default, the size is `64k`. Values exceeding this limit are returned to the client but are not cached.
+  définit la taille maximale d'une valeur pouvant être mise en cache ; `64k` par défaut. Les valeurs plus grandes sont renvoyées au client mais pas mises en cache.
 
 - **`not_found`=`off` | `on` | `time`**
 
-  Enables or disables caching of `not found` results. By default, such results are not cached. The value `on` uses the same timeout as for database values. A time value specifies a separate lifetime for `not found` results.
+  Active ou désactive la mise en cache des résultats « introuvable » (`not found`). Par défaut, ils ne sont pas mis en cache. La valeur `on` utilise le même délai que pour les valeurs de la base ; une durée indique une durée de vie distincte pour ces résultats.
 
-For example:
+Par exemple :
 
 ```nginx
 http {
@@ -57,18 +54,18 @@ http {
 }
 ```
 
-The evaluated [[12-directives/db-get|db_get]] value is used as the cache key. A cached value is returned without contacting the database. A cached missing-key result returns `404 Not Found` if missing-key caching is enabled in the current location. Otherwise, the database is queried.
+La valeur évaluée de [[12-directives/db-get|db_get]] sert de clé de cache. Une valeur en cache est renvoyée sans interroger la base. Un résultat « clé absente » en cache renvoie `404 Not Found` si la mise en cache des clés absentes est activée dans le bloc location courant ; sinon, la base est interrogée.
 
-A zero-length value is a successful result and is distinct from a missing key. Only complete, valid successful responses are cached, together with missing-key results when enabled. Failed, malformed, or incomplete responses are not cached.
+Une valeur de longueur nulle est un résultat valide, distinct d'une clé absente. Seules les réponses valides et complètes sont mises en cache, ainsi que les résultats de clé absente si cette option est activée. Les réponses en échec, mal formées ou incomplètes ne sont pas mises en cache.
 
-Locations sharing a zone must have identical [[12-directives/db-pass|db_pass]], [[12-directives/db-name|db_name]], and [[12-directives/db-auth|db_auth]] settings. A cache zone must not also be used for ordinary keyval data. Missing-key caching cannot be combined with the `not_found` parameter of [[12-directives/db-next-upstream|db_next_upstream]].
+Les blocs location qui partagent une zone doivent avoir des réglages [[12-directives/db-pass|db_pass]], [[12-directives/db-name|db_name]] et [[12-directives/db-auth|db_auth]] identiques. Une zone de cache ne doit pas servir aussi aux données keyval ordinaires. La mise en cache des clés absentes ne peut pas être combinée avec le paramètre `not_found` de [[12-directives/db-next-upstream|db_next_upstream]].
 
-A cache lookup error returns `500 Internal Server Error`. Failure to insert a result into the cache does not affect the response.
+Une erreur de recherche dans le cache renvoie `500 Internal Server Error`. L'échec de l'insertion d'un résultat dans le cache n'affecte pas la réponse.
 
-The directive is inherited from the previous configuration level unless overridden.
+La directive est héritée du niveau de configuration précédent, sauf redéfinition.
 
 > [!NOTE]
-> The module does not provide cache invalidation or purge. Database changes may remain invisible until cached entries expire or are evicted. Concurrent cache misses are not combined into a single database request.
+> Le module ne propose ni invalidation ni purge du cache. Les modifications de la base peuvent rester invisibles jusqu'à l'expiration ou l'éviction des entrées. Les absences simultanées dans le cache ne sont pas regroupées en une seule requête à la base.
 
 ---
 

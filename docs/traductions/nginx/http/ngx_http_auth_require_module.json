@@ -1,0 +1,4 @@
+{
+ "4b89267ded6d": "Le module `ngx_http_auth_require_module` (1.29.0) autorise les clients selon des variables. Il peut aussi utiliser les variables fournies par d'autres modules d'accès comme [[11-modules/02-http/ngx_http_auth_request_module|ngx_http_auth_request_module]] ou [[11-modules/02-http/ngx_http_auth_request_module|ngx_http_auth_oidc_module]].",
+ "9475960eb9c6": "Active l'autorisation selon les variables indiquées. L'accès n'est autorisé que si aucune variable n'est vide ni égale à « 0 ». Sinon, le module renvoie le code `403`, modifiable avec le paramètre `error`. Plusieurs directives `auth_require` peuvent servir à renvoyer des codes d'erreur différents."
+}

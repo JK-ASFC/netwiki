@@ -1,12 +1,9 @@
 ---
 title: "acme_issuer"
-description: "Directive nginx acme_issuer (ngx_http_acme_module) — Defines an ACME certificate issuer object."
+description: "Directive nginx acme_issuer (ngx_http_acme_module) — Définit un émetteur de certificats ACME."
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines an ACME certificate issuer object.
+Définit un émetteur de certificats ACME.
 
 ---
 

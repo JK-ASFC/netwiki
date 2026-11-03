@@ -11,7 +11,7 @@ icon: puzzle
 The `ngx_http_keyval_module` module (1.13.3) creates variables with values taken from key-value pairs managed by the [[11-modules/02-http/ngx_http_api_module|API]] or a variable (1.15.10) that can also be set with [njs](https://github.com/nginx/njs-examples/#logging-the-number-of-requests-per-client-http-logging-num-requests).
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 

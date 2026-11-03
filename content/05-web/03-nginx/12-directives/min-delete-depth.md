@@ -1,12 +1,9 @@
 ---
 title: "min_delete_depth"
-description: "Directive nginx min_delete_depth (ngx_http_dav_module) — Allows the DELETE method to remove files provided that the number of elements in a request path is not less than the specified number. For example, the directive nginx min_delete_depth 4; allows…"
+description: "Directive nginx min_delete_depth (ngx_http_dav_module) — Permet à la méthode DELETE de supprimer des fichiers si le nombre d'éléments du chemin de la requête n'est pas inférieur au nombre indiqué. Par exemple, la directive nginx min_delete_depth 4; permet…"
 tags: [nginx, directive, ngx_http_dav_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,13 +14,13 @@ icon: settings-2
 
 ## Utilisation
 
-Allows the DELETE method to remove files provided that the number of elements in a request path is not less than the specified number. For example, the directive
+Permet à la méthode DELETE de supprimer des fichiers si le nombre d'éléments du chemin de la requête n'est pas inférieur au nombre indiqué. Par exemple, la directive
 
 ```nginx
 min_delete_depth 4;
 ```
 
-allows removing files on requests
+permet de supprimer des fichiers pour les requêtes
 
 ```nginx
 /users/00/00/name
@@ -31,7 +28,7 @@ allows removing files on requests
 /users/00/00/page.html
 ```
 
-and denies the removal of
+et refuse la suppression de
 
 ```nginx
 /users/00/00

@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `ssl_session_ticket_key file;` |
@@ -34,7 +31,7 @@ openssl rand 80 > ticket.key
 
 Selon la taille du fichier, le chiffrement utilise AES256 (clés de 80 octets, 1.11.8) ou AES128 (clés de 48 octets).
 
-If the directive is specified on the [[12-directives/server-stream-core|server]] level, the value from the default server can be used. Details are provided in the “[[10-guides/02-http/server-names|Virtual server selection]]” section.
+Si la directive est indiquée au niveau [[12-directives/server-stream-core|server]], la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « [[10-guides/02-http/server-names|Choix du serveur virtuel]] ».
 
 ---
 

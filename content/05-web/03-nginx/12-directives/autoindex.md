@@ -1,12 +1,9 @@
 ---
 title: "autoindex"
-description: "Directive nginx autoindex (ngx_http_autoindex_module) — Enables or disables the directory listing output."
+description: "Directive nginx autoindex (ngx_http_autoindex_module) — Active ou désactive l'affichage de la liste du répertoire."
 tags: [nginx, directive, ngx_http_autoindex_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables the directory listing output.
+Active ou désactive l'affichage de la liste du répertoire.
 
 ---
 

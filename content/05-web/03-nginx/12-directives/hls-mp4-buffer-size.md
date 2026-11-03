@@ -1,12 +1,9 @@
 ---
 title: "hls_mp4_buffer_size"
-description: "Directive nginx hls_mp4_buffer_size (ngx_http_hls_module) — Sets the initial size of the buffer used for processing MP4 and MOV files."
+description: "Directive nginx hls_mp4_buffer_size (ngx_http_hls_module) — Définit la taille (size) initiale du tampon utilisé pour traiter les fichiers MP4 et MOV."
 tags: [nginx, directive, ngx_http_hls_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the initial *size* of the buffer used for processing MP4 and MOV files.
+Définit la taille (*size*) initiale du tampon utilisé pour traiter les fichiers MP4 et MOV.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "geo (ngx_http_geo_module)"
-description: "Directive nginx geo (ngx_http_geo_module) — Describes the dependency of values of the specified variable on the client IP address. By default, the address is taken from the $remote_addr variable, but it can also be taken from another variable…"
+description: "Directive nginx geo (ngx_http_geo_module) — Décrit la dépendance entre les valeurs de la variable indiquée et l'adresse IP du client. Par défaut, l'adresse est prise dans la variable $remote_addr, mais elle peut aussi l'être dans une autre…"
 tags: [nginx, directive, ngx_http_geo_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Describes the dependency of values of the specified variable on the client IP address. By default, the address is taken from the `$remote_addr` variable, but it can also be taken from another variable (0.7.27), for example:
+Décrit la dépendance entre les valeurs de la variable indiquée et l'adresse IP du client. Par défaut, l'adresse est prise dans la variable `$remote_addr`, mais elle peut aussi l'être dans une autre variable (0.7.27), par exemple :
 
 ```nginx
 geo $arg_remote_addr $geo {
@@ -26,47 +23,47 @@ geo $arg_remote_addr $geo {
 ```
 
 > [!NOTE]
-> Since variables are evaluated only when used, the mere existence of even a large number of declared “`geo`” variables does not cause any extra costs for request processing.
+> Comme les variables ne sont évaluées que lorsqu'elles sont utilisées, la simple existence d'un grand nombre de variables « `geo` » déclarées n'ajoute aucun coût au traitement des requêtes.
 
-If the value of a variable does not represent a valid IP address then the “`255.255.255.255`” address is used.
+Si la valeur d'une variable n'est pas une adresse IP valide, l'adresse « `255.255.255.255` » est utilisée.
 
-Addresses are specified either as prefixes in CIDR notation (including individual addresses) or as ranges (0.7.23).
+Les adresses s'indiquent soit sous forme de préfixes en notation CIDR (adresses individuelles comprises), soit sous forme de plages (0.7.23).
 
 > [!NOTE]
-> IPv6 prefixes are supported starting from versions 1.3.10 and 1.2.7.
+> Les préfixes IPv6 sont pris en charge à partir des versions 1.3.10 et 1.2.7.
 
 Les paramètres spéciaux suivants sont aussi pris en charge :
 
 - **`delete`**
 
-  deletes the specified network (0.7.23).
+  supprime le réseau indiqué (0.7.23).
 
 - **`default`**
 
-  a value set to the variable if the client address does not match any of the specified addresses. When addresses are specified in CIDR notation, “`0.0.0.0/0`” and “`::/0`” can be used instead of `default`. When `default` is not specified, the default value will be an empty string.
+  valeur affectée à la variable si l'adresse du client ne correspond à aucune des adresses indiquées. En notation CIDR, on peut utiliser « `0.0.0.0/0` » et « `::/0` » au lieu de `default`. Sans `default`, la valeur par défaut est une chaîne vide.
 
 - **`include`**
 
-  includes a file with addresses and values. There can be several inclusions.
+  inclut un fichier d'adresses et de valeurs. Il peut y avoir plusieurs inclusions.
 
 - **`proxy`**
 
-  defines trusted addresses (0.8.7, 0.7.63). When a request comes from a trusted address, an address from the `X-Forwarded-For` request header field will be used instead. In contrast to the regular addresses, trusted addresses are checked sequentially.
+  définit les adresses de confiance (0.8.7, 0.7.63). Lorsqu'une requête provient d'une adresse de confiance, c'est l'adresse du champ d'en-tête de requête `X-Forwarded-For` qui est utilisée. Contrairement aux adresses ordinaires, les adresses de confiance sont vérifiées dans l'ordre.
 
   > [!NOTE]
-  > Trusted IPv6 addresses are supported starting from versions 1.3.0 and 1.2.1.
+  > Les adresses IPv6 de confiance sont prises en charge à partir des versions 1.3.0 et 1.2.1.
 
 - **`proxy_recursive`**
 
-  enables recursive address search (1.3.0, 1.2.1). If recursive search is disabled then instead of the original client address that matches one of the trusted addresses, the last address sent in `X-Forwarded-For` will be used. If recursive search is enabled then instead of the original client address that matches one of the trusted addresses, the last non-trusted address sent in `X-Forwarded-For` will be used.
+  active la recherche récursive d'adresse (1.3.0, 1.2.1). Si elle est désactivée, l'adresse d'origine du client qui correspond à une adresse de confiance est remplacée par la dernière adresse transmise dans `X-Forwarded-For`. Si elle est activée, elle est remplacée par la dernière adresse non fiable transmise dans `X-Forwarded-For`.
 
 - **`ranges`**
 
-  indicates that addresses are specified as ranges (0.7.23). This parameter should be the first. To speed up loading of a geo base, addresses should be put in ascending order.
+  indique que les adresses sont des plages (0.7.23). Ce paramètre doit figurer en premier. Pour accélérer le chargement d'une base geo, les adresses doivent être classées par ordre croissant.
 
 - **`volatile`**
 
-  indicates that the variable is not cacheable (1.29.3).
+  indique que la variable ne peut pas être mise en cache (1.29.3).
 
 Exemple :
 
@@ -85,16 +82,16 @@ geo $country {
 }
 ```
 
-The `conf/geo.conf` file could contain the following lines:
+Le fichier `conf/geo.conf` peut contenir les lignes suivantes :
 
 ```nginx
 10.2.0.0/16    RU;
 192.168.2.0/24 RU;
 ```
 
-A value of the most specific match is used. For example, for the 127.0.0.1 address the value “`RU`” will be chosen, not “`US`”.
+La valeur de la correspondance la plus précise est utilisée. Par exemple, pour l'adresse 127.0.0.1, c'est la valeur « `RU` » qui est choisie, et non « `US` ».
 
-Example with ranges:
+Exemple avec des plages :
 
 ```nginx
 geo $country {

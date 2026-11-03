@@ -1,0 +1,6 @@
+{
+ "23f7d63abc81": "Comment mentionner le copyright de nginx lorsqu'on l'intègre à un logiciel propriétaire distribué ?",
+ "38e3f21948a6": "Q : Je souhaite intégrer la distribution de nginx à mon logiciel propriétaire. Comment mentionner le copyright de nginx dans ce cas ?",
+ "cbfcb7d0913c": "Si votre compilation de nginx inclut aussi des produits tiers parmi zlib, PCRE et OpenSSL, il est conseillé d'inclure également leurs mentions de copyright et clauses de non-responsabilité.",
+ "d55b2fc03bd5": "R : Le texte ci-dessous doit être ajouté à vos conditions de licence, suivi du texte de la licence BSD à 2 clauses applicable, décrite [ici](http://nginx.org/LICENSE)."
+}

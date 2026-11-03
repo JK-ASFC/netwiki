@@ -1,46 +1,43 @@
 ---
-title: "Controlling nginx"
-description: "Nginx — Controlling nginx. nginx can be controlled with signals. The process ID of the master process is written to the file /usr/local/nginx/logs/nginx.pid by default. This name may be changed at configuration time, or in nginx.conf using the…"
+title: "Contrôler nginx"
+description: "Nginx — Contrôler nginx. nginx se contrôle par des signaux. L'identifiant du processus maître est écrit par défaut dans le fichier /usr/local/nginx/logs/nginx.pid. Ce nom peut être modifié lors de la configuration de la compilation, ou dans…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-nginx can be controlled with signals. The process ID of the master process is written to the file `/usr/local/nginx/logs/nginx.pid` by default. This name may be changed at configuration time, or in `nginx.conf` using the [[12-directives/pid|pid]] directive. The master process supports the following signals:
+nginx se contrôle par des signaux. L'identifiant du processus maître est écrit par défaut dans le fichier `/usr/local/nginx/logs/nginx.pid`. Ce nom peut être modifié lors de la configuration de la compilation, ou dans `nginx.conf` avec la directive [[12-directives/pid|pid]]. Le processus maître prend en charge les signaux suivants :
 
 > [!NOTE]
 > |   |   |
 > | --- | --- |
-> | TERM, INT | fast shutdown |
-> | QUIT | graceful shutdown |
-> | HUP | changing configuration, keeping up with a changed time zone (only for FreeBSD and Linux), starting new worker processes with a new configuration, graceful shutdown of old worker processes |
-> | USR1 | re-opening log files |
-> | USR2 | upgrading an executable file |
-> | WINCH | graceful shutdown of worker processes |
+> | TERM, INT | arrêt rapide |
+> | QUIT | arrêt en douceur |
+> | HUP | changement de configuration, prise en compte d'un changement de fuseau horaire (FreeBSD et Linux uniquement), démarrage de nouveaux processus de travail avec la nouvelle configuration, arrêt en douceur des anciens processus de travail |
+> | USR1 | réouverture des fichiers journaux |
+> | USR2 | mise à jour de l'exécutable |
+> | WINCH | arrêt en douceur des processus de travail |
 
-Individual worker processes can be controlled with signals as well, though it is not required. The supported signals are:
+Les processus de travail peuvent aussi être contrôlés individuellement par des signaux, même si ce n'est pas nécessaire. Les signaux pris en charge sont :
 
 > [!NOTE]
 > |   |   |
 > | --- | --- |
-> | TERM, INT | fast shutdown |
-> | QUIT | graceful shutdown |
-> | USR1 | re-opening log files |
-> | WINCH | abnormal termination for debugging (requires [[12-directives/debug-points\|debug_points]] to be enabled) |
+> | TERM, INT | arrêt rapide |
+> | QUIT | arrêt en douceur |
+> | USR1 | réouverture des fichiers journaux |
+> | WINCH | arrêt anormal pour le débogage (nécessite d'activer [[12-directives/debug-points\|debug_points]]) |
 
-## Changing Configuration
+## Changer la configuration
 
-In order for nginx to re-read the configuration file, a HUP signal should be sent to the master process. The master process first checks the syntax validity, then tries to apply new configuration, that is, to open log files and new listen sockets. If this fails, it rolls back changes and continues to work with old configuration. If this succeeds, it starts new worker processes, and sends messages to old worker processes requesting them to shut down gracefully. Old worker processes close listen sockets and continue to service old clients. After all clients are serviced, old worker processes are shut down.
+Pour que nginx relise son fichier de configuration, il faut envoyer le signal HUP au processus maître. Celui-ci vérifie d'abord la syntaxe, puis tente d'appliquer la nouvelle configuration, c'est-à-dire d'ouvrir les fichiers journaux et les nouveaux sockets d'écoute. En cas d'échec, il annule les modifications et continue avec l'ancienne configuration. En cas de succès, il démarre de nouveaux processus de travail et demande aux anciens de s'arrêter en douceur. Les anciens processus de travail ferment les sockets d'écoute et continuent de servir les clients en cours ; une fois tous ces clients servis, ils s'arrêtent.
 
-Let’s illustrate this by example. Imagine that nginx is run on FreeBSD and the command
+Illustrons cela par un exemple. Imaginons que nginx tourne sous FreeBSD et que la commande
 
 ```
 ps axw -o pid,ppid,user,%cpu,vsz,wchan,command | egrep '(nginx|PID)'
 ```
 
-produces the following output:
+produise la sortie suivante :
 
 ```
   PID  PPID USER    %CPU   VSZ WCHAN  COMMAND
@@ -50,7 +47,7 @@ produces the following output:
 33129 33126 nobody   0.0  1364 kqread nginx: worker process (nginx)
 ```
 
-If HUP is sent to the master process, the output becomes:
+Si le signal HUP est envoyé au processus maître, la sortie devient :
 
 ```
   PID  PPID USER    %CPU   VSZ WCHAN  COMMAND
@@ -61,7 +58,7 @@ If HUP is sent to the master process, the output becomes:
 33136 33126 nobody   0.0  1368 kqread nginx: worker process (nginx)
 ```
 
-One of the old worker processes with PID 33129 still continues to work. After some time it exits:
+L'un des anciens processus de travail, de PID 33129, continue de fonctionner. Au bout d'un moment, il se termine :
 
 ```
   PID  PPID USER    %CPU   VSZ WCHAN  COMMAND
@@ -71,13 +68,13 @@ One of the old worker processes with PID 33129 still continues to work. After so
 33136 33126 nobody   0.0  1368 kqread nginx: worker process (nginx)
 ```
 
-## Rotating Log-files
+## Rotation des fichiers journaux
 
-In order to rotate log files, they need to be renamed first. After that USR1 signal should be sent to the master process. The master process will then re-open all currently open log files and assign them an unprivileged user under which the worker processes are running, as an owner. After successful re-opening, the master process closes all open files and sends the message to worker process to ask them to re-open files. Worker processes also open new files and close old files right away. As a result, old files are almost immediately available for post processing, such as compression.
+Pour faire tourner les fichiers journaux, il faut d'abord les renommer, puis envoyer le signal USR1 au processus maître. Celui-ci rouvre alors tous les fichiers journaux ouverts et leur attribue comme propriétaire l'utilisateur non privilégié sous lequel s'exécutent les processus de travail. Une fois la réouverture réussie, le processus maître ferme tous les fichiers ouverts et demande aux processus de travail de rouvrir les fichiers. Ceux-ci ouvrent les nouveaux fichiers et ferment aussitôt les anciens. Les anciens fichiers sont ainsi presque immédiatement disponibles pour un traitement ultérieur, comme la compression.
 
-## Upgrading Executable on the Fly
+## Mettre à jour l'exécutable à chaud
 
-In order to upgrade the server executable, the new executable file should be put in place of an old file first. After that USR2 signal should be sent to the master process. The master process first renames its file with the process ID to a new file with the `.oldbin` suffix, e.g. `/usr/local/nginx/logs/nginx.pid.oldbin`, then starts a new executable file that in turn starts new worker processes:
+Pour mettre à jour l'exécutable du serveur, il faut d'abord placer le nouvel exécutable à la place de l'ancien, puis envoyer le signal USR2 au processus maître. Celui-ci renomme d'abord son fichier d'identifiant de processus en lui ajoutant le suffixe `.oldbin`, par exemple `/usr/local/nginx/logs/nginx.pid.oldbin`, puis lance le nouvel exécutable, qui démarre à son tour de nouveaux processus de travail :
 
 ```
   PID  PPID USER    %CPU   VSZ WCHAN  COMMAND
@@ -91,7 +88,7 @@ In order to upgrade the server executable, the new executable file should be put
 36267 36264 nobody   0.0  1364 kqread nginx: worker process (nginx)
 ```
 
-After that all worker processes (old and new ones) continue to accept requests. If the WINCH signal is sent to the first master process, it will send messages to its worker processes, requesting them to shut down gracefully, and they will start to exit:
+Tous les processus de travail (anciens et nouveaux) continuent alors d'accepter des requêtes. Si le signal WINCH est envoyé au premier processus maître, celui-ci demande à ses processus de travail de s'arrêter en douceur, et ils commencent à se terminer :
 
 ```
   PID  PPID USER    %CPU   VSZ WCHAN  COMMAND
@@ -103,7 +100,7 @@ After that all worker processes (old and new ones) continue to accept requests. 
 36267 36264 nobody   0.0  1364 kqread nginx: worker process (nginx)
 ```
 
-After some time, only the new worker processes will process requests:
+Au bout d'un moment, seuls les nouveaux processus de travail traitent les requêtes :
 
 ```
   PID  PPID USER    %CPU   VSZ WCHAN  COMMAND
@@ -114,14 +111,14 @@ After some time, only the new worker processes will process requests:
 36267 36264 nobody   0.0  1364 kqread nginx: worker process (nginx)
 ```
 
-It should be noted that the old master process does not close its listen sockets, and it can be managed to start its worker processes again if needed. If for some reason the new executable file works unacceptably, one of the following can be done:
+L'ancien processus maître ne ferme pas ses sockets d'écoute : on peut lui faire redémarrer ses processus de travail si nécessaire. Si, pour une raison quelconque, le nouvel exécutable ne fonctionne pas correctement, on peut :
 
-- Send the HUP signal to the old master process. The old master process will start new worker processes without re-reading the configuration. After that, all new processes can be shut down gracefully, by sending the QUIT signal to the new master process.
-- Send the TERM signal to the new master process. It will then send a message to its worker processes requesting them to exit immediately, and they will all exit almost immediately. (If new processes do not exit for some reason, the KILL signal should be sent to them to force them to exit.) When the new master process exits, the old master process will start new worker processes automatically.
+- Envoyer le signal HUP à l'ancien processus maître. Il démarre de nouveaux processus de travail sans relire la configuration. On peut ensuite arrêter en douceur tous les nouveaux processus en envoyant le signal QUIT au nouveau processus maître.
+- Envoyer le signal TERM au nouveau processus maître. Il demande à ses processus de travail de se terminer immédiatement, ce qu'ils font presque tous aussitôt. (Si les nouveaux processus ne se terminent pas, leur envoyer le signal KILL pour les y forcer.) Lorsque le nouveau processus maître se termine, l'ancien redémarre automatiquement de nouveaux processus de travail.
 
-If the new master process exits then the old master process discards the `.oldbin` suffix from the file name with the process ID.
+Si le nouveau processus maître se termine, l'ancien retire le suffixe `.oldbin` du nom du fichier d'identifiant de processus.
 
-If upgrade was successful, then the QUIT signal should be sent to the old master process, and only new processes will stay:
+Si la mise à jour a réussi, il faut envoyer le signal QUIT à l'ancien processus maître ; seuls les nouveaux processus restent :
 
 ```
   PID  PPID USER    %CPU   VSZ WCHAN  COMMAND
@@ -132,7 +129,7 @@ If upgrade was successful, then the QUIT signal should be sent to the old master
 ```
 
 > [!NOTE]
-> To preserve established QUIC connections during an upgrade or reload, [[12-directives/quic-bpf|quic_bpf]] should be enabled.
+> Pour conserver les connexions QUIC établies lors d'une mise à jour ou d'un rechargement, activer [[12-directives/quic-bpf|quic_bpf]].
 
 ---
 

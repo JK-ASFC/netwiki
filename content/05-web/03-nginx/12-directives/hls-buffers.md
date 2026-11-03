@@ -1,12 +1,9 @@
 ---
 title: "hls_buffers"
-description: "Directive nginx hls_buffers (ngx_http_hls_module) — Sets the maximum number and size of buffers that are used for reading and writing data frames."
+description: "Directive nginx hls_buffers (ngx_http_hls_module) — Définit le nombre (number) et la taille (size) maximaux des tampons utilisés pour lire et écrire les trames de données."
 tags: [nginx, directive, ngx_http_hls_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the maximum *number* and *size* of buffers that are used for reading and writing data frames.
+Définit le nombre (*number*) et la taille (*size*) maximaux des tampons utilisés pour lire et écrire les trames de données.
 
 ---
 

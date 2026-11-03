@@ -1,16 +1,13 @@
 ---
-title: "Setting up hashes"
-description: "Nginx — Setting up hashes. To quickly process static sets of data such as server names, map directive’s values, MIME types, names of request header strings, nginx uses hash tables. During the start and each re-configuration nginx selects the…"
+title: "Réglage des tables de hachage"
+description: "Nginx — Réglage des tables de hachage. Pour traiter rapidement des ensembles de données statiques comme les noms de serveurs, les valeurs de la directive map, les types MIME ou les noms des en-têtes de requête, nginx utilise des tables de hachage. Au…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Pour traiter rapidement des ensembles de données statiques comme les noms de serveurs, les valeurs de la directive [[12-directives/map-http-map|map]], les types MIME ou les noms des en-têtes de requête, nginx utilise des tables de hachage. Au démarrage et à chaque reconfiguration, nginx choisit les plus petites tailles de tables possibles telles que la taille d'un compartiment, qui contient les clés de même valeur de hachage, ne dépasse pas le paramètre configuré (*hash bucket size*). La taille d'une table s'exprime en compartiments. L'ajustement se poursuit jusqu'à ce que la taille de la table dépasse le paramètre *hash max size*. La plupart des tables ont des directives permettant de modifier ces paramètres ; par exemple, pour la table des noms de serveurs, [[12-directives/server-names-hash-max-size-http-core|server_names_hash_max_size]] et [[12-directives/server-names-hash-bucket-size-http-core|server_names_hash_bucket_size]].
 
-To quickly process static sets of data such as server names, [[12-directives/map-http-map|map]] directive’s values, MIME types, names of request header strings, nginx uses hash tables. During the start and each re-configuration nginx selects the minimum possible sizes of hash tables such that the bucket size that stores keys with identical hash values does not exceed the configured parameter (hash bucket size). The size of a table is expressed in buckets. The adjustment is continued until the table size exceeds the hash max size parameter. Most hashes have the corresponding directives that allow changing these parameters, for example, for the server names hash they are [[12-directives/server-names-hash-max-size-http-core|server_names_hash_max_size]] and [[12-directives/server-names-hash-bucket-size-http-core|server_names_hash_bucket_size]].
-
-The hash bucket size parameter is aligned to the size that is a multiple of the processor’s cache line size. This speeds up key search in a hash on modern processors by reducing the number of memory accesses. If hash bucket size is equal to one processor’s cache line size then the number of memory accesses during the key search will be two in the worst case — first to compute the bucket address, and second during the key search inside the bucket. Therefore, if nginx emits the message requesting to increase either hash max size or hash bucket size then the first parameter should first be increased.
+Le paramètre *hash bucket size* est aligné sur un multiple de la taille de ligne de cache du processeur. Cela accélère la recherche des clés sur les processeurs modernes en réduisant le nombre d'accès à la mémoire. Si *hash bucket size* est égal à la taille d'une ligne de cache, la recherche d'une clé nécessite au pire deux accès mémoire : le premier pour calculer l'adresse du compartiment, le second pour chercher la clé dans le compartiment. Si nginx demande d'augmenter *hash max size* ou *hash bucket size*, il faut donc augmenter d'abord le premier paramètre.
 
 ---
 

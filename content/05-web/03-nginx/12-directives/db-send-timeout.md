@@ -1,12 +1,9 @@
 ---
 title: "db_send_timeout"
-description: "Directive nginx db_send_timeout (ngx_http_db_module) — Defines a timeout for sending data to a database server."
+description: "Directive nginx db_send_timeout (ngx_http_db_module) — Définit le délai d'envoi des données à un serveur de base de données."
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a timeout for sending data to a database server.
+Définit le délai d'envoi des données à un serveur de base de données.
 
 ---
 

@@ -11,7 +11,7 @@ icon: puzzle
 The `ngx_stream_zone_sync_module` module (1.13.8) provides the necessary support for synchronizing contents of [[12-directives/zone-stream-upstream|shared memory zones]] between nodes of a cluster. To enable synchronization for a particular zone, a corresponding module must support this feature. Currently, it is possible to synchronize HTTP [[12-directives/sticky|sticky]] sessions, information about [[11-modules/02-http/ngx_http_limit_req_module|excessive HTTP requests]], and key-value pairs both in [[11-modules/02-http/ngx_http_keyval_module|http]] and [[11-modules/03-stream/ngx_stream_keyval_module|stream]].
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 

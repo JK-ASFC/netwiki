@@ -1,12 +1,9 @@
 ---
 title: "uri"
-description: "Directive nginx uri (ngx_http_acme_module) — The directory URL of the ACME server. This directive is mandatory."
+description: "Directive nginx uri (ngx_http_acme_module) — L'URL de répertoire du serveur ACME. Cette directive est obligatoire."
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-The [directory URL](https://datatracker.ietf.org/doc/html/rfc8555#section-7.1.1) of the ACME server. This directive is mandatory.
+L'[URL de répertoire](https://datatracker.ietf.org/doc/html/rfc8555#section-7.1.1) du serveur ACME. Cette directive est obligatoire.
 
 ---
 

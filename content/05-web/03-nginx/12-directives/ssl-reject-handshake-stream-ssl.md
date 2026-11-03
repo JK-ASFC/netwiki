@@ -1,12 +1,9 @@
 ---
 title: "ssl_reject_handshake (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_reject_handshake (ngx_stream_ssl_module) — If enabled, SSL handshakes in the server block will be rejected. Par exemple, dans la configuration suivante, les négociations SSL avec un nom de serveur autre que example.com sont rejetées : nginx…"
+description: "Directive nginx ssl_reject_handshake (ngx_stream_ssl_module) — Si cette option est activée, les négociations SSL dans le bloc server sont rejetées. Par exemple, dans la configuration suivante, les négociations SSL avec un nom de serveur autre que example.com…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-If enabled, SSL handshakes in the [[12-directives/server-stream-core|server]] block will be rejected.
+Si cette option est activée, les négociations SSL dans le bloc [[12-directives/server-stream-core|server]] sont rejetées.
 
 Par exemple, dans la configuration suivante, les négociations SSL avec un nom de serveur autre que `example.com` sont rejetées :
 

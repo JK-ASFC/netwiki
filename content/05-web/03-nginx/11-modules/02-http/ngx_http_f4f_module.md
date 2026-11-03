@@ -1,21 +1,18 @@
 ---
 title: "ngx_http_f4f_module"
-description: "Module nginx ngx_http_f4f_module — The ngx_http_f4f_module module provides server-side support for Adobe HTTP Dynamic Streaming (HDS)."
+description: "Module nginx ngx_http_f4f_module — Le module ngx_http_f4f_module fournit côté serveur la prise en charge d'Adobe HTTP Dynamic Streaming (HDS)."
 tags: [nginx, module, ngx_http_f4f_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_f4f_module` fournit côté serveur la prise en charge d'Adobe HTTP Dynamic Streaming (HDS).
 
-The `ngx_http_f4f_module` module provides server-side support for Adobe HTTP Dynamic Streaming (HDS).
+Ce module traite les requêtes HTTP Dynamic Streaming de la forme « `/videoSeg1-Frag1` » en extrayant le fragment nécessaire du fichier `videoSeg1.f4f` à l'aide du fichier d'index `videoSeg1.f4x`. Il remplace le module f4f d'Adobe (HTTP Origin Module) pour Apache.
 
-This module implements handling of HTTP Dynamic Streaming requests in the “`/videoSeg1-Frag1`” form — extracting the needed fragment from the `videoSeg1.f4f` file using the `videoSeg1.f4x` index file. This module is an alternative to the Adobe’s f4f module (HTTP Origin Module) for Apache.
-
-Usual pre-processing with Adobe’s f4fpackager is required, see relevant documentation for details.
+Le prétraitement habituel avec f4fpackager d'Adobe est nécessaire ; voir sa documentation pour les détails.
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 

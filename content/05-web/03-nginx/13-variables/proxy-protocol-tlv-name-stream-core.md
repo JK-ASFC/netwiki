@@ -47,7 +47,7 @@ Le nom de type de TLV SSL spécial suivant est aussi pris en charge :
 
 - `ssl_verify` — client SSL certificate verification result, zero if the client presented a certificate and it was successfully verified, and non-zero otherwise
 
-The PROXY protocol must be previously enabled by setting the `proxy_protocol` parameter in the [[12-directives/listen-stream-core|listen]] directive.
+Le protocole PROXY doit au préalable être activé avec le paramètre `proxy_protocol` de la directive [[12-directives/listen-stream-core|listen]].
 
 ---
 

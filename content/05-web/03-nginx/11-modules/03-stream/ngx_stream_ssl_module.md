@@ -22,7 +22,7 @@ Pour réduire la charge du processeur, il est recommandé de
 - régler le nombre de [[12-directives/worker-processes|processus de travail]] sur le nombre de processeurs,
 - activer le cache de sessions partagé,
 - désactiver le cache de sessions intégré,
-- and possibly increase the session [[12-directives/ssl-session-timeout-stream-ssl|lifetime]] (by default, 5 minutes):
+- et éventuellement augmenter la [[12-directives/ssl-session-timeout-stream-ssl|durée de vie]] des sessions (5 minutes par défaut) :
 
 ```nginx
 worker_processes auto;

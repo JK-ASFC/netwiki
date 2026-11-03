@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_autoindex_module"
-description: "Module nginx ngx_http_autoindex_module — The ngx_http_autoindex_module module processes requests ending with the slash character (‘/’) and produces a directory listing. Usually a request is passed to the ngx_http_autoindex_module module when the…"
+description: "Module nginx ngx_http_autoindex_module — Le module ngx_http_autoindex_module traite les requêtes se terminant par une barre oblique (‘/’) et produit la liste du contenu du répertoire. Une requête est généralement transmise à ce module lorsque le module…"
 tags: [nginx, module, ngx_http_autoindex_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_autoindex_module` module processes requests ending with the slash character (‘`/`’) and produces a directory listing. Usually a request is passed to the `ngx_http_autoindex_module` module when the [[11-modules/02-http/ngx_http_index_module|ngx_http_index_module]] module cannot find an index file.
+Le module `ngx_http_autoindex_module` traite les requêtes se terminant par une barre oblique (‘`/`’) et produit la liste du contenu du répertoire. Une requête est généralement transmise à ce module lorsque le module [[11-modules/02-http/ngx_http_index_module|ngx_http_index_module]] ne trouve pas de fichier d'index.
 
 ## Exemple de configuration
 

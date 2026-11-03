@@ -1,12 +1,9 @@
 ---
 title: "accept_terms_of_service"
-description: "Directive nginx accept_terms_of_service (ngx_http_acme_module) — Agrees to the terms of service under which the ACME server will be used. Some servers require accepting the terms of service before account registration. The terms are usually available on the ACME…"
+description: "Directive nginx accept_terms_of_service (ngx_http_acme_module) — Accepte les conditions d'utilisation du serveur ACME. Certains serveurs exigent leur acceptation avant l'enregistrement du compte. Les conditions sont généralement disponibles sur le site du serveur…"
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Agrees to the terms of service under which the ACME server will be used. Some servers require accepting the terms of service before account registration. The terms are usually available on the ACME server's website, and the URL will be printed to the error log if necessary.
+Accepte les conditions d'utilisation du serveur ACME. Certains serveurs exigent leur acceptation avant l'enregistrement du compte. Les conditions sont généralement disponibles sur le site du serveur ACME, et l'URL est écrite dans le journal d'erreurs si nécessaire.
 
 ---
 

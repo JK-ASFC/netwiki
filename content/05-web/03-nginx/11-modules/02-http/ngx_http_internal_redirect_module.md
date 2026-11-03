@@ -11,7 +11,7 @@ icon: puzzle
 The `ngx_http_internal_redirect_module` module (1.23.4) allows making an internal redirect. In contrast to [[11-modules/02-http/ngx_http_rewrite_module|rewriting URIs]], the redirection is made after checking [[11-modules/02-http/ngx_http_limit_req_module|request]] and [[11-modules/02-http/ngx_http_limit_conn_module|connection]] processing limits, and [[11-modules/02-http/ngx_http_access_module|access]] limits.
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 

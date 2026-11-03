@@ -1,12 +1,9 @@
 ---
 title: "hls_forward_args"
-description: "Directive nginx hls_forward_args (ngx_http_hls_module) — Adds arguments from a playlist request to URIs of fragments. This may be useful for performing client authorization at the moment of requesting a fragment, or when protecting an HLS stream with the…"
+description: "Directive nginx hls_forward_args (ngx_http_hls_module) — Ajoute les arguments d'une requête de liste de lecture aux URI des fragments. Cela peut servir à autoriser le client au moment où il demande un fragment, ou à protéger un flux HLS avec le module…"
 tags: [nginx, directive, ngx_http_hls_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Adds arguments from a playlist request to URIs of fragments. This may be useful for performing client authorization at the moment of requesting a fragment, or when protecting an HLS stream with the [[11-modules/02-http/ngx_http_secure_link_module|ngx_http_secure_link_module]] module.
+Ajoute les arguments d'une requête de liste de lecture aux URI des fragments. Cela peut servir à autoriser le client au moment où il demande un fragment, ou à protéger un flux HLS avec le module [[11-modules/02-http/ngx_http_secure_link_module|ngx_http_secure_link_module]].
 
-For example, if a client requests a playlist `http://example.com/hls/test.mp4.m3u8?a=1&b=2`, the arguments `a=1` and `b=2` will be added to URIs of fragments after the arguments `start` and `end`:
+Par exemple, si un client demande la liste de lecture `http://example.com/hls/test.mp4.m3u8?a=1&b=2`, les arguments `a=1` et `b=2` sont ajoutés aux URI des fragments, après les arguments `start` et `end` :
 
 ```nginx
 #EXTM3U
@@ -44,7 +41,7 @@ test.mp4.ts?start=42.583&end=52.209&a=1&b=2
 #EXT-X-ENDLIST
 ```
 
-If an HLS stream is protected with the [[11-modules/02-http/ngx_http_secure_link_module|ngx_http_secure_link_module]] module, `$uri` should not be used in the [[12-directives/secure-link-md5|secure_link_md5]] expression because this will cause errors when requesting the fragments. [[12-directives/map-http-map|Base URI]] should be used instead of `$uri` (`$hls_uri` in the example):
+Si un flux HLS est protégé par le module [[11-modules/02-http/ngx_http_secure_link_module|ngx_http_secure_link_module]], il ne faut pas utiliser `$uri` dans l'expression [[12-directives/secure-link-md5|secure_link_md5]], car cela provoque des erreurs lors de la demande des fragments. Utilisez plutôt un [[12-directives/map-http-map|URI de base]] (`$hls_uri` dans l'exemple) :
 
 ```nginx
 http {

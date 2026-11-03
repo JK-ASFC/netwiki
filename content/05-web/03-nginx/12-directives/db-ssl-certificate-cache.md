@@ -1,12 +1,9 @@
 ---
 title: "db_ssl_certificate_cache"
-description: "Directive nginx db_ssl_certificate_cache (ngx_http_db_module) — Defines a cache that stores SSL certificates and secret keys specified with variables. La directive accepte les paramètres suivants : - max définit le nombre maximal d'éléments dans le cache ; en cas…"
+description: "Directive nginx db_ssl_certificate_cache (ngx_http_db_module) — Définit un cache qui conserve les certificats SSL et les clés secrètes indiqués par des variables. La directive accepte les paramètres suivants : - max définit le nombre maximal d'éléments dans le…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a cache that stores [[12-directives/db-ssl-certificate|SSL certificates]] and [[12-directives/db-ssl-certificate-key|secret keys]] specified with variables.
+Définit un cache qui conserve les [[12-directives/db-ssl-certificate|certificats SSL]] et les [[12-directives/db-ssl-certificate-key|clés secrètes]] indiqués par des variables.
 
 La directive accepte les paramètres suivants :
 

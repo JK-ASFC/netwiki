@@ -1,12 +1,9 @@
 ---
 title: "acme_shared_zone"
-description: "Directive nginx acme_shared_zone (ngx_http_acme_module) — Allows increasing the size of in-memory storage of the module. The shared memory zone will be used to store the issued certificates, keys and challenge data for all the configured certificate…"
+description: "Directive nginx acme_shared_zone (ngx_http_acme_module) — Permet d'augmenter la taille du stockage en mémoire du module. La zone de mémoire partagée conserve les certificats émis, les clés et les données de défi de tous les émetteurs configurés. La taille…"
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Allows increasing the size of in-memory storage of the module. The shared memory zone will be used to store the issued certificates, keys and challenge data for all the configured certificate issuers.
+Permet d'augmenter la taille du stockage en mémoire du module. La zone de mémoire partagée conserve les certificats émis, les clés et les données de défi de tous les émetteurs configurés.
 
-The default zone size is sufficient to hold approximately 50 ECDSA prime256v1 keys or 35 RSA 2048 keys.
+La taille par défaut de la zone suffit pour environ 50 clés ECDSA prime256v1 ou 35 clés RSA 2048.
 
 ---
 

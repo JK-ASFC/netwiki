@@ -1,12 +1,9 @@
 ---
 title: "autoindex_format"
-description: "Directive nginx autoindex_format (ngx_http_autoindex_module) — Sets the format of a directory listing. When the JSONP format is used, the name of a callback function is set with the callback request argument. If the argument is missing or has an empty value,…"
+description: "Directive nginx autoindex_format (ngx_http_autoindex_module) — Définit le format de la liste du répertoire. Avec le format JSONP, le nom de la fonction de rappel est défini par l'argument de requête callback. Si l'argument est absent ou vide, le format JSON est…"
 tags: [nginx, directive, ngx_http_autoindex_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,11 +15,11 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the format of a directory listing.
+Définit le format de la liste du répertoire.
 
-When the JSONP format is used, the name of a callback function is set with the `callback` request argument. If the argument is missing or has an empty value, then the JSON format is used.
+Avec le format JSONP, le nom de la fonction de rappel est défini par l'argument de requête `callback`. Si l'argument est absent ou vide, le format JSON est utilisé.
 
-The XML output can be transformed using the [[11-modules/02-http/ngx_http_xslt_module|ngx_http_xslt_module]] module.
+La sortie XML peut être transformée avec le module [[11-modules/02-http/ngx_http_xslt_module|ngx_http_xslt_module]].
 
 ---
 

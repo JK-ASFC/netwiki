@@ -11,7 +11,7 @@ icon: puzzle
 The `ngx_stream_keyval_module` module (1.13.7) creates variables with values taken from key-value pairs managed by the [[11-modules/02-http/ngx_http_api_module|API]] or a variable that can also be set with [njs](https://github.com/nginx/njs-examples/).
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 

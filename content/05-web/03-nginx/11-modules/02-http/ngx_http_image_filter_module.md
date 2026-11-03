@@ -1,22 +1,19 @@
 ---
 title: "ngx_http_image_filter_module"
-description: "Module nginx ngx_http_image_filter_module — The ngx_http_image_filter_module module (0.7.54+) is a filter that transforms images in JPEG, GIF, PNG, and WebP formats."
+description: "Module nginx ngx_http_image_filter_module — Le module ngx_http_image_filter_module (0.7.54+) est un filtre qui transforme les images aux formats JPEG, GIF, PNG et WebP."
 tags: [nginx, module, ngx_http_image_filter_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_image_filter_module` (0.7.54+) est un filtre qui transforme les images aux formats JPEG, GIF, PNG et WebP.
 
-The `ngx_http_image_filter_module` module (0.7.54+) is a filter that transforms images in JPEG, GIF, PNG, and WebP formats.
-
-This module is not built by default, it should be enabled with the `--with-http_image_filter_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_image_filter_module`.
 
 > [!NOTE]
-> This module utilizes the [libgd](http://libgd.org) library. It is recommended to use the latest available version of the library.
+> Ce module utilise la bibliothèque [libgd](http://libgd.org). Il est recommandé d'utiliser la version la plus récente de la bibliothèque.
 
 > [!NOTE]
-> The WebP format support appeared in version 1.11.6. To transform images in this format, the `libgd` library must be compiled with the WebP support.
+> La prise en charge du format WebP est apparue en version 1.11.6. Pour transformer des images dans ce format, la bibliothèque `libgd` doit être compilée avec la prise en charge de WebP.
 
 ## Exemple de configuration
 

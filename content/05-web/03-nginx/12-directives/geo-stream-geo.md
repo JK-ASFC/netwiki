@@ -28,7 +28,7 @@ geo $arg_remote_addr $geo {
 > [!NOTE]
 > Since variables are evaluated only when used, the mere existence of even a large number of declared “`geo`” variables does not cause any extra costs for connection processing.
 
-If the value of a variable does not represent a valid IP address then the “`255.255.255.255`” address is used.
+Si la valeur d'une variable n'est pas une adresse IP valide, l'adresse « `255.255.255.255` » est utilisée.
 
 Addresses are specified either as prefixes in CIDR notation (including individual addresses) or as ranges.
 
@@ -40,11 +40,11 @@ Les paramètres spéciaux suivants sont aussi pris en charge :
 
 - **`default`**
 
-  a value set to the variable if the client address does not match any of the specified addresses. When addresses are specified in CIDR notation, “`0.0.0.0/0`” and “`::/0`” can be used instead of `default`. When `default` is not specified, the default value will be an empty string.
+  valeur affectée à la variable si l'adresse du client ne correspond à aucune des adresses indiquées. En notation CIDR, on peut utiliser « `0.0.0.0/0` » et « `::/0` » au lieu de `default`. Sans `default`, la valeur par défaut est une chaîne vide.
 
 - **`include`**
 
-  includes a file with addresses and values. There can be several inclusions.
+  inclut un fichier d'adresses et de valeurs. Il peut y avoir plusieurs inclusions.
 
 - **`ranges`**
 
@@ -52,7 +52,7 @@ Les paramètres spéciaux suivants sont aussi pris en charge :
 
 - **`volatile`**
 
-  indicates that the variable is not cacheable (1.29.3).
+  indique que la variable ne peut pas être mise en cache (1.29.3).
 
 Exemple :
 
@@ -69,16 +69,16 @@ geo $country {
 }
 ```
 
-The `conf/geo.conf` file could contain the following lines:
+Le fichier `conf/geo.conf` peut contenir les lignes suivantes :
 
 ```nginx
 10.2.0.0/16    RU;
 192.168.2.0/24 RU;
 ```
 
-A value of the most specific match is used. For example, for the 127.0.0.1 address the value “`RU`” will be chosen, not “`US`”.
+La valeur de la correspondance la plus précise est utilisée. Par exemple, pour l'adresse 127.0.0.1, c'est la valeur « `RU` » qui est choisie, et non « `US` ».
 
-Example with ranges:
+Exemple avec des plages :
 
 ```nginx
 geo $country {

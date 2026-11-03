@@ -1,12 +1,9 @@
 ---
 title: "geoip_country (ngx_http_geoip_module)"
-description: "Directive nginx geoip_country (ngx_http_geoip_module) — Specifies a database used to determine the country depending on the client IP address. The following variables are available when using this database: - $geoip_country_code two-letter country code,…"
+description: "Directive nginx geoip_country (ngx_http_geoip_module) — Indique la base utilisée pour déterminer le pays selon l'adresse IP du client. Les variables suivantes sont alors disponibles : - $geoip_country_code code de pays à deux lettres, par exemple « RU »,…"
 tags: [nginx, directive, ngx_http_geoip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,19 +14,19 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a database used to determine the country depending on the client IP address. The following variables are available when using this database:
+Indique la base utilisée pour déterminer le pays selon l'adresse IP du client. Les variables suivantes sont alors disponibles :
 
 - **`$geoip_country_code`**
 
-  two-letter country code, for example, “`RU`”, “`US`”.
+  code de pays à deux lettres, par exemple « `RU` », « `US` ».
 
 - **`$geoip_country_code3`**
 
-  three-letter country code, for example, “`RUS`”, “`USA`”.
+  code de pays à trois lettres, par exemple « `RUS` », « `USA` ».
 
 - **`$geoip_country_name`**
 
-  country name, for example, “`Russian Federation`”, “`United States`”.
+  nom du pays, par exemple « `Russian Federation` », « `United States` ».
 
 ---
 

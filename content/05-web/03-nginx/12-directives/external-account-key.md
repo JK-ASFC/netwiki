@@ -1,12 +1,9 @@
 ---
 title: "external_account_key"
-description: "Directive nginx external_account_key (ngx_http_acme_module) — Specifies a key identifier kid and a file with the MAC key for external account authorization. The value data:key can be specified instead of the file, which loads a key directly from the…"
+description: "Directive nginx external_account_key (ngx_http_acme_module) — Indique un identifiant de clé kid et un fichier (file) contenant la clé MAC pour l'autorisation par compte externe. On peut indiquer data:key à la place de file pour charger la clé directement depuis…"
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,11 +15,11 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a key identifier *kid* and a *file* with the MAC key for [external account authorization](https://datatracker.ietf.org/doc/html/rfc8555#section-7.3.4).
+Indique un identifiant de clé *kid* et un fichier (*file*) contenant la clé MAC pour l'[autorisation par compte externe](https://datatracker.ietf.org/doc/html/rfc8555#section-7.3.4).
 
-The value `data`:*key* can be specified instead of the *file*, which loads a key directly from the configuration without using intermediate files.
+On peut indiquer `data`:*key* à la place de *file* pour charger la clé directement depuis la configuration, sans fichier intermédiaire.
 
-In both cases, the key is expected to be encoded in [base64url](https://datatracker.ietf.org/doc/html/rfc4648#section-5).
+Dans les deux cas, la clé doit être encodée en [base64url](https://datatracker.ietf.org/doc/html/rfc4648#section-5).
 
 ---
 

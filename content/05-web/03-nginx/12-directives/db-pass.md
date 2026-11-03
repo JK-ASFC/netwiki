@@ -1,12 +1,9 @@
 ---
 title: "db_pass"
-description: "Directive nginx db_pass (ngx_http_db_module) — Specifies the upstream group used for database lookups: nginx db_pass redis_backend; The group must be configured with db_type. A server address cannot be specified directly. The db_get directive…"
+description: "Directive nginx db_pass (ngx_http_db_module) — Indique le groupe amont utilisé pour les recherches dans la base : nginx db_pass redis_backend; Le groupe doit être configuré avec db_type. Une adresse de serveur ne peut pas être indiquée…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,19 +14,19 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the upstream group used for database lookups:
+Indique le groupe amont utilisé pour les recherches dans la base :
 
 ```nginx
 db_pass redis_backend;
 ```
 
-The group must be configured with [[12-directives/db-type|db_type]]. A server address cannot be specified directly.
+Le groupe doit être configuré avec [[12-directives/db-type|db_type]]. Une adresse de serveur ne peut pas être indiquée directement.
 
-The [[12-directives/db-get|db_get]] directive must also be configured, either in the current configuration or inherited from a parent location.
+La directive [[12-directives/db-get|db_get]] doit aussi être configurée, dans la configuration courante ou héritée d'un bloc location parent.
 
-Only `GET` and `HEAD` requests are accepted. Other methods return `405 Method Not Allowed`. The client request body is discarded. Client headers and the request body are not forwarded to the database.
+Seules les requêtes `GET` et `HEAD` sont acceptées ; les autres méthodes renvoient `405 Method Not Allowed`. Le corps de la requête du client est ignoré. Les en-têtes et le corps de la requête du client ne sont pas transmis à la base.
 
-The response content type is determined by the [[12-directives/types|types]] and [[12-directives/default-type|default_type]] directives.
+Le type de contenu de la réponse est déterminé par les directives [[12-directives/types|types]] et [[12-directives/default-type|default_type]].
 
 ---
 

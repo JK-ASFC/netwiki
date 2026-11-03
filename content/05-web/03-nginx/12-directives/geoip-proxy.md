@@ -1,12 +1,9 @@
 ---
 title: "geoip_proxy"
-description: "Directive nginx geoip_proxy (ngx_http_geoip_module) — Defines trusted addresses. When a request comes from a trusted address, an address from the X-Forwarded-For request header field will be used instead."
+description: "Directive nginx geoip_proxy (ngx_http_geoip_module) — Définit les adresses de confiance. Lorsqu'une requête provient d'une adresse de confiance, c'est l'adresse du champ d'en-tête de requête X-Forwarded-For qui est utilisée."
 tags: [nginx, directive, ngx_http_geoip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines trusted addresses. When a request comes from a trusted address, an address from the `X-Forwarded-For` request header field will be used instead.
+Définit les adresses de confiance. Lorsqu'une requête provient d'une adresse de confiance, c'est l'adresse du champ d'en-tête de requête `X-Forwarded-For` qui est utilisée.
 
 ---
 

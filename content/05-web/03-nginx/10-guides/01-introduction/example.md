@@ -1,14 +1,11 @@
 ---
-title: "Example nginx configuration"
-description: "Nginx — Example nginx configuration. An example site configuration that passes all requests to the backend except images and requests starting with \"/download/\"."
+title: "Exemple de configuration de nginx"
+description: "Nginx — Exemple de configuration de nginx. Exemple de configuration de site qui transmet toutes les requêtes au serveur d'arrière-plan, sauf les images et les requêtes commençant par « /download/ »."
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-An example site configuration that passes all requests to the backend except images and requests starting with "/download/".
+Exemple de configuration de site qui transmet toutes les requêtes au serveur d'arrière-plan, sauf les images et les requêtes commençant par « /download/ ».
 
 ```
 user  www www;

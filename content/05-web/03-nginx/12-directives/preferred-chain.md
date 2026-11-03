@@ -1,12 +1,9 @@
 ---
 title: "preferred_chain"
-description: "Directive nginx preferred_chain (ngx_http_acme_module) — Specifies the preferred certificate chain. If the ACME server offers multiple certificate chains, prefer the chain with the topmost certificate issued from the Subject Common Name name. If there are…"
+description: "Directive nginx preferred_chain (ngx_http_acme_module) — Indique la chaîne de certificats préférée. Si le serveur ACME propose plusieurs chaînes de certificats, la chaîne dont le certificat le plus haut est émis par le nom commun name est préférée. Sans…"
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the preferred certificate chain.
+Indique la chaîne de certificats préférée.
 
-If the ACME server offers multiple certificate chains, prefer the chain with the topmost certificate issued from the Subject Common Name *name*. If there are no matches, the default chain will be used.
+Si le serveur ACME propose plusieurs chaînes de certificats, la chaîne dont le certificat le plus haut est émis par le nom commun *name* est préférée. Sans correspondance, la chaîne par défaut est utilisée.
 
 ---
 

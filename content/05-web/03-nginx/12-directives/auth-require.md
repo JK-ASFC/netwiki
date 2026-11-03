@@ -1,12 +1,9 @@
 ---
 title: "auth_require"
-description: "Directive nginx auth_require (ngx_http_auth_require_module) — Enables authorization based on the specified variables. The access is allowed only if all the variables are not empty and are not equal to “0”. Otherwise, the module returns 403 code, which can be…"
+description: "Directive nginx auth_require (ngx_http_auth_require_module) — Active l'autorisation selon les variables indiquées. L'accès n'est autorisé que si aucune variable n'est vide ni égale à « 0 ». Sinon, le module renvoie le code 403, modifiable avec le paramètre…"
 tags: [nginx, directive, ngx_http_auth_require_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables authorization based on the specified variables. The access is allowed only if all the variables are not empty and are not equal to “0”. Otherwise, the module returns `403` code, which can be overridden by the `error` parameter. Several `auth_require` directives can be used to return different error codes.
+Active l'autorisation selon les variables indiquées. L'accès n'est autorisé que si aucune variable n'est vide ni égale à « 0 ». Sinon, le module renvoie le code `403`, modifiable avec le paramètre `error`. Plusieurs directives `auth_require` peuvent servir à renvoyer des codes d'erreur différents.
 
 ---
 

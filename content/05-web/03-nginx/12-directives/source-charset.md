@@ -1,12 +1,9 @@
 ---
 title: "source_charset"
-description: "Directive nginx source_charset (ngx_http_charset_module) — Defines the source charset of a response. If this charset is different from the charset specified in the charset directive, a conversion is performed."
+description: "Directive nginx source_charset (ngx_http_charset_module) — Définit le jeu de caractères source d'une réponse. S'il diffère de celui indiqué dans la directive charset, une conversion est effectuée."
 tags: [nginx, directive, ngx_http_charset_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the source charset of a response. If this charset is different from the charset specified in the [[12-directives/charset|charset]] directive, a conversion is performed.
+Définit le jeu de caractères source d'une réponse. S'il diffère de celui indiqué dans la directive [[12-directives/charset|charset]], une conversion est effectuée.
 
 ---
 

@@ -1,30 +1,27 @@
 ---
 title: "ngx_http_browser_module"
-description: "Module nginx ngx_http_browser_module — The ngx_http_browser_module module creates variables whose values depend on the value of the User-Agent request header field:"
+description: "Module nginx ngx_http_browser_module — Le module ngx_http_browser_module crée des variables dont la valeur dépend du champ d'en-tête de requête User-Agent :"
 tags: [nginx, module, ngx_http_browser_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_browser_module` module creates variables whose values depend on the value of the `User-Agent` request header field:
+Le module `ngx_http_browser_module` crée des variables dont la valeur dépend du champ d'en-tête de requête `User-Agent` :
 
 - **`$modern_browser`**
 
-  equals the value set by the [[12-directives/modern-browser-value|modern_browser_value]] directive, if a browser was identified as modern;
+  vaut la valeur définie par la directive [[12-directives/modern-browser-value|modern_browser_value]] si le navigateur est identifié comme moderne ;
 
 - **`$ancient_browser`**
 
-  equals the value set by the [[12-directives/ancient-browser-value|ancient_browser_value]] directive, if a browser was identified as ancient;
+  vaut la valeur définie par la directive [[12-directives/ancient-browser-value|ancient_browser_value]] si le navigateur est identifié comme ancien ;
 
 - **`$msie`**
 
-  equals “1” if a browser was identified as MSIE of any version.
+  vaut « 1 » si le navigateur est identifié comme MSIE, quelle que soit sa version.
 
 ## Exemple de configuration
 
-Choosing an index file:
+Choix d'un fichier d'index :
 
 ```nginx
 modern_browser_value "modern.";
@@ -38,7 +35,7 @@ modern_browser konqueror 3.0;
 index index.${modern_browser}html index.html;
 ```
 
-Redirection for old browsers:
+Redirection des anciens navigateurs :
 
 ```nginx
 modern_browser msie      5.0;

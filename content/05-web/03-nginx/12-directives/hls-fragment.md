@@ -1,12 +1,9 @@
 ---
 title: "hls_fragment"
-description: "Directive nginx hls_fragment (ngx_http_hls_module) — Defines the default fragment length for playlist URIs requested without the “len” argument."
+description: "Directive nginx hls_fragment (ngx_http_hls_module) — Définit la longueur de fragment par défaut pour les URI de liste de lecture demandés sans l'argument « len »."
 tags: [nginx, directive, ngx_http_hls_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines the default fragment length for playlist URIs requested without the “`len`” argument.
+Définit la longueur de fragment par défaut pour les URI de liste de lecture demandés sans l'argument « `len` ».
 
 ---
 

@@ -15,7 +15,7 @@ The module expects the OpenID Provider's configuration to be available via [meta
 The module can be combined with other access modules via the [[12-directives/satisfy|satisfy]] directive. Note that the module may still block requests even with `satisfy any;` as an OpenID Provider might not redirect the user back to nginx.
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 

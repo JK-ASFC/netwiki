@@ -1,12 +1,9 @@
 ---
 title: "state_path (ngx_http_acme_module)"
-description: "Directive nginx state_path (ngx_http_acme_module) — Defines a directory for storing the module data that can be persisted across restarts. This can improve the load time by skipping some requests on startup, and avoid hitting request rate limits on…"
+description: "Directive nginx state_path (ngx_http_acme_module) — Définit le répertoire de stockage des données du module conservées entre les redémarrages. Cela peut accélérer le démarrage en évitant certaines requêtes et éviter d'atteindre les limites de débit du…"
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,14 +14,14 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a directory for storing the module data that can be persisted across restarts. This can improve the load time by skipping some requests on startup, and avoid hitting request rate limits on the ACME server.
+Définit le répertoire de stockage des données du module conservées entre les redémarrages. Cela peut accélérer le démarrage en évitant certaines requêtes et éviter d'atteindre les limites de débit du serveur ACME.
 
-The directory contains sensitive content, such as the account key, issued certificates, and private keys.
+Ce répertoire contient des données sensibles, comme la clé du compte, les certificats émis et les clés privées.
 
-The `off` parameter (0.2.0) disables storing the account information and issued certificates on disk.
+Le paramètre `off` (0.2.0) désactive l'enregistrement sur disque des informations du compte et des certificats émis.
 
 > [!NOTE]
-> Prior to version 0.2.0, the state directory was not created by default.
+> Avant la version 0.2.0, le répertoire d'état n'était pas créé par défaut.
 
 ---
 

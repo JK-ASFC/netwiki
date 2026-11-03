@@ -1,0 +1,6 @@
+{
+ "3ff538801077": "Le module `ngx_http_addition_module` est un filtre qui ajoute du texte avant et après une réponse. Il n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_addition_module`.",
+ "4ff92e5e7bd7": "Ajoute après le corps de la réponse le texte renvoyé par le traitement de la sous-requête indiquée. Une chaîne vide (`\"\"`) en paramètre annule l'ajout hérité du niveau de configuration précédent.",
+ "6e226b1a20a3": "Permet d'ajouter du texte aux réponses des types MIME indiqués, en plus de « `text/html` ». La valeur spéciale « `*` » correspond à tous les types MIME (0.8.29).",
+ "e960d9e510ff": "Ajoute avant le corps de la réponse le texte renvoyé par le traitement de la sous-requête indiquée. Une chaîne vide (`\"\"`) en paramètre annule l'ajout hérité du niveau de configuration précédent."
+}

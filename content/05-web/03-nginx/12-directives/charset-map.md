@@ -1,12 +1,9 @@
 ---
 title: "charset_map"
-description: "Directive nginx charset_map (ngx_http_charset_module) — Describes the conversion table from one charset to another. A reverse conversion table is built using the same data. Character codes are given in hexadecimal. Missing characters in the range 80-FF…"
+description: "Directive nginx charset_map (ngx_http_charset_module) — Décrit la table de conversion d'un jeu de caractères à un autre. La table inverse est construite à partir des mêmes données. Les codes des caractères sont en hexadécimal. Les caractères manquants…"
 tags: [nginx, directive, ngx_http_charset_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Describes the conversion table from one charset to another. A reverse conversion table is built using the same data. Character codes are given in hexadecimal. Missing characters in the range 80-FF are replaced with “`?`”. When converting from UTF-8, characters missing in a one-byte charset are replaced with “`&#XXXX;`”.
+Décrit la table de conversion d'un jeu de caractères à un autre. La table inverse est construite à partir des mêmes données. Les codes des caractères sont en hexadécimal. Les caractères manquants dans la plage 80-FF sont remplacés par « `?` ». Lors d'une conversion depuis UTF-8, les caractères absents du jeu à un octet sont remplacés par « `&#XXXX;` ».
 
 Exemple :
 
@@ -31,7 +28,7 @@ charset_map koi8-r windows-1251 {
 }
 ```
 
-When describing a conversion table to UTF-8, codes for the UTF-8 charset should be given in the second column, for example:
+Pour décrire une table de conversion vers UTF-8, les codes UTF-8 se placent dans la seconde colonne, par exemple :
 
 ```nginx
 charset_map koi8-r utf-8 {
@@ -43,7 +40,7 @@ charset_map koi8-r utf-8 {
 }
 ```
 
-Full conversion tables from `koi8-r` to `windows-1251`, and from `koi8-r` and `windows-1251` to `utf-8` are provided in the distribution files `conf/koi-win`, `conf/koi-utf`, and `conf/win-utf`.
+Les tables de conversion complètes de `koi8-r` vers `windows-1251`, et de `koi8-r` et `windows-1251` vers `utf-8`, sont fournies dans les fichiers de la distribution `conf/koi-win`, `conf/koi-utf` et `conf/win-utf`.
 
 ---
 

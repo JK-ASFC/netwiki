@@ -1,36 +1,33 @@
 ---
-title: "Building nginx on the Win32 platform with Visual C"
-description: "Nginx — Building nginx on the Win32 platform with Visual C. To build nginx on the Microsoft Win32 platform you need:"
+title: "Compiler nginx sous Win32 avec Visual C"
+description: "Nginx — Compiler nginx sous Win32 avec Visual C. Pour compiler nginx sous Microsoft Win32, il faut :"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+## Prérequis
 
-## Prerequisites
+Pour compiler nginx sous Microsoft Win32, il faut :
 
-To build nginx on the Microsoft Win32 platform you need:
+- le compilateur Microsoft Visual C ; Microsoft Visual Studio 8, 10 et 17 fonctionnent ;
+- [MSYS](https://sourceforge.net/projects/mingw/files/MSYS/) ou [MSYS2](https://www.msys2.org) ;
+- Perl, pour compiler OpenSSL et nginx avec la prise en charge de SSL, par exemple [ActivePerl](http://www.activestate.com/activeperl) ou [Strawberry Perl](http://strawberryperl.com) ;
+- un client [Git](https://cli.github.com/) ;
+- les sources des bibliothèques [PCRE](http://www.pcre.org), [zlib](http://zlib.net) et [OpenSSL](http://www.openssl.org).
 
-- Microsoft Visual C compiler. Microsoft Visual Studio 8, 10, 17 are known to work.
-- [MSYS](https://sourceforge.net/projects/mingw/files/MSYS/) or [MSYS2](https://www.msys2.org).
-- Perl, if you want to build OpenSSL and nginx with SSL support. For example [ActivePerl](http://www.activestate.com/activeperl) or [Strawberry Perl](http://strawberryperl.com).
-- [Git](https://cli.github.com/) client.
-- [PCRE](http://www.pcre.org), [zlib](http://zlib.net) and [OpenSSL](http://www.openssl.org) libraries sources.
+## Étapes de compilation
 
-## Build steps
+Avant de commencer, vérifiez que les répertoires bin de Perl, Git et MSYS figurent dans la variable d'environnement PATH. Pour préparer l'environnement Visual C, exécutez le script vcvarsall.bat du répertoire de Visual C.
 
-Ensure that paths to Perl, Git and MSYS bin directories are added to PATH environment variable before you start build. To set Visual C environment run vcvarsall.bat script from Visual C directory.
+Pour compiler nginx :
 
-To build nginx:
-
-- Start MSYS bash.
-- Check out nginx sources from the GitHub repository:
+- Lancez le bash de MSYS.
+- Récupérez les sources de nginx depuis le dépôt GitHub :
 
   ```
   git clone https://github.com/nginx/nginx.git
   ```
-- Create a build and lib directories, and unpack zlib, PCRE and OpenSSL libraries sources into lib directory:
+- Créez les répertoires build et lib, et décompressez les sources de zlib, PCRE et OpenSSL dans le répertoire lib :
 
   ```
   mkdir objs
@@ -40,7 +37,7 @@ To build nginx:
   tar -xzf ../../zlib-1.3.1.tar.gz
   tar -xzf ../../openssl-3.0.14.tar.gz
   ```
-- Run configure script:
+- Exécutez le script configure :
 
   ```
   auto/configure \
@@ -64,15 +61,15 @@ To build nginx:
       --with-openssl-opt=no-asm \
       --with-http_ssl_module
   ```
-- Run make:
+- Exécutez make :
 
   ```
   nmake
   ```
 
-## See also
+## Voir aussi
 
-- [[10-guides/01-introduction/windows|nginx for Windows]]
+- [[10-guides/01-introduction/windows|nginx pour Windows]]
 
 ---
 

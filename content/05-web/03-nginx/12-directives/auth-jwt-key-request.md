@@ -1,12 +1,9 @@
 ---
 title: "auth_jwt_key_request"
-description: "Directive nginx auth_jwt_key_request (ngx_http_auth_jwt_module) — Allows retrieving a JSON Web Key Set file from a subrequest for validating JWT signature and sets the URI where the subrequest will be sent to. Parameter value can contain variables. To avoid…"
+description: "Directive nginx auth_jwt_key_request (ngx_http_auth_jwt_module) — Permet de récupérer un fichier JSON Web Key Set depuis une sous-requête pour valider la signature des JWT, et définit l'URI auquel la sous-requête est envoyée. La valeur du paramètre peut contenir…"
 tags: [nginx, directive, ngx_http_auth_jwt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Allows retrieving a [JSON Web Key Set](https://datatracker.ietf.org/doc/html/rfc7517#section-5) file from a subrequest for validating JWT signature and sets the URI where the subrequest will be sent to. Parameter value can contain variables. To avoid validation overhead, it is recommended to cache the key file:
+Permet de récupérer un fichier [JSON Web Key Set](https://datatracker.ietf.org/doc/html/rfc7517#section-5) depuis une sous-requête pour valider la signature des JWT, et définit l'URI auquel la sous-requête est envoyée. La valeur du paramètre peut contenir des variables. Pour éviter le surcoût de validation, il est recommandé de mettre le fichier de clés en cache :
 
 ```nginx
 proxy_cache_path /data/nginx/cache levels=1 keys_zone=foo:10m;
@@ -39,14 +36,14 @@ server {
 }
 ```
 
-Several `auth_jwt_key_request` directives can be specified on the same level (1.21.1):
+Plusieurs directives `auth_jwt_key_request` peuvent être indiquées au même niveau (1.21.1) :
 
 ```nginx
 auth_jwt_key_request /jwks_uri;
 auth_jwt_key_request /jwks2_uri;
 ```
 
-If at least one of the specified keys cannot be loaded or processed, nginx will return the `500 Internal Server Error` error.
+Si au moins une des clés indiquées ne peut pas être chargée ou traitée, nginx renvoie l'erreur `500 Internal Server Error`.
 
 ---
 

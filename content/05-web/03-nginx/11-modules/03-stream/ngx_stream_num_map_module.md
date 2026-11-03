@@ -11,7 +11,7 @@ icon: puzzle
 The `ngx_stream_num_map_module` module (1.29.3) creates variables whose values depend on numeric values or numeric value ranges.
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 

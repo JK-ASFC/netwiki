@@ -1,12 +1,9 @@
 ---
 title: "account_key"
-description: "Directive nginx account_key (ngx_http_acme_module) — The account's private key used for request authentication. Accepted values: - ecdsa:256/384/521 for ES256, ES384, or ES512 JSON Web Signature algorithms - rsa:2048/3072/4096 for RS256. - File path…"
+description: "Directive nginx account_key (ngx_http_acme_module) — Clé privée du compte, utilisée pour authentifier les requêtes. Valeurs acceptées : - ecdsa:256/384/521 pour les algorithmes JSON Web Signature ES256, ES384 ou ES512 - rsa:2048/3072/4096 pour RS256. -…"
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,15 +14,15 @@ icon: settings-2
 
 ## Utilisation
 
-The account's private key used for request authentication.
+Clé privée du compte, utilisée pour authentifier les requêtes.
 
-Accepted values:
+Valeurs acceptées :
 
-- `ecdsa`:*256*/*384*/*521* for ES256, ES384, or ES512 JSON Web Signature algorithms
-- `rsa`:*2048*/*3072*/*4096* for RS256.
-- File path for an existing key, using one of the algorithms above.
+- `ecdsa`:*256*/*384*/*521* pour les algorithmes JSON Web Signature ES256, ES384 ou ES512
+- `rsa`:*2048*/*3072*/*4096* pour RS256.
+- Chemin d'une clé existante utilisant l'un des algorithmes ci-dessus.
 
-The generated account keys are preserved across reloads, but will be lost on restart unless [[12-directives/state-path-http-acme|state_path]] is configured.
+Les clés de compte générées sont conservées lors des rechargements, mais perdues au redémarrage si [[12-directives/state-path-http-acme|state_path]] n'est pas configuré.
 
 ---
 

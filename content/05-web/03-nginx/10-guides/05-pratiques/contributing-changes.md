@@ -1,28 +1,25 @@
 ---
-title: "Contributing Changes"
-description: "Nginx — Contributing Changes. GitHub is used to store source code. The repository can be cloned with the following command:"
+title: "Contribuer des modifications"
+description: "Nginx — Contribuer des modifications. Le code source est hébergé sur GitHub. Le dépôt peut être cloné avec la commande suivante :"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+## Obtenir les sources
 
-## Getting Sources
-
-[GitHub](https://github.com) is used to store source code. The [repository](https://github.com/nginx/nginx) can be cloned with the following command:
+Le code source est hébergé sur [GitHub](https://github.com). Le [dépôt](https://github.com/nginx/nginx) peut être cloné avec la commande suivante :
 
 ```
 git clone https://github.com/nginx/nginx.git
 ```
 
-## Formatting Changes
+## Mise en forme des modifications
 
-Changes should be formatted according to the code style used by nginx. Sometimes, there is no clear rule; in such cases examine how existing nginx sources are formatted and mimic this style. Changes will more likely be accepted if style corresponds to the surrounding code.
+Les modifications doivent respecter le style de code de nginx. Lorsqu'il n'existe pas de règle claire, observez la mise en forme des sources existantes de nginx et imitez-la. Une modification a plus de chances d'être acceptée si son style correspond au code environnant.
 
-[Commit](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/about-commits) the changes in your nginx GitHub fork. Please ensure that the specified [e-mail](https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git) address and real name of the author are correct.
+[Commitez](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/about-commits) les modifications dans votre fork GitHub de nginx. Vérifiez que l'adresse [e-mail](https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git) et le vrai nom de l'auteur sont corrects.
 
-The commit message should have a single-line synopsis followed by verbose description after an empty line. Limit the subject and commit message body lines to 72 characters. The resulting commit can be obtained using the `git show` command:
+Le message de commit doit comporter un résumé d'une ligne, suivi d'une description détaillée après une ligne vide. Limitez les lignes du sujet et du corps du message à 72 caractères. Le commit obtenu s'affiche avec la commande `git show` :
 
 ```c
 commit 067d766f210ee914b750d79d9284cbf8801058f3
@@ -47,35 +44,35 @@ index 0c46106db..53ddf39bb 100644
      sr->uri = *uri;
 ```
 
-## Before Submitting
+## Avant de soumettre
 
-Several points are worth to consider before submitting changes:
+Quelques points méritent attention avant de soumettre des modifications :
 
-- The proposed changes should work properly on a wide range of supported platforms.
-- Try to make it clear why the suggested change is needed, and provide a use case, if possible.
-- Passing your changes through the test suite is a good way to ensure that they do not cause a regression. The [repository](https://github.com/nginx/nginx-tests) with tests can be cloned with the following command:
+- Les modifications proposées doivent fonctionner correctement sur un large éventail de plates-formes prises en charge.
+- Expliquez clairement pourquoi la modification est nécessaire et, si possible, donnez un cas d'usage.
+- Passer vos modifications dans la suite de tests est un bon moyen de vérifier qu'elles ne provoquent pas de régression. Le [dépôt](https://github.com/nginx/nginx-tests) des tests peut être cloné avec la commande suivante :
 
   ```
   git clone https://github.com/nginx/nginx-tests.git
   ```
 
-## Submitting Changes
+## Soumettre les modifications
 
-The proposed changes should be submitted from your fork to [nginx repository](https://github.com/nginx/nginx) as a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
+Les modifications proposées doivent être soumises depuis votre fork vers le [dépôt nginx](https://github.com/nginx/nginx) sous forme de [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
-## Website
+## Site web
 
-GitHub is used to store the sources for this website. The [repository](https://www.github.com/nginx/nginx.org) can be cloned with the following command:
+Les sources de ce site web sont hébergées sur GitHub. Le [dépôt](https://www.github.com/nginx/nginx.org) peut être cloné avec la commande suivante :
 
 ```
 git clone https://github.com/nginx/nginx.org.git
 ```
 
-Documentation changes should be submitted from your fork as a pull request.
+Les modifications de la documentation doivent être soumises depuis votre fork sous forme de pull request.
 
-## License
+## Licence
 
-Submitting changes implies granting project a permission to use it under an appropriate [license](https://nginx.org/LICENSE).
+Soumettre des modifications implique d'autoriser le projet à les utiliser sous une [licence](https://nginx.org/LICENSE) appropriée.
 
 ---
 

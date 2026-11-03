@@ -1,6 +1,6 @@
 ---
 title: "$server_addr (ngx_stream_core_module)"
-description: "Variable nginx $server_addr (ngx_stream_core_module) — an address of the server which accepted a connection Computing a value of this variable usually requires one system call. To avoid a system call, the listen directives must specify addresses and use…"
+description: "Variable nginx $server_addr (ngx_stream_core_module) — an address of the server which accepted a connection Le calcul de cette variable nécessite généralement un appel système. Pour l'éviter, les directives listen doivent indiquer des adresses et…"
 tags: [nginx, variable, ngx_stream_core_module]
 icon: dollar-sign
 ---
@@ -15,7 +15,7 @@ icon: dollar-sign
 
 an address of the server which accepted a connection
 
-Computing a value of this variable usually requires one system call. To avoid a system call, the [[12-directives/listen-stream-core|listen]] directives must specify addresses and use the `bind` parameter.
+Le calcul de cette variable nécessite généralement un appel système. Pour l'éviter, les directives [[12-directives/listen-stream-core|listen]] doivent indiquer des adresses et utiliser le paramètre `bind`.
 
 ---
 

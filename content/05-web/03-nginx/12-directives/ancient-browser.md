@@ -1,12 +1,9 @@
 ---
 title: "ancient_browser"
-description: "Directive nginx ancient_browser (ngx_http_browser_module) — If any of the specified substrings is found in the User-Agent request header field, the browser will be considered ancient. The special string “netscape4” corresponds to the regular expression…"
+description: "Directive nginx ancient_browser (ngx_http_browser_module) — Si l'une des sous-chaînes indiquées figure dans le champ d'en-tête de requête User-Agent, le navigateur est considéré comme ancien. La chaîne spéciale « netscape4 » correspond à l'expression…"
 tags: [nginx, directive, ngx_http_browser_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-If any of the specified substrings is found in the `User-Agent` request header field, the browser will be considered ancient. The special string “`netscape4`” corresponds to the regular expression “`^Mozilla/[1-4]`”.
+Si l'une des sous-chaînes indiquées figure dans le champ d'en-tête de requête `User-Agent`, le navigateur est considéré comme ancien. La chaîne spéciale « `netscape4` » correspond à l'expression régulière « `^Mozilla/[1-4]` ».
 
 ---
 

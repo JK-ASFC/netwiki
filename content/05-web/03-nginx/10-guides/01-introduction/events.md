@@ -1,29 +1,26 @@
 ---
-title: "Connection processing methods"
-description: "Nginx — Connection processing methods. nginx supports a variety of connection processing methods. The availability of a particular method depends on the platform used. On platforms that support several methods nginx will normally select the most efficient…"
+title: "Méthodes de traitement des connexions"
+description: "Nginx — Méthodes de traitement des connexions. nginx prend en charge plusieurs méthodes de traitement des connexions. La disponibilité de chacune dépend de la plate-forme. Sur les plates-formes qui en prennent en charge plusieurs, nginx choisit normalement…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+nginx prend en charge plusieurs méthodes de traitement des connexions. La disponibilité de chacune dépend de la plate-forme. Sur les plates-formes qui en prennent en charge plusieurs, nginx choisit normalement automatiquement la plus efficace. Si besoin, on peut toutefois choisir explicitement la méthode avec la directive [[12-directives/use|use]].
 
-nginx supports a variety of connection processing methods. The availability of a particular method depends on the platform used. On platforms that support several methods nginx will normally select the most efficient method automatically. However, if needed, a connection processing method can be selected explicitly with the [[12-directives/use|use]] directive.
+Les méthodes de traitement des connexions suivantes sont prises en charge :
 
-The following connection processing methods are supported:
-
-- `select` — standard method. The supporting module is built automatically on platforms that lack more efficient methods. The `--with-select_module` and `--without-select_module` configuration parameters can be used to forcibly enable or disable the build of this module.
-- `poll` — standard method. The supporting module is built automatically on platforms that lack more efficient methods. The `--with-poll_module` and `--without-poll_module` configuration parameters can be used to forcibly enable or disable the build of this module.
-- `kqueue` — efficient method used on FreeBSD 4.1+, OpenBSD 2.9+, NetBSD 2.0, and macOS.
-- `epoll` — efficient method used on Linux 2.6+.
+- `select` : méthode standard. Le module correspondant est compilé automatiquement sur les plates-formes qui n'ont pas de méthode plus efficace. Les paramètres de configuration `--with-select_module` et `--without-select_module` permettent de forcer ou d'empêcher sa compilation.
+- `poll` : méthode standard. Le module correspondant est compilé automatiquement sur les plates-formes qui n'ont pas de méthode plus efficace. Les paramètres de configuration `--with-poll_module` et `--without-poll_module` permettent de forcer ou d'empêcher sa compilation.
+- `kqueue` : méthode efficace utilisée sous FreeBSD 4.1+, OpenBSD 2.9+, NetBSD 2.0 et macOS.
+- `epoll` : méthode efficace utilisée sous Linux 2.6+.
 
   > [!NOTE]
-  > The `EPOLLRDHUP` (Linux 2.6.17, glibc 2.8) and `EPOLLEXCLUSIVE` (Linux 4.5, glibc 2.24) flags are supported since 1.11.3.
+  > Les options `EPOLLRDHUP` (Linux 2.6.17, glibc 2.8) et `EPOLLEXCLUSIVE` (Linux 4.5, glibc 2.24) sont prises en charge depuis la version 1.11.3.
 
   > [!NOTE]
-  > Some older distributions like SuSE 8.2 provide patches that add epoll support to 2.4 kernels.
-- `/dev/poll` — efficient method used on Solaris 7 11/99+, HP/UX 11.22+ (eventport), IRIX 6.5.15+, and Tru64 UNIX 5.1A+.
-- `eventport` — event ports, method used on Solaris 10+ (due to known issues, it is recommended using the `/dev/poll` method instead).
+  > Certaines distributions anciennes, comme SuSE 8.2, fournissent des correctifs qui ajoutent la prise en charge d'epoll aux noyaux 2.4.
+- `/dev/poll` : méthode efficace utilisée sous Solaris 7 11/99+, HP/UX 11.22+ (eventport), IRIX 6.5.15+ et Tru64 UNIX 5.1A+.
+- `eventport` : ports d'événements, méthode utilisée sous Solaris 10+ (en raison de problèmes connus, il est recommandé d'utiliser plutôt la méthode `/dev/poll`).
 
 ---
 

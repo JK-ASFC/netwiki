@@ -1,12 +1,9 @@
 ---
 title: "acme_certificate"
-description: "Directive nginx acme_certificate (ngx_http_acme_module) — Defines a certificate with the list of identifiers requested from issuer issuer. The explicit list of identifiers can be omitted. In this case, the identifiers will be taken from the server_name…"
+description: "Directive nginx acme_certificate (ngx_http_acme_module) — Définit un certificat avec la liste d'identifiants identifiers demandée à l'émetteur issuer. La liste explicite d'identifiants peut être omise : ils sont alors pris dans la directive server_name du…"
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a certificate with the list of `identifiers` requested from issuer `issuer`.
+Définit un certificat avec la liste d'identifiants `identifiers` demandée à l'émetteur `issuer`.
 
-The explicit list of identifiers can be omitted. In this case, the identifiers will be taken from the [[12-directives/server-name-http-core|server_name]] directive in the same [[12-directives/server-http-core|server]] block. Not all values accepted in the `server_name` are valid certificate identifiers: regular expressions and wildcards are not supported.
+La liste explicite d'identifiants peut être omise : ils sont alors pris dans la directive [[12-directives/server-name-http-core|server_name]] du même bloc [[12-directives/server-http-core|server]]. Toutes les valeurs acceptées par `server_name` ne sont pas des identifiants de certificat valides : les expressions régulières et les noms génériques ne sont pas pris en charge.
 
-The key parameter sets the type of a generated private key. Supported key algorithms and sizes: `ecdsa:256` (default), `ecdsa:384`, `ecdsa:521`, `rsa:2048`, `rsa:3072`, `rsa:4096`.
+Le paramètre key définit le type de la clé privée générée. Algorithmes et tailles pris en charge : `ecdsa:256` (par défaut), `ecdsa:384`, `ecdsa:521`, `rsa:2048`, `rsa:3072`, `rsa:4096`.
 
 ---
 

@@ -1,23 +1,20 @@
 ---
 title: "ngx_http_auth_request_module"
-description: "Module nginx ngx_http_auth_request_module — The ngx_http_auth_request_module module (1.5.4+) implements client authorization based on the result of a subrequest. If the subrequest returns a 2xx response code, the access is allowed. If it returns 401 or 403, the…"
+description: "Module nginx ngx_http_auth_request_module — Le module ngx_http_auth_request_module (1.5.4+) autorise les clients selon le résultat d'une sous-requête. Si la sous-requête renvoie un code 2xx, l'accès est autorisé. Si elle renvoie 401 ou 403, l'accès est refusé…"
 tags: [nginx, module, ngx_http_auth_request_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_auth_request_module` (1.5.4+) autorise les clients selon le résultat d'une sous-requête. Si la sous-requête renvoie un code 2xx, l'accès est autorisé. Si elle renvoie 401 ou 403, l'accès est refusé avec le code d'erreur correspondant. Tout autre code renvoyé par la sous-requête est considéré comme une erreur.
 
-The `ngx_http_auth_request_module` module (1.5.4+) implements client authorization based on the result of a subrequest. If the subrequest returns a 2xx response code, the access is allowed. If it returns 401 or 403, the access is denied with the corresponding error code. Any other response code returned by the subrequest is considered an error.
+Pour l'erreur 401, le client reçoit aussi l'en-tête `WWW-Authenticate` de la réponse de la sous-requête.
 
-For the 401 error, the client also receives the `WWW-Authenticate` header from the subrequest response.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_auth_request_module`.
 
-This module is not built by default, it should be enabled with the `--with-http_auth_request_module` configuration parameter.
-
-The module may be combined with other access modules, such as [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]], [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]], and [[11-modules/02-http/ngx_http_auth_jwt_module|ngx_http_auth_jwt_module]], via the [[12-directives/satisfy|satisfy]] directive.
+Le module peut être combiné avec d'autres modules d'accès, comme [[11-modules/02-http/ngx_http_access_module|ngx_http_access_module]], [[11-modules/02-http/ngx_http_auth_basic_module|ngx_http_auth_basic_module]] et [[11-modules/02-http/ngx_http_auth_jwt_module|ngx_http_auth_jwt_module]], à l'aide de la directive [[12-directives/satisfy|satisfy]].
 
 > [!NOTE]
-> Before version 1.7.3, responses to authorization subrequests could not be cached (using [[12-directives/proxy-cache|proxy_cache]], [[12-directives/proxy-store|proxy_store]], etc.).
+> Avant la version 1.7.3, les réponses aux sous-requêtes d'autorisation ne pouvaient pas être mises en cache (avec [[12-directives/proxy-cache|proxy_cache]], [[12-directives/proxy-store|proxy_store]], etc.).
 
 ## Exemple de configuration
 

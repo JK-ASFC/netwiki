@@ -1,12 +1,9 @@
 ---
 title: "common_name_in_csr"
-description: "Directive nginx common_name_in_csr (ngx_http_acme_module) — If enabled, sets the Subject Common Name in the certificate request to the first DNS name or the first IP address provided. NOTE Enabling this option may result in rejected certificate requests. NOTE…"
+description: "Directive nginx common_name_in_csr (ngx_http_acme_module) — Si cette option est activée, le nom commun du sujet (Subject Common Name) de la demande de certificat est défini sur le premier nom DNS ou la première adresse IP fournis. NOTE Activer cette option…"
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,13 +15,13 @@ icon: settings-2
 
 ## Utilisation
 
-If enabled, sets the Subject Common Name in the certificate request to the first DNS name or the first IP address provided.
+Si cette option est activée, le nom commun du sujet (*Subject Common Name*) de la demande de certificat est défini sur le premier nom DNS ou la première adresse IP fournis.
 
 > [!NOTE]
-> Enabling this option may result in rejected certificate requests.
+> Activer cette option peut entraîner le rejet des demandes de certificat.
 
 > [!NOTE]
-> Prior to version 0.4.0, the Subject Common Name was always set.
+> Avant la version 0.4.0, le nom commun du sujet était toujours défini.
 
 ---
 

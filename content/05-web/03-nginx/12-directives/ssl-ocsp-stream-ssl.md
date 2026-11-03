@@ -1,12 +1,9 @@
 ---
 title: "ssl_ocsp (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_ocsp (ngx_stream_ssl_module) — Active la validation OCSP de la chaîne de certificats du client. Le paramètre leaf limite la validation au seul certificat du client. For the OCSP validation to work, the ssl_verify_client directive…"
+description: "Directive nginx ssl_ocsp (ngx_stream_ssl_module) — Active la validation OCSP de la chaîne de certificats du client. Le paramètre leaf limite la validation au seul certificat du client. Pour que la validation OCSP fonctionne, la directive…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -20,9 +17,9 @@ icon: settings-2
 
 Active la validation OCSP de la chaîne de certificats du client. Le paramètre `leaf` limite la validation au seul certificat du client.
 
-For the OCSP validation to work, the [[12-directives/ssl-verify-client-stream-ssl|ssl_verify_client]] directive should be set to `on` or `optional`.
+Pour que la validation OCSP fonctionne, la directive [[12-directives/ssl-verify-client-stream-ssl|ssl_verify_client]] doit valoir `on` ou `optional`.
 
-To resolve the OCSP responder hostname, the [[12-directives/resolver-stream-core|resolver]] directive should also be specified.
+Pour résoudre le nom d'hôte du répondeur OCSP, la directive [[12-directives/resolver-stream-core|resolver]] doit aussi être indiquée.
 
 Exemple :
 

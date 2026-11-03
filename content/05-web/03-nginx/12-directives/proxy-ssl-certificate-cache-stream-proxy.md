@@ -1,12 +1,9 @@
 ---
 title: "proxy_ssl_certificate_cache (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_ssl_certificate_cache (ngx_stream_proxy_module) — Defines a cache that stores SSL certificates and secret keys specified with variables. La directive accepte les paramètres suivants : - max définit le nombre maximal d'éléments dans le cache ; en cas…"
+description: "Directive nginx proxy_ssl_certificate_cache (ngx_stream_proxy_module) — Définit un cache qui conserve les certificats SSL et les clés secrètes indiqués par des variables. La directive accepte les paramètres suivants : - max définit le nombre maximal d'éléments dans le…"
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a cache that stores [[12-directives/proxy-ssl-certificate-stream-proxy|SSL certificates]] and [[12-directives/proxy-ssl-certificate-key-stream-proxy|secret keys]] specified with variables.
+Définit un cache qui conserve les [[12-directives/proxy-ssl-certificate-stream-proxy|certificats SSL]] et les [[12-directives/proxy-ssl-certificate-key-stream-proxy|clés secrètes]] indiqués par des variables.
 
 La directive accepte les paramètres suivants :
 

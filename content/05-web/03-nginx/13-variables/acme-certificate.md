@@ -1,19 +1,16 @@
 ---
 title: "$acme_certificate"
-description: "Variable nginx $acme_certificate (ngx_http_acme_module) — SSL certificate that can be passed to the ssl_certificate"
+description: "Variable nginx $acme_certificate (ngx_http_acme_module) — certificat SSL utilisable dans ssl_certificate"
 tags: [nginx, variable, ngx_http_acme_module]
 icon: dollar-sign
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
 | **Variable** | `$acme_certificate` |
 | **Module** | [[11-modules/02-http/ngx_http_acme_module\|ngx_http_acme_module]] |
 
-SSL certificate that can be passed to the [[12-directives/ssl-certificate-http-ssl|ssl_certificate]]
+certificat SSL utilisable dans [[12-directives/ssl-certificate-http-ssl|ssl_certificate]]
 
 ---
 

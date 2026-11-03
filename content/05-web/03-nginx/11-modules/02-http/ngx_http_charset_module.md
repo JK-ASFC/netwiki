@@ -1,18 +1,15 @@
 ---
 title: "ngx_http_charset_module"
-description: "Module nginx ngx_http_charset_module — The ngx_http_charset_module module adds the specified charset to the Content-Type response header field. In addition, the module can convert data from one charset to another, with some limitations:"
+description: "Module nginx ngx_http_charset_module — Le module ngx_http_charset_module ajoute le jeu de caractères indiqué au champ d'en-tête de réponse Content-Type. Il peut aussi convertir les données d'un jeu de caractères à un autre, avec certaines limites :"
 tags: [nginx, module, ngx_http_charset_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_charset_module` ajoute le jeu de caractères indiqué au champ d'en-tête de réponse `Content-Type`. Il peut aussi convertir les données d'un jeu de caractères à un autre, avec certaines limites :
 
-The `ngx_http_charset_module` module adds the specified charset to the `Content-Type` response header field. In addition, the module can convert data from one charset to another, with some limitations:
-
-- conversion is performed one way — from server to client,
-- only single-byte charsets can be converted
-- or single-byte charsets to/from UTF-8.
+- la conversion ne se fait que dans un sens, du serveur vers le client ;
+- seuls les jeux de caractères à un octet peuvent être convertis
+- ou les jeux de caractères à un octet vers ou depuis UTF-8.
 
 ## Exemple de configuration
 

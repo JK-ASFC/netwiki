@@ -1,0 +1,8 @@
+{
+ "0d74a3ebf0d0": "Cette directive est devenue obsolète en version 1.15.0 et a été supprimée en version 1.25.1. Utiliser à la place le paramètre `ssl` de la directive [[12-directives/listen-mail-core|listen]].",
+ "6233cd060eb3": "Contrairement au certificat défini par [[12-directives/ssl-client-certificate-mail-ssl|ssl_client_certificate]], la liste de ces certificats n'est pas envoyée aux clients.",
+ "8c4c84dd104a": "et éventuellement augmenter la [[12-directives/ssl-session-timeout-mail-ssl|durée de vie]] des sessions (5 minutes par défaut) :",
+ "a61718d732ba": "Indique le fichier (*file*) contenant les certificats révoqués (CRL) au format PEM utilisé pour [[12-directives/ssl-verify-client-mail-ssl|vérifier]] les certificats des clients. Avec des certificats intermédiaires, leurs CRL doivent figurer dans le même fichier.",
+ "b1f16adc8589": "Indique un fichier (*file*) de phrases de passe pour les [[12-directives/ssl-certificate-key-mail-ssl|clés secrètes]], une phrase par ligne. Les phrases sont essayées tour à tour au chargement de la clé.",
+ "cfe57c0e6f09": "La liste des certificats est envoyée aux clients. Si ce n'est pas souhaité, on peut utiliser la directive [[12-directives/ssl-trusted-certificate-mail-ssl|ssl_trusted_certificate]]."
+}

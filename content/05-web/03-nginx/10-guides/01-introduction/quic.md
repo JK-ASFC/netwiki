@@ -46,7 +46,7 @@ Alternatively, nginx can be configured with [LibreSSL](https://www.libressl.org)
     --with-ld-opt="-L../libressl/build/lib"
 ```
 
-After configuration, nginx is compiled and installed using `make`.
+Après la configuration, nginx est compilé et installé avec `make`.
 
 ## Configuration tips
 

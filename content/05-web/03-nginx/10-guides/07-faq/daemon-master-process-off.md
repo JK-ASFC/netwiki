@@ -1,20 +1,17 @@
 ---
-title: "Can I run nginx with “daemon off” or                “master_process off” settings                in a production environment?"
-description: "Nginx — Can I run nginx with “daemon off” or “master_process off” settings in a production environment?. Q: Can I run nginx with \"daemon off\" or \"master_process off\" settings in a production environment?"
+title: "Puis-je utiliser nginx avec « daemon off » ou « master_process off » en production ?"
+description: "Nginx — Puis-je utiliser nginx avec « daemon off » ou « master_process off » en production ?. Q : Puis-je utiliser nginx avec « daemon off » ou « master_process off » en production ?"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Q : Puis-je utiliser nginx avec « daemon off » ou « master\_process off » en production ?
 
-Q: Can I run nginx with "daemon off" or "master\_process off" settings in a production environment?
+R : Les directives « daemon on|off » et « master\_process on|off » ont avant tout été conçues pour le développement du code de nginx.
 
-A: First of all, both "daemon on|off" and "master\_process on|off" directives were intended to be used primarily for nginx code development.
+Beaucoup utilisent « daemon off » en production, alors que ce n'était pas vraiment prévu pour cela. Depuis la version 1.0.9, on peut toutefois utiliser nginx en production avec « daemon off » sans risque. Attention : la mise à jour sans interruption n'est pas possible avec « daemon off ».
 
-While many people use "daemon off" in production it wasn’t really meant for that. Since version 1.0.9 it is now quite safe to run nginx in production with "daemon off", though. Bear in mind that non-stop upgrade is not an option with "daemon off".
-
-In a development environment, using "master\_process off", nginx can run in the foreground without the master process and can be terminated simply with ^C (SIGINT). This is somewhat similar to running Apache with an 'X' command-line option. However you should NEVER run nginx in production with "master\_process off".
+En environnement de développement, avec « master\_process off », nginx peut tourner au premier plan sans processus maître et s'arrêter simplement avec ^C (SIGINT). C'est un peu comme lancer Apache avec l'option de ligne de commande « X ». En revanche, il ne faut JAMAIS utiliser nginx en production avec « master\_process off ».
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "db_buffer_size"
-description: "Directive nginx db_buffer_size (ngx_http_db_module) — Sets the size of the buffer used for reading the database response. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform. It can be made smaller,…"
+description: "Directive nginx db_buffer_size (ngx_http_db_module) — Définit la taille du tampon utilisé pour lire la réponse de la base de données. Par défaut, le tampon fait une page mémoire, soit 4K ou 8K selon la plate-forme. Il peut toutefois être réduit. Le…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,11 +14,11 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the size of the buffer used for reading the database response. By default, the buffer size is equal to one memory page. This is either 4K or 8K, depending on a platform. It can be made smaller, however.
+Définit la taille du tampon utilisé pour lire la réponse de la base de données. Par défaut, le tampon fait une page mémoire, soit 4K ou 8K selon la plate-forme. Il peut toutefois être réduit.
 
-The buffer is also used when parsing database protocol replies. A protocol reply header that does not fit in the buffer cannot be processed successfully.
+Le tampon sert aussi à analyser les réponses du protocole de la base. Un en-tête de réponse qui ne tient pas dans le tampon ne peut pas être traité.
 
-Database response bodies are processed without upstream response buffering.
+Le corps des réponses de la base est traité sans mise en tampon des réponses amont.
 
 ---
 

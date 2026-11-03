@@ -1,0 +1,20 @@
+{
+ "0831af583538": "les sources des bibliothèques [PCRE](http://www.pcre.org), [zlib](http://zlib.net) et [OpenSSL](http://www.openssl.org).",
+ "1ab77d1c7d09": "le compilateur Microsoft Visual C ; Microsoft Visual Studio 8, 10 et 17 fonctionnent ;",
+ "2d8243a2c0e4": "Voir aussi",
+ "328de8eb5308": "un client [Git](https://cli.github.com/) ;",
+ "332f9bfe6561": "Exécutez make :",
+ "3a2e53edddae": "Compiler nginx sous Win32 avec Visual C",
+ "3da0fd7c1eb8": "Pour compiler nginx :",
+ "538655494d78": "Pour compiler nginx sous Microsoft Win32, il faut :",
+ "7fa727537036": "[[10-guides/01-introduction/windows|nginx pour Windows]]",
+ "8e863f4b7608": "Lancez le bash de MSYS.",
+ "9112a0990e93": "Avant de commencer, vérifiez que les répertoires bin de Perl, Git et MSYS figurent dans la variable d'environnement PATH. Pour préparer l'environnement Visual C, exécutez le script vcvarsall.bat du répertoire de Visual C.",
+ "945a189ba27a": "Perl, pour compiler OpenSSL et nginx avec la prise en charge de SSL, par exemple [ActivePerl](http://www.activestate.com/activeperl) ou [Strawberry Perl](http://strawberryperl.com) ;",
+ "9dc7330fb803": "[MSYS](https://sourceforge.net/projects/mingw/files/MSYS/) ou [MSYS2](https://www.msys2.org) ;",
+ "c1c8295964c9": "Étapes de compilation",
+ "d325fc8ffe22": "Exécutez le script configure :",
+ "d6848aecdae3": "Créez les répertoires build et lib, et décompressez les sources de zlib, PCRE et OpenSSL dans le répertoire lib :",
+ "df23c4faa19e": "Récupérez les sources de nginx depuis le dépôt GitHub :",
+ "eed036e414a3": "Prérequis"
+}

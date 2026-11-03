@@ -91,7 +91,7 @@ En outre, les paramètres suivants sont disponibles dans le cadre de notre [abon
 
 - **`slow_start`=*time***
 
-  sets the *time* during which the server will recover its weight from zero to a nominal value, when unhealthy server becomes [[12-directives/health-check-stream-upstream-hc|healthy]], or when the server becomes available after a period of time it was considered unavailable. Default value is zero, i.e. slow start is disabled.
+  définit la durée (*time*) pendant laquelle le serveur fait remonter son poids de zéro à sa valeur nominale, lorsqu'un serveur défaillant redevient [[12-directives/health-check-stream-upstream-hc|sain]] ou lorsqu'il redevient disponible après avoir été considéré comme indisponible. La valeur par défaut, zéro, désactive ce démarrage progressif.
 
   > [!NOTE]
   > The parameter cannot be used along with the [[12-directives/hash-stream-upstream|hash]] and [[12-directives/random-stream-upstream|random]] load balancing methods.

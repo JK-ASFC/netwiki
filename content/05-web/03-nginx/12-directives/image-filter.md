@@ -1,6 +1,6 @@
 ---
 title: "image_filter"
-description: "Directive nginx image_filter (ngx_http_image_filter_module) — Sets the type of transformation to perform on images: - off turns off module processing in a surrounding location. - test ensures that responses are images in either JPEG, GIF, PNG, or WebP format.…"
+description: "Directive nginx image_filter (ngx_http_image_filter_module) — Définit le type de transformation à appliquer aux images : - off désactive le traitement par le module dans le bloc location englobant. - test vérifie que les réponses sont des images au format JPEG,…"
 tags: [nginx, directive, ngx_http_image_filter_module]
 icon: settings-2
 ---
@@ -17,15 +17,15 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the type of transformation to perform on images:
+Définit le type de transformation à appliquer aux images :
 
 - **`off`**
 
-  turns off module processing in a surrounding location.
+  désactive le traitement par le module dans le bloc location englobant.
 
 - **`test`**
 
-  ensures that responses are images in either JPEG, GIF, PNG, or WebP format. Otherwise, the `415 Unsupported Media Type` error is returned.
+  vérifie que les réponses sont des images au format JPEG, GIF, PNG ou WebP ; sinon, l'erreur `415 Unsupported Media Type` est renvoyée.
 
 - **`size`**
 

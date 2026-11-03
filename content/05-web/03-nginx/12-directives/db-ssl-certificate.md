@@ -1,12 +1,9 @@
 ---
 title: "db_ssl_certificate"
-description: "Directive nginx db_ssl_certificate (ngx_http_db_module) — Specifies a file with the certificate in the PEM format used for authentication to a database server. The corresponding db_ssl_certificate_key must also be configured. The parameter value can contain…"
+description: "Directive nginx db_ssl_certificate (ngx_http_db_module) — Indique le fichier (file) contenant le certificat au format PEM utilisé pour s'authentifier auprès d'un serveur de base de données. La directive db_ssl_certificate_key correspondante doit aussi être…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with the certificate in the PEM format used for authentication to a database server. The corresponding [[12-directives/db-ssl-certificate-key|db_ssl_certificate_key]] must also be configured.
+Indique le fichier (*file*) contenant le certificat au format PEM utilisé pour s'authentifier auprès d'un serveur de base de données. La directive [[12-directives/db-ssl-certificate-key|db_ssl_certificate_key]] correspondante doit aussi être configurée.
 
-The parameter value can contain variables:
+La valeur du paramètre peut contenir des variables :
 
 ```nginx
 db_ssl_certificate /etc/nginx/client-certs/$host.crt;

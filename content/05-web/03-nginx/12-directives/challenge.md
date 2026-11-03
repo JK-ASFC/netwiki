@@ -1,12 +1,9 @@
 ---
 title: "challenge"
-description: "Directive nginx challenge (ngx_http_acme_module) — Specifies the ACME challenge type to be used for the issuer. Accepted values: - http-01 (http) - tls-alpn-01 (tls-alpn) NOTE ACME challenges are versioned. If an unversioned name is specified, the…"
+description: "Directive nginx challenge (ngx_http_acme_module) — Indique le type de défi ACME à utiliser pour l'émetteur. Valeurs acceptées : - http-01 (http) - tls-alpn-01 (tls-alpn) NOTE Les défis ACME sont versionnés. Si un nom sans version est indiqué, le…"
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,15 +15,15 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the ACME challenge type to be used for the issuer.
+Indique le type de défi ACME à utiliser pour l'émetteur.
 
-Accepted values:
+Valeurs acceptées :
 
 - `http-01` (`http`)
 - `tls-alpn-01` (`tls-alpn`)
 
 > [!NOTE]
-> ACME challenges are versioned. If an unversioned name is specified, the module automatically selects the latest implemented version.
+> Les défis ACME sont versionnés. Si un nom sans version est indiqué, le module choisit automatiquement la dernière version mise en œuvre.
 
 ---
 

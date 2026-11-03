@@ -1,32 +1,29 @@
 ---
-title: "Using nginx as HTTP load balancer"
-description: "Nginx — Using nginx as HTTP load balancer. Load balancing across multiple application instances is a commonly used technique for optimizing resource utilization, maximizing throughput, reducing latency, and ensuring fault-tolerant configurations."
+title: "Utiliser nginx comme répartiteur de charge HTTP"
+description: "Nginx — Utiliser nginx comme répartiteur de charge HTTP. La répartition de charge entre plusieurs instances d'une application est une technique courante pour optimiser l'utilisation des ressources, maximiser le débit, réduire la latence et assurer la tolérance aux pannes."
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 ## Introduction
 
-Load balancing across multiple application instances is a commonly used technique for optimizing resource utilization, maximizing throughput, reducing latency, and ensuring fault-tolerant configurations.
+La répartition de charge entre plusieurs instances d'une application est une technique courante pour optimiser l'utilisation des ressources, maximiser le débit, réduire la latence et assurer la tolérance aux pannes.
 
-It is possible to use nginx as a very efficient HTTP load balancer to distribute traffic to several application servers and to improve performance, scalability and reliability of web applications with nginx.
+nginx peut servir de répartiteur de charge HTTP très efficace pour distribuer le trafic entre plusieurs serveurs d'applications et améliorer les performances, l'évolutivité et la fiabilité des applications web.
 
-## Load balancing methods
+## Méthodes de répartition de charge
 
-The following load balancing mechanisms (or methods) are supported in nginx:
+nginx prend en charge les mécanismes (ou méthodes) de répartition de charge suivants :
 
-- round-robin — requests to the application servers are distributed in a round-robin fashion,
+- tourniquet (*round-robin*) : les requêtes sont distribuées à tour de rôle entre les serveurs d'applications ;
 
-- least-connected — next request is assigned to the server with the least number of active connections,
+- moins de connexions (*least-connected*) : la requête suivante est attribuée au serveur ayant le moins de connexions actives ;
 
-- ip-hash — a hash-function is used to determine what server should be selected for the next request (based on the client’s IP address).
+- hachage d'IP (*ip-hash*) : une fonction de hachage détermine quel serveur choisir pour la requête suivante (selon l'adresse IP du client).
 
-## Default load balancing configuration
+## Configuration de répartition par défaut
 
-The simplest configuration for load balancing with nginx may look like the following:
+La configuration la plus simple de répartition de charge avec nginx peut ressembler à ceci :
 
 ```
 http {
@@ -46,21 +43,21 @@ http {
 }
 ```
 
-In the example above, there are 3 instances of the same application running on srv1-srv3. When the load balancing method is not specifically configured, it defaults to round-robin. All requests are [[12-directives/proxy-pass-http-proxy|proxied]] to the server group myapp1, and nginx applies HTTP load balancing to distribute the requests.
+Dans l'exemple ci-dessus, trois instances de la même application tournent sur srv1 à srv3. Si la méthode de répartition n'est pas configurée explicitement, c'est le tourniquet qui s'applique. Toutes les requêtes sont [[12-directives/proxy-pass-http-proxy|relayées]] vers le groupe de serveurs myapp1, et nginx applique la répartition de charge HTTP pour distribuer les requêtes.
 
-Reverse proxy implementation in nginx includes load balancing for HTTP, HTTPS, FastCGI, uwsgi, SCGI, memcached, and gRPC.
+Le mandataire inverse de nginx assure la répartition de charge pour HTTP, HTTPS, FastCGI, uwsgi, SCGI, memcached et gRPC.
 
-To configure load balancing for HTTPS instead of HTTP, just use “https” as the protocol.
+Pour répartir la charge en HTTPS au lieu de HTTP, il suffit d'utiliser « https » comme protocole.
 
-When setting up load balancing for FastCGI, uwsgi, SCGI, memcached, or gRPC, use [[12-directives/fastcgi-pass|fastcgi_pass]], [[12-directives/uwsgi-pass|uwsgi_pass]], [[12-directives/scgi-pass|scgi_pass]], [[12-directives/memcached-pass|memcached_pass]], and [[12-directives/grpc-pass|grpc_pass]] directives respectively.
+Pour répartir la charge en FastCGI, uwsgi, SCGI, memcached ou gRPC, utilisez respectivement les directives [[12-directives/fastcgi-pass|fastcgi_pass]], [[12-directives/uwsgi-pass|uwsgi_pass]], [[12-directives/scgi-pass|scgi_pass]], [[12-directives/memcached-pass|memcached_pass]] et [[12-directives/grpc-pass|grpc_pass]].
 
-## Least connected load balancing
+## Répartition selon le moins de connexions
 
-Another load balancing discipline is least-connected. Least-connected allows controlling the load on application instances more fairly in a situation when some of the requests take longer to complete.
+Une autre règle de répartition est celle du moins de connexions. Elle permet de répartir plus équitablement la charge entre les instances lorsque certaines requêtes prennent plus de temps.
 
-With the least-connected load balancing, nginx will try not to overload a busy application server with excessive requests, distributing the new requests to a less busy server instead.
+Avec cette méthode, nginx évite de surcharger un serveur occupé et distribue les nouvelles requêtes à un serveur moins chargé.
 
-Least-connected load balancing in nginx is activated when the [[12-directives/least-conn-http-upstream|least_conn]] directive is used as part of the server group configuration:
+Cette méthode s'active avec la directive [[12-directives/least-conn-http-upstream|least_conn]] dans la configuration du groupe de serveurs :
 
 ```
 upstream myapp1 {
@@ -71,19 +68,19 @@ upstream myapp1 {
 }
 ```
 
-## Least time load balancing
+## Répartition selon le temps de réponse
 
-Another load balancing discipline is least-time. Least-time selects the server with the lowest average response time and the lowest number of active connections, taking into account inflight requests.
+Une autre règle de répartition est celle du moindre temps (*least-time*). Elle choisit le serveur ayant le temps de réponse moyen le plus court et le moins de connexions actives, en tenant compte des requêtes en cours.
 
-With the least-time load balancing, nginx selects the server based on which of the following parameters is specified in the [[12-directives/least-time-http-upstream|least_time]] directive:
+Avec cette méthode, nginx choisit le serveur selon le paramètre indiqué dans la directive [[12-directives/least-time-http-upstream|least_time]] :
 
-- `header` — time to receive the first byte from the server,
+- `header` : durée de réception du premier octet du serveur ;
 
-- `last_byte` — time to receive the full response from the server,
+- `last_byte` : durée de réception de la réponse complète du serveur ;
 
-- `last_byte inflight` — time to receive the full response from the server, taking into account incomplete requests.
+- `last_byte inflight` : durée de réception de la réponse complète du serveur, en tenant compte des requêtes non terminées.
 
-Least-time load balancing in nginx is activated when the [[12-directives/least-time-http-upstream|least_time]] directive is used as part of the server group configuration:
+Cette méthode s'active avec la directive [[12-directives/least-time-http-upstream|least_time]] dans la configuration du groupe de serveurs :
 
 ```
 upstream myapp1 {
@@ -94,15 +91,15 @@ upstream myapp1 {
 }
 ```
 
-## Session persistence
+## Persistance de session
 
-Please note that with round-robin or least-connected load balancing, each subsequent client’s request can be potentially distributed to a different server. There is no guarantee that the same client will be always directed to the same server.
+Avec le tourniquet ou le moins de connexions, chaque requête successive d'un client peut être distribuée à un serveur différent. Rien ne garantit que le même client sera toujours dirigé vers le même serveur.
 
-If there is the need to tie a client to a particular application server — in other words, make the client’s session “sticky” or “persistent” in terms of always trying to select a particular server — the ip-hash load balancing mechanism can be used.
+S'il faut lier un client à un serveur d'applications particulier (autrement dit, rendre sa session « collante » ou « persistante » en choisissant toujours le même serveur), on peut utiliser le mécanisme de hachage d'IP.
 
-With ip-hash, the client’s IP address is used as a hashing key to determine what server in a server group should be selected for the client’s requests. This method ensures that the requests from the same client will always be directed to the same server except when this server is unavailable.
+Avec le hachage d'IP, l'adresse IP du client sert de clé de hachage pour déterminer quel serveur du groupe doit traiter ses requêtes. Cette méthode garantit que les requêtes d'un même client sont toujours dirigées vers le même serveur, sauf si celui-ci est indisponible.
 
-To configure ip-hash load balancing, just add the [[12-directives/ip-hash|ip_hash]] directive to the server (upstream) group configuration:
+Pour configurer le hachage d'IP, il suffit d'ajouter la directive [[12-directives/ip-hash|ip_hash]] à la configuration du groupe de serveurs (upstream) :
 
 ```
 upstream myapp1 {
@@ -113,15 +110,15 @@ upstream myapp1 {
 }
 ```
 
-## Weighted load balancing
+## Répartition pondérée
 
-It is also possible to influence nginx load balancing algorithms even further by using server weights.
+On peut aussi influencer davantage les algorithmes de répartition de nginx en utilisant des poids pour les serveurs.
 
-In the examples above, the server weights are not configured which means that all specified servers are treated as equally qualified for a particular load balancing method.
+Dans les exemples ci-dessus, aucun poids n'est configuré : tous les serveurs sont considérés comme également aptes pour une méthode de répartition donnée.
 
-With the round-robin in particular it also means a more or less equal distribution of requests across the servers — provided there are enough requests, and when the requests are processed in a uniform manner and completed fast enough.
+Avec le tourniquet en particulier, cela signifie aussi une répartition à peu près égale des requêtes entre les serveurs, à condition qu'il y ait assez de requêtes, qu'elles soient traitées de façon uniforme et qu'elles se terminent assez vite.
 
-When the [[12-directives/server-http-upstream|weight]] parameter is specified for a server, the weight is accounted as part of the load balancing decision.
+Lorsque le paramètre [[12-directives/server-http-upstream|weight]] est indiqué pour un serveur, le poids est pris en compte dans la décision de répartition.
 
 ```
 upstream myapp1 {
@@ -131,21 +128,21 @@ upstream myapp1 {
 }
 ```
 
-With this configuration, every 5 new requests will be distributed across the application instances as the following: 3 requests will be directed to srv1, one request will go to srv2, and another one — to srv3.
+Avec cette configuration, toutes les 5 nouvelles requêtes sont réparties ainsi entre les instances : 3 vers srv1, une vers srv2 et une autre vers srv3.
 
-It is similarly possible to use weights with the least-connected and ip-hash load balancing in the recent versions of nginx.
+Dans les versions récentes de nginx, on peut de même utiliser des poids avec les méthodes du moins de connexions et du hachage d'IP.
 
-## Health checks
+## Vérifications d'état
 
-Reverse proxy implementation in nginx includes in-band (or passive) server health checks. If the response from a particular server fails with an error, nginx will mark this server as failed, and will try to avoid selecting this server for subsequent inbound requests for a while.
+Le mandataire inverse de nginx comprend des vérifications d'état passives (*in-band*) des serveurs. Si la réponse d'un serveur échoue avec une erreur, nginx marque ce serveur comme défaillant et évite de le choisir pour les requêtes suivantes pendant un certain temps.
 
-The [[12-directives/server-http-upstream|max_fails]] directive sets the number of consecutive unsuccessful attempts to communicate with the server that should happen during [[12-directives/server-http-upstream|fail_timeout]]. By default, [[12-directives/server-http-upstream|max_fails]] is set to 1. When it is set to 0, health checks are disabled for this server. The [[12-directives/server-http-upstream|fail_timeout]] parameter also defines how long the server will be marked as failed. After [[12-directives/server-http-upstream|fail_timeout]] interval following the server failure, nginx will start to gracefully probe the server with the live client’s requests. If the probes have been successful, the server is marked as a live one.
+La directive [[12-directives/server-http-upstream|max_fails]] définit le nombre de tentatives de communication échouées consécutives qui doivent survenir pendant [[12-directives/server-http-upstream|fail_timeout]]. Par défaut, [[12-directives/server-http-upstream|max_fails]] vaut 1 ; à 0, les vérifications d'état sont désactivées pour ce serveur. Le paramètre [[12-directives/server-http-upstream|fail_timeout]] définit aussi la durée pendant laquelle le serveur reste marqué comme défaillant. Une fois ce délai écoulé après la défaillance, nginx commence à sonder prudemment le serveur avec les requêtes réelles des clients. Si les sondes réussissent, le serveur est de nouveau marqué comme disponible.
 
-## Further reading
+## Pour aller plus loin
 
-In addition, there are more directives and parameters that control server load balancing in nginx, e.g. [[12-directives/proxy-next-upstream-http-proxy|proxy_next_upstream]], [[12-directives/server-http-upstream|backup]], [[12-directives/server-http-upstream|down]], and [[12-directives/keepalive|keepalive]]. For more information please check our [reference documentation](https://nginx.org/en/docs/).
+D'autres directives et paramètres contrôlent la répartition de charge dans nginx, par exemple [[12-directives/proxy-next-upstream-http-proxy|proxy_next_upstream]], [[12-directives/server-http-upstream|backup]], [[12-directives/server-http-upstream|down]] et [[12-directives/keepalive|keepalive]]. Pour plus d'informations, consultez notre [documentation de référence](https://nginx.org/en/docs/).
 
-Last but not least, application load balancing, application health checks, activity monitoring and on-the-fly reconfiguration of server groups are available as part of our paid NGINX Plus subscriptions.
+Enfin, la répartition de charge applicative, les vérifications d'état applicatives, la surveillance de l'activité et la reconfiguration à chaud des groupes de serveurs sont disponibles avec nos abonnements payants NGINX Plus.
 
 ---
 

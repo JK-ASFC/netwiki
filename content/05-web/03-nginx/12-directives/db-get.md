@@ -1,12 +1,9 @@
 ---
 title: "db_get"
-description: "Directive nginx db_get (ngx_http_db_module) — Specifies the key to retrieve from the database. The key can contain text, variables, and their combination. An empty key is not allowed. For the Redis backend, the key is passed to the GET command.…"
+description: "Directive nginx db_get (ngx_http_db_module) — Indique la clé à récupérer dans la base. La clé peut contenir du texte, des variables ou une combinaison des deux. Une clé vide n'est pas autorisée. Avec Redis, la clé est transmise à la commande…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the key to retrieve from the database. The key can contain text, variables, and their combination. An empty key is not allowed.
+Indique la clé à récupérer dans la base. La clé peut contenir du texte, des variables ou une combinaison des deux. Une clé vide n'est pas autorisée.
 
-For the Redis backend, the key is passed to the `GET` command. A successful lookup returns the value as the response body.
+Avec Redis, la clé est transmise à la commande `GET`. Une recherche réussie renvoie la valeur comme corps de réponse.
 
 ```nginx
 upstream redis_backend {
@@ -35,7 +32,7 @@ server {
 }
 ```
 
-If caching is [[12-directives/db-cache|enabled]], the evaluated key is also used as the cache key.
+Si la mise en cache est [[12-directives/db-cache|activée]], la clé évaluée sert aussi de clé de cache.
 
 ---
 

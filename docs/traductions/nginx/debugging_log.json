@@ -1,0 +1,16 @@
+{
+ "088b19873f32": "Redéfinir le journal sans indiquer aussi le niveau `debug` désactive le journal de débogage. Dans l'exemple ci-dessous, redéfinir le journal au niveau [[12-directives/server-http-core|server]] désactive le journal de débogage pour ce serveur :",
+ "0e584b83f70c": "Le journal de débogage",
+ "15052106d7d3": "Pour activer le journal de débogage, nginx doit être configuré avec la prise en charge du débogage lors de la compilation :",
+ "29c9a5d2d899": "Pour l'éviter, mettez en commentaire la ligne qui redéfinit le journal, ou ajoutez-y aussi le niveau `debug` :",
+ "330fc00ea314": "Journalisation dans un tampon mémoire circulaire",
+ "63673d8c7970": "La journalisation au niveau `debug` dans le tampon mémoire n'a pas d'impact notable sur les performances, même sous forte charge. Le journal peut alors être extrait avec un script `gdb` comme celui-ci :",
+ "a882c90d5250": "puis on définit le niveau `debug`. La version de nginx pour Windows est toujours compilée avec le journal de débogage ; il suffit donc de définir le niveau `debug`.",
+ "c8d57beaa3fd": "Il faut ensuite définir le niveau `debug` avec la directive [[12-directives/error-log|error_log]] :",
+ "d78a6433faac": "Les paquets Linux précompilés prennent en charge le journal de débogage avec l'exécutable `nginx-debug` (1.9.8), qu'on lance avec les commandes",
+ "db59d1e4aae0": "Le journal de débogage peut être écrit dans un tampon mémoire circulaire :",
+ "db708a190332": "Ou avec un script `lldb` comme celui-ci :",
+ "dd7de6ff24b6": "Pour vérifier que nginx prend en charge le débogage, exécutez la commande `nginx -V` :",
+ "e5c1bd448c15": "On peut aussi activer le journal de débogage uniquement pour [[12-directives/debug-connection|certaines adresses de clients]] :",
+ "edc835f309ea": "Journal de débogage pour certains clients"
+}

@@ -1,16 +1,13 @@
 ---
-title: "Is there a proper way to use nginx variables to                make sections of the configuration shorter,                using them as macros for making                parts of configuration work as templates?"
-description: "Nginx — Is there a proper way to use nginx variables to make sections of the configuration shorter, using them as macros for making parts of configuration work as templates?. Q: Is there a proper way to use nginx variables to make sections of the configuration shorter, using them as macros for making parts of configuration work as templates?"
+title: "Existe-t-il une bonne façon d'utiliser les variables de nginx comme macros pour raccourcir la configuration et en faire des modèles ?"
+description: "Nginx — Existe-t-il une bonne façon d'utiliser les variables de nginx comme macros pour raccourcir la configuration et en faire des modèles ?. Q : Existe-t-il une bonne façon d'utiliser les variables de nginx comme macros pour raccourcir certaines sections de la configuration et les utiliser comme modèles ?"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Q : Existe-t-il une bonne façon d'utiliser les variables de nginx comme macros pour raccourcir certaines sections de la configuration et les utiliser comme modèles ?
 
-Q: Is there a proper way to use nginx variables to make sections of the configuration shorter, using them as macros for making parts of configuration work as templates?
-
-A: Variables should not be used as template macros. Variables are evaluated in the run-time during the processing of each request, so they are rather costly compared to plain static configuration. Using variables to store static strings is also a bad idea. Instead, a macro expansion and "include" directives should be used to generate configs more easily and it can be done with the external tools, e.g. sed + make or any other common template mechanism.
+R : Les variables ne doivent pas servir de macros de modèles. Elles sont évaluées à l'exécution, pendant le traitement de chaque requête : elles coûtent donc bien plus cher qu'une configuration statique simple. Utiliser des variables pour stocker des chaînes statiques est aussi une mauvaise idée. Il vaut mieux générer les configurations par expansion de macros et directives « include », avec des outils externes comme sed + make ou tout autre mécanisme de modèles courant.
 
 ---
 

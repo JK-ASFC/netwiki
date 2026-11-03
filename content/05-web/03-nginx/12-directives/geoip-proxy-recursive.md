@@ -1,12 +1,9 @@
 ---
 title: "geoip_proxy_recursive"
-description: "Directive nginx geoip_proxy_recursive (ngx_http_geoip_module) — If recursive search is disabled then instead of the original client address that matches one of the trusted addresses, the last address sent in X-Forwarded-For will be used. If recursive search is…"
+description: "Directive nginx geoip_proxy_recursive (ngx_http_geoip_module) — Si la recherche récursive est désactivée, l'adresse d'origine du client qui correspond à une adresse de confiance est remplacée par la dernière adresse transmise dans X-Forwarded-For. Si elle est…"
 tags: [nginx, directive, ngx_http_geoip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-If recursive search is disabled then instead of the original client address that matches one of the trusted addresses, the last address sent in `X-Forwarded-For` will be used. If recursive search is enabled then instead of the original client address that matches one of the trusted addresses, the last non-trusted address sent in `X-Forwarded-For` will be used.
+Si la recherche récursive est désactivée, l'adresse d'origine du client qui correspond à une adresse de confiance est remplacée par la dernière adresse transmise dans `X-Forwarded-For`. Si elle est activée, elle est remplacée par la dernière adresse non fiable transmise dans `X-Forwarded-For`.
 
 ---
 

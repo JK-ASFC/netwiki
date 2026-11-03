@@ -19,7 +19,7 @@ By default, if the [[12-directives/enforce-initial-report|initial usage report]]
 Automatic license renewal is supported since 1.29.0 ([NGINX Plus R35](https://docs.nginx.com/nginx/releases/#r35)) for instances that report directly to the F5 licensing endpoint. On renewal, NGINX downloads the updated JWT from F5 licensing endpoint and applies it without configuration [[10-guides/01-introduction/switches|reload]]. The updated license is stored in the [[12-directives/state-path-mgmt|state_path]] directory.
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 

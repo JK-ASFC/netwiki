@@ -1,18 +1,15 @@
 ---
 title: "ngx_http_flv_module"
-description: "Module nginx ngx_http_flv_module — The ngx_http_flv_module module provides pseudo-streaming server-side support for Flash Video (FLV) files."
+description: "Module nginx ngx_http_flv_module — Le module ngx_http_flv_module fournit côté serveur la prise en charge de la pseudo-diffusion en continu des fichiers Flash Video (FLV)."
 tags: [nginx, module, ngx_http_flv_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_flv_module` fournit côté serveur la prise en charge de la pseudo-diffusion en continu des fichiers Flash Video (FLV).
 
-The `ngx_http_flv_module` module provides pseudo-streaming server-side support for Flash Video (FLV) files.
+Il traite de façon particulière les requêtes dont la chaîne de requête de l'URI contient l'argument `start` : il renvoie le contenu du fichier à partir du décalage en octets demandé, précédé de l'en-tête FLV.
 
-It handles requests with the `start` argument in the request URI’s query string specially, by sending back the contents of a file starting from the requested byte offset and with the prepended FLV header.
-
-This module is not built by default, it should be enabled with the `--with-http_flv_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_flv_module`.
 
 ## Exemple de configuration
 

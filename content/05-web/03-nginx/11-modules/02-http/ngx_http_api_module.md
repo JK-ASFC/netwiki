@@ -16,7 +16,7 @@ The `ngx_http_api_module` module (1.13.3) provides REST API for accessing variou
 When using the `PATCH` or `POST` methods, make sure that the payload does not exceed the [[12-directives/client-body-buffer-size|buffer size]] for reading the client request body, otherwise, the `413 Request Entity Too Large` error may be returned.
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 
@@ -96,7 +96,7 @@ http://127.0.0.1/api/10/stream/upstreams/backend
 http://127.0.0.1/api/10/stream/upstreams/backend/servers/1
 ```
 
-## Compatibility
+## Compatibilité
 
 - [[12-directives/license-pending-token|Deferred autorenewal]] of JWT license tokens: the “`PUT`” method for adding a JWT license token, and the “`pending_renewal`” field were added to the /license data in version 10.
 - The “`response_time_hist`” data for each HTTP upstream were added in version 9 (1.29.8).

@@ -1,41 +1,38 @@
 ---
-title: "A debugging log"
-description: "Nginx — A debugging log. To enable a debugging log, nginx needs to be configured to support debugging during the build:"
+title: "Le journal de débogage"
+description: "Nginx — Le journal de débogage. Pour activer le journal de débogage, nginx doit être configuré avec la prise en charge du débogage lors de la compilation :"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-To enable a debugging log, nginx needs to be configured to support debugging during the build:
+Pour activer le journal de débogage, nginx doit être configuré avec la prise en charge du débogage lors de la compilation :
 
 ```
 ./configure --with-debug ...
 ```
 
-Then the `debug` level should be set with the [[12-directives/error-log|error_log]] directive:
+Il faut ensuite définir le niveau `debug` avec la directive [[12-directives/error-log|error_log]] :
 
 ```c
 error_log /path/to/log debug;
 ```
 
-To verify that nginx is configured to support debugging, run the `nginx -V` command:
+Pour vérifier que nginx prend en charge le débogage, exécutez la commande `nginx -V` :
 
 ```
 configure arguments: --with-debug ...
 ```
 
-Pre-built Linux packages provide out-of-the-box support for debugging log with the `nginx-debug` binary (1.9.8) which can be run using commands
+Les paquets Linux précompilés prennent en charge le journal de débogage avec l'exécutable `nginx-debug` (1.9.8), qu'on lance avec les commandes
 
 ```
 service nginx stop
 service nginx-debug start
 ```
 
-and then set the `debug` level. The nginx binary version for Windows is always built with the debugging log support, so only setting the `debug` level will suffice.
+puis on définit le niveau `debug`. La version de nginx pour Windows est toujours compilée avec le journal de débogage ; il suffit donc de définir le niveau `debug`.
 
-Note that redefining the log without also specifying the `debug` level will disable the debugging log. In the example below, redefining the log on the [[12-directives/server-http-core|server]] level disables the debugging log for this server:
+Redéfinir le journal sans indiquer aussi le niveau `debug` désactive le journal de débogage. Dans l'exemple ci-dessous, redéfinir le journal au niveau [[12-directives/server-http-core|server]] désactive le journal de débogage pour ce serveur :
 
 ```
 error_log /path/to/log debug;
@@ -46,7 +43,7 @@ http {
         ...
 ```
 
-To avoid this, either the line redefining the log should be commented out, or the `debug` level specification should also be added:
+Pour l'éviter, mettez en commentaire la ligne qui redéfinit le journal, ou ajoutez-y aussi le niveau `debug` :
 
 ```
 error_log /path/to/log debug;
@@ -57,9 +54,9 @@ http {
         ...
 ```
 
-## Debugging log for selected clients
+## Journal de débogage pour certains clients
 
-It is also possible to enable the debugging log for [[12-directives/debug-connection|selected client addresses]] only:
+On peut aussi activer le journal de débogage uniquement pour [[12-directives/debug-connection|certaines adresses de clients]] :
 
 ```c
 error_log /path/to/log;
@@ -70,15 +67,15 @@ events {
 }
 ```
 
-## Logging to a cyclic memory buffer
+## Journalisation dans un tampon mémoire circulaire
 
-The debugging log can be written to a cyclic memory buffer:
+Le journal de débogage peut être écrit dans un tampon mémoire circulaire :
 
 ```c
 error_log memory:32m debug;
 ```
 
-Logging to the memory buffer on the `debug` level does not have significant impact on performance even under high load. In this case, the log can be extracted using a `gdb` script like the following one:
+La journalisation au niveau `debug` dans le tampon mémoire n'a pas d'impact notable sur les performances, même sous forte charge. Le journal peut alors être extrait avec un script `gdb` comme celui-ci :
 
 ```nginx
 set $log = ngx_cycle->log
@@ -91,7 +88,7 @@ set $buf = (ngx_log_memory_buf_t *) $log->wdata
 dump binary memory debug_log.txt $buf->start $buf->end
 ```
 
-Or using an `lldb` script as follows:
+Ou avec un script `lldb` comme celui-ci :
 
 ```nginx
 expr ngx_log_t *$log = ngx_cycle->log

@@ -1,12 +1,9 @@
 ---
 title: "mp4"
-description: "Directive nginx mp4 (ngx_http_mp4_module) — Turns on module processing in a surrounding location."
+description: "Directive nginx mp4 (ngx_http_mp4_module) — Active le traitement par le module dans le bloc location englobant."
 tags: [nginx, directive, ngx_http_mp4_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Turns on module processing in a surrounding location.
+Active le traitement par le module dans le bloc location englobant.
 
 ---
 

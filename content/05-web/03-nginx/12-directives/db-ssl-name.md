@@ -1,12 +1,9 @@
 ---
 title: "db_ssl_name"
-description: "Directive nginx db_ssl_name (ngx_http_db_module) — Allows overriding the server name used to verify the database server certificate and to be passed through SNI when establishing a connection with the database server."
+description: "Directive nginx db_ssl_name (ngx_http_db_module) — Permet de remplacer le nom de serveur utilisé pour vérifier le certificat du serveur de base de données et transmis via SNI lors de l'établissement de la connexion."
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Allows overriding the server name used to [[12-directives/db-ssl-verify|verify]] the database server certificate and to be [[12-directives/db-ssl-server-name|passed through SNI]] when establishing a connection with the database server.
+Permet de remplacer le nom de serveur utilisé pour [[12-directives/db-ssl-verify|vérifier]] le certificat du serveur de base de données et [[12-directives/db-ssl-server-name|transmis via SNI]] lors de l'établissement de la connexion.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "ssl_trusted_certificate (ngx_mail_ssl_module)"
-description: "Directive nginx ssl_trusted_certificate (ngx_mail_ssl_module) — Specifies a file with trusted CA certificates in the PEM format used to verify client certificates. In contrast to the certificate set by ssl_client_certificate, the list of these certificates will…"
+description: "Directive nginx ssl_trusted_certificate (ngx_mail_ssl_module) — Specifies a file with trusted CA certificates in the PEM format used to verify client certificates. Contrairement au certificat défini par ssl_client_certificate, la liste de ces certificats n'est…"
 tags: [nginx, directive, ngx_mail_ssl_module]
 icon: settings-2
 ---
@@ -20,7 +20,7 @@ icon: settings-2
 
 Specifies a *file* with trusted CA certificates in the PEM format used to [[12-directives/ssl-verify-client-mail-ssl|verify]] client certificates.
 
-In contrast to the certificate set by [[12-directives/ssl-client-certificate-mail-ssl|ssl_client_certificate]], the list of these certificates will not be sent to clients.
+Contrairement au certificat défini par [[12-directives/ssl-client-certificate-mail-ssl|ssl_client_certificate]], la liste de ces certificats n'est pas envoyée aux clients.
 
 ---
 

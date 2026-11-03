@@ -1,12 +1,9 @@
 ---
 title: "contact"
-description: "Directive nginx contact (ngx_http_acme_module) — Sets an array of URLs that the ACME server can use to contact the client regarding account issues. The mailto: scheme will be used unless specified explicitly."
+description: "Directive nginx contact (ngx_http_acme_module) — Définit une liste d'URL que le serveur ACME peut utiliser pour contacter le client au sujet du compte. Le schéma mailto: est utilisé s'il n'est pas indiqué explicitement."
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets an array of URLs that the ACME server can use to contact the client regarding account issues. The `mailto:` scheme will be used unless specified explicitly.
+Définit une liste d'URL que le serveur ACME peut utiliser pour contacter le client au sujet du compte. Le schéma `mailto:` est utilisé s'il n'est pas indiqué explicitement.
 
 ---
 

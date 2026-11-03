@@ -1,12 +1,9 @@
 ---
 title: "db_socket_keepalive"
-description: "Directive nginx db_socket_keepalive (ngx_http_db_module) — Configures the “TCP keepalive” behavior for outgoing connections to a database server. If enabled, the SO_KEEPALIVE socket option is turned on. This is distinct from caching idle upstream…"
+description: "Directive nginx db_socket_keepalive (ngx_http_db_module) — Configure le comportement « TCP keepalive » des connexions sortantes vers un serveur de base de données. Si cette option est activée, l'option de socket SO_KEEPALIVE est activée. C'est différent du…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Configures the “TCP keepalive” behavior for outgoing connections to a database server. If enabled, the `SO_KEEPALIVE` socket option is turned on.
+Configure le comportement « TCP keepalive » des connexions sortantes vers un serveur de base de données. Si cette option est activée, l'option de socket `SO_KEEPALIVE` est activée.
 
-This is distinct from caching idle upstream connections, which is configured using the [[12-directives/keepalive|keepalive]] directive.
+C'est différent du cache des connexions amont inactives, configuré avec la directive [[12-directives/keepalive|keepalive]].
 
 ---
 

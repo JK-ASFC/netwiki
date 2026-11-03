@@ -184,7 +184,7 @@ The full list of formatting options, supported by these functions is in `src/cor
 
 You can prepend `u` on most types to make them unsigned. To convert output to hex, use `X` or `x`.
 
-For example:
+Par exemple :
 
 ```c
 u_char      buf[NGX_INT_T_LEN];

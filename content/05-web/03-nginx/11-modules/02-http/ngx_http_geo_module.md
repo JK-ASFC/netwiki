@@ -1,14 +1,11 @@
 ---
 title: "ngx_http_geo_module"
-description: "Module nginx ngx_http_geo_module — The ngx_http_geo_module module creates variables with values depending on the client IP address."
+description: "Module nginx ngx_http_geo_module — Le module ngx_http_geo_module crée des variables dont la valeur dépend de l'adresse IP du client."
 tags: [nginx, module, ngx_http_geo_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-The `ngx_http_geo_module` module creates variables with values depending on the client IP address.
+Le module `ngx_http_geo_module` crée des variables dont la valeur dépend de l'adresse IP du client.
 
 ## Exemple de configuration
 

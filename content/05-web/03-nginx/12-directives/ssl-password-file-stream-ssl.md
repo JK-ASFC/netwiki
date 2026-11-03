@@ -1,12 +1,9 @@
 ---
 title: "ssl_password_file (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_password_file (ngx_stream_ssl_module) — Specifies a file with passphrases for secret keys where each passphrase is specified on a separate line. Passphrases are tried in turn when loading the key. Exemple : nginx stream { ssl_password_file…"
+description: "Directive nginx ssl_password_file (ngx_stream_ssl_module) — Indique un fichier (file) de phrases de passe pour les clés secrètes, une phrase par ligne. Les phrases sont essayées tour à tour au chargement de la clé. Exemple : nginx stream { ssl_password_file…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a *file* with passphrases for [[12-directives/ssl-certificate-key-stream-ssl|secret keys]] where each passphrase is specified on a separate line. Passphrases are tried in turn when loading the key.
+Indique un fichier (*file*) de phrases de passe pour les [[12-directives/ssl-certificate-key-stream-ssl|clés secrètes]], une phrase par ligne. Les phrases sont essayées tour à tour au chargement de la clé.
 
 Exemple :
 

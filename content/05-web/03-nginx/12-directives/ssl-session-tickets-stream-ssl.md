@@ -1,12 +1,9 @@
 ---
 title: "ssl_session_tickets (ngx_stream_ssl_module)"
-description: "Directive nginx ssl_session_tickets (ngx_stream_ssl_module) — Active ou désactive la reprise de session par tickets de session TLS. If the directive is specified on the server level, the value from the default server can be used. Details are provided in the…"
+description: "Directive nginx ssl_session_tickets (ngx_stream_ssl_module) — Active ou désactive la reprise de session par tickets de session TLS. Si la directive est indiquée au niveau server, la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la…"
 tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -19,7 +16,7 @@ icon: settings-2
 
 Active ou désactive la reprise de session par [tickets de session TLS](https://datatracker.ietf.org/doc/html/rfc5077).
 
-If the directive is specified on the [[12-directives/server-stream-core|server]] level, the value from the default server can be used. Details are provided in the “[[10-guides/02-http/server-names|Virtual server selection]]” section.
+Si la directive est indiquée au niveau [[12-directives/server-stream-core|server]], la valeur du serveur par défaut peut être utilisée. Les détails figurent dans la section « [[10-guides/02-http/server-names|Choix du serveur virtuel]] ».
 
 ---
 

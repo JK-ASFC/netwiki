@@ -1,12 +1,9 @@
 ---
 title: "auth_request_set"
-description: "Directive nginx auth_request_set (ngx_http_auth_request_module) — Sets the request variable to the given value after the authorization request completes. The value may contain variables from the authorization request, such as $upstream_http_."
+description: "Directive nginx auth_request_set (ngx_http_auth_request_module) — Affecte la valeur (value) donnée à la variable de requête (variable) une fois la requête d'autorisation terminée. La valeur peut contenir des variables de la requête d'autorisation, comme…"
 tags: [nginx, directive, ngx_http_auth_request_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the request *variable* to the given *value* after the authorization request completes. The value may contain variables from the authorization request, such as `$upstream_http_*`.
+Affecte la valeur (*value*) donnée à la variable de requête (*variable*) une fois la requête d'autorisation terminée. La valeur peut contenir des variables de la requête d'autorisation, comme `$upstream_http_*`.
 
 ---
 

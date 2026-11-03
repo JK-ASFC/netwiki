@@ -1,0 +1,6 @@
+{
+ "02006780d6ae": "Un groupe configurable dynamiquement, avec [[11-modules/03-stream/ngx_stream_upstream_hc_module|vérifications d'état]] périodiques, est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/) :",
+ "2eb3e9bc6fc6": "définit la durée (*time*) pendant laquelle le serveur fait remonter son poids de zéro à sa valeur nominale, lorsqu'un serveur défaillant redevient [[12-directives/health-check-stream-upstream-hc|sain]] ou lorsqu'il redevient disponible après avoir été considéré comme indisponible. La valeur par défaut, zéro, désactive ce démarrage progressif.",
+ "ad7f6db03317": "Le module `ngx_stream_upstream_module` fournit les variables intégrées suivantes :",
+ "b5ea6b359150": "L'état se limite actuellement à la liste des serveurs et de leurs paramètres. Le fichier est lu lors de l'analyse de la configuration et mis à jour à chaque [[11-modules/03-stream/ngx_stream_api_module|modification]] de la configuration du groupe amont. Il faut éviter de modifier directement son contenu. La directive ne peut pas être utilisée avec la directive [[12-directives/server-stream-upstream|server]]."
+}

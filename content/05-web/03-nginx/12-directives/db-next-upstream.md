@@ -1,12 +1,9 @@
 ---
 title: "db_next_upstream"
-description: "Directive nginx db_next_upstream (ngx_http_db_module) — Specifies the conditions under which a request can be passed to the next database server: - error une erreur s'est produite lors de l'établissement de la connexion avec le serveur, de la transmission…"
+description: "Directive nginx db_next_upstream (ngx_http_db_module) — Indique dans quels cas une requête peut être transmise au serveur de base de données suivant : - error une erreur s'est produite lors de l'établissement de la connexion avec le serveur, de la…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies the conditions under which a request can be passed to the next database server:
+Indique dans quels cas une requête peut être transmise au serveur de base de données suivant :
 
 - **`error`**
 
@@ -29,14 +26,14 @@ Specifies the conditions under which a request can be passed to the next databas
 
 - **`invalid_response`**
 
-  server returned an invalid response. For the Redis backend, this also includes Redis error replies, such as authentication failures or key-value mismatch errors;
+  le serveur a renvoyé une réponse non valide. Avec Redis, cela inclut aussi les réponses d'erreur, comme les échecs d'authentification ou les erreurs de type de valeur ;
 
 - **`not_found`**
 
-  the requested key was not found. For the Redis backend, this corresponds to a nil reply to the `GET` command;
+  la clé demandée est introuvable. Avec Redis, cela correspond à une réponse nil à la commande `GET` ;
 
   > [!NOTE]
-  > The parameter cannot be used when caching of `not_found` results is enabled with the [[12-directives/db-cache|db_cache]] directive.
+  > Ce paramètre ne peut pas être utilisé lorsque la mise en cache des résultats `not_found` est activée avec la directive [[12-directives/db-cache|db_cache]].
 
 - **`off`**
 
@@ -44,11 +41,11 @@ Specifies the conditions under which a request can be passed to the next databas
 
 La requête ne peut être transmise au serveur suivant que si rien n'a encore été envoyé au client. Si une erreur ou un dépassement de délai survient au milieu du transfert de la réponse, il est impossible d'y remédier.
 
-The directive also defines what is considered an [[11-modules/02-http/ngx_http_upstream_module|unsuccessful attempt]] of communication with a server. The cases of `error` and `timeout`, are always considered unsuccessful attempts, even if they are not specified in the directive. The case of `invalid_response` is considered an unsuccessful attempt only if it is specified in the directive. The case of `not_found` is never considered an unsuccessful attempt.
+La directive définit aussi ce qui est considéré comme une [[11-modules/02-http/ngx_http_upstream_module|tentative échouée]] de communication avec un serveur. Les cas `error` et `timeout` sont toujours considérés comme des échecs, même s'ils ne figurent pas dans la directive. Le cas `invalid_response` n'est considéré comme un échec que s'il figure dans la directive. Le cas `not_found` n'est jamais considéré comme un échec.
 
-Passing a request to the next server can be limited by [[12-directives/db-next-upstream-tries|the number of tries]] and by [[12-directives/db-next-upstream-timeout|time]].
+La transmission d'une requête au serveur suivant peut être limitée par le [[12-directives/db-next-upstream-tries|nombre de tentatives]] et par la [[12-directives/db-next-upstream-timeout|durée]].
 
-The `not_found` parameter cannot be combined with enabled missing-key caching in [[12-directives/db-cache|db_cache]].
+Le paramètre `not_found` ne peut pas être combiné avec la mise en cache des clés absentes de [[12-directives/db-cache|db_cache]].
 
 ---
 

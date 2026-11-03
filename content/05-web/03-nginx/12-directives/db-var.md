@@ -1,12 +1,9 @@
 ---
 title: "db_var"
-description: "Directive nginx db_var (ngx_http_db_module) — Creates a variable whose value is obtained from the response body of a subrequest. The location parameter sets the subrequest URI. The query parameter sets its query string. An empty query string can…"
+description: "Directive nginx db_var (ngx_http_db_module) — Crée une variable dont la valeur provient du corps de réponse d'une sous-requête. Le paramètre location définit l'URI de la sous-requête et le paramètre query sa chaîne de requête. Une chaîne de…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,19 +14,19 @@ icon: settings-2
 
 ## Utilisation
 
-Creates a variable whose value is obtained from the response body of a subrequest. The `location` parameter sets the subrequest URI. The `query` parameter sets its query string. An empty query string can be specified explicitly:
+Crée une variable dont la valeur provient du corps de réponse d'une sous-requête. Le paramètre `location` définit l'URI de la sous-requête et le paramètre `query` sa chaîne de requête. Une chaîne de requête vide peut être indiquée explicitement :
 
 ```nginx
 db_var $configuration /_configuration "";
 ```
 
-The parameter values can contain text, variables, and their combination.
+Les valeurs des paramètres peuvent contenir du texte, des variables ou une combinaison des deux.
 
-If the subrequest returns the `200 OK`, its response body is assigned to the variable. An empty response body is a valid value.
+Si la sous-requête renvoie `200 OK`, son corps de réponse est affecté à la variable. Un corps vide est une valeur valide.
 
-If the subrequest returns the `404 Not Found`, the value specified by the `default` parameter is assigned to the variable. The parameter value can contain variables. If no `default` parameter is specified, the variable is marked as not found.
+Si la sous-requête renvoie `404 Not Found`, la valeur indiquée par le paramètre `default` est affectée à la variable ; elle peut contenir des variables. Sans paramètre `default`, la variable est marquée comme introuvable.
 
-Variables are populated during the pre-access phase, not when first evaluated. They should be consumed in subsequent processing phases, such as access or content processing. Reading them earlier, for example in rewrite-phase [[12-directives/if|if]], [[12-directives/set-http-rewrite|set]], or [[12-directives/return-http-rewrite|return]] processing, does not initiate a lookup.
+Les variables sont alimentées pendant la phase de pré-accès, pas lors de leur première évaluation. Elles doivent être utilisées dans les phases suivantes, comme l'accès ou la production du contenu. Les lire plus tôt, par exemple dans [[12-directives/if|if]], [[12-directives/set-http-rewrite|set]] ou [[12-directives/return-http-rewrite|return]] pendant la phase de réécriture, ne déclenche pas de recherche.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "addition_types"
-description: "Directive nginx addition_types (ngx_http_addition_module) — Allows adding text in responses with the specified MIME types, in addition to “text/html”. The special value “” matches any MIME type (0.8.29)."
+description: "Directive nginx addition_types (ngx_http_addition_module) — Permet d'ajouter du texte aux réponses des types MIME indiqués, en plus de « text/html ». La valeur spéciale « » correspond à tous les types MIME (0.8.29)."
 tags: [nginx, directive, ngx_http_addition_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Allows adding text in responses with the specified MIME types, in addition to “`text/html`”. The special value “`*`” matches any MIME type (0.8.29).
+Permet d'ajouter du texte aux réponses des types MIME indiqués, en plus de « `text/html` ». La valeur spéciale « `*` » correspond à tous les types MIME (0.8.29).
 
 ---
 

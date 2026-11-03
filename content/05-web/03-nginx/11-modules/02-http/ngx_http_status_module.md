@@ -581,7 +581,7 @@ The following status information is provided:
 
       The name of the shared memory [[12-directives/zone-stream-upstream|zone]] that keeps the group’s configuration and run-time state.
 
-## Compatibility
+## Compatibilité
 
 - The `zone` field in http and stream upstreams was added in `version` 8.
 - The `slabs` status data were added in `version` 8.

@@ -1,6 +1,6 @@
 ---
-title: "Compatibility"
-description: "Nginx — Compatibility. This page describes the JavaScript surface provided by njs:"
+title: "Compatibilité"
+description: "Nginx — Compatibilité. This page describes the JavaScript surface provided by njs:"
 tags: [nginx, guide]
 icon: book-open
 ---

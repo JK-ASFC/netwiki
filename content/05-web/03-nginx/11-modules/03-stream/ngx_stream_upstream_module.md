@@ -30,7 +30,7 @@ server {
 }
 ```
 
-Dynamically configurable group with periodic [[11-modules/03-stream/ngx_stream_upstream_hc_module|health checks]] is available as part of our [abonnement commercial](https://nginx.com/products/):
+Un groupe configurable dynamiquement, avec [[11-modules/03-stream/ngx_stream_upstream_hc_module|vérifications d'état]] périodiques, est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/) :
 
 ```nginx
 resolver 10.0.0.1;

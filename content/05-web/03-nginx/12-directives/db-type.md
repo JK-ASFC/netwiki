@@ -1,12 +1,9 @@
 ---
 title: "db_type"
-description: "Directive nginx db_type (ngx_http_db_module) — Sets the database protocol used by the upstream group. Currently, only redis is supported: nginx upstream redis_backend { server 127.0.0.1:6379; db_type redis; } The protocol name is case-insensitive."
+description: "Directive nginx db_type (ngx_http_db_module) — Définit le protocole de base de données utilisé par le groupe amont. Actuellement, seul redis est pris en charge : nginx upstream redis_backend { server 127.0.0.1:6379; db_type redis; } Le nom du…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the database protocol used by the upstream group. Currently, only `redis` is supported:
+Définit le protocole de base de données utilisé par le groupe amont. Actuellement, seul `redis` est pris en charge :
 
 ```nginx
 upstream redis_backend {
@@ -26,7 +23,7 @@ upstream redis_backend {
 }
 ```
 
-The protocol name is case-insensitive.
+Le nom du protocole est insensible à la casse.
 
 ---
 

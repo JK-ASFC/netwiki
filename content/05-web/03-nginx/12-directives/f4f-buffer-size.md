@@ -1,12 +1,9 @@
 ---
 title: "f4f_buffer_size"
-description: "Directive nginx f4f_buffer_size (ngx_http_f4f_module) — Sets the size of the buffer used for reading the .f4x index file."
+description: "Directive nginx f4f_buffer_size (ngx_http_f4f_module) — Définit la taille (size) du tampon utilisé pour lire le fichier d'index .f4x."
 tags: [nginx, directive, ngx_http_f4f_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *size* of the buffer used for reading the `.f4x` index file.
+Définit la taille (*size*) du tampon utilisé pour lire le fichier d'index `.f4x`.
 
 ---
 

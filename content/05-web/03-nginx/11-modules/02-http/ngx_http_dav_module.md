@@ -1,19 +1,16 @@
 ---
 title: "ngx_http_dav_module"
-description: "Module nginx ngx_http_dav_module — The ngx_http_dav_module module is intended for file management automation via the WebDAV protocol. The module processes HTTP and WebDAV methods PUT, DELETE, MKCOL, COPY, and MOVE."
+description: "Module nginx ngx_http_dav_module — Le module ngx_http_dav_module sert à automatiser la gestion de fichiers via le protocole WebDAV. Il traite les méthodes HTTP et WebDAV PUT, DELETE, MKCOL, COPY et MOVE."
 tags: [nginx, module, ngx_http_dav_module]
 icon: puzzle
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Le module `ngx_http_dav_module` sert à automatiser la gestion de fichiers via le protocole WebDAV. Il traite les méthodes HTTP et WebDAV PUT, DELETE, MKCOL, COPY et MOVE.
 
-The `ngx_http_dav_module` module is intended for file management automation via the WebDAV protocol. The module processes HTTP and WebDAV methods PUT, DELETE, MKCOL, COPY, and MOVE.
-
-This module is not built by default, it should be enabled with the `--with-http_dav_module` configuration parameter.
+Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_dav_module`.
 
 > [!NOTE]
-> WebDAV clients that require additional WebDAV methods to operate will not work with this module.
+> Les clients WebDAV qui ont besoin d'autres méthodes WebDAV pour fonctionner ne marcheront pas avec ce module.
 
 ## Exemple de configuration
 

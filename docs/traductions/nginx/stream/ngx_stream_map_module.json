@@ -1,0 +1,4 @@
+{
+ "824363d3aa18": "Définit la taille des compartiments des tables de hachage des variables [[12-directives/map-stream-map|map]]. La valeur par défaut dépend de la taille de ligne de cache du processeur. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]].",
+ "da542049ad14": "Définit la taille (*size*) maximale des tables de hachage des variables [[12-directives/map-stream-map|map]]. Le réglage des tables de hachage est détaillé dans un [[10-guides/01-introduction/hash|document distinct]]."
+}

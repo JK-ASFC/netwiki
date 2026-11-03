@@ -1,12 +1,9 @@
 ---
 title: "autoindex_exact_size"
-description: "Directive nginx autoindex_exact_size (ngx_http_autoindex_module) — For the HTML format, specifies whether exact file sizes should be output in the directory listing, or rather rounded to kilobytes, megabytes, and gigabytes."
+description: "Directive nginx autoindex_exact_size (ngx_http_autoindex_module) — Pour le format HTML, indique si la liste affiche la taille exacte des fichiers ou une taille arrondie en kilooctets, mégaoctets et gigaoctets."
 tags: [nginx, directive, ngx_http_autoindex_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-For the HTML [[12-directives/autoindex-format|format]], specifies whether exact file sizes should be output in the directory listing, or rather rounded to kilobytes, megabytes, and gigabytes.
+Pour le [[12-directives/autoindex-format|format]] HTML, indique si la liste affiche la taille exacte des fichiers ou une taille arrondie en kilooctets, mégaoctets et gigaoctets.
 
 ---
 

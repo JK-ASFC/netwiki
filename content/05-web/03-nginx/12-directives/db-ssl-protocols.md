@@ -1,12 +1,9 @@
 ---
 title: "db_ssl_protocols"
-description: "Directive nginx db_ssl_protocols (ngx_http_db_module) — Enables the specified protocols for connections to database servers."
+description: "Directive nginx db_ssl_protocols (ngx_http_db_module) — Active les protocoles indiqués pour les connexions aux serveurs de base de données."
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables the specified protocols for connections to database servers.
+Active les protocoles indiqués pour les connexions aux serveurs de base de données.
 
 ---
 

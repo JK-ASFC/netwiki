@@ -1,12 +1,9 @@
 ---
 title: "ssl_verify (ngx_http_acme_module)"
-description: "Directive nginx ssl_verify (ngx_http_acme_module) — Enables or disables verification of the ACME server certificate."
+description: "Directive nginx ssl_verify (ngx_http_acme_module) — Active ou désactive la vérification du certificat du serveur ACME."
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables verification of the ACME server certificate.
+Active ou désactive la vérification du certificat du serveur ACME.
 
 ---
 

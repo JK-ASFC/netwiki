@@ -1,12 +1,9 @@
 ---
 title: "empty_gif"
-description: "Directive nginx empty_gif (ngx_http_empty_gif_module) — Turns on module processing in a surrounding location."
+description: "Directive nginx empty_gif (ngx_http_empty_gif_module) — Active le traitement par le module dans le bloc location englobant."
 tags: [nginx, directive, ngx_http_empty_gif_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Turns on module processing in a surrounding location.
+Active le traitement par le module dans le bloc location englobant.
 
 ---
 

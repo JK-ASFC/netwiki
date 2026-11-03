@@ -1,12 +1,9 @@
 ---
 title: "profile"
-description: "Directive nginx profile (ngx_http_acme_module) — Requests the certificate profile name from the ACME server. The require parameter will cause certificate renewals to fail if the server does not support the specified profile."
+description: "Directive nginx profile (ngx_http_acme_module) — Demande au serveur ACME le profil de certificat name. Avec le paramètre require, le renouvellement des certificats échoue si le serveur ne prend pas en charge le profil indiqué."
 tags: [nginx, directive, ngx_http_acme_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,9 +15,9 @@ icon: settings-2
 
 ## Utilisation
 
-Requests the [certificate profile](https://datatracker.ietf.org/doc/html/draft-ietf-acme-profiles) *name* from the ACME server.
+Demande au serveur ACME le [profil de certificat](https://datatracker.ietf.org/doc/html/draft-ietf-acme-profiles) *name*.
 
-The `require` parameter will cause certificate renewals to fail if the server does not support the specified profile.
+Avec le paramètre `require`, le renouvellement des certificats échoue si le serveur ne prend pas en charge le profil indiqué.
 
 ---
 

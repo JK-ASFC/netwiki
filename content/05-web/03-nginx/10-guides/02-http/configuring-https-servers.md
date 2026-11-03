@@ -1,14 +1,11 @@
 ---
-title: "Configuring HTTPS servers"
-description: "Nginx — Configuring HTTPS servers. To configure an HTTPS server, the ssl parameter must be enabled on listening sockets in the server block, and the locations of the server certificate and private key files should be specified:"
+title: "Configurer des serveurs HTTPS"
+description: "Nginx — Configurer des serveurs HTTPS. Pour configurer un serveur HTTPS, il faut activer le paramètre ssl sur les sockets d'écoute du bloc server et indiquer l'emplacement des fichiers du certificat du serveur et de la clé privée :"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-To configure an HTTPS server, the `ssl` parameter must be enabled on [[12-directives/listen-http-core|listening sockets]] in the [[12-directives/server-http-core|server]] block, and the locations of the [[12-directives/ssl-certificate-http-ssl|server certificate]] and [[12-directives/ssl-certificate-key-http-ssl|private key]] files should be specified:
+Pour configurer un serveur HTTPS, il faut activer le paramètre `ssl` sur les [[12-directives/listen-http-core|sockets d'écoute]] du bloc [[12-directives/server-http-core|server]] et indiquer l'emplacement des fichiers du [[12-directives/ssl-certificate-http-ssl|certificat du serveur]] et de la [[12-directives/ssl-certificate-key-http-ssl|clé privée]] :
 
 ```
 server {
@@ -22,20 +19,20 @@ server {
 }
 ```
 
-The server certificate is a public entity. It is sent to every client that connects to the server. The private key is a secure entity and should be stored in a file with restricted access, however, it must be readable by nginx’s master process. The private key may alternately be stored in the same file as the certificate:
+Le certificat du serveur est public : il est envoyé à chaque client qui se connecte. La clé privée est secrète et doit être stockée dans un fichier à accès restreint, lisible toutefois par le processus maître de nginx. La clé privée peut aussi être stockée dans le même fichier que le certificat :
 
 ```c
 ssl_certificate     www.example.com.cert;
 ssl_certificate_key www.example.com.cert;
 ```
 
-in which case the file access rights should also be restricted. Although the certificate and the key are stored in one file, only the certificate is sent to a client.
+les droits d'accès du fichier doivent alors aussi être restreints. Même si le certificat et la clé sont dans un seul fichier, seul le certificat est envoyé au client.
 
-The directives [[12-directives/ssl-protocols-http-ssl|ssl_protocols]] and [[12-directives/ssl-ciphers-http-ssl|ssl_ciphers]] can be used to limit connections to include only the strong versions and ciphers of SSL/TLS. By default nginx uses “`ssl_protocols TLSv1.2 TLSv1.3`” and “`ssl_ciphers HIGH:!aNULL:!MD5`”, so configuring them explicitly is generally not needed. Note that default values of these directives were changed several times.
+Les directives [[12-directives/ssl-protocols-http-ssl|ssl_protocols]] et [[12-directives/ssl-ciphers-http-ssl|ssl_ciphers]] permettent de n'autoriser que les versions et suites de chiffrement robustes de SSL/TLS. Par défaut, nginx utilise « `ssl_protocols TLSv1.2 TLSv1.3` » et « `ssl_ciphers HIGH:!aNULL:!MD5` » ; il n'est donc généralement pas nécessaire de les configurer. Les valeurs par défaut de ces directives ont changé plusieurs fois.
 
-## HTTPS server optimization
+## Optimisation d'un serveur HTTPS
 
-SSL operations consume extra CPU resources. On multi-processor systems several [[12-directives/worker-processes|worker processes]] should be run, no less than the number of available CPU cores. The most CPU-intensive operation is the SSL handshake. There are two ways to minimize the number of these operations per client: the first is by enabling [[12-directives/keepalive-timeout-http-core|keepalive]] connections to send several requests via one connection and the second is to reuse SSL session parameters to avoid SSL handshakes for parallel and subsequent connections. The sessions are stored in an SSL session cache shared between workers and configured by the [[12-directives/ssl-session-cache-http-ssl|ssl_session_cache]] directive. One megabyte of the cache contains about 4000 sessions. The default cache timeout is 5 minutes. It can be increased by using the [[12-directives/ssl-session-timeout-http-ssl|ssl_session_timeout]] directive. Here is a sample configuration optimized for a multi-core system with 10 megabyte shared session cache:
+Les opérations SSL consomment des ressources processeur supplémentaires. Sur les systèmes multiprocesseurs, il faut lancer plusieurs [[12-directives/worker-processes|processus de travail]], au moins autant que de cœurs disponibles. L'opération la plus coûteuse est la négociation SSL. Deux moyens permettent de réduire le nombre de négociations par client : activer les connexions [[12-directives/keepalive-timeout-http-core|persistantes]] pour envoyer plusieurs requêtes sur une même connexion, et réutiliser les paramètres de session SSL pour éviter les négociations des connexions parallèles et suivantes. Les sessions sont stockées dans un cache de sessions SSL partagé entre les processus de travail et configuré par la directive [[12-directives/ssl-session-cache-http-ssl|ssl_session_cache]]. Un mégaoctet de cache contient environ 4000 sessions. La durée de vie par défaut est de 5 minutes ; elle peut être augmentée avec la directive [[12-directives/ssl-session-timeout-http-ssl|ssl_session_timeout]]. Voici un exemple de configuration optimisée pour un système multicœur avec un cache de sessions partagé de 10 mégaoctets :
 
 ```
 worker_processes auto;
@@ -56,15 +53,15 @@ http {
         ...
 ```
 
-## SSL certificate chains
+## Chaînes de certificats SSL
 
-Some browsers may complain about a certificate signed by a well-known certificate authority, while other browsers may accept the certificate without issues. This occurs because the issuing authority has signed the server certificate using an intermediate certificate that is not present in the certificate base of well-known trusted certificate authorities which is distributed with a particular browser. In this case the authority provides a bundle of chained certificates which should be concatenated to the signed server certificate. The server certificate must appear before the chained certificates in the combined file:
+Certains navigateurs peuvent signaler un problème avec un certificat signé par une autorité connue, alors que d'autres l'acceptent sans souci. Cela arrive lorsque l'autorité a signé le certificat du serveur avec un certificat intermédiaire absent de la base des autorités de confiance fournie avec le navigateur. L'autorité fournit alors un ensemble de certificats chaînés à concaténer au certificat signé du serveur. Le certificat du serveur doit précéder les certificats chaînés dans le fichier combiné :
 
 ```
 $ cat www.example.com.crt bundle.crt > www.example.com.chained.crt
 ```
 
-The resulting file should be used in the [[12-directives/ssl-certificate-http-ssl|ssl_certificate]] directive:
+Le fichier obtenu doit être indiqué dans la directive [[12-directives/ssl-certificate-http-ssl|ssl_certificate]] :
 
 ```
 server {
@@ -76,16 +73,16 @@ server {
 }
 ```
 
-If the server certificate and the bundle have been concatenated in the wrong order, nginx will fail to start and will display the error message:
+Si le certificat du serveur et la chaîne ont été concaténés dans le mauvais ordre, nginx ne démarre pas et affiche le message d'erreur :
 
 ```
 SSL_CTX_use_PrivateKey_file(" ... /www.example.com.key") failed
    (SSL: error:05800074:x509 certificate routines::key values mismatch)
 ```
 
-because nginx has tried to use the private key with the bundle’s first certificate instead of the server certificate.
+car nginx a tenté d'utiliser la clé privée avec le premier certificat de la chaîne au lieu du certificat du serveur.
 
-Browsers usually store intermediate certificates which they receive and which are signed by trusted authorities, so actively used browsers may already have the required intermediate certificates and may not complain about a certificate sent without a chained bundle. To ensure the server sends the complete certificate chain, the `openssl` command-line utility may be used, for example:
+Les navigateurs conservent généralement les certificats intermédiaires reçus et signés par des autorités de confiance : un navigateur très utilisé peut donc déjà posséder les certificats intermédiaires nécessaires et ne pas signaler de problème avec un certificat envoyé sans sa chaîne. Pour vérifier que le serveur envoie bien la chaîne complète, on peut utiliser l'outil en ligne de commande `openssl`, par exemple :
 
 ```
 $ openssl s_client -connect www.godaddy.com:443
@@ -113,13 +110,13 @@ Certificate chain
 ...
 ```
 
-In this example the subject (“*s*”) of the `www.GoDaddy.com` server certificate #0 is signed by an issuer (“*i*”) which itself is the subject of the certificate #1, which is signed by an issuer which itself is the subject of the certificate #2, which signed by the well-known issuer *ValiCert, Inc.* whose certificate is stored in the browsers’ built-in certificate base (that lay in the house that Jack built).
+Dans cet exemple, le sujet (« *s* ») du certificat #0 du serveur `www.GoDaddy.com` est signé par un émetteur (« *i* ») qui est lui-même le sujet du certificat #1, signé par un émetteur qui est le sujet du certificat #2, signé par l'émetteur connu *ValiCert, Inc.*, dont le certificat figure dans la base intégrée des navigateurs.
 
-If a certificate bundle has not been added, only the server certificate #0 will be shown.
+Si la chaîne de certificats n'a pas été ajoutée, seul le certificat #0 du serveur apparaît.
 
-## A single HTTP/HTTPS server
+## Un seul serveur HTTP/HTTPS
 
-It is possible to configure a single server that handles both HTTP and HTTPS requests:
+On peut configurer un seul serveur qui traite à la fois les requêtes HTTP et HTTPS :
 
 ```
 server {
@@ -133,11 +130,11 @@ server {
 ```
 
 > [!NOTE]
-> Prior to 0.7.14 SSL could not be enabled selectively for individual listening sockets, as shown above. SSL could only be enabled for the entire server using the [[12-directives/ssl-http-ssl|ssl]] directive, making it impossible to set up a single HTTP/HTTPS server. The `ssl` parameter of the [[12-directives/listen-http-core|listen]] directive was added to solve this issue. The use of the [[12-directives/ssl-http-ssl|ssl]] directive in modern versions is thus discouraged; it was removed in 1.25.1.
+> Avant la version 0.7.14, SSL ne pouvait pas être activé séparément sur chaque socket d'écoute comme ci-dessus : il ne pouvait l'être que pour tout le serveur avec la directive [[12-directives/ssl-http-ssl|ssl]], ce qui empêchait de créer un seul serveur HTTP/HTTPS. Le paramètre `ssl` de la directive [[12-directives/listen-http-core|listen]] a été ajouté pour résoudre ce problème. L'utilisation de la directive [[12-directives/ssl-http-ssl|ssl]] est donc déconseillée dans les versions récentes ; elle a été supprimée en version 1.25.1.
 
-## Name-based HTTPS servers
+## Serveurs HTTPS par nom
 
-A common issue arises when configuring two or more HTTPS servers listening on a single IP address:
+Un problème fréquent survient lorsqu'on configure plusieurs serveurs HTTPS écoutant sur une même adresse IP :
 
 ```
 server {
@@ -155,9 +152,9 @@ server {
 }
 ```
 
-With this configuration a browser receives the default server’s certificate, i.e. `www.example.com` regardless of the requested server name. This is caused by SSL protocol behaviour. The SSL connection is established before the browser sends an HTTP request and nginx does not know the name of the requested server. Therefore, it may only offer the default server’s certificate.
+Avec cette configuration, le navigateur reçoit le certificat du serveur par défaut, c'est-à-dire `www.example.com`, quel que soit le nom de serveur demandé. Cela tient au fonctionnement du protocole SSL : la connexion SSL est établie avant que le navigateur n'envoie la requête HTTP, et nginx ne connaît pas encore le nom du serveur demandé. Il ne peut donc proposer que le certificat du serveur par défaut.
 
-The oldest and most robust method to resolve the issue is to assign a separate IP address for every HTTPS server:
+La méthode la plus ancienne et la plus robuste consiste à attribuer une adresse IP distincte à chaque serveur HTTPS :
 
 ```
 server {
@@ -175,13 +172,13 @@ server {
 }
 ```
 
-### An SSL certificate with several names
+### Un certificat SSL à plusieurs noms
 
-There are other ways that allow sharing a single IP address between several HTTPS servers. However, all of them have their drawbacks. One way is to use a certificate with several names in the SubjectAltName certificate field, for example, `www.example.com` and `www.example.org`. However, the SubjectAltName field length is limited.
+D'autres méthodes permettent de partager une même adresse IP entre plusieurs serveurs HTTPS, mais elles ont toutes des inconvénients. L'une consiste à utiliser un certificat contenant plusieurs noms dans son champ SubjectAltName, par exemple `www.example.com` et `www.example.org`. La longueur du champ SubjectAltName est toutefois limitée.
 
-Another way is to use a certificate with a wildcard name, for example, `*.example.org`. A wildcard certificate secures all subdomains of the specified domain, but only on one level. This certificate matches `www.example.org`, but does not match `example.org` and `www.sub.example.org`. These two methods can also be combined. A certificate may contain exact and wildcard names in the SubjectAltName field, for example, `example.org` and `*.example.org`.
+Une autre consiste à utiliser un certificat générique, par exemple `*.example.org`. Un certificat générique protège tous les sous-domaines du domaine indiqué, mais sur un seul niveau : il correspond à `www.example.org`, mais pas à `example.org` ni à `www.sub.example.org`. Ces deux méthodes peuvent être combinées : un certificat peut contenir des noms exacts et génériques dans son champ SubjectAltName, par exemple `example.org` et `*.example.org`.
 
-It is better to place a certificate file with several names and its private key file at the *http* level of configuration to inherit their single memory copy in all servers:
+Il vaut mieux placer le fichier d'un certificat à plusieurs noms et celui de sa clé privée au niveau *http* de la configuration, pour que tous les serveurs en héritent avec une seule copie en mémoire :
 
 ```
 ssl_certificate     common.crt;
@@ -200,14 +197,14 @@ server {
 }
 ```
 
-### Server Name Indication
+### Indication du nom de serveur (SNI)
 
-A more generic solution for running several HTTPS servers on a single IP address is [TLS Server Name Indication extension](http://en.wikipedia.org/wiki/Server_Name_Indication) (SNI, RFC 6066), which allows a browser to pass a requested server name during the SSL handshake and, therefore, the server will know which certificate it should use for the connection. SNI is currently [supported](http://en.wikipedia.org/wiki/Server_Name_Indication#Support) by most modern browsers and is a mandatory-to-implement extension in TLSv1.3, though may not be used by some old or special clients.
+Une solution plus générale pour faire fonctionner plusieurs serveurs HTTPS sur une même adresse IP est l'[extension TLS Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication) (SNI, RFC 6066) : elle permet au navigateur de transmettre le nom du serveur demandé pendant la négociation SSL, et le serveur sait alors quel certificat utiliser. SNI est actuellement [pris en charge](http://en.wikipedia.org/wiki/Server_Name_Indication#Support) par la plupart des navigateurs modernes et son implémentation est obligatoire en TLSv1.3, mais certains clients anciens ou particuliers peuvent ne pas l'utiliser.
 
 > [!NOTE]
-> Only domain names can be passed in SNI, however some browsers may erroneously pass an IP address of the server as its name if a request includes literal IP address. One should not rely on this.
+> Seuls des noms de domaine peuvent être transmis par SNI, mais certains navigateurs peuvent transmettre par erreur l'adresse IP du serveur comme nom si la requête contient une adresse IP littérale. Il ne faut pas compter dessus.
 
-In order to use SNI in nginx, it must be supported in both the OpenSSL library with which the nginx binary has been built as well as the library to which it is being dynamically linked at run time. OpenSSL supports SNI since 0.9.8f version if it was built with config option “--enable-tlsext”. Since OpenSSL 0.9.8j this option is enabled by default. If nginx was built with SNI support, then nginx will show this when run with the “-V” switch:
+Pour utiliser SNI dans nginx, il doit être pris en charge à la fois par la bibliothèque OpenSSL avec laquelle l'exécutable nginx a été compilé et par celle à laquelle il est lié dynamiquement à l'exécution. OpenSSL prend en charge SNI depuis la version 0.9.8f s'il a été compilé avec l'option « --enable-tlsext » ; depuis OpenSSL 0.9.8j, cette option est activée par défaut. Si nginx a été compilé avec la prise en charge de SNI, il l'indique lorsqu'on le lance avec l'option « -V » :
 
 ```
 $ nginx -V
@@ -216,7 +213,7 @@ TLS SNI support enabled
 ...
 ```
 
-However, if the SNI-enabled nginx is linked dynamically to an OpenSSL library without SNI support, nginx displays the warning:
+En revanche, si nginx compilé avec SNI est lié dynamiquement à une bibliothèque OpenSSL sans prise en charge de SNI, il affiche l'avertissement :
 
 ```
 nginx was built with SNI support, however, now it is linked
@@ -224,11 +221,11 @@ dynamically to an OpenSSL library which has no tlsext support,
 therefore SNI is not available
 ```
 
-### Client SSL certificates
+### Certificats SSL des clients
 
-[[12-directives/ssl-verify-client-http-ssl|Verification of client SSL certificates]] should be configured with care in named-based HTTPS servers. If a client does not request a server name through SNI, the entire SSL configuration of the default server is used to establish the connection. In this case, the server configuration that processes the HTTP request may be switched afterwards; see [[10-guides/02-http/server-names|Virtual server selection]]. As a result, a client with a certificate trusted by the default server may be able to request resources from other servers listening on the same address, including servers that verify client certificates against a different certificate authority.
+La [[12-directives/ssl-verify-client-http-ssl|vérification des certificats SSL des clients]] doit être configurée avec soin dans les serveurs HTTPS par nom. Si un client ne demande pas de nom de serveur via SNI, toute la configuration SSL du serveur par défaut sert à établir la connexion. La configuration de serveur qui traite la requête HTTP peut alors changer ensuite ; voir [[10-guides/02-http/server-names|Choix du serveur virtuel]]. Un client disposant d'un certificat reconnu par le serveur par défaut peut ainsi demander des ressources à d'autres serveurs écoutant sur la même adresse, y compris des serveurs qui vérifient les certificats clients auprès d'une autre autorité.
 
-If this is not desired, connections without SNI should be limited by [[12-directives/ssl-reject-handshake-http-ssl|ssl_reject_handshake]] in the default server. This will enforce the check for inappropriate [connection reuse](https://datatracker.ietf.org/doc/html/rfc9113#name-connection-reuse):
+Si ce n'est pas souhaité, les connexions sans SNI doivent être limitées avec [[12-directives/ssl-reject-handshake-http-ssl|ssl_reject_handshake]] dans le serveur par défaut. Cela impose la vérification contre une [réutilisation de connexion](https://datatracker.ietf.org/doc/html/rfc9113#name-connection-reuse) inappropriée :
 
 ```
 server {
@@ -238,24 +235,24 @@ server {
 }
 ```
 
-## Compatibility
+## Compatibilité
 
-- The SNI support status has been shown by the “-V” switch since 0.8.21 and 0.7.62.
-- The `ssl` parameter of the [[12-directives/listen-http-core|listen]] directive has been supported since 0.7.14. Prior to 0.8.21 it could only be specified along with the `default` parameter.
-- SNI has been supported since 0.5.23.
-- The shared SSL session cache has been supported since 0.5.6.
+- L'état de la prise en charge de SNI est affiché par l'option « -V » depuis les versions 0.8.21 et 0.7.62.
+- Le paramètre `ssl` de la directive [[12-directives/listen-http-core|listen]] est pris en charge depuis la version 0.7.14. Avant la version 0.8.21, il ne pouvait être indiqué qu'avec le paramètre `default`.
+- SNI est pris en charge depuis la version 0.5.23.
+- Le cache de sessions SSL partagé est pris en charge depuis la version 0.5.6.
 
-- Version 1.27.3 and later: the default SSL protocols are TLSv1.2 and TLSv1.3 (if supported by the OpenSSL library). Otherwise, when OpenSSL 1.0.0 or older is used, the default SSL protocols are TLSv1 and TLSv1.1.
-- Version 1.23.4 and later: the default SSL protocols are TLSv1, TLSv1.1, TLSv1.2, and TLSv1.3 (if supported by the OpenSSL library).
-- Version 1.9.1 and later: the default SSL protocols are TLSv1, TLSv1.1, and TLSv1.2 (if supported by the OpenSSL library).
-- Version 0.7.65, 0.8.19 and later: the default SSL protocols are SSLv3, TLSv1, TLSv1.1, and TLSv1.2 (if supported by the OpenSSL library).
-- Version 0.7.64, 0.8.18 and earlier: the default SSL protocols are SSLv2, SSLv3, and TLSv1.
+- Version 1.27.3 et suivantes : les protocoles SSL par défaut sont TLSv1.2 et TLSv1.3 (si la bibliothèque OpenSSL les prend en charge). Avec OpenSSL 1.0.0 ou plus ancien, ce sont TLSv1 et TLSv1.1.
+- Version 1.23.4 et suivantes : les protocoles SSL par défaut sont TLSv1, TLSv1.1, TLSv1.2 et TLSv1.3 (si la bibliothèque OpenSSL les prend en charge).
+- Version 1.9.1 et suivantes : les protocoles SSL par défaut sont TLSv1, TLSv1.1 et TLSv1.2 (si la bibliothèque OpenSSL les prend en charge).
+- Versions 0.7.65, 0.8.19 et suivantes : les protocoles SSL par défaut sont SSLv3, TLSv1, TLSv1.1 et TLSv1.2 (si la bibliothèque OpenSSL les prend en charge).
+- Versions 0.7.64, 0.8.18 et antérieures : les protocoles SSL par défaut sont SSLv2, SSLv3 et TLSv1.
 
-- Version 1.0.5 and later: the default SSL ciphers are “`HIGH:!aNULL:!MD5`”.
-- Version 0.7.65, 0.8.20 and later: the default SSL ciphers are “`HIGH:!ADH:!MD5`”.
-- Version 0.8.19: the default SSL ciphers are “`ALL:!ADH:RC4+RSA:+HIGH:+MEDIUM`”.
-- Version 0.7.64, 0.8.18 and earlier: the default SSL ciphers are
-  “`ALL:!ADH:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP`”.
+- Version 1.0.5 et suivantes : les suites de chiffrement SSL par défaut sont « `HIGH:!aNULL:!MD5` ».
+- Versions 0.7.65, 0.8.20 et suivantes : les suites de chiffrement SSL par défaut sont « `HIGH:!ADH:!MD5` ».
+- Version 0.8.19 : les suites de chiffrement SSL par défaut sont « `ALL:!ADH:RC4+RSA:+HIGH:+MEDIUM` ».
+- Versions 0.7.64, 0.8.18 et antérieures : les suites de chiffrement SSL par défaut sont
+  « `ALL:!ADH:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP` ».
 
 ---
 

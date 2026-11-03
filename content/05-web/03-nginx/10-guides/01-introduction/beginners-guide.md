@@ -1,80 +1,77 @@
 ---
-title: "Beginner’s Guide"
-description: "Nginx — Beginner’s Guide. This guide gives a basic introduction to nginx and describes some simple tasks that can be done with it. It is supposed that nginx is already installed on the reader’s machine. If it is not, see the Installing nginx…"
+title: "Guide du débutant"
+description: "Nginx — Guide du débutant. Ce guide présente les bases de nginx et décrit quelques tâches simples. On suppose que nginx est déjà installé sur la machine ; sinon, voir la page Installer nginx. Il explique comment démarrer et arrêter nginx et…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
+Ce guide présente les bases de nginx et décrit quelques tâches simples. On suppose que nginx est déjà installé sur la machine ; sinon, voir la page [[10-guides/01-introduction/install|Installer nginx]]. Il explique comment démarrer et arrêter nginx et recharger sa configuration, décrit la structure du fichier de configuration et montre comment servir du contenu statique, configurer nginx comme serveur mandataire et le relier à une application FastCGI.
 
-This guide gives a basic introduction to nginx and describes some simple tasks that can be done with it. It is supposed that nginx is already installed on the reader’s machine. If it is not, see the [[10-guides/01-introduction/install|Installing nginx]] page. This guide describes how to start and stop nginx, and reload its configuration, explains the structure of the configuration file and describes how to set up nginx to serve out static content, how to configure nginx as a proxy server, and how to connect it with a FastCGI application.
+nginx comporte un processus maître et plusieurs processus de travail. Le rôle principal du processus maître est de lire et d'évaluer la configuration et de gérer les processus de travail, qui traitent réellement les requêtes. nginx utilise un modèle événementiel et des mécanismes propres au système d'exploitation pour répartir efficacement les requêtes entre les processus de travail. Leur nombre est défini dans le fichier de configuration ; il peut être fixe ou ajusté automatiquement au nombre de cœurs disponibles (voir [[12-directives/worker-processes|worker_processes]]).
 
-nginx has one master process and several worker processes. The main purpose of the master process is to read and evaluate configuration, and maintain worker processes. Worker processes do actual processing of requests. nginx employs event-based model and OS-dependent mechanisms to efficiently distribute requests among worker processes. The number of worker processes is defined in the configuration file and may be fixed for a given configuration or automatically adjusted to the number of available CPU cores (see [[12-directives/worker-processes|worker_processes]]).
+Le fonctionnement de nginx et de ses modules est défini dans le fichier de configuration. Par défaut, il s'appelle `nginx.conf` et se trouve dans le répertoire `/usr/local/nginx/conf`, `/etc/nginx` ou `/usr/local/etc/nginx`.
 
-The way nginx and its modules work is determined in the configuration file. By default, the configuration file is named `nginx.conf` and placed in the directory `/usr/local/nginx/conf`, `/etc/nginx`, or `/usr/local/etc/nginx`.
+## Démarrer, arrêter et recharger la configuration
 
-## Starting, Stopping, and Reloading Configuration
-
-To start nginx, run the executable file. Once nginx is started, it can be controlled by invoking the executable with the `-s` parameter. Use the following syntax:
+Pour démarrer nginx, lancez l'exécutable. Une fois nginx démarré, on le contrôle en appelant l'exécutable avec le paramètre `-s`, selon la syntaxe suivante :
 
 ```
 nginx -s signal
 ```
 
-Where *signal* may be one of the following:
+où *signal* peut être :
 
-- `stop` — fast shutdown
-- `quit` — graceful shutdown
-- `reload` — reloading the configuration file
-- `reopen` — reopening the log files
+- `stop` : arrêt rapide
+- `quit` : arrêt en douceur
+- `reload` : rechargement du fichier de configuration
+- `reopen` : réouverture des fichiers journaux
 
-For example, to stop nginx processes with waiting for the worker processes to finish serving current requests, the following command can be executed:
+Par exemple, pour arrêter les processus nginx en attendant que les processus de travail aient fini de servir les requêtes en cours, on peut exécuter :
 
 ```
 nginx -s quit
 ```
 
 > [!NOTE]
-> This command should be executed under the same user that started nginx.
+> Cette commande doit être exécutée par l'utilisateur qui a démarré nginx.
 
-Changes made in the configuration file will not be applied until the command to reload configuration is sent to nginx or it is restarted. To reload configuration, execute:
+Les modifications du fichier de configuration ne s'appliquent qu'après l'envoi à nginx de la commande de rechargement ou un redémarrage. Pour recharger la configuration, exécutez :
 
 ```
 nginx -s reload
 ```
 
-Once the master process receives the signal to reload configuration, it checks the syntax validity of the new configuration file and tries to apply the configuration provided in it. If this is a success, the master process starts new worker processes and sends messages to old worker processes, requesting them to shut down. Otherwise, the master process rolls back the changes and continues to work with the old configuration. Old worker processes, receiving a command to shut down, stop accepting new connections and continue to service current requests until all such requests are serviced. After that, the old worker processes exit.
+Lorsque le processus maître reçoit le signal de rechargement, il vérifie la syntaxe du nouveau fichier de configuration et tente d'appliquer la configuration qu'il contient. En cas de succès, il démarre de nouveaux processus de travail et demande aux anciens de s'arrêter. Sinon, il annule les modifications et continue avec l'ancienne configuration. Les anciens processus de travail qui reçoivent l'ordre de s'arrêter n'acceptent plus de nouvelles connexions et continuent de servir les requêtes en cours jusqu'à les avoir toutes traitées, puis ils se terminent.
 
-A signal may also be sent to nginx processes with the help of Unix tools such as the `kill` utility. In this case a signal is sent directly to a process with a given process ID. The process ID of the nginx master process is written, by default, to the `nginx.pid` in the directory `/usr/local/nginx/logs` or `/var/run`. For example, if the master process ID is 1628, to send the QUIT signal resulting in nginx’s graceful shutdown, execute:
+Un signal peut aussi être envoyé aux processus nginx avec les outils Unix, comme la commande `kill`. Le signal est alors envoyé directement au processus d'identifiant donné. L'identifiant du processus maître est écrit par défaut dans le fichier `nginx.pid` du répertoire `/usr/local/nginx/logs` ou `/var/run`. Par exemple, si l'identifiant du processus maître est 1628, pour envoyer le signal QUIT qui provoque l'arrêt en douceur de nginx, exécutez :
 
 ```
 kill -s QUIT 1628
 ```
 
-For getting the list of all running nginx processes, the `ps` utility may be used, for example, in the following way:
+Pour obtenir la liste de tous les processus nginx en cours d'exécution, on peut utiliser la commande `ps`, par exemple ainsi :
 
 ```
 ps -ax | grep nginx
 ```
 
-For more information on sending signals to nginx, see [[10-guides/01-introduction/control|Controlling nginx]].
+Pour en savoir plus sur l'envoi de signaux à nginx, voir [[10-guides/01-introduction/control|Contrôler nginx]].
 
-## Configuration File’s Structure
+## Structure du fichier de configuration
 
-nginx consists of modules which are controlled by directives specified in the configuration file. Directives are divided into simple directives and block directives. A simple directive consists of the name and parameters separated by spaces and ends with a semicolon (`;`). A block directive has the same structure as a simple directive, but instead of the semicolon it ends with a set of additional instructions surrounded by braces (`{` and `}`). If a block directive can have other directives inside braces, it is called a context (examples: [[12-directives/events|events]], [[12-directives/http|http]], [[12-directives/server-http-core|server]], and [[12-directives/location|location]]).
+nginx est composé de modules pilotés par des directives indiquées dans le fichier de configuration. On distingue les directives simples et les directives de bloc. Une directive simple se compose d'un nom et de paramètres séparés par des espaces, et se termine par un point-virgule (`;`). Une directive de bloc a la même structure, mais se termine par un ensemble d'instructions entre accolades (`{` et `}`) au lieu du point-virgule. Si une directive de bloc peut contenir d'autres directives entre ses accolades, on l'appelle un contexte (exemples : [[12-directives/events|events]], [[12-directives/http|http]], [[12-directives/server-http-core|server]] et [[12-directives/location|location]]).
 
-Directives placed in the configuration file outside of any contexts are considered to be in the [[11-modules/01-coeur/ngx_core_module|main]] context. The `events` and `http` directives reside in the `main` context, `server` in `http`, and `location` in `server`.
+Les directives placées dans le fichier de configuration en dehors de tout contexte sont considérées comme appartenant au contexte [[11-modules/01-coeur/ngx_core_module|main]]. Les directives `events` et `http` se trouvent dans le contexte `main`, `server` dans `http`, et `location` dans `server`.
 
-The rest of a line after the `#` sign is considered a comment.
+Le reste d'une ligne après le signe `#` est un commentaire.
 
-## Serving Static Content
+## Servir du contenu statique
 
-An important web server task is serving out files (such as images or static HTML pages). You will implement an example where, depending on the request, files will be served from different local directories: `/data/www` (which may contain HTML files) and `/data/images` (containing images). This will require editing of the configuration file and setting up of a [[12-directives/server-http-core|server]] block inside the [[12-directives/http|http]] block with two [[12-directives/location|location]] blocks.
+Une tâche importante d'un serveur web est de servir des fichiers (images, pages HTML statiques…). Vous allez mettre en place un exemple où, selon la requête, les fichiers sont servis depuis différents répertoires locaux : `/data/www` (qui peut contenir des fichiers HTML) et `/data/images` (qui contient des images). Il faut pour cela modifier le fichier de configuration et créer, dans le bloc [[12-directives/http|http]], un bloc [[12-directives/server-http-core|server]] contenant deux blocs [[12-directives/location|location]].
 
-First, create the `/data/www` directory and put an `index.html` file with any text content into it and create the `/data/images` directory and place some images in it.
+Créez d'abord le répertoire `/data/www` et placez-y un fichier `index.html` contenant n'importe quel texte, puis créez le répertoire `/data/images` et placez-y quelques images.
 
-Next, open the configuration file. The default configuration file already includes several examples of the `server` block, mostly commented out. For now comment out all such blocks and start a new `server` block:
+Ouvrez ensuite le fichier de configuration. Le fichier par défaut contient déjà plusieurs exemples de bloc `server`, pour la plupart en commentaire. Pour l'instant, mettez tous ces blocs en commentaire et commencez un nouveau bloc `server` :
 
 ```
 http {
@@ -83,9 +80,9 @@ http {
 }
 ```
 
-Generally, the configuration file may include several `server` blocks [[10-guides/02-http/request-processing|distinguished]] by ports on which they [[12-directives/listen-http-core|listen]] to and by [[10-guides/02-http/server-names|server names]]. Once nginx decides which `server` processes a request, it tests the URI specified in the request’s header against the parameters of the `location` directives defined inside the `server` block.
+En général, le fichier de configuration peut contenir plusieurs blocs `server`, [[10-guides/02-http/request-processing|distingués]] par les ports sur lesquels ils [[12-directives/listen-http-core|écoutent]] et par les [[10-guides/02-http/server-names|noms de serveurs]]. Une fois que nginx a choisi le bloc `server` qui traite une requête, il compare l'URI indiqué dans l'en-tête de la requête aux paramètres des directives `location` définies dans ce bloc `server`.
 
-Add the following `location` block to the `server` block:
+Ajoutez le bloc `location` suivant au bloc `server` :
 
 ```
 location / {
@@ -93,9 +90,9 @@ location / {
 }
 ```
 
-This `location` block specifies the “`/`” prefix compared with the URI from the request. For matching requests, the URI will be added to the path specified in the [[12-directives/root|root]] directive, that is, to `/data/www`, to form the path to the requested file on the local file system. If there are several matching `location` blocks nginx selects the one with the longest prefix. The `location` block above provides the shortest prefix, of length one, and so only if all other `location` blocks fail to provide a match, this block will be used.
+Ce bloc `location` indique le préfixe « `/` », comparé à l'URI de la requête. Pour les requêtes correspondantes, l'URI est ajouté au chemin indiqué dans la directive [[12-directives/root|root]], c'est-à-dire `/data/www`, pour former le chemin du fichier demandé sur le système de fichiers local. Si plusieurs blocs `location` correspondent, nginx choisit celui dont le préfixe est le plus long. Le bloc ci-dessus a le préfixe le plus court, d'une longueur de un : il n'est donc utilisé que si aucun autre bloc `location` ne correspond.
 
-Next, add the second `location` block:
+Ajoutez ensuite le second bloc `location` :
 
 ```
 location /images/ {
@@ -103,9 +100,9 @@ location /images/ {
 }
 ```
 
-It will be a match for requests starting with `/images/` (`location /` also matches such requests, but has shorter prefix).
+Il correspond aux requêtes commençant par `/images/` (`location /` correspond aussi à ces requêtes, mais avec un préfixe plus court).
 
-The resulting configuration of the `server` block should look like this:
+La configuration du bloc `server` doit maintenant ressembler à ceci :
 
 ```
 server {
@@ -119,24 +116,24 @@ server {
 }
 ```
 
-This is already a working configuration of a server that listens on the standard port 80 and is accessible on the local machine at `http://localhost/`. In response to requests with URIs starting with `/images/`, the server will send files from the `/data/images` directory. For example, in response to the `http://localhost/images/example.png` request nginx will send the `/data/images/example.png` file. If such file does not exist, nginx will send a response indicating the 404 error. Requests with URIs not starting with `/images/` will be mapped onto the `/data/www` directory. For example, in response to the `http://localhost/some/example.html` request nginx will send the `/data/www/some/example.html` file.
+C'est déjà la configuration fonctionnelle d'un serveur qui écoute sur le port standard 80 et est accessible sur la machine locale à l'adresse `http://localhost/`. En réponse aux requêtes dont l'URI commence par `/images/`, le serveur envoie les fichiers du répertoire `/data/images`. Par exemple, à la requête `http://localhost/images/example.png`, nginx envoie le fichier `/data/images/example.png`. Si ce fichier n'existe pas, nginx renvoie une réponse d'erreur 404. Les requêtes dont l'URI ne commence pas par `/images/` sont associées au répertoire `/data/www`. Par exemple, à la requête `http://localhost/some/example.html`, nginx envoie le fichier `/data/www/some/example.html`.
 
-To apply the new configuration, start nginx if it is not yet started or send the `reload` signal to the nginx’s master process, by executing:
+Pour appliquer la nouvelle configuration, démarrez nginx s'il ne l'est pas encore, ou envoyez le signal `reload` au processus maître de nginx en exécutant :
 
 ```
 nginx -s reload
 ```
 
 > [!NOTE]
-> In case something does not work as expected, you may try to find out the reason in `access.log` and `error.log` files in the directory `/usr/local/nginx/logs` or `/var/log/nginx`.
+> Si quelque chose ne fonctionne pas comme prévu, cherchez la cause dans les fichiers `access.log` et `error.log` du répertoire `/usr/local/nginx/logs` ou `/var/log/nginx`.
 
-## Setting Up a Simple Proxy Server
+## Mettre en place un serveur mandataire simple
 
-One of the frequent uses of nginx is setting it up as a proxy server, which means a server that receives requests, passes them to the proxied servers, retrieves responses from them, and sends them to the clients.
+Un usage fréquent de nginx est de le configurer comme serveur mandataire (*proxy*) : un serveur qui reçoit les requêtes, les transmet aux serveurs mandatés, récupère leurs réponses et les envoie aux clients.
 
-We will configure a basic proxy server, which serves requests of images with files from the local directory and sends all other requests to a proxied server. In this example, both servers will be defined on a single nginx instance.
+Nous allons configurer un mandataire simple qui sert les requêtes d'images avec les fichiers d'un répertoire local et envoie toutes les autres requêtes à un serveur mandaté. Dans cet exemple, les deux serveurs sont définis dans une même instance de nginx.
 
-First, define the proxied server by adding one more `server` block to the nginx’s configuration file with the following contents:
+Définissez d'abord le serveur mandaté en ajoutant au fichier de configuration de nginx un autre bloc `server` avec le contenu suivant :
 
 ```
 server {
@@ -148,9 +145,9 @@ server {
 }
 ```
 
-This will be a simple server that listens on the port 8080 (previously, the `listen` directive has not been specified since the standard port 80 was used) and maps all requests to the `/data/up1` directory on the local file system. Create this directory and put the `index.html` file into it. Note that the `root` directive is placed in the `server` context. Such `root` directive is used when the `location` block selected for serving a request does not include its own `root` directive.
+C'est un serveur simple qui écoute sur le port 8080 (jusqu'ici, la directive `listen` n'était pas indiquée car le port standard 80 était utilisé) et associe toutes les requêtes au répertoire `/data/up1` du système de fichiers local. Créez ce répertoire et placez-y le fichier `index.html`. Notez que la directive `root` est placée dans le contexte `server` : elle est utilisée lorsque le bloc `location` choisi pour servir une requête ne contient pas sa propre directive `root`.
 
-Next, use the server configuration from the previous section and modify it to make it a proxy server configuration. In the first `location` block, put the [[12-directives/proxy-pass-http-proxy|proxy_pass]] directive with the protocol, name and port of the proxied server specified in the parameter (in our case, it is `http://localhost:8080`):
+Reprenez ensuite la configuration de serveur de la section précédente et transformez-la en configuration de mandataire. Dans le premier bloc `location`, placez la directive [[12-directives/proxy-pass-http-proxy|proxy_pass]] avec, en paramètre, le protocole, le nom et le port du serveur mandaté (ici, `http://localhost:8080`) :
 
 ```
 server {
@@ -164,7 +161,7 @@ server {
 }
 ```
 
-We will modify the second `location` block, which currently maps requests with the `/images/` prefix to the files under the `/data/images` directory, to make it match the requests of images with typical file extensions. The modified `location` block looks like this:
+Nous allons modifier le second bloc `location`, qui associe actuellement les requêtes de préfixe `/images/` aux fichiers du répertoire `/data/images`, pour qu'il corresponde aux requêtes d'images ayant les extensions de fichier habituelles. Le bloc `location` modifié ressemble à ceci :
 
 ```
 location ~ \.(gif|jpg|png)$ {
@@ -172,11 +169,11 @@ location ~ \.(gif|jpg|png)$ {
 }
 ```
 
-The parameter is a regular expression matching all URIs ending with `.gif`, `.jpg`, or `.png`. A regular expression should be preceded with `~`. The corresponding requests will be mapped to the `/data/images` directory.
+Le paramètre est une expression régulière qui correspond à tous les URI se terminant par `.gif`, `.jpg` ou `.png`. Une expression régulière doit être précédée de `~`. Les requêtes correspondantes sont associées au répertoire `/data/images`.
 
-When nginx selects a `location` block to serve a request it first checks [[12-directives/location|location]] directives that specify prefixes, remembering `location` with the longest prefix, and then checks regular expressions. If there is a match with a regular expression, nginx picks this `location` or, otherwise, it picks the one remembered earlier.
+Lorsque nginx choisit le bloc `location` qui servira une requête, il examine d'abord les directives [[12-directives/location|location]] à préfixe, mémorise celle dont le préfixe est le plus long, puis examine les expressions régulières. S'il y a une correspondance avec une expression régulière, nginx choisit ce bloc `location` ; sinon, il choisit celui mémorisé précédemment.
 
-The resulting configuration of a proxy server will look like this:
+La configuration complète du mandataire ressemble à ceci :
 
 ```
 server {
@@ -190,17 +187,17 @@ server {
 }
 ```
 
-This server will filter requests ending with `.gif`, `.jpg`, or `.png` and map them to the `/data/images` directory (by adding URI to the `root` directive’s parameter) and pass all other requests to the proxied server configured above.
+Ce serveur filtre les requêtes se terminant par `.gif`, `.jpg` ou `.png`, les associe au répertoire `/data/images` (en ajoutant l'URI au paramètre de la directive `root`) et transmet toutes les autres requêtes au serveur mandaté configuré plus haut.
 
-To apply new configuration, send the `reload` signal to nginx as described in the previous sections.
+Pour appliquer la nouvelle configuration, envoyez le signal `reload` à nginx comme décrit dans les sections précédentes.
 
-There are many [[11-modules/02-http/ngx_http_proxy_module|more]] directives that may be used to further configure a proxy connection.
+Il existe de nombreuses [[11-modules/02-http/ngx_http_proxy_module|autres]] directives pour affiner la configuration d'une connexion mandatée.
 
-## Setting Up FastCGI Proxying
+## Mettre en place un relais FastCGI
 
-nginx can be used to route requests to FastCGI servers which run applications built with various frameworks and programming languages such as PHP.
+nginx peut acheminer les requêtes vers des serveurs FastCGI qui exécutent des applications écrites avec divers frameworks et langages, comme PHP.
 
-The most basic nginx configuration to work with a FastCGI server includes using the [[12-directives/fastcgi-pass|fastcgi_pass]] directive instead of the `proxy_pass` directive, and [[12-directives/fastcgi-param|fastcgi_param]] directives to set parameters passed to a FastCGI server. Suppose the FastCGI server is accessible on `localhost:9000`. Taking the proxy configuration from the previous section as a basis, replace the `proxy_pass` directive with the `fastcgi_pass` directive and change the parameter to `localhost:9000`. In PHP, the `SCRIPT_FILENAME` parameter is used for determining the script name, and the `QUERY_STRING` parameter is used to pass request parameters. The resulting configuration would be:
+La configuration de base de nginx pour travailler avec un serveur FastCGI utilise la directive [[12-directives/fastcgi-pass|fastcgi_pass]] au lieu de `proxy_pass`, et des directives [[12-directives/fastcgi-param|fastcgi_param]] pour définir les paramètres transmis au serveur FastCGI. Supposons que le serveur FastCGI soit accessible sur `localhost:9000`. En partant de la configuration de mandataire de la section précédente, remplacez la directive `proxy_pass` par `fastcgi_pass` et changez le paramètre en `localhost:9000`. En PHP, le paramètre `SCRIPT_FILENAME` sert à déterminer le nom du script, et le paramètre `QUERY_STRING` à transmettre les paramètres de la requête. La configuration obtenue est :
 
 ```
 server {
@@ -216,7 +213,7 @@ server {
 }
 ```
 
-This will set up a server that will route all requests except for requests for static images to the proxied server operating on `localhost:9000` through the FastCGI protocol.
+Cela met en place un serveur qui achemine toutes les requêtes, sauf celles d'images statiques, vers le serveur mandaté fonctionnant sur `localhost:9000` via le protocole FastCGI.
 
 ---
 

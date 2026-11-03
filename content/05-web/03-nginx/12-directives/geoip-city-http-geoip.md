@@ -1,12 +1,9 @@
 ---
 title: "geoip_city (ngx_http_geoip_module)"
-description: "Directive nginx geoip_city (ngx_http_geoip_module) — Specifies a database used to determine the country, region, and city depending on the client IP address. The following variables are available when using this database: - $geoip_area_code telephone…"
+description: "Directive nginx geoip_city (ngx_http_geoip_module) — Indique la base utilisée pour déterminer le pays, la région et la ville selon l'adresse IP du client. Les variables suivantes sont alors disponibles : - $geoip_area_code indicatif téléphonique…"
 tags: [nginx, directive, ngx_http_geoip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,37 +14,37 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a database used to determine the country, region, and city depending on the client IP address. The following variables are available when using this database:
+Indique la base utilisée pour déterminer le pays, la région et la ville selon l'adresse IP du client. Les variables suivantes sont alors disponibles :
 
 - **`$geoip_area_code`**
 
-  telephone area code (US only).
+  indicatif téléphonique régional (États-Unis uniquement).
 
   > [!NOTE]
-  > This variable may contain outdated information since the corresponding database field is deprecated.
+  > Cette variable peut contenir des informations obsolètes, car le champ correspondant de la base est abandonné.
 
 - **`$geoip_city_continent_code`**
 
-  two-letter continent code, for example, “`EU`”, “`NA`”.
+  code de continent à deux lettres, par exemple « `EU` », « `NA` ».
 
 - **`$geoip_city_country_code`**
 
-  two-letter country code, for example, “`RU`”, “`US`”.
+  code de pays à deux lettres, par exemple « `RU` », « `US` ».
 
 - **`$geoip_city_country_code3`**
 
-  three-letter country code, for example, “`RUS`”, “`USA`”.
+  code de pays à trois lettres, par exemple « `RUS` », « `USA` ».
 
 - **`$geoip_city_country_name`**
 
-  country name, for example, “`Russian Federation`”, “`United States`”.
+  nom du pays, par exemple « `Russian Federation` », « `United States` ».
 
 - **`$geoip_dma_code`**
 
-  DMA region code in US (also known as “metro code”), according to the [geotargeting](https://developers.google.com/adwords/api/docs/appendix/cities-DMAregions) in Google AdWords API.
+  code de région DMA aux États-Unis (aussi appelé « metro code »), selon le [ciblage géographique](https://developers.google.com/adwords/api/docs/appendix/cities-DMAregions) de l'API Google AdWords.
 
   > [!NOTE]
-  > This variable may contain outdated information since the corresponding database field is deprecated.
+  > Cette variable peut contenir des informations obsolètes, car le champ correspondant de la base est abandonné.
 
 - **`$geoip_latitude`**
 
@@ -59,19 +56,19 @@ Specifies a database used to determine the country, region, and city depending o
 
 - **`$geoip_region`**
 
-  country region code (region, territory, state, province, federal land and the like).
+  code de la région du pays (région, territoire, État, province, Land, etc.).
 
 - **`$geoip_region_name`**
 
-  country region name (region, territory, state, province, federal land and the like), for example, “`Moscow City`”, “`District of Columbia`”.
+  nom de la région du pays (région, territoire, État, province, Land, etc.), par exemple « `Moscow City` », « `District of Columbia` ».
 
 - **`$geoip_city`**
 
-  city name, for example, “`Moscow`”, “`Washington`”.
+  nom de la ville, par exemple « `Moscow` », « `Washington` ».
 
 - **`$geoip_postal_code`**
 
-  postal code.
+  code postal.
 
 ---
 

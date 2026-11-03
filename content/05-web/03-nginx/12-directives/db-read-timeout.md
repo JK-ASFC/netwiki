@@ -1,12 +1,9 @@
 ---
 title: "db_read_timeout"
-description: "Directive nginx db_read_timeout (ngx_http_db_module) — Defines a timeout for reading data from a database server. The timeout is set only between two successive read operations, not for the transmission of the whole response. If the database server does…"
+description: "Directive nginx db_read_timeout (ngx_http_db_module) — Définit le délai de lecture des données d'un serveur de base de données. Ce délai porte uniquement sur l'intervalle entre deux lectures successives, pas sur la transmission de toute la réponse. Si le…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Defines a timeout for reading data from a database server. The timeout is set only between two successive read operations, not for the transmission of the whole response. If the database server does not transmit anything within this time, the connection is closed.
+Définit le délai de lecture des données d'un serveur de base de données. Ce délai porte uniquement sur l'intervalle entre deux lectures successives, pas sur la transmission de toute la réponse. Si le serveur n'envoie rien pendant ce délai, la connexion est fermée.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "charset"
-description: "Directive nginx charset (ngx_http_charset_module) — Adds the specified charset to the Content-Type response header field. If this charset is different from the charset specified in the source_charset directive, a conversion is performed. The parameter…"
+description: "Directive nginx charset (ngx_http_charset_module) — Ajoute le jeu de caractères indiqué au champ d'en-tête de réponse Content-Type. S'il diffère de celui indiqué dans la directive source_charset, une conversion est effectuée. Le paramètre off annule…"
 tags: [nginx, directive, ngx_http_charset_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,23 +14,23 @@ icon: settings-2
 
 ## Utilisation
 
-Adds the specified charset to the `Content-Type` response header field. If this charset is different from the charset specified in the [[12-directives/source-charset|source_charset]] directive, a conversion is performed.
+Ajoute le jeu de caractères indiqué au champ d'en-tête de réponse `Content-Type`. S'il diffère de celui indiqué dans la directive [[12-directives/source-charset|source_charset]], une conversion est effectuée.
 
-The parameter `off` cancels the addition of charset to the `Content-Type` response header field.
+Le paramètre `off` annule l'ajout du jeu de caractères au champ d'en-tête de réponse `Content-Type`.
 
-A charset can be defined with a variable:
+Le jeu de caractères peut être défini par une variable :
 
 ```nginx
 charset $charset;
 ```
 
-In such a case, all possible values of a variable need to be present in the configuration at least once in the form of the [[12-directives/charset-map|charset_map]], [[12-directives/charset|charset]], or [[12-directives/source-charset|source_charset]] directives. For `utf-8`, `windows-1251`, and `koi8-r` charsets, it is sufficient to include the files `conf/koi-win`, `conf/koi-utf`, and `conf/win-utf` into configuration. For other charsets, simply making a fictitious conversion table works, for example:
+Dans ce cas, toutes les valeurs possibles de la variable doivent apparaître au moins une fois dans la configuration, sous forme de directives [[12-directives/charset-map|charset_map]], [[12-directives/charset|charset]] ou [[12-directives/source-charset|source_charset]]. Pour les jeux `utf-8`, `windows-1251` et `koi8-r`, il suffit d'inclure les fichiers `conf/koi-win`, `conf/koi-utf` et `conf/win-utf` dans la configuration. Pour les autres, une table de conversion fictive suffit, par exemple :
 
 ```nginx
 charset_map iso-8859-5 _ { }
 ```
 
-In addition, a charset can be set in the `X-Accel-Charset` response header field. This capability can be disabled using the [[12-directives/proxy-ignore-headers|proxy_ignore_headers]], [[12-directives/fastcgi-ignore-headers|fastcgi_ignore_headers]], [[12-directives/uwsgi-ignore-headers|uwsgi_ignore_headers]], [[12-directives/scgi-ignore-headers|scgi_ignore_headers]], and [[12-directives/grpc-ignore-headers|grpc_ignore_headers]] directives.
+Le jeu de caractères peut aussi être défini dans le champ d'en-tête de réponse `X-Accel-Charset`. Cette possibilité peut être désactivée avec les directives [[12-directives/proxy-ignore-headers|proxy_ignore_headers]], [[12-directives/fastcgi-ignore-headers|fastcgi_ignore_headers]], [[12-directives/uwsgi-ignore-headers|uwsgi_ignore_headers]], [[12-directives/scgi-ignore-headers|scgi_ignore_headers]] et [[12-directives/grpc-ignore-headers|grpc_ignore_headers]].
 
 ---
 

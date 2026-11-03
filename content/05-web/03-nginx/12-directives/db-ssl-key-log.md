@@ -1,12 +1,9 @@
 ---
 title: "db_ssl_key_log"
-description: "Directive nginx db_ssl_key_log (ngx_http_db_module) — Enables logging of database server connection SSL keys and specifies the path to the key log file. Keys are logged in the SSLKEYLOGFILE format compatible with Wireshark. NOTE TLS key logs contain…"
+description: "Directive nginx db_ssl_key_log (ngx_http_db_module) — Active la journalisation des clés SSL des connexions aux serveurs de base de données et indique le chemin du fichier journal des clés. Les clés sont écrites au format SSLKEYLOGFILE, compatible avec…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,10 +14,10 @@ icon: settings-2
 
 ## Utilisation
 
-Enables logging of database server connection SSL keys and specifies the path to the key log file. Keys are logged in the [SSLKEYLOGFILE](https://datatracker.ietf.org/doc/html/rfc9850) format compatible with Wireshark.
+Active la journalisation des clés SSL des connexions aux serveurs de base de données et indique le chemin du fichier journal des clés. Les clés sont écrites au format [SSLKEYLOGFILE](https://datatracker.ietf.org/doc/html/rfc9850), compatible avec Wireshark.
 
 > [!NOTE]
-> TLS key logs contain sensitive material that can enable decryption of captured traffic. Protect these files and enable logging only when needed.
+> Les journaux de clés TLS contiennent des données sensibles permettant de déchiffrer le trafic capturé. Protégez ces fichiers et n'activez la journalisation qu'en cas de besoin.
 
 ---
 

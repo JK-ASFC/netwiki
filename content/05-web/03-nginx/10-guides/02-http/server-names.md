@@ -246,7 +246,7 @@ In such a case, first try to set [[12-directives/server-names-hash-max-size-http
 
 If a server is the only server for a listen port, then nginx will not test server names at all (and will not build the hash tables for the listen port). However, there is one exception. If a server name is a regular expression with captures, then nginx has to execute the expression to get the captures.
 
-## Compatibility
+## Compatibilité
 
 - The special server name “`$hostname`” has been supported since 0.9.4.
 - A default server name value is an empty name “” since 0.8.48.

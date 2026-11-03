@@ -1,12 +1,9 @@
 ---
 title: "geoip_org (ngx_http_geoip_module)"
-description: "Directive nginx geoip_org (ngx_http_geoip_module) — Specifies a database used to determine the organization depending on the client IP address. The following variable is available when using this database: - $geoip_org organization name, for example,…"
+description: "Directive nginx geoip_org (ngx_http_geoip_module) — Indique la base utilisée pour déterminer l'organisation selon l'adresse IP du client. La variable suivante est alors disponible : - $geoip_org nom de l'organisation, par exemple « The University of…"
 tags: [nginx, directive, ngx_http_geoip_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,11 +15,11 @@ icon: settings-2
 
 ## Utilisation
 
-Specifies a database used to determine the organization depending on the client IP address. The following variable is available when using this database:
+Indique la base utilisée pour déterminer l'organisation selon l'adresse IP du client. La variable suivante est alors disponible :
 
 - **`$geoip_org`**
 
-  organization name, for example, “The University of Melbourne”.
+  nom de l'organisation, par exemple « The University of Melbourne ».
 
 ---
 

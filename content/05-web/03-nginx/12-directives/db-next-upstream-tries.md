@@ -1,12 +1,9 @@
 ---
 title: "db_next_upstream_tries"
-description: "Directive nginx db_next_upstream_tries (ngx_http_db_module) — Limits the number of possible tries for passing a request to the next server. The limit includes the initial attempt. The 0 value turns off this limitation."
+description: "Directive nginx db_next_upstream_tries (ngx_http_db_module) — Limite le nombre de tentatives de transmission d'une requête au serveur suivant. La limite inclut la tentative initiale. La valeur 0 supprime cette limite."
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Limits the number of possible tries for passing a request to the [[12-directives/db-next-upstream|next server]]. The limit includes the initial attempt. The `0` value turns off this limitation.
+Limite le nombre de tentatives de transmission d'une requête au [[12-directives/db-next-upstream|serveur suivant]]. La limite inclut la tentative initiale. La valeur `0` supprime cette limite.
 
 ---
 

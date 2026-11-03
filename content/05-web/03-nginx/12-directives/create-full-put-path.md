@@ -1,12 +1,9 @@
 ---
 title: "create_full_put_path"
-description: "Directive nginx create_full_put_path (ngx_http_dav_module) — The WebDAV specification only allows creating files in already existing directories. This directive allows creating all needed intermediate directories."
+description: "Directive nginx create_full_put_path (ngx_http_dav_module) — La spécification WebDAV ne permet de créer des fichiers que dans des répertoires existants. Cette directive permet de créer tous les répertoires intermédiaires nécessaires."
 tags: [nginx, directive, ngx_http_dav_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-The WebDAV specification only allows creating files in already existing directories. This directive allows creating all needed intermediate directories.
+La spécification WebDAV ne permet de créer des fichiers que dans des répertoires existants. Cette directive permet de créer tous les répertoires intermédiaires nécessaires.
 
 ---
 

@@ -1,12 +1,9 @@
 ---
 title: "proxy_bind_dynamic (ngx_stream_proxy_module)"
-description: "Directive nginx proxy_bind_dynamic (ngx_stream_proxy_module) — When enabled, makes the bind operation at each connection attempt. NOTE Cette directive est disponible dans le cadre de notre abonnement commercial."
+description: "Directive nginx proxy_bind_dynamic (ngx_stream_proxy_module) — Si cette option est activée, l'opération bind est effectuée à chaque tentative de connexion. NOTE Cette directive est disponible dans le cadre de notre abonnement commercial."
 tags: [nginx, directive, ngx_stream_proxy_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-When enabled, makes the [[12-directives/proxy-bind-stream-proxy|bind]] operation at each connection attempt.
+Si cette option est activée, l'opération [[12-directives/proxy-bind-stream-proxy|bind]] est effectuée à chaque tentative de connexion.
 
 > [!NOTE]
 > Cette directive est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).

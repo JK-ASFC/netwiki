@@ -5,9 +5,6 @@ tags: [nginx, directive, ngx_stream_ssl_module]
 icon: settings-2
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
 | Propriété | Valeur |
 | --- | --- |
 | **Syntaxe** | `ssl_certificate file;` |
@@ -47,7 +44,7 @@ ssl_certificate_key $ssl_server_name.key;
 
 L'utilisation de variables implique de charger le certificat à chaque négociation SSL, ce qui peut nuire aux performances.
 
-Since [[13-variables/ssl-server-name-stream-ssl|$ssl_server_name]] is chosen by the client, loading certificates with such a file name should be filtered:
+Comme [[13-variables/ssl-server-name-stream-ssl|$ssl_server_name]] est choisi par le client, le chargement de certificats avec un tel nom de fichier doit être filtré :
 
 ```nginx
 map $ssl_server_name $name {

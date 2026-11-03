@@ -1,0 +1,3 @@
+{
+ "af41e4151e03": "le fichier est ouvert et fermé à chaque écriture. Toutefois, comme les descripteurs des fichiers fréquemment utilisés peuvent être conservés dans un [[12-directives/open-log-file-cache-stream-log|cache]], l'écriture dans l'ancien fichier peut se poursuivre pendant la durée indiquée par le paramètre `valid` de la directive [[12-directives/open-log-file-cache-stream-log|open_log_file_cache]]"
+}

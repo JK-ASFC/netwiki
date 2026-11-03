@@ -1,12 +1,9 @@
 ---
 title: "db_ssl_verify_depth"
-description: "Directive nginx db_ssl_verify_depth (ngx_http_db_module) — Sets the verification depth in the database server certificate chain. The directive is required when db_ssl_verify is enabled."
+description: "Directive nginx db_ssl_verify_depth (ngx_http_db_module) — Définit la profondeur de vérification dans la chaîne de certificats du serveur de base de données. Cette directive est obligatoire lorsque db_ssl_verify est activé."
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the verification depth in the database server certificate chain. The directive is required when [[12-directives/db-ssl-verify|db_ssl_verify]] is enabled.
+Définit la profondeur de vérification dans la chaîne de certificats du serveur de base de données. Cette directive est obligatoire lorsque [[12-directives/db-ssl-verify|db_ssl_verify]] est activé.
 
 ---
 

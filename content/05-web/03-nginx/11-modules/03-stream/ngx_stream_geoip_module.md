@@ -13,7 +13,7 @@ The `ngx_stream_geoip_module` module (1.11.3) creates variables with values depe
 This module is not built by default, it should be enabled with the [[10-guides/01-introduction/configure|--with-stream_geoip_module]] configuration parameter.
 
 > [!NOTE]
-> This module requires the [libmaxminddb](https://github.com/maxmind/libmaxminddb) library for databases in MMDB format (1.31.7) or [GeoIP Legacy C](https://github.com/maxmind/geoip-api-c) library for databases in DAT format.
+> Ce module nécessite la bibliothèque [libmaxminddb](https://github.com/maxmind/libmaxminddb) pour les bases au format MMDB (1.31.7) ou la bibliothèque [GeoIP Legacy C](https://github.com/maxmind/geoip-api-c) pour les bases au format DAT.
 
 When using DAT databases with IPv6 support, IPv4 addresses are looked up as IPv4-mapped IPv6 addresses. When using MMDB databases, IPv4-mapped IPv6 addresses are looked up as IPv4 addresses.
 

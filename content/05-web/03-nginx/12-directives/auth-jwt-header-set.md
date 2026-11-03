@@ -1,12 +1,9 @@
 ---
 title: "auth_jwt_header_set"
-description: "Directive nginx auth_jwt_header_set (ngx_http_auth_jwt_module) — Sets the variable to a JOSE header parameter identified by key names. Name matching starts from the top level of the JSON tree. For arrays, the variable keeps a list of array elements separated by…"
+description: "Directive nginx auth_jwt_header_set (ngx_http_auth_jwt_module) — Affecte à la variable (variable) un paramètre d'en-tête JOSE identifié par des noms de clés. La correspondance des noms part du niveau supérieur de l'arbre JSON. Pour les tableaux, la variable…"
 tags: [nginx, directive, ngx_http_auth_jwt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,10 +15,10 @@ icon: settings-2
 
 ## Utilisation
 
-Sets the *variable* to a JOSE header parameter identified by key names. Name matching starts from the top level of the JSON tree. For arrays, the variable keeps a list of array elements separated by commas.
+Affecte à la variable (*variable*) un paramètre d'en-tête JOSE identifié par des noms de clés. La correspondance des noms part du niveau supérieur de l'arbre JSON. Pour les tableaux, la variable contient la liste des éléments séparés par des virgules.
 
 > [!NOTE]
-> Prior to version 1.13.7, only one key name could be specified, and the result was undefined for arrays.
+> Avant la version 1.13.7, un seul nom de clé pouvait être indiqué, et le résultat était indéfini pour les tableaux.
 
 ---
 

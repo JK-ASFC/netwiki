@@ -1,14 +1,11 @@
 ---
-title: "Why nginx doesn’t handle chunked encoding                responses from my backend properly?"
-description: "Nginx — Why nginx doesn’t handle chunked encoding responses from my backend properly?. Q: My backend server appears to send HTTP/1.0 responses using chunked encoding but nginx doesn’t handle it correctly. For instance, I’m using nginx as a frontend to my node.js application and instead of pure JSON from…"
+title: "Pourquoi nginx ne traite-t-il pas correctement les réponses encodées par morceaux (chunked) de mon serveur d'arrière-plan ?"
+description: "Nginx — Pourquoi nginx ne traite-t-il pas correctement les réponses encodées par morceaux (chunked) de mon serveur d'arrière-plan ?. Q : Mon serveur d'arrière-plan semble envoyer des réponses HTTP/1.0 avec l'encodage par morceaux, mais nginx ne les traite pas correctement. Par exemple, j'utilise nginx devant mon application node.js et, au lieu du…"
 tags: [nginx, guide]
 icon: book-open
 ---
 
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
-
-Q: My backend server appears to send HTTP/1.0 responses using chunked encoding but nginx doesn’t handle it correctly. For instance, I’m using nginx as a frontend to my node.js application and instead of pure JSON from backend, nginx returns something framed in decimal numbers like
+Q : Mon serveur d'arrière-plan semble envoyer des réponses HTTP/1.0 avec l'encodage par morceaux, mais nginx ne les traite pas correctement. Par exemple, j'utilise nginx devant mon application node.js et, au lieu du JSON pur du serveur d'arrière-plan, nginx renvoie quelque chose encadré de nombres décimaux comme
 
 ```c
 47
@@ -16,7 +13,7 @@ Q: My backend server appears to send HTTP/1.0 responses using chunked encoding b
 0
 ```
 
-A: Your backend violates HTTP specification (see [RFC 2616, "3.6 Transfer Codings"](https://datatracker.ietf.org/doc/html/rfc2616#section-3.6)). The "chunked" transfer-codings must not be used with HTTP/1.0. You’d need to either fix your backend application or upgrade to nginx version 1.1.4 and newer, where an additional code was introduced to handle such erratic backend behavior.
+R : Votre serveur d'arrière-plan enfreint la spécification HTTP (voir [RFC 2616, « 3.6 Transfer Codings »](https://datatracker.ietf.org/doc/html/rfc2616#section-3.6)). L'encodage de transfert « chunked » ne doit pas être utilisé avec HTTP/1.0. Il faut soit corriger votre application, soit passer à nginx 1.1.4 ou plus récent, où du code a été ajouté pour gérer ce comportement erroné.
 
 ---
 

@@ -1,0 +1,9 @@
+{
+ "0df01127cf12": "Ce module utilise la bibliothèque [libgd](http://libgd.org). Il est recommandé d'utiliser la version la plus récente de la bibliothèque.",
+ "4df51244361f": "Définit le type de transformation à appliquer aux images :",
+ "5602c10fac54": "vérifie que les réponses sont des images au format JPEG, GIF, PNG ou WebP ; sinon, l'erreur `415 Unsupported Media Type` est renvoyée.",
+ "b8d5b8e57104": "désactive le traitement par le module dans le bloc location englobant.",
+ "bdaf55d34457": "Le module `ngx_http_image_filter_module` (0.7.54+) est un filtre qui transforme les images aux formats JPEG, GIF, PNG et WebP.",
+ "bf95f0aac4e9": "La prise en charge du format WebP est apparue en version 1.11.6. Pour transformer des images dans ce format, la bibliothèque `libgd` doit être compilée avec la prise en charge de WebP.",
+ "ff74f9e8731a": "Ce module n'est pas compilé par défaut ; il doit être activé avec le paramètre de configuration `--with-http_image_filter_module`."
+}

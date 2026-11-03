@@ -22,7 +22,7 @@ Sets an njs function as a handler in the [[10-guides/06-developpement/developmen
 
 A handler that returns without calling [[10-guides/04-njs/reference|r.return()]] or [[10-guides/04-njs/reference|r.decline()]] grants access. To deny access or send a custom response (for example, a redirect), the handler may call [[10-guides/04-njs/reference|r.return()]]. To make the handler express no opinion, deferring the decision to other access checkers under [[12-directives/satisfy|satisfy any]], the handler may call [[10-guides/04-njs/reference|r.decline()]].
 
-For example:
+Par exemple :
 
 ```nginx
 example.conf:

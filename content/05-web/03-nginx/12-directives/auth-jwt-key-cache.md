@@ -1,12 +1,9 @@
 ---
 title: "auth_jwt_key_cache"
-description: "Directive nginx auth_jwt_key_cache (ngx_http_auth_jwt_module) — Enables or disables caching of keys obtained from a file or from a subrequest, and sets caching time for them. Caching of keys obtained from variables is not supported. By default, caching of keys is…"
+description: "Directive nginx auth_jwt_key_cache (ngx_http_auth_jwt_module) — Active ou désactive la mise en cache des clés obtenues depuis un fichier ou une sous-requête, et définit leur durée de mise en cache. La mise en cache des clés obtenues depuis des variables n'est pas…"
 tags: [nginx, directive, ngx_http_auth_jwt_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -18,7 +15,7 @@ icon: settings-2
 
 ## Utilisation
 
-Enables or disables caching of keys obtained from a [[12-directives/auth-jwt-key-file|file]] or from a [[12-directives/auth-jwt-key-request|subrequest]], and sets caching time for them. Caching of keys obtained from variables is not supported. By default, caching of keys is disabled.
+Active ou désactive la mise en cache des clés obtenues depuis un [[12-directives/auth-jwt-key-file|fichier]] ou une [[12-directives/auth-jwt-key-request|sous-requête]], et définit leur durée de mise en cache. La mise en cache des clés obtenues depuis des variables n'est pas prise en charge. Par défaut, la mise en cache est désactivée.
 
 ---
 

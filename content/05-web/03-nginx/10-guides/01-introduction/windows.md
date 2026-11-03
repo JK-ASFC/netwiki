@@ -43,10 +43,10 @@ nginx/Windows runs as a standard console application (not a service), and it can
 
 |   |   |
 | --- | --- |
-| nginx -s stop | fast shutdown |
-| nginx -s quit | graceful shutdown |
+| nginx -s stop | arrêt rapide |
+| nginx -s quit | arrêt en douceur |
 | nginx -s reload | changing configuration, starting new worker processes with a new configuration, graceful shutdown of old worker processes |
-| nginx -s reopen | re-opening log files |
+| nginx -s reopen | réouverture des fichiers journaux |
 
 ## Known issues
 

@@ -1,12 +1,9 @@
 ---
 title: "ancient_browser_value"
-description: "Directive nginx ancient_browser_value (ngx_http_browser_module) — Sets a value for the $ancient_browser variables."
+description: "Directive nginx ancient_browser_value (ngx_http_browser_module) — Définit la valeur des variables $ancient_browser."
 tags: [nginx, directive, ngx_http_browser_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,7 +14,7 @@ icon: settings-2
 
 ## Utilisation
 
-Sets a value for the `$ancient_browser` variables.
+Définit la valeur des variables `$ancient_browser`.
 
 ---
 

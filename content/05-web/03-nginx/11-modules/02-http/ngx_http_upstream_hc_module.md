@@ -16,7 +16,7 @@ If a health check fails, the server will be considered unhealthy. If several hea
 > Please note that most of the variables will have empty values when used with health checks.
 
 > [!NOTE]
-> This module is available as part of our [abonnement commercial](https://nginx.com/products/).
+> Ce module est disponible dans le cadre de notre [abonnement commercial](https://nginx.com/products/).
 
 ## Exemple de configuration
 

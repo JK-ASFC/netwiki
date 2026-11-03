@@ -1,12 +1,9 @@
 ---
 title: "db_ssl_conf_command"
-description: "Directive nginx db_ssl_conf_command (ngx_http_db_module) — Sets arbitrary OpenSSL configuration commands when establishing a connection with the database server. Several db_ssl_conf_command directives can be specified on the same level. These directives are…"
+description: "Directive nginx db_ssl_conf_command (ngx_http_db_module) — Définit des commandes de configuration OpenSSL quelconques à appliquer lors de l'établissement de la connexion avec le serveur de base de données. Plusieurs directives db_ssl_conf_command peuvent…"
 tags: [nginx, directive, ngx_http_db_module]
 icon: settings-2
 ---
-
-> [!NOTE]
-> Traduction en cours : les passages encore en anglais seront traduits prochainement.
 
 | Propriété | Valeur |
 | --- | --- |
@@ -17,9 +14,9 @@ icon: settings-2
 
 ## Utilisation
 
-Sets arbitrary OpenSSL configuration [commands](https://www.openssl.org/docs/man1.1.1/man3/SSL_CONF_cmd.html) when establishing a connection with the database server.
+Définit des [commandes](https://www.openssl.org/docs/man1.1.1/man3/SSL_CONF_cmd.html) de configuration OpenSSL quelconques à appliquer lors de l'établissement de la connexion avec le serveur de base de données.
 
-Several `db_ssl_conf_command` directives can be specified on the same level. These directives are inherited from the previous configuration level if and only if there are no `db_ssl_conf_command` directives defined on the current level.
+Plusieurs directives `db_ssl_conf_command` peuvent être indiquées au même niveau. Ces directives sont héritées du niveau de configuration précédent si et seulement si aucune directive `db_ssl_conf_command` n'est définie au niveau courant.
 
 > [!NOTE]
 > Configurer OpenSSL directement peut provoquer un comportement inattendu.
