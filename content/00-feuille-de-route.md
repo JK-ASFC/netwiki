@@ -90,6 +90,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 74 | Catalogue — facturation, temps et e-commerce PHP : Invoice Ninja, Akaunting, Kimai, Crater, PrestaShop, WooCommerce, OpenCart, Magento Open Source | ✅ |
 | 75 | Catalogue — commerce headless et frameworks : Saleor, Medusa, Vendure, Sylius, Shopware, Bagisto, Spree, Solidus, Reaction Commerce | ✅ |
 | 76 | Catalogue — caisses et inventaire : OSPOS, uniCenta oPOS, Floreant POS, ERPNext POS, InvenTree, Snipe-IT, OpenBoxes, FusionInventory | ✅ |
+| 77 | Catalogue — forges, revue de code et gestion de versions : Gogs, OneDev, SourceHut, Pagure, RhodeCode, Gerrit, Review Board, Subversion, Mercurial, Fossil (Phorge déjà présent) | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -266,6 +267,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[05-jenkins/01-presentation-installation\|Jenkins]] | jenkins | Jenkins | jenkins-lts | ✅ |
 | [[06-teamcity/01-presentation-installation\|TeamCity]] | TeamCity (archive, Docker) | TeamCity | ➖ | ✅ |
 | [[07-sonarqube/01-presentation-installation\|SonarQube]] | sonarqube | SonarQube | sonarqube (Docker) | ✅ |
+| [[13-forges-revue-vcs/01-forges\|Gogs, OneDev, SourceHut, Pagure, RhodeCode]], [[13-forges-revue-vcs/02-gerrit-reviewboard\|Gerrit, Review Board]], [[13-forges-revue-vcs/03-subversion-mercurial-fossil\|Subversion, Mercurial, Fossil]] | Docker, binaires, paquets | TortoiseSVN, TortoiseHg, Fossil (winget) | Homebrew | ✅ |
 
 ## Supervision & métriques
 

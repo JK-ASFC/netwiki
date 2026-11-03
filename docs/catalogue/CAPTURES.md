@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-437 capture(s) attendue(s) dans 118 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+439 capture(s) attendue(s) dans 119 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -663,6 +663,13 @@
 | `content/14-devops/11-tekton-argo-workflows/_assets/tekton-dashboard.png` | Tekton Dashboard — PipelineRun et journaux des étapes | `03-interface-graphique.md` |
 | `content/14-devops/11-tekton-argo-workflows/_assets/argo-workflows-dag.png` | Argo Workflows — graphe DAG d'un workflow | `03-interface-graphique.md` |
 | `content/14-devops/11-tekton-argo-workflows/_assets/argo-workflows-cron.png` | Argo Workflows — liste des Cron Workflows | `03-interface-graphique.md` |
+
+## 14-devops/13-forges-revue-vcs
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/14-devops/13-forges-revue-vcs/_assets/onedev-projet.png` | Projet OneDev avec pipeline CI et tickets | `01-forges.md` |
+| `content/14-devops/13-forges-revue-vcs/_assets/gerrit-changement.png` | Changement Gerrit avec votes et commentaires | `02-gerrit-reviewboard.md` |
 
 ## 15-journalisation/11-recherche-journaux
 

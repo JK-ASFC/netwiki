@@ -1,0 +1,1 @@
+{ "title": "Autres forges, revue de code et gestion de versions", "icon": "git-merge", "color": "#f05133", "description": "Forges légères (Gogs, OneDev, SourceHut, Pagure, RhodeCode), revue de code (Gerrit, Review Board) et gestionnaires de versions Subversion, Mercurial et Fossil." }

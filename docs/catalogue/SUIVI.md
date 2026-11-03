@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 183 (14 %) | 553 | 2 | 573 (44 %) |
+| 1311 | 184 (14 %) | 563 | 2 | 562 (43 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -767,7 +767,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OCS Inventory NG | Inventaire IT | Windows, Linux, macOS | ✅ existant | `21-outils/06-support-parc/07-ocs-inventory` |
 | FusionInventory | Inventaire IT (ancien) | Windows, Linux | 🆕 fait (lot 76) | `25-web-cms-portails/11-caisse-inventaire` |
 
-## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 5/56
+## 14. DEVOPS, DEPOTS DE CODE, REGISTRY ET QUALITE — 16/56
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -775,17 +775,17 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Gitea | Forge Git | Windows, Linux, macOS | ✅ existant | `14-devops/03-gitea` |
 | Forgejo | Forge Git | Windows, Linux, macOS | ✅ existant | `14-devops/04-forgejo` |
 | GitLab Community Edition | Forge DevOps | Linux | ✅ existant | `14-devops/02-gitlab` |
-| Gogs | Forge Git | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| OneDev | Forge DevOps | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| SourceHut | Forge de développement | Linux | ⏳ à faire | → `14-devops` |
-| Pagure | Forge Git | Linux | ⏳ à faire | → `14-devops` |
-| Phorge | Forge développement | Linux | ⏳ à faire | → `14-devops` |
-| Gerrit Code Review | Revue de code | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Review Board | Revue de code | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| RhodeCode Community | Forge Git | Linux | ⏳ à faire | → `14-devops` |
-| Fossil SCM | Gestion versions | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Mercurial | Gestion versions | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
-| Subversion Apache | Gestion versions | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
+| Gogs | Forge Git | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| OneDev | Forge DevOps | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| SourceHut | Forge de développement | Linux | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Pagure | Forge Git | Linux | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Phorge | Forge développement | Linux | ✅ existant (lot 77) | `10-messagerie/16-gestion-projet` |
+| Gerrit Code Review | Revue de code | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Review Board | Revue de code | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| RhodeCode Community | Forge Git | Linux | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Fossil SCM | Gestion versions | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Mercurial | Gestion versions | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
+| Subversion Apache | Gestion versions | Windows, Linux, macOS | 🆕 fait (lot 77) | `14-devops/13-forges-revue-vcs` |
 | Harbor | Registry OCI | Linux | ⏳ à faire | → `14-devops` |
 | Distribution Registry | Registry Docker | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
 | Zot | Registry OCI | Windows, Linux, macOS | ⏳ à faire | → `14-devops` |
