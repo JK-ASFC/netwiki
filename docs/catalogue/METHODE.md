@@ -92,6 +92,7 @@ Pour les services majeurs, la fiche peut être complétée par la **documentatio
 - Générer les pages avec un script versionné (`scripts/import-<service>-docs.py`) pour pouvoir les régénérer à chaque nouvelle version ; ne pas les modifier à la main.
 - Une page par élément (commande, module, directive), un sous-dossier par thème pour les guides, liens wiki entre les éléments (directive → module, module → directives, guide → directives).
 - Ajouter un renvoi vers ces sections dans la page de présentation du service et passer le statut du catalogue à `ameliore`.
+- Même principe pour une **référence de commandes** fournie sous forme de fichier : `scripts/import-commandes-shell.py <fichier.html> content/27-commandes --wiki content` extrait la base de commandes (Bash, PowerShell, macOS), restaure les accents des textes à partir du vocabulaire du wiki (jamais dans les commandes) et génère une page par commande, rangée par shell puis par thème.
 
 ## 6. Valider et enregistrer
 

@@ -1,0 +1,1 @@
+{"title": "VPN", "icon": "lock", "color": "#3b82f6", "description": "PowerShell — VPN : Add-VpnConnection, easyrsa, Get-VpnConnection / Remove-VpnConnection, Install-RemoteAccess, New-NetNat, openvpn, rasdial, Set-NetIPInterface, Set-VpnConnectionIPsecConfiguration, Set-VpnServerConfiguration, wg, wireguard.exe"}

@@ -462,3 +462,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[03-supports-deploiement/02-fog-opsi-wapt\|FOG, opsi, WAPT]] | installfog.sh, Docker, paquets | agents | agents (opsi, WAPT) | ✅ |
 | [[04-inventaire-rmm/01-open-audit-tactical-rport-remotely\|Open-AudIT, Tactical RMM, RPort, Remotely]] | installateurs, script, Docker | agents, Open-AudIT | agents | ✅ |
 | [[05-automatisation-poste/01-autohotkey-autoit-actiona\|AutoHotkey, AutoIt, Actiona]] | apt (Actiona) | winget, installateurs | ➖ | ✅ |
+
+## Commandes Bash, PowerShell & macOS
+
+| Référence | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[27-commandes/01-presentation\|Référence des commandes]] : 350 commandes Bash, 252 PowerShell, 307 macOS, une page par commande | Bash | PowerShell | zsh | ✅ |
