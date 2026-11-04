@@ -1,0 +1,1 @@
+{"title": "Windows Server", "icon": "server", "color": "#3b82f6", "description": "PowerShell — Windows Server : Add-DhcpServerv4Scope, Add-DnsServerPrimaryZone, Get-ComputerInfo, Get-WindowsFeature, Install-ADDSForest, Install-WindowsFeature, Restart-Computer, sconfig, Uninstall-WindowsFeature"}

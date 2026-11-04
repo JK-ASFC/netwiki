@@ -7,6 +7,10 @@ icon: terminal
 
 Chaque service documenté dispose d'un article **« aide-mémoire des commandes »** : les commandes utiles regroupées par thème, avec des exemples prêts à copier (et commentés). Les explications détaillées restent dans les articles du service. Pour les équipements réseau, voir aussi la [[01-correspondance-commandes/01-administration-commutation|correspondance des commandes entre constructeurs]].
 
+## Commandes des systèmes
+
+- [[27-commandes/01-presentation|Référence des commandes Bash, PowerShell et macOS]] : une page par commande, classée par shell et par thème.
+
 ## Annuaire, identité & secrets
 
 - [[01-annuaire-identite/01-active-directory/90-aide-memoire|Active Directory]]

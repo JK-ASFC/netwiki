@@ -1,0 +1,1 @@
+{"title": "Réseau", "icon": "network", "color": "#3b82f6", "description": "PowerShell — Réseau : Get-NetIPConfiguration, Get-NetTCPConnection, Invoke-RestMethod, Invoke-WebRequest, ipconfig, netstat, Resolve-DnsName, Test-Connection, Test-NetConnection, Test-NetConnection -TraceRoute, robocopy"}

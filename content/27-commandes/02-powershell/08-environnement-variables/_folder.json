@@ -1,0 +1,1 @@
+{"title": "Environnement & variables", "icon": "settings", "color": "#3b82f6", "description": "PowerShell — Environnement & variables : $env:, . (dot-source), Get-Alias, Get-ChildItem Env:, Get-Variable, SetEnvironmentVariable, Write-Output"}

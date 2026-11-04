@@ -1,0 +1,1 @@
+{"title": "Archivage & compression", "icon": "archive", "color": "#3b82f6", "description": "PowerShell — Archivage & compression : 7z, Compress-Archive, Expand-Archive, tar, ZipFile (.NET), restic init, restic backup, restic snapshots, restic restore, restic forget, restic check"}
