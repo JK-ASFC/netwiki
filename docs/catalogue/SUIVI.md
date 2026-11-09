@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 663 | 4 | 453 (35 %) |
+| 1311 | 191 (15 %) | 673 | 4 | 443 (34 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -874,7 +874,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | AutoIt | Automatisation Windows | Windows | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
 | PowerToys | Utilitaires Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 
-## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 37/67
+## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 47/67
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -913,16 +913,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | chezmoi | Gestion dotfiles | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
 | GNU Stow | Gestion dotfiles | Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
 | Ansible Pull | Configuration poste | Windows, Linux, macOS | ✅ existant | `17-automatisation/01-ansible` |
-| Timeshift | Snapshots système | Linux | ⏳ à faire | → `21-outils` |
-| Snapper | Snapshots système | Linux | ⏳ à faire | → `21-outils` |
-| Back In Time | Sauvegarde poste | Linux | ⏳ à faire | → `21-outils` |
-| Déjà Dup | Sauvegarde poste | Linux | ⏳ à faire | → `21-outils` |
-| KDE Connect | Intégration appareils | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Barrier | Partage clavier/souris | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Input Leap | Partage clavier/souris | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Synergy Core (open source legacy) | Partage clavier/souris | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| LocalSend | Transfert fichiers local | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| KDE Plasma | Environnement bureau | Linux, BSD | ⏳ à faire | → `21-outils` |
+| Timeshift | Snapshots système | Linux | 🆕 fait (lot agent-2026-11-09) | `21-outils/11-snapshots-sauvegarde-poste/01-timeshift` |
+| Snapper | Snapshots système | Linux | 🆕 fait (lot agent-2026-11-09) | `21-outils/11-snapshots-sauvegarde-poste/02-snapper` |
+| Back In Time | Sauvegarde poste | Linux | 🆕 fait (lot agent-2026-11-09) | `21-outils/11-snapshots-sauvegarde-poste/03-back-in-time` |
+| Déjà Dup | Sauvegarde poste | Linux | 🆕 fait (lot agent-2026-11-09) | `21-outils/11-snapshots-sauvegarde-poste/04-deja-dup` |
+| KDE Connect | Intégration appareils | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-09) | `21-outils/12-partage-appareils/01-kde-connect` |
+| Barrier | Partage clavier/souris | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-09) | `21-outils/12-partage-appareils/02-barrier-input-leap-synergy` |
+| Input Leap | Partage clavier/souris | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-09) | `21-outils/12-partage-appareils/02-barrier-input-leap-synergy` |
+| Synergy Core (open source legacy) | Partage clavier/souris | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-09) | `21-outils/12-partage-appareils/02-barrier-input-leap-synergy` |
+| LocalSend | Transfert fichiers local | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-09) | `21-outils/12-partage-appareils/03-localsend` |
+| KDE Plasma | Environnement bureau | Linux, BSD | 🆕 fait (lot agent-2026-11-09) | `21-outils/13-kde-plasma/01-presentation-installation` |
 | GNOME | Environnement bureau | Linux, BSD | ⏳ à faire | → `21-outils` |
 | XFCE | Environnement bureau | Linux, BSD | ⏳ à faire | → `21-outils` |
 | MATE | Environnement bureau | Linux, BSD | ⏳ à faire | → `21-outils` |
