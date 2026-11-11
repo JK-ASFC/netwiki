@@ -144,6 +144,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 128 | Catalogue — ML classique et inférence optimisée : scikit-learn, XGBoost, LightGBM, CatBoost, ONNX Runtime, OpenVINO | ✅ |
 | 129 | Catalogue — service de modèles et MLOps : BentoML, KServe, Seldon Core, Ray, Kubeflow | ✅ |
 | 130 | Catalogue — expériences et annotation : ClearML, Aim, Label Studio, CVAT, FiftyOne | ✅ |
+| 131 | Catalogue — audio et voix : Whisper, whisper.cpp, faster-whisper, Piper, Coqui TTS, Kokoro, RVC, Mimic 3 | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -562,3 +563,4 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[29-ia-machine-learning/09-ml-classique-inference/01-scikit-learn-boosting\|scikit-learn, XGBoost, LightGBM, CatBoost]], [[29-ia-machine-learning/09-ml-classique-inference/02-onnx-runtime-openvino\|ONNX Runtime, OpenVINO]] | pip, apt | pip (DirectML) | pip (CoreML) | ✅ |
 | [[29-ia-machine-learning/10-mlops-serving/01-bentoml-kserve-seldon\|BentoML, KServe, Seldon Core]], [[29-ia-machine-learning/10-mlops-serving/02-ray-kubeflow\|Ray, Kubeflow]] | pip, Kubernetes, Helm | pip (BentoML, Ray) | pip (BentoML, Ray) | ✅ |
 | [[29-ia-machine-learning/11-experiences-annotation/01-clearml-aim\|ClearML, Aim]], [[29-ia-machine-learning/11-experiences-annotation/02-label-studio-cvat-fiftyone\|Label Studio, CVAT, FiftyOne]] | Docker Compose, pip | Docker, pip | Docker, pip | ✅ |
+| [[29-ia-machine-learning/12-audio-voix/01-whisper\|Whisper, whisper.cpp, faster-whisper]], [[29-ia-machine-learning/12-audio-voix/02-synthese-vocale\|Piper, Coqui TTS, Kokoro, Mimic 3, RVC]] | pip, CMake, Docker | pip, binaires | pip, Homebrew, Metal | ✅ |

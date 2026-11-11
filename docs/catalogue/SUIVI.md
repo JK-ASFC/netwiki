@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 859 | 4 | 257 (20 %) |
+| 1311 | 191 (15 %) | 867 | 4 | 249 (19 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1096,7 +1096,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | LakeFS | Versionnement data lake | Windows, Linux, macOS | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
 | Pachyderm | Pipelines données | Linux | 🆕 fait (lot 119) | `28-data-analytique/07-science-donnees` |
 
-## 20. IA, MACHINE LEARNING ET INFERENCE AUTO-HEBERGEE — 49/57
+## 20. IA, MACHINE LEARNING ET INFERENCE AUTO-HEBERGEE — 57/57
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1149,14 +1149,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Label Studio | Annotation données | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
 | CVAT | Annotation vision | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
 | FiftyOne | Gestion datasets vision | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
-| Whisper.cpp | Transcription locale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| faster-whisper | Transcription audio | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Whisper | Reconnaissance vocale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Piper | Synthèse vocale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Coqui TTS | Synthèse vocale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Kokoro TTS (open weights) | Synthèse vocale (licence modèle à vérifier) | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| RVC Project | Conversion voix | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Mimic 3 | Synthèse vocale | Linux | ⏳ à faire | → `28-ia-machine-learning` |
+| Whisper.cpp | Transcription locale | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| faster-whisper | Transcription audio | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| Whisper | Reconnaissance vocale | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| Piper | Synthèse vocale | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| Coqui TTS | Synthèse vocale | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| Kokoro TTS (open weights) | Synthèse vocale (licence modèle à vérifier) | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| RVC Project | Conversion voix | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| Mimic 3 | Synthèse vocale | Linux | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 
 ## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 2/48
 
