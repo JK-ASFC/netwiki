@@ -1,11 +1,11 @@
 ---
 title: Outils de développement — aide-mémoire (VS Code, JetBrains, Visual Studio, GitHub, DBeaver, Playwright, uv…)
-description: Commandes et raccourcis des outils de développement avec exemples — VS Code (ligne de commande code, extensions, raccourcis, Remote SSH), IntelliJ IDEA et PyCharm (raccourcis, lanceurs), Visual Studio (devenv, msbuild, dotnet), Eclipse, Notepad++ (raccourcis, recherche par expressions régulières), GitHub CLI (gh) et GitHub Desktop, DBeaver et clients SQL, pgAdmin / MySQL Workbench, Playwright (installation, tests, codegen, rapport), uv (projets Python).
-tags: [aide-mémoire, vscode, jetbrains, visual studio, gh, dbeaver, playwright, uv]
+description: Commandes et raccourcis des outils de développement avec exemples — VS Code (ligne de commande code, extensions, raccourcis, Remote SSH), IntelliJ IDEA et PyCharm (raccourcis, lanceurs), Visual Studio (devenv, msbuild, dotnet), Eclipse, Notepad++ (raccourcis, recherche par expressions régulières), GitHub CLI (gh) et GitHub Desktop, DBeaver et clients SQL, pgAdmin / MySQL Workbench, Playwright (installation, tests, codegen, rapport), uv (projets Python), VSCodium (codium, Open VSX), Apache NetBeans, Qt Creator et Code::Blocks.
+tags: [aide-mémoire, vscode, vscodium, jetbrains, visual studio, netbeans, qt creator, code blocks, gh, dbeaver, playwright, uv]
 icon: terminal
 ---
 
-Référence rapide ; les explications sont dans [[01-vscode|VS Code]], [[06-github-github-desktop|GitHub]], [[09-playwright|Playwright]] et [[10-uv|uv]].
+Référence rapide ; les explications sont dans [[01-vscode|VS Code]], [[06-github-github-desktop|GitHub]], [[09-playwright|Playwright]], [[10-uv|uv]], [[11-vscodium|VSCodium]] et [[12-netbeans-qt-creator-code-blocks|NetBeans, Qt Creator, Code::Blocks]].
 
 ## VS Code
 
@@ -128,4 +128,21 @@ uv tool install ruff && ruff check .
 uv python list
 uv lock --upgrade && uv sync
 uvx ansible-lint playbooks/
+```
+
+## VSCodium
+
+```bash
+codium .                                            # la commande s'appelle codium
+code --list-extensions > extensions.txt && xargs -n1 codium --install-extension < extensions.txt
+codium --install-extension extension.vsix           # extension hors Open VSX (si la licence le permet)
+```
+
+## NetBeans, Qt Creator, Code::Blocks
+
+```bash
+sudo apt install openjdk-21-jdk && sudo snap install netbeans --classic
+sudo apt install qtcreator qt6-base-dev cmake build-essential
+sudo apt install codeblocks build-essential gdb
+cmake -S . -B build && cmake --build build          # construire un projet Qt Creator (CMake) hors de l'IDE
 ```

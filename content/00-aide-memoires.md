@@ -257,6 +257,7 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[21-outils/12-partage-appareils/90-aide-memoire|Partage entre appareils]]
 - [[21-outils/13-environnements-bureau/90-aide-memoire|Environnements de bureau]]
 - [[21-outils/14-terminaux-graphiques/90-aide-memoire|Terminaux graphiques]]
+- [[21-outils/15-editeurs-texte/90-aide-memoire|Éditeurs de texte]]
 
 ## Équipements réseau par constructeur
 

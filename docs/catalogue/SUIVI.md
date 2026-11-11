@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 684 | 4 | 432 (33 %) |
+| 1311 | 191 (15 %) | 693 | 4 | 423 (32 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -874,7 +874,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | AutoIt | Automatisation Windows | Windows | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
 | PowerToys | Utilitaires Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 
-## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 58/67
+## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 67/67
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -934,16 +934,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | WezTerm | Terminal graphique | Windows, Linux, macOS | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
 | Kitty | Terminal graphique | Linux, macOS | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
 | Ghostty | Terminal graphique | Linux, macOS | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
-| Neovim | Éditeur terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Vim | Éditeur texte | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Emacs | Éditeur texte | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Geany | IDE léger | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| VSCodium | Éditeur code | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
+| Neovim | Éditeur terminal | Windows, Linux, macOS | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
+| Vim | Éditeur texte | Windows, Linux, macOS | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
+| Emacs | Éditeur texte | Windows, Linux, macOS | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
+| Geany | IDE léger | Windows, Linux, macOS | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
+| VSCodium | Éditeur code | Windows, Linux, macOS | 🆕 fait (lot 93) | `21-outils/04-developpement` |
 | Eclipse IDE | IDE | Windows, Linux, macOS | ✅ existant | `21-outils/04-developpement/04-eclipse` |
-| Apache NetBeans | IDE | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Qt Creator | IDE | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Code::Blocks | IDE | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Kate | Éditeur texte | Linux, Windows | ⏳ à faire | → `21-outils` |
+| Apache NetBeans | IDE | Windows, Linux, macOS | 🆕 fait (lot 93) | `21-outils/04-developpement` |
+| Qt Creator | IDE | Windows, Linux, macOS | 🆕 fait (lot 93) | `21-outils/04-developpement` |
+| Code::Blocks | IDE | Windows, Linux, macOS | 🆕 fait (lot 93) | `21-outils/04-developpement` |
+| Kate | Éditeur texte | Linux, Windows | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
 | Notepad++ | Éditeur texte | Windows | ✅ existant | `21-outils/04-developpement/05-notepad-plus-plus` |
 
 ## 17. STREAMING, MEDIA, AUDIO, VIDEO ET TRANSCODAGE — 7/49
