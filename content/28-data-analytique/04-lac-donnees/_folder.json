@@ -1,0 +1,1 @@
+{ "title": "Iceberg, Delta Lake, Hudi, Nessie et lakeFS", "icon": "layers", "color": "#0ea5e9", "description": "Lac de données transactionnel (lakehouse) : formats de tables ouverts Apache Iceberg, Delta Lake et Apache Hudi, catalogue versionné Nessie et versionnage de données lakeFS." }

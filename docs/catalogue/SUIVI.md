@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 795 | 4 | 321 (24 %) |
+| 1311 | 191 (15 %) | 804 | 4 | 312 (24 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1036,7 +1036,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Fetchmail | Récupération mail | Windows, Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 | OfflineIMAP | Synchronisation mail | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 
-## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 38/55
+## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 47/55
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1077,14 +1077,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Kafka Connect | Connecteurs streaming | Windows, Linux, macOS | 🆕 fait (lot 115) | `28-data-analytique/03-cdc-connecteurs` |
 | Benthos / Redpanda Connect | Pipeline données | Windows, Linux, macOS | 🆕 fait (lot 115) | `28-data-analytique/03-cdc-connecteurs` |
 | Flink CDC | CDC streaming | Linux | 🆕 fait (lot 115) | `28-data-analytique/03-cdc-connecteurs` |
-| Apache Hudi | Lakehouse | Linux | ⏳ à faire | → `27-data-analytique` |
-| Apache Iceberg | Format table lakehouse | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Delta Lake | Lakehouse | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Project Nessie | Catalogue lakehouse | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache Atlas | Gouvernance données | Linux | ⏳ à faire | → `27-data-analytique` |
-| OpenMetadata | Catalogue et gouvernance | Linux, Windows via conteneur | ⏳ à faire | → `27-data-analytique` |
-| DataHub | Catalogue données | Linux | ⏳ à faire | → `27-data-analytique` |
-| Amundsen | Catalogue données | Linux | ⏳ à faire | → `27-data-analytique` |
+| Apache Hudi | Lakehouse | Linux | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
+| Apache Iceberg | Format table lakehouse | Windows, Linux, macOS | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
+| Delta Lake | Lakehouse | Windows, Linux, macOS | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
+| Project Nessie | Catalogue lakehouse | Windows, Linux, macOS | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
+| Apache Atlas | Gouvernance données | Linux | 🆕 fait (lot 117) | `28-data-analytique/05-catalogues-metadonnees` |
+| OpenMetadata | Catalogue et gouvernance | Linux, Windows via conteneur | 🆕 fait (lot 117) | `28-data-analytique/05-catalogues-metadonnees` |
+| DataHub | Catalogue données | Linux | 🆕 fait (lot 117) | `28-data-analytique/05-catalogues-metadonnees` |
+| Amundsen | Catalogue données | Linux | 🆕 fait (lot 117) | `28-data-analytique/05-catalogues-metadonnees` |
 | dbt Core | Transformation SQL | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
 | SQLMesh | Transformation SQL | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
 | Polars | DataFrame | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
@@ -1093,7 +1093,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | JupyterLab | Notebooks | Windows, Linux, macOS | ✅ existant | `21-outils/05-ia-productivite/05-jupyterlab` |
 | MLflow | Cycle de vie ML | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
 | DVC | Versionnement données | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| LakeFS | Versionnement data lake | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
+| LakeFS | Versionnement data lake | Windows, Linux, macOS | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
 | Pachyderm | Pipelines données | Linux | ⏳ à faire | → `27-data-analytique` |
 
 ## 20. IA, MACHINE LEARNING ET INFERENCE AUTO-HEBERGEE — 2/57

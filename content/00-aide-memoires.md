@@ -328,3 +328,5 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[28-data-analytique/01-traitement-flux-lots/90-aide-memoire|Flink, Spark, Beam, Samza et Storm]]
 - [[28-data-analytique/02-integration-donnees/90-aide-memoire|NiFi, SeaTunnel, Airbyte, Meltano et Singer]]
 - [[28-data-analytique/03-cdc-connecteurs/90-aide-memoire|Debezium, Kafka Connect, Redpanda Connect et Flink CDC]]
+- [[28-data-analytique/04-lac-donnees/90-aide-memoire|Iceberg, Delta Lake, Hudi, Nessie et lakeFS]]
+- [[28-data-analytique/05-catalogues-metadonnees/90-aide-memoire|Catalogues de données]]

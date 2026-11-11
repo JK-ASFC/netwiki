@@ -129,6 +129,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 113 | Catalogue — traitement de flux et par lots : Apache Spark, Flink, Beam, Samza, Storm | ✅ |
 | 114 | Catalogue — intégration de données : Apache NiFi, SeaTunnel, Airbyte, Meltano, Singer | ✅ |
 | 115 | Catalogue — capture de changements : Debezium, Kafka Connect, Benthos / Redpanda Connect, Flink CDC | ✅ |
+| 116 | Catalogue — lac de données transactionnel : Apache Iceberg, Delta Lake, Apache Hudi, Project Nessie, lakeFS | ✅ |
+| 117 | Catalogue — catalogues de données : OpenMetadata, DataHub, Amundsen, Apache Atlas | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -527,3 +529,5 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[28-data-analytique/01-traitement-flux-lots/01-apache-spark\|Apache Spark]], [[28-data-analytique/01-traitement-flux-lots/02-apache-flink\|Apache Flink]], [[28-data-analytique/01-traitement-flux-lots/03-beam-samza-storm\|Beam, Samza, Storm]] | archives, pip, Kubernetes | archives (Java), WSL | archives, Homebrew | ✅ |
 | [[28-data-analytique/02-integration-donnees/01-apache-nifi\|Apache NiFi]], [[28-data-analytique/02-integration-donnees/02-seatunnel-airbyte\|SeaTunnel, Airbyte]], [[28-data-analytique/02-integration-donnees/03-meltano-singer\|Meltano, Singer]] | archives, Docker, abctl, pipx | archives, Docker, pipx | archives, Docker, pipx | ✅ |
 | [[28-data-analytique/03-cdc-connecteurs/01-debezium-kafka-connect\|Debezium, Kafka Connect]], [[28-data-analytique/03-cdc-connecteurs/02-benthos-flink-cdc\|Redpanda Connect, Flink CDC]] | archives, conteneurs, rpk | conteneurs | conteneurs, Homebrew (rpk) | ✅ |
+| [[28-data-analytique/04-lac-donnees/01-iceberg-delta-hudi\|Iceberg, Delta Lake, Hudi]], [[28-data-analytique/04-lac-donnees/02-nessie-lakefs\|Nessie, lakeFS]] | bibliothèques Spark/Flink, pip, Docker | pip, Docker | pip, Docker, Homebrew (lakectl) | ✅ |
+| [[28-data-analytique/05-catalogues-metadonnees/01-openmetadata-datahub\|OpenMetadata, DataHub]], [[28-data-analytique/05-catalogues-metadonnees/02-amundsen-atlas\|Amundsen, Apache Atlas]] | Docker, Helm, pip, archives | Docker, pip | Docker, pip | ✅ |
