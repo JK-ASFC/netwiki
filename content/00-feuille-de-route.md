@@ -149,6 +149,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 133 | Catalogue — GED d'entreprise : OpenKM, LogicalDOC, SeedDMS | ✅ |
 | 134 | Catalogue — signature et PDF : Documenso, OpenSign, LibreSign, Stirling-PDF, Gotenberg | ✅ |
 | 135 | Catalogue — bureautique : ONLYOFFICE Docs, Collabora Online, LibreOffice, Apache OpenOffice | ✅ |
+| 136 | Catalogue — notes et connaissances : TriliumNext, Memos, SilverBullet, Logseq, SiYuan | ✅ |
+| 137 | Catalogue — documentation technique : MkDocs, Material for MkDocs, Sphinx, Read the Docs, Documize | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -577,3 +579,5 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[32-documentation-ged/02-ged-entreprise/01-openkm-logicaldoc-seeddms\|OpenKM, LogicalDOC, SeedDMS]] | Tomcat (Java), Apache + PHP | installateurs (Java), PHP | ➖ | ✅ |
 | [[32-documentation-ged/03-signature-pdf/01-documenso-opensign-libresign\|Documenso, OpenSign, LibreSign]], [[32-documentation-ged/03-signature-pdf/02-stirling-pdf-gotenberg\|Stirling-PDF, Gotenberg]] | Docker, Nextcloud (occ) | Docker | Docker | ✅ |
 | [[32-documentation-ged/04-bureautique/01-onlyoffice-collabora\|ONLYOFFICE Docs, Collabora Online]], [[32-documentation-ged/04-bureautique/02-libreoffice-openoffice\|LibreOffice, OpenOffice]] | Docker, apt, dnf, Flatpak | Docker (serveurs), MSI, winget | Homebrew, .dmg | ✅ |
+| [[32-documentation-ged/05-notes-connaissance/01-triliumnext-memos\|TriliumNext, Memos]], [[32-documentation-ged/05-notes-connaissance/02-silverbullet-logseq-siyuan\|SilverBullet, Logseq, SiYuan]] | Docker, Flatpak, AppImage | applications, Docker | applications, Docker | ✅ |
+| [[32-documentation-ged/06-documentation-technique/01-mkdocs-material\|MkDocs, Material]], [[32-documentation-ged/06-documentation-technique/02-sphinx-readthedocs-documize\|Sphinx, Read the Docs, Documize]] | pip, Docker | pip | pip, Homebrew | ✅ |

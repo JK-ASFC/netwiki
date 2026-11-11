@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 883 | 4 | 233 (18 %) |
+| 1311 | 191 (15 %) | 893 | 4 | 223 (17 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1158,7 +1158,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | RVC Project | Conversion voix | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 | Mimic 3 | Synthèse vocale | Linux | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 
-## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 18/48
+## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 28/48
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1178,19 +1178,19 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Collabora Online Development Edition | Suite bureautique web | Linux | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
 | LibreOffice | Suite bureautique | Windows, Linux, macOS | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
 | Apache OpenOffice | Suite bureautique | Windows, Linux, macOS | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
-| TriliumNext Notes | Base de connaissances | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
+| TriliumNext Notes | Base de connaissances | Windows, Linux, macOS | 🆕 fait (lot 136) | `32-documentation-ged/05-notes-connaissance` |
 | Joplin Server | Synchronisation notes | Windows, Linux, macOS | ✅ existant | `10-messagerie/09-joplin-server` |
-| Memos | Notes auto-hébergées | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| SilverBullet | Base de connaissance Markdown | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Logseq | Notes et graphe | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| SiYuan | Base de connaissances | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Documize Community | Documentation | Linux | ⏳ à faire | → `29-documentation-ged` |
-| Read the Docs (community stack) | Documentation technique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| MkDocs | Documentation statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Material for MkDocs | Thème documentation | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
+| Memos | Notes auto-hébergées | Windows, Linux, macOS | 🆕 fait (lot 136) | `32-documentation-ged/05-notes-connaissance` |
+| SilverBullet | Base de connaissance Markdown | Windows, Linux, macOS | 🆕 fait (lot 136) | `32-documentation-ged/05-notes-connaissance` |
+| Logseq | Notes et graphe | Windows, Linux, macOS | 🆕 fait (lot 136) | `32-documentation-ged/05-notes-connaissance` |
+| SiYuan | Base de connaissances | Windows, Linux, macOS | 🆕 fait (lot 136) | `32-documentation-ged/05-notes-connaissance` |
+| Documize Community | Documentation | Linux | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
+| Read the Docs (community stack) | Documentation technique | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
+| MkDocs | Documentation statique | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
+| Material for MkDocs | Thème documentation | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
 | Docusaurus | Documentation statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
 | VitePress | Documentation statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Sphinx | Documentation Python | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
+| Sphinx | Documentation Python | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
 | Antora | Documentation technique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
 | Bookdown | Publication docs | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
 | Hugo | Générateur site statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
