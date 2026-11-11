@@ -164,6 +164,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 148 | Catalogue — émulateurs réseau : CORE, ns-3, Mininet | ✅ |
 | 149 | Catalogue — contrôleurs SDN : OpenDaylight, ONOS, Ryu | ✅ |
 | 150 | Catalogue — tests de débit : iperf2, OpenSpeedTest, LibreSpeed, Speedtest Tracker | ✅ |
+| 151 | Catalogue — sondes réseau : Smokeping, Blackbox Exporter, fping exporter | ✅ |
+| 152 | Catalogue — configuration réseau : Oxidized, RANCID, Netdisco, Batfish | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -473,6 +475,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | Laboratoires réseau | [[19-labos-reseau/01-gns3-containerlab\|GNS3, Containerlab, Kathará]] | ✅ |
 | Contrôleurs SDN | [[20-controleurs-sdn/01-opendaylight-onos-ryu\|OpenDaylight, ONOS, Ryu]] | ✅ |
 | Tests de débit | [[21-tests-debit/01-iperf2-openspeedtest-librespeed\|iperf2, OpenSpeedTest, LibreSpeed, Speedtest Tracker]] | ✅ |
+| Sondes réseau (latence) | [[22-sondes-reseau/01-smokeping-blackbox\|Smokeping, Blackbox Exporter, fping exporter]] | ✅ |
+| Configurations réseau | [[23-config-reseau/01-oxidized-rancid-netdisco-batfish\|Oxidized, RANCID, Netdisco, Batfish]] | ✅ |
 
 ## Équipements réseau par constructeur
 

@@ -285,6 +285,8 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[21-outils/19-labos-reseau/90-aide-memoire|Laboratoires réseau]]
 - [[21-outils/20-controleurs-sdn/90-aide-memoire|Contrôleurs SDN]]
 - [[21-outils/21-tests-debit/90-aide-memoire|Tests de débit]]
+- [[21-outils/22-sondes-reseau/90-aide-memoire|Sondes réseau]]
+- [[21-outils/23-config-reseau/90-aide-memoire|Oxidized, RANCID, Netdisco et Batfish]]
 
 ## Équipements réseau par constructeur
 

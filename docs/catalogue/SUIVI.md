@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 936 | 4 | 180 (14 %) |
+| 1311 | 191 (15 %) | 943 | 4 | 173 (13 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1211,7 +1211,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | 4get | Métamoteur recherche | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 | LibreX | Métamoteur recherche | Linux | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 
-## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 27/50
+## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 34/50
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1249,13 +1249,13 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OpenSpeedTest | Test débit web | Windows, Linux, macOS | 🆕 fait (lot 150) | `21-outils/21-tests-debit` |
 | LibreSpeed | Test débit web | Windows, Linux, macOS | 🆕 fait (lot 150) | `21-outils/21-tests-debit` |
 | Speedtest Tracker | Historique tests débit | Linux | 🆕 fait (lot 150) | `21-outils/21-tests-debit` |
-| Smokeping | Latence réseau | Linux | ⏳ à faire | → `21-outils` |
-| Blackbox Exporter | Sondes réseau Prometheus | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Fping exporter | Sonde ping | Linux | ⏳ à faire | → `21-outils` |
-| Netdisco | Découverte réseau | Linux | ⏳ à faire | → `21-outils` |
-| Oxidized | Sauvegarde configuration réseau | Linux | ⏳ à faire | → `21-outils` |
-| RANCID | Sauvegarde configuration réseau | Linux, Unix | ⏳ à faire | → `21-outils` |
-| Batfish | Validation configuration réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
+| Smokeping | Latence réseau | Linux | 🆕 fait (lot 151) | `21-outils/22-sondes-reseau` |
+| Blackbox Exporter | Sondes réseau Prometheus | Windows, Linux, macOS | 🆕 fait (lot 151) | `21-outils/22-sondes-reseau` |
+| Fping exporter | Sonde ping | Linux | 🆕 fait (lot 151) | `21-outils/22-sondes-reseau` |
+| Netdisco | Découverte réseau | Linux | 🆕 fait (lot 152) | `21-outils/23-config-reseau` |
+| Oxidized | Sauvegarde configuration réseau | Linux | 🆕 fait (lot 152) | `21-outils/23-config-reseau` |
+| RANCID | Sauvegarde configuration réseau | Linux, Unix | 🆕 fait (lot 152) | `21-outils/23-config-reseau` |
+| Batfish | Validation configuration réseau | Windows, Linux, macOS | 🆕 fait (lot 152) | `21-outils/23-config-reseau` |
 | Containerlab | Laboratoire réseau | Linux | 🆕 fait (lot 147) | `21-outils/19-labos-reseau` |
 | Kathara | Laboratoire réseau | Windows, Linux, macOS | 🆕 fait (lot 147) | `21-outils/19-labos-reseau` |
 | GNS3 | Simulation réseau | Windows, Linux, macOS | 🆕 fait (lot 147) | `21-outils/19-labos-reseau` |
