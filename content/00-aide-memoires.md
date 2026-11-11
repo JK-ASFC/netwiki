@@ -162,6 +162,8 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[12-recherche-messages/09-nats-nsq-zeromq-redpanda/90-aide-memoire|NATS, NSQ, ZeroMQ et Redpanda]]
 - [[12-recherche-messages/10-courtiers-mqtt/90-aide-memoire|VerneMQ, NanoMQ et HiveMQ CE]]
 - [[12-recherche-messages/11-files-de-taches/90-aide-memoire|Files de tâches]]
+- [[12-recherche-messages/12-moteurs-recherche/90-aide-memoire|Moteurs de recherche]]
+- [[12-recherche-messages/13-metamoteurs/90-aide-memoire|Métamoteurs]]
 
 ## Conteneurs & virtualisation
 
@@ -357,3 +359,4 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[32-documentation-ged/05-notes-connaissance/90-aide-memoire|Notes et bases de connaissances]]
 - [[32-documentation-ged/06-documentation-technique/90-aide-memoire|MkDocs, Sphinx et Read the Docs]]
 - [[32-documentation-ged/07-generateurs-documentation/90-aide-memoire|Docusaurus, VitePress, Antora et Bookdown]]
+- [[32-documentation-ged/08-sites-statiques/90-aide-memoire|Générateurs de sites statiques]]

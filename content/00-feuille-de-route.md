@@ -152,6 +152,10 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 136 | Catalogue — notes et connaissances : TriliumNext, Memos, SilverBullet, Logseq, SiYuan | ✅ |
 | 137 | Catalogue — documentation technique : MkDocs, Material for MkDocs, Sphinx, Read the Docs, Documize | ✅ |
 | 138 | Catalogue — générateurs de documentation : Docusaurus, VitePress, Antora, Bookdown | ✅ |
+| 139 | Catalogue — sites statiques : Hugo, Jekyll, Zola, Astro, Quartz | ✅ |
+| 140 | Catalogue — recherche instantanée : Meilisearch, Typesense, Sonic | ✅ |
+| 141 | Catalogue — moteurs plein texte : Apache Solr, Manticore Search, ZincSearch, Tantivy | ✅ |
+| 142 | Catalogue — métamoteurs : SearXNG, Whoogle, 4get, LibreX | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -313,6 +317,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[09-nats-nsq-zeromq-redpanda/01-nats\|NATS, JetStream]], [[09-nats-nsq-zeromq-redpanda/02-nsq-zeromq\|NSQ, ZeroMQ]], [[09-nats-nsq-zeromq-redpanda/03-redpanda\|Redpanda]] | binaires, paquets, Docker | binaires, bibliothèques | Homebrew, Docker | ✅ |
 | [[10-courtiers-mqtt/01-vernemq\|VerneMQ]], [[10-courtiers-mqtt/02-nanomq-hivemq\|NanoMQ, HiveMQ CE]] | paquets, Docker | Docker, archive Java | Docker | ✅ |
 | [[11-files-de-taches/01-beanstalkd-gearman\|Beanstalkd, Gearman]], [[11-files-de-taches/02-celery-dramatiq-rq\|Celery, Dramatiq, RQ]], [[11-files-de-taches/03-bullmq-pg-boss-graphile\|BullMQ, pg-boss, Graphile Worker]] | paquets, pip, npm | pip, npm | Homebrew, pip, npm | ✅ |
+| [[12-moteurs-recherche/01-meilisearch-typesense-sonic\|Meilisearch, Typesense, Sonic]], [[12-moteurs-recherche/02-solr-manticore-zinc-tantivy\|Solr, Manticore, ZincSearch, Tantivy]] | binaires, Docker | binaires, Docker | Homebrew, Docker | ✅ |
+| [[13-metamoteurs/01-searxng-whoogle-4get-librex\|SearXNG, Whoogle, 4get, LibreX]] | Docker, PHP | Docker | Docker | ✅ |
 
 ## Conteneurs & virtualisation
 
@@ -583,3 +589,4 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[32-documentation-ged/05-notes-connaissance/01-triliumnext-memos\|TriliumNext, Memos]], [[32-documentation-ged/05-notes-connaissance/02-silverbullet-logseq-siyuan\|SilverBullet, Logseq, SiYuan]] | Docker, Flatpak, AppImage | applications, Docker | applications, Docker | ✅ |
 | [[32-documentation-ged/06-documentation-technique/01-mkdocs-material\|MkDocs, Material]], [[32-documentation-ged/06-documentation-technique/02-sphinx-readthedocs-documize\|Sphinx, Read the Docs, Documize]] | pip, Docker | pip | pip, Homebrew | ✅ |
 | [[32-documentation-ged/07-generateurs-documentation/01-docusaurus-vitepress\|Docusaurus, VitePress]], [[32-documentation-ged/07-generateurs-documentation/02-antora-bookdown\|Antora, Bookdown]] | npm, R | npm, R | npm, R, Homebrew | ✅ |
+| [[32-documentation-ged/08-sites-statiques/01-hugo-jekyll-zola\|Hugo, Jekyll, Zola]], [[32-documentation-ged/08-sites-statiques/02-astro-quartz\|Astro, Quartz]] | binaires, snap, gem, npm | winget, gem, npm | Homebrew, gem, npm | ✅ |

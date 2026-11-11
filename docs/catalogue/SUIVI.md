@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 897 | 4 | 219 (17 %) |
+| 1311 | 191 (15 %) | 913 | 4 | 203 (15 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1158,7 +1158,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | RVC Project | Conversion voix | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 | Mimic 3 | Synthèse vocale | Linux | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 
-## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 32/48
+## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 48/48
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1193,23 +1193,23 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Sphinx | Documentation Python | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
 | Antora | Documentation technique | Windows, Linux, macOS | 🆕 fait (lot 138) | `32-documentation-ged/07-generateurs-documentation` |
 | Bookdown | Publication docs | Windows, Linux, macOS | 🆕 fait (lot 138) | `32-documentation-ged/07-generateurs-documentation` |
-| Hugo | Générateur site statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Jekyll | Générateur site statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Zola | Générateur site statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Astro | Framework web statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Quartz | Publication notes | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Meilisearch | Moteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Typesense | Moteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Sonic | Moteur recherche | Linux | ⏳ à faire | → `12-recherche-messages` |
-| Apache Solr | Moteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
+| Hugo | Générateur site statique | Windows, Linux, macOS | 🆕 fait (lot 139) | `32-documentation-ged/08-sites-statiques` |
+| Jekyll | Générateur site statique | Windows, Linux, macOS | 🆕 fait (lot 139) | `32-documentation-ged/08-sites-statiques` |
+| Zola | Générateur site statique | Windows, Linux, macOS | 🆕 fait (lot 139) | `32-documentation-ged/08-sites-statiques` |
+| Astro | Framework web statique | Windows, Linux, macOS | 🆕 fait (lot 139) | `32-documentation-ged/08-sites-statiques` |
+| Quartz | Publication notes | Windows, Linux, macOS | 🆕 fait (lot 139) | `32-documentation-ged/08-sites-statiques` |
+| Meilisearch | Moteur recherche | Windows, Linux, macOS | 🆕 fait (lot 140) | `12-recherche-messages/12-moteurs-recherche` |
+| Typesense | Moteur recherche | Windows, Linux, macOS | 🆕 fait (lot 140) | `12-recherche-messages/12-moteurs-recherche` |
+| Sonic | Moteur recherche | Linux | 🆕 fait (lot 140) | `12-recherche-messages/12-moteurs-recherche` |
+| Apache Solr | Moteur recherche | Windows, Linux, macOS | 🆕 fait (lot 141) | `12-recherche-messages/12-moteurs-recherche` |
 | Elasticsearch (license changed) | Moteur recherche (licence non OSI selon version) | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/01-elasticsearch` |
-| Manticore Search | Moteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| ZincSearch | Moteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Tantivy | Bibliothèque recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Whoogle | Métamoteur recherche privé | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| SearXNG | Métamoteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| 4get | Métamoteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| LibreX | Métamoteur recherche | Linux | ⏳ à faire | → `12-recherche-messages` |
+| Manticore Search | Moteur recherche | Windows, Linux, macOS | 🆕 fait (lot 141) | `12-recherche-messages/12-moteurs-recherche` |
+| ZincSearch | Moteur recherche | Windows, Linux, macOS | 🆕 fait (lot 141) | `12-recherche-messages/12-moteurs-recherche` |
+| Tantivy | Bibliothèque recherche | Windows, Linux, macOS | 🆕 fait (lot 141) | `12-recherche-messages/12-moteurs-recherche` |
+| Whoogle | Métamoteur recherche privé | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
+| SearXNG | Métamoteur recherche | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
+| 4get | Métamoteur recherche | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
+| LibreX | Métamoteur recherche | Linux | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 
 ## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 4/50
 
