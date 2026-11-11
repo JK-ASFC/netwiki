@@ -1,0 +1,1 @@
+{ "title": "OctoPrint, Klipper, Moonraker, Mainsail et Fluidd", "icon": "printer", "color": "#f59e0b", "description": "Piloter des imprimantes 3D en réseau : OctoPrint (serveur d'impression), Klipper (firmware), Moonraker (API) et les interfaces Mainsail et Fluidd ; rappel sur l'impression réseau IPP Everywhere." }

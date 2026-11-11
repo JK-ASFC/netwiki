@@ -374,3 +374,5 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 
 - [[33-materiel-iot/01-inventaire-cmdb/90-aide-memoire|FusionInventory, i-doit et CMDBuild]]
 - [[33-materiel-iot/02-gestion-stocks/90-aide-memoire|Gestion de stocks]]
+- [[33-materiel-iot/03-impression-3d/90-aide-memoire|Impression 3D et IPP]]
+- [[33-materiel-iot/04-domotique/90-aide-memoire|Domotique]]

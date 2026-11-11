@@ -168,6 +168,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 152 | Catalogue — configuration réseau : Oxidized, RANCID, Netdisco, Batfish | ✅ |
 | 153 | Catalogue — inventaire et CMDB : Agent FusionInventory, i-doit Open, CMDBuild | ✅ |
 | 154 | Catalogue — gestion de stocks : Grocy, Homebox, PartKeepr, ERPNext Stock, OpenWMS, OpenLMIS | ✅ |
+| 155 | Catalogue — impression 3D et IPP : OctoPrint, Klipper, Moonraker, Mainsail, Fluidd, IPP Everywhere | ✅ |
+| 156 | Catalogue — domotique : Home Assistant, openHAB, Domoticz | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -618,3 +620,5 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | --- | --- | --- | --- | --- |
 | [[33-materiel-iot/01-inventaire-cmdb/01-fusioninventory-idoit-cmdbuild\|FusionInventory, i-doit, CMDBuild]] | agent, LAMP, Tomcat | agent (MSI) | agent | ✅ |
 | [[33-materiel-iot/02-gestion-stocks/01-grocy-homebox-partkeepr\|Grocy, Homebox, PartKeepr]], [[33-materiel-iot/02-gestion-stocks/02-erpnext-openwms-openlmis\|ERPNext, OpenWMS, OpenLMIS]] | Docker, bench | Docker | Docker | ✅ |
+| [[33-materiel-iot/03-impression-3d/01-octoprint-klipper-moonraker\|OctoPrint, Klipper, Moonraker, Mainsail, Fluidd]] | pip, Docker, KIAUH | ➖ | ➖ | ✅ |
+| [[33-materiel-iot/04-domotique/01-home-assistant-openhab-domoticz\|Home Assistant, openHAB, Domoticz]] | OS, Docker, paquets | Docker, VM | Docker, VM | ✅ |
