@@ -111,6 +111,11 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 95 | Catalogue — radio web et plates-formes vidéo : AzuraCast, LibreTime, Owncast, PeerTube, MediaCMS | ✅ |
 | 96 | Catalogue — serveurs de streaming vidéo : MediaMTX, SRS, OvenMediaEngine, Ant Media Server Community, Red5, Restreamer | ✅ |
 | 97 | Catalogue — WebRTC : Janus, LiveKit, mediasoup, Pion, Kurento | ✅ |
+| 98 | Catalogue — traitement vidéo : FFmpeg, GStreamer, HandBrake | ✅ |
+| 99 | Catalogue — capture et lecture : OBS Studio, VLC, mpv, Kodi | ✅ |
+| 100 | Catalogue — empaquetage et transcodage automatisé : Shaka Packager, Bento4, Tdarr, Unmanic, FileFlows | ✅ |
+| 101 | Catalogue — gestion de médiathèque : Sonarr, Radarr, Lidarr, Readarr, Prowlarr, Jackett, Bazarr | ✅ |
+| 102 | Catalogue — outils de téléchargement : aria2, yt-dlp | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -377,6 +382,11 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[09-radio-video/01-azuracast-libretime\|AzuraCast, LibreTime]], [[09-radio-video/02-owncast\|Owncast]], [[09-radio-video/03-peertube\|PeerTube]], [[09-radio-video/04-mediacms\|MediaCMS]] | Docker, Docker Compose | Docker (WSL), Owncast | Docker, Owncast | ✅ |
 | [[10-serveurs-streaming/02-mediamtx\|MediaMTX]], [[10-serveurs-streaming/03-srs\|SRS]], [[10-serveurs-streaming/04-ovenmediaengine\|OvenMediaEngine]], [[10-serveurs-streaming/05-ant-media-red5\|Ant Media Server, Red5]], [[10-serveurs-streaming/06-restreamer\|Restreamer]] | binaire, Docker, script | MediaMTX, SRS (binaires), Docker | MediaMTX, Docker | ✅ |
 | [[11-webrtc/01-architecture\|architecture WebRTC]], [[11-webrtc/02-janus\|Janus]], [[11-webrtc/03-livekit\|LiveKit]], [[11-webrtc/04-mediasoup-pion-kurento\|mediasoup, Pion, Kurento]] | janus, binaires, Docker, npm, Go | LiveKit, mediasoup, Pion | LiveKit, mediasoup, Pion | ✅ |
+| [[12-traitement-video/01-ffmpeg\|FFmpeg]], [[12-traitement-video/02-gstreamer\|GStreamer]], [[12-traitement-video/03-handbrake\|HandBrake]] | ffmpeg, gstreamer1.0, Flatpak | winget | Homebrew | ✅ |
+| [[13-capture-lecture/01-obs-studio\|OBS Studio]], [[13-capture-lecture/02-vlc-mpv\|VLC, mpv]], [[13-capture-lecture/03-kodi\|Kodi]] | Flatpak, apt, LibreELEC | winget | Homebrew | ✅ |
+| [[14-packaging-transcodage-auto/01-shaka-packager-bento4\|Shaka Packager, Bento4]], [[14-packaging-transcodage-auto/02-tdarr-unmanic-fileflows\|Tdarr, Unmanic, FileFlows]] | binaires, Docker | binaires, Docker | Homebrew, Docker | ✅ |
+| [[15-gestion-medias-arr/01-pile-arr\|pile *arr]], [[15-gestion-medias-arr/02-sonarr-radarr-lidarr-readarr\|Sonarr, Radarr, Lidarr, Readarr]], [[15-gestion-medias-arr/03-prowlarr-jackett-bazarr\|Prowlarr, Jackett, Bazarr]] | Docker (LinuxServer), paquets | installateurs | Homebrew, Docker | ✅ |
+| [[16-telechargement/01-aria2\|aria2]], [[16-telechargement/02-yt-dlp\|yt-dlp]] | aria2, pip, pipx | winget | Homebrew | ✅ |
 
 ## Outils de l'administrateur
 

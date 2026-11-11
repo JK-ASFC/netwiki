@@ -1,0 +1,1 @@
+{"title": "Gestion de médiathèque (*arr)", "icon": "library", "color": "#a855f7", "description": "Organiser et compléter une médiathèque : Sonarr (séries), Radarr (films), Lidarr (musique), Readarr (livres, archivé), Prowlarr et Jackett (indexeurs), Bazarr (sous-titres) ; architecture, Docker Compose, liens physiques et sécurité."}

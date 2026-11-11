@@ -246,6 +246,11 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[20-multimedia-services/09-radio-video/90-aide-memoire|Radio web et plates-formes vidéo (AzuraCast, LibreTime, Owncast, PeerTube, MediaCMS)]]
 - [[20-multimedia-services/10-serveurs-streaming/90-aide-memoire|Serveurs de streaming (MediaMTX, SRS, OvenMediaEngine, Ant Media, Red5, Restreamer)]]
 - [[20-multimedia-services/11-webrtc/90-aide-memoire|Serveurs WebRTC (Janus, LiveKit, mediasoup, Pion, Kurento)]]
+- [[20-multimedia-services/12-traitement-video/90-aide-memoire|Traitement vidéo (FFmpeg, GStreamer, HandBrake)]]
+- [[20-multimedia-services/13-capture-lecture/90-aide-memoire|Capture et lecture (OBS Studio, VLC, mpv, Kodi)]]
+- [[20-multimedia-services/14-packaging-transcodage-auto/90-aide-memoire|Empaquetage et transcodage automatisé (Shaka Packager, Bento4, Tdarr, Unmanic, FileFlows)]]
+- [[20-multimedia-services/15-gestion-medias-arr/90-aide-memoire|Gestion de médiathèque (Sonarr, Radarr, Lidarr, Readarr, Prowlarr, Jackett, Bazarr)]]
+- [[20-multimedia-services/16-telechargement/90-aide-memoire|Outils de téléchargement (aria2, yt-dlp)]]
 
 ## Outils de l'administrateur
 

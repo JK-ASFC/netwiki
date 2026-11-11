@@ -1,0 +1,1 @@
+{"title": "Empaquetage et transcodage automatisé", "icon": "workflow", "color": "#a855f7", "description": "Préparer des vidéos pour la diffusion adaptative (DASH, HLS, CMAF, chiffrement) avec Shaka Packager et Bento4, et automatiser le transcodage d'une médiathèque avec Tdarr, Unmanic et FileFlows."}

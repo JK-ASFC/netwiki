@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 714 | 4 | 402 (31 %) |
+| 1311 | 191 (15 %) | 735 | 4 | 381 (29 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -946,7 +946,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Kate | Éditeur texte | Linux, Windows | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
 | Notepad++ | Éditeur texte | Windows | ✅ existant | `21-outils/04-developpement/05-notepad-plus-plus` |
 
-## 17. STREAMING, MEDIA, AUDIO, VIDEO ET TRANSCODAGE — 28/49
+## 17. STREAMING, MEDIA, AUDIO, VIDEO ET TRANSCODAGE — 49/49
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -973,32 +973,32 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | LiveKit | Serveur WebRTC | Windows, Linux, macOS | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
 | Pion WebRTC | Bibliothèque WebRTC | Windows, Linux, macOS | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
 | Kurento | Serveur média WebRTC | Linux | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
-| FFmpeg | Traitement audio/vidéo | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| HandBrake | Transcodage vidéo | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| GStreamer | Framework multimédia | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| OBS Studio | Capture et streaming | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| VLC | Lecteur média | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| MPV | Lecteur média | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Kodi | Media center | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Shaka Packager | Packaging vidéo | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Bento4 | Packaging MP4 | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
+| FFmpeg | Traitement audio/vidéo | Windows, Linux, macOS | 🆕 fait (lot 98) | `20-multimedia-services/12-traitement-video` |
+| HandBrake | Transcodage vidéo | Windows, Linux, macOS | 🆕 fait (lot 98) | `20-multimedia-services/12-traitement-video` |
+| GStreamer | Framework multimédia | Windows, Linux, macOS | 🆕 fait (lot 98) | `20-multimedia-services/12-traitement-video` |
+| OBS Studio | Capture et streaming | Windows, Linux, macOS | 🆕 fait (lot 99) | `20-multimedia-services/13-capture-lecture` |
+| VLC | Lecteur média | Windows, Linux, macOS | 🆕 fait (lot 99) | `20-multimedia-services/13-capture-lecture` |
+| MPV | Lecteur média | Windows, Linux, macOS | 🆕 fait (lot 99) | `20-multimedia-services/13-capture-lecture` |
+| Kodi | Media center | Windows, Linux, macOS | 🆕 fait (lot 99) | `20-multimedia-services/13-capture-lecture` |
+| Shaka Packager | Packaging vidéo | Windows, Linux, macOS | 🆕 fait (lot 100) | `20-multimedia-services/14-packaging-transcodage-auto` |
+| Bento4 | Packaging MP4 | Windows, Linux, macOS | 🆕 fait (lot 100) | `20-multimedia-services/14-packaging-transcodage-auto` |
 | MediaMTX | Serveur RTSP/RTMP/WebRTC | Windows, Linux, macOS | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
 | Restreamer | Streaming et retransmission | Windows, Linux, macOS | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
-| Tdarr (community) | Automatisation transcodage | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Unmanic | Automatisation médias | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| FileFlows | Traitement médias | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Bazarr | Sous-titres | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Sonarr | Gestion séries | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Radarr | Gestion films | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Lidarr | Gestion musique | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Readarr | Gestion livres | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Prowlarr | Gestion indexeurs | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Jackett | Proxy indexeurs | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
+| Tdarr (community) | Automatisation transcodage | Windows, Linux, macOS | 🆕 fait (lot 100) | `20-multimedia-services/14-packaging-transcodage-auto` |
+| Unmanic | Automatisation médias | Windows, Linux, macOS | 🆕 fait (lot 100) | `20-multimedia-services/14-packaging-transcodage-auto` |
+| FileFlows | Traitement médias | Windows, Linux, macOS | 🆕 fait (lot 100) | `20-multimedia-services/14-packaging-transcodage-auto` |
+| Bazarr | Sous-titres | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Sonarr | Gestion séries | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Radarr | Gestion films | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Lidarr | Gestion musique | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Readarr | Gestion livres | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Prowlarr | Gestion indexeurs | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Jackett | Proxy indexeurs | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
 | qBittorrent | Client BitTorrent | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/06-bittorrent/02-qbittorrent` |
 | Transmission | Client BitTorrent | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/06-bittorrent/01-transmission` |
 | Deluge | Client BitTorrent | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/06-bittorrent/03-deluge` |
-| aria2 | Téléchargement multi-protocole | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| yt-dlp | Téléchargement médias | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
+| aria2 | Téléchargement multi-protocole | Windows, Linux, macOS | 🆕 fait (lot 102) | `20-multimedia-services/16-telechargement` |
+| yt-dlp | Téléchargement médias | Windows, Linux, macOS | 🆕 fait (lot 102) | `20-multimedia-services/16-telechargement` |
 
 ## 18. DNS WEB, EMAIL, ANTI-SPAM ET OUTILS DE COMMUNICATION — 4/31
 
