@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 974 | 4 | 142 (11 %) |
+| 1311 | 191 (15 %) | 982 | 4 | 134 (10 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1266,7 +1266,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | ONOS | Contrôleur SDN | Linux | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
 | Ryu SDN Framework | Contrôleur SDN | Windows, Linux, macOS | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
 
-## 23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS — 33/41
+## 23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS — 41/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1303,14 +1303,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | ESPHome | Firmware IoT | Windows, Linux, macOS | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
 | Tasmota | Firmware IoT | ESP | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
 | OpenMQTTGateway | Passerelle IoT | ESP | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
-| Frigate | NVR détection objets | Linux | ⏳ à faire | → `26-gestion-parc` |
-| ZoneMinder | Vidéosurveillance | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Shinobi | NVR vidéosurveillance | Linux, Windows via conteneur | ⏳ à faire | → `26-gestion-parc` |
-| Motion | Détection mouvement | Linux | ⏳ à faire | → `26-gestion-parc` |
-| motionEye (legacy) | Interface vidéosurveillance | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Kerberos.io | Vidéosurveillance | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Scrypted | Passerelle caméra | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| go2rtc | Relais flux caméra | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
+| Frigate | NVR détection objets | Linux | 🆕 fait (lot 160) | `33-materiel-iot/08-videosurveillance` |
+| ZoneMinder | Vidéosurveillance | Linux | 🆕 fait (lot 160) | `33-materiel-iot/08-videosurveillance` |
+| Shinobi | NVR vidéosurveillance | Linux, Windows via conteneur | 🆕 fait (lot 160) | `33-materiel-iot/08-videosurveillance` |
+| Motion | Détection mouvement | Linux | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
+| motionEye (legacy) | Interface vidéosurveillance | Linux | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
+| Kerberos.io | Vidéosurveillance | Linux | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
+| Scrypted | Passerelle caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
+| go2rtc | Relais flux caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 
 ## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 3/62
 

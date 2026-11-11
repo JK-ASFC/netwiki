@@ -379,3 +379,4 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[33-materiel-iot/05-plateformes-iot/90-aide-memoire|Plates-formes IoT]]
 - [[33-materiel-iot/07-lorawan/90-aide-memoire|LoRaWAN et passerelles]]
 - [[33-materiel-iot/06-zigbee-zwave/90-aide-memoire|Zigbee, Z-Wave et firmwares ESP]]
+- [[33-materiel-iot/08-videosurveillance/90-aide-memoire|Vidéosurveillance]]
