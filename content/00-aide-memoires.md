@@ -332,3 +332,17 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[28-data-analytique/05-catalogues-metadonnees/90-aide-memoire|Catalogues de données]]
 - [[28-data-analytique/06-transformation/90-aide-memoire|dbt, SQLMesh, Polars et Arrow]]
 - [[28-data-analytique/07-science-donnees/90-aide-memoire|JupyterHub, MLflow, DVC et Pachyderm]]
+
+## IA & machine learning
+
+- [[29-ia-machine-learning/01-inference-locale/90-aide-memoire|llama.cpp, KoboldCpp et LocalAI]]
+- [[29-ia-machine-learning/02-serveurs-inference/90-aide-memoire|vLLM, TGI et Transformers]]
+- [[29-ia-machine-learning/03-interfaces-chat/90-aide-memoire|Interfaces de chat]]
+- [[29-ia-machine-learning/04-applications-locales/90-aide-memoire|GPT4All, Jan, PrivateGPT et Khoj]]
+- [[29-ia-machine-learning/05-constructeurs-applications/90-aide-memoire|Dify, Flowise et Langflow]]
+- [[29-ia-machine-learning/06-frameworks-rag/90-aide-memoire|RAG (LangChain, LlamaIndex, Haystack, RAGFlow, Quivr)]]
+- [[29-ia-machine-learning/07-generation-images/90-aide-memoire|Génération d'images]]
+- [[29-ia-machine-learning/08-frameworks-ml/90-aide-memoire|PyTorch, TensorFlow, JAX et OpenCV]]
+- [[29-ia-machine-learning/09-ml-classique-inference/90-aide-memoire|scikit-learn, boosting, ONNX Runtime et OpenVINO]]
+- [[29-ia-machine-learning/10-mlops-serving/90-aide-memoire|BentoML, KServe, Seldon, Ray et Kubeflow]]
+- [[29-ia-machine-learning/11-experiences-annotation/90-aide-memoire|ClearML, Aim, Label Studio, CVAT et FiftyOne]]

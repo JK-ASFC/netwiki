@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 812 | 4 | 304 (23 %) |
+| 1311 | 191 (15 %) | 859 | 4 | 257 (20 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1096,59 +1096,59 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | LakeFS | Versionnement data lake | Windows, Linux, macOS | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
 | Pachyderm | Pipelines données | Linux | 🆕 fait (lot 119) | `28-data-analytique/07-science-donnees` |
 
-## 20. IA, MACHINE LEARNING ET INFERENCE AUTO-HEBERGEE — 2/57
+## 20. IA, MACHINE LEARNING ET INFERENCE AUTO-HEBERGEE — 49/57
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Ollama | Exécution LLM locale | Windows, Linux, macOS | ✅ existant | `21-outils/05-ia-productivite/04-ollama-open-webui` |
-| llama.cpp | Inference LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| LocalAI | API IA locale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| vLLM | Serveur inference LLM | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| Text Generation Inference | Serveur inference LLM | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| Hugging Face Transformers | Bibliothèque ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Hugging Face TGI | Inference LLM | Linux | ⏳ à faire | → `28-ia-machine-learning` |
+| llama.cpp | Inference LLM | Windows, Linux, macOS | 🆕 fait (lot 120) | `29-ia-machine-learning/01-inference-locale` |
+| LocalAI | API IA locale | Windows, Linux, macOS | 🆕 fait (lot 120) | `29-ia-machine-learning/01-inference-locale` |
+| vLLM | Serveur inference LLM | Linux | 🆕 fait (lot 121) | `29-ia-machine-learning/02-serveurs-inference` |
+| Text Generation Inference | Serveur inference LLM | Linux | 🆕 fait (lot 121) | `29-ia-machine-learning/02-serveurs-inference` |
+| Hugging Face Transformers | Bibliothèque ML | Windows, Linux, macOS | 🆕 fait (lot 121) | `29-ia-machine-learning/02-serveurs-inference` |
+| Hugging Face TGI | Inference LLM | Linux | 🆕 fait (lot 121) | `29-ia-machine-learning/02-serveurs-inference` |
 | Open WebUI | Interface LLM auto-hébergée | Windows, Linux, macOS | ✅ existant | `21-outils/05-ia-productivite/04-ollama-open-webui` |
-| LibreChat | Interface chat IA | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| AnythingLLM | Espace de travail LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Dify | Plateforme applications IA | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Flowise | Constructeur flux LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Langflow | Constructeur flux IA | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| LangChain | Framework LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| LlamaIndex | Framework RAG | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Haystack | Framework recherche/RAG | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| RAGFlow | Moteur RAG | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| Quivr | Base de connaissance IA | Linux, Windows via conteneur | ⏳ à faire | → `28-ia-machine-learning` |
-| Khoj | Assistant personnel IA | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| PrivateGPT | RAG local | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| GPT4All | LLM local | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Jan | LLM local | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| KoboldCpp | Inference LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| text-generation-webui | Interface inference LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| SillyTavern | Interface chat LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| ComfyUI | Génération image par nœuds | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| AUTOMATIC1111 Stable Diffusion WebUI | Génération image | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| InvokeAI | Génération image | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Fooocus | Génération image | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| OpenCV | Vision par ordinateur | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| PyTorch | Framework ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| TensorFlow | Framework ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| JAX | Framework ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| scikit-learn | Machine learning | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| XGBoost | Machine learning | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| LightGBM | Machine learning | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| CatBoost | Machine learning | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| ONNX Runtime | Inference ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| OpenVINO | Inference accélérée | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| BentoML | Déploiement modèles | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| KServe | Serving modèles Kubernetes | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| Seldon Core | Serving modèles | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| Ray | Calcul distribué/IA | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Kubeflow | Plateforme ML Kubernetes | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| ClearML | MLOps | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Aim | Suivi expériences ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Label Studio | Annotation données | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| CVAT | Annotation vision | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| FiftyOne | Gestion datasets vision | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
+| LibreChat | Interface chat IA | Windows, Linux, macOS | 🆕 fait (lot 122) | `29-ia-machine-learning/03-interfaces-chat` |
+| AnythingLLM | Espace de travail LLM | Windows, Linux, macOS | 🆕 fait (lot 122) | `29-ia-machine-learning/03-interfaces-chat` |
+| Dify | Plateforme applications IA | Windows, Linux, macOS | 🆕 fait (lot 124) | `29-ia-machine-learning/05-constructeurs-applications` |
+| Flowise | Constructeur flux LLM | Windows, Linux, macOS | 🆕 fait (lot 124) | `29-ia-machine-learning/05-constructeurs-applications` |
+| Langflow | Constructeur flux IA | Windows, Linux, macOS | 🆕 fait (lot 124) | `29-ia-machine-learning/05-constructeurs-applications` |
+| LangChain | Framework LLM | Windows, Linux, macOS | 🆕 fait (lot 125) | `29-ia-machine-learning/06-frameworks-rag` |
+| LlamaIndex | Framework RAG | Windows, Linux, macOS | 🆕 fait (lot 125) | `29-ia-machine-learning/06-frameworks-rag` |
+| Haystack | Framework recherche/RAG | Windows, Linux, macOS | 🆕 fait (lot 125) | `29-ia-machine-learning/06-frameworks-rag` |
+| RAGFlow | Moteur RAG | Linux | 🆕 fait (lot 125) | `29-ia-machine-learning/06-frameworks-rag` |
+| Quivr | Base de connaissance IA | Linux, Windows via conteneur | 🆕 fait (lot 125) | `29-ia-machine-learning/06-frameworks-rag` |
+| Khoj | Assistant personnel IA | Windows, Linux, macOS | 🆕 fait (lot 123) | `29-ia-machine-learning/04-applications-locales` |
+| PrivateGPT | RAG local | Windows, Linux, macOS | 🆕 fait (lot 123) | `29-ia-machine-learning/04-applications-locales` |
+| GPT4All | LLM local | Windows, Linux, macOS | 🆕 fait (lot 123) | `29-ia-machine-learning/04-applications-locales` |
+| Jan | LLM local | Windows, Linux, macOS | 🆕 fait (lot 123) | `29-ia-machine-learning/04-applications-locales` |
+| KoboldCpp | Inference LLM | Windows, Linux, macOS | 🆕 fait (lot 120) | `29-ia-machine-learning/01-inference-locale` |
+| text-generation-webui | Interface inference LLM | Windows, Linux, macOS | 🆕 fait (lot 122) | `29-ia-machine-learning/03-interfaces-chat` |
+| SillyTavern | Interface chat LLM | Windows, Linux, macOS | 🆕 fait (lot 122) | `29-ia-machine-learning/03-interfaces-chat` |
+| ComfyUI | Génération image par nœuds | Windows, Linux, macOS | 🆕 fait (lot 126) | `29-ia-machine-learning/07-generation-images` |
+| AUTOMATIC1111 Stable Diffusion WebUI | Génération image | Windows, Linux, macOS | 🆕 fait (lot 126) | `29-ia-machine-learning/07-generation-images` |
+| InvokeAI | Génération image | Windows, Linux, macOS | 🆕 fait (lot 126) | `29-ia-machine-learning/07-generation-images` |
+| Fooocus | Génération image | Windows, Linux, macOS | 🆕 fait (lot 126) | `29-ia-machine-learning/07-generation-images` |
+| OpenCV | Vision par ordinateur | Windows, Linux, macOS | 🆕 fait (lot 127) | `29-ia-machine-learning/08-frameworks-ml` |
+| PyTorch | Framework ML | Windows, Linux, macOS | 🆕 fait (lot 127) | `29-ia-machine-learning/08-frameworks-ml` |
+| TensorFlow | Framework ML | Windows, Linux, macOS | 🆕 fait (lot 127) | `29-ia-machine-learning/08-frameworks-ml` |
+| JAX | Framework ML | Windows, Linux, macOS | 🆕 fait (lot 127) | `29-ia-machine-learning/08-frameworks-ml` |
+| scikit-learn | Machine learning | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| XGBoost | Machine learning | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| LightGBM | Machine learning | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| CatBoost | Machine learning | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| ONNX Runtime | Inference ML | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| OpenVINO | Inference accélérée | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| BentoML | Déploiement modèles | Windows, Linux, macOS | 🆕 fait (lot 129) | `29-ia-machine-learning/10-mlops-serving` |
+| KServe | Serving modèles Kubernetes | Linux | 🆕 fait (lot 129) | `29-ia-machine-learning/10-mlops-serving` |
+| Seldon Core | Serving modèles | Linux | 🆕 fait (lot 129) | `29-ia-machine-learning/10-mlops-serving` |
+| Ray | Calcul distribué/IA | Windows, Linux, macOS | 🆕 fait (lot 129) | `29-ia-machine-learning/10-mlops-serving` |
+| Kubeflow | Plateforme ML Kubernetes | Linux | 🆕 fait (lot 129) | `29-ia-machine-learning/10-mlops-serving` |
+| ClearML | MLOps | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
+| Aim | Suivi expériences ML | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
+| Label Studio | Annotation données | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
+| CVAT | Annotation vision | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
+| FiftyOne | Gestion datasets vision | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
 | Whisper.cpp | Transcription locale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
 | faster-whisper | Transcription audio | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
 | Whisper | Reconnaissance vocale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |

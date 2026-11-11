@@ -133,6 +133,17 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 117 | Catalogue — catalogues de données : OpenMetadata, DataHub, Amundsen, Apache Atlas | ✅ |
 | 118 | Catalogue — transformation : dbt Core, SQLMesh, Polars, Apache Arrow | ✅ |
 | 119 | Catalogue — science des données : JupyterHub, MLflow, DVC, Pachyderm | ✅ |
+| 120 | Catalogue — inférence locale : llama.cpp, KoboldCpp, LocalAI | ✅ |
+| 121 | Catalogue — serveurs d'inférence : vLLM, Text Generation Inference, Hugging Face Transformers | ✅ |
+| 122 | Catalogue — interfaces de chat : LibreChat, AnythingLLM, text-generation-webui, SillyTavern | ✅ |
+| 123 | Catalogue — applications locales : GPT4All, Jan, PrivateGPT, Khoj | ✅ |
+| 124 | Catalogue — constructeurs d'applications IA : Dify, Flowise, Langflow | ✅ |
+| 125 | Catalogue — RAG : LangChain, LlamaIndex, Haystack, RAGFlow, Quivr | ✅ |
+| 126 | Catalogue — génération d'images : ComfyUI, AUTOMATIC1111, InvokeAI, Fooocus | ✅ |
+| 127 | Catalogue — frameworks : PyTorch, TensorFlow, JAX, OpenCV | ✅ |
+| 128 | Catalogue — ML classique et inférence optimisée : scikit-learn, XGBoost, LightGBM, CatBoost, ONNX Runtime, OpenVINO | ✅ |
+| 129 | Catalogue — service de modèles et MLOps : BentoML, KServe, Seldon Core, Ray, Kubeflow | ✅ |
+| 130 | Catalogue — expériences et annotation : ClearML, Aim, Label Studio, CVAT, FiftyOne | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -535,3 +546,19 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[28-data-analytique/05-catalogues-metadonnees/01-openmetadata-datahub\|OpenMetadata, DataHub]], [[28-data-analytique/05-catalogues-metadonnees/02-amundsen-atlas\|Amundsen, Apache Atlas]] | Docker, Helm, pip, archives | Docker, pip | Docker, pip | ✅ |
 | [[28-data-analytique/06-transformation/01-dbt-sqlmesh\|dbt Core, SQLMesh]], [[28-data-analytique/06-transformation/02-polars-arrow\|Polars, Apache Arrow]] | pip | pip | pip, Homebrew | ✅ |
 | [[28-data-analytique/07-science-donnees/01-jupyterhub\|JupyterHub]], [[28-data-analytique/07-science-donnees/02-mlflow\|MLflow]], [[28-data-analytique/07-science-donnees/03-dvc-pachyderm\|DVC, Pachyderm]] | TLJH, Helm, pip | pip, Docker | pip, Homebrew (DVC) | ✅ |
+
+## IA & machine learning
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[29-ia-machine-learning/01-inference-locale/01-llama-cpp\|llama.cpp]], [[29-ia-machine-learning/01-inference-locale/02-koboldcpp-localai\|KoboldCpp, LocalAI]] | binaires, CMake, Docker | binaires (CUDA, Vulkan) | Homebrew, Metal | ✅ |
+| [[29-ia-machine-learning/02-serveurs-inference/01-vllm-tgi\|vLLM, TGI]], [[29-ia-machine-learning/02-serveurs-inference/02-transformers\|Transformers]] | pip, Docker (GPU) | WSL, pip (Transformers) | pip (Transformers, MPS) | ✅ |
+| [[29-ia-machine-learning/03-interfaces-chat/01-librechat-anythingllm\|LibreChat, AnythingLLM]], [[29-ia-machine-learning/03-interfaces-chat/02-text-generation-webui-sillytavern\|text-generation-webui, SillyTavern]] | Docker, scripts, Node.js | Docker, scripts, application | Docker, scripts, application | ✅ |
+| [[29-ia-machine-learning/04-applications-locales/01-gpt4all-jan\|GPT4All, Jan]], [[29-ia-machine-learning/04-applications-locales/02-privategpt-khoj\|PrivateGPT, Khoj]] | .deb, Flatpak, Docker, Poetry | installateurs, Docker | .dmg, Docker | ✅ |
+| [[29-ia-machine-learning/05-constructeurs-applications/01-dify\|Dify]], [[29-ia-machine-learning/05-constructeurs-applications/02-flowise-langflow\|Flowise, Langflow]] | Docker Compose, npx, uv | Docker, npx, uv | Docker, npx, uv | ✅ |
+| [[29-ia-machine-learning/06-frameworks-rag/01-langchain-llamaindex-haystack\|LangChain, LlamaIndex, Haystack]], [[29-ia-machine-learning/06-frameworks-rag/02-ragflow-quivr\|RAGFlow, Quivr]] | pip, Docker Compose | pip, Docker | pip, Docker | ✅ |
+| [[29-ia-machine-learning/07-generation-images/01-comfyui\|ComfyUI]], [[29-ia-machine-learning/07-generation-images/02-automatic1111-invokeai-fooocus\|AUTOMATIC1111, InvokeAI, Fooocus]] | git + venv, Docker | portable, lanceurs | application, git + venv (MPS) | ✅ |
+| [[29-ia-machine-learning/08-frameworks-ml/01-pytorch-tensorflow-jax\|PyTorch, TensorFlow, JAX]], [[29-ia-machine-learning/08-frameworks-ml/02-opencv\|OpenCV]] | pip (CUDA, ROCm), apt | pip (TensorFlow GPU via WSL2) | pip (MPS, Metal) | ✅ |
+| [[29-ia-machine-learning/09-ml-classique-inference/01-scikit-learn-boosting\|scikit-learn, XGBoost, LightGBM, CatBoost]], [[29-ia-machine-learning/09-ml-classique-inference/02-onnx-runtime-openvino\|ONNX Runtime, OpenVINO]] | pip, apt | pip (DirectML) | pip (CoreML) | ✅ |
+| [[29-ia-machine-learning/10-mlops-serving/01-bentoml-kserve-seldon\|BentoML, KServe, Seldon Core]], [[29-ia-machine-learning/10-mlops-serving/02-ray-kubeflow\|Ray, Kubeflow]] | pip, Kubernetes, Helm | pip (BentoML, Ray) | pip (BentoML, Ray) | ✅ |
+| [[29-ia-machine-learning/11-experiences-annotation/01-clearml-aim\|ClearML, Aim]], [[29-ia-machine-learning/11-experiences-annotation/02-label-studio-cvat-fiftyone\|Label Studio, CVAT, FiftyOne]] | Docker Compose, pip | Docker, pip | Docker, pip | ✅ |

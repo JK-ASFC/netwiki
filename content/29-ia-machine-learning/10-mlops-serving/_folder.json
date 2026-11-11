@@ -1,0 +1,1 @@
+{ "title": "BentoML, KServe, Seldon, Ray et Kubeflow", "icon": "rocket", "color": "#ec4899", "description": "Mettre des modèles en production et industrialiser l'apprentissage : empaquetage et service (BentoML, KServe, Seldon Core), calcul distribué (Ray) et plate-forme ML sur Kubernetes (Kubeflow)." }

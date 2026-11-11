@@ -1,0 +1,1 @@
+{ "title": "vLLM, TGI et Transformers", "icon": "server", "color": "#ec4899", "description": "Servir des LLM en production sur GPU : vLLM et Hugging Face Text Generation Inference (TGI), et la bibliothèque Hugging Face Transformers pour charger, exécuter et adapter les modèles." }
