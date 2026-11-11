@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 867 | 4 | 249 (19 %) |
+| 1311 | 191 (15 %) | 883 | 4 | 233 (18 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1158,26 +1158,26 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | RVC Project | Conversion voix | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 | Mimic 3 | Synthèse vocale | Linux | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 
-## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 2/48
+## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 18/48
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| Paperless-ngx | GED et archivage | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Mayan EDMS | GED | Linux | ⏳ à faire | → `29-documentation-ged` |
-| Teedy | GED | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| OpenKM Community | GED | Windows, Linux | ⏳ à faire | → `29-documentation-ged` |
-| LogicalDOC Community | GED | Windows, Linux | ⏳ à faire | → `29-documentation-ged` |
-| SeedDMS | GED | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Docspell | GED | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Documenso | Signature électronique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| OpenSign | Signature électronique | Linux | ⏳ à faire | → `29-documentation-ged` |
-| LibreSign | Signature électronique Nextcloud | Linux | ⏳ à faire | → `29-documentation-ged` |
-| Stirling-PDF | Outils PDF web | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Gotenberg | Conversion documents API | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| ONLYOFFICE Docs Community | Suite bureautique serveur | Windows, Linux | ⏳ à faire | → `29-documentation-ged` |
-| Collabora Online Development Edition | Suite bureautique web | Linux | ⏳ à faire | → `29-documentation-ged` |
-| LibreOffice | Suite bureautique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Apache OpenOffice | Suite bureautique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
+| Paperless-ngx | GED et archivage | Windows, Linux, macOS | 🆕 fait (lot 132) | `32-documentation-ged/01-ged-legere` |
+| Mayan EDMS | GED | Linux | 🆕 fait (lot 132) | `32-documentation-ged/01-ged-legere` |
+| Teedy | GED | Windows, Linux, macOS | 🆕 fait (lot 132) | `32-documentation-ged/01-ged-legere` |
+| OpenKM Community | GED | Windows, Linux | 🆕 fait (lot 133) | `32-documentation-ged/02-ged-entreprise` |
+| LogicalDOC Community | GED | Windows, Linux | 🆕 fait (lot 133) | `32-documentation-ged/02-ged-entreprise` |
+| SeedDMS | GED | Windows, Linux, macOS | 🆕 fait (lot 133) | `32-documentation-ged/02-ged-entreprise` |
+| Docspell | GED | Windows, Linux, macOS | 🆕 fait (lot 132) | `32-documentation-ged/01-ged-legere` |
+| Documenso | Signature électronique | Windows, Linux, macOS | 🆕 fait (lot 134) | `32-documentation-ged/03-signature-pdf` |
+| OpenSign | Signature électronique | Linux | 🆕 fait (lot 134) | `32-documentation-ged/03-signature-pdf` |
+| LibreSign | Signature électronique Nextcloud | Linux | 🆕 fait (lot 134) | `32-documentation-ged/03-signature-pdf` |
+| Stirling-PDF | Outils PDF web | Windows, Linux, macOS | 🆕 fait (lot 134) | `32-documentation-ged/03-signature-pdf` |
+| Gotenberg | Conversion documents API | Windows, Linux, macOS | 🆕 fait (lot 134) | `32-documentation-ged/03-signature-pdf` |
+| ONLYOFFICE Docs Community | Suite bureautique serveur | Windows, Linux | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
+| Collabora Online Development Edition | Suite bureautique web | Linux | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
+| LibreOffice | Suite bureautique | Windows, Linux, macOS | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
+| Apache OpenOffice | Suite bureautique | Windows, Linux, macOS | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
 | TriliumNext Notes | Base de connaissances | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
 | Joplin Server | Synchronisation notes | Windows, Linux, macOS | ✅ existant | `10-messagerie/09-joplin-server` |
 | Memos | Notes auto-hébergées | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |

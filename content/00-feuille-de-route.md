@@ -145,6 +145,10 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 129 | Catalogue — service de modèles et MLOps : BentoML, KServe, Seldon Core, Ray, Kubeflow | ✅ |
 | 130 | Catalogue — expériences et annotation : ClearML, Aim, Label Studio, CVAT, FiftyOne | ✅ |
 | 131 | Catalogue — audio et voix : Whisper, whisper.cpp, faster-whisper, Piper, Coqui TTS, Kokoro, RVC, Mimic 3 | ✅ |
+| 132 | Catalogue — GED : Paperless-ngx, Mayan EDMS, Teedy, Docspell | ✅ |
+| 133 | Catalogue — GED d'entreprise : OpenKM, LogicalDOC, SeedDMS | ✅ |
+| 134 | Catalogue — signature et PDF : Documenso, OpenSign, LibreSign, Stirling-PDF, Gotenberg | ✅ |
+| 135 | Catalogue — bureautique : ONLYOFFICE Docs, Collabora Online, LibreOffice, Apache OpenOffice | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -564,3 +568,12 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[29-ia-machine-learning/10-mlops-serving/01-bentoml-kserve-seldon\|BentoML, KServe, Seldon Core]], [[29-ia-machine-learning/10-mlops-serving/02-ray-kubeflow\|Ray, Kubeflow]] | pip, Kubernetes, Helm | pip (BentoML, Ray) | pip (BentoML, Ray) | ✅ |
 | [[29-ia-machine-learning/11-experiences-annotation/01-clearml-aim\|ClearML, Aim]], [[29-ia-machine-learning/11-experiences-annotation/02-label-studio-cvat-fiftyone\|Label Studio, CVAT, FiftyOne]] | Docker Compose, pip | Docker, pip | Docker, pip | ✅ |
 | [[29-ia-machine-learning/12-audio-voix/01-whisper\|Whisper, whisper.cpp, faster-whisper]], [[29-ia-machine-learning/12-audio-voix/02-synthese-vocale\|Piper, Coqui TTS, Kokoro, Mimic 3, RVC]] | pip, CMake, Docker | pip, binaires | pip, Homebrew, Metal | ✅ |
+
+## Documentation, GED & connaissance
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[32-documentation-ged/01-ged-legere/01-paperless-ngx\|Paperless-ngx]], [[32-documentation-ged/01-ged-legere/02-mayan-teedy-docspell\|Mayan EDMS, Teedy, Docspell]] | Docker Compose | Docker | Docker | ✅ |
+| [[32-documentation-ged/02-ged-entreprise/01-openkm-logicaldoc-seeddms\|OpenKM, LogicalDOC, SeedDMS]] | Tomcat (Java), Apache + PHP | installateurs (Java), PHP | ➖ | ✅ |
+| [[32-documentation-ged/03-signature-pdf/01-documenso-opensign-libresign\|Documenso, OpenSign, LibreSign]], [[32-documentation-ged/03-signature-pdf/02-stirling-pdf-gotenberg\|Stirling-PDF, Gotenberg]] | Docker, Nextcloud (occ) | Docker | Docker | ✅ |
+| [[32-documentation-ged/04-bureautique/01-onlyoffice-collabora\|ONLYOFFICE Docs, Collabora Online]], [[32-documentation-ged/04-bureautique/02-libreoffice-openoffice\|LibreOffice, OpenOffice]] | Docker, apt, dnf, Flatpak | Docker (serveurs), MSI, winget | Homebrew, .dmg | ✅ |

@@ -347,3 +347,10 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[29-ia-machine-learning/10-mlops-serving/90-aide-memoire|BentoML, KServe, Seldon, Ray et Kubeflow]]
 - [[29-ia-machine-learning/11-experiences-annotation/90-aide-memoire|ClearML, Aim, Label Studio, CVAT et FiftyOne]]
 - [[29-ia-machine-learning/12-audio-voix/90-aide-memoire|Whisper et synthèse vocale]]
+
+## Documentation, GED & connaissance
+
+- [[32-documentation-ged/01-ged-legere/90-aide-memoire|Paperless-ngx, Mayan EDMS, Teedy et Docspell]]
+- [[32-documentation-ged/02-ged-entreprise/90-aide-memoire|OpenKM, LogicalDOC et SeedDMS]]
+- [[32-documentation-ged/03-signature-pdf/90-aide-memoire|Signature électronique et outils PDF]]
+- [[32-documentation-ged/04-bureautique/90-aide-memoire|Bureautique]]
