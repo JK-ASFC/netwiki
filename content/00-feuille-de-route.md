@@ -160,6 +160,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 144 | Catalogue — gestion du réseau Linux : NetworkManager, systemd-networkd, ConnMan | ✅ |
 | 145 | Catalogue — Wi-Fi Linux : hostapd, wpa_supplicant, iw, iwd | ✅ |
 | 146 | Catalogue — commutateur virtuel : Open vSwitch | ✅ |
+| 147 | Catalogue — laboratoires réseau : GNS3, Containerlab, Kathará | ✅ |
+| 148 | Catalogue — émulateurs réseau : CORE, ns-3, Mininet | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -466,6 +468,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | Gestion du réseau (Linux) | [[16-gestion-reseau-linux/01-networkmanager-networkd-connman\|NetworkManager, systemd-networkd, ConnMan]] | ✅ |
 | Wi-Fi (Linux) | [[17-wifi-linux/01-hostapd-wpa-supplicant-iw-iwd\|hostapd, wpa_supplicant, iw, iwd]] | ✅ |
 | Commutateur virtuel | [[18-open-vswitch/01-open-vswitch\|Open vSwitch]] | ✅ |
+| Laboratoires réseau | [[19-labos-reseau/01-gns3-containerlab\|GNS3, Containerlab, Kathará]] | ✅ |
 
 ## Équipements réseau par constructeur
 

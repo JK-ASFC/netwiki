@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 923 | 4 | 193 (15 %) |
+| 1311 | 191 (15 %) | 929 | 4 | 187 (14 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1211,7 +1211,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | 4get | Métamoteur recherche | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 | LibreX | Métamoteur recherche | Linux | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 
-## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 14/50
+## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 20/50
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1256,12 +1256,12 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Oxidized | Sauvegarde configuration réseau | Linux | ⏳ à faire | → `21-outils` |
 | RANCID | Sauvegarde configuration réseau | Linux, Unix | ⏳ à faire | → `21-outils` |
 | Batfish | Validation configuration réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Containerlab | Laboratoire réseau | Linux | ⏳ à faire | → `21-outils` |
-| Kathara | Laboratoire réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| GNS3 | Simulation réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| CORE Network Emulator | Émulation réseau | Linux | ⏳ à faire | → `21-outils` |
-| ns-3 | Simulation réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Mininet | Émulation réseau SDN | Linux | ⏳ à faire | → `21-outils` |
+| Containerlab | Laboratoire réseau | Linux | 🆕 fait (lot 147) | `21-outils/19-labos-reseau` |
+| Kathara | Laboratoire réseau | Windows, Linux, macOS | 🆕 fait (lot 147) | `21-outils/19-labos-reseau` |
+| GNS3 | Simulation réseau | Windows, Linux, macOS | 🆕 fait (lot 147) | `21-outils/19-labos-reseau` |
+| CORE Network Emulator | Émulation réseau | Linux | 🆕 fait (lot 148) | `21-outils/19-labos-reseau` |
+| ns-3 | Simulation réseau | Windows, Linux, macOS | 🆕 fait (lot 148) | `21-outils/19-labos-reseau` |
+| Mininet | Émulation réseau SDN | Linux | 🆕 fait (lot 148) | `21-outils/19-labos-reseau` |
 | OpenDaylight | Contrôleur SDN | Linux | ⏳ à faire | → `21-outils` |
 | ONOS | Contrôleur SDN | Linux | ⏳ à faire | → `21-outils` |
 | Ryu SDN Framework | Contrôleur SDN | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
