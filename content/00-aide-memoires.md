@@ -408,3 +408,5 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[31-auto-hebergement/11-baas/90-aide-memoire|BaaS auto-hébergés]]
 - [[31-auto-hebergement/12-api-bdd/90-aide-memoire|API sur base de données]]
 - [[31-auto-hebergement/13-bi-analytics/90-aide-memoire|BI auto-hébergée]]
+- [[31-auto-hebergement/14-observabilite/90-aide-memoire|Kibana et OpenObserve]]
+- [[31-auto-hebergement/15-marque-pages/90-aide-memoire|Marque-pages et archivage]]

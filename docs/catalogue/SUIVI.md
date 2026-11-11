@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 1088 | 4 | 28 (2 %) |
+| 1311 | 191 (15 %) | 1100 | 4 | 16 (1 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1379,7 +1379,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | shfmt | Formatage shell | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 | EditorConfig | Conventions code | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 
-## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 48/60
+## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 60/60
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1391,7 +1391,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Sandstorm | Plateforme applications | Linux | 🆕 fait (lot 176) | `31-auto-hebergement/03-suites-homelab` |
 | FreedomBox | Serveur personnel | Debian | 🆕 fait (lot 176) | `31-auto-hebergement/03-suites-homelab` |
 | HestiaCP | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
-| CyberPanel (open source components) | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
+| CyberPanel (open source components) | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
 | ISPConfig | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
 | Virtualmin GPL | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
 | Webmin | Administration serveur | Linux, Unix | 🆕 fait (lot 178) | `31-auto-hebergement/05-admin-serveur` |
@@ -1420,7 +1420,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Appsmith | Applications internes | Windows, Linux, macOS | 🆕 fait (lot 184) | `31-auto-hebergement/10-low-code` |
 | Budibase | Applications internes | Windows, Linux, macOS | 🆕 fait (lot 184) | `31-auto-hebergement/10-low-code` |
 | ToolJet | Applications internes | Windows, Linux, macOS | 🆕 fait (lot 184) | `31-auto-hebergement/10-low-code` |
-| Supabase (self-hosted) | Backend-as-a-Service | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
+| Supabase (self-hosted) | Backend-as-a-Service | Windows, Linux, macOS | 🆕 fait (lot 185) | `31-auto-hebergement/11-baas` |
 | Appwrite | Backend-as-a-Service | Windows, Linux, macOS | 🆕 fait (lot 185) | `31-auto-hebergement/11-baas` |
 | PocketBase | Backend léger | Windows, Linux, macOS | 🆕 fait (lot 185) | `31-auto-hebergement/11-baas` |
 | Parse Server | Backend-as-a-Service | Windows, Linux, macOS | 🆕 fait (lot 185) | `31-auto-hebergement/11-baas` |
@@ -1433,14 +1433,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Lightdash | BI dbt | Windows, Linux, macOS | 🆕 fait (lot 187) | `31-auto-hebergement/13-bi-analytics` |
 | Evidence | BI-as-code | Windows, Linux, macOS | 🆕 fait (lot 187) | `31-auto-hebergement/13-bi-analytics` |
 | Grafana | Dashboards | Windows, Linux, macOS | ✅ existant | `06-supervision/03-grafana` |
-| Kibana (license check) | Dashboards recherche | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| OpenObserve | Observabilité et analytics | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Linkding | Gestion favoris | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Shiori | Gestion favoris | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Wallabag | Lecture différée | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| ArchiveBox | Archivage web | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Readeck | Lecture différée | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Changedetection.io | Surveillance pages web | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Hoarder (Karakeep) | Signets et archivage | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Linkwarden | Gestion liens | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
+| Kibana (license check) | Dashboards recherche | Windows, Linux, macOS | 🆕 fait (lot 188) | `31-auto-hebergement/14-observabilite` |
+| OpenObserve | Observabilité et analytics | Windows, Linux, macOS | 🆕 fait (lot 188) | `31-auto-hebergement/14-observabilite` |
+| Linkding | Gestion favoris | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Shiori | Gestion favoris | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Wallabag | Lecture différée | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| ArchiveBox | Archivage web | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Readeck | Lecture différée | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Changedetection.io | Surveillance pages web | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Hoarder (Karakeep) | Signets et archivage | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Linkwarden | Gestion liens | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
 

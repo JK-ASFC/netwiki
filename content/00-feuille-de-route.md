@@ -201,6 +201,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 185 | Catalogue — BaaS auto-hébergés : Supabase, Appwrite, PocketBase, Parse Server | ✅ |
 | 186 | Catalogue — API sur base : Hasura, PostgREST, PostGraphile | ✅ |
 | 187 | Catalogue — BI : Metabase, Apache Superset, Redash, Lightdash, Evidence | ✅ |
+| 188 | Catalogue — observabilité : Kibana, OpenObserve | ✅ |
+| 189 | Catalogue — marque-pages et archivage : Linkding, Shiori, Linkwarden, Hoarder/Karakeep, Wallabag, Readeck, ArchiveBox, Changedetection.io | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -689,3 +691,5 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[31-auto-hebergement/11-baas/01-supabase-appwrite-pocketbase\|Supabase, Appwrite, PocketBase, Parse Server]] | Docker, binaire | Docker, binaire | Docker, binaire | ✅ |
 | [[31-auto-hebergement/12-api-bdd/01-hasura-postgrest-postgraphile\|Hasura, PostgREST, PostGraphile]] | Docker, npx | Docker, npx | Docker, npx | ✅ |
 | [[31-auto-hebergement/13-bi-analytics/01-metabase-superset-redash\|Metabase, Superset, Redash, Lightdash, Evidence]] | Docker, npm | Docker, npm | Docker, npm | ✅ |
+| [[31-auto-hebergement/14-observabilite/01-kibana-openobserve\|Kibana, OpenObserve]] | Docker | Docker | Docker | ✅ |
+| [[31-auto-hebergement/15-marque-pages/01-linkding-wallabag-archivebox\|Linkding, Shiori, Linkwarden, Karakeep, Wallabag, Readeck, ArchiveBox, Changedetection.io]] | Docker | Docker | Docker | ✅ |
