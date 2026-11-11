@@ -1,0 +1,12 @@
+{
+  "format": "netwiki-content-index",
+  "version": "2026.11.11.1400",
+  "label": "Contenu NetWiki du 11/11/2026",
+  "created": "2026-11-11T14:02:03.715Z",
+  "file": "netwiki-contenu.netwiki",
+  "files": 5810,
+  "size": 10955352,
+  "sha256": "2d433696f22fe55ba094c8eeed2a617dfac2bef2ab31ba9898d82cfac0c97d0a",
+  "contentHash": "1aee7578f646f53b6990ddbd9a17b4525101af90da368ed77da11bd5d9a6a1cf",
+  "appVersion": "1.46.0"
+}
