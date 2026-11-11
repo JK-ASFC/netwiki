@@ -1,0 +1,1 @@
+{ "title": "Pact, Schemathesis, Dredd, Hurl et Newman", "icon": "shield-check", "color": "#6366f1", "description": "Tester des API : contrats entre services (Pact), conformité à OpenAPI (Schemathesis, Dredd) et tests fonctionnels rejouables (Hurl, Newman)." }

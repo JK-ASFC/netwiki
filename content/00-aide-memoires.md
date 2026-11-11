@@ -380,3 +380,13 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[33-materiel-iot/07-lorawan/90-aide-memoire|LoRaWAN et passerelles]]
 - [[33-materiel-iot/06-zigbee-zwave/90-aide-memoire|Zigbee, Z-Wave et firmwares ESP]]
 - [[33-materiel-iot/08-videosurveillance/90-aide-memoire|Vidéosurveillance]]
+
+## Développement, API & tests
+
+- [[30-developpement-api/04-clients-http/90-aide-memoire|Clients HTTP et API]]
+- [[30-developpement-api/05-documentation-api/90-aide-memoire|Documentation d'API]]
+- [[30-developpement-api/06-mock-api/90-aide-memoire|Simulation d'API]]
+- [[30-developpement-api/07-tests-contrat/90-aide-memoire|Tests d'API et de contrat]]
+
+## Services de plateforme & auto-hébergement
+

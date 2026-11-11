@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 982 | 4 | 134 (10 %) |
+| 1311 | 191 (15 %) | 1001 | 4 | 115 (9 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1312,32 +1312,32 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Scrypted | Passerelle caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 | go2rtc | Relais flux caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 
-## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 3/62
+## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 22/62
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Insomnia (license check) | Client API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
 | Bruno | Client API | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/07-postman-bruno` |
-| Hoppscotch | Client API web | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| HTTPie | Client HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| Hoppscotch | Client API web | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
+| HTTPie | Client HTTP | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
 | curl | Client HTTP | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/06-dig-mtr-curl` |
-| wget | Téléchargement HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| xh | Client HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Swagger UI | Documentation API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Swagger Editor | Édition OpenAPI | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Redoc | Documentation API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Scalar | Documentation API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Stoplight Elements | Documentation API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Prism | Mock serveur API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| WireMock | Mock HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| MockServer | Mock API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Hoverfly | Simulation API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Mountebank | Mock multi-protocoles | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Pact | Tests contractuels | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Schemathesis | Tests API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Dredd | Tests API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Hurl | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Newman | Runner Postman collections | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| wget | Téléchargement HTTP | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
+| xh | Client HTTP | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
+| Swagger UI | Documentation API | Windows, Linux, macOS | 🆕 fait (lot 163) | `30-developpement-api/05-documentation-api` |
+| Swagger Editor | Édition OpenAPI | Windows, Linux, macOS | 🆕 fait (lot 163) | `30-developpement-api/05-documentation-api` |
+| Redoc | Documentation API | Windows, Linux, macOS | 🆕 fait (lot 163) | `30-developpement-api/05-documentation-api` |
+| Scalar | Documentation API | Windows, Linux, macOS | 🆕 fait (lot 163) | `30-developpement-api/05-documentation-api` |
+| Stoplight Elements | Documentation API | Windows, Linux, macOS | 🆕 fait (lot 163) | `30-developpement-api/05-documentation-api` |
+| Prism | Mock serveur API | Windows, Linux, macOS | 🆕 fait (lot 164) | `30-developpement-api/06-mock-api` |
+| WireMock | Mock HTTP | Windows, Linux, macOS | 🆕 fait (lot 164) | `30-developpement-api/06-mock-api` |
+| MockServer | Mock API | Windows, Linux, macOS | 🆕 fait (lot 164) | `30-developpement-api/06-mock-api` |
+| Hoverfly | Simulation API | Windows, Linux, macOS | 🆕 fait (lot 164) | `30-developpement-api/06-mock-api` |
+| Mountebank | Mock multi-protocoles | Windows, Linux, macOS | 🆕 fait (lot 164) | `30-developpement-api/06-mock-api` |
+| Pact | Tests contractuels | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
+| Schemathesis | Tests API | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
+| Dredd | Tests API | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
+| Hurl | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
+| Newman | Runner Postman collections | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
 | Apache Bench | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
 | wrk2 | Tests HTTP | Linux, macOS | ⏳ à faire | → `30-developpement-api` |
 | Autocannon | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |

@@ -1,0 +1,1 @@
+{ "title": "Prism, WireMock, MockServer, Hoverfly et Mountebank", "icon": "test-tube", "color": "#6366f1", "description": "Simuler des API pour développer et tester sans dépendre des vrais services : Prism (depuis OpenAPI), WireMock, MockServer, Hoverfly (capture/rejeu) et Mountebank (multi-protocoles)." }

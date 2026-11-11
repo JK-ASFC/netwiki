@@ -175,6 +175,10 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 159 | Catalogue — Zigbee, Z-Wave et firmwares : Zigbee2MQTT, Z-Wave JS UI, ESPHome, Tasmota, OpenMQTTGateway | ✅ |
 | 160 | Catalogue — vidéosurveillance (NVR) : Frigate, ZoneMinder, Shinobi | ✅ |
 | 161 | Catalogue — relais et détection vidéo : Motion, motionEye, Kerberos.io, Scrypted, go2rtc | ✅ |
+| 162 | Catalogue — clients HTTP et API : Insomnia, Hoppscotch, HTTPie, xh, wget | ✅ |
+| 163 | Catalogue — documentation d'API : Swagger UI, Swagger Editor, Redoc, Scalar, Stoplight Elements | ✅ |
+| 164 | Catalogue — simulation d'API : Prism, WireMock, MockServer, Hoverfly, Mountebank | ✅ |
+| 165 | Catalogue — tests d'API et de contrat : Pact, Schemathesis, Dredd, Hurl, Newman | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -631,3 +635,17 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[33-materiel-iot/07-lorawan/01-chirpstack-ttn\|ChirpStack, The Things Stack]], [[33-materiel-iot/07-lorawan/02-mosquitto-iot-gateway\|Mosquitto, ThingsBoard Gateway]] | Docker, paquets | Docker | Docker | ✅ |
 | [[33-materiel-iot/06-zigbee-zwave/01-zigbee2mqtt-zwavejs\|Zigbee2MQTT, Z-Wave JS UI]], [[33-materiel-iot/06-zigbee-zwave/02-esphome-tasmota\|ESPHome, Tasmota, OpenMQTTGateway]] | Docker, pip, flash | flash (Tasmotizer) | flash, pip | ✅ |
 | [[33-materiel-iot/08-videosurveillance/01-frigate-zoneminder-shinobi\|Frigate, ZoneMinder, Shinobi]], [[33-materiel-iot/08-videosurveillance/02-motion-scrypted-go2rtc\|Motion, Kerberos.io, Scrypted, go2rtc]] | Docker | Docker | Docker | ✅ |
+
+## Développement, API & tests
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[30-developpement-api/04-clients-http/01-insomnia-hoppscotch-httpie\|Insomnia, Hoppscotch, HTTPie, xh, wget]] | paquets, Flatpak, pip, Docker | winget, pip | Homebrew, pip | ✅ |
+| [[30-developpement-api/05-documentation-api/01-swagger-redoc-scalar\|Swagger UI, Swagger Editor, Redoc, Scalar, Stoplight Elements]] | Docker, npx | Docker, npx | Docker, npx | ✅ |
+| [[30-developpement-api/06-mock-api/01-prism-wiremock-mockserver\|Prism, WireMock, MockServer, Hoverfly, Mountebank]] | npx, Docker, binaires | npx, Docker | npx, Docker | ✅ |
+| [[30-developpement-api/07-tests-contrat/01-pact-schemathesis\|Pact, Schemathesis, Dredd, Hurl, Newman]] | pip, npm, Docker, binaires | pip, npm | Homebrew, pip, npm | ✅ |
+
+## Services de plateforme & auto-hébergement
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
