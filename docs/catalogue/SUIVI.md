@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 1041 | 4 | 75 (6 %) |
+| 1311 | 191 (15 %) | 1052 | 4 | 64 (5 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1379,25 +1379,25 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | shfmt | Formatage shell | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 | EditorConfig | Conventions code | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 
-## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 1/60
+## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 12/60
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| Coolify | Plateforme déploiement PaaS | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Dokku | PaaS léger | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| CapRover | PaaS | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| HomelabOS | Déploiement services homelab | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Ansible-NAS | Déploiement NAS | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Sandstorm | Plateforme applications | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| FreedomBox | Serveur personnel | Debian | ⏳ à faire | → `31-auto-hebergement` |
-| HestiaCP | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
+| Coolify | Plateforme déploiement PaaS | Linux | 🆕 fait (lot 175) | `31-auto-hebergement/02-paas` |
+| Dokku | PaaS léger | Linux | 🆕 fait (lot 175) | `31-auto-hebergement/02-paas` |
+| CapRover | PaaS | Linux | 🆕 fait (lot 175) | `31-auto-hebergement/02-paas` |
+| HomelabOS | Déploiement services homelab | Linux | 🆕 fait (lot 176) | `31-auto-hebergement/03-suites-homelab` |
+| Ansible-NAS | Déploiement NAS | Linux | 🆕 fait (lot 176) | `31-auto-hebergement/03-suites-homelab` |
+| Sandstorm | Plateforme applications | Linux | 🆕 fait (lot 176) | `31-auto-hebergement/03-suites-homelab` |
+| FreedomBox | Serveur personnel | Debian | 🆕 fait (lot 176) | `31-auto-hebergement/03-suites-homelab` |
+| HestiaCP | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
 | CyberPanel (open source components) | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| ISPConfig | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Virtualmin GPL | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
+| ISPConfig | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
+| Virtualmin GPL | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
 | Webmin | Administration serveur | Linux, Unix | ⏳ à faire | → `31-auto-hebergement` |
 | Ajenti | Administration serveur | Linux | ⏳ à faire | → `31-auto-hebergement` |
 | Froxlor | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Virtualmin | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
+| Virtualmin | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
 | Yacht | Gestion Docker | Linux | ⏳ à faire | → `31-auto-hebergement` |
 | Dockge | Gestion Compose | Linux, Windows via conteneur | ⏳ à faire | → `31-auto-hebergement` |
 | Komodo | Gestion déploiements conteneurs | Linux | ⏳ à faire | → `31-auto-hebergement` |

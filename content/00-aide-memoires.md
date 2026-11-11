@@ -396,3 +396,6 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 
 ## Services de plateforme & auto-hébergement
 
+- [[31-auto-hebergement/02-paas/90-aide-memoire|PaaS auto-hébergés]]
+- [[31-auto-hebergement/03-suites-homelab/90-aide-memoire|Suites d'auto-hébergement]]
+- [[31-auto-hebergement/04-panneaux-hebergement/90-aide-memoire|Panneaux d'hébergement]]

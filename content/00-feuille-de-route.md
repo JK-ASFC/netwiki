@@ -188,6 +188,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 172 | Catalogue — détection de secrets : Gitleaks, detect-secrets, TruffleHog OSS | ✅ |
 | 173 | Catalogue — analyse IaC : Checkov, KICS, Terrascan, TFLint | ✅ |
 | 174 | Catalogue — linters et format : Actionlint, ShellCheck, shfmt, EditorConfig | ✅ |
+| 175 | Catalogue — PaaS auto-hébergés : Coolify, Dokku, CapRover | ✅ |
+| 176 | Catalogue — suites d'auto-hébergement : HomelabOS, Ansible-NAS, Sandstorm, FreedomBox | ✅ |
+| 177 | Catalogue — panneaux d'hébergement : HestiaCP, CyberPanel, ISPConfig, Virtualmin | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -664,3 +667,6 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 
 | Service | Linux | Windows | macOS | État |
 | --- | --- | --- | --- | --- |
+| [[31-auto-hebergement/02-paas/01-coolify-dokku-caprover\|Coolify, Dokku, CapRover]] | script, Docker | ➖ | ➖ | ✅ |
+| [[31-auto-hebergement/03-suites-homelab/01-homelabos-sandstorm\|HomelabOS, Ansible-NAS, Sandstorm, FreedomBox]] | Ansible, script, Debian | ➖ | ➖ | ✅ |
+| [[31-auto-hebergement/04-panneaux-hebergement/01-hestiacp-cyberpanel-ispconfig-virtualmin\|HestiaCP, CyberPanel, ISPConfig, Virtualmin]] | scripts d'installation | ➖ | ➖ | ✅ |
