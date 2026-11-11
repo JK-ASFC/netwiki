@@ -399,3 +399,5 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[31-auto-hebergement/02-paas/90-aide-memoire|PaaS auto-hébergés]]
 - [[31-auto-hebergement/03-suites-homelab/90-aide-memoire|Suites d'auto-hébergement]]
 - [[31-auto-hebergement/04-panneaux-hebergement/90-aide-memoire|Panneaux d'hébergement]]
+- [[31-auto-hebergement/05-admin-serveur/90-aide-memoire|Webmin, Ajenti et Froxlor]]
+- [[31-auto-hebergement/06-gestion-docker/90-aide-memoire|Gestion de conteneurs Docker]]

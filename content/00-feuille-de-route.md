@@ -191,6 +191,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 175 | Catalogue — PaaS auto-hébergés : Coolify, Dokku, CapRover | ✅ |
 | 176 | Catalogue — suites d'auto-hébergement : HomelabOS, Ansible-NAS, Sandstorm, FreedomBox | ✅ |
 | 177 | Catalogue — panneaux d'hébergement : HestiaCP, CyberPanel, ISPConfig, Virtualmin | ✅ |
+| 178 | Catalogue — administration serveur : Webmin, Ajenti, Froxlor | ✅ |
+| 179 | Catalogue — gestion de conteneurs : Dockge, Yacht, Komodo | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -670,3 +672,5 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[31-auto-hebergement/02-paas/01-coolify-dokku-caprover\|Coolify, Dokku, CapRover]] | script, Docker | ➖ | ➖ | ✅ |
 | [[31-auto-hebergement/03-suites-homelab/01-homelabos-sandstorm\|HomelabOS, Ansible-NAS, Sandstorm, FreedomBox]] | Ansible, script, Debian | ➖ | ➖ | ✅ |
 | [[31-auto-hebergement/04-panneaux-hebergement/01-hestiacp-cyberpanel-ispconfig-virtualmin\|HestiaCP, CyberPanel, ISPConfig, Virtualmin]] | scripts d'installation | ➖ | ➖ | ✅ |
+| [[31-auto-hebergement/05-admin-serveur/01-webmin-ajenti-froxlor\|Webmin, Ajenti, Froxlor]] | paquets, script | ➖ | ➖ | ✅ |
+| [[31-auto-hebergement/06-gestion-docker/01-dockge-yacht-komodo\|Dockge, Yacht, Komodo]] | Docker | Docker | Docker | ✅ |

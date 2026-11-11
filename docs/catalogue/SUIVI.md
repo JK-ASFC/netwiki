@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 1052 | 4 | 64 (5 %) |
+| 1311 | 191 (15 %) | 1058 | 4 | 58 (4 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1379,7 +1379,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | shfmt | Formatage shell | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 | EditorConfig | Conventions code | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 
-## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 12/60
+## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 18/60
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1394,13 +1394,13 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | CyberPanel (open source components) | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
 | ISPConfig | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
 | Virtualmin GPL | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
-| Webmin | Administration serveur | Linux, Unix | ⏳ à faire | → `31-auto-hebergement` |
-| Ajenti | Administration serveur | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Froxlor | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
+| Webmin | Administration serveur | Linux, Unix | 🆕 fait (lot 178) | `31-auto-hebergement/05-admin-serveur` |
+| Ajenti | Administration serveur | Linux | 🆕 fait (lot 178) | `31-auto-hebergement/05-admin-serveur` |
+| Froxlor | Panneau hébergement | Linux | 🆕 fait (lot 178) | `31-auto-hebergement/05-admin-serveur` |
 | Virtualmin | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
-| Yacht | Gestion Docker | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Dockge | Gestion Compose | Linux, Windows via conteneur | ⏳ à faire | → `31-auto-hebergement` |
-| Komodo | Gestion déploiements conteneurs | Linux | ⏳ à faire | → `31-auto-hebergement` |
+| Yacht | Gestion Docker | Linux | 🆕 fait (lot 179) | `31-auto-hebergement/06-gestion-docker` |
+| Dockge | Gestion Compose | Linux, Windows via conteneur | 🆕 fait (lot 179) | `31-auto-hebergement/06-gestion-docker` |
+| Komodo | Gestion déploiements conteneurs | Linux | 🆕 fait (lot 179) | `31-auto-hebergement/06-gestion-docker` |
 | Homepage | Dashboard serveur | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
 | Homarr | Dashboard serveur | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
 | Dashy | Dashboard serveur | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
