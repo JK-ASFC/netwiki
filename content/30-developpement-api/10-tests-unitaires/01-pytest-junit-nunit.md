@@ -105,6 +105,6 @@ dotnet test --filter "FullyQualifiedName~Division"
 | Java/Kotlin | JUnit 5 (unitaire), TestNG (intégration) |
 | .NET | xUnit.net (neuf), NUnit, MSTest |
 | JavaScript/TypeScript | [[11-tests-js/01-vitest-jest-mocha\|Vitest, Jest, Mocha]] |
-| Go, Rust, PHP, Ruby | [[12-tests-langages/01-gotest-cargo-phpunit-rspec\|go test, cargo test, PHPUnit, RSpec]] |
+| Go, Rust, PHP, Ruby | [[12-tests-langages/01-bdd-gotest-cargo\|go test, cargo test, PHPUnit, RSpec]] |
 
 Commandes : [[90-aide-memoire|aide-mémoire]].
