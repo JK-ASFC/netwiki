@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 781 | 4 | 335 (26 %) |
+| 1311 | 191 (15 %) | 795 | 4 | 321 (24 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1036,7 +1036,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Fetchmail | Récupération mail | Windows, Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 | OfflineIMAP | Synchronisation mail | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 
-## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 24/55
+## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 38/55
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1063,20 +1063,20 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | BullMQ | Queue de tâches Node.js | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
 | pg-boss | Queue PostgreSQL | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
 | Graphile Worker | Queue PostgreSQL | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
-| Apache Flink | Traitement streaming | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache Spark | Traitement distribué | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache Beam | Traitement data | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache Samza | Traitement streaming | Linux | ⏳ à faire | → `27-data-analytique` |
-| Apache Storm | Traitement streaming | Linux | ⏳ à faire | → `27-data-analytique` |
-| Apache NiFi | Flux de données | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache SeaTunnel | Intégration données | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Airbyte (community) | ELT | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Meltano | ELT | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Singer taps | Connecteurs ELT | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Debezium | CDC | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Kafka Connect | Connecteurs streaming | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Benthos / Redpanda Connect | Pipeline données | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Flink CDC | CDC streaming | Linux | ⏳ à faire | → `27-data-analytique` |
+| Apache Flink | Traitement streaming | Windows, Linux, macOS | 🆕 fait (lot 113) | `28-data-analytique/01-traitement-flux-lots` |
+| Apache Spark | Traitement distribué | Windows, Linux, macOS | 🆕 fait (lot 113) | `28-data-analytique/01-traitement-flux-lots` |
+| Apache Beam | Traitement data | Windows, Linux, macOS | 🆕 fait (lot 113) | `28-data-analytique/01-traitement-flux-lots` |
+| Apache Samza | Traitement streaming | Linux | 🆕 fait (lot 113) | `28-data-analytique/01-traitement-flux-lots` |
+| Apache Storm | Traitement streaming | Linux | 🆕 fait (lot 113) | `28-data-analytique/01-traitement-flux-lots` |
+| Apache NiFi | Flux de données | Windows, Linux, macOS | 🆕 fait (lot 114) | `28-data-analytique/02-integration-donnees` |
+| Apache SeaTunnel | Intégration données | Windows, Linux, macOS | 🆕 fait (lot 114) | `28-data-analytique/02-integration-donnees` |
+| Airbyte (community) | ELT | Windows, Linux, macOS | 🆕 fait (lot 114) | `28-data-analytique/02-integration-donnees` |
+| Meltano | ELT | Windows, Linux, macOS | 🆕 fait (lot 114) | `28-data-analytique/02-integration-donnees` |
+| Singer taps | Connecteurs ELT | Windows, Linux, macOS | 🆕 fait (lot 114) | `28-data-analytique/02-integration-donnees` |
+| Debezium | CDC | Windows, Linux, macOS | 🆕 fait (lot 115) | `28-data-analytique/03-cdc-connecteurs` |
+| Kafka Connect | Connecteurs streaming | Windows, Linux, macOS | 🆕 fait (lot 115) | `28-data-analytique/03-cdc-connecteurs` |
+| Benthos / Redpanda Connect | Pipeline données | Windows, Linux, macOS | 🆕 fait (lot 115) | `28-data-analytique/03-cdc-connecteurs` |
+| Flink CDC | CDC streaming | Linux | 🆕 fait (lot 115) | `28-data-analytique/03-cdc-connecteurs` |
 | Apache Hudi | Lakehouse | Linux | ⏳ à faire | → `27-data-analytique` |
 | Apache Iceberg | Format table lakehouse | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
 | Delta Lake | Lakehouse | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |

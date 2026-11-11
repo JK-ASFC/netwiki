@@ -1,0 +1,1 @@
+{ "title": "Data & analytique", "icon": "database", "color": "#0ea5e9", "description": "Plates-formes de données : traitement de flux et par lots (Flink, Spark), intégration et capture de changements (NiFi, Airbyte, Debezium), formats de lac de données (Iceberg, Delta, Hudi), catalogues, transformation (dbt) et science des données (JupyterHub, MLflow)." }

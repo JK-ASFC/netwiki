@@ -1,0 +1,1 @@
+{ "title": "Flink, Spark, Beam, Samza et Storm", "icon": "workflow", "color": "#0ea5e9", "description": "Moteurs de traitement distribué : Apache Spark (lots et micro-lots), Apache Flink (flux avec état), Apache Beam (modèle unifié), Samza et Storm (historiques)." }

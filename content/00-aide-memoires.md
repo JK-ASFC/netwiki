@@ -322,3 +322,9 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[23-telephonie-ip/14-softphones/90-aide-memoire|Softphones]]
 - [[23-telephonie-ip/15-diagnostic-voip/90-aide-memoire|Diagnostic VoIP]]
 - [[23-telephonie-ip/16-visioconference/90-aide-memoire|Visioconférence]]
+
+## Data & analytique
+
+- [[28-data-analytique/01-traitement-flux-lots/90-aide-memoire|Flink, Spark, Beam, Samza et Storm]]
+- [[28-data-analytique/02-integration-donnees/90-aide-memoire|NiFi, SeaTunnel, Airbyte, Meltano et Singer]]
+- [[28-data-analytique/03-cdc-connecteurs/90-aide-memoire|Debezium, Kafka Connect, Redpanda Connect et Flink CDC]]

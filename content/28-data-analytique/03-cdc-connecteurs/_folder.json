@@ -1,0 +1,1 @@
+{ "title": "Debezium, Kafka Connect, Redpanda Connect et Flink CDC", "icon": "git-compare", "color": "#0ea5e9", "description": "Capture des changements de bases de données (CDC) et connecteurs de flux : Debezium sur Kafka Connect, Benthos / Redpanda Connect et Flink CDC." }

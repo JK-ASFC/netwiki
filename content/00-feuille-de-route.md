@@ -126,6 +126,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 110 | Catalogue — messagerie légère : NATS et JetStream, NSQ, ZeroMQ, Redpanda | ✅ |
 | 111 | Catalogue — autres courtiers MQTT : VerneMQ, NanoMQ, HiveMQ CE | ✅ |
 | 112 | Catalogue — files de tâches : Beanstalkd, Gearman, Celery, Dramatiq, RQ, BullMQ, pg-boss, Graphile Worker | ✅ |
+| 113 | Catalogue — traitement de flux et par lots : Apache Spark, Flink, Beam, Samza, Storm | ✅ |
+| 114 | Catalogue — intégration de données : Apache NiFi, SeaTunnel, Airbyte, Meltano, Singer | ✅ |
+| 115 | Catalogue — capture de changements : Debezium, Kafka Connect, Benthos / Redpanda Connect, Flink CDC | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -516,3 +519,11 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | Référence | Linux | Windows | macOS | État |
 | --- | --- | --- | --- | --- |
 | [[27-commandes/01-presentation\|Référence des commandes]] : 350 commandes Bash, 252 PowerShell, 307 macOS, une page par commande | Bash | PowerShell | zsh | ✅ |
+
+## Data & analytique
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[28-data-analytique/01-traitement-flux-lots/01-apache-spark\|Apache Spark]], [[28-data-analytique/01-traitement-flux-lots/02-apache-flink\|Apache Flink]], [[28-data-analytique/01-traitement-flux-lots/03-beam-samza-storm\|Beam, Samza, Storm]] | archives, pip, Kubernetes | archives (Java), WSL | archives, Homebrew | ✅ |
+| [[28-data-analytique/02-integration-donnees/01-apache-nifi\|Apache NiFi]], [[28-data-analytique/02-integration-donnees/02-seatunnel-airbyte\|SeaTunnel, Airbyte]], [[28-data-analytique/02-integration-donnees/03-meltano-singer\|Meltano, Singer]] | archives, Docker, abctl, pipx | archives, Docker, pipx | archives, Docker, pipx | ✅ |
+| [[28-data-analytique/03-cdc-connecteurs/01-debezium-kafka-connect\|Debezium, Kafka Connect]], [[28-data-analytique/03-cdc-connecteurs/02-benthos-flink-cdc\|Redpanda Connect, Flink CDC]] | archives, conteneurs, rpk | conteneurs | conteneurs, Homebrew (rpk) | ✅ |
