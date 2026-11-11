@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 1058 | 4 | 58 (4 %) |
+| 1311 | 191 (15 %) | 1069 | 4 | 47 (4 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1379,7 +1379,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | shfmt | Formatage shell | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 | EditorConfig | Conventions code | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 
-## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 18/60
+## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 29/60
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1401,17 +1401,17 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Yacht | Gestion Docker | Linux | 🆕 fait (lot 179) | `31-auto-hebergement/06-gestion-docker` |
 | Dockge | Gestion Compose | Linux, Windows via conteneur | 🆕 fait (lot 179) | `31-auto-hebergement/06-gestion-docker` |
 | Komodo | Gestion déploiements conteneurs | Linux | 🆕 fait (lot 179) | `31-auto-hebergement/06-gestion-docker` |
-| Homepage | Dashboard serveur | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Homarr | Dashboard serveur | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Dashy | Dashboard serveur | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Heimdall | Dashboard applications | Linux, Windows via conteneur | ⏳ à faire | → `31-auto-hebergement` |
-| Flame | Dashboard applications | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Organizr | Dashboard applications | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Glance | Dashboard | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Homer | Dashboard | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Fenrus | Dashboard | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| DashMachine | Dashboard | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| SUI | Dashboard auto-hébergement | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
+| Homepage | Dashboard serveur | Windows, Linux, macOS | 🆕 fait (lot 180) | `31-auto-hebergement/07-dashboards` |
+| Homarr | Dashboard serveur | Windows, Linux, macOS | 🆕 fait (lot 180) | `31-auto-hebergement/07-dashboards` |
+| Dashy | Dashboard serveur | Windows, Linux, macOS | 🆕 fait (lot 180) | `31-auto-hebergement/07-dashboards` |
+| Heimdall | Dashboard applications | Linux, Windows via conteneur | 🆕 fait (lot 180) | `31-auto-hebergement/07-dashboards` |
+| Flame | Dashboard applications | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| Organizr | Dashboard applications | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| Glance | Dashboard | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| Homer | Dashboard | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| Fenrus | Dashboard | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| DashMachine | Dashboard | Linux | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| SUI | Dashboard auto-hébergement | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
 | OliveTin | Exécution commandes contrôlée | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
 | Ansible Semaphore | Interface Ansible | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
 | NocoDB | Base no-code | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
