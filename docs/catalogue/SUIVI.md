@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 943 | 4 | 173 (13 %) |
+| 1311 | 191 (15 %) | 952 | 4 | 164 (13 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1266,19 +1266,19 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | ONOS | Contrôleur SDN | Linux | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
 | Ryu SDN Framework | Contrôleur SDN | Windows, Linux, macOS | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
 
-## 23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS — 2/41
+## 23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS — 11/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| FusionInventory Agent | Inventaire agent | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| i-doit Open | CMDB | Linux | ⏳ à faire | → `26-gestion-parc` |
-| CMDBuild | CMDB | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
-| PartKeepr (archivé) | Inventaire composants | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Grocy | Gestion inventaire | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Homebox | Inventaire domestique | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| ERPNext Stock | Gestion stocks | Linux | ⏳ à faire | → `26-gestion-parc` |
-| OpenWMS | Gestion entrepôt | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
-| OpenLMIS | Logistique | Linux | ⏳ à faire | → `26-gestion-parc` |
+| FusionInventory Agent | Inventaire agent | Windows, Linux, macOS | 🆕 fait (lot 153) | `33-materiel-iot/01-inventaire-cmdb` |
+| i-doit Open | CMDB | Linux | 🆕 fait (lot 153) | `33-materiel-iot/01-inventaire-cmdb` |
+| CMDBuild | CMDB | Windows, Linux | 🆕 fait (lot 153) | `33-materiel-iot/01-inventaire-cmdb` |
+| PartKeepr (archivé) | Inventaire composants | Linux | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
+| Grocy | Gestion inventaire | Windows, Linux, macOS | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
+| Homebox | Inventaire domestique | Windows, Linux, macOS | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
+| ERPNext Stock | Gestion stocks | Linux | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
+| OpenWMS | Gestion entrepôt | Windows, Linux | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
+| OpenLMIS | Logistique | Linux | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
 | CUPS | Serveur impression | Linux, macOS | ✅ existant | `18-infrastructure-systeme/03-impression` |
 | IPP Everywhere | Impression réseau | Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | Samba print services | Partage imprimantes | Windows, Linux | ✅ existant | `09-fichiers-partage/01-samba` |

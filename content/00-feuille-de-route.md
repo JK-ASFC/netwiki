@@ -166,6 +166,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 150 | Catalogue — tests de débit : iperf2, OpenSpeedTest, LibreSpeed, Speedtest Tracker | ✅ |
 | 151 | Catalogue — sondes réseau : Smokeping, Blackbox Exporter, fping exporter | ✅ |
 | 152 | Catalogue — configuration réseau : Oxidized, RANCID, Netdisco, Batfish | ✅ |
+| 153 | Catalogue — inventaire et CMDB : Agent FusionInventory, i-doit Open, CMDBuild | ✅ |
+| 154 | Catalogue — gestion de stocks : Grocy, Homebox, PartKeepr, ERPNext Stock, OpenWMS, OpenLMIS | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -609,3 +611,10 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[32-documentation-ged/06-documentation-technique/01-mkdocs-material\|MkDocs, Material]], [[32-documentation-ged/06-documentation-technique/02-sphinx-readthedocs-documize\|Sphinx, Read the Docs, Documize]] | pip, Docker | pip | pip, Homebrew | ✅ |
 | [[32-documentation-ged/07-generateurs-documentation/01-docusaurus-vitepress\|Docusaurus, VitePress]], [[32-documentation-ged/07-generateurs-documentation/02-antora-bookdown\|Antora, Bookdown]] | npm, R | npm, R | npm, R, Homebrew | ✅ |
 | [[32-documentation-ged/08-sites-statiques/01-hugo-jekyll-zola\|Hugo, Jekyll, Zola]], [[32-documentation-ged/08-sites-statiques/02-astro-quartz\|Astro, Quartz]] | binaires, snap, gem, npm | winget, gem, npm | Homebrew, gem, npm | ✅ |
+
+## Matériel, IoT & vidéosurveillance
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[33-materiel-iot/01-inventaire-cmdb/01-fusioninventory-idoit-cmdbuild\|FusionInventory, i-doit, CMDBuild]] | agent, LAMP, Tomcat | agent (MSI) | agent | ✅ |
+| [[33-materiel-iot/02-gestion-stocks/01-grocy-homebox-partkeepr\|Grocy, Homebox, PartKeepr]], [[33-materiel-iot/02-gestion-stocks/02-erpnext-openwms-openlmis\|ERPNext, OpenWMS, OpenLMIS]] | Docker, bench | Docker | Docker | ✅ |

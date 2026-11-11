@@ -369,3 +369,8 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[32-documentation-ged/06-documentation-technique/90-aide-memoire|MkDocs, Sphinx et Read the Docs]]
 - [[32-documentation-ged/07-generateurs-documentation/90-aide-memoire|Docusaurus, VitePress, Antora et Bookdown]]
 - [[32-documentation-ged/08-sites-statiques/90-aide-memoire|Générateurs de sites statiques]]
+
+## Matériel, IoT & vidéosurveillance
+
+- [[33-materiel-iot/01-inventaire-cmdb/90-aide-memoire|FusionInventory, i-doit et CMDBuild]]
+- [[33-materiel-iot/02-gestion-stocks/90-aide-memoire|Gestion de stocks]]
