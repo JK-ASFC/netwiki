@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 929 | 4 | 187 (14 %) |
+| 1311 | 191 (15 %) | 936 | 4 | 180 (14 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1211,7 +1211,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | 4get | Métamoteur recherche | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 | LibreX | Métamoteur recherche | Linux | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 
-## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 20/50
+## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 27/50
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1245,10 +1245,10 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | ConnMan | Gestion réseau | Linux | 🆕 fait (lot 144) | `21-outils/16-gestion-reseau-linux` |
 | Open vSwitch | Switch virtuel | Linux, Windows | 🆕 fait (lot 146) | `21-outils/18-open-vswitch` |
 | FRR | Routage dynamique | Linux, BSD | 🆕 fait (lot 51) | `22-constructeurs/31-routage-logiciel` |
-| iperf2 | Mesure réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| OpenSpeedTest | Test débit web | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| LibreSpeed | Test débit web | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Speedtest Tracker | Historique tests débit | Linux | ⏳ à faire | → `21-outils` |
+| iperf2 | Mesure réseau | Windows, Linux, macOS | 🆕 fait (lot 150) | `21-outils/21-tests-debit` |
+| OpenSpeedTest | Test débit web | Windows, Linux, macOS | 🆕 fait (lot 150) | `21-outils/21-tests-debit` |
+| LibreSpeed | Test débit web | Windows, Linux, macOS | 🆕 fait (lot 150) | `21-outils/21-tests-debit` |
+| Speedtest Tracker | Historique tests débit | Linux | 🆕 fait (lot 150) | `21-outils/21-tests-debit` |
 | Smokeping | Latence réseau | Linux | ⏳ à faire | → `21-outils` |
 | Blackbox Exporter | Sondes réseau Prometheus | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
 | Fping exporter | Sonde ping | Linux | ⏳ à faire | → `21-outils` |
@@ -1262,9 +1262,9 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | CORE Network Emulator | Émulation réseau | Linux | 🆕 fait (lot 148) | `21-outils/19-labos-reseau` |
 | ns-3 | Simulation réseau | Windows, Linux, macOS | 🆕 fait (lot 148) | `21-outils/19-labos-reseau` |
 | Mininet | Émulation réseau SDN | Linux | 🆕 fait (lot 148) | `21-outils/19-labos-reseau` |
-| OpenDaylight | Contrôleur SDN | Linux | ⏳ à faire | → `21-outils` |
-| ONOS | Contrôleur SDN | Linux | ⏳ à faire | → `21-outils` |
-| Ryu SDN Framework | Contrôleur SDN | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
+| OpenDaylight | Contrôleur SDN | Linux | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
+| ONOS | Contrôleur SDN | Linux | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
+| Ryu SDN Framework | Contrôleur SDN | Windows, Linux, macOS | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
 
 ## 23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS — 2/41
 

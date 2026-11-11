@@ -1,0 +1,1 @@
+{ "title": "iperf2, OpenSpeedTest, LibreSpeed et Speedtest Tracker", "icon": "gauge", "color": "#14b8a6", "description": "Mesurer le débit réseau : iperf2 entre deux machines, serveurs de test de débit par navigateur OpenSpeedTest et LibreSpeed, et suivi historique avec Speedtest Tracker." }

@@ -283,6 +283,8 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[21-outils/17-wifi-linux/90-aide-memoire|hostapd, wpa_supplicant, iw et iwd]]
 - [[21-outils/18-open-vswitch/90-aide-memoire|Open vSwitch]]
 - [[21-outils/19-labos-reseau/90-aide-memoire|Laboratoires réseau]]
+- [[21-outils/20-controleurs-sdn/90-aide-memoire|Contrôleurs SDN]]
+- [[21-outils/21-tests-debit/90-aide-memoire|Tests de débit]]
 
 ## Équipements réseau par constructeur
 

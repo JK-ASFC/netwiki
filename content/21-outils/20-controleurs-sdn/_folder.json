@@ -1,0 +1,1 @@
+{ "title": "OpenDaylight, ONOS et Ryu", "icon": "workflow", "color": "#14b8a6", "description": "Contrôleurs SDN (réseaux pilotés par logiciel) : OpenDaylight et ONOS (plates-formes complètes) et Ryu (framework léger pour développer ses propres applications OpenFlow)." }
