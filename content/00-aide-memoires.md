@@ -255,6 +255,8 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[21-outils/10-shells-terminal/90-aide-memoire|Shells, multiplexeurs et dotfiles]]
 - [[21-outils/11-sauvegarde-poste/90-aide-memoire|Instantanés et sauvegarde du poste]]
 - [[21-outils/12-partage-appareils/90-aide-memoire|Partage entre appareils]]
+- [[21-outils/13-environnements-bureau/90-aide-memoire|Environnements de bureau]]
+- [[21-outils/14-terminaux-graphiques/90-aide-memoire|Terminaux graphiques]]
 
 ## Équipements réseau par constructeur
 

@@ -103,6 +103,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 87 | Catalogue — shells, multiplexeurs et dotfiles : tmux, GNU Screen, Zellij, Bash, Zsh, Oh My Zsh, fish, Nushell, Starship, chezmoi, GNU Stow | ✅ |
 | 88 | Catalogue — instantanés et sauvegarde du poste : Timeshift, Snapper, Back In Time, Déjà Dup | ✅ |
 | 89 | Catalogue — partage entre appareils : KDE Connect, GSConnect, LocalSend, Barrier, Input Leap, Synergy Core (Deskflow) | ✅ |
+| 90 | Catalogue — environnements de bureau : GNOME, KDE Plasma, XFCE, MATE, Cinnamon, LXQt, COSMIC | ✅ |
+| 91 | Catalogue — terminaux graphiques : Xfce Terminal, Alacritty, WezTerm, Kitty, Ghostty | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -382,6 +384,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | Shells et terminal | [[10-shells-terminal/01-tmux-screen-zellij\|tmux, Screen, Zellij]], [[10-shells-terminal/02-shells-bash-zsh-fish-nushell\|Bash, Zsh, fish, Nushell, Starship, Oh My Zsh]], [[10-shells-terminal/03-dotfiles-chezmoi-stow\|chezmoi, GNU Stow]] | ✅ |
 | Instantanés et sauvegarde du poste | [[11-sauvegarde-poste/01-timeshift-snapper\|Timeshift, Snapper]], [[11-sauvegarde-poste/02-back-in-time-deja-dup\|Back In Time, Déjà Dup]] | ✅ |
 | Partage entre appareils | [[12-partage-appareils/01-kde-connect-localsend\|KDE Connect, LocalSend]], [[12-partage-appareils/02-barrier-input-leap-synergy\|Barrier, Input Leap, Synergy]] | ✅ |
+| Environnements de bureau | [[13-environnements-bureau/01-panorama-choix\|choisir un bureau, Wayland ou X11]], [[13-environnements-bureau/02-gnome-kde-plasma\|GNOME, KDE Plasma]], [[13-environnements-bureau/03-xfce-mate-cinnamon-lxqt-cosmic\|XFCE, MATE, Cinnamon, LXQt, COSMIC]] | ✅ |
+| Terminaux graphiques | [[14-terminaux-graphiques/01-alacritty-kitty-wezterm-ghostty\|Alacritty, Kitty, WezTerm, Ghostty]], [[14-terminaux-graphiques/02-xfce-terminal\|Xfce Terminal]] | ✅ |
 
 ## Équipements réseau par constructeur
 

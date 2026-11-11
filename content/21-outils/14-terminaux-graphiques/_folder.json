@@ -1,0 +1,1 @@
+{ "title": "Terminaux graphiques", "icon": "square-terminal", "color": "#475569", "description": "Émulateurs de terminal pour le poste d'administration : Alacritty, Kitty, WezTerm et Ghostty (accélérés par la carte graphique) et Xfce Terminal ; configuration, onglets et volets, SSH, terminfo et polices." }

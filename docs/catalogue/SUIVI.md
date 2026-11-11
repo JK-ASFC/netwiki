@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 672 | 4 | 444 (34 %) |
+| 1311 | 191 (15 %) | 684 | 4 | 432 (33 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -874,7 +874,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | AutoIt | Automatisation Windows | Windows | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
 | PowerToys | Utilitaires Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 
-## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 46/67
+## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 58/67
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -922,18 +922,18 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Input Leap | Partage clavier/souris | Windows, Linux, macOS | 🆕 fait (lot 89) | `21-outils/12-partage-appareils` |
 | Synergy Core (open source legacy) | Partage clavier/souris | Windows, Linux, macOS | 🆕 fait (lot 89) | `21-outils/12-partage-appareils` |
 | LocalSend | Transfert fichiers local | Windows, Linux, macOS | 🆕 fait (lot 89) | `21-outils/12-partage-appareils` |
-| KDE Plasma | Environnement bureau | Linux, BSD | ⏳ à faire | → `21-outils` |
-| GNOME | Environnement bureau | Linux, BSD | ⏳ à faire | → `21-outils` |
-| XFCE | Environnement bureau | Linux, BSD | ⏳ à faire | → `21-outils` |
-| MATE | Environnement bureau | Linux, BSD | ⏳ à faire | → `21-outils` |
-| Cinnamon | Environnement bureau | Linux | ⏳ à faire | → `21-outils` |
-| LXQt | Environnement bureau | Linux | ⏳ à faire | → `21-outils` |
-| COSMIC | Environnement bureau | Linux | ⏳ à faire | → `21-outils` |
-| Xfce Terminal | Terminal graphique | Linux | ⏳ à faire | → `21-outils` |
-| Alacritty | Terminal graphique | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| WezTerm | Terminal graphique | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Kitty | Terminal graphique | Linux, macOS | ⏳ à faire | → `21-outils` |
-| Ghostty | Terminal graphique | Linux, macOS | ⏳ à faire | → `21-outils` |
+| KDE Plasma | Environnement bureau | Linux, BSD | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| GNOME | Environnement bureau | Linux, BSD | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| XFCE | Environnement bureau | Linux, BSD | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| MATE | Environnement bureau | Linux, BSD | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| Cinnamon | Environnement bureau | Linux | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| LXQt | Environnement bureau | Linux | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| COSMIC | Environnement bureau | Linux | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| Xfce Terminal | Terminal graphique | Linux | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
+| Alacritty | Terminal graphique | Windows, Linux, macOS | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
+| WezTerm | Terminal graphique | Windows, Linux, macOS | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
+| Kitty | Terminal graphique | Linux, macOS | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
+| Ghostty | Terminal graphique | Linux, macOS | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
 | Neovim | Éditeur terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
 | Vim | Éditeur texte | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
 | Emacs | Éditeur texte | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
