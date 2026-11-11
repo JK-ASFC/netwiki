@@ -402,3 +402,6 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[31-auto-hebergement/05-admin-serveur/90-aide-memoire|Webmin, Ajenti et Froxlor]]
 - [[31-auto-hebergement/06-gestion-docker/90-aide-memoire|Gestion de conteneurs Docker]]
 - [[31-auto-hebergement/07-dashboards/90-aide-memoire|Tableaux de bord]]
+- [[31-auto-hebergement/08-actions-automatisation/90-aide-memoire|OliveTin et Ansible Semaphore]]
+- [[31-auto-hebergement/09-bases-nocode/90-aide-memoire|NocoDB, Baserow et Grist]]
+- [[31-auto-hebergement/10-low-code/90-aide-memoire|Appsmith, Budibase et ToolJet]]

@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 1069 | 4 | 47 (4 %) |
+| 1311 | 191 (15 %) | 1077 | 4 | 39 (3 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1379,7 +1379,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | shfmt | Formatage shell | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 | EditorConfig | Conventions code | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 
-## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 29/60
+## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 37/60
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1412,14 +1412,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Fenrus | Dashboard | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
 | DashMachine | Dashboard | Linux | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
 | SUI | Dashboard auto-hébergement | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
-| OliveTin | Exécution commandes contrôlée | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Ansible Semaphore | Interface Ansible | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| NocoDB | Base no-code | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Baserow | Base no-code | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Grist | Tableur/base de données | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Appsmith | Applications internes | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Budibase | Applications internes | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| ToolJet | Applications internes | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
+| OliveTin | Exécution commandes contrôlée | Windows, Linux, macOS | 🆕 fait (lot 182) | `31-auto-hebergement/08-actions-automatisation` |
+| Ansible Semaphore | Interface Ansible | Windows, Linux, macOS | 🆕 fait (lot 182) | `31-auto-hebergement/08-actions-automatisation` |
+| NocoDB | Base no-code | Windows, Linux, macOS | 🆕 fait (lot 183) | `31-auto-hebergement/09-bases-nocode` |
+| Baserow | Base no-code | Windows, Linux, macOS | 🆕 fait (lot 183) | `31-auto-hebergement/09-bases-nocode` |
+| Grist | Tableur/base de données | Windows, Linux, macOS | 🆕 fait (lot 183) | `31-auto-hebergement/09-bases-nocode` |
+| Appsmith | Applications internes | Windows, Linux, macOS | 🆕 fait (lot 184) | `31-auto-hebergement/10-low-code` |
+| Budibase | Applications internes | Windows, Linux, macOS | 🆕 fait (lot 184) | `31-auto-hebergement/10-low-code` |
+| ToolJet | Applications internes | Windows, Linux, macOS | 🆕 fait (lot 184) | `31-auto-hebergement/10-low-code` |
 | Supabase (self-hosted) | Backend-as-a-Service | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
 | Appwrite | Backend-as-a-Service | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
 | PocketBase | Backend léger | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |

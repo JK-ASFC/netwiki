@@ -195,6 +195,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 179 | Catalogue — gestion de conteneurs : Dockge, Yacht, Komodo | ✅ |
 | 180 | Catalogue — tableaux de bord : Homepage, Homarr, Dashy, Heimdall | ✅ |
 | 181 | Catalogue — tableaux de bord (suite) : Flame, Organizr, Glance, Homer, Fenrus, DashMachine, SUI | ✅ |
+| 182 | Catalogue — actions et automatisation : OliveTin, Ansible Semaphore | ✅ |
+| 183 | Catalogue — bases no-code : NocoDB, Baserow, Grist | ✅ |
+| 184 | Catalogue — low-code : Appsmith, Budibase, ToolJet | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -677,3 +680,6 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[31-auto-hebergement/05-admin-serveur/01-webmin-ajenti-froxlor\|Webmin, Ajenti, Froxlor]] | paquets, script | ➖ | ➖ | ✅ |
 | [[31-auto-hebergement/06-gestion-docker/01-dockge-yacht-komodo\|Dockge, Yacht, Komodo]] | Docker | Docker | Docker | ✅ |
 | [[31-auto-hebergement/07-dashboards/01-homepage-homarr-dashy\|Homepage, Homarr, Dashy, Heimdall]], [[31-auto-hebergement/07-dashboards/02-flame-glance-homer\|Flame, Organizr, Glance, Homer]] | Docker | Docker | Docker | ✅ |
+| [[31-auto-hebergement/08-actions-automatisation/01-olivetin-semaphore\|OliveTin, Ansible Semaphore]] | Docker | Docker | Docker | ✅ |
+| [[31-auto-hebergement/09-bases-nocode/01-nocodb-baserow-grist\|NocoDB, Baserow, Grist]] | Docker | Docker | Docker | ✅ |
+| [[31-auto-hebergement/10-low-code/01-appsmith-budibase-tooljet\|Appsmith, Budibase, ToolJet]] | Docker | Docker | Docker | ✅ |

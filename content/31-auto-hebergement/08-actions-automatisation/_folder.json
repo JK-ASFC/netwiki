@@ -1,0 +1,1 @@
+{ "title": "OliveTin et Ansible Semaphore", "icon": "workflow", "color": "#22c55e", "description": "Déclencher des actions d'administration depuis une interface web : OliveTin (boutons exécutant des commandes prédéfinies) et Ansible Semaphore (interface pour lancer des playbooks Ansible, Terraform et scripts)." }
