@@ -1,0 +1,1 @@
+{ "title": "Kibana et OpenObserve", "icon": "telescope", "color": "#22c55e", "description": "Explorer journaux, métriques et traces : Kibana (visualisation pour Elasticsearch/OpenSearch) et OpenObserve (observabilité légère tout-en-un, alternative économe)." }

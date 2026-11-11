@@ -95,6 +95,7 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[08-acces-distant-vpn/08-rds/90-aide-memoire|Services Bureau à distance (RDS)]]
 - [[08-acces-distant-vpn/09-winrm/90-aide-memoire|WinRM et PowerShell à distance]]
 - [[08-acces-distant-vpn/10-windows-admin-center/90-aide-memoire|Windows Admin Center]]
+- [[08-acces-distant-vpn/14-dropbear-tinyssh/90-aide-memoire|Dropbear et TinySSH]]
 
 ## Fichiers, partage & stockage
 
@@ -162,6 +163,8 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[12-recherche-messages/09-nats-nsq-zeromq-redpanda/90-aide-memoire|NATS, NSQ, ZeroMQ et Redpanda]]
 - [[12-recherche-messages/10-courtiers-mqtt/90-aide-memoire|VerneMQ, NanoMQ et HiveMQ CE]]
 - [[12-recherche-messages/11-files-de-taches/90-aide-memoire|Files de tâches]]
+- [[12-recherche-messages/12-moteurs-recherche/90-aide-memoire|Moteurs de recherche]]
+- [[12-recherche-messages/13-metamoteurs/90-aide-memoire|Métamoteurs]]
 
 ## Conteneurs & virtualisation
 
@@ -276,6 +279,14 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[21-outils/13-environnements-bureau/90-aide-memoire|Environnements de bureau]]
 - [[21-outils/14-terminaux-graphiques/90-aide-memoire|Terminaux graphiques]]
 - [[21-outils/15-editeurs-texte/90-aide-memoire|Éditeurs de texte]]
+- [[21-outils/16-gestion-reseau-linux/90-aide-memoire|NetworkManager, systemd-networkd et ConnMan]]
+- [[21-outils/17-wifi-linux/90-aide-memoire|hostapd, wpa_supplicant, iw et iwd]]
+- [[21-outils/18-open-vswitch/90-aide-memoire|Open vSwitch]]
+- [[21-outils/19-labos-reseau/90-aide-memoire|Laboratoires réseau]]
+- [[21-outils/20-controleurs-sdn/90-aide-memoire|Contrôleurs SDN]]
+- [[21-outils/21-tests-debit/90-aide-memoire|Tests de débit]]
+- [[21-outils/22-sondes-reseau/90-aide-memoire|Sondes réseau]]
+- [[21-outils/23-config-reseau/90-aide-memoire|Oxidized, RANCID, Netdisco et Batfish]]
 
 ## Équipements réseau par constructeur
 
@@ -354,3 +365,48 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[32-documentation-ged/02-ged-entreprise/90-aide-memoire|OpenKM, LogicalDOC et SeedDMS]]
 - [[32-documentation-ged/03-signature-pdf/90-aide-memoire|Signature électronique et outils PDF]]
 - [[32-documentation-ged/04-bureautique/90-aide-memoire|Bureautique]]
+- [[32-documentation-ged/05-notes-connaissance/90-aide-memoire|Notes et bases de connaissances]]
+- [[32-documentation-ged/06-documentation-technique/90-aide-memoire|MkDocs, Sphinx et Read the Docs]]
+- [[32-documentation-ged/07-generateurs-documentation/90-aide-memoire|Docusaurus, VitePress, Antora et Bookdown]]
+- [[32-documentation-ged/08-sites-statiques/90-aide-memoire|Générateurs de sites statiques]]
+
+## Matériel, IoT & vidéosurveillance
+
+- [[33-materiel-iot/01-inventaire-cmdb/90-aide-memoire|FusionInventory, i-doit et CMDBuild]]
+- [[33-materiel-iot/02-gestion-stocks/90-aide-memoire|Gestion de stocks]]
+- [[33-materiel-iot/03-impression-3d/90-aide-memoire|Impression 3D et IPP]]
+- [[33-materiel-iot/04-domotique/90-aide-memoire|Domotique]]
+- [[33-materiel-iot/05-plateformes-iot/90-aide-memoire|Plates-formes IoT]]
+- [[33-materiel-iot/07-lorawan/90-aide-memoire|LoRaWAN et passerelles]]
+- [[33-materiel-iot/06-zigbee-zwave/90-aide-memoire|Zigbee, Z-Wave et firmwares ESP]]
+- [[33-materiel-iot/08-videosurveillance/90-aide-memoire|Vidéosurveillance]]
+
+## Développement, API & tests
+
+- [[30-developpement-api/04-clients-http/90-aide-memoire|Clients HTTP et API]]
+- [[30-developpement-api/05-documentation-api/90-aide-memoire|Documentation d'API]]
+- [[30-developpement-api/06-mock-api/90-aide-memoire|Simulation d'API]]
+- [[30-developpement-api/07-tests-contrat/90-aide-memoire|Tests d'API et de contrat]]
+- [[30-developpement-api/08-tests-charge/90-aide-memoire|Micro-tests de charge]]
+- [[30-developpement-api/09-tests-navigateur/90-aide-memoire|Tests navigateur]]
+- [[30-developpement-api/10-tests-unitaires/90-aide-memoire|Tests unitaires (Python, JVM, .NET)]]
+- [[30-developpement-api/12-tests-langages/90-aide-memoire|Tests BDD, Go, Rust, PHP et Ruby]]
+- [[30-developpement-api/11-tests-js/90-aide-memoire|Tests JavaScript]]
+- [[30-developpement-api/13-securite-code/90-aide-memoire|Sécurité du code et linters]]
+
+## Services de plateforme & auto-hébergement
+
+- [[31-auto-hebergement/02-paas/90-aide-memoire|PaaS auto-hébergés]]
+- [[31-auto-hebergement/03-suites-homelab/90-aide-memoire|Suites d'auto-hébergement]]
+- [[31-auto-hebergement/04-panneaux-hebergement/90-aide-memoire|Panneaux d'hébergement]]
+- [[31-auto-hebergement/05-admin-serveur/90-aide-memoire|Webmin, Ajenti et Froxlor]]
+- [[31-auto-hebergement/06-gestion-docker/90-aide-memoire|Gestion de conteneurs Docker]]
+- [[31-auto-hebergement/07-dashboards/90-aide-memoire|Tableaux de bord]]
+- [[31-auto-hebergement/08-actions-automatisation/90-aide-memoire|OliveTin et Ansible Semaphore]]
+- [[31-auto-hebergement/09-bases-nocode/90-aide-memoire|NocoDB, Baserow et Grist]]
+- [[31-auto-hebergement/10-low-code/90-aide-memoire|Appsmith, Budibase et ToolJet]]
+- [[31-auto-hebergement/11-baas/90-aide-memoire|BaaS auto-hébergés]]
+- [[31-auto-hebergement/12-api-bdd/90-aide-memoire|API sur base de données]]
+- [[31-auto-hebergement/13-bi-analytics/90-aide-memoire|BI auto-hébergée]]
+- [[31-auto-hebergement/14-observabilite/90-aide-memoire|Kibana et OpenObserve]]
+- [[31-auto-hebergement/15-marque-pages/90-aide-memoire|Marque-pages et archivage]]

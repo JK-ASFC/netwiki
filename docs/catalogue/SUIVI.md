@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 883 | 4 | 233 (18 %) |
+| 1311 | 191 (15 %) | 1100 | 4 | 16 (1 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1158,7 +1158,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | RVC Project | Conversion voix | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 | Mimic 3 | Synthèse vocale | Linux | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 
-## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 18/48
+## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 48/48
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1178,46 +1178,46 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Collabora Online Development Edition | Suite bureautique web | Linux | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
 | LibreOffice | Suite bureautique | Windows, Linux, macOS | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
 | Apache OpenOffice | Suite bureautique | Windows, Linux, macOS | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
-| TriliumNext Notes | Base de connaissances | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
+| TriliumNext Notes | Base de connaissances | Windows, Linux, macOS | 🆕 fait (lot 136) | `32-documentation-ged/05-notes-connaissance` |
 | Joplin Server | Synchronisation notes | Windows, Linux, macOS | ✅ existant | `10-messagerie/09-joplin-server` |
-| Memos | Notes auto-hébergées | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| SilverBullet | Base de connaissance Markdown | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Logseq | Notes et graphe | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| SiYuan | Base de connaissances | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Documize Community | Documentation | Linux | ⏳ à faire | → `29-documentation-ged` |
-| Read the Docs (community stack) | Documentation technique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| MkDocs | Documentation statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Material for MkDocs | Thème documentation | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Docusaurus | Documentation statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| VitePress | Documentation statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Sphinx | Documentation Python | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Antora | Documentation technique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Bookdown | Publication docs | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Hugo | Générateur site statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Jekyll | Générateur site statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Zola | Générateur site statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Astro | Framework web statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Quartz | Publication notes | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Meilisearch | Moteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Typesense | Moteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Sonic | Moteur recherche | Linux | ⏳ à faire | → `12-recherche-messages` |
-| Apache Solr | Moteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
+| Memos | Notes auto-hébergées | Windows, Linux, macOS | 🆕 fait (lot 136) | `32-documentation-ged/05-notes-connaissance` |
+| SilverBullet | Base de connaissance Markdown | Windows, Linux, macOS | 🆕 fait (lot 136) | `32-documentation-ged/05-notes-connaissance` |
+| Logseq | Notes et graphe | Windows, Linux, macOS | 🆕 fait (lot 136) | `32-documentation-ged/05-notes-connaissance` |
+| SiYuan | Base de connaissances | Windows, Linux, macOS | 🆕 fait (lot 136) | `32-documentation-ged/05-notes-connaissance` |
+| Documize Community | Documentation | Linux | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
+| Read the Docs (community stack) | Documentation technique | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
+| MkDocs | Documentation statique | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
+| Material for MkDocs | Thème documentation | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
+| Docusaurus | Documentation statique | Windows, Linux, macOS | 🆕 fait (lot 138) | `32-documentation-ged/07-generateurs-documentation` |
+| VitePress | Documentation statique | Windows, Linux, macOS | 🆕 fait (lot 138) | `32-documentation-ged/07-generateurs-documentation` |
+| Sphinx | Documentation Python | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
+| Antora | Documentation technique | Windows, Linux, macOS | 🆕 fait (lot 138) | `32-documentation-ged/07-generateurs-documentation` |
+| Bookdown | Publication docs | Windows, Linux, macOS | 🆕 fait (lot 138) | `32-documentation-ged/07-generateurs-documentation` |
+| Hugo | Générateur site statique | Windows, Linux, macOS | 🆕 fait (lot 139) | `32-documentation-ged/08-sites-statiques` |
+| Jekyll | Générateur site statique | Windows, Linux, macOS | 🆕 fait (lot 139) | `32-documentation-ged/08-sites-statiques` |
+| Zola | Générateur site statique | Windows, Linux, macOS | 🆕 fait (lot 139) | `32-documentation-ged/08-sites-statiques` |
+| Astro | Framework web statique | Windows, Linux, macOS | 🆕 fait (lot 139) | `32-documentation-ged/08-sites-statiques` |
+| Quartz | Publication notes | Windows, Linux, macOS | 🆕 fait (lot 139) | `32-documentation-ged/08-sites-statiques` |
+| Meilisearch | Moteur recherche | Windows, Linux, macOS | 🆕 fait (lot 140) | `12-recherche-messages/12-moteurs-recherche` |
+| Typesense | Moteur recherche | Windows, Linux, macOS | 🆕 fait (lot 140) | `12-recherche-messages/12-moteurs-recherche` |
+| Sonic | Moteur recherche | Linux | 🆕 fait (lot 140) | `12-recherche-messages/12-moteurs-recherche` |
+| Apache Solr | Moteur recherche | Windows, Linux, macOS | 🆕 fait (lot 141) | `12-recherche-messages/12-moteurs-recherche` |
 | Elasticsearch (license changed) | Moteur recherche (licence non OSI selon version) | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/01-elasticsearch` |
-| Manticore Search | Moteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| ZincSearch | Moteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Tantivy | Bibliothèque recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Whoogle | Métamoteur recherche privé | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| SearXNG | Métamoteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| 4get | Métamoteur recherche | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| LibreX | Métamoteur recherche | Linux | ⏳ à faire | → `12-recherche-messages` |
+| Manticore Search | Moteur recherche | Windows, Linux, macOS | 🆕 fait (lot 141) | `12-recherche-messages/12-moteurs-recherche` |
+| ZincSearch | Moteur recherche | Windows, Linux, macOS | 🆕 fait (lot 141) | `12-recherche-messages/12-moteurs-recherche` |
+| Tantivy | Bibliothèque recherche | Windows, Linux, macOS | 🆕 fait (lot 141) | `12-recherche-messages/12-moteurs-recherche` |
+| Whoogle | Métamoteur recherche privé | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
+| SearXNG | Métamoteur recherche | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
+| 4get | Métamoteur recherche | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
+| LibreX | Métamoteur recherche | Linux | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 
-## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 4/50
+## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 34/50
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | OpenSSH | SSH client/serveur | Windows, Linux, macOS | ✅ existant | `08-acces-distant-vpn/01-openssh` |
-| Dropbear SSH | Serveur SSH léger | Linux, embedded | ⏳ à faire | → `08-acces-distant-vpn` |
-| TinySSH | Serveur SSH minimal | Linux | ⏳ à faire | → `08-acces-distant-vpn` |
+| Dropbear SSH | Serveur SSH léger | Linux, embedded | 🆕 fait (lot 143) | `08-acces-distant-vpn/14-dropbear-tinyssh` |
+| TinySSH | Serveur SSH minimal | Linux | 🆕 fait (lot 143) | `08-acces-distant-vpn/14-dropbear-tinyssh` |
 | Mosh | Terminal distant | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
 | Eternal Terminal | Terminal distant | Linux, macOS | ⏳ à faire | → `21-outils` |
 | tmate | Partage terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
@@ -1236,211 +1236,211 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | MITMf (archivé) | Outils réseau anciens | Linux | ⏳ à faire | → `21-outils` |
 | Aircrack-ng | Audit Wi-Fi | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
 | Kismet | Détection réseau sans fil | Linux, macOS | ⏳ à faire | → `21-outils` |
-| hostapd | Point d'accès Wi-Fi | Linux | ⏳ à faire | → `21-outils` |
-| wpa_supplicant | Client Wi-Fi | Linux, Windows | ⏳ à faire | → `21-outils` |
-| iw | Outils Wi-Fi | Linux | ⏳ à faire | → `21-outils` |
-| iwctl/iwd | Gestion Wi-Fi | Linux | ⏳ à faire | → `21-outils` |
-| NetworkManager | Gestion réseau | Linux | ⏳ à faire | → `21-outils` |
-| systemd-networkd | Gestion réseau | Linux | ⏳ à faire | → `21-outils` |
-| ConnMan | Gestion réseau | Linux | ⏳ à faire | → `21-outils` |
-| Open vSwitch | Switch virtuel | Linux, Windows | ⏳ à faire | → `21-outils` |
+| hostapd | Point d'accès Wi-Fi | Linux | 🆕 fait (lot 145) | `21-outils/17-wifi-linux` |
+| wpa_supplicant | Client Wi-Fi | Linux, Windows | 🆕 fait (lot 145) | `21-outils/17-wifi-linux` |
+| iw | Outils Wi-Fi | Linux | 🆕 fait (lot 145) | `21-outils/17-wifi-linux` |
+| iwctl/iwd | Gestion Wi-Fi | Linux | 🆕 fait (lot 145) | `21-outils/17-wifi-linux` |
+| NetworkManager | Gestion réseau | Linux | 🆕 fait (lot 144) | `21-outils/16-gestion-reseau-linux` |
+| systemd-networkd | Gestion réseau | Linux | 🆕 fait (lot 144) | `21-outils/16-gestion-reseau-linux` |
+| ConnMan | Gestion réseau | Linux | 🆕 fait (lot 144) | `21-outils/16-gestion-reseau-linux` |
+| Open vSwitch | Switch virtuel | Linux, Windows | 🆕 fait (lot 146) | `21-outils/18-open-vswitch` |
 | FRR | Routage dynamique | Linux, BSD | 🆕 fait (lot 51) | `22-constructeurs/31-routage-logiciel` |
-| iperf2 | Mesure réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| OpenSpeedTest | Test débit web | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| LibreSpeed | Test débit web | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Speedtest Tracker | Historique tests débit | Linux | ⏳ à faire | → `21-outils` |
-| Smokeping | Latence réseau | Linux | ⏳ à faire | → `21-outils` |
-| Blackbox Exporter | Sondes réseau Prometheus | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Fping exporter | Sonde ping | Linux | ⏳ à faire | → `21-outils` |
-| Netdisco | Découverte réseau | Linux | ⏳ à faire | → `21-outils` |
-| Oxidized | Sauvegarde configuration réseau | Linux | ⏳ à faire | → `21-outils` |
-| RANCID | Sauvegarde configuration réseau | Linux, Unix | ⏳ à faire | → `21-outils` |
-| Batfish | Validation configuration réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Containerlab | Laboratoire réseau | Linux | ⏳ à faire | → `21-outils` |
-| Kathara | Laboratoire réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| GNS3 | Simulation réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| CORE Network Emulator | Émulation réseau | Linux | ⏳ à faire | → `21-outils` |
-| ns-3 | Simulation réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Mininet | Émulation réseau SDN | Linux | ⏳ à faire | → `21-outils` |
-| OpenDaylight | Contrôleur SDN | Linux | ⏳ à faire | → `21-outils` |
-| ONOS | Contrôleur SDN | Linux | ⏳ à faire | → `21-outils` |
-| Ryu SDN Framework | Contrôleur SDN | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
+| iperf2 | Mesure réseau | Windows, Linux, macOS | 🆕 fait (lot 150) | `21-outils/21-tests-debit` |
+| OpenSpeedTest | Test débit web | Windows, Linux, macOS | 🆕 fait (lot 150) | `21-outils/21-tests-debit` |
+| LibreSpeed | Test débit web | Windows, Linux, macOS | 🆕 fait (lot 150) | `21-outils/21-tests-debit` |
+| Speedtest Tracker | Historique tests débit | Linux | 🆕 fait (lot 150) | `21-outils/21-tests-debit` |
+| Smokeping | Latence réseau | Linux | 🆕 fait (lot 151) | `21-outils/22-sondes-reseau` |
+| Blackbox Exporter | Sondes réseau Prometheus | Windows, Linux, macOS | 🆕 fait (lot 151) | `21-outils/22-sondes-reseau` |
+| Fping exporter | Sonde ping | Linux | 🆕 fait (lot 151) | `21-outils/22-sondes-reseau` |
+| Netdisco | Découverte réseau | Linux | 🆕 fait (lot 152) | `21-outils/23-config-reseau` |
+| Oxidized | Sauvegarde configuration réseau | Linux | 🆕 fait (lot 152) | `21-outils/23-config-reseau` |
+| RANCID | Sauvegarde configuration réseau | Linux, Unix | 🆕 fait (lot 152) | `21-outils/23-config-reseau` |
+| Batfish | Validation configuration réseau | Windows, Linux, macOS | 🆕 fait (lot 152) | `21-outils/23-config-reseau` |
+| Containerlab | Laboratoire réseau | Linux | 🆕 fait (lot 147) | `21-outils/19-labos-reseau` |
+| Kathara | Laboratoire réseau | Windows, Linux, macOS | 🆕 fait (lot 147) | `21-outils/19-labos-reseau` |
+| GNS3 | Simulation réseau | Windows, Linux, macOS | 🆕 fait (lot 147) | `21-outils/19-labos-reseau` |
+| CORE Network Emulator | Émulation réseau | Linux | 🆕 fait (lot 148) | `21-outils/19-labos-reseau` |
+| ns-3 | Simulation réseau | Windows, Linux, macOS | 🆕 fait (lot 148) | `21-outils/19-labos-reseau` |
+| Mininet | Émulation réseau SDN | Linux | 🆕 fait (lot 148) | `21-outils/19-labos-reseau` |
+| OpenDaylight | Contrôleur SDN | Linux | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
+| ONOS | Contrôleur SDN | Linux | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
+| Ryu SDN Framework | Contrôleur SDN | Windows, Linux, macOS | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
 
-## 23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS — 2/41
+## 23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS — 41/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| FusionInventory Agent | Inventaire agent | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| i-doit Open | CMDB | Linux | ⏳ à faire | → `26-gestion-parc` |
-| CMDBuild | CMDB | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
-| PartKeepr (archivé) | Inventaire composants | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Grocy | Gestion inventaire | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Homebox | Inventaire domestique | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| ERPNext Stock | Gestion stocks | Linux | ⏳ à faire | → `26-gestion-parc` |
-| OpenWMS | Gestion entrepôt | Windows, Linux | ⏳ à faire | → `26-gestion-parc` |
-| OpenLMIS | Logistique | Linux | ⏳ à faire | → `26-gestion-parc` |
+| FusionInventory Agent | Inventaire agent | Windows, Linux, macOS | 🆕 fait (lot 153) | `33-materiel-iot/01-inventaire-cmdb` |
+| i-doit Open | CMDB | Linux | 🆕 fait (lot 153) | `33-materiel-iot/01-inventaire-cmdb` |
+| CMDBuild | CMDB | Windows, Linux | 🆕 fait (lot 153) | `33-materiel-iot/01-inventaire-cmdb` |
+| PartKeepr (archivé) | Inventaire composants | Linux | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
+| Grocy | Gestion inventaire | Windows, Linux, macOS | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
+| Homebox | Inventaire domestique | Windows, Linux, macOS | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
+| ERPNext Stock | Gestion stocks | Linux | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
+| OpenWMS | Gestion entrepôt | Windows, Linux | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
+| OpenLMIS | Logistique | Linux | 🆕 fait (lot 154) | `33-materiel-iot/02-gestion-stocks` |
 | CUPS | Serveur impression | Linux, macOS | ✅ existant | `18-infrastructure-systeme/03-impression` |
-| IPP Everywhere | Impression réseau | Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
+| IPP Everywhere | Impression réseau | Linux, macOS | 🆕 fait (lot 155) | `33-materiel-iot/03-impression-3d` |
 | Samba print services | Partage imprimantes | Windows, Linux | ✅ existant | `09-fichiers-partage/01-samba` |
-| OctoPrint | Serveur impression 3D | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Klipper | Firmware impression 3D | Linux, SBC | ⏳ à faire | → `26-gestion-parc` |
-| Moonraker | API impression 3D | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Mainsail | Interface impression 3D | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Fluidd | Interface impression 3D | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Home Assistant | Domotique | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| openHAB | Domotique | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Domoticz | Domotique | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| ThingsBoard Community | Plateforme IoT | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Mainflux | Plateforme IoT | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Kaa IoT (community) | Plateforme IoT | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Eclipse Mosquitto | Broker IoT MQTT | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Eclipse Kura | Passerelle IoT | Linux | ⏳ à faire | → `26-gestion-parc` |
-| ChirpStack | Serveur LoRaWAN | Linux | ⏳ à faire | → `26-gestion-parc` |
-| The Things Network Stack | Serveur LoRaWAN | Linux | ⏳ à faire | → `26-gestion-parc` |
-| ThingsBoard Gateway | Passerelle IoT | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Zigbee2MQTT | Passerelle Zigbee | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Z-Wave JS UI | Passerelle Z-Wave | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| ESPHome | Firmware IoT | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Tasmota | Firmware IoT | ESP | ⏳ à faire | → `26-gestion-parc` |
-| OpenMQTTGateway | Passerelle IoT | ESP | ⏳ à faire | → `26-gestion-parc` |
-| Frigate | NVR détection objets | Linux | ⏳ à faire | → `26-gestion-parc` |
-| ZoneMinder | Vidéosurveillance | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Shinobi | NVR vidéosurveillance | Linux, Windows via conteneur | ⏳ à faire | → `26-gestion-parc` |
-| Motion | Détection mouvement | Linux | ⏳ à faire | → `26-gestion-parc` |
-| motionEye (legacy) | Interface vidéosurveillance | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Kerberos.io | Vidéosurveillance | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Scrypted | Passerelle caméra | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| go2rtc | Relais flux caméra | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
+| OctoPrint | Serveur impression 3D | Windows, Linux, macOS | 🆕 fait (lot 155) | `33-materiel-iot/03-impression-3d` |
+| Klipper | Firmware impression 3D | Linux, SBC | 🆕 fait (lot 155) | `33-materiel-iot/03-impression-3d` |
+| Moonraker | API impression 3D | Linux | 🆕 fait (lot 155) | `33-materiel-iot/03-impression-3d` |
+| Mainsail | Interface impression 3D | Linux | 🆕 fait (lot 155) | `33-materiel-iot/03-impression-3d` |
+| Fluidd | Interface impression 3D | Linux | 🆕 fait (lot 155) | `33-materiel-iot/03-impression-3d` |
+| Home Assistant | Domotique | Windows, Linux, macOS | 🆕 fait (lot 156) | `33-materiel-iot/04-domotique` |
+| openHAB | Domotique | Windows, Linux, macOS | 🆕 fait (lot 156) | `33-materiel-iot/04-domotique` |
+| Domoticz | Domotique | Windows, Linux, macOS | 🆕 fait (lot 156) | `33-materiel-iot/04-domotique` |
+| ThingsBoard Community | Plateforme IoT | Windows, Linux, macOS | 🆕 fait (lot 157) | `33-materiel-iot/05-plateformes-iot` |
+| Mainflux | Plateforme IoT | Linux | 🆕 fait (lot 157) | `33-materiel-iot/05-plateformes-iot` |
+| Kaa IoT (community) | Plateforme IoT | Linux | 🆕 fait (lot 157) | `33-materiel-iot/05-plateformes-iot` |
+| Eclipse Mosquitto | Broker IoT MQTT | Windows, Linux, macOS | 🆕 fait (lot 158) | `33-materiel-iot/07-lorawan` |
+| Eclipse Kura | Passerelle IoT | Linux | 🆕 fait (lot 157) | `33-materiel-iot/05-plateformes-iot` |
+| ChirpStack | Serveur LoRaWAN | Linux | 🆕 fait (lot 158) | `33-materiel-iot/07-lorawan` |
+| The Things Network Stack | Serveur LoRaWAN | Linux | 🆕 fait (lot 158) | `33-materiel-iot/07-lorawan` |
+| ThingsBoard Gateway | Passerelle IoT | Windows, Linux, macOS | 🆕 fait (lot 158) | `33-materiel-iot/07-lorawan` |
+| Zigbee2MQTT | Passerelle Zigbee | Windows, Linux, macOS | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
+| Z-Wave JS UI | Passerelle Z-Wave | Windows, Linux, macOS | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
+| ESPHome | Firmware IoT | Windows, Linux, macOS | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
+| Tasmota | Firmware IoT | ESP | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
+| OpenMQTTGateway | Passerelle IoT | ESP | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
+| Frigate | NVR détection objets | Linux | 🆕 fait (lot 160) | `33-materiel-iot/08-videosurveillance` |
+| ZoneMinder | Vidéosurveillance | Linux | 🆕 fait (lot 160) | `33-materiel-iot/08-videosurveillance` |
+| Shinobi | NVR vidéosurveillance | Linux, Windows via conteneur | 🆕 fait (lot 160) | `33-materiel-iot/08-videosurveillance` |
+| Motion | Détection mouvement | Linux | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
+| motionEye (legacy) | Interface vidéosurveillance | Linux | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
+| Kerberos.io | Vidéosurveillance | Linux | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
+| Scrypted | Passerelle caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
+| go2rtc | Relais flux caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 
-## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 3/62
+## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 62/62
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| Insomnia (license check) | Client API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| Insomnia (license check) | Client API | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
 | Bruno | Client API | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/07-postman-bruno` |
-| Hoppscotch | Client API web | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| HTTPie | Client HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| Hoppscotch | Client API web | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
+| HTTPie | Client HTTP | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
 | curl | Client HTTP | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/06-dig-mtr-curl` |
-| wget | Téléchargement HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| xh | Client HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Swagger UI | Documentation API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Swagger Editor | Édition OpenAPI | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Redoc | Documentation API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Scalar | Documentation API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Stoplight Elements | Documentation API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Prism | Mock serveur API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| WireMock | Mock HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| MockServer | Mock API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Hoverfly | Simulation API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Mountebank | Mock multi-protocoles | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Pact | Tests contractuels | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Schemathesis | Tests API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Dredd | Tests API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Hurl | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Newman | Runner Postman collections | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Apache Bench | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| wrk2 | Tests HTTP | Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Autocannon | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| oha | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| wget | Téléchargement HTTP | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
+| xh | Client HTTP | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
+| Swagger UI | Documentation API | Windows, Linux, macOS | 🆕 fait (lot 163) | `30-developpement-api/05-documentation-api` |
+| Swagger Editor | Édition OpenAPI | Windows, Linux, macOS | 🆕 fait (lot 163) | `30-developpement-api/05-documentation-api` |
+| Redoc | Documentation API | Windows, Linux, macOS | 🆕 fait (lot 163) | `30-developpement-api/05-documentation-api` |
+| Scalar | Documentation API | Windows, Linux, macOS | 🆕 fait (lot 163) | `30-developpement-api/05-documentation-api` |
+| Stoplight Elements | Documentation API | Windows, Linux, macOS | 🆕 fait (lot 163) | `30-developpement-api/05-documentation-api` |
+| Prism | Mock serveur API | Windows, Linux, macOS | 🆕 fait (lot 164) | `30-developpement-api/06-mock-api` |
+| WireMock | Mock HTTP | Windows, Linux, macOS | 🆕 fait (lot 164) | `30-developpement-api/06-mock-api` |
+| MockServer | Mock API | Windows, Linux, macOS | 🆕 fait (lot 164) | `30-developpement-api/06-mock-api` |
+| Hoverfly | Simulation API | Windows, Linux, macOS | 🆕 fait (lot 164) | `30-developpement-api/06-mock-api` |
+| Mountebank | Mock multi-protocoles | Windows, Linux, macOS | 🆕 fait (lot 164) | `30-developpement-api/06-mock-api` |
+| Pact | Tests contractuels | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
+| Schemathesis | Tests API | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
+| Dredd | Tests API | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
+| Hurl | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
+| Newman | Runner Postman collections | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
+| Apache Bench | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 166) | `30-developpement-api/08-tests-charge` |
+| wrk2 | Tests HTTP | Linux, macOS | 🆕 fait (lot 166) | `30-developpement-api/08-tests-charge` |
+| Autocannon | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 166) | `30-developpement-api/08-tests-charge` |
+| oha | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 166) | `30-developpement-api/08-tests-charge` |
 | Playwright | Tests navigateur | Windows, Linux, macOS | ✅ existant | `21-outils/04-developpement/09-playwright` |
-| Selenium | Automatisation navigateur | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Cypress | Tests navigateur | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| WebdriverIO | Tests navigateur | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Puppeteer | Automatisation navigateur | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Robot Framework | Automatisation tests | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| pytest | Tests Python | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| JUnit | Tests Java | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| TestNG | Tests Java | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| NUnit | Tests .NET | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| xUnit.net | Tests .NET | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| MSTest | Tests .NET | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Cucumber | Tests BDD | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Behave | Tests BDD Python | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Ginkgo | Tests Go | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Go test | Tests Go | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| cargo test | Tests Rust | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Vitest | Tests JavaScript | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Jest | Tests JavaScript | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Mocha | Tests JavaScript | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| AVA | Tests JavaScript | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| PHPUnit | Tests PHP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Pest PHP | Tests PHP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Rspec | Tests Ruby | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Minitest | Tests Ruby | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Gitleaks | Détection secrets Git | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| detect-secrets | Détection secrets | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| TruffleHog OSS | Détection secrets | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Checkov | Analyse IaC | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| KICS | Analyse IaC | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Terrascan | Analyse IaC | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| TFLint | Lint Terraform | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Actionlint | Lint GitHub Actions | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| ShellCheck | Lint shell | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| shfmt | Formatage shell | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| EditorConfig | Conventions code | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| Selenium | Automatisation navigateur | Windows, Linux, macOS | 🆕 fait (lot 167) | `30-developpement-api/09-tests-navigateur` |
+| Cypress | Tests navigateur | Windows, Linux, macOS | 🆕 fait (lot 167) | `30-developpement-api/09-tests-navigateur` |
+| WebdriverIO | Tests navigateur | Windows, Linux, macOS | 🆕 fait (lot 167) | `30-developpement-api/09-tests-navigateur` |
+| Puppeteer | Automatisation navigateur | Windows, Linux, macOS | 🆕 fait (lot 167) | `30-developpement-api/09-tests-navigateur` |
+| Robot Framework | Automatisation tests | Windows, Linux, macOS | 🆕 fait (lot 167) | `30-developpement-api/09-tests-navigateur` |
+| pytest | Tests Python | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
+| JUnit | Tests Java | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
+| TestNG | Tests Java | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
+| NUnit | Tests .NET | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
+| xUnit.net | Tests .NET | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
+| MSTest | Tests .NET | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
+| Cucumber | Tests BDD | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
+| Behave | Tests BDD Python | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
+| Ginkgo | Tests Go | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
+| Go test | Tests Go | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
+| cargo test | Tests Rust | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
+| Vitest | Tests JavaScript | Windows, Linux, macOS | 🆕 fait (lot 170) | `30-developpement-api/11-tests-js` |
+| Jest | Tests JavaScript | Windows, Linux, macOS | 🆕 fait (lot 170) | `30-developpement-api/11-tests-js` |
+| Mocha | Tests JavaScript | Windows, Linux, macOS | 🆕 fait (lot 170) | `30-developpement-api/11-tests-js` |
+| AVA | Tests JavaScript | Windows, Linux, macOS | 🆕 fait (lot 170) | `30-developpement-api/11-tests-js` |
+| PHPUnit | Tests PHP | Windows, Linux, macOS | 🆕 fait (lot 171) | `30-developpement-api/12-tests-langages` |
+| Pest PHP | Tests PHP | Windows, Linux, macOS | 🆕 fait (lot 171) | `30-developpement-api/12-tests-langages` |
+| Rspec | Tests Ruby | Windows, Linux, macOS | 🆕 fait (lot 171) | `30-developpement-api/12-tests-langages` |
+| Minitest | Tests Ruby | Windows, Linux, macOS | 🆕 fait (lot 171) | `30-developpement-api/12-tests-langages` |
+| Gitleaks | Détection secrets Git | Windows, Linux, macOS | 🆕 fait (lot 172) | `30-developpement-api/13-securite-code` |
+| detect-secrets | Détection secrets | Windows, Linux, macOS | 🆕 fait (lot 172) | `30-developpement-api/13-securite-code` |
+| TruffleHog OSS | Détection secrets | Windows, Linux, macOS | 🆕 fait (lot 172) | `30-developpement-api/13-securite-code` |
+| Checkov | Analyse IaC | Windows, Linux, macOS | 🆕 fait (lot 173) | `30-developpement-api/13-securite-code` |
+| KICS | Analyse IaC | Windows, Linux, macOS | 🆕 fait (lot 173) | `30-developpement-api/13-securite-code` |
+| Terrascan | Analyse IaC | Windows, Linux, macOS | 🆕 fait (lot 173) | `30-developpement-api/13-securite-code` |
+| TFLint | Lint Terraform | Windows, Linux, macOS | 🆕 fait (lot 173) | `30-developpement-api/13-securite-code` |
+| Actionlint | Lint GitHub Actions | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
+| ShellCheck | Lint shell | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
+| shfmt | Formatage shell | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
+| EditorConfig | Conventions code | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 
-## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 1/60
+## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 60/60
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| Coolify | Plateforme déploiement PaaS | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Dokku | PaaS léger | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| CapRover | PaaS | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| HomelabOS | Déploiement services homelab | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Ansible-NAS | Déploiement NAS | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Sandstorm | Plateforme applications | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| FreedomBox | Serveur personnel | Debian | ⏳ à faire | → `31-auto-hebergement` |
-| HestiaCP | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| CyberPanel (open source components) | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| ISPConfig | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Virtualmin GPL | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Webmin | Administration serveur | Linux, Unix | ⏳ à faire | → `31-auto-hebergement` |
-| Ajenti | Administration serveur | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Froxlor | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Virtualmin | Panneau hébergement | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Yacht | Gestion Docker | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Dockge | Gestion Compose | Linux, Windows via conteneur | ⏳ à faire | → `31-auto-hebergement` |
-| Komodo | Gestion déploiements conteneurs | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Homepage | Dashboard serveur | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Homarr | Dashboard serveur | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Dashy | Dashboard serveur | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Heimdall | Dashboard applications | Linux, Windows via conteneur | ⏳ à faire | → `31-auto-hebergement` |
-| Flame | Dashboard applications | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Organizr | Dashboard applications | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Glance | Dashboard | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Homer | Dashboard | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Fenrus | Dashboard | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| DashMachine | Dashboard | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| SUI | Dashboard auto-hébergement | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| OliveTin | Exécution commandes contrôlée | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Ansible Semaphore | Interface Ansible | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| NocoDB | Base no-code | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Baserow | Base no-code | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Grist | Tableur/base de données | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Appsmith | Applications internes | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Budibase | Applications internes | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| ToolJet | Applications internes | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Supabase (self-hosted) | Backend-as-a-Service | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Appwrite | Backend-as-a-Service | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| PocketBase | Backend léger | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Parse Server | Backend-as-a-Service | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Hasura GraphQL Engine | API GraphQL | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| PostgREST | API REST PostgreSQL | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| PostGraphile | API GraphQL PostgreSQL | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Metabase | BI et dashboards | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Apache Superset | BI | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Redash | BI | Linux | ⏳ à faire | → `31-auto-hebergement` |
-| Lightdash | BI dbt | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Evidence | BI-as-code | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
+| Coolify | Plateforme déploiement PaaS | Linux | 🆕 fait (lot 175) | `31-auto-hebergement/02-paas` |
+| Dokku | PaaS léger | Linux | 🆕 fait (lot 175) | `31-auto-hebergement/02-paas` |
+| CapRover | PaaS | Linux | 🆕 fait (lot 175) | `31-auto-hebergement/02-paas` |
+| HomelabOS | Déploiement services homelab | Linux | 🆕 fait (lot 176) | `31-auto-hebergement/03-suites-homelab` |
+| Ansible-NAS | Déploiement NAS | Linux | 🆕 fait (lot 176) | `31-auto-hebergement/03-suites-homelab` |
+| Sandstorm | Plateforme applications | Linux | 🆕 fait (lot 176) | `31-auto-hebergement/03-suites-homelab` |
+| FreedomBox | Serveur personnel | Debian | 🆕 fait (lot 176) | `31-auto-hebergement/03-suites-homelab` |
+| HestiaCP | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
+| CyberPanel (open source components) | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
+| ISPConfig | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
+| Virtualmin GPL | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
+| Webmin | Administration serveur | Linux, Unix | 🆕 fait (lot 178) | `31-auto-hebergement/05-admin-serveur` |
+| Ajenti | Administration serveur | Linux | 🆕 fait (lot 178) | `31-auto-hebergement/05-admin-serveur` |
+| Froxlor | Panneau hébergement | Linux | 🆕 fait (lot 178) | `31-auto-hebergement/05-admin-serveur` |
+| Virtualmin | Panneau hébergement | Linux | 🆕 fait (lot 177) | `31-auto-hebergement/04-panneaux-hebergement` |
+| Yacht | Gestion Docker | Linux | 🆕 fait (lot 179) | `31-auto-hebergement/06-gestion-docker` |
+| Dockge | Gestion Compose | Linux, Windows via conteneur | 🆕 fait (lot 179) | `31-auto-hebergement/06-gestion-docker` |
+| Komodo | Gestion déploiements conteneurs | Linux | 🆕 fait (lot 179) | `31-auto-hebergement/06-gestion-docker` |
+| Homepage | Dashboard serveur | Windows, Linux, macOS | 🆕 fait (lot 180) | `31-auto-hebergement/07-dashboards` |
+| Homarr | Dashboard serveur | Windows, Linux, macOS | 🆕 fait (lot 180) | `31-auto-hebergement/07-dashboards` |
+| Dashy | Dashboard serveur | Windows, Linux, macOS | 🆕 fait (lot 180) | `31-auto-hebergement/07-dashboards` |
+| Heimdall | Dashboard applications | Linux, Windows via conteneur | 🆕 fait (lot 180) | `31-auto-hebergement/07-dashboards` |
+| Flame | Dashboard applications | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| Organizr | Dashboard applications | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| Glance | Dashboard | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| Homer | Dashboard | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| Fenrus | Dashboard | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| DashMachine | Dashboard | Linux | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| SUI | Dashboard auto-hébergement | Windows, Linux, macOS | 🆕 fait (lot 181) | `31-auto-hebergement/07-dashboards` |
+| OliveTin | Exécution commandes contrôlée | Windows, Linux, macOS | 🆕 fait (lot 182) | `31-auto-hebergement/08-actions-automatisation` |
+| Ansible Semaphore | Interface Ansible | Windows, Linux, macOS | 🆕 fait (lot 182) | `31-auto-hebergement/08-actions-automatisation` |
+| NocoDB | Base no-code | Windows, Linux, macOS | 🆕 fait (lot 183) | `31-auto-hebergement/09-bases-nocode` |
+| Baserow | Base no-code | Windows, Linux, macOS | 🆕 fait (lot 183) | `31-auto-hebergement/09-bases-nocode` |
+| Grist | Tableur/base de données | Windows, Linux, macOS | 🆕 fait (lot 183) | `31-auto-hebergement/09-bases-nocode` |
+| Appsmith | Applications internes | Windows, Linux, macOS | 🆕 fait (lot 184) | `31-auto-hebergement/10-low-code` |
+| Budibase | Applications internes | Windows, Linux, macOS | 🆕 fait (lot 184) | `31-auto-hebergement/10-low-code` |
+| ToolJet | Applications internes | Windows, Linux, macOS | 🆕 fait (lot 184) | `31-auto-hebergement/10-low-code` |
+| Supabase (self-hosted) | Backend-as-a-Service | Windows, Linux, macOS | 🆕 fait (lot 185) | `31-auto-hebergement/11-baas` |
+| Appwrite | Backend-as-a-Service | Windows, Linux, macOS | 🆕 fait (lot 185) | `31-auto-hebergement/11-baas` |
+| PocketBase | Backend léger | Windows, Linux, macOS | 🆕 fait (lot 185) | `31-auto-hebergement/11-baas` |
+| Parse Server | Backend-as-a-Service | Windows, Linux, macOS | 🆕 fait (lot 185) | `31-auto-hebergement/11-baas` |
+| Hasura GraphQL Engine | API GraphQL | Windows, Linux, macOS | 🆕 fait (lot 186) | `31-auto-hebergement/12-api-bdd` |
+| PostgREST | API REST PostgreSQL | Windows, Linux, macOS | 🆕 fait (lot 186) | `31-auto-hebergement/12-api-bdd` |
+| PostGraphile | API GraphQL PostgreSQL | Windows, Linux, macOS | 🆕 fait (lot 186) | `31-auto-hebergement/12-api-bdd` |
+| Metabase | BI et dashboards | Windows, Linux, macOS | 🆕 fait (lot 187) | `31-auto-hebergement/13-bi-analytics` |
+| Apache Superset | BI | Windows, Linux, macOS | 🆕 fait (lot 187) | `31-auto-hebergement/13-bi-analytics` |
+| Redash | BI | Linux | 🆕 fait (lot 187) | `31-auto-hebergement/13-bi-analytics` |
+| Lightdash | BI dbt | Windows, Linux, macOS | 🆕 fait (lot 187) | `31-auto-hebergement/13-bi-analytics` |
+| Evidence | BI-as-code | Windows, Linux, macOS | 🆕 fait (lot 187) | `31-auto-hebergement/13-bi-analytics` |
 | Grafana | Dashboards | Windows, Linux, macOS | ✅ existant | `06-supervision/03-grafana` |
-| Kibana (license check) | Dashboards recherche | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| OpenObserve | Observabilité et analytics | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Linkding | Gestion favoris | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Shiori | Gestion favoris | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Wallabag | Lecture différée | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| ArchiveBox | Archivage web | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Readeck | Lecture différée | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Changedetection.io | Surveillance pages web | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Hoarder (Karakeep) | Signets et archivage | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
-| Linkwarden | Gestion liens | Windows, Linux, macOS | ⏳ à faire | → `31-auto-hebergement` |
+| Kibana (license check) | Dashboards recherche | Windows, Linux, macOS | 🆕 fait (lot 188) | `31-auto-hebergement/14-observabilite` |
+| OpenObserve | Observabilité et analytics | Windows, Linux, macOS | 🆕 fait (lot 188) | `31-auto-hebergement/14-observabilite` |
+| Linkding | Gestion favoris | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Shiori | Gestion favoris | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Wallabag | Lecture différée | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| ArchiveBox | Archivage web | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Readeck | Lecture différée | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Changedetection.io | Surveillance pages web | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Hoarder (Karakeep) | Signets et archivage | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
+| Linkwarden | Gestion liens | Windows, Linux, macOS | 🆕 fait (lot 189) | `31-auto-hebergement/15-marque-pages` |
 

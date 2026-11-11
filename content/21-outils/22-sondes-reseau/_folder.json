@@ -1,0 +1,1 @@
+{ "title": "Smokeping, Blackbox Exporter et fping exporter", "icon": "activity", "color": "#14b8a6", "description": "Surveiller la latence, la perte de paquets et la disponibilité des services depuis des sondes : Smokeping (graphes historiques) et les exportateurs Prometheus Blackbox et fping." }

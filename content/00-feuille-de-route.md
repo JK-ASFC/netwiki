@@ -149,6 +149,60 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 133 | Catalogue — GED d'entreprise : OpenKM, LogicalDOC, SeedDMS | ✅ |
 | 134 | Catalogue — signature et PDF : Documenso, OpenSign, LibreSign, Stirling-PDF, Gotenberg | ✅ |
 | 135 | Catalogue — bureautique : ONLYOFFICE Docs, Collabora Online, LibreOffice, Apache OpenOffice | ✅ |
+| 136 | Catalogue — notes et connaissances : TriliumNext, Memos, SilverBullet, Logseq, SiYuan | ✅ |
+| 137 | Catalogue — documentation technique : MkDocs, Material for MkDocs, Sphinx, Read the Docs, Documize | ✅ |
+| 138 | Catalogue — générateurs de documentation : Docusaurus, VitePress, Antora, Bookdown | ✅ |
+| 139 | Catalogue — sites statiques : Hugo, Jekyll, Zola, Astro, Quartz | ✅ |
+| 140 | Catalogue — recherche instantanée : Meilisearch, Typesense, Sonic | ✅ |
+| 141 | Catalogue — moteurs plein texte : Apache Solr, Manticore Search, ZincSearch, Tantivy | ✅ |
+| 142 | Catalogue — métamoteurs : SearXNG, Whoogle, 4get, LibreX | ✅ |
+| 143 | Catalogue — serveurs SSH légers : Dropbear, TinySSH | ✅ |
+| 144 | Catalogue — gestion du réseau Linux : NetworkManager, systemd-networkd, ConnMan | ✅ |
+| 145 | Catalogue — Wi-Fi Linux : hostapd, wpa_supplicant, iw, iwd | ✅ |
+| 146 | Catalogue — commutateur virtuel : Open vSwitch | ✅ |
+| 147 | Catalogue — laboratoires réseau : GNS3, Containerlab, Kathará | ✅ |
+| 148 | Catalogue — émulateurs réseau : CORE, ns-3, Mininet | ✅ |
+| 149 | Catalogue — contrôleurs SDN : OpenDaylight, ONOS, Ryu | ✅ |
+| 150 | Catalogue — tests de débit : iperf2, OpenSpeedTest, LibreSpeed, Speedtest Tracker | ✅ |
+| 151 | Catalogue — sondes réseau : Smokeping, Blackbox Exporter, fping exporter | ✅ |
+| 152 | Catalogue — configuration réseau : Oxidized, RANCID, Netdisco, Batfish | ✅ |
+| 153 | Catalogue — inventaire et CMDB : Agent FusionInventory, i-doit Open, CMDBuild | ✅ |
+| 154 | Catalogue — gestion de stocks : Grocy, Homebox, PartKeepr, ERPNext Stock, OpenWMS, OpenLMIS | ✅ |
+| 155 | Catalogue — impression 3D et IPP : OctoPrint, Klipper, Moonraker, Mainsail, Fluidd, IPP Everywhere | ✅ |
+| 156 | Catalogue — domotique : Home Assistant, openHAB, Domoticz | ✅ |
+| 157 | Catalogue — plates-formes IoT : ThingsBoard Community, Mainflux/Magistrala, Kaa, Eclipse Kura | ✅ |
+| 158 | Catalogue — LoRaWAN et passerelles : ChirpStack, The Things Stack, Mosquitto, ThingsBoard Gateway | ✅ |
+| 159 | Catalogue — Zigbee, Z-Wave et firmwares : Zigbee2MQTT, Z-Wave JS UI, ESPHome, Tasmota, OpenMQTTGateway | ✅ |
+| 160 | Catalogue — vidéosurveillance (NVR) : Frigate, ZoneMinder, Shinobi | ✅ |
+| 161 | Catalogue — relais et détection vidéo : Motion, motionEye, Kerberos.io, Scrypted, go2rtc | ✅ |
+| 162 | Catalogue — clients HTTP et API : Insomnia, Hoppscotch, HTTPie, xh, wget | ✅ |
+| 163 | Catalogue — documentation d'API : Swagger UI, Swagger Editor, Redoc, Scalar, Stoplight Elements | ✅ |
+| 164 | Catalogue — simulation d'API : Prism, WireMock, MockServer, Hoverfly, Mountebank | ✅ |
+| 165 | Catalogue — tests d'API et de contrat : Pact, Schemathesis, Dredd, Hurl, Newman | ✅ |
+| 166 | Catalogue — micro-tests de charge : Apache Bench, wrk2, Autocannon, oha | ✅ |
+| 167 | Catalogue — tests navigateur : Selenium, Cypress, WebdriverIO, Puppeteer, Robot Framework | ✅ |
+| 168 | Catalogue — tests unitaires : pytest, JUnit, TestNG, NUnit, xUnit.net, MSTest | ✅ |
+| 169 | Catalogue — BDD et tests Go/Rust : Cucumber, Behave, Ginkgo, go test, cargo test | ✅ |
+| 170 | Catalogue — tests JavaScript : Vitest, Jest, Mocha, AVA | ✅ |
+| 171 | Catalogue — tests PHP et Ruby : PHPUnit, Pest, RSpec, Minitest | ✅ |
+| 172 | Catalogue — détection de secrets : Gitleaks, detect-secrets, TruffleHog OSS | ✅ |
+| 173 | Catalogue — analyse IaC : Checkov, KICS, Terrascan, TFLint | ✅ |
+| 174 | Catalogue — linters et format : Actionlint, ShellCheck, shfmt, EditorConfig | ✅ |
+| 175 | Catalogue — PaaS auto-hébergés : Coolify, Dokku, CapRover | ✅ |
+| 176 | Catalogue — suites d'auto-hébergement : HomelabOS, Ansible-NAS, Sandstorm, FreedomBox | ✅ |
+| 177 | Catalogue — panneaux d'hébergement : HestiaCP, CyberPanel, ISPConfig, Virtualmin | ✅ |
+| 178 | Catalogue — administration serveur : Webmin, Ajenti, Froxlor | ✅ |
+| 179 | Catalogue — gestion de conteneurs : Dockge, Yacht, Komodo | ✅ |
+| 180 | Catalogue — tableaux de bord : Homepage, Homarr, Dashy, Heimdall | ✅ |
+| 181 | Catalogue — tableaux de bord (suite) : Flame, Organizr, Glance, Homer, Fenrus, DashMachine, SUI | ✅ |
+| 182 | Catalogue — actions et automatisation : OliveTin, Ansible Semaphore | ✅ |
+| 183 | Catalogue — bases no-code : NocoDB, Baserow, Grist | ✅ |
+| 184 | Catalogue — low-code : Appsmith, Budibase, ToolJet | ✅ |
+| 185 | Catalogue — BaaS auto-hébergés : Supabase, Appwrite, PocketBase, Parse Server | ✅ |
+| 186 | Catalogue — API sur base : Hasura, PostgREST, PostGraphile | ✅ |
+| 187 | Catalogue — BI : Metabase, Apache Superset, Redash, Lightdash, Evidence | ✅ |
+| 188 | Catalogue — observabilité : Kibana, OpenObserve | ✅ |
+| 189 | Catalogue — marque-pages et archivage : Linkding, Shiori, Linkwarden, Hoarder/Karakeep, Wallabag, Readeck, ArchiveBox, Changedetection.io | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -235,6 +289,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[08-rds/01-presentation-architecture\|Services Bureau à distance (Session Host, Gateway, Licensing, Broker, Web Access)]] | ➖ | RDS-* | ➖ | ✅ |
 | [[10-windows-admin-center/01-presentation-installation\|Windows Admin Center]], [[09-winrm/01-presentation-configuration\|WinRM]] | ➖ | WindowsAdminCenter, WinRM | ➖ | ✅ |
 | Serveur Telnet | ➖ | non disponible sur les versions modernes (remplacé par OpenSSH) | ➖ | ➖ |
+| [[14-dropbear-tinyssh/01-dropbear-tinyssh\|Dropbear, TinySSH]] | dropbear-bin, dropbear-initramfs, tinysshd | ➖ | ➖ | ✅ |
 
 ## Fichiers, partage & stockage
 
@@ -310,6 +365,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[09-nats-nsq-zeromq-redpanda/01-nats\|NATS, JetStream]], [[09-nats-nsq-zeromq-redpanda/02-nsq-zeromq\|NSQ, ZeroMQ]], [[09-nats-nsq-zeromq-redpanda/03-redpanda\|Redpanda]] | binaires, paquets, Docker | binaires, bibliothèques | Homebrew, Docker | ✅ |
 | [[10-courtiers-mqtt/01-vernemq\|VerneMQ]], [[10-courtiers-mqtt/02-nanomq-hivemq\|NanoMQ, HiveMQ CE]] | paquets, Docker | Docker, archive Java | Docker | ✅ |
 | [[11-files-de-taches/01-beanstalkd-gearman\|Beanstalkd, Gearman]], [[11-files-de-taches/02-celery-dramatiq-rq\|Celery, Dramatiq, RQ]], [[11-files-de-taches/03-bullmq-pg-boss-graphile\|BullMQ, pg-boss, Graphile Worker]] | paquets, pip, npm | pip, npm | Homebrew, pip, npm | ✅ |
+| [[12-moteurs-recherche/01-meilisearch-typesense-sonic\|Meilisearch, Typesense, Sonic]], [[12-moteurs-recherche/02-solr-manticore-zinc-tantivy\|Solr, Manticore, ZincSearch, Tantivy]] | binaires, Docker | binaires, Docker | Homebrew, Docker | ✅ |
+| [[13-metamoteurs/01-searxng-whoogle-4get-librex\|SearXNG, Whoogle, 4get, LibreX]] | Docker, PHP | Docker | Docker | ✅ |
 
 ## Conteneurs & virtualisation
 
@@ -449,6 +506,14 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | Environnements de bureau | [[13-environnements-bureau/01-panorama-choix\|choisir un bureau, Wayland ou X11]], [[13-environnements-bureau/02-gnome-kde-plasma\|GNOME, KDE Plasma]], [[13-environnements-bureau/03-xfce-mate-cinnamon-lxqt-cosmic\|XFCE, MATE, Cinnamon, LXQt, COSMIC]] | ✅ |
 | Terminaux graphiques | [[14-terminaux-graphiques/01-alacritty-kitty-wezterm-ghostty\|Alacritty, Kitty, WezTerm, Ghostty]], [[14-terminaux-graphiques/02-xfce-terminal\|Xfce Terminal]] | ✅ |
 | Éditeurs de texte | [[15-editeurs-texte/01-vim-neovim\|Vim, Neovim]], [[15-editeurs-texte/02-emacs\|GNU Emacs]], [[15-editeurs-texte/03-kate-geany\|Kate, Geany]] | ✅ |
+| Gestion du réseau (Linux) | [[16-gestion-reseau-linux/01-networkmanager-networkd-connman\|NetworkManager, systemd-networkd, ConnMan]] | ✅ |
+| Wi-Fi (Linux) | [[17-wifi-linux/01-hostapd-wpa-supplicant-iw-iwd\|hostapd, wpa_supplicant, iw, iwd]] | ✅ |
+| Commutateur virtuel | [[18-open-vswitch/01-open-vswitch\|Open vSwitch]] | ✅ |
+| Laboratoires réseau | [[19-labos-reseau/01-gns3-containerlab\|GNS3, Containerlab, Kathará]] | ✅ |
+| Contrôleurs SDN | [[20-controleurs-sdn/01-opendaylight-onos-ryu\|OpenDaylight, ONOS, Ryu]] | ✅ |
+| Tests de débit | [[21-tests-debit/01-iperf2-openspeedtest-librespeed\|iperf2, OpenSpeedTest, LibreSpeed, Speedtest Tracker]] | ✅ |
+| Sondes réseau (latence) | [[22-sondes-reseau/01-smokeping-blackbox\|Smokeping, Blackbox Exporter, fping exporter]] | ✅ |
+| Configurations réseau | [[23-config-reseau/01-oxidized-rancid-netdisco-batfish\|Oxidized, RANCID, Netdisco, Batfish]] | ✅ |
 
 ## Équipements réseau par constructeur
 
@@ -577,3 +642,54 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[32-documentation-ged/02-ged-entreprise/01-openkm-logicaldoc-seeddms\|OpenKM, LogicalDOC, SeedDMS]] | Tomcat (Java), Apache + PHP | installateurs (Java), PHP | ➖ | ✅ |
 | [[32-documentation-ged/03-signature-pdf/01-documenso-opensign-libresign\|Documenso, OpenSign, LibreSign]], [[32-documentation-ged/03-signature-pdf/02-stirling-pdf-gotenberg\|Stirling-PDF, Gotenberg]] | Docker, Nextcloud (occ) | Docker | Docker | ✅ |
 | [[32-documentation-ged/04-bureautique/01-onlyoffice-collabora\|ONLYOFFICE Docs, Collabora Online]], [[32-documentation-ged/04-bureautique/02-libreoffice-openoffice\|LibreOffice, OpenOffice]] | Docker, apt, dnf, Flatpak | Docker (serveurs), MSI, winget | Homebrew, .dmg | ✅ |
+| [[32-documentation-ged/05-notes-connaissance/01-triliumnext-memos\|TriliumNext, Memos]], [[32-documentation-ged/05-notes-connaissance/02-silverbullet-logseq-siyuan\|SilverBullet, Logseq, SiYuan]] | Docker, Flatpak, AppImage | applications, Docker | applications, Docker | ✅ |
+| [[32-documentation-ged/06-documentation-technique/01-mkdocs-material\|MkDocs, Material]], [[32-documentation-ged/06-documentation-technique/02-sphinx-readthedocs-documize\|Sphinx, Read the Docs, Documize]] | pip, Docker | pip | pip, Homebrew | ✅ |
+| [[32-documentation-ged/07-generateurs-documentation/01-docusaurus-vitepress\|Docusaurus, VitePress]], [[32-documentation-ged/07-generateurs-documentation/02-antora-bookdown\|Antora, Bookdown]] | npm, R | npm, R | npm, R, Homebrew | ✅ |
+| [[32-documentation-ged/08-sites-statiques/01-hugo-jekyll-zola\|Hugo, Jekyll, Zola]], [[32-documentation-ged/08-sites-statiques/02-astro-quartz\|Astro, Quartz]] | binaires, snap, gem, npm | winget, gem, npm | Homebrew, gem, npm | ✅ |
+
+## Matériel, IoT & vidéosurveillance
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[33-materiel-iot/01-inventaire-cmdb/01-fusioninventory-idoit-cmdbuild\|FusionInventory, i-doit, CMDBuild]] | agent, LAMP, Tomcat | agent (MSI) | agent | ✅ |
+| [[33-materiel-iot/02-gestion-stocks/01-grocy-homebox-partkeepr\|Grocy, Homebox, PartKeepr]], [[33-materiel-iot/02-gestion-stocks/02-erpnext-openwms-openlmis\|ERPNext, OpenWMS, OpenLMIS]] | Docker, bench | Docker | Docker | ✅ |
+| [[33-materiel-iot/03-impression-3d/01-octoprint-klipper-moonraker\|OctoPrint, Klipper, Moonraker, Mainsail, Fluidd]] | pip, Docker, KIAUH | ➖ | ➖ | ✅ |
+| [[33-materiel-iot/04-domotique/01-home-assistant-openhab-domoticz\|Home Assistant, openHAB, Domoticz]] | OS, Docker, paquets | Docker, VM | Docker, VM | ✅ |
+| [[33-materiel-iot/05-plateformes-iot/01-thingsboard-mainflux\|ThingsBoard, Magistrala]], [[33-materiel-iot/05-plateformes-iot/02-kaa-kura\|Kaa, Eclipse Kura]] | Docker | Docker | Docker | ✅ |
+| [[33-materiel-iot/07-lorawan/01-chirpstack-ttn\|ChirpStack, The Things Stack]], [[33-materiel-iot/07-lorawan/02-mosquitto-iot-gateway\|Mosquitto, ThingsBoard Gateway]] | Docker, paquets | Docker | Docker | ✅ |
+| [[33-materiel-iot/06-zigbee-zwave/01-zigbee2mqtt-zwavejs\|Zigbee2MQTT, Z-Wave JS UI]], [[33-materiel-iot/06-zigbee-zwave/02-esphome-tasmota\|ESPHome, Tasmota, OpenMQTTGateway]] | Docker, pip, flash | flash (Tasmotizer) | flash, pip | ✅ |
+| [[33-materiel-iot/08-videosurveillance/01-frigate-zoneminder-shinobi\|Frigate, ZoneMinder, Shinobi]], [[33-materiel-iot/08-videosurveillance/02-motion-scrypted-go2rtc\|Motion, Kerberos.io, Scrypted, go2rtc]] | Docker | Docker | Docker | ✅ |
+
+## Développement, API & tests
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[30-developpement-api/04-clients-http/01-insomnia-hoppscotch-httpie\|Insomnia, Hoppscotch, HTTPie, xh, wget]] | paquets, Flatpak, pip, Docker | winget, pip | Homebrew, pip | ✅ |
+| [[30-developpement-api/05-documentation-api/01-swagger-redoc-scalar\|Swagger UI, Swagger Editor, Redoc, Scalar, Stoplight Elements]] | Docker, npx | Docker, npx | Docker, npx | ✅ |
+| [[30-developpement-api/06-mock-api/01-prism-wiremock-mockserver\|Prism, WireMock, MockServer, Hoverfly, Mountebank]] | npx, Docker, binaires | npx, Docker | npx, Docker | ✅ |
+| [[30-developpement-api/07-tests-contrat/01-pact-schemathesis\|Pact, Schemathesis, Dredd, Hurl, Newman]] | pip, npm, Docker, binaires | pip, npm | Homebrew, pip, npm | ✅ |
+| [[30-developpement-api/08-tests-charge/01-ab-wrk2-autocannon-oha\|Apache Bench, wrk2, Autocannon, oha]] | paquets, npm, binaires | npm, binaires | Homebrew, npm | ✅ |
+| [[30-developpement-api/09-tests-navigateur/01-selenium-cypress-webdriverio\|Selenium, Cypress, WebdriverIO, Puppeteer, Robot Framework]] | pip, npm, Docker | pip, npm | pip, npm | ✅ |
+| [[30-developpement-api/10-tests-unitaires/01-pytest-junit-nunit\|pytest, JUnit, TestNG, NUnit, xUnit.net, MSTest]] | pip, Maven, Gradle, dotnet | pip, Maven, dotnet | pip, Maven, dotnet | ✅ |
+| [[30-developpement-api/12-tests-langages/01-bdd-gotest-cargo\|Cucumber, Behave, Ginkgo, go test, cargo test]], [[30-developpement-api/12-tests-langages/02-phpunit-pest-rspec\|PHPUnit, Pest, RSpec, Minitest]] | npm, pip, go, cargo | npm, pip, go, cargo | npm, pip, go, cargo | ✅ |
+| [[30-developpement-api/11-tests-js/01-vitest-jest-mocha\|Vitest, Jest, Mocha, AVA]] | npm | npm | npm | ✅ |
+| [[30-developpement-api/13-securite-code/01-gitleaks-detect-secrets-trufflehog\|Gitleaks, detect-secrets, TruffleHog]], [[30-developpement-api/13-securite-code/02-iac-checkov-kics\|Checkov, KICS, Terrascan, TFLint]], [[30-developpement-api/13-securite-code/03-linters-shellcheck\|Actionlint, ShellCheck, shfmt, EditorConfig]] | binaires, pip, Docker | binaires, pip | Homebrew, pip | ✅ |
+
+## Services de plateforme & auto-hébergement
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[31-auto-hebergement/02-paas/01-coolify-dokku-caprover\|Coolify, Dokku, CapRover]] | script, Docker | ➖ | ➖ | ✅ |
+| [[31-auto-hebergement/03-suites-homelab/01-homelabos-sandstorm\|HomelabOS, Ansible-NAS, Sandstorm, FreedomBox]] | Ansible, script, Debian | ➖ | ➖ | ✅ |
+| [[31-auto-hebergement/04-panneaux-hebergement/01-hestiacp-cyberpanel-ispconfig-virtualmin\|HestiaCP, CyberPanel, ISPConfig, Virtualmin]] | scripts d'installation | ➖ | ➖ | ✅ |
+| [[31-auto-hebergement/05-admin-serveur/01-webmin-ajenti-froxlor\|Webmin, Ajenti, Froxlor]] | paquets, script | ➖ | ➖ | ✅ |
+| [[31-auto-hebergement/06-gestion-docker/01-dockge-yacht-komodo\|Dockge, Yacht, Komodo]] | Docker | Docker | Docker | ✅ |
+| [[31-auto-hebergement/07-dashboards/01-homepage-homarr-dashy\|Homepage, Homarr, Dashy, Heimdall]], [[31-auto-hebergement/07-dashboards/02-flame-glance-homer\|Flame, Organizr, Glance, Homer]] | Docker | Docker | Docker | ✅ |
+| [[31-auto-hebergement/08-actions-automatisation/01-olivetin-semaphore\|OliveTin, Ansible Semaphore]] | Docker | Docker | Docker | ✅ |
+| [[31-auto-hebergement/09-bases-nocode/01-nocodb-baserow-grist\|NocoDB, Baserow, Grist]] | Docker | Docker | Docker | ✅ |
+| [[31-auto-hebergement/10-low-code/01-appsmith-budibase-tooljet\|Appsmith, Budibase, ToolJet]] | Docker | Docker | Docker | ✅ |
+| [[31-auto-hebergement/11-baas/01-supabase-appwrite-pocketbase\|Supabase, Appwrite, PocketBase, Parse Server]] | Docker, binaire | Docker, binaire | Docker, binaire | ✅ |
+| [[31-auto-hebergement/12-api-bdd/01-hasura-postgrest-postgraphile\|Hasura, PostgREST, PostGraphile]] | Docker, npx | Docker, npx | Docker, npx | ✅ |
+| [[31-auto-hebergement/13-bi-analytics/01-metabase-superset-redash\|Metabase, Superset, Redash, Lightdash, Evidence]] | Docker, npm | Docker, npm | Docker, npm | ✅ |
+| [[31-auto-hebergement/14-observabilite/01-kibana-openobserve\|Kibana, OpenObserve]] | Docker | Docker | Docker | ✅ |
+| [[31-auto-hebergement/15-marque-pages/01-linkding-wallabag-archivebox\|Linkding, Shiori, Linkwarden, Karakeep, Wallabag, Readeck, ArchiveBox, Changedetection.io]] | Docker | Docker | Docker | ✅ |

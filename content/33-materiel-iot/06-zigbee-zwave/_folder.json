@@ -1,0 +1,1 @@
+{ "title": "Zigbee2MQTT, Z-Wave JS UI, ESPHome et Tasmota", "icon": "cpu", "color": "#f59e0b", "description": "Passerelles radio et firmwares pour objets connectés : Zigbee2MQTT et Z-Wave JS UI (ponts vers MQTT), ESPHome et Tasmota (firmwares ESP) et OpenMQTTGateway (passerelle multi-radio)." }

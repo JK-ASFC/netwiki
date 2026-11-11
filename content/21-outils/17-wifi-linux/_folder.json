@@ -1,0 +1,1 @@
+{ "title": "hostapd, wpa_supplicant, iw et iwd", "icon": "wifi", "color": "#14b8a6", "description": "Wi-Fi sous Linux : créer un point d'accès (hostapd), se connecter à un réseau (wpa_supplicant, iwd) et diagnostiquer avec iw." }

@@ -1,0 +1,1 @@
+{ "title": "Dockge, Yacht et Komodo", "icon": "container", "color": "#22c55e", "description": "Interfaces web pour gérer des conteneurs et des piles Docker Compose : Dockge (piles compose), Yacht (déploiement par modèles) et Komodo (gestion multi-serveurs et builds), complément de Portainer." }

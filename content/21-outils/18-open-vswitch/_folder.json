@@ -1,0 +1,1 @@
+{ "title": "Open vSwitch", "icon": "network", "color": "#14b8a6", "description": "Commutateur virtuel multicouche pour la virtualisation et le SDN : ponts, ports, VLAN, agrégation, tunnels VXLAN/GRE, OpenFlow et supervision des flux." }

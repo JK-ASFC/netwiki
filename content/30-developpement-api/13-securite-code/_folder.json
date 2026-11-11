@@ -1,0 +1,1 @@
+{ "title": "Détection de secrets, IaC et linters", "icon": "shield-check", "color": "#6366f1", "description": "Sécurité du code dans la chaîne CI : détection de secrets (Gitleaks, detect-secrets, TruffleHog), analyse d'infrastructure as code (Checkov, KICS, Terrascan, TFLint) et linters (Actionlint, ShellCheck, shfmt, EditorConfig)." }
