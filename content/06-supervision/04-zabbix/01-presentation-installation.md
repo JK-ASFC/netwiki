@@ -41,7 +41,21 @@ flowchart LR
 
 ## Versions
 
-Une version **LTS** environ tous les 18 mois (5.0, 6.0, **7.0 LTS** en 2024, 8.0 attendue), supportée 5 ans ; des versions intermédiaires (7.2, 7.4) supportées quelques mois. Choisissez une LTS en production.
+Une version **LTS** environ tous les 18 mois (5.0, 6.0, **7.0 LTS** en 2024, **8.0 LTS** en novembre 2026), supportée 5 ans ; des versions intermédiaires (7.2, 7.4) supportées quelques mois. Choisissez une LTS en production.
+
+### Nouveautés de la version 8.0 LTS
+
+Source : notes de version Zabbix 8.0.0. Points à anticiper avant une migration depuis la 7.0 :
+
+- **API désactivée par défaut** pour tous les rôles d'utilisateurs : réactivez-la dans les rôles qui en ont besoin (scripts, Terraform, Grafana).
+- **Méthodes d'API supprimées** : `massupdate` (hôtes, modèles, groupes), `hostinterface.update` et `hostinterface.replacehostinterfaces` ; seule `hostinterface.get` reste publique.
+- **Macros obsolètes supprimées** (`{ACK.DATE}`, `{IPADDRESS}`, `{HOSTNAME}`, `{USER.ALIAS}`…) : corrigez vos actions et notifications.
+- **Prérequis relevés** : PHP 8.2 minimum, PostgreSQL 15, MySQL/Percona 8.4, MariaDB 10.11, TimescaleDB 2.20.
+- Anciens protocoles du *trapper* et option `DISCARD` des éléments d'état SNMP supprimés.
+- Nouveautés : historique ClickHouse, collecteur OpenTelemetry sur les proxys (traces), authentification AppRole pour HashiCorp Vault.
+
+> [!NOTE]
+> Les commandes d'installation ci-dessous restent celles de la 7.0 LTS. Pour la 8.0, générez dépôt et paquets avec le sélecteur de https://www.zabbix.com/download (même procédure, version 8.0).
 
 ## Installation (7.0 LTS, PostgreSQL, Nginx)
 
