@@ -198,6 +198,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 182 | Catalogue — actions et automatisation : OliveTin, Ansible Semaphore | ✅ |
 | 183 | Catalogue — bases no-code : NocoDB, Baserow, Grist | ✅ |
 | 184 | Catalogue — low-code : Appsmith, Budibase, ToolJet | ✅ |
+| 185 | Catalogue — BaaS auto-hébergés : Supabase, Appwrite, PocketBase, Parse Server | ✅ |
+| 186 | Catalogue — API sur base : Hasura, PostgREST, PostGraphile | ✅ |
+| 187 | Catalogue — BI : Metabase, Apache Superset, Redash, Lightdash, Evidence | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -683,3 +686,6 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[31-auto-hebergement/08-actions-automatisation/01-olivetin-semaphore\|OliveTin, Ansible Semaphore]] | Docker | Docker | Docker | ✅ |
 | [[31-auto-hebergement/09-bases-nocode/01-nocodb-baserow-grist\|NocoDB, Baserow, Grist]] | Docker | Docker | Docker | ✅ |
 | [[31-auto-hebergement/10-low-code/01-appsmith-budibase-tooljet\|Appsmith, Budibase, ToolJet]] | Docker | Docker | Docker | ✅ |
+| [[31-auto-hebergement/11-baas/01-supabase-appwrite-pocketbase\|Supabase, Appwrite, PocketBase, Parse Server]] | Docker, binaire | Docker, binaire | Docker, binaire | ✅ |
+| [[31-auto-hebergement/12-api-bdd/01-hasura-postgrest-postgraphile\|Hasura, PostgREST, PostGraphile]] | Docker, npx | Docker, npx | Docker, npx | ✅ |
+| [[31-auto-hebergement/13-bi-analytics/01-metabase-superset-redash\|Metabase, Superset, Redash, Lightdash, Evidence]] | Docker, npm | Docker, npm | Docker, npm | ✅ |

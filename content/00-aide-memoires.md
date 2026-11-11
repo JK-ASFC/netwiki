@@ -405,3 +405,6 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[31-auto-hebergement/08-actions-automatisation/90-aide-memoire|OliveTin et Ansible Semaphore]]
 - [[31-auto-hebergement/09-bases-nocode/90-aide-memoire|NocoDB, Baserow et Grist]]
 - [[31-auto-hebergement/10-low-code/90-aide-memoire|Appsmith, Budibase et ToolJet]]
+- [[31-auto-hebergement/11-baas/90-aide-memoire|BaaS auto-hébergés]]
+- [[31-auto-hebergement/12-api-bdd/90-aide-memoire|API sur base de données]]
+- [[31-auto-hebergement/13-bi-analytics/90-aide-memoire|BI auto-hébergée]]

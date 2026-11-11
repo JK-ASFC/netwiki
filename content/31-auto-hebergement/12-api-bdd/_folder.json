@@ -1,0 +1,1 @@
+{ "title": "Hasura, PostgREST et PostGraphile", "icon": "database", "color": "#22c55e", "description": "Générer automatiquement une API (GraphQL ou REST) à partir d'une base PostgreSQL existante : Hasura, PostgREST et PostGraphile." }
