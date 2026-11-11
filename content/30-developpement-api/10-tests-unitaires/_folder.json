@@ -1,0 +1,1 @@
+{ "title": "pytest et tests unitaires JVM/.NET", "icon": "flask-conical", "color": "#6366f1", "description": "Frameworks de tests unitaires : pytest (Python) et les grands frameworks de la JVM (JUnit, TestNG) et de .NET (NUnit, xUnit.net, MSTest)." }

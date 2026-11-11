@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 1001 | 4 | 115 (9 %) |
+| 1311 | 191 (15 %) | 1015 | 4 | 101 (8 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1312,7 +1312,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Scrypted | Passerelle caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 | go2rtc | Relais flux caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 
-## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 22/62
+## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 36/62
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1338,22 +1338,22 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Dredd | Tests API | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
 | Hurl | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
 | Newman | Runner Postman collections | Windows, Linux, macOS | 🆕 fait (lot 165) | `30-developpement-api/07-tests-contrat` |
-| Apache Bench | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| wrk2 | Tests HTTP | Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Autocannon | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| oha | Tests HTTP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| Apache Bench | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 166) | `30-developpement-api/08-tests-charge` |
+| wrk2 | Tests HTTP | Linux, macOS | 🆕 fait (lot 166) | `30-developpement-api/08-tests-charge` |
+| Autocannon | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 166) | `30-developpement-api/08-tests-charge` |
+| oha | Tests HTTP | Windows, Linux, macOS | 🆕 fait (lot 166) | `30-developpement-api/08-tests-charge` |
 | Playwright | Tests navigateur | Windows, Linux, macOS | ✅ existant | `21-outils/04-developpement/09-playwright` |
-| Selenium | Automatisation navigateur | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Cypress | Tests navigateur | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| WebdriverIO | Tests navigateur | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Puppeteer | Automatisation navigateur | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Robot Framework | Automatisation tests | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| pytest | Tests Python | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| JUnit | Tests Java | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| TestNG | Tests Java | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| NUnit | Tests .NET | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| Selenium | Automatisation navigateur | Windows, Linux, macOS | 🆕 fait (lot 167) | `30-developpement-api/09-tests-navigateur` |
+| Cypress | Tests navigateur | Windows, Linux, macOS | 🆕 fait (lot 167) | `30-developpement-api/09-tests-navigateur` |
+| WebdriverIO | Tests navigateur | Windows, Linux, macOS | 🆕 fait (lot 167) | `30-developpement-api/09-tests-navigateur` |
+| Puppeteer | Automatisation navigateur | Windows, Linux, macOS | 🆕 fait (lot 167) | `30-developpement-api/09-tests-navigateur` |
+| Robot Framework | Automatisation tests | Windows, Linux, macOS | 🆕 fait (lot 167) | `30-developpement-api/09-tests-navigateur` |
+| pytest | Tests Python | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
+| JUnit | Tests Java | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
+| TestNG | Tests Java | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
+| NUnit | Tests .NET | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
 | xUnit.net | Tests .NET | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| MSTest | Tests .NET | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| MSTest | Tests .NET | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
 | Cucumber | Tests BDD | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
 | Behave | Tests BDD Python | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
 | Ginkgo | Tests Go | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |

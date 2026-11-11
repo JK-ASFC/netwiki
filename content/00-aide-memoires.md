@@ -387,6 +387,9 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[30-developpement-api/05-documentation-api/90-aide-memoire|Documentation d'API]]
 - [[30-developpement-api/06-mock-api/90-aide-memoire|Simulation d'API]]
 - [[30-developpement-api/07-tests-contrat/90-aide-memoire|Tests d'API et de contrat]]
+- [[30-developpement-api/08-tests-charge/90-aide-memoire|Micro-tests de charge]]
+- [[30-developpement-api/09-tests-navigateur/90-aide-memoire|Tests navigateur]]
+- [[30-developpement-api/10-tests-unitaires/90-aide-memoire|Tests unitaires (Python, JVM, .NET)]]
 
 ## Services de plateforme & auto-hébergement
 

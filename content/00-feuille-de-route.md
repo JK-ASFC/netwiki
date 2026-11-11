@@ -179,6 +179,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 163 | Catalogue — documentation d'API : Swagger UI, Swagger Editor, Redoc, Scalar, Stoplight Elements | ✅ |
 | 164 | Catalogue — simulation d'API : Prism, WireMock, MockServer, Hoverfly, Mountebank | ✅ |
 | 165 | Catalogue — tests d'API et de contrat : Pact, Schemathesis, Dredd, Hurl, Newman | ✅ |
+| 166 | Catalogue — micro-tests de charge : Apache Bench, wrk2, Autocannon, oha | ✅ |
+| 167 | Catalogue — tests navigateur : Selenium, Cypress, WebdriverIO, Puppeteer, Robot Framework | ✅ |
+| 168 | Catalogue — tests unitaires : pytest, JUnit, TestNG, NUnit, xUnit.net, MSTest | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -644,6 +647,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[30-developpement-api/05-documentation-api/01-swagger-redoc-scalar\|Swagger UI, Swagger Editor, Redoc, Scalar, Stoplight Elements]] | Docker, npx | Docker, npx | Docker, npx | ✅ |
 | [[30-developpement-api/06-mock-api/01-prism-wiremock-mockserver\|Prism, WireMock, MockServer, Hoverfly, Mountebank]] | npx, Docker, binaires | npx, Docker | npx, Docker | ✅ |
 | [[30-developpement-api/07-tests-contrat/01-pact-schemathesis\|Pact, Schemathesis, Dredd, Hurl, Newman]] | pip, npm, Docker, binaires | pip, npm | Homebrew, pip, npm | ✅ |
+| [[30-developpement-api/08-tests-charge/01-ab-wrk2-autocannon-oha\|Apache Bench, wrk2, Autocannon, oha]] | paquets, npm, binaires | npm, binaires | Homebrew, npm | ✅ |
+| [[30-developpement-api/09-tests-navigateur/01-selenium-cypress-webdriverio\|Selenium, Cypress, WebdriverIO, Puppeteer, Robot Framework]] | pip, npm, Docker | pip, npm | pip, npm | ✅ |
+| [[30-developpement-api/10-tests-unitaires/01-pytest-junit-nunit\|pytest, JUnit, TestNG, NUnit, xUnit.net, MSTest]] | pip, Maven, Gradle, dotnet | pip, Maven, dotnet | pip, Maven, dotnet | ✅ |
 
 ## Services de plateforme & auto-hébergement
 
