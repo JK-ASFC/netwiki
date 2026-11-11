@@ -392,6 +392,7 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[30-developpement-api/10-tests-unitaires/90-aide-memoire|Tests unitaires (Python, JVM, .NET)]]
 - [[30-developpement-api/12-tests-langages/90-aide-memoire|Tests BDD, Go, Rust, PHP et Ruby]]
 - [[30-developpement-api/11-tests-js/90-aide-memoire|Tests JavaScript]]
+- [[30-developpement-api/13-securite-code/90-aide-memoire|Sécurité du code et linters]]
 
 ## Services de plateforme & auto-hébergement
 

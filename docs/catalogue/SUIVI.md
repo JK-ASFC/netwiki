@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 1028 | 4 | 88 (7 %) |
+| 1311 | 191 (15 %) | 1039 | 4 | 77 (6 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1312,7 +1312,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Scrypted | Passerelle caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 | go2rtc | Relais flux caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 
-## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 49/62
+## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 60/62
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1367,17 +1367,17 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Pest PHP | Tests PHP | Windows, Linux, macOS | 🆕 fait (lot 171) | `30-developpement-api/12-tests-langages` |
 | Rspec | Tests Ruby | Windows, Linux, macOS | 🆕 fait (lot 171) | `30-developpement-api/12-tests-langages` |
 | Minitest | Tests Ruby | Windows, Linux, macOS | 🆕 fait (lot 171) | `30-developpement-api/12-tests-langages` |
-| Gitleaks | Détection secrets Git | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| detect-secrets | Détection secrets | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| TruffleHog OSS | Détection secrets | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Checkov | Analyse IaC | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| KICS | Analyse IaC | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Terrascan | Analyse IaC | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| TFLint | Lint Terraform | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Actionlint | Lint GitHub Actions | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| ShellCheck | Lint shell | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| shfmt | Formatage shell | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| EditorConfig | Conventions code | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| Gitleaks | Détection secrets Git | Windows, Linux, macOS | 🆕 fait (lot 172) | `30-developpement-api/13-securite-code` |
+| detect-secrets | Détection secrets | Windows, Linux, macOS | 🆕 fait (lot 172) | `30-developpement-api/13-securite-code` |
+| TruffleHog OSS | Détection secrets | Windows, Linux, macOS | 🆕 fait (lot 172) | `30-developpement-api/13-securite-code` |
+| Checkov | Analyse IaC | Windows, Linux, macOS | 🆕 fait (lot 173) | `30-developpement-api/13-securite-code` |
+| KICS | Analyse IaC | Windows, Linux, macOS | 🆕 fait (lot 173) | `30-developpement-api/13-securite-code` |
+| Terrascan | Analyse IaC | Windows, Linux, macOS | 🆕 fait (lot 173) | `30-developpement-api/13-securite-code` |
+| TFLint | Lint Terraform | Windows, Linux, macOS | 🆕 fait (lot 173) | `30-developpement-api/13-securite-code` |
+| Actionlint | Lint GitHub Actions | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
+| ShellCheck | Lint shell | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
+| shfmt | Formatage shell | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
+| EditorConfig | Conventions code | Windows, Linux, macOS | 🆕 fait (lot 174) | `30-developpement-api/13-securite-code` |
 
 ## 25. SERVICES DE PLATEFORME, PORTAILS ET OUTILS AUTO-HEBERGES — 1/60
 

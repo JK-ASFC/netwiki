@@ -185,6 +185,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 169 | Catalogue — BDD et tests Go/Rust : Cucumber, Behave, Ginkgo, go test, cargo test | ✅ |
 | 170 | Catalogue — tests JavaScript : Vitest, Jest, Mocha, AVA | ✅ |
 | 171 | Catalogue — tests PHP et Ruby : PHPUnit, Pest, RSpec, Minitest | ✅ |
+| 172 | Catalogue — détection de secrets : Gitleaks, detect-secrets, TruffleHog OSS | ✅ |
+| 173 | Catalogue — analyse IaC : Checkov, KICS, Terrascan, TFLint | ✅ |
+| 174 | Catalogue — linters et format : Actionlint, ShellCheck, shfmt, EditorConfig | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -655,6 +658,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[30-developpement-api/10-tests-unitaires/01-pytest-junit-nunit\|pytest, JUnit, TestNG, NUnit, xUnit.net, MSTest]] | pip, Maven, Gradle, dotnet | pip, Maven, dotnet | pip, Maven, dotnet | ✅ |
 | [[30-developpement-api/12-tests-langages/01-bdd-gotest-cargo\|Cucumber, Behave, Ginkgo, go test, cargo test]], [[30-developpement-api/12-tests-langages/02-phpunit-pest-rspec\|PHPUnit, Pest, RSpec, Minitest]] | npm, pip, go, cargo | npm, pip, go, cargo | npm, pip, go, cargo | ✅ |
 | [[30-developpement-api/11-tests-js/01-vitest-jest-mocha\|Vitest, Jest, Mocha, AVA]] | npm | npm | npm | ✅ |
+| [[30-developpement-api/13-securite-code/01-gitleaks-detect-secrets-trufflehog\|Gitleaks, detect-secrets, TruffleHog]], [[30-developpement-api/13-securite-code/02-iac-checkov-kics\|Checkov, KICS, Terrascan, TFLint]], [[30-developpement-api/13-securite-code/03-linters-shellcheck\|Actionlint, ShellCheck, shfmt, EditorConfig]] | binaires, pip, Docker | binaires, pip | Homebrew, pip | ✅ |
 
 ## Services de plateforme & auto-hébergement
 
