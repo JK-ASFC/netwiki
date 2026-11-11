@@ -131,6 +131,9 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[10-messagerie/08-radicale/90-aide-memoire|Radicale (CalDAV / CardDAV)]]
 - [[10-messagerie/09-joplin-server/90-aide-memoire|Joplin Server]]
 - [[10-messagerie/10-smtp-windows/90-aide-memoire|Serveur SMTP Windows]]
+- [[10-messagerie/23-plateformes-envoi/90-aide-memoire|Haraka et Postal]]
+- [[10-messagerie/24-authentification-mail/90-aide-memoire|DKIM, DMARC, ARC, SPF et greylisting (OpenDKIM, OpenDMARC, OpenARC, policyd-spf, Postgrey)]]
+- [[10-messagerie/25-listes-newsletters/90-aide-memoire|Newsletters et listes de diffusion (Listmonk, phpList, Mautic, Sympa)]]
 
 ## Bases de données
 

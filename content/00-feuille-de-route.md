@@ -116,6 +116,10 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 100 | Catalogue — empaquetage et transcodage automatisé : Shaka Packager, Bento4, Tdarr, Unmanic, FileFlows | ✅ |
 | 101 | Catalogue — gestion de médiathèque : Sonarr, Radarr, Lidarr, Readarr, Prowlarr, Jackett, Bazarr | ✅ |
 | 102 | Catalogue — outils de téléchargement : aria2, yt-dlp | ✅ |
+| 103 | Catalogue — administration et plates-formes d'envoi : PostfixAdmin, Haraka, Postal | ✅ |
+| 104 | Catalogue — serveurs SMTP de test : MailHog, smtp4dev | ✅ |
+| 105 | Catalogue — authentification et filtrage des e-mails : OpenDKIM, OpenDMARC, OpenARC, policyd-spf, Postgrey | ✅ |
+| 106 | Catalogue — newsletters et listes de diffusion : Listmonk, phpList, Mautic, Sympa, Mailman 2 (migration) | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -228,7 +232,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[02-dovecot/01-presentation-installation\|Dovecot]] | dovecot-imapd | ➖ | dovecot | ✅ |
 | [[06-mailman/01-presentation-installation\|Mailman 3]] | mailman3-full | ➖ (Docker) | ➖ (Docker) | ✅ |
 | [[04-rspamd/01-presentation-installation\|Rspamd]], [[05-spamassassin/01-presentation-installation\|SpamAssassin]] | rspamd, spamassassin | ➖ | rspamd, spamassassin | ✅ |
-| [[07-mailpit/01-presentation-installation\|Mailpit (tests)]] | mailpit | mailpit | mailpit | ✅ |
+| [[07-mailpit/01-presentation-installation\|Mailpit (tests)]], [[07-mailpit/03-mailhog-smtp4dev\|MailHog, smtp4dev]] | mailpit, Docker | mailpit, smtp4dev | mailpit, Docker | ✅ |
 | [[10-smtp-windows/01-relais-smtp\|Serveur SMTP Windows (relais IIS 6)]] | ➖ | SMTP-Server | ➖ | ✅ |
 | [[08-radicale/01-installation-configuration\|Radicale (CalDAV / CardDAV)]], [[09-joplin-server/01-installation-exploitation\|Joplin Server]] | radicale | radicale (pip) | radicale, joplin-server | ✅ |
 | [[11-matrix/01-synapse-ess\|Matrix (Synapse, ESS, Element)]] | matrix-synapse-py3, Docker | ➖ (Docker), Element | ➖ (Docker), Element | ✅ |
@@ -241,6 +245,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[18-edition-collaborative/01-hedgedoc-etherpad-cryptpad\|HedgeDoc, Etherpad, CryptPad]], [[19-groupware-agendas/01-sogo-kopano\|SOGo, Kopano]], [[19-groupware-agendas/02-calcom-baikal-davical\|Cal.diy, Baïkal, DAViCal]] | Docker, sogo, davical | Etherpad, Docker | Etherpad, Docker | ✅ |
 | [[20-suites-messagerie/01-mailcow-mailu-docker-mailserver\|Mailcow, Mailu, docker-mailserver]], [[20-suites-messagerie/02-modoboa-iredmail\|Modoboa, iRedMail]], [[22-opensmtpd/01-presentation-configuration\|OpenSMTPD]], [[05-spamassassin/03-amavis\|Amavis]] | Docker, installateurs, opensmtpd, amavisd-new | ➖ (VM Linux) | opensmtpd (brew) | ✅ |
 | [[21-webmail/01-roundcube\|Roundcube]], [[21-webmail/02-snappymail-anciens\|SnappyMail, SquirrelMail, RainLoop]] | roundcube, archive, Docker | IIS + PHP, Docker | PHP, Docker | ✅ |
+| [[01-postfix/10-postfixadmin\|PostfixAdmin]], [[23-plateformes-envoi/01-haraka\|Haraka]], [[23-plateformes-envoi/02-postal\|Postal]] | postfixadmin, npm, Docker | ➖ (Docker) | npm (Haraka), Docker | ✅ |
+| [[24-authentification-mail/01-opendkim-opendmarc-openarc\|OpenDKIM, OpenDMARC, OpenARC]], [[24-authentification-mail/02-policyd-spf-postgrey\|policyd-spf, Postgrey]] | opendkim, opendmarc, postfix-policyd-spf-python, postgrey | ➖ | ➖ | ✅ |
+| [[25-listes-newsletters/01-listmonk-phplist\|Listmonk, phpList]], [[25-listes-newsletters/02-mautic\|Mautic]], [[25-listes-newsletters/03-sympa\|Sympa]], [[06-mailman/04-mailman2-migration\|Mailman 2 et migration]] | binaire, Docker, PHP, sympa | ➖ (Docker) | ➖ (Docker) | ✅ |
 
 ## Bases de données
 

@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 735 | 4 | 381 (29 %) |
+| 1311 | 191 (15 %) | 750 | 4 | 366 (28 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1000,27 +1000,27 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | aria2 | Téléchargement multi-protocole | Windows, Linux, macOS | 🆕 fait (lot 102) | `20-multimedia-services/16-telechargement` |
 | yt-dlp | Téléchargement médias | Windows, Linux, macOS | 🆕 fait (lot 102) | `20-multimedia-services/16-telechargement` |
 
-## 18. DNS WEB, EMAIL, ANTI-SPAM ET OUTILS DE COMMUNICATION — 4/31
+## 18. DNS WEB, EMAIL, ANTI-SPAM ET OUTILS DE COMMUNICATION — 19/31
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| PostfixAdmin | Administration Postfix | Linux | ⏳ à faire | → `10-messagerie` |
+| PostfixAdmin | Administration Postfix | Linux | 🆕 fait (lot 103) | `10-messagerie/01-postfix/10-postfixadmin` |
 | Mailpit | Test SMTP local | Windows, Linux, macOS | ✅ existant | `10-messagerie/07-mailpit` |
-| MailHog | Test SMTP local | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| smtp4dev | Test SMTP local | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Haraka | Serveur SMTP Node.js | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Postal | Plateforme envoi email | Linux | ⏳ à faire | → `10-messagerie` |
-| Listmonk | Newsletters | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Mautic | Marketing automation | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| phpList | Newsletters | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Sympa | Listes de diffusion | Linux | ⏳ à faire | → `10-messagerie` |
+| MailHog | Test SMTP local | Windows, Linux, macOS | 🆕 fait (lot 104) | `10-messagerie/07-mailpit` |
+| smtp4dev | Test SMTP local | Windows, Linux, macOS | 🆕 fait (lot 104) | `10-messagerie/07-mailpit` |
+| Haraka | Serveur SMTP Node.js | Windows, Linux, macOS | 🆕 fait (lot 103) | `10-messagerie/23-plateformes-envoi` |
+| Postal | Plateforme envoi email | Linux | 🆕 fait (lot 103) | `10-messagerie/23-plateformes-envoi` |
+| Listmonk | Newsletters | Windows, Linux, macOS | 🆕 fait (lot 106) | `10-messagerie/25-listes-newsletters` |
+| Mautic | Marketing automation | Windows, Linux, macOS | 🆕 fait (lot 106) | `10-messagerie/25-listes-newsletters` |
+| phpList | Newsletters | Windows, Linux, macOS | 🆕 fait (lot 106) | `10-messagerie/25-listes-newsletters` |
+| Sympa | Listes de diffusion | Linux | 🆕 fait (lot 106) | `10-messagerie/25-listes-newsletters` |
 | Mailman 3 | Listes de diffusion | Linux | ✅ existant | `10-messagerie/06-mailman` |
-| Mailman 2 (legacy) | Listes de diffusion | Linux | ⏳ à faire | → `10-messagerie` |
-| OpenDKIM | Signature DKIM | Linux | ⏳ à faire | → `10-messagerie` |
-| OpenDMARC | Validation DMARC | Linux | ⏳ à faire | → `10-messagerie` |
-| Postgrey | Greylisting SMTP | Linux | ⏳ à faire | → `10-messagerie` |
-| policyd-spf | Validation SPF | Linux | ⏳ à faire | → `10-messagerie` |
-| OpenARC | Validation ARC | Linux | ⏳ à faire | → `10-messagerie` |
+| Mailman 2 (legacy) | Listes de diffusion | Linux | 🆕 fait (lot 106) | `10-messagerie/06-mailman` |
+| OpenDKIM | Signature DKIM | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
+| OpenDMARC | Validation DMARC | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
+| Postgrey | Greylisting SMTP | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
+| policyd-spf | Validation SPF | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
+| OpenARC | Validation ARC | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
 | SoGo Connector | Connecteur groupware | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
 | Nextcloud Calendar | Calendrier | Linux | ✅ existant | `09-fichiers-partage/08-nextcloud` |
 | Nextcloud Contacts | Contacts | Linux | ✅ existant | `09-fichiers-partage/08-nextcloud` |

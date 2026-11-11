@@ -91,3 +91,14 @@ grep "status=deferred" /var/log/mail.log | tail
 grep "4F3A21C0B2" /var/log/mail.log                     # suivre un message par son identifiant
 pflogsumm -d yesterday /var/log/mail.log | less         # rapport quotidien
 ```
+
+## PostfixAdmin
+
+```bash
+sudo postfixadmin-cli domain add exemple.fr
+sudo postfixadmin-cli mailbox add alice@exemple.fr --password 'Mdp' --password2 'Mdp' --quota 2048
+sudo postfixadmin-cli alias add contact@exemple.fr --goto alice@exemple.fr
+postmap -q alice@exemple.fr mysql:/etc/postfix/sql/boites.cf
+```
+
+Voir [[10-postfixadmin|PostfixAdmin]].

@@ -45,3 +45,14 @@ curl -s $M/info | jq .
 | Laravel | `MAIL_HOST=127.0.0.1`, `MAIL_PORT=1025` |
 
 Mailpit est un outil de **développement et de recette** : ne l'exposez pas sur Internet et n'y faites jamais transiter de vrais messages d'utilisateurs.
+
+## MailHog et smtp4dev
+
+```bash
+docker run -d -p 1025:1025 -p 8025:8025 mailhog/mailhog          # MailHog (abandonné : préférer axllent/mailpit)
+curl -s http://localhost:8025/api/v2/messages | jq '.total'
+docker run -d -p 5000:80 -p 2525:25 -p 143:143 rnwood/smtp4dev   # smtp4dev : web 5000, SMTP 2525, IMAP 143
+dotnet tool install -g Rnwood.Smtp4dev
+```
+
+Voir [[03-mailhog-smtp4dev|MailHog et smtp4dev]].
