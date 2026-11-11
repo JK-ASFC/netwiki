@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 961 | 4 | 155 (12 %) |
+| 1311 | 191 (15 %) | 969 | 4 | 147 (11 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1266,7 +1266,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | ONOS | Contrôleur SDN | Linux | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
 | Ryu SDN Framework | Contrôleur SDN | Windows, Linux, macOS | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
 
-## 23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS — 20/41
+## 23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS — 28/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1290,14 +1290,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Home Assistant | Domotique | Windows, Linux, macOS | 🆕 fait (lot 156) | `33-materiel-iot/04-domotique` |
 | openHAB | Domotique | Windows, Linux, macOS | 🆕 fait (lot 156) | `33-materiel-iot/04-domotique` |
 | Domoticz | Domotique | Windows, Linux, macOS | 🆕 fait (lot 156) | `33-materiel-iot/04-domotique` |
-| ThingsBoard Community | Plateforme IoT | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Mainflux | Plateforme IoT | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Kaa IoT (community) | Plateforme IoT | Linux | ⏳ à faire | → `26-gestion-parc` |
-| Eclipse Mosquitto | Broker IoT MQTT | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Eclipse Kura | Passerelle IoT | Linux | ⏳ à faire | → `26-gestion-parc` |
-| ChirpStack | Serveur LoRaWAN | Linux | ⏳ à faire | → `26-gestion-parc` |
-| The Things Network Stack | Serveur LoRaWAN | Linux | ⏳ à faire | → `26-gestion-parc` |
-| ThingsBoard Gateway | Passerelle IoT | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
+| ThingsBoard Community | Plateforme IoT | Windows, Linux, macOS | 🆕 fait (lot 157) | `33-materiel-iot/05-plateformes-iot` |
+| Mainflux | Plateforme IoT | Linux | 🆕 fait (lot 157) | `33-materiel-iot/05-plateformes-iot` |
+| Kaa IoT (community) | Plateforme IoT | Linux | 🆕 fait (lot 157) | `33-materiel-iot/05-plateformes-iot` |
+| Eclipse Mosquitto | Broker IoT MQTT | Windows, Linux, macOS | 🆕 fait (lot 158) | `33-materiel-iot/07-lorawan` |
+| Eclipse Kura | Passerelle IoT | Linux | 🆕 fait (lot 157) | `33-materiel-iot/05-plateformes-iot` |
+| ChirpStack | Serveur LoRaWAN | Linux | 🆕 fait (lot 158) | `33-materiel-iot/07-lorawan` |
+| The Things Network Stack | Serveur LoRaWAN | Linux | 🆕 fait (lot 158) | `33-materiel-iot/07-lorawan` |
+| ThingsBoard Gateway | Passerelle IoT | Windows, Linux, macOS | 🆕 fait (lot 158) | `33-materiel-iot/07-lorawan` |
 | Zigbee2MQTT | Passerelle Zigbee | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | Z-Wave JS UI | Passerelle Z-Wave | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
 | ESPHome | Firmware IoT | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |

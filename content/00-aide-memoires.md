@@ -376,3 +376,5 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[33-materiel-iot/02-gestion-stocks/90-aide-memoire|Gestion de stocks]]
 - [[33-materiel-iot/03-impression-3d/90-aide-memoire|Impression 3D et IPP]]
 - [[33-materiel-iot/04-domotique/90-aide-memoire|Domotique]]
+- [[33-materiel-iot/05-plateformes-iot/90-aide-memoire|Plates-formes IoT]]
+- [[33-materiel-iot/07-lorawan/90-aide-memoire|LoRaWAN et passerelles]]

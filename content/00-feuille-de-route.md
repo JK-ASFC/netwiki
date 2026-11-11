@@ -170,6 +170,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 154 | Catalogue — gestion de stocks : Grocy, Homebox, PartKeepr, ERPNext Stock, OpenWMS, OpenLMIS | ✅ |
 | 155 | Catalogue — impression 3D et IPP : OctoPrint, Klipper, Moonraker, Mainsail, Fluidd, IPP Everywhere | ✅ |
 | 156 | Catalogue — domotique : Home Assistant, openHAB, Domoticz | ✅ |
+| 157 | Catalogue — plates-formes IoT : ThingsBoard Community, Mainflux/Magistrala, Kaa, Eclipse Kura | ✅ |
+| 158 | Catalogue — LoRaWAN et passerelles : ChirpStack, The Things Stack, Mosquitto, ThingsBoard Gateway | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -622,3 +624,5 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[33-materiel-iot/02-gestion-stocks/01-grocy-homebox-partkeepr\|Grocy, Homebox, PartKeepr]], [[33-materiel-iot/02-gestion-stocks/02-erpnext-openwms-openlmis\|ERPNext, OpenWMS, OpenLMIS]] | Docker, bench | Docker | Docker | ✅ |
 | [[33-materiel-iot/03-impression-3d/01-octoprint-klipper-moonraker\|OctoPrint, Klipper, Moonraker, Mainsail, Fluidd]] | pip, Docker, KIAUH | ➖ | ➖ | ✅ |
 | [[33-materiel-iot/04-domotique/01-home-assistant-openhab-domoticz\|Home Assistant, openHAB, Domoticz]] | OS, Docker, paquets | Docker, VM | Docker, VM | ✅ |
+| [[33-materiel-iot/05-plateformes-iot/01-thingsboard-mainflux\|ThingsBoard, Magistrala]], [[33-materiel-iot/05-plateformes-iot/02-kaa-kura\|Kaa, Eclipse Kura]] | Docker | Docker | Docker | ✅ |
+| [[33-materiel-iot/07-lorawan/01-chirpstack-ttn\|ChirpStack, The Things Stack]], [[33-materiel-iot/07-lorawan/02-mosquitto-iot-gateway\|Mosquitto, ThingsBoard Gateway]] | Docker, paquets | Docker | Docker | ✅ |
