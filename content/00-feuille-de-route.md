@@ -124,6 +124,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 108 | Catalogue — courrier en terminal et récupération : Mutt, NeoMutt, aerc, fetchmail, getmail6, OfflineIMAP | ✅ |
 | 109 | Catalogue — courtiers d'entreprise : ActiveMQ Classic, ActiveMQ Artemis, Apache RocketMQ, Apache Pulsar | ✅ |
 | 110 | Catalogue — messagerie légère : NATS et JetStream, NSQ, ZeroMQ, Redpanda | ✅ |
+| 111 | Catalogue — autres courtiers MQTT : VerneMQ, NanoMQ, HiveMQ CE | ✅ |
+| 112 | Catalogue — files de tâches : Beanstalkd, Gearman, Celery, Dramatiq, RQ, BullMQ, pg-boss, Graphile Worker | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -283,6 +285,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[07-msmq/01-presentation-exploitation\|Message Queuing (MSMQ)]] | ➖ | MSMQ | ➖ | ✅ |
 | [[08-activemq-rocketmq-pulsar/01-activemq-classic-artemis\|ActiveMQ Classic, Artemis]], [[08-activemq-rocketmq-pulsar/02-rocketmq-pulsar\|RocketMQ, Pulsar]] | archives Apache, Docker, Helm | archives (Java) | archives, Homebrew | ✅ |
 | [[09-nats-nsq-zeromq-redpanda/01-nats\|NATS, JetStream]], [[09-nats-nsq-zeromq-redpanda/02-nsq-zeromq\|NSQ, ZeroMQ]], [[09-nats-nsq-zeromq-redpanda/03-redpanda\|Redpanda]] | binaires, paquets, Docker | binaires, bibliothèques | Homebrew, Docker | ✅ |
+| [[10-courtiers-mqtt/01-vernemq\|VerneMQ]], [[10-courtiers-mqtt/02-nanomq-hivemq\|NanoMQ, HiveMQ CE]] | paquets, Docker | Docker, archive Java | Docker | ✅ |
+| [[11-files-de-taches/01-beanstalkd-gearman\|Beanstalkd, Gearman]], [[11-files-de-taches/02-celery-dramatiq-rq\|Celery, Dramatiq, RQ]], [[11-files-de-taches/03-bullmq-pg-boss-graphile\|BullMQ, pg-boss, Graphile Worker]] | paquets, pip, npm | pip, npm | Homebrew, pip, npm | ✅ |
 
 ## Conteneurs & virtualisation
 

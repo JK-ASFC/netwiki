@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 770 | 4 | 346 (26 %) |
+| 1311 | 191 (15 %) | 781 | 4 | 335 (26 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1036,7 +1036,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Fetchmail | Récupération mail | Windows, Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 | OfflineIMAP | Synchronisation mail | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 
-## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 13/55
+## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 24/55
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1050,19 +1050,19 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | NATS | Message broker | Windows, Linux, macOS | 🆕 fait (lot 110) | `12-recherche-messages/09-nats-nsq-zeromq-redpanda` |
 | Mosquitto | Broker MQTT | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/05-mosquitto` |
 | EMQX (community) | Broker MQTT | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/06-emqx` |
-| VerneMQ | Broker MQTT | Linux | ⏳ à faire | → `12-recherche-messages` |
-| NanoMQ | Broker MQTT | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| HiveMQ CE | Broker MQTT | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
+| VerneMQ | Broker MQTT | Linux | 🆕 fait (lot 111) | `12-recherche-messages/10-courtiers-mqtt` |
+| NanoMQ | Broker MQTT | Windows, Linux, macOS | 🆕 fait (lot 111) | `12-recherche-messages/10-courtiers-mqtt` |
+| HiveMQ CE | Broker MQTT | Windows, Linux, macOS | 🆕 fait (lot 111) | `12-recherche-messages/10-courtiers-mqtt` |
 | ZeroMQ | Messaging bibliothèque | Windows, Linux, macOS | 🆕 fait (lot 110) | `12-recherche-messages/09-nats-nsq-zeromq-redpanda` |
 | NSQ | Message broker | Windows, Linux, macOS | 🆕 fait (lot 110) | `12-recherche-messages/09-nats-nsq-zeromq-redpanda` |
-| Beanstalkd | Queue de tâches | Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Gearman | Queue de tâches | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Celery | Queue de tâches Python | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Dramatiq | Queue de tâches Python | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| RQ | Queue de tâches Python | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| BullMQ | Queue de tâches Node.js | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| pg-boss | Queue PostgreSQL | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Graphile Worker | Queue PostgreSQL | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
+| Beanstalkd | Queue de tâches | Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| Gearman | Queue de tâches | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| Celery | Queue de tâches Python | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| Dramatiq | Queue de tâches Python | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| RQ | Queue de tâches Python | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| BullMQ | Queue de tâches Node.js | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| pg-boss | Queue PostgreSQL | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| Graphile Worker | Queue PostgreSQL | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
 | Apache Flink | Traitement streaming | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
 | Apache Spark | Traitement distribué | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
 | Apache Beam | Traitement data | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |

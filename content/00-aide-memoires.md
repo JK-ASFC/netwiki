@@ -160,6 +160,8 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[12-recherche-messages/07-msmq/90-aide-memoire|Message Queuing (MSMQ)]]
 - [[12-recherche-messages/08-activemq-rocketmq-pulsar/90-aide-memoire|ActiveMQ, RocketMQ et Pulsar]]
 - [[12-recherche-messages/09-nats-nsq-zeromq-redpanda/90-aide-memoire|NATS, NSQ, ZeroMQ et Redpanda]]
+- [[12-recherche-messages/10-courtiers-mqtt/90-aide-memoire|VerneMQ, NanoMQ et HiveMQ CE]]
+- [[12-recherche-messages/11-files-de-taches/90-aide-memoire|Files de tâches]]
 
 ## Conteneurs & virtualisation
 
