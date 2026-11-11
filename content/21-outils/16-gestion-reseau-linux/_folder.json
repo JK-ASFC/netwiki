@@ -1,0 +1,1 @@
+{ "title": "NetworkManager, systemd-networkd et ConnMan", "icon": "network", "color": "#14b8a6", "description": "Configurer le réseau sous Linux : NetworkManager (postes et serveurs, nmcli), systemd-networkd (serveurs et conteneurs) et ConnMan (embarqué), avec le choix selon le contexte." }

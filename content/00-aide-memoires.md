@@ -279,6 +279,9 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[21-outils/13-environnements-bureau/90-aide-memoire|Environnements de bureau]]
 - [[21-outils/14-terminaux-graphiques/90-aide-memoire|Terminaux graphiques]]
 - [[21-outils/15-editeurs-texte/90-aide-memoire|Éditeurs de texte]]
+- [[21-outils/16-gestion-reseau-linux/90-aide-memoire|NetworkManager, systemd-networkd et ConnMan]]
+- [[21-outils/17-wifi-linux/90-aide-memoire|hostapd, wpa_supplicant, iw et iwd]]
+- [[21-outils/18-open-vswitch/90-aide-memoire|Open vSwitch]]
 
 ## Équipements réseau par constructeur
 

@@ -157,6 +157,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 141 | Catalogue — moteurs plein texte : Apache Solr, Manticore Search, ZincSearch, Tantivy | ✅ |
 | 142 | Catalogue — métamoteurs : SearXNG, Whoogle, 4get, LibreX | ✅ |
 | 143 | Catalogue — serveurs SSH légers : Dropbear, TinySSH | ✅ |
+| 144 | Catalogue — gestion du réseau Linux : NetworkManager, systemd-networkd, ConnMan | ✅ |
+| 145 | Catalogue — Wi-Fi Linux : hostapd, wpa_supplicant, iw, iwd | ✅ |
+| 146 | Catalogue — commutateur virtuel : Open vSwitch | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -460,6 +463,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | Environnements de bureau | [[13-environnements-bureau/01-panorama-choix\|choisir un bureau, Wayland ou X11]], [[13-environnements-bureau/02-gnome-kde-plasma\|GNOME, KDE Plasma]], [[13-environnements-bureau/03-xfce-mate-cinnamon-lxqt-cosmic\|XFCE, MATE, Cinnamon, LXQt, COSMIC]] | ✅ |
 | Terminaux graphiques | [[14-terminaux-graphiques/01-alacritty-kitty-wezterm-ghostty\|Alacritty, Kitty, WezTerm, Ghostty]], [[14-terminaux-graphiques/02-xfce-terminal\|Xfce Terminal]] | ✅ |
 | Éditeurs de texte | [[15-editeurs-texte/01-vim-neovim\|Vim, Neovim]], [[15-editeurs-texte/02-emacs\|GNU Emacs]], [[15-editeurs-texte/03-kate-geany\|Kate, Geany]] | ✅ |
+| Gestion du réseau (Linux) | [[16-gestion-reseau-linux/01-networkmanager-networkd-connman\|NetworkManager, systemd-networkd, ConnMan]] | ✅ |
+| Wi-Fi (Linux) | [[17-wifi-linux/01-hostapd-wpa-supplicant-iw-iwd\|hostapd, wpa_supplicant, iw, iwd]] | ✅ |
+| Commutateur virtuel | [[18-open-vswitch/01-open-vswitch\|Open vSwitch]] | ✅ |
 
 ## Équipements réseau par constructeur
 

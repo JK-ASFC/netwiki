@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 915 | 4 | 201 (15 %) |
+| 1311 | 191 (15 %) | 923 | 4 | 193 (15 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1211,7 +1211,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | 4get | Métamoteur recherche | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 | LibreX | Métamoteur recherche | Linux | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 
-## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 6/50
+## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 14/50
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1236,14 +1236,14 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | MITMf (archivé) | Outils réseau anciens | Linux | ⏳ à faire | → `21-outils` |
 | Aircrack-ng | Audit Wi-Fi | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
 | Kismet | Détection réseau sans fil | Linux, macOS | ⏳ à faire | → `21-outils` |
-| hostapd | Point d'accès Wi-Fi | Linux | ⏳ à faire | → `21-outils` |
-| wpa_supplicant | Client Wi-Fi | Linux, Windows | ⏳ à faire | → `21-outils` |
-| iw | Outils Wi-Fi | Linux | ⏳ à faire | → `21-outils` |
-| iwctl/iwd | Gestion Wi-Fi | Linux | ⏳ à faire | → `21-outils` |
-| NetworkManager | Gestion réseau | Linux | ⏳ à faire | → `21-outils` |
-| systemd-networkd | Gestion réseau | Linux | ⏳ à faire | → `21-outils` |
-| ConnMan | Gestion réseau | Linux | ⏳ à faire | → `21-outils` |
-| Open vSwitch | Switch virtuel | Linux, Windows | ⏳ à faire | → `21-outils` |
+| hostapd | Point d'accès Wi-Fi | Linux | 🆕 fait (lot 145) | `21-outils/17-wifi-linux` |
+| wpa_supplicant | Client Wi-Fi | Linux, Windows | 🆕 fait (lot 145) | `21-outils/17-wifi-linux` |
+| iw | Outils Wi-Fi | Linux | 🆕 fait (lot 145) | `21-outils/17-wifi-linux` |
+| iwctl/iwd | Gestion Wi-Fi | Linux | 🆕 fait (lot 145) | `21-outils/17-wifi-linux` |
+| NetworkManager | Gestion réseau | Linux | 🆕 fait (lot 144) | `21-outils/16-gestion-reseau-linux` |
+| systemd-networkd | Gestion réseau | Linux | 🆕 fait (lot 144) | `21-outils/16-gestion-reseau-linux` |
+| ConnMan | Gestion réseau | Linux | 🆕 fait (lot 144) | `21-outils/16-gestion-reseau-linux` |
+| Open vSwitch | Switch virtuel | Linux, Windows | 🆕 fait (lot 146) | `21-outils/18-open-vswitch` |
 | FRR | Routage dynamique | Linux, BSD | 🆕 fait (lot 51) | `22-constructeurs/31-routage-logiciel` |
 | iperf2 | Mesure réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
 | OpenSpeedTest | Test débit web | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
