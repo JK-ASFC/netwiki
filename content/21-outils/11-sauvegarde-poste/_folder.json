@@ -1,0 +1,1 @@
+{ "title": "Instantanés et sauvegarde du poste", "icon": "archive-restore", "color": "#475569", "description": "Revenir en arrière après une mise à jour ratée et sauvegarder ses fichiers sur un poste ou un serveur Linux : Timeshift et Snapper (instantanés système, rsync ou Btrfs), Back In Time et Déjà Dup (sauvegarde des données utilisateur)." }

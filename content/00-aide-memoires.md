@@ -250,6 +250,11 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[21-outils/05-ia-productivite/90-aide-memoire|IA et productivité]]
 - [[21-outils/06-support-parc/90-aide-memoire|Support et gestion de parc]]
 - [[21-outils/07-disques-recuperation/90-aide-memoire|Disques et récupération]]
+- [[21-outils/08-gestionnaires-paquets/90-aide-memoire|Gestionnaires de paquets]]
+- [[21-outils/09-init-processus/90-aide-memoire|Init et supervision de processus]]
+- [[21-outils/10-shells-terminal/90-aide-memoire|Shells, multiplexeurs et dotfiles]]
+- [[21-outils/11-sauvegarde-poste/90-aide-memoire|Instantanés et sauvegarde du poste]]
+- [[21-outils/12-partage-appareils/90-aide-memoire|Partage entre appareils]]
 
 ## Équipements réseau par constructeur
 

@@ -101,6 +101,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 85 | Catalogue — gestionnaires de paquets : Homebrew, MacPorts, Nix, GNU Guix, Flatpak, Snap, AppImage, équivalences apt/dnf/yum/zypper/pacman/apk/Portage (déjà traités par distribution) | ✅ |
 | 86 | Catalogue — init et supervision de processus : systemd, OpenRC, runit, s6, Supervisor, Monit, Circus, PM2, forever | ✅ |
 | 87 | Catalogue — shells, multiplexeurs et dotfiles : tmux, GNU Screen, Zellij, Bash, Zsh, Oh My Zsh, fish, Nushell, Starship, chezmoi, GNU Stow | ✅ |
+| 88 | Catalogue — instantanés et sauvegarde du poste : Timeshift, Snapper, Back In Time, Déjà Dup | ✅ |
+| 89 | Catalogue — partage entre appareils : KDE Connect, GSConnect, LocalSend, Barrier, Input Leap, Synergy Core (Deskflow) | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -378,6 +380,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | Gestionnaires de paquets | [[08-gestionnaires-paquets/01-homebrew-macports\|Homebrew, MacPorts]], [[08-gestionnaires-paquets/02-nix-guix\|Nix, Guix]], [[08-gestionnaires-paquets/03-flatpak-snap-appimage\|Flatpak, Snap, AppImage]], [[08-gestionnaires-paquets/04-equivalences-distributions\|équivalences apt, dnf, zypper, pacman, apk, Portage]] | ✅ |
 | Init et processus | [[09-init-processus/01-systemd\|systemd]], [[09-init-processus/02-openrc-runit-s6\|OpenRC, runit, s6]], [[09-init-processus/03-supervisor-monit-circus\|Supervisor, Monit, Circus]], [[09-init-processus/04-pm2-forever\|PM2, forever]] | ✅ |
 | Shells et terminal | [[10-shells-terminal/01-tmux-screen-zellij\|tmux, Screen, Zellij]], [[10-shells-terminal/02-shells-bash-zsh-fish-nushell\|Bash, Zsh, fish, Nushell, Starship, Oh My Zsh]], [[10-shells-terminal/03-dotfiles-chezmoi-stow\|chezmoi, GNU Stow]] | ✅ |
+| Instantanés et sauvegarde du poste | [[11-sauvegarde-poste/01-timeshift-snapper\|Timeshift, Snapper]], [[11-sauvegarde-poste/02-back-in-time-deja-dup\|Back In Time, Déjà Dup]] | ✅ |
+| Partage entre appareils | [[12-partage-appareils/01-kde-connect-localsend\|KDE Connect, LocalSend]], [[12-partage-appareils/02-barrier-input-leap-synergy\|Barrier, Input Leap, Synergy]] | ✅ |
 
 ## Équipements réseau par constructeur
 
