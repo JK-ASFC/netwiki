@@ -1,0 +1,1 @@
+{ "title": "ComfyUI, AUTOMATIC1111, InvokeAI et Fooocus", "icon": "image", "color": "#ec4899", "description": "Générer des images avec des modèles de diffusion ouverts (Stable Diffusion, SDXL, Flux) en local : ComfyUI (graphes de nœuds), Stable Diffusion WebUI d'AUTOMATIC1111, InvokeAI et Fooocus." }

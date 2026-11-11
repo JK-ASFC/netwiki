@@ -1,0 +1,1 @@
+{ "title": "Éditeurs de texte", "icon": "file-code", "color": "#475569", "description": "Éditer des fichiers de configuration et du code, en local ou sur un serveur : Vim et Neovim (modes, commandes, configuration, LSP), GNU Emacs (TRAMP, Org, Magit), Kate et Geany." }

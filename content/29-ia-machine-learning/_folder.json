@@ -1,0 +1,1 @@
+{ "title": "IA & machine learning", "icon": "brain-circuit", "color": "#ec4899", "description": "Intelligence artificielle auto-hébergée : inférence de LLM (llama.cpp, vLLM, TGI), interfaces et applications de chat, RAG, génération d'images, frameworks d'apprentissage, MLOps, annotation et traitement de la voix." }

@@ -1,0 +1,1 @@
+{ "title": "Whisper, Piper, Coqui TTS et voix", "icon": "audio-lines", "color": "#ec4899", "description": "Traitement de la parole en local : transcription (Whisper, whisper.cpp, faster-whisper), synthèse vocale (Piper, Coqui TTS, Kokoro, Mimic 3) et conversion de voix (RVC), avec leurs limites et précautions." }

@@ -1,0 +1,1 @@
+{ "title": "NiFi, SeaTunnel, Airbyte, Meltano et Singer", "icon": "git-merge", "color": "#0ea5e9", "description": "Déplacer et synchroniser des données entre sources et destinations : Apache NiFi (flux graphiques), Apache SeaTunnel, Airbyte, Meltano et le standard Singer (taps et targets)." }

@@ -1,0 +1,1 @@
+{ "title": "Files de tâches", "icon": "list-checks", "color": "#a855f7", "description": "Exécuter des travaux en arrière-plan : Beanstalkd, Gearman, Celery, Dramatiq, RQ, BullMQ, pg-boss et Graphile Worker — principes, installation, supervision et choix." }

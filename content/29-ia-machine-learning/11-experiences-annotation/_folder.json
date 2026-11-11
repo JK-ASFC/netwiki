@@ -1,0 +1,1 @@
+{ "title": "ClearML, Aim, Label Studio, CVAT et FiftyOne", "icon": "tag", "color": "#ec4899", "description": "Suivre les expériences d'apprentissage (ClearML, Aim) et préparer les données : annotation (Label Studio, CVAT) et exploration des jeux de données de vision (FiftyOne)." }

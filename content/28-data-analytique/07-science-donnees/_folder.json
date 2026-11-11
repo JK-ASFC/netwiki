@@ -1,0 +1,1 @@
+{ "title": "JupyterHub, MLflow, DVC et Pachyderm", "icon": "flask-conical", "color": "#0ea5e9", "description": "Plates-formes de science des données : carnets Jupyter multi-utilisateurs (JupyterHub), suivi d'expériences et registre de modèles (MLflow), versionnage des données et pipelines (DVC, Pachyderm)." }

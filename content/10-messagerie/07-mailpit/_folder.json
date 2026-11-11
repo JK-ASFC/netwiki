@@ -1,1 +1,1 @@
-{ "title": "Mailpit", "icon": "flask-conical", "color": "#64748b", "description": "Serveur SMTP de test avec interface web et API pour le développement et la recette." }
+{ "title": "Mailpit, MailHog et smtp4dev", "icon": "flask-conical", "color": "#64748b", "description": "Serveurs SMTP de test avec interface web et API pour le développement et la recette : Mailpit (recommandé), MailHog (historique, abandonné) et smtp4dev (.NET, IMAP, relais)." }

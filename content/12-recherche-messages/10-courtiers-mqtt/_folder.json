@@ -1,0 +1,1 @@
+{ "title": "VerneMQ, NanoMQ et HiveMQ CE (MQTT)", "icon": "radio", "color": "#6366f1", "description": "Autres courtiers MQTT : VerneMQ (Erlang, grappe), NanoMQ (C, passerelle de périphérie) et HiveMQ Community Edition (Java), avec un comparatif face à Mosquitto et EMQX." }

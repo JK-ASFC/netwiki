@@ -1,0 +1,1 @@
+{ "title": "scikit-learn, boosting, ONNX Runtime et OpenVINO", "icon": "chart-line", "color": "#ec4899", "description": "Apprentissage automatique classique sur données tabulaires (scikit-learn, XGBoost, LightGBM, CatBoost) et exécution optimisée des modèles en production (ONNX Runtime, OpenVINO)." }

@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 673 | 4 | 443 (34 %) |
+| 1311 | 191 (15 %) | 883 | 4 | 233 (18 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -874,7 +874,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | AutoIt | Automatisation Windows | Windows | 🆕 fait (lot 84) | `26-gestion-parc/05-automatisation-poste` |
 | PowerToys | Utilitaires Windows | Windows | 🆕 fait (lot 82) | `26-gestion-parc/01-outils-windows` |
 
-## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 47/67
+## 16. SERVICES MACOS, LINUX DESKTOP ET OUTILS MULTIPLATEFORMES — 67/67
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -913,271 +913,271 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | chezmoi | Gestion dotfiles | Windows, Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
 | GNU Stow | Gestion dotfiles | Linux, macOS | 🆕 fait (lot 87) | `21-outils/10-shells-terminal` |
 | Ansible Pull | Configuration poste | Windows, Linux, macOS | ✅ existant | `17-automatisation/01-ansible` |
-| Timeshift | Snapshots système | Linux | 🆕 fait (lot agent-2026-11-09) | `21-outils/11-snapshots-sauvegarde-poste/01-timeshift` |
-| Snapper | Snapshots système | Linux | 🆕 fait (lot agent-2026-11-09) | `21-outils/11-snapshots-sauvegarde-poste/02-snapper` |
-| Back In Time | Sauvegarde poste | Linux | 🆕 fait (lot agent-2026-11-09) | `21-outils/11-snapshots-sauvegarde-poste/03-back-in-time` |
-| Déjà Dup | Sauvegarde poste | Linux | 🆕 fait (lot agent-2026-11-09) | `21-outils/11-snapshots-sauvegarde-poste/04-deja-dup` |
-| KDE Connect | Intégration appareils | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-09) | `21-outils/12-partage-appareils/01-kde-connect` |
-| Barrier | Partage clavier/souris | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-09) | `21-outils/12-partage-appareils/02-barrier-input-leap-synergy` |
-| Input Leap | Partage clavier/souris | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-09) | `21-outils/12-partage-appareils/02-barrier-input-leap-synergy` |
-| Synergy Core (open source legacy) | Partage clavier/souris | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-09) | `21-outils/12-partage-appareils/02-barrier-input-leap-synergy` |
-| LocalSend | Transfert fichiers local | Windows, Linux, macOS | 🆕 fait (lot agent-2026-11-09) | `21-outils/12-partage-appareils/03-localsend` |
-| KDE Plasma | Environnement bureau | Linux, BSD | 🆕 fait (lot agent-2026-11-09) | `21-outils/13-kde-plasma/01-presentation-installation` |
-| GNOME | Environnement bureau | Linux, BSD | ⏳ à faire | → `21-outils` |
-| XFCE | Environnement bureau | Linux, BSD | ⏳ à faire | → `21-outils` |
-| MATE | Environnement bureau | Linux, BSD | ⏳ à faire | → `21-outils` |
-| Cinnamon | Environnement bureau | Linux | ⏳ à faire | → `21-outils` |
-| LXQt | Environnement bureau | Linux | ⏳ à faire | → `21-outils` |
-| COSMIC | Environnement bureau | Linux | ⏳ à faire | → `21-outils` |
-| Xfce Terminal | Terminal graphique | Linux | ⏳ à faire | → `21-outils` |
-| Alacritty | Terminal graphique | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| WezTerm | Terminal graphique | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Kitty | Terminal graphique | Linux, macOS | ⏳ à faire | → `21-outils` |
-| Ghostty | Terminal graphique | Linux, macOS | ⏳ à faire | → `21-outils` |
-| Neovim | Éditeur terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Vim | Éditeur texte | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Emacs | Éditeur texte | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Geany | IDE léger | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| VSCodium | Éditeur code | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
+| Timeshift | Snapshots système | Linux | 🆕 fait (lot 88) | `21-outils/11-sauvegarde-poste` |
+| Snapper | Snapshots système | Linux | 🆕 fait (lot 88) | `21-outils/11-sauvegarde-poste` |
+| Back In Time | Sauvegarde poste | Linux | 🆕 fait (lot 88) | `21-outils/11-sauvegarde-poste` |
+| Déjà Dup | Sauvegarde poste | Linux | 🆕 fait (lot 88) | `21-outils/11-sauvegarde-poste` |
+| KDE Connect | Intégration appareils | Windows, Linux, macOS | 🆕 fait (lot 89) | `21-outils/12-partage-appareils` |
+| Barrier | Partage clavier/souris | Windows, Linux, macOS | 🆕 fait (lot 89) | `21-outils/12-partage-appareils` |
+| Input Leap | Partage clavier/souris | Windows, Linux, macOS | 🆕 fait (lot 89) | `21-outils/12-partage-appareils` |
+| Synergy Core (open source legacy) | Partage clavier/souris | Windows, Linux, macOS | 🆕 fait (lot 89) | `21-outils/12-partage-appareils` |
+| LocalSend | Transfert fichiers local | Windows, Linux, macOS | 🆕 fait (lot 89) | `21-outils/12-partage-appareils` |
+| KDE Plasma | Environnement bureau | Linux, BSD | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| GNOME | Environnement bureau | Linux, BSD | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| XFCE | Environnement bureau | Linux, BSD | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| MATE | Environnement bureau | Linux, BSD | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| Cinnamon | Environnement bureau | Linux | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| LXQt | Environnement bureau | Linux | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| COSMIC | Environnement bureau | Linux | 🆕 fait (lot 90) | `21-outils/13-environnements-bureau` |
+| Xfce Terminal | Terminal graphique | Linux | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
+| Alacritty | Terminal graphique | Windows, Linux, macOS | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
+| WezTerm | Terminal graphique | Windows, Linux, macOS | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
+| Kitty | Terminal graphique | Linux, macOS | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
+| Ghostty | Terminal graphique | Linux, macOS | 🆕 fait (lot 91) | `21-outils/14-terminaux-graphiques` |
+| Neovim | Éditeur terminal | Windows, Linux, macOS | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
+| Vim | Éditeur texte | Windows, Linux, macOS | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
+| Emacs | Éditeur texte | Windows, Linux, macOS | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
+| Geany | IDE léger | Windows, Linux, macOS | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
+| VSCodium | Éditeur code | Windows, Linux, macOS | 🆕 fait (lot 93) | `21-outils/04-developpement` |
 | Eclipse IDE | IDE | Windows, Linux, macOS | ✅ existant | `21-outils/04-developpement/04-eclipse` |
-| Apache NetBeans | IDE | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Qt Creator | IDE | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Code::Blocks | IDE | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Kate | Éditeur texte | Linux, Windows | ⏳ à faire | → `21-outils` |
+| Apache NetBeans | IDE | Windows, Linux, macOS | 🆕 fait (lot 93) | `21-outils/04-developpement` |
+| Qt Creator | IDE | Windows, Linux, macOS | 🆕 fait (lot 93) | `21-outils/04-developpement` |
+| Code::Blocks | IDE | Windows, Linux, macOS | 🆕 fait (lot 93) | `21-outils/04-developpement` |
+| Kate | Éditeur texte | Linux, Windows | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
 | Notepad++ | Éditeur texte | Windows | ✅ existant | `21-outils/04-developpement/05-notepad-plus-plus` |
 
-## 17. STREAMING, MEDIA, AUDIO, VIDEO ET TRANSCODAGE — 7/49
+## 17. STREAMING, MEDIA, AUDIO, VIDEO ET TRANSCODAGE — 49/49
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Jellyfin | Serveur média | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/01-jellyfin` |
 | Navidrome | Serveur musique | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/03-navidrome` |
-| Ampache | Serveur musique | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| LMS (Lyrion Music Server) | Serveur musique | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Mopidy | Serveur musique | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Airsonic-Advanced | Serveur musique | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Funkwhale | Plateforme audio | Linux | ⏳ à faire | → `20-multimedia-services` |
-| AzuraCast | Radio web | Linux | ⏳ à faire | → `20-multimedia-services` |
-| LibreTime | Radio web | Linux | ⏳ à faire | → `20-multimedia-services` |
+| Ampache | Serveur musique | Windows, Linux, macOS | 🆕 fait (lot 94) | `20-multimedia-services/08-serveurs-musique` |
+| LMS (Lyrion Music Server) | Serveur musique | Windows, Linux, macOS | 🆕 fait (lot 94) | `20-multimedia-services/08-serveurs-musique` |
+| Mopidy | Serveur musique | Windows, Linux, macOS | 🆕 fait (lot 94) | `20-multimedia-services/08-serveurs-musique` |
+| Airsonic-Advanced | Serveur musique | Windows, Linux, macOS | 🆕 fait (lot 94) | `20-multimedia-services/08-serveurs-musique` |
+| Funkwhale | Plateforme audio | Linux | 🆕 fait (lot 94) | `20-multimedia-services/08-serveurs-musique` |
+| AzuraCast | Radio web | Linux | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
+| LibreTime | Radio web | Linux | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
 | Icecast | Streaming audio | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/04-icecast` |
-| Owncast | Streaming vidéo live | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| PeerTube | Plateforme vidéo | Linux | ⏳ à faire | → `20-multimedia-services` |
-| MediaCMS | Plateforme vidéo | Linux | ⏳ à faire | → `20-multimedia-services` |
-| Ant Media Community (license check) | Streaming vidéo | Linux | ⏳ à faire | → `20-multimedia-services` |
-| OvenMediaEngine | Streaming vidéo | Linux | ⏳ à faire | → `20-multimedia-services` |
-| SRS | Serveur streaming | Linux, Windows, macOS | ⏳ à faire | → `20-multimedia-services` |
+| Owncast | Streaming vidéo live | Windows, Linux, macOS | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
+| PeerTube | Plateforme vidéo | Linux | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
+| MediaCMS | Plateforme vidéo | Linux | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
+| Ant Media Community (license check) | Streaming vidéo | Linux | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
+| OvenMediaEngine | Streaming vidéo | Linux | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
+| SRS | Serveur streaming | Linux, Windows, macOS | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
 | Nginx RTMP Module | Streaming RTMP | Linux | ✅ existant | `20-multimedia-services/05-nginx-rtmp` |
-| Red5 Open Source | Serveur streaming | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Janus WebRTC Server | Serveur WebRTC | Linux | ⏳ à faire | → `20-multimedia-services` |
-| mediasoup | SFU WebRTC | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| LiveKit | Serveur WebRTC | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Pion WebRTC | Bibliothèque WebRTC | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Kurento | Serveur média WebRTC | Linux | ⏳ à faire | → `20-multimedia-services` |
-| FFmpeg | Traitement audio/vidéo | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| HandBrake | Transcodage vidéo | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| GStreamer | Framework multimédia | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| OBS Studio | Capture et streaming | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| VLC | Lecteur média | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| MPV | Lecteur média | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Kodi | Media center | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Shaka Packager | Packaging vidéo | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Bento4 | Packaging MP4 | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| MediaMTX | Serveur RTSP/RTMP/WebRTC | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Restreamer | Streaming et retransmission | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Tdarr (community) | Automatisation transcodage | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Unmanic | Automatisation médias | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| FileFlows | Traitement médias | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Bazarr | Sous-titres | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Sonarr | Gestion séries | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Radarr | Gestion films | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Lidarr | Gestion musique | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Readarr | Gestion livres | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Prowlarr | Gestion indexeurs | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Jackett | Proxy indexeurs | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
+| Red5 Open Source | Serveur streaming | Windows, Linux, macOS | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
+| Janus WebRTC Server | Serveur WebRTC | Linux | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
+| mediasoup | SFU WebRTC | Windows, Linux, macOS | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
+| LiveKit | Serveur WebRTC | Windows, Linux, macOS | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
+| Pion WebRTC | Bibliothèque WebRTC | Windows, Linux, macOS | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
+| Kurento | Serveur média WebRTC | Linux | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
+| FFmpeg | Traitement audio/vidéo | Windows, Linux, macOS | 🆕 fait (lot 98) | `20-multimedia-services/12-traitement-video` |
+| HandBrake | Transcodage vidéo | Windows, Linux, macOS | 🆕 fait (lot 98) | `20-multimedia-services/12-traitement-video` |
+| GStreamer | Framework multimédia | Windows, Linux, macOS | 🆕 fait (lot 98) | `20-multimedia-services/12-traitement-video` |
+| OBS Studio | Capture et streaming | Windows, Linux, macOS | 🆕 fait (lot 99) | `20-multimedia-services/13-capture-lecture` |
+| VLC | Lecteur média | Windows, Linux, macOS | 🆕 fait (lot 99) | `20-multimedia-services/13-capture-lecture` |
+| MPV | Lecteur média | Windows, Linux, macOS | 🆕 fait (lot 99) | `20-multimedia-services/13-capture-lecture` |
+| Kodi | Media center | Windows, Linux, macOS | 🆕 fait (lot 99) | `20-multimedia-services/13-capture-lecture` |
+| Shaka Packager | Packaging vidéo | Windows, Linux, macOS | 🆕 fait (lot 100) | `20-multimedia-services/14-packaging-transcodage-auto` |
+| Bento4 | Packaging MP4 | Windows, Linux, macOS | 🆕 fait (lot 100) | `20-multimedia-services/14-packaging-transcodage-auto` |
+| MediaMTX | Serveur RTSP/RTMP/WebRTC | Windows, Linux, macOS | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
+| Restreamer | Streaming et retransmission | Windows, Linux, macOS | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
+| Tdarr (community) | Automatisation transcodage | Windows, Linux, macOS | 🆕 fait (lot 100) | `20-multimedia-services/14-packaging-transcodage-auto` |
+| Unmanic | Automatisation médias | Windows, Linux, macOS | 🆕 fait (lot 100) | `20-multimedia-services/14-packaging-transcodage-auto` |
+| FileFlows | Traitement médias | Windows, Linux, macOS | 🆕 fait (lot 100) | `20-multimedia-services/14-packaging-transcodage-auto` |
+| Bazarr | Sous-titres | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Sonarr | Gestion séries | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Radarr | Gestion films | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Lidarr | Gestion musique | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Readarr | Gestion livres | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Prowlarr | Gestion indexeurs | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
+| Jackett | Proxy indexeurs | Windows, Linux, macOS | 🆕 fait (lot 101) | `20-multimedia-services/15-gestion-medias-arr` |
 | qBittorrent | Client BitTorrent | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/06-bittorrent/02-qbittorrent` |
 | Transmission | Client BitTorrent | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/06-bittorrent/01-transmission` |
 | Deluge | Client BitTorrent | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/06-bittorrent/03-deluge` |
-| aria2 | Téléchargement multi-protocole | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| yt-dlp | Téléchargement médias | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
+| aria2 | Téléchargement multi-protocole | Windows, Linux, macOS | 🆕 fait (lot 102) | `20-multimedia-services/16-telechargement` |
+| yt-dlp | Téléchargement médias | Windows, Linux, macOS | 🆕 fait (lot 102) | `20-multimedia-services/16-telechargement` |
 
-## 18. DNS WEB, EMAIL, ANTI-SPAM ET OUTILS DE COMMUNICATION — 4/31
+## 18. DNS WEB, EMAIL, ANTI-SPAM ET OUTILS DE COMMUNICATION — 31/31
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| PostfixAdmin | Administration Postfix | Linux | ⏳ à faire | → `10-messagerie` |
+| PostfixAdmin | Administration Postfix | Linux | 🆕 fait (lot 103) | `10-messagerie/01-postfix/10-postfixadmin` |
 | Mailpit | Test SMTP local | Windows, Linux, macOS | ✅ existant | `10-messagerie/07-mailpit` |
-| MailHog | Test SMTP local | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| smtp4dev | Test SMTP local | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Haraka | Serveur SMTP Node.js | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Postal | Plateforme envoi email | Linux | ⏳ à faire | → `10-messagerie` |
-| Listmonk | Newsletters | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Mautic | Marketing automation | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| phpList | Newsletters | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Sympa | Listes de diffusion | Linux | ⏳ à faire | → `10-messagerie` |
+| MailHog | Test SMTP local | Windows, Linux, macOS | 🆕 fait (lot 104) | `10-messagerie/07-mailpit` |
+| smtp4dev | Test SMTP local | Windows, Linux, macOS | 🆕 fait (lot 104) | `10-messagerie/07-mailpit` |
+| Haraka | Serveur SMTP Node.js | Windows, Linux, macOS | 🆕 fait (lot 103) | `10-messagerie/23-plateformes-envoi` |
+| Postal | Plateforme envoi email | Linux | 🆕 fait (lot 103) | `10-messagerie/23-plateformes-envoi` |
+| Listmonk | Newsletters | Windows, Linux, macOS | 🆕 fait (lot 106) | `10-messagerie/25-listes-newsletters` |
+| Mautic | Marketing automation | Windows, Linux, macOS | 🆕 fait (lot 106) | `10-messagerie/25-listes-newsletters` |
+| phpList | Newsletters | Windows, Linux, macOS | 🆕 fait (lot 106) | `10-messagerie/25-listes-newsletters` |
+| Sympa | Listes de diffusion | Linux | 🆕 fait (lot 106) | `10-messagerie/25-listes-newsletters` |
 | Mailman 3 | Listes de diffusion | Linux | ✅ existant | `10-messagerie/06-mailman` |
-| Mailman 2 (legacy) | Listes de diffusion | Linux | ⏳ à faire | → `10-messagerie` |
-| OpenDKIM | Signature DKIM | Linux | ⏳ à faire | → `10-messagerie` |
-| OpenDMARC | Validation DMARC | Linux | ⏳ à faire | → `10-messagerie` |
-| Postgrey | Greylisting SMTP | Linux | ⏳ à faire | → `10-messagerie` |
-| policyd-spf | Validation SPF | Linux | ⏳ à faire | → `10-messagerie` |
-| OpenARC | Validation ARC | Linux | ⏳ à faire | → `10-messagerie` |
-| SoGo Connector | Connecteur groupware | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
+| Mailman 2 (legacy) | Listes de diffusion | Linux | 🆕 fait (lot 106) | `10-messagerie/06-mailman` |
+| OpenDKIM | Signature DKIM | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
+| OpenDMARC | Validation DMARC | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
+| Postgrey | Greylisting SMTP | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
+| policyd-spf | Validation SPF | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
+| OpenARC | Validation ARC | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
+| SoGo Connector | Connecteur groupware | Windows, Linux, macOS | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
 | Nextcloud Calendar | Calendrier | Linux | ✅ existant | `09-fichiers-partage/08-nextcloud` |
 | Nextcloud Contacts | Contacts | Linux | ✅ existant | `09-fichiers-partage/08-nextcloud` |
-| DAVx5 (client open source) | Synchronisation CalDAV/CardDAV | Android | ⏳ à faire | → `10-messagerie` |
-| Evolution | Client mail/groupware | Linux | ⏳ à faire | → `10-messagerie` |
-| Thunderbird | Client mail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| KMail | Client mail | Linux | ⏳ à faire | → `10-messagerie` |
-| Claws Mail | Client mail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Mutt | Client mail terminal | Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| NeoMutt | Client mail terminal | Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| aerc | Client mail terminal | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| getmail6 | Récupération mail | Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Fetchmail | Récupération mail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| OfflineIMAP | Synchronisation mail | Linux, macOS | ⏳ à faire | → `10-messagerie` |
+| DAVx5 (client open source) | Synchronisation CalDAV/CardDAV | Android | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
+| Evolution | Client mail/groupware | Linux | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
+| Thunderbird | Client mail | Windows, Linux, macOS | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
+| KMail | Client mail | Linux | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
+| Claws Mail | Client mail | Windows, Linux, macOS | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
+| Mutt | Client mail terminal | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
+| NeoMutt | Client mail terminal | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
+| aerc | Client mail terminal | Windows, Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
+| getmail6 | Récupération mail | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
+| Fetchmail | Récupération mail | Windows, Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
+| OfflineIMAP | Synchronisation mail | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 
-## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 5/55
+## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 55/55
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Apache Kafka | Streaming événements | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/04-kafka` |
-| Redpanda (community source) | Streaming Kafka-compatible | Linux | ⏳ à faire | → `27-data-analytique` |
-| Apache Pulsar | Messaging et streaming | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
+| Redpanda (community source) | Streaming Kafka-compatible | Linux | 🆕 fait (lot 110) | `12-recherche-messages/09-nats-nsq-zeromq-redpanda` |
+| Apache Pulsar | Messaging et streaming | Windows, Linux, macOS | 🆕 fait (lot 109) | `12-recherche-messages/08-activemq-rocketmq-pulsar` |
 | RabbitMQ | Message broker | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/03-rabbitmq` |
-| ActiveMQ Classic | Message broker | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| ActiveMQ Artemis | Message broker | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Apache RocketMQ | Message broker | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| NATS | Message broker | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
+| ActiveMQ Classic | Message broker | Windows, Linux, macOS | 🆕 fait (lot 109) | `12-recherche-messages/08-activemq-rocketmq-pulsar` |
+| ActiveMQ Artemis | Message broker | Windows, Linux, macOS | 🆕 fait (lot 109) | `12-recherche-messages/08-activemq-rocketmq-pulsar` |
+| Apache RocketMQ | Message broker | Windows, Linux, macOS | 🆕 fait (lot 109) | `12-recherche-messages/08-activemq-rocketmq-pulsar` |
+| NATS | Message broker | Windows, Linux, macOS | 🆕 fait (lot 110) | `12-recherche-messages/09-nats-nsq-zeromq-redpanda` |
 | Mosquitto | Broker MQTT | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/05-mosquitto` |
 | EMQX (community) | Broker MQTT | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/06-emqx` |
-| VerneMQ | Broker MQTT | Linux | ⏳ à faire | → `12-recherche-messages` |
-| NanoMQ | Broker MQTT | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| HiveMQ CE | Broker MQTT | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| ZeroMQ | Messaging bibliothèque | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| NSQ | Message broker | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Beanstalkd | Queue de tâches | Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Gearman | Queue de tâches | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Celery | Queue de tâches Python | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Dramatiq | Queue de tâches Python | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| RQ | Queue de tâches Python | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| BullMQ | Queue de tâches Node.js | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| pg-boss | Queue PostgreSQL | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Graphile Worker | Queue PostgreSQL | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Apache Flink | Traitement streaming | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache Spark | Traitement distribué | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache Beam | Traitement data | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache Samza | Traitement streaming | Linux | ⏳ à faire | → `27-data-analytique` |
-| Apache Storm | Traitement streaming | Linux | ⏳ à faire | → `27-data-analytique` |
-| Apache NiFi | Flux de données | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache SeaTunnel | Intégration données | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Airbyte (community) | ELT | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Meltano | ELT | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Singer taps | Connecteurs ELT | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Debezium | CDC | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Kafka Connect | Connecteurs streaming | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Benthos / Redpanda Connect | Pipeline données | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Flink CDC | CDC streaming | Linux | ⏳ à faire | → `27-data-analytique` |
-| Apache Hudi | Lakehouse | Linux | ⏳ à faire | → `27-data-analytique` |
-| Apache Iceberg | Format table lakehouse | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Delta Lake | Lakehouse | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Project Nessie | Catalogue lakehouse | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache Atlas | Gouvernance données | Linux | ⏳ à faire | → `27-data-analytique` |
-| OpenMetadata | Catalogue et gouvernance | Linux, Windows via conteneur | ⏳ à faire | → `27-data-analytique` |
-| DataHub | Catalogue données | Linux | ⏳ à faire | → `27-data-analytique` |
-| Amundsen | Catalogue données | Linux | ⏳ à faire | → `27-data-analytique` |
-| dbt Core | Transformation SQL | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| SQLMesh | Transformation SQL | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Polars | DataFrame | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache Arrow | Format et moteur colonne | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| JupyterHub | Plateforme notebooks | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
+| VerneMQ | Broker MQTT | Linux | 🆕 fait (lot 111) | `12-recherche-messages/10-courtiers-mqtt` |
+| NanoMQ | Broker MQTT | Windows, Linux, macOS | 🆕 fait (lot 111) | `12-recherche-messages/10-courtiers-mqtt` |
+| HiveMQ CE | Broker MQTT | Windows, Linux, macOS | 🆕 fait (lot 111) | `12-recherche-messages/10-courtiers-mqtt` |
+| ZeroMQ | Messaging bibliothèque | Windows, Linux, macOS | 🆕 fait (lot 110) | `12-recherche-messages/09-nats-nsq-zeromq-redpanda` |
+| NSQ | Message broker | Windows, Linux, macOS | 🆕 fait (lot 110) | `12-recherche-messages/09-nats-nsq-zeromq-redpanda` |
+| Beanstalkd | Queue de tâches | Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| Gearman | Queue de tâches | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| Celery | Queue de tâches Python | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| Dramatiq | Queue de tâches Python | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| RQ | Queue de tâches Python | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| BullMQ | Queue de tâches Node.js | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| pg-boss | Queue PostgreSQL | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| Graphile Worker | Queue PostgreSQL | Windows, Linux, macOS | 🆕 fait (lot 112) | `12-recherche-messages/11-files-de-taches` |
+| Apache Flink | Traitement streaming | Windows, Linux, macOS | 🆕 fait (lot 113) | `28-data-analytique/01-traitement-flux-lots` |
+| Apache Spark | Traitement distribué | Windows, Linux, macOS | 🆕 fait (lot 113) | `28-data-analytique/01-traitement-flux-lots` |
+| Apache Beam | Traitement data | Windows, Linux, macOS | 🆕 fait (lot 113) | `28-data-analytique/01-traitement-flux-lots` |
+| Apache Samza | Traitement streaming | Linux | 🆕 fait (lot 113) | `28-data-analytique/01-traitement-flux-lots` |
+| Apache Storm | Traitement streaming | Linux | 🆕 fait (lot 113) | `28-data-analytique/01-traitement-flux-lots` |
+| Apache NiFi | Flux de données | Windows, Linux, macOS | 🆕 fait (lot 114) | `28-data-analytique/02-integration-donnees` |
+| Apache SeaTunnel | Intégration données | Windows, Linux, macOS | 🆕 fait (lot 114) | `28-data-analytique/02-integration-donnees` |
+| Airbyte (community) | ELT | Windows, Linux, macOS | 🆕 fait (lot 114) | `28-data-analytique/02-integration-donnees` |
+| Meltano | ELT | Windows, Linux, macOS | 🆕 fait (lot 114) | `28-data-analytique/02-integration-donnees` |
+| Singer taps | Connecteurs ELT | Windows, Linux, macOS | 🆕 fait (lot 114) | `28-data-analytique/02-integration-donnees` |
+| Debezium | CDC | Windows, Linux, macOS | 🆕 fait (lot 115) | `28-data-analytique/03-cdc-connecteurs` |
+| Kafka Connect | Connecteurs streaming | Windows, Linux, macOS | 🆕 fait (lot 115) | `28-data-analytique/03-cdc-connecteurs` |
+| Benthos / Redpanda Connect | Pipeline données | Windows, Linux, macOS | 🆕 fait (lot 115) | `28-data-analytique/03-cdc-connecteurs` |
+| Flink CDC | CDC streaming | Linux | 🆕 fait (lot 115) | `28-data-analytique/03-cdc-connecteurs` |
+| Apache Hudi | Lakehouse | Linux | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
+| Apache Iceberg | Format table lakehouse | Windows, Linux, macOS | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
+| Delta Lake | Lakehouse | Windows, Linux, macOS | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
+| Project Nessie | Catalogue lakehouse | Windows, Linux, macOS | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
+| Apache Atlas | Gouvernance données | Linux | 🆕 fait (lot 117) | `28-data-analytique/05-catalogues-metadonnees` |
+| OpenMetadata | Catalogue et gouvernance | Linux, Windows via conteneur | 🆕 fait (lot 117) | `28-data-analytique/05-catalogues-metadonnees` |
+| DataHub | Catalogue données | Linux | 🆕 fait (lot 117) | `28-data-analytique/05-catalogues-metadonnees` |
+| Amundsen | Catalogue données | Linux | 🆕 fait (lot 117) | `28-data-analytique/05-catalogues-metadonnees` |
+| dbt Core | Transformation SQL | Windows, Linux, macOS | 🆕 fait (lot 118) | `28-data-analytique/06-transformation` |
+| SQLMesh | Transformation SQL | Windows, Linux, macOS | 🆕 fait (lot 118) | `28-data-analytique/06-transformation` |
+| Polars | DataFrame | Windows, Linux, macOS | 🆕 fait (lot 118) | `28-data-analytique/06-transformation` |
+| Apache Arrow | Format et moteur colonne | Windows, Linux, macOS | 🆕 fait (lot 118) | `28-data-analytique/06-transformation` |
+| JupyterHub | Plateforme notebooks | Windows, Linux, macOS | 🆕 fait (lot 119) | `28-data-analytique/07-science-donnees` |
 | JupyterLab | Notebooks | Windows, Linux, macOS | ✅ existant | `21-outils/05-ia-productivite/05-jupyterlab` |
-| MLflow | Cycle de vie ML | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| DVC | Versionnement données | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| LakeFS | Versionnement data lake | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Pachyderm | Pipelines données | Linux | ⏳ à faire | → `27-data-analytique` |
+| MLflow | Cycle de vie ML | Windows, Linux, macOS | 🆕 fait (lot 119) | `28-data-analytique/07-science-donnees` |
+| DVC | Versionnement données | Windows, Linux, macOS | 🆕 fait (lot 119) | `28-data-analytique/07-science-donnees` |
+| LakeFS | Versionnement data lake | Windows, Linux, macOS | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
+| Pachyderm | Pipelines données | Linux | 🆕 fait (lot 119) | `28-data-analytique/07-science-donnees` |
 
-## 20. IA, MACHINE LEARNING ET INFERENCE AUTO-HEBERGEE — 2/57
+## 20. IA, MACHINE LEARNING ET INFERENCE AUTO-HEBERGEE — 57/57
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Ollama | Exécution LLM locale | Windows, Linux, macOS | ✅ existant | `21-outils/05-ia-productivite/04-ollama-open-webui` |
-| llama.cpp | Inference LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| LocalAI | API IA locale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| vLLM | Serveur inference LLM | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| Text Generation Inference | Serveur inference LLM | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| Hugging Face Transformers | Bibliothèque ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Hugging Face TGI | Inference LLM | Linux | ⏳ à faire | → `28-ia-machine-learning` |
+| llama.cpp | Inference LLM | Windows, Linux, macOS | 🆕 fait (lot 120) | `29-ia-machine-learning/01-inference-locale` |
+| LocalAI | API IA locale | Windows, Linux, macOS | 🆕 fait (lot 120) | `29-ia-machine-learning/01-inference-locale` |
+| vLLM | Serveur inference LLM | Linux | 🆕 fait (lot 121) | `29-ia-machine-learning/02-serveurs-inference` |
+| Text Generation Inference | Serveur inference LLM | Linux | 🆕 fait (lot 121) | `29-ia-machine-learning/02-serveurs-inference` |
+| Hugging Face Transformers | Bibliothèque ML | Windows, Linux, macOS | 🆕 fait (lot 121) | `29-ia-machine-learning/02-serveurs-inference` |
+| Hugging Face TGI | Inference LLM | Linux | 🆕 fait (lot 121) | `29-ia-machine-learning/02-serveurs-inference` |
 | Open WebUI | Interface LLM auto-hébergée | Windows, Linux, macOS | ✅ existant | `21-outils/05-ia-productivite/04-ollama-open-webui` |
-| LibreChat | Interface chat IA | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| AnythingLLM | Espace de travail LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Dify | Plateforme applications IA | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Flowise | Constructeur flux LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Langflow | Constructeur flux IA | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| LangChain | Framework LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| LlamaIndex | Framework RAG | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Haystack | Framework recherche/RAG | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| RAGFlow | Moteur RAG | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| Quivr | Base de connaissance IA | Linux, Windows via conteneur | ⏳ à faire | → `28-ia-machine-learning` |
-| Khoj | Assistant personnel IA | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| PrivateGPT | RAG local | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| GPT4All | LLM local | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Jan | LLM local | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| KoboldCpp | Inference LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| text-generation-webui | Interface inference LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| SillyTavern | Interface chat LLM | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| ComfyUI | Génération image par nœuds | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| AUTOMATIC1111 Stable Diffusion WebUI | Génération image | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| InvokeAI | Génération image | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Fooocus | Génération image | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| OpenCV | Vision par ordinateur | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| PyTorch | Framework ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| TensorFlow | Framework ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| JAX | Framework ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| scikit-learn | Machine learning | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| XGBoost | Machine learning | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| LightGBM | Machine learning | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| CatBoost | Machine learning | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| ONNX Runtime | Inference ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| OpenVINO | Inference accélérée | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| BentoML | Déploiement modèles | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| KServe | Serving modèles Kubernetes | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| Seldon Core | Serving modèles | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| Ray | Calcul distribué/IA | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Kubeflow | Plateforme ML Kubernetes | Linux | ⏳ à faire | → `28-ia-machine-learning` |
-| ClearML | MLOps | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Aim | Suivi expériences ML | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Label Studio | Annotation données | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| CVAT | Annotation vision | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| FiftyOne | Gestion datasets vision | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Whisper.cpp | Transcription locale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| faster-whisper | Transcription audio | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Whisper | Reconnaissance vocale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Piper | Synthèse vocale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Coqui TTS | Synthèse vocale | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Kokoro TTS (open weights) | Synthèse vocale (licence modèle à vérifier) | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| RVC Project | Conversion voix | Windows, Linux, macOS | ⏳ à faire | → `28-ia-machine-learning` |
-| Mimic 3 | Synthèse vocale | Linux | ⏳ à faire | → `28-ia-machine-learning` |
+| LibreChat | Interface chat IA | Windows, Linux, macOS | 🆕 fait (lot 122) | `29-ia-machine-learning/03-interfaces-chat` |
+| AnythingLLM | Espace de travail LLM | Windows, Linux, macOS | 🆕 fait (lot 122) | `29-ia-machine-learning/03-interfaces-chat` |
+| Dify | Plateforme applications IA | Windows, Linux, macOS | 🆕 fait (lot 124) | `29-ia-machine-learning/05-constructeurs-applications` |
+| Flowise | Constructeur flux LLM | Windows, Linux, macOS | 🆕 fait (lot 124) | `29-ia-machine-learning/05-constructeurs-applications` |
+| Langflow | Constructeur flux IA | Windows, Linux, macOS | 🆕 fait (lot 124) | `29-ia-machine-learning/05-constructeurs-applications` |
+| LangChain | Framework LLM | Windows, Linux, macOS | 🆕 fait (lot 125) | `29-ia-machine-learning/06-frameworks-rag` |
+| LlamaIndex | Framework RAG | Windows, Linux, macOS | 🆕 fait (lot 125) | `29-ia-machine-learning/06-frameworks-rag` |
+| Haystack | Framework recherche/RAG | Windows, Linux, macOS | 🆕 fait (lot 125) | `29-ia-machine-learning/06-frameworks-rag` |
+| RAGFlow | Moteur RAG | Linux | 🆕 fait (lot 125) | `29-ia-machine-learning/06-frameworks-rag` |
+| Quivr | Base de connaissance IA | Linux, Windows via conteneur | 🆕 fait (lot 125) | `29-ia-machine-learning/06-frameworks-rag` |
+| Khoj | Assistant personnel IA | Windows, Linux, macOS | 🆕 fait (lot 123) | `29-ia-machine-learning/04-applications-locales` |
+| PrivateGPT | RAG local | Windows, Linux, macOS | 🆕 fait (lot 123) | `29-ia-machine-learning/04-applications-locales` |
+| GPT4All | LLM local | Windows, Linux, macOS | 🆕 fait (lot 123) | `29-ia-machine-learning/04-applications-locales` |
+| Jan | LLM local | Windows, Linux, macOS | 🆕 fait (lot 123) | `29-ia-machine-learning/04-applications-locales` |
+| KoboldCpp | Inference LLM | Windows, Linux, macOS | 🆕 fait (lot 120) | `29-ia-machine-learning/01-inference-locale` |
+| text-generation-webui | Interface inference LLM | Windows, Linux, macOS | 🆕 fait (lot 122) | `29-ia-machine-learning/03-interfaces-chat` |
+| SillyTavern | Interface chat LLM | Windows, Linux, macOS | 🆕 fait (lot 122) | `29-ia-machine-learning/03-interfaces-chat` |
+| ComfyUI | Génération image par nœuds | Windows, Linux, macOS | 🆕 fait (lot 126) | `29-ia-machine-learning/07-generation-images` |
+| AUTOMATIC1111 Stable Diffusion WebUI | Génération image | Windows, Linux, macOS | 🆕 fait (lot 126) | `29-ia-machine-learning/07-generation-images` |
+| InvokeAI | Génération image | Windows, Linux, macOS | 🆕 fait (lot 126) | `29-ia-machine-learning/07-generation-images` |
+| Fooocus | Génération image | Windows, Linux, macOS | 🆕 fait (lot 126) | `29-ia-machine-learning/07-generation-images` |
+| OpenCV | Vision par ordinateur | Windows, Linux, macOS | 🆕 fait (lot 127) | `29-ia-machine-learning/08-frameworks-ml` |
+| PyTorch | Framework ML | Windows, Linux, macOS | 🆕 fait (lot 127) | `29-ia-machine-learning/08-frameworks-ml` |
+| TensorFlow | Framework ML | Windows, Linux, macOS | 🆕 fait (lot 127) | `29-ia-machine-learning/08-frameworks-ml` |
+| JAX | Framework ML | Windows, Linux, macOS | 🆕 fait (lot 127) | `29-ia-machine-learning/08-frameworks-ml` |
+| scikit-learn | Machine learning | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| XGBoost | Machine learning | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| LightGBM | Machine learning | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| CatBoost | Machine learning | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| ONNX Runtime | Inference ML | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| OpenVINO | Inference accélérée | Windows, Linux, macOS | 🆕 fait (lot 128) | `29-ia-machine-learning/09-ml-classique-inference` |
+| BentoML | Déploiement modèles | Windows, Linux, macOS | 🆕 fait (lot 129) | `29-ia-machine-learning/10-mlops-serving` |
+| KServe | Serving modèles Kubernetes | Linux | 🆕 fait (lot 129) | `29-ia-machine-learning/10-mlops-serving` |
+| Seldon Core | Serving modèles | Linux | 🆕 fait (lot 129) | `29-ia-machine-learning/10-mlops-serving` |
+| Ray | Calcul distribué/IA | Windows, Linux, macOS | 🆕 fait (lot 129) | `29-ia-machine-learning/10-mlops-serving` |
+| Kubeflow | Plateforme ML Kubernetes | Linux | 🆕 fait (lot 129) | `29-ia-machine-learning/10-mlops-serving` |
+| ClearML | MLOps | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
+| Aim | Suivi expériences ML | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
+| Label Studio | Annotation données | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
+| CVAT | Annotation vision | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
+| FiftyOne | Gestion datasets vision | Windows, Linux, macOS | 🆕 fait (lot 130) | `29-ia-machine-learning/11-experiences-annotation` |
+| Whisper.cpp | Transcription locale | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| faster-whisper | Transcription audio | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| Whisper | Reconnaissance vocale | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| Piper | Synthèse vocale | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| Coqui TTS | Synthèse vocale | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| Kokoro TTS (open weights) | Synthèse vocale (licence modèle à vérifier) | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| RVC Project | Conversion voix | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
+| Mimic 3 | Synthèse vocale | Linux | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 
-## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 2/48
+## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 18/48
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| Paperless-ngx | GED et archivage | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Mayan EDMS | GED | Linux | ⏳ à faire | → `29-documentation-ged` |
-| Teedy | GED | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| OpenKM Community | GED | Windows, Linux | ⏳ à faire | → `29-documentation-ged` |
-| LogicalDOC Community | GED | Windows, Linux | ⏳ à faire | → `29-documentation-ged` |
-| SeedDMS | GED | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Docspell | GED | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Documenso | Signature électronique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| OpenSign | Signature électronique | Linux | ⏳ à faire | → `29-documentation-ged` |
-| LibreSign | Signature électronique Nextcloud | Linux | ⏳ à faire | → `29-documentation-ged` |
-| Stirling-PDF | Outils PDF web | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Gotenberg | Conversion documents API | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| ONLYOFFICE Docs Community | Suite bureautique serveur | Windows, Linux | ⏳ à faire | → `29-documentation-ged` |
-| Collabora Online Development Edition | Suite bureautique web | Linux | ⏳ à faire | → `29-documentation-ged` |
-| LibreOffice | Suite bureautique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Apache OpenOffice | Suite bureautique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
+| Paperless-ngx | GED et archivage | Windows, Linux, macOS | 🆕 fait (lot 132) | `32-documentation-ged/01-ged-legere` |
+| Mayan EDMS | GED | Linux | 🆕 fait (lot 132) | `32-documentation-ged/01-ged-legere` |
+| Teedy | GED | Windows, Linux, macOS | 🆕 fait (lot 132) | `32-documentation-ged/01-ged-legere` |
+| OpenKM Community | GED | Windows, Linux | 🆕 fait (lot 133) | `32-documentation-ged/02-ged-entreprise` |
+| LogicalDOC Community | GED | Windows, Linux | 🆕 fait (lot 133) | `32-documentation-ged/02-ged-entreprise` |
+| SeedDMS | GED | Windows, Linux, macOS | 🆕 fait (lot 133) | `32-documentation-ged/02-ged-entreprise` |
+| Docspell | GED | Windows, Linux, macOS | 🆕 fait (lot 132) | `32-documentation-ged/01-ged-legere` |
+| Documenso | Signature électronique | Windows, Linux, macOS | 🆕 fait (lot 134) | `32-documentation-ged/03-signature-pdf` |
+| OpenSign | Signature électronique | Linux | 🆕 fait (lot 134) | `32-documentation-ged/03-signature-pdf` |
+| LibreSign | Signature électronique Nextcloud | Linux | 🆕 fait (lot 134) | `32-documentation-ged/03-signature-pdf` |
+| Stirling-PDF | Outils PDF web | Windows, Linux, macOS | 🆕 fait (lot 134) | `32-documentation-ged/03-signature-pdf` |
+| Gotenberg | Conversion documents API | Windows, Linux, macOS | 🆕 fait (lot 134) | `32-documentation-ged/03-signature-pdf` |
+| ONLYOFFICE Docs Community | Suite bureautique serveur | Windows, Linux | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
+| Collabora Online Development Edition | Suite bureautique web | Linux | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
+| LibreOffice | Suite bureautique | Windows, Linux, macOS | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
+| Apache OpenOffice | Suite bureautique | Windows, Linux, macOS | 🆕 fait (lot 135) | `32-documentation-ged/04-bureautique` |
 | TriliumNext Notes | Base de connaissances | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
 | Joplin Server | Synchronisation notes | Windows, Linux, macOS | ✅ existant | `10-messagerie/09-joplin-server` |
 | Memos | Notes auto-hébergées | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |

@@ -1,0 +1,1 @@
+{ "title": "Courrier en terminal et récupération", "icon": "square-terminal", "color": "#e11d48", "description": "Lire, envoyer et récupérer le courrier en ligne de commande : Mutt, NeoMutt et aerc (clients en terminal), fetchmail, getmail6 et OfflineIMAP (récupération et synchronisation de boîtes)." }

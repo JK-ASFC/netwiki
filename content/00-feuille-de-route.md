@@ -101,7 +101,54 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 85 | Catalogue — gestionnaires de paquets : Homebrew, MacPorts, Nix, GNU Guix, Flatpak, Snap, AppImage, équivalences apt/dnf/yum/zypper/pacman/apk/Portage (déjà traités par distribution) | ✅ |
 | 86 | Catalogue — init et supervision de processus : systemd, OpenRC, runit, s6, Supervisor, Monit, Circus, PM2, forever | ✅ |
 | 87 | Catalogue — shells, multiplexeurs et dotfiles : tmux, GNU Screen, Zellij, Bash, Zsh, Oh My Zsh, fish, Nushell, Starship, chezmoi, GNU Stow | ✅ |
-| 88 | Catalogue — snapshots, sauvegarde du poste, partage entre appareils et bureau : Timeshift, Snapper, Back In Time, Déjà Dup, KDE Connect, Barrier, Input Leap, Synergy, LocalSend, KDE Plasma | ✅ |
+| 88 | Catalogue — instantanés et sauvegarde du poste : Timeshift, Snapper, Back In Time, Déjà Dup | ✅ |
+| 89 | Catalogue — partage entre appareils : KDE Connect, GSConnect, LocalSend, Barrier, Input Leap, Synergy Core (Deskflow) | ✅ |
+| 90 | Catalogue — environnements de bureau : GNOME, KDE Plasma, XFCE, MATE, Cinnamon, LXQt, COSMIC | ✅ |
+| 91 | Catalogue — terminaux graphiques : Xfce Terminal, Alacritty, WezTerm, Kitty, Ghostty | ✅ |
+| 92 | Catalogue — éditeurs de texte : Vim, Neovim, GNU Emacs, Kate, Geany | ✅ |
+| 93 | Catalogue — IDE : VSCodium, Apache NetBeans, Qt Creator, Code::Blocks | ✅ |
+| 94 | Catalogue — serveurs de musique : Ampache, Lyrion Music Server, Mopidy, Airsonic-Advanced, Funkwhale | ✅ |
+| 95 | Catalogue — radio web et plates-formes vidéo : AzuraCast, LibreTime, Owncast, PeerTube, MediaCMS | ✅ |
+| 96 | Catalogue — serveurs de streaming vidéo : MediaMTX, SRS, OvenMediaEngine, Ant Media Server Community, Red5, Restreamer | ✅ |
+| 97 | Catalogue — WebRTC : Janus, LiveKit, mediasoup, Pion, Kurento | ✅ |
+| 98 | Catalogue — traitement vidéo : FFmpeg, GStreamer, HandBrake | ✅ |
+| 99 | Catalogue — capture et lecture : OBS Studio, VLC, mpv, Kodi | ✅ |
+| 100 | Catalogue — empaquetage et transcodage automatisé : Shaka Packager, Bento4, Tdarr, Unmanic, FileFlows | ✅ |
+| 101 | Catalogue — gestion de médiathèque : Sonarr, Radarr, Lidarr, Readarr, Prowlarr, Jackett, Bazarr | ✅ |
+| 102 | Catalogue — outils de téléchargement : aria2, yt-dlp | ✅ |
+| 103 | Catalogue — administration et plates-formes d'envoi : PostfixAdmin, Haraka, Postal | ✅ |
+| 104 | Catalogue — serveurs SMTP de test : MailHog, smtp4dev | ✅ |
+| 105 | Catalogue — authentification et filtrage des e-mails : OpenDKIM, OpenDMARC, OpenARC, policyd-spf, Postgrey | ✅ |
+| 106 | Catalogue — newsletters et listes de diffusion : Listmonk, phpList, Mautic, Sympa, Mailman 2 (migration) | ✅ |
+| 107 | Catalogue — clients de messagerie et synchronisation : Thunderbird, Evolution, KMail, Claws Mail, SOGo Connector, DAVx5 | ✅ |
+| 108 | Catalogue — courrier en terminal et récupération : Mutt, NeoMutt, aerc, fetchmail, getmail6, OfflineIMAP | ✅ |
+| 109 | Catalogue — courtiers d'entreprise : ActiveMQ Classic, ActiveMQ Artemis, Apache RocketMQ, Apache Pulsar | ✅ |
+| 110 | Catalogue — messagerie légère : NATS et JetStream, NSQ, ZeroMQ, Redpanda | ✅ |
+| 111 | Catalogue — autres courtiers MQTT : VerneMQ, NanoMQ, HiveMQ CE | ✅ |
+| 112 | Catalogue — files de tâches : Beanstalkd, Gearman, Celery, Dramatiq, RQ, BullMQ, pg-boss, Graphile Worker | ✅ |
+| 113 | Catalogue — traitement de flux et par lots : Apache Spark, Flink, Beam, Samza, Storm | ✅ |
+| 114 | Catalogue — intégration de données : Apache NiFi, SeaTunnel, Airbyte, Meltano, Singer | ✅ |
+| 115 | Catalogue — capture de changements : Debezium, Kafka Connect, Benthos / Redpanda Connect, Flink CDC | ✅ |
+| 116 | Catalogue — lac de données transactionnel : Apache Iceberg, Delta Lake, Apache Hudi, Project Nessie, lakeFS | ✅ |
+| 117 | Catalogue — catalogues de données : OpenMetadata, DataHub, Amundsen, Apache Atlas | ✅ |
+| 118 | Catalogue — transformation : dbt Core, SQLMesh, Polars, Apache Arrow | ✅ |
+| 119 | Catalogue — science des données : JupyterHub, MLflow, DVC, Pachyderm | ✅ |
+| 120 | Catalogue — inférence locale : llama.cpp, KoboldCpp, LocalAI | ✅ |
+| 121 | Catalogue — serveurs d'inférence : vLLM, Text Generation Inference, Hugging Face Transformers | ✅ |
+| 122 | Catalogue — interfaces de chat : LibreChat, AnythingLLM, text-generation-webui, SillyTavern | ✅ |
+| 123 | Catalogue — applications locales : GPT4All, Jan, PrivateGPT, Khoj | ✅ |
+| 124 | Catalogue — constructeurs d'applications IA : Dify, Flowise, Langflow | ✅ |
+| 125 | Catalogue — RAG : LangChain, LlamaIndex, Haystack, RAGFlow, Quivr | ✅ |
+| 126 | Catalogue — génération d'images : ComfyUI, AUTOMATIC1111, InvokeAI, Fooocus | ✅ |
+| 127 | Catalogue — frameworks : PyTorch, TensorFlow, JAX, OpenCV | ✅ |
+| 128 | Catalogue — ML classique et inférence optimisée : scikit-learn, XGBoost, LightGBM, CatBoost, ONNX Runtime, OpenVINO | ✅ |
+| 129 | Catalogue — service de modèles et MLOps : BentoML, KServe, Seldon Core, Ray, Kubeflow | ✅ |
+| 130 | Catalogue — expériences et annotation : ClearML, Aim, Label Studio, CVAT, FiftyOne | ✅ |
+| 131 | Catalogue — audio et voix : Whisper, whisper.cpp, faster-whisper, Piper, Coqui TTS, Kokoro, RVC, Mimic 3 | ✅ |
+| 132 | Catalogue — GED : Paperless-ngx, Mayan EDMS, Teedy, Docspell | ✅ |
+| 133 | Catalogue — GED d'entreprise : OpenKM, LogicalDOC, SeedDMS | ✅ |
+| 134 | Catalogue — signature et PDF : Documenso, OpenSign, LibreSign, Stirling-PDF, Gotenberg | ✅ |
+| 135 | Catalogue — bureautique : ONLYOFFICE Docs, Collabora Online, LibreOffice, Apache OpenOffice | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -214,7 +261,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[02-dovecot/01-presentation-installation\|Dovecot]] | dovecot-imapd | ➖ | dovecot | ✅ |
 | [[06-mailman/01-presentation-installation\|Mailman 3]] | mailman3-full | ➖ (Docker) | ➖ (Docker) | ✅ |
 | [[04-rspamd/01-presentation-installation\|Rspamd]], [[05-spamassassin/01-presentation-installation\|SpamAssassin]] | rspamd, spamassassin | ➖ | rspamd, spamassassin | ✅ |
-| [[07-mailpit/01-presentation-installation\|Mailpit (tests)]] | mailpit | mailpit | mailpit | ✅ |
+| [[07-mailpit/01-presentation-installation\|Mailpit (tests)]], [[07-mailpit/03-mailhog-smtp4dev\|MailHog, smtp4dev]] | mailpit, Docker | mailpit, smtp4dev | mailpit, Docker | ✅ |
 | [[10-smtp-windows/01-relais-smtp\|Serveur SMTP Windows (relais IIS 6)]] | ➖ | SMTP-Server | ➖ | ✅ |
 | [[08-radicale/01-installation-configuration\|Radicale (CalDAV / CardDAV)]], [[09-joplin-server/01-installation-exploitation\|Joplin Server]] | radicale | radicale (pip) | radicale, joplin-server | ✅ |
 | [[11-matrix/01-synapse-ess\|Matrix (Synapse, ESS, Element)]] | matrix-synapse-py3, Docker | ➖ (Docker), Element | ➖ (Docker), Element | ✅ |
@@ -227,6 +274,11 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[18-edition-collaborative/01-hedgedoc-etherpad-cryptpad\|HedgeDoc, Etherpad, CryptPad]], [[19-groupware-agendas/01-sogo-kopano\|SOGo, Kopano]], [[19-groupware-agendas/02-calcom-baikal-davical\|Cal.diy, Baïkal, DAViCal]] | Docker, sogo, davical | Etherpad, Docker | Etherpad, Docker | ✅ |
 | [[20-suites-messagerie/01-mailcow-mailu-docker-mailserver\|Mailcow, Mailu, docker-mailserver]], [[20-suites-messagerie/02-modoboa-iredmail\|Modoboa, iRedMail]], [[22-opensmtpd/01-presentation-configuration\|OpenSMTPD]], [[05-spamassassin/03-amavis\|Amavis]] | Docker, installateurs, opensmtpd, amavisd-new | ➖ (VM Linux) | opensmtpd (brew) | ✅ |
 | [[21-webmail/01-roundcube\|Roundcube]], [[21-webmail/02-snappymail-anciens\|SnappyMail, SquirrelMail, RainLoop]] | roundcube, archive, Docker | IIS + PHP, Docker | PHP, Docker | ✅ |
+| [[01-postfix/10-postfixadmin\|PostfixAdmin]], [[23-plateformes-envoi/01-haraka\|Haraka]], [[23-plateformes-envoi/02-postal\|Postal]] | postfixadmin, npm, Docker | ➖ (Docker) | npm (Haraka), Docker | ✅ |
+| [[24-authentification-mail/01-opendkim-opendmarc-openarc\|OpenDKIM, OpenDMARC, OpenARC]], [[24-authentification-mail/02-policyd-spf-postgrey\|policyd-spf, Postgrey]] | opendkim, opendmarc, postfix-policyd-spf-python, postgrey | ➖ | ➖ | ✅ |
+| [[25-listes-newsletters/01-listmonk-phplist\|Listmonk, phpList]], [[25-listes-newsletters/02-mautic\|Mautic]], [[25-listes-newsletters/03-sympa\|Sympa]], [[06-mailman/04-mailman2-migration\|Mailman 2 et migration]] | binaire, Docker, PHP, sympa | ➖ (Docker) | ➖ (Docker) | ✅ |
+| [[26-clients-messagerie/01-thunderbird\|Thunderbird]], [[26-clients-messagerie/02-evolution-kmail-claws\|Evolution, KMail, Claws Mail]], [[26-clients-messagerie/03-davx5-sogo-connector\|DAVx5, SOGo Connector]] | thunderbird, evolution, kmail, claws-mail | Thunderbird, Claws Mail | Thunderbird | ✅ |
+| [[27-courrier-terminal/01-mutt-neomutt-aerc\|Mutt, NeoMutt, aerc]], [[27-courrier-terminal/02-fetchmail-getmail-offlineimap\|fetchmail, getmail6, OfflineIMAP]] | mutt, neomutt, aerc, fetchmail, getmail6, offlineimap3 | ➖ (WSL) | neomutt, aerc (brew) | ✅ |
 
 ## Bases de données
 
@@ -254,6 +306,10 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[05-mosquitto/01-presentation-configuration\|Mosquitto (MQTT)]] | mosquitto | Eclipse Mosquitto | mosquitto | ✅ |
 | [[06-emqx/01-presentation-installation\|EMQX (MQTT)]] | emqx | ➖ (Docker) | emqx | ✅ |
 | [[07-msmq/01-presentation-exploitation\|Message Queuing (MSMQ)]] | ➖ | MSMQ | ➖ | ✅ |
+| [[08-activemq-rocketmq-pulsar/01-activemq-classic-artemis\|ActiveMQ Classic, Artemis]], [[08-activemq-rocketmq-pulsar/02-rocketmq-pulsar\|RocketMQ, Pulsar]] | archives Apache, Docker, Helm | archives (Java) | archives, Homebrew | ✅ |
+| [[09-nats-nsq-zeromq-redpanda/01-nats\|NATS, JetStream]], [[09-nats-nsq-zeromq-redpanda/02-nsq-zeromq\|NSQ, ZeroMQ]], [[09-nats-nsq-zeromq-redpanda/03-redpanda\|Redpanda]] | binaires, paquets, Docker | binaires, bibliothèques | Homebrew, Docker | ✅ |
+| [[10-courtiers-mqtt/01-vernemq\|VerneMQ]], [[10-courtiers-mqtt/02-nanomq-hivemq\|NanoMQ, HiveMQ CE]] | paquets, Docker | Docker, archive Java | Docker | ✅ |
+| [[11-files-de-taches/01-beanstalkd-gearman\|Beanstalkd, Gearman]], [[11-files-de-taches/02-celery-dramatiq-rq\|Celery, Dramatiq, RQ]], [[11-files-de-taches/03-bullmq-pg-boss-graphile\|BullMQ, pg-boss, Graphile Worker]] | paquets, pip, npm | pip, npm | Homebrew, pip, npm | ✅ |
 
 ## Conteneurs & virtualisation
 
@@ -364,6 +420,15 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[04-icecast/01-installation-configuration\|Icecast]], [[05-nginx-rtmp/01-diffusion-direct\|Nginx RTMP]] | icecast2, libnginx-mod-rtmp | Icecast | icecast | ✅ |
 | [[06-bittorrent/01-transmission\|Transmission]], [[06-bittorrent/02-qbittorrent\|qBittorrent]], [[06-bittorrent/03-deluge\|Deluge]] | transmission-daemon, qbittorrent-nox, deluged | Transmission, qBittorrent, Deluge | transmission, qbittorrent, deluge | ✅ |
 | [[07-serveurs-jeux/01-minecraft\|Minecraft]], [[07-serveurs-jeux/02-terraria\|Terraria]] | Java + Paper, serveur dédié | serveurs dédiés | minecraft-server, terraria-server | ✅ |
+| [[08-serveurs-musique/02-ampache\|Ampache]], [[08-serveurs-musique/03-lyrion-music-server\|Lyrion Music Server]], [[08-serveurs-musique/04-mopidy\|Mopidy]], [[08-serveurs-musique/05-airsonic-advanced\|Airsonic-Advanced]], [[08-serveurs-musique/06-funkwhale\|Funkwhale]] | Docker, paquets, pip | Ampache, LMS, Airsonic (Java) | Docker, Homebrew | ✅ |
+| [[09-radio-video/01-azuracast-libretime\|AzuraCast, LibreTime]], [[09-radio-video/02-owncast\|Owncast]], [[09-radio-video/03-peertube\|PeerTube]], [[09-radio-video/04-mediacms\|MediaCMS]] | Docker, Docker Compose | Docker (WSL), Owncast | Docker, Owncast | ✅ |
+| [[10-serveurs-streaming/02-mediamtx\|MediaMTX]], [[10-serveurs-streaming/03-srs\|SRS]], [[10-serveurs-streaming/04-ovenmediaengine\|OvenMediaEngine]], [[10-serveurs-streaming/05-ant-media-red5\|Ant Media Server, Red5]], [[10-serveurs-streaming/06-restreamer\|Restreamer]] | binaire, Docker, script | MediaMTX, SRS (binaires), Docker | MediaMTX, Docker | ✅ |
+| [[11-webrtc/01-architecture\|architecture WebRTC]], [[11-webrtc/02-janus\|Janus]], [[11-webrtc/03-livekit\|LiveKit]], [[11-webrtc/04-mediasoup-pion-kurento\|mediasoup, Pion, Kurento]] | janus, binaires, Docker, npm, Go | LiveKit, mediasoup, Pion | LiveKit, mediasoup, Pion | ✅ |
+| [[12-traitement-video/01-ffmpeg\|FFmpeg]], [[12-traitement-video/02-gstreamer\|GStreamer]], [[12-traitement-video/03-handbrake\|HandBrake]] | ffmpeg, gstreamer1.0, Flatpak | winget | Homebrew | ✅ |
+| [[13-capture-lecture/01-obs-studio\|OBS Studio]], [[13-capture-lecture/02-vlc-mpv\|VLC, mpv]], [[13-capture-lecture/03-kodi\|Kodi]] | Flatpak, apt, LibreELEC | winget | Homebrew | ✅ |
+| [[14-packaging-transcodage-auto/01-shaka-packager-bento4\|Shaka Packager, Bento4]], [[14-packaging-transcodage-auto/02-tdarr-unmanic-fileflows\|Tdarr, Unmanic, FileFlows]] | binaires, Docker | binaires, Docker | Homebrew, Docker | ✅ |
+| [[15-gestion-medias-arr/01-pile-arr\|pile *arr]], [[15-gestion-medias-arr/02-sonarr-radarr-lidarr-readarr\|Sonarr, Radarr, Lidarr, Readarr]], [[15-gestion-medias-arr/03-prowlarr-jackett-bazarr\|Prowlarr, Jackett, Bazarr]] | Docker (LinuxServer), paquets | installateurs | Homebrew, Docker | ✅ |
+| [[16-telechargement/01-aria2\|aria2]], [[16-telechargement/02-yt-dlp\|yt-dlp]] | aria2, pip, pipx | winget | Homebrew | ✅ |
 
 ## Outils de l'administrateur
 
@@ -372,13 +437,18 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | Administration et accès | [[01-openssh/01-presentation\|OpenSSH]], [[01-acces-administration/01-putty\|PuTTY]], [[01-acces-administration/02-termius\|Termius]], [[01-acces-administration/03-winscp\|WinSCP]], [[10-windows-admin-center/01-presentation-installation\|Windows Admin Center]], [[08-portainer/01-presentation-installation\|Portainer]] | ✅ |
 | Réseau et diagnostic | [[02-reseau-diagnostic/01-wireshark-capture\|Wireshark]], [[02-reseau-diagnostic/03-nmap\|Nmap]], [[02-reseau-diagnostic/04-angry-ip-scanner\|Angry IP Scanner]], [[02-reseau-diagnostic/05-iperf3\|iPerf3]], [[02-reseau-diagnostic/06-dig-mtr-curl\|dig, mtr, curl]], [[02-reseau-diagnostic/07-postman-bruno\|Postman, Bruno]], [[02-reseau-diagnostic/08-greenbone-openvas\|Greenbone/OpenVAS]] | ✅ |
 | Cybersécurité | [[09-defender/01-antivirus-configuration\|Microsoft Defender]], [[03-cybersecurite/01-nessus\|Nessus]], [[03-cybersecurite/02-owasp-zap\|OWASP ZAP]], [[03-cybersecurite/03-burp-suite\|Burp Suite]], [[03-cybersecurite/04-john-hashcat\|John the Ripper, Hashcat]], [[08-lynis/01-installation-audit\|Lynis]], [[03-cybersecurite/05-owasp-dependency-check\|OWASP Dependency-Check]], [[03-cybersecurite/06-keepassxc-bitwarden\|KeePassXC, Bitwarden]], [[03-cybersecurite/07-ghidra\|Ghidra]] | ✅ |
-| Développement | [[04-developpement/01-vscode\|VS Code]], [[04-developpement/02-jetbrains-intellij-pycharm\|IntelliJ IDEA, PyCharm]], [[04-developpement/03-visual-studio\|Visual Studio]], [[04-developpement/04-eclipse\|Eclipse]], [[04-developpement/05-notepad-plus-plus\|Notepad++]], [[01-git/01-presentation-installation\|Git]], [[04-developpement/06-github-github-desktop\|GitHub, GitHub Desktop]], [[04-developpement/07-dbeaver\|DBeaver]], [[04-developpement/08-pgadmin-mysql-workbench\|pgAdmin, MySQL Workbench]], [[04-developpement/09-playwright\|Playwright]], [[04-developpement/10-uv\|uv]], [[06-nodejs/01-presentation-installation\|Node.js]] | ✅ |
+| Développement | [[04-developpement/01-vscode\|VS Code]], [[04-developpement/02-jetbrains-intellij-pycharm\|IntelliJ IDEA, PyCharm]], [[04-developpement/03-visual-studio\|Visual Studio]], [[04-developpement/04-eclipse\|Eclipse]], [[04-developpement/05-notepad-plus-plus\|Notepad++]], [[01-git/01-presentation-installation\|Git]], [[04-developpement/06-github-github-desktop\|GitHub, GitHub Desktop]], [[04-developpement/07-dbeaver\|DBeaver]], [[04-developpement/08-pgadmin-mysql-workbench\|pgAdmin, MySQL Workbench]], [[04-developpement/09-playwright\|Playwright]], [[04-developpement/10-uv\|uv]], [[04-developpement/11-vscodium\|VSCodium]], [[04-developpement/12-netbeans-qt-creator-code-blocks\|NetBeans, Qt Creator, Code::Blocks]], [[06-nodejs/01-presentation-installation\|Node.js]] | ✅ |
 | IA et productivité | [[05-ia-productivite/01-chatgpt\|ChatGPT]], [[05-ia-productivite/02-github-copilot\|GitHub Copilot]], [[05-ia-productivite/03-cursor\|Cursor]], [[05-ia-productivite/04-ollama-open-webui\|Ollama, Open WebUI]], [[05-ia-productivite/05-jupyterlab\|JupyterLab]], [[05-ia-productivite/06-n8n\|n8n]], [[05-ia-productivite/07-power-automate\|Power Automate]], [[05-ia-productivite/08-obsidian\|Obsidian]], [[05-ia-productivite/09-bookstack\|BookStack]] | ✅ |
 | Support et prise en main | [[06-support-parc/01-anydesk-teamviewer\|AnyDesk, TeamViewer]], [[06-support-parc/02-rustdesk\|RustDesk]], [[06-support-parc/03-meshcentral\|MeshCentral]], [[06-support-parc/04-glpi-installation\|GLPI]], [[06-support-parc/06-zammad\|Zammad]], [[06-support-parc/12-chatwoot\|Chatwoot]], [[06-support-parc/13-freescout\|FreeScout]], [[06-support-parc/14-osticket\|osTicket]], [[06-support-parc/15-itop\|iTop]], [[06-support-parc/16-otobo-znuny\|OTOBO et Znuny]], [[06-support-parc/17-request-tracker\|Request Tracker]], [[06-support-parc/18-uvdesk-faveo\|UVdesk et Faveo]], [[06-support-parc/07-ocs-inventory\|OCS Inventory NG]], [[06-support-parc/08-lansweeper\|Lansweeper]], [[06-support-parc/09-pdq-deploy\|PDQ Deploy]], [[06-support-parc/10-intune-inscription\|Intune]] | ✅ |
 | Disques et récupération | [[07-disques-recuperation/01-gparted\|GParted]], [[07-disques-recuperation/02-clonezilla\|Clonezilla]], [[07-disques-recuperation/03-testdisk-photorec\|TestDisk, PhotoRec]] | ✅ |
 | Gestionnaires de paquets | [[08-gestionnaires-paquets/01-homebrew-macports\|Homebrew, MacPorts]], [[08-gestionnaires-paquets/02-nix-guix\|Nix, Guix]], [[08-gestionnaires-paquets/03-flatpak-snap-appimage\|Flatpak, Snap, AppImage]], [[08-gestionnaires-paquets/04-equivalences-distributions\|équivalences apt, dnf, zypper, pacman, apk, Portage]] | ✅ |
 | Init et processus | [[09-init-processus/01-systemd\|systemd]], [[09-init-processus/02-openrc-runit-s6\|OpenRC, runit, s6]], [[09-init-processus/03-supervisor-monit-circus\|Supervisor, Monit, Circus]], [[09-init-processus/04-pm2-forever\|PM2, forever]] | ✅ |
 | Shells et terminal | [[10-shells-terminal/01-tmux-screen-zellij\|tmux, Screen, Zellij]], [[10-shells-terminal/02-shells-bash-zsh-fish-nushell\|Bash, Zsh, fish, Nushell, Starship, Oh My Zsh]], [[10-shells-terminal/03-dotfiles-chezmoi-stow\|chezmoi, GNU Stow]] | ✅ |
+| Instantanés et sauvegarde du poste | [[11-sauvegarde-poste/01-timeshift-snapper\|Timeshift, Snapper]], [[11-sauvegarde-poste/02-back-in-time-deja-dup\|Back In Time, Déjà Dup]] | ✅ |
+| Partage entre appareils | [[12-partage-appareils/01-kde-connect-localsend\|KDE Connect, LocalSend]], [[12-partage-appareils/02-barrier-input-leap-synergy\|Barrier, Input Leap, Synergy]] | ✅ |
+| Environnements de bureau | [[13-environnements-bureau/01-panorama-choix\|choisir un bureau, Wayland ou X11]], [[13-environnements-bureau/02-gnome-kde-plasma\|GNOME, KDE Plasma]], [[13-environnements-bureau/03-xfce-mate-cinnamon-lxqt-cosmic\|XFCE, MATE, Cinnamon, LXQt, COSMIC]] | ✅ |
+| Terminaux graphiques | [[14-terminaux-graphiques/01-alacritty-kitty-wezterm-ghostty\|Alacritty, Kitty, WezTerm, Ghostty]], [[14-terminaux-graphiques/02-xfce-terminal\|Xfce Terminal]] | ✅ |
+| Éditeurs de texte | [[15-editeurs-texte/01-vim-neovim\|Vim, Neovim]], [[15-editeurs-texte/02-emacs\|GNU Emacs]], [[15-editeurs-texte/03-kate-geany\|Kate, Geany]] | ✅ |
 
 ## Équipements réseau par constructeur
 
@@ -469,3 +539,41 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | Référence | Linux | Windows | macOS | État |
 | --- | --- | --- | --- | --- |
 | [[27-commandes/01-presentation\|Référence des commandes]] : 350 commandes Bash, 252 PowerShell, 307 macOS, une page par commande | Bash | PowerShell | zsh | ✅ |
+
+## Data & analytique
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[28-data-analytique/01-traitement-flux-lots/01-apache-spark\|Apache Spark]], [[28-data-analytique/01-traitement-flux-lots/02-apache-flink\|Apache Flink]], [[28-data-analytique/01-traitement-flux-lots/03-beam-samza-storm\|Beam, Samza, Storm]] | archives, pip, Kubernetes | archives (Java), WSL | archives, Homebrew | ✅ |
+| [[28-data-analytique/02-integration-donnees/01-apache-nifi\|Apache NiFi]], [[28-data-analytique/02-integration-donnees/02-seatunnel-airbyte\|SeaTunnel, Airbyte]], [[28-data-analytique/02-integration-donnees/03-meltano-singer\|Meltano, Singer]] | archives, Docker, abctl, pipx | archives, Docker, pipx | archives, Docker, pipx | ✅ |
+| [[28-data-analytique/03-cdc-connecteurs/01-debezium-kafka-connect\|Debezium, Kafka Connect]], [[28-data-analytique/03-cdc-connecteurs/02-benthos-flink-cdc\|Redpanda Connect, Flink CDC]] | archives, conteneurs, rpk | conteneurs | conteneurs, Homebrew (rpk) | ✅ |
+| [[28-data-analytique/04-lac-donnees/01-iceberg-delta-hudi\|Iceberg, Delta Lake, Hudi]], [[28-data-analytique/04-lac-donnees/02-nessie-lakefs\|Nessie, lakeFS]] | bibliothèques Spark/Flink, pip, Docker | pip, Docker | pip, Docker, Homebrew (lakectl) | ✅ |
+| [[28-data-analytique/05-catalogues-metadonnees/01-openmetadata-datahub\|OpenMetadata, DataHub]], [[28-data-analytique/05-catalogues-metadonnees/02-amundsen-atlas\|Amundsen, Apache Atlas]] | Docker, Helm, pip, archives | Docker, pip | Docker, pip | ✅ |
+| [[28-data-analytique/06-transformation/01-dbt-sqlmesh\|dbt Core, SQLMesh]], [[28-data-analytique/06-transformation/02-polars-arrow\|Polars, Apache Arrow]] | pip | pip | pip, Homebrew | ✅ |
+| [[28-data-analytique/07-science-donnees/01-jupyterhub\|JupyterHub]], [[28-data-analytique/07-science-donnees/02-mlflow\|MLflow]], [[28-data-analytique/07-science-donnees/03-dvc-pachyderm\|DVC, Pachyderm]] | TLJH, Helm, pip | pip, Docker | pip, Homebrew (DVC) | ✅ |
+
+## IA & machine learning
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[29-ia-machine-learning/01-inference-locale/01-llama-cpp\|llama.cpp]], [[29-ia-machine-learning/01-inference-locale/02-koboldcpp-localai\|KoboldCpp, LocalAI]] | binaires, CMake, Docker | binaires (CUDA, Vulkan) | Homebrew, Metal | ✅ |
+| [[29-ia-machine-learning/02-serveurs-inference/01-vllm-tgi\|vLLM, TGI]], [[29-ia-machine-learning/02-serveurs-inference/02-transformers\|Transformers]] | pip, Docker (GPU) | WSL, pip (Transformers) | pip (Transformers, MPS) | ✅ |
+| [[29-ia-machine-learning/03-interfaces-chat/01-librechat-anythingllm\|LibreChat, AnythingLLM]], [[29-ia-machine-learning/03-interfaces-chat/02-text-generation-webui-sillytavern\|text-generation-webui, SillyTavern]] | Docker, scripts, Node.js | Docker, scripts, application | Docker, scripts, application | ✅ |
+| [[29-ia-machine-learning/04-applications-locales/01-gpt4all-jan\|GPT4All, Jan]], [[29-ia-machine-learning/04-applications-locales/02-privategpt-khoj\|PrivateGPT, Khoj]] | .deb, Flatpak, Docker, Poetry | installateurs, Docker | .dmg, Docker | ✅ |
+| [[29-ia-machine-learning/05-constructeurs-applications/01-dify\|Dify]], [[29-ia-machine-learning/05-constructeurs-applications/02-flowise-langflow\|Flowise, Langflow]] | Docker Compose, npx, uv | Docker, npx, uv | Docker, npx, uv | ✅ |
+| [[29-ia-machine-learning/06-frameworks-rag/01-langchain-llamaindex-haystack\|LangChain, LlamaIndex, Haystack]], [[29-ia-machine-learning/06-frameworks-rag/02-ragflow-quivr\|RAGFlow, Quivr]] | pip, Docker Compose | pip, Docker | pip, Docker | ✅ |
+| [[29-ia-machine-learning/07-generation-images/01-comfyui\|ComfyUI]], [[29-ia-machine-learning/07-generation-images/02-automatic1111-invokeai-fooocus\|AUTOMATIC1111, InvokeAI, Fooocus]] | git + venv, Docker | portable, lanceurs | application, git + venv (MPS) | ✅ |
+| [[29-ia-machine-learning/08-frameworks-ml/01-pytorch-tensorflow-jax\|PyTorch, TensorFlow, JAX]], [[29-ia-machine-learning/08-frameworks-ml/02-opencv\|OpenCV]] | pip (CUDA, ROCm), apt | pip (TensorFlow GPU via WSL2) | pip (MPS, Metal) | ✅ |
+| [[29-ia-machine-learning/09-ml-classique-inference/01-scikit-learn-boosting\|scikit-learn, XGBoost, LightGBM, CatBoost]], [[29-ia-machine-learning/09-ml-classique-inference/02-onnx-runtime-openvino\|ONNX Runtime, OpenVINO]] | pip, apt | pip (DirectML) | pip (CoreML) | ✅ |
+| [[29-ia-machine-learning/10-mlops-serving/01-bentoml-kserve-seldon\|BentoML, KServe, Seldon Core]], [[29-ia-machine-learning/10-mlops-serving/02-ray-kubeflow\|Ray, Kubeflow]] | pip, Kubernetes, Helm | pip (BentoML, Ray) | pip (BentoML, Ray) | ✅ |
+| [[29-ia-machine-learning/11-experiences-annotation/01-clearml-aim\|ClearML, Aim]], [[29-ia-machine-learning/11-experiences-annotation/02-label-studio-cvat-fiftyone\|Label Studio, CVAT, FiftyOne]] | Docker Compose, pip | Docker, pip | Docker, pip | ✅ |
+| [[29-ia-machine-learning/12-audio-voix/01-whisper\|Whisper, whisper.cpp, faster-whisper]], [[29-ia-machine-learning/12-audio-voix/02-synthese-vocale\|Piper, Coqui TTS, Kokoro, Mimic 3, RVC]] | pip, CMake, Docker | pip, binaires | pip, Homebrew, Metal | ✅ |
+
+## Documentation, GED & connaissance
+
+| Service | Linux | Windows | macOS | État |
+| --- | --- | --- | --- | --- |
+| [[32-documentation-ged/01-ged-legere/01-paperless-ngx\|Paperless-ngx]], [[32-documentation-ged/01-ged-legere/02-mayan-teedy-docspell\|Mayan EDMS, Teedy, Docspell]] | Docker Compose | Docker | Docker | ✅ |
+| [[32-documentation-ged/02-ged-entreprise/01-openkm-logicaldoc-seeddms\|OpenKM, LogicalDOC, SeedDMS]] | Tomcat (Java), Apache + PHP | installateurs (Java), PHP | ➖ | ✅ |
+| [[32-documentation-ged/03-signature-pdf/01-documenso-opensign-libresign\|Documenso, OpenSign, LibreSign]], [[32-documentation-ged/03-signature-pdf/02-stirling-pdf-gotenberg\|Stirling-PDF, Gotenberg]] | Docker, Nextcloud (occ) | Docker | Docker | ✅ |
+| [[32-documentation-ged/04-bureautique/01-onlyoffice-collabora\|ONLYOFFICE Docs, Collabora Online]], [[32-documentation-ged/04-bureautique/02-libreoffice-openoffice\|LibreOffice, OpenOffice]] | Docker, apt, dnf, Flatpak | Docker (serveurs), MSI, winget | Homebrew, .dmg | ✅ |

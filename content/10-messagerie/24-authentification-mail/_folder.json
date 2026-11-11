@@ -1,0 +1,1 @@
+{ "title": "DKIM, DMARC, ARC, SPF et greylisting", "icon": "shield-check", "color": "#e11d48", "description": "Composants autonomes branchés sur Postfix : OpenDKIM (signature et vérification DKIM), OpenDMARC (politique DMARC et rapports), OpenARC (chaîne ARC), policyd-spf (vérification SPF) et Postgrey (greylisting)." }

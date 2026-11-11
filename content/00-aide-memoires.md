@@ -131,6 +131,11 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[10-messagerie/08-radicale/90-aide-memoire|Radicale (CalDAV / CardDAV)]]
 - [[10-messagerie/09-joplin-server/90-aide-memoire|Joplin Server]]
 - [[10-messagerie/10-smtp-windows/90-aide-memoire|Serveur SMTP Windows]]
+- [[10-messagerie/23-plateformes-envoi/90-aide-memoire|Haraka et Postal]]
+- [[10-messagerie/24-authentification-mail/90-aide-memoire|DKIM, DMARC, ARC, SPF et greylisting (OpenDKIM, OpenDMARC, OpenARC, policyd-spf, Postgrey)]]
+- [[10-messagerie/25-listes-newsletters/90-aide-memoire|Newsletters et listes de diffusion (Listmonk, phpList, Mautic, Sympa)]]
+- [[10-messagerie/26-clients-messagerie/90-aide-memoire|Clients de messagerie (Thunderbird, Evolution, KMail, Claws Mail, DAVx5)]]
+- [[10-messagerie/27-courrier-terminal/90-aide-memoire|Courrier en terminal (Mutt, NeoMutt, aerc, fetchmail, getmail6, OfflineIMAP)]]
 
 ## Bases de données
 
@@ -153,6 +158,10 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[12-recherche-messages/05-mosquitto/90-aide-memoire|Mosquitto (MQTT)]]
 - [[12-recherche-messages/06-emqx/90-aide-memoire|EMQX (MQTT)]]
 - [[12-recherche-messages/07-msmq/90-aide-memoire|Message Queuing (MSMQ)]]
+- [[12-recherche-messages/08-activemq-rocketmq-pulsar/90-aide-memoire|ActiveMQ, RocketMQ et Pulsar]]
+- [[12-recherche-messages/09-nats-nsq-zeromq-redpanda/90-aide-memoire|NATS, NSQ, ZeroMQ et Redpanda]]
+- [[12-recherche-messages/10-courtiers-mqtt/90-aide-memoire|VerneMQ, NanoMQ et HiveMQ CE]]
+- [[12-recherche-messages/11-files-de-taches/90-aide-memoire|Files de tâches]]
 
 ## Conteneurs & virtualisation
 
@@ -242,6 +251,15 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[20-multimedia-services/05-nginx-rtmp/90-aide-memoire|Nginx RTMP]]
 - [[20-multimedia-services/06-bittorrent/90-aide-memoire|Clients BitTorrent]]
 - [[20-multimedia-services/07-serveurs-jeux/90-aide-memoire|Serveurs de jeux]]
+- [[20-multimedia-services/08-serveurs-musique/90-aide-memoire|Serveurs de musique (Ampache, Lyrion, Mopidy, Airsonic, Funkwhale)]]
+- [[20-multimedia-services/09-radio-video/90-aide-memoire|Radio web et plates-formes vidéo (AzuraCast, LibreTime, Owncast, PeerTube, MediaCMS)]]
+- [[20-multimedia-services/10-serveurs-streaming/90-aide-memoire|Serveurs de streaming (MediaMTX, SRS, OvenMediaEngine, Ant Media, Red5, Restreamer)]]
+- [[20-multimedia-services/11-webrtc/90-aide-memoire|Serveurs WebRTC (Janus, LiveKit, mediasoup, Pion, Kurento)]]
+- [[20-multimedia-services/12-traitement-video/90-aide-memoire|Traitement vidéo (FFmpeg, GStreamer, HandBrake)]]
+- [[20-multimedia-services/13-capture-lecture/90-aide-memoire|Capture et lecture (OBS Studio, VLC, mpv, Kodi)]]
+- [[20-multimedia-services/14-packaging-transcodage-auto/90-aide-memoire|Empaquetage et transcodage automatisé (Shaka Packager, Bento4, Tdarr, Unmanic, FileFlows)]]
+- [[20-multimedia-services/15-gestion-medias-arr/90-aide-memoire|Gestion de médiathèque (Sonarr, Radarr, Lidarr, Readarr, Prowlarr, Jackett, Bazarr)]]
+- [[20-multimedia-services/16-telechargement/90-aide-memoire|Outils de téléchargement (aria2, yt-dlp)]]
 
 ## Outils de l'administrateur
 
@@ -250,6 +268,14 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[21-outils/05-ia-productivite/90-aide-memoire|IA et productivité]]
 - [[21-outils/06-support-parc/90-aide-memoire|Support et gestion de parc]]
 - [[21-outils/07-disques-recuperation/90-aide-memoire|Disques et récupération]]
+- [[21-outils/08-gestionnaires-paquets/90-aide-memoire|Gestionnaires de paquets]]
+- [[21-outils/09-init-processus/90-aide-memoire|Init et supervision de processus]]
+- [[21-outils/10-shells-terminal/90-aide-memoire|Shells, multiplexeurs et dotfiles]]
+- [[21-outils/11-sauvegarde-poste/90-aide-memoire|Instantanés et sauvegarde du poste]]
+- [[21-outils/12-partage-appareils/90-aide-memoire|Partage entre appareils]]
+- [[21-outils/13-environnements-bureau/90-aide-memoire|Environnements de bureau]]
+- [[21-outils/14-terminaux-graphiques/90-aide-memoire|Terminaux graphiques]]
+- [[21-outils/15-editeurs-texte/90-aide-memoire|Éditeurs de texte]]
 
 ## Équipements réseau par constructeur
 
@@ -296,3 +322,35 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[23-telephonie-ip/14-softphones/90-aide-memoire|Softphones]]
 - [[23-telephonie-ip/15-diagnostic-voip/90-aide-memoire|Diagnostic VoIP]]
 - [[23-telephonie-ip/16-visioconference/90-aide-memoire|Visioconférence]]
+
+## Data & analytique
+
+- [[28-data-analytique/01-traitement-flux-lots/90-aide-memoire|Flink, Spark, Beam, Samza et Storm]]
+- [[28-data-analytique/02-integration-donnees/90-aide-memoire|NiFi, SeaTunnel, Airbyte, Meltano et Singer]]
+- [[28-data-analytique/03-cdc-connecteurs/90-aide-memoire|Debezium, Kafka Connect, Redpanda Connect et Flink CDC]]
+- [[28-data-analytique/04-lac-donnees/90-aide-memoire|Iceberg, Delta Lake, Hudi, Nessie et lakeFS]]
+- [[28-data-analytique/05-catalogues-metadonnees/90-aide-memoire|Catalogues de données]]
+- [[28-data-analytique/06-transformation/90-aide-memoire|dbt, SQLMesh, Polars et Arrow]]
+- [[28-data-analytique/07-science-donnees/90-aide-memoire|JupyterHub, MLflow, DVC et Pachyderm]]
+
+## IA & machine learning
+
+- [[29-ia-machine-learning/01-inference-locale/90-aide-memoire|llama.cpp, KoboldCpp et LocalAI]]
+- [[29-ia-machine-learning/02-serveurs-inference/90-aide-memoire|vLLM, TGI et Transformers]]
+- [[29-ia-machine-learning/03-interfaces-chat/90-aide-memoire|Interfaces de chat]]
+- [[29-ia-machine-learning/04-applications-locales/90-aide-memoire|GPT4All, Jan, PrivateGPT et Khoj]]
+- [[29-ia-machine-learning/05-constructeurs-applications/90-aide-memoire|Dify, Flowise et Langflow]]
+- [[29-ia-machine-learning/06-frameworks-rag/90-aide-memoire|RAG (LangChain, LlamaIndex, Haystack, RAGFlow, Quivr)]]
+- [[29-ia-machine-learning/07-generation-images/90-aide-memoire|Génération d'images]]
+- [[29-ia-machine-learning/08-frameworks-ml/90-aide-memoire|PyTorch, TensorFlow, JAX et OpenCV]]
+- [[29-ia-machine-learning/09-ml-classique-inference/90-aide-memoire|scikit-learn, boosting, ONNX Runtime et OpenVINO]]
+- [[29-ia-machine-learning/10-mlops-serving/90-aide-memoire|BentoML, KServe, Seldon, Ray et Kubeflow]]
+- [[29-ia-machine-learning/11-experiences-annotation/90-aide-memoire|ClearML, Aim, Label Studio, CVAT et FiftyOne]]
+- [[29-ia-machine-learning/12-audio-voix/90-aide-memoire|Whisper et synthèse vocale]]
+
+## Documentation, GED & connaissance
+
+- [[32-documentation-ged/01-ged-legere/90-aide-memoire|Paperless-ngx, Mayan EDMS, Teedy et Docspell]]
+- [[32-documentation-ged/02-ged-entreprise/90-aide-memoire|OpenKM, LogicalDOC et SeedDMS]]
+- [[32-documentation-ged/03-signature-pdf/90-aide-memoire|Signature électronique et outils PDF]]
+- [[32-documentation-ged/04-bureautique/90-aide-memoire|Bureautique]]

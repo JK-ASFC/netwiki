@@ -1,0 +1,1 @@
+{ "title": "llama.cpp, KoboldCpp et LocalAI", "icon": "cpu", "color": "#ec4899", "description": "Exécuter des LLM sur CPU ou GPU grand public : llama.cpp (moteur et format GGUF), KoboldCpp (exécutable tout-en-un) et LocalAI (API compatible OpenAI multi-moteurs)." }

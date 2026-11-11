@@ -1,0 +1,1 @@
+{"title": "Traitement et transcodage vidéo", "icon": "film", "color": "#a855f7", "description": "Convertir, découper, transcoder et diffuser des fichiers et flux audio et vidéo : FFmpeg, GStreamer et HandBrake, accélération matérielle (VAAPI, NVENC, Quick Sync)."}

@@ -1,0 +1,1 @@
+{ "title": "dbt, SQLMesh, Polars et Arrow", "icon": "table-2", "color": "#0ea5e9", "description": "Transformer et manipuler les données : modèles SQL versionnés et testés (dbt Core, SQLMesh), DataFrames rapides (Polars) et format colonnaire en mémoire (Apache Arrow)." }
