@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 1039 | 4 | 77 (6 %) |
+| 1311 | 191 (15 %) | 1041 | 4 | 75 (6 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1312,11 +1312,11 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Scrypted | Passerelle caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 | go2rtc | Relais flux caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 
-## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 60/62
+## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 62/62
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
-| Insomnia (license check) | Client API | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| Insomnia (license check) | Client API | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
 | Bruno | Client API | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/07-postman-bruno` |
 | Hoppscotch | Client API web | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
 | HTTPie | Client HTTP | Windows, Linux, macOS | 🆕 fait (lot 162) | `30-developpement-api/04-clients-http` |
@@ -1352,7 +1352,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | JUnit | Tests Java | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
 | TestNG | Tests Java | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
 | NUnit | Tests .NET | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
-| xUnit.net | Tests .NET | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| xUnit.net | Tests .NET | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
 | MSTest | Tests .NET | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
 | Cucumber | Tests BDD | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
 | Behave | Tests BDD Python | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
