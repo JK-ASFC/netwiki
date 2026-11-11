@@ -182,6 +182,9 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 166 | Catalogue — micro-tests de charge : Apache Bench, wrk2, Autocannon, oha | ✅ |
 | 167 | Catalogue — tests navigateur : Selenium, Cypress, WebdriverIO, Puppeteer, Robot Framework | ✅ |
 | 168 | Catalogue — tests unitaires : pytest, JUnit, TestNG, NUnit, xUnit.net, MSTest | ✅ |
+| 169 | Catalogue — BDD et tests Go/Rust : Cucumber, Behave, Ginkgo, go test, cargo test | ✅ |
+| 170 | Catalogue — tests JavaScript : Vitest, Jest, Mocha, AVA | ✅ |
+| 171 | Catalogue — tests PHP et Ruby : PHPUnit, Pest, RSpec, Minitest | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -650,6 +653,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[30-developpement-api/08-tests-charge/01-ab-wrk2-autocannon-oha\|Apache Bench, wrk2, Autocannon, oha]] | paquets, npm, binaires | npm, binaires | Homebrew, npm | ✅ |
 | [[30-developpement-api/09-tests-navigateur/01-selenium-cypress-webdriverio\|Selenium, Cypress, WebdriverIO, Puppeteer, Robot Framework]] | pip, npm, Docker | pip, npm | pip, npm | ✅ |
 | [[30-developpement-api/10-tests-unitaires/01-pytest-junit-nunit\|pytest, JUnit, TestNG, NUnit, xUnit.net, MSTest]] | pip, Maven, Gradle, dotnet | pip, Maven, dotnet | pip, Maven, dotnet | ✅ |
+| [[30-developpement-api/12-tests-langages/01-bdd-gotest-cargo\|Cucumber, Behave, Ginkgo, go test, cargo test]], [[30-developpement-api/12-tests-langages/02-phpunit-pest-rspec\|PHPUnit, Pest, RSpec, Minitest]] | npm, pip, go, cargo | npm, pip, go, cargo | npm, pip, go, cargo | ✅ |
+| [[30-developpement-api/11-tests-js/01-vitest-jest-mocha\|Vitest, Jest, Mocha, AVA]] | npm | npm | npm | ✅ |
 
 ## Services de plateforme & auto-hébergement
 

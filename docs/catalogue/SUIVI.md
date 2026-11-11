@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 1015 | 4 | 101 (8 %) |
+| 1311 | 191 (15 %) | 1028 | 4 | 88 (7 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1312,7 +1312,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Scrypted | Passerelle caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 | go2rtc | Relais flux caméra | Windows, Linux, macOS | 🆕 fait (lot 161) | `33-materiel-iot/08-videosurveillance` |
 
-## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 36/62
+## 24. OUTILS DE DEVELOPPEMENT, API ET TESTS — 49/62
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1354,19 +1354,19 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | NUnit | Tests .NET | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
 | xUnit.net | Tests .NET | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
 | MSTest | Tests .NET | Windows, Linux, macOS | 🆕 fait (lot 168) | `30-developpement-api/10-tests-unitaires` |
-| Cucumber | Tests BDD | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Behave | Tests BDD Python | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Ginkgo | Tests Go | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Go test | Tests Go | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| cargo test | Tests Rust | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Vitest | Tests JavaScript | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Jest | Tests JavaScript | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Mocha | Tests JavaScript | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| AVA | Tests JavaScript | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| PHPUnit | Tests PHP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Pest PHP | Tests PHP | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Rspec | Tests Ruby | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
-| Minitest | Tests Ruby | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
+| Cucumber | Tests BDD | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
+| Behave | Tests BDD Python | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
+| Ginkgo | Tests Go | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
+| Go test | Tests Go | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
+| cargo test | Tests Rust | Windows, Linux, macOS | 🆕 fait (lot 169) | `30-developpement-api/12-tests-langages` |
+| Vitest | Tests JavaScript | Windows, Linux, macOS | 🆕 fait (lot 170) | `30-developpement-api/11-tests-js` |
+| Jest | Tests JavaScript | Windows, Linux, macOS | 🆕 fait (lot 170) | `30-developpement-api/11-tests-js` |
+| Mocha | Tests JavaScript | Windows, Linux, macOS | 🆕 fait (lot 170) | `30-developpement-api/11-tests-js` |
+| AVA | Tests JavaScript | Windows, Linux, macOS | 🆕 fait (lot 170) | `30-developpement-api/11-tests-js` |
+| PHPUnit | Tests PHP | Windows, Linux, macOS | 🆕 fait (lot 171) | `30-developpement-api/12-tests-langages` |
+| Pest PHP | Tests PHP | Windows, Linux, macOS | 🆕 fait (lot 171) | `30-developpement-api/12-tests-langages` |
+| Rspec | Tests Ruby | Windows, Linux, macOS | 🆕 fait (lot 171) | `30-developpement-api/12-tests-langages` |
+| Minitest | Tests Ruby | Windows, Linux, macOS | 🆕 fait (lot 171) | `30-developpement-api/12-tests-langages` |
 | Gitleaks | Détection secrets Git | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
 | detect-secrets | Détection secrets | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |
 | TruffleHog OSS | Détection secrets | Windows, Linux, macOS | ⏳ à faire | → `30-developpement-api` |

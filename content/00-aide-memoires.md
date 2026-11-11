@@ -390,6 +390,8 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[30-developpement-api/08-tests-charge/90-aide-memoire|Micro-tests de charge]]
 - [[30-developpement-api/09-tests-navigateur/90-aide-memoire|Tests navigateur]]
 - [[30-developpement-api/10-tests-unitaires/90-aide-memoire|Tests unitaires (Python, JVM, .NET)]]
+- [[30-developpement-api/12-tests-langages/90-aide-memoire|Tests BDD, Go, Rust, PHP et Ruby]]
+- [[30-developpement-api/11-tests-js/90-aide-memoire|Tests JavaScript]]
 
 ## Services de plateforme & auto-hébergement
 

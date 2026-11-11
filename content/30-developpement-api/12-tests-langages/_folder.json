@@ -1,0 +1,1 @@
+{ "title": "BDD, go test, cargo test, PHPUnit et RSpec", "icon": "flask-conical", "color": "#6366f1", "description": "Tests comportementaux (Cucumber, Behave, Ginkgo) et tests natifs des langages Go, Rust, PHP (PHPUnit, Pest) et Ruby (RSpec, Minitest)." }
