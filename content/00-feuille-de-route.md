@@ -156,6 +156,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 140 | Catalogue — recherche instantanée : Meilisearch, Typesense, Sonic | ✅ |
 | 141 | Catalogue — moteurs plein texte : Apache Solr, Manticore Search, ZincSearch, Tantivy | ✅ |
 | 142 | Catalogue — métamoteurs : SearXNG, Whoogle, 4get, LibreX | ✅ |
+| 143 | Catalogue — serveurs SSH légers : Dropbear, TinySSH | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -242,6 +243,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[08-rds/01-presentation-architecture\|Services Bureau à distance (Session Host, Gateway, Licensing, Broker, Web Access)]] | ➖ | RDS-* | ➖ | ✅ |
 | [[10-windows-admin-center/01-presentation-installation\|Windows Admin Center]], [[09-winrm/01-presentation-configuration\|WinRM]] | ➖ | WindowsAdminCenter, WinRM | ➖ | ✅ |
 | Serveur Telnet | ➖ | non disponible sur les versions modernes (remplacé par OpenSSH) | ➖ | ➖ |
+| [[14-dropbear-tinyssh/01-dropbear-tinyssh\|Dropbear, TinySSH]] | dropbear-bin, dropbear-initramfs, tinysshd | ➖ | ➖ | ✅ |
 
 ## Fichiers, partage & stockage
 

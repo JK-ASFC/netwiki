@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 913 | 4 | 203 (15 %) |
+| 1311 | 191 (15 %) | 915 | 4 | 201 (15 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1211,13 +1211,13 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | 4get | Métamoteur recherche | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 | LibreX | Métamoteur recherche | Linux | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 
-## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 4/50
+## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 6/50
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | OpenSSH | SSH client/serveur | Windows, Linux, macOS | ✅ existant | `08-acces-distant-vpn/01-openssh` |
-| Dropbear SSH | Serveur SSH léger | Linux, embedded | ⏳ à faire | → `08-acces-distant-vpn` |
-| TinySSH | Serveur SSH minimal | Linux | ⏳ à faire | → `08-acces-distant-vpn` |
+| Dropbear SSH | Serveur SSH léger | Linux, embedded | 🆕 fait (lot 143) | `08-acces-distant-vpn/14-dropbear-tinyssh` |
+| TinySSH | Serveur SSH minimal | Linux | 🆕 fait (lot 143) | `08-acces-distant-vpn/14-dropbear-tinyssh` |
 | Mosh | Terminal distant | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
 | Eternal Terminal | Terminal distant | Linux, macOS | ⏳ à faire | → `21-outils` |
 | tmate | Partage terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |

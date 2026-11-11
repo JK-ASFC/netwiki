@@ -1,0 +1,1 @@
+{ "title": "Dropbear et TinySSH", "icon": "terminal-square", "color": "#0ea5e9", "description": "Serveurs SSH légers pour routeurs, systèmes embarqués, initramfs (déverrouillage LUKS à distance) et serveurs minimalistes : Dropbear et TinySSH." }

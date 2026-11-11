@@ -95,6 +95,7 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[08-acces-distant-vpn/08-rds/90-aide-memoire|Services Bureau à distance (RDS)]]
 - [[08-acces-distant-vpn/09-winrm/90-aide-memoire|WinRM et PowerShell à distance]]
 - [[08-acces-distant-vpn/10-windows-admin-center/90-aide-memoire|Windows Admin Center]]
+- [[08-acces-distant-vpn/14-dropbear-tinyssh/90-aide-memoire|Dropbear et TinySSH]]
 
 ## Fichiers, partage & stockage
 
