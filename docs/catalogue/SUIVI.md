@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 750 | 4 | 366 (28 %) |
+| 1311 | 191 (15 %) | 762 | 4 | 354 (27 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1000,7 +1000,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | aria2 | Téléchargement multi-protocole | Windows, Linux, macOS | 🆕 fait (lot 102) | `20-multimedia-services/16-telechargement` |
 | yt-dlp | Téléchargement médias | Windows, Linux, macOS | 🆕 fait (lot 102) | `20-multimedia-services/16-telechargement` |
 
-## 18. DNS WEB, EMAIL, ANTI-SPAM ET OUTILS DE COMMUNICATION — 19/31
+## 18. DNS WEB, EMAIL, ANTI-SPAM ET OUTILS DE COMMUNICATION — 31/31
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1021,20 +1021,20 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Postgrey | Greylisting SMTP | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
 | policyd-spf | Validation SPF | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
 | OpenARC | Validation ARC | Linux | 🆕 fait (lot 105) | `10-messagerie/24-authentification-mail` |
-| SoGo Connector | Connecteur groupware | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
+| SoGo Connector | Connecteur groupware | Windows, Linux, macOS | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
 | Nextcloud Calendar | Calendrier | Linux | ✅ existant | `09-fichiers-partage/08-nextcloud` |
 | Nextcloud Contacts | Contacts | Linux | ✅ existant | `09-fichiers-partage/08-nextcloud` |
-| DAVx5 (client open source) | Synchronisation CalDAV/CardDAV | Android | ⏳ à faire | → `10-messagerie` |
-| Evolution | Client mail/groupware | Linux | ⏳ à faire | → `10-messagerie` |
-| Thunderbird | Client mail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| KMail | Client mail | Linux | ⏳ à faire | → `10-messagerie` |
-| Claws Mail | Client mail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Mutt | Client mail terminal | Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| NeoMutt | Client mail terminal | Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| aerc | Client mail terminal | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| getmail6 | Récupération mail | Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| Fetchmail | Récupération mail | Windows, Linux, macOS | ⏳ à faire | → `10-messagerie` |
-| OfflineIMAP | Synchronisation mail | Linux, macOS | ⏳ à faire | → `10-messagerie` |
+| DAVx5 (client open source) | Synchronisation CalDAV/CardDAV | Android | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
+| Evolution | Client mail/groupware | Linux | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
+| Thunderbird | Client mail | Windows, Linux, macOS | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
+| KMail | Client mail | Linux | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
+| Claws Mail | Client mail | Windows, Linux, macOS | 🆕 fait (lot 107) | `10-messagerie/26-clients-messagerie` |
+| Mutt | Client mail terminal | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
+| NeoMutt | Client mail terminal | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
+| aerc | Client mail terminal | Windows, Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
+| getmail6 | Récupération mail | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
+| Fetchmail | Récupération mail | Windows, Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
+| OfflineIMAP | Synchronisation mail | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 
 ## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 5/55
 

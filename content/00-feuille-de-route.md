@@ -120,6 +120,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 104 | Catalogue — serveurs SMTP de test : MailHog, smtp4dev | ✅ |
 | 105 | Catalogue — authentification et filtrage des e-mails : OpenDKIM, OpenDMARC, OpenARC, policyd-spf, Postgrey | ✅ |
 | 106 | Catalogue — newsletters et listes de diffusion : Listmonk, phpList, Mautic, Sympa, Mailman 2 (migration) | ✅ |
+| 107 | Catalogue — clients de messagerie et synchronisation : Thunderbird, Evolution, KMail, Claws Mail, SOGo Connector, DAVx5 | ✅ |
+| 108 | Catalogue — courrier en terminal et récupération : Mutt, NeoMutt, aerc, fetchmail, getmail6, OfflineIMAP | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -248,6 +250,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[01-postfix/10-postfixadmin\|PostfixAdmin]], [[23-plateformes-envoi/01-haraka\|Haraka]], [[23-plateformes-envoi/02-postal\|Postal]] | postfixadmin, npm, Docker | ➖ (Docker) | npm (Haraka), Docker | ✅ |
 | [[24-authentification-mail/01-opendkim-opendmarc-openarc\|OpenDKIM, OpenDMARC, OpenARC]], [[24-authentification-mail/02-policyd-spf-postgrey\|policyd-spf, Postgrey]] | opendkim, opendmarc, postfix-policyd-spf-python, postgrey | ➖ | ➖ | ✅ |
 | [[25-listes-newsletters/01-listmonk-phplist\|Listmonk, phpList]], [[25-listes-newsletters/02-mautic\|Mautic]], [[25-listes-newsletters/03-sympa\|Sympa]], [[06-mailman/04-mailman2-migration\|Mailman 2 et migration]] | binaire, Docker, PHP, sympa | ➖ (Docker) | ➖ (Docker) | ✅ |
+| [[26-clients-messagerie/01-thunderbird\|Thunderbird]], [[26-clients-messagerie/02-evolution-kmail-claws\|Evolution, KMail, Claws Mail]], [[26-clients-messagerie/03-davx5-sogo-connector\|DAVx5, SOGo Connector]] | thunderbird, evolution, kmail, claws-mail | Thunderbird, Claws Mail | Thunderbird | ✅ |
+| [[27-courrier-terminal/01-mutt-neomutt-aerc\|Mutt, NeoMutt, aerc]], [[27-courrier-terminal/02-fetchmail-getmail-offlineimap\|fetchmail, getmail6, OfflineIMAP]] | mutt, neomutt, aerc, fetchmail, getmail6, offlineimap3 | ➖ (WSL) | neomutt, aerc (brew) | ✅ |
 
 ## Bases de données
 

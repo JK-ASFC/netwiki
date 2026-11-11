@@ -134,6 +134,8 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[10-messagerie/23-plateformes-envoi/90-aide-memoire|Haraka et Postal]]
 - [[10-messagerie/24-authentification-mail/90-aide-memoire|DKIM, DMARC, ARC, SPF et greylisting (OpenDKIM, OpenDMARC, OpenARC, policyd-spf, Postgrey)]]
 - [[10-messagerie/25-listes-newsletters/90-aide-memoire|Newsletters et listes de diffusion (Listmonk, phpList, Mautic, Sympa)]]
+- [[10-messagerie/26-clients-messagerie/90-aide-memoire|Clients de messagerie (Thunderbird, Evolution, KMail, Claws Mail, DAVx5)]]
+- [[10-messagerie/27-courrier-terminal/90-aide-memoire|Courrier en terminal (Mutt, NeoMutt, aerc, fetchmail, getmail6, OfflineIMAP)]]
 
 ## Bases de données
 
