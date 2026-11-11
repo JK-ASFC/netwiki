@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 703 | 4 | 413 (32 %) |
+| 1311 | 191 (15 %) | 714 | 4 | 402 (31 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -946,7 +946,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Kate | Éditeur texte | Linux, Windows | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
 | Notepad++ | Éditeur texte | Windows | ✅ existant | `21-outils/04-developpement/05-notepad-plus-plus` |
 
-## 17. STREAMING, MEDIA, AUDIO, VIDEO ET TRANSCODAGE — 17/49
+## 17. STREAMING, MEDIA, AUDIO, VIDEO ET TRANSCODAGE — 28/49
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -963,16 +963,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Owncast | Streaming vidéo live | Windows, Linux, macOS | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
 | PeerTube | Plateforme vidéo | Linux | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
 | MediaCMS | Plateforme vidéo | Linux | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
-| Ant Media Community (license check) | Streaming vidéo | Linux | ⏳ à faire | → `20-multimedia-services` |
-| OvenMediaEngine | Streaming vidéo | Linux | ⏳ à faire | → `20-multimedia-services` |
-| SRS | Serveur streaming | Linux, Windows, macOS | ⏳ à faire | → `20-multimedia-services` |
+| Ant Media Community (license check) | Streaming vidéo | Linux | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
+| OvenMediaEngine | Streaming vidéo | Linux | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
+| SRS | Serveur streaming | Linux, Windows, macOS | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
 | Nginx RTMP Module | Streaming RTMP | Linux | ✅ existant | `20-multimedia-services/05-nginx-rtmp` |
-| Red5 Open Source | Serveur streaming | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Janus WebRTC Server | Serveur WebRTC | Linux | ⏳ à faire | → `20-multimedia-services` |
-| mediasoup | SFU WebRTC | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| LiveKit | Serveur WebRTC | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Pion WebRTC | Bibliothèque WebRTC | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Kurento | Serveur média WebRTC | Linux | ⏳ à faire | → `20-multimedia-services` |
+| Red5 Open Source | Serveur streaming | Windows, Linux, macOS | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
+| Janus WebRTC Server | Serveur WebRTC | Linux | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
+| mediasoup | SFU WebRTC | Windows, Linux, macOS | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
+| LiveKit | Serveur WebRTC | Windows, Linux, macOS | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
+| Pion WebRTC | Bibliothèque WebRTC | Windows, Linux, macOS | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
+| Kurento | Serveur média WebRTC | Linux | 🆕 fait (lot 97) | `20-multimedia-services/11-webrtc` |
 | FFmpeg | Traitement audio/vidéo | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
 | HandBrake | Transcodage vidéo | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
 | GStreamer | Framework multimédia | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
@@ -982,8 +982,8 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Kodi | Media center | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
 | Shaka Packager | Packaging vidéo | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
 | Bento4 | Packaging MP4 | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| MediaMTX | Serveur RTSP/RTMP/WebRTC | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Restreamer | Streaming et retransmission | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
+| MediaMTX | Serveur RTSP/RTMP/WebRTC | Windows, Linux, macOS | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
+| Restreamer | Streaming et retransmission | Windows, Linux, macOS | 🆕 fait (lot 96) | `20-multimedia-services/10-serveurs-streaming` |
 | Tdarr (community) | Automatisation transcodage | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
 | Unmanic | Automatisation médias | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
 | FileFlows | Traitement médias | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |

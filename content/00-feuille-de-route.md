@@ -109,6 +109,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 93 | Catalogue — IDE : VSCodium, Apache NetBeans, Qt Creator, Code::Blocks | ✅ |
 | 94 | Catalogue — serveurs de musique : Ampache, Lyrion Music Server, Mopidy, Airsonic-Advanced, Funkwhale | ✅ |
 | 95 | Catalogue — radio web et plates-formes vidéo : AzuraCast, LibreTime, Owncast, PeerTube, MediaCMS | ✅ |
+| 96 | Catalogue — serveurs de streaming vidéo : MediaMTX, SRS, OvenMediaEngine, Ant Media Server Community, Red5, Restreamer | ✅ |
+| 97 | Catalogue — WebRTC : Janus, LiveKit, mediasoup, Pion, Kurento | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -373,6 +375,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[07-serveurs-jeux/01-minecraft\|Minecraft]], [[07-serveurs-jeux/02-terraria\|Terraria]] | Java + Paper, serveur dédié | serveurs dédiés | minecraft-server, terraria-server | ✅ |
 | [[08-serveurs-musique/02-ampache\|Ampache]], [[08-serveurs-musique/03-lyrion-music-server\|Lyrion Music Server]], [[08-serveurs-musique/04-mopidy\|Mopidy]], [[08-serveurs-musique/05-airsonic-advanced\|Airsonic-Advanced]], [[08-serveurs-musique/06-funkwhale\|Funkwhale]] | Docker, paquets, pip | Ampache, LMS, Airsonic (Java) | Docker, Homebrew | ✅ |
 | [[09-radio-video/01-azuracast-libretime\|AzuraCast, LibreTime]], [[09-radio-video/02-owncast\|Owncast]], [[09-radio-video/03-peertube\|PeerTube]], [[09-radio-video/04-mediacms\|MediaCMS]] | Docker, Docker Compose | Docker (WSL), Owncast | Docker, Owncast | ✅ |
+| [[10-serveurs-streaming/02-mediamtx\|MediaMTX]], [[10-serveurs-streaming/03-srs\|SRS]], [[10-serveurs-streaming/04-ovenmediaengine\|OvenMediaEngine]], [[10-serveurs-streaming/05-ant-media-red5\|Ant Media Server, Red5]], [[10-serveurs-streaming/06-restreamer\|Restreamer]] | binaire, Docker, script | MediaMTX, SRS (binaires), Docker | MediaMTX, Docker | ✅ |
+| [[11-webrtc/01-architecture\|architecture WebRTC]], [[11-webrtc/02-janus\|Janus]], [[11-webrtc/03-livekit\|LiveKit]], [[11-webrtc/04-mediasoup-pion-kurento\|mediasoup, Pion, Kurento]] | janus, binaires, Docker, npm, Go | LiveKit, mediasoup, Pion | LiveKit, mediasoup, Pion | ✅ |
 
 ## Outils de l'administrateur
 

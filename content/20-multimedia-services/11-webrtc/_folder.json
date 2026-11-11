@@ -1,0 +1,1 @@
+{"title": "Serveurs WebRTC", "icon": "video", "color": "#a855f7", "description": "Architecture WebRTC (P2P, SFU, MCU, STUN/TURN) et serveurs médias pour la visio et le direct interactif : Janus, LiveKit, mediasoup, Pion et Kurento."}
