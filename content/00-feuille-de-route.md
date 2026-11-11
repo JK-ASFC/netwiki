@@ -107,6 +107,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 91 | Catalogue — terminaux graphiques : Xfce Terminal, Alacritty, WezTerm, Kitty, Ghostty | ✅ |
 | 92 | Catalogue — éditeurs de texte : Vim, Neovim, GNU Emacs, Kate, Geany | ✅ |
 | 93 | Catalogue — IDE : VSCodium, Apache NetBeans, Qt Creator, Code::Blocks | ✅ |
+| 94 | Catalogue — serveurs de musique : Ampache, Lyrion Music Server, Mopidy, Airsonic-Advanced, Funkwhale | ✅ |
+| 95 | Catalogue — radio web et plates-formes vidéo : AzuraCast, LibreTime, Owncast, PeerTube, MediaCMS | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -369,6 +371,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[04-icecast/01-installation-configuration\|Icecast]], [[05-nginx-rtmp/01-diffusion-direct\|Nginx RTMP]] | icecast2, libnginx-mod-rtmp | Icecast | icecast | ✅ |
 | [[06-bittorrent/01-transmission\|Transmission]], [[06-bittorrent/02-qbittorrent\|qBittorrent]], [[06-bittorrent/03-deluge\|Deluge]] | transmission-daemon, qbittorrent-nox, deluged | Transmission, qBittorrent, Deluge | transmission, qbittorrent, deluge | ✅ |
 | [[07-serveurs-jeux/01-minecraft\|Minecraft]], [[07-serveurs-jeux/02-terraria\|Terraria]] | Java + Paper, serveur dédié | serveurs dédiés | minecraft-server, terraria-server | ✅ |
+| [[08-serveurs-musique/02-ampache\|Ampache]], [[08-serveurs-musique/03-lyrion-music-server\|Lyrion Music Server]], [[08-serveurs-musique/04-mopidy\|Mopidy]], [[08-serveurs-musique/05-airsonic-advanced\|Airsonic-Advanced]], [[08-serveurs-musique/06-funkwhale\|Funkwhale]] | Docker, paquets, pip | Ampache, LMS, Airsonic (Java) | Docker, Homebrew | ✅ |
+| [[09-radio-video/01-azuracast-libretime\|AzuraCast, LibreTime]], [[09-radio-video/02-owncast\|Owncast]], [[09-radio-video/03-peertube\|PeerTube]], [[09-radio-video/04-mediacms\|MediaCMS]] | Docker, Docker Compose | Docker (WSL), Owncast | Docker, Owncast | ✅ |
 
 ## Outils de l'administrateur
 

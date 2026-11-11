@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 693 | 4 | 423 (32 %) |
+| 1311 | 191 (15 %) | 703 | 4 | 413 (32 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -946,23 +946,23 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Kate | Éditeur texte | Linux, Windows | 🆕 fait (lot 92) | `21-outils/15-editeurs-texte` |
 | Notepad++ | Éditeur texte | Windows | ✅ existant | `21-outils/04-developpement/05-notepad-plus-plus` |
 
-## 17. STREAMING, MEDIA, AUDIO, VIDEO ET TRANSCODAGE — 7/49
+## 17. STREAMING, MEDIA, AUDIO, VIDEO ET TRANSCODAGE — 17/49
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Jellyfin | Serveur média | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/01-jellyfin` |
 | Navidrome | Serveur musique | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/03-navidrome` |
-| Ampache | Serveur musique | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| LMS (Lyrion Music Server) | Serveur musique | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Mopidy | Serveur musique | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Airsonic-Advanced | Serveur musique | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| Funkwhale | Plateforme audio | Linux | ⏳ à faire | → `20-multimedia-services` |
-| AzuraCast | Radio web | Linux | ⏳ à faire | → `20-multimedia-services` |
-| LibreTime | Radio web | Linux | ⏳ à faire | → `20-multimedia-services` |
+| Ampache | Serveur musique | Windows, Linux, macOS | 🆕 fait (lot 94) | `20-multimedia-services/08-serveurs-musique` |
+| LMS (Lyrion Music Server) | Serveur musique | Windows, Linux, macOS | 🆕 fait (lot 94) | `20-multimedia-services/08-serveurs-musique` |
+| Mopidy | Serveur musique | Windows, Linux, macOS | 🆕 fait (lot 94) | `20-multimedia-services/08-serveurs-musique` |
+| Airsonic-Advanced | Serveur musique | Windows, Linux, macOS | 🆕 fait (lot 94) | `20-multimedia-services/08-serveurs-musique` |
+| Funkwhale | Plateforme audio | Linux | 🆕 fait (lot 94) | `20-multimedia-services/08-serveurs-musique` |
+| AzuraCast | Radio web | Linux | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
+| LibreTime | Radio web | Linux | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
 | Icecast | Streaming audio | Windows, Linux, macOS | ✅ existant | `20-multimedia-services/04-icecast` |
-| Owncast | Streaming vidéo live | Windows, Linux, macOS | ⏳ à faire | → `20-multimedia-services` |
-| PeerTube | Plateforme vidéo | Linux | ⏳ à faire | → `20-multimedia-services` |
-| MediaCMS | Plateforme vidéo | Linux | ⏳ à faire | → `20-multimedia-services` |
+| Owncast | Streaming vidéo live | Windows, Linux, macOS | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
+| PeerTube | Plateforme vidéo | Linux | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
+| MediaCMS | Plateforme vidéo | Linux | 🆕 fait (lot 95) | `20-multimedia-services/09-radio-video` |
 | Ant Media Community (license check) | Streaming vidéo | Linux | ⏳ à faire | → `20-multimedia-services` |
 | OvenMediaEngine | Streaming vidéo | Linux | ⏳ à faire | → `20-multimedia-services` |
 | SRS | Serveur streaming | Linux, Windows, macOS | ⏳ à faire | → `20-multimedia-services` |

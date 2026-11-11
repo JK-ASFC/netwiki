@@ -242,6 +242,8 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[20-multimedia-services/05-nginx-rtmp/90-aide-memoire|Nginx RTMP]]
 - [[20-multimedia-services/06-bittorrent/90-aide-memoire|Clients BitTorrent]]
 - [[20-multimedia-services/07-serveurs-jeux/90-aide-memoire|Serveurs de jeux]]
+- [[20-multimedia-services/08-serveurs-musique/90-aide-memoire|Serveurs de musique (Ampache, Lyrion, Mopidy, Airsonic, Funkwhale)]]
+- [[20-multimedia-services/09-radio-video/90-aide-memoire|Radio web et plates-formes vidéo (AzuraCast, LibreTime, Owncast, PeerTube, MediaCMS)]]
 
 ## Outils de l'administrateur
 
