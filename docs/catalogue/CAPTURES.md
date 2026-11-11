@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-441 capture(s) attendue(s) dans 120 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+458 capture(s) attendue(s) dans 123 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -884,6 +884,38 @@
 | `content/21-outils/06-support-parc/_assets/rt-scrips.png` | Administration d'une file, liste des scrips | `17-request-tracker.md` |
 | `content/21-outils/06-support-parc/_assets/uvdesk-tickets.png` | Liste des tickets UVdesk (espace agent) | `18-uvdesk-faveo.md` |
 | `content/21-outils/06-support-parc/_assets/faveo-tableau-de-bord.png` | Tableau de bord agent de Faveo | `18-uvdesk-faveo.md` |
+
+## 21-outils/11-snapshots-sauvegarde-poste
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/timeshift-assistant.png` | Assistant Timeshift, choix du type de snapshot et de la destination | `01-timeshift.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/timeshift-snapshots.png` | Fenêtre principale Timeshift avec la liste des snapshots | `01-timeshift.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/snapper-yast.png` | Module Snapper de YaST, liste des snapshots | `02-snapper.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/backintime-principal.png` | Fenêtre principale Back In Time avec les instantanés et les fichiers | `03-back-in-time.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/backintime-parametres.png` | Paramètres, onglet Inclure | `03-back-in-time.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/deja-dup-apercu.png` | Fenêtre Sauvegardes, vue d'ensemble | `04-deja-dup.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/deja-dup-stockage.png` | Choix de l'emplacement de stockage | `04-deja-dup.md` |
+
+## 21-outils/12-partage-appareils
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/21-outils/12-partage-appareils/_assets/kde-connect-appareils.png` | Page KDE Connect des Paramètres système avec un téléphone appairé | `01-kde-connect.md` |
+| `content/21-outils/12-partage-appareils/_assets/kde-connect-modules.png` | Liste des modules d'un appareil appairé | `01-kde-connect.md` |
+| `content/21-outils/12-partage-appareils/_assets/barrier-serveur.png` | Fenêtre principale en mode serveur | `02-barrier-input-leap-synergy.md` |
+| `content/21-outils/12-partage-appareils/_assets/barrier-grille-ecrans.png` | Configuration du serveur, grille des écrans | `02-barrier-input-leap-synergy.md` |
+| `content/21-outils/12-partage-appareils/_assets/localsend-envoyer.png` | Onglet Envoyer avec les appareils détectés | `03-localsend.md` |
+| `content/21-outils/12-partage-appareils/_assets/localsend-parametres.png` | Onglet Paramètres, alias et dossier de réception | `03-localsend.md` |
+
+## 21-outils/13-kde-plasma
+
+| Image à créer | Écran | Article |
+| --- | --- | --- |
+| `content/21-outils/13-kde-plasma/_assets/plasma-bureau.png` | Bureau Plasma 6 avec panneau et lanceur ouvert | `03-interface-graphique.md` |
+| `content/21-outils/13-kde-plasma/_assets/plasma-parametres-systeme.png` | Paramètres système, page Apparence | `03-interface-graphique.md` |
+| `content/21-outils/13-kde-plasma/_assets/plasma-mode-edition.png` | Mode édition du bureau avec le panneau de widgets | `03-interface-graphique.md` |
+| `content/21-outils/13-kde-plasma/_assets/plasma-discover.png` | Discover, page des mises à jour | `03-interface-graphique.md` |
 
 ## 22-constructeurs/29-openwrt-openwisp
 
