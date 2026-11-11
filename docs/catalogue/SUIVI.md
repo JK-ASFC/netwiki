@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 804 | 4 | 312 (24 %) |
+| 1311 | 191 (15 %) | 812 | 4 | 304 (23 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1036,7 +1036,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Fetchmail | Récupération mail | Windows, Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 | OfflineIMAP | Synchronisation mail | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 
-## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 47/55
+## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 55/55
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1085,16 +1085,16 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | OpenMetadata | Catalogue et gouvernance | Linux, Windows via conteneur | 🆕 fait (lot 117) | `28-data-analytique/05-catalogues-metadonnees` |
 | DataHub | Catalogue données | Linux | 🆕 fait (lot 117) | `28-data-analytique/05-catalogues-metadonnees` |
 | Amundsen | Catalogue données | Linux | 🆕 fait (lot 117) | `28-data-analytique/05-catalogues-metadonnees` |
-| dbt Core | Transformation SQL | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| SQLMesh | Transformation SQL | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Polars | DataFrame | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| Apache Arrow | Format et moteur colonne | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| JupyterHub | Plateforme notebooks | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
+| dbt Core | Transformation SQL | Windows, Linux, macOS | 🆕 fait (lot 118) | `28-data-analytique/06-transformation` |
+| SQLMesh | Transformation SQL | Windows, Linux, macOS | 🆕 fait (lot 118) | `28-data-analytique/06-transformation` |
+| Polars | DataFrame | Windows, Linux, macOS | 🆕 fait (lot 118) | `28-data-analytique/06-transformation` |
+| Apache Arrow | Format et moteur colonne | Windows, Linux, macOS | 🆕 fait (lot 118) | `28-data-analytique/06-transformation` |
+| JupyterHub | Plateforme notebooks | Windows, Linux, macOS | 🆕 fait (lot 119) | `28-data-analytique/07-science-donnees` |
 | JupyterLab | Notebooks | Windows, Linux, macOS | ✅ existant | `21-outils/05-ia-productivite/05-jupyterlab` |
-| MLflow | Cycle de vie ML | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| DVC | Versionnement données | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
+| MLflow | Cycle de vie ML | Windows, Linux, macOS | 🆕 fait (lot 119) | `28-data-analytique/07-science-donnees` |
+| DVC | Versionnement données | Windows, Linux, macOS | 🆕 fait (lot 119) | `28-data-analytique/07-science-donnees` |
 | LakeFS | Versionnement data lake | Windows, Linux, macOS | 🆕 fait (lot 116) | `28-data-analytique/04-lac-donnees` |
-| Pachyderm | Pipelines données | Linux | ⏳ à faire | → `27-data-analytique` |
+| Pachyderm | Pipelines données | Linux | 🆕 fait (lot 119) | `28-data-analytique/07-science-donnees` |
 
 ## 20. IA, MACHINE LEARNING ET INFERENCE AUTO-HEBERGEE — 2/57
 

@@ -330,3 +330,5 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[28-data-analytique/03-cdc-connecteurs/90-aide-memoire|Debezium, Kafka Connect, Redpanda Connect et Flink CDC]]
 - [[28-data-analytique/04-lac-donnees/90-aide-memoire|Iceberg, Delta Lake, Hudi, Nessie et lakeFS]]
 - [[28-data-analytique/05-catalogues-metadonnees/90-aide-memoire|Catalogues de données]]
+- [[28-data-analytique/06-transformation/90-aide-memoire|dbt, SQLMesh, Polars et Arrow]]
+- [[28-data-analytique/07-science-donnees/90-aide-memoire|JupyterHub, MLflow, DVC et Pachyderm]]

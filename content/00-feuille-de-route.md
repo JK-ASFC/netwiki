@@ -131,6 +131,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 115 | Catalogue — capture de changements : Debezium, Kafka Connect, Benthos / Redpanda Connect, Flink CDC | ✅ |
 | 116 | Catalogue — lac de données transactionnel : Apache Iceberg, Delta Lake, Apache Hudi, Project Nessie, lakeFS | ✅ |
 | 117 | Catalogue — catalogues de données : OpenMetadata, DataHub, Amundsen, Apache Atlas | ✅ |
+| 118 | Catalogue — transformation : dbt Core, SQLMesh, Polars, Apache Arrow | ✅ |
+| 119 | Catalogue — science des données : JupyterHub, MLflow, DVC, Pachyderm | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -531,3 +533,5 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[28-data-analytique/03-cdc-connecteurs/01-debezium-kafka-connect\|Debezium, Kafka Connect]], [[28-data-analytique/03-cdc-connecteurs/02-benthos-flink-cdc\|Redpanda Connect, Flink CDC]] | archives, conteneurs, rpk | conteneurs | conteneurs, Homebrew (rpk) | ✅ |
 | [[28-data-analytique/04-lac-donnees/01-iceberg-delta-hudi\|Iceberg, Delta Lake, Hudi]], [[28-data-analytique/04-lac-donnees/02-nessie-lakefs\|Nessie, lakeFS]] | bibliothèques Spark/Flink, pip, Docker | pip, Docker | pip, Docker, Homebrew (lakectl) | ✅ |
 | [[28-data-analytique/05-catalogues-metadonnees/01-openmetadata-datahub\|OpenMetadata, DataHub]], [[28-data-analytique/05-catalogues-metadonnees/02-amundsen-atlas\|Amundsen, Apache Atlas]] | Docker, Helm, pip, archives | Docker, pip | Docker, pip | ✅ |
+| [[28-data-analytique/06-transformation/01-dbt-sqlmesh\|dbt Core, SQLMesh]], [[28-data-analytique/06-transformation/02-polars-arrow\|Polars, Apache Arrow]] | pip | pip | pip, Homebrew | ✅ |
+| [[28-data-analytique/07-science-donnees/01-jupyterhub\|JupyterHub]], [[28-data-analytique/07-science-donnees/02-mlflow\|MLflow]], [[28-data-analytique/07-science-donnees/03-dvc-pachyderm\|DVC, Pachyderm]] | TLJH, Helm, pip | pip, Docker | pip, Homebrew (DVC) | ✅ |
