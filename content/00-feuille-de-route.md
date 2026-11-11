@@ -101,6 +101,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 85 | Catalogue — gestionnaires de paquets : Homebrew, MacPorts, Nix, GNU Guix, Flatpak, Snap, AppImage, équivalences apt/dnf/yum/zypper/pacman/apk/Portage (déjà traités par distribution) | ✅ |
 | 86 | Catalogue — init et supervision de processus : systemd, OpenRC, runit, s6, Supervisor, Monit, Circus, PM2, forever | ✅ |
 | 87 | Catalogue — shells, multiplexeurs et dotfiles : tmux, GNU Screen, Zellij, Bash, Zsh, Oh My Zsh, fish, Nushell, Starship, chezmoi, GNU Stow | ✅ |
+| 88 | Catalogue — snapshots, sauvegarde du poste, partage entre appareils et bureau : Timeshift, Snapper, Back In Time, Déjà Dup, KDE Connect, Barrier, Input Leap, Synergy, LocalSend, KDE Plasma | ✅ |
 
 ## Annuaire, identité & secrets
 
