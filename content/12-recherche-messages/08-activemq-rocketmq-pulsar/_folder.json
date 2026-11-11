@@ -1,0 +1,1 @@
+{ "title": "ActiveMQ, RocketMQ et Pulsar", "icon": "radio-tower", "color": "#a855f7", "description": "Courtiers de messages d'entreprise : ActiveMQ Classic et ActiveMQ Artemis (JMS, AMQP, STOMP, MQTT), Apache RocketMQ (transactions, messages différés) et Apache Pulsar (multi-locataire, stockage BookKeeper, géoréplication)." }

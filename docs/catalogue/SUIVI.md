@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 762 | 4 | 354 (27 %) |
+| 1311 | 191 (15 %) | 770 | 4 | 346 (26 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1036,25 +1036,25 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Fetchmail | Récupération mail | Windows, Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 | OfflineIMAP | Synchronisation mail | Linux, macOS | 🆕 fait (lot 108) | `10-messagerie/27-courrier-terminal` |
 
-## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 5/55
+## 19. DATA, BIG DATA, MESSAGE BROKERS ET STREAMING — 13/55
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | Apache Kafka | Streaming événements | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/04-kafka` |
-| Redpanda (community source) | Streaming Kafka-compatible | Linux | ⏳ à faire | → `27-data-analytique` |
-| Apache Pulsar | Messaging et streaming | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
+| Redpanda (community source) | Streaming Kafka-compatible | Linux | 🆕 fait (lot 110) | `12-recherche-messages/09-nats-nsq-zeromq-redpanda` |
+| Apache Pulsar | Messaging et streaming | Windows, Linux, macOS | 🆕 fait (lot 109) | `12-recherche-messages/08-activemq-rocketmq-pulsar` |
 | RabbitMQ | Message broker | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/03-rabbitmq` |
-| ActiveMQ Classic | Message broker | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| ActiveMQ Artemis | Message broker | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| Apache RocketMQ | Message broker | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| NATS | Message broker | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
+| ActiveMQ Classic | Message broker | Windows, Linux, macOS | 🆕 fait (lot 109) | `12-recherche-messages/08-activemq-rocketmq-pulsar` |
+| ActiveMQ Artemis | Message broker | Windows, Linux, macOS | 🆕 fait (lot 109) | `12-recherche-messages/08-activemq-rocketmq-pulsar` |
+| Apache RocketMQ | Message broker | Windows, Linux, macOS | 🆕 fait (lot 109) | `12-recherche-messages/08-activemq-rocketmq-pulsar` |
+| NATS | Message broker | Windows, Linux, macOS | 🆕 fait (lot 110) | `12-recherche-messages/09-nats-nsq-zeromq-redpanda` |
 | Mosquitto | Broker MQTT | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/05-mosquitto` |
 | EMQX (community) | Broker MQTT | Windows, Linux, macOS | ✅ existant | `12-recherche-messages/06-emqx` |
 | VerneMQ | Broker MQTT | Linux | ⏳ à faire | → `12-recherche-messages` |
 | NanoMQ | Broker MQTT | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
 | HiveMQ CE | Broker MQTT | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
-| ZeroMQ | Messaging bibliothèque | Windows, Linux, macOS | ⏳ à faire | → `27-data-analytique` |
-| NSQ | Message broker | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
+| ZeroMQ | Messaging bibliothèque | Windows, Linux, macOS | 🆕 fait (lot 110) | `12-recherche-messages/09-nats-nsq-zeromq-redpanda` |
+| NSQ | Message broker | Windows, Linux, macOS | 🆕 fait (lot 110) | `12-recherche-messages/09-nats-nsq-zeromq-redpanda` |
 | Beanstalkd | Queue de tâches | Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
 | Gearman | Queue de tâches | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |
 | Celery | Queue de tâches Python | Windows, Linux, macOS | ⏳ à faire | → `12-recherche-messages` |

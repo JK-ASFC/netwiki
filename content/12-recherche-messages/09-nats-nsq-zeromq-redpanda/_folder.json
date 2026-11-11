@@ -1,0 +1,1 @@
+{ "title": "NATS, NSQ, ZeroMQ et Redpanda", "icon": "zap", "color": "#a855f7", "description": "Messagerie légère et rapide : NATS et JetStream (sujets, persistance, clé-valeur), NSQ (files distribuées simples), ZeroMQ (bibliothèque sans courtier) et Redpanda (compatible avec l'API Kafka, sans JVM)." }

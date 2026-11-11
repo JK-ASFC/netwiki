@@ -158,6 +158,8 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[12-recherche-messages/05-mosquitto/90-aide-memoire|Mosquitto (MQTT)]]
 - [[12-recherche-messages/06-emqx/90-aide-memoire|EMQX (MQTT)]]
 - [[12-recherche-messages/07-msmq/90-aide-memoire|Message Queuing (MSMQ)]]
+- [[12-recherche-messages/08-activemq-rocketmq-pulsar/90-aide-memoire|ActiveMQ, RocketMQ et Pulsar]]
+- [[12-recherche-messages/09-nats-nsq-zeromq-redpanda/90-aide-memoire|NATS, NSQ, ZeroMQ et Redpanda]]
 
 ## Conteneurs & virtualisation
 

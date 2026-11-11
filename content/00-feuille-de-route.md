@@ -122,6 +122,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 106 | Catalogue — newsletters et listes de diffusion : Listmonk, phpList, Mautic, Sympa, Mailman 2 (migration) | ✅ |
 | 107 | Catalogue — clients de messagerie et synchronisation : Thunderbird, Evolution, KMail, Claws Mail, SOGo Connector, DAVx5 | ✅ |
 | 108 | Catalogue — courrier en terminal et récupération : Mutt, NeoMutt, aerc, fetchmail, getmail6, OfflineIMAP | ✅ |
+| 109 | Catalogue — courtiers d'entreprise : ActiveMQ Classic, ActiveMQ Artemis, Apache RocketMQ, Apache Pulsar | ✅ |
+| 110 | Catalogue — messagerie légère : NATS et JetStream, NSQ, ZeroMQ, Redpanda | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -279,6 +281,8 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[05-mosquitto/01-presentation-configuration\|Mosquitto (MQTT)]] | mosquitto | Eclipse Mosquitto | mosquitto | ✅ |
 | [[06-emqx/01-presentation-installation\|EMQX (MQTT)]] | emqx | ➖ (Docker) | emqx | ✅ |
 | [[07-msmq/01-presentation-exploitation\|Message Queuing (MSMQ)]] | ➖ | MSMQ | ➖ | ✅ |
+| [[08-activemq-rocketmq-pulsar/01-activemq-classic-artemis\|ActiveMQ Classic, Artemis]], [[08-activemq-rocketmq-pulsar/02-rocketmq-pulsar\|RocketMQ, Pulsar]] | archives Apache, Docker, Helm | archives (Java) | archives, Homebrew | ✅ |
+| [[09-nats-nsq-zeromq-redpanda/01-nats\|NATS, JetStream]], [[09-nats-nsq-zeromq-redpanda/02-nsq-zeromq\|NSQ, ZeroMQ]], [[09-nats-nsq-zeromq-redpanda/03-redpanda\|Redpanda]] | binaires, paquets, Docker | binaires, bibliothèques | Homebrew, Docker | ✅ |
 
 ## Conteneurs & virtualisation
 
