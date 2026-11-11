@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 969 | 4 | 147 (11 %) |
+| 1311 | 191 (15 %) | 974 | 4 | 142 (11 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1266,7 +1266,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | ONOS | Contrôleur SDN | Linux | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
 | Ryu SDN Framework | Contrôleur SDN | Windows, Linux, macOS | 🆕 fait (lot 149) | `21-outils/20-controleurs-sdn` |
 
-## 23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS — 28/41
+## 23. GESTION MATERIEL, INVENTAIRE, IMPRESSION ET SERVICES DIVERS — 33/41
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1298,11 +1298,11 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | ChirpStack | Serveur LoRaWAN | Linux | 🆕 fait (lot 158) | `33-materiel-iot/07-lorawan` |
 | The Things Network Stack | Serveur LoRaWAN | Linux | 🆕 fait (lot 158) | `33-materiel-iot/07-lorawan` |
 | ThingsBoard Gateway | Passerelle IoT | Windows, Linux, macOS | 🆕 fait (lot 158) | `33-materiel-iot/07-lorawan` |
-| Zigbee2MQTT | Passerelle Zigbee | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Z-Wave JS UI | Passerelle Z-Wave | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| ESPHome | Firmware IoT | Windows, Linux, macOS | ⏳ à faire | → `26-gestion-parc` |
-| Tasmota | Firmware IoT | ESP | ⏳ à faire | → `26-gestion-parc` |
-| OpenMQTTGateway | Passerelle IoT | ESP | ⏳ à faire | → `26-gestion-parc` |
+| Zigbee2MQTT | Passerelle Zigbee | Windows, Linux, macOS | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
+| Z-Wave JS UI | Passerelle Z-Wave | Windows, Linux, macOS | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
+| ESPHome | Firmware IoT | Windows, Linux, macOS | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
+| Tasmota | Firmware IoT | ESP | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
+| OpenMQTTGateway | Passerelle IoT | ESP | 🆕 fait (lot 159) | `33-materiel-iot/06-zigbee-zwave` |
 | Frigate | NVR détection objets | Linux | ⏳ à faire | → `26-gestion-parc` |
 | ZoneMinder | Vidéosurveillance | Linux | ⏳ à faire | → `26-gestion-parc` |
 | Shinobi | NVR vidéosurveillance | Linux, Windows via conteneur | ⏳ à faire | → `26-gestion-parc` |

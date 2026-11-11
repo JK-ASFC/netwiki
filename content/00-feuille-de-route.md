@@ -172,6 +172,7 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 156 | Catalogue — domotique : Home Assistant, openHAB, Domoticz | ✅ |
 | 157 | Catalogue — plates-formes IoT : ThingsBoard Community, Mainflux/Magistrala, Kaa, Eclipse Kura | ✅ |
 | 158 | Catalogue — LoRaWAN et passerelles : ChirpStack, The Things Stack, Mosquitto, ThingsBoard Gateway | ✅ |
+| 159 | Catalogue — Zigbee, Z-Wave et firmwares : Zigbee2MQTT, Z-Wave JS UI, ESPHome, Tasmota, OpenMQTTGateway | ✅ |
 
 ## Annuaire, identité & secrets
 
@@ -626,3 +627,4 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | [[33-materiel-iot/04-domotique/01-home-assistant-openhab-domoticz\|Home Assistant, openHAB, Domoticz]] | OS, Docker, paquets | Docker, VM | Docker, VM | ✅ |
 | [[33-materiel-iot/05-plateformes-iot/01-thingsboard-mainflux\|ThingsBoard, Magistrala]], [[33-materiel-iot/05-plateformes-iot/02-kaa-kura\|Kaa, Eclipse Kura]] | Docker | Docker | Docker | ✅ |
 | [[33-materiel-iot/07-lorawan/01-chirpstack-ttn\|ChirpStack, The Things Stack]], [[33-materiel-iot/07-lorawan/02-mosquitto-iot-gateway\|Mosquitto, ThingsBoard Gateway]] | Docker, paquets | Docker | Docker | ✅ |
+| [[33-materiel-iot/06-zigbee-zwave/01-zigbee2mqtt-zwavejs\|Zigbee2MQTT, Z-Wave JS UI]], [[33-materiel-iot/06-zigbee-zwave/02-esphome-tasmota\|ESPHome, Tasmota, OpenMQTTGateway]] | Docker, pip, flash | flash (Tasmotizer) | flash, pip | ✅ |
