@@ -36,11 +36,12 @@ import shell from 'highlight.js/lib/languages/shell';
 import typescript from 'highlight.js/lib/languages/typescript';
 import vim from 'highlight.js/lib/languages/vim';
 import lisp from 'highlight.js/lib/languages/lisp';
+import r from 'highlight.js/lib/languages/r';
 import sql from 'highlight.js/lib/languages/sql';
 import xml from 'highlight.js/lib/languages/xml';
 import yaml from 'highlight.js/lib/languages/yaml';
 
-const langs = { apache, bash, c, cmake, csharp, diff, dns, dockerfile, elixir, erlang, go, makefile, rust, groovy, ini, java, javascript, json, kotlin, lua, markdown, nginx, nix, perl, php, plaintext, powershell, properties, python, ruby, shell, sql, typescript, vim, lisp, xml, yaml };
+const langs = { apache, bash, c, cmake, csharp, diff, dns, dockerfile, elixir, erlang, go, makefile, rust, groovy, ini, java, javascript, json, kotlin, lua, markdown, nginx, nix, perl, php, plaintext, powershell, properties, python, ruby, shell, sql, typescript, vim, lisp, r, xml, yaml };
 for (const [name, def] of Object.entries(langs)) hljs.registerLanguage(name, def);
 
 function confLanguage(name, keywords, extraContains = []) {
@@ -174,6 +175,7 @@ hljs.registerAliases(['tac_plus', 'tac_plus-ng', 'tacacs'], { languageName: 'tac
 hljs.registerAliases(['sh', 'zsh', 'console', 'linux'], { languageName: 'bash' });
 hljs.registerAliases(['vimrc', 'vimscript'], { languageName: 'vim' });
 hljs.registerAliases(['elisp', 'emacs-lisp'], { languageName: 'lisp' });
+hljs.registerAliases(['rscript'], { languageName: 'r' });
 hljs.registerAliases(['ps', 'ps1', 'pwsh', 'cmd', 'bat', 'batch'], { languageName: 'powershell' });
 hljs.registerAliases(['zone'], { languageName: 'dns' });
 hljs.registerAliases(['bind', 'bind9', 'namedconf'], { languageName: 'named' });

@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 893 | 4 | 223 (17 %) |
+| 1311 | 191 (15 %) | 897 | 4 | 219 (17 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1158,7 +1158,7 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | RVC Project | Conversion voix | Windows, Linux, macOS | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 | Mimic 3 | Synthèse vocale | Linux | 🆕 fait (lot 131) | `29-ia-machine-learning/12-audio-voix` |
 
-## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 28/48
+## 21. DOCUMENTATION, RECHERCHE, GED ET CONNAISSANCE — 32/48
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
@@ -1188,11 +1188,11 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | Read the Docs (community stack) | Documentation technique | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
 | MkDocs | Documentation statique | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
 | Material for MkDocs | Thème documentation | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
-| Docusaurus | Documentation statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| VitePress | Documentation statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
+| Docusaurus | Documentation statique | Windows, Linux, macOS | 🆕 fait (lot 138) | `32-documentation-ged/07-generateurs-documentation` |
+| VitePress | Documentation statique | Windows, Linux, macOS | 🆕 fait (lot 138) | `32-documentation-ged/07-generateurs-documentation` |
 | Sphinx | Documentation Python | Windows, Linux, macOS | 🆕 fait (lot 137) | `32-documentation-ged/06-documentation-technique` |
-| Antora | Documentation technique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
-| Bookdown | Publication docs | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
+| Antora | Documentation technique | Windows, Linux, macOS | 🆕 fait (lot 138) | `32-documentation-ged/07-generateurs-documentation` |
+| Bookdown | Publication docs | Windows, Linux, macOS | 🆕 fait (lot 138) | `32-documentation-ged/07-generateurs-documentation` |
 | Hugo | Générateur site statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
 | Jekyll | Générateur site statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |
 | Zola | Générateur site statique | Windows, Linux, macOS | ⏳ à faire | → `29-documentation-ged` |

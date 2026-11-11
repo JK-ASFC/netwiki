@@ -356,3 +356,4 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[32-documentation-ged/04-bureautique/90-aide-memoire|Bureautique]]
 - [[32-documentation-ged/05-notes-connaissance/90-aide-memoire|Notes et bases de connaissances]]
 - [[32-documentation-ged/06-documentation-technique/90-aide-memoire|MkDocs, Sphinx et Read the Docs]]
+- [[32-documentation-ged/07-generateurs-documentation/90-aide-memoire|Docusaurus, VitePress, Antora et Bookdown]]
