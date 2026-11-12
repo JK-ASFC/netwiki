@@ -241,6 +241,32 @@ handle('wiki:load', async () => {
   return scanFolder(root, '');
 });
 
+// Index de recherche précalculé au build : l'application le réutilise tel quel si l'empreinte du contenu
+// installé correspond, évitant ~2 s de reconstruction à chaque lancement. Absent des builds de
+// développement : l'application reconstruit alors l'index normalement.
+// Les métadonnées (empreinte, nombre de pages) sont lues d'abord ; les données volumineuses ne sont
+// transférées (en chaîne, pas en objet : bien plus rapide par IPC) que si l'empreinte correspond.
+let searchMetaCache;
+let searchDataCache;
+handle('search:index-meta', async () => {
+  if (searchMetaCache !== undefined) return searchMetaCache;
+  try {
+    searchMetaCache = JSON.parse(await fsp.readFile(path.join(__dirname, 'dist', 'search-index.json'), 'utf8'));
+  } catch {
+    searchMetaCache = null;
+  }
+  return searchMetaCache;
+});
+handle('search:index-data', async () => {
+  if (searchDataCache !== undefined) return searchDataCache;
+  try {
+    searchDataCache = await fsp.readFile(path.join(__dirname, 'dist', 'search-index-data.json'), 'utf8');
+  } catch {
+    searchDataCache = null;
+  }
+  return searchDataCache;
+});
+
 handle('wiki:write', async (rel, content) => {
   const abs = resolveInside(rel);
   if (!abs.toLowerCase().endsWith('.md')) throw new Error('Seuls les fichiers .md sont modifiables.');

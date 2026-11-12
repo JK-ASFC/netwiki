@@ -3,7 +3,7 @@
 import { hasIcon, icon } from './icons.js';
 import { $, closeContextMenu, confirmDialog, contextMenu, debounce, esc, modal, promptDialog, toast } from './ui.js';
 import { buildStore, getNode, store } from './store.js';
-import { ensureIndex, invalidateIndex, search, snippet } from './search.js';
+import { buildSearchIndex, ensureIndex, invalidateIndex, search, snippet } from './search.js';
 import { actions, api, state } from './state.js';
 import { initSidebar, renderSidebar, revealInSidebar } from './sidebar.js';
 import { renderHome } from './views/home.js';
@@ -569,7 +569,7 @@ async function init() {
   });
 
   // Point d'accès pour le diagnostic depuis les outils de développement (F12) et les tests automatisés.
-  window.__netwiki = { store, state, actions, hljs, hasIcon, renderMarkdown, renderMermaid, search, snippet, ensureIndex };
+  window.__netwiki = { store, state, actions, hljs, hasIcon, renderMarkdown, renderMermaid, search, snippet, ensureIndex, buildSearchIndex };
 
   // Mises à jour : accord demandé une seule fois, jamais pendant les tests automatisés.
   if (!state.info.automation) setTimeout(() => initUpdates().catch(() => {}), 1200);

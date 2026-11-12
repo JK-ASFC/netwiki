@@ -13,15 +13,16 @@
   "scripts": {
     "build": "node build.mjs",
     "build:prod": "node build.mjs --prod",
+    "search-index": "electron scripts/build-search-index.js",
     "start": "node build.mjs && electron .",
     "watch": "node build.mjs --watch",
     "icon": "electron scripts/make-icon.js",
     "shot": "electron scripts/shot.js",
     "validate": "node build.mjs && electron scripts/validate.js",
-    "dist": "node build.mjs --prod && electron-builder",
-    "dist:win": "node build.mjs --prod && electron-builder --win",
-    "dist:mac": "node build.mjs --prod && electron-builder --mac",
-    "dist:linux": "node build.mjs --prod && electron-builder --linux",
+    "dist": "node build.mjs --prod && electron scripts/build-search-index.js && electron-builder",
+    "dist:win": "node build.mjs --prod && electron scripts/build-search-index.js && electron-builder --win",
+    "dist:mac": "node build.mjs --prod && electron scripts/build-search-index.js && electron-builder --mac",
+    "dist:linux": "node build.mjs --prod && electron scripts/build-search-index.js && electron-builder --linux",
     "installer-art": "electron scripts/make-installer-art.js"
   },
   "build": {
