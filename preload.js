@@ -32,6 +32,8 @@ contextBridge.exposeInMainWorld('netwiki', {
   choosePack: () => invoke('pack:choose'),
   applyPack: (token) => invoke('pack:apply', token),
   contentInfo: () => invoke('content:info'),
+  searchIndexMeta: () => invoke('search:index-meta'),
+  searchIndexData: () => invoke('search:index-data'),
   checkAppUpdate: () => invoke('updates:check-app'),
   checkContentUpdate: () => invoke('updates:check-content'),
   downloadContent: () => invoke('updates:download-content'),

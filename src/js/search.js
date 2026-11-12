@@ -2,14 +2,81 @@
 // Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
 import MiniSearch from 'minisearch';
 import { esc, normalize } from './ui.js';
+import { api } from './state.js';
 import { ancestors, crumbText, store } from './store.js';
 
 const STOP = new Set(
   'le la les un une des de du d l et ou en au aux a à ce ces cet cette son sa ses pour par sur dans avec sans est sont the of and to in is on for'.split(' ')
 );
 
+// Options de l'index, partagées entre la construction et le rechargement d'un index précalculé :
+// la désérialisation (MiniSearch.loadJS) doit utiliser exactement la même configuration.
+const INDEX_OPTIONS = {
+  idField: 'path',
+  fields: ['title', 'tags', 'headings', 'description', 'crumbs', 'text'],
+  storeFields: ['title'],
+  processTerm: (term) => {
+    const t = normalize(term);
+    return t.length < 2 || STOP.has(t) ? null : t;
+  },
+  // « named.conf » ou « 192.168.1.10 » sont indexés entiers et par morceaux.
+  tokenize: (s) =>
+    s
+      .split(/[\s\-—–,;:!?()[\]{}"'«»/\\=<>|+*`]+/u)
+      .map((t) => t.replace(/^\.+|\.+$/g, ''))
+      .flatMap((t) => (t.includes('.') ? [t, ...t.split('.')] : [t])),
+  searchOptions: {
+    boost: { title: 6, tags: 4, headings: 2.5, description: 2, crumbs: 1.5, text: 1 },
+    prefix: (term) => term.length >= 2,
+    fuzzy: (term) => (term.length > 5 ? 0.2 : false),
+    combineWith: 'AND',
+  },
+};
+
 let index = null;
-const texts = new Map();
+let loading = null; // promesse de chargement en cours (évite les constructions concurrentes)
+
+/**
+ * Empreinte rapide du contenu vivant (FNV-1a sur chemin + corps, pages triées).
+ * Elle doit être identique côté build et côté application : un index précalculé n'est réutilisé
+ * que si l'empreinte du contenu installé correspond à celle enregistrée au build.
+ */
+export function contentSignature() {
+  const paths = [...store.pages.keys()].sort();
+  let h = 0x811c9dc5 >>> 0;
+  const mix = (s) => {
+    for (let i = 0; i < s.length; i++) {
+      const c = s.charCodeAt(i);
+      h = (h ^ (c & 0xff)) >>> 0;
+      h = (h ^ ((c >> 8) & 0xff)) >>> 0;
+      h = Math.imul(h, 0x01000193) >>> 0;
+    }
+    h = Math.imul(h ^ 0, 0x01000193) >>> 0;
+  };
+  for (const p of paths) {
+    mix(p);
+    mix('\u0000');
+    mix(store.pages.get(p).body);
+    mix('\u0000');
+  }
+  return (h >>> 0).toString(16);
+}
+
+function docsFromStore() {
+  const docs = [];
+  for (const p of store.pages.values()) {
+    docs.push({
+      path: p.path,
+      title: p.title,
+      tags: p.tags.join(' '),
+      headings: [...p.body.matchAll(/^#{1,4}\s+(.+)$/gm)].map((m) => m[1]).join(' \n '),
+      description: p.description,
+      crumbs: crumbText(p),
+      text: plain(p.body),
+    });
+  }
+  return docs;
+}
 
 function plain(md) {
   return md
@@ -24,44 +91,50 @@ function plain(md) {
     .replace(/[ \t]+/g, ' ');
 }
 
+/** Construit l'index complet à partir du contenu en mémoire (~2 s pour 5000+ pages). */
 export function buildIndex() {
-  index = new MiniSearch({
-    idField: 'path',
-    fields: ['title', 'tags', 'headings', 'description', 'crumbs', 'text'],
-    storeFields: ['title'],
-    processTerm: (term) => {
-      const t = normalize(term);
-      return t.length < 2 || STOP.has(t) ? null : t;
-    },
-    // « named.conf » ou « 192.168.1.10 » sont indexés entiers et par morceaux.
-    tokenize: (s) =>
-      s
-        .split(/[\s\-—–,;:!?()[\]{}"'«»/\\=<>|+*`]+/u)
-        .map((t) => t.replace(/^\.+|\.+$/g, ''))
-        .flatMap((t) => (t.includes('.') ? [t, ...t.split('.')] : [t])),
-    searchOptions: {
-      boost: { title: 6, tags: 4, headings: 2.5, description: 2, crumbs: 1.5, text: 1 },
-      prefix: (term) => term.length >= 2,
-      fuzzy: (term) => (term.length > 5 ? 0.2 : false),
-      combineWith: 'AND',
-    },
+  index = new MiniSearch(INDEX_OPTIONS);
+  index.addAll(docsFromStore());
+  return index;
+}
+
+/** Sérialise l'index (pour le précalcul au build) : empreinte + nombre de pages + index MiniSearch. */
+export function buildSearchIndex() {
+  buildIndex();
+  return { sig: contentSignature(), count: store.pages.size, idx: index.toJSON() };
+}
+
+/**
+ * Prépare l'index sans bloquer : réutilise l'index précalculé livré avec l'application si l'empreinte
+ * du contenu installé correspond, sinon le reconstruit entièrement. Idempotent et non concurrent.
+ */
+export function ensureIndex() {
+  if (index) return Promise.resolve(index);
+  if (loading) return loading;
+  loading = (async () => {
+    try {
+      const meta = await api.searchIndexMeta?.();
+      if (meta && meta.count === store.pages.size && meta.sig === contentSignature()) {
+        // Données transférées en chaîne puis désérialisées ici (MiniSearch.loadJSON) : plus rapide
+        // qu'un clone IPC d'objet, et bien plus rapide qu'une reconstruction complète.
+        const data = await api.searchIndexData();
+        if (data) return (index = MiniSearch.loadJSON(data, INDEX_OPTIONS));
+      }
+    } catch {
+      // index précalculé indisponible (build de dev, plate-forme web, contenu modifié…) : reconstruction
+    }
+    return buildIndex();
+  })();
+  loading.finally(() => {
+    loading = null;
   });
-  texts.clear();
-  const docs = [];
-  for (const p of store.pages.values()) {
-    const text = plain(p.body);
-    texts.set(p.path, text);
-    docs.push({
-      path: p.path,
-      title: p.title,
-      tags: p.tags.join(' '),
-      headings: [...p.body.matchAll(/^#{1,4}\s+(.+)$/gm)].map((m) => m[1]).join(' \n '),
-      description: p.description,
-      crumbs: crumbText(p),
-      text,
-    });
-  }
-  index.addAll(docs);
+  return loading;
+}
+
+/** Invalide l'index (après rechargement du contenu) : il sera reconstruit à la demande. */
+export function invalidateIndex() {
+  index = null;
+  loading = null;
 }
 
 /**
@@ -94,7 +167,10 @@ export function search(query, { scope = '', limit = 60, strict = false } = {}) {
 
 /** Extrait le passage qui contient le plus de termes recherchés différents, avec surlignage. */
 export function snippet(path, terms, len = 170) {
-  const text = (texts.get(path) || '').replace(/\s+/g, ' ').trim();
+  // Texte brut calculé à la demande (seulement pour les résultats affichés), plutôt que conservé
+  // en mémoire pour les 5000+ pages : économise une copie complète du contenu.
+  const page = store.pages.get(path);
+  const text = page ? plain(page.body).replace(/\s+/g, ' ').trim() : '';
   if (!text) return '';
   const norm = normalize(text);
   const keys = [...new Set(terms.map(normalize).filter(Boolean))];

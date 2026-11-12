@@ -9,8 +9,9 @@ icon: app-window
 
 `https://auth.corp.exemple.fr` : formulaire de connexion (ou choix du mode : AD, Kerberos, autre IdP), **menu des applications** autorisées, gestion des seconds facteurs (*2FA Manager*), changement de mot de passe, notifications à accepter.
 
-<!-- CAPTURE: LemonLDAP::NG — portail, menu des applications | _assets/lemonldap-portail-menu.png -->
-<!-- CAPTURE: LemonLDAP::NG — enregistrement d'un second facteur TOTP | _assets/lemonldap-2fa.png -->
+![LemonLDAP::NG — portail : menu des applications autorisées, regroupées par catégorie (FusionIAM, applications d'exemple, administration)](_assets/lemonldap-portail-menu.png "Portail LemonLDAP::NG après connexion : tuiles des applications accessibles en SSO")
+
+![LemonLDAP::NG — gestion des seconds facteurs : une clé WebAuthn enregistrée, avec sa date et le bouton de suppression](_assets/lemonldap-2fa.png "2FA Manager du portail : liste des seconds facteurs de l'utilisateur (ici une clé WebAuthn/FIDO)")
 
 ## Manager
 
@@ -25,7 +26,10 @@ icon: app-window
 
 Chaque enregistrement crée une **nouvelle version** de configuration, comparable et restaurable (*Browse* les versions).
 
-<!-- CAPTURE: LemonLDAP::NG — Manager, arbre de configuration et hôte virtuel | _assets/lemonldap-manager-vhost.png -->
+![LemonLDAP::NG — Manager : arbre de configuration (paramètres généraux, portail, modules d'authentification, combinaison de backends) avec l'aide contextuelle à droite](_assets/lemonldap-manager-vhost.png "Manager LemonLDAP::NG : navigation dans l'arbre de configuration")
+
+![LemonLDAP::NG — Manager : boîte de dialogue de choix du logo d'une application du menu du portail](_assets/lemonldap-choix-logo.png "Personnalisation du menu : sélection de l'icône associée à une application")
+
 <!-- CAPTURE: LemonLDAP::NG — Manager, explorateur de sessions | _assets/lemonldap-manager-sessions.png -->
 
 ## Correspondance Manager ↔ ligne de commande

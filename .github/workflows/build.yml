@@ -44,6 +44,15 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node build.mjs --prod
+      - name: Précalculer l'index de recherche
+        shell: bash
+        # Non bloquant : si l'index n'est pas généré, l'application le reconstruit au lancement.
+        run: |
+          if [ "${{ runner.os }}" = "Linux" ]; then
+            xvfb-run -a npx electron --no-sandbox scripts/build-search-index.js || echo "::warning title=Index::index de recherche non précalculé (repli à l'exécution)"
+          else
+            npx electron scripts/build-search-index.js || echo "::warning title=Index::index de recherche non précalculé (repli à l'exécution)"
+          fi
       - name: Construire les installeurs
         shell: bash
         # Une variable vide (secret absent) est prise pour un certificat sur macOS : on la retire.
