@@ -48,7 +48,9 @@ export function makePage(node, parent) {
     type: 'page',
     path: node.path,
     name: node.name,
-    raw: node.raw,
+    // `raw` (markdown d'origine avec front-matter) n'est pas conservé : pour ~5000 pages, cela
+    // dupliquait inutilement tout le contenu en mémoire. L'éditeur repart de `body` + `fm`, et
+    // le partage se rabat sur le titre + le corps.
     fm: data,
     body,
     parent,

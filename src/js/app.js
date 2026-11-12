@@ -3,7 +3,7 @@
 import { hasIcon, icon } from './icons.js';
 import { $, closeContextMenu, confirmDialog, contextMenu, debounce, esc, modal, promptDialog, toast } from './ui.js';
 import { buildStore, getNode, store } from './store.js';
-import { buildIndex } from './search.js';
+import { ensureIndex, invalidateIndex, search, snippet } from './search.js';
 import { actions, api, state } from './state.js';
 import { initSidebar, renderSidebar, revealInSidebar } from './sidebar.js';
 import { renderHome } from './views/home.js';
@@ -63,12 +63,22 @@ actions.openDataDir = () => api.openDataDir();
 
 // ================================================================ chargement des données
 
+// Construit l'index de recherche hors du chemin critique : la page d'accueil et la barre latérale
+// n'en ont pas besoin. Programmé pendant un temps mort après le premier affichage ; la recherche
+// le force à la demande si on l'ouvre avant (voir search.js).
+function scheduleIndex() {
+  const build = () => ensureIndex();
+  if (typeof requestIdleCallback === 'function') requestIdleCallback(build, { timeout: 2000 });
+  else setTimeout(build, 200);
+}
+
 actions.reload = async (rerender = false) => {
   const tree = await api.load();
   buildStore(tree);
-  buildIndex();
+  invalidateIndex(); // l'index sera reconstruit en tâche de fond à partir du nouveau contenu
   renderSidebar();
   if (rerender) actions.rerender();
+  scheduleIndex();
 };
 
 // ================================================================ navigation
@@ -338,9 +348,8 @@ actions.sharePage = async (page) => {
   });
   if (!choice) return;
   if (choice === 'text') {
-    const node = getNode(page.path);
     try {
-      const r = await api.share({ title: page.title, text: node?.raw || `${page.title}\n\n${page.body || ''}` });
+      const r = await api.share({ title: page.title, text: `${page.title}\n\n${page.body || ''}` });
       if (r?.copied) toast('Article copié dans le presse-papiers', 'info');
     } catch (err) {
       if (err?.name !== 'AbortError') toast(err.message || String(err), 'error', 5000);
@@ -560,7 +569,7 @@ async function init() {
   });
 
   // Point d'accès pour le diagnostic depuis les outils de développement (F12) et les tests automatisés.
-  window.__netwiki = { store, state, actions, hljs, hasIcon, renderMarkdown, renderMermaid };
+  window.__netwiki = { store, state, actions, hljs, hasIcon, renderMarkdown, renderMermaid, search, snippet, ensureIndex };
 
   // Mises à jour : accord demandé une seule fois, jamais pendant les tests automatisés.
   if (!state.info.automation) setTimeout(() => initUpdates().catch(() => {}), 1200);

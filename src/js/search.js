@@ -9,7 +9,6 @@ const STOP = new Set(
 );
 
 let index = null;
-const texts = new Map();
 
 function plain(md) {
   return md
@@ -46,11 +45,8 @@ export function buildIndex() {
       combineWith: 'AND',
     },
   });
-  texts.clear();
   const docs = [];
   for (const p of store.pages.values()) {
-    const text = plain(p.body);
-    texts.set(p.path, text);
     docs.push({
       path: p.path,
       title: p.title,
@@ -58,10 +54,20 @@ export function buildIndex() {
       headings: [...p.body.matchAll(/^#{1,4}\s+(.+)$/gm)].map((m) => m[1]).join(' \n '),
       description: p.description,
       crumbs: crumbText(p),
-      text,
+      text: plain(p.body),
     });
   }
   index.addAll(docs);
+}
+
+/** Construit l'index une seule fois (idempotent). Appelé en tâche de fond au démarrage. */
+export function ensureIndex() {
+  if (!index) buildIndex();
+}
+
+/** Invalide l'index (après rechargement du contenu) : il sera reconstruit à la demande. */
+export function invalidateIndex() {
+  index = null;
 }
 
 /**
@@ -94,7 +100,10 @@ export function search(query, { scope = '', limit = 60, strict = false } = {}) {
 
 /** Extrait le passage qui contient le plus de termes recherchés différents, avec surlignage. */
 export function snippet(path, terms, len = 170) {
-  const text = (texts.get(path) || '').replace(/\s+/g, ' ').trim();
+  // Texte brut calculé à la demande (seulement pour les résultats affichés), plutôt que conservé
+  // en mémoire pour les 5000+ pages : économise une copie complète du contenu.
+  const page = store.pages.get(path);
+  const text = page ? plain(page.body).replace(/\s+/g, ' ').trim() : '';
   if (!text) return '';
   const norm = normalize(text);
   const keys = [...new Set(terms.map(normalize).filter(Boolean))];
