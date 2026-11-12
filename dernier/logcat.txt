@@ -1,80 +1,80 @@
 --------- beginning of main
-11-12 10:27:38.924  2329  2329 D Capacitor: Starting BridgeActivity
-11-12 10:27:38.955  2329  2329 D Capacitor: Registering plugin instance: CapacitorCookies
-11-12 10:27:38.959  2329  2329 D Capacitor: Registering plugin instance: WebView
-11-12 10:27:38.961  2329  2329 D Capacitor: Registering plugin instance: CapacitorHttp
-11-12 10:27:38.964  2329  2329 D Capacitor: Registering plugin instance: NetWiki
-11-12 10:27:38.983  2329  2329 D Capacitor: Registering plugin instance: Browser
-11-12 10:27:39.016  2329  2329 W Capacitor: Unable to read file at path public/plugins
-11-12 10:27:39.019  2329  2329 D Capacitor: Loading app at https://localhost
-11-12 10:27:39.058  2329  2329 D Capacitor: App started
-11-12 10:27:39.065  2329  2329 D Capacitor: App resumed
-11-12 10:27:39.111  2329  2400 D Capacitor: Handling local request: https://localhost/
-11-12 10:27:39.662  2329  2387 D Capacitor: Handling local request: https://localhost/dist/styles.css
-11-12 10:27:39.664  2329  2393 D Capacitor: Handling local request: https://localhost/dist/platform.js
-11-12 10:27:39.684  2329  2400 D Capacitor: Handling local request: https://localhost/dist/app.js
-11-12 10:27:39.989  2329  2387 D Capacitor: Handling local request: https://localhost/dist/inter-latin-wght-normal-NRMW37G5.woff2
-11-12 10:27:43.116  2329  2329 V Capacitor: callback: 71325312, pluginId: NetWiki, methodName: addListener, methodData: {"eventName":"updateProgress"}
-11-12 10:27:43.121  2329  2329 V Capacitor: callback: 71325313, pluginId: NetWiki, methodName: getInfo, methodData: {}
-11-12 10:27:43.126  2329  2387 D Capacitor: Handling local request: https://localhost/favicon.ico
-11-12 10:27:43.505  2329  2387 D Capacitor: Handling local request: https://localhost/LICENSE.txt
-11-12 10:27:43.830  2329  2387 D Capacitor: Handling local request: https://localhost/content.json
-11-12 10:27:44.162  2329  2329 V Capacitor: callback: 71325314, pluginId: NetWiki, methodName: addListener, methodData: {"eventName":"backButton"}
-11-12 10:27:44.163  2329  2329 V Capacitor: callback: 71325315, pluginId: NetWiki, methodName: setBackHandler, methodData: {"enabled":true}
-11-12 10:27:44.183  2329  2329 V Capacitor: callback: 71325316, pluginId: NetWiki, methodName: setSystemBars, methodData: {"dark":true,"color":"#0b0d14"}
-11-12 10:27:45.717  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:27:45.966  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:27:58.032  2329  2329 V Capacitor: callback: 71325317, pluginId: NetWiki, methodName: addListener, methodData: {"eventName":"launchAction"}
-11-12 10:27:58.033  2329  2329 V Capacitor: callback: 71325318, pluginId: NetWiki, methodName: consumeLaunchAction, methodData: {}
-11-12 10:28:17.781  2329  2329 V Capacitor: callback: 71325319, pluginId: NetWiki, methodName: requestNotifications, methodData: {}
-11-12 10:28:19.156  2329  2329 V Capacitor: callback: 71325320, pluginId: NetWiki, methodName: configureUpdates, methodData: {"notify":true,"contentNotify":true}
-11-12 10:28:20.060  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:28:20.062  2329  2329 V Capacitor: callback: 71325321, pluginId: NetWiki, methodName: configureUpdates, methodData: {"notify":true,"contentVersion":"2026.11.12.1024"}
-11-12 10:28:20.564  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:28:21.880  2329  2329 V Capacitor: callback: 71325322, pluginId: NetWiki, methodName: getInfo, methodData: {}
-11-12 10:28:38.218  2329  2387 D Capacitor: Handling local request: https://localhost/dist/mermaid.min.js
-11-12 10:28:38.226  2329  2387 D Capacitor: Handling local request: https://localhost/dist/jetbrains-mono-latin-wght-normal-VBS632QH.woff2
-11-12 10:29:02.105  2329  2329 V Capacitor: callback: 71325323, pluginId: NetWiki, methodName: savePdf, methodData: {"name":"Présentation et installation","action":"save"}
-11-12 10:29:02.107  2329  2428 I NetWiki : PDF : save « Présentation et installation.pdf »
-11-12 10:29:28.445  2329  2329 V Capacitor: callback: 71325324, pluginId: NetWiki, methodName: savePdf, methodData: {"name":"Présentation et installation","action":"share"}
-11-12 10:29:28.452  2329  2428 I NetWiki : PDF : share « Présentation et installation.pdf »
-11-12 10:29:32.211  2329  2329 D Capacitor: App paused
-11-12 10:29:36.662  2329  2329 D Capacitor: App resumed
-11-12 10:29:54.435  2329  2329 V Capacitor: callback: 71325325, pluginId: NetWiki, methodName: printPage, methodData: {"name":"Présentation et installation"}
-11-12 10:29:55.171  2329  2329 D Capacitor: App paused
-11-12 10:30:02.028  2329  2329 D Capacitor: App resumed
-11-12 10:30:02.359  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:30:20.200  2329  2329 V Capacitor: callback: 71325326, pluginId: NetWiki, methodName: shareText, methodData: {"title":"Présentation et installation","text":"Présentation et installation\n\n\nUn **conteneur** exécute une application avec ses dépendances dans un environnement isolé (espaces de noms, cgroups) qui partage le noyau de l'hôte. Une **image** est le modèle en lecture seule, constitué de couches, à partir duquel on crée des conteneurs. **Docker** a popularisé ce modèle et reste l'outil de référence pour construire et exécuter des conteneurs.\n\n## Architecture\n\n```mermaid\nflowchart LR\n  CLI[\"docker (client)<br\/>docker compose\"] -- \"API (socket \/var\/run\/docker.sock)\" --> D[\"dockerd<br\/>(réseaux, volumes, images)\"]\n  D --> C[\"containerd\"] --> R[\"runc<br\/>(création du conteneur)\"]\n  D -- \"pull \/ push\" --> REG[(\"Registres<br\/>Docker Hub, Harbor, GitLab…\")]\n```\n\n| Notion | Description |\n| --- | --- |\n| Image | Couches empilées, identifiées par `nom:tag` et un condensat `sha256` |\n| Conteneur | Instance d'une image avec une couche inscriptible |\n| Registre | Stockage et distribution des images |\n| Volume | Données persistantes hors du cycle de vie du conteneur |\n| Réseau | Réseaux virtuels (bridge, host, macvlan, overlay) |\n\n## Docker Engine ou Docker Desktop ?\n\n| Produit | Plate-forme | Licence |\n| --- | --- | --- |\n| **Docker Engine** | Linux (serveurs) | Libre (Apache 2.0) |\n| **Docker Desktop** | Windows, macOS, Linux (poste) | Gratuit pour usage personnel, éducation et petites entreprises (< 250 salariés et < 10 M$ de CA) ; **payant** sinon |\n\n## Installation sous Linux (dépôt officiel)\n\n### Debian \/ Ubuntu\n\n```bash\nsudo apt install ca-certificates curl\nsudo install -m 0755 -d \/etc\/apt\/keyrings\nsudo curl -fsSL https:\/\/download.docker.com\/linux\/debian\/gpg -o \/etc\/apt\/keyrings\/docker.asc     # …\/linux\/ubuntu\/gpg pour Ubuntu\necho \"deb [arch=$(dpkg --print-architecture) signed-by=\/etc\/apt\/keyrings\/docker.asc] https:\/\/download.docker.com\/linux\/debian $(. \/etc\/os-release && echo \"$VERSION_CODENAME\") stable\" \\\n  | sudo tee \/etc\/apt\/sources.list.d\/docker.list\nsudo apt update\nsudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin\nsudo systemctl enable --now docker\nsudo docker run --rm hello-world\n```\n\nLe paquet `docker.io` de la distribution existe aussi (version plus ancienne, sans le greffon Compose v2 sur certaines versions).\n\n### RHEL \/ Rocky \/ Alma\n\n```bash\nsudo dnf remove -y podman buildah runc 2>\/dev\/null     # RHEL fournit Podman par défaut\nsudo dnf config-manager --add-repo https:\/\/download.docker.com\/linux\/rhel\/docker-ce.repo\nsudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin\nsudo systemctl enable --now docker\n```\n\nSous RHEL, [[02-podman\/01-presentation-installation|Podman]] est l'outil natif et largement compatible.\n\n### Accès sans sudo\n\n```bash\nsudo usermod -aG docker alice          # effectif à la prochaine connexion\n```\n\n> [!WARNING]\n> Être membre du groupe **docker** équivaut à être **root** sur l'hôte (monter `\/` dans un conteneur privilégié, par exemple). Réservez-le aux administrateurs ou utilisez le mode *rootless* (voir [[05-securite-exploitation]]).\n\n## Windows\n\n| Besoin | Solution |\n| --- | --- |\n| Poste de développement (conteneurs Linux) | **Docker Desktop** avec moteur **WSL 2** : `winget install Docker.DockerDesktop` |\n| Conteneurs **Windows** sur Windows Server | Docker Engine (script Microsoft `install-docker-ce.ps1`, Mirantis Container Runtime) ou containerd + nerdctl ; images `mcr.microsoft.com\/windows\/servercore` |\n| Sans Docker Desktop | Docker Engine dans une distribution WSL 2 |\n\nLes conteneurs Windows exigent une version d'image compatible avec la version de l'hôte (isolation processus) ou l'isolation Hyper-V.\n\n## macOS\n\n| Solution | Remarque |\n| --- | --- |\n| **Docker Desktop** | `brew install --cask docker` 
-11-12 10:30:21.035  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:30:21.041  2329  2329 D Capacitor: App paused
-11-12 10:30:26.422  2329  2329 D Capacitor: App resumed
-11-12 10:30:31.457  2329  2329 V Capacitor: callback: 71325327, pluginId: NetWiki, methodName: setSystemBars, methodData: {"dark":false,"color":"#f4f5f9"}
-11-12 10:30:32.249  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:30:40.856  2329  2329 V Capacitor: callback: 71325328, pluginId: NetWiki, methodName: setSystemBars, methodData: {"dark":true,"color":"#0b0d14"}
-11-12 10:30:41.527  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:30:48.958  2329  2329 V Capacitor: callback: 71325329, pluginId: NetWiki, methodName: configureUpdates, methodData: {"notify":true,"contentVersion":"2000.01.01.0000"}
-11-12 10:30:49.533  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:30:49.538  2329  2329 V Capacitor: callback: 71325330, pluginId: NetWiki, methodName: runBackgroundCheck, methodData: {}
-11-12 10:30:51.769  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:30:51.770  2329  2329 V Capacitor: callback: 71325331, pluginId: NetWiki, methodName: getInfo, methodData: {}
-11-12 10:30:58.946  2329  2329 D Capacitor: App paused
-11-12 10:30:58.952  2329  2329 D Capacitor: App resumed
-11-12 10:31:00.435  2329  2329 V Capacitor: callback: 71325332, pluginId: NetWiki, methodName: getInfo, methodData: {}
-11-12 10:31:10.119  2329  2329 V Capacitor: callback: 71325333, pluginId: NetWiki, methodName: httpGet, methodData: {"url":"https:\/\/github.com\/JK-ASFC\/netwiki\/releases\/download\/v1.45.0\/netwiki-update.json"}
-11-12 10:31:12.092  2329  2329 V Capacitor: callback: 71325334, pluginId: NetWiki, methodName: downloadUpdate, methodData: {"url":"https:\/\/github.com\/JK-ASFC\/netwiki\/releases\/download\/v1.45.0\/app-debug.apk","sha256":"6b954bd93c28fd1a522971320672797834cafb5f578b1f74882730e1cbc77679","name":"test.apk"}
-11-12 10:31:14.628  2329  4140 D Capacitor: Sending plugin error: {"save":false,"callbackId":"71325334","pluginId":"NetWiki","methodName":"downloadUpdate","success":false,"error":{"message":"La nouvelle version est signée avec la clé officielle de JK-ASFC, différente de celle de l'application installée (ancienne version de test). Désinstallez NetWiki une seule fois puis installez la nouvelle version : les mises à jour suivantes seront automatiques.","code":"SIGNATURE"}}
-11-12 10:31:15.729  2329  2329 V Capacitor: callback: 71325335, pluginId: NetWiki, methodName: downloadUpdate, methodData: {"url":"https:\/\/github.com\/JK-ASFC\/netwiki\/releases\/download\/v1.45.0\/netwiki-update.json","sha256":"0000000000000000000000000000000000000000000000000000000000000000","name":"x.apk"}
-11-12 10:31:15.874  2329  4140 D Capacitor: Sending plugin error: {"save":false,"callbackId":"71325335","pluginId":"NetWiki","methodName":"downloadUpdate","success":false,"error":{"message":"Empreinte du fichier téléchargé incorrecte : mise à jour annulée."}}
-11-12 10:31:16.821  2329  2329 V Capacitor: callback: 71325336, pluginId: NetWiki, methodName: openInstallSettings, methodData: {}
-11-12 10:31:17.123  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:31:17.144  2329  2329 D Capacitor: App paused
-11-12 10:31:20.926  2329  2329 D Capacitor: App stopped
-11-12 10:31:20.976  2329  2329 D Capacitor: Saving instance state!
-11-12 10:31:21.153  2329  2329 D Capacitor: App restarted
-11-12 10:31:21.154  2329  2329 D Capacitor: App started
-11-12 10:31:21.160  2329  2329 D Capacitor: App resumed
-11-12 10:31:32.114  2329  2329 V Capacitor: callback: 71325337, pluginId: NetWiki, methodName: exitApp, methodData: {}
-11-12 10:31:32.996  2329  2329 I Capacitor/Console: File:  - Line 333 - Msg: undefined
-11-12 10:31:33.001  2329  2329 D Capacitor: App paused
-11-12 10:31:35.627  2329  2329 D Capacitor: App stopped
-11-12 10:31:35.628  2329  2329 D Capacitor: Saving instance state!
+11-12 10:37:48.452  2338  2338 D Capacitor: Starting BridgeActivity
+11-12 10:37:48.519  2338  2338 D Capacitor: Registering plugin instance: CapacitorCookies
+11-12 10:37:48.524  2338  2338 D Capacitor: Registering plugin instance: WebView
+11-12 10:37:48.527  2338  2338 D Capacitor: Registering plugin instance: CapacitorHttp
+11-12 10:37:48.538  2338  2338 D Capacitor: Registering plugin instance: NetWiki
+11-12 10:37:48.560  2338  2338 D Capacitor: Registering plugin instance: Browser
+11-12 10:37:48.602  2338  2338 W Capacitor: Unable to read file at path public/plugins
+11-12 10:37:48.606  2338  2338 D Capacitor: Loading app at https://localhost
+11-12 10:37:48.680  2338  2338 D Capacitor: App started
+11-12 10:37:48.714  2338  2338 D Capacitor: App resumed
+11-12 10:37:48.798  2338  2426 D Capacitor: Handling local request: https://localhost/
+11-12 10:37:49.460  2338  2426 D Capacitor: Handling local request: https://localhost/dist/styles.css
+11-12 10:37:49.466  2338  2427 D Capacitor: Handling local request: https://localhost/dist/platform.js
+11-12 10:37:49.483  2338  2429 D Capacitor: Handling local request: https://localhost/dist/app.js
+11-12 10:37:49.647  2338  2338 V Capacitor: callback: 65340164, pluginId: NetWiki, methodName: addListener, methodData: {"eventName":"updateProgress"}
+11-12 10:37:49.653  2338  2426 D Capacitor: Handling local request: https://localhost/dist/inter-latin-wght-normal-NRMW37G5.woff2
+11-12 10:37:53.176  2338  2338 V Capacitor: callback: 65340165, pluginId: NetWiki, methodName: getInfo, methodData: {}
+11-12 10:37:53.189  2338  2426 D Capacitor: Handling local request: https://localhost/favicon.ico
+11-12 10:37:53.691  2338  2426 D Capacitor: Handling local request: https://localhost/LICENSE.txt
+11-12 10:37:53.944  2338  2426 D Capacitor: Handling local request: https://localhost/content.json
+11-12 10:37:54.299  2338  2338 V Capacitor: callback: 65340166, pluginId: NetWiki, methodName: addListener, methodData: {"eventName":"backButton"}
+11-12 10:37:54.301  2338  2338 V Capacitor: callback: 65340167, pluginId: NetWiki, methodName: setBackHandler, methodData: {"enabled":true}
+11-12 10:37:54.303  2338  2338 V Capacitor: callback: 65340168, pluginId: NetWiki, methodName: setSystemBars, methodData: {"dark":true,"color":"#0b0d14"}
+11-12 10:37:54.675  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:37:55.846  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:38:10.903  2338  2338 V Capacitor: callback: 65340169, pluginId: NetWiki, methodName: addListener, methodData: {"eventName":"launchAction"}
+11-12 10:38:10.906  2338  2338 V Capacitor: callback: 65340170, pluginId: NetWiki, methodName: consumeLaunchAction, methodData: {}
+11-12 10:38:30.550  2338  2338 V Capacitor: callback: 65340171, pluginId: NetWiki, methodName: requestNotifications, methodData: {}
+11-12 10:38:31.970  2338  2338 V Capacitor: callback: 65340172, pluginId: NetWiki, methodName: configureUpdates, methodData: {"notify":true,"contentNotify":true}
+11-12 10:38:32.884  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:38:32.886  2338  2338 V Capacitor: callback: 65340173, pluginId: NetWiki, methodName: configureUpdates, methodData: {"notify":true,"contentVersion":"2026.11.12.1034"}
+11-12 10:38:33.856  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:38:34.835  2338  2338 V Capacitor: callback: 65340174, pluginId: NetWiki, methodName: getInfo, methodData: {}
+11-12 10:38:51.217  2338  2426 D Capacitor: Handling local request: https://localhost/dist/mermaid.min.js
+11-12 10:38:51.227  2338  2426 D Capacitor: Handling local request: https://localhost/dist/jetbrains-mono-latin-wght-normal-VBS632QH.woff2
+11-12 10:39:17.205  2338  2338 V Capacitor: callback: 65340175, pluginId: NetWiki, methodName: savePdf, methodData: {"name":"Présentation et installation","action":"save"}
+11-12 10:39:17.206  2338  2478 I NetWiki : PDF : save « Présentation et installation.pdf »
+11-12 10:39:43.772  2338  2338 V Capacitor: callback: 65340176, pluginId: NetWiki, methodName: savePdf, methodData: {"name":"Présentation et installation","action":"share"}
+11-12 10:39:43.775  2338  2478 I NetWiki : PDF : share « Présentation et installation.pdf »
+11-12 10:39:47.326  2338  2338 D Capacitor: App paused
+11-12 10:39:51.644  2338  2338 D Capacitor: App resumed
+11-12 10:40:10.394  2338  2338 V Capacitor: callback: 65340177, pluginId: NetWiki, methodName: printPage, methodData: {"name":"Présentation et installation"}
+11-12 10:40:11.142  2338  2338 D Capacitor: App paused
+11-12 10:40:18.794  2338  2338 D Capacitor: App resumed
+11-12 10:40:19.153  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:40:37.356  2338  2338 V Capacitor: callback: 65340178, pluginId: NetWiki, methodName: shareText, methodData: {"title":"Présentation et installation","text":"Présentation et installation\n\n\nUn **conteneur** exécute une application avec ses dépendances dans un environnement isolé (espaces de noms, cgroups) qui partage le noyau de l'hôte. Une **image** est le modèle en lecture seule, constitué de couches, à partir duquel on crée des conteneurs. **Docker** a popularisé ce modèle et reste l'outil de référence pour construire et exécuter des conteneurs.\n\n## Architecture\n\n```mermaid\nflowchart LR\n  CLI[\"docker (client)<br\/>docker compose\"] -- \"API (socket \/var\/run\/docker.sock)\" --> D[\"dockerd<br\/>(réseaux, volumes, images)\"]\n  D --> C[\"containerd\"] --> R[\"runc<br\/>(création du conteneur)\"]\n  D -- \"pull \/ push\" --> REG[(\"Registres<br\/>Docker Hub, Harbor, GitLab…\")]\n```\n\n| Notion | Description |\n| --- | --- |\n| Image | Couches empilées, identifiées par `nom:tag` et un condensat `sha256` |\n| Conteneur | Instance d'une image avec une couche inscriptible |\n| Registre | Stockage et distribution des images |\n| Volume | Données persistantes hors du cycle de vie du conteneur |\n| Réseau | Réseaux virtuels (bridge, host, macvlan, overlay) |\n\n## Docker Engine ou Docker Desktop ?\n\n| Produit | Plate-forme | Licence |\n| --- | --- | --- |\n| **Docker Engine** | Linux (serveurs) | Libre (Apache 2.0) |\n| **Docker Desktop** | Windows, macOS, Linux (poste) | Gratuit pour usage personnel, éducation et petites entreprises (< 250 salariés et < 10 M$ de CA) ; **payant** sinon |\n\n## Installation sous Linux (dépôt officiel)\n\n### Debian \/ Ubuntu\n\n```bash\nsudo apt install ca-certificates curl\nsudo install -m 0755 -d \/etc\/apt\/keyrings\nsudo curl -fsSL https:\/\/download.docker.com\/linux\/debian\/gpg -o \/etc\/apt\/keyrings\/docker.asc     # …\/linux\/ubuntu\/gpg pour Ubuntu\necho \"deb [arch=$(dpkg --print-architecture) signed-by=\/etc\/apt\/keyrings\/docker.asc] https:\/\/download.docker.com\/linux\/debian $(. \/etc\/os-release && echo \"$VERSION_CODENAME\") stable\" \\\n  | sudo tee \/etc\/apt\/sources.list.d\/docker.list\nsudo apt update\nsudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin\nsudo systemctl enable --now docker\nsudo docker run --rm hello-world\n```\n\nLe paquet `docker.io` de la distribution existe aussi (version plus ancienne, sans le greffon Compose v2 sur certaines versions).\n\n### RHEL \/ Rocky \/ Alma\n\n```bash\nsudo dnf remove -y podman buildah runc 2>\/dev\/null     # RHEL fournit Podman par défaut\nsudo dnf config-manager --add-repo https:\/\/download.docker.com\/linux\/rhel\/docker-ce.repo\nsudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin\nsudo systemctl enable --now docker\n```\n\nSous RHEL, [[02-podman\/01-presentation-installation|Podman]] est l'outil natif et largement compatible.\n\n### Accès sans sudo\n\n```bash\nsudo usermod -aG docker alice          # effectif à la prochaine connexion\n```\n\n> [!WARNING]\n> Être membre du groupe **docker** équivaut à être **root** sur l'hôte (monter `\/` dans un conteneur privilégié, par exemple). Réservez-le aux administrateurs ou utilisez le mode *rootless* (voir [[05-securite-exploitation]]).\n\n## Windows\n\n| Besoin | Solution |\n| --- | --- |\n| Poste de développement (conteneurs Linux) | **Docker Desktop** avec moteur **WSL 2** : `winget install Docker.DockerDesktop` |\n| Conteneurs **Windows** sur Windows Server | Docker Engine (script Microsoft `install-docker-ce.ps1`, Mirantis Container Runtime) ou containerd + nerdctl ; images `mcr.microsoft.com\/windows\/servercore` |\n| Sans Docker Desktop | Docker Engine dans une distribution WSL 2 |\n\nLes conteneurs Windows exigent une version d'image compatible avec la version de l'hôte (isolation processus) ou l'isolation Hyper-V.\n\n## macOS\n\n| Solution | Remarque |\n| --- | --- |\n| **Docker Desktop** | `brew install --cask docker` 
+11-12 10:40:38.302  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:40:38.333  2338  2338 D Capacitor: App paused
+11-12 10:40:43.231  2338  2338 D Capacitor: App resumed
+11-12 10:40:48.313  2338  2338 V Capacitor: callback: 65340179, pluginId: NetWiki, methodName: setSystemBars, methodData: {"dark":false,"color":"#f4f5f9"}
+11-12 10:40:48.972  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:40:57.291  2338  2338 V Capacitor: callback: 65340180, pluginId: NetWiki, methodName: setSystemBars, methodData: {"dark":true,"color":"#0b0d14"}
+11-12 10:40:57.983  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:41:06.324  2338  2338 V Capacitor: callback: 65340181, pluginId: NetWiki, methodName: configureUpdates, methodData: {"notify":true,"contentVersion":"2000.01.01.0000"}
+11-12 10:41:06.908  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:41:06.912  2338  2338 V Capacitor: callback: 65340182, pluginId: NetWiki, methodName: runBackgroundCheck, methodData: {}
+11-12 10:41:09.423  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:41:09.431  2338  2338 V Capacitor: callback: 65340183, pluginId: NetWiki, methodName: getInfo, methodData: {}
+11-12 10:41:17.052  2338  2338 D Capacitor: App paused
+11-12 10:41:17.063  2338  2338 D Capacitor: App resumed
+11-12 10:41:18.442  2338  2338 V Capacitor: callback: 65340184, pluginId: NetWiki, methodName: getInfo, methodData: {}
+11-12 10:41:28.865  2338  2338 V Capacitor: callback: 65340185, pluginId: NetWiki, methodName: httpGet, methodData: {"url":"https:\/\/github.com\/JK-ASFC\/netwiki\/releases\/download\/v1.45.0\/netwiki-update.json"}
+11-12 10:41:30.836  2338  2338 V Capacitor: callback: 65340186, pluginId: NetWiki, methodName: downloadUpdate, methodData: {"url":"https:\/\/github.com\/JK-ASFC\/netwiki\/releases\/download\/v1.45.0\/app-debug.apk","sha256":"6b954bd93c28fd1a522971320672797834cafb5f578b1f74882730e1cbc77679","name":"test.apk"}
+11-12 10:41:33.087  2338  4210 D Capacitor: Sending plugin error: {"save":false,"callbackId":"65340186","pluginId":"NetWiki","methodName":"downloadUpdate","success":false,"error":{"message":"La nouvelle version est signée avec la clé officielle de JK-ASFC, différente de celle de l'application installée (ancienne version de test). Désinstallez NetWiki une seule fois puis installez la nouvelle version : les mises à jour suivantes seront automatiques.","code":"SIGNATURE"}}
+11-12 10:41:34.242  2338  2338 V Capacitor: callback: 65340187, pluginId: NetWiki, methodName: downloadUpdate, methodData: {"url":"https:\/\/github.com\/JK-ASFC\/netwiki\/releases\/download\/v1.45.0\/netwiki-update.json","sha256":"0000000000000000000000000000000000000000000000000000000000000000","name":"x.apk"}
+11-12 10:41:34.385  2338  4210 D Capacitor: Sending plugin error: {"save":false,"callbackId":"65340187","pluginId":"NetWiki","methodName":"downloadUpdate","success":false,"error":{"message":"Empreinte du fichier téléchargé incorrecte : mise à jour annulée."}}
+11-12 10:41:35.332  2338  2338 V Capacitor: callback: 65340188, pluginId: NetWiki, methodName: openInstallSettings, methodData: {}
+11-12 10:41:35.646  2338  2338 D Capacitor: App paused
+11-12 10:41:35.731  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:41:40.396  2338  2338 D Capacitor: App stopped
+11-12 10:41:40.421  2338  2338 D Capacitor: Saving instance state!
+11-12 10:41:40.606  2338  2338 D Capacitor: App restarted
+11-12 10:41:40.607  2338  2338 D Capacitor: App started
+11-12 10:41:40.611  2338  2338 D Capacitor: App resumed
+11-12 10:41:52.226  2338  2338 V Capacitor: callback: 65340189, pluginId: NetWiki, methodName: exitApp, methodData: {}
+11-12 10:41:53.074  2338  2338 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-12 10:41:53.116  2338  2338 D Capacitor: App paused
+11-12 10:41:55.645  2338  2338 D Capacitor: App stopped
+11-12 10:41:55.648  2338  2338 D Capacitor: Saving instance state!

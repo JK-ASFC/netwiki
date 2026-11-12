@@ -31,7 +31,7 @@ Appareil : Android SDK built for x86_64 — versionCode=10000 minSdk=23 targetSd
 
 ![pdf-enregistre](07-pdf-enregistre.png)
 
-| ✅ | Enregistrer en PDF (Téléchargements) | -rwxrwx--- 1 u0_a128 media_rw 501267 2026-11-12 10:29 Présentation\ et\ installation.pdf |
+| ✅ | Enregistrer en PDF (Téléchargements) | -rwxrwx--- 1 u0_a124 media_rw 501267 2026-11-12 10:39 Présentation\ et\ installation.pdf |
 
 ![partage-pdf](08-partage-pdf.png)
 
