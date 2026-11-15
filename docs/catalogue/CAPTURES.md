@@ -1,6 +1,6 @@
 # Captures d'écran à ajouter
 
-458 capture(s) attendue(s) dans 123 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
+453 capture(s) attendue(s) dans 123 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
 ## 01-annuaire-identite/12-389-directory-server
 
@@ -25,9 +25,6 @@
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-portail-menu.png` | LemonLDAP::NG — portail, menu des applications | `03-interface-graphique.md` |
-| `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-2fa.png` | LemonLDAP::NG — enregistrement d'un second facteur TOTP | `03-interface-graphique.md` |
-| `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-manager-vhost.png` | LemonLDAP::NG — Manager, arbre de configuration et hôte virtuel | `03-interface-graphique.md` |
 | `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-manager-sessions.png` | LemonLDAP::NG — Manager, explorateur de sessions | `03-interface-graphique.md` |
 
 ## 01-annuaire-identite/17-privacyidea-linotp
@@ -903,8 +900,6 @@
 | --- | --- | --- |
 | `content/21-outils/12-partage-appareils/_assets/kde-connect-appareils.png` | Page KDE Connect des Paramètres système avec un téléphone appairé | `01-kde-connect.md` |
 | `content/21-outils/12-partage-appareils/_assets/kde-connect-modules.png` | Liste des modules d'un appareil appairé | `01-kde-connect.md` |
-| `content/21-outils/12-partage-appareils/_assets/barrier-serveur.png` | Fenêtre principale en mode serveur | `02-barrier-input-leap-synergy.md` |
-| `content/21-outils/12-partage-appareils/_assets/barrier-grille-ecrans.png` | Configuration du serveur, grille des écrans | `02-barrier-input-leap-synergy.md` |
 | `content/21-outils/12-partage-appareils/_assets/localsend-envoyer.png` | Onglet Envoyer avec les appareils détectés | `03-localsend.md` |
 | `content/21-outils/12-partage-appareils/_assets/localsend-parametres.png` | Onglet Paramètres, alias et dossier de réception | `03-localsend.md` |
 
