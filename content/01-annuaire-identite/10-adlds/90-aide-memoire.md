@@ -1,6 +1,6 @@
 ---
 title: AD LDS — aide-mémoire des commandes
-description: Commandes AD LDS avec exemples — installation du rôle, création d'instance sans assistant (adaminstall et fichier de réponses), import de schémas (ldifde), gestion des objets avec le module ActiveDirectory et ADSI Edit, liaisons et tests (ldp.exe), réplication entre instances (repadmin), service Windows, sauvegarde (dsdbutil), désinstallation d'instance.
+description: Référence complète des commandes AD LDS avec exemples — installation d'une instance par fichier de réponses, service et ports, suppression d'instance, schémas et import LDIF, objets et comptes AD LDS (mot de passe, désactivation), rôles de partition, autorisations dsacls, outils graphiques, réplication, sauvegarde, instantanés et dsamain, IFM, journaux et diagnostic.
 tags: [aide-mémoire, ad lds, ldap, adam, ldifde, windows server]
 icon: terminal
 ---
@@ -66,4 +66,56 @@ repadmin /syncall localhost:50389 "O=Annuaire,C=FR"
 dsdbutil "activate instance AppAnnuaire" snapshot create quit quit
 wbadmin start backup -backupTarget:E: -include:D:\ADLDS\AppAnnuaire -quiet
 # Supprimer l'instance : Paramètres → Applications → « Instance AD LDS AppAnnuaire »
+```
+
+## Instances et service
+
+```powershell
+Get-Service ADAM_* | Select-Object Name, Status, StartType
+Restart-Service ADAM_AppAnnuaire
+Get-ChildItem HKLM:\SYSTEM\CurrentControlSet\Services | Where-Object PSChildName -like "ADAM_*" | Select-Object PSChildName
+Get-NetTCPConnection -State Listen | Where-Object LocalPort -in 50389, 50636
+Test-NetConnection localhost -Port 50636
+# Supprimer une instance
+& "$env:SystemRoot\ADAM\adamuninstall.exe" /i:AppAnnuaire
+```
+
+## Comptes AD LDS
+
+```powershell
+New-ADUser -Name "svc-intranet" -Path "OU=Utilisateurs,O=Annuaire,C=FR" -Server localhost:50389 -AccountPassword (Read-Host -AsSecureString "Mot de passe") -Enabled $true
+Set-ADAccountPassword -Identity "CN=svc-intranet,OU=Utilisateurs,O=Annuaire,C=FR" -Reset -NewPassword (Read-Host -AsSecureString "Nouveau") -Server localhost:50389
+Set-ADObject "CN=svc-intranet,OU=Utilisateurs,O=Annuaire,C=FR" -Replace @{"msDS-UserAccountDisabled" = $true} -Server localhost:50389    # désactiver
+Get-ADObject -LDAPFilter "(objectClass=user)" -SearchBase "O=Annuaire,C=FR" -Server localhost:50389 -Properties "msDS-UserAccountDisabled", whenCreated
+# Rôles de la partition (Readers, Users, Administrators)
+Get-ADGroupMember -Identity "CN=Administrators,CN=Roles,O=Annuaire,C=FR" -Server localhost:50389
+Get-ADGroupMember -Identity "CN=Readers,CN=Roles,O=Annuaire,C=FR" -Server localhost:50389
+```
+
+## Autorisations
+
+```powershell
+dsacls "\\localhost:50389\O=Annuaire,C=FR"
+dsacls "\\localhost:50389\OU=Utilisateurs,O=Annuaire,C=FR" /G "CN=GG-App-Lecture,CN=Roles,O=Annuaire,C=FR:GR" /I:T
+```
+
+## Sauvegarde, instantanés, IFM
+
+```powershell
+dsdbutil "activate instance AppAnnuaire" snapshot create quit quit
+dsdbutil "activate instance AppAnnuaire" snapshot "list all" quit quit
+dsdbutil "activate instance AppAnnuaire" snapshot "mount 1" quit quit
+dsamain -dbpath "C:\`$SNAP_202611150200_VOLUMED`$\ADLDS\AppAnnuaire\data\adamntds.dit" -ldapport 51389
+dsdbutil "activate instance AppAnnuaire" snapshot "unmount *" quit quit
+# Support d'installation pour une nouvelle réplique
+dsdbutil "activate instance AppAnnuaire" ifm "create full D:\IFM-ADLDS" quit quit
+```
+
+## Diagnostic
+
+```powershell
+repadmin /showrepl localhost:50389
+repadmin /replsummary localhost:50389
+Get-WinEvent -LogName "ADAM (AppAnnuaire)" -MaxEvents 30 | Select-Object TimeCreated, Id, LevelDisplayName, Message
+ldifde -f C:\Temp\rootdse.ldf -s localhost:50389 -d "" -p Base           # contexte racine (partitions, contrôles)
 ```
