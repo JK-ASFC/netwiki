@@ -122,6 +122,13 @@ git fsck                     # intégrité
 git count-objects -vH        # taille du dépôt
 ```
 
+## Nouveautés de la version 2.56.1
+
+> [!WARNING]
+> Git 2.56.1 et Git for Windows 2.56.1.windows.1 corrigent notamment CVE-2026-111760 : un clone récursif (`--recurse-submodules`) d'un dépôt piégé peut conduire à une exécution de code à distance (un fichier gitfile de sous-module est remplacé par un lien symbolique vers un répertoire contenant une configuration ou des hooks malveillants). Sont aussi corrigés CVE-2026-113408 (HEAD « unborn » annoncé par un serveur avec traversée de chemin), CVE-2026-114467 (corruption de pile avec plus de deux signatures GPG, déclenchable par `git merge` d'une étiquette) ainsi que CVE-2026-114466, CVE-2026-114469 et CVE-2026-105437. Mettez à jour les postes et les serveurs ; d'ici là, évitez de cloner récursivement des dépôts non fiables.
+
+Source : https://github.com/git-for-windows/git/releases/tag/v2.56.1.windows.1
+
 ## Erreurs fréquentes
 
 | Message | Cause | Solution |

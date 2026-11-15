@@ -81,4 +81,7 @@ git config --global credential.helper manager
 git update-git-for-windows
 ```
 
+> [!WARNING]
+> Git for Windows 2.56.1.windows.1 corrige plusieurs failles de sécurité, dont CVE-2026-111760 (exécution de code à distance lors d'un clone récursif d'un dépôt piégé). Exécutez `git update-git-for-windows` sur les postes. Détails : [[14-devops/01-git/03-serveur-hooks-depannage|Git, nouveautés 2.56.1]].
+
 Voir [[01-git/01-presentation-installation|Git]] pour l'usage. Commandes : [[90-aide-memoire|aide-mémoire]].
