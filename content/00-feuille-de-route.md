@@ -203,6 +203,10 @@ NetWiki documente progressivement les services listés ci-dessous. Un même logi
 | 187 | Catalogue — BI : Metabase, Apache Superset, Redash, Lightdash, Evidence | ✅ |
 | 188 | Catalogue — observabilité : Kibana, OpenObserve | ✅ |
 | 189 | Catalogue — marque-pages et archivage : Linkding, Shiori, Linkwarden, Hoarder/Karakeep, Wallabag, Readeck, ArchiveBox, Changedetection.io | ✅ |
+| 190 | Catalogue — terminaux distants : Mosh, Eternal Terminal, tmate | ✅ |
+| 191 | Catalogue — relais et outils réseau : socat, ncat, netcat-openbsd, GNU inetutils | ✅ |
+| 192 | Catalogue — diagnostic L2/L3 : traceroute, fping, arp-scan, arping | ✅ |
+| 193 | Catalogue — Wi-Fi et homme du milieu : Kismet (WIDS) ; Ettercap, Bettercap, MITMf, Aircrack-ng traités sous l'angle de la défense — fin du catalogue | ✅ |
 
 ## Annuaire, identité & secrets
 

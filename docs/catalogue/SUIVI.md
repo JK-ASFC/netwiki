@@ -4,7 +4,7 @@ Généré par `node scripts/catalogue.mjs` à partir de [catalogue-services.txt]
 
 | Total | Déjà dans le wiki | Nouvelles fiches | Fiches améliorées | Reste à faire |
 | --- | --- | --- | --- | --- |
-| 1311 | 191 (15 %) | 1100 | 4 | 16 (1 %) |
+| 1311 | 191 (15 %) | 1116 | 4 | 0 (0 %) |
 
 Méthode de rédaction : [METHODE.md](METHODE.md).
 
@@ -1211,31 +1211,31 @@ Méthode de rédaction : [METHODE.md](METHODE.md).
 | 4get | Métamoteur recherche | Windows, Linux, macOS | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 | LibreX | Métamoteur recherche | Linux | 🆕 fait (lot 142) | `12-recherche-messages/13-metamoteurs` |
 
-## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 34/50
+## 22. RESEAU, ACCES DISTANT, TRANSFERT ET OUTILS DIAGNOSTIC — 50/50
 
 | Service | Rôle | Plateformes | État | Fiche / cible |
 | --- | --- | --- | --- | --- |
 | OpenSSH | SSH client/serveur | Windows, Linux, macOS | ✅ existant | `08-acces-distant-vpn/01-openssh` |
 | Dropbear SSH | Serveur SSH léger | Linux, embedded | 🆕 fait (lot 143) | `08-acces-distant-vpn/14-dropbear-tinyssh` |
 | TinySSH | Serveur SSH minimal | Linux | 🆕 fait (lot 143) | `08-acces-distant-vpn/14-dropbear-tinyssh` |
-| Mosh | Terminal distant | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Eternal Terminal | Terminal distant | Linux, macOS | ⏳ à faire | → `21-outils` |
-| tmate | Partage terminal | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| GNU inetutils | Utilitaires réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| socat | Relais sockets | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| ncat | Outil réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| netcat-openbsd | Outil réseau | Linux, BSD | ⏳ à faire | → `21-outils` |
+| Mosh | Terminal distant | Windows, Linux, macOS | 🆕 fait (lot 190) | `21-outils/24-terminaux-distants` |
+| Eternal Terminal | Terminal distant | Linux, macOS | 🆕 fait (lot 190) | `21-outils/24-terminaux-distants` |
+| tmate | Partage terminal | Windows, Linux, macOS | 🆕 fait (lot 190) | `21-outils/24-terminaux-distants` |
+| GNU inetutils | Utilitaires réseau | Windows, Linux, macOS | 🆕 fait (lot 191) | `21-outils/25-relais-outils-reseau` |
+| socat | Relais sockets | Windows, Linux, macOS | 🆕 fait (lot 191) | `21-outils/25-relais-outils-reseau` |
+| ncat | Outil réseau | Windows, Linux, macOS | 🆕 fait (lot 191) | `21-outils/25-relais-outils-reseau` |
+| netcat-openbsd | Outil réseau | Linux, BSD | 🆕 fait (lot 191) | `21-outils/25-relais-outils-reseau` |
 | iperf3 | Mesure débit réseau | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/05-iperf3` |
 | mtr | Diagnostic réseau | Windows, Linux, macOS | ✅ existant | `21-outils/02-reseau-diagnostic/06-dig-mtr-curl` |
-| traceroute | Diagnostic réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| fping | Ping multi-hôtes | Linux, BSD | ⏳ à faire | → `21-outils` |
-| arp-scan | Découverte LAN | Linux | ⏳ à faire | → `21-outils` |
-| arping | Diagnostic ARP | Linux | ⏳ à faire | → `21-outils` |
-| Ettercap | Analyse réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Bettercap | Analyse réseau | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| MITMf (archivé) | Outils réseau anciens | Linux | ⏳ à faire | → `21-outils` |
-| Aircrack-ng | Audit Wi-Fi | Windows, Linux, macOS | ⏳ à faire | → `21-outils` |
-| Kismet | Détection réseau sans fil | Linux, macOS | ⏳ à faire | → `21-outils` |
+| traceroute | Diagnostic réseau | Windows, Linux, macOS | 🆕 fait (lot 192) | `21-outils/26-diagnostic-l2-l3` |
+| fping | Ping multi-hôtes | Linux, BSD | 🆕 fait (lot 192) | `21-outils/26-diagnostic-l2-l3` |
+| arp-scan | Découverte LAN | Linux | 🆕 fait (lot 192) | `21-outils/26-diagnostic-l2-l3` |
+| arping | Diagnostic ARP | Linux | 🆕 fait (lot 192) | `21-outils/26-diagnostic-l2-l3` |
+| Ettercap | Analyse réseau | Windows, Linux, macOS | 🆕 fait (lot 193) | `21-outils/27-wifi-homme-du-milieu` |
+| Bettercap | Analyse réseau | Windows, Linux, macOS | 🆕 fait (lot 193) | `21-outils/27-wifi-homme-du-milieu` |
+| MITMf (archivé) | Outils réseau anciens | Linux | 🆕 fait (lot 193) | `21-outils/27-wifi-homme-du-milieu` |
+| Aircrack-ng | Audit Wi-Fi | Windows, Linux, macOS | 🆕 fait (lot 193) | `21-outils/27-wifi-homme-du-milieu` |
+| Kismet | Détection réseau sans fil | Linux, macOS | 🆕 fait (lot 193) | `21-outils/27-wifi-homme-du-milieu` |
 | hostapd | Point d'accès Wi-Fi | Linux | 🆕 fait (lot 145) | `21-outils/17-wifi-linux` |
 | wpa_supplicant | Client Wi-Fi | Linux, Windows | 🆕 fait (lot 145) | `21-outils/17-wifi-linux` |
 | iw | Outils Wi-Fi | Linux | 🆕 fait (lot 145) | `21-outils/17-wifi-linux` |

@@ -1,0 +1,1 @@
+{ "title": "socat, ncat, netcat et GNU inetutils", "icon": "cable", "color": "#6366f1", "description": "Couteaux suisses du réseau en ligne de commande : tester un port, relayer TCP/UDP, envelopper en TLS, parler à un socket Unix ou à un port série (socat, ncat, netcat-openbsd), et clients historiques telnet, ftp et whois de GNU inetutils." }

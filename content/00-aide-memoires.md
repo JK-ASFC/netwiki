@@ -287,6 +287,10 @@ Chaque service documenté dispose d'un article **« aide-mémoire des commandes 
 - [[21-outils/21-tests-debit/90-aide-memoire|Tests de débit]]
 - [[21-outils/22-sondes-reseau/90-aide-memoire|Sondes réseau]]
 - [[21-outils/23-config-reseau/90-aide-memoire|Oxidized, RANCID, Netdisco et Batfish]]
+- [[21-outils/24-terminaux-distants/90-aide-memoire|Mosh, Eternal Terminal et tmate]]
+- [[21-outils/25-relais-outils-reseau/90-aide-memoire|socat, ncat, netcat et GNU inetutils]]
+- [[21-outils/26-diagnostic-l2-l3/90-aide-memoire|traceroute, fping, arp-scan et arping]]
+- [[21-outils/27-wifi-homme-du-milieu/90-aide-memoire|Kismet et défense contre l'homme du milieu]]
 
 ## Équipements réseau par constructeur
 

@@ -1,0 +1,1 @@
+{ "title": "Kismet et défense contre l'homme du milieu", "icon": "radar", "color": "#ef4444", "description": "Surveiller ses réseaux sans fil avec Kismet (inventaire, points d'accès pirates, alertes d'attaque) et se protéger des outils d'interception (Ettercap, Bettercap, MITMf, Aircrack-ng) : inspection ARP, DHCP snooping, RA Guard, WPA3 et 802.11w, 802.1X." }
