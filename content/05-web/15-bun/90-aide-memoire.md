@@ -22,3 +22,31 @@ bun build src/index.ts --compile --target=bun-linux-x64 --outfile app   # compil
 bun pm ls ; bun pm cache rm
 bun --env-file=.env.production run src/index.ts
 ```
+
+## Installation et service
+
+```bash
+curl -fsSL https://bun.sh/install | bash             # Linux, macOS (dans ~/.bun)
+brew install oven-sh/bun/bun                         # macOS
+npm install -g bun
+powershell -c "irm bun.sh/install.ps1 | iex"         # Windows
+docker run --rm -v "$PWD":/app -w /app oven/bun:1 bun test
+```
+
+```ini /etc/systemd/system/api-bun.service
+[Unit]
+Description=API Bun
+After=network-online.target
+
+[Service]
+User=app
+WorkingDirectory=/opt/api-bun
+EnvironmentFile=/etc/api-bun/env
+ExecStart=/opt/api-bun/app
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+`/opt/api-bun/app` est le binaire autonome produit par `bun build --compile` : aucun Bun n'est nécessaire sur le serveur.

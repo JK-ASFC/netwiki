@@ -121,3 +121,13 @@ python -m cProfile -s cumtime script.py | head -30
 py-spy top --pid $(pgrep -f gunicorn | head -1)     # profiler un processus en cours
 python -m http.server 8080 --bind 127.0.0.1          # serveur de fichiers de test
 ```
+
+## Gunicorn et Uvicorn : vérifications
+
+```bash
+gunicorn --check-config -c /etc/app-web/gunicorn.conf.py projet.wsgi:application   # configuration et import de l'application
+gunicorn --print-config -c /etc/app-web/gunicorn.conf.py projet.wsgi:application | grep -E "^(workers|bind|timeout|worker_class)"
+kill -HUP $(cat /run/app-web/gunicorn.pid)                                  # recharger les workers sans coupure
+uvicorn projet.asgi:application --host 127.0.0.1 --port 8001 --workers 4 --proxy-headers --forwarded-allow-ips 127.0.0.1
+python -X importtime -c "import projet.wsgi" 2> /tmp/imports.txt && sort -t '|' -k2 -n /tmp/imports.txt | tail   # imports les plus lents au démarrage
+```

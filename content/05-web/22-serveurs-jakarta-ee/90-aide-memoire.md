@@ -32,3 +32,32 @@ server list ; server create app ; server start app ; server run app ; server sto
 server dump app --include=thread,heap ; server package app --include=usr
 featureUtility installServerFeatures app ; securityUtility encode --encoding=aes 'secret'
 ```
+
+## Jetty : base d'instance
+
+```bash
+# JETTY_HOME = distribution (lecture seule) ; JETTY_BASE = configuration de l'instance
+sudo mkdir -p /opt/jetty-base && cd /opt/jetty-base
+java -jar $JETTY_HOME/start.jar --add-modules=server,http,ee10-deploy
+java -jar $JETTY_HOME/start.jar --add-modules=ssl,https          # puis keystore dans /opt/jetty-base/etc
+cp app.war /opt/jetty-base/webapps/
+java -jar $JETTY_HOME/start.jar                                   # démarrer (depuis JETTY_BASE)
+```
+
+## Payara / GlassFish : sécurisation et pool de connexions
+
+```bash
+asadmin change-admin-password
+asadmin enable-secure-admin && asadmin restart-domain              # console d'administration en HTTPS, accès distant
+asadmin create-jdbc-connection-pool --datasourceclassname org.postgresql.ds.PGSimpleDataSource --restype javax.sql.DataSource --property user=app:password=MotDePasse:serverName=srv-db.corp.exemple.fr:portNumber=5432:databaseName=inventaire pool-inventaire
+asadmin create-jdbc-resource --connectionpoolid pool-inventaire jdbc/inventaire
+asadmin ping-connection-pool pool-inventaire
+```
+
+## Open Liberty : fonctionnalités
+
+```bash
+featureUtility installFeature restfulWS-3.1
+featureUtility find jdbc
+server javadump app                                              # vidage des threads
+```

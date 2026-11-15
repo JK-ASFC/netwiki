@@ -24,3 +24,49 @@ $valeur = $env:PROXY ?? 'aucun' ; Get-Item /etc/hosts && Write-Host 'présent'
 Enter-PSSession -HostName srv-lin-01 -UserName adm-jk ; Get-PSSession | Remove-PSSession
 Find-PSResource Microsoft.Graph -Repository PSGallery ; Install-PSResource PSScriptAnalyzer -Scope CurrentUser
 ```
+
+## Installation
+
+```bash
+winget install Microsoft.PowerShell                  # Windows
+sudo apt install powershell                          # Ubuntu / Debian (dépôt Microsoft packages-microsoft-prod)
+sudo dnf install powershell                          # RHEL (dépôt Microsoft)
+brew install --cask powershell                       # macOS
+pwsh -Version
+```
+
+## Administration à distance
+
+```powershell
+# WinRM (Windows)
+Enable-PSRemoting -Force
+Invoke-Command -ComputerName srv-win-01, srv-win-02 -ScriptBlock { Get-Service W32Time }
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value "srv-hors-domaine.exemple.fr" -Concatenate
+# SSH (Linux, macOS, Windows) : dans sshd_config de la cible
+#   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo
+Invoke-Command -HostName srv-lin-01 -UserName adm-jk -ScriptBlock { uname -a }
+```
+
+## Sécurité des scripts et secrets
+
+```powershell
+Get-ExecutionPolicy -List
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Install-PSResource PSScriptAnalyzer -Scope CurrentUser
+Invoke-ScriptAnalyzer -Path . -Recurse
+Set-AuthenticodeSignature -FilePath .\deploiement.ps1 -Certificate (Get-ChildItem Cert:\CurrentUser\My -CodeSigningCert | Select-Object -First 1)
+Start-Transcript -Path "C:\Journaux\session-$(Get-Date -Format yyyyMMdd-HHmm).txt"
+# Coffre de secrets local
+Install-PSResource Microsoft.PowerShell.SecretManagement, Microsoft.PowerShell.SecretStore -Scope CurrentUser
+Register-SecretVault -Name Coffre -ModuleName Microsoft.PowerShell.SecretStore -DefaultVault
+Set-Secret -Name ApiNetbox -Secret 'jeton-netbox'
+Get-Secret -Name ApiNetbox -AsPlainText
+```
+
+## Tâche planifiée (Windows)
+
+```powershell
+$action = New-ScheduledTaskAction -Execute "pwsh.exe" -Argument "-NoProfile -File C:\Scripts\inventaire.ps1"
+$declencheur = New-ScheduledTaskTrigger -Daily -At 6am
+Register-ScheduledTask -TaskName "Inventaire quotidien" -Action $action -Trigger $declencheur -User "CORP\gmsa-scripts$" -RunLevel Highest
+```

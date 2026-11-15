@@ -103,3 +103,15 @@ tail -f log/production.log
 RAILS_LOG_LEVEL=debug bin/rails server
 ruby -e 'require "openssl"; puts OpenSSL::OPENSSL_VERSION'
 ```
+
+## Secrets et production (Rails)
+
+```bash
+EDITOR=vim bin/rails credentials:edit --environment production                # config/credentials/production.yml.enc
+bin/rails credentials:show --environment production
+RAILS_ENV=production bin/rails assets:precompile
+RAILS_ENV=production bin/rails runner "puts User.count"
+RAILS_ENV=production bin/rails db:migrate:status
+```
+
+La clé `config/credentials/production.key` (ou la variable `RAILS_MASTER_KEY`) ne doit jamais être versionnée : déposez-la sur le serveur ou dans le coffre de secrets.

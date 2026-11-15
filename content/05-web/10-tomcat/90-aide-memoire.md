@@ -97,3 +97,23 @@ cd "C:\Program Files\Apache Software Foundation\Tomcat 10.1\bin"
 .\tomcat10w.exe //ES//Tomcat10                                          # interface de configuration du service
 Restart-Service Tomcat10
 ```
+
+## Vérification, JVM, client réel
+
+```bash
+sudo -u tomcat /opt/tomcat/bin/catalina.sh configtest                       # valider server.xml sans démarrer
+```
+
+```bash /opt/tomcat/bin/setenv.sh
+# Mémoire, ramasse-miettes et journal du ramasse-miettes
+CATALINA_OPTS="-Xms1g -Xmx2g -XX:+UseG1GC -Xlog:gc*:file=/opt/tomcat/logs/gc.log:time,uptime:filecount=5,filesize=20M"
+CATALINA_OPTS="$CATALINA_OPTS -Djava.security.egd=file:/dev/urandom"
+export CATALINA_OPTS
+```
+
+```xml server.xml (dans <Host>) : adresse réelle et HTTPS vus derrière le répartiteur 10.0.30.2
+<Valve className="org.apache.catalina.valves.RemoteIpValve"
+       internalProxies="10\.0\.30\.2"
+       remoteIpHeader="x-forwarded-for"
+       protocolHeader="x-forwarded-proto" />
+```

@@ -35,3 +35,24 @@ curl -sI --http2 https://www.corp.exemple.fr/ | head -1
 sudo cherokee-admin -b 127.0.0.1 -p 9090
 grep -E '^vserver!' /etc/cherokee/cherokee.conf | cut -d! -f2 | sort -u   # hôtes virtuels
 ```
+
+## Installation et état (Lighttpd)
+
+```bash
+sudo apt install lighttpd                          # Debian / Ubuntu
+sudo dnf install lighttpd lighttpd-fastcgi          # RHEL (EPEL), Fedora
+sudo apk add lighttpd                               # Alpine
+sudo pkg install lighttpd && sudo sysrc lighttpd_enable=YES   # FreeBSD
+sudo lighty-enable-mod fastcgi fastcgi-php status   # Debian : PHP et page d'état
+sudo systemctl reload lighttpd
+curl -s http://127.0.0.1/server-status?auto         # avec status.status-url = "/server-status" (accès à restreindre)
+```
+
+## H2O : installation
+
+```bash
+sudo apt install h2o                                # Debian / Ubuntu
+brew install h2o                                    # macOS
+```
+
+Cherokee n'est plus maintenu (dernière version publiée en 2013) : migrez vers Nginx, Caddy ou Lighttpd.

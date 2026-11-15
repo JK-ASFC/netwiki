@@ -21,3 +21,36 @@ go clean -modcache
 go tool dist list | grep linux              # cibles de compilation croisée
 govulncheck ./...
 ```
+
+## Installation
+
+```bash
+# Archive officielle (Linux), version voulue
+curl -LO https://go.dev/dl/go1.23.4.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
+echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> ~/.profile
+sudo apt install golang                              # version de la distribution (souvent plus ancienne)
+brew install go                                      # macOS
+winget install GoLang.Go                             # Windows
+```
+
+## Compilation pour la production
+
+```bash
+# Binaire statique, sans informations de débogage, version injectée
+CGO_ENABLED=0 go build -trimpath -ldflags "-s -w -X main.version=1.4.2" -o collecteur .
+# Compilation croisée
+GOOS=windows GOARCH=amd64 go build -o collecteur.exe .
+GOOS=linux GOARCH=arm64 go build -o collecteur-arm64 .
+go version -m ./collecteur                           # modules et options embarqués dans un binaire
+go install golang.org/x/vuln/cmd/govulncheck@latest
+```
+
+## Modules privés et mandataire
+
+```bash
+go env -w GOPRIVATE=gitlab.corp.exemple.fr
+go env -w GOPROXY=https://proxy.golang.org,direct
+git config --global url."git@gitlab.corp.exemple.fr:".insteadOf "https://gitlab.corp.exemple.fr/"
+go env -u GOPROXY                                    # revenir à la valeur par défaut
+```

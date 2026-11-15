@@ -126,3 +126,12 @@ docker run --rm -v "$PWD":/app -w /app php:8.4-cli php script.php
 ```
 
 Installation sur Alpine, Arch, openSUSE, Windows, FreeBSD : [[03-runtime-php-systemes-composer|Runtime PHP]].
+
+## OPcache (cachetool)
+
+```bash
+curl -sLO https://github.com/gordalina/cachetool/releases/latest/download/cachetool.phar && chmod +x cachetool.phar
+sudo ./cachetool.phar opcache:status --fcgi=/run/php/php8.2-fpm.sock          # mémoire, taux de réussite, scripts en cache
+sudo ./cachetool.phar opcache:reset --fcgi=/run/php/php8.2-fpm.sock           # vider après un déploiement (sans redémarrer FPM)
+sudo ./cachetool.phar opcache:status:scripts --fcgi=/run/php/php8.2-fpm.sock | head
+```

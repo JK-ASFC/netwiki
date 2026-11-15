@@ -1,6 +1,6 @@
 ---
 title: Nginx — aide-mémoire des commandes
-description: Commandes Nginx avec exemples — vérification et rechargement (nginx -t, -T, -s reload), service, blocs server HTTP/HTTPS, redirections, proxy inverse et WebSocket, équilibrage (upstream), cache, limitation de débit, restrictions d'accès, authentification de base, certificats (certbot), journaux et formats, tests (curl), Windows et macOS.
+description: Référence complète des commandes Nginx avec exemples — installation (Debian/Ubuntu, RHEL, Alpine, Arch, FreeBSD, macOS, Windows), service, vérification et configuration complète (nginx -T), signaux, site HTTPS, proxy inverse, WebSocket, équilibrage, cache, limitation, authentification, certificats, adresse réelle du client derrière un répartiteur, page stub_status, journaux (format avec temps amont, analyse, GoAccess), débogage par adresse, tests TLS et HTTP/2, test avant bascule DNS (--resolve), SELinux, test de charge, Windows et macOS.
 tags: [aide-mémoire, nginx, reverse proxy, certbot, upstream, web]
 icon: terminal
 ---
@@ -136,4 +136,89 @@ cd C:\nginx; start nginx; .\nginx.exe -t; .\nginx.exe -s reload; .\nginx.exe -s 
 
 ```bash
 brew install nginx && brew services start nginx      # macOS, port 8080 par défaut, conf /opt/homebrew/etc/nginx
+```
+
+## Installation
+
+```bash
+sudo apt install nginx                                 # Debian / Ubuntu
+sudo dnf install nginx                                 # RHEL / Rocky / Alma
+sudo apk add nginx                                     # Alpine
+sudo pacman -S nginx                                   # Arch
+sudo pkg install nginx && sudo sysrc nginx_enable=YES  # FreeBSD
+sudo systemctl enable --now nginx
+nginx -V 2>&1 | tr ' ' '\n' | grep -E "^--with|^--add"     # modules compilés
+```
+
+## Inspection et signaux
+
+```bash
+sudo nginx -T | less                                   # configuration complète, tous fichiers inclus
+sudo nginx -T 2>/dev/null | grep -nE "server_name|listen"
+sudo nginx -t && sudo nginx -s reload                  # vérifier puis recharger sans coupure
+sudo nginx -s reopen                                   # rouvrir les journaux (après rotation)
+sudo nginx -s quit                                     # arrêt propre
+```
+
+## Client réel derrière un répartiteur, page d'état
+
+```nginx /etc/nginx/conf.d/commun.conf
+# Adresse réelle du client transmise par le répartiteur (10.0.30.2 et 10.0.30.3)
+set_real_ip_from 10.0.30.2;
+set_real_ip_from 10.0.30.3;
+real_ip_header X-Forwarded-For;
+real_ip_recursive on;
+
+server {
+    listen 127.0.0.1:8080;
+    location = /nginx_status {
+        stub_status;
+        allow 127.0.0.1;
+        deny all;
+    }
+}
+```
+
+```bash
+curl -s http://127.0.0.1:8080/nginx_status          # connexions actives, requêtes, lecture/écriture/attente
+```
+
+## Journaux : temps de réponse et analyse
+
+```nginx
+log_format perf '$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent '
+                'rt=$request_time urt=$upstream_response_time uaddr=$upstream_addr "$http_user_agent"';
+access_log /var/log/nginx/intranet-perf.log perf;
+```
+
+```bash
+awk '{print $9}' /var/log/nginx/access.log | sort | uniq -c | sort -rn
+grep -oE 'rt=[0-9.]+' /var/log/nginx/intranet-perf.log | cut -d= -f2 | sort -rn | head      # requêtes les plus lentes (s)
+grep -E '" (502|503|504) ' /var/log/nginx/access.log | tail
+sudo tail -f /var/log/nginx/error.log | grep -E "upstream|connect\(\)|timed out"
+goaccess /var/log/nginx/access.log --log-format=COMBINED -o /var/www/html/rapport.html
+```
+
+## Débogage d'une seule adresse
+
+```nginx
+# Paquets nginx.org : binaire nginx-debug ; journal de débogage seulement pour le poste de test
+events {
+    debug_connection 10.0.99.10;
+}
+error_log /var/log/nginx/error.log notice;
+```
+
+## Tests TLS, HTTP/2 et bascule
+
+```bash
+curl -sI --http2 https://intranet.exemple.fr/ | head -1                    # HTTP/2 attendu
+openssl s_client -connect intranet.exemple.fr:443 -servername intranet.exemple.fr -tls1_3 </dev/null | grep -E "Protocol|Cipher"
+openssl s_client -connect intranet.exemple.fr:443 -servername intranet.exemple.fr -status </dev/null | grep -A2 "OCSP Response Status"   # agrafage OCSP
+# Tester le nouveau serveur avant de changer le DNS
+curl -svk --resolve intranet.exemple.fr:443:10.0.30.11 https://intranet.exemple.fr/ -o /dev/null
+# Charge (paquet wrk)
+wrk -t4 -c100 -d30s https://intranet.exemple.fr/
+# SELinux (RHEL) : autoriser Nginx à joindre les serveurs amont
+sudo setsebool -P httpd_can_network_connect 1
 ```

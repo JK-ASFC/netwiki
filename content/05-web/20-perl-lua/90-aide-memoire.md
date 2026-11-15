@@ -26,3 +26,14 @@ lua -v ; lua script.lua ; lua -e 'print(_VERSION)' ; luac -p *.lua
 luarocks search json ; luarocks install --local lua-cjson ; luarocks list ; luarocks remove lua-cjson
 eval "$(luarocks path)"          # LUA_PATH et LUA_CPATH pour les modules locaux
 ```
+
+## Installation
+
+```bash
+sudo apt install perl cpanminus carton               # Debian / Ubuntu
+sudo dnf install perl perl-App-cpanminus             # RHEL
+sudo apt install lua5.4 luarocks                     # Lua (Debian / Ubuntu)
+sudo dnf install lua luarocks                        # RHEL
+brew install perl cpanminus lua luarocks             # macOS
+winget install StrawberryPerl.StrawberryPerl         # Perl sous Windows
+```

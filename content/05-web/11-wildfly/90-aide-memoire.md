@@ -72,3 +72,14 @@ ls /opt/wildfly/standalone/deployments/          # marqueurs .deployed, .failed,
 touch /opt/wildfly/standalone/deployments/app.war.dodeploy     # redéployer via le scanner
 jcmd $(pgrep -f jboss-modules) Thread.print > /tmp/threads.txt
 ```
+
+## TLS avec Elytron (jboss-cli)
+
+```bash
+# Magasin de clés PKCS12 existant → contexte TLS et écouteur HTTPS (WildFly 15+)
+/opt/wildfly/bin/jboss-cli.sh --connect --command="security enable-ssl-http-server --key-store-path=/opt/wildfly/standalone/configuration/app.p12 --key-store-password=MotDePasseMagasin --key-store-type=PKCS12 --no-reload"
+/opt/wildfly/bin/jboss-cli.sh --connect --command=":reload"
+/opt/wildfly/bin/jboss-cli.sh --connect --command="/subsystem=elytron/key-store=*:read-resource"
+/opt/wildfly/bin/jboss-cli.sh --connect --command="/subsystem=undertow/server=default-server/https-listener=https:read-resource(include-runtime=true)"
+openssl s_client -connect srv-app.corp.exemple.fr:8443 </dev/null | openssl x509 -noout -subject -enddate
+```

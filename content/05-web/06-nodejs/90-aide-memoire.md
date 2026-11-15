@@ -116,3 +116,22 @@ WantedBy=multi-user.target
 ```bash
 sudo systemctl daemon-reload && sudo systemctl enable --now api && journalctl -u api -f
 ```
+
+## Mémoire et diagnostic
+
+```bash
+NODE_OPTIONS="--max-old-space-size=2048" node server.js                      # tas limité à 2 Go
+node --heapsnapshot-signal=SIGUSR2 server.js &                               # instantané du tas à la demande…
+kill -USR2 $(pgrep -f "node server.js")                                      # … fichier Heap.*.heapsnapshot (Chrome DevTools)
+node --report-on-fatalerror --report-directory=/var/log/app-web server.js    # rapport JSON en cas d'arrêt brutal
+node --cpu-prof server.js                                                    # profil CPU (.cpuprofile)
+node -e "console.log(process.memoryUsage())"
+pm2 monit                                                                    # mémoire et CPU par processus PM2
+```
+
+```ini /etc/systemd/system/app-web.service (extrait)
+[Service]
+Environment=NODE_ENV=production
+Environment=NODE_OPTIONS=--max-old-space-size=2048
+MemoryMax=3G
+```

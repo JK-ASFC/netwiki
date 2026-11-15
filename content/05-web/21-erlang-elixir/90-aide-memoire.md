@@ -27,3 +27,40 @@ bin/app start ; bin/app daemon ; bin/app remote ; bin/app rpc 'IO.puts(node())' 
 mix phx.server                                           # application Phoenix en développement
 mise use erlang@27 elixir@1.18 ; asdf current
 ```
+
+## Installation
+
+```bash
+sudo apt install erlang elixir                       # Debian / Ubuntu (versions de la distribution)
+sudo dnf install erlang elixir                       # Fedora, RHEL avec EPEL
+brew install erlang elixir                           # macOS
+winget install Erlang.ErlangOTP                      # Windows
+```
+
+## Release en production (systemd, ports de distribution)
+
+```ini /etc/systemd/system/app.service
+[Unit]
+Description=Application Elixir
+After=network-online.target
+
+[Service]
+User=app
+WorkingDirectory=/opt/app
+Environment=RELEASE_COOKIE=remplacer-par-un-cookie-long-et-aleatoire
+Environment=ERL_AFLAGS="-kernel inet_dist_listen_min 9100 inet_dist_listen_max 9105"
+ExecStart=/opt/app/bin/app start
+ExecStop=/opt/app/bin/app stop
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+# Grappe de nœuds : ouvrir epmd (4369) et la plage de distribution, seulement entre les nœuds
+sudo firewall-cmd --permanent --add-rich-rule='rule family=ipv4 source address=10.0.30.0/24 port port=4369 protocol=tcp accept'
+sudo firewall-cmd --permanent --add-rich-rule='rule family=ipv4 source address=10.0.30.0/24 port port=9100-9105 protocol=tcp accept'
+sudo firewall-cmd --reload
+/opt/app/bin/app pid
+```
