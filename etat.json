@@ -1,0 +1,2912 @@
+{
+ "proxmox-ve": {
+  "version": "9.2",
+  "date": "2026-05-21",
+  "vu": "2026-11-15"
+ },
+ "xcp-ng": {
+  "version": "8.3.0-20250606",
+  "date": "2025-06-16",
+  "vu": "2026-11-15"
+ },
+ "qemu": {
+  "version": "v11.1.3",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "utm": {
+  "version": "v5.0.8",
+  "date": "2026-10-17",
+  "vu": "2026-11-15"
+ },
+ "libvirt": {
+  "version": "v12.9.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "ovirt": {
+  "version": "ovirt-engine-4.5.7",
+  "date": "2025-12-17",
+  "vu": "2026-11-15"
+ },
+ "openstack": {
+  "version": "2025.1-eom",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "opennebula": {
+  "version": "release-7.4.1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "apache-cloudstack": {
+  "version": "4.23.0.0",
+  "date": "2026-09-02",
+  "vu": "2026-11-15"
+ },
+ "incus": {
+  "version": "v7.6.0",
+  "date": "2026-10-30",
+  "vu": "2026-11-15"
+ },
+ "lxd": {
+  "version": "lxd-6.10.1",
+  "date": "2026-10-28",
+  "vu": "2026-11-15"
+ },
+ "lxc": {
+  "version": "v7.0.0",
+  "date": "2026-04-30",
+  "vu": "2026-11-15"
+ },
+ "docker-engine": {
+  "version": "docker-v29.9.3",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "podman": {
+  "version": "v6.2.0",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "containerd": {
+  "version": "v2.4.2",
+  "date": "2026-10-13",
+  "vu": "2026-11-15"
+ },
+ "cri-o": {
+  "version": "v1.37.3",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "kata-containers": {
+  "version": "4.3.1",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "firecracker": {
+  "version": "v1.18.0",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "bareos": {
+  "version": "Release/25.1.2",
+  "date": "2026-10-27",
+  "vu": "2026-11-15"
+ },
+ "freebsd": {
+  "version": "14.5",
+  "date": "2026-09-08",
+  "vu": "2026-11-15"
+ },
+ "debian": {
+  "version": "13.7",
+  "date": "2026-09-12",
+  "vu": "2026-11-15"
+ },
+ "ubuntu-server": {
+  "version": "26.10",
+  "date": "2026-10-15",
+  "vu": "2026-11-15"
+ },
+ "rocky-linux": {
+  "version": "10.2",
+  "date": "2026-05-29",
+  "vu": "2026-11-15"
+ },
+ "almalinux": {
+  "version": "10.2",
+  "date": "2026-05-26",
+  "vu": "2026-11-15"
+ },
+ "fedora-server": {
+  "version": "45",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "opensuse-leap": {
+  "version": "16.0",
+  "date": "2025-10-01",
+  "vu": "2026-11-15"
+ },
+ "alpine-linux": {
+  "version": "3.24.4",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "oracle-linux": {
+  "version": "10.1",
+  "date": "2025-12-06",
+  "vu": "2026-11-15"
+ },
+ "centos-stream": {
+  "version": "10",
+  "date": "2024-12-12",
+  "vu": "2026-11-15"
+ },
+ "nixos": {
+  "version": "26.05",
+  "date": "2026-05-30",
+  "vu": "2026-11-15"
+ },
+ "truenas-scale": {
+  "version": "TS-25.10.8",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "rockstor": {
+  "version": "5.5.5-0",
+  "date": "2026-07-06",
+  "vu": "2026-11-15"
+ },
+ "casaos": {
+  "version": "v0.4.15",
+  "date": "2024-12-19",
+  "vu": "2026-11-15"
+ },
+ "umbrel": {
+  "version": "2.0.1",
+  "date": "2026-11-01",
+  "vu": "2026-11-15"
+ },
+ "yunohost": {
+  "version": "debian/12.1.42",
+  "date": "2026-11-15",
+  "vu": "2026-11-15"
+ },
+ "runtipi": {
+  "version": "v4.12.0",
+  "date": "2026-10-31",
+  "vu": "2026-11-15"
+ },
+ "dietpi": {
+  "version": "v10.8",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "389-directory-server": {
+  "version": "389-ds-base-3.3.1",
+  "date": "2026-09-07",
+  "vu": "2026-11-15"
+ },
+ "freeipa": {
+  "version": "release-4-13-5",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "samba": {
+  "version": "talloc-2.5.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "keycloak": {
+  "version": "26.8.2",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "authentik": {
+  "version": "version/2026.8.5",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "authelia": {
+  "version": "v4.39.28",
+  "date": "2026-09-17",
+  "vu": "2026-11-15"
+ },
+ "kanidm": {
+  "version": "v1.12.1",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "gluu-flex": {
+  "version": "v2.6.1",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "privacyidea": {
+  "version": "v3.14",
+  "date": "2026-10-07",
+  "vu": "2026-11-15"
+ },
+ "linotp": {
+  "version": "release/3.4.5",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "oauth2-proxy": {
+  "version": "v7.15.6",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "dex": {
+  "version": "v2.46.1",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "zitadel": {
+  "version": "v4.20.3",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "casdoor": {
+  "version": "v4.29.0",
+  "date": "2026-11-15",
+  "vu": "2026-11-15"
+ },
+ "logto": {
+  "version": "v1.46.0",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "ory-kratos": {
+  "version": "v26.2.0",
+  "date": "2026-03-20",
+  "vu": "2026-11-15"
+ },
+ "ory-hydra": {
+  "version": "v26.2.0",
+  "date": "2026-03-20",
+  "vu": "2026-11-15"
+ },
+ "openam": {
+  "version": "16.1.4",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "freeradius": {
+  "version": "release_3_2_10",
+  "date": "2026-06-03",
+  "vu": "2026-11-15"
+ },
+ "packetfence": {
+  "version": "v15.2.0",
+  "date": "2026-08-24",
+  "vu": "2026-11-15"
+ },
+ "sssd": {
+  "version": "2.13.2",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "gopass": {
+  "version": "v1.17.4",
+  "date": "2026-10-10",
+  "vu": "2026-11-15"
+ },
+ "knot-dns": {
+  "version": "v3.6.2",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "unbound": {
+  "version": "release-1.26.2",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "coredns": {
+  "version": "v1.15.0",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "technitium-dns-server": {
+  "version": "v15.6.2",
+  "date": "2026-10-17",
+  "vu": "2026-11-15"
+ },
+ "adguard-home": {
+  "version": "v0.107.80",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "pi-hole": {
+  "version": "v6.6",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "blocky": {
+  "version": "v0.36.0",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "nsd": {
+  "version": "NSD_4_15_4_REL",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "kea-stork": {
+  "version": "v2.6.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "phpipam": {
+  "version": "v1.9.0",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "netbox": {
+  "version": "v4.7.5",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "nautobot": {
+  "version": "v3.2.9",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "nipap": {
+  "version": "v0.32.7",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "ralph": {
+  "version": "20261112.1",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "racktables": {
+  "version": "RackTables-0.22.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "openwisp": {
+  "version": "1.3.3",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "openwrt": {
+  "version": "v25.12.6",
+  "date": "2026-10-18",
+  "vu": "2026-11-15"
+ },
+ "opnsense": {
+  "version": "27.1.a",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "vyos": {
+  "version": "1.4.0-epa3",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "frrouting": {
+  "version": "frr-10.7.1",
+  "date": "2026-08-31",
+  "vu": "2026-11-15"
+ },
+ "openvpn": {
+  "version": "v2.7.9",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "strongswan": {
+  "version": "6.1.0",
+  "date": "2026-09-07",
+  "vu": "2026-11-15"
+ },
+ "tailscale-client-open-source": {
+  "version": "v1.104.7",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "headscale": {
+  "version": "v0.29.7",
+  "date": "2026-10-30",
+  "vu": "2026-11-15"
+ },
+ "netbird": {
+  "version": "v0.83.1",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "zerotier-client-open-source": {
+  "version": "1.16.2",
+  "date": "2026-05-28",
+  "vu": "2026-11-15"
+ },
+ "nebula": {
+  "version": "v1.12.0",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "softether-vpn": {
+  "version": "5.2.5189",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "pritunl-community": {
+  "version": "1.34.4803.56",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "mullvad-vpn-app": {
+  "version": "android/2026.12",
+  "date": "2026-09-30",
+  "vu": "2026-11-15"
+ },
+ "nginx": {
+  "version": "release-1.31.8",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "haproxy": {
+  "version": "3.4.7",
+  "date": "2026-10-14",
+  "vu": "2026-11-15"
+ },
+ "apache-http-server": {
+  "version": "djg-apache-nspr-07",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "caddy": {
+  "version": "v2.11.9",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "traefik-proxy": {
+  "version": "v3.7.19",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "envoy-proxy": {
+  "version": "v1.40.2",
+  "date": "2026-10-27",
+  "vu": "2026-11-15"
+ },
+ "varnish-cache": {
+  "version": "varnish-8.0.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "squid": {
+  "version": "SQUID_7_8",
+  "date": "2026-10-30",
+  "vu": "2026-11-15"
+ },
+ "tinyproxy": {
+  "version": "1.11.3",
+  "date": "2026-03-07",
+  "vu": "2026-11-15"
+ },
+ "mitmproxy": {
+  "version": "v12.3.1",
+  "date": "2026-10-25",
+  "vu": "2026-11-15"
+ },
+ "apache-traffic-server": {
+  "version": "10.2.1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "openresty": {
+  "version": "v1.27.1.2",
+  "date": "2025-10-08",
+  "vu": "2026-11-15"
+ },
+ "h2o": {
+  "version": "tag-no-more-releases",
+  "date": "2026-01-19",
+  "vu": "2026-11-15"
+ },
+ "kong-gateway-oss": {
+  "version": "3.9.4",
+  "date": "2026-10-12",
+  "vu": "2026-11-15"
+ },
+ "apache-apisix": {
+  "version": "3.20.0",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "tyk-gateway-community": {
+  "version": "v5.16.0",
+  "date": "2026-10-27",
+  "vu": "2026-11-15"
+ },
+ "krakend-community": {
+  "version": "v3.0.4",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "yarp": {
+  "version": "v2.3.0",
+  "date": "2025-02-27",
+  "vu": "2026-11-15"
+ },
+ "keepalived": {
+  "version": "v2.4.3",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "pgbouncer": {
+  "version": "pgbouncer_1_26_1",
+  "date": "2026-10-14",
+  "vu": "2026-11-15"
+ },
+ "proxysql": {
+  "version": "v3.0.12",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "maxscale-edition-communautaire": {
+  "version": "maxscale-24.08.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "odyssey": {
+  "version": "v1.5.2",
+  "date": "2026-09-13",
+  "vu": "2026-11-15"
+ },
+ "nodejs": {
+  "version": "v27.0.0-alpha.0.1.0",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "python": {
+  "version": "3.15.2",
+  "date": "2026-10-25",
+  "vu": "2026-11-15"
+ },
+ "ruby": {
+  "version": "4.0.9",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "apache-tomcat": {
+  "version": "11.0.29",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "wildfly": {
+  "version": "42.0.0.Final",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "jenkins": {
+  "version": "jenkins-2.590",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "postgresql": {
+  "version": "18.7",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "mariadb-server": {
+  "version": "13.0.2",
+  "date": "2026-09-14",
+  "vu": "2026-11-15"
+ },
+ "mysql-community-server": {
+  "version": "26.10.0",
+  "date": "2026-10-20",
+  "vu": "2026-11-15"
+ },
+ "influxdb-oss": {
+  "version": "v3.12.2",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "mongodb-community-server": {
+  "version": "9.0.8",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "couchdb": {
+  "version": "3.5.3.post1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "redis": {
+  "version": "8.10.3",
+  "date": "2026-10-26",
+  "vu": "2026-11-15"
+ },
+ "valkey": {
+  "version": "9.1.3",
+  "date": "2026-10-26",
+  "vu": "2026-11-15"
+ },
+ "memcached": {
+  "version": "1.6.45",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "neo4j-community": {
+  "version": "2026.10.2",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "minio-community-source": {
+  "version": "RELEASE.2025-10-15T17-29-55Z",
+  "date": "2025-10-16",
+  "vu": "2026-11-15"
+ },
+ "nfs-ganesha": {
+  "version": "V15.12",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "restic": {
+  "version": "v0.19.1",
+  "date": "2026-07-05",
+  "vu": "2026-11-15"
+ },
+ "borgbackup": {
+  "version": "1.4.5",
+  "date": "2026-07-18",
+  "vu": "2026-11-15"
+ },
+ "syncthing": {
+  "version": "v2.1.7",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "seafile-community": {
+  "version": "v7.1.1-server",
+  "date": "2019-12-17",
+  "vu": "2026-11-15"
+ },
+ "nextcloud": {
+  "version": "v33.0.11",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "owncloud-infinite-scale": {
+  "version": "v8.2.3",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "kubernetes": {
+  "version": "v1.37.2",
+  "date": "2026-10-28",
+  "vu": "2026-11-15"
+ },
+ "k3s": {
+  "version": "v1.37.2+k3s1",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "minikube": {
+  "version": "v1.39.0",
+  "date": "2026-09-02",
+  "vu": "2026-11-15"
+ },
+ "kind": {
+  "version": "v0.33.0",
+  "date": "2026-08-26",
+  "vu": "2026-11-15"
+ },
+ "portainer-ce": {
+  "version": "2.45.3",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "docker-compose": {
+  "version": "v5.7.1",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "podman-compose": {
+  "version": "v1.6.0",
+  "date": "2026-06-03",
+  "vu": "2026-11-15"
+ },
+ "prometheus": {
+  "version": "v3.16.0",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "grafana-oss": {
+  "version": "v13.3.1",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "zabbix": {
+  "version": "8.0.0",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "icinga-2": {
+  "version": "v2.16.6",
+  "date": "2026-10-28",
+  "vu": "2026-11-15"
+ },
+ "nagios-core": {
+  "version": "nagios-4.5.14",
+  "date": "2026-08-05",
+  "vu": "2026-11-15"
+ },
+ "netdata": {
+  "version": "v2.12.3",
+  "date": "2026-11-04",
+  "vu": "2026-11-15"
+ },
+ "centreon-open-source": {
+  "version": "centreon-web-26.11.0",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "prometheus-node-exporter": {
+  "version": "v1.12.1",
+  "date": "2026-07-14",
+  "vu": "2026-11-15"
+ },
+ "telegraf": {
+  "version": "v1.40.3",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "fluent-bit": {
+  "version": "v5.2.0",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "logstash": {
+  "version": "9.5.6",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "opensearch": {
+  "version": "3.9.0",
+  "date": "2026-09-29",
+  "vu": "2026-11-15"
+ },
+ "opensearch-dashboards": {
+  "version": "3.9.0",
+  "date": "2026-10-12",
+  "vu": "2026-11-15"
+ },
+ "graylog-open": {
+  "version": "7.2.2",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "wazuh": {
+  "version": "v4.14.10",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "wireshark": {
+  "version": "wireshark-4.4.9",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "suricata": {
+  "version": "suricata-8.0.8",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "zeek": {
+  "version": "v9.0.1",
+  "date": "2026-10-26",
+  "vu": "2026-11-15"
+ },
+ "snort": {
+  "version": "3.13.2.0",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "lynis": {
+  "version": "3.1.7",
+  "date": "2026-06-25",
+  "vu": "2026-11-15"
+ },
+ "greenbone-community-edition": {
+  "version": "v26.43.0",
+  "date": "2026-10-27",
+  "vu": "2026-11-15"
+ },
+ "openvas": {
+  "version": "v23.52.12",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "owasp-zap": {
+  "version": "v2.17.0",
+  "date": "2025-12-15",
+  "vu": "2026-11-15"
+ },
+ "keepassxc": {
+  "version": "2.8.0",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "bitwarden-self-hosted-clients-open-source": {
+  "version": "v2026.10.1",
+  "date": "2026-10-28",
+  "vu": "2026-11-15"
+ },
+ "vaultwarden": {
+  "version": "1.37.5",
+  "date": "2026-11-01",
+  "vu": "2026-11-15"
+ },
+ "fail2ban": {
+  "version": "1.1.1",
+  "date": "2026-08-15",
+  "vu": "2026-11-15"
+ },
+ "crowdsec": {
+  "version": "v1.8.2",
+  "date": "2026-10-26",
+  "vu": "2026-11-15"
+ },
+ "clamav": {
+  "version": "clamav-1.5.4",
+  "date": "2026-08-07",
+  "vu": "2026-11-15"
+ },
+ "aide": {
+  "version": "v0.19.5",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "xcp-ng-xen-orchestra-community": {
+  "version": "xo-lite-v0.27.0",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "ansible": {
+  "version": "v2.22.0",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "salt-project": {
+  "version": "v3007.17",
+  "date": "2026-10-27",
+  "vu": "2026-11-15"
+ },
+ "terraform": {
+  "version": "v1.17.2",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "opentofu": {
+  "version": "v1.13.9",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "n8n-source-available-community": {
+  "version": "n8n@2.47.7",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "zammad": {
+  "version": "7.2.3",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "glpi": {
+  "version": "12.0.2",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "bookstack": {
+  "version": "v26.09.3",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "radicale": {
+  "version": "v3.9.1",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "exim": {
+  "version": "exim-4.99.1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "dovecot": {
+  "version": "2.4.5",
+  "date": "2026-08-28",
+  "vu": "2026-11-15"
+ },
+ "rspamd": {
+  "version": "4.3.0",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "ocs-inventory-ng": {
+  "version": "2.12.6",
+  "date": "2026-08-25",
+  "vu": "2026-11-15"
+ },
+ "git": {
+  "version": "v2.56.1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "gitea": {
+  "version": "v28.3.0",
+  "date": "2026-11-01",
+  "vu": "2026-11-15"
+ },
+ "gitlab-community-edition": {
+  "version": "19.5.5",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "sonarqube-community-build": {
+  "version": "26.11.0.134175",
+  "date": "2026-11-04",
+  "vu": "2026-11-15"
+ },
+ "meshcentral": {
+  "version": "1.3.1",
+  "date": "2026-10-23",
+  "vu": "2026-11-15"
+ },
+ "rustdesk-server": {
+  "version": "1.1.16",
+  "date": "2026-07-20",
+  "vu": "2026-11-15"
+ },
+ "glpi-agent": {
+  "version": "1.21",
+  "date": "2026-10-08",
+  "vu": "2026-11-15"
+ },
+ "notepad": {
+  "version": "v8.9.9.1",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "jellyfin": {
+  "version": "v12.4",
+  "date": "2026-10-26",
+  "vu": "2026-11-15"
+ },
+ "navidrome": {
+  "version": "v0.64.2",
+  "date": "2026-09-24",
+  "vu": "2026-11-15"
+ },
+ "nginx-rtmp-module": {
+  "version": "v1.2.2",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "qbittorrent": {
+  "version": "release-5.3.0",
+  "date": "2026-10-20",
+  "vu": "2026-11-15"
+ },
+ "transmission": {
+  "version": "4.1.4",
+  "date": "2026-10-24",
+  "vu": "2026-11-15"
+ },
+ "deluge": {
+  "version": "deluge-2.2.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "mailpit": {
+  "version": "v1.33.1",
+  "date": "2026-11-07",
+  "vu": "2026-11-15"
+ },
+ "apache-kafka": {
+  "version": "4.4.0",
+  "date": "2026-10-13",
+  "vu": "2026-11-15"
+ },
+ "rabbitmq": {
+  "version": "v4.4.0",
+  "date": "2026-10-19",
+  "vu": "2026-11-15"
+ },
+ "mosquitto": {
+  "version": "v2.1.2",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "emqx-community": {
+  "version": "6.3.3",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "jupyterlab": {
+  "version": "v4.6.6",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "ollama": {
+  "version": "v0.40.16",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "open-webui": {
+  "version": "v0.13.3",
+  "date": "2026-11-08",
+  "vu": "2026-11-15"
+ },
+ "joplin-server": {
+  "version": "v3.7.22",
+  "date": "2026-10-28",
+  "vu": "2026-11-15"
+ },
+ "elasticsearch-license-changed": {
+  "version": "v9.5.6",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "openssh": {
+  "version": "V_10_6_P2",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "iperf3": {
+  "version": "3.22",
+  "date": "2026-09-29",
+  "vu": "2026-11-15"
+ },
+ "mtr": {
+  "version": "v0.96",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "cups": {
+  "version": "v2.4.20",
+  "date": "2026-10-05",
+  "vu": "2026-11-15"
+ },
+ "bruno": {
+  "version": "v4.3.0",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "curl": {
+  "version": "curl-8_23_0",
+  "date": "2026-10-14",
+  "vu": "2026-11-15"
+ },
+ "playwright": {
+  "version": "v1.65.1",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "php": {
+  "version": "php-8.5.12",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "deno": {
+  "version": "v2.9.8",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "bun": {
+  "version": "bun-v1.4.4",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "go": {
+  "version": "weekly.2012-03-27",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "rust": {
+  "version": "1.100.0",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "eclipse-temurin": {
+  "version": "27.0.1.0.2+1",
+  "date": "2026-10-24",
+  "vu": "2026-11-15"
+ },
+ "graalvm-community-edition": {
+  "version": "vm-19.3.1",
+  "date": "2020-01-23",
+  "vu": "2026-11-15"
+ },
+ "net-sdk": {
+  "version": "11.0.0",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "powershell": {
+  "version": "v7.7.0",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "erlang-otp": {
+  "version": "OTP-29.1.2",
+  "date": "2026-10-14",
+  "vu": "2026-11-15"
+ },
+ "elixir": {
+  "version": "v1.20.5",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "clang-llvm": {
+  "version": "llvmorg-23.1.5",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "cmake": {
+  "version": "v4.5.0",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "ninja": {
+  "version": "v1.13.2",
+  "date": "2025-11-20",
+  "vu": "2026-11-15"
+ },
+ "meson": {
+  "version": "1.12.1",
+  "date": "2026-09-22",
+  "vu": "2026-11-15"
+ },
+ "eclipse-jetty": {
+  "version": "jetty-12.1.15",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "payara-community": {
+  "version": "payara-server-7.2026.11",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "open-liberty": {
+  "version": "gm-26.0.0.11",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "glassfish": {
+  "version": "8.0.5",
+  "date": "2026-10-04",
+  "vu": "2026-11-15"
+ },
+ "buildbot": {
+  "version": "v4.3.0",
+  "date": "2025-05-12",
+  "vu": "2026-11-15"
+ },
+ "concourse-ci": {
+  "version": "v8.3.3",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "gocd": {
+  "version": "26.1.0",
+  "date": "2026-07-06",
+  "vu": "2026-11-15"
+ },
+ "woodpecker-ci": {
+  "version": "v3.20.1",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "tekton": {
+  "version": "v1.18.0",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "argo-workflows": {
+  "version": "v4.1.6",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "dagger": {
+  "version": "v0.21.11",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "task": {
+  "version": "v3.54.0",
+  "date": "2026-10-01",
+  "vu": "2026-11-15"
+ },
+ "just": {
+  "version": "1.59.0",
+  "date": "2026-10-15",
+  "vu": "2026-11-15"
+ },
+ "firebird": {
+  "version": "v5.0.4",
+  "date": "2026-04-17",
+  "vu": "2026-11-15"
+ },
+ "duckdb": {
+  "version": "v2.0.0",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "cockroachdb": {
+  "version": "v26.2.11",
+  "date": "2026-08-24",
+  "vu": "2026-11-15"
+ },
+ "yugabytedb": {
+  "version": "v2026.1.3.0",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "tidb": {
+  "version": "v7.5.8",
+  "date": "2026-09-17",
+  "vu": "2026-11-15"
+ },
+ "citus": {
+  "version": "v14.3.0",
+  "date": "2026-10-23",
+  "vu": "2026-11-15"
+ },
+ "timescaledb": {
+  "version": "2.32.0",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "questdb": {
+  "version": "10.2.0",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "apache-cassandra": {
+  "version": "5.0.9",
+  "date": "2026-08-07",
+  "vu": "2026-11-15"
+ },
+ "ferretdb": {
+  "version": "v2.7.0",
+  "date": "2025-11-10",
+  "vu": "2026-11-15"
+ },
+ "dragonfly": {
+  "version": "v2.1",
+  "date": "2026-11-04",
+  "vu": "2026-11-15"
+ },
+ "etcd": {
+  "version": "v3.7.3",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "consul": {
+  "version": "v2.1.0",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "foundationdb": {
+  "version": "7.3.77",
+  "date": "2026-04-16",
+  "vu": "2026-11-15"
+ },
+ "surrealdb": {
+  "version": "v4.0.1",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "arangodb-community": {
+  "version": "v3.12.13",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "memgraph": {
+  "version": "v3.14.0",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "janusgraph": {
+  "version": "v1.2.0",
+  "date": "2026-10-25",
+  "vu": "2026-11-15"
+ },
+ "apache-age": {
+  "version": "PG18/v1.8.0-rc0",
+  "date": "2026-07-09",
+  "vu": "2026-11-15"
+ },
+ "terminusdb": {
+  "version": "v12.1.0-rc3",
+  "date": "2026-11-14",
+  "vu": "2026-11-15"
+ },
+ "xtdb": {
+  "version": "v2.2.0",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "apache-doris": {
+  "version": "4.1.5-release",
+  "date": "2026-10-15",
+  "vu": "2026-11-15"
+ },
+ "clickhouse": {
+  "version": "v26.9.28.166-stable",
+  "date": "2026-11-14",
+  "vu": "2026-11-15"
+ },
+ "apache-pinot": {
+  "version": "release-1.6.0",
+  "date": "2026-10-23",
+  "vu": "2026-11-15"
+ },
+ "apache-druid": {
+  "version": "druid-38.0.0",
+  "date": "2026-10-01",
+  "vu": "2026-11-15"
+ },
+ "trino": {
+  "version": "484",
+  "date": "2026-10-16",
+  "vu": "2026-11-15"
+ },
+ "presto": {
+  "version": "0.300",
+  "date": "2026-11-04",
+  "vu": "2026-11-15"
+ },
+ "apache-ignite": {
+  "version": "2.18.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "hazelcast": {
+  "version": "v5.7.0",
+  "date": "2026-05-13",
+  "vu": "2026-11-15"
+ },
+ "h2-database": {
+  "version": "version-2.5.252",
+  "date": "2026-09-24",
+  "vu": "2026-11-15"
+ },
+ "ceph": {
+  "version": "v22.0.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "glusterfs": {
+  "version": "v11.2",
+  "date": "2025-07-02",
+  "vu": "2026-11-15"
+ },
+ "openzfs": {
+  "version": "zfs-2.4.4",
+  "date": "2026-08-21",
+  "vu": "2026-11-15"
+ },
+ "mergerfs": {
+  "version": "2.42.0",
+  "date": "2026-05-08",
+  "vu": "2026-11-15"
+ },
+ "snapraid": {
+  "version": "v15.1",
+  "date": "2026-10-23",
+  "vu": "2026-11-15"
+ },
+ "seaweedfs": {
+  "version": "4.53",
+  "date": "2026-11-08",
+  "vu": "2026-11-15"
+ },
+ "rook": {
+  "version": "v1.21.2",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "longhorn": {
+  "version": "v1.13.0",
+  "date": "2026-09-29",
+  "vu": "2026-11-15"
+ },
+ "openebs": {
+  "version": "v4.6.2",
+  "date": "2026-10-07",
+  "vu": "2026-11-15"
+ },
+ "kopia": {
+  "version": "v0.23.1",
+  "date": "2026-06-16",
+  "vu": "2026-11-15"
+ },
+ "duplicati": {
+  "version": "v2.4.1.0_stable_2026-10-29",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "rsync": {
+  "version": "v3.5.2",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "rclone": {
+  "version": "v1.76.0",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "file-browser": {
+  "version": "v2.63.23",
+  "date": "2026-07-27",
+  "vu": "2026-11-15"
+ },
+ "sftpgo": {
+  "version": "v2.7.6",
+  "date": "2026-09-19",
+  "vu": "2026-11-15"
+ },
+ "pydio-cells": {
+  "version": "v5.1.1",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "filestash": {
+  "version": "v0.4",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "pingvin-share": {
+  "version": "v1.13.0",
+  "date": "2025-05-25",
+  "vu": "2026-11-15"
+ },
+ "microk8s": {
+  "version": "v1.36",
+  "date": "2026-05-25",
+  "vu": "2026-11-15"
+ },
+ "k0s": {
+  "version": "v1.37.2+k0s.1",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "talos-linux": {
+  "version": "v1.14.6",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "rke2": {
+  "version": "v1.37.2+rke2r1",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "openshift-okd": {
+  "version": "5.0.0-okd-scos.7",
+  "date": "2026-11-14",
+  "vu": "2026-11-15"
+ },
+ "kubevirt": {
+  "version": "v1.9.1",
+  "date": "2026-10-12",
+  "vu": "2026-11-15"
+ },
+ "helm": {
+  "version": "v4.3.2",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "argo-cd": {
+  "version": "v3.6.1",
+  "date": "2026-11-04",
+  "vu": "2026-11-15"
+ },
+ "flux-cd": {
+  "version": "v2.10.0",
+  "date": "2026-10-26",
+  "vu": "2026-11-15"
+ },
+ "rancher": {
+  "version": "v2.15.3",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "dapr": {
+  "version": "v1.19.1",
+  "date": "2026-10-31",
+  "vu": "2026-11-15"
+ },
+ "knative": {
+  "version": "knative-v1.24.0",
+  "date": "2026-10-26",
+  "vu": "2026-11-15"
+ },
+ "keda": {
+  "version": "v2.21.0",
+  "date": "2026-09-23",
+  "vu": "2026-11-15"
+ },
+ "crossplane": {
+  "version": "v2.4.3",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "cluster-api": {
+  "version": "v1.14.4",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "metallb": {
+  "version": "v0.16.2",
+  "date": "2026-11-04",
+  "vu": "2026-11-15"
+ },
+ "cilium": {
+  "version": "v1.20.4",
+  "date": "2026-10-23",
+  "vu": "2026-11-15"
+ },
+ "calico": {
+  "version": "v3.33.0",
+  "date": "2026-10-01",
+  "vu": "2026-11-15"
+ },
+ "flannel": {
+  "version": "v0.28.10",
+  "date": "2026-10-08",
+  "vu": "2026-11-15"
+ },
+ "cert-manager": {
+  "version": "v1.21.3",
+  "date": "2026-10-23",
+  "vu": "2026-11-15"
+ },
+ "externaldns": {
+  "version": "v0.24.0",
+  "date": "2026-10-23",
+  "vu": "2026-11-15"
+ },
+ "velero": {
+  "version": "v1.18.4",
+  "date": "2026-09-28",
+  "vu": "2026-11-15"
+ },
+ "trivy": {
+  "version": "v0.76.2",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "falco": {
+  "version": "0.45.2",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "kyverno": {
+  "version": "v1.20.0",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "packer": {
+  "version": "v1.16.2",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "vagrant": {
+  "version": "v2.4.9",
+  "date": "2025-08-21",
+  "vu": "2026-11-15"
+ },
+ "victoriametrics": {
+  "version": "v1.156.0",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "thanos": {
+  "version": "v0.42.5",
+  "date": "2026-10-27",
+  "vu": "2026-11-15"
+ },
+ "mimir": {
+  "version": "mimir-3.2.5",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "alertmanager": {
+  "version": "v0.35.0",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "librenms": {
+  "version": "26.10.2",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "glances": {
+  "version": "v4.5.9",
+  "date": "2026-11-07",
+  "vu": "2026-11-15"
+ },
+ "cockpit": {
+  "version": "372",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "windows-exporter": {
+  "version": "v0.32.1",
+  "date": "2026-10-30",
+  "vu": "2026-11-15"
+ },
+ "opentelemetry-collector": {
+  "version": "v0.165.0",
+  "date": "2026-11-07",
+  "vu": "2026-11-15"
+ },
+ "jaeger": {
+  "version": "v2.23.0",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "tempo": {
+  "version": "v3.1.1",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "loki": {
+  "version": "v3.7.10",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "grafana-alloy": {
+  "version": "v1.22.0",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "fluentd": {
+  "version": "v1.20.1",
+  "date": "2026-10-26",
+  "vu": "2026-11-15"
+ },
+ "vector": {
+  "version": "v0.61.0",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "quickwit": {
+  "version": "v0.9.3",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "signoz": {
+  "version": "v0.150.0",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "sentry-self-hosted": {
+  "version": "26.10.1",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "uptime-kuma": {
+  "version": "2.5.11",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "gatus": {
+  "version": "v5.38.0",
+  "date": "2026-10-28",
+  "vu": "2026-11-15"
+ },
+ "healthchecks": {
+  "version": "v5.0.3",
+  "date": "2026-10-27",
+  "vu": "2026-11-15"
+ },
+ "ntopng": {
+  "version": "7.0",
+  "date": "2026-09-22",
+  "vu": "2026-11-15"
+ },
+ "ossec": {
+  "version": "4.4.1",
+  "date": "2026-10-18",
+  "vu": "2026-11-15"
+ },
+ "security-onion": {
+  "version": "3.4.0-20261102",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "misp": {
+  "version": "v2.5.51",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "opencti": {
+  "version": "7.261109.0",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "velociraptor": {
+  "version": "v0.77.3",
+  "date": "2026-10-05",
+  "vu": "2026-11-15"
+ },
+ "osquery": {
+  "version": "5.24.1",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "fleetdm": {
+  "version": "fleet-v4.94.1",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "openscap": {
+  "version": "1.4.6",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "nuclei": {
+  "version": "v3.11.1",
+  "date": "2026-08-08",
+  "vu": "2026-11-15"
+ },
+ "sqlmap": {
+  "version": "1.10",
+  "date": "2026-01-01",
+  "vu": "2026-11-15"
+ },
+ "testsslsh": {
+  "version": "v3.2.5",
+  "date": "2026-11-04",
+  "vu": "2026-11-15"
+ },
+ "sslyze": {
+  "version": "6.3.1",
+  "date": "2026-03-29",
+  "vu": "2026-11-15"
+ },
+ "certbot": {
+  "version": "v5.10.0",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "acmesh": {
+  "version": "3.1.6",
+  "date": "2026-09-20",
+  "vu": "2026-11-15"
+ },
+ "step-ca": {
+  "version": "v0.30.2",
+  "date": "2026-03-23",
+  "vu": "2026-11-15"
+ },
+ "smallstep-cli": {
+  "version": "v0.31.0",
+  "date": "2026-09-25",
+  "vu": "2026-11-15"
+ },
+ "openssl": {
+  "version": "openssl-4.1.0",
+  "date": "2026-10-23",
+  "vu": "2026-11-15"
+ },
+ "age": {
+  "version": "v1.3.2",
+  "date": "2026-08-29",
+  "vu": "2026-11-15"
+ },
+ "sops": {
+  "version": "v3.13.3",
+  "date": "2026-07-23",
+  "vu": "2026-11-15"
+ },
+ "vault-open-source-core": {
+  "version": "v2.2.2",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "openbao": {
+  "version": "v2.7.2",
+  "date": "2026-10-26",
+  "vu": "2026-11-15"
+ },
+ "infisical-open-source-core": {
+  "version": "v0.167.10",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "passbolt-community": {
+  "version": "v5.18.0",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "yara": {
+  "version": "v4.6.0",
+  "date": "2026-10-27",
+  "vu": "2026-11-15"
+ },
+ "awx": {
+  "version": "24.6.1",
+  "date": "2024-07-02",
+  "vu": "2026-11-15"
+ },
+ "semaphore-ui": {
+  "version": "v2.20.23",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "rundeck-community": {
+  "version": "v6.3.0",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "cfengine": {
+  "version": "318.7-build1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "pulumi": {
+  "version": "v3.276.0",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "terragrunt": {
+  "version": "v1.2.2",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "terramate": {
+  "version": "v0.17.4",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "cloud-init": {
+  "version": "26.2",
+  "date": "2026-07-29",
+  "vu": "2026-11-15"
+ },
+ "ignition": {
+  "version": "v2.28.0",
+  "date": "2026-10-15",
+  "vu": "2026-11-15"
+ },
+ "foreman": {
+  "version": "5.0.1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "katello": {
+  "version": "4.20.1",
+  "date": "2026-05-18",
+  "vu": "2026-11-15"
+ },
+ "uyuni": {
+  "version": "yum-rhn-plugin-4.4.3-1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "nornir": {
+  "version": "v3.6.1",
+  "date": "2026-10-30",
+  "vu": "2026-11-15"
+ },
+ "netmiko": {
+  "version": "v4.8.0",
+  "date": "2026-09-21",
+  "vu": "2026-11-15"
+ },
+ "napalm": {
+  "version": "5.2.0",
+  "date": "2026-07-27",
+  "vu": "2026-11-15"
+ },
+ "stackstorm": {
+  "version": "v3.9.0",
+  "date": "2026-01-12",
+  "vu": "2026-11-15"
+ },
+ "huginn": {
+  "version": "v2026.11.09",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "node-red": {
+  "version": "5.0.9",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "activepieces-community": {
+  "version": "0.93.0",
+  "date": "2026-11-08",
+  "vu": "2026-11-15"
+ },
+ "windmill-community": {
+  "version": "v1.875.0",
+  "date": "2026-11-14",
+  "vu": "2026-11-15"
+ },
+ "kestra": {
+  "version": "v2.0.10",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "apache-airflow": {
+  "version": "3.4.0",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "prefect": {
+  "version": "3.9.3",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "dagster": {
+  "version": "1.13.30",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "temporal": {
+  "version": "v1.32.2",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "molecule": {
+  "version": "v26.11.0",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "matrix-synapse": {
+  "version": "v1.165.0",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "mattermost-team-edition": {
+  "version": "v12.0.2",
+  "date": "2026-11-04",
+  "vu": "2026-11-15"
+ },
+ "rocketchat-community": {
+  "version": "9.0.0",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "zulip": {
+  "version": "13.2",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "ejabberd": {
+  "version": "26.09",
+  "date": "2026-09-30",
+  "vu": "2026-11-15"
+ },
+ "openfire": {
+  "version": "v5.1.2",
+  "date": "2026-08-17",
+  "vu": "2026-11-15"
+ },
+ "snikket": {
+  "version": "stable.20260611.1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "mongooseim": {
+  "version": "6.10.0",
+  "date": "2026-10-15",
+  "vu": "2026-11-15"
+ },
+ "galene": {
+  "version": "galene-1.2.2",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "conversejs": {
+  "version": "v14.0.1",
+  "date": "2026-10-17",
+  "vu": "2026-11-15"
+ },
+ "chatwoot": {
+  "version": "v4.19.1",
+  "date": "2026-10-24",
+  "vu": "2026-11-15"
+ },
+ "freescout": {
+  "version": "1.8.251",
+  "date": "2026-11-14",
+  "vu": "2026-11-15"
+ },
+ "osticket": {
+  "version": "v1.18.4",
+  "date": "2026-06-17",
+  "vu": "2026-11-15"
+ },
+ "itop": {
+  "version": "3.3.0-1",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "otobo": {
+  "version": "rel-11_1_1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "znuny": {
+  "version": "rel-7_3_8",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "request-tracker": {
+  "version": "rt-6.0.4",
+  "date": "2026-10-29",
+  "vu": "2026-11-15"
+ },
+ "uvdesk-community": {
+  "version": "v1.1.8",
+  "date": "2025-09-19",
+  "vu": "2026-11-15"
+ },
+ "faveo-helpdesk-community": {
+  "version": "v2.0.3",
+  "date": "2023-10-31",
+  "vu": "2026-11-15"
+ },
+ "openproject": {
+  "version": "v17.9.7",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "taiga": {
+  "version": "django17-deploy-step1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "plane-community": {
+  "version": "v1.4.3",
+  "date": "2026-10-28",
+  "vu": "2026-11-15"
+ },
+ "leantime": {
+  "version": "v3.15.0",
+  "date": "2026-11-15",
+  "vu": "2026-11-15"
+ },
+ "redmine": {
+  "version": "7.0.3",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "trac": {
+  "version": "trac-1.6",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "phabricator-archive": {
+  "version": "2026.27",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "kanboard": {
+  "version": "v1.2.57",
+  "date": "2026-10-31",
+  "vu": "2026-11-15"
+ },
+ "wekan": {
+  "version": "v13.13",
+  "date": "2026-11-15",
+  "vu": "2026-11-15"
+ },
+ "focalboard-archive": {
+  "version": "v8.0.0",
+  "date": "2024-06-13",
+  "vu": "2026-11-15"
+ },
+ "vikunja": {
+  "version": "v2.8.0",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "appflowy": {
+  "version": "0.15.1",
+  "date": "2026-11-15",
+  "vu": "2026-11-15"
+ },
+ "affine": {
+  "version": "v0.27.4",
+  "date": "2026-08-18",
+  "vu": "2026-11-15"
+ },
+ "outline": {
+  "version": "v1.12.0",
+  "date": "2026-10-23",
+  "vu": "2026-11-15"
+ },
+ "wikijs": {
+  "version": "3.4.0",
+  "date": "2026-11-15",
+  "vu": "2026-11-15"
+ },
+ "xwiki": {
+  "version": "xwiki-platform-17.10.15",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "dokuwiki": {
+  "version": "release-2026-07-14c",
+  "date": "2026-09-02",
+  "vu": "2026-11-15"
+ },
+ "mediawiki": {
+  "version": "1.46.2",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "moinmoin": {
+  "version": "moin20-repo-reboot",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "gollum": {
+  "version": "v6.1.0",
+  "date": "2024-12-23",
+  "vu": "2026-11-15"
+ },
+ "hedgedoc": {
+  "version": "1.12.0",
+  "date": "2026-08-21",
+  "vu": "2026-11-15"
+ },
+ "etherpad": {
+  "version": "v3.3.17",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "cryptpad": {
+  "version": "2026.10.1",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "sogo": {
+  "version": "SOGo-5.12.13",
+  "date": "2026-11-04",
+  "vu": "2026-11-15"
+ },
+ "calcom-core-open-source": {
+  "version": "v6.2.0",
+  "date": "2026-03-01",
+  "vu": "2026-11-15"
+ },
+ "baikal": {
+  "version": "0.13.0",
+  "date": "2026-10-19",
+  "vu": "2026-11-15"
+ },
+ "mailu": {
+  "version": "2024.06.68",
+  "date": "2026-11-08",
+  "vu": "2026-11-15"
+ },
+ "mailcow": {
+  "version": "2026-11",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "docker-mailserver": {
+  "version": "v17.0.0",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "modoboa": {
+  "version": "2.13.0",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "iredmail-open-source-edition": {
+  "version": "1.8.10",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "opensmtpd": {
+  "version": "7.9.0p0",
+  "date": "2026-09-13",
+  "vu": "2026-11-15"
+ },
+ "roundcube": {
+  "version": "1.7.6",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "snappymail": {
+  "version": "v3.0.1",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "wordpress": {
+  "version": "7.1.4",
+  "date": "2026-10-28",
+  "vu": "2026-11-15"
+ },
+ "drupal": {
+  "version": "11.4.12",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "joomla": {
+  "version": "6.2.0",
+  "date": "2026-10-13",
+  "vu": "2026-11-15"
+ },
+ "ghost": {
+  "version": "v6.77.0",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "grav": {
+  "version": "2.2.29",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "classicpress": {
+  "version": "2.7.4",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "typo3": {
+  "version": "v14.3.11",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "contao": {
+  "version": "6.0.6",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "october-cms-community": {
+  "version": "v4.4.0",
+  "date": "2026-08-30",
+  "vu": "2026-11-15"
+ },
+ "strapi": {
+  "version": "v5.62.0",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "directus": {
+  "version": "v12.6.1",
+  "date": "2026-11-04",
+  "vu": "2026-11-15"
+ },
+ "payload-cms": {
+  "version": "v3.93.0",
+  "date": "2026-11-04",
+  "vu": "2026-11-15"
+ },
+ "keystonejs": {
+  "version": "2026-11-03",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "sanity-studio-source-available": {
+  "version": "v6.23.0",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "wagtail": {
+  "version": "v8.1",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "mezzanine": {
+  "version": "v6.1.1",
+  "date": "2025-06-04",
+  "vu": "2026-11-15"
+ },
+ "plone": {
+  "version": "6.2.3",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "zope": {
+  "version": "backups/gotcha-LP143531@113945",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "liferay-community-edition": {
+  "version": "7.4.3.132-ga132",
+  "date": "2025-02-19",
+  "vu": "2026-11-15"
+ },
+ "alfresco-community": {
+  "version": "tas-restapi-1.135",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "moodle": {
+  "version": "v5.3.1",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "canvas-lms-open-source": {
+  "version": "release/2026-05-20.143",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "chamilo": {
+  "version": "v3.0.2",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "ilias": {
+  "version": "v11.5",
+  "date": "2026-10-06",
+  "vu": "2026-11-15"
+ },
+ "open-edx": {
+  "version": "named-release/birch",
+  "date": "2015-03-02",
+  "vu": "2026-11-15"
+ },
+ "frappe-framework": {
+  "version": "v15.126.1",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "erpnext": {
+  "version": "v16.55.0",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "odoo-community": {
+  "version": "5.0.0-2-addons",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "tryton": {
+  "version": "6.6.1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "dolibarr": {
+  "version": "24.0.3",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "idempiere": {
+  "version": "v2.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "metasfresh": {
+  "version": "5.175",
+  "date": "2023-06-27",
+  "vu": "2026-11-15"
+ },
+ "apache-ofbiz": {
+  "version": "release24.09.08",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "invoice-ninja-community": {
+  "version": "v5.13.53",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "akaunting-community": {
+  "version": "3.3.1",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "kimai": {
+  "version": "2.72.0",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "opencart": {
+  "version": "4.1.0.4",
+  "date": "2026-08-11",
+  "vu": "2026-11-15"
+ },
+ "prestashop": {
+  "version": "9.2.1",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "magento-open-source": {
+  "version": "2.4.10-alpha1",
+  "date": "2026-10-13",
+  "vu": "2026-11-15"
+ },
+ "woocommerce": {
+  "version": "11.3.0",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "saleor": {
+  "version": "3.23.49",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "medusa": {
+  "version": "v2.22.7",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "sylius": {
+  "version": "v2.3.2",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "shopware-community": {
+  "version": "v6.7.16.0",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "bagisto": {
+  "version": "v2.5.1",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "spree-commerce": {
+  "version": "v6.0.4",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "reaction-commerce-archive": {
+  "version": "v5.0.0",
+  "date": "2023-06-13",
+  "vu": "2026-11-15"
+ },
+ "vendure": {
+  "version": "v3.8.2",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "solidus": {
+  "version": "solidus_admin/v0.5.1",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "open-source-pos-ospos": {
+  "version": "3.4.3",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "openboxes": {
+  "version": "v0.9.9",
+  "date": "2026-10-23",
+  "vu": "2026-11-15"
+ },
+ "inventree": {
+  "version": "1.7.2",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "snipe-it": {
+  "version": "v8.8.3",
+  "date": "2026-10-22",
+  "vu": "2026-11-15"
+ },
+ "gogs": {
+  "version": "v0.14.4",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "onedev": {
+  "version": "v17.2.0",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "gerrit-code-review": {
+  "version": "v3.15.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "review-board": {
+  "version": "release-8.0",
+  "date": "2026-06-09",
+  "vu": "2026-11-15"
+ },
+ "subversion-apache": {
+  "version": "milestone-3",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "harbor": {
+  "version": "v2.15.5",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "distribution-registry": {
+  "version": "v3.1.2",
+  "date": "2026-09-24",
+  "vu": "2026-11-15"
+ },
+ "zot": {
+  "version": "v2.1.23",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "nexus-repository-oss": {
+  "version": "release-3.98.1-01",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "verdaccio": {
+  "version": "v7.1.0",
+  "date": "2026-11-08",
+  "vu": "2026-11-15"
+ },
+ "semgrep-ce": {
+  "version": "v1.185.0",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "codeql-cli-license-restrictions": {
+  "version": "v2.27.4",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "pmd": {
+  "version": "pmd_releases/7.29.0",
+  "date": "2026-10-30",
+  "vu": "2026-11-15"
+ },
+ "checkstyle": {
+  "version": "checkstyle-14.4.0",
+  "date": "2026-10-31",
+  "vu": "2026-11-15"
+ },
+ "spotbugs": {
+  "version": "4.10.5",
+  "date": "2026-10-12",
+  "vu": "2026-11-15"
+ },
+ "eslint": {
+  "version": "v10.15.0",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "prettier": {
+  "version": "3.10.1",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "ruff": {
+  "version": "0.17.5",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "pylint": {
+  "version": "v4.1.4",
+  "date": "2026-11-14",
+  "vu": "2026-11-15"
+ },
+ "mypy": {
+  "version": "v2.4.1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "bandit": {
+  "version": "1.9.4",
+  "date": "2026-02-25",
+  "vu": "2026-11-15"
+ },
+ "grype": {
+  "version": "v0.121.3",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "syft": {
+  "version": "v1.57.1",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "cosign": {
+  "version": "v3.1.4",
+  "date": "2026-10-20",
+  "vu": "2026-11-15"
+ },
+ "in-toto": {
+  "version": "v3.1.0",
+  "date": "2026-05-04",
+  "vu": "2026-11-15"
+ },
+ "tekton-chains": {
+  "version": "v0.30.0",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "renovate": {
+  "version": "44.239.1",
+  "date": "2026-11-13",
+  "vu": "2026-11-15"
+ },
+ "mend-renovate-cli": {
+  "version": "15.11.0",
+  "date": "2026-11-02",
+  "vu": "2026-11-15"
+ },
+ "openrewrite": {
+  "version": "v8.108.1",
+  "date": "2026-11-15",
+  "vu": "2026-11-15"
+ },
+ "allure-report": {
+  "version": "v3.33.0",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "reportportal": {
+  "version": "26.0.7",
+  "date": "2026-10-27",
+  "vu": "2026-11-15"
+ },
+ "sonobuoy": {
+  "version": "v0.57.5",
+  "date": "2026-07-01",
+  "vu": "2026-11-15"
+ },
+ "k6": {
+  "version": "v2.4.0",
+  "date": "2026-11-12",
+  "vu": "2026-11-15"
+ },
+ "apache-jmeter": {
+  "version": "rel/v5.6.3",
+  "date": "2024-01-09",
+  "vu": "2026-11-15"
+ },
+ "locust": {
+  "version": "2.47.0",
+  "date": "2026-10-21",
+  "vu": "2026-11-15"
+ },
+ "gatling-core": {
+  "version": "v3.16.0",
+  "date": "2026-09-29",
+  "vu": "2026-11-15"
+ },
+ "vegeta": {
+  "version": "v12.13.0",
+  "date": "2025-10-31",
+  "vu": "2026-11-15"
+ },
+ "wrk": {
+  "version": "4.2.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "hey": {
+  "version": "v0.1.5",
+  "date": "2026-01-10",
+  "vu": "2026-11-15"
+ },
+ "siege": {
+  "version": "4.2.2",
+  "date": "2026-10-27",
+  "vu": "2026-11-15"
+ },
+ "owasp-juice-shop": {
+  "version": "v20.4.0",
+  "date": "2026-11-08",
+  "vu": "2026-11-15"
+ },
+ "webgoat": {
+  "version": "v2026.5",
+  "date": "2026-10-12",
+  "vu": "2026-11-15"
+ },
+ "powershell-7": {
+  "version": "v7.7.0",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "windows-terminal": {
+  "version": "v1.25.3131.0",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "winget-cli": {
+  "version": "v1.29.380",
+  "date": "2026-09-21",
+  "vu": "2026-11-15"
+ },
+ "chocolatey-community-edition": {
+  "version": "2.7.5",
+  "date": "2026-10-28",
+  "vu": "2026-11-15"
+ },
+ "scoop": {
+  "version": "v0.6.0",
+  "date": "2026-09-30",
+  "vu": "2026-11-15"
+ },
+ "winsw": {
+  "version": "v2.12.0",
+  "date": "2023-01-28",
+  "vu": "2026-11-15"
+ },
+ "rdpy": {
+  "version": "v1.3.2",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "freerdp": {
+  "version": "3.33.1",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "apache-guacamole": {
+  "version": "1.6.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "tigervnc": {
+  "version": "v1.16.2",
+  "date": "2026-03-26",
+  "vu": "2026-11-15"
+ },
+ "xrdp": {
+  "version": "v0.10.6.1",
+  "date": "2026-07-07",
+  "vu": "2026-11-15"
+ },
+ "wsl": {
+  "version": "3.0.5",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "git-for-windows": {
+  "version": "v2.56.1.windows.1",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "rufus-open-source": {
+  "version": "v4.15",
+  "date": "2026-06-30",
+  "vu": "2026-11-15"
+ },
+ "ventoy": {
+  "version": "v1.1.18",
+  "date": "2026-10-09",
+  "vu": "2026-11-15"
+ },
+ "fog-project": {
+  "version": "1.6.0.158",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "opsi": {
+  "version": "4.3.1.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "win32-openssh": {
+  "version": "10.4.0.0p1-Preview",
+  "date": "2026-10-20",
+  "vu": "2026-11-15"
+ },
+ "rport": {
+  "version": "0.9.14",
+  "date": "2023-11-14",
+  "vu": "2026-11-15"
+ },
+ "tactical-rmm": {
+  "version": "v1.6.1",
+  "date": "2026-10-27",
+  "vu": "2026-11-15"
+ },
+ "remotely": {
+  "version": "v2024.08.07.0819",
+  "date": "2024-08-12",
+  "vu": "2026-11-15"
+ },
+ "autohotkey": {
+  "version": "v2.0.31",
+  "date": "2026-10-25",
+  "vu": "2026-11-15"
+ },
+ "powertoys": {
+  "version": "v0.102.3101",
+  "date": "2026-11-06",
+  "vu": "2026-11-15"
+ },
+ "homebrew": {
+  "version": "7.0.13",
+  "date": "2026-11-09",
+  "vu": "2026-11-15"
+ },
+ "macports": {
+  "version": "v2.12.7",
+  "date": "2026-10-13",
+  "vu": "2026-11-15"
+ },
+ "nix": {
+  "version": "2.35.6",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "flatpak": {
+  "version": "1.18.4",
+  "date": "2026-09-28",
+  "vu": "2026-11-15"
+ },
+ "snapd": {
+  "version": "2.78",
+  "date": "2026-10-07",
+  "vu": "2026-11-15"
+ },
+ "appimage": {
+  "version": "13",
+  "date": "2020-12-31",
+  "vu": "2026-11-15"
+ },
+ "systemd": {
+  "version": "v262.2",
+  "date": "2026-11-05",
+  "vu": "2026-11-15"
+ },
+ "s6": {
+  "version": "v2.15.1.1",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "supervisord": {
+  "version": "4.3.0",
+  "date": "",
+  "vu": "2026-11-15"
+ },
+ "pm2": {
+  "version": "v7.1.2",
+  "date": "2026-11-03",
+  "vu": "2026-11-15"
+ },
+ "forever": {
+  "version": "4.0.0",
+  "date": "2021-06-01",
+  "vu": "2026-11-15"
+ },
+ "circus": {
+  "version": "0.17.1",
+  "date": "2021-05-20",
+  "vu": "2026-11-15"
+ },
+ "tmux": {
+  "version": "3.8",
+  "date": "2026-09-09",
+  "vu": "2026-11-15"
+ },
+ "zellij": {
+  "version": "v0.46.0",
+  "date": "2026-11-11",
+  "vu": "2026-11-15"
+ },
+ "fish-shell": {
+  "version": "4.9.3",
+  "date": "2026-09-08",
+  "vu": "2026-11-15"
+ },
+ "nushell": {
+  "version": "0.117.0",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ },
+ "starship": {
+  "version": "v1.27.0",
+  "date": "2026-10-17",
+  "vu": "2026-11-15"
+ },
+ "chezmoi": {
+  "version": "v2.74.1",
+  "date": "2026-11-10",
+  "vu": "2026-11-15"
+ }
+}
