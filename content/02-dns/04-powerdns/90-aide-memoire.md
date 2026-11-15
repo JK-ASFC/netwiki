@@ -1,6 +1,6 @@
 ---
 title: PowerDNS — aide-mémoire des commandes
-description: Commandes PowerDNS avec exemples — serveur faisant autorité (pdns_server, pdnsutil : zones, enregistrements, édition, vérification, DNSSEC, clés TSIG, métadonnées, secondaires), pdns_control, API REST (curl), Recursor (rec_control), dnsdist (console, statistiques, règles), tests et journaux.
+description: Référence complète des commandes PowerDNS avec exemples — paquets (autoritaire, backends, Recursor, dnsdist), pdnsutil (zones, enregistrements, édition, contrôle, rectification, import, secondaires, type et compte de zone, migration de backend), DNSSEC (sécurisation, clés : liste, activation, publication, NSEC3, DS) et TSIG (création, import, activation), pdns_control (statistiques, cache, notification, transfert, configuration courante), API REST (zones : liste, création, modification, export, rectification, notification, suppression ; recherche ; clés DNSSEC), Recursor (rec_control : cache, zones, Lua, traces, NTA, palmarès), dnsdist (console, commandes non interactives, serveurs, règles, statistiques, API), métriques Prometheus et tests.
 tags: [aide-mémoire, powerdns, pdnsutil, rec_control, dnsdist, api]
 icon: terminal
 ---
@@ -102,4 +102,103 @@ dnsdist -c                                   # console (controlSocket configuré
 dig @10.0.10.53 exemple.fr SOA +short
 dig @10.0.10.53 exemple.fr DNSKEY +dnssec
 sudo journalctl -u pdns -u pdns-recursor -f
+```
+
+## Paquets
+
+```bash
+# Paquets de la distribution ou du dépôt officiel repo.powerdns.com (voir l'article d'installation)
+sudo apt install pdns-server pdns-backend-pgsql          # autoritaire + PostgreSQL (pdns-backend-mysql, pdns-backend-bind…)
+sudo apt install pdns-recursor dnsdist
+sudo dnf install pdns pdns-backend-postgresql pdns-recursor dnsdist   # RHEL (EPEL ou dépôt PowerDNS)
+pdns_server --version ; pdns_recursor --version ; dnsdist --version
+```
+
+## pdnsutil : compléments
+
+```bash
+pdnsutil set-kind exemple.fr primary                     # native, primary, secondary
+pdnsutil set-account exemple.fr equipe-reseau            # compte (filtrage dans les interfaces web)
+pdnsutil add-record exemple.fr _sip._tls SRV "10 10 5061 pbx.exemple.fr"
+pdnsutil add-record exemple.fr @ CAA '0 issue "letsencrypt.org"'
+pdnsutil list-zone exemple.fr | grep -E "\sA\s"
+pdnsutil create-zone 30.0.10.in-addr.arpa ns1.exemple.fr
+pdnsutil add-record 30.0.10.in-addr.arpa 10 PTR www.exemple.fr
+pdnsutil set-meta exemple.fr SOA-EDIT-API DEFAULT         # numéro de série incrémenté par les modifications API
+pdnsutil b2b-migrate gmysql gpgsql                        # copier toutes les zones d'un backend vers un autre
+```
+
+## DNSSEC et TSIG : compléments
+
+```bash
+pdnsutil list-keys exemple.fr
+pdnsutil activate-zone-key exemple.fr 3
+pdnsutil deactivate-zone-key exemple.fr 2
+pdnsutil publish-zone-key exemple.fr 3
+pdnsutil unpublish-zone-key exemple.fr 2
+pdnsutil remove-zone-key exemple.fr 2
+pdnsutil set-presigned exemple.org                        # zone présignée reçue d'un primaire
+pdnsutil list-tsig-keys
+pdnsutil import-tsig-key transfert-ns2 hmac-sha256 'c2VjcmV0LWJhc2U2NC1mb3Vybmktc3VyLWxlLXByaW1haXJl'
+pdnsutil delete-tsig-key ancienne-cle
+```
+
+## pdns_control : compléments
+
+```bash
+pdns_control current-config | grep -E "^(api|webserver|launch|primary|secondary)"
+pdns_control list-zones
+pdns_control bind-reload-now exemple.fr                   # backend BIND : relire un fichier de zone
+pdns_control show uptime
+pdns_control show query-cache-hit
+```
+
+## API REST : compléments
+
+```bash
+API=http://127.0.0.1:8081/api/v1/servers/localhost
+H="X-API-Key: $CLE"
+# Créer une zone
+curl -s -X POST -H "$H" $API/zones -d '{"name":"nouvelle.fr.","kind":"Native","nameservers":["ns1.exemple.fr.","ns2.exemple.fr."],"soa_edit_api":"DEFAULT"}' | jq .id
+# Supprimer un enregistrement
+curl -s -X PATCH -H "$H" $API/zones/exemple.fr. -d '{"rrsets":[{"name":"ancien.exemple.fr.","type":"A","changetype":"DELETE"}]}'
+# Export au format fichier de zone, rectification, notification, transfert (secondaire)
+curl -s -H "$H" $API/zones/exemple.fr./export
+curl -s -X PUT -H "$H" $API/zones/exemple.fr./rectify
+curl -s -X PUT -H "$H" $API/zones/exemple.fr./notify
+curl -s -X PUT -H "$H" $API/zones/exemple.org./axfr-retrieve
+# Recherche dans toutes les zones
+curl -s -H "$H" "$API/search-data?q=www*&max=20" | jq '.[] | {name, type, content}'
+# Clés DNSSEC et DS
+curl -s -H "$H" $API/zones/exemple.fr./cryptokeys | jq '.[] | {id, keytype, active, ds}'
+curl -s -X DELETE -H "$H" $API/zones/nouvelle.fr.
+```
+
+## Recursor : compléments
+
+```bash
+rec_control get cache-entries
+rec_control top-remotes                                   # clients les plus actifs
+rec_control top-queries
+rec_control top-servfail-queries
+rec_control add-nta zone-cassee.exemple.org "DNSSEC défaillant chez le fournisseur"
+rec_control get-ntas
+rec_control clear-nta zone-cassee.exemple.org
+rec_control reload-acls
+rec_control quit-nicely
+curl -s -H "X-API-Key: $CLE_REC" http://127.0.0.1:8082/metrics | grep -E "^pdns_recursor_(questions|cache_hits|cache_misses|servfail_answers)"
+```
+
+## dnsdist : compléments
+
+```bash
+dnsdist -c -e 'showServers()'                             # commande non interactive
+dnsdist -c -e 'topQueries(20)'
+dnsdist -c -e 'showDynBlocks()'
+dnsdist -c -e 'dumpStats()'
+dnsdist -c -e 'getServer(0):setDown()'                    # retirer un serveur de la rotation
+dnsdist -c -e 'getServer(0):setAuto()'                    # rendre le contrôle de santé automatique
+dnsdist -c -e 'grepq("exemple.com")'                      # requêtes récentes correspondant à un nom
+curl -s -H "X-API-Key: $CLE_DNSDIST" http://127.0.0.1:8083/api/v1/servers/localhost/statistics | jq '.[0:10]'
+curl -s -H "X-API-Key: $CLE" http://127.0.0.1:8081/metrics | grep -E "^pdns_auth_(udp_queries|tcp_queries|packetcache_hit)"
 ```

@@ -1,6 +1,6 @@
 ---
 title: dnsmasq — aide-mémoire des commandes
-description: Commandes et options dnsmasq avec exemples — vérification de la configuration (--test), lancement au premier plan pour le débogage, rechargement (SIGHUP) et statistiques du cache (SIGUSR1), baux DHCP, options DNS (server, address, local, domain, cache-size), DHCP (dhcp-range, dhcp-host, dhcp-option, tags), TFTP/PXE, journaux et tests.
+description: Référence complète des commandes et options dnsmasq avec exemples — installation (Debian/Ubuntu, RHEL, Alpine, Arch, FreeBSD, macOS) et conflit avec systemd-resolved, service et signaux (rechargement, statistiques), options DNS (amont, redirection par domaine, noms locaux, enregistrements host, SRV, MX, TXT, PTR, CNAME, blocage, protection contre le rebinding, DNSSEC, ensembles nftables, journalisation), options DHCP (plages, réservations, étiquettes, clients inconnus refusés, options, routes statiques, relais, script de bail, IPv6 et annonces de routeur), TFTP et PXE, baux, tests et diagnostic.
 tags: [aide-mémoire, dnsmasq, dns, dhcp, tftp, pxe]
 icon: terminal
 ---
@@ -78,4 +78,100 @@ pxe-service=x86PC,"Démarrage réseau",pxelinux
 dig @192.168.1.1 nas.maison.lan +short
 dig @192.168.1.1 -x 192.168.1.5 +short
 sudo nmap --script broadcast-dhcp-discover -e eth1     # voir les serveurs DHCP qui répondent
+```
+
+## Installation
+
+```bash
+sudo apt install dnsmasq                               # Debian / Ubuntu
+sudo dnf install dnsmasq                               # RHEL / Rocky / Alma / Fedora
+sudo apk add dnsmasq                                   # Alpine
+sudo pacman -S dnsmasq                                 # Arch
+sudo pkg install dnsmasq && sudo sysrc dnsmasq_enable=YES   # FreeBSD
+brew install dnsmasq && sudo brew services start dnsmasq    # macOS (configuration : $(brew --prefix)/etc/dnsmasq.conf)
+sudo systemctl enable --now dnsmasq
+
+# Ubuntu : libérer le port 53 occupé par le résolveur local de systemd-resolved
+sudo sed -i 's/^#\?DNSStubListener=.*/DNSStubListener=no/' /etc/systemd/resolved.conf
+sudo systemctl restart systemd-resolved
+sudo ss -ulpn | grep ':53 '
+```
+
+## Options DNS complémentaires
+
+```ini /etc/dnsmasq.d/dns-avance.conf
+# Écouter seulement sur les interfaces nommées (plusieurs instances possibles)
+bind-interfaces
+# Interroger les serveurs amont dans l'ordre, ou tous à la fois
+strict-order
+# Domaine local : jamais transmis à l'amont
+local=/maison.lan/
+# Fichiers d'hôtes supplémentaires (rechargés par SIGHUP)
+addn-hosts=/etc/dnsmasq.hosts
+# Enregistrements explicites
+host-record=nas.maison.lan,192.168.1.5,fd00::5
+srv-host=_ldap._tcp.maison.lan,dc.maison.lan,389,0,100
+mx-host=maison.lan,mail.maison.lan,10
+txt-record=maison.lan,"v=spf1 mx -all"
+ptr-record=5.1.168.192.in-addr.arpa,nas.maison.lan
+# Protection contre le rebinding (adresses privées refusées dans les réponses publiques), sauf domaine interne
+stop-dns-rebind
+rebind-domain-ok=/corp.exemple.fr/
+# Validation DNSSEC
+dnssec
+conf-file=/usr/share/dnsmasq-base/trust-anchors.conf
+# Résolutions de certains domaines ajoutées à un ensemble nftables (routage ou filtrage par domaine)
+nftset=/vpn.exemple.com/4#inet#filtre#via_vpn
+# Cache
+cache-size=10000
+neg-ttl=60
+# Journal détaillé des requêtes dans un fichier
+log-queries=extra
+log-facility=/var/log/dnsmasq.log
+log-async=25
+```
+
+## Options DHCP complémentaires
+
+```ini /etc/dnsmasq.d/dhcp-avance.conf
+# Plage réservée aux adresses fixes (aucune distribution dynamique)
+dhcp-range=192.168.10.0,static,255.255.255.0,12h
+# Refuser les clients sans réservation
+dhcp-ignore=tag:!known
+# Réservation par identifiant client et étiquette
+dhcp-host=id:01:aa:bb:cc:dd:ee:ff,poste-direction,192.168.1.30,set:vip
+dhcp-option=tag:vip,option:dns-server,192.168.1.1,192.168.1.2
+# Suffixes de recherche, MTU, routes statiques sans classe (option 121)
+dhcp-option=option:domain-search,maison.lan,corp.exemple.fr
+dhcp-option=option:mtu,1400
+dhcp-option=121,10.20.0.0/16,192.168.1.254,0.0.0.0/0,192.168.1.1
+# Nombre maximal de baux
+dhcp-lease-max=500
+# Relais vers un serveur DHCP central (dnsmasq en relais sur l'interface eth2)
+dhcp-relay=192.168.60.1,10.0.10.67,eth2
+# Script lancé à chaque bail (add, old, del)
+dhcp-script=/usr/local/bin/bail-dnsmasq.sh
+# IPv6 : annonces de routeur et DHCPv6 sans état
+enable-ra
+dhcp-range=::,constructor:eth1,ra-stateless,64,12h
+```
+
+```bash
+# Lister les options DHCP connues par nom
+dnsmasq --help dhcp
+dnsmasq --help dhcp6
+```
+
+## Baux, tests, diagnostic
+
+```bash
+# Format d'une ligne de bail : expiration (epoch) MAC IP nom identifiant-client
+awk '{ printf "%s %-17s %-15s %s\n", strftime("%F %T", $1), $2, $3, $4 }' /var/lib/misc/dnsmasq.leases
+sudo pkill -USR1 dnsmasq && sudo journalctl -u dnsmasq -n 20      # statistiques du cache et des serveurs amont
+dig @192.168.1.1 _ldap._tcp.maison.lan SRV +short
+dig @192.168.1.1 maison.lan MX +short
+sudo dhclient -v -1 eth0                                          # demander un bail depuis un client Linux
+sudo tcpdump -ni eth1 port 67 or port 68 -vv                      # échanges DHCP
+sudo tcpdump -ni eth1 port 69                                     # TFTP (PXE)
+sudo tail -f /var/log/dnsmasq.log
 ```
