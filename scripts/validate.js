@@ -83,10 +83,19 @@ app.on('browser-window-created', (_e, win) => {
     try {
       // Attendre que le wiki soit chargé (plus long sur un gros contenu ou une machine lente) plutôt qu'un délai fixe.
       const loaded = () => win.webContents.executeJavaScript('!!(window.__netwiki && window.__netwiki.store && window.__netwiki.store.pages.size)').catch(() => false);
-      for (let i = 0; i < 240 && !(await loaded()); i++) await new Promise((r) => setTimeout(r, 500));
-      if (!(await loaded())) throw new Error('NetWiki ne s’est pas chargé en 2 minutes.');
-      await new Promise((r) => setTimeout(r, 1000));
-      const res = await win.webContents.executeJavaScript(`(${CHECK.toString()})()`);
+      // Si la page est rechargée pendant le contrôle (« Render frame was disposed »), attendre et recommencer (3 essais).
+      let res;
+      for (let essai = 1; !res; essai++) {
+        for (let i = 0; i < 240 && !(await loaded()); i++) await new Promise((r) => setTimeout(r, 500));
+        if (!(await loaded())) throw new Error('NetWiki ne s’est pas chargé en 2 minutes.');
+        await new Promise((r) => setTimeout(r, 1000));
+        try {
+          res = await win.webContents.executeJavaScript(`(${CHECK.toString()})()`);
+        } catch (err) {
+          if (essai >= 3 || !/disposed/i.test(String(err))) throw err;
+          console.log(`Page rechargée pendant le contrôle : nouvel essai (${essai + 1}/3).`);
+        }
+      }
       console.log(`Pages : ${res.pages} · dossiers : ${res.folders} · blocs de code : ${res.codeBlocks} · diagrammes : ${res.diagrams} · images : ${res.images}`);
       if (res.issues.length) {
         code = 1;
