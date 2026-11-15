@@ -1,6 +1,6 @@
 ---
 title: Aide-mémoire TACACS / TACACS+
-description: L'essentiel de TACACS, XTACACS et TACACS+ sur une page — ports, versions, codes des paquets, attributs courants, configuration minimale Cisco, NX-OS, Junos, Arista, Comware, serveurs tac_plus-ng et tac_plus, commandes de test et de débogage.
+description: Référence complète TACACS+ avec exemples — protocoles et codes, attributs par constructeur, configurations minimales Cisco IOS/IOS XE, NX-OS, Junos, Arista, Comware, serveurs tac_plus-ng et tac_plus (Shrubbery) : service, vérification, débogage, test des sources d'annuaire (mavistest), journaux ; vérifications et débogage sur Cisco, Aruba AOS-CX, FortiGate et Palo Alto ; tests et règles d'or.
 tags: [tacacs+, tacacs, aide-mémoire, cisco, junos, tac_plus-ng, tac_plus]
 icon: book-open
 ---
@@ -126,3 +126,41 @@ user = alice { member = admins  login = PAM }
 3. Une clé longue par groupe d'équipements, réseau de gestion isolé, TLS dès que possible.
 4. Deux serveurs, configuration en Git, journaux centralisés.
 5. Rôles par groupes d'annuaire, règles écrites sur les commandes développées.
+
+## Serveurs : exploitation
+
+```bash
+sudo systemctl status tac_plus-ng
+sudo tac_plus-ng -P /usr/local/etc/tac_plus-ng.cfg && sudo systemctl reload tac_plus-ng
+# Tester l'authentification d'un utilisateur auprès de la source d'annuaire (LDAP/AD) configurée dans MAVIS
+mavistest /usr/local/etc/tac_plus-ng.cfg tac_plus-ng TACPLUS alice 'MotDePasse'
+sudo tail -f /var/log/tac_plus-ng/acct-$(date +%Y%m%d).log
+sudo ss -ltnp | grep ':49 '
+sudo systemctl status tac_plus                              # serveur Shrubbery
+sudo tail -f /var/log/tac_plus/acct.log
+```
+
+## Vérifications et débogage sur les équipements
+
+```text
+! Cisco IOS / IOS XE
+show tacacs
+show aaa servers
+show aaa method-lists all
+show aaa sessions
+debug aaa authentication
+debug aaa authorization
+debug tacacs
+undebug all
+! Aruba AOS-CX
+show tacacs-server detail
+show aaa authentication
+show accounting log all
+# FortiGate
+diagnose debug application fnbamd -1
+diagnose debug enable
+diagnose test authserver tacacs+ TACACS alice MotDePasse
+diagnose debug disable
+# Palo Alto (le mot de passe est demandé)
+test authentication authentication-profile TACACS username alice password
+```

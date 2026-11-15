@@ -1,6 +1,6 @@
 ---
 title: FreeRADIUS — aide-mémoire des commandes
-description: Commandes FreeRADIUS avec exemples — vérification et mode débogage (radiusd -XC, freeradius -X), service, clients (clients.conf), utilisateurs (fichier authorize, SQL), tests d'authentification (radtest, radclient, eapol_test pour PEAP/EAP-TLS), comptabilité, certificats EAP (bootstrap, make), modules (ldap, sql, rest), statistiques (radmin, Status-Server), dictionnaires et attributs VLAN dynamiques.
+description: Référence complète des commandes FreeRADIUS 3 avec exemples — installation (Debian/Ubuntu, RHEL, Alpine, FreeBSD, conteneur) et pare-feu, vérification et débogage (freeradius -X, filtrage, débogage ciblé d'un seul client avec radmin), clients, utilisateurs et VLAN dynamique, tests (radtest, radclient, Status-Server, déconnexion et CoA, eapol_test PEAP et EAP-TLS), Active Directory pour MSCHAPv2 (jonction Samba, winbind, ntlm_auth), base SQL (schéma, utilisateurs, groupes, sessions ouvertes), certificats EAP (contrôle, paramètres DH, TLS minimal), modules, journaux d'authentification et de comptabilité, statistiques et codes de réponse.
 tags: [aide-mémoire, freeradius, radius, radtest, eap, 802.1x]
 icon: terminal
 ---
@@ -113,3 +113,88 @@ sudo radlast
 | `Access-Reject` | Refus : mot de passe, utilisateur inconnu, politique |
 | `Access-Challenge` | Échange en cours (EAP) |
 | Aucune réponse | Client non déclaré, secret partagé faux (« Ignoring request from unknown client »), pare-feu UDP 1812 |
+
+## Installation
+
+```bash
+sudo apt install freeradius freeradius-utils freeradius-ldap freeradius-postgresql      # Debian / Ubuntu
+sudo dnf install freeradius freeradius-utils freeradius-ldap freeradius-postgresql      # RHEL / Rocky / Alma
+sudo apk add freeradius freeradius-eap freeradius-ldap freeradius-utils                 # Alpine
+sudo pkg install freeradius3 && sudo sysrc radiusd_enable=YES                           # FreeBSD
+docker run -d --name freeradius -p 1812-1813:1812-1813/udp -v /srv/raddb:/etc/raddb freeradius/freeradius-server:latest-3.2
+sudo systemctl enable --now freeradius                                                  # RHEL : radiusd
+sudo firewall-cmd --permanent --add-service=radius && sudo firewall-cmd --reload        # UDP 1812 et 1813
+sudo ufw allow 1812:1813/udp
+```
+
+## Débogage ciblé (production)
+
+```bash
+# Filtrer la sortie de débogage
+sudo freeradius -X 2>&1 | grep -E "Login (OK|incorrect)|Sent Access-(Accept|Reject)|ERROR|WARNING"
+# Déboguer un seul équipement sans arrêter le service (socket de contrôle activé)
+sudo radmin -e "debug condition '(Packet-Src-IP-Address == 10.0.99.10)'"
+sudo radmin -e "debug file /var/log/freeradius/debug-sw-paris.log"
+sudo radmin -e "debug level 4"
+sudo tail -f /var/log/freeradius/debug-sw-paris.log
+sudo radmin -e "debug condition"                      # sans argument : désactiver
+sudo radmin -e "debug level 0"
+```
+
+## Déconnexion et changement d'autorisation (CoA, RFC 5176)
+
+```bash
+# Déconnecter une session sur le commutateur (port CoA 3799 ; Cisco IOS utilise 1700 par défaut)
+echo "User-Name=amartin,Acct-Session-Id=0000002A" | radclient -x 10.0.99.10:3799 disconnect Sx9vT2qL7mWp4KzB8nRc
+# Forcer une réauthentification (attribut Cisco)
+echo 'User-Name=amartin,Cisco-AVPair="subscriber:command=reauthenticate"' | radclient -x 10.0.99.10:1700 coa Sx9vT2qL7mWp4KzB8nRc
+# Test d'un autre type d'authentification
+radtest -t eap-md5 amartin MotDePasseTest 127.0.0.1 0 testing123
+```
+
+## Active Directory pour MSCHAPv2 (Samba et winbind)
+
+```bash
+sudo apt install samba winbind krb5-user                 # RHEL : samba-winbind samba-winbind-clients
+sudo net ads join -U adm-jonction                        # smb.conf : workgroup = CORP, security = ads, realm = CORP.EXEMPLE.FR
+sudo systemctl restart winbind
+wbinfo -t                                                # canal sécurisé avec le domaine
+wbinfo -u | head
+sudo usermod -aG winbindd_priv freerad                   # accès de FreeRADIUS au socket winbind (RHEL : radiusd)
+ntlm_auth --request-nt-key --domain=CORP --username=amartin --password='MotDePasseAD'   # « NT_STATUS_OK » attendu
+radtest -t mschap amartin 'MotDePasseAD' 127.0.0.1 0 testing123
+```
+
+## Base SQL
+
+```bash
+# Schéma (PostgreSQL), puis activer le module sql
+sudo -u postgres psql -c "CREATE USER radius WITH PASSWORD 'MotDePasseBase';" -c "CREATE DATABASE radius OWNER radius;"
+psql -h 127.0.0.1 -U radius radius < /etc/freeradius/3.0/mods-config/sql/main/postgresql/schema.sql
+```
+
+```sql
+-- Utilisateur, réponse (VLAN), groupe
+INSERT INTO radcheck (username, attribute, op, value) VALUES ('amartin', 'Cleartext-Password', ':=', 'MotDePasseTest');
+INSERT INTO radusergroup (username, groupname, priority) VALUES ('amartin', 'reseau', 1);
+INSERT INTO radgroupreply (groupname, attribute, op, value) VALUES ('reseau', 'Tunnel-Private-Group-Id', ':=', '30');
+-- Sessions ouvertes (comptabilité)
+SELECT username, nasipaddress, nasportid, acctstarttime FROM radacct WHERE acctstoptime IS NULL ORDER BY acctstarttime DESC;
+```
+
+## Certificats EAP : contrôles
+
+```bash
+openssl x509 -in /etc/freeradius/3.0/certs/server.pem -noout -subject -issuer -enddate -ext extendedKeyUsage,subjectAltName
+openssl verify -CAfile /etc/freeradius/3.0/certs/ca.pem /etc/freeradius/3.0/certs/server.pem
+sudo openssl dhparam -out /etc/freeradius/3.0/certs/dh 2048
+grep -nE "tls_min_version|tls_max_version|private_key_file|certificate_file|ca_file" /etc/freeradius/3.0/mods-enabled/eap
+```
+
+## Journaux
+
+```bash
+sudo tail -f /var/log/freeradius/radius.log                       # « auth = yes » dans radiusd.conf pour journaliser chaque connexion
+sudo ls /var/log/freeradius/radacct/                              # un dossier par client, fichiers detail-AAAAMMJJ
+sudo tail -f /var/log/freeradius/radacct/10.0.99.10/detail-$(date +%Y%m%d)
+```

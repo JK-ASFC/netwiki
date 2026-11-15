@@ -1,6 +1,6 @@
 ---
 title: NPS (serveur RADIUS Windows) — aide-mémoire des commandes
-description: Commandes NPS avec exemples — installation, enregistrement dans l'AD, clients RADIUS (New-NpsRadiusClient), export/import de la configuration (Export-NpsConfiguration, netsh nps), stratégies réseau et de demande de connexion, journalisation (fichiers IAS/DTS, SQL), audit des événements 6272/6273, tests depuis un client, certificats pour PEAP/EAP-TLS, extension MFA (NPS Extension for Azure MFA).
+description: Référence complète des commandes NPS (serveur RADIUS Windows) avec exemples — installation et inscription dans AD, clients RADIUS, export, import et consultation de la configuration, audit (sous-catégorie par GUID, indépendante de la langue), événements 6272 à 6274 et codes de raison, journaux de comptabilité, ports et service, certificats PEAP et EAP-TLS, extension MFA Entra ID et tests depuis les équipements.
 tags: [aide-mémoire, nps, radius, windows server, 802.1x, netsh]
 icon: terminal
 ---
@@ -43,7 +43,7 @@ Les stratégies réseau (conditions : groupe Windows, type de port NAS, type d'a
 
 ```powershell
 # Activer l'audit des événements NPS (6272 accordé, 6273 refusé)
-auditpol /set /subcategory:"Network Policy Server" /success:enable /failure:enable
+auditpol /set /subcategory:"{0CCE9243-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable   # « Serveur NPS » : GUID valable quelle que soit la langue
 Get-WinEvent -FilterHashtable @{LogName="Security"; Id=6273} -MaxEvents 10 | Format-List TimeCreated, Message
 Get-WinEvent -FilterHashtable @{LogName="Security"; Id=6272} -MaxEvents 10 | Select-Object TimeCreated
 # Fichiers journaux comptabilité (format DTS/IAS)
@@ -58,6 +58,9 @@ Get-ChildItem "$env:SystemRoot\System32\LogFiles\IN*.log" | Sort-Object LastWrit
 | Code 65 | Accès réseau refusé dans les propriétés de numérotation du compte |
 | Code 22 | Le client n'a pas pu être authentifié (type EAP non pris en charge) |
 | Code 265 | Certificat du client non approuvé (EAP-TLS) |
+| Code 8 | Compte utilisateur inexistant |
+| Code 23 | Erreur pendant le traitement EAP (certificat du serveur, chaîne) |
+| Code 66 | Méthode d'authentification non autorisée par la stratégie réseau |
 
 ## Certificats (PEAP / EAP-TLS)
 
@@ -79,3 +82,15 @@ Get-WinEvent -LogName "AuthNOptCh" -MaxEvents 10 -ErrorAction SilentlyContinue
 
 - Depuis un équipement : `test aaa group radius amartin MotDePasse new-code` (Cisco IOS), `diagnose test authserver radius NPS pap amartin MotDePasse` (FortiGate).
 - Depuis Linux : `radtest` / `eapol_test` (voir [[01-freeradius/90-aide-memoire|FreeRADIUS]]).
+
+## Service, ports, événements
+
+```powershell
+Get-Service IAS | Select-Object Name, Status, StartType
+Get-NetUDPEndpoint -LocalPort 1812, 1813 | Select-Object LocalAddress, LocalPort
+# Accordé (6272), refusé (6273), rejeté par le serveur (6274) sur la dernière heure
+Get-WinEvent -FilterHashtable @{LogName='Security'; Id=6272,6273,6274; StartTime=(Get-Date).AddHours(-1)} | Group-Object Id | Select-Object Name, Count
+Get-WinEvent -FilterHashtable @{LogName='Security'; Id=6273} -MaxEvents 5 | ForEach-Object { $_.Message -split "`n" | Select-String -Pattern "Nom du compte|Account Name|Adresse IP du client|Client IP|Code de la raison|Reason Code" }
+Get-WinEvent -LogName "System" -MaxEvents 50 | Where-Object ProviderName -eq "NPS"
+certutil -verifystore My
+```
