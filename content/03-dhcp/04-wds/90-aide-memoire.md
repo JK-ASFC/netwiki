@@ -1,6 +1,6 @@
 ---
 title: WDS — aide-mémoire des commandes
-description: Commandes des Services de déploiement Windows avec exemples — installation et initialisation (wdsutil /initialize-server), réponse PXE, images de démarrage et d'installation (Import-WdsBootImage, Import-WdsInstallImage), groupes d'images, pré-approvisionnement, multidiffusion, pilotes, options DHCP 60/66/67, journalisation et dépannage, alternatives (MDT, Configuration Manager, iPXE).
+description: Référence complète des commandes WDS avec exemples — installation et initialisation, réponse aux clients PXE, cohabitation avec le DHCP Microsoft, images de démarrage et d'installation (groupes, désactivation, fichiers de réponses), pilotes, pré-approvisionnement et approbation des clients en attente, multidiffusion, options DHCP 66/67, taille des blocs TFTP, journaux, réinitialisation et dépannage.
 tags: [aide-mémoire, wds, wdsutil, pxe, déploiement, windows]
 icon: terminal
 ---
@@ -69,3 +69,34 @@ Get-Service WDSServer | Restart-Service
 
 > [!NOTE]
 > Microsoft a déprécié certains scénarios WDS (installation de Windows 11 directement par l'image `boot.wim` du support) : WDS reste utilisé comme serveur PXE pour **MDT**, **Configuration Manager** ou des images WinPE personnalisées.
+
+## Configuration complète, clients en attente
+
+```powershell
+wdsutil /get-server /show:all
+wdsutil /get-allimages /show:install
+wdsutil /set-server /answerclients:known
+wdsutil /set-server /pxepromptpolicy /known:noprompt /new:abort
+# Approbation manuelle des nouveaux postes
+wdsutil /set-server /autoaddpolicy /policy:adminapproval
+wdsutil /get-autoadddevices /devicetype:pendingdevices
+wdsutil /approve-autoadddevices /requestid:3
+wdsutil /reject-autoadddevices /requestid:4
+```
+
+## TFTP : accélérer le chargement de l'image de démarrage
+
+```powershell
+# Taille de bloc TFTP plus grande dans le magasin BCD de WDS (à tester : certains micrologiciels la refusent)
+bcdedit /store D:\RemoteInstall\Boot\BCD /set "{68d9e51c-a129-4ee1-9725-2ab00a957daf}" ramdisktftpblocksize 16384
+bcdedit /store D:\RemoteInstall\Boot\BCD /enum all | Select-String -Pattern "ramdisktftp"
+```
+
+## Réinitialisation et dépannage
+
+```powershell
+wdsutil /uninitialize-server                                     # désactiver puis réinitialiser (répertoire RemoteInstall conservé)
+wdsutil /initialize-server /reminst:"D:\RemoteInstall"
+Get-NetUDPEndpoint -LocalPort 67, 69, 4011 -ErrorAction SilentlyContinue | Select-Object LocalAddress, LocalPort, OwningProcess
+Get-WinEvent -LogName "Microsoft-Windows-Deployment-Services-Diagnostics/Admin" -MaxEvents 30 | Select-Object TimeCreated, Id, Message
+```

@@ -1,6 +1,6 @@
 ---
 title: DHCP Windows Server — aide-mémoire des commandes
-description: Commandes du serveur DHCP Windows avec exemples — installation et autorisation dans l'AD, étendues IPv4/IPv6, plages d'exclusion, options (serveur, étendue, réservation, options personnalisées 66/150/43), réservations, baux, filtres MAC, classes de fournisseur et stratégies, basculement (failover), audit et journaux, sauvegarde, export/import et migration, netsh dhcp.
+description: Référence complète des commandes du serveur DHCP Windows (module DhcpServer) avec exemples — installation et autorisation dans AD, paramètres (détection de conflits), étendues, super-étendues, exclusions, options (serveur, étendue, réservation, personnalisées), adresses libres, réservations et baux, filtres, classes et stratégies (avec plages), mises à jour DNS et identifiants dédiés, basculement (états, partenaire hors service, réplication), base et journal d'audit, journaux d'événements, inventaire multi-serveurs et alerte d'occupation, sauvegarde, migration, netsh et commandes côté client.
 tags: [aide-mémoire, dhcp windows, powershell, failover, netsh, réservations]
 icon: terminal
 ---
@@ -91,4 +91,79 @@ Set-DhcpServerv4DnsSetting -DynamicUpdates Always -DeleteDnsRROnLeaseExpiry $tru
 netsh dhcp server \\dhcp01 show scope
 netsh dhcp server \\dhcp01 scope 10.0.20.0 show clients 1
 netsh dhcp server \\dhcp01 dump > C:\Temp\dhcp-dump.txt
+```
+
+## Paramètres, super-étendues, adresses libres
+
+```powershell
+Get-DhcpServerSetting
+Set-DhcpServerSetting -ConflictDetectionAttempts 2                       # ping avant attribution
+Add-DhcpServerv4Superscope -SuperscopeName "Paris-VLAN20" -ScopeId 10.0.20.0, 10.0.21.0
+Get-DhcpServerv4Superscope
+Get-DhcpServerv4FreeIPAddress -ScopeId 10.0.20.0 -NumAddress 5
+Set-DhcpServerv4Scope -ScopeId 10.0.20.0 -LeaseDuration 1.00:00:00
+Set-DhcpServerv6OptionValue -DnsServer 2001:db8::53 -DomainSearchList corp.exemple.fr
+```
+
+## Stratégies avec plage dédiée
+
+```powershell
+Add-DhcpServerv4PolicyIPRange -Name "Telephones" -ScopeId 10.0.40.0 -StartRange 10.0.40.50 -EndRange 10.0.40.99
+Get-DhcpServerv4PolicyIPRange -ScopeId 10.0.40.0 -Name "Telephones"
+Set-DhcpServerv4Policy -Name "Telephones" -ScopeId 10.0.40.0 -Enabled $false
+```
+
+## Mises à jour DNS
+
+```powershell
+Set-DhcpServerv4DnsSetting -ScopeId 10.0.20.0 -DynamicUpdates OnClientRequest -NameProtection $true -DeleteDnsRROnLeaseExpiry $true
+Set-DhcpServerDnsCredential -Credential (Get-Credential CORP\svc-dhcp-dns)     # compte dédié (pas un compte ordinateur de DC)
+Get-DhcpServerDnsCredential
+```
+
+## Basculement : états
+
+```powershell
+Get-DhcpServerv4Failover | Select-Object Name, PartnerServer, Mode, State, LoadBalancePercent, ScopeId
+Set-DhcpServerv4Failover -Name "Paris-HA" -PartnerDown                  # partenaire définitivement perdu
+Remove-DhcpServerv4FailoverScope -Name "Paris-HA" -ScopeId 10.0.50.0
+Remove-DhcpServerv4Failover -Name "Paris-HA"
+```
+
+## Base, audit, journaux
+
+```powershell
+Get-DhcpServerDatabase
+Set-DhcpServerDatabase -BackupInterval 30 -CleanupInterval 60
+Set-DhcpServerAuditLog -Enable $true -Path "$env:SystemRoot\System32\dhcp"
+Get-WinEvent -LogName "Microsoft-Windows-Dhcp-Server/Operational" -MaxEvents 30 | Select-Object TimeCreated, Id, Message
+Get-WinEvent -LogName "Microsoft-Windows-Dhcp-Server/AdminEvents" -MaxEvents 30 | Select-Object TimeCreated, Id, Message
+Get-WinEvent -LogName "Microsoft-Windows-Dhcp-Server/FilterNotifications" -MaxEvents 30 | Select-Object TimeCreated, Message
+```
+
+## Inventaire et alerte d'occupation
+
+```powershell
+# Toutes les étendues de tous les serveurs autorisés, occupation décroissante
+Get-DhcpServerInDC | ForEach-Object { $s = $_.DnsName; Get-DhcpServerv4ScopeStatistics -ComputerName $s | Select-Object @{n='Serveur';e={$s}}, ScopeId, Free, InUse, PercentageInUse } | Sort-Object PercentageInUse -Descending | Format-Table
+# Étendues pleines à plus de 90 %
+Get-DhcpServerv4ScopeStatistics | Where-Object PercentageInUse -gt 90 | Select-Object ScopeId, PercentageInUse
+Get-DhcpServerv4Statistics | Select-Object TotalScopes, TotalAddresses, AddressesInUse, PercentageInUse
+```
+
+## Migration depuis un ancien serveur
+
+```powershell
+Export-DhcpServer -ComputerName ancien-dhcp.corp.exemple.fr -File C:\Temp\migration-dhcp.xml -Leases -Force
+Import-DhcpServer -ComputerName dhcp01.corp.exemple.fr -File C:\Temp\migration-dhcp.xml -BackupPath C:\Temp\dhcp-avant-import -Leases
+Remove-DhcpServerInDC -DnsName ancien-dhcp.corp.exemple.fr -IPAddress 10.0.10.66
+```
+
+## Côté client
+
+```powershell
+ipconfig /release ; ipconfig /renew
+ipconfig /all | Select-String "DHCP|Bail|Lease"
+Get-NetIPInterface -AddressFamily IPv4 | Select-Object InterfaceAlias, Dhcp, ConnectionState
+Get-NetIPConfiguration -Detailed
 ```
