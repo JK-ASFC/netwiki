@@ -81,7 +81,11 @@ app.on('browser-window-created', (_e, win) => {
   win.webContents.once('did-finish-load', async () => {
     let code = 0;
     try {
-      await new Promise((r) => setTimeout(r, 2500));
+      // Attendre que le wiki soit chargé (plus long sur un gros contenu ou une machine lente) plutôt qu'un délai fixe.
+      const loaded = () => win.webContents.executeJavaScript('!!(window.__netwiki && window.__netwiki.store && window.__netwiki.store.pages.size)').catch(() => false);
+      for (let i = 0; i < 240 && !(await loaded()); i++) await new Promise((r) => setTimeout(r, 500));
+      if (!(await loaded())) throw new Error('NetWiki ne s’est pas chargé en 2 minutes.');
+      await new Promise((r) => setTimeout(r, 1000));
       const res = await win.webContents.executeJavaScript(`(${CHECK.toString()})()`);
       console.log(`Pages : ${res.pages} · dossiers : ${res.folders} · blocs de code : ${res.codeBlocks} · diagrammes : ${res.diagrams} · images : ${res.images}`);
       if (res.issues.length) {

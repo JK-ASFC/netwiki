@@ -8,8 +8,9 @@
 // Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = path.join(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dir = path.join(root, 'docs', 'catalogue');
 const content = path.join(root, 'content');
 const SUIVI = path.join(dir, 'suivi.json');

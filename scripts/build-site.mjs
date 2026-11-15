@@ -7,11 +7,12 @@
 // Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import { icons } from 'lucide';
 
 const require = createRequire(import.meta.url);
-const root = path.join(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const src = path.join(root, 'site');
 const out = path.join(root, '_site');
 const content = path.join(root, 'content');

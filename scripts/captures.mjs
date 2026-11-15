@@ -4,8 +4,9 @@
 // Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = path.join(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const content = path.join(root, 'content');
 const RE = /<!--\s*CAPTURE:\s*(.+?)\s*\|\s*(_assets\/[\w.-]+\.(?:png|jpe?g|webp|gif|svg|avif))\s*-->/gi;
 const appliquer = process.argv.includes('--appliquer');
