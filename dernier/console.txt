@@ -1,219 +1,215 @@
 Appareil : Android SDK built for x86_64 emulator-5554
-[webview] error Failed to load resource: the server responded with a status of 404 (Not Found)
-[webview] startGroupCollapsed %cresult %cNetWiki.getInfo (#65340165) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.getInfo (#56780808) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {version: 1.0.0, versionCode: 10000, selfUpdate: true, store: github, sdk: 34}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.addListener (#65340166) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340166, pluginId: NetWiki, methodName: addListener, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.addListener (#56780809) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780809, pluginId: NetWiki, methodName: addListener, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.setBackHandler (#65340167) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340167, pluginId: NetWiki, methodName: setBackHandler, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.setBackHandler (#56780810) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780810, pluginId: NetWiki, methodName: setBackHandler, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.setSystemBars (#65340168) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340168, pluginId: NetWiki, methodName: setSystemBars, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.setSystemBars (#56780811) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780811, pluginId: NetWiki, methodName: setSystemBars, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.setBackHandler (#65340167) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.setBackHandler (#56780810) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.setSystemBars (#65340168) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.setSystemBars (#56780811) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.addListener (#65340169) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340169, pluginId: NetWiki, methodName: addListener, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.addListener (#56780812) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780812, pluginId: NetWiki, methodName: addListener, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.consumeLaunchAction (#65340170) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340170, pluginId: NetWiki, methodName: consumeLaunchAction, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.consumeLaunchAction (#56780813) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780813, pluginId: NetWiki, methodName: consumeLaunchAction, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.consumeLaunchAction (#65340170) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.consumeLaunchAction (#56780813) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.requestNotifications (#65340171) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340171, pluginId: NetWiki, methodName: requestNotifications, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.requestNotifications (#56780814) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780814, pluginId: NetWiki, methodName: requestNotifications, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.requestNotifications (#65340171) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.requestNotifications (#56780814) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {granted: true}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.configureUpdates (#65340172) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340172, pluginId: NetWiki, methodName: configureUpdates, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.configureUpdates (#56780815) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780815, pluginId: NetWiki, methodName: configureUpdates, options: Object}
 [webview] endGroup console.groupEnd
 OK   Premier lancement : choix des mises à jour Mises à jour de NetWiki
-[webview] startGroupCollapsed %cresult %cNetWiki.configureUpdates (#65340172) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.configureUpdates (#56780815) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.configureUpdates (#65340173) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340173, pluginId: NetWiki, methodName: configureUpdates, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.configureUpdates (#56780816) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780816, pluginId: NetWiki, methodName: configureUpdates, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.configureUpdates (#65340173) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.configureUpdates (#56780816) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.getInfo (#65340174) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340174, pluginId: NetWiki, methodName: getInfo, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.getInfo (#56780817) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780817, pluginId: NetWiki, methodName: getInfo, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.getInfo (#65340174) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.getInfo (#56780817) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {version: 1.0.0, versionCode: 10000, selfUpdate: true, store: github, sdk: 34}
 [webview] endGroup console.groupEnd
-OK   Mise à jour proposée au démarrage (version de test 1.0.0) NetWiki 1.46.0 est disponible
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340166) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+OK   Mise à jour proposée au démarrage (version de test 1.0.0) NetWiki 1.47.0 est disponible
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780809) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {}
 [webview] endGroup console.groupEnd
 OK   Bouton Retour : ferme la fenêtre fermée
 OK   Écran d’accueil 
 OK   Ouverture d’un article Présentation et installation
 OK   Fenêtre Partager / exporter 
-[webview] startGroupCollapsed %cnative %cNetWiki.savePdf (#65340175) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340175, pluginId: NetWiki, methodName: savePdf, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.savePdf (#56780818) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780818, pluginId: NetWiki, methodName: savePdf, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.savePdf (#65340175) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.savePdf (#56780818) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {uri: content://media/external/downloads/1000000019, location: Téléchargements/NetWiki/Présentation et installation.pdf}
 [webview] endGroup console.groupEnd
-OK   Enregistrer en PDF (Téléchargements) -rwxrwx--- 1 u0_a124 media_rw 501267 2026-11-12 10:39 Présentation\ et\ installation.pdf
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340166) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+OK   Enregistrer en PDF (Téléchargements) -rwxrwx--- 1 u0_a125 media_rw 501267 2026-11-22 07:50 Présentation\ et\ installation.pdf
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780809) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.savePdf (#65340176) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340176, pluginId: NetWiki, methodName: savePdf, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.savePdf (#56780819) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780819, pluginId: NetWiki, methodName: savePdf, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.savePdf (#65340176) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.savePdf (#56780819) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {shared: true}
 [webview] endGroup console.groupEnd
 OK   Partager le PDF (sélecteur d’Android) 
-[webview] startGroupCollapsed %cnative %cNetWiki.printPage (#65340177) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340177, pluginId: NetWiki, methodName: printPage, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.printPage (#56780820) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780820, pluginId: NetWiki, methodName: printPage, options: Object}
 [webview] endGroup console.groupEnd
 OK   Imprimer (boîte d’impression d’Android) 
-[webview] startGroupCollapsed %cresult %cNetWiki.printPage (#65340177) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.printPage (#56780820) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.shareText (#65340178) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340178, pluginId: NetWiki, methodName: shareText, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.shareText (#56780821) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780821, pluginId: NetWiki, methodName: shareText, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.shareText (#65340178) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.shareText (#56780821) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
 OK   Partager le texte (Markdown) 
-[webview] startGroupCollapsed %cnative %cNetWiki.setSystemBars (#65340179) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340179, pluginId: NetWiki, methodName: setSystemBars, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.setSystemBars (#56780822) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780822, pluginId: NetWiki, methodName: setSystemBars, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.setSystemBars (#65340179) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.setSystemBars (#56780822) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.setSystemBars (#65340180) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340180, pluginId: NetWiki, methodName: setSystemBars, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.setSystemBars (#56780823) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780823, pluginId: NetWiki, methodName: setSystemBars, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.setSystemBars (#65340180) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.setSystemBars (#56780823) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
 OK   Thème clair (barres système) 
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340166) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780809) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {}
 [webview] endGroup console.groupEnd
 OK   Paramètres → Mises à jour 
-[webview] startGroupCollapsed %cnative %cNetWiki.configureUpdates (#65340181) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340181, pluginId: NetWiki, methodName: configureUpdates, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.configureUpdates (#56780824) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780824, pluginId: NetWiki, methodName: configureUpdates, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.configureUpdates (#65340181) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.configureUpdates (#56780824) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.runBackgroundCheck (#65340182) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340182, pluginId: NetWiki, methodName: runBackgroundCheck, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.runBackgroundCheck (#56780825) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780825, pluginId: NetWiki, methodName: runBackgroundCheck, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.runBackgroundCheck (#65340182) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.runBackgroundCheck (#56780825) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.getInfo (#65340183) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340183, pluginId: NetWiki, methodName: getInfo, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.getInfo (#56780826) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780826, pluginId: NetWiki, methodName: getInfo, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.getInfo (#65340183) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.getInfo (#56780826) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {version: 1.0.0, versionCode: 10000, selfUpdate: true, store: github, sdk: 34}
 [webview] endGroup console.groupEnd
 OK   Notification de nouvelle version (tâche de fond) notification affichée ; nouveaux articles : true
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340169) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780812) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {action: app-update}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.getInfo (#65340184) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340184, pluginId: NetWiki, methodName: getInfo, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.getInfo (#56780827) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780827, pluginId: NetWiki, methodName: getInfo, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.getInfo (#65340184) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.getInfo (#56780827) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {version: 1.0.0, versionCode: 10000, selfUpdate: true, store: github, sdk: 34}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340166) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+OK   Notification touchée → fenêtre de mise à jour NetWiki 1.47.0 est disponible
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780809) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {}
 [webview] endGroup console.groupEnd
-OK   Notification touchée → fenêtre de mise à jour NetWiki 1.46.0 est disponible
-[webview] startGroupCollapsed %cnative %cNetWiki.httpGet (#65340185) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340185, pluginId: NetWiki, methodName: httpGet, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.httpGet (#56780828) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780828, pluginId: NetWiki, methodName: httpGet, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.httpGet (#65340185) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.httpGet (#56780828) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {status: 200, text: {
   "format": "netwiki-signed",
   "version": 1,
   …CzieyAXVkGMNBiu8r2JyvAgqpowGyQ3NginxURXoixCw=="
 }}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.downloadUpdate (#65340186) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340186, pluginId: NetWiki, methodName: downloadUpdate, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.downloadUpdate (#56780829) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780829, pluginId: NetWiki, methodName: downloadUpdate, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340164) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780807) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {received: 1378, total: 9443196}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340164) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
-[webview] dir {received: 808034, total: 9443196}
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780807) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] dir {received: 1760583, total: 9443196}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340164) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
-[webview] dir {received: 2433826, total: 9443196}
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780807) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] dir {received: 3382599, total: 9443196}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340164) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
-[webview] dir {received: 3806306, total: 9443196}
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780807) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] dir {received: 4770183, total: 9443196}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340164) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
-[webview] dir {received: 5362786, total: 9443196}
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780807) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] dir {received: 7024256, total: 9443196}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340164) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
-[webview] dir {received: 6534242, total: 9443196}
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780807) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] dir {received: 9235904, total: 9443196}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340164) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
-[webview] dir {received: 7917282, total: 9443196}
-[webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340164) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780807) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {received: 9443196, total: 9443196}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.downloadUpdate (#65340186) font-style: italic; font-weight: lighter; color: red font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.downloadUpdate (#56780829) font-style: italic; font-weight: lighter; color: red font-style: italic; font-weight: bold; color: #444
 [webview] error {message: La nouvelle version est signée avec la clé officie…: les mises à jour suivantes seront automatiques., code: SIGNATURE}
 [webview] endGroup console.groupEnd
 OK   Téléchargement vérifié (refus d’un APK signé par une autre clé) SIGNATURE La nouvelle version est signée avec la clé officielle de JK-ASFC, différente de celle de l'application installée (ancienne version de test). Désinstallez NetWiki une seule fois puis installez la nouvelle version : les mises à jour suivantes seront automatiques.
-[webview] startGroupCollapsed %cnative %cNetWiki.downloadUpdate (#65340187) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340187, pluginId: NetWiki, methodName: downloadUpdate, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.downloadUpdate (#56780830) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780830, pluginId: NetWiki, methodName: downloadUpdate, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340164) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780807) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {received: 1915, total: 1915}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340164) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780807) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {received: 1915, total: 1915}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.downloadUpdate (#65340187) font-style: italic; font-weight: lighter; color: red font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.downloadUpdate (#56780830) font-style: italic; font-weight: lighter; color: red font-style: italic; font-weight: bold; color: #444
 [webview] error {message: Empreinte du fichier téléchargé incorrecte : mise à jour annulée.}
 [webview] endGroup console.groupEnd
 OK   Empreinte incorrecte refusée Empreinte du fichier téléchargé incorrecte : mise à jour annulée.
-[webview] startGroupCollapsed %cnative %cNetWiki.openInstallSettings (#65340188) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340188, pluginId: NetWiki, methodName: openInstallSettings, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.openInstallSettings (#56780831) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780831, pluginId: NetWiki, methodName: openInstallSettings, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.openInstallSettings (#65340188) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.openInstallSettings (#56780831) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
 OK   Autorisation « Installer des applications inconnues » 
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340166) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780809) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340166) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780809) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#65340166) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.addListener (#56780809) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir {}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cnative %cNetWiki.exitApp (#65340189) font-weight: lighter; color: gray font-weight: bold; color: #000
-[webview] dir {callbackId: 65340189, pluginId: NetWiki, methodName: exitApp, options: Object}
+[webview] startGroupCollapsed %cnative %cNetWiki.exitApp (#56780832) font-weight: lighter; color: gray font-weight: bold; color: #000
+[webview] dir {callbackId: 56780832, pluginId: NetWiki, methodName: exitApp, options: Object}
 [webview] endGroup console.groupEnd
-[webview] startGroupCollapsed %cresult %cNetWiki.exitApp (#65340189) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
+[webview] startGroupCollapsed %cresult %cNetWiki.exitApp (#56780832) font-style: italic; font-weight: lighter; color: gray font-style: italic; font-weight: bold; color: #444
 [webview] dir undefined
 [webview] endGroup console.groupEnd
 OK   Bouton Retour : article → accueil → sortie accueil puis application en arrière-plan
