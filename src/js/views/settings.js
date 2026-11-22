@@ -28,7 +28,7 @@ export function openSettings() {
         <label class="toggle"><input type="checkbox" id="st-fx" ${s.effects !== false ? 'checked' : ''}><span></span></label></div></div>
       <div class="field"><div class="row"><div class="grow"><label>Écran de démarrage</label><div class="hint">Logo et terminal animé à l'ouverture de NetWiki.</div></div>
         <label class="toggle"><input type="checkbox" id="st-splash" ${s.showSplash !== false ? 'checked' : ''}><span></span></label></div></div>
-      ${state.info.mobile ? `      <div class="field"><label>Mises à jour</label>
+      ${state.info.mobile && !state.info.hostedWeb ? `      <div class="field"><label>Mises à jour</label>
         <div class="row"><div class="grow"><b style="font-size:13px">Application</b><div class="hint" style="margin:0">Version installée : ${esc(state.info.version)}.${state.info.selfUpdate ? ' Téléchargée et vérifiée (signature de JK-ASFC) avant installation.' : ''}</div></div>
           <button class="btn sm" id="st-check-app">${icon('refresh-cw', 15)}Rechercher</button></div>
         <div class="row" style="margin-top:10px"><div class="grow"><b style="font-size:13px">Recherche automatique</b><div class="hint" style="margin:0">À l'ouverture : nouvelle version de l'application et nouveaux articles du wiki. Rien n'est installé sans votre accord.</div></div>

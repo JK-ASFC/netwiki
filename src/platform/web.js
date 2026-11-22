@@ -492,6 +492,9 @@ window.netwiki = {
       owner: 'JK-ASFC',
       attributionOk: await attributionOk(),
       mobile: true,
+      // Vrai uniquement dans un navigateur (version GitHub Pages), faux dans l'app Capacitor installée :
+      // désactive les vérifications de mise à jour, inutiles sur une page toujours servie à jour.
+      hostedWeb: PLATFORM === 'web',
       selfUpdate: !!appInfo?.selfUpdate,
       store: appInfo?.store || '',
     };
