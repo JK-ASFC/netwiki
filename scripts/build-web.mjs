@@ -11,7 +11,14 @@ const { contentVersion } = createRequire(import.meta.url)('./content-version.js'
 
 const prod = process.argv.includes('--prod');
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), '..');
-const www = path.join(root, 'mobile', 'www');
+// Dossier de sortie : mobile/www par défaut (Capacitor), ou « --out <dossier> » pour la version
+// publiée sur GitHub Pages (ex. _site/app). Le contenu produit est identique : application entièrement
+// relative, utilisable sous n'importe quel sous-chemin.
+const outArg = (() => {
+  const i = process.argv.indexOf('--out');
+  return i >= 0 && process.argv[i + 1] ? process.argv[i + 1] : null;
+})();
+const www = outArg ? path.resolve(root, outArg) : path.join(root, 'mobile', 'www');
 const dist = path.join(www, 'dist');
 const { version } = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
 
@@ -40,6 +47,8 @@ let html = fs.readFileSync(path.join(root, 'src', 'index.html'), 'utf8');
 html = html
   .replace(/content="default-src[^"]*"/, `content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'"`)
   .replace('width=device-width, initial-scale=1', 'width=device-width, initial-scale=1, viewport-fit=cover')
+  // Icône d'onglet / d'installation et couleur de thème (version navigateur).
+  .replace('<link rel="stylesheet" href="../dist/styles.css" />', '<link rel="icon" href="./icon.png" />\n    <link rel="apple-touch-icon" href="./icon.png" />\n    <meta name="theme-color" content="#0b0d14" />\n    <link rel="stylesheet" href="../dist/styles.css" />')
   .replaceAll('../dist/', './dist/')
   .replace('<script defer src="./dist/app.js"></script>', '<script defer src="./dist/platform.js"></script>\n    <script defer src="./dist/app.js"></script>');
 fs.writeFileSync(path.join(www, 'index.html'), html);
@@ -70,4 +79,4 @@ const cv = contentVersion(root);
 fs.writeFileSync(path.join(www, 'content.json'), JSON.stringify({ version, contentVersion: cv, built: Date.now(), files, images: imageSums }));
 fs.copyFileSync(path.join(root, 'LICENSE'), path.join(www, 'LICENSE.txt'));
 fs.copyFileSync(path.join(root, 'build', 'icon.png'), path.join(www, 'icon.png'));
-console.log(`mobile/www prêt : ${Object.keys(files).length} fichiers de contenu, ${images} image(s), version ${version}, contenu ${cv}.`);
+console.log(`${path.relative(root, www) || '.'} prêt : ${Object.keys(files).length} fichiers de contenu, ${images} image(s), version ${version}, contenu ${cv}.`);

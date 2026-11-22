@@ -1,7 +1,10 @@
 # NetWiki — site de présentation publié sur GitHub Pages (https://jk-asfc.github.io/netwiki/).
 # Copyright (c) 2026 JK-ASFC — licence MIT (voir LICENSE).
 #
-# Reconstruit à chaque modification du site ou des articles (chiffres et catégories calculés depuis content/).
+# Publie deux choses sur GitHub Pages :
+#   - la page de présentation (racine, construite par build-site.mjs) ;
+#   - l'application wiki complète, utilisable dans le navigateur, sous /app/ (build-web.mjs).
+# Reconstruit à chaque modification du site, de l'application (src/) ou des articles (content/).
 # Prérequis (une seule fois) : Settings → Pages → Build and deployment → Source : « GitHub Actions ».
 
 name: Site web
@@ -11,8 +14,11 @@ on:
     branches: [main]
     paths:
       - 'site/**'
+      - 'src/**'
       - 'content/**'
       - 'scripts/build-site.mjs'
+      - 'scripts/build-web.mjs'
+      - 'scripts/content-version.js'
       - 'build/icon.png'
       - 'package.json'
       - '.github/workflows/site.yml'
@@ -41,6 +47,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/build-site.mjs
+      # Application wiki (navigateur) dans _site/app — après build-site.mjs, qui recrée _site.
+      - run: node scripts/build-web.mjs --prod --out _site/app
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -572,7 +572,9 @@ async function init() {
   window.__netwiki = { store, state, actions, hljs, hasIcon, renderMarkdown, renderMermaid, search, snippet, ensureIndex, buildSearchIndex };
 
   // Mises à jour : accord demandé une seule fois, jamais pendant les tests automatisés.
-  if (!state.info.automation) setTimeout(() => initUpdates().catch(() => {}), 1200);
+  // Pas de vérification de mise à jour sur la version web hébergée (GitHub Pages) : la page est
+  // toujours servie à jour. Les applications installées (bureau, mobile) conservent ce mécanisme.
+  if (!state.info.automation && !state.info.hostedWeb) setTimeout(() => initUpdates().catch(() => {}), 1200);
 }
 
 init().catch((err) => {
