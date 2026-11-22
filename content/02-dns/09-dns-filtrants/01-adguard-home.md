@@ -36,4 +36,17 @@ Configuration stockée dans `AdGuardHome.yaml` (sauvegardez ce fichier et le dos
 
 Deux instances (DHCP ou postes configurés avec les deux adresses) ; synchronisation de configuration avec l'outil communautaire *adguardhome-sync*.
 
+## Nouveautés de la version 1.0.0
+
+> [!WARNING]
+> Depuis la 1.0.0, les versions mineures peuvent contenir des changements incompatibles. Le schéma de `AdGuardHome.yaml` reste celui de la 0.107.x.
+
+- **Options de ligne de commande supprimées** : `--no-mem-optimization`, `--no-etc-hosts`, `--port`/`-p` ; `--host`/`-h` n'affiche plus que l'aide avec `--help`. Retirez-les des unités systemd, scripts et fichiers `compose.yaml`.
+- **API HTTP** : les points d'accès dépréciés (`/control/querylog_info`, `/control/querylog_config`, `/control/stats_info`, `/control/stats_config`, `/control/blocked_services/set`, `/control/safesearch/enable`, `/control/safesearch/disable`, etc.) sont supprimés. Adaptez vos scripts d'automatisation.
+- **DNS amont par défaut** : les nouvelles installations utilisent Cloudflare au lieu de Quad9 ; une configuration existante n'est pas modifiée. Quad9 cessant de servir la France le 24 novembre, remplacez-le dans les amonts, le *bootstrap* et le *fallback* si vous êtes concernés.
+- **Réglages par client** : « Utiliser les paramètres globaux » ne concerne plus que la protection ; les services bloqués ont leur propre interrupteur.
+- **Sécurité** : mise à jour de Go (correctifs de la 1.27.4) ; les CVE ne sont pas détaillées dans les notes.
+
+Source : notes de version <https://github.com/AdguardTeam/AdGuardHome/releases/tag/v1.0.0>.
+
 Interface : [[04-interface-graphique|interfaces web]] · commandes : [[90-aide-memoire|aide-mémoire]].

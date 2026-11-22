@@ -2,1078 +2,1078 @@
 
 455 capture(s) attendue(s) dans 124 fiche(s). Déposez chaque image au chemin indiqué, puis lancez `node scripts/captures.mjs --appliquer`.
 
-## 01-annuaire-identite\12-389-directory-server
+## 01-annuaire-identite/12-389-directory-server
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/01-annuaire-identite\12-389-directory-server\_assets\389ds-cockpit-instance.png` | Cockpit 389 — sélection de l'instance et onglets principaux | `03-interface-graphique.md` |
-| `content/01-annuaire-identite\12-389-directory-server\_assets\389ds-cockpit-replication.png` | Cockpit 389 — onglet Replication, accords et état | `03-interface-graphique.md` |
-| `content/01-annuaire-identite\12-389-directory-server\_assets\389ds-cockpit-ldap-browser.png` | Cockpit 389 — LDAP Browser, édition d'un utilisateur | `03-interface-graphique.md` |
-| `content/01-annuaire-identite\12-389-directory-server\_assets\389ds-cockpit-pwpolicy.png` | Cockpit 389 — politique de mots de passe | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/12-389-directory-server/_assets/389ds-cockpit-instance.png` | Cockpit 389 — sélection de l'instance et onglets principaux | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/12-389-directory-server/_assets/389ds-cockpit-replication.png` | Cockpit 389 — onglet Replication, accords et état | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/12-389-directory-server/_assets/389ds-cockpit-ldap-browser.png` | Cockpit 389 — LDAP Browser, édition d'un utilisateur | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/12-389-directory-server/_assets/389ds-cockpit-pwpolicy.png` | Cockpit 389 — politique de mots de passe | `03-interface-graphique.md` |
 
-## 01-annuaire-identite\13-authentik
+## 01-annuaire-identite/13-authentik
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/01-annuaire-identite\13-authentik\_assets\authentik-bibliotheque.png` | Authentik — bibliothèque d'applications de l'utilisateur | `03-interface-graphique.md` |
-| `content/01-annuaire-identite\13-authentik\_assets\authentik-admin-tableau-de-bord.png` | Authentik — tableau de bord d'administration | `03-interface-graphique.md` |
-| `content/01-annuaire-identite\13-authentik\_assets\authentik-assistant-application.png` | Authentik — assistant « Create with Provider » (OIDC) | `03-interface-graphique.md` |
-| `content/01-annuaire-identite\13-authentik\_assets\authentik-flux-etapes.png` | Authentik — flux d'authentification et ses étapes (MFA) | `03-interface-graphique.md` |
-| `content/01-annuaire-identite\13-authentik\_assets\authentik-source-ldap.png` | Authentik — source LDAP Active Directory | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/13-authentik/_assets/authentik-bibliotheque.png` | Authentik — bibliothèque d'applications de l'utilisateur | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/13-authentik/_assets/authentik-admin-tableau-de-bord.png` | Authentik — tableau de bord d'administration | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/13-authentik/_assets/authentik-assistant-application.png` | Authentik — assistant « Create with Provider » (OIDC) | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/13-authentik/_assets/authentik-flux-etapes.png` | Authentik — flux d'authentification et ses étapes (MFA) | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/13-authentik/_assets/authentik-source-ldap.png` | Authentik — source LDAP Active Directory | `03-interface-graphique.md` |
 
-## 01-annuaire-identite\15-lemonldap-ng
+## 01-annuaire-identite/15-lemonldap-ng
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/01-annuaire-identite\15-lemonldap-ng\_assets\lemonldap-manager-sessions.png` | LemonLDAP::NG — Manager, explorateur de sessions | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/15-lemonldap-ng/_assets/lemonldap-manager-sessions.png` | LemonLDAP::NG — Manager, explorateur de sessions | `03-interface-graphique.md` |
 
-## 01-annuaire-identite\17-privacyidea-linotp
+## 01-annuaire-identite/17-privacyidea-linotp
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/01-annuaire-identite\17-privacyidea-linotp\_assets\privacyidea-jetons.png` | privacyIDEA — liste des jetons | `03-interface-graphique.md` |
-| `content/01-annuaire-identite\17-privacyidea-linotp\_assets\privacyidea-resolveur-ldap.png` | privacyIDEA — configuration d'un résolveur LDAP Active Directory | `03-interface-graphique.md` |
-| `content/01-annuaire-identite\17-privacyidea-linotp\_assets\privacyidea-politique.png` | privacyIDEA — éditeur de politique (scope authentication) | `03-interface-graphique.md` |
-| `content/01-annuaire-identite\17-privacyidea-linotp\_assets\privacyidea-inscription-totp.png` | privacyIDEA — inscription d'un jeton TOTP avec QR code | `03-interface-graphique.md` |
-| `content/01-annuaire-identite\17-privacyidea-linotp\_assets\linotp-manage.png` | LinOTP — Manage UI, liste des jetons | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/17-privacyidea-linotp/_assets/privacyidea-jetons.png` | privacyIDEA — liste des jetons | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/17-privacyidea-linotp/_assets/privacyidea-resolveur-ldap.png` | privacyIDEA — configuration d'un résolveur LDAP Active Directory | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/17-privacyidea-linotp/_assets/privacyidea-politique.png` | privacyIDEA — éditeur de politique (scope authentication) | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/17-privacyidea-linotp/_assets/privacyidea-inscription-totp.png` | privacyIDEA — inscription d'un jeton TOTP avec QR code | `03-interface-graphique.md` |
+| `content/01-annuaire-identite/17-privacyidea-linotp/_assets/linotp-manage.png` | LinOTP — Manage UI, liste des jetons | `03-interface-graphique.md` |
 
-## 01-annuaire-identite\19-plateformes-iam
+## 01-annuaire-identite/19-plateformes-iam
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/01-annuaire-identite\19-plateformes-iam\_assets\zitadel-console-projets.png` | Zitadel — console, liste des projets et applications | `02-zitadel.md` |
-| `content/01-annuaire-identite\19-plateformes-iam\_assets\zitadel-parametres-connexion.png` | Zitadel — paramètres de connexion (passkeys, MFA) | `02-zitadel.md` |
-| `content/01-annuaire-identite\19-plateformes-iam\_assets\casdoor-applications.png` | Casdoor — liste des applications | `03-casdoor.md` |
-| `content/01-annuaire-identite\19-plateformes-iam\_assets\casdoor-application-edition.png` | Casdoor — édition d'une application (redirections, fournisseurs) | `03-casdoor.md` |
-| `content/01-annuaire-identite\19-plateformes-iam\_assets\logto-sign-in-experience.png` | Logto — console, expérience de connexion | `04-logto.md` |
-| `content/01-annuaire-identite\19-plateformes-iam\_assets\logto-organisations.png` | Logto — organisations et rôles | `04-logto.md` |
-| `content/01-annuaire-identite\19-plateformes-iam\_assets\janssen-tui-clients.png` | Janssen — interface TUI d'administration (clients OpenID) | `06-gluu-flex-openam.md` |
-| `content/01-annuaire-identite\19-plateformes-iam\_assets\openam-console-royaume.png` | OpenAM — console, royaume et chaînes d'authentification | `06-gluu-flex-openam.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/zitadel-console-projets.png` | Zitadel — console, liste des projets et applications | `02-zitadel.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/zitadel-parametres-connexion.png` | Zitadel — paramètres de connexion (passkeys, MFA) | `02-zitadel.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/casdoor-applications.png` | Casdoor — liste des applications | `03-casdoor.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/casdoor-application-edition.png` | Casdoor — édition d'une application (redirections, fournisseurs) | `03-casdoor.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/logto-sign-in-experience.png` | Logto — console, expérience de connexion | `04-logto.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/logto-organisations.png` | Logto — organisations et rôles | `04-logto.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/janssen-tui-clients.png` | Janssen — interface TUI d'administration (clients OpenID) | `06-gluu-flex-openam.md` |
+| `content/01-annuaire-identite/19-plateformes-iam/_assets/openam-console-royaume.png` | OpenAM — console, royaume et chaînes d'authentification | `06-gluu-flex-openam.md` |
 
-## 02-dns\08-technitium
+## 02-dns/08-technitium
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/02-dns\08-technitium\_assets\technitium-tableau-de-bord.png` | Technitium — tableau de bord | `03-interface-graphique.md` |
-| `content/02-dns\08-technitium\_assets\technitium-zone.png` | Technitium — édition d'une zone et de ses enregistrements | `03-interface-graphique.md` |
-| `content/02-dns\08-technitium\_assets\technitium-blocage.png` | Technitium — paramètres de blocage avec listes | `03-interface-graphique.md` |
-| `content/02-dns\08-technitium\_assets\technitium-dns-client.png` | Technitium — DNS Client (outil de résolution) | `03-interface-graphique.md` |
+| `content/02-dns/08-technitium/_assets/technitium-tableau-de-bord.png` | Technitium — tableau de bord | `03-interface-graphique.md` |
+| `content/02-dns/08-technitium/_assets/technitium-zone.png` | Technitium — édition d'une zone et de ses enregistrements | `03-interface-graphique.md` |
+| `content/02-dns/08-technitium/_assets/technitium-blocage.png` | Technitium — paramètres de blocage avec listes | `03-interface-graphique.md` |
+| `content/02-dns/08-technitium/_assets/technitium-dns-client.png` | Technitium — DNS Client (outil de résolution) | `03-interface-graphique.md` |
 
-## 02-dns\09-dns-filtrants
+## 02-dns/09-dns-filtrants
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/02-dns\09-dns-filtrants\_assets\adguard-home-tableau-de-bord.png` | AdGuard Home — tableau de bord | `04-interface-graphique.md` |
-| `content/02-dns\09-dns-filtrants\_assets\adguard-home-journal.png` | AdGuard Home — journal des requêtes avec la règle appliquée | `04-interface-graphique.md` |
-| `content/02-dns\09-dns-filtrants\_assets\adguard-home-parametres-dns.png` | AdGuard Home — paramètres DNS (amonts et transfert conditionnel) | `04-interface-graphique.md` |
-| `content/02-dns\09-dns-filtrants\_assets\pihole-tableau-de-bord.png` | Pi-hole — tableau de bord | `04-interface-graphique.md` |
-| `content/02-dns\09-dns-filtrants\_assets\pihole-query-log.png` | Pi-hole — Query Log | `04-interface-graphique.md` |
-| `content/02-dns\09-dns-filtrants\_assets\blocky-grafana.png` | Grafana — tableau de bord Blocky | `04-interface-graphique.md` |
+| `content/02-dns/09-dns-filtrants/_assets/adguard-home-tableau-de-bord.png` | AdGuard Home — tableau de bord | `04-interface-graphique.md` |
+| `content/02-dns/09-dns-filtrants/_assets/adguard-home-journal.png` | AdGuard Home — journal des requêtes avec la règle appliquée | `04-interface-graphique.md` |
+| `content/02-dns/09-dns-filtrants/_assets/adguard-home-parametres-dns.png` | AdGuard Home — paramètres DNS (amonts et transfert conditionnel) | `04-interface-graphique.md` |
+| `content/02-dns/09-dns-filtrants/_assets/pihole-tableau-de-bord.png` | Pi-hole — tableau de bord | `04-interface-graphique.md` |
+| `content/02-dns/09-dns-filtrants/_assets/pihole-query-log.png` | Pi-hole — Query Log | `04-interface-graphique.md` |
+| `content/02-dns/09-dns-filtrants/_assets/blocky-grafana.png` | Grafana — tableau de bord Blocky | `04-interface-graphique.md` |
 
-## 03-dhcp\02-kea
+## 03-dhcp/02-kea
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/03-dhcp\02-kea\_assets\stork-tableau-de-bord.png` | Stork — tableau de bord DHCP (occupation des sous-réseaux) | `04-interface-graphique-stork.md` |
-| `content/03-dhcp\02-kea\_assets\stork-recherche-baux.png` | Stork — recherche de baux | `04-interface-graphique-stork.md` |
-| `content/03-dhcp\02-kea\_assets\stork-reservations.png` | Stork — réservations d'hôtes | `04-interface-graphique-stork.md` |
+| `content/03-dhcp/02-kea/_assets/stork-tableau-de-bord.png` | Stork — tableau de bord DHCP (occupation des sous-réseaux) | `04-interface-graphique-stork.md` |
+| `content/03-dhcp/02-kea/_assets/stork-recherche-baux.png` | Stork — recherche de baux | `04-interface-graphique-stork.md` |
+| `content/03-dhcp/02-kea/_assets/stork-reservations.png` | Stork — réservations d'hôtes | `04-interface-graphique-stork.md` |
 
-## 04-aaa\03-packetfence-opennac
+## 04-aaa/03-packetfence-opennac
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/04-aaa\03-packetfence-opennac\_assets\packetfence-status.png` | PacketFence — tableau de bord Status | `03-interface-graphique.md` |
-| `content/04-aaa\03-packetfence-opennac\_assets\packetfence-audit-radius.png` | PacketFence — Auditing, détail d'une authentification RADIUS | `03-interface-graphique.md` |
-| `content/04-aaa\03-packetfence-opennac\_assets\packetfence-node.png` | PacketFence — Nodes, fiche d'un terminal et changement de rôle | `03-interface-graphique.md` |
-| `content/04-aaa\03-packetfence-opennac\_assets\packetfence-switch-roles.png` | PacketFence — configuration d'un commutateur (rôles → VLAN) | `03-interface-graphique.md` |
-| `content/04-aaa\03-packetfence-opennac\_assets\packetfence-portail-captif.png` | PacketFence — portail captif d'enregistrement | `03-interface-graphique.md` |
-| `content/04-aaa\03-packetfence-opennac\_assets\opennac-politiques.png` | OpenNAC — console, liste des politiques | `03-interface-graphique.md` |
+| `content/04-aaa/03-packetfence-opennac/_assets/packetfence-status.png` | PacketFence — tableau de bord Status | `03-interface-graphique.md` |
+| `content/04-aaa/03-packetfence-opennac/_assets/packetfence-audit-radius.png` | PacketFence — Auditing, détail d'une authentification RADIUS | `03-interface-graphique.md` |
+| `content/04-aaa/03-packetfence-opennac/_assets/packetfence-node.png` | PacketFence — Nodes, fiche d'un terminal et changement de rôle | `03-interface-graphique.md` |
+| `content/04-aaa/03-packetfence-opennac/_assets/packetfence-switch-roles.png` | PacketFence — configuration d'un commutateur (rôles → VLAN) | `03-interface-graphique.md` |
+| `content/04-aaa/03-packetfence-opennac/_assets/packetfence-portail-captif.png` | PacketFence — portail captif d'enregistrement | `03-interface-graphique.md` |
+| `content/04-aaa/03-packetfence-opennac/_assets/opennac-politiques.png` | OpenNAC — console, liste des politiques | `03-interface-graphique.md` |
 
-## 05-web\13-lighttpd-h2o-cherokee
+## 05-web/13-lighttpd-h2o-cherokee
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/05-web\13-lighttpd-h2o-cherokee\_assets\cherokee-admin.png` | cherokee-admin — liste des vServers et règles | `03-cherokee.md` |
+| `content/05-web/13-lighttpd-h2o-cherokee/_assets/cherokee-admin.png` | cherokee-admin — liste des vServers et règles | `03-cherokee.md` |
 
-## 05-web\22-serveurs-jakarta-ee
+## 05-web/22-serveurs-jakarta-ee
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/05-web\22-serveurs-jakarta-ee\_assets\payara-applications.png` | Payara — console d'administration, liste des applications | `04-interface-graphique.md` |
-| `content/05-web\22-serveurs-jakarta-ee\_assets\payara-jdbc.png` | Payara — pool JDBC et test de connexion (Ping) | `04-interface-graphique.md` |
-| `content/05-web\22-serveurs-jakarta-ee\_assets\liberty-admin-center.png` | Open Liberty — Admin Center, outil Explore | `04-interface-graphique.md` |
+| `content/05-web/22-serveurs-jakarta-ee/_assets/payara-applications.png` | Payara — console d'administration, liste des applications | `04-interface-graphique.md` |
+| `content/05-web/22-serveurs-jakarta-ee/_assets/payara-jdbc.png` | Payara — pool JDBC et test de connexion (Ping) | `04-interface-graphique.md` |
+| `content/05-web/22-serveurs-jakarta-ee/_assets/liberty-admin-center.png` | Open Liberty — Admin Center, outil Explore | `04-interface-graphique.md` |
 
-## 06-supervision\14-supervision-reseau-snmp
+## 06-supervision/14-supervision-reseau-snmp
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/06-supervision\14-supervision-reseau-snmp\_assets\librenms-dashboard.png` | LibreNMS — tableau de bord | `03-interface-graphique.md` |
-| `content/06-supervision\14-supervision-reseau-snmp\_assets\librenms-ports.png` | LibreNMS — page d'un commutateur, onglet Ports | `03-interface-graphique.md` |
-| `content/06-supervision\14-supervision-reseau-snmp\_assets\librenms-carte.png` | LibreNMS — carte réseau des voisins LLDP | `03-interface-graphique.md` |
-| `content/06-supervision\14-supervision-reseau-snmp\_assets\observium-equipement.png` | Observium — vue d'un équipement | `03-interface-graphique.md` |
-| `content/06-supervision\14-supervision-reseau-snmp\_assets\opennms-alarmes.png` | OpenNMS Horizon — liste des alarmes | `03-interface-graphique.md` |
-| `content/06-supervision\14-supervision-reseau-snmp\_assets\netxms-carte.png` | NetXMS — console, carte réseau | `03-interface-graphique.md` |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/librenms-dashboard.png` | LibreNMS — tableau de bord | `03-interface-graphique.md` |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/librenms-ports.png` | LibreNMS — page d'un commutateur, onglet Ports | `03-interface-graphique.md` |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/librenms-carte.png` | LibreNMS — carte réseau des voisins LLDP | `03-interface-graphique.md` |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/observium-equipement.png` | Observium — vue d'un équipement | `03-interface-graphique.md` |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/opennms-alarmes.png` | OpenNMS Horizon — liste des alarmes | `03-interface-graphique.md` |
+| `content/06-supervision/14-supervision-reseau-snmp/_assets/netxms-carte.png` | NetXMS — console, carte réseau | `03-interface-graphique.md` |
 
-## 06-supervision\15-glances-cockpit
+## 06-supervision/15-glances-cockpit
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/06-supervision\15-glances-cockpit\_assets\glances-web.png` | Glances — interface web | `01-glances.md` |
-| `content/06-supervision\15-glances-cockpit\_assets\cockpit-apercu.png` | Cockpit — vue d'ensemble d'un serveur | `02-cockpit.md` |
-| `content/06-supervision\15-glances-cockpit\_assets\cockpit-stockage.png` | Cockpit — stockage et LVM | `02-cockpit.md` |
-| `content/06-supervision\15-glances-cockpit\_assets\cockpit-podman.png` | Cockpit — conteneurs Podman | `02-cockpit.md` |
+| `content/06-supervision/15-glances-cockpit/_assets/glances-web.png` | Glances — interface web | `01-glances.md` |
+| `content/06-supervision/15-glances-cockpit/_assets/cockpit-apercu.png` | Cockpit — vue d'ensemble d'un serveur | `02-cockpit.md` |
+| `content/06-supervision/15-glances-cockpit/_assets/cockpit-stockage.png` | Cockpit — stockage et LVM | `02-cockpit.md` |
+| `content/06-supervision/15-glances-cockpit/_assets/cockpit-podman.png` | Cockpit — conteneurs Podman | `02-cockpit.md` |
 
-## 06-supervision\17-opentelemetry-alloy
+## 06-supervision/17-opentelemetry-alloy
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/06-supervision\17-opentelemetry-alloy\_assets\alloy-ui.png` | Grafana Alloy — interface de débogage, graphe des composants | `01-presentation-installation.md` |
+| `content/06-supervision/17-opentelemetry-alloy/_assets/alloy-ui.png` | Grafana Alloy — interface de débogage, graphe des composants | `01-presentation-installation.md` |
 
-## 06-supervision\18-tracage-distribue
+## 06-supervision/18-tracage-distribue
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/06-supervision\18-tracage-distribue\_assets\jaeger-recherche.png` | Jaeger — recherche de traces d'un service | `03-interface-graphique.md` |
-| `content/06-supervision\18-tracage-distribue\_assets\jaeger-trace.png` | Jaeger — vue en cascade d'une trace | `03-interface-graphique.md` |
-| `content/06-supervision\18-tracage-distribue\_assets\grafana-tempo-trace.png` | Grafana — trace Tempo avec lien vers les journaux Loki | `03-interface-graphique.md` |
-| `content/06-supervision\18-tracage-distribue\_assets\grafana-tempo-graphe.png` | Grafana — graphe des services (Tempo) | `03-interface-graphique.md` |
+| `content/06-supervision/18-tracage-distribue/_assets/jaeger-recherche.png` | Jaeger — recherche de traces d'un service | `03-interface-graphique.md` |
+| `content/06-supervision/18-tracage-distribue/_assets/jaeger-trace.png` | Jaeger — vue en cascade d'une trace | `03-interface-graphique.md` |
+| `content/06-supervision/18-tracage-distribue/_assets/grafana-tempo-trace.png` | Grafana — trace Tempo avec lien vers les journaux Loki | `03-interface-graphique.md` |
+| `content/06-supervision/18-tracage-distribue/_assets/grafana-tempo-graphe.png` | Grafana — graphe des services (Tempo) | `03-interface-graphique.md` |
 
-## 06-supervision\19-observabilite-unifiee
+## 06-supervision/19-observabilite-unifiee
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/06-supervision\19-observabilite-unifiee\_assets\signoz-apm.png` | SigNoz — vue APM d'un service (latence, erreurs, débit) | `01-presentation-installation.md` |
-| `content/06-supervision\19-observabilite-unifiee\_assets\hyperdx-recherche.png` | HyperDX — recherche de journaux et trace associée | `01-presentation-installation.md` |
-| `content/06-supervision\19-observabilite-unifiee\_assets\uptrace-traces.png` | Uptrace — liste des traces | `01-presentation-installation.md` |
+| `content/06-supervision/19-observabilite-unifiee/_assets/signoz-apm.png` | SigNoz — vue APM d'un service (latence, erreurs, débit) | `01-presentation-installation.md` |
+| `content/06-supervision/19-observabilite-unifiee/_assets/hyperdx-recherche.png` | HyperDX — recherche de journaux et trace associée | `01-presentation-installation.md` |
+| `content/06-supervision/19-observabilite-unifiee/_assets/uptrace-traces.png` | Uptrace — liste des traces | `01-presentation-installation.md` |
 
-## 06-supervision\20-suivi-erreurs
+## 06-supervision/20-suivi-erreurs
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/06-supervision\20-suivi-erreurs\_assets\glitchtip-problemes.png` | GlitchTip — liste des problèmes d'un projet | `01-presentation-installation.md` |
-| `content/06-supervision\20-suivi-erreurs\_assets\sentry-erreur.png` | Sentry — détail d'une erreur avec pile d'appels | `01-presentation-installation.md` |
+| `content/06-supervision/20-suivi-erreurs/_assets/glitchtip-problemes.png` | GlitchTip — liste des problèmes d'un projet | `01-presentation-installation.md` |
+| `content/06-supervision/20-suivi-erreurs/_assets/sentry-erreur.png` | Sentry — détail d'une erreur avec pile d'appels | `01-presentation-installation.md` |
 
-## 06-supervision\21-disponibilite-pages-statut
+## 06-supervision/21-disponibilite-pages-statut
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/06-supervision\21-disponibilite-pages-statut\_assets\uptime-kuma-tableau.png` | Uptime Kuma — tableau de bord des sondes | `03-interface-graphique.md` |
-| `content/06-supervision\21-disponibilite-pages-statut\_assets\uptime-kuma-statut.png` | Uptime Kuma — page de statut publique | `03-interface-graphique.md` |
-| `content/06-supervision\21-disponibilite-pages-statut\_assets\gatus-tableau.png` | Gatus — tableau des points de terminaison | `03-interface-graphique.md` |
-| `content/06-supervision\21-disponibilite-pages-statut\_assets\healthchecks-liste.png` | Healthchecks — liste des contrôles | `03-interface-graphique.md` |
+| `content/06-supervision/21-disponibilite-pages-statut/_assets/uptime-kuma-tableau.png` | Uptime Kuma — tableau de bord des sondes | `03-interface-graphique.md` |
+| `content/06-supervision/21-disponibilite-pages-statut/_assets/uptime-kuma-statut.png` | Uptime Kuma — page de statut publique | `03-interface-graphique.md` |
+| `content/06-supervision/21-disponibilite-pages-statut/_assets/gatus-tableau.png` | Gatus — tableau des points de terminaison | `03-interface-graphique.md` |
+| `content/06-supervision/21-disponibilite-pages-statut/_assets/healthchecks-liste.png` | Healthchecks — liste des contrôles | `03-interface-graphique.md` |
 
-## 06-supervision\22-analyse-trafic
+## 06-supervision/22-analyse-trafic
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/06-supervision\22-analyse-trafic\_assets\ntopng-tableau.png` | ntopng — tableau de bord (top hôtes et applications) | `01-ntopng.md` |
-| `content/06-supervision\22-analyse-trafic\_assets\ntopng-hote.png` | ntopng — détail d'un hôte | `01-ntopng.md` |
+| `content/06-supervision/22-analyse-trafic/_assets/ntopng-tableau.png` | ntopng — tableau de bord (top hôtes et applications) | `01-ntopng.md` |
+| `content/06-supervision/22-analyse-trafic/_assets/ntopng-hote.png` | ntopng — détail d'un hôte | `01-ntopng.md` |
 
-## 07-proxy-cache\09-mitmproxy
+## 07-proxy-cache/09-mitmproxy
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/07-proxy-cache\09-mitmproxy\_assets\mitmweb-flux.png` | mitmweb — liste des flux et détail d'une requête JSON | `01-presentation-utilisation.md` |
-| `content/07-proxy-cache\09-mitmproxy\_assets\mitmweb-interception.png` | mitmweb — interception et modification d'une requête | `01-presentation-utilisation.md` |
-| `content/07-proxy-cache\09-mitmproxy\_assets\mitmproxy-console.png` | mitmproxy — interface console | `01-presentation-utilisation.md` |
+| `content/07-proxy-cache/09-mitmproxy/_assets/mitmweb-flux.png` | mitmweb — liste des flux et détail d'une requête JSON | `01-presentation-utilisation.md` |
+| `content/07-proxy-cache/09-mitmproxy/_assets/mitmweb-interception.png` | mitmweb — interception et modification d'une requête | `01-presentation-utilisation.md` |
+| `content/07-proxy-cache/09-mitmproxy/_assets/mitmproxy-console.png` | mitmproxy — interface console | `01-presentation-utilisation.md` |
 
-## 07-proxy-cache\11-kong-apisix
+## 07-proxy-cache/11-kong-apisix
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/07-proxy-cache\11-kong-apisix\_assets\kong-manager-services.png` | Kong Manager — liste des Gateway Services | `03-interface-graphique.md` |
-| `content/07-proxy-cache\11-kong-apisix\_assets\kong-manager-greffon.png` | Kong Manager — ajout du greffon rate-limiting à une route | `03-interface-graphique.md` |
-| `content/07-proxy-cache\11-kong-apisix\_assets\apisix-routes.png` | APISIX — liste des routes | `03-interface-graphique.md` |
-| `content/07-proxy-cache\11-kong-apisix\_assets\apisix-greffons.png` | APISIX — configuration des greffons d'une route | `03-interface-graphique.md` |
+| `content/07-proxy-cache/11-kong-apisix/_assets/kong-manager-services.png` | Kong Manager — liste des Gateway Services | `03-interface-graphique.md` |
+| `content/07-proxy-cache/11-kong-apisix/_assets/kong-manager-greffon.png` | Kong Manager — ajout du greffon rate-limiting à une route | `03-interface-graphique.md` |
+| `content/07-proxy-cache/11-kong-apisix/_assets/apisix-routes.png` | APISIX — liste des routes | `03-interface-graphique.md` |
+| `content/07-proxy-cache/11-kong-apisix/_assets/apisix-greffons.png` | APISIX — configuration des greffons d'une route | `03-interface-graphique.md` |
 
-## 07-proxy-cache\12-passerelles-api-alternatives
+## 07-proxy-cache/12-passerelles-api-alternatives
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/07-proxy-cache\12-passerelles-api-alternatives\_assets\gravitee-console.png` | Gravitee — console, liste des API et plans | `01-tyk-krakend-gravitee.md` |
-| `content/07-proxy-cache\12-passerelles-api-alternatives\_assets\gravitee-portail.png` | Gravitee — portail développeur | `01-tyk-krakend-gravitee.md` |
-| `content/07-proxy-cache\12-passerelles-api-alternatives\_assets\krakend-designer.png` | KrakenD Designer — édition d'un endpoint agrégé | `01-tyk-krakend-gravitee.md` |
+| `content/07-proxy-cache/12-passerelles-api-alternatives/_assets/gravitee-console.png` | Gravitee — console, liste des API et plans | `01-tyk-krakend-gravitee.md` |
+| `content/07-proxy-cache/12-passerelles-api-alternatives/_assets/gravitee-portail.png` | Gravitee — portail développeur | `01-tyk-krakend-gravitee.md` |
+| `content/07-proxy-cache/12-passerelles-api-alternatives/_assets/krakend-designer.png` | KrakenD Designer — édition d'un endpoint agrégé | `01-tyk-krakend-gravitee.md` |
 
-## 07-proxy-cache\14-proxys-bases-de-donnees
+## 07-proxy-cache/14-proxys-bases-de-donnees
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/07-proxy-cache\14-proxys-bases-de-donnees\_assets\maxscale-gui.png` | MaxScale GUI — tableau de bord et topologie de réplication | `02-proxysql-maxscale.md` |
+| `content/07-proxy-cache/14-proxys-bases-de-donnees/_assets/maxscale-gui.png` | MaxScale GUI — tableau de bord et topologie de réplication | `02-proxysql-maxscale.md` |
 
-## 08-acces-distant-vpn\11-netbird-nebula
+## 08-acces-distant-vpn/11-netbird-nebula
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/08-acces-distant-vpn\11-netbird-nebula\_assets\netbird-pairs.png` | NetBird — liste des pairs | `03-interface-graphique.md` |
-| `content/08-acces-distant-vpn\11-netbird-nebula\_assets\netbird-politique.png` | NetBird — création d'une politique d'accès | `03-interface-graphique.md` |
-| `content/08-acces-distant-vpn\11-netbird-nebula\_assets\netbird-reseau.png` | NetBird — réseau routé via un pair routeur | `03-interface-graphique.md` |
-| `content/08-acces-distant-vpn\11-netbird-nebula\_assets\netbird-client.png` | NetBird — application de bureau dans la barre des tâches | `03-interface-graphique.md` |
-| `content/08-acces-distant-vpn\11-netbird-nebula\_assets\mobile-nebula.png` | Mobile Nebula — configuration d'un site | `03-interface-graphique.md` |
+| `content/08-acces-distant-vpn/11-netbird-nebula/_assets/netbird-pairs.png` | NetBird — liste des pairs | `03-interface-graphique.md` |
+| `content/08-acces-distant-vpn/11-netbird-nebula/_assets/netbird-politique.png` | NetBird — création d'une politique d'accès | `03-interface-graphique.md` |
+| `content/08-acces-distant-vpn/11-netbird-nebula/_assets/netbird-reseau.png` | NetBird — réseau routé via un pair routeur | `03-interface-graphique.md` |
+| `content/08-acces-distant-vpn/11-netbird-nebula/_assets/netbird-client.png` | NetBird — application de bureau dans la barre des tâches | `03-interface-graphique.md` |
+| `content/08-acces-distant-vpn/11-netbird-nebula/_assets/mobile-nebula.png` | Mobile Nebula — configuration d'un site | `03-interface-graphique.md` |
 
-## 08-acces-distant-vpn\12-openconnect-ocserv
+## 08-acces-distant-vpn/12-openconnect-ocserv
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/08-acces-distant-vpn\12-openconnect-ocserv\_assets\openconnect-networkmanager.png` | NetworkManager — configuration d'un VPN OpenConnect (GNOME) | `01-presentation-installation.md` |
-| `content/08-acces-distant-vpn\12-openconnect-ocserv\_assets\openconnect-gui.png` | OpenConnect GUI sous Windows | `01-presentation-installation.md` |
+| `content/08-acces-distant-vpn/12-openconnect-ocserv/_assets/openconnect-networkmanager.png` | NetworkManager — configuration d'un VPN OpenConnect (GNOME) | `01-presentation-installation.md` |
+| `content/08-acces-distant-vpn/12-openconnect-ocserv/_assets/openconnect-gui.png` | OpenConnect GUI sous Windows | `01-presentation-installation.md` |
 
-## 08-acces-distant-vpn\13-softether-pritunl-mullvad
+## 08-acces-distant-vpn/13-softether-pritunl-mullvad
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/08-acces-distant-vpn\13-softether-pritunl-mullvad\_assets\softether-manager.png` | SoftEther VPN Server Manager — fenêtre principale | `04-interface-graphique.md` |
-| `content/08-acces-distant-vpn\13-softether-pritunl-mullvad\_assets\softether-l2tp.png` | SoftEther — paramètres IPsec / L2TP | `04-interface-graphique.md` |
-| `content/08-acces-distant-vpn\13-softether-pritunl-mullvad\_assets\pritunl-serveurs.png` | Pritunl — onglet Servers avec routes et organisation rattachée | `04-interface-graphique.md` |
-| `content/08-acces-distant-vpn\13-softether-pritunl-mullvad\_assets\pritunl-client.png` | Pritunl Client — profil importé et connexion | `04-interface-graphique.md` |
-| `content/08-acces-distant-vpn\13-softether-pritunl-mullvad\_assets\mullvad-principal.png` | Mullvad VPN — écran principal connecté | `04-interface-graphique.md` |
-| `content/08-acces-distant-vpn\13-softether-pritunl-mullvad\_assets\mullvad-parametres.png` | Mullvad VPN — paramètres VPN (lockdown, DNS) | `04-interface-graphique.md` |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/softether-manager.png` | SoftEther VPN Server Manager — fenêtre principale | `04-interface-graphique.md` |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/softether-l2tp.png` | SoftEther — paramètres IPsec / L2TP | `04-interface-graphique.md` |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/pritunl-serveurs.png` | Pritunl — onglet Servers avec routes et organisation rattachée | `04-interface-graphique.md` |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/pritunl-client.png` | Pritunl Client — profil importé et connexion | `04-interface-graphique.md` |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/mullvad-principal.png` | Mullvad VPN — écran principal connecté | `04-interface-graphique.md` |
+| `content/08-acces-distant-vpn/13-softether-pritunl-mullvad/_assets/mullvad-parametres.png` | Mullvad VPN — paramètres VPN (lockdown, DNS) | `04-interface-graphique.md` |
 
-## 09-fichiers-partage\21-truenas-scale
+## 09-fichiers-partage/21-truenas-scale
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/09-fichiers-partage\21-truenas-scale\_assets\truenas-tableau-de-bord.png` | TrueNAS — tableau de bord | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\21-truenas-scale\_assets\truenas-creer-pool.png` | TrueNAS — assistant de création de pool (étape Data, RAIDZ2) | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\21-truenas-scale\_assets\truenas-storage.png` | TrueNAS — page Storage, état d'un pool et de ses vdev | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\21-truenas-scale\_assets\truenas-acl.png` | TrueNAS — éditeur d'ACL d'un jeu de données SMB | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\21-truenas-scale\_assets\truenas-partage-smb.png` | TrueNAS — assistant d'ajout de partage SMB | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\21-truenas-scale\_assets\truenas-data-protection.png` | TrueNAS — page Data Protection avec tâches d'instantanés et de réplication | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\21-truenas-scale\_assets\truenas-active-directory.png` | TrueNAS — Directory Services, rejoindre Active Directory | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-tableau-de-bord.png` | TrueNAS — tableau de bord | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-creer-pool.png` | TrueNAS — assistant de création de pool (étape Data, RAIDZ2) | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-storage.png` | TrueNAS — page Storage, état d'un pool et de ses vdev | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-acl.png` | TrueNAS — éditeur d'ACL d'un jeu de données SMB | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-partage-smb.png` | TrueNAS — assistant d'ajout de partage SMB | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-data-protection.png` | TrueNAS — page Data Protection avec tâches d'instantanés et de réplication | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/21-truenas-scale/_assets/truenas-active-directory.png` | TrueNAS — Directory Services, rejoindre Active Directory | `03-interface-graphique.md` |
 
-## 09-fichiers-partage\22-openmediavault
+## 09-fichiers-partage/22-openmediavault
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/09-fichiers-partage\22-openmediavault\_assets\omv-tableau-de-bord.png` | OpenMediaVault — tableau de bord avec widgets (système, systèmes de fichiers, services) | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\22-openmediavault\_assets\omv-appliquer.png` | OpenMediaVault — bandeau « changements en attente » | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\22-openmediavault\_assets\omv-systemes-de-fichiers.png` | OpenMediaVault — Stockage, systèmes de fichiers montés | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\22-openmediavault\_assets\omv-dossier-partage.png` | OpenMediaVault — dossier partagé et ses permissions | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\22-openmediavault\_assets\omv-smb.png` | OpenMediaVault — Services, partage SMB | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/22-openmediavault/_assets/omv-tableau-de-bord.png` | OpenMediaVault — tableau de bord avec widgets (système, systèmes de fichiers, services) | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/22-openmediavault/_assets/omv-appliquer.png` | OpenMediaVault — bandeau « changements en attente » | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/22-openmediavault/_assets/omv-systemes-de-fichiers.png` | OpenMediaVault — Stockage, systèmes de fichiers montés | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/22-openmediavault/_assets/omv-dossier-partage.png` | OpenMediaVault — dossier partagé et ses permissions | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/22-openmediavault/_assets/omv-smb.png` | OpenMediaVault — Services, partage SMB | `03-interface-graphique.md` |
 
-## 09-fichiers-partage\23-rockstor
+## 09-fichiers-partage/23-rockstor
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/09-fichiers-partage\23-rockstor\_assets\rockstor-tableau-de-bord.png` | Rockstor — tableau de bord | `01-presentation-installation.md` |
-| `content/09-fichiers-partage\23-rockstor\_assets\rockstor-pool.png` | Rockstor — création d'un pool Btrfs en raid1 | `01-presentation-installation.md` |
-| `content/09-fichiers-partage\23-rockstor\_assets\rockstor-rock-ons.png` | Rockstor — Rock-ons disponibles | `01-presentation-installation.md` |
+| `content/09-fichiers-partage/23-rockstor/_assets/rockstor-tableau-de-bord.png` | Rockstor — tableau de bord | `01-presentation-installation.md` |
+| `content/09-fichiers-partage/23-rockstor/_assets/rockstor-pool.png` | Rockstor — création d'un pool Btrfs en raid1 | `01-presentation-installation.md` |
+| `content/09-fichiers-partage/23-rockstor/_assets/rockstor-rock-ons.png` | Rockstor — Rock-ons disponibles | `01-presentation-installation.md` |
 
-## 09-fichiers-partage\24-ceph
+## 09-fichiers-partage/24-ceph
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/09-fichiers-partage\24-ceph\_assets\ceph-dashboard.png` | Ceph Dashboard — page d'accueil (santé et capacité) | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\24-ceph\_assets\ceph-osd.png` | Ceph Dashboard — liste des OSD | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\24-ceph\_assets\proxmox-ceph.png` | Proxmox VE — Datacenter → Ceph | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/24-ceph/_assets/ceph-dashboard.png` | Ceph Dashboard — page d'accueil (santé et capacité) | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/24-ceph/_assets/ceph-osd.png` | Ceph Dashboard — liste des OSD | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/24-ceph/_assets/proxmox-ceph.png` | Proxmox VE — Datacenter → Ceph | `03-interface-graphique.md` |
 
-## 09-fichiers-partage\33-stockage-kubernetes
+## 09-fichiers-partage/33-stockage-kubernetes
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/09-fichiers-partage\33-stockage-kubernetes\_assets\longhorn-dashboard.png` | Longhorn — tableau de bord | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\33-stockage-kubernetes\_assets\longhorn-volume.png` | Longhorn — détail d'un volume et de ses répliques | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/33-stockage-kubernetes/_assets/longhorn-dashboard.png` | Longhorn — tableau de bord | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/33-stockage-kubernetes/_assets/longhorn-volume.png` | Longhorn — détail d'un volume et de ses répliques | `03-interface-graphique.md` |
 
-## 09-fichiers-partage\35-rsync-rclone
+## 09-fichiers-partage/35-rsync-rclone
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/09-fichiers-partage\35-rsync-rclone\_assets\rclone-webgui.png` | Rclone Web GUI — explorateur de remotes | `02-rclone.md` |
+| `content/09-fichiers-partage/35-rsync-rclone/_assets/rclone-webgui.png` | Rclone Web GUI — explorateur de remotes | `02-rclone.md` |
 
-## 09-fichiers-partage\36-interfaces-web-fichiers
+## 09-fichiers-partage/36-interfaces-web-fichiers
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/09-fichiers-partage\36-interfaces-web-fichiers\_assets\filebrowser-liste.png` | File Browser — liste des fichiers | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\36-interfaces-web-fichiers\_assets\filestash-connexion.png` | Filestash — écran de connexion multi-protocoles | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\36-interfaces-web-fichiers\_assets\sftpgo-utilisateurs.png` | SFTPGo — liste des utilisateurs | `03-interface-graphique.md` |
-| `content/09-fichiers-partage\36-interfaces-web-fichiers\_assets\sftpgo-client.png` | SFTPGo — client web utilisateur | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/36-interfaces-web-fichiers/_assets/filebrowser-liste.png` | File Browser — liste des fichiers | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/36-interfaces-web-fichiers/_assets/filestash-connexion.png` | Filestash — écran de connexion multi-protocoles | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/36-interfaces-web-fichiers/_assets/sftpgo-utilisateurs.png` | SFTPGo — liste des utilisateurs | `03-interface-graphique.md` |
+| `content/09-fichiers-partage/36-interfaces-web-fichiers/_assets/sftpgo-client.png` | SFTPGo — client web utilisateur | `03-interface-graphique.md` |
 
-## 09-fichiers-partage\37-partage-collaboration
+## 09-fichiers-partage/37-partage-collaboration
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/09-fichiers-partage\37-partage-collaboration\_assets\pydio-cells-workspace.png` | Pydio Cells — espace de travail et partage | `04-interface-graphique.md` |
-| `content/09-fichiers-partage\37-partage-collaboration\_assets\pydio-cells-console.png` | Pydio Cells — console d'administration, datasources | `04-interface-graphique.md` |
-| `content/09-fichiers-partage\37-partage-collaboration\_assets\cozy-drive.png` | Cozy Drive — liste des fichiers | `04-interface-graphique.md` |
-| `content/09-fichiers-partage\37-partage-collaboration\_assets\projectsend-fichier.png` | ProjectSend — attribution d'un fichier à un client | `04-interface-graphique.md` |
-| `content/09-fichiers-partage\37-partage-collaboration\_assets\pingvin-share.png` | Pingvin Share — création d'un partage | `04-interface-graphique.md` |
+| `content/09-fichiers-partage/37-partage-collaboration/_assets/pydio-cells-workspace.png` | Pydio Cells — espace de travail et partage | `04-interface-graphique.md` |
+| `content/09-fichiers-partage/37-partage-collaboration/_assets/pydio-cells-console.png` | Pydio Cells — console d'administration, datasources | `04-interface-graphique.md` |
+| `content/09-fichiers-partage/37-partage-collaboration/_assets/cozy-drive.png` | Cozy Drive — liste des fichiers | `04-interface-graphique.md` |
+| `content/09-fichiers-partage/37-partage-collaboration/_assets/projectsend-fichier.png` | ProjectSend — attribution d'un fichier à un client | `04-interface-graphique.md` |
+| `content/09-fichiers-partage/37-partage-collaboration/_assets/pingvin-share.png` | Pingvin Share — création d'un partage | `04-interface-graphique.md` |
 
-## 10-messagerie\11-matrix
+## 10-messagerie/11-matrix
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/10-messagerie\11-matrix\_assets\element-salons.png` | Element — liste des salons et espaces | `03-interface-graphique.md` |
-| `content/10-messagerie\11-matrix\_assets\element-verification.png` | Element — vérification d'une nouvelle session | `03-interface-graphique.md` |
-| `content/10-messagerie\11-matrix\_assets\synapse-admin-utilisateurs.png` | synapse-admin — liste des utilisateurs | `03-interface-graphique.md` |
+| `content/10-messagerie/11-matrix/_assets/element-salons.png` | Element — liste des salons et espaces | `03-interface-graphique.md` |
+| `content/10-messagerie/11-matrix/_assets/element-verification.png` | Element — vérification d'une nouvelle session | `03-interface-graphique.md` |
+| `content/10-messagerie/11-matrix/_assets/synapse-admin-utilisateurs.png` | synapse-admin — liste des utilisateurs | `03-interface-graphique.md` |
 
-## 10-messagerie\12-mattermost
+## 10-messagerie/12-mattermost
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/10-messagerie\12-mattermost\_assets\mattermost-premier-demarrage.png` | Assistant de premier démarrage (création du compte administrateur et de l'équipe) | `01-presentation-installation.md` |
-| `content/10-messagerie\12-mattermost\_assets\mattermost-espace-travail.png` | Espace de travail avec barre latérale, canal et fil de discussion ouvert | `03-interface-graphique.md` |
-| `content/10-messagerie\12-mattermost\_assets\mattermost-system-console.png` | System Console, section Users | `03-interface-graphique.md` |
-| `content/10-messagerie\12-mattermost\_assets\mattermost-webhook.png` | Création d'un webhook entrant | `03-interface-graphique.md` |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-premier-demarrage.png` | Assistant de premier démarrage (création du compte administrateur et de l'équipe) | `01-presentation-installation.md` |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-espace-travail.png` | Espace de travail avec barre latérale, canal et fil de discussion ouvert | `03-interface-graphique.md` |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-system-console.png` | System Console, section Users | `03-interface-graphique.md` |
+| `content/10-messagerie/12-mattermost/_assets/mattermost-webhook.png` | Création d'un webhook entrant | `03-interface-graphique.md` |
 
-## 10-messagerie\13-rocketchat
+## 10-messagerie/13-rocketchat
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/10-messagerie\13-rocketchat\_assets\rocketchat-assistant.png` | Assistant de configuration (administrateur et organisation) | `01-presentation-installation.md` |
-| `content/10-messagerie\13-rocketchat\_assets\rocketchat-espace-travail.png` | Espace de travail Rocket.Chat avec un canal et ses fils | `02-interface-graphique.md` |
-| `content/10-messagerie\13-rocketchat\_assets\rocketchat-administration-users.png` | Administration, page Users | `02-interface-graphique.md` |
-| `content/10-messagerie\13-rocketchat\_assets\rocketchat-omnichannel.png` | Configuration Omnichannel, départements et agents | `02-interface-graphique.md` |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-assistant.png` | Assistant de configuration (administrateur et organisation) | `01-presentation-installation.md` |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-espace-travail.png` | Espace de travail Rocket.Chat avec un canal et ses fils | `02-interface-graphique.md` |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-administration-users.png` | Administration, page Users | `02-interface-graphique.md` |
+| `content/10-messagerie/13-rocketchat/_assets/rocketchat-omnichannel.png` | Configuration Omnichannel, départements et agents | `02-interface-graphique.md` |
 
-## 10-messagerie\14-zulip
+## 10-messagerie/14-zulip
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/10-messagerie\14-zulip\_assets\zulip-creation-organisation.png` | Page de création de l'organisation Zulip | `01-presentation-installation.md` |
-| `content/10-messagerie\14-zulip\_assets\zulip-boite-reception.png` | Boîte de réception avec canaux et sujets non lus | `02-interface-graphique.md` |
-| `content/10-messagerie\14-zulip\_assets\zulip-parametres-utilisateurs.png` | Paramètres de l'organisation, section Utilisateurs | `02-interface-graphique.md` |
+| `content/10-messagerie/14-zulip/_assets/zulip-creation-organisation.png` | Page de création de l'organisation Zulip | `01-presentation-installation.md` |
+| `content/10-messagerie/14-zulip/_assets/zulip-boite-reception.png` | Boîte de réception avec canaux et sujets non lus | `02-interface-graphique.md` |
+| `content/10-messagerie/14-zulip/_assets/zulip-parametres-utilisateurs.png` | Paramètres de l'organisation, section Utilisateurs | `02-interface-graphique.md` |
 
-## 10-messagerie\15-xmpp
+## 10-messagerie/15-xmpp
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/10-messagerie\15-xmpp\_assets\ejabberd-webadmin.png` | Interface web d'ejabberd, page des utilisateurs du domaine | `02-ejabberd.md` |
-| `content/10-messagerie\15-xmpp\_assets\openfire-assistant-ldap.png` | Assistant Openfire, étape Profils utilisateurs avec Active Directory | `03-openfire.md` |
-| `content/10-messagerie\15-xmpp\_assets\openfire-sessions.png` | Console Openfire, liste des sessions | `03-openfire.md` |
-| `content/10-messagerie\15-xmpp\_assets\snikket-portail.png` | Portail d'administration Snikket (utilisateurs et invitations) | `04-snikket-mongooseim.md` |
-| `content/10-messagerie\15-xmpp\_assets\conversejs-plein-ecran.png` | Converse.js en mode plein écran avec un salon ouvert | `05-clients-conversejs.md` |
+| `content/10-messagerie/15-xmpp/_assets/ejabberd-webadmin.png` | Interface web d'ejabberd, page des utilisateurs du domaine | `02-ejabberd.md` |
+| `content/10-messagerie/15-xmpp/_assets/openfire-assistant-ldap.png` | Assistant Openfire, étape Profils utilisateurs avec Active Directory | `03-openfire.md` |
+| `content/10-messagerie/15-xmpp/_assets/openfire-sessions.png` | Console Openfire, liste des sessions | `03-openfire.md` |
+| `content/10-messagerie/15-xmpp/_assets/snikket-portail.png` | Portail d'administration Snikket (utilisateurs et invitations) | `04-snikket-mongooseim.md` |
+| `content/10-messagerie/15-xmpp/_assets/conversejs-plein-ecran.png` | Converse.js en mode plein écran avec un salon ouvert | `05-clients-conversejs.md` |
 
-## 10-messagerie\16-gestion-projet
+## 10-messagerie/16-gestion-projet
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/10-messagerie\16-gestion-projet\_assets\openproject-gantt.png` | Vue Gantt d'un projet OpenProject | `01-openproject.md` |
-| `content/10-messagerie\16-gestion-projet\_assets\openproject-tableau.png` | Tableau agile (kanban) des lots de travaux | `01-openproject.md` |
-| `content/10-messagerie\16-gestion-projet\_assets\redmine-demandes.png` | Liste des demandes d'un projet Redmine avec filtres | `02-redmine.md` |
-| `content/10-messagerie\16-gestion-projet\_assets\redmine-workflow.png` | Administration, écran Workflow | `02-redmine.md` |
-| `content/10-messagerie\16-gestion-projet\_assets\taiga-backlog.png` | Backlog scrum d'un projet Taiga | `03-taiga-plane-leantime.md` |
-| `content/10-messagerie\16-gestion-projet\_assets\plane-issues.png` | Liste des issues d'un projet Plane (vue tableau) | `03-taiga-plane-leantime.md` |
-| `content/10-messagerie\16-gestion-projet\_assets\leantime-tableau-de-bord.png` | Tableau de bord d'un projet Leantime | `03-taiga-plane-leantime.md` |
-| `content/10-messagerie\16-gestion-projet\_assets\tuleap-cardwall.png` | Tableau agile (cardwall) d'un projet Tuleap | `04-tuleap-trac-phorge.md` |
-| `content/10-messagerie\16-gestion-projet\_assets\phorge-differential.png` | Revue de code Differential dans Phorge | `04-tuleap-trac-phorge.md` |
-| `content/10-messagerie\16-gestion-projet\_assets\kanboard-tableau.png` | Tableau kanban d'un projet Kanboard | `05-kanban-taches.md` |
-| `content/10-messagerie\16-gestion-projet\_assets\wekan-tableau.png` | Tableau Wekan avec listes et cartes | `05-kanban-taches.md` |
-| `content/10-messagerie\16-gestion-projet\_assets\vikunja-kanban.png` | Vue kanban d'un projet Vikunja | `05-kanban-taches.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/openproject-gantt.png` | Vue Gantt d'un projet OpenProject | `01-openproject.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/openproject-tableau.png` | Tableau agile (kanban) des lots de travaux | `01-openproject.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/redmine-demandes.png` | Liste des demandes d'un projet Redmine avec filtres | `02-redmine.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/redmine-workflow.png` | Administration, écran Workflow | `02-redmine.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/taiga-backlog.png` | Backlog scrum d'un projet Taiga | `03-taiga-plane-leantime.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/plane-issues.png` | Liste des issues d'un projet Plane (vue tableau) | `03-taiga-plane-leantime.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/leantime-tableau-de-bord.png` | Tableau de bord d'un projet Leantime | `03-taiga-plane-leantime.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/tuleap-cardwall.png` | Tableau agile (cardwall) d'un projet Tuleap | `04-tuleap-trac-phorge.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/phorge-differential.png` | Revue de code Differential dans Phorge | `04-tuleap-trac-phorge.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/kanboard-tableau.png` | Tableau kanban d'un projet Kanboard | `05-kanban-taches.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/wekan-tableau.png` | Tableau Wekan avec listes et cartes | `05-kanban-taches.md` |
+| `content/10-messagerie/16-gestion-projet/_assets/vikunja-kanban.png` | Vue kanban d'un projet Vikunja | `05-kanban-taches.md` |
 
-## 10-messagerie\17-wikis
+## 10-messagerie/17-wikis
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/10-messagerie\17-wikis\_assets\outline-document.png` | Document Outline en édition collaborative | `01-outline-wikijs.md` |
-| `content/10-messagerie\17-wikis\_assets\wikijs-stockage-git.png` | Administration Wiki.js, module de stockage Git | `01-outline-wikijs.md` |
-| `content/10-messagerie\17-wikis\_assets\xwiki-distribution.png` | Assistant de distribution XWiki (installation du flavor Standard) | `02-xwiki.md` |
-| `content/10-messagerie\17-wikis\_assets\xwiki-droits.png` | Administration XWiki, droits d'un espace | `02-xwiki.md` |
-| `content/10-messagerie\17-wikis\_assets\mediawiki-visualeditor.png` | Page MediaWiki en édition avec VisualEditor | `03-mediawiki-dokuwiki.md` |
-| `content/10-messagerie\17-wikis\_assets\dokuwiki-acl.png` | Gestion des ACL DokuWiki | `03-mediawiki-dokuwiki.md` |
-| `content/10-messagerie\17-wikis\_assets\appflowy-console.png` | Console d'administration AppFlowy Cloud | `05-appflowy-affine.md` |
-| `content/10-messagerie\17-wikis\_assets\affine-tableau-blanc.png` | Document AFFiNE en mode tableau blanc | `05-appflowy-affine.md` |
+| `content/10-messagerie/17-wikis/_assets/outline-document.png` | Document Outline en édition collaborative | `01-outline-wikijs.md` |
+| `content/10-messagerie/17-wikis/_assets/wikijs-stockage-git.png` | Administration Wiki.js, module de stockage Git | `01-outline-wikijs.md` |
+| `content/10-messagerie/17-wikis/_assets/xwiki-distribution.png` | Assistant de distribution XWiki (installation du flavor Standard) | `02-xwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/xwiki-droits.png` | Administration XWiki, droits d'un espace | `02-xwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/mediawiki-visualeditor.png` | Page MediaWiki en édition avec VisualEditor | `03-mediawiki-dokuwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/dokuwiki-acl.png` | Gestion des ACL DokuWiki | `03-mediawiki-dokuwiki.md` |
+| `content/10-messagerie/17-wikis/_assets/appflowy-console.png` | Console d'administration AppFlowy Cloud | `05-appflowy-affine.md` |
+| `content/10-messagerie/17-wikis/_assets/affine-tableau-blanc.png` | Document AFFiNE en mode tableau blanc | `05-appflowy-affine.md` |
 
-## 10-messagerie\18-edition-collaborative
+## 10-messagerie/18-edition-collaborative
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/10-messagerie\18-edition-collaborative\_assets\hedgedoc-note.png` | Note HedgeDoc en mode édition et aperçu côte à côte | `01-hedgedoc-etherpad-cryptpad.md` |
-| `content/10-messagerie\18-edition-collaborative\_assets\etherpad-pad.png` | Pad Etherpad avec couleurs des auteurs | `01-hedgedoc-etherpad-cryptpad.md` |
-| `content/10-messagerie\18-edition-collaborative\_assets\cryptpad-lecteur.png` | Lecteur CryptPad avec documents et tableurs | `01-hedgedoc-etherpad-cryptpad.md` |
+| `content/10-messagerie/18-edition-collaborative/_assets/hedgedoc-note.png` | Note HedgeDoc en mode édition et aperçu côte à côte | `01-hedgedoc-etherpad-cryptpad.md` |
+| `content/10-messagerie/18-edition-collaborative/_assets/etherpad-pad.png` | Pad Etherpad avec couleurs des auteurs | `01-hedgedoc-etherpad-cryptpad.md` |
+| `content/10-messagerie/18-edition-collaborative/_assets/cryptpad-lecteur.png` | Lecteur CryptPad avec documents et tableurs | `01-hedgedoc-etherpad-cryptpad.md` |
 
-## 10-messagerie\19-groupware-agendas
+## 10-messagerie/19-groupware-agendas
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/10-messagerie\19-groupware-agendas\_assets\sogo-agenda.png` | Agenda partagé dans l'interface web de SOGo | `01-sogo-kopano.md` |
-| `content/10-messagerie\19-groupware-agendas\_assets\caldiy-reservation.png` | Page de réservation publique Cal.diy | `02-calcom-baikal-davical.md` |
-| `content/10-messagerie\19-groupware-agendas\_assets\baikal-utilisateurs.png` | Administration Baïkal, liste des utilisateurs | `02-calcom-baikal-davical.md` |
+| `content/10-messagerie/19-groupware-agendas/_assets/sogo-agenda.png` | Agenda partagé dans l'interface web de SOGo | `01-sogo-kopano.md` |
+| `content/10-messagerie/19-groupware-agendas/_assets/caldiy-reservation.png` | Page de réservation publique Cal.diy | `02-calcom-baikal-davical.md` |
+| `content/10-messagerie/19-groupware-agendas/_assets/baikal-utilisateurs.png` | Administration Baïkal, liste des utilisateurs | `02-calcom-baikal-davical.md` |
 
-## 10-messagerie\20-suites-messagerie
+## 10-messagerie/20-suites-messagerie
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/10-messagerie\20-suites-messagerie\_assets\mailcow-administration.png` | Interface d'administration Mailcow (domaines et boîtes) | `01-mailcow-mailu-docker-mailserver.md` |
-| `content/10-messagerie\20-suites-messagerie\_assets\modoboa-domaines.png` | Interface d'administration Modoboa, liste des domaines | `02-modoboa-iredmail.md` |
-| `content/10-messagerie\20-suites-messagerie\_assets\iredadmin-utilisateur.png` | iRedAdmin, création d'un utilisateur | `02-modoboa-iredmail.md` |
+| `content/10-messagerie/20-suites-messagerie/_assets/mailcow-administration.png` | Interface d'administration Mailcow (domaines et boîtes) | `01-mailcow-mailu-docker-mailserver.md` |
+| `content/10-messagerie/20-suites-messagerie/_assets/modoboa-domaines.png` | Interface d'administration Modoboa, liste des domaines | `02-modoboa-iredmail.md` |
+| `content/10-messagerie/20-suites-messagerie/_assets/iredadmin-utilisateur.png` | iRedAdmin, création d'un utilisateur | `02-modoboa-iredmail.md` |
 
-## 10-messagerie\21-webmail
+## 10-messagerie/21-webmail
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/10-messagerie\21-webmail\_assets\roundcube-elastic.png` | Boîte de réception Roundcube (thème Elastic) | `01-roundcube.md` |
-| `content/10-messagerie\21-webmail\_assets\snappymail-domaine.png` | Administration SnappyMail, configuration d'un domaine IMAP et SMTP | `02-snappymail-anciens.md` |
+| `content/10-messagerie/21-webmail/_assets/roundcube-elastic.png` | Boîte de réception Roundcube (thème Elastic) | `01-roundcube.md` |
+| `content/10-messagerie/21-webmail/_assets/snappymail-domaine.png` | Administration SnappyMail, configuration d'un domaine IMAP et SMTP | `02-snappymail-anciens.md` |
 
-## 11-bases-de-donnees\11-duckdb
+## 11-bases-de-donnees/11-duckdb
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\11-duckdb\_assets\duckdb-ui.png` | DuckDB UI — carnet SQL et résultat d'une requête sur un fichier Parquet | `01-presentation-utilisation.md` |
+| `content/11-bases-de-donnees/11-duckdb/_assets/duckdb-ui.png` | DuckDB UI — carnet SQL et résultat d'une requête sur un fichier Parquet | `01-presentation-utilisation.md` |
 
-## 11-bases-de-donnees\12-sql-distribue
+## 11-bases-de-donnees/12-sql-distribue
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\12-sql-distribue\_assets\cockroachdb-console.png` | CockroachDB — DB Console, vue d'ensemble du cluster | `04-interface-graphique.md` |
-| `content/11-bases-de-donnees\12-sql-distribue\_assets\yugabytedb-ui.png` | YugabyteDB — interface yugabyted | `04-interface-graphique.md` |
-| `content/11-bases-de-donnees\12-sql-distribue\_assets\tidb-dashboard.png` | TiDB Dashboard — requêtes lentes | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/12-sql-distribue/_assets/cockroachdb-console.png` | CockroachDB — DB Console, vue d'ensemble du cluster | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/12-sql-distribue/_assets/yugabytedb-ui.png` | YugabyteDB — interface yugabyted | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/12-sql-distribue/_assets/tidb-dashboard.png` | TiDB Dashboard — requêtes lentes | `04-interface-graphique.md` |
 
-## 11-bases-de-donnees\14-questdb
+## 11-bases-de-donnees/14-questdb
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\14-questdb\_assets\questdb-console.png` | QuestDB — console web, éditeur SQL et graphique de résultat | `01-presentation-installation.md` |
+| `content/11-bases-de-donnees/14-questdb/_assets/questdb-console.png` | QuestDB — console web, éditeur SQL et graphique de résultat | `01-presentation-installation.md` |
 
-## 11-bases-de-donnees\16-bases-documentaires
+## 11-bases-de-donnees/16-bases-documentaires
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\16-bases-documentaires\_assets\couchbase-query.png` | Couchbase — Query Workbench | `05-interface-graphique.md` |
-| `content/11-bases-de-donnees\16-bases-documentaires\_assets\ravendb-studio.png` | RavenDB — Studio, liste des documents d'une collection | `05-interface-graphique.md` |
-| `content/11-bases-de-donnees\16-bases-documentaires\_assets\rethinkdb-explorer.png` | RethinkDB — Data Explorer | `05-interface-graphique.md` |
+| `content/11-bases-de-donnees/16-bases-documentaires/_assets/couchbase-query.png` | Couchbase — Query Workbench | `05-interface-graphique.md` |
+| `content/11-bases-de-donnees/16-bases-documentaires/_assets/ravendb-studio.png` | RavenDB — Studio, liste des documents d'une collection | `05-interface-graphique.md` |
+| `content/11-bases-de-donnees/16-bases-documentaires/_assets/rethinkdb-explorer.png` | RethinkDB — Data Explorer | `05-interface-graphique.md` |
 
-## 11-bases-de-donnees\18-etcd-consul
+## 11-bases-de-donnees/18-etcd-consul
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\18-etcd-consul\_assets\consul-services.png` | Consul — liste des services et état de santé | `03-interface-graphique.md` |
-| `content/11-bases-de-donnees\18-etcd-consul\_assets\consul-kv.png` | Consul — magasin clé-valeur | `03-interface-graphique.md` |
+| `content/11-bases-de-donnees/18-etcd-consul/_assets/consul-services.png` | Consul — liste des services et état de santé | `03-interface-graphique.md` |
+| `content/11-bases-de-donnees/18-etcd-consul/_assets/consul-kv.png` | Consul — magasin clé-valeur | `03-interface-graphique.md` |
 
-## 11-bases-de-donnees\21-multi-modeles
+## 11-bases-de-donnees/21-multi-modeles
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\21-multi-modeles\_assets\surrealist.png` | Surrealist — éditeur de requêtes SurrealQL | `04-interface-graphique.md` |
-| `content/11-bases-de-donnees\21-multi-modeles\_assets\arangodb-aql.png` | ArangoDB — éditeur AQL et résultat | `04-interface-graphique.md` |
-| `content/11-bases-de-donnees\21-multi-modeles\_assets\arangodb-graphe.png` | ArangoDB — visualisation d'un graphe | `04-interface-graphique.md` |
-| `content/11-bases-de-donnees\21-multi-modeles\_assets\orientdb-studio.png` | OrientDB Studio — éditeur de graphe | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/21-multi-modeles/_assets/surrealist.png` | Surrealist — éditeur de requêtes SurrealQL | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/21-multi-modeles/_assets/arangodb-aql.png` | ArangoDB — éditeur AQL et résultat | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/21-multi-modeles/_assets/arangodb-graphe.png` | ArangoDB — visualisation d'un graphe | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/21-multi-modeles/_assets/orientdb-studio.png` | OrientDB Studio — éditeur de graphe | `04-interface-graphique.md` |
 
-## 11-bases-de-donnees\22-bases-graphes
+## 11-bases-de-donnees/22-bases-graphes
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\22-bases-graphes\_assets\memgraph-lab.png` | Memgraph Lab — visualisation d'une topologie réseau | `04-interface-graphique.md` |
-| `content/11-bases-de-donnees\22-bases-graphes\_assets\dgraph-ratel.png` | Dgraph Ratel — requête DQL et vue graphe | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/22-bases-graphes/_assets/memgraph-lab.png` | Memgraph Lab — visualisation d'une topologie réseau | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/22-bases-graphes/_assets/dgraph-ratel.png` | Dgraph Ratel — requête DQL et vue graphe | `04-interface-graphique.md` |
 
-## 11-bases-de-donnees\24-clickhouse
+## 11-bases-de-donnees/24-clickhouse
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\24-clickhouse\_assets\clickhouse-play.png` | ClickHouse — interface Play (requête SQL dans le navigateur) | `01-presentation-installation.md` |
-| `content/11-bases-de-donnees\24-clickhouse\_assets\clickhouse-dashboard.png` | ClickHouse — tableau de bord intégré /dashboard | `01-presentation-installation.md` |
+| `content/11-bases-de-donnees/24-clickhouse/_assets/clickhouse-play.png` | ClickHouse — interface Play (requête SQL dans le navigateur) | `01-presentation-installation.md` |
+| `content/11-bases-de-donnees/24-clickhouse/_assets/clickhouse-dashboard.png` | ClickHouse — tableau de bord intégré /dashboard | `01-presentation-installation.md` |
 
-## 11-bases-de-donnees\25-olap-temps-reel
+## 11-bases-de-donnees/25-olap-temps-reel
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\25-olap-temps-reel\_assets\doris-backends.png` | Apache Doris — interface web, liste des Backends | `04-interface-graphique.md` |
-| `content/11-bases-de-donnees\25-olap-temps-reel\_assets\pinot-query.png` | Apache Pinot — Query Console | `04-interface-graphique.md` |
-| `content/11-bases-de-donnees\25-olap-temps-reel\_assets\druid-datasources.png` | Apache Druid — console, onglet Datasources | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/25-olap-temps-reel/_assets/doris-backends.png` | Apache Doris — interface web, liste des Backends | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/25-olap-temps-reel/_assets/pinot-query.png` | Apache Pinot — Query Console | `04-interface-graphique.md` |
+| `content/11-bases-de-donnees/25-olap-temps-reel/_assets/druid-datasources.png` | Apache Druid — console, onglet Datasources | `04-interface-graphique.md` |
 
-## 11-bases-de-donnees\26-moteurs-sql-federes
+## 11-bases-de-donnees/26-moteurs-sql-federes
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\26-moteurs-sql-federes\_assets\trino-ui.png` | Trino — interface web, liste des requêtes | `03-interface-graphique.md` |
-| `content/11-bases-de-donnees\26-moteurs-sql-federes\_assets\drill-storage.png` | Apache Drill — onglet Storage | `03-interface-graphique.md` |
+| `content/11-bases-de-donnees/26-moteurs-sql-federes/_assets/trino-ui.png` | Trino — interface web, liste des requêtes | `03-interface-graphique.md` |
+| `content/11-bases-de-donnees/26-moteurs-sql-federes/_assets/drill-storage.png` | Apache Drill — onglet Storage | `03-interface-graphique.md` |
 
-## 11-bases-de-donnees\29-grilles-memoire
+## 11-bases-de-donnees/29-grilles-memoire
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\29-grilles-memoire\_assets\hazelcast-mc.png` | Hazelcast Management Center — vue des membres du cluster | `03-interface-graphique.md` |
-| `content/11-bases-de-donnees\29-grilles-memoire\_assets\geode-pulse.png` | Geode Pulse — vue du cluster | `03-interface-graphique.md` |
+| `content/11-bases-de-donnees/29-grilles-memoire/_assets/hazelcast-mc.png` | Hazelcast Management Center — vue des membres du cluster | `03-interface-graphique.md` |
+| `content/11-bases-de-donnees/29-grilles-memoire/_assets/geode-pulse.png` | Geode Pulse — vue du cluster | `03-interface-graphique.md` |
 
-## 11-bases-de-donnees\30-bases-java-embarquees
+## 11-bases-de-donnees/30-bases-java-embarquees
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/11-bases-de-donnees\30-bases-java-embarquees\_assets\realm-studio.png` | Realm Studio — ouverture d'un fichier .realm et vue des objets | `02-realm.md` |
+| `content/11-bases-de-donnees/30-bases-java-embarquees/_assets/realm-studio.png` | Realm Studio — ouverture d'un fichier .realm et vue des objets | `02-realm.md` |
 
-## 13-conteneurs\14-kvm-qemu-libvirt
+## 13-conteneurs/14-kvm-qemu-libvirt
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\14-kvm-qemu-libvirt\_assets\virt-manager-fenetre-principale.png` | virt-manager — fenêtre principale avec deux hôtes et la liste des machines | `03-interface-graphique.md` |
-| `content/13-conteneurs\14-kvm-qemu-libvirt\_assets\virt-manager-assistant-source.png` | virt-manager — assistant de création, étape 1 (choix de la source d'installation) | `03-interface-graphique.md` |
-| `content/13-conteneurs\14-kvm-qemu-libvirt\_assets\virt-manager-personnalisation-uefi.png` | virt-manager — personnalisation avant installation (Aperçu : chipset Q35, microprogramme UEFI) | `03-interface-graphique.md` |
-| `content/13-conteneurs\14-kvm-qemu-libvirt\_assets\virt-manager-details-materiel.png` | virt-manager — détails matériels d'une VM Windows 11 (TPM et disque VirtIO) | `03-interface-graphique.md` |
-| `content/13-conteneurs\14-kvm-qemu-libvirt\_assets\virt-manager-pools-stockage.png` | virt-manager — détails de la connexion, onglet Stockage avec un pool NFS | `03-interface-graphique.md` |
-| `content/13-conteneurs\14-kvm-qemu-libvirt\_assets\virt-manager-instantanes.png` | virt-manager — gestion des instantanés d'une machine | `03-interface-graphique.md` |
-| `content/13-conteneurs\14-kvm-qemu-libvirt\_assets\gnome-boxes-creation.png` | GNOME Boxes — liste des machines et assistant de création | `03-interface-graphique.md` |
-| `content/13-conteneurs\14-kvm-qemu-libvirt\_assets\cockpit-machines-console.png` | Cockpit — rubrique Machines virtuelles avec la console d'une VM | `03-interface-graphique.md` |
+| `content/13-conteneurs/14-kvm-qemu-libvirt/_assets/virt-manager-fenetre-principale.png` | virt-manager — fenêtre principale avec deux hôtes et la liste des machines | `03-interface-graphique.md` |
+| `content/13-conteneurs/14-kvm-qemu-libvirt/_assets/virt-manager-assistant-source.png` | virt-manager — assistant de création, étape 1 (choix de la source d'installation) | `03-interface-graphique.md` |
+| `content/13-conteneurs/14-kvm-qemu-libvirt/_assets/virt-manager-personnalisation-uefi.png` | virt-manager — personnalisation avant installation (Aperçu : chipset Q35, microprogramme UEFI) | `03-interface-graphique.md` |
+| `content/13-conteneurs/14-kvm-qemu-libvirt/_assets/virt-manager-details-materiel.png` | virt-manager — détails matériels d'une VM Windows 11 (TPM et disque VirtIO) | `03-interface-graphique.md` |
+| `content/13-conteneurs/14-kvm-qemu-libvirt/_assets/virt-manager-pools-stockage.png` | virt-manager — détails de la connexion, onglet Stockage avec un pool NFS | `03-interface-graphique.md` |
+| `content/13-conteneurs/14-kvm-qemu-libvirt/_assets/virt-manager-instantanes.png` | virt-manager — gestion des instantanés d'une machine | `03-interface-graphique.md` |
+| `content/13-conteneurs/14-kvm-qemu-libvirt/_assets/gnome-boxes-creation.png` | GNOME Boxes — liste des machines et assistant de création | `03-interface-graphique.md` |
+| `content/13-conteneurs/14-kvm-qemu-libvirt/_assets/cockpit-machines-console.png` | Cockpit — rubrique Machines virtuelles avec la console d'une VM | `03-interface-graphique.md` |
 
-## 13-conteneurs\15-xcp-ng-xen
+## 13-conteneurs/15-xcp-ng-xen
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\15-xcp-ng-xen\_assets\xo-lite-tableau-de-bord.png` | XO Lite — tableau de bord d'un hôte XCP-ng | `03-interface-graphique.md` |
-| `content/13-conteneurs\15-xcp-ng-xen\_assets\xen-orchestra-accueil-vm.png` | Xen Orchestra — vue Accueil, liste des VM d'un pool avec filtres | `03-interface-graphique.md` |
-| `content/13-conteneurs\15-xcp-ng-xen\_assets\xen-orchestra-tableau-de-bord.png` | Xen Orchestra — tableau de bord de santé du parc | `03-interface-graphique.md` |
-| `content/13-conteneurs\15-xcp-ng-xen\_assets\xen-orchestra-nouvelle-vm.png` | Xen Orchestra — formulaire de création de VM avec cloud-init | `03-interface-graphique.md` |
-| `content/13-conteneurs\15-xcp-ng-xen\_assets\xen-orchestra-console.png` | Xen Orchestra — onglet Console d'une VM Windows | `03-interface-graphique.md` |
-| `content/13-conteneurs\15-xcp-ng-xen\_assets\xen-orchestra-nouveau-sr.png` | Xen Orchestra — création d'un SR NFS partagé | `03-interface-graphique.md` |
-| `content/13-conteneurs\15-xcp-ng-xen\_assets\xen-orchestra-sauvegarde-delta.png` | Xen Orchestra — assistant de sauvegarde delta avec planification | `03-interface-graphique.md` |
-| `content/13-conteneurs\15-xcp-ng-xen\_assets\xen-orchestra-restauration-fichiers.png` | Xen Orchestra — restauration de fichiers depuis une sauvegarde | `03-interface-graphique.md` |
-| `content/13-conteneurs\15-xcp-ng-xen\_assets\xen-orchestra-correctifs.png` | Xen Orchestra — onglet Correctifs d'un pool et bouton Rolling pool update | `03-interface-graphique.md` |
+| `content/13-conteneurs/15-xcp-ng-xen/_assets/xo-lite-tableau-de-bord.png` | XO Lite — tableau de bord d'un hôte XCP-ng | `03-interface-graphique.md` |
+| `content/13-conteneurs/15-xcp-ng-xen/_assets/xen-orchestra-accueil-vm.png` | Xen Orchestra — vue Accueil, liste des VM d'un pool avec filtres | `03-interface-graphique.md` |
+| `content/13-conteneurs/15-xcp-ng-xen/_assets/xen-orchestra-tableau-de-bord.png` | Xen Orchestra — tableau de bord de santé du parc | `03-interface-graphique.md` |
+| `content/13-conteneurs/15-xcp-ng-xen/_assets/xen-orchestra-nouvelle-vm.png` | Xen Orchestra — formulaire de création de VM avec cloud-init | `03-interface-graphique.md` |
+| `content/13-conteneurs/15-xcp-ng-xen/_assets/xen-orchestra-console.png` | Xen Orchestra — onglet Console d'une VM Windows | `03-interface-graphique.md` |
+| `content/13-conteneurs/15-xcp-ng-xen/_assets/xen-orchestra-nouveau-sr.png` | Xen Orchestra — création d'un SR NFS partagé | `03-interface-graphique.md` |
+| `content/13-conteneurs/15-xcp-ng-xen/_assets/xen-orchestra-sauvegarde-delta.png` | Xen Orchestra — assistant de sauvegarde delta avec planification | `03-interface-graphique.md` |
+| `content/13-conteneurs/15-xcp-ng-xen/_assets/xen-orchestra-restauration-fichiers.png` | Xen Orchestra — restauration de fichiers depuis une sauvegarde | `03-interface-graphique.md` |
+| `content/13-conteneurs/15-xcp-ng-xen/_assets/xen-orchestra-correctifs.png` | Xen Orchestra — onglet Correctifs d'un pool et bouton Rolling pool update | `03-interface-graphique.md` |
 
-## 13-conteneurs\16-utm
+## 13-conteneurs/16-utm
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\16-utm\_assets\utm-fenetre-principale.png` | UTM — fenêtre principale avec une VM Windows 11 et une VM Debian | `03-interface-graphique.md` |
-| `content/13-conteneurs\16-utm\_assets\utm-assistant-virtualiser.png` | UTM — assistant, choix Virtualiser / Émuler | `03-interface-graphique.md` |
-| `content/13-conteneurs\16-utm\_assets\utm-assistant-windows.png` | UTM — assistant, étape Windows avec l'ISO ARM64 et l'option pilotes SPICE | `03-interface-graphique.md` |
-| `content/13-conteneurs\16-utm\_assets\utm-reglages-reseau.png` | UTM — réglages Réseau avec mode ponté et redirection de port SSH | `03-interface-graphique.md` |
-| `content/13-conteneurs\16-utm\_assets\utm-console-debian.png` | UTM — VM Debian en cours d'exécution avec la barre d'outils | `03-interface-graphique.md` |
+| `content/13-conteneurs/16-utm/_assets/utm-fenetre-principale.png` | UTM — fenêtre principale avec une VM Windows 11 et une VM Debian | `03-interface-graphique.md` |
+| `content/13-conteneurs/16-utm/_assets/utm-assistant-virtualiser.png` | UTM — assistant, choix Virtualiser / Émuler | `03-interface-graphique.md` |
+| `content/13-conteneurs/16-utm/_assets/utm-assistant-windows.png` | UTM — assistant, étape Windows avec l'ISO ARM64 et l'option pilotes SPICE | `03-interface-graphique.md` |
+| `content/13-conteneurs/16-utm/_assets/utm-reglages-reseau.png` | UTM — réglages Réseau avec mode ponté et redirection de port SSH | `03-interface-graphique.md` |
+| `content/13-conteneurs/16-utm/_assets/utm-console-debian.png` | UTM — VM Debian en cours d'exécution avec la barre d'outils | `03-interface-graphique.md` |
 
-## 13-conteneurs\17-incus-lxd-lxc
+## 13-conteneurs/17-incus-lxd-lxc
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\17-incus-lxd-lxc\_assets\incus-ui-connexion.png` | Incus UI — page de connexion et assistant de certificat client | `03-interface-graphique.md` |
-| `content/13-conteneurs\17-incus-lxd-lxc\_assets\incus-ui-instances.png` | Incus UI — liste des instances avec filtres | `03-interface-graphique.md` |
-| `content/13-conteneurs\17-incus-lxd-lxc\_assets\incus-ui-creer-instance.png` | Incus UI — formulaire de création d'instance (choix de l'image et type VM) | `03-interface-graphique.md` |
-| `content/13-conteneurs\17-incus-lxd-lxc\_assets\incus-ui-terminal.png` | Incus UI — terminal d'un conteneur dans le navigateur | `03-interface-graphique.md` |
-| `content/13-conteneurs\17-incus-lxd-lxc\_assets\incus-ui-console-vm.png` | Incus UI — console graphique d'une machine virtuelle | `03-interface-graphique.md` |
-| `content/13-conteneurs\17-incus-lxd-lxc\_assets\incus-ui-stockage.png` | Incus UI — page Stockage avec un pool ZFS et ses volumes | `03-interface-graphique.md` |
+| `content/13-conteneurs/17-incus-lxd-lxc/_assets/incus-ui-connexion.png` | Incus UI — page de connexion et assistant de certificat client | `03-interface-graphique.md` |
+| `content/13-conteneurs/17-incus-lxd-lxc/_assets/incus-ui-instances.png` | Incus UI — liste des instances avec filtres | `03-interface-graphique.md` |
+| `content/13-conteneurs/17-incus-lxd-lxc/_assets/incus-ui-creer-instance.png` | Incus UI — formulaire de création d'instance (choix de l'image et type VM) | `03-interface-graphique.md` |
+| `content/13-conteneurs/17-incus-lxd-lxc/_assets/incus-ui-terminal.png` | Incus UI — terminal d'un conteneur dans le navigateur | `03-interface-graphique.md` |
+| `content/13-conteneurs/17-incus-lxd-lxc/_assets/incus-ui-console-vm.png` | Incus UI — console graphique d'une machine virtuelle | `03-interface-graphique.md` |
+| `content/13-conteneurs/17-incus-lxd-lxc/_assets/incus-ui-stockage.png` | Incus UI — page Stockage avec un pool ZFS et ses volumes | `03-interface-graphique.md` |
 
-## 13-conteneurs\18-ovirt
+## 13-conteneurs/18-ovirt
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\18-ovirt\_assets\ovirt-accueil.png` | oVirt — page d'accueil du moteur avec les liens vers les portails | `03-interface-graphique.md` |
-| `content/13-conteneurs\18-ovirt\_assets\ovirt-tableau-de-bord.png` | oVirt — tableau de bord (capacité CPU, mémoire, stockage, alertes) | `03-interface-graphique.md` |
-| `content/13-conteneurs\18-ovirt\_assets\ovirt-nouvelle-vm.png` | oVirt — fenêtre Nouvelle machine virtuelle, onglet Général | `03-interface-graphique.md` |
-| `content/13-conteneurs\18-ovirt\_assets\ovirt-console-novnc.png` | oVirt — console noVNC d'une VM dans le navigateur | `03-interface-graphique.md` |
-| `content/13-conteneurs\18-ovirt\_assets\ovirt-reseaux-hote.png` | oVirt — configuration des réseaux d'un hôte par glisser-déposer | `03-interface-graphique.md` |
+| `content/13-conteneurs/18-ovirt/_assets/ovirt-accueil.png` | oVirt — page d'accueil du moteur avec les liens vers les portails | `03-interface-graphique.md` |
+| `content/13-conteneurs/18-ovirt/_assets/ovirt-tableau-de-bord.png` | oVirt — tableau de bord (capacité CPU, mémoire, stockage, alertes) | `03-interface-graphique.md` |
+| `content/13-conteneurs/18-ovirt/_assets/ovirt-nouvelle-vm.png` | oVirt — fenêtre Nouvelle machine virtuelle, onglet Général | `03-interface-graphique.md` |
+| `content/13-conteneurs/18-ovirt/_assets/ovirt-console-novnc.png` | oVirt — console noVNC d'une VM dans le navigateur | `03-interface-graphique.md` |
+| `content/13-conteneurs/18-ovirt/_assets/ovirt-reseaux-hote.png` | oVirt — configuration des réseaux d'un hôte par glisser-déposer | `03-interface-graphique.md` |
 
-## 13-conteneurs\19-openstack
+## 13-conteneurs/19-openstack
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\19-openstack\_assets\horizon-connexion.png` | Horizon — page de connexion avec domaine | `03-interface-graphique.md` |
-| `content/13-conteneurs\19-openstack\_assets\horizon-vue-ensemble.png` | Horizon — vue d'ensemble du projet avec les jauges de quotas | `03-interface-graphique.md` |
-| `content/13-conteneurs\19-openstack\_assets\horizon-lancer-instance.png` | Horizon — assistant Lancer une instance, onglet Source | `03-interface-graphique.md` |
-| `content/13-conteneurs\19-openstack\_assets\horizon-console.png` | Horizon — console noVNC d'une instance | `03-interface-graphique.md` |
-| `content/13-conteneurs\19-openstack\_assets\horizon-topologie.png` | Horizon — topologie du réseau d'un projet | `03-interface-graphique.md` |
-| `content/13-conteneurs\19-openstack\_assets\horizon-hyperviseurs.png` | Horizon — Admin, liste des hyperviseurs avec leur charge | `03-interface-graphique.md` |
+| `content/13-conteneurs/19-openstack/_assets/horizon-connexion.png` | Horizon — page de connexion avec domaine | `03-interface-graphique.md` |
+| `content/13-conteneurs/19-openstack/_assets/horizon-vue-ensemble.png` | Horizon — vue d'ensemble du projet avec les jauges de quotas | `03-interface-graphique.md` |
+| `content/13-conteneurs/19-openstack/_assets/horizon-lancer-instance.png` | Horizon — assistant Lancer une instance, onglet Source | `03-interface-graphique.md` |
+| `content/13-conteneurs/19-openstack/_assets/horizon-console.png` | Horizon — console noVNC d'une instance | `03-interface-graphique.md` |
+| `content/13-conteneurs/19-openstack/_assets/horizon-topologie.png` | Horizon — topologie du réseau d'un projet | `03-interface-graphique.md` |
+| `content/13-conteneurs/19-openstack/_assets/horizon-hyperviseurs.png` | Horizon — Admin, liste des hyperviseurs avec leur charge | `03-interface-graphique.md` |
 
-## 13-conteneurs\20-opennebula
+## 13-conteneurs/20-opennebula
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\20-opennebula\_assets\sunstone-tableau-de-bord.png` | Sunstone — tableau de bord (hôtes, VM, utilisation) | `03-interface-graphique.md` |
-| `content/13-conteneurs\20-opennebula\_assets\sunstone-creer-vm.png` | Sunstone — création d'une VM depuis un modèle | `03-interface-graphique.md` |
-| `content/13-conteneurs\20-opennebula\_assets\sunstone-console-vnc.png` | Sunstone — console VNC d'une VM | `03-interface-graphique.md` |
-| `content/13-conteneurs\20-opennebula\_assets\sunstone-marketplace.png` | Sunstone — Marketplace et import d'une image Debian | `03-interface-graphique.md` |
-| `content/13-conteneurs\20-opennebula\_assets\sunstone-hotes.png` | Sunstone — liste des hôtes avec leur charge | `03-interface-graphique.md` |
+| `content/13-conteneurs/20-opennebula/_assets/sunstone-tableau-de-bord.png` | Sunstone — tableau de bord (hôtes, VM, utilisation) | `03-interface-graphique.md` |
+| `content/13-conteneurs/20-opennebula/_assets/sunstone-creer-vm.png` | Sunstone — création d'une VM depuis un modèle | `03-interface-graphique.md` |
+| `content/13-conteneurs/20-opennebula/_assets/sunstone-console-vnc.png` | Sunstone — console VNC d'une VM | `03-interface-graphique.md` |
+| `content/13-conteneurs/20-opennebula/_assets/sunstone-marketplace.png` | Sunstone — Marketplace et import d'une image Debian | `03-interface-graphique.md` |
+| `content/13-conteneurs/20-opennebula/_assets/sunstone-hotes.png` | Sunstone — liste des hôtes avec leur charge | `03-interface-graphique.md` |
 
-## 13-conteneurs\21-apache-cloudstack
+## 13-conteneurs/21-apache-cloudstack
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\21-apache-cloudstack\_assets\cloudstack-tableau-de-bord.png` | CloudStack — tableau de bord de capacité (CPU, mémoire, stockage, IP publiques) | `03-interface-graphique.md` |
-| `content/13-conteneurs\21-apache-cloudstack\_assets\cloudstack-assistant-zone.png` | CloudStack — assistant d'ajout de zone, étape réseau physique | `03-interface-graphique.md` |
-| `content/13-conteneurs\21-apache-cloudstack\_assets\cloudstack-hotes.png` | CloudStack — liste des hôtes KVM et leur état | `03-interface-graphique.md` |
-| `content/13-conteneurs\21-apache-cloudstack\_assets\cloudstack-deployer-instance.png` | CloudStack — assistant de déploiement d'instance | `03-interface-graphique.md` |
+| `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-tableau-de-bord.png` | CloudStack — tableau de bord de capacité (CPU, mémoire, stockage, IP publiques) | `03-interface-graphique.md` |
+| `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-assistant-zone.png` | CloudStack — assistant d'ajout de zone, étape réseau physique | `03-interface-graphique.md` |
+| `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-hotes.png` | CloudStack — liste des hôtes KVM et leur état | `03-interface-graphique.md` |
+| `content/13-conteneurs/21-apache-cloudstack/_assets/cloudstack-deployer-instance.png` | CloudStack — assistant de déploiement d'instance | `03-interface-graphique.md` |
 
-## 13-conteneurs\26-rke2-rancher
+## 13-conteneurs/26-rke2-rancher
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\26-rke2-rancher\_assets\rancher-accueil.png` | Rancher — accueil, liste des clusters | `03-interface-graphique.md` |
-| `content/13-conteneurs\26-rke2-rancher\_assets\rancher-explorateur.png` | Rancher — explorateur de cluster, liste des déploiements | `03-interface-graphique.md` |
-| `content/13-conteneurs\26-rke2-rancher\_assets\rancher-auth-ad.png` | Rancher — configuration de l'authentification Active Directory | `03-interface-graphique.md` |
+| `content/13-conteneurs/26-rke2-rancher/_assets/rancher-accueil.png` | Rancher — accueil, liste des clusters | `03-interface-graphique.md` |
+| `content/13-conteneurs/26-rke2-rancher/_assets/rancher-explorateur.png` | Rancher — explorateur de cluster, liste des déploiements | `03-interface-graphique.md` |
+| `content/13-conteneurs/26-rke2-rancher/_assets/rancher-auth-ad.png` | Rancher — configuration de l'authentification Active Directory | `03-interface-graphique.md` |
 
-## 13-conteneurs\27-openshift-okd
+## 13-conteneurs/27-openshift-okd
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\27-openshift-okd\_assets\okd-overview.png` | OKD — vue d'ensemble du cluster (perspective Administrateur) | `02-interface-graphique.md` |
-| `content/13-conteneurs\27-openshift-okd\_assets\okd-topology.png` | OKD — vue Topology (perspective Développeur) | `02-interface-graphique.md` |
-| `content/13-conteneurs\27-openshift-okd\_assets\okd-mise-a-jour.png` | OKD — Cluster Settings, mise à jour | `02-interface-graphique.md` |
+| `content/13-conteneurs/27-openshift-okd/_assets/okd-overview.png` | OKD — vue d'ensemble du cluster (perspective Administrateur) | `02-interface-graphique.md` |
+| `content/13-conteneurs/27-openshift-okd/_assets/okd-topology.png` | OKD — vue Topology (perspective Développeur) | `02-interface-graphique.md` |
+| `content/13-conteneurs/27-openshift-okd/_assets/okd-mise-a-jour.png` | OKD — Cluster Settings, mise à jour | `02-interface-graphique.md` |
 
-## 13-conteneurs\30-gitops-argocd-flux
+## 13-conteneurs/30-gitops-argocd-flux
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\30-gitops-argocd-flux\_assets\argocd-applications.png` | Argo CD — liste des applications | `03-interface-graphique.md` |
-| `content/13-conteneurs\30-gitops-argocd-flux\_assets\argocd-arbre.png` | Argo CD — arbre des ressources d'une application | `03-interface-graphique.md` |
-| `content/13-conteneurs\30-gitops-argocd-flux\_assets\argocd-diff.png` | Argo CD — différences avant synchronisation | `03-interface-graphique.md` |
-| `content/13-conteneurs\30-gitops-argocd-flux\_assets\flux-capacitor.png` | Capacitor — état des Kustomizations Flux | `03-interface-graphique.md` |
+| `content/13-conteneurs/30-gitops-argocd-flux/_assets/argocd-applications.png` | Argo CD — liste des applications | `03-interface-graphique.md` |
+| `content/13-conteneurs/30-gitops-argocd-flux/_assets/argocd-arbre.png` | Argo CD — arbre des ressources d'une application | `03-interface-graphique.md` |
+| `content/13-conteneurs/30-gitops-argocd-flux/_assets/argocd-diff.png` | Argo CD — différences avant synchronisation | `03-interface-graphique.md` |
+| `content/13-conteneurs/30-gitops-argocd-flux/_assets/flux-capacitor.png` | Capacitor — état des Kustomizations Flux | `03-interface-graphique.md` |
 
-## 13-conteneurs\31-lens-headlamp-k9s
+## 13-conteneurs/31-lens-headlamp-k9s
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\31-lens-headlamp-k9s\_assets\lens-cluster.png` | Lens — vue d'ensemble d'un cluster | `02-interface-graphique.md` |
-| `content/13-conteneurs\31-lens-headlamp-k9s\_assets\headlamp-pods.png` | Headlamp — liste des pods et détail | `02-interface-graphique.md` |
-| `content/13-conteneurs\31-lens-headlamp-k9s\_assets\headlamp-map.png` | Headlamp — vue Map | `02-interface-graphique.md` |
-| `content/13-conteneurs\31-lens-headlamp-k9s\_assets\k9s-pods.png` | K9s — vue des pods avec filtre | `02-interface-graphique.md` |
-| `content/13-conteneurs\31-lens-headlamp-k9s\_assets\k9s-pulses.png` | K9s — tableau de bord Pulses | `02-interface-graphique.md` |
+| `content/13-conteneurs/31-lens-headlamp-k9s/_assets/lens-cluster.png` | Lens — vue d'ensemble d'un cluster | `02-interface-graphique.md` |
+| `content/13-conteneurs/31-lens-headlamp-k9s/_assets/headlamp-pods.png` | Headlamp — liste des pods et détail | `02-interface-graphique.md` |
+| `content/13-conteneurs/31-lens-headlamp-k9s/_assets/headlamp-map.png` | Headlamp — vue Map | `02-interface-graphique.md` |
+| `content/13-conteneurs/31-lens-headlamp-k9s/_assets/k9s-pods.png` | K9s — vue des pods avec filtre | `02-interface-graphique.md` |
+| `content/13-conteneurs/31-lens-headlamp-k9s/_assets/k9s-pulses.png` | K9s — tableau de bord Pulses | `02-interface-graphique.md` |
 
-## 13-conteneurs\32-developpement-kubernetes
+## 13-conteneurs/32-developpement-kubernetes
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\32-developpement-kubernetes\_assets\tilt-ui.png` | Tilt — interface web, état des ressources et journaux | `01-presentation-utilisation.md` |
+| `content/13-conteneurs/32-developpement-kubernetes/_assets/tilt-ui.png` | Tilt — interface web, état des ressources et journaux | `01-presentation-utilisation.md` |
 
-## 13-conteneurs\36-reseau-cni
+## 13-conteneurs/36-reseau-cni
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\36-reseau-cni\_assets\hubble-ui.png` | Hubble UI — carte des flux d'un namespace | `02-cilium.md` |
+| `content/13-conteneurs/36-reseau-cni/_assets/hubble-ui.png` | Hubble UI — carte des flux d'un namespace | `02-cilium.md` |
 
-## 13-conteneurs\39-securite-kubernetes
+## 13-conteneurs/39-securite-kubernetes
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/13-conteneurs\39-securite-kubernetes\_assets\falcosidekick-ui.png` | Falcosidekick UI — tableau des alertes | `02-falco.md` |
+| `content/13-conteneurs/39-securite-kubernetes/_assets/falcosidekick-ui.png` | Falcosidekick UI — tableau des alertes | `02-falco.md` |
 
-## 14-devops\08-buildbot-gocd
+## 14-devops/08-buildbot-gocd
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/14-devops\08-buildbot-gocd\_assets\buildbot-waterfall.png` | Buildbot — vue Waterfall | `03-interface-graphique.md` |
-| `content/14-devops\08-buildbot-gocd\_assets\buildbot-construction.png` | Buildbot — détail d'une construction et de ses étapes | `03-interface-graphique.md` |
-| `content/14-devops\08-buildbot-gocd\_assets\gocd-dashboard.png` | GoCD — tableau de bord des pipelines | `03-interface-graphique.md` |
-| `content/14-devops\08-buildbot-gocd\_assets\gocd-vsm.png` | GoCD — carte de flux de valeur | `03-interface-graphique.md` |
+| `content/14-devops/08-buildbot-gocd/_assets/buildbot-waterfall.png` | Buildbot — vue Waterfall | `03-interface-graphique.md` |
+| `content/14-devops/08-buildbot-gocd/_assets/buildbot-construction.png` | Buildbot — détail d'une construction et de ses étapes | `03-interface-graphique.md` |
+| `content/14-devops/08-buildbot-gocd/_assets/gocd-dashboard.png` | GoCD — tableau de bord des pipelines | `03-interface-graphique.md` |
+| `content/14-devops/08-buildbot-gocd/_assets/gocd-vsm.png` | GoCD — carte de flux de valeur | `03-interface-graphique.md` |
 
-## 14-devops\09-woodpecker-drone
+## 14-devops/09-woodpecker-drone
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/14-devops\09-woodpecker-drone\_assets\woodpecker-pipelines.png` | Woodpecker — liste des pipelines d'un dépôt | `03-interface-graphique.md` |
-| `content/14-devops\09-woodpecker-drone\_assets\woodpecker-journaux.png` | Woodpecker — journaux d'une étape | `03-interface-graphique.md` |
-| `content/14-devops\09-woodpecker-drone\_assets\woodpecker-secrets.png` | Woodpecker — réglages du dépôt et secrets | `03-interface-graphique.md` |
+| `content/14-devops/09-woodpecker-drone/_assets/woodpecker-pipelines.png` | Woodpecker — liste des pipelines d'un dépôt | `03-interface-graphique.md` |
+| `content/14-devops/09-woodpecker-drone/_assets/woodpecker-journaux.png` | Woodpecker — journaux d'une étape | `03-interface-graphique.md` |
+| `content/14-devops/09-woodpecker-drone/_assets/woodpecker-secrets.png` | Woodpecker — réglages du dépôt et secrets | `03-interface-graphique.md` |
 
-## 14-devops\10-concourse
+## 14-devops/10-concourse
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/14-devops\10-concourse\_assets\concourse-pipeline.png` | Concourse — vue graphique d'un pipeline | `01-presentation-installation.md` |
+| `content/14-devops/10-concourse/_assets/concourse-pipeline.png` | Concourse — vue graphique d'un pipeline | `01-presentation-installation.md` |
 
-## 14-devops\11-tekton-argo-workflows
+## 14-devops/11-tekton-argo-workflows
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/14-devops\11-tekton-argo-workflows\_assets\tekton-dashboard.png` | Tekton Dashboard — PipelineRun et journaux des étapes | `03-interface-graphique.md` |
-| `content/14-devops\11-tekton-argo-workflows\_assets\argo-workflows-dag.png` | Argo Workflows — graphe DAG d'un workflow | `03-interface-graphique.md` |
-| `content/14-devops\11-tekton-argo-workflows\_assets\argo-workflows-cron.png` | Argo Workflows — liste des Cron Workflows | `03-interface-graphique.md` |
+| `content/14-devops/11-tekton-argo-workflows/_assets/tekton-dashboard.png` | Tekton Dashboard — PipelineRun et journaux des étapes | `03-interface-graphique.md` |
+| `content/14-devops/11-tekton-argo-workflows/_assets/argo-workflows-dag.png` | Argo Workflows — graphe DAG d'un workflow | `03-interface-graphique.md` |
+| `content/14-devops/11-tekton-argo-workflows/_assets/argo-workflows-cron.png` | Argo Workflows — liste des Cron Workflows | `03-interface-graphique.md` |
 
-## 14-devops\13-forges-revue-vcs
+## 14-devops/13-forges-revue-vcs
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/14-devops\13-forges-revue-vcs\_assets\onedev-projet.png` | Projet OneDev avec pipeline CI et tickets | `01-forges.md` |
-| `content/14-devops\13-forges-revue-vcs\_assets\gerrit-changement.png` | Changement Gerrit avec votes et commentaires | `02-gerrit-reviewboard.md` |
+| `content/14-devops/13-forges-revue-vcs/_assets/onedev-projet.png` | Projet OneDev avec pipeline CI et tickets | `01-forges.md` |
+| `content/14-devops/13-forges-revue-vcs/_assets/gerrit-changement.png` | Changement Gerrit avec votes et commentaires | `02-gerrit-reviewboard.md` |
 
-## 14-devops\14-registres-artefacts
+## 14-devops/14-registres-artefacts
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/14-devops\14-registres-artefacts\_assets\harbor-projet.png` | Projet Harbor avec résultats d'analyse Trivy | `01-harbor-distribution-zot.md` |
-| `content/14-devops\14-registres-artefacts\_assets\nexus-depots.png` | Liste des dépôts Nexus (proxy, hébergés, groupes) | `02-nexus-artifactory-verdaccio.md` |
+| `content/14-devops/14-registres-artefacts/_assets/harbor-projet.png` | Projet Harbor avec résultats d'analyse Trivy | `01-harbor-distribution-zot.md` |
+| `content/14-devops/14-registres-artefacts/_assets/nexus-depots.png` | Liste des dépôts Nexus (proxy, hébergés, groupes) | `02-nexus-artifactory-verdaccio.md` |
 
-## 15-journalisation\11-recherche-journaux
+## 15-journalisation/11-recherche-journaux
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/15-journalisation\11-recherche-journaux\_assets\victorialogs-vmui.png` | VictoriaLogs — interface vmui, requête LogsQL | `02-quickwit-victorialogs.md` |
-| `content/15-journalisation\11-recherche-journaux\_assets\quickwit-ui.png` | Quickwit — interface de recherche | `02-quickwit-victorialogs.md` |
+| `content/15-journalisation/11-recherche-journaux/_assets/victorialogs-vmui.png` | VictoriaLogs — interface vmui, requête LogsQL | `02-quickwit-victorialogs.md` |
+| `content/15-journalisation/11-recherche-journaux/_assets/quickwit-ui.png` | Quickwit — interface de recherche | `02-quickwit-victorialogs.md` |
 
-## 16-securite\13-security-onion
+## 16-securite/13-security-onion
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/16-securite\13-security-onion\_assets\security-onion-alertes.png` | Security Onion — écran Alerts | `02-interface-graphique.md` |
-| `content/16-securite\13-security-onion\_assets\security-onion-hunt.png` | Security Onion — Hunt, pivot sur une adresse IP | `02-interface-graphique.md` |
-| `content/16-securite\13-security-onion\_assets\security-onion-cas.png` | Security Onion — gestion d'un cas | `02-interface-graphique.md` |
+| `content/16-securite/13-security-onion/_assets/security-onion-alertes.png` | Security Onion — écran Alerts | `02-interface-graphique.md` |
+| `content/16-securite/13-security-onion/_assets/security-onion-hunt.png` | Security Onion — Hunt, pivot sur une adresse IP | `02-interface-graphique.md` |
+| `content/16-securite/13-security-onion/_assets/security-onion-cas.png` | Security Onion — gestion d'un cas | `02-interface-graphique.md` |
 
-## 16-securite\14-reponse-incident-cti
+## 16-securite/14-reponse-incident-cti
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/16-securite\14-reponse-incident-cti\_assets\thehive-cas.png` | TheHive — liste des cas | `04-interface-graphique.md` |
-| `content/16-securite\14-reponse-incident-cti\_assets\thehive-observables.png` | TheHive — observables enrichis par Cortex | `04-interface-graphique.md` |
-| `content/16-securite\14-reponse-incident-cti\_assets\misp-evenement.png` | MISP — événement et attributs | `04-interface-graphique.md` |
-| `content/16-securite\14-reponse-incident-cti\_assets\opencti-graphe.png` | OpenCTI — graphe de connaissance d'un rapport | `04-interface-graphique.md` |
-| `content/16-securite\14-reponse-incident-cti\_assets\intelowl-resultats.png` | IntelOwl — résultats d'analyse d'une adresse IP | `04-interface-graphique.md` |
-| `content/16-securite\14-reponse-incident-cti\_assets\yeti-observable.png` | Yeti — page d'un observable et ses liens | `04-interface-graphique.md` |
+| `content/16-securite/14-reponse-incident-cti/_assets/thehive-cas.png` | TheHive — liste des cas | `04-interface-graphique.md` |
+| `content/16-securite/14-reponse-incident-cti/_assets/thehive-observables.png` | TheHive — observables enrichis par Cortex | `04-interface-graphique.md` |
+| `content/16-securite/14-reponse-incident-cti/_assets/misp-evenement.png` | MISP — événement et attributs | `04-interface-graphique.md` |
+| `content/16-securite/14-reponse-incident-cti/_assets/opencti-graphe.png` | OpenCTI — graphe de connaissance d'un rapport | `04-interface-graphique.md` |
+| `content/16-securite/14-reponse-incident-cti/_assets/intelowl-resultats.png` | IntelOwl — résultats d'analyse d'une adresse IP | `04-interface-graphique.md` |
+| `content/16-securite/14-reponse-incident-cti/_assets/yeti-observable.png` | Yeti — page d'un observable et ses liens | `04-interface-graphique.md` |
 
-## 16-securite\15-velociraptor-grr
+## 16-securite/15-velociraptor-grr
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/16-securite\15-velociraptor-grr\_assets\velociraptor-chasse.png` | Velociraptor — résultats d'une chasse sur le parc | `01-presentation-installation.md` |
-| `content/16-securite\15-velociraptor-grr\_assets\velociraptor-client.png` | Velociraptor — vue d'un client et collecte d'artefacts | `01-presentation-installation.md` |
+| `content/16-securite/15-velociraptor-grr/_assets/velociraptor-chasse.png` | Velociraptor — résultats d'une chasse sur le parc | `01-presentation-installation.md` |
+| `content/16-securite/15-velociraptor-grr/_assets/velociraptor-client.png` | Velociraptor — vue d'un client et collecte d'artefacts | `01-presentation-installation.md` |
 
-## 16-securite\16-osquery-fleet
+## 16-securite/16-osquery-fleet
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/16-securite\16-osquery-fleet\_assets\fleet-hotes.png` | FleetDM — liste des hôtes et politiques | `01-presentation-installation.md` |
-| `content/16-securite\16-osquery-fleet\_assets\fleet-requete.png` | FleetDM — requête en direct sur plusieurs hôtes | `01-presentation-installation.md` |
+| `content/16-securite/16-osquery-fleet/_assets/fleet-hotes.png` | FleetDM — liste des hôtes et politiques | `01-presentation-installation.md` |
+| `content/16-securite/16-osquery-fleet/_assets/fleet-requete.png` | FleetDM — requête en direct sur plusieurs hôtes | `01-presentation-installation.md` |
 
-## 16-securite\17-openscap
+## 16-securite/17-openscap
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/16-securite\17-openscap\_assets\openscap-rapport.png` | OpenSCAP — rapport HTML (score et règles en échec) | `01-presentation-installation.md` |
-| `content/16-securite\17-openscap\_assets\scap-workbench.png` | SCAP Workbench — choix du profil et personnalisation | `01-presentation-installation.md` |
+| `content/16-securite/17-openscap/_assets/openscap-rapport.png` | OpenSCAP — rapport HTML (score et règles en échec) | `01-presentation-installation.md` |
+| `content/16-securite/17-openscap/_assets/scap-workbench.png` | SCAP Workbench — choix du profil et personnalisation | `01-presentation-installation.md` |
 
-## 16-securite\21-pki-step-ca-ejbca
+## 16-securite/21-pki-step-ca-ejbca
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/16-securite\21-pki-step-ca-ejbca\_assets\ejbca-ac.png` | EJBCA — Admin Web, liste des autorités de certification | `03-interface-graphique.md` |
-| `content/16-securite\21-pki-step-ca-ejbca\_assets\ejbca-profil.png` | EJBCA — profil de certificat serveur TLS | `03-interface-graphique.md` |
-| `content/16-securite\21-pki-step-ca-ejbca\_assets\ejbca-ra.png` | EJBCA — RA Web, demande de certificat | `03-interface-graphique.md` |
+| `content/16-securite/21-pki-step-ca-ejbca/_assets/ejbca-ac.png` | EJBCA — Admin Web, liste des autorités de certification | `03-interface-graphique.md` |
+| `content/16-securite/21-pki-step-ca-ejbca/_assets/ejbca-profil.png` | EJBCA — profil de certificat serveur TLS | `03-interface-graphique.md` |
+| `content/16-securite/21-pki-step-ca-ejbca/_assets/ejbca-ra.png` | EJBCA — RA Web, demande de certificat | `03-interface-graphique.md` |
 
-## 16-securite\25-openbao-infisical
+## 16-securite/25-openbao-infisical
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/16-securite\25-openbao-infisical\_assets\openbao-kv.png` | OpenBao — navigation dans un moteur KV | `03-interface-graphique.md` |
-| `content/16-securite\25-openbao-infisical\_assets\openbao-politiques.png` | OpenBao — politiques ACL | `03-interface-graphique.md` |
-| `content/16-securite\25-openbao-infisical\_assets\infisical-secrets.png` | Infisical — tableau des secrets par environnement | `03-interface-graphique.md` |
+| `content/16-securite/25-openbao-infisical/_assets/openbao-kv.png` | OpenBao — navigation dans un moteur KV | `03-interface-graphique.md` |
+| `content/16-securite/25-openbao-infisical/_assets/openbao-politiques.png` | OpenBao — politiques ACL | `03-interface-graphique.md` |
+| `content/16-securite/25-openbao-infisical/_assets/infisical-secrets.png` | Infisical — tableau des secrets par environnement | `03-interface-graphique.md` |
 
-## 16-securite\26-passbolt-psono
+## 16-securite/26-passbolt-psono
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/16-securite\26-passbolt-psono\_assets\passbolt-liste.png` | Passbolt — liste des mots de passe et partage par groupe | `01-presentation-installation.md` |
-| `content/16-securite\26-passbolt-psono\_assets\psono-coffre.png` | Psono — coffre et dossiers partagés | `01-presentation-installation.md` |
+| `content/16-securite/26-passbolt-psono/_assets/passbolt-liste.png` | Passbolt — liste des mots de passe et partage par groupe | `01-presentation-installation.md` |
+| `content/16-securite/26-passbolt-psono/_assets/psono-coffre.png` | Psono — coffre et dossiers partagés | `01-presentation-installation.md` |
 
-## 17-automatisation\06-awx-semaphore
+## 17-automatisation/06-awx-semaphore
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/17-automatisation\06-awx-semaphore\_assets\awx-modeles.png` | AWX — liste des modèles de tâches | `03-interface-graphique.md` |
-| `content/17-automatisation\06-awx-semaphore\_assets\awx-execution.png` | AWX — sortie d'une exécution | `03-interface-graphique.md` |
-| `content/17-automatisation\06-awx-semaphore\_assets\semaphore-modeles.png` | Semaphore UI — modèles de tâches d'un projet | `03-interface-graphique.md` |
-| `content/17-automatisation\06-awx-semaphore\_assets\semaphore-tache.png` | Semaphore UI — journal d'une tâche | `03-interface-graphique.md` |
+| `content/17-automatisation/06-awx-semaphore/_assets/awx-modeles.png` | AWX — liste des modèles de tâches | `03-interface-graphique.md` |
+| `content/17-automatisation/06-awx-semaphore/_assets/awx-execution.png` | AWX — sortie d'une exécution | `03-interface-graphique.md` |
+| `content/17-automatisation/06-awx-semaphore/_assets/semaphore-modeles.png` | Semaphore UI — modèles de tâches d'un projet | `03-interface-graphique.md` |
+| `content/17-automatisation/06-awx-semaphore/_assets/semaphore-tache.png` | Semaphore UI — journal d'une tâche | `03-interface-graphique.md` |
 
-## 17-automatisation\07-rundeck
+## 17-automatisation/07-rundeck
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/17-automatisation\07-rundeck\_assets\rundeck-taches.png` | Rundeck — liste des tâches d'un projet | `02-interface-graphique.md` |
-| `content/17-automatisation\07-rundeck\_assets\rundeck-lancement.png` | Rundeck — lancement d'une tâche avec options | `02-interface-graphique.md` |
-| `content/17-automatisation\07-rundeck\_assets\rundeck-journal.png` | Rundeck — journal d'exécution par nœud | `02-interface-graphique.md` |
+| `content/17-automatisation/07-rundeck/_assets/rundeck-taches.png` | Rundeck — liste des tâches d'un projet | `02-interface-graphique.md` |
+| `content/17-automatisation/07-rundeck/_assets/rundeck-lancement.png` | Rundeck — lancement d'une tâche avec options | `02-interface-graphique.md` |
+| `content/17-automatisation/07-rundeck/_assets/rundeck-journal.png` | Rundeck — journal d'exécution par nœud | `02-interface-graphique.md` |
 
-## 17-automatisation\12-foreman-katello
+## 17-automatisation/12-foreman-katello
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/17-automatisation\12-foreman-katello\_assets\foreman-tableau.png` | Foreman — tableau de bord | `02-interface-graphique.md` |
-| `content/17-automatisation\12-foreman-katello\_assets\katello-vues.png` | Katello — vue de contenu et environnements de cycle de vie | `02-interface-graphique.md` |
-| `content/17-automatisation\12-foreman-katello\_assets\foreman-ansible.png` | Foreman — exécution d'un rôle Ansible sur un groupe d'hôtes | `02-interface-graphique.md` |
+| `content/17-automatisation/12-foreman-katello/_assets/foreman-tableau.png` | Foreman — tableau de bord | `02-interface-graphique.md` |
+| `content/17-automatisation/12-foreman-katello/_assets/katello-vues.png` | Katello — vue de contenu et environnements de cycle de vie | `02-interface-graphique.md` |
+| `content/17-automatisation/12-foreman-katello/_assets/foreman-ansible.png` | Foreman — exécution d'un rôle Ansible sur un groupe d'hôtes | `02-interface-graphique.md` |
 
-## 17-automatisation\13-uyuni
+## 17-automatisation/13-uyuni
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/17-automatisation\13-uyuni\_assets\uyuni-accueil.png` | Uyuni — vue d'ensemble des systèmes et correctifs | `02-interface-graphique.md` |
-| `content/17-automatisation\13-uyuni\_assets\uyuni-clm.png` | Uyuni — projet de cycle de vie des contenus | `02-interface-graphique.md` |
-| `content/17-automatisation\13-uyuni\_assets\uyuni-cve.png` | Uyuni — audit CVE | `02-interface-graphique.md` |
+| `content/17-automatisation/13-uyuni/_assets/uyuni-accueil.png` | Uyuni — vue d'ensemble des systèmes et correctifs | `02-interface-graphique.md` |
+| `content/17-automatisation/13-uyuni/_assets/uyuni-clm.png` | Uyuni — projet de cycle de vie des contenus | `02-interface-graphique.md` |
+| `content/17-automatisation/13-uyuni/_assets/uyuni-cve.png` | Uyuni — audit CVE | `02-interface-graphique.md` |
 
-## 17-automatisation\14-rudder
+## 17-automatisation/14-rudder
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/17-automatisation\14-rudder\_assets\rudder-tableau.png` | Rudder — tableau de bord de conformité | `02-interface-graphique.md` |
-| `content/17-automatisation\14-rudder\_assets\rudder-regle.png` | Rudder — conformité d'une règle par nœud | `02-interface-graphique.md` |
-| `content/17-automatisation\14-rudder\_assets\rudder-editeur.png` | Rudder — éditeur de techniques | `02-interface-graphique.md` |
+| `content/17-automatisation/14-rudder/_assets/rudder-tableau.png` | Rudder — tableau de bord de conformité | `02-interface-graphique.md` |
+| `content/17-automatisation/14-rudder/_assets/rudder-regle.png` | Rudder — conformité d'une règle par nœud | `02-interface-graphique.md` |
+| `content/17-automatisation/14-rudder/_assets/rudder-editeur.png` | Rudder — éditeur de techniques | `02-interface-graphique.md` |
 
-## 17-automatisation\18-workflows-low-code
+## 17-automatisation/18-workflows-low-code
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/17-automatisation\18-workflows-low-code\_assets\node-red-editeur.png` | Node-RED — éditeur de flux | `01-node-red.md` |
-| `content/17-automatisation\18-workflows-low-code\_assets\activepieces-flux.png` | Activepieces — éditeur de flux | `02-huginn-activepieces-windmill.md` |
-| `content/17-automatisation\18-workflows-low-code\_assets\windmill-script.png` | Windmill — script avec formulaire généré | `02-huginn-activepieces-windmill.md` |
+| `content/17-automatisation/18-workflows-low-code/_assets/node-red-editeur.png` | Node-RED — éditeur de flux | `01-node-red.md` |
+| `content/17-automatisation/18-workflows-low-code/_assets/activepieces-flux.png` | Activepieces — éditeur de flux | `02-huginn-activepieces-windmill.md` |
+| `content/17-automatisation/18-workflows-low-code/_assets/windmill-script.png` | Windmill — script avec formulaire généré | `02-huginn-activepieces-windmill.md` |
 
-## 17-automatisation\19-orchestration-donnees
+## 17-automatisation/19-orchestration-donnees
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/17-automatisation\19-orchestration-donnees\_assets\airflow-grille.png` | Airflow — vue grille d'un DAG | `03-interface-graphique.md` |
-| `content/17-automatisation\19-orchestration-donnees\_assets\airflow-journal.png` | Airflow — journal d'une tâche | `03-interface-graphique.md` |
-| `content/17-automatisation\19-orchestration-donnees\_assets\kestra-editeur.png` | Kestra — éditeur de flux et topologie | `03-interface-graphique.md` |
-| `content/17-automatisation\19-orchestration-donnees\_assets\prefect-executions.png` | Prefect — exécutions d'un flux | `03-interface-graphique.md` |
-| `content/17-automatisation\19-orchestration-donnees\_assets\dagster-actifs.png` | Dagster — graphe des actifs | `03-interface-graphique.md` |
-| `content/17-automatisation\19-orchestration-donnees\_assets\dolphinscheduler-workflow.png` | DolphinScheduler — définition visuelle d'un workflow | `03-interface-graphique.md` |
+| `content/17-automatisation/19-orchestration-donnees/_assets/airflow-grille.png` | Airflow — vue grille d'un DAG | `03-interface-graphique.md` |
+| `content/17-automatisation/19-orchestration-donnees/_assets/airflow-journal.png` | Airflow — journal d'une tâche | `03-interface-graphique.md` |
+| `content/17-automatisation/19-orchestration-donnees/_assets/kestra-editeur.png` | Kestra — éditeur de flux et topologie | `03-interface-graphique.md` |
+| `content/17-automatisation/19-orchestration-donnees/_assets/prefect-executions.png` | Prefect — exécutions d'un flux | `03-interface-graphique.md` |
+| `content/17-automatisation/19-orchestration-donnees/_assets/dagster-actifs.png` | Dagster — graphe des actifs | `03-interface-graphique.md` |
+| `content/17-automatisation/19-orchestration-donnees/_assets/dolphinscheduler-workflow.png` | DolphinScheduler — définition visuelle d'un workflow | `03-interface-graphique.md` |
 
-## 17-automatisation\20-temporal-conductor
+## 17-automatisation/20-temporal-conductor
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/17-automatisation\20-temporal-conductor\_assets\temporal-ui.png` | Temporal — interface web, historique d'un workflow | `01-presentation-installation.md` |
+| `content/17-automatisation/20-temporal-conductor/_assets/temporal-ui.png` | Temporal — interface web, historique d'un workflow | `01-presentation-installation.md` |
 
-## 18-infrastructure-systeme\08-netbox-nautobot
+## 18-infrastructure-systeme/08-netbox-nautobot
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/18-infrastructure-systeme\08-netbox-nautobot\_assets\netbox-prefixes.png` | NetBox — liste des préfixes avec leur utilisation | `03-interface-graphique.md` |
-| `content/18-infrastructure-systeme\08-netbox-nautobot\_assets\netbox-elevation-baie.png` | NetBox — élévation d'une baie | `03-interface-graphique.md` |
-| `content/18-infrastructure-systeme\08-netbox-nautobot\_assets\netbox-trace-cable.png` | NetBox — fiche d'équipement et traçage de câble | `03-interface-graphique.md` |
-| `content/18-infrastructure-systeme\08-netbox-nautobot\_assets\nautobot-job.png` | Nautobot — lancement d'un Job | `03-interface-graphique.md` |
-| `content/18-infrastructure-systeme\08-netbox-nautobot\_assets\nautobot-golden-config.png` | Nautobot — Golden Config, tableau de conformité | `03-interface-graphique.md` |
+| `content/18-infrastructure-systeme/08-netbox-nautobot/_assets/netbox-prefixes.png` | NetBox — liste des préfixes avec leur utilisation | `03-interface-graphique.md` |
+| `content/18-infrastructure-systeme/08-netbox-nautobot/_assets/netbox-elevation-baie.png` | NetBox — élévation d'une baie | `03-interface-graphique.md` |
+| `content/18-infrastructure-systeme/08-netbox-nautobot/_assets/netbox-trace-cable.png` | NetBox — fiche d'équipement et traçage de câble | `03-interface-graphique.md` |
+| `content/18-infrastructure-systeme/08-netbox-nautobot/_assets/nautobot-job.png` | Nautobot — lancement d'un Job | `03-interface-graphique.md` |
+| `content/18-infrastructure-systeme/08-netbox-nautobot/_assets/nautobot-golden-config.png` | Nautobot — Golden Config, tableau de conformité | `03-interface-graphique.md` |
 
-## 18-infrastructure-systeme\09-phpipam
+## 18-infrastructure-systeme/09-phpipam
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/18-infrastructure-systeme\09-phpipam\_assets\phpipam-sous-reseau.png` | phpIPAM — vue d'un sous-réseau avec carte des adresses | `01-presentation-installation.md` |
-| `content/18-infrastructure-systeme\09-phpipam\_assets\phpipam-sections.png` | phpIPAM — arborescence des sections et sous-réseaux | `01-presentation-installation.md` |
-| `content/18-infrastructure-systeme\09-phpipam\_assets\phpipam-auth-ad.png` | phpIPAM — configuration de l'authentification Active Directory | `01-presentation-installation.md` |
+| `content/18-infrastructure-systeme/09-phpipam/_assets/phpipam-sous-reseau.png` | phpIPAM — vue d'un sous-réseau avec carte des adresses | `01-presentation-installation.md` |
+| `content/18-infrastructure-systeme/09-phpipam/_assets/phpipam-sections.png` | phpIPAM — arborescence des sections et sous-réseaux | `01-presentation-installation.md` |
+| `content/18-infrastructure-systeme/09-phpipam/_assets/phpipam-auth-ad.png` | phpIPAM — configuration de l'authentification Active Directory | `01-presentation-installation.md` |
 
-## 18-infrastructure-systeme\10-ipam-dcim-alternatives
+## 18-infrastructure-systeme/10-ipam-dcim-alternatives
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/18-infrastructure-systeme\10-ipam-dcim-alternatives\_assets\gestioip-reseaux.png` | GestióIP — liste des réseaux et occupation | `01-presentation-comparatif.md` |
-| `content/18-infrastructure-systeme\10-ipam-dcim-alternatives\_assets\ralph-dc-view.png` | Ralph — vue graphique d'une salle et de ses baies | `01-presentation-comparatif.md` |
-| `content/18-infrastructure-systeme\10-ipam-dcim-alternatives\_assets\racktables-baie.png` | RackTables — vue d'une baie | `01-presentation-comparatif.md` |
+| `content/18-infrastructure-systeme/10-ipam-dcim-alternatives/_assets/gestioip-reseaux.png` | GestióIP — liste des réseaux et occupation | `01-presentation-comparatif.md` |
+| `content/18-infrastructure-systeme/10-ipam-dcim-alternatives/_assets/ralph-dc-view.png` | Ralph — vue graphique d'une salle et de ses baies | `01-presentation-comparatif.md` |
+| `content/18-infrastructure-systeme/10-ipam-dcim-alternatives/_assets/racktables-baie.png` | RackTables — vue d'une baie | `01-presentation-comparatif.md` |
 
-## 19-sauvegarde\08-bareos
+## 19-sauvegarde/08-bareos
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/19-sauvegarde\08-bareos\_assets\bareos-webui-connexion.png` | Bareos WebUI — page de connexion | `03-interface-graphique.md` |
-| `content/19-sauvegarde\08-bareos\_assets\bareos-webui-tableau-de-bord.png` | Bareos WebUI — tableau de bord des tâches | `03-interface-graphique.md` |
-| `content/19-sauvegarde\08-bareos\_assets\bareos-webui-restauration.png` | Bareos WebUI — assistant de restauration avec arborescence de fichiers | `03-interface-graphique.md` |
-| `content/19-sauvegarde\08-bareos\_assets\bareos-webui-volumes.png` | Bareos WebUI — liste des volumes d'un pool | `03-interface-graphique.md` |
+| `content/19-sauvegarde/08-bareos/_assets/bareos-webui-connexion.png` | Bareos WebUI — page de connexion | `03-interface-graphique.md` |
+| `content/19-sauvegarde/08-bareos/_assets/bareos-webui-tableau-de-bord.png` | Bareos WebUI — tableau de bord des tâches | `03-interface-graphique.md` |
+| `content/19-sauvegarde/08-bareos/_assets/bareos-webui-restauration.png` | Bareos WebUI — assistant de restauration avec arborescence de fichiers | `03-interface-graphique.md` |
+| `content/19-sauvegarde/08-bareos/_assets/bareos-webui-volumes.png` | Bareos WebUI — liste des volumes d'un pool | `03-interface-graphique.md` |
 
-## 19-sauvegarde\09-kopia
+## 19-sauvegarde/09-kopia
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/19-sauvegarde\09-kopia\_assets\kopiaui-snapshots.png` | KopiaUI — liste des instantanés | `02-interface-graphique.md` |
-| `content/19-sauvegarde\09-kopia\_assets\kopiaui-policy.png` | KopiaUI — politique de planification et de rétention | `02-interface-graphique.md` |
-| `content/19-sauvegarde\09-kopia\_assets\kopiaui-restauration.png` | KopiaUI — restauration d'un dossier | `02-interface-graphique.md` |
+| `content/19-sauvegarde/09-kopia/_assets/kopiaui-snapshots.png` | KopiaUI — liste des instantanés | `02-interface-graphique.md` |
+| `content/19-sauvegarde/09-kopia/_assets/kopiaui-policy.png` | KopiaUI — politique de planification et de rétention | `02-interface-graphique.md` |
+| `content/19-sauvegarde/09-kopia/_assets/kopiaui-restauration.png` | KopiaUI — restauration d'un dossier | `02-interface-graphique.md` |
 
-## 19-sauvegarde\10-duplicati
+## 19-sauvegarde/10-duplicati
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/19-sauvegarde\10-duplicati\_assets\duplicati-accueil.png` | Duplicati — tableau des sauvegardes (accueil de l'interface web) | `01-presentation-installation.md` |
-| `content/19-sauvegarde\10-duplicati\_assets\duplicati-destination.png` | Duplicati — assistant de création, étape Destination | `01-presentation-installation.md` |
-| `content/19-sauvegarde\10-duplicati\_assets\duplicati-restauration.png` | Duplicati — restauration de fichiers | `01-presentation-installation.md` |
+| `content/19-sauvegarde/10-duplicati/_assets/duplicati-accueil.png` | Duplicati — tableau des sauvegardes (accueil de l'interface web) | `01-presentation-installation.md` |
+| `content/19-sauvegarde/10-duplicati/_assets/duplicati-destination.png` | Duplicati — assistant de création, étape Destination | `01-presentation-installation.md` |
+| `content/19-sauvegarde/10-duplicati/_assets/duplicati-restauration.png` | Duplicati — restauration de fichiers | `01-presentation-installation.md` |
 
-## 21-outils\06-support-parc
+## 21-outils/06-support-parc
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/21-outils\06-support-parc\_assets\chatwoot-conversations.png` | Boîte de conversations Chatwoot avec une conversation ouverte | `12-chatwoot.md` |
-| `content/21-outils\06-support-parc\_assets\chatwoot-widget.png` | Ajout d'une boîte de réception Site web (widget) | `12-chatwoot.md` |
-| `content/21-outils\06-support-parc\_assets\freescout-conversations.png` | Boîte aux lettres FreeScout avec liste de conversations | `13-freescout.md` |
-| `content/21-outils\06-support-parc\_assets\freescout-imap.png` | Paramètres de connexion entrante IMAP d'une boîte aux lettres | `13-freescout.md` |
-| `content/21-outils\06-support-parc\_assets\osticket-file-tickets.png` | File de tickets osTicket (panneau agent) | `14-osticket.md` |
-| `content/21-outils\06-support-parc\_assets\osticket-rubriques.png` | Panneau d'administration, Rubriques d'aide | `14-osticket.md` |
-| `content/21-outils\06-support-parc\_assets\itop-setup-modules.png` | Assistant d'installation iTop, choix des modules ITIL | `15-itop.md` |
-| `content/21-outils\06-support-parc\_assets\itop-analyse-impact.png` | Fiche d'un serveur avec l'onglet Impacts (graphe) | `15-itop.md` |
-| `content/21-outils\06-support-parc\_assets\itop-incidents.png` | Liste des incidents ouverts avec SLA | `15-itop.md` |
-| `content/21-outils\06-support-parc\_assets\otobo-vue-files.png` | Vue des files de l'interface agent OTOBO | `16-otobo-znuny.md` |
-| `content/21-outils\06-support-parc\_assets\otobo-processus.png` | Éditeur graphique de processus | `16-otobo-znuny.md` |
-| `content/21-outils\06-support-parc\_assets\rt-accueil.png` | Page d'accueil RT avec tickets et files | `17-request-tracker.md` |
-| `content/21-outils\06-support-parc\_assets\rt-scrips.png` | Administration d'une file, liste des scrips | `17-request-tracker.md` |
-| `content/21-outils\06-support-parc\_assets\uvdesk-tickets.png` | Liste des tickets UVdesk (espace agent) | `18-uvdesk-faveo.md` |
-| `content/21-outils\06-support-parc\_assets\faveo-tableau-de-bord.png` | Tableau de bord agent de Faveo | `18-uvdesk-faveo.md` |
+| `content/21-outils/06-support-parc/_assets/chatwoot-conversations.png` | Boîte de conversations Chatwoot avec une conversation ouverte | `12-chatwoot.md` |
+| `content/21-outils/06-support-parc/_assets/chatwoot-widget.png` | Ajout d'une boîte de réception Site web (widget) | `12-chatwoot.md` |
+| `content/21-outils/06-support-parc/_assets/freescout-conversations.png` | Boîte aux lettres FreeScout avec liste de conversations | `13-freescout.md` |
+| `content/21-outils/06-support-parc/_assets/freescout-imap.png` | Paramètres de connexion entrante IMAP d'une boîte aux lettres | `13-freescout.md` |
+| `content/21-outils/06-support-parc/_assets/osticket-file-tickets.png` | File de tickets osTicket (panneau agent) | `14-osticket.md` |
+| `content/21-outils/06-support-parc/_assets/osticket-rubriques.png` | Panneau d'administration, Rubriques d'aide | `14-osticket.md` |
+| `content/21-outils/06-support-parc/_assets/itop-setup-modules.png` | Assistant d'installation iTop, choix des modules ITIL | `15-itop.md` |
+| `content/21-outils/06-support-parc/_assets/itop-analyse-impact.png` | Fiche d'un serveur avec l'onglet Impacts (graphe) | `15-itop.md` |
+| `content/21-outils/06-support-parc/_assets/itop-incidents.png` | Liste des incidents ouverts avec SLA | `15-itop.md` |
+| `content/21-outils/06-support-parc/_assets/otobo-vue-files.png` | Vue des files de l'interface agent OTOBO | `16-otobo-znuny.md` |
+| `content/21-outils/06-support-parc/_assets/otobo-processus.png` | Éditeur graphique de processus | `16-otobo-znuny.md` |
+| `content/21-outils/06-support-parc/_assets/rt-accueil.png` | Page d'accueil RT avec tickets et files | `17-request-tracker.md` |
+| `content/21-outils/06-support-parc/_assets/rt-scrips.png` | Administration d'une file, liste des scrips | `17-request-tracker.md` |
+| `content/21-outils/06-support-parc/_assets/uvdesk-tickets.png` | Liste des tickets UVdesk (espace agent) | `18-uvdesk-faveo.md` |
+| `content/21-outils/06-support-parc/_assets/faveo-tableau-de-bord.png` | Tableau de bord agent de Faveo | `18-uvdesk-faveo.md` |
 
-## 21-outils\11-snapshots-sauvegarde-poste
+## 21-outils/11-snapshots-sauvegarde-poste
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/21-outils\11-snapshots-sauvegarde-poste\_assets\timeshift-assistant.png` | Assistant Timeshift, choix du type de snapshot et de la destination | `01-timeshift.md` |
-| `content/21-outils\11-snapshots-sauvegarde-poste\_assets\timeshift-snapshots.png` | Fenêtre principale Timeshift avec la liste des snapshots | `01-timeshift.md` |
-| `content/21-outils\11-snapshots-sauvegarde-poste\_assets\snapper-yast.png` | Module Snapper de YaST, liste des snapshots | `02-snapper.md` |
-| `content/21-outils\11-snapshots-sauvegarde-poste\_assets\backintime-principal.png` | Fenêtre principale Back In Time avec les instantanés et les fichiers | `03-back-in-time.md` |
-| `content/21-outils\11-snapshots-sauvegarde-poste\_assets\backintime-parametres.png` | Paramètres, onglet Inclure | `03-back-in-time.md` |
-| `content/21-outils\11-snapshots-sauvegarde-poste\_assets\deja-dup-apercu.png` | Fenêtre Sauvegardes, vue d'ensemble | `04-deja-dup.md` |
-| `content/21-outils\11-snapshots-sauvegarde-poste\_assets\deja-dup-stockage.png` | Choix de l'emplacement de stockage | `04-deja-dup.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/timeshift-assistant.png` | Assistant Timeshift, choix du type de snapshot et de la destination | `01-timeshift.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/timeshift-snapshots.png` | Fenêtre principale Timeshift avec la liste des snapshots | `01-timeshift.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/snapper-yast.png` | Module Snapper de YaST, liste des snapshots | `02-snapper.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/backintime-principal.png` | Fenêtre principale Back In Time avec les instantanés et les fichiers | `03-back-in-time.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/backintime-parametres.png` | Paramètres, onglet Inclure | `03-back-in-time.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/deja-dup-apercu.png` | Fenêtre Sauvegardes, vue d'ensemble | `04-deja-dup.md` |
+| `content/21-outils/11-snapshots-sauvegarde-poste/_assets/deja-dup-stockage.png` | Choix de l'emplacement de stockage | `04-deja-dup.md` |
 
-## 21-outils\12-partage-appareils
+## 21-outils/12-partage-appareils
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/21-outils\12-partage-appareils\_assets\kde-connect-appareils.png` | Page KDE Connect des Paramètres système avec un téléphone appairé | `01-kde-connect.md` |
-| `content/21-outils\12-partage-appareils\_assets\kde-connect-modules.png` | Liste des modules d'un appareil appairé | `01-kde-connect.md` |
-| `content/21-outils\12-partage-appareils\_assets\localsend-envoyer.png` | Onglet Envoyer avec les appareils détectés | `03-localsend.md` |
-| `content/21-outils\12-partage-appareils\_assets\localsend-parametres.png` | Onglet Paramètres, alias et dossier de réception | `03-localsend.md` |
+| `content/21-outils/12-partage-appareils/_assets/kde-connect-appareils.png` | Page KDE Connect des Paramètres système avec un téléphone appairé | `01-kde-connect.md` |
+| `content/21-outils/12-partage-appareils/_assets/kde-connect-modules.png` | Liste des modules d'un appareil appairé | `01-kde-connect.md` |
+| `content/21-outils/12-partage-appareils/_assets/localsend-envoyer.png` | Onglet Envoyer avec les appareils détectés | `03-localsend.md` |
+| `content/21-outils/12-partage-appareils/_assets/localsend-parametres.png` | Onglet Paramètres, alias et dossier de réception | `03-localsend.md` |
 
-## 21-outils\13-kde-plasma
+## 21-outils/13-kde-plasma
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/21-outils\13-kde-plasma\_assets\plasma-bureau.png` | Bureau Plasma 6 avec panneau et lanceur ouvert | `03-interface-graphique.md` |
-| `content/21-outils\13-kde-plasma\_assets\plasma-parametres-systeme.png` | Paramètres système, page Apparence | `03-interface-graphique.md` |
-| `content/21-outils\13-kde-plasma\_assets\plasma-mode-edition.png` | Mode édition du bureau avec le panneau de widgets | `03-interface-graphique.md` |
-| `content/21-outils\13-kde-plasma\_assets\plasma-discover.png` | Discover, page des mises à jour | `03-interface-graphique.md` |
+| `content/21-outils/13-kde-plasma/_assets/plasma-bureau.png` | Bureau Plasma 6 avec panneau et lanceur ouvert | `03-interface-graphique.md` |
+| `content/21-outils/13-kde-plasma/_assets/plasma-parametres-systeme.png` | Paramètres système, page Apparence | `03-interface-graphique.md` |
+| `content/21-outils/13-kde-plasma/_assets/plasma-mode-edition.png` | Mode édition du bureau avec le panneau de widgets | `03-interface-graphique.md` |
+| `content/21-outils/13-kde-plasma/_assets/plasma-discover.png` | Discover, page des mises à jour | `03-interface-graphique.md` |
 
-## 21-outils\27-wifi-homme-du-milieu
+## 21-outils/27-wifi-homme-du-milieu
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/21-outils\27-wifi-homme-du-milieu\_assets\kismet-appareils.png` | Kismet — liste des appareils détectés avec type, chiffrement et canal | `01-kismet.md` |
-| `content/21-outils\27-wifi-homme-du-milieu\_assets\kismet-detail-ap.png` | Kismet — détail d'un point d'accès (chiffrement WPA3, 802.11w, canal, clients) | `01-kismet.md` |
+| `content/21-outils/27-wifi-homme-du-milieu/_assets/kismet-appareils.png` | Kismet — liste des appareils détectés avec type, chiffrement et canal | `01-kismet.md` |
+| `content/21-outils/27-wifi-homme-du-milieu/_assets/kismet-detail-ap.png` | Kismet — détail d'un point d'accès (chiffrement WPA3, 802.11w, canal, clients) | `01-kismet.md` |
 
-## 22-constructeurs\29-openwrt-openwisp
+## 22-constructeurs/29-openwrt-openwisp
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/22-constructeurs\29-openwrt-openwisp\_assets\luci-overview.png` | LuCI — Status Overview | `03-interface-graphique.md` |
-| `content/22-constructeurs\29-openwrt-openwisp\_assets\luci-vlan-dsa.png` | LuCI — Network → Interfaces, onglet Devices avec les VLAN du pont br-lan | `03-interface-graphique.md` |
-| `content/22-constructeurs\29-openwrt-openwisp\_assets\luci-wifi.png` | LuCI — Network → Wireless, configuration d'un SSID WPA3 | `03-interface-graphique.md` |
-| `content/22-constructeurs\29-openwrt-openwisp\_assets\luci-pare-feu.png` | LuCI — Network → Firewall, zones | `03-interface-graphique.md` |
-| `content/22-constructeurs\29-openwrt-openwisp\_assets\openwisp-tableau-de-bord.png` | OpenWISP — tableau de bord avec carte des appareils | `03-interface-graphique.md` |
-| `content/22-constructeurs\29-openwrt-openwisp\_assets\openwisp-appareil.png` | OpenWISP — fiche d'un appareil, onglet Configuration et modèles | `03-interface-graphique.md` |
-| `content/22-constructeurs\29-openwrt-openwisp\_assets\openwisp-supervision.png` | OpenWISP — graphiques de supervision d'un point d'accès | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/luci-overview.png` | LuCI — Status Overview | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/luci-vlan-dsa.png` | LuCI — Network → Interfaces, onglet Devices avec les VLAN du pont br-lan | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/luci-wifi.png` | LuCI — Network → Wireless, configuration d'un SSID WPA3 | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/luci-pare-feu.png` | LuCI — Network → Firewall, zones | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/openwisp-tableau-de-bord.png` | OpenWISP — tableau de bord avec carte des appareils | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/openwisp-appareil.png` | OpenWISP — fiche d'un appareil, onglet Configuration et modèles | `03-interface-graphique.md` |
+| `content/22-constructeurs/29-openwrt-openwisp/_assets/openwisp-supervision.png` | OpenWISP — graphiques de supervision d'un point d'accès | `03-interface-graphique.md` |
 
-## 22-constructeurs\30-ipfire-endian
+## 22-constructeurs/30-ipfire-endian
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/22-constructeurs\30-ipfire-endian\_assets\ipfire-accueil.png` | IPFire — page d'accueil avec état des zones | `03-interface-graphique.md` |
-| `content/22-constructeurs\30-ipfire-endian\_assets\ipfire-regles.png` | IPFire — Firewall Rules, création d'une redirection de port vers la DMZ | `03-interface-graphique.md` |
-| `content/22-constructeurs\30-ipfire-endian\_assets\ipfire-ips.png` | IPFire — Intrusion Prevention System, choix des jeux de règles | `03-interface-graphique.md` |
-| `content/22-constructeurs\30-ipfire-endian\_assets\ipfire-pakfire.png` | IPFire — Pakfire | `03-interface-graphique.md` |
-| `content/22-constructeurs\30-ipfire-endian\_assets\endian-tableau-de-bord.png` | Endian — tableau de bord | `03-interface-graphique.md` |
-| `content/22-constructeurs\30-ipfire-endian\_assets\endian-pare-feu.png` | Endian — Firewall, règles inter-zones | `03-interface-graphique.md` |
-| `content/22-constructeurs\30-ipfire-endian\_assets\endian-openvpn.png` | Endian — VPN, serveur OpenVPN | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/ipfire-accueil.png` | IPFire — page d'accueil avec état des zones | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/ipfire-regles.png` | IPFire — Firewall Rules, création d'une redirection de port vers la DMZ | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/ipfire-ips.png` | IPFire — Intrusion Prevention System, choix des jeux de règles | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/ipfire-pakfire.png` | IPFire — Pakfire | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/endian-tableau-de-bord.png` | Endian — tableau de bord | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/endian-pare-feu.png` | Endian — Firewall, règles inter-zones | `03-interface-graphique.md` |
+| `content/22-constructeurs/30-ipfire-endian/_assets/endian-openvpn.png` | Endian — VPN, serveur OpenVPN | `03-interface-graphique.md` |
 
-## 24-systemes-exploitation\01-debian-ubuntu
+## 24-systemes-exploitation/01-debian-ubuntu
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/24-systemes-exploitation\01-debian-ubuntu\_assets\cockpit-connexion.png` | Cockpit — page de connexion | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\01-debian-ubuntu\_assets\cockpit-vue-ensemble.png` | Cockpit — vue d'ensemble d'un serveur Debian | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\01-debian-ubuntu\_assets\cockpit-stockage-lvm.png` | Cockpit — page Stockage avec un groupe de volumes LVM | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\01-debian-ubuntu\_assets\cockpit-services.png` | Cockpit — page Services, détail d'une unité systemd | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\01-debian-ubuntu\_assets\cockpit-mises-a-jour.png` | Cockpit — mises à jour logicielles disponibles | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/01-debian-ubuntu/_assets/cockpit-connexion.png` | Cockpit — page de connexion | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/01-debian-ubuntu/_assets/cockpit-vue-ensemble.png` | Cockpit — vue d'ensemble d'un serveur Debian | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/01-debian-ubuntu/_assets/cockpit-stockage-lvm.png` | Cockpit — page Stockage avec un groupe de volumes LVM | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/01-debian-ubuntu/_assets/cockpit-services.png` | Cockpit — page Services, détail d'une unité systemd | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/01-debian-ubuntu/_assets/cockpit-mises-a-jour.png` | Cockpit — mises à jour logicielles disponibles | `03-interface-graphique.md` |
 
-## 24-systemes-exploitation\02-famille-red-hat
+## 24-systemes-exploitation/02-famille-red-hat
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/24-systemes-exploitation\02-famille-red-hat\_assets\anaconda-resume.png` | Anaconda — résumé de l'installation (Rocky Linux 10) | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\02-famille-red-hat\_assets\anaconda-stockage.png` | Anaconda — Destination d'installation avec partitionnement LVM personnalisé | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\02-famille-red-hat\_assets\anaconda-reseau.png` | Anaconda — Réseau et nom d'hôte avec adresse IP fixe | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\02-famille-red-hat\_assets\cockpit-selinux.png` | Cockpit — page SELinux avec un refus et la solution proposée | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\02-famille-red-hat\_assets\cockpit-firewalld.png` | Cockpit — Réseau, zones du pare-feu firewalld | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\02-famille-red-hat\_assets\nmtui-connexion.png` | nmtui — modification d'une connexion avec adresse IP fixe | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/anaconda-resume.png` | Anaconda — résumé de l'installation (Rocky Linux 10) | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/anaconda-stockage.png` | Anaconda — Destination d'installation avec partitionnement LVM personnalisé | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/anaconda-reseau.png` | Anaconda — Réseau et nom d'hôte avec adresse IP fixe | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/cockpit-selinux.png` | Cockpit — page SELinux avec un refus et la solution proposée | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/cockpit-firewalld.png` | Cockpit — Réseau, zones du pare-feu firewalld | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/02-famille-red-hat/_assets/nmtui-connexion.png` | nmtui — modification d'une connexion avec adresse IP fixe | `03-interface-graphique.md` |
 
-## 24-systemes-exploitation\03-opensuse
+## 24-systemes-exploitation/03-opensuse
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/24-systemes-exploitation\03-opensuse\_assets\agama-vue-ensemble.png` | Agama — vue d'ensemble de l'installation openSUSE Leap 16 | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\03-opensuse\_assets\agama-stockage.png` | Agama — configuration du stockage Btrfs avec instantanés | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\03-opensuse\_assets\yast-centre-controle.png` | YaST — centre de contrôle graphique | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\03-opensuse\_assets\yast-texte-reseau.png` | YaST en mode texte (ncurses) — paramètres réseau | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\03-opensuse\_assets\yast-snapper.png` | YaST — module Snapper, comparaison de deux instantanés | `03-interface-graphique.md` |
-| `content/24-systemes-exploitation\03-opensuse\_assets\cockpit-opensuse-leap16.png` | Cockpit sur openSUSE Leap 16 — vue d'ensemble | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/03-opensuse/_assets/agama-vue-ensemble.png` | Agama — vue d'ensemble de l'installation openSUSE Leap 16 | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/03-opensuse/_assets/agama-stockage.png` | Agama — configuration du stockage Btrfs avec instantanés | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/03-opensuse/_assets/yast-centre-controle.png` | YaST — centre de contrôle graphique | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/03-opensuse/_assets/yast-texte-reseau.png` | YaST en mode texte (ncurses) — paramètres réseau | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/03-opensuse/_assets/yast-snapper.png` | YaST — module Snapper, comparaison de deux instantanés | `03-interface-graphique.md` |
+| `content/24-systemes-exploitation/03-opensuse/_assets/cockpit-opensuse-leap16.png` | Cockpit sur openSUSE Leap 16 — vue d'ensemble | `03-interface-graphique.md` |
 
-## 24-systemes-exploitation\10-raspberry-pi-os-dietpi
+## 24-systemes-exploitation/10-raspberry-pi-os-dietpi
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/24-systemes-exploitation\10-raspberry-pi-os-dietpi\_assets\rpi-imager-reglages.png` | Raspberry Pi Imager — réglages de personnalisation (nom d'hôte, SSH, utilisateur) | `01-presentation-installation.md` |
-| `content/24-systemes-exploitation\10-raspberry-pi-os-dietpi\_assets\raspi-config-menu.png` | raspi-config — menu principal | `01-presentation-installation.md` |
-| `content/24-systemes-exploitation\10-raspberry-pi-os-dietpi\_assets\dietpi-software.png` | DietPi — menu dietpi-software | `01-presentation-installation.md` |
+| `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/rpi-imager-reglages.png` | Raspberry Pi Imager — réglages de personnalisation (nom d'hôte, SSH, utilisateur) | `01-presentation-installation.md` |
+| `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/raspi-config-menu.png` | raspi-config — menu principal | `01-presentation-installation.md` |
+| `content/24-systemes-exploitation/10-raspberry-pi-os-dietpi/_assets/dietpi-software.png` | DietPi — menu dietpi-software | `01-presentation-installation.md` |
 
-## 25-web-cms-portails\01-wordpress
+## 25-web-cms-portails/01-wordpress
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/25-web-cms-portails\01-wordpress\_assets\wordpress-tableau-de-bord.png` | Tableau de bord d'administration WordPress | `01-presentation-installation.md` |
+| `content/25-web-cms-portails/01-wordpress/_assets/wordpress-tableau-de-bord.png` | Tableau de bord d'administration WordPress | `01-presentation-installation.md` |
 
-## 25-web-cms-portails\02-drupal-joomla
+## 25-web-cms-portails/02-drupal-joomla
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/25-web-cms-portails\02-drupal-joomla\_assets\drupal-rapport-etat.png` | Rapport d'état Drupal | `01-drupal.md` |
-| `content/25-web-cms-portails\02-drupal-joomla\_assets\joomla-administration.png` | Panneau d'administration Joomla | `02-joomla.md` |
+| `content/25-web-cms-portails/02-drupal-joomla/_assets/drupal-rapport-etat.png` | Rapport d'état Drupal | `01-drupal.md` |
+| `content/25-web-cms-portails/02-drupal-joomla/_assets/joomla-administration.png` | Panneau d'administration Joomla | `02-joomla.md` |
 
-## 25-web-cms-portails\03-typo3-contao
+## 25-web-cms-portails/03-typo3-contao
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/25-web-cms-portails\03-typo3-contao\_assets\typo3-module-page.png` | Back-office TYPO3, module Page | `01-typo3.md` |
-| `content/25-web-cms-portails\03-typo3-contao\_assets\contao-structure-site.png` | Back-office Contao, structure du site | `02-contao.md` |
+| `content/25-web-cms-portails/03-typo3-contao/_assets/typo3-module-page.png` | Back-office TYPO3, module Page | `01-typo3.md` |
+| `content/25-web-cms-portails/03-typo3-contao/_assets/contao-structure-site.png` | Back-office Contao, structure du site | `02-contao.md` |
 
-## 25-web-cms-portails\04-ghost-grav-october
+## 25-web-cms-portails/04-ghost-grav-october
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/25-web-cms-portails\04-ghost-grav-october\_assets\ghost-editeur.png` | Éditeur d'article Ghost | `01-ghost.md` |
-| `content/25-web-cms-portails\04-ghost-grav-october\_assets\grav-admin.png` | Interface d'administration Grav, édition d'une page | `02-grav-october.md` |
+| `content/25-web-cms-portails/04-ghost-grav-october/_assets/ghost-editeur.png` | Éditeur d'article Ghost | `01-ghost.md` |
+| `content/25-web-cms-portails/04-ghost-grav-october/_assets/grav-admin.png` | Interface d'administration Grav, édition d'une page | `02-grav-october.md` |
 
-## 25-web-cms-portails\05-cms-headless-python
+## 25-web-cms-portails/05-cms-headless-python
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/25-web-cms-portails\05-cms-headless-python\_assets\strapi-content-type-builder.png` | Constructeur de types de contenu Strapi | `01-strapi-directus-payload.md` |
-| `content/25-web-cms-portails\05-cms-headless-python\_assets\directus-data-studio.png` | Data Studio Directus, collection et éditeur d'élément | `01-strapi-directus-payload.md` |
-| `content/25-web-cms-portails\05-cms-headless-python\_assets\wagtail-streamfield.png` | Éditeur de page Wagtail avec StreamField | `03-wagtail-mezzanine.md` |
-| `content/25-web-cms-portails\05-cms-headless-python\_assets\plone-volto.png` | Interface Volto de Plone 6, édition d'une page | `04-plone-zope.md` |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/strapi-content-type-builder.png` | Constructeur de types de contenu Strapi | `01-strapi-directus-payload.md` |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/directus-data-studio.png` | Data Studio Directus, collection et éditeur d'élément | `01-strapi-directus-payload.md` |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/wagtail-streamfield.png` | Éditeur de page Wagtail avec StreamField | `03-wagtail-mezzanine.md` |
+| `content/25-web-cms-portails/05-cms-headless-python/_assets/plone-volto.png` | Interface Volto de Plone 6, édition d'une page | `04-plone-zope.md` |
 
-## 25-web-cms-portails\06-portails-ged
+## 25-web-cms-portails/06-portails-ged
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/25-web-cms-portails\06-portails-ged\_assets\liferay-control-panel.png` | Control Panel de Liferay | `01-liferay-jahia-exo.md` |
-| `content/25-web-cms-portails\06-portails-ged\_assets\alfresco-share-documents.png` | Bibliothèque de documents d'un site dans Alfresco Share | `02-alfresco-nuxeo.md` |
+| `content/25-web-cms-portails/06-portails-ged/_assets/liferay-control-panel.png` | Control Panel de Liferay | `01-liferay-jahia-exo.md` |
+| `content/25-web-cms-portails/06-portails-ged/_assets/alfresco-share-documents.png` | Bibliothèque de documents d'un site dans Alfresco Share | `02-alfresco-nuxeo.md` |
 
-## 25-web-cms-portails\07-lms
+## 25-web-cms-portails/07-lms
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/25-web-cms-portails\07-lms\_assets\moodle-cours.png` | Page d'un cours Moodle (format thématique) | `01-moodle.md` |
-| `content/25-web-cms-portails\07-lms\_assets\moodle-administration.png` | Administration du site Moodle | `01-moodle.md` |
+| `content/25-web-cms-portails/07-lms/_assets/moodle-cours.png` | Page d'un cours Moodle (format thématique) | `01-moodle.md` |
+| `content/25-web-cms-portails/07-lms/_assets/moodle-administration.png` | Administration du site Moodle | `01-moodle.md` |
 
-## 25-web-cms-portails\08-erp
+## 25-web-cms-portails/08-erp
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/25-web-cms-portails\08-erp\_assets\odoo-applications.png` | Écran des applications Odoo | `01-odoo.md` |
-| `content/25-web-cms-portails\08-erp\_assets\erpnext-comptabilite.png` | Espace de travail Comptabilité d'ERPNext | `02-frappe-erpnext.md` |
-| `content/25-web-cms-portails\08-erp\_assets\dolibarr-tableau-de-bord.png` | Tableau de bord Dolibarr | `03-dolibarr-tryton.md` |
+| `content/25-web-cms-portails/08-erp/_assets/odoo-applications.png` | Écran des applications Odoo | `01-odoo.md` |
+| `content/25-web-cms-portails/08-erp/_assets/erpnext-comptabilite.png` | Espace de travail Comptabilité d'ERPNext | `02-frappe-erpnext.md` |
+| `content/25-web-cms-portails/08-erp/_assets/dolibarr-tableau-de-bord.png` | Tableau de bord Dolibarr | `03-dolibarr-tryton.md` |
 
-## 25-web-cms-portails\09-facturation-temps
+## 25-web-cms-portails/09-facturation-temps
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/25-web-cms-portails\09-facturation-temps\_assets\invoiceninja-tableau-de-bord.png` | Tableau de bord Invoice Ninja | `01-invoice-ninja-akaunting-kimai-crater.md` |
-| `content/25-web-cms-portails\09-facturation-temps\_assets\kimai-feuille-temps.png` | Feuille de temps hebdomadaire Kimai | `01-invoice-ninja-akaunting-kimai-crater.md` |
+| `content/25-web-cms-portails/09-facturation-temps/_assets/invoiceninja-tableau-de-bord.png` | Tableau de bord Invoice Ninja | `01-invoice-ninja-akaunting-kimai-crater.md` |
+| `content/25-web-cms-portails/09-facturation-temps/_assets/kimai-feuille-temps.png` | Feuille de temps hebdomadaire Kimai | `01-invoice-ninja-akaunting-kimai-crater.md` |
 
-## 25-web-cms-portails\10-ecommerce
+## 25-web-cms-portails/10-ecommerce
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/25-web-cms-portails\10-ecommerce\_assets\prestashop-commandes.png` | Back-office PrestaShop, liste des commandes | `01-prestashop-woocommerce-opencart-magento.md` |
+| `content/25-web-cms-portails/10-ecommerce/_assets/prestashop-commandes.png` | Back-office PrestaShop, liste des commandes | `01-prestashop-woocommerce-opencart-magento.md` |
 
-## 25-web-cms-portails\11-caisse-inventaire
+## 25-web-cms-portails/11-caisse-inventaire
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/25-web-cms-portails\11-caisse-inventaire\_assets\ospos-vente.png` | Écran de vente OSPOS | `01-caisses-pos.md` |
-| `content/25-web-cms-portails\11-caisse-inventaire\_assets\inventree-piece.png` | Fiche d'une pièce InvenTree avec stocks par emplacement | `02-inventaire-actifs.md` |
-| `content/25-web-cms-portails\11-caisse-inventaire\_assets\snipeit-actifs.png` | Liste des actifs Snipe-IT | `02-inventaire-actifs.md` |
+| `content/25-web-cms-portails/11-caisse-inventaire/_assets/ospos-vente.png` | Écran de vente OSPOS | `01-caisses-pos.md` |
+| `content/25-web-cms-portails/11-caisse-inventaire/_assets/inventree-piece.png` | Fiche d'une pièce InvenTree avec stocks par emplacement | `02-inventaire-actifs.md` |
+| `content/25-web-cms-portails/11-caisse-inventaire/_assets/snipeit-actifs.png` | Liste des actifs Snipe-IT | `02-inventaire-actifs.md` |
 
-## 31-auto-hebergement\01-plateformes-auto-hebergement
+## 31-auto-hebergement/01-plateformes-auto-hebergement
 
 | Image à créer | Écran | Article |
 | --- | --- | --- |
-| `content/31-auto-hebergement\01-plateformes-auto-hebergement\_assets\yunohost-admin-accueil.png` | YunoHost — interface d'administration, accueil | `02-yunohost.md` |
-| `content/31-auto-hebergement\01-plateformes-auto-hebergement\_assets\yunohost-catalogue.png` | YunoHost — catalogue d'applications | `02-yunohost.md` |
-| `content/31-auto-hebergement\01-plateformes-auto-hebergement\_assets\yunohost-diagnostic.png` | YunoHost — diagnostic (DNS, ports, messagerie) | `02-yunohost.md` |
-| `content/31-auto-hebergement\01-plateformes-auto-hebergement\_assets\yunohost-portail.png` | YunoHost — portail utilisateur avec les tuiles d'applications | `02-yunohost.md` |
-| `content/31-auto-hebergement\01-plateformes-auto-hebergement\_assets\casaos-tableau-de-bord.png` | CasaOS — tableau de bord avec widgets et applications | `03-casaos-runtipi-umbrel.md` |
-| `content/31-auto-hebergement\01-plateformes-auto-hebergement\_assets\casaos-app-store.png` | CasaOS — App Store | `03-casaos-runtipi-umbrel.md` |
-| `content/31-auto-hebergement\01-plateformes-auto-hebergement\_assets\casaos-appli-personnalisee.png` | CasaOS — installation d'une application personnalisée (Compose) | `03-casaos-runtipi-umbrel.md` |
-| `content/31-auto-hebergement\01-plateformes-auto-hebergement\_assets\runtipi-app-store.png` | Runtipi — App Store | `03-casaos-runtipi-umbrel.md` |
-| `content/31-auto-hebergement\01-plateformes-auto-hebergement\_assets\runtipi-config-appli.png` | Runtipi — configuration d'une application avec domaine exposé | `03-casaos-runtipi-umbrel.md` |
-| `content/31-auto-hebergement\01-plateformes-auto-hebergement\_assets\umbrel-tableau-de-bord.png` | Umbrel — tableau de bord umbrelOS | `03-casaos-runtipi-umbrel.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/yunohost-admin-accueil.png` | YunoHost — interface d'administration, accueil | `02-yunohost.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/yunohost-catalogue.png` | YunoHost — catalogue d'applications | `02-yunohost.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/yunohost-diagnostic.png` | YunoHost — diagnostic (DNS, ports, messagerie) | `02-yunohost.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/yunohost-portail.png` | YunoHost — portail utilisateur avec les tuiles d'applications | `02-yunohost.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/casaos-tableau-de-bord.png` | CasaOS — tableau de bord avec widgets et applications | `03-casaos-runtipi-umbrel.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/casaos-app-store.png` | CasaOS — App Store | `03-casaos-runtipi-umbrel.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/casaos-appli-personnalisee.png` | CasaOS — installation d'une application personnalisée (Compose) | `03-casaos-runtipi-umbrel.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/runtipi-app-store.png` | Runtipi — App Store | `03-casaos-runtipi-umbrel.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/runtipi-config-appli.png` | Runtipi — configuration d'une application avec domaine exposé | `03-casaos-runtipi-umbrel.md` |
+| `content/31-auto-hebergement/01-plateformes-auto-hebergement/_assets/umbrel-tableau-de-bord.png` | Umbrel — tableau de bord umbrelOS | `03-casaos-runtipi-umbrel.md` |
 
