@@ -31,10 +31,39 @@ sudo -u librenms /opt/librenms/lnms device:poll sw-coeur-01.corp.exemple.fr -vv 
 
 Découverte automatique : `config.php` ou interface (*Global Settings → Discovery*) avec les réseaux autorisés (`nets`) et les identifiants SNMP v3, puis découverte par voisins **LLDP/CDP**.
 
+## Fonctionnalités
+
+| Domaine | Ce que LibreNMS fournit |
+| --- | --- |
+| Découverte | Automatique par **CDP/LLDP**, OSPF, BGP, ARP, table de routage ; par plage réseau ou SNMP scan |
+| Collecte | Ports (trafic, erreurs, *broadcast*), CPU, mémoire, capteurs (température, ventilateurs, alim.), stockage, VLAN, pile, onduleurs, imprimantes |
+| Protocoles L2/L3 | Voisins, FDB/MAC, VRF, OSPF, BGP (sessions et préfixes), IP-SLA, QoS |
+| Graphiques | RRDtool, par port et par équipement ; *bills* (quotas 95ᵉ centile de facturation) |
+| Cartes | Cartes réseau automatiques (LLDP), plans géographiques, *availability map* |
+| Services | Vérifications Nagios (`check_*`) en complément du SNMP |
+| Journaux | **Syslog**, *eventlog*, **traps SNMP** rattachés à l'équipement |
+
 ## Alertes et configurations
 
-- *Alerts → Alert Rules* : partir des **règles par défaut** (équipement injoignable, port tombé, BGP, capteurs) puis ajuster ; *Alert Transports* : e-mail, Microsoft Teams, Slack, Telegram, webhook.
+- *Alerts → Alert Rules* : partir des **règles par défaut** (équipement injoignable, port tombé, BGP, capteurs) puis ajuster ; *Alert Transports* : e-mail, Microsoft Teams, Slack, Telegram, webhook, PagerDuty, Opsgenie.
 - **Oxidized** (outil séparé) sauvegarde les configurations des équipements dans Git ; LibreNMS l'affiche et compare les versions.
 - **Syslog** et **traps SNMP** (snmptrapd) rattachés aux équipements.
+
+## Mise à l'échelle
+
+- **RRDCached** : regroupe les écritures RRD (indispensable au-delà de quelques centaines d'équipements).
+- **Pollers distribués** : plusieurs *pollers* partageant une base MySQL/Redis via le *dispatcher* Python (`librenms/dispatcher`), répartissant les équipements par groupe.
+- **Redis** sert de verrou et de file de collecte partagée entre pollers.
+
+## API
+
+LibreNMS expose une **API REST** (jeton par utilisateur, *Settings → API*) utilisée par Grafana (source *LibreNMS* ou *Infinity*), les scripts et l'intégration :
+
+```bash
+TOKEN=xxxxxxxx
+curl -s -H "X-Auth-Token: $TOKEN" https://librenms.corp.exemple.fr/api/v0/devices | jq '.devices | length'
+curl -s -H "X-Auth-Token: $TOKEN" https://librenms.corp.exemple.fr/api/v0/devices/sw-coeur-01/ports | jq '.ports[].ifName'
+curl -s -H "X-Auth-Token: $TOKEN" https://librenms.corp.exemple.fr/api/v0/alerts?state=1 | jq '.alerts | length'
+```
 
 Suite : [[02-observium-opennms-netxms|Observium, OpenNMS et NetXMS]] · [[03-interface-graphique|interfaces graphiques]] · [[90-aide-memoire|aide-mémoire]].

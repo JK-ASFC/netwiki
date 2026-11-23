@@ -22,6 +22,12 @@ docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name upti
 
 Premier accès `http://<hôte>:3001` : créer le compte administrateur (activer la 2FA), puis *Ajouter une sonde* : type, URL, intervalle, nombre de réessais, **expiration du certificat**, notifications. Sauvegarde : le volume `data` (SQLite).
 
+**Types de sondes** : HTTP(S) (code attendu, mot-clé présent/absent, en-têtes, méthode, corps), HTTP avec **requête JSON** (`$.etat == "ok"`), TCP, Ping, DNS (enregistrement attendu), certificat TLS (jours restants), Docker (conteneur en vie), bases de données (PostgreSQL, MySQL, MongoDB, Redis, SQL Server), Steam, MQTT, RADIUS, gRPC, et **Push** (*dead man's switch* : c'est le service qui appelle Uptime Kuma).
+
+**Notifications** : plus de 90 intégrations — courriel (SMTP), **Microsoft Teams**, Slack, Telegram, Discord, **ntfy**, Gotify, Pushover, webhook, PagerDuty, Opsgenie, Matrix, signal, SMS (divers).
+
+**Pages de statut** : une ou plusieurs pages publiques regroupant des sondes choisies, avec incidents et domaine personnalisé. **Fenêtres de maintenance** planifiées (pas d'alerte ni de dégradation du taux de disponibilité). Une **API** et des métriques Prometheus (`/metrics`) sont exposées.
+
 ## Gatus
 
 ```yaml
@@ -49,5 +55,19 @@ endpoints:
 ```bash
 docker run -d -p 8080:8080 -v $PWD/config.yaml:/config/config.yaml --name gatus twinproduction/gatus
 ```
+
+Les **conditions** s'écrivent avec des marqueurs (`[...]`) comparés à une valeur :
+
+| Marqueur | Signification |
+| --- | --- |
+| `[STATUS]` | Code HTTP de la réponse |
+| `[RESPONSE_TIME]` | Temps de réponse en ms |
+| `[BODY]` | Corps (`[BODY].champ`, `[BODY].liste[0]`, `len([BODY].x)`, `pat(...)`) |
+| `[CERTIFICATE_EXPIRATION]` | Temps avant expiration du certificat TLS |
+| `[CONNECTED]` | Connexion TCP/STARTTLS établie |
+| `[DNS_RCODE]` | Code de réponse DNS (`NOERROR`…) |
+| `[IP]`, `[DOMAIN_EXPIRATION]` | IP résolue, expiration du domaine |
+
+Le fichier étant **versionnable** (Git), Gatus convient à une configuration revue et déployée en CI ; la page de statut et l'API (`/api/v1/endpoints/statuses`) sont servies par le même binaire.
 
 Suite : [[02-pages-statut-healthchecks|pages de statut et Healthchecks]] · [[03-interface-graphique|interfaces graphiques]] · [[90-aide-memoire|aide-mémoire]].

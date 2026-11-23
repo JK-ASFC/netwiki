@@ -7,6 +7,19 @@ icon: info
 
 Une **trace** suit une requête à travers tous les services qu'elle traverse ; chaque étape est un **span** (durée, service, attributs, erreurs). On voit immédiatement quel appel ralentit une page ou quel service renvoie l'erreur. Les applications s'instrumentent avec **OpenTelemetry** et envoient leurs spans à un [[17-opentelemetry-alloy/01-presentation-installation|collecteur]].
 
+## Concepts
+
+| Notion | Description |
+| --- | --- |
+| **Trace** | L'arbre complet d'une requête, identifié par un `trace_id` |
+| **Span** | Une opération (appel HTTP, requête SQL…) : `span_id`, parent, début, durée, statut, attributs, événements |
+| **Propagation de contexte** | Le `trace_id` passe de service en service via un en-tête : **W3C `traceparent`** (standard actuel) ou **B3** (hérité de Zipkin) |
+| **Baggage** | Paires clé/valeur propagées le long de la trace (ex. `tenant`) |
+| **Échantillonnage** | *Head* (décidé au départ : `parentbased_traceidratio`, taux fixe) ou *tail* (décidé une fois la trace complète, côté Collector : garder erreurs + traces lentes) |
+| **Exemplar** | Lien d'un point de métrique vers une trace représentative (saut métrique → trace dans Grafana) |
+
+L'échantillonnage *head* est simple mais aveugle (il peut jeter l'erreur rare) ; l'échantillonnage *tail* (voir [[17-opentelemetry-alloy/01-presentation-installation|Collector]], processeur `tail_sampling`) garde ce qui compte au prix d'une passerelle qui bufferise les traces.
+
 | | **Jaeger** | **Zipkin** | [[02-tempo\|Tempo]] |
 | --- | --- | --- | --- |
 | Projet | CNCF (diplômé) | OpenZipkin (historique) | Grafana Labs (AGPL) |
