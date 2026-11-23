@@ -32,14 +32,31 @@ docker run -d --name tempo -p 3200:3200 -p 4317:4317 -p 4318:4318 -v $PWD/tempo.
 # Kubernetes : helm install tempo grafana/tempo-distributed -n tempo -f valeurs.yaml
 ```
 
+## Composants (mode microservices)
+
+| Composant | Rôle |
+| --- | --- |
+| **distributor** | Reçoit les spans (OTLP, Jaeger, Zipkin) et les répartit |
+| **ingester** | Regroupe les spans en blocs et les écrit dans le stockage objet |
+| **querier** / **query-frontend** | Exécutent et accélèrent (cache, découpage) les requêtes TraceQL |
+| **compactor** | Fusionne les blocs et applique la rétention |
+| **metrics-generator** | Dérive des métriques RED et le graphe de services, envoyées en `remote_write` |
+
+En mode **monolithique** (`-target=all`, ou l'image par défaut), tout tient dans un seul processus — suffisant pour la plupart des besoins ; le mode microservices (chart `tempo-distributed`) sert à la très grande échelle.
+
 ## TraceQL (dans Grafana → Explore → Tempo)
 
 ```text
 { resource.service.name = "inventaire" && status = error }
 { span.http.route = "/api/equipements" && duration > 2s }
 { resource.service.name = "frontal" } >> { resource.service.name = "base" && duration > 500ms }
+avg(duration) by (resource.service.name)              # agrégats TraceQL
 ```
 
-Le **metrics-generator** produit des métriques RED (taux, erreurs, durées) et un **graphe des services** à partir des traces.
+L'opérateur `>>` exprime une relation **ancêtre → descendant** entre spans (`>` pour parent direct). Le **metrics-generator** produit des métriques RED (taux, erreurs, durées) et un **graphe des services** à partir des traces.
+
+## Corréler traces, journaux et métriques
+
+Dans Grafana, les *data links* relient les trois signaux : d'une métrique (via **exemplar**) ou d'une ligne de [[09-loki-promtail/01-loki|Loki]] contenant un `trace_id` vers la trace Tempo, et de chaque span vers les journaux du service sur l'intervalle concerné (*Trace to logs*). C'est le cœur de l'observabilité : partir du symptôme (métrique), isoler la requête (trace), lire la cause (journal).
 
 Suite : [[03-interface-graphique|interfaces graphiques]] · [[90-aide-memoire|aide-mémoire]].

@@ -36,7 +36,45 @@ jobs:
     update_every: 5
 ```
 
-Autres collecteurs utiles : `portcheck` (ports TCP), `httpcheck`, `x509check` (expiration de certificats), `dnsquery`, `nginx`, `postgres`, `docker`, `systemdunits`, `wireguard`.
+### Catalogue des collecteurs `go.d`
+
+Plus de 800 intégrations ; les plus courants en exploitation :
+
+| Domaine | Modules `go.d` |
+| --- | --- |
+| Système / conteneurs | `docker`, `docker_engine`, `k8s_kubelet`, `k8s_kubeproxy`, `cgroups` (interne), `systemdunits`, `logind`, `filecheck` |
+| Réseau | `snmp`, `ping`, `portcheck`, `httpcheck`, `x509check`, `dnsquery`, `dns_query`, `isc_dhcpd`, `wireguard`, `fail2ban`, `nvme`, `smartctl` |
+| Web / proxy | `nginx`, `nginxplus`, `apache`, `httpd`, `haproxy`, `traefik`, `web_log` (journaux d'accès), `squidlog`, `varnish` |
+| Bases de données | `postgres`, `mysql`, `mariadb`, `redis`, `mongodb`, `couchdb`, `cassandra`, `clickhouse`, `pgbouncer`, `elasticsearch` |
+| Messagerie / files | `rabbitmq`, `activemq`, `nats`, `beanstalk`, `mosquitto` (MQTT via `prometheus`) |
+| Supervision / divers | `prometheus` (scrape de tout point `/metrics` !), `windows` (windows_exporter), `vsphere`, `proxmox`, `pihole`, `powerdns`, `unbound`, `chrony`, `ntpd`, `openvpn`, `whoisquery` |
+
+Le module `prometheus` est puissant : il permet à Netdata de **collecter n'importe quel exporteur Prometheus** et d'en tracer les métriques en temps réel, sans Prometheus.
+
+```yaml /etc/netdata/go.d/prometheus.conf
+jobs:
+  - name: traefik
+    url: http://127.0.0.1:8082/metrics
+```
+
+```bash
+# Lister les modules go.d disponibles et déboguer un job précis
+ls /usr/lib/netdata/conf.d/go.d/
+sudo -u netdata /usr/libexec/netdata/plugins.d/go.d.plugin -d -m snmp     # trace de collecte
+```
+
+Au-delà de `go.d`, d'autres greffons collectent : **`ebpf.plugin`** (appels système, latence disque/réseau au niveau noyau), **`apps.plugin`** (ressources par application/utilisateur), **`cgroups.plugin`** (conteneurs/VM), **`python.d.plugin`** (collecteurs hérités), **`charts.d.plugin`** (shell), **`slabinfo`**, **`perf.plugin`** (compteurs matériels).
+
+### Fonctions et journal systemd
+
+Les **Functions** exposent des tables en direct interrogeables depuis le tableau de bord :
+
+```bash
+sudo netdatacli functions                                   # lister les fonctions disponibles
+# Exemples : processes (top live), systemd-journal, systemd-list-units, streaming, block-devices
+```
+
+Le collecteur `systemd-journal` rend les journaux `journald` consultables et filtrables dans Netdata (recherche plein texte, facettes par unité, priorité, hôte) — pratique sur un parent qui centralise plusieurs serveurs.
 
 ## Rétention
 
@@ -101,21 +139,48 @@ Pour ne garder que les alertes centralisées, désactivez-les sur les agents enf
     health enabled by default = auto
 ```
 
-Un agent enfant léger peut se contenter de collecter et transmettre (`[db] mode = ram`, tableau de bord désactivé). Deux parents peuvent se répliquer mutuellement pour la haute disponibilité.
+Un agent enfant léger peut se contenter de collecter et transmettre (`[db] mode = ram`, tableau de bord désactivé). Pour la **haute disponibilité**, un enfant liste plusieurs parents (bascule automatique), et deux parents se répliquent mutuellement en étant à la fois parent et enfant l'un de l'autre :
+
+```ini /etc/netdata/stream.conf (enfant : plusieurs destinations, bascule)
+[stream]
+    enabled = yes
+    destination = parent1:19999:SSL parent2:19999:SSL      ; essaie dans l'ordre
+    api key = 11111111-2222-3333-4444-555555555555
+```
+
+Depuis Netdata v2, les parents prennent en charge la **réplication** (rattrapage de l'historique manqué après une coupure) et le *streaming* compressé. Dimensionnez le `dbengine` du parent pour la rétention de tous les enfants.
 
 ## Exports
 
+Deux sens possibles : **Prometheus collecte Netdata** (pull), ou **Netdata pousse** vers une base externe (push, via `exporting.conf`).
+
 | Destination | Méthode |
 | --- | --- |
-| **Prometheus** | Collecte de `http://agent:19999/api/v1/allmetrics?format=prometheus` (ou du parent pour tous les nœuds) |
-| InfluxDB, Graphite, OpenTSDB, remote write | `exporting.conf` |
+| **Prometheus** (pull) | Collecte de `http://agent:19999/api/v1/allmetrics?format=prometheus` (ou du parent pour tous les nœuds) |
+| InfluxDB, Graphite, OpenTSDB, JSON, Pub/Sub, Kafka, MongoDB | Push via `exporting.conf` |
+| Prometheus *remote write* | Push vers tout récepteur compatible (VictoriaMetrics, Mimir, Thanos receive) |
 
-```yaml prometheus.yml (extrait)
+```yaml prometheus.yml (extrait — Prometheus collecte Netdata)
   - job_name: netdata
     metrics_path: /api/v1/allmetrics
     params: { format: [ prometheus ] }
+    honor_labels: true
     static_configs:
       - targets: [ "parent-netdata.corp.exemple.fr:19999" ]
+```
+
+```ini /etc/netdata/exporting.conf (Netdata pousse vers une base)
+[exporting:global]
+    enabled = yes
+    update every = 10
+[prometheus_remote_write:victoria]
+    enabled = yes
+    destination = https://vm.corp.exemple.fr/api/v1/write
+    remote write URL path = /api/v1/write
+    send names instead of ids = yes
+[influxdb:local]
+    enabled = no
+    destination = influx.corp.exemple.fr:8086
 ```
 
 ## Mises à jour et dépannage

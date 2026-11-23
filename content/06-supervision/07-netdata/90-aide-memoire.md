@@ -11,11 +11,24 @@ Référence rapide ; les explications sont dans [[01-presentation-installation|N
 
 ```bash
 wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh --stable-channel --disable-telemetry
+# Options utiles du kickstart : --nightly-channel, --no-updates, --dont-start-it, --claim-token … (Cloud)
 sudo systemctl status netdata
-sudo netdatacli ping
-sudo netdatacli reload-health
-sudo netdatacli aclk-state                  # état de la connexion à Netdata Cloud
-netdata -W buildinfo | head
+netdata -W buildinfo | head                 # fonctionnalités compilées (dbengine, ml, cloud…)
+```
+
+## netdatacli (commande de contrôle locale)
+
+```bash
+sudo netdatacli ping                        # l'agent répond-il ?
+sudo netdatacli reload-health               # recharger les alertes après édition
+sudo netdatacli reload-labels               # recharger les étiquettes d'hôte
+sudo netdatacli version
+sudo netdatacli aclk-state                  # état de la connexion à Netdata Cloud (ACLK)
+sudo netdatacli dumpconfig                  # configuration effective (toutes sections résolues)
+sudo netdatacli functions                   # lister les fonctions en direct disponibles
+sudo netdatacli function processes          # exécuter une fonction (ex. table des processus)
+sudo netdatacli health-cmdapi-command DISABLE ALL    # désactiver temporairement toutes les alertes
+sudo netdatacli reload-health               # (réactive après maintenance)
 ```
 
 ## Configuration
@@ -53,9 +66,17 @@ curl -s "http://127.0.0.1:19999/api/v1/alarms?active" | jq '.alarms | keys'
 ## API
 
 ```bash
+# API v1
 curl -s http://127.0.0.1:19999/api/v1/info | jq '.version, .os_name'
+curl -s http://127.0.0.1:19999/api/v1/charts | jq '.charts | keys | length'          # nombre de graphiques
 curl -s "http://127.0.0.1:19999/api/v1/data?chart=system.cpu&after=-300&points=10&format=json" | jq '.data[0]'
-curl -s "http://127.0.0.1:19999/api/v1/allmetrics?format=prometheus" | head          # pour Prometheus
+curl -s "http://127.0.0.1:19999/api/v1/alarms?active" | jq '.alarms | keys'           # alertes actives
+curl -s "http://127.0.0.1:19999/api/v1/allmetrics?format=prometheus" | head           # pour Prometheus
+
+# API v2 (multi-nœuds sur un parent, requêtes agrégées)
+curl -s "http://127.0.0.1:19999/api/v2/nodes" | jq '.nodes[] | {nm: .nm, state: .st}'
+curl -s "http://127.0.0.1:19999/api/v2/data?contexts=system.cpu&after=-60&group_by=node" | jq '.summary.nodes | length'
+curl -s "http://127.0.0.1:19999/api/v2/alerts" | jq '.alerts | length'
 ```
 
 ## Streaming et Cloud

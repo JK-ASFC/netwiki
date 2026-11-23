@@ -7,11 +7,20 @@ icon: info
 
 **OpenTelemetry** (OTel) est le standard ouvert d'instrumentation : les applications produisent métriques, journaux et **traces** au format **OTLP**, et un **Collector** les reçoit, les transforme et les envoie vers les outils de votre choix, sans dépendre d'un fournisseur. **Grafana Alloy** est la distribution du Collector de Grafana Labs, qui remplace Grafana Agent et Promtail.
 
+Les trois **signaux** (traces, métriques, journaux) partagent une même description de la source (*resource* : `service.name`, `deployment.environment`, hôte…) définie par les **conventions sémantiques** OTel, ce qui permet de passer d'une trace lente au journal correspondant.
+
 | Brique du Collector | Exemples |
 | --- | --- |
-| **Receivers** | `otlp` (4317 gRPC, 4318 HTTP), `prometheus`, `hostmetrics`, `filelog`, `syslog`, `kafka` |
-| **Processors** | `batch`, `memory_limiter`, `resource`, `attributes`, `filter`, `k8sattributes`, `tail_sampling` |
-| **Exporters** | `otlp`/`otlphttp` (Tempo, Jaeger, SigNoz), `prometheusremotewrite`, `loki`/`otlphttp` vers Loki, `debug` |
+| **Receivers** | `otlp` (4317 gRPC, 4318 HTTP), `prometheus`, `hostmetrics`, `filelog`, `journald`, `syslog`, `kafka`, `jaeger`, `zipkin`, `statsd`, `fluentforward`, `k8s_cluster`, `kubeletstats` |
+| **Processors** | `batch`, `memory_limiter`, `resource`, `resourcedetection`, `attributes`, `filter`, `transform` (OTTL), `k8sattributes`, `tail_sampling`, `probabilistic_sampler`, `redaction` |
+| **Exporters** | `otlp`/`otlphttp` (Tempo, Jaeger, SigNoz), `prometheusremotewrite`, `prometheus` (expose en `/metrics`), `loki`/`otlphttp` vers Loki, `kafka`, `file`, `debug` |
+| **Connectors** | `spanmetrics` (métriques RED à partir des traces), `servicegraph`, `count`, `routing` |
+| **Extensions** | `health_check`, `pprof`, `zpages`, `basicauth`, `oauth2client`, `file_storage` (file d'attente persistante) |
+
+### Agent ou passerelle
+
+- **Agent** : un Collector par hôte/nœud (collecte locale `hostmetrics`/`filelog`, enrichissement, relais). Faible latence, résilient.
+- **Passerelle** (*gateway*) : un (ou plusieurs) Collector central recevant l'OTLP des agents et des applications — c'est là que se font l'échantillonnage par traces complètes (`tail_sampling`), la limitation de débit et le routage par destination. Les deux se combinent (agents → passerelle → bases).
 
 ## OpenTelemetry Collector
 
@@ -49,6 +58,28 @@ service:
 otelcol-contrib validate --config /etc/otelcol-contrib/config.yaml && sudo systemctl restart otelcol-contrib
 ```
 
+### Échantillonnage des traces (passerelle)
+
+Sur une passerelle, `tail_sampling` décide de garder ou non une trace **une fois complète** (par ex. toujours les erreurs et les traces lentes, 10 % du reste) :
+
+```yaml
+processors:
+  tail_sampling:
+    decision_wait: 10s
+    policies:
+      - name: erreurs
+        type: status_code
+        status_code: { status_codes: [ERROR] }
+      - name: lentes
+        type: latency
+        latency: { threshold_ms: 1000 }
+      - name: echantillon
+        type: probabilistic
+        probabilistic: { sampling_percentage: 10 }
+```
+
+Le connecteur `spanmetrics` dérive en plus des métriques de débit, d'erreurs et de latence (RED) par service directement des traces.
+
 ## Grafana Alloy
 
 ```bash
@@ -76,7 +107,18 @@ loki.write "central" {
 }
 ```
 
-Interface de débogage : `http://localhost:12345` (graphe des composants et leurs données). Conversion : `alloy convert --source-format=promtail promtail.yaml -o config.alloy` (aussi `prometheus`, `static`, `otelcol`).
+Alloy décrit un **graphe de composants** reliés par leurs références (`forward_to`, `.targets`). Familles de composants :
+
+| Préfixe | Rôle | Exemples |
+| --- | --- | --- |
+| `prometheus.*` | Métriques | `prometheus.scrape`, `prometheus.exporter.unix`, `prometheus.exporter.windows`, `prometheus.relabel`, `prometheus.remote_write` |
+| `loki.*` | Journaux | `loki.source.file`, `loki.source.journal`, `loki.source.syslog`, `loki.process` (étapes), `loki.write` |
+| `otelcol.*` | OTLP (traces/métriques/logs) | `otelcol.receiver.otlp`, `otelcol.processor.batch`, `otelcol.processor.tail_sampling`, `otelcol.exporter.otlp` |
+| `discovery.*` | Découverte de cibles | `discovery.kubernetes`, `discovery.docker`, `discovery.file`, `discovery.relabel` |
+| `pyroscope.*` | Profilage continu | `pyroscope.scrape`, `pyroscope.write` |
+| Utilitaires | Divers | `local.file_match`, `remote.http`, `declare` (composants personnalisés), `livedebugging` |
+
+Interface de débogage : `http://localhost:12345` (graphe des composants et leurs données, *live debugging*). Conversion : `alloy convert --source-format=promtail promtail.yaml -o config.alloy` (aussi `prometheus`, `static`, `otelcol`). Validation : `alloy fmt config.alloy` et `alloy run --dry-run`.
 
 <!-- CAPTURE: Grafana Alloy — interface de débogage, graphe des composants | _assets/alloy-ui.png -->
 

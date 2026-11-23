@@ -48,7 +48,24 @@ sudo systemctl status netdata
 
 ## Tableau de bord local
 
-`http://serveur:19999` : graphiques organisés par catégorie, corrélation des anomalies (*Metric Correlations*), détection d'anomalies par apprentissage automatique (*Anomaly Advisor*).
+`http://serveur:19999` : graphiques organisés par catégorie, mis à jour à la seconde.
+
+| Fonctionnalité du tableau de bord | Usage |
+| --- | --- |
+| **Metric Correlations** | Sélectionner une fenêtre de temps : Netdata classe les métriques qui ont le plus changé → trouver la cause d'un incident |
+| **Anomaly Advisor** | Détection d'anomalies par apprentissage automatique (un modèle par métrique, entraîné en continu) ; score d'anomalie par graphique |
+| **Functions** | Tables interactives en direct fournies par les collecteurs : `processes` (comme `top`), `systemd-journal` (journaux), `systemd-list-units`, `streaming`, `block-devices`, `network-connections`, `mount-points` |
+| **Alerts** | Onglet des alertes actives, acquittées, et historique |
+| **Nodes** | Vue multi-nœuds (sur un parent ou le Cloud) |
+
+La détection d'anomalies s'active/se règle dans `[ml]` de `netdata.conf` (`enabled = yes` par défaut sur la plupart des versions) :
+
+```ini /etc/netdata/netdata.conf
+[ml]
+    enabled = yes
+    maximum num samples to train = 21600     ; 6 h d'entraînement glissant
+    num samples to diff = 1
+```
 
 > [!WARNING]
 > Par défaut, l'agent écoute sur **toutes les interfaces** sans authentification : n'importe qui sur le réseau voit les métriques (noms de processus, utilisateurs, connexions). Restreignez l'écoute ou l'accès.
@@ -66,6 +83,27 @@ sudo systemctl restart netdata
 ```
 
 Publiez le tableau de bord derrière un reverse proxy HTTPS authentifié si un accès distant est nécessaire.
+
+### Durcissement complémentaire
+
+```ini /etc/netdata/netdata.conf
+[web]
+    mode = static-threaded
+    bind to = 127.0.0.1:19999
+    # Restreindre les API dangereuses (modification de config, exécution de fonctions) :
+    allow management from = localhost
+    allow netdata.conf from = localhost
+    allow streaming from = 10.0.*
+    enable gzip compression = yes
+[registry]
+    enabled = no                               ; pas d'enregistrement global (vie privée)
+[global]
+    run as user = netdata
+```
+
+- **Désactiver la télémétrie** : `--disable-telemetry` à l'installation, ou fichier `/etc/netdata/.opt-out-from-anonymous-statistics`.
+- **Jeton d'API** (lecture) pour un accès programmatique contrôlé : à définir côté reverse proxy (en-tête `Authorization`), Netdata n'authentifie pas lui-même l'agent local.
+- Le compte `netdata` tourne **sans privilèges** ; certains collecteurs (eBPF, perf) nécessitent des capacités ajoutées à des binaires précis (déjà réglées par le paquet).
 
 ## Suite
 

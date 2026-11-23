@@ -39,6 +39,18 @@ config: { bucket: thanos, endpoint: minio.corp.exemple.fr, access_key: THANOS, s
 
 Prometheus doit avoir des `external_labels` (par exemple `cluster`, `replica`) et `--storage.tsdb.min-block-duration=2h --storage.tsdb.max-block-duration=2h`. Grafana interroge **Thanos Query** (API Prometheus, port 10902).
 
+| Composant Thanos | Rôle |
+| --- | --- |
+| **Sidecar** | Accolé à chaque Prometheus : expose ses données en direct et téléverse ses blocs TSDB dans le stockage objet |
+| **Store Gateway** | Donne accès aux blocs historiques du stockage objet |
+| **Query** | Agrège sidecars et stores, déduplique les réplicas, expose l'API Prometheus |
+| **Query Frontend** | Met en cache et découpe les requêtes (accélère les longues plages) |
+| **Compactor** | Compacte et **sous-échantillonne** (5 m, 1 h) les blocs, applique la rétention |
+| **Ruler** | Évalue les règles d'alerte/enregistrement sur l'ensemble des données |
+| **Receive** | Reçoit en `remote_write` (mode *push*, alternative au sidecar pour les sources sans Prometheus local) |
+
+Le **sous-échantillonnage** du Compactor est la clé des requêtes sur plusieurs mois : une plage d'un an est servie à la résolution 1 h, bien plus légère que les données brutes.
+
 ## Grafana Mimir
 
 ```bash

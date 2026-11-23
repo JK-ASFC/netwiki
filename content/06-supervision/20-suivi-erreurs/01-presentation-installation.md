@@ -37,7 +37,27 @@ import sentry_sdk
 sentry_sdk.init(dsn="https://<clé>@erreurs.corp.exemple.fr/3", environment="prod", release="inventaire@1.8.2", traces_sample_rate=0.1)
 ```
 
-Le **DSN** se trouve dans les paramètres du projet. Masquer les données personnelles (`send_default_pii=False`, règles de nettoyage côté serveur) et définir une **rétention** courte (90 jours) pour respecter le RGPD.
+Le **DSN** se trouve dans les paramètres du projet. SDK pour la plupart des langages et cadriciels (JavaScript/navigateur, Node, Python, PHP/Laravel, Ruby/Rails, Java, .NET, Go, Android, iOS…) ; tous acceptent le même DSN, y compris vers GlitchTip.
+
+### Bien exploiter les erreurs
+
+- **Regroupement** (*fingerprinting*) : les occurrences d'une même erreur sont fusionnées en un *issue* ; on suit son état (non résolu, résolu, ignoré) et sa régression.
+- **Contexte de version** : renseignez `release` (et téléversez les *source maps* JS / symboles pour dépiler le code minifié) afin de relier une erreur au commit et au déploiement fautifs.
+- **Breadcrumbs** et contexte utilisateur/requête accompagnent chaque exception.
+- **Alertes** : règles « nouvelle erreur », « seuil d'occurrences », « régression » → courriel, **Slack**, **Teams**, webhook, PagerDuty.
+
+```javascript
+// Navigateur / Node
+Sentry.init({
+  dsn: "https://<clé>@erreurs.corp.exemple.fr/5",
+  environment: "prod",
+  release: "inventaire@1.8.2",
+  tracesSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1.0,   // rejeu de session sur erreur (Sentry)
+});
+```
+
+Masquer les données personnelles (`send_default_pii=False`, scrubbing côté serveur) et définir une **rétention** courte (90 jours) pour respecter le RGPD.
 
 <!-- CAPTURE: GlitchTip — liste des problèmes d'un projet | _assets/glitchtip-problemes.png -->
 <!-- CAPTURE: Sentry — détail d'une erreur avec pile d'appels | _assets/sentry-erreur.png -->

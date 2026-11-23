@@ -49,6 +49,44 @@ curl -s 'http://vm:8428/api/v1/query?query=up' | jq '.data.result | length'
 vmbackup -storageDataPath=/var/lib/victoria-metrics -snapshot.createURL=http://localhost:8428/snapshot/create -dst=s3://sauv-vm/quotidien
 ```
 
-Interface intégrée **vmui** : `http://vm:8428/vmui` (requêtes, cardinalité, requêtes lentes).
+Interface intégrée **vmui** : `http://vm:8428/vmui` (requêtes, cardinalité via *Cardinality explorer*, requêtes lentes, graphe).
+
+## vmagent : collecte et relais
+
+`vmagent` remplace la collecte de Prometheus avec un tampon disque (aucune perte si la base est indisponible) et peut dédoubler l'écriture vers plusieurs destinations :
+
+```bash
+vmagent -promscrape.config=/etc/vmagent/scrape.yml \
+  -remoteWrite.url=http://vm1:8428/api/v1/write \
+  -remoteWrite.url=http://vm2:8428/api/v1/write \
+  -remoteWrite.tmpDataPath=/var/lib/vmagent -remoteWrite.maxDiskUsagePerURL=10GB
+```
+
+Il accepte aussi le *push* : `remote_write` Prometheus, protocoles **InfluxDB** (`:8428/write`), **Graphite**, **OpenTSDB**, **DataDog**, OTLP — pratique pour migrer sans changer les agents existants.
+
+## vmalert : règles et alertes
+
+```bash
+vmalert -datasource.url=http://vm:8428 \
+  -remoteWrite.url=http://vm:8428 \          # où écrire les règles d'enregistrement
+  -notifier.url=http://alertmanager:9093 \
+  -rule=/etc/vmalert/*.yml                    # mêmes fichiers de règles que Prometheus
+```
+
+Les fichiers de règles sont **identiques** à ceux de Prometheus (`groups: [{ rules: [...] }]`). `-external.url` permet des liens cliquables depuis Alertmanager vers vmui.
+
+## MetricsQL
+
+MetricsQL est un sur-ensemble de PromQL, plus permissif et doté de fonctions supplémentaires : `rollup_rate`, `histogram_quantile` sur histogrammes natifs, `range_*`, `median_over_time`, intervalles par défaut implicites, `WITH (...)` pour factoriser une expression. Les requêtes PromQL existantes fonctionnent sans modification.
+
+## Version cluster
+
+| Composant | Rôle | Port |
+| --- | --- | --- |
+| `vminsert` | Reçoit les écritures, répartit sur les `vmstorage` | 8480 |
+| `vmstorage` | Stocke les données | 8482/8400/8401 |
+| `vmselect` | Exécute les requêtes en interrogeant les `vmstorage` | 8481 |
+
+Écriture : `http://vminsert:8480/insert/0/prometheus/api/v1/write` ; lecture : `http://vmselect:8481/select/0/prometheus` (le `0` est l'identifiant de locataire — multi-locataires natif). Outil de migration `vmctl` (depuis Prometheus, InfluxDB, Thanos, OpenTSDB).
 
 Suite : [[02-thanos-mimir-cortex|Thanos, Mimir et Cortex]] · [[90-aide-memoire|aide-mémoire]].

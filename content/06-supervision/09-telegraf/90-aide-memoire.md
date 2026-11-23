@@ -18,6 +18,10 @@ telegraf --config /etc/telegraf/telegraf.conf --config-directory /etc/telegraf/t
 telegraf --config /etc/telegraf/telegraf.conf --debug
 telegraf plugins inputs | head
 telegraf plugins outputs
+telegraf plugins processors ; telegraf plugins aggregators ; telegraf plugins secretstores
+telegraf --usage snmp                                                   # aide et options d'un greffon précis
+telegraf secrets list                                                   # magasins de secrets configurés
+telegraf secrets set os_store MON_TOKEN                                 # enregistrer un secret (@{os_store:MON_TOKEN})
 sudo systemctl restart telegraf && journalctl -u telegraf -f
 ```
 

@@ -34,7 +34,31 @@ sudo systemctl enable --now ntopng          # interface https://<hôte>:3000 (ad
 
 RHEL : dépôt ntop pour EL ; Windows : installeur ; Docker : `ntop/ntopng` (en mode `--network host`) ; [[19-pfsense-opnsense/01-pfsense|pfSense et OPNsense]] : paquet ntopng.
 
+| Option `ntopng.conf` | Rôle |
+| --- | --- |
+| `-i=ens224` | Interface écoutée (répéter pour plusieurs) ; `-i=tcp://…` pour nProbe |
+| `-w=3000` / `-W=3001` | Port HTTP / HTTPS de l'interface |
+| `-m=10.0.0.0/8` | Réseaux considérés comme locaux (distingue interne/externe) |
+| `-F="clickhouse;..."` | Export des flux vers ClickHouse (historique, édition Pro/Ent.) |
+| `-g` / `--local-networks-only` | Ne garder que les hôtes locaux |
+| `-n=1` | Résolution DNS des hôtes |
+| `--disable-login=1` | Désactiver l'authentification (à éviter) |
+
 Port miroir : configuration du commutateur (`monitor session 1 source interface Gi1/0/1 both` puis `destination interface Gi1/0/48` sur Cisco). Pour un gros débit, préférez les flux NetFlow/sFlow (moins de charge).
+
+## Ce que ntopng montre
+
+| Vue | Contenu |
+| --- | --- |
+| Tableau de bord | Top hôtes, top applications (nDPI), top talkers, répartition par protocole |
+| **Hôtes** | Par hôte : débit, applications, pairs, score de risque, ports, géolocalisation |
+| **Flux** (*Flows*) | Connexions en cours : client/serveur, application, octets, latence, état |
+| Applications (nDPI) | Reconnaissance applicative (HTTP, TLS/SNI, QUIC, streaming, VPN, P2P…) même sans numéro de port standard |
+| Interfaces | Débit, paquets, pertes par interface écoutée |
+| **Alertes** | Comportements anormaux : scans, dépassements de seuil, hôtes à risque, expirations TLS, DGA |
+| Carte / périphériques | Cartographie des échanges, découverte des équipements |
+
+Avec **nProbe**, ntopng collecte les flux **NetFlow v5/v9/IPFIX** et **sFlow** exportés par les routeurs (`-i=tcp://127.0.0.1:5556`), et exporte vers ClickHouse, Kafka ou Elasticsearch. L'**historique** (édition Pro/Enterprise) conserve les flux dans ClickHouse pour l'analyse rétrospective.
 
 > [!NOTE]
 > L'analyse de trafic touche aux communications des personnes : informez les utilisateurs (charte informatique), limitez l'accès et la durée de conservation, conformément au RGPD.
