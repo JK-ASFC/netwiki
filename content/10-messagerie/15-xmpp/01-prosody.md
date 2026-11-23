@@ -106,7 +106,27 @@ Component "fichiers.corp.exemple.fr" "http_file_share"
     http_file_share_expires_after = 30 * 86400
 ```
 
-Les modules courants (`mam`, `carbons`, `smacks`, `pep`, `blocklist`, `ping`, `bosh`, `websocket`…) s'activent dans `modules_enabled` de la section globale ; le fichier fourni par le paquet les liste avec des commentaires.
+### Catalogue des modules
+
+Les modules s'activent dans `modules_enabled` de la section globale (le fichier fourni les liste en commentaire) ; les modules **communautaires** s'installent avec `prosodyctl install`.
+
+| Domaine | Modules |
+| --- | --- |
+| Base (souvent activés d'office) | `roster`, `saslauth`, `tls`, `dialback`, `disco`, `posix`, `version`, `uptime`, `time`, `ping`, `register` |
+| Historique / multi-appareils | `mam` (archive), `carbons`, `smacks` (reprise de session), `offline` |
+| Présence / profil | `pep`, `vcard4`, `vcard_legacy`, `blocklist`, `lastactivity` |
+| HTTP / web | `bosh`, `websocket`, `http`, `http_file_share`, `http_files` |
+| Salons | `muc`, `muc_mam` (historique des salons), `muc_mention_notifications` |
+| Mobile | `csi_simple` (économie de batterie), `cloud_notify` (push, communautaire) |
+| Sécurité / limites | `limits`, `firewall` (règles, communautaire), `s2s_bidi`, `tombstones`, `watchregistrations` |
+| Administration | `admin_adhoc`, `admin_shell`, `admin_telnet`, `announce` |
+| Authentification | `auth_internal_hashed` (défaut), `auth_ldap` (communautaire), `auth_sql`, `auth_oauthbearer` |
+| Appels (A/V) | `turn_external` (coturn), `external_services` |
+
+```bash
+sudo prosodyctl install mod_cloud_notify      # module communautaire (push mobile)
+sudo prosodyctl check                          # vérifier après activation
+```
 
 ### Certificats
 
