@@ -27,9 +27,31 @@ RHEL/Oracle Linux/Alma : dépôts `pritunl.repo` et `mongodb-org.repo` puis `dnf
 3. **Start Server**.
 4. Chaque utilisateur télécharge son profil (lien temporaire, URI `pritunl://`) et l'importe dans **Pritunl Client** (Windows, macOS, Linux) ou tout client OpenVPN.
 
+### Modes de serveur et options
+
+| Réglage (onglet Server) | Rôle |
+| --- | --- |
+| Protocol | **OpenVPN** (UDP/TCP) ou **WireGuard** (port dédié en plus) |
+| Virtual Network | Sous-réseau des clients (`10.11.0.0/24`) ; `Network Mode` *Tunnel* ou *Bridge* |
+| Routes | Réseaux routés par le VPN ; cocher *NAT* pour masquer, décocher pour un routage pur |
+| DNS Servers / Search Domain | Résolution poussée aux clients |
+| Restrict Routes, Block Outside DNS | Empêcher les fuites hors tunnel |
+| Inter-Client / VXLAN | Communication entre clients, maillage multi-serveurs |
+| Max Clients, Ping/Dpd | Capacité et détection de pairs morts |
+
+### SSO, MFA et haute disponibilité
+
+- **MFA** : Google Authenticator/TOTP (édition gratuite) ; **SSO** SAML/OIDC (Okta, Entra ID, Google, OneLogin, Duo, Radius) en édition payante.
+- **Haute disponibilité** : plusieurs hôtes Pritunl partageant le même **replica set MongoDB** ; un serveur VPN peut être *replicated* sur plusieurs hôtes derrière une même adresse.
+- **PIN** et **Device Authentication** par utilisateur ; expiration et désactivation des profils.
+
 ```bash
 sudo pritunl logs                 # journaux
+sudo pritunl set-mongodb mongodb://… # changer la base
 sudo pritunl reset-password       # réinitialiser l'accès administrateur
+sudo pritunl set app.reverse_proxy true   # derrière un reverse proxy
+sudo pritunl set app.redirect_server false # désactiver la redirection HTTP→HTTPS
+sudo pritunl version
 ```
 
 **Pritunl Zero** (projet séparé) fournit un accès Zero Trust aux services web et SSH par certificats. Interface : [[04-interface-graphique|interfaces graphiques]].
