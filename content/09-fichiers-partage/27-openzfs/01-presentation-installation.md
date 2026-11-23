@@ -41,6 +41,27 @@ sudo zfs set quota=2T tank/sauvegardes ; sudo zfs set sharenfs="rw=@10.0.20.0/24
 zpool status ; zpool list ; zfs list -o name,used,avail,compressratio
 ```
 
+### Propriétés de dataset utiles
+
+| Propriété | Rôle |
+| --- | --- |
+| `compression` | `lz4` (défaut conseillé), `zstd`, `zstd-N`, `off` |
+| `recordsize` | Taille de bloc logique : `1M` (gros fichiers), `16K`/`8K` (bases) |
+| `atime` / `relatime` | Horodatage d'accès (`off` pour la performance) |
+| `xattr=sa` | Attributs étendus en ligne (ACL POSIX efficaces) |
+| `sync` | `standard`, `always`, `disabled` (jamais sur des données importantes) |
+| `logbias` | `latency` (défaut) ou `throughput` |
+| `primarycache` / `secondarycache` | Contenu mis en ARC / L2ARC (`all`, `metadata`, `none`) |
+| `quota` / `refquota` | Limite d'espace (avec / sans les instantanés et enfants) |
+| `reservation` / `refreservation` | Espace garanti |
+| `dedup` | Déduplication (très coûteuse en RAM : à éviter, préférer la compression) |
+| `copies` | 1–3 copies des blocs (redondance intra-pool) |
+| `sharenfs` / `sharesmb` | Export NFS / partage SMB intégré |
+| `snapdir` | `visible`/`hidden` : accès aux instantanés via `.zfs/snapshot` |
+| `encryption` / `keyformat` / `keylocation` | Chiffrement natif |
+
+`zfs get all tank/bases` liste toutes les propriétés et leur origine (locale, héritée, par défaut).
+
 ## Instantanés, réplication et entretien
 
 ```bash
