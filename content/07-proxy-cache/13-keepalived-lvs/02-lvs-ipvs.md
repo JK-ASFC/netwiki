@@ -13,6 +13,21 @@ icon: info
 | **DR** (`-g`) | Le directeur réécrit seulement l'adresse MAC ; les réponses vont **directement** au client | Même segment L2 ; VIP sur `lo` des serveurs réels, ARP désactivé pour elle |
 | **TUN** (`-i`) | Encapsulation IP-in-IP vers les serveurs réels | Serveurs réels capables de décapsuler |
 
+### Algorithmes d'ordonnancement (`-s`)
+
+| Code | Algorithme | Usage |
+| --- | --- | --- |
+| `rr` | *Round Robin* | Tourniquet simple |
+| `wrr` | *Weighted RR* | Tourniquet pondéré (serveurs de puissances différentes) |
+| `lc` | *Least Connection* | Vers le serveur avec le moins de connexions actives |
+| `wlc` | *Weighted LC* | Idem, pondéré (défaut recommandé) |
+| `sh` | *Source Hashing* | Même client → même serveur (persistance par IP source) |
+| `dh` | *Destination Hashing* | Par IP de destination (caches transparents) |
+| `mh` | *Maglev Hashing* | Hachage cohérent (stable quand un serveur change) |
+| `lblc` / `lblcr` | *Locality-Based LC* | Affinité de cache avec repli |
+
+La **persistance** (`-p [timeout]` en ipvsadm, `persistence_timeout` sous Keepalived) épingle un client à un serveur le temps d'une session.
+
 ## Installation et service virtuel
 
 ```bash

@@ -73,4 +73,36 @@ traffic_ctl metric match cache_hit
 curl -X PURGE -H "Host: www.corp.exemple.fr" http://127.0.0.1/images/logo.png
 ```
 
-Plugin `stats_over_http` pour exposer les métriques (export vers [[02-prometheus/01-presentation-installation|Prometheus]]). Commandes : [[90-aide-memoire|aide-mémoire]].
+Plugin `stats_over_http` pour exposer les métriques (export vers [[02-prometheus/01-presentation-installation|Prometheus]]).
+
+## Greffons (plugins)
+
+ATS est extensible par greffons (globaux dans `plugin.config`, ou par règle avec `@plugin=` dans `remap.config`) :
+
+| Greffon | Rôle |
+| --- | --- |
+| `header_rewrite` | Réécrire/ajouter/supprimer des en-têtes selon des conditions |
+| `cache_promote` | Ne mettre en cache qu'après N accès (évite de polluer le cache) |
+| `cache_range_requests` | Mettre en cache les requêtes `Range` (vidéo, gros fichiers) |
+| `s3_auth` | Signer les requêtes vers un stockage objet S3 en origine |
+| `regex_remap` | Remap par expressions régulières |
+| `compress` | Compression gzip/brotli à la volée |
+| `xdebug` | En-têtes de débogage (`X-Cache`, `Via`) via l'en-tête `X-Debug` |
+| `lua` / `ts_lua` | Logique sur mesure en Lua |
+| `prometheus` / `stats_over_http` | Exposition des métriques |
+
+## traffic_ctl et outils
+
+```bash
+traffic_ctl config get proxy.config.http.cache.required_headers   # lire un paramètre
+traffic_ctl config set proxy.config.http.insert_age_in_response 0 # écrire (persistant)
+traffic_ctl config diff                                           # écarts par rapport aux valeurs par défaut
+traffic_ctl config reload          # recharger (remap, header_rewrite, la plupart des records)
+traffic_ctl server restart         # redémarrage (ports, storage.config)
+traffic_ctl metric match hit       # tous les compteurs contenant « hit »
+traffic_ctl plugin msg <plugin> <message>   # message à un greffon à chaud
+traffic_logstats -f /var/log/trafficserver/access.log           # statistiques des journaux
+traffic_server -C verify_config    # vérifier la configuration
+```
+
+Taux de succès du cache : `proxy.process.http.cache_hit_ratio` (via `traffic_ctl metric get`). Commandes : [[90-aide-memoire|aide-mémoire]].

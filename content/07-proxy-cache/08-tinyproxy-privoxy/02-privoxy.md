@@ -56,7 +56,25 @@ sudo systemctl restart privoxy
 curl -x http://10.0.20.6:8118 -I http://www.exemple.com
 ```
 
-Interface d'information : `http://config.privoxy.org/` (ou `http://p.p/`) via le proxy — affiche la configuration, les actions appliquées à une URL (*Show which actions apply to a URL*).
+### Actions courantes
+
+Les **actions** (`+` active, `-` désactive) s'appliquent aux motifs d'URL qui suivent :
+
+| Action | Effet |
+| --- | --- |
+| `+block{raison}` | Bloque la requête (publicité, traqueur) |
+| `+handle-as-image` / `+handle-as-empty-document` | Remplace un élément bloqué par une image/page vide (évite les trous dans la page) |
+| `+redirect{URL}` | Redirige la requête |
+| `+hide-referrer{…}` / `+hide-user-agent{…}` | Masque/falsifie `Referer` et `User-Agent` |
+| `+crunch-incoming-cookies` / `+crunch-outgoing-cookies` / `+session-cookies-only` | Supprime ou limite les cookies |
+| `+filter{nom}` | Applique un filtre de contenu (`default.filter`/`user.filter`) |
+| `+change-x-forwarded-for{block}` | Retire l'en-tête `X-Forwarded-For` |
+| `+limit-connect{ports}` | Restreint les ports autorisés en `CONNECT` |
+| `+forward-override{…}` | Change le transfert (SOCKS/parent) pour ce motif |
+
+Les motifs d'URL s'écrivent `domaine/chemin` avec jokers : `.doubleclick.net`, `exemple.com/pub/`, `/banniere[0-9]+\.gif`. Fichiers : `match-all.action` (réglages globaux), `default.action` (livré, mis à jour), **`user.action`** (vos règles, les plus prioritaires).
+
+Interface d'information : `http://config.privoxy.org/` (ou `http://p.p/`) via le proxy — affiche la configuration, bascule les actions, et surtout *Show which actions apply to a URL* pour **déboguer** quelle règle agit sur une adresse.
 
 > [!NOTE]
 > Sans inspection TLS (fonction optionnelle à compiler et à configurer avec une CA), Privoxy ne voit que le nom d'hôte des sites HTTPS : le filtrage se limite alors au blocage par domaine.

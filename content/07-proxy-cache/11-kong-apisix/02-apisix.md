@@ -45,6 +45,18 @@ curl -s http://127.0.0.1:9180/apisix/admin/consumers -H "$ADMIN" -X PUT -d '{
 curl -i http://127.0.0.1:9080/commandes/123 -H "apikey: cle-appli-mobile-2026"
 ```
 
+## Catalogue de greffons (plus de 80)
+
+| Catégorie | Greffons |
+| --- | --- |
+| Authentification | `key-auth`, `basic-auth`, `jwt-auth`, `hmac-auth`, `openid-connect`, `ldap-auth`, `authz-keycloak`, `opa` |
+| Sécurité | `cors`, `ip-restriction`, `ua-restriction`, `csrf`, `referer-restriction`, `consumer-restriction` |
+| Trafic | `limit-count`, `limit-req`, `limit-conn`, `proxy-cache`, `request-validation`, `traffic-split` (canari/A-B), `api-breaker` (disjoncteur), `proxy-rewrite`, `response-rewrite` |
+| Observabilité | `prometheus`, `skywalking`, `opentelemetry`, `zipkin`, `http-logger`, `kafka-logger`, `syslog`, `datadog` |
+| Sans serveur / divers | `serverless-pre-function`/`post-function`, `aws-lambda`, `azure-functions`, `grpc-transcode`, `grpc-web`, `fault-injection`, `mocking` |
+
+Les greffons s'écrivent en **Lua**, ou en Go/Python/Java/JS via les *plugin runners* externes, ou en **WASM** (proxy-wasm). L'ordre d'exécution suit leur priorité.
+
 ## Configuration déclarative
 
 - **Mode autonome** : `deployment.role_data_plane.config_provider: yaml` et fichier `conf/apisix.yaml` (rechargé automatiquement), sans etcd.

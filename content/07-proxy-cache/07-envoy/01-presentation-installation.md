@@ -104,6 +104,39 @@ sudo systemctl restart envoy                       # ou envoy -c … en premier 
 
 TLS côté client : `transport_socket` de type `DownstreamTlsContext` sur la chaîne de filtres (certificats fichiers ou SDS) ; TLS vers l'amont : `UpstreamTlsContext` sur le cluster.
 
+### Filtres HTTP courants
+
+Les filtres HTTP s'enchaînent dans l'ordre, `router` toujours en dernier :
+
+| Filtre | Rôle |
+| --- | --- |
+| `router` | Routage vers les clusters (obligatoire, en fin de chaîne) |
+| `ext_authz` | Délègue l'autorisation à un service externe (gRPC/HTTP) |
+| `jwt_authn` | Vérifie les jetons JWT (JWKS, *issuer*, *audiences*) |
+| `rbac` | Contrôle d'accès par règles (en-têtes, SNI, IP, JWT) |
+| `cors` | En-têtes CORS |
+| `local_ratelimit` / `ratelimit` | Limitation de débit locale ou via un service global |
+| `compressor` / `decompressor` | gzip, brotli, zstd |
+| `lua` / `wasm` | Scripts Lua ou modules WebAssembly (filtres sur mesure) |
+| `fault` | Injection de pannes/latences (tests de résilience) |
+| `header_to_metadata`, `grpc_web`, `grpc_json_transcoder` | Transformations d'en-têtes et passerelles gRPC |
+
+### Politiques d'équilibrage (`lb_policy`)
+
+`ROUND_ROBIN`, `LEAST_REQUEST`, `RING_HASH` et `MAGLEV` (hachage cohérent par clé, sessions persistantes), `RANDOM`, `CLUSTER_PROVIDED`. Les clusters portent aussi **disjoncteurs** (`circuit_breakers`), **détection de pannes** (`outlier_detection` : éjection des *endpoints* qui renvoient des 5xx) et **réessais** par route.
+
+### Endpoints d'administration utiles
+
+| Endpoint (`:9901`) | Usage |
+| --- | --- |
+| `/ready` | Prêt à servir (sonde de vivacité) |
+| `/clusters` | État et santé de chaque *endpoint* amont |
+| `/config_dump` | Configuration effective (toutes les ressources xDS) |
+| `/stats` et `/stats/prometheus` | Compteurs ; format Prometheus |
+| `/listeners`, `/certs`, `/server_info` | Écouteurs, certificats chargés, version et état |
+| `POST /logging?level=debug` | Niveau de journalisation à chaud |
+| `POST /healthcheck/fail` | Sortir proprement du service (drain) avant arrêt |
+
 ## Administration et observabilité
 
 L'interface d'administration (jamais exposée publiquement) donne l'état interne :
