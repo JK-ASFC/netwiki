@@ -109,7 +109,20 @@ modules:
     access: none                            # pas d'inscription libre
 ```
 
-Le fichier fourni contient la liste complète des modules usuels (`mod_carbons`, `mod_stream_mgmt`, `mod_push`, `mod_pubsub`, `mod_vcard`, `mod_stun_disco`…). Vérifier puis appliquer sans couper les connexions :
+### Catalogue des modules
+
+| Domaine | Modules |
+| --- | --- |
+| Historique / multi-appareils | `mod_mam`, `mod_carboncopy`, `mod_stream_mgmt`, `mod_offline` |
+| Salons | `mod_muc`, `mod_muc_admin`, `mod_muc_log`, `mod_mix` (canaux MIX) |
+| Présence / profil | `mod_roster`, `mod_vcard`, `mod_vcard_xupdate`, `mod_last`, `mod_privacy`, `mod_blocking`, `mod_pubsub`, `mod_pep` |
+| Fichiers / HTTP | `mod_http_upload`, `mod_http_upload_quota`, `mod_http_api`, `mod_bosh`, `ejabberd_http_ws` |
+| Mobile | `mod_push`, `mod_push_keepalive`, `mod_client_state` |
+| Appels A/V | `mod_stun_disco`, `mod_proxy65` (relais de fichiers), STUN/TURN intégré |
+| Inscription / admin | `mod_register`, `mod_admin_extra`, `mod_configure`, `mod_announce` |
+| Autres protocoles | `mod_mqtt` (courtier MQTT), `mod_sip` |
+
+La liste de référence (avec chaque option) est dans la documentation `modules` d'ejabberd ; `ejabberdctl modules_available` et `modules_installed` gèrent les **modules contribués** (ejabberd-contrib). Vérifier puis appliquer sans couper les connexions :
 
 ```bash
 sudo ejabberdctl reload_config

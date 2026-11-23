@@ -56,4 +56,32 @@ rclone rcd --rc-web-gui --rc-user admin --rc-pass "$MDP"   # interface web d'adm
 
 <!-- CAPTURE: Rclone Web GUI — explorateur de remotes | _assets/rclone-webgui.png -->
 
+### Sous-commandes utiles
+
+| Commande | Rôle |
+| --- | --- |
+| `copy` / `move` | Copier / déplacer (sans supprimer à la destination) |
+| `sync` | Rendre la destination **identique** à la source (supprime le surplus) |
+| `bisync` | Synchronisation **bidirectionnelle** (deux sens) |
+| `check` / `cryptcheck` | Vérifier que source et destination concordent (empreintes) |
+| `dedupe` | Fusionner les doublons (Google Drive notamment) |
+| `mount` / `serve` | Monter un remote (FUSE/WinFsp) / l'exposer (S3, WebDAV, SFTP, HTTP, NFS) |
+| `lsd`, `ls`, `lsl`, `tree`, `size` | Lister, arborescence, taille |
+| `cleanup` / `purge` | Vider la corbeille du remote / supprimer un dossier et son contenu |
+
+### Indicateurs globaux fréquents
+
+| Indicateur | Effet |
+| --- | --- |
+| `--transfers N` / `--checkers N` | Transferts / comparaisons en parallèle |
+| `--bwlimit 10M` | Limiter la bande passante (`--bwlimit "08:00,1M 20:00,off"` par plage horaire) |
+| `--fast-list` | Moins d'appels API (gros buckets S3) |
+| `--filter`, `--include`, `--exclude`, `--exclude-from` | Sélection des fichiers |
+| `--max-age 7d` / `--min-size 1M` | Filtres par date / taille |
+| `--backup-dir` | Déplacer les fichiers remplacés/supprimés ailleurs (versions) |
+| `--track-renames` | Détecter les renommages (évite de recopier) |
+| `--dry-run` / `--interactive` | Simulation / confirmation |
+| `--progress` / `--stats 10s` | Avancement / statistiques périodiques |
+| `--log-file` / `--log-level` | Journalisation (`INFO`, `DEBUG`) |
+
 Planification : minuterie systemd ou cron ; sous Windows, tâche planifiée avec `--log-file`. Commandes : [[90-aide-memoire|aide-mémoire]].

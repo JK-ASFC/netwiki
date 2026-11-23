@@ -31,7 +31,21 @@ echo '/mnt/disque* /srv/media fuse.mergerfs cache.files=off,category.create=mfs,
 sudo mkdir -p /srv/media && sudo mount /srv/media && df -h /srv/media
 ```
 
-Politiques de création : `mfs` (disque le plus libre), `epmfs` (garder les fichiers d'un même dossier ensemble), `ff` (premier disque).
+Politiques de création : `mfs` (disque le plus libre), `epmfs` (garder les fichiers d'un même dossier ensemble), `ff` (premier disque), `rand`, `lus` (le moins utilisé).
+
+| Option de montage | Rôle |
+| --- | --- |
+| `category.create=` | Politique de création de fichier (`mfs`, `epmfs`, `ff`, `lus`, `rand`) |
+| `category.search=` / `category.action=` | Politique de recherche / d'action (ouverture, suppression) |
+| `minfreespace=50G` | Espace libre minimal pour qu'un disque reçoive de nouveaux fichiers |
+| `moveonenospc=true` | Déplacer un fichier vers un autre disque si celui-ci est plein en cours d'écriture |
+| `cache.files=` | `off` (défaut récent, cohérence), `partial`, `full`, `auto-full` |
+| `dropcacheonclose=true` | Vider le cache à la fermeture (recommandé avec `cache.files=partial/full`) |
+| `func.getattr=newest` | Afficher la version la plus récente d'un fichier présent sur plusieurs disques |
+| `branches` (chemin) | `/mnt/d1:/mnt/d2=RO:/mnt/d3=NC` : par disque, mode RW, lecture seule (RO) ou pas de création (NC) |
+| `fsname=mergerfs` | Nom affiché dans `df` / `mount` |
+
+Dans `/etc/fstab`, le motif `/mnt/disque*` développe automatiquement les branches ; `mergerfs.fsck` et `mergerfs.dup` (paquet `mergerfs-tools`) vérifient droits et duplications.
 
 ## SnapRAID
 

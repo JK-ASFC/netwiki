@@ -65,6 +65,23 @@ Pour MySQL/PostgreSQL : `ROUNDCUBEMAIL_DB_TYPE`, `ROUNDCUBEMAIL_DB_HOST`, `ROUND
 | `carddav` (tierce) | Carnets d'adresses CardDAV (SOGo, Baïkal, Nextcloud) |
 | `oauth2` (cœur) | Connexion par OAuth2/OIDC (Microsoft 365, Keycloak) : `oauth_provider`, `oauth_client_id`… |
 
+## Options de configuration utiles (`config.inc.php`)
+
+| Option | Rôle |
+| --- | --- |
+| `default_host`, `smtp_host` | Serveurs IMAP/SMTP (préremplis, non modifiables si une seule valeur) |
+| `session_lifetime` | Durée d'inactivité avant déconnexion (minutes) |
+| `enable_installer` | **Mettre à `false`** après installation (sinon `/installer` accessible) |
+| `log_driver`, `log_dir`, `per_user_logging` | Journalisation (fichier, syslog) |
+| `imap_cache`, `messages_cache` | Cache des entêtes/messages en base (performances) |
+| `max_message_size`, `max_group_members` | Limites |
+| `password_charset`, `username_domain` | Domaine ajouté automatiquement à l'identifiant |
+| `default_charset`, `skin_logo` | Encodage, logo personnalisé |
+| `trusted_host_patterns` | Noms d'hôtes autorisés (anti-injection d'en-tête `Host`) |
+| `smtp_conn_options` / `imap_conn_options` | Options TLS (vérification du certificat) |
+
+Les réglages par défaut d'un **nouvel** utilisateur (tri, aperçu, signature HTML…) se placent dans `config['default_*']` et `config['dont_override']` pour les verrouiller.
+
 ## Sécurité, sauvegarde, mise à jour
 
 - HTTPS uniquement, `/installer` supprimé, dossiers `config/`, `temp/`, `logs/` et `SQL/` non accessibles depuis le web, Fail2ban sur `logs/errors.log` (échecs de connexion).

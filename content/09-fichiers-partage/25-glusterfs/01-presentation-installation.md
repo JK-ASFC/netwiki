@@ -55,4 +55,21 @@ sudo gluster volume replace-brick web gl3:/srv/gluster/web gl4:/srv/gluster/web 
 sudo gluster snapshot create avant-maj web       # nécessite des briques sur LVM thin
 ```
 
+### Options de volume (`gluster volume set`)
+
+| Option | Rôle |
+| --- | --- |
+| `auth.allow` / `auth.reject` | Adresses IP clientes autorisées/refusées |
+| `cluster.self-heal-daemon` | Démon d'auto-réparation (on/off) |
+| `cluster.quorum-type` / `cluster.server-quorum-type` | Quorum client/serveur (protection contre le split-brain) |
+| `features.quota` / `features.quota-deem-statfs` | Quotas et prise en compte dans `df` |
+| `performance.cache-size` | Cache de lecture par brique |
+| `performance.io-thread-count` | Threads d'E/S |
+| `nfs.disable` | Désactiver l'export NFS intégré (déprécié au profit de NFS-Ganesha) |
+| `network.ping-timeout` | Délai avant d'écarter une brique injoignable |
+| `storage.fips-mode-rchecksum` | Sommes de contrôle conformes FIPS |
+| `diagnostics.brick-log-level` | Verbosité des journaux de brique |
+
+`gluster volume get web all` affiche toutes les options effectives d'un volume.
+
 Commandes : [[90-aide-memoire|aide-mémoire]].

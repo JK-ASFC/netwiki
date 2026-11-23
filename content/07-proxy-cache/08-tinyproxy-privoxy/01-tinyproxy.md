@@ -61,4 +61,23 @@ curl -x http://10.0.20.5:8888 -I https://deb.debian.org
 
 Clients : `export https_proxy=http://10.0.20.5:8888` ; APT : `Acquire::https::Proxy "http://10.0.20.5:8888";` dans `/etc/apt/apt.conf.d/90proxy` ; DNF : `proxy=http://10.0.20.5:8888` dans `/etc/dnf/dnf.conf`.
 
+### Directives principales
+
+| Directive | Rôle |
+| --- | --- |
+| `Port` / `Listen` / `Bind` | Port d'écoute / interface d'écoute / adresse source des sorties |
+| `Allow` / `Deny` | Réseaux autorisés/refusés à utiliser le proxy |
+| `ConnectPort` | Ports autorisés pour la méthode `CONNECT` (HTTPS : 443, 563) ; vide = tous |
+| `BasicAuth user mdp` | Authentification HTTP (en clair → réseau interne uniquement) |
+| `Upstream http hôte:port "."` | Chaînage vers un proxy parent (par domaine ou global) ; `Upstream socks5 …` |
+| `Filter` / `FilterType` (`ere`/`fnmatch`) | Liste de domaines/URL ; `FilterURLs`, `FilterDefaultDeny Yes` = liste blanche |
+| `FilterCaseSensitive`, `FilterExtended` | Comportement du filtre |
+| `MaxClients` | Connexions simultanées |
+| `DisableViaHeader` / `XTinyproxy` | Masquer l'en-tête `Via` / ne pas ajouter `X-Tinyproxy` |
+| `Anonymous` | En-têtes à conserver (tous les autres sont retirés) |
+| `StatHost` | Hôte virtuel renvoyant la page de statistiques du proxy |
+| `LogLevel` (`Critical`…`Connect`/`Info`) | Verbosité des journaux |
+
+`tinyproxy -d` lance en premier plan (débogage) ; `tinyproxy -c /chemin/tinyproxy.conf` pour un fichier précis. La page de statistiques (`StatHost`) donne le nombre de connexions ouvertes, refusées et le temps de fonctionnement.
+
 Suite : [[02-privoxy|Privoxy]] · [[90-aide-memoire|aide-mémoire]].

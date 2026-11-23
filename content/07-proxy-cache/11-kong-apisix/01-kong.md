@@ -63,6 +63,18 @@ curl -s -X POST localhost:8001/services/api-stock/plugins --data name=rate-limit
 curl -s localhost:8001/routes | jq '.data[] | {name, paths}'
 ```
 
+### Catalogue de greffons
+
+| Catégorie | Greffons |
+| --- | --- |
+| Authentification | `key-auth`, `basic-auth`, `hmac-auth`, `jwt`, `oauth2`, `ldap-auth`, `openid-connect` (Enterprise), `mtls-auth` |
+| Sécurité | `acl`, `cors`, `ip-restriction`, `bot-detection`, `request-size-limiting` |
+| Trafic | `rate-limiting`, `response-ratelimiting`, `request-termination`, `proxy-cache`, `request-transformer`, `response-transformer`, `correlation-id` |
+| Observabilité | `prometheus`, `http-log`, `file-log`, `tcp-log`, `syslog`, `datadog`, `zipkin`, `opentelemetry` |
+| Sans serveur / divers | `serverless-functions` (pre/post), `aws-lambda`, `azure-functions`, `grpc-gateway`, `grpc-web` |
+
+L'ordre d'exécution des greffons est fixé par leur priorité ; un même greffon peut être posé globalement puis affiné par service, route ou consommateur (le plus spécifique gagne). Greffons sur mesure en **Lua** ou, via le *plugin server*, en Go/Python/JS.
+
 > [!WARNING]
 > L'API d'administration donne le contrôle total de la passerelle : ne l'exposez **jamais** publiquement (écoute sur `127.0.0.1` ou réseau d'administration, filtrage, ou greffon d'authentification devant elle).
 
