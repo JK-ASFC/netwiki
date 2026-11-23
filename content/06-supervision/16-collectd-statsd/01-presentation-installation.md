@@ -39,20 +39,59 @@ LoadPlugin write_prometheus
 ```
 
 ```bash
-sudo collectd -t && sudo systemctl restart collectd
+sudo collectd -t && sudo systemctl restart collectd     # -t : tester la configuration
 curl -s localhost:9103/metrics | head
+```
+
+### Catalogue des greffons collectd
+
+Plus de 100 greffons ; les plus courants, par rôle :
+
+| Rôle | Greffons `LoadPlugin` |
+| --- | --- |
+| Système | `cpu`, `memory`, `load`, `df`, `disk`, `interface`, `swap`, `processes`, `uptime`, `users`, `irq`, `entropy`, `vmem`, `thermal`, `sensors`, `ipmi`, `numa` |
+| Réseau / sondes | `ping`, `dns`, `tcpconns`, `netlink`, `conntrack`, `snmp`, `snmp_agent` |
+| Services | `apache`, `nginx`, `mysql`, `postgresql`, `redis`, `memcached`, `varnish`, `openvpn`, `ntpd`, `chrony`, `bind`, `ceph` |
+| Virtualisation | `virt` (libvirt/KVM), `docker` (via `exec`) |
+| Entrées génériques | `exec` (script), `tail` (journaux), `python`, `perl`, `curl`, `curl_json`, `table` |
+| Sorties (*write*) | `write_prometheus`, `write_graphite`, `write_http`, `write_kafka`, `write_log`, `network` (protocole collectd), `rrdtool`, `csv`, `amqp`, `write_tsdb` (OpenTSDB), `write_mongodb` |
+| Prétraitement | `aggregation`, `filter` (chaînes), `target_*`, `match_*`, `threshold` (alertes/notifications) |
+
+Les types de mesures sont définis dans `types.db` (`gauge`, `counter`, `derive`, `absolute`). Le greffon `network` permet d'empiler collectd en **client/serveur** (agents qui poussent vers un collecteur central), et `threshold` + `notification` déclenchent des alertes (`exec` ou `notify_email`).
+
+```text /etc/collectd/collectd.conf (seuil + notification)
+LoadPlugin threshold
+<Plugin threshold>
+  <Plugin "df">
+    <Type "percent_bytes">
+      Instance "free"
+      WarningMin 10
+      FailureMin 5
+    </Type>
+  </Plugin>
+</Plugin>
 ```
 
 ## StatsD
 
-Les applications envoient des lignes texte en UDP (port **8125**) : `nom:valeur|type`.
+Les applications envoient des lignes texte en UDP (port **8125**) : `nom:valeur|type[|@échantillonnage]`.
+
+| Type | Suffixe | Usage |
+| --- | --- | --- |
+| Compteur | `\|c` | Incréments (requêtes, erreurs) ; agrégés en débit par seconde |
+| Jauge | `\|g` | Valeur instantanée (file d'attente, connexions) ; `+5`/`-3` pour un delta |
+| Durée (*timer*) | `\|ms` | Latences ; StatsD en calcule moyenne, médiane, centiles (p90, p95, p99) |
+| Histogramme | `\|h` | Variante des *timers* (certaines implémentations) |
+| Ensemble (*set*) | `\|s` | Nombre de valeurs **uniques** (ex. utilisateurs distincts) |
 
 ```bash
-echo "inventaire.connexions:1|c" | nc -u -w0 127.0.0.1 8125          # compteur
-echo "inventaire.temps_requete:320|ms" | nc -u -w0 127.0.0.1 8125     # durée
-echo "inventaire.file_attente:42|g" | nc -u -w0 127.0.0.1 8125        # jauge
+echo "inventaire.connexions:1|c" | nc -u -w0 127.0.0.1 8125            # compteur
+echo "inventaire.connexions:1|c|@0.1" | nc -u -w0 127.0.0.1 8125       # échantillonné à 10 %
+echo "inventaire.temps_requete:320|ms" | nc -u -w0 127.0.0.1 8125      # durée
+echo "inventaire.file_attente:42|g" | nc -u -w0 127.0.0.1 8125         # jauge
+echo "inventaire.utilisateurs:kevin|s" | nc -u -w0 127.0.0.1 8125      # ensemble
 ```
 
-Serveurs compatibles : StatsD d'origine (`npm install -g statsd`), **Telegraf** (entrée `statsd`), **statsd_exporter** (expose en format Prometheus), VictoriaMetrics via statsd_exporter.
+L'intervalle de **vidage** (*flush*, 10 s par défaut) détermine la fréquence d'agrégation vers la sortie. Serveurs compatibles : StatsD d'origine (`npm install -g statsd`), **Telegraf** (entrée `statsd`, avec analyse des `topic`/*templates*), **statsd_exporter** (expose en format Prometheus, avec fichier de *mapping* `name → métrique + labels`), VictoriaMetrics via statsd_exporter.
 
 Commandes : [[90-aide-memoire|aide-mémoire]].

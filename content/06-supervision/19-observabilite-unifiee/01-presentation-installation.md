@@ -32,7 +32,36 @@ docker run -d -p 8080:8080 -p 4317:4317 -p 4318:4318 docker.hyperdx.io/hyperdx/h
 # Paquets .deb/.rpm ou Docker Compose (dépôt uptrace/uptrace, dossier example/docker) avec ClickHouse et PostgreSQL
 ```
 
-Applications : variables `OTEL_EXPORTER_OTLP_ENDPOINT` vers la plate-forme (ou vers un Collector qui relaie). Dimensionner ClickHouse (disques rapides) et fixer une **rétention** par signal (journaux souvent 7 à 30 jours, traces 7 jours, métriques plus longtemps).
+## Envoyer les données (OTLP)
+
+Les applications (ou un Collector relais) pointent vers la plate-forme par les variables d'environnement standard OpenTelemetry :
+
+| Variable | Rôle |
+| --- | --- |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | URL du collecteur (`http://signoz:4318`) |
+| `OTEL_EXPORTER_OTLP_PROTOCOL` | `grpc` (4317) ou `http/protobuf` (4318) |
+| `OTEL_EXPORTER_OTLP_HEADERS` | En-têtes (clé d'ingestion : `signoz-ingestion-key=…`) |
+| `OTEL_SERVICE_NAME` | Nom du service (regroupe traces/métriques/journaux) |
+| `OTEL_RESOURCE_ATTRIBUTES` | Attributs de ressource (`deployment.environment=prod`) |
+
+```bash
+# Instrumentation automatique (exemple Python)
+pip install opentelemetry-distro opentelemetry-exporter-otlp && opentelemetry-bootstrap -a install
+OTEL_SERVICE_NAME=inventaire OTEL_EXPORTER_OTLP_ENDPOINT=http://signoz:4318 opentelemetry-instrument python app.py
+```
+
+## Dimensionnement et rétention
+
+- **ClickHouse** est le facteur dimensionnant : disques rapides (NVMe), RAM généreuse ; c'est lui qui absorbe le volume de journaux et de traces.
+- Fixez une **rétention par signal** (TTL ClickHouse) : journaux souvent 7 à 30 jours, traces 7 jours, métriques plus longtemps.
+- **Échantillonnage** des traces côté SDK ou Collector (`traces_sample_rate`, `tail_sampling`) pour maîtriser le volume.
+
+| Critère | Pile unifiée (SigNoz/HyperDX/Uptrace) | Pile Grafana (Loki/Tempo/Mimir) |
+| --- | --- | --- |
+| Déploiement | Une application + ClickHouse | Plusieurs services + Grafana |
+| Corrélation | Native, immédiate | Via *data links* configurés |
+| Stockage | ClickHouse (un moteur) | Objet (S3) par signal |
+| Souplesse | Intégrée, moins modulaire | Très modulaire, à assembler |
 
 <!-- CAPTURE: SigNoz — vue APM d'un service (latence, erreurs, débit) | _assets/signoz-apm.png -->
 <!-- CAPTURE: HyperDX — recherche de journaux et trace associée | _assets/hyperdx-recherche.png -->

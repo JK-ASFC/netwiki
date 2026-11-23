@@ -70,6 +70,59 @@ sudo systemctl enable --now telegraf
 
 Les fichiers de `/etc/telegraf/telegraf.d/*.conf` sont chargés en plus : un fichier par fonction. Les variables `${…}` viennent de l'environnement (`/etc/default/telegraf` ou unité systemd) ; Telegraf sait aussi lire des **magasins de secrets** (`[[secretstores.os]]`, `[[secretstores.jose]]`) référencés par `@{magasin:clé}`.
 
+### Générer une configuration
+
+```bash
+telegraf config > telegraf.conf                                  # configuration exemple complète
+telegraf --input-filter cpu:mem:disk:net:snmp \
+         --output-filter influxdb_v2 config > telegraf.conf      # seulement les greffons voulus
+telegraf plugins inputs | sort                                   # lister tous les greffons d'entrée compilés
+telegraf plugins outputs
+```
+
+### Catalogue des greffons
+
+Plus de 300 greffons, en quatre familles exécutées dans l'ordre **entrées → processeurs → agrégateurs → sorties** :
+
+| Famille | Exemples courants |
+| --- | --- |
+| **Entrées** (`inputs`) | `cpu`, `mem`, `disk`, `diskio`, `net`, `netstat`, `system`, `processes`, `procstat`, `kernel`, `temp`, `smart`, `ipmi_sensor`, `docker`, `kubernetes`, `snmp`, `gnmi`, `ping`, `net_response`, `http_response`, `dns_query`, `x509_cert`, `nginx`, `apache`, `haproxy`, `postgresql`, `mysql`, `redis`, `mongodb`, `elasticsearch`, `rabbitmq`, `mqtt_consumer`, `kafka_consumer`, `syslog`, `tail`, `exec`, `http`, `prometheus`, `win_perf_counters`, `win_services`, `win_eventlog` |
+| **Processeurs** (`processors`) | `rename`, `regex`, `converter`, `enum`, `strings`, `override`, `pivot`/`unpivot`, `date`, `starlark` (script), `lookup`, `filter` |
+| **Agrégateurs** (`aggregators`) | `basicstats` (min/max/moyenne), `histogram`, `quantile`, `merge`, `final`, `valuecounter` |
+| **Sorties** (`outputs`) | `influxdb_v2`, `influxdb`, `prometheus_client`, `file`, `kafka`, `mqtt`, `elasticsearch`, `graphite`, `opentsdb`, `cloudwatch`, `health`, `exec`, `socket_writer`, `nats`, `postgresql` |
+
+### Parsers (formats d'entrée) et processeurs
+
+Chaque entrée générique (`exec`, `http`, `file`, `tail`, `mqtt_consumer`, `kafka_consumer`) interprète les données avec un **data_format** : `influx`, `json`, `json_v2`, `csv`, `value`, `prometheus`, `xpath_json`, `grok`, `logfmt`. Les processeurs transforment avant envoi :
+
+```telegraf /etc/telegraf/telegraf.d/transformations.conf
+# Renommer une mesure et convertir un champ
+[[processors.rename]]
+  [[processors.rename.replace]]
+    measurement = "win_cpu"
+    dest = "cpu"
+
+[[processors.converter]]
+  [processors.converter.fields]
+    float = ["load1", "load5"]
+    tag   = ["status_code"]
+
+# Agréger : moyenne glissante sur 1 min, et ne garder que l'agrégat
+[[aggregators.basicstats]]
+  period = "60s"
+  drop_original = true
+  stats = ["mean", "max", "min"]
+
+# Script Starlark pour une logique sur mesure
+[[processors.starlark]]
+  source = '''
+def apply(metric):
+    if metric.fields.get("in_octets"):
+        metric.fields["in_bits"] = metric.fields["in_octets"] * 8
+    return metric
+'''
+```
+
 ## Windows
 
 ```telegraf C:\Program Files\Telegraf\telegraf.d\windows.conf

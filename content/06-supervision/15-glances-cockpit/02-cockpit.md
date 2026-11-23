@@ -17,6 +17,31 @@ sudo apt install -t "$(. /etc/os-release; echo $VERSION_CODENAME)-backports" coc
 
 Accès : `https://<serveur>:9090`, connexion avec un compte système (cocher « réutiliser mon mot de passe pour les tâches privilégiées » pour sudo). Modules complémentaires 45Drives : **Navigator** (fichiers), **File Sharing** (Samba et NFS), **Identities**.
 
+## Modules (paquets `cockpit-*`)
+
+Cockpit est modulaire : chaque fonction est un paquet activé à la demande.
+
+| Module | Paquet | Fonction |
+| --- | --- | --- |
+| Aperçu / graphiques | *(base)* | CPU, mémoire, disque, réseau en temps réel ; historique de performance via **PCP** (`cockpit-pcp`) |
+| Services | *(base)* | Unités systemd : démarrer, arrêter, activer, voir les journaux d'une unité |
+| Journaux | *(base)* | `journald` filtrable (priorité, unité, intervalle) |
+| Réseau | *(base)* | Interfaces, *bonds*, ponts, VLAN, pare-feu **firewalld** |
+| Comptes | *(base)* | Utilisateurs, clés SSH, mots de passe, rôles |
+| Stockage | `cockpit-storaged` | Disques, partitions, **LVM**, RAID, LUKS, systèmes de fichiers, NFS |
+| Mises à jour | `cockpit-packagekit` | Mises à jour logicielles, redémarrages, abonnement |
+| Conteneurs | `cockpit-podman` | Images et conteneurs **Podman** (pods, journaux, console) |
+| Machines virtuelles | `cockpit-machines` | VM **libvirt/KVM** (création, console VNC/SPICE, réseaux, pools) |
+| SELinux | `cockpit-selinux` | État, alertes et suggestions de correction |
+| Terminal | *(base)* | Shell du serveur dans le navigateur |
+| Diagnostics | `cockpit-storaged`, `sosreport` | Génération d'un rapport `sos` pour le support |
+| Kdump | `cockpit-kdump` | Configuration du vidage mémoire sur panique noyau |
+
+## Plusieurs serveurs et métriques
+
+- **Tableau de bord multi-hôtes** : ajoutez des serveurs depuis le sélecteur d'hôte (connexion SSH sortante depuis le serveur Cockpit principal ; aucun agent à installer sur les cibles).
+- **Historique de performance** : avec `cockpit-pcp` (*Performance Co-Pilot*), l'onglet « Affichage des métriques » conserve plusieurs jours de CPU, mémoire, disque et réseau, avec repérage des pics et des processus responsables.
+
 ## Sécurité
 
 - Certificat : déposer `*.cert` et `*.key` dans `/etc/cockpit/ws-certs.d/` (sinon certificat auto-signé).
