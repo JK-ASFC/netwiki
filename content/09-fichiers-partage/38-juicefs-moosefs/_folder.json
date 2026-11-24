@@ -1,0 +1,1 @@
+{ "title": "JuiceFS et MooseFS", "icon": "hard-drive", "color": "#2563eb", "description": "Systèmes de fichiers distribués POSIX : JuiceFS (données sur stockage objet S3, métadonnées Redis/SQL) et MooseFS (maître, chunkservers, réplication par objectif) — installation, montage, administration et exploitation." }
