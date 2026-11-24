@@ -1,0 +1,1 @@
+{ "title": "Connecteurs, CDC et traitement de flux", "icon": "workflow", "color": "#0891b2", "description": "Déplacer et transformer les flux entre bases, files de messages et stockages : Kafka Connect et Debezium (capture de changements, CDC) et Redpanda Connect / Benthos (traitement de flux déclaratif et connecteurs)." }

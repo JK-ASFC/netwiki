@@ -5,7 +5,7 @@ tags: [aide-mémoire, meilisearch, typesense, sonic, solr, manticore, zincsearch
 icon: terminal
 ---
 
-Explications : [[01-meilisearch-typesense-sonic|Meilisearch, Typesense et Sonic]] · [[02-solr-manticore-zinc-tantivy|Solr, Manticore, ZincSearch et Tantivy]].
+Explications : [[01-meilisearch-typesense-sonic|Meilisearch, Typesense et Sonic]] · [[02-solr-manticore-zinc-tantivy|Solr, Manticore, ZincSearch et Tantivy]] · [[03-quickwit|Quickwit]].
 
 | Moteur | Ports | Authentification |
 | --- | --- | --- |
@@ -34,4 +34,17 @@ curl "http://127.0.0.1:8983/solr/admin/cores?action=STATUS"
 
 # Manticore
 mysql -h 127.0.0.1 -P 9306 -e "SHOW TABLES; SHOW STATUS LIKE 'uptime';"
+```
+
+## Quickwit
+
+```bash
+./quickwit run                                     # tout-en-un (REST 7280, gRPC 7281)
+./quickwit index create --index-config index-logs.yaml
+./quickwit index ingest --index logs --input-path journaux.ndjson
+curl -X POST localhost:7280/api/v1/logs/ingest -H 'Content-Type: application/x-ndjson' --data-binary @j.ndjson
+./quickwit index search --index logs --query 'severity:ERROR AND service:api' --max-hits 20
+curl "localhost:7280/api/v1/logs/search?query=severity:ERROR&start_timestamp=1764000000&max_hits=20"
+./quickwit index list ; ./quickwit index describe --index logs ; ./quickwit split list --index logs
+./quickwit index gc --index logs ; ./quickwit index clear --index logs
 ```
