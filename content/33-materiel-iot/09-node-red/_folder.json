@@ -1,0 +1,1 @@
+{ "title": "Node-RED", "icon": "workflow", "color": "#8f0000", "description": "Programmation par flux (Node.js) pour l'IoT et l'automatisation : nœuds, flux et câblage, palette de nœuds, intégration MQTT et domotique, tableau de bord, sécurité (adminAuth, HTTPS), projets Git et exploitation." }

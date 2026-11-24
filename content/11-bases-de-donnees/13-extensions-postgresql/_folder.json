@@ -1,1 +1,1 @@
-{ "title": "Citus, TimescaleDB et Apache AGE", "icon": "puzzle", "color": "#336791", "description": "Extensions de PostgreSQL : distribution horizontale (Citus), séries temporelles (TimescaleDB) et graphes openCypher (Apache AGE)." }
+{ "title": "Citus, TimescaleDB, Apache AGE et pgvector", "icon": "puzzle", "color": "#336791", "description": "Extensions de PostgreSQL : distribution horizontale (Citus), séries temporelles (TimescaleDB), graphes openCypher (Apache AGE) et recherche vectorielle pour l'IA (pgvector)." }

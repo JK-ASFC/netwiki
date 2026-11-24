@@ -38,6 +38,30 @@ ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:8000", "inventaire.wsgi"]
 | `EXPOSE` | Documentation du port (ne publie rien) |
 | `ENTRYPOINT` / `CMD` | Commande principale / arguments par défaut |
 | `HEALTHCHECK` | Sonde de santé |
+| `WORKDIR` | Répertoire de travail (créé si absent) |
+| `VOLUME` | Point de montage déclaré comme volume |
+| `LABEL` | Métadonnées (préférer les annotations OCI `org.opencontainers.image.*`) |
+| `STOPSIGNAL` | Signal d'arrêt du conteneur |
+| `SHELL` | Shell utilisé par la forme *shell* de `RUN`/`CMD` |
+| `ONBUILD` | Instruction déclenchée quand l'image sert de base à une autre |
+
+**Formes `exec` vs `shell`** : `CMD ["nginx","-g","daemon off;"]` (exec, recommandée, pas de shell) contre `CMD nginx -g 'daemon off;'` (shell, variables développées). `ENTRYPOINT` fixe la commande, `CMD` fournit les arguments par défaut remplaçables.
+
+### Montages BuildKit (`RUN --mount`)
+
+```dockerfile
+# syntax=docker/dockerfile:1
+# Cache de dépendances réutilisé entre builds (ne reste pas dans l'image)
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
+# Secret de build (jamais écrit dans une couche)
+RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci
+# Clé SSH pour cloner un dépôt privé
+RUN --mount=type=ssh git clone git@gitlab.corp.exemple.fr:reseau/lib.git
+# Fichiers d'une autre étape sans les copier
+RUN --mount=type=bind,from=construction,source=/out,target=/out cp /out/bin /usr/local/bin/
+```
+
+`COPY --link` (couche indépendante, cache plus stable), `ADD` sait récupérer une URL ou un dépôt Git (`ADD git@…`). `ARG` n'est visible que dans l'étape où il est déclaré (le redéclarer après un `FROM`).
 
 ### Bonnes pratiques
 

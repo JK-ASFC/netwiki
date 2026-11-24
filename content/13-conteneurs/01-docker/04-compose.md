@@ -106,6 +106,44 @@ DJANGO_SECRET_KEY=valeur-secrete
 | `docker compose down` | Arrêter et supprimer conteneurs et réseaux (`-v` supprime aussi les **volumes**) |
 | `docker compose config` | Fichier final après variables et surcharges (vérification) |
 
+### Toutes les sous-commandes
+
+```bash
+docker compose up -d --build --force-recreate --remove-orphans   # (re)construire et recréer
+docker compose build --pull --no-cache web                       # construire les images des services
+docker compose create ; docker compose start ; docker compose stop ; docker compose restart
+docker compose kill -s SIGHUP web ; docker compose pause web ; docker compose unpause web
+docker compose rm -f ; docker compose down --rmi local --volumes --remove-orphans
+docker compose ps -a --format json ; docker compose ls          # piles (projets) en cours
+docker compose top ; docker compose events --json ; docker compose port web 8000
+docker compose images ; docker compose logs -f --tail 100 --since 10m
+docker compose exec -it db psql -U inventaire ; docker compose run --rm web sh
+docker compose cp web:/app/export.csv ./ ; docker compose scale web=3
+docker compose pull ; docker compose push ; docker compose wait web
+docker compose config --services ; docker compose config --volumes ; docker compose convert
+docker compose watch                                             # reconstruction/synchro en développement (section develop:)
+docker compose --profile outils up -d                            # activer un profil
+```
+
+### Principales clés du fichier `compose.yaml`
+
+| Clé de service | Rôle |
+| --- | --- |
+| `image` / `build` | Image à utiliser / construire (`context`, `dockerfile`, `args`, `target`, `secrets`) |
+| `command` / `entrypoint` | Remplacer la commande / le point d'entrée |
+| `environment` / `env_file` | Variables (liste ou carte) / fichier(s) de variables |
+| `ports` / `expose` | Publier / exposer des ports (`"127.0.0.1:8000:8000"`) |
+| `volumes` / `tmpfs` | Volumes nommés, *bind mounts*, tmpfs |
+| `networks` / `dns` / `extra_hosts` | Réseaux attachés, DNS, entrées `/etc/hosts` |
+| `depends_on` | Ordre et condition (`service_healthy`, `service_started`, `service_completed_successfully`) |
+| `healthcheck` | Sonde (`test`, `interval`, `timeout`, `retries`, `start_period`) |
+| `restart` / `deploy` | Politique de redémarrage / `replicas`, `resources.limits`, `update_config`, `placement` |
+| `secrets` / `configs` | Secrets et configurations montés |
+| `profiles` | N'activer le service qu'avec `--profile` |
+| `user`, `cap_drop`, `cap_add`, `read_only`, `security_opt`, `pids_limit` | Durcissement (mêmes options que `docker run`) |
+| `logging`, `labels`, `ulimits`, `sysctls`, `devices`, `gpus` | Journalisation, étiquettes, limites, périphériques, GPU |
+| `develop.watch` | Synchronisation/reconstruction automatique (`docker compose watch`) |
+
 ## Points clés
 
 | Sujet | Recommandation |

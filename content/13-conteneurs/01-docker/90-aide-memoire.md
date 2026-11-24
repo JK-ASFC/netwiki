@@ -113,3 +113,106 @@ cat /etc/docker/daemon.json
   "userland-proxy": false
 }
 ```
+
+## `docker run` / `create` — référence des options
+
+```bash
+docker run [options] IMAGE [commande] [args]
+```
+
+| Option | Rôle |
+| --- | --- |
+| `-d`, `--detach` / `-it` | Arrière-plan / interactif + TTY |
+| `--name`, `--hostname`, `--restart` | Nom, nom d'hôte, politique (`no`, `on-failure[:n]`, `always`, `unless-stopped`) |
+| `-p h:c`, `-P`, `--expose` | Publier un port / tous les ports exposés / exposer sans publier |
+| `-e`, `--env-file` | Variable d'environnement / fichier de variables |
+| `-v`, `--mount`, `--tmpfs` | Volume ou *bind* / montage détaillé / tmpfs |
+| `-w`, `--user`, `-u` | Répertoire de travail / utilisateur (`uid:gid`) |
+| `--network`, `--ip`, `--dns`, `--add-host` | Réseau, IP fixe, DNS, entrée `/etc/hosts` |
+| `--memory`, `--cpus`, `--cpuset-cpus`, `--pids-limit` | Limites mémoire, CPU, cœurs, processus |
+| `--cap-drop`, `--cap-add`, `--privileged` | Capacités Linux / mode privilégié (à éviter) |
+| `--security-opt`, `--read-only`, `--userns` | seccomp/AppArmor/`no-new-privileges`, racine en lecture seule, espace d'UID |
+| `--health-cmd`, `--health-interval`, `--no-healthcheck` | Sonde de santé |
+| `--gpus all`, `--device`, `--shm-size` | GPU (NVIDIA), périphérique hôte, taille `/dev/shm` |
+| `--label`, `--log-driver`, `--log-opt` | Étiquettes, pilote et options de journalisation |
+| `--rm`, `--init`, `--pull`, `--platform` | Suppression à l'arrêt, init PID 1, politique de pull, architecture |
+
+## Cycle de vie complet
+
+```bash
+docker create --name web nginx:1.27        # créer sans démarrer
+docker start -ai web                         # démarrer (attaché)
+docker attach web                            # se rattacher aux E/S
+docker pause web ; docker unpause web        # geler / reprendre
+docker kill -s HUP web                       # envoyer un signal
+docker wait web                              # attendre l'arrêt et renvoyer le code de sortie
+docker rename web frontal                    # renommer
+docker commit frontal app:instantane         # créer une image depuis un conteneur
+docker export frontal | gzip > frontal.tar.gz   # exporter le système de fichiers
+docker import frontal.tar.gz app:importe     # réimporter en image
+docker diff frontal                          # fichiers modifiés depuis l'image
+docker port frontal                          # correspondances de ports
+docker kill frontal ; docker rm -f frontal
+```
+
+## Images (compléments)
+
+```bash
+docker image inspect nginx:1.27 --format '{{.Architecture}} {{.Os}} {{index .RepoDigests 0}}'
+docker search --filter is-official=true --limit 5 nginx
+docker manifest inspect nginx:1.27                 # manifeste multi-architecture
+docker history --no-trunc app:test                 # couches détaillées
+docker image prune -a --filter "label!=garder=true" -f
+```
+
+## Buildx et BuildKit
+
+```bash
+docker buildx ls                                   # constructeurs disponibles
+docker buildx create --name multi --driver docker-container --bootstrap --use
+docker buildx build --platform linux/amd64,linux/arm64 -t reg/app:1 --push .
+docker buildx build --cache-to type=registry,ref=reg/app:cache --cache-from type=registry,ref=reg/app:cache -t reg/app:1 --push .
+docker buildx bake                                  # construire plusieurs cibles (docker-bake.hcl)
+docker buildx imagetools inspect reg/app:1          # inspecter un index d'images
+docker buildx prune -f ; docker buildx rm multi
+```
+
+## Docker Scout (sécurité)
+
+```bash
+docker scout quickview app:1                        # aperçu des vulnérabilités
+docker scout cves app:1 --only-severity critical,high
+docker scout recommendations app:1                  # images de base plus sûres
+docker scout compare app:1 --to app:0.9             # comparer deux images
+```
+
+## Système, événements, init
+
+```bash
+docker system info --format '{{.ServerVersion}} {{.Driver}} {{.CgroupVersion}}'
+docker system events --since 1h --filter type=container --filter event=oom
+docker system prune -a --volumes -f                 # tout nettoyer (prudence)
+docker init                                         # générer Dockerfile + compose.yaml + .dockerignore
+```
+
+## Swarm (orchestrateur intégré)
+
+```bash
+docker swarm init --advertise-addr 10.0.20.10
+docker swarm join-token worker ; docker swarm join-token manager
+docker node ls ; docker node promote srv02 ; docker node update --availability drain srv03
+docker service create --name web --replicas 3 -p 80:80 --update-delay 10s nginx:1.27
+docker service ls ; docker service ps web ; docker service scale web=5
+docker service update --image nginx:1.27-alpine --rollback-monitor 10s web
+docker secret create tls.key ./tls.key ; docker config create nginx.conf ./nginx.conf
+docker stack deploy -c compose.yaml pile ; docker stack services pile ; docker stack rm pile
+```
+
+## Greffons, signature, manifeste
+
+```bash
+docker plugin install vieux/sshfs ; docker plugin ls ; docker plugin disable ID
+export DOCKER_CONTENT_TRUST=1                        # exiger des images signées (pull/run/push)
+docker trust sign reg/app:1 ; docker trust inspect --pretty reg/app:1
+docker manifest create reg/app:1 reg/app:1-amd64 reg/app:1-arm64 && docker manifest push reg/app:1
+```

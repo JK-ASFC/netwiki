@@ -5,7 +5,7 @@ tags: [aide-mémoire, mailcow, mailu, docker-mailserver, modoboa, iredmail]
 icon: terminal
 ---
 
-Explications : [[01-mailcow-mailu-docker-mailserver|Mailcow, Mailu, docker-mailserver]] · [[02-modoboa-iredmail|Modoboa, iRedMail]].
+Explications : [[01-mailcow-mailu-docker-mailserver|Mailcow, Mailu, docker-mailserver]] · [[02-modoboa-iredmail|Modoboa, iRedMail]] · [[03-stalwart-maddy|Stalwart, Maddy]].
 
 ```bash
 cd /opt/mailcow-dockerized && sudo ./update.sh
@@ -20,6 +20,20 @@ docker exec -ti mailserver setup alias add postmaster@corp.exemple.fr jk@corp.ex
 docker exec -ti mailserver setup config dkim
 cd modoboa-installer && sudo ./run.py --stop-after-configfile-check corp.exemple.fr && sudo ./run.py corp.exemple.fr
 cd iRedMail-1.8.9 && sudo bash iRedMail.sh
+```
+
+## Stalwart et Maddy
+
+```bash
+# Stalwart (stalwart-cli ; -c utilisateur:mot_de_passe d'administration)
+stalwart-cli -u https://mail.corp.exemple.fr -c admin:MDP account create jk jk@corp.exemple.fr -p 'Mdp'
+stalwart-cli -u https://mail.corp.exemple.fr -c admin:MDP domain create corp.exemple.fr
+stalwart-cli -u https://mail.corp.exemple.fr -c admin:MDP dkim create corp.exemple.fr
+stalwart-cli -u https://mail.corp.exemple.fr -c admin:MDP queue list
+stalwart-cli -u https://mail.corp.exemple.fr -c admin:MDP import messages jk /sauvegarde/Maildir
+# Maddy (maddyctl)
+maddyctl creds create jk@corp.exemple.fr ; maddyctl imap-acct create jk@corp.exemple.fr
+maddyctl imap-mboxes list jk@corp.exemple.fr ; maddy -config /etc/maddy/maddy.conf run
 ```
 
 ## Tests

@@ -90,6 +90,6 @@ print([recherche.doc(a)["titre"] for _, a in recherche.search(index.parse_query(
 | Recherche SQL légère pour une application MySQL | Manticore |
 | Recherche instantanée pour une interface web | [[01-meilisearch-typesense-sonic\|Meilisearch ou Typesense]] |
 | Recherche intégrée à un programme, sans serveur | Tantivy |
-| Journaux et analytique | [[01-elasticsearch/01-presentation-installation\|Elasticsearch]], [[02-opensearch/01-presentation-installation\|OpenSearch]], Quickwit |
+| Journaux et analytique | [[01-elasticsearch/01-presentation-installation\|Elasticsearch]], [[02-opensearch/01-presentation-installation\|OpenSearch]], [[03-quickwit\|Quickwit]] |
 
-Commandes : [[90-aide-memoire|aide-mémoire]].
+Suite : [[03-quickwit|Quickwit]] (recherche de journaux sur stockage objet) · [[90-aide-memoire|aide-mémoire]].

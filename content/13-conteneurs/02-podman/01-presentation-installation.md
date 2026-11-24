@@ -82,6 +82,32 @@ podman compose up -d                         # utilise docker-compose ou podman-
 
 Les outils qui parlent à l'API Docker (Compose, Portainer, tests) fonctionnent alors avec Podman.
 
+## Catalogue des commandes et outils
+
+Podman reprend les commandes de Docker (`run`, `ps`, `build`, `image`, `network`, `volume`, `system`…) et y ajoute ses spécificités :
+
+| Famille | Commandes propres à Podman |
+| --- | --- |
+| **Pods** | `podman pod create/start/stop/rm/ps/inspect/stats` |
+| **Kubernetes** | `podman kube generate` / `play` / `down` ; `podman generate systemd` (déprécié → Quadlet) |
+| **systemd / Quadlet** | unités `.container`/`.pod`/`.volume`/`.network`/`.kube`/`.image`, `podman auto-update` |
+| **Rootless** | `podman unshare`, `podman system migrate`, `loginctl enable-linger` |
+| **Machine** (VM) | `podman machine init/start/ssh/set/stop/rm` (Windows, macOS) |
+| **Distant** | `podman system connection`, `podman --remote`, socket API compatible Docker |
+| **Checkpoint** | `podman container checkpoint` / `restore` (CRIU) |
+| **Farm** | `podman farm` (construction multi-architecture répartie) |
+| **Secrets** | `podman secret create/ls/rm` (fichier, env) |
+
+| Outil | Commandes | Rôle |
+| --- | --- | --- |
+| **Buildah** | `from`, `run`, `copy`, `config`, `commit`, `bud`, `images`, `mount`, `push` | Construire des images pas à pas ou depuis un Dockerfile |
+| **Skopeo** | `inspect`, `copy`, `sync`, `list-tags`, `delete`, `login` | Opérer sur les images entre registres sans démon ni téléchargement local |
+
+```bash
+podman <commande> --help         # options détaillées
+podman --help                     # liste complète ; voir aussi l'aide-mémoire
+```
+
 ## Suite
 
 [[02-pods-quadlet-exploitation|Pods, Quadlet, systemd et exploitation]]

@@ -89,3 +89,74 @@ buildah bud -t localhost/app:1.1 .
 skopeo inspect docker://docker.io/library/nginx:1.27 | jq '.Digest, .Created'
 skopeo copy docker://docker.io/library/nginx:1.27 docker://registre.exemple.fr/miroir/nginx:1.27
 ```
+
+## Cycle de vie et inspection
+
+```bash
+podman create --name web docker.io/library/nginx:1.27 ; podman start web
+podman stop web ; podman restart web ; podman kill -s HUP web
+podman pause web ; podman unpause web ; podman wait web ; podman rename web frontal
+podman cp frontal:/etc/nginx/nginx.conf ./ ; podman commit frontal localhost/app:instantane
+podman export frontal -o frontal.tar ; podman import frontal.tar localhost/app:importe
+podman diff frontal ; podman top frontal ; podman port frontal
+podman inspect frontal --format '{{.State.Health.Status}}'
+podman stats --no-stream ; podman update --memory 1g frontal
+podman healthcheck run frontal ; podman init frontal
+podman events --since 1h --filter event=died
+```
+
+## Images et manifestes
+
+```bash
+podman pull docker.io/library/nginx:1.27 ; podman push localhost/app:1 registre.exemple.fr/app:1
+podman tag localhost/app:1 localhost/app:latest ; podman image ls --digests
+podman save -o app.tar localhost/app:1 ; podman load -i app.tar
+podman image prune -a ; podman image mount <id> ; podman image tree localhost/app:1
+podman manifest create app:multi ; podman manifest add app:multi docker://app:1-arm64
+podman manifest push --all app:multi docker://registre.exemple.fr/app:multi
+```
+
+## Réseaux, volumes, checkpoint
+
+```bash
+podman network create --subnet 10.89.0.0/24 --gateway 10.89.0.1 interne
+podman network ls ; podman network inspect interne ; podman network reload --all
+podman volume create data ; podman volume export data -o data.tar ; podman volume import data data.tar
+# Checkpoint / restauration à chaud (CRIU)
+podman container checkpoint frontal --export frontal.ckpt.tar
+podman container restore --import frontal.ckpt.tar
+```
+
+## Machine (Windows, macOS, Linux)
+
+```bash
+podman machine init --cpus 4 --memory 8192 --disk-size 50 --rootful
+podman machine start ; podman machine ssh ; podman machine ls
+podman machine set --rootful=false ; podman machine stop ; podman machine rm
+podman system connection list ; podman --remote --connection distant ps     # hôte Podman distant
+```
+
+## Buildah (construction fine)
+
+```bash
+ctr=$(buildah from docker.io/library/debian:12)
+buildah run $ctr apt-get update
+buildah copy $ctr ./app /app
+buildah config --port 8080 --entrypoint '["/app/serveur"]' --user 10001 $ctr
+buildah commit $ctr localhost/app:1.2 ; buildah images ; buildah containers
+buildah bud -t localhost/app:1.2 .                 # construire depuis un Dockerfile
+buildah push localhost/app:1.2 docker://registre.exemple.fr/app:1.2
+buildah unshare ; buildah mount $ctr                # accéder au système de fichiers (rootless)
+```
+
+## Skopeo (images sans démon)
+
+```bash
+skopeo login registre.exemple.fr
+skopeo inspect docker://docker.io/library/nginx:1.27 | jq '.Digest,.Created,.Architecture'
+skopeo list-tags docker://docker.io/library/nginx
+skopeo copy --all docker://docker.io/library/nginx:1.27 docker://registre.exemple.fr/miroir/nginx:1.27
+skopeo copy docker://nginx:1.27 oci-archive:nginx.tar   # vers une archive OCI
+skopeo sync --src docker --dest dir docker.io/library/redis ./miroir-redis
+skopeo delete docker://registre.exemple.fr/app:ancien
+```

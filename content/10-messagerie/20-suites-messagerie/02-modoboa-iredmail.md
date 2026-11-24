@@ -44,4 +44,4 @@ Le récapitulatif final (`iRedMail.tips`) donne les adresses et mots de passe : 
 - Journaux : `/var/log/mail.log` (Debian/Ubuntu), `/var/log/maillog` (RHEL).
 - Diagnostic : voir les aide-mémoires de [[01-postfix/90-aide-memoire|Postfix]] et [[02-dovecot/90-aide-memoire|Dovecot]].
 
-Commandes : [[90-aide-memoire|aide-mémoire]].
+Suite : [[03-stalwart-maddy|Stalwart et Maddy]] · [[90-aide-memoire|aide-mémoire]].
