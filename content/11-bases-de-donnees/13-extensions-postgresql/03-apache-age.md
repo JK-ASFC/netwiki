@@ -40,4 +40,4 @@ $$) AS (nom agtype);
 
 `LOAD 'age'` et le `search_path` sont à refaire à chaque session (ou à mettre dans `session_preload_libraries` et la configuration du rôle). Visualisation : **AGE Viewer** (application web du projet).
 
-Commandes : [[90-aide-memoire|aide-mémoire]].
+Suite : [[04-pgvector|pgvector]] · [[90-aide-memoire|aide-mémoire]].

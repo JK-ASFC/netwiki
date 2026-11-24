@@ -1,0 +1,1 @@
+{ "title": "Bases vectorielles", "icon": "boxes", "color": "#a855f7", "description": "Bases de données vectorielles pour l'IA (RAG, recherche sémantique, recommandation) : Qdrant, Milvus, Weaviate et Chroma — installation, collections, index ANN, filtrage, API et exploitation." }

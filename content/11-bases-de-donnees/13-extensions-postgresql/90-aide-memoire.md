@@ -36,3 +36,15 @@ SELECT * FROM ag_graph; SELECT * FROM ag_label;
 SELECT * FROM cypher('reseau', $$ MATCH (n) RETURN count(n) $$) AS (n agtype);
 SELECT drop_graph('reseau', true);
 ```
+
+## pgvector
+
+```sql
+CREATE EXTENSION vector; SELECT extversion FROM pg_extension WHERE extname='vector';
+CREATE INDEX ON documents USING hnsw (embedding vector_cosine_ops) WITH (m=16, ef_construction=64);
+CREATE INDEX ON documents USING ivfflat (embedding vector_cosine_ops) WITH (lists=1000);
+SET hnsw.ef_search = 100; SET ivfflat.probes = 10;              -- rappel vs latence (requête)
+SELECT titre, embedding <=> $1 AS d FROM documents ORDER BY embedding <=> $1 LIMIT 5;  -- <-> L2, <#> ip, <=> cos
+SELECT pg_size_pretty(pg_relation_size('documents_embedding_idx'));   -- taille de l'index
+REINDEX INDEX CONCURRENTLY documents_embedding_idx;
+```
