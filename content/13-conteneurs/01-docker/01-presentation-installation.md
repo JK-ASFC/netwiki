@@ -110,6 +110,35 @@ docker pull debian:12
 | `docker stats` | Consommation en temps réel |
 | `docker system df` | Espace disque utilisé |
 
+## Catalogue des commandes
+
+La CLI Docker s'organise en **commandes de gestion** (`docker <objet> <action>`) et en raccourcis de haut niveau (`docker run` = `docker container run`).
+
+| Commande de gestion | Objet | Actions principales |
+| --- | --- | --- |
+| `docker container` | Conteneurs | `run`, `create`, `start`, `stop`, `restart`, `kill`, `pause`, `unpause`, `rm`, `ls`, `logs`, `exec`, `attach`, `cp`, `inspect`, `stats`, `top`, `port`, `rename`, `update`, `wait`, `diff`, `commit`, `export`, `prune` |
+| `docker image` | Images | `build`, `pull`, `push`, `ls`, `tag`, `rm`, `inspect`, `history`, `save`, `load`, `import`, `prune` |
+| `docker network` | Réseaux | `create`, `ls`, `inspect`, `connect`, `disconnect`, `rm`, `prune` |
+| `docker volume` | Volumes | `create`, `ls`, `inspect`, `rm`, `prune` |
+| `docker system` | Moteur | `df`, `info`, `events`, `prune` |
+| `docker context` | Hôtes distants | `create`, `ls`, `use`, `inspect`, `rm` |
+| `docker builder` / `docker buildx` | Construction (BuildKit) | `build`, `bake`, `ls`, `create`, `use`, `inspect`, `prune`, `imagetools` |
+| `docker compose` | Multi-conteneurs | `up`, `down`, `ps`, `logs`, `build`, `pull`, `exec`, `config`, `watch` |
+| `docker scout` | Sécurité des images | `quickview`, `cves`, `recommendations`, `compare` |
+| `docker swarm` | Orchestrateur intégré | `init`, `join`, `join-token`, `leave`, `update` |
+| `docker service` / `stack` / `node` | Swarm | services répliqués, piles (`stack deploy`), nœuds |
+| `docker secret` / `config` | Swarm | secrets et configurations distribués |
+| `docker plugin` | Extensions | `install`, `ls`, `enable`, `disable`, `rm` (pilotes volume/réseau/journaux) |
+| `docker trust` / `manifest` | Images | signature (Notary) ; manifestes multi-architectures |
+| `docker` (divers) | — | `version`, `info`, `login`/`logout`, `search`, `events`, `init` (générer Dockerfile/compose) |
+
+```bash
+docker <commande> --help        # options détaillées de chaque commande
+docker help                      # liste complète
+```
+
+Les détails et exemples sont répartis dans les pages suivantes et l'[[90-aide-memoire|aide-mémoire]].
+
 ## Suite du parcours
 
 1. [[02-images-dockerfile-registres|Images, Dockerfile et registres]]
