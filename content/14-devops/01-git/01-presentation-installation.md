@@ -118,6 +118,29 @@ git remote add origin git@gitlab.corp.exemple.fr:reseau/configurations.git
 git push -u origin main
 ```
 
+## Catalogue des commandes
+
+Git distingue les commandes de **porcelaine** (usage courant) et de **plomberie** (bas niveau, scripts).
+
+| Domaine | Commandes |
+| --- | --- |
+| Créer / obtenir | `init`, `clone` |
+| Travailler | `status`, `add`, `restore`, `rm`, `mv`, `commit`, `diff`, `stash` |
+| Historique | `log`, `show`, `shortlog`, `blame`, `describe`, `range-diff`, `whatchanged` |
+| Branches | `branch`, `switch`, `checkout`, `merge`, `rebase`, `cherry-pick`, `tag` |
+| Distants | `remote`, `fetch`, `pull`, `push`, `ls-remote` |
+| Annuler / réparer | `reset`, `revert`, `reflog`, `restore`, `clean`, `rerere` |
+| Inspecter / chercher | `grep`, `bisect`, `rev-parse`, `rev-list`, `cat-file`, `ls-files`, `show-ref` |
+| Organiser | `submodule`, `worktree`, `sparse-checkout`, `notes`, `archive`, `bundle` |
+| Maintenance | `gc`, `fsck`, `maintenance`, `prune`, `repack`, `count-objects` |
+| Réécrire | `rebase -i`, `commit --amend`, `filter-repo`, `replace` |
+| Config / extensions | `config`, `remote-helper`, `credential`, `lfs`, `hook` |
+
+```bash
+git help -a            # toutes les commandes ; git help <commande> pour la page de manuel
+git <commande> -h      # aide courte
+```
+
 ## Suite du parcours
 
 1. [[02-branches-workflows|Commandes, branches et flux de travail]]

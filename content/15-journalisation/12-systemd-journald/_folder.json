@@ -1,0 +1,1 @@
+{ "title": "systemd-journald et journalctl", "icon": "scroll-text", "color": "#64748b", "description": "Journal système de systemd : collecte binaire structurée, lecture et filtrage avec journalctl, stockage persistant, rotation et quotas, transfert vers syslog, journal distant et espaces de noms." }
