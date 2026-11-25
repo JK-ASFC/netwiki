@@ -54,6 +54,37 @@ table ip nat {
 }
 ```
 
+### Référence nft
+
+| Élément | Valeurs |
+| --- | --- |
+| **Familles** | `inet` (IPv4+IPv6, recommandé), `ip`, `ip6`, `arp`, `bridge`, `netdev` |
+| **Hooks** | `prerouting`, `input`, `forward`, `output`, `postrouting`, `ingress` (netdev/inet) |
+| **Priorités** nommées | `raw` (−300), `mangle` (−150), `dstnat` (−100), `filter` (0), `srcnat` (100) |
+| **Verdicts** | `accept`, `drop`, `reject` (avec `with icmp type …`), `queue`, `continue`, `return`, `jump <chaîne>`, `goto` |
+| **Sélecteurs** | `ip saddr/daddr`, `tcp/udp dport/sport`, `ct state`, `iif/oif`, `meta l4proto/mark/skuid`, `ether saddr` |
+| **Instructions** | `log`, `limit rate`, `counter`, `quota`, `meter` (limite par IP), `dnat`/`snat`/`masquerade`/`redirect`, `tcp flags`, `mark set` |
+| **Objets nommés** | `set` (ensemble), `map` (clé→valeur/verdict), `counter`, `quota`, `ct helper`, `flowtable` (déchargement) |
+
+```text
+# Ensemble, map de redirection de ports et limite par IP
+table inet filtre {
+  map portmap { type inet_service : ipv4_addr; elements = { 80 : 10.0.20.10, 443 : 10.0.20.11 } }
+  chain entree {
+    type filter hook input priority filter; policy drop;
+    ct state established,related accept
+    tcp dport 22 meter ssh-flood { ip saddr limit rate 10/minute } accept   # anti-force-brute par IP
+    counter comment "paquets refusés" drop
+  }
+}
+```
+
+```bash
+sudo nft list ruleset ; sudo nft list sets ; sudo nft list counters
+sudo nft monitor                     # suivre les événements en direct
+sudo nft list ruleset > /etc/nftables-sauvegarde.nft      # sauvegarde
+```
+
 ## iptables
 
 ```bash
@@ -63,7 +94,10 @@ sudo iptables -A INPUT -s 10.0.99.0/24 -p tcp --dport 22 -j ACCEPT
 sudo iptables -P INPUT DROP
 sudo iptables-save | sudo tee /etc/iptables/rules.v4        # persistance (paquet iptables-persistent sur Debian)
 iptables-translate -A INPUT -p tcp --dport 22 -j ACCEPT      # équivalent nftables
+sudo iptables -I DOCKER-USER -i eth0 ! -s 10.0.99.0/24 -j DROP     # restreindre les conteneurs publiés
 ```
+
+Modules de correspondance (`-m`) courants : `conntrack` (`--ctstate`), `multiport` (`--dports 80,443`), `limit`/`hashlimit` (anti-flood), `recent` (listes dynamiques), `addrtype`, `mac`, `owner` (par UID), `string`, `comment`. Cibles (`-j`) utiles : `ACCEPT`, `DROP`, `REJECT --reject-with`, `LOG --log-prefix`, `DNAT`/`SNAT`/`MASQUERADE` (table `nat`), `MARK`, `RETURN`.
 
 **Docker** ajoute ses propres règles (chaînes `DOCKER`, `DOCKER-USER`) : placez vos restrictions dans `DOCKER-USER`, sinon les ports publiés contournent votre politique.
 
